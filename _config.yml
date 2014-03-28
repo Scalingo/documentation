@@ -1,0 +1,4 @@
+name: Appsdeck documentation
+markdown: redcarpet
+pygments: true
+permalink: none
