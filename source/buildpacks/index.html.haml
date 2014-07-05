@@ -1,0 +1,58 @@
+---
+title: Buildpacks
+date: 05/07/2014
+tag: buildpacks, build, image
+category: internals
+---
+
+:markdown
+  # Buildpacks
+
+  When you want to deploy your application on Appsdeck, it needs to be build as
+  a portable container image. This image will be loaded by our servers to run
+  and scale your app.
+
+  A buildpack is a set of scripts which aims at:
+
+  * Detecting the language of an application `detect`
+  * Installing the dependencies of a project `compile`
+  * Defining how the application should be started `release`
+
+  # Buidpacks included on Appsdeck
+
+%ul
+  %li
+    %code Ruby
+    —
+    = link_to "Documentation", "https://www.ruby-lang.org"
+    —
+    = link_to "Source", "https://github.com/Appsdeck/heroku-buildpack-ruby"
+  %li
+    %code Node.js
+    —
+    = link_to "Documentation", "http://nodejs.org/"
+    —
+    = link_to "Source", "https://github.com/Appsdeck/heroku-buildpack/nodejs"
+  %li
+    %code Java
+  %li
+    %code Python
+  %li
+    %code PHP
+  %li
+    %code Go
+  %li
+    %code Scala
+  %li
+    %code Erlang
+  %li
+    %code Haskell
+  %li
+    %code Clojure
+  %li
+    %code Grails Framework
+  %li
+    %code Meteorite Framework
+  %li
+    %code Play Framework
+
