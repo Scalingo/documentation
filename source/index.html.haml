@@ -1,0 +1,23 @@
+.container
+  .row
+    .col-lg-6.superblock
+      .block
+        %h2 Internals
+        %ul.list-unstyled
+          %li
+            %a{href: "#"}Title
+    .col-lg-6.superblock
+      .block
+        %h2 Getting started
+        %ul.list-unstyled
+          %li
+            %a{href: "#"}Title
+
+  .row
+    .col-lg-6.superblock
+      .block
+        %h2 Languages documentation
+        %ul.list-unstyled
+          - blog.articles[0...5].each do |article|
+            %li
+              %a{href: article.url}=article.title
