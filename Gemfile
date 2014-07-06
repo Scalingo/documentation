@@ -20,6 +20,7 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 gem 'redcarpet'
 gem 'haml'
 gem 'sass'
+gem 'coffee-script'
 
 gem 'bootstrap-sass', require: false
 

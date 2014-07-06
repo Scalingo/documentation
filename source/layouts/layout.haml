@@ -3,11 +3,14 @@
   %head
     %meta{charset: "utf-8"}
     %meta{http_equiv: "X-UA-Compatible", content:"IE=edge,chrome=1"}
-    %title Documentation Appsdeck
+    %title= current_page.data.title
 
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
 
-    = stylesheet_link_tag 'all'
+    %script{src:"//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"}
+    = javascript_include_tag 'script'
+    = stylesheet_link_tag 'style'
+
     %link{href: "//fonts.googleapis.com/css?family=Cabin+Condensed:400,700", media: "screen", rel: "stylesheet"}
     %link{href: "//fonts.googleapis.com/css?family=Droid+Sans:400,700", media: "screen", rel: "stylesheet"}
     %link{href: "//fonts.googleapis.com/css?family=Droid+Sans+Mono", media: "screen", rel: "stylesheet"}
@@ -21,11 +24,19 @@
     <![endif]-->
 
   %body
-    .navbar.navbar-static-top
-      .navbar-inner
-        .container
-          %a.brand{href: "/"}
-          %ul.nav
-            %li
-              %a{href: "/"}Home
-    = yield
+    #wrapper
+      #sidebar-wrapper
+        = partial "menus/main"
+
+      .navbar.navbar-static-top.header
+        .navbar-inner
+          .container
+            %a#menu-toggle.btn.btn-default{href: "#"}
+              %i.fa.fa-reorder
+            %a.brand{href: "/"}Appsdeck Documentation
+            %ul.nav
+              %li
+                %a{href: "#"}Languages
+
+      #page-content-wrapper
+        = yield
