@@ -13,3 +13,15 @@
           - blog.by_top_category("languages")[0...5].each do |article|
             %li
               %a{href: article.url}=article.title
+
+  .row
+    .col-lg-6.superblock
+      .block
+        %h2 Recent Activity
+        %ul.list-unstyled
+          - blog.articles[0...5].each do |article|
+            %li
+              = link_to article.url do
+                = article.title
+                %span.last-article-date.pull-right
+                  = article.date.strftime("%d-%m-%Y")
