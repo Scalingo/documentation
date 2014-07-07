@@ -3,6 +3,7 @@ Time.zone = "Europe/Paris"
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+  ignore ".*.swp"
 end
 
 # HACK HAML 4
