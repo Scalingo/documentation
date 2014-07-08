@@ -26,7 +26,10 @@
   %body
     #wrapper
       #sidebar-wrapper
-        = partial "menus/main"
+        - if current_page.data.menu
+          = partial "menus/#{current_page.data.menu}"
+        - else
+          = partial "menus/main"
 
       .navbar.navbar-static-top.header
         .navbar-inner

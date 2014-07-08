@@ -37,14 +37,16 @@ $mobile-max-width: 767px
   text-indent: 20px
 
 .sidebar-nav li a
-  color: #999999
+  color: $text-menu-color
   display: block
   text-decoration: none
 
 .sidebar-nav li a:hover
-  color: #fff
-  background: rgba(255,255,255,0.2)
-  text-decoration: none
+  color: darken($text-menu-color, 10%)
+  background: darken($menu-color, 10%)
+
+.sidebar-nav li a:visited
+  color: lighten($text-menu-color, 30%)
 
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus
