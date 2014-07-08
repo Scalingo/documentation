@@ -31,15 +31,20 @@
         - else
           = partial "menus/main"
 
-      .navbar.navbar-static-top.header
-        .navbar-inner
-          .container
-            %a#menu-toggle.btn.btn-default{href: "#"}
+      .navbar.navbar-default.navbar-static-top{role: "navigation"}
+        .container
+          .navbar-header
+            %button#menu-toggle.btn.btn-default.navbar-toggle
               %i.fa.fa-reorder
-            %a.brand{href: "/"}Appsdeck Documentation
-            %ul.nav
+            %a.navbar-brand{href: "/"}Appsdeck Documentation
+          .navbar-collapse.collapse
+            %ul.nav.navbar-nav
               %li
-                %a{href: "#"}Languages
+                %a= link_to "Getting started", "/first-steps"
+              %li
+                %a= link_to "Languages", "/languages"
+              %li
+                %a= link_to "Internals", "/internals"
 
       #page-content-wrapper
         = yield
