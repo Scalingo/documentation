@@ -3,6 +3,7 @@
 
 $menu-color: #e7e7e7
 $text-menu-color: #333333
+$info-background-color: #ccccff
 $border-menu-color: darken($menu-color, 20%)
 
 @import "./_index"
@@ -68,3 +69,12 @@ h1, h2, h3
   background-color: #FCFDFD
   border: 1px solid rgba(86, 61, 124, 0.2)
   padding: 15px
+
+blockquote
+  font-size: 10pt
+  &.info
+    background-color: $info-background-color
+  img
+    padding: 5px 5px 5px 5px
+    border: 1px solid #aaaaaa
+    box-shadow: 3px 3px 3px #7C7C7C
