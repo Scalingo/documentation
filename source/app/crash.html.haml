@@ -1,0 +1,40 @@
+---
+title: Application crash
+date: 10/09/2014
+tag: app, crash, recovery
+category: app
+---
+
+:markdown
+  # Application crash
+
+  For various reasons your application can terminate abruptly. 
+  
+  In this case, when we detect it
+  
+  1. An email is sent to you.
+  2. Your application is restarted.
+
+%blockquote.info
+  There is a hard limit of
+  %strong 10
+  crashes between two deployments.
+  
+:markdown
+  > This limitation has been setup in order to avoid the situation when an
+  > application try to boot and crash immediately, it is to let it crash again
+  > and again... and again.
+
+  When the limit is reached your application won't be accessible anymore.
+
+  # What to do?
+
+  We stronly advise to look at the logs of your application using the web
+  dashboard or by using the [CLI tool](https://github.com/Appsdeck/appsdeck-executables).
+
+  According to the information gathered, you should then modify your application to
+  fix the issues which lead to this instability.
+
+  # Need support?
+
+  Don't hesitate to contact us at [support@appsdeck.eu](mailto:support@appsdeck.eu)
