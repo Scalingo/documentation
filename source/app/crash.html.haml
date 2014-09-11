@@ -25,6 +25,26 @@ category: app
   > application try to boot and crash immediately, it is to let it crash again
   > and again... and again.
 
+  ## Restart rhythm
+
+  We do not restart your application 10 times in a row, there is an increasing
+  duration between each restart.
+
+- restart_timers = [0, 0, 10, 30, 60, 120, 300, 600, 1200, 1800]
+%table.table
+  %tbody
+    %tr
+      %td
+        %strong Crash number
+      - restart_timers.each_with_index do |value, index|
+        %td=index+1
+    %tr
+      %td
+        %strong Time before restart (seconds)
+      - restart_timers.each_with_index do |value, index|
+        %td=value
+
+:markdown
   When the limit is reached your application won't be accessible anymore.
 
   # What to do?
