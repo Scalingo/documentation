@@ -72,6 +72,7 @@ List of frameworks:
 * Slim
 * Silex
 * Cake PHP 2
+* Change 2
 
 Deployment configuration
 ------------------------
