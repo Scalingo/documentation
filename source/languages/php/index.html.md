@@ -9,7 +9,7 @@ tags: programming, dev, php, language
 
 ## Buildpack
 
-[Link to PHP Buildpack](https://github.com/Appsdeck/appsdeck-buildpack-php)
+[Link to PHP Buildpack](https://github.com/Scalingo/appsdeck-buildpack-php)
 
 [Documentation](/languages/php/buildpack)
 
