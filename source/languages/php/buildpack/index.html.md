@@ -73,6 +73,7 @@ List of frameworks:
 * Silex
 * Cake PHP 2
 * Change 2
+* Yii
 
 Deployment configuration
 ------------------------
