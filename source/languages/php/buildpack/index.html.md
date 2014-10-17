@@ -58,6 +58,19 @@ $ composer update slim/slim
 The composer.lock file will be updated automatically, do not forget to commit the
 modifications of the file.
 
+Composer during the deployment
+------------------------------
+
+We consider that when you deploy your application on Appsdeck that your want it
+to run in "production" mode. As a result, `composer install` is run with the flag
+`--no-dev`.
+
+If, in order to debug your application, you wish to install development dependencies,
+you can set the following environment variable:
+
+* `COMPOSER_DEV` → `true`
+
+
 Frameworks
 ----------
 
@@ -113,6 +126,10 @@ The directory where nginx will define the root of your app.
 
 > It is empty by default, it means that nginx will look at
 > the index.php at the root of your project.
+
+This parameter can also be overrided with the environment variable:
+
+* `DOCUMENT_ROOT`
 
 ### .extra.paas.index-document
 
