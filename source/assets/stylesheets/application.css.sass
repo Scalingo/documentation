@@ -4,6 +4,7 @@
 $menu-color: #e7e7e7
 $text-menu-color: #333333
 $info-background-color: #ccccff
+$tip-background-color: #ffff99
 $border-menu-color: darken($menu-color, 20%)
 
 @import "./_github"
@@ -11,13 +12,43 @@ $border-menu-color: darken($menu-color, 20%)
 @import "./_sidebar"
 @import "./_syntax"
 
+html
+  height: 100%
+
 body
   background-color: #F4F4F4
   color: #394D54
   font-family: "Droid Sans",sans-serif
   font-size: 14px
   line-height: 20px
+  height: 100%
   margin: 0
+  #wrapper
+    position: relative
+    transition: all 0.4s ease 0s
+    padding-left: 250px
+    min-height: 100%
+    @media screen and (max-width: $mobile-max-width)
+      padding-left: 0
+
+    #page-content-wrapper
+      padding-left: 20px
+      padding-bottom: 80px
+      width: 80%
+
+    footer
+      position: absolute
+      bottom: 0
+      width: 100%
+      left: -1px
+      height: 60px
+      padding-top: 20px
+      border-top: 1px solid $border-menu-color
+      background-color: $menu-color
+      padding-left: 270px
+      @media screen and (max-width: $mobile-max-width)
+        padding-left: 20px
+
 
 .navbar
   border-bottom: 1px solid $border-menu-color
@@ -75,7 +106,10 @@ blockquote
   font-size: 10pt
   &.info
     background-color: $info-background-color
+  &.tip
+    background-color: $tip-background-color
   img
     padding: 5px 5px 5px 5px
     border: 1px solid #aaaaaa
     box-shadow: 3px 3px 3px #7C7C7C
+
