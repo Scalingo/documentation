@@ -1,0 +1,98 @@
+---
+title: Getting Started with Rails
+category: languages
+date: 17/10/2014
+tags: programming, dev, ruby, rails, language
+---
+
+%h1 Getting started with Rails
+
+%h2 Initialize your application
+
+:markdown
+  ```bash
+  $ rails new rails-app
+
+  # 
+  # It creates file and run 'bundle install'
+  #
+
+  $ git init
+  $ git add .
+  $ git commit -m "Base rails application"
+  ```
+
+%h2 Create your application on Appsdeck
+
+%blockquote.info
+  You can also use our web dashboard to achieve this operation
+
+:markdown
+  ```bash
+  $ appsdeck create my-ruby-app
+  Git repository detected: remote appsdeck added
+  → 'git push appsdeck master' to deploy your app
+  ```
+
+%h2 Provisionning your database
+
+:markdown 
+  * Go on the [dashboard](https://appsdeck.eu/home/apps) of your application.
+  * Select the __Addons__ tab
+  * Choose the database you want to use
+  * Select the __Environment__ tab
+
+%h3 PostgreSQL
+
+:markdown
+
+  Add the gem `pg` to your `Gemfile` and set the following environment variable:
+
+  * `DATABASE_URL` → `$APPSDECK_POSTGRESQL_URL`
+
+%h3 MySQL
+
+:markdown
+
+  Add the gem `mysql2` to your `Gemfile` and set the following environment variable:
+
+  * `DATABASE_URL` → `$APPSDECK_MYSQL_URL`
+
+%h3 MongoDB
+
+:markdown
+  To use a MongoDB database your need to add the gem `mongoid` to your `Gemfile`
+
+  [Configure Mongoid](/languages/ruby/configure-mongoid.html)
+
+%h2 Setup your application logging
+
+:markdown
+  By default, rails application don't write their logs to STDOUT but in a custom file.
+  We expect your applications to write all their logging entries to STDOUT and STDERR
+  according to their nature, in accordance to the [12 factors](http://12factor.net)
+
+  * Add the following gem in your `Gemfile`: `gem "rails_12factors"`
+
+%h2 Finalize and deploy
+
+:markdown
+  ```bash
+  $ bundle install
+  $ git add .
+  $ git commit -m "Configure application for Appsdeck"
+  $ git push appsdeck master
+  ```
+
+
+%h2 Access your application
+
+:markdown
+  ```
+   …
+   Waiting for your application to boot... 
+   <-- https://my-ruby-app.appsdeck.eu -->
+  ```
+
+  Yes a new application will render a 404 error `The page you were looking for doesn't exist.`,
+  but it's normal, there is nothing in the project, it's time to build your product!

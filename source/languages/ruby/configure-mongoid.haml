@@ -1,0 +1,29 @@
+---
+title: Configure Mongoid
+category: languages
+date: 17/10/2014
+tags: programming, dev, ruby, mongoid, mongodb
+---
+
+%h1 Configure Mongoid
+
+:markdown
+  You need to create the file `config/mongoid.yml` in order to configure Mongoid.
+
+  ```yml
+  development:
+    sessions:
+      default:
+        database: my-ruby-app
+        hosts:
+          - localhost:27017
+  production:
+    sessions:
+      default:
+        uri: <%= ENV['APPSDECK_MONGO_URL'] %>
+  ```
+
+  If you want to modify connection options or the connections pooling, you can
+  find all the information in the [official
+  documentation](http://mongoid.org/en/mongoid/docs/installation.html)
+
