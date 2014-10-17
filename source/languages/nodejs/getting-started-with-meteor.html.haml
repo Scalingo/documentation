@@ -1,0 +1,65 @@
+---
+title: Getting Started with Meteor
+category: languages
+date: 17/10/2014
+tags: programming, dev, nodejs, language, meteor, tutorial
+---
+
+%h1 Getting started with Meteor
+
+%h2 Initialize your application
+
+:markdown
+  ```bash
+  # Install meteor
+  $ curl https://install.meteor.com | /bin/sh
+
+  # Create your app
+  $ meteor create meteor-app
+  $ cd meteor-app
+
+  # Add everything in the GIT repository
+  $ git init .
+  $ git commit -m "Init meteor application"
+  ```
+
+%h2 Provision a MongoDB database
+
+:markdown
+  The meteor framework uses extensively MongoDB as a datastore,
+  so you need an available instance for you application.
+
+  * Go on the [dashboard](https://appsdeck.eu/home/apps) of your application.
+  * Select the __Addons__ tab
+  * Choose the addon __MongoDB__
+  * Select the __Environment__ tab
+  * Add the environment variable
+    * `MONGO_URL` → `$APPSDECK_MONGO_URL`
+
+%blockquote.tip
+  By default, meteor look for the environment variable MONGO_URL to define its database.
+
+%h2 Create your application on Appsdeck and deploy
+
+%blockquote.info
+  You can also use our web dashboard to achieve this operation
+
+:markdown
+  ```bash
+  $ appsdeck create meteor-app
+  Git repository detected: remote appsdeck added
+  → 'git push appsdeck master' to deploy your app
+
+  $ git push appsdeck master
+  ```
+
+%h2 Access your application
+
+:markdown
+  ```
+   …
+   Waiting for your application to boot... 
+   <-- https://meteor-app.appsdeck.eu -->
+  ```
+
+Now you can have fun with meteor and all its real-time feature. Of course, we support websocket!
