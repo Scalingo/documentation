@@ -7,12 +7,17 @@
           %li
             %a{href: "/first-steps"}First Steps
           %li
+            %a{href: "/cli"}Command Line Tool
+          %li
             %a{href: "/app/domain"}Custom Domain Name
+          %li
+            %a{href: "/databases"}Databases
     .col-lg-6.superblock
       .block
-        %h2 Languages documentation
+        %h2
+          %a{href: "/languages"} Languages documentation
         %ul.list-unstyled
-          - blog.by_top_category("languages")[0...5].each do |article|
+          - blog.by_top_category("languages")[0...10].each do |article|
             %li
               %a{href: article.url}=article.title
 
@@ -21,9 +26,18 @@
       .block
         %h2 Recent Activity
         %ul.list-unstyled
-          - blog.articles[0...5].each do |article|
+          - blog.articles[0...10].each do |article|
             %li
               = link_to article.url do
                 = article.title
                 %span.last-article-date.pull-right
                   = article.date.strftime("%d-%m-%Y")
+
+    .col-lg-6.superblock
+      .block
+        %h2
+          %a{href: "/databases"} Databases
+        %ul.list-unstyled
+          - blog.by_top_category("databases")[0...10].each do |article|
+            %li
+              %a{href: article.url}=article.title

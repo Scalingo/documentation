@@ -1,0 +1,42 @@
+---
+title: Access your PostgreSQL database
+category: databases
+date: 25/11/2014
+tags: databases, postgresql
+---
+
+:markdown
+  # Access your PostgreSQL database
+
+%blockquote.info
+  :markdown
+    You need to have our command line utility
+    [Documentation](/cli) - [https://github.com/Scalingo/appsdeck-executables](https://github.com/Scalingo/appsdeck-executables)
+
+:markdown
+
+  ## Use `appsdeck run`
+
+  ```
+  appsdeck -a <application name> run -e PGPASSWORD=<password> psql -U <user> -h <host> -p <port> <db>
+  ```
+
+  ### Example
+
+  If my application's name is 'example' and it has the environment variable
+  `APPSDECK_POSTGRESQL_URL = "postgresql://example_123:H_grwjqBteMMrVye442Zw6@example-123.postgresql.dbs.appsdeck.eu:30000/example_123"`
+
+  You can run:
+
+  ```
+  $ appsdeck -a example run -e PGPASSWORD=H_grwjqBteMMrVye442Zw6 psql -U example_123 -h example-123.postgresql.dbs.appsdeck.eu -p 30000 example_123
+  psql (9.3.5)
+  Type "help" for help.
+
+  example_123=> SELECT version();
+                                                 version                                                
+  ------------------------------------------------------------------------------------------------------
+   PostgreSQL 9.3.5 on x86_64-unknown-linux-gnu, compiled by gcc (Ubuntu 4.8.2-19ubuntu1) 4.8.2, 64-bit
+
+  ```
+

@@ -3,6 +3,13 @@
     %a{href: "/"}
       = image_tag "avatar-tiny.png"
   %li
+    %form.form-inline.search-field{role: "search"}
+      .form-group
+        .input-group
+          .input-group-addon
+            %i.fa.fa-search
+          %input#st-search-input.form-control{type: "search", placeholder: "Search"}
+  %li
     %h2 Getting Started
   %li= link_to "First steps on Appsdeck", "/first-steps"
   %li

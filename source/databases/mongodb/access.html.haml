@@ -1,0 +1,39 @@
+---
+title: Access your MongoDB database
+category: databases
+date: 24/11/2014
+tags: databases, mongodb
+---
+
+:markdown
+  # Access your MongoDB database
+
+%blockquote.info
+  :markdown
+    You need to have our command line utility
+    [Documentation](/cli) - [https://github.com/Scalingo/appsdeck-executables](https://github.com/Scalingo/appsdeck-executables)
+
+:markdown
+
+  ## Use `appsdeck run`
+
+  ```
+  appsdeck -a <application name> run mongo -u <user> -p <password> <host:port>/<db>
+  ```
+
+  ### Example
+
+  If my application's name is 'example' and it has the environment variable
+  `APPSDECK_MONGO_URL = "mongodb://example-123:H_grwjqBteMMrVye442Zw6@example-123.mongo.dbs.appsdeck.eu:30000/example-123"`
+
+  You can run:
+
+  ```
+  $ appsdeck -a example run mongo -u example-123 -p H_grwjqBteMMrVye442Zw6 example-123.mongo.dbs.appsdeck.eu:30000/example-123
+  ,
+  > db
+  example
+  > db.version()
+  2.6.5
+  ```
+

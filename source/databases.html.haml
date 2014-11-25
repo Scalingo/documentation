@@ -1,0 +1,67 @@
+---
+title: Databases
+category: databases
+date: 24/11/2014
+tags: index-databases, polydbs
+---
+
+%h1 Databases
+
+You applications need databases to store your data. As we believe your data
+should be located geographically close to your application servers we embed
+the most common types of database.
+
+We ensure your database is located at the same location as your applications.
+It provides the best performance and latency possible. Moreover you know where
+your data are.
+
+%h2 Database types
+
+%h3 SQL
+
+%ul
+  %li PostgreSQL
+  %li MySQL
+
+%h3 NoSQL
+
+%ul
+  %li MongoDB
+  %li Redis
+  %li Elasticsearch
+
+%h2 Provision a database
+
+To provision a database for one of your app, the process is really simple:
+
+%ol
+  %li Go on your app [dashboard](https://appsdeck.eu/home/apps)
+  %li Click on the 'Addons' tab
+  %li
+    Select the database type your need and the capacity you need
+    %blockquote.info
+      The capacity of your database is elastic, you will be able to upgrade
+      your addon later.
+  %li Click on the button 'Add to my app'
+
+:markdown
+  That's it, your database has been instantly provisionned. To get the
+  credentials to connect to it, go to then __environment__ tab of your app,
+  where you will find the connection chain named: `APPSDECK_<TYPE>_URL` 
+
+%h3 Backups
+
+We are making backups of your database on a daily basis, however we don't keep
+those backups forever. The following rules are applied:
+
+%ul
+  %li Everyday of 1 month
+  %li One per week during the 2nd and 3rd months
+  %li One per month during the 4th, 5th and 6th months
+
+%h3 -- Related
+
+%ul
+  - blog.by_top_category("databases")[0...10].each do |article|
+    %li
+      %a{href: article.url}=article.title

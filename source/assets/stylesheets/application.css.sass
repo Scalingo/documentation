@@ -77,6 +77,10 @@ body
   background-color: inherit
   color: #333
 
+.search-field
+  text-indent: 0
+  margin-left: 5px
+
 a
   color: #24B8EB
   text-decoration: none
@@ -87,6 +91,8 @@ a:hover, a:focus
 
 h1, h2, h3
   color: #394D54
+  a
+    color: #394D54
   font-family: "Cabin Condensed",sans-serif
 
 .lighter
@@ -106,6 +112,10 @@ blockquote
   font-size: 10pt
   &.info
     background-color: $info-background-color
+    a
+      color: black
+      &:visited
+        color: #333333
   &.tip
     background-color: $tip-background-color
   img
