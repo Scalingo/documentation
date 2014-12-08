@@ -15,6 +15,6 @@ tags: index-languages, polyglot
   # Article about 'languages'
 
 %ul.list-unstyled
-  - blog.by_top_category("languages")[0...5].each do |article|
+  - blog.by_top_category("languages")[0...10].each do |article|
     %li
       %a{href: article.url}=article.title
