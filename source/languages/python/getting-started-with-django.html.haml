@@ -94,6 +94,19 @@ tags: programming, dev, python, django, language, tutorial
 
   The configuration file in our example is located at `myapp/settings.py`.
 
+  ### Ensure that the base directory of the application is defined
+
+%blockquote.info This instruction may be already set according to your Django version
+
+:markdown
+  Add (if not already set) the following definition after the top comment header of
+  the `myapp/settings.py` file:
+
+  ```
+  import os
+  BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+  ```
+
   ### Configure the Database access
 
   Replace:
@@ -110,7 +123,6 @@ tags: programming, dev, python, django, language, tutorial
   With:
 
   ```python
-  import os
   import dj_database_url
 
   try:
