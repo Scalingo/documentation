@@ -110,12 +110,14 @@ tags: programming, dev, python, django, language, tutorial
   With:
 
   ```python
+  import os
+  import dj_database_url
+
   try:
     database_url = os.environ["DATABASE_URL"]
   except KeyError:
     database_url = "file:///{}".format(os.path.join(BASE_DIR, 'db.sqlite3'))
 
-  import dj_database_url
   DATABASES = { 'default': dj_database_url.config() }
   ```
 
