@@ -1,6 +1,6 @@
 ---
 title: Buildpacks
-date: 24/09/2014
+date: 04/01/2015
 tag: buildpacks, build, image
 category: internals
 ---
@@ -57,4 +57,23 @@ category: internals
     %code Grails Framework
   %li
     %code Play Framework
+
+:markdown
+  # Use a custom buildpack
+
+  We want our users to be able to use the technologies they love, we try to provide the support for
+  an extended range of languages and frameworks, but if we don't fit your need, you can use a
+  [custom buildpack](/buildpacks/custom).
+
+  # Specify a precise buildpack
+
+  In some cases, your application may be detected by two different buildpacks, for instance if you
+  are building a PHP application which manages its dependencies with `grunt` tasks, `bower` or `gulp`,
+  your application will be detected as a NodeJS application and as a PHP application.
+
+  In this situation you need to specify the buildpack you want to use by defining the environment variable:
+
+  ```
+  BUILDPACK_NAME=php
+  ```
 
