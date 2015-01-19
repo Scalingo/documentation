@@ -10,100 +10,13 @@ category: app
 
   We provide a command line tool able to interact with the platform.
 
-  ## Download the tool
-
-  > [https://github.com/Scalingo/appsdeck-executables](https://github.com/Scalingo/appsdeck-executables)
-
-  ## Syntax
-
-  `appsdeck <global action> <options> <arguments>`
-
-  `appsdeck --app <name> <action> <options> <arguments>`
+  You can find it here with its documentation [http://cli.scalingo.com](http://cli.scalingo.com)
 
 %blockquote.info
   %ul
     %li
-      You can use tne environment `APPSDECK_APP` instead of using the `--app` flag
+      You can use tne environment `SCALINGO_APP` instead of using the `--app` flag
     %li
       If your current directory is the base directory of your project
-      and that your git repository has a remote named 'appsdeck', your
+      and that your git repository has a remote named 'scalingo', your
       don't need to specify `--app <name>` it will be detected automatically.
-
-:markdown
-
-  ## Global actions
-
-  ### `create`
-
-  ```
-  $ appsdeck create new-app
-  App 'new-app' has been created
-  To deploy your application, run these commands in your GIT repository:
-  → git remote add appsdeck git@staging.appsdeck.eu:new-app.git
-  → git push appsdeck master
-  ```
-
-  In a git repository:
-
-  ```
-  $ appsdeck create new-app
-  App 'new-app' has been created
-  Git repository detected: remote appsdeck added
-  → 'git push appsdeck master' to deploy your app
-  ```
-
-  ### `destroy`
-
-  ```
-  $ appsdeck destroy new-app
-  \/!\ Your going to delete new-app, this operation is irreversible.
-  To confirm type the name of the application: new-app
-  App new-app has been deleted
-  ```
-
-  ### `apps`
-
-  ```
-  $ appsdeck apps
-  List of your apps :
-  ∘ sample-go-martini —  (owner)
-  ∘ sample-ruby-sinatra —  (collaborator - owned by user@example.com)
-  ∘ sample-python-flask —  (collaborator - owned by user@example.com)
-  ∘ sample-php-base —  (collaborator - owned by user@example.com)
-  ∘ sample-php-slim —  (collaborator - owned by user@example.com)  
-  ```
-
-  ### `logout`
-
-  Destroy all the credentials stored on your workstation
-
-  ```
-  $ appsdeck logout
-  Appsdeck credentials have been deleted.
-  ```
-  
-  ## Actions
-
-  ### `logs`
-
-  Display the logs of your application.
-
-  ```
-  $ appsdeck --app my-app logs [-n line-number] [-f]
-  ```
-
-  * `--lines -n <integer>` Number of lines to show (20 by default)
-  * `--follow -f` Display the new lines in real time
-
-  ### `run`
-
-  Run a custom job in your application environment: [documentation](/app/jobs)
-
-  ```
-  $ appsdeck --app my-app run [-f file1 [-f file2] …] [-e env1 [-e env2] …] <command>
-  ```
-
-  * `--file -f <file>` Upload a file or a directory to the remote container.
-  * `--env -e <var=val>` Define additional environment variables in the remote container.
-    (they will be added those of your application)
-

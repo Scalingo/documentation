@@ -29,7 +29,7 @@ tags: programming, dev, nodejs, language, meteor, tutorial
   The meteor framework uses extensively MongoDB as a datastore,
   so you need an available instance for you application.
 
-  * Go on the [dashboard](https://appsdeck.eu/home/apps) of your application.
+  * Go on the [dashboard](https://my.scalingo.com/apps) of your application.
   * Select the __Addons__ tab
   * Choose the addon __MongoDB__
   * Select the __Environment__ tab
@@ -39,18 +39,18 @@ tags: programming, dev, nodejs, language, meteor, tutorial
 %blockquote.tip
   By default, meteor looks for the environment variable MONGO_URL to define its database.
 
-%h2 Create your application on Appsdeck and deploy
+%h2 Create your application on Scalingo and deploy
 
 %blockquote.info
   You can also use our web dashboard to achieve this operation
 
 :markdown
   ```bash
-  $ appsdeck create meteor-app
-  Git repository detected: remote appsdeck added
-  → 'git push appsdeck master' to deploy your app
+  $ scalingo create meteor-app
+  Git repository detected: remote scalingo added
+  → 'git push scalingo master' to deploy your app
 
-  $ git push appsdeck master
+  $ git push scalingo master
   ```
 
 %h2 Access your application
@@ -59,7 +59,7 @@ tags: programming, dev, nodejs, language, meteor, tutorial
   ```
    …
    Waiting for your application to boot... 
-   <-- https://meteor-app.appsdeck.eu -->
+   <-- https://meteor-app.scalingo.io -->
   ```
 
 Now you can have fun with meteor and all its real-time feature. Of course, we support websocket!

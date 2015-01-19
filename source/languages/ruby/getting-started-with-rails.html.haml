@@ -29,15 +29,15 @@ tags: programming, dev, ruby, rails, language, tutorial
 
 :markdown
   ```bash
-  $ appsdeck create ruby-app
-  Git repository detected: remote appsdeck added
-  → 'git push appsdeck master' to deploy your app
+  $ scalingo create ruby-app
+  Git repository detected: remote scalingo added
+  → 'git push scalingo master' to deploy your app
   ```
 
 %h2 Provision your database
 
 :markdown 
-  * Go on the [dashboard](https://appsdeck.eu/home/apps) of your application.
+  * Go on the [dashboard](https://my.scalingo.com/apps) of your application.
   * Select the __Addons__ tab
   * Choose the database you want to use
   * Select the __Environment__ tab
@@ -82,7 +82,7 @@ tags: programming, dev, ruby, rails, language, tutorial
   $ bundle install
   $ git add .
   $ git commit -m "Configure application for Appsdeck"
-  $ git push appsdeck master
+  $ git push scalingo master
   ```
 
 
@@ -92,7 +92,7 @@ tags: programming, dev, ruby, rails, language, tutorial
   ```
    …
    Waiting for your application to boot... 
-   <-- https://ruby-app.appsdeck.eu -->
+   <-- https://ruby-app.scalingo.io -->
   ```
 
   Yes a new application will render a 404 error `The page you were looking for doesn't exist.`,

@@ -11,25 +11,25 @@ tags: databases, mysql
 %blockquote.info
   :markdown
     You need to have our command line utility
-    [Documentation](/cli) - [https://github.com/Scalingo/appsdeck-executables](https://github.com/Scalingo/appsdeck-executables)
+    [Documentation](/cli) - [http://cli.scalingo.com](http://cli.scalingo.com)
 
 :markdown
 
-  ## Use `appsdeck run`
+  ## Use `scalingo run`
 
   ```
-  appsdeck -a <application name> run mysql -u <user> --password=<password> -h <host> -P <port> <db>
+  scalingo -a <application name> run mysql -u <user> --password=<password> -h <host> -P <port> <db>
   ```
 
   ### Example
 
   If my application's name is 'example' and it has the environment variable
-  `APPSDECK_MYSQL_URL = "mysql://example_123:H_grwjqBteMMrVye442Zw6@example-123.mysql.dbs.appsdeck.eu:30000/example_123"`
+  `APPSDECK_MYSQL_URL = "mysql://example_123:H_grwjqBteMMrVye442Zw6@example-123.mysql.dbs.scalingo.com:30000/example_123"`
 
   You can run:
 
   ```
-  $ appsdeck -a example run mysql -u example_123 --password=H_grwjqBteMMrVye442Zw6 -h example-123.mysql.dbs.appsdeck.eu -P 30000 example_123
+  $ scalingo -a example run mysql -u example_123 --password=H_grwjqBteMMrVye442Zw6 -h example-123.mysql.dbs.scalingo.com -P 30000 example_123
 
   Reading table information for completion of table and column names
   You can turn off this feature to get a quicker startup with -A

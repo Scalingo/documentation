@@ -11,7 +11,7 @@ tags: databases, elasticsearch
 %blockquote.info
   :markdown
     You need to have our command line utility
-    [Documentation](/cli) - [https://github.com/Scalingo/appsdeck-executables](https://github.com/Scalingo/appsdeck-executables)
+    [Documentation](/cli) - [http://cli.scalingo.com](http://cli.scalingo.com)
 
 :markdown
 
@@ -20,21 +20,21 @@ tags: databases, elasticsearch
   an official client. The most common command line tool is `curl`, the following example
   is using it.
 
-  ## Use `appsdeck run`
+  ## Use `scalingo run`
 
   ```
-  appsdeck -a <application name> run curl http://<user>:<password>@<host>:<port>
+  scalingo -a <application name> run curl http://<user>:<password>@<host>:<port>
   ```
 
   ### Example
 
   If my application's name is 'example' and it has the environment variable
-  `APPSDECK_ELASTICSEARCH_URL = "http://example-123:H_grwjqBteMMrVye442Zw6@example-123.elasticsearch.dbs.appsdeck.eu:30000/example-123"`
+  `APPSDECK_ELASTICSEARCH_URL = "http://example-123:H_grwjqBteMMrVye442Zw6@example-123.elasticsearch.dbs.scalingo.com:30000/example-123"`
 
   You can run:
 
   ```
-  $ appsdeck -a example run curl $APPSDECK_ELASTICSEARCH_URL
+  $ scalingo -a example run curl $APPSDECK_ELASTICSEARCH_URL
   {
     "status" : 200,
     "name" : "the Tomorrow Man Zarrko",

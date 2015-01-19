@@ -25,7 +25,7 @@ category: app
   ### Execute `bash`
 
   ```bash
-  $ appsdeck --app my-app run bash
+  $ scalingo --app my-app run bash
   [10:45] Appsdeck ~ $ ls
   bin  Godeps  main.go  Procfile	README.md  templates
   ```
@@ -33,7 +33,7 @@ category: app
   ### Execute `bash` with custom environment variables
 
   ```bash
-  $ appsdeck --app my-app run --env VAR1=VAL1 --env VAR2=VAL2 bash
+  $ scalingo --app my-app run --env VAR1=VAL1 --env VAR2=VAL2 bash
   [10:51] Appsdeck ~ $ env | grep VAR
   VAR1=VAL1
   VAR2=VAL2
@@ -44,7 +44,7 @@ category: app
   * Use the `--file` flag to select the files to upload
 
   ```bash
-  $ appsdeck --app my-app run --file ./dump.tar bash
+  $ scalingo --app my-app run --file ./dump.tar bash
   Upload /tmp/job-file635294589/dump.tar to container.
   ```
 

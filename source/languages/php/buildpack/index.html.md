@@ -134,7 +134,7 @@ This parameter can also be overrided with the environment variable:
 ### .extra.paas.index-document
 
 Name of the index document of each directory. When accessing a directory 
-(`https://example.appsdeck.eu/web/`), nginx looks by default to an index.php
+(`https://example.scalingo.io/web/`), nginx looks by default to an index.php
 file to execute, if your project is using another name, specify it here.
 
 ### .extra.paas.engines.nginx
