@@ -1,0 +1,53 @@
+---
+title: Scala
+category: languages
+date: 26/01/2015
+tags: programming, dev, scala, language
+---
+
+:markdown
+  # Scala
+
+  Scala is officially supported on Scalingo
+
+  It uses [sbt](https://github.com/harrah/xsbt/) 0.11.0+.
+
+  Usage
+  -----
+
+  Example usage:
+
+      $ ls
+      Procfile build.sbt project src
+
+      $ scalingo create scala-app
+
+      $ git push scalingo master
+      ...
+      -----> Scala app detected
+      -----> Building app with sbt
+      -----> Running: sbt compile stage
+
+  The buildpack will detect your app as Scala if it has the project/build.properties and either .sbt or .scala based build config.  It vendors a version of sbt and your popluated .ivy/cache into your container.  The .ivy2 directory will be cached between builds to allow for faster build times.
+
+  Clean builds
+  ------------
+
+  In some cases, builds need to clean artifacts before compiling. If a clean build is necessary, configure builds to perform clean by setting `SBT_CLEAN=true`:
+
+  ```sh-session
+  $ scalingo env-set SBT_CLEAN=true
+  SBT_CLEAN has been set to true.
+  ```
+
+  All subsequent deploys will use the clean task. To remove the clean task, unset `SBT_CLEAN`:
+
+  ```sh-session
+  $ scalingo env-unset SBT_CLEAN
+  SBT_CLEAN has been unset.
+  ```
+
+  Buildpack
+  ---------
+
+  More details at https://github.com/Scalingo/scala-buildpack
