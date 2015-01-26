@@ -7,6 +7,11 @@ bundle
 middleman server
 ```
 
+## Good practice
+
+Think to edit last modification date in the header
+of each source file you are editing.
+
 ## Deploying in production
 
 ```
