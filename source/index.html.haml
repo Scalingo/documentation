@@ -1,5 +1,14 @@
 .container
   .row
+    .col-xs-12
+      %form.form-inline.search-field{role: "search"}
+        .form-group
+          .input-group
+            .input-group-addon
+              %i.fa.fa-search
+            %input#st-search-input.form-control{type: "search", placeholder: "Search"}
+
+  .row
     .col-lg-6.superblock
       .block
         %h2 Getting started
