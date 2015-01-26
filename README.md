@@ -13,6 +13,7 @@ middleman server
 # -- commit --
 # Keep sync branch master
 git push origin master
-# deploy on gh-pages branch
+
+# build html and assets, then deploy on gh-pages branch
 middleman deploy
 ```
