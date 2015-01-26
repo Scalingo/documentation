@@ -14,7 +14,7 @@ PHP Buildpack
 Overview
 --------
 
-The PHP buildpack provided by Appsdeck is based on Nginx and PHP-FPM.
+The PHP buildpack provided by Scalingo is based on Nginx and PHP-FPM.
 
 Detection
 ---------
@@ -41,7 +41,7 @@ used to configure custom settings of your project (see below)
 
 When you have defined the different third-party libraries you want to use, you need
 to fix the version you want to install. These versions will be written in a `compose.lock`
-file. This file will be read to deploy your application on Appsdeck, so it is _required_
+file. This file will be read to deploy your application on Scalingo, so it is _required_
 
 To generate `compose.lock` you need to run
 
@@ -61,7 +61,7 @@ modifications of the file.
 Composer during the deployment
 ------------------------------
 
-We consider that when you deploy your application on Appsdeck that your want it
+We consider that when you deploy your application on Scalingo that your want it
 to run in "production" mode. As a result, `composer install` is run with the flag
 `--no-dev`.
 
@@ -189,7 +189,7 @@ Commands to run after the dependency installation.
 If your project is writing in custom logfiles, you can specify them
 here and they will be streamed to the logs of your application.
 
-Your can read the logs on your dashboard or with the Appsdeck CLI utility.
+Your can read the logs on your dashboard or with the Scalingo CLI utility.
 
 ### .extra.paas.new-relic
 

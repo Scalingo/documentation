@@ -26,7 +26,7 @@ category: app
 
   ```bash
   $ scalingo --app my-app run bash
-  [10:45] Appsdeck ~ $ ls
+  [10:45] Scalingo ~ $ ls
   bin  Godeps  main.go  Procfile	README.md  templates
   ```
 
@@ -34,7 +34,7 @@ category: app
 
   ```bash
   $ scalingo --app my-app run --env VAR1=VAL1 --env VAR2=VAL2 bash
-  [10:51] Appsdeck ~ $ env | grep VAR
+  [10:51] Scalingo ~ $ env | grep VAR
   VAR1=VAL1
   VAR2=VAL2
   ```
@@ -51,14 +51,14 @@ category: app
   * Uploaded files are located in the directory `/tmp/uploads`
 
   ```bash
-  [10:51] Appsdeck ~ $ ls /tmp/uploads
+  [10:51] Scalingo ~ $ ls /tmp/uploads
   dump.tar
   ```
 
   * Extract the archive to `/tmp`
 
   ```bash
-  [10:51] Appsdeck ~ $ tar -C /tmp -xvf /tmp/uploads/dump.tar
+  [10:51] Scalingo ~ $ tar -C /tmp -xvf /tmp/uploads/dump.tar
   /tmp/dump
   /tmp/dump/collection1.bson
   /tmp/dump/collection1.metadata.json
