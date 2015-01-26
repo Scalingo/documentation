@@ -29,12 +29,12 @@ tags: databases, elasticsearch
   ### Example
 
   If my application's name is 'example' and it has the environment variable
-  `APPSDECK_ELASTICSEARCH_URL = "http://example-123:H_grwjqBteMMrVye442Zw6@example-123.elasticsearch.dbs.scalingo.com:30000/example-123"`
+  `SCALINGO_ELASTICSEARCH_URL = "http://example-123:H_grwjqBteMMrVye442Zw6@example-123.elasticsearch.dbs.scalingo.com:30000/example-123"`
 
   You can run:
 
   ```
-  $ scalingo -a example run curl $APPSDECK_ELASTICSEARCH_URL
+  $ scalingo -a example run curl $SCALINGO_ELASTICSEARCH_URL
   {
     "status" : 200,
     "name" : "the Tomorrow Man Zarrko",
