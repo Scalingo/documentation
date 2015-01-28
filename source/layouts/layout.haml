@@ -37,7 +37,9 @@
           .col-xs-9
             = yield
         - else
-          .col-xs-12
+          .hidden-xs.col-sm-3
+            = table_of_contents(current_page)
+          .col-sm-9
             = yield
     %footer
       .container

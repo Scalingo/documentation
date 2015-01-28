@@ -21,7 +21,7 @@ gem 'redcarpet'
 gem 'haml'
 gem 'sass'
 gem 'coffee-script'
-
+gem 'nokogiri'
 gem 'bootstrap-sass', require: false
 
 gem 'pry'
