@@ -66,7 +66,9 @@ end
 
 page "/sitemap.xml", :layout => false
 activate :directory_indexes
+
 activate :blog do |blog|
+  require "lib/middleman/blog/blog_article.rb"
   blog.sources = "{category}/{title}.html"
   blog.permalink = "{category}/{title}.html"
 end
