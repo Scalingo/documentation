@@ -50,7 +50,7 @@ helpers do
   end
 
   def toc_link(heading)
-    heading_id = heading[:id]
+    heading_id = heading[:id] || "#"
     content_tag(:a, heading.text, href: "#" + heading_id)
   end
 

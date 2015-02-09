@@ -19,16 +19,16 @@ to manage the [__meteor__](/languages/javascript/nodejs/meteor.html) framework.
 
 ## Standard node applications
 
-### Detection
+### Node.js app detection
 
 The file `package.json` should be present at the root of the project.
 
-### Compilation
+### NPM dependencies installation
 
 The dependencies of your project are installed according to the
 `package.json` content using `npm`.
 
-### Application Start
+### Node.JS app startup
 
 What we use in order of priority
 
@@ -38,11 +38,11 @@ What we use in order of priority
 
 ## Meteor application
 
-### Detection
+### Meteor app detection
 
 The directory `.meteor` should be present at the root of your project
 
-### Compilation
+### Meteor dependencies installation
 
 There are different way to install dependencies in your `meteor` project.
 
@@ -72,7 +72,7 @@ Dependencies defined in the `packages.json` (with an 's') are detected by the
 npm module then injected in the final `package.json`. Then `npm` is able to
 install all the dependencies of your app.
 
-### Application start
+### Meteor app startup
 
 As `demeteorizer` changes the structure of your app, it generates automatically
 a `Procfile` to start your application.
