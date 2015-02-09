@@ -1,5 +1,5 @@
 ---
-title: io.js support
+title: io.js
 category: languages
 date: 09/02/2015
 tags: programming, dev, iojs, javascript, language
