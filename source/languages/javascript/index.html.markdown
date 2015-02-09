@@ -7,5 +7,5 @@ tags: programming, dev, nodejs, iojs, javascript, language
 
 # Javascript interpreters:
 
-* (Node.js)[/languages/javascript/nodejs]
-* (io.js)[/languages/javascript/iojs]
+* [Node.js](/languages/javascript/nodejs)
+* [io.js](/languages/javascript/iojs)
