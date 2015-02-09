@@ -10,8 +10,8 @@ tags: programming, dev, nodejs, language
 NodeJS is supported by Scalingo, furthermore, custom support has been added
 to manage the [__meteor__](/languages/javascript/nodejs/meteor.html) framework.
 
-* [Getting Started with NodeJS](/languages/javascript/nodejs/getting-started-with-nodejs.html)
-* [Getting Started with Meteor](/languages/javascript/nodejs/getting-started-with-meteor.html)
+* [Getting Started with NodeJS](/languages/javascript/getting-started-with-nodejs.html)
+* [Getting Started with Meteor](/languages/javascript/getting-started-with-meteor.html)
 
 ## Buildpack
 
