@@ -15,6 +15,8 @@ javascript code, server side.
 
 ## How to convert a Node.js application to io.js
 
+> Node.js support: http://doc.scalingo.com/langauges/javascript/nodejs
+
 It is pretty straightforward, you just have to change the engine
 you want to use in your `package.json`
 
@@ -44,5 +46,5 @@ Getting started with io.js: [tutorial](http://doc.scalingo.com/languages/javascr
 
 ## Example application
 
-Github repository: https://github.com/Scalingo/sample-iojs-express
-Live application:  https://sample-iojs-express.scalingo.io
+* Github repository: https://github.com/Scalingo/sample-iojs-express
+* Live application:  https://sample-iojs-express.scalingo.io
