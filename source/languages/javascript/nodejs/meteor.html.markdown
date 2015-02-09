@@ -16,6 +16,20 @@ Deploy your first __Meteor__ application: [URL](/languages/javascript/nodejs/get
 
 ## Configuration
 
+### Node.js version
+
+As you don't always have a `package.json` file in a Meteor project, we've built a way to specify the node
+version you want to use. You just have to create a `.node-version` file at the root of your project,
+containing the version requirement:
+
+Example:
+
+```
+0.12.x
+```
+
+### Meteor settings
+
 According to the 12 factors, the environment should be the source of all the configuration of your app.
 However sometimes, it's not enough and you want to user Meteor built-in settings system. No problem
 with that.
