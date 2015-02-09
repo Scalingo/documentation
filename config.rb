@@ -8,7 +8,7 @@ end
 
 class Tilt::RedcarpetTemplate::Redcarpet2
   def initialize(file, line, options)
-    options = { :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :smartypants => true }
+    options = { :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :smartypants => true, :with_toc_data => true }
     super(file, line, options)
   end
 end
@@ -28,12 +28,54 @@ set :fonts_dir,  'assets/fonts'
 activate :syntax
 set :haml, { :ugly => true, :format => :html5 }
 set :markdown_engine, :redcarpet
-set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :smartypants => true
+set :markdown, {
+  tables: true,
+  autolink: true,
+  gh_blockcode: true,
+  fenced_code_blocks: true,
+  smartypants: true,
+  with_toc_data: true
+}
 
+require 'nokogiri'
+
+helpers do
+  def body_for(resource)
+    resource.render(layout: nil)
+  end
+
+  def doc_for(resource)
+    html = body_for(resource)
+    Nokogiri::HTML::DocumentFragment.parse(html)
+  end
+
+  def toc_link(heading)
+    heading_id = heading[:id]
+    content_tag(:a, heading.text, href: "#" + heading_id)
+  end
+
+  def toc_item(heading)
+    content_tag(:li, toc_link(heading))
+  end
+
+  def heading_nodes(resource)
+    doc_for(resource).css('h2')
+  end
+
+  def table_of_contents(resource)
+    list = heading_nodes(resource).map do |heading|
+      toc_item(heading)
+    end.join
+
+    content_tag("div", content_tag("strong", "Page") + content_tag(:ul, list), class: "well toc")
+  end
+end
 
 page "/sitemap.xml", :layout => false
 activate :directory_indexes
+
 activate :blog do |blog|
+  require "lib/middleman/blog/blog_article.rb"
   blog.sources = "{category}/{title}.html"
   blog.permalink = "{category}/{title}.html"
 end
