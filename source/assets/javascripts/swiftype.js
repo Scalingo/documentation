@@ -3,4 +3,4 @@
 e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
 })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
 
-_st('install','FTmQ76TYQp83ZvPaKz5i');
+_st('install','ZQADzCwHGAbur5NYiFMQ');
