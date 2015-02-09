@@ -43,7 +43,7 @@ helpers do
   end
 
   def toc_link(heading)
-    heading_id = heading[:id] || "PIPOMOLO"
+    heading_id = heading[:id] || "TBD"
     content_tag(:a, heading.text, href: "#" + heading_id)
   end
 
@@ -60,7 +60,7 @@ helpers do
       toc_item(heading)
     end.join
 
-    content_tag(:ul, list)
+    content_tag("div", content_tag("strong", "Page") + content_tag(:ul, list), class: "well toc")
   end
 end
 

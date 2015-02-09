@@ -23,24 +23,39 @@
   %body
     %section.header
       .container
-        .col-xs-12
-          .brand
-            %h1
-              = link_to "/" do
-                = image_tag "https://scalingo.com/logo-mini.png"
-                Documentation center
+        .row
+          .col-xs-12
+            .brand
+              %h1
+                = link_to "/" do
+                  = image_tag "https://scalingo.com/logo-mini.png"
+                  Documentation center
     %section.main
       .container
-        - if current_page.data.menu
-          .col-xs-3
-            = partial "menus/#{current_page.data.menu}"
-          .col-xs-9
-            = yield
-        - else
-          .hidden-xs.col-sm-3
-            = table_of_contents(current_page)
-          .col-sm-9
-            = yield
+        .row
+          .col-xs-12
+            %form.form-inline.search-field{role: "search"}
+              .form-group
+                .input-group
+                  .input-group-addon
+                    %i.fa.fa-search
+                  %input#st-search-input.form-control{type: "search", placeholder: "Search"}
+
+        .row
+          - if current_page.path != "index.html" && current_page.data.menu
+            .hidden-xs.col-sm-3
+              = partial "menus/#{current_page.data.menu}"
+            .col-xs-12.col-sm-9
+              = yield
+          - else
+            - if current_page.path == "index.html"
+              .col-xs-12
+                = yield
+            - else
+              .hidden-xs.col-sm-3
+                = table_of_contents(current_page)
+              .col-xs-12.col-sm-9
+                = yield
     %footer
       .container
         .col-xs-12
