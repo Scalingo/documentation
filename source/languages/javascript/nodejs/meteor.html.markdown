@@ -5,16 +5,16 @@ date: 09/02/2015
 tags: programming, dev, nodejs, language, meteor, scaling
 ---
 
-## Meteor
+# Meteor
 
 Meteor is a complete open source platform for building web and mobile apps in pure JavaScript.
 It focuses problematics around real time web to emphasize the most fluent experience possible.
 
-### Getting Started
+## Getting Started
 
 Deploy your first __Meteor__ application: [URL](/languages/javascript/nodejs/getting-started-with-meteor.html)
 
-### Configuration
+## Configuration
 
 According to the 12 factors, the environment should be the source of all the configuration of your app.
 However sometimes, it's not enough and you want to user Meteor built-in settings system. No problem
@@ -24,14 +24,14 @@ If you have a `settings.json` or a `config/settings.json` file you usually run w
 `meteor --settings settings.json`, it will automatically be detected and the variable `METEOR_SETTINGS`
 will be set with its content. Allowing Meteor to handle the settings file.
 
-### How to scale __Meteor__
+## How to scale __Meteor__
 
 As a real time framework, the number of scaling constraints is higher than another more classical
 framework. Each instance is keeping some stateful information and each instance has to be able to
 get instantly the most up-to-date data. To achieve that, the two common processes used are the
 _sticky sessions_ and the _oplog_ feature of MongoDB.
 
-#### Oplog
+### Oplog
 
 __Oplog__ is a MongoDB feature which logs all the operations achieved on a MongoDB cluster. __Meteor__
 uses this feature to sync different instances of an application.
@@ -48,7 +48,7 @@ As a result, you juste have to restart your application.
   This operation will restart your database instance so your application may raise an exception
 </blockquote>
 
-#### Sticky Sessions
+### Sticky Sessions
 
 > The usage of _sticky sessions_ is also know as _session affinity_
 
