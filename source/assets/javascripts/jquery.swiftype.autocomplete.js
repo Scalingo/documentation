@@ -312,6 +312,7 @@
     params['sort_direction'] = handleFunctionParam(config.sortDirection);
     params['per_page'] = config.resultLimit;
 
+    config.beforeRemoteCall()
     var endpoint = Swiftype.root_url + '/api/v1/public/engines/suggest.json';
     $this.currentRequest = $.ajax({
       type: 'GET',
@@ -329,6 +330,8 @@
         return;
       }
       processData($this, data.records, term);
+    }).complete(function(data) {
+      config.onRemoteComplete(data)
     });
   };
 
