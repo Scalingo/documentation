@@ -10,6 +10,7 @@
     %script{src:"//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"}
     = javascript_include_tag 'application'
     = stylesheet_link_tag 'application'
+
     %link{href: "//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic", media: "screen", rel: "stylesheet"}
 
     %link{href: "https://scalingo.com/favicon.ico", rel: "shortcut icon", type: "image/vnd.microsoft.icon"}
@@ -40,7 +41,6 @@
                   .input-group-addon
                     %i.fa.fa-search
                   %input#st-search-input.form-control{type: "search", placeholder: "Search"}
-
         .row
           - if current_page.path != "index.html" && current_page.data.menu
             .hidden-xs.col-sm-3
@@ -60,3 +60,4 @@
       .container
         .col-xs-12
           = link_to "scalingo.com", "https://scalingo.com"
+
