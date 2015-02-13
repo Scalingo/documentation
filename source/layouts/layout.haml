@@ -35,12 +35,11 @@
       .container
         .row
           .col-xs-12
-            %form.form-inline.search-field{role: "search"}
-              .form-group
-                .input-group
-                  .input-group-addon
-                    %i.fa.fa-search
-                  %input#st-search-input.form-control{type: "search", placeholder: "Search"}
+            .form-group
+              .input-group
+                .input-group-addon
+                  %i.fa.fa-search
+                %input#st-search-input.form-control{type: "search", placeholder: "Search"}
         .row
           - if current_page.path != "index.html" && current_page.data.menu
             .hidden-xs.col-sm-3
