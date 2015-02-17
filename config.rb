@@ -18,6 +18,7 @@ Haml::Filters.remove_filter('Markdown')
 Haml::Filters.register_tilt_filter('Markdown', template_class: Tilt::RedcarpetTemplate::Redcarpet2)
 # END HACK
 
+require "lib/helpers/content_helper.rb"
 require "lib/middleman/blog/blog_data.rb"
 
 set :css_dir, 'assets/stylesheets'
@@ -70,6 +71,8 @@ helpers do
     content_tag("div", content_tag("strong", "Page") + content_tag(:ul, list), class: "well toc")
   end
 end
+
+helpers Helpers::ContentHelper
 
 page "/sitemap.xml", :layout => false
 activate :directory_indexes
