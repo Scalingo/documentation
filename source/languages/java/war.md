@@ -1,18 +1,18 @@
 ---
-title: Correctly deploy your .waf archive
+title: Correctly deploy your .war archive
 category: languages
 date: 25/02/2015
-tags: programming, dev, waf, java, language
+tags: programming, dev, war, java, language
 ---
 
-# Correctly deploy your .waf archive
+# Correctly deploy your .war archive
 
-If the result of your maven build result in a `.waf` file, a little additional
+If the result of your maven build result in a `.war` file, a little additional
 work is required.
 
 ## Add the webapp-runner as dependency
 
-To correcly execute your waf file, we need you to add the
+To correcly execute your war file, we need you to add the
 [webapp-runner](https://github.com/jsimone/webapp-runner) dependency to your
 `pom.xml` file. This dependency let us start your application by starting
 Tomcat in a simple command.

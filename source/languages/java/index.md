@@ -48,7 +48,7 @@ The buildpack will detect your app as Java if it has the file `pom.xml` in
 the root. It will use Maven to execute the build defined by your pom.xml and
 download your dependencies.
 
-If your build result in a `.waf` file you need to add a small dependency
+If your build result in a `.war` file you need to add a small dependency
 to your project in order to execute it, [follow the guide](/languages/java/waf.html)
 
 The .m2 folder (local maven repository) will be cached between builds for
