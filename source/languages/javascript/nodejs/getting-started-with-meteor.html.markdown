@@ -28,15 +28,8 @@ The meteor framework uses extensively MongoDB as a datastore,
 so you need an available instance for you application.
 
 * Go on the [dashboard](https://my.scalingo.com/apps) of your application.
-* Select the __Addons__ tab
+* Select the __Addons__ section.
 * Choose the addon __MongoDB__
-* Select the __Environment__ tab
-* Add the environment variable
-* `MONGO_URL` → `$SCALINGO_MONGO_URL`
-
-<blockquote class="tip">
-  By default, meteor looks for the environment variable MONGO_URL to define its database.
-</blockquote>
 
 ## Create your application on Scalingo and deploy
 
