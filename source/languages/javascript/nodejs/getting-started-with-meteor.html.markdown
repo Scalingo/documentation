@@ -7,6 +7,10 @@ tags: programming, dev, nodejs, language, meteor, tutorial
 
 # Getting started with Meteor
 
+<blockquote class="info">
+  All the operation achieved with the <a href="http://cli.scalingo.com">'scalingo' CLI</a> can also be done on our <a href="https://my.scalingo.com">web dashbaord</a>.
+</blockquote>
+
 ## Initialize your application
 
 ```bash
@@ -22,26 +26,26 @@ $ git init .
 $ git commit -m "Init meteor application"
 ```
 
-## Provision a MongoDB database
+## Create your application and provision a MongoDB database
 
 The meteor framework uses extensively MongoDB as a datastore,
 so you need an available instance for you application.
 
-* Go on the [dashboard](https://my.scalingo.com/apps) of your application.
-* Select the __Addons__ section.
-* Choose the addon __MongoDB__
-
-## Create your application on Scalingo and deploy
-
-<blockquote class="info">
-  You can also use our web dashboard to achieve this operation
-</blockquote>
-
-```bash
+```
 $ scalingo create meteor-app
 Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
 
+$ scalingo -a meteor-app addons-add scalingo-mongodb free
+-----> Addon scalingo-mongodb has been provisionned
+       ID: meteor-app-7247
+       Modified variables: [MONGO_URL SCALINGO_MONGO_URL]
+       Message from addon provider: Database successfully created
+```
+
+## Deploy your application!
+
+```bash
 $ git push scalingo master
 ```
 
