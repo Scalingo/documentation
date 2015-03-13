@@ -25,8 +25,13 @@ containing the version requirement:
 Example:
 
 ```
-0.12.x
+0.10.x
 ```
+
+<blockquote class="info">
+  Meteor is not compatible with Node.JS 0.11 and 0.12 yet. To ensure compatibility, don't precise any version,
+  we'll provider the best for your version of meteor.
+</blockquote>
 
 ### Meteor settings
 
