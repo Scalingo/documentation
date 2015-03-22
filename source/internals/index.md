@@ -1,0 +1,32 @@
+---
+title: Internals
+category: internals
+tags: internals, index
+date: 22/03/2015
+---
+
+# Internals of Scalingo
+
+## [Procfile management](/internals/procfile.html)
+
+Define how the platform will start your application.
+
+[Documentation](/internals/procfile.html)
+
+<hr>
+
+## [Container Management](/internals/container-management.html)
+
+Learn how the application manages your containers, what their life cycle and
+the good practice to fit it.
+
+[Documentation](/internals/container-management.html)
+
+<hr>
+
+## [HTTP Routing](/internals/routing.html)
+
+Discover the routing settings of the platform. What headers should your
+applicaion expect and how to handle long running connections.
+
+[Documentation](/internals/routing.html)
