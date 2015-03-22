@@ -3,7 +3,12 @@
   %head
     %meta{charset: "utf-8"}
     %meta{http_equiv: "X-UA-Compatible", content:"IE=edge,chrome=1"}
-    %title= "Scalingo - #{ current_page.data.title }"
+    %title
+      Scalingo -
+      - if current_page.data.title
+        = current_page.data.title
+      - else
+        Documentation center
 
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
 
