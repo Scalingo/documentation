@@ -7,6 +7,10 @@ tags: programming, dev, iojs, javascript, language
 
 # io.js - https://iojs.org/
 
+## Getting started tutorial
+
+Deploy your first __io.js__ application: [URL](/languages/javascript/iojs/getting-started-with-iojs.html)
+
 ## Description
 
 io.js is a fork from the Node.js project and is compatible with
@@ -48,3 +52,11 @@ Getting started with io.js: [tutorial](http://doc.scalingo.com/languages/javascr
 
 * Github repository: https://github.com/Scalingo/sample-iojs-express
 * Live application:  https://sample-iojs-express.scalingo.io
+
+## -- See also
+
+* [Getting started with io.js](/languages/javascript/iojs/getting-started-with-iojs.html)
+* [NodeJS documentation](/languages/javascript/nodejs)
+* [Getting started with NodeJS](/languages/javascript/nodejs/getting-started-with-nodejs.html)
+* [Meteor documentation](/languages/javascript/nodejs/meteor)
+* [Getting started with Meteor](/languages/javascript/nodejs/getting-started-with-meteor.html)

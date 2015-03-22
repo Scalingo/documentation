@@ -20,9 +20,12 @@ configuration operations:
   This operation is not instant. DNS propagation can take up to days to be completely done.
 </blockquote>
 
-* Add your domain name in our dashboard:
+You can achieve the operation with our [CLI](http://cli.scalingo.com), or through our
+[dashboard](https://my.scalingo.com).
 
-> ![Add domain screenshot](/assets/images/add-domain.png)
+```
+scalingo -a <app> domains-add example.com
+```
 
 ## Add a root domain
 

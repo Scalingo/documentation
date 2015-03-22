@@ -33,7 +33,13 @@ refer to [the Godeps documentation](https://github.com/tools/godep).
 #### Defining a Procfile
 
 ```
-web: <package name>
+web: <base package name>
+```
+
+Example if your package is `github.com/user/example`:
+
+```
+web: example
 ```
 
 You can find an example at: https://github.com/Scalingo/sample-go-martini

@@ -1,7 +1,7 @@
 ---
 title: NodeJS
 category: languages
-date: 09/02/2015
+date: 22/03/2015
 tags: programming, dev, nodejs, language
 ---
 
@@ -10,12 +10,12 @@ tags: programming, dev, nodejs, language
 NodeJS is supported by Scalingo, furthermore, custom support has been added
 to manage the [__meteor__](/languages/javascript/nodejs/meteor.html) framework.
 
-* [Getting Started with NodeJS](/languages/javascript/getting-started-with-nodejs.html)
-* [Getting Started with Meteor](/languages/javascript/getting-started-with-meteor.html)
+* [Getting Started with NodeJS](/languages/javascript/nodejs/getting-started-with-nodejs.html)
+* [Getting Started with Meteor](/languages/javascript/nodejs/getting-started-with-meteor.html)
 
 ## Buildpack
 
-[NodeJS Buildpack](https://github.com/Scalingo/appsdeck-buildpack-nodejs)
+[NodeJS Buildpack](https://github.com/Scalingo/nodejs-buildpack)
 
 ## Standard node applications
 
@@ -38,50 +38,15 @@ What we use in order of priority
 
 ## Meteor application
 
-### Meteor app detection
+If a `.meteor` file is detected at the root of your project, your app will
+be considered as a Meteor application.
 
-The directory `.meteor` should be present at the root of your project
+See the [Meteor applications documentation](/languages/javascript/nodejs/meteor)
 
-### Meteor dependencies installation
+## -- See also
 
-There are different way to install dependencies in your `meteor` project.
-
-#### Meteor ≤ v0.8
-
-* [meteorite](https://github.com/oortcloud/meteorite/): your have to add
-`smart.json` and `smart.lock` to your repository.
-* [npm](https://www.npmjs.org/): you can use any standard nodejs module
-in your project: [Guide](https://meteorhacks.com/complete-npm-integration-for-meteor.html)
-
-#### Meteor ≥ v0.9
-
-Methods from v0.8 still work when using v0.9 but have been deprecated, you
-should consider migrating your application.
-
-* Using meteor embedded dependency management (with `meteor add` and `meteor update`)
-* `npm` using [meteorhacks:npm](https://github.com/meteorhacks/npm) package.
-
-#### Demeteorizer
-
-[`demeteorizer`](https://github.com/onmodulus/demeteorizer) is used to deploy your
-meteor applications. It uses `meteor build|bundle` to package your meteor application,
-then generate the correct `package.json` in order to install the modules with
-`npm`.
-
-Dependencies defined in the `packages.json` (with an 's') are detected by the
-npm module then injected in the final `package.json`. Then `npm` is able to
-install all the dependencies of your app.
-
-### Meteor app startup
-
-As `demeteorizer` changes the structure of your app, it generates automatically
-a `Procfile` to start your application.
-
-Generated Procfile:
-
-```yml
-web: cd demeteorized && npm start
-```
-
-If your wish to write your own `Procfile` don't forget to keep this line for your
-`web` process, otherwise your application may not boot.
+* [Getting started with NodeJS](/languages/javascript/nodejs/getting-started-with-nodejs.html)
+* [io.js documentation](/languages/javascript/iojs)
+* [Getting started with io.js](/languages/javascript/iojs/getting-started-with-iojs.html)
+* [Meteor documentation](/languages/javascript/nodejs/meteor)
+* [Getting started with Meteor](/languages/javascript/nodejs/getting-started-with-meteor.html)
