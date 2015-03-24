@@ -19,6 +19,10 @@ containers of your application.
 * `X-Forwarded-Proto`: Either `http` or `https`
 * `X-Forwarded-Port`: Either 80 or 443
 
+<blockquote class="info">
+  Guide: <a href="/internals/detecting-https-requests.html">Detecting HTTPS requests</a>
+</blockquote>
+
 ### Example
 
 If you want to have a look to those headers: here is an application which dumps

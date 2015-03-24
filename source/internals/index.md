@@ -30,3 +30,11 @@ Discover the routing settings of the platform. What headers should your
 applicaion expect and how to handle long running connections.
 
 [Documentation](/internals/routing.html)
+
+### How to detect HTTPS requests
+
+In your application you may want to get either a use has accessed your
+application through HTTPS or HTTP, the following guide will tell your more
+about this: [Detecting HTTPS
+requests](/internals/detecting-https-requests.html)
+
