@@ -222,7 +222,7 @@ one or more configuration files:
 
 ### Example: URL rewriting (i.e. Wordpress)
 
-Here is an example of legacy .htaccess. This file won work on Scalingo,
+Here is an example of legacy .htaccess. This file won't work on Scalingo,
 you need to replace it with the nginx configuration following the example.
 
 .htaccess
