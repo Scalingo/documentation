@@ -1,6 +1,6 @@
 ---
 title: HTTPS access
-date: 01/09/2014
+date: 01/04/2015
 tag: app, ssl, http, https
 category: app
 ---
@@ -62,7 +62,23 @@ Those are examples, a lot of other companies are providing this service.
 
 ### 3. Upload your key and certificate
 
-Using our dashboard, go to the 'Domain Names' tab of your application and
-click on 'Add Certificate'
+You can use our [command line utility](http://cli.scalingo.com) or our web dashboard
+to achieve this operation.
 
-> ![Add SSL Certificate](/assets/images/add-ssl-certificate.png)
+With the CLI:
+
+```
+# If the doman has already been defined
+scalingo domains-ssl --cert ./app.crt --key ./app.key www.example.com
+
+# If it is a new domain
+scalingo domains-add --cert ./app.crt --key ./app.key www.example.com
+```
+
+From our dashboard:
+
+Go to the 'Domain' tab of your application, click on the gear of the concerned domain,
+select the certificate you want to use and the key, then click on 'Validate'.
+
+In both cases the modification is applied instantly.
+
