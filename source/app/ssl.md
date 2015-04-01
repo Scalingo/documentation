@@ -15,8 +15,8 @@ By default you can access your application using the following domain name:
 HTTPS is enabled by default for those domains and we recommend you to use
 it by default to ensure the encryption of the requests to your apps.
 
-We provide a valid certificate which is recognized by all modern browser and HTTP
-client.
+We provide a valid certificate which is recognized by all modern browsers and HTTP
+clients.
 
 ## Custom domain
 
