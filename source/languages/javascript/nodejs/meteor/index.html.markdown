@@ -20,26 +20,11 @@ The directory `.meteor` should be present at the root of your project
 
 ## Meteor dependencies installation
 
-There are different way to install dependencies in your `meteor` project.
-
-#### Meteor ≤ v0.8
-
-* [meteorite](https://github.com/oortcloud/meteorite/): your have to add
-`smart.json` and `smart.lock` to your repository.
-* [npm](https://www.npmjs.org/): you can use any standard nodejs module
-in your project: [Guide](https://meteorhacks.com/complete-npm-integration-for-meteor.html)
-
-#### Meteor ≥ v0.9
-
-Methods from v0.8 still work when using v0.9 but have been deprecated, you
-should consider migrating your application.
-
 * Using meteor embedded dependency management (with `meteor add` and `meteor
   update`)
 * `npm` using [meteorhacks:npm](https://github.com/meteorhacks/npm) package.
   This package requires some custom actions to be setup, please follow the
   documentation at [this page](/languages/javascript/nodejs/meteor/npm.html)
-
 
 #### Demeteorizer
 
