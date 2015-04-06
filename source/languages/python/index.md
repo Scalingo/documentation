@@ -23,7 +23,7 @@ Python 2 and Python 3 are both completely supported, you can specify the runtime
 Example of `runtime.txt` which would install python 3.4.3:
 
 ```
-3.4.3
+python-3.4.3
 ```
 
 ## Frameworks
