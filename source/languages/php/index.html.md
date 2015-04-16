@@ -13,15 +13,21 @@ tags: programming, dev, php, language
 
 [Documentation](/languages/php/buildpack)
 
-## Frameworks
+## Officially supported frameworks
 
-Supported framework:
+For these framework we have done some extra work to save your configuration
+worktime.  Actually you have nothing special to configure in your
+`composer.json`, just `git push` your code and everything will work out of the
+box.
+
+List of the frameworks:
 
 * Symfony 2
 * Zend Framework 2
 * Magento
 * Slim
+* Laravel
+* Lumen
 * Silex
 * Cake PHP 2
 * Change 2
-
