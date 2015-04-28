@@ -40,11 +40,23 @@
       .container
         .row
           .col-xs-12
-            .form-group
-              .input-group
-                #search-icon.input-group-addon
-                  %i.fa.fa-search
-                %input#st-search-input.form-control{type: "search", placeholder: "Search"}
+            %form
+              .form-group
+                .input-group
+                  #search-icon.input-group-addon
+                    %i.fa.fa-search
+                  %input#st-search-input.form-control{type: "search", placeholder: "Search"}
+            #search-modal.modal.fade
+              .modal-dialog.search-dialog
+                .modal-content
+                  .modal-header
+                    %button.close{type: "button", "data-dismiss" => "modal", "aria-label" => "Close"}
+                      %span{"aria-label" => "Close"} &times;
+                    %h4 Search results
+                  .modal-body
+                    #search-results
+                  .modal-footer
+                    %button.btn.btn-default{type: "button", "data-dismiss" => "modal"}Close
         .row
           - if current_page.path != "index.html" && current_page.data.menu
             .hidden-xs.col-sm-3
