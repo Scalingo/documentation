@@ -1,17 +1,19 @@
 ---
-title: Getting Started with NodeJS
+title: Getting started with io.js
 category: languages
 date: 09/02/2015
-tags: programming, dev, nodejs, language, express, tutorial
+tags: programming, dev, iojs, javascript, language, tutorial
 ---
 
-# Getting started with NodeJS
+# Getting started with io.js
+
+<%= partial 'partials/tutorial_requirements' %>
 
 ## Initialize your application
 
 ```bash
-$ mkdir nodejs-app
-$ cd nodejs-app
+$ mkdir iojs-app
+$ cd iojs-app
 $ npm init
 
 # 
@@ -52,25 +54,37 @@ var server = app.listen(process.env.PORT || 3000, function () {
 Procfile
 
 ```yml
-web: node server.js
+web: iojs server.js
 ```
+
+## Define io.js as javascript engine
+
+In your `package.json`, add the following block:
+
+```js
+"engines": {
+  "iojs": "1.1.x"
+}
+```
+
+This will instruct the deployment scripts to install iojs at
+the given version instead of Node.js
 
 ## Commit your application 
 
 ```bash
 $ git init
 $ git add .
-$ git commit -m "Base NodeJS application"
+$ git commit -m "Base io.js application"
 ```
 
 ## Create your application on Scalingo and deploy
 
-<blockquote class="info">
-  You can also use our web dashboard to achieve this operation
-</blockquote>
+> This operation has to be done in the directory of your project.
 
 ```bash
-$ scalingo create nodejs-app
+
+$ scalingo create iojs-app
 Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
 
@@ -82,7 +96,7 @@ $ git push scalingo master
 ```
 …
 Waiting for your application to boot... 
-<-- https://nodejs-app.scalingo.io -->
+<-- https://iojs-app.scalingo.io -->
 ```
 
 Now develop your project and build something amazing!

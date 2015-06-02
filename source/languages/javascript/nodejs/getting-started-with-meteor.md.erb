@@ -7,9 +7,7 @@ tags: programming, dev, nodejs, language, meteor, tutorial
 
 # Getting started with Meteor
 
-<blockquote class="info">
-  All the operation achieved with the <a href="http://cli.scalingo.com">'scalingo' CLI</a> can also be done on our <a href="https://my.scalingo.com">web dashbaord</a>.
-</blockquote>
+<%= partial 'partials/tutorial_requirements' %>
 
 ## Initialize your application
 
@@ -44,6 +42,8 @@ $ scalingo -a meteor-app addons-add scalingo-mongodb free
 ```
 
 ## Deploy your application!
+
+> This operation has to be done in the directory of your project.
 
 ```bash
 $ git push scalingo master
