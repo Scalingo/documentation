@@ -27,7 +27,7 @@ date: 15/04/2015
 	</tr>
 	<tr>
 		<td>M - Medium (Default)</td>
-		<td>512GB</td>
+		<td>512MB</td>
 		<td>Standard priority CPU access</td>
 		<td>0.02€/h</td>
 	</tr>
