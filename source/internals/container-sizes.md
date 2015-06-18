@@ -54,7 +54,7 @@ date: 15/04/2015
 
 ## Availability of the sizes
 
-Our free tier only gives you access to small and medium containers, if you want
+Our 30 days free trial only gives you access to small and medium containers, if you want
 to use another kind of size, please [fill your billing profile and payment
 method](https://my.scalingo.com/apps/billing)
 
