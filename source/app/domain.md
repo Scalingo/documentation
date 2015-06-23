@@ -82,7 +82,7 @@ Some providers allow to create `ALIAS`, `ANAME` or `CNAME` field for root domain
 
 When you add an alias, we don't do any prior verification. If you cannot add
 your alias because it's already taken on Scalingo and you think you're legit
-to use it, send an email to [support@scalingo.com](mailto:support.scalingo.com)
+to use it, send an email to <support.scalingo.com>
 describing the problem.
 
 
