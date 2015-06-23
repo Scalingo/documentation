@@ -1,7 +1,7 @@
 ---
 title: Ruby
 category: languages
-date: 17/10/2014
+date: 23/06/2015
 tags: programming, dev, ruby, language
 ---
 
@@ -58,14 +58,38 @@ Presence of a `config/application.rb`
 If your need to install a custom version of ruby, you can achieve that by specifying
 it in your Gemfile:
 
-### Ruby MRI 2.1.3
+### Ruby MRI 2.2.0
 
 ```ruby
-ruby "2.1.3"
+ruby "2.2.0"
 ```
 
-### JRuby 1.9.3
+### JRuby 2.0.0
 
 ```ruby
-ruby "1.9.3", :engine => "jruby", :engine_version => "1.7.8"
+ruby "2.0.0", :engine => "jruby", :engine_version => "1.7.20"
 ```
+
+## List of the compatible runtimes
+
+### MRI
+
+* `2.2.2`
+* `2.2.1`
+* `2.2.0`
+* `2.1.5`
+* `2.1.4`
+* `2.1.3`
+* `2.1.2`
+* `2.1.1`
+* `2.1.0`
+* `2.0.0`
+* `1.9.3`
+* `1.9.2`
+* `1.8.7`
+
+### Jruby
+
+* `1.7.18`: Ruby versions: `1.8.7`, `1.9.3`, `2.0.0`
+* `1.7.19`: Ruby versions: `1.8.7`, `1.9.3`, `2.0.0`
+* `1.7.20`: Ruby versions: `1.8.7`, `1.9.3`, `2.0.0`
