@@ -127,3 +127,31 @@ Error: unknown package: npm-container
 This error is due to the fact that the package `npm-container` is present in
 the `.meteor/packages` file but that the directory `packages/npm-container` has
 not been added correctly to the GIT repository, please ensure this point.
+
+
+### error: couldn't read npm version lock information
+
+#### Complete message
+
+```
+=> Errors while initializing project: 
+
+While building package npm-container: 
+error: couldn't read npm version lock information
+```
+
+### Solution
+
+This error happened when the internal files of `npm-container` are already defined
+and that you've added or updated a npm package in your project. To fix this you have
+to remove these data from your git repository
+
+```
+git rm -r --cached packages/npm-container/.npm
+echo packages/npm-container/.npm >> .gitignore
+git commit -m "remove internal data of npm-container from repository"
+git push scalingo master
+```
+
+That should do the trick and your application will be deployed correctly.
+
