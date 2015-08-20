@@ -49,7 +49,7 @@ the root. It will use Maven to execute the build defined by your pom.xml and
 download your dependencies.
 
 If your build result in a `.war` file you need to add a small dependency
-to your project in order to execute it, [follow the guide](/languages/java/waf.html)
+to your project in order to execute it, [follow the guide](/languages/java/war.html)
 
 The .m2 folder (local maven repository) will be cached between builds for
 faster dependency resolution. However neither the mvn executable or the .m2
