@@ -18,7 +18,7 @@ Java is officially supported on Scalingo
 
 ## Deployment
 
-It uses Maven 3.2.5 to build your application and OpenJDK 8u20 to run it (by
+It uses Maven 3.2.5 to build your application and OpenJDK 8u51 to run it (by
 default).
 
 Example usage:
@@ -48,7 +48,7 @@ The buildpack will detect your app as Java if it has the file `pom.xml` in
 the root. It will use Maven to execute the build defined by your pom.xml and
 download your dependencies.
 
-If your build result in a `.war` file you need to add a small dependency
+If your build results in a `.war` file you need to add a small dependency
 to your project in order to execute it, [follow the guide](/languages/java/war.html)
 
 The .m2 folder (local maven repository) will be cached between builds for
@@ -102,7 +102,7 @@ These variables can be set like this:
 
 ```sh-session
 $ scalingo env-set MAVEN_CUSTOM_GOALS="clean package"
-$ scalingo env-unset MAVEN_CUSTOM_OPTS="--update-snapshots -DskipTests=true"
+$ scalingo env-set MAVEN_CUSTOM_OPTS="--update-snapshots -DskipTests=true"
 ```
 
 Other options are available for [defining custom a `settings.xml` file](https://devcenter.heroku.com/articles/using-a-custom-maven-settings-xml).
