@@ -51,6 +51,10 @@ curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scr
 curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_zsh" > ~/.zsh/completion/scalingo_complete_zsh
 ```
 
-* Add the following line to your `~/.zshrc` : `source ~/.zsh/completion/scalingo_complete_zsh`
+* Make sure the completion script will be loaded, by adding to the following line to your `~/.zshrc` :
+
+```bash
+source ~/.zsh/completion/scalingo_complete_zsh
+```
 
 * Reload your shell: `exec zsh -l`
