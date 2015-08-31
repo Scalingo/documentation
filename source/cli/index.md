@@ -32,12 +32,12 @@ You can find it here with its documentation [http://cli.scalingo.com](http://cli
   * Linux users :
 
 ```bash
-curl "https://raw.githubusercontent.com/Scalingo/cli/cli_autocomplete/cmd/autocomplete/scripts/scalingo_complete_bash" > "/etc/bash_completion.d/scalingo_complete_bash"
+curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_bash" > /etc/bash_completion.d/scalingo_complete_bash.sh
 ```
   * Mac users :
 
 ```bash
-curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_bash" > "/usr/local/etc/bash_completion.d/scalingo_complete_bash"
+curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_bash" > /usr/local/etc/bash_completion.d/scalingo_complete_bash.sh
 ```
 
 
@@ -48,11 +48,9 @@ curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scr
 * Get zsh completion script in the folder you want (~/.zsh/completion/):
 
 ```bash
-curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_zsh" > "~/.zsh/completion/scalingo_complete_zsh"
+curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_zsh" > ~/.zsh/completion/scalingo_complete_zsh
 ```
 
-* Place it in your /path/to/zsh/completion, for example `~/.zsh/completion/`
-
-* Include the directory in your `$fpath`, for example by adding in `~/.zshrc` : `fpath=(~/.zsh/completion $fpath)`
+* Add the following line to your `~/.zshrc` : `source ~/.zsh/completion/scalingo_complete_zsh`
 
 * Reload your shell: `exec zsh -l`
