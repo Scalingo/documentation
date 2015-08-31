@@ -28,13 +28,13 @@ You can find it here with its documentation [http://cli.scalingo.com](http://cli
 
 * Make sure bash completion is installed. If you use a current Linux in a non-minimal installation, bash completion should be available. On a Mac, install with `brew install bash-completion`
 
-* Get bash completion script in the correct folder:
-  * Linux users :
+* Get bash completion script in the directory:
+  * Linux users `/etc/bash_completion.d/`:
 
 ```bash
 curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_bash" > /etc/bash_completion.d/scalingo_complete_bash.sh
 ```
-  * Mac users :
+  * Mac users `/usr/local/etc/bash_completion.d/`:
 
 ```bash
 curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_bash" > /usr/local/etc/bash_completion.d/scalingo_complete_bash.sh
@@ -45,7 +45,13 @@ curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scr
 
 ### Zsh
 
-* Get zsh completion script in the folder you want (~/.zsh/completion/):
+* Create a directory `~/.zsh/completion/` :
+
+```bash
+mkdir -p ~/.zsh/completion
+```
+
+* Get zsh completion script in the directory `~/.zsh/completion/` :
 
 ```bash
 curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_zsh" > ~/.zsh/completion/scalingo_complete_zsh
