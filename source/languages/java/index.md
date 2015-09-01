@@ -1,7 +1,7 @@
 ---
 title: Java
 category: languages
-date: 25/02/2015
+date: 01/09/2015
 tags: programming, dev, java, language
 ---
 
@@ -15,6 +15,13 @@ Java is officially supported on Scalingo
 * 1.7
 * 1.8
 * 1.9 - pre-release
+
+## Frameworks
+
+Most frameworks should work on the platform, the only condition is to listen on the port
+defined by the environment variable `PORT`
+
+* Spring Boot: You can find custom information about this framework at the [following page](/languages/java/spring-boot.html)
 
 ## Deployment
 
