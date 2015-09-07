@@ -20,7 +20,7 @@ achieve this action.
 
 ## Build the tunnel
 
-By running the following command, an encrypted SSH tunnel will be built between you and your database
+By running the following command, an encrypted SSH tunnel will be built between you and your database.
 
 ```
 $ scalingo -a example-app db-tunnel MONGO_URL
@@ -28,7 +28,7 @@ Building tunnel to <dbhost>:<dbport>
 You can access your database on '127.0.0.1:<localport>'
 ```
 
-> We use MONGO\_URL in the example, but it can be REDIS_URL or DATABASE_URL according to the database you're using.
+> We use MONGO\_URL in the example, but it can be REDIS\_URL or DATABASE\_URL according to the database you're using.
 
 ## Use any client to read, import or export your data
 

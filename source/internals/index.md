@@ -17,8 +17,7 @@ Define how the platform will start your application.
 
 ## [Container Management](/internals/container-management.html)
 
-Learn how the application manages your containers, what their life cycle and
-the good practice to fit it.
+Learn how the platform manages your container's life cycle and the good practice to handle it.
 
 [Documentation](/internals/container-management.html)
 
@@ -33,8 +32,7 @@ applicaion expect and how to handle long running connections.
 
 ### How to detect HTTPS requests
 
-In your application you may want to get either a use has accessed your
+In your application you may want to know either a user has accessed your
 application through HTTPS or HTTP, the following guide will tell your more
-about this: [Detecting HTTPS
-requests](/internals/detecting-https-requests.html)
+about this: [Detecting HTTPS requests](/internals/detecting-https-requests.html).
 
