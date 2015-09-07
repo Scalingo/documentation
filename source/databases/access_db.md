@@ -15,7 +15,7 @@ We've built two different solutions to access Scalingo's databases:
 
 * Remote console: an interactive console is started and you access it directly.
 * Encrypted tunnel: if you want a full access to the database, you have to build an
-  SSH-encrypted tunnel, then you'll be able to the database as if it was running locally.
+  SSH-encrypted tunnel, then you'll be able to access the database as if it was running locally.
   You have to use this solution if you want to import/export data.
 
 ## Open an interactive remote console
