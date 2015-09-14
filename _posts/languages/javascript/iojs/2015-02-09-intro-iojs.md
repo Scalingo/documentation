@@ -1,0 +1,58 @@
+---
+title: io.js
+modified_at: 2015-02-09 00:00:00
+category: languages
+tags: iojs, javascript,
+show_in_toc: true
+---
+
+# io.js - https://iojs.org/
+
+## Getting started tutorial
+
+To deploy your first __io.js__ application, follow [Getting started with io.js]({% post_url /languages/javascript/iojs/2015-02-09-getting-started-with-iojs %}).
+
+## Description
+
+io.js is a fork from the Node.js project and is compatible with
+the whole `npm` ecosystem. So it is used as a runtime for your
+javascript code, server side.
+
+## How to convert a Node.js application to io.js
+
+> Node.js support: http://doc.scalingo.com/langauges/javascript/nodejs
+
+It is pretty straightforward, you just have to change the engine
+you want to use in your `package.json`
+
+Instead of having no `engines` section, or a block like:
+
+{% highlight json %}
+{
+  "engines": {
+    "node": "0.12.x"
+  }
+}
+{% endhighlight %}
+
+Write 
+
+{% highlight json %}
+{
+  "engines": {
+    "iojs": "1.1.x"
+  }
+}
+{% endhighlight %}
+
+## Example application
+
+* Github repository: https://github.com/Scalingo/sample-iojs-express
+* Live application:  https://sample-iojs-express.scalingo.io
+
+## -- See also
+
+* [Node.js documentation]({% post_url /languages/javascript/nodejs/2015-03-22-nodejs %})
+* [Getting started with Node.js]({% post_url /languages/javascript/nodejs/2015-02-09-getting-started-with-nodejs %})
+* [Meteor documentation]({% post_url /languages/javascript/meteor/2015-03-22-intro-meteor %})
+* [Getting started with Meteor]({% post_url /languages/javascript/meteor/2015-02-09-getting-started-with-meteor %})

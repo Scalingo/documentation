@@ -1,0 +1,7 @@
+<blockquote class="tip">
+  {% unless include.data%}
+    {{data}}
+  {% else %}
+    {{include.data}}
+  {% endunless %}
+</blockquote>
