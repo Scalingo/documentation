@@ -68,9 +68,3 @@ directory containing all the third party dependency source code in the image:
 {% highlight text %}
 Godeps
 {% endhighlight %}
-
-## See also
-
-* [Procfile]({% post_url /internals/2014-12-01-procfile %}): How to manage your app container types
-* [Build Errors]({% post_url /deployment/2015-03-24-build-error %}): List of potential errors happening during a deployment build
-* [Start Errors]({% post_url /deployment/2014-08-26-start-error %}): Possible errors which happen when the platform tries to start an application

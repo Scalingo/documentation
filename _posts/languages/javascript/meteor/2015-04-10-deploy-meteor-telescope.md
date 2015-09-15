@@ -59,9 +59,3 @@ At the end of the deployment process, an URL is returned, you application is now
 Waiting for your application to boot...
 <-- https://my-telescope.scalingo.io -->
 {% endhighlight %}
-
-## See also
-
-* [Meteor documentation]({% post_url /languages/javascript/meteor/2015-03-22-intro-meteor %})
-* [Node.js documentation]({% post_url /languages/javascript/nodejs/2015-03-22-nodejs %})
-* [Getting started with Meteor]({% post_url /languages/javascript/meteor/2015-02-09-getting-started-with-meteor %})

@@ -138,8 +138,3 @@ as a parameter._
 
 That's it, just commit your `pom.xml` and your `Procfile` and your app will
 deploy in the blink of an eye.
-
-## See also
-
-* [Procfile structure]({% post_url /internals/2014-12-01-procfile %}): Know how to start and define
-  process types for your application

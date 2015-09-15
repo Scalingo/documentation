@@ -47,10 +47,3 @@ Write
 
 * Github repository: https://github.com/Scalingo/sample-iojs-express
 * Live application:  https://sample-iojs-express.scalingo.io
-
-## -- See also
-
-* [Node.js documentation]({% post_url /languages/javascript/nodejs/2015-03-22-nodejs %})
-* [Getting started with Node.js]({% post_url /languages/javascript/nodejs/2015-02-09-getting-started-with-nodejs %})
-* [Meteor documentation]({% post_url /languages/javascript/meteor/2015-03-22-intro-meteor %})
-* [Getting started with Meteor]({% post_url /languages/javascript/meteor/2015-02-09-getting-started-with-meteor %})

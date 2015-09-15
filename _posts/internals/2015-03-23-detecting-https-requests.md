@@ -89,7 +89,3 @@ public class RequestUtil {
 	}
 }
 {% endhighlight %}
-
-## See also
-
-* [HTTP Routing on Scalingo]({% post_url /internals/2015-03-22-routing %})

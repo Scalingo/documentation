@@ -112,10 +112,3 @@ for __Meteor__ apps. A user will keep using the same route during 1 hour.
 You have nothing to do except increasing the amount of containers you are using, to do
 so, open the dashboard of your application and in the _containers_ tab, then you can increase the amount
 of containers as needed, click on _scale_ and the amount of instances will be scaled instantly.
-
-## -- See also
-
-* [Getting started with Meteor]({% post_url /languages/javascript/meteor/2015-02-09-getting-started-with-meteor %})
-* [Install custom NPM modules in a Meteor app]({% post_url /languages/javascript/meteor/2015-03-22-custom-npm-module-meteor %})
-* [Node.js documentation]({% post_url /languages/javascript/nodejs/2015-03-22-nodejs %})
-* [Getting started with Node.js]({% post_url /languages/javascript/nodejs/2015-02-09-getting-started-with-nodejs %})
