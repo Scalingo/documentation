@@ -12,6 +12,7 @@ It focuses problematics around real time web to emphasize the most fluent experi
 ## Getting started tutorial
 
 Deploy your first __Meteor__ application: [URL]({% post_url /languages/javascript/meteor/2015-02-09-getting-started-with-meteor %})
+
 Deploy an existing application like __Telescope__: [URL]({% post_url /languages/javascript/meteor/2015-04-10-deploy-meteor-telescope %})
 
 ## Meteor app detection
