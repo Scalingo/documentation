@@ -5,8 +5,6 @@ category: deployment
 tags: app, error, deployment, quota,
 ---
 
-# Application build errors
-
 When your application is deployed, the dependencies are gathered and are packaged
 into an _application image_
 
@@ -32,7 +30,7 @@ Different solutions are available to lighten the image of your application:
 If you absolutely need all these data, please contact us at
 [support@scalingo.com](mailto:support@scalingo.com).
 
-<blockquote class="info">
+<blockquote class="bg-info">
   Why this quota? Besides being a simple security limit, this quota is also present to
   preserve the PaaS user experience. A large image results in longer deployments, the
   instantaneity aspect is lost.

@@ -6,8 +6,6 @@ tags: databases, elasticsearch,
 index: 2
 ---
 
-# Access your Elasticsearch search engine
-
 {% include info_command_line_tool.md %}
 
 The difference between this data storage engine and the others is that Elasticsearch

@@ -6,8 +6,6 @@ tags: internals, index,
 index: 0
 ---
 
-# Internals of Scalingo
-
 ## [Procfile management]({% post_url /internals/2014-12-01-procfile %})
 
 Define how the platform will start your application.

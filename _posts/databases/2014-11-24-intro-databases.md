@@ -6,8 +6,6 @@ tags: index-databases, polydbs,
 index: 0
 ---
 
-# Databases
-
 You applications need databases to store your data. As we believe your data
 should be located geographically close to your application servers we support
 the most common types of database.
@@ -36,7 +34,7 @@ To provision a database for one of your app, the process is really simple:
 1. Go on your [dashboard](https://my.scalingo.com/apps)
 2. Click on the 'Addons' tab
 3. Select the database type your need and the capacity you need
-   <blockquote class="info">
+   <blockquote class="bg-info">
      The capacity of your database is elastic, you will be able to upgrade
      your addon later.
    </blockquote>

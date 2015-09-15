@@ -6,8 +6,6 @@ tags: databases,
 index: 1
 ---
 
-# Access your database
-
 Databases hosted on Scalingo are not directly available on the Internet. By default
 access to most databases are unencrypted, so unsecure. Applications are on the same
 network than your database, but you can not connect your machine to it directly.
@@ -21,7 +19,7 @@ We've built two different solutions to access Scalingo's databases:
 
 ## Open an interactive remote console
 
-<blockquote class="info">
+<blockquote class="bg-info">
 You need to have Scalingo's <a href="http://cli.scalingo.com" target="_blank">command line interface</a> to
 achieve this action.
 </blockquote>

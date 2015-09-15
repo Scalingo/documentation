@@ -4,7 +4,6 @@ requirejs([
   'jquery.swiftype.search',
   'highlight.pack',
   'highlight',
-  'sidebar',
   'search'
   ], function() {
 });

@@ -5,8 +5,6 @@ category: deployment
 tags: deployment, build, customize,
 ---
 
-# Use a custom directory from the GIT repository
-
 It may happen that your project is in a subfolder of your GIT repository.
 It's completely OK but you have to notice Scalingo's deployment system about
 it as the default behaviour is to look at the root of the GIT repository.

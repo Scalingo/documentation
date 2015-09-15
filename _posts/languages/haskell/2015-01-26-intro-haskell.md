@@ -6,8 +6,6 @@ tags: haskell,
 show_in_toc: true
 ---
 
-# Haskell
-
 Haskell is officially supported on Scalingo
 
 It uses cabal-1.14.0.
@@ -27,6 +25,6 @@ $ git push scalingo master
 -----> Running: cabal install
 {% endhighlight %}
 
-# Buildpack
+## Buildpack
 
 For more information, go to https://github.com/Scalingo/haskell-buildpack

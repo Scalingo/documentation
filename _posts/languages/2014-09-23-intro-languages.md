@@ -7,12 +7,10 @@ index: 0
 show_in_toc: true
 ---
 
-# Internals
-
 _-- Soon_
 
 
-# Article about 'languages'
+## Article about 'languages'
 
 <ul class="list-unstyled">
   {% for p in site.pages %}

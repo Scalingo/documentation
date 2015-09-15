@@ -5,8 +5,6 @@ category: getting-started
 tags: follow-the-light, ssh,
 ---
 
-# First Steps On Scalingo
-
 ## Deployment requirements
 
 ### GIT
@@ -47,7 +45,7 @@ scalingo keys-add Laptop ~/.ssh/id_rsa.pub
 
 {% include related_category_posts %}
 
-<blockquote class="tip">
+<blockquote class="bg-success">
   We support a lot of technologies, ask for your tutorial!
   <a href="mailto:support@scalingo.com">support@scalingo.com</a>
 </blockquote>

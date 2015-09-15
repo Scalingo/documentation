@@ -5,8 +5,6 @@ category: internals
 tags: internals, containers, sizes,
 ---
 
-# Containers Sizes
-
 ## Comparative table
 
 <table class="table">

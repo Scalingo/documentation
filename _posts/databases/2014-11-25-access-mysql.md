@@ -6,8 +6,6 @@ tags: databases, mysql,
 index: 2
 ---
 
-# Access your MySQL database
-
 {% include info_command_line_tool.md %}
 
 

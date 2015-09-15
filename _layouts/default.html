@@ -5,66 +5,91 @@
 
   <body>
 
-    {% include header.html %}
+    <a href="https://github.com/Scalingo/documentation"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2 sidebar-nav">
+          <a href="/"><img src="https://scalingo.com/logo.svg" class="h1 logo img-responsive"></a>
 
-    <section class="main">
+          <strong>{{ site.title }}</strong>
+          <ul class="list-unstyled">
+            <li><a href="https://scalingo.com/">Main site</a></li>
+            <li><a href="http://developers.scalingo.com/">Scalingo API</a></li>
+            <li><a href="">HowTos</a></li>
+            <li><a href="">Q&amp;A</a></li>
+          </ul>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <form action="">
-              <div class="form-group">
-                <div class="input-group">
-                  <div id="search-icon" class="input-group-addon">
-                    <i class="fa fa-search"></i>
-                  </div>
-                  <input type="search" id="st-search-input" class="form-control" placeholder="Search"></input>
-                </div>
-              </div>
-            </form>
-            <div id="search-modal" class="modal fade">
+          {% include related_category_posts %}
+          {% include related_posts %}
 
-              <div class="modal-dialog search-dialog">
-
-                <div class="modal-content">
-
-                  <div class="modal-header">
-
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
-                      <span aria-label="Close">&times;</span>
-                    <h4>Search results</h4>
-                  </div>
-                  <div class="modal-body">
-                    <div id="search-results"></div>
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          {% if page.path == "index.md" %}
-            <div class="col-xs-12">
-              {{ content }}
-            </div>
-          {% else %}
-            <div class="hidden-xs col-sm-3">
-              {% include related_category_posts %}
-              {% include related_posts %}
-            </div>
-            <div class="col-xs-12 col-sm-9">
-              {{ content }}
-            </div>
+          {% if page.url == '/index.html' %}
+          <strong>Recent Activity</strong>
+          <ul class='list-unstyled'>
+          {% for post in site.posts limit:5 %}
+            <span class="last-article-date pull-right">
+              {{ post.date | date_to_string}}
+            </span>
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
           {% endif %}
         </div>
+
+        <!-- Right pane -->
+        <div class="col-lg-5 col-md-8 col-sm-10 col-sm-offset-2 main">
+          <div class="container-fluid">
+            <!-- Spacing -->
+            <div class="row" style="height:25px;"></div>
+
+            <!-- Search bar -->
+            <div class="row">
+              <div class="col-xs-12">
+                <form action="">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <div id="search-icon" class="input-group-addon">
+                        <i class="fa fa-search"></i>
+                      </div>
+                      <input type="search" id="st-search-input" class="form-control" placeholder="Search"></input>
+                    </div>
+                  </div>
+                </form>
+                <div id="search-modal" class="modal fade">
+
+                  <div class="modal-dialog search-dialog">
+
+                    <div class="modal-content">
+
+                      <div class="modal-header">
+
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+                          <span aria-label="Close">&times;</span>
+                        <h4>Search results</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div id="search-results"></div>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Page content -->
+            {{ content }}
+
+            <!-- Spacing -->
+            <div class="row" style="height:25px;"></div>
+          </div>
+        </div><!-- End right pane -->
+
       </div>
-
-    </section>
-
-    {% include footer.html %}
+    </div>
 
   </body>
 

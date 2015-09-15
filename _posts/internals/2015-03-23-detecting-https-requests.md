@@ -5,8 +5,6 @@ category: internals
 tags: internals, routing, request, https,
 ---
 
-# Detecting HTTPS requests
-
 ## Background
 
 Your application runs behind a load balancer which does all the request handling

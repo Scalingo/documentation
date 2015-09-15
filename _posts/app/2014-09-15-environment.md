@@ -5,8 +5,6 @@ category: app
 tags: app, configuration, environment,
 ---
 
-# The application environment
-
 The environment should be used to configure your application. When your
 project is deployed and a new container is started, all the variables defined
 in your environment are automatically injected into it.

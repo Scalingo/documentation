@@ -6,8 +6,6 @@ tags: groovy,
 show_in_toc: true
 ---
 
-# Groovy
-
 Groovy language is supported only for the Grails Framework.
 
 ## Usage

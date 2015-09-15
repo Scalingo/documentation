@@ -5,8 +5,6 @@ category: getting-started
 tags: nodejs, meteor, tutorial,
 ---
 
-# Getting started with Meteor
-
 {% include info_tutorial_requirements.md %}
 
 ## Initialize your application

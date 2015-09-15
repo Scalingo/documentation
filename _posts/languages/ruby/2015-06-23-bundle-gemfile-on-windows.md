@@ -5,8 +5,6 @@ category: languages
 tags: ruby, application, server,
 ---
 
-# Deploy a ruby project developped on Windows
-
 ## Context
 
 Applications running in Scalingo's infrastructure are running on a distribution of Linux

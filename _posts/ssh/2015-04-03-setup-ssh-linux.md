@@ -5,8 +5,6 @@ category: getting-started
 tags: follow-the-light, ssh, linux, git,
 ---
 
-# Setup SSH on Linux
-
 ## Check if you already have an available SSH key
 
 {% highlight bash %}

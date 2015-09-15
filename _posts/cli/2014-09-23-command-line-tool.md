@@ -5,8 +5,6 @@ category: app
 tags: cli, interface, app,
 ---
 
-# Command Line Tool
-
 ## Installation
 
 We provide a command line tool able to interact with the platform.

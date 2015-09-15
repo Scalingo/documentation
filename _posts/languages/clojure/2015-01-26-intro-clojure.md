@@ -6,8 +6,6 @@ tags: clojure,
 show_in_toc: true
 ---
 
-# Clojure
-
 Clojure is supported on Scalingo, you can deploy your apps
 
 It uses [Leiningen](http://leiningen.org).

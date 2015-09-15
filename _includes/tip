@@ -1,4 +1,4 @@
-<blockquote class="tip">
+<blockquote class="bg-success">
   {% unless include.data%}
     {{data}}
   {% else %}

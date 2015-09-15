@@ -5,8 +5,6 @@ category: languages
 tags: nodejs, meteor, npm,
 ---
 
-# Custom NPM modules with Meteor
-
 ## Initialization
 
 ### Install the package meteorhacks:npm

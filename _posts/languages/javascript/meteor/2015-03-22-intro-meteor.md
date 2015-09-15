@@ -6,8 +6,6 @@ tags: nodejs, meteor, scaling,
 show_in_toc: true
 ---
 
-# Meteor
-
 Meteor is a complete open source platform for building web and mobile apps in pure JavaScript.
 It focuses problematics around real time web to emphasize the most fluent experience possible.
 
@@ -73,7 +71,7 @@ Example:
 0.10.x
 {% endhighlight %}
 
-<blockquote class="info">
+<blockquote class="bg-info">
   Meteor is not compatible with Node.JS 0.11 and 0.12 yet. To ensure compatibility, don't precise any version,
   we'll provider the best for your version of meteor.
 </blockquote>
@@ -98,7 +96,7 @@ As a result, you juste have to restart your application.
 
 > ![Link to Dashboard](/assets/images/database/link-to-dashboard.png)
 
-<blockquote class="info">
+<blockquote class="bg-info">
   This operation will restart your database instance so your application may raise an exception
 </blockquote>
 

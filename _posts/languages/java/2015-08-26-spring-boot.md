@@ -5,8 +5,6 @@ category: languages
 tags: war, java, spring, spring-boot,
 ---
 
-# Sprint Boot support
-
 > Takes an opinionated view of building production-ready Spring applications.
 > Spring Boot favors convention over configuration and is designed to get you up
 > and running as quickly as possible.

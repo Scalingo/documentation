@@ -5,8 +5,6 @@ category: getting-started
 tags: follow-the-light, ssh, macos, git,
 ---
 
-# Setup SSH on Mac OS
-
 ## Check if you already have an available SSH key
 
 {% highlight bash %}

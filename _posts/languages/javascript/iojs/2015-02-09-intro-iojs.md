@@ -6,8 +6,6 @@ tags: iojs, javascript,
 show_in_toc: true
 ---
 
-# io.js - https://iojs.org/
-
 ## Getting started tutorial
 
 To deploy your first __io.js__ application, follow [Getting started with io.js]({% post_url /languages/javascript/iojs/2015-02-09-getting-started-with-iojs %}).

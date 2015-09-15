@@ -6,8 +6,6 @@ tags: nodejs, iojs, javascript,
 show_in_toc: true
 ---
 
-# Javascript
-
 ## Supported interpreters
 
 * [Node.js]({% post_url languages/javascript/nodejs/2015-03-22-nodejs %})

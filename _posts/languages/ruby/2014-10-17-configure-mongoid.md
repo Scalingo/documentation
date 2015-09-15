@@ -5,8 +5,6 @@ category: languages
 tags: ruby, mongoid, mongodb,
 ---
 
-# Configure Mongoid
-
 You need to create the file `config/mongoid.yml` in order to configure Mongoid.
 
 {% highlight yaml %}

@@ -6,8 +6,6 @@ tags: databases, postgresql,
 index: 2
 ---
 
-# Access your PostgreSQL database
-
 {% include info_command_line_tool.md %}
 
 

@@ -5,8 +5,6 @@ category: getting-started
 tags: heroku,
 ---
 
-# Heroku Compatibility
-
 Scalingo uses buildpack technology. Thus, if your application works on Heroku, it will work on Scalingo.
 
 ## Procfile

@@ -5,8 +5,6 @@ category: getting-started
 tags: python, django, tutorial,
 ---
 
-# Getting started with Django
-
 {% include info_tutorial_requirements.md %}
 
 ## Initialize your application
@@ -53,7 +51,7 @@ pip freeze > requirements.txt
 
 ## Create your application and databases on Scalingo
 
-<blockquote class="info">
+<blockquote class="bg-info">
   You can also use our web dashboard to achieve this operation
 </blockquote>
 
@@ -90,7 +88,7 @@ The configuration file in our example is located at `myapp/settings.py`.
 
 ### Ensure that the base directory of the application is defined
 
-<blockquote class="info">
+<blockquote class="bg-info">
   This instruction may be already set according to your Django version
 </blockquote>
 

@@ -6,8 +6,6 @@ tags: ruby,
 show_in_toc: true
 ---
 
-# Ruby
-
 Ruby is entirely supported by Scalingo, furthermore, custom support is added
 for the Rails framework in all its versions.
 

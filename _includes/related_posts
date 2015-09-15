@@ -23,12 +23,10 @@
 
 {% assign size = (rel_posts | size) %}
 {% if size > 0 %}
-<div class="well toc">
   <strong>Related posts</strong>
-  <ul>
+  <ul class="list-unstyled">
   {% for rel_post in rel_posts group_by: "category" %}
     <li><a href="{{ rel_post.url }}">{{ rel_post.title }}</a></li>
   {% endfor %}
   </ul>
-</div>
 {% endif %}

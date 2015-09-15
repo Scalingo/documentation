@@ -5,8 +5,6 @@ category: getting-started
 tags: ruby, rails, tutorial,
 ---
 
-# Getting started with Rails
-
 ## Initialize your application
 
 {% highlight bash %}
@@ -23,7 +21,7 @@ $ git commit -m "Base rails application"
 
 ## Create your application on Scalingo
 
-<blockquote class="info">
+<blockquote class="bg-info">
   You can also use our web dashboard to achieve this operation
 </blockquote>
 

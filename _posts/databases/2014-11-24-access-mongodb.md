@@ -6,8 +6,6 @@ tags: databases, mongodb,
 index: 2
 ---
 
-# Access your MongoDB database
-
 {% include info_command_line_tool.md %}
 
 

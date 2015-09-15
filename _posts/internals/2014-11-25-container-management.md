@@ -5,8 +5,6 @@ category: internals
 tags: internals, containers,
 ---
 
-# Containers management
-
 ## Shutdown
 
 Whether you are deploying a new version of your app or for any operation which

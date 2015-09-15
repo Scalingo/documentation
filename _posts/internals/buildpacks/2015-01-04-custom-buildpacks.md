@@ -5,8 +5,6 @@ category: internals
 tags: custom, buildpacks, build, image,
 ---
 
-# Use of a custom buildpack
-
 If you need to deploy a technology which is not supported by Scalingo,
 you can used an open-source buildpack or a buildpack you have developed.
 
@@ -28,7 +26,7 @@ Then during the deployment, you'll be able to see:
 -- SNIP --
 {% endhighlight %}
 
-# Build a custom buildpack
+## Build a custom buildpack
 
 Our execution stack is public and can be found as a docker image on the __Docker Hub__
 Its name is [appsdeck/builder:latest](https://registry.hub.docker.com/u/appsdeck/builder/)

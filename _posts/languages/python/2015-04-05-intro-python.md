@@ -6,8 +6,6 @@ tags: python,
 show_in_toc: true
 ---
 
-# Python
-
 The python Language is supported
 
 ## Detection

@@ -5,8 +5,6 @@ category: internals
 tags: buildpacks, build, image,
 ---
 
-# Buildpacks
-
 ## Introduction
 
 When you want to deploy your application on Scalingo, it needs to be build as

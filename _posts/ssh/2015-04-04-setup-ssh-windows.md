@@ -5,8 +5,6 @@ category: getting-started
 tags: follow-the-light, ssh, windows, git,
 ---
 
-# Setup SSH on Windows
-
 ## Create a new SSH key pair
 
 {% highlight bash %}

@@ -5,8 +5,6 @@ category: internals
 tags: internals, slugignore, image, size,
 ---
 
-# The `.slugignore` file
-
 ## Background
 
 When you deploy an application, our build system is fetching all the required
@@ -54,7 +52,7 @@ classes and jar archives from the build:
 .m2
 {% endhighlight %}
 
-<blockquote class="info">
+<blockquote class="bg-info">
   <code>.m2</code> directory is the maven local repository which is used to store
   all the dependencies which are downloaded during the build. You don't need them once
   your application is packaged into a `.war` file.

@@ -6,8 +6,6 @@ tags: erlang,
 show_in_toc: true
 ---
 
-# Erlang
-
 Erlang is officially supported on the platform.
 
 It uses [Rebar](https://github.com/basho/rebar).

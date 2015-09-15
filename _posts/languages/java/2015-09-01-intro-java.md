@@ -6,8 +6,6 @@ tags: java,
 show_in_toc: true
 ---
 
-# Java
-
 Java is officially supported on Scalingo
 
 ## Versions

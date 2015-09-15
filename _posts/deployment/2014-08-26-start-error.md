@@ -5,8 +5,6 @@ category: deployment
 tags: app, error, timeout, crash,
 ---
 
-# Application start errors
-
 After creating the container image of your application, it is deployed
 in our infrastructure, the following errors may happend if your application
 is not configured correctly.

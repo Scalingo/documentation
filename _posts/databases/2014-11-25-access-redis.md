@@ -6,8 +6,6 @@ tags: databases, redis,
 index: 2
 ---
 
-# Access your Redis database
-
 {% include info_command_line_tool.md %}
 
 ## Use `scalingo run`

@@ -5,12 +5,10 @@ category: languages
 tags: nodejs, meteor, tutorial, telescope,
 ---
 
-# Deployment of a Meteor application: Telescope
-
 This guide will go through the deployment of a un-modified instance of Telescope,
 but if you've applied some modifications to it, it should work the same manner.
 
-<blockquote class="info">
+<blockquote class="bg-info">
   All the operation achieved with the <a href="http://cli.scalingo.com">'scalingo' CLI</a> can also be done on our <a href="https://my.scalingo.com">web dashbaord</a>.
 </blockquote>
 

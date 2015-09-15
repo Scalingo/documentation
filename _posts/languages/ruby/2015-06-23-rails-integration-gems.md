@@ -5,8 +5,6 @@ category: languages
 tags: ruby, application, server, rails,
 ---
 
-# Rails integration to the platform
-
 To completely integrate Ruby on Rails to the Scalingo platform, it has to respect the
 [12 factor](http://12factor.net). These rules define how a web application should ideally
 behaves. Scalingo is built around these principles and you should respect them to be sure
