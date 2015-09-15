@@ -2,7 +2,7 @@
 title: Buildpacks
 modified_at: 2015-01-04 00:00:00
 category: internals
-tags: buildpacks, build, image,
+tags: buildpacks build image
 ---
 
 ## Introduction

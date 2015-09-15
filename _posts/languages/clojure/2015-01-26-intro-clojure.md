@@ -2,7 +2,7 @@
 title: Clojure
 modified_at: 2015-01-26 00:00:00
 category: languages
-tags: clojure,
+tags: clojure
 show_in_toc: true
 ---
 

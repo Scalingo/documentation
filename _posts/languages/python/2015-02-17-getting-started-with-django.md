@@ -2,7 +2,7 @@
 title: Getting Started with Django
 modified_at: 2015-02-17 00:00:00
 category: getting-started
-tags: python, django, tutorial,
+tags: python django tutorial getting-started-tutorial
 ---
 
 {% include info_tutorial_requirements.md %}

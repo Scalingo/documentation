@@ -2,7 +2,7 @@
 title: Access your MongoDB database
 modified_at: 2014-11-24 00:00:00
 category: databases
-tags: databases, mongodb,
+tags: databases mongodb
 index: 2
 ---
 

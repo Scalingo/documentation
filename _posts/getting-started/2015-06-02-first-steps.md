@@ -2,7 +2,7 @@
 title: First Steps On Scalingo
 modified_at: 2015-06-02 00:00:00
 category: getting-started
-tags: follow-the-light, ssh,
+tags: follow-the-light ssh
 ---
 
 ## Deployment requirements
@@ -43,7 +43,11 @@ scalingo keys-add Laptop ~/.ssh/id_rsa.pub
 
 ## Some tutorials to start with
 
-{% include related_category_posts %}
+<ul class="list-unstyled">
+  {% for post in site.tags["getting-started-tutorial"] %}
+  <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
 <blockquote class="bg-success">
   We support a lot of technologies, ask for your tutorial!

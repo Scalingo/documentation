@@ -2,7 +2,7 @@
 title: Getting Started with Meteor
 modified_at: 2015-02-09 00:00:00
 category: getting-started
-tags: nodejs, meteor, tutorial,
+tags: nodejs meteor tutorial getting-started-tutorial
 ---
 
 {% include info_tutorial_requirements.md %}

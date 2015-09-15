@@ -2,7 +2,7 @@
 title: Getting Started with Rails
 modified_at: 2015-02-17 00:00:00
 category: getting-started
-tags: ruby, rails, tutorial,
+tags: ruby rails tutorial getting-started-tutorial
 ---
 
 ## Initialize your application

@@ -2,7 +2,7 @@
 title: Command Line Tool
 modified_at: 2014-09-23 00:00:00
 category: app
-tags: cli, interface, app,
+tags: cli interface app
 ---
 
 ## Installation

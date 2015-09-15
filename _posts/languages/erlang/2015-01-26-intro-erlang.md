@@ -2,7 +2,7 @@
 title: Erlang
 modified_at: 2015-01-26 00:00:00
 category: languages
-tags: erlang,
+tags: erlang
 show_in_toc: true
 ---
 

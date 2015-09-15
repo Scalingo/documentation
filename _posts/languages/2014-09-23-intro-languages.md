@@ -2,7 +2,7 @@
 title: Languages
 modified_at: 2014-09-23 00:00:00
 category: languages
-tags: languages, polyglot,
+tags: languages polyglot
 index: 0
 show_in_toc: true
 ---

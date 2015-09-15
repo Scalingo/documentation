@@ -2,7 +2,7 @@
 title: Intro Internals
 modified_at: 2015-03-22 00:00:00
 category: internals
-tags: internals, index,
+tags: internals index
 index: 0
 ---
 

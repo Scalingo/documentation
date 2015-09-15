@@ -2,7 +2,7 @@
 title: Ruby
 modified_at: 2015-06-23 00:00:00
 category: languages
-tags: ruby,
+tags: ruby
 show_in_toc: true
 ---
 

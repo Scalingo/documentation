@@ -2,7 +2,7 @@
 title: Deploy your Spring Boot application
 modified_at: 2015-08-26 00:00:00
 category: languages
-tags: war, java, spring, spring-boot,
+tags: war java spring spring-boot
 ---
 
 > Takes an opinionated view of building production-ready Spring applications.

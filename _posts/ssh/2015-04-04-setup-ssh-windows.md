@@ -2,7 +2,7 @@
 title: Setup SSH on Windows
 modified_at: 2015-04-04 00:00:00
 category: getting-started
-tags: follow-the-light, ssh, windows, git,
+tags: follow-the-light ssh windows git
 ---
 
 ## Create a new SSH key pair

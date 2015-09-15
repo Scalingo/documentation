@@ -2,7 +2,7 @@
 title: Ruby application server
 modified_at: 2015-06-23 00:00:00
 category: languages
-tags: ruby, application, server,
+tags: ruby application server
 ---
 
 ## Ruby application web server

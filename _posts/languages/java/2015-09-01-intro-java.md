@@ -2,7 +2,7 @@
 title: Java
 modified_at: 2015-09-01 00:00:00
 category: languages
-tags: java,
+tags: java
 show_in_toc: true
 ---
 

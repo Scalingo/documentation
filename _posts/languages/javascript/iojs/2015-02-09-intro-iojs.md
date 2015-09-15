@@ -2,7 +2,7 @@
 title: io.js
 modified_at: 2015-02-09 00:00:00
 category: languages
-tags: iojs, javascript,
+tags: iojs javascript
 show_in_toc: true
 ---
 

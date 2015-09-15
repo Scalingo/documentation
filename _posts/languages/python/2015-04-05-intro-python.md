@@ -2,7 +2,7 @@
 title: Python
 modified_at: 2015-04-05 00:00:00
 category: languages
-tags: python,
+tags: python
 show_in_toc: true
 ---
 

@@ -2,7 +2,7 @@
 title: Meteor
 modified_at: 2015-03-22 00:00:00
 category: languages
-tags: nodejs, meteor, scaling,
+tags: nodejs meteor scaling
 show_in_toc: true
 ---
 

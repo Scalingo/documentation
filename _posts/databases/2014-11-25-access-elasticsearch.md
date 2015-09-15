@@ -2,7 +2,7 @@
 title: Access your Elasticsearch search engine
 modified_at: 2014-11-25 00:00:00
 category: databases
-tags: databases, elasticsearch,
+tags: databases elasticsearch
 index: 2
 ---
 

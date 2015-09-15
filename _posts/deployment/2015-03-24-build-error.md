@@ -2,7 +2,7 @@
 title: Build Errors
 modified_at: 2015-03-24 00:00:00
 category: deployment
-tags: app, error, deployment, quota,
+tags: app error deployment quota
 ---
 
 When your application is deployed, the dependencies are gathered and are packaged

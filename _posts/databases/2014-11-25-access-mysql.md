@@ -2,7 +2,7 @@
 title: Access your MySQL database
 modified_at: 2014-11-25 00:00:00
 category: databases
-tags: databases, mysql,
+tags: databases mysql
 index: 2
 ---
 

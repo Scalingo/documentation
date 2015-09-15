@@ -2,7 +2,7 @@
 title: Haskell
 modified_at: 2015-01-26 00:00:00
 category: languages
-tags: haskell,
+tags: haskell
 show_in_toc: true
 ---
 
