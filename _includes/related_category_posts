@@ -23,7 +23,7 @@
 {% endfor %}
 
 
-{% assign rel_cat_posts = (rel_cat_posts | sort: 'index', 'last') %}
+{% assign rel_cat_posts = (rel_cat_posts | sort: 'title' | sort: 'index', 'last') %}
 {% assign size = (rel_cat_posts | size) %}
 
 

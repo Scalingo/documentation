@@ -57,7 +57,7 @@ date: 2015-09-09 00:00:00
     <!-- <div class='well'> -->
       <h2>Language documentation</h2>
       <ul class='list-unstyled'>
-      {% assign posts = (site.categories.languages | sort: 'index', 'last') %}
+      {% assign posts = (site.categories.languages | sort: 'title' | sort: 'index', 'last') %}
       {% for post in posts %}
         {% if post.show_in_toc %}
         <li>
