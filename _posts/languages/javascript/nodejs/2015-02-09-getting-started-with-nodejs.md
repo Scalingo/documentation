@@ -43,7 +43,7 @@ var server = app.listen(process.env.PORT || 3000, function () {
 })
 {% endhighlight %}
 
-<blockquote class="bg-success">
+<blockquote class="bg-info">
   The `process.env.PORT` will read the environment variable PORT dynamically provided by our container manager.
 </blockquote>
 

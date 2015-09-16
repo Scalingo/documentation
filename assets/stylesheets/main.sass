@@ -7,7 +7,8 @@
 body
   background-color: darken(#fafafa, 5%)
   font-size: 13px
-  font-family: HelveticaNeue,Helvetica,Arial,sans-serif
+  font-family: Roboto,HelveticaNeue,Helvetica,Arial,sans-serif
+  // font-family: HelveticaNeue,Helvetica,Arial,sans-serif
 
 pre
   border: 0
@@ -21,7 +22,7 @@ code
   font-size: 100%
 
 blockquote
-  background-color: #ffff99
+  background-color: #D9EDF7
   font-size: inherit
   border-left: 0
 
@@ -45,19 +46,40 @@ h3
 .header + .row
   flex: 1
 
-.header, .footer
-  background-color: #272822
-  color: white
-  strong
-    font-size: 120%
-  a
-    color: white
-  .form-group
-    margin-bottom: 0
+.navbar
+  height: 54px
+  margin-bottom: 40px
+  background-color: #2196F3
+  border: 0
+  box-shadow: rgba(0, 0, 0, 0.0117647) 0px 0.148168px 0.148168px 0px, rgba(0, 0, 0, 0.0156863) 0px 0.222251px 0.0740838px -0.148168px, rgba(0, 0, 0, 0.00784314) 0px 0.0740838px 0.370419px 0px
+  .navbar-nav
+    a
+      color: white
+      line-height: 54px
+      font-size: 18px
+      padding: 0 15px
+  img
+    height: 30px
+  .navbar-brand
+    height: 30px
+    padding: 0
+    margin-top: 12px
 
-.footer
+.nav>li>a:focus, .nav>li>a:hover
+  background-color: transparent
+
+footer
+  margin-top: 40px
+  padding: 20px 0
+  background-color: darken(#fafafa, 15%)
+  color: darken(#fafafa, 40%)
+  a
+    color: darken(#fafafa, 40%)
+    text-decoration: underline
+    &:hover
+      color: darken(#fafafa, 60%)
   ul
-    margin-top: 40px
+    margin-bottom: 0
 
 .logo
   margin-top: 10px
@@ -85,8 +107,6 @@ h3
 
 .sidebar-nav
   background-color: darken(#fafafa, 5%)
-  padding-top: 15px
-  padding-bottom: 15px
   strong
     font-size: 120%
   a
@@ -109,6 +129,11 @@ h3
   a:hover
     text-decoration: none
     color: #222
+
+@media (min-width: 1200px)
+  .container
+    width: 970px
+
 
 @media (min-width: 768px)
   .sidebar-nav

@@ -49,7 +49,7 @@ scalingo keys-add Laptop ~/.ssh/id_rsa.pub
   {% endfor %}
 </ul>
 
-<blockquote class="bg-success">
+<blockquote class="bg-info">
   We support a lot of technologies, ask for your tutorial!
   <a href="mailto:support@scalingo.com">support@scalingo.com</a>
 </blockquote>
