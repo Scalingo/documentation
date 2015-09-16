@@ -69,20 +69,3 @@ date: 2015-09-09 00:00:00
     <!-- </div> -->
   </div>
 </div>
-<!-- <div class='row'>
-  <div class='col-xs-12 col-sm-6'>
-    <div class='well'>
-      <h2>Recent Activity</h2>
-      <ul class='list-unstyled'>
-      {% for post in site.posts limit:10 %}
-        <span class="last-article-date pull-right">
-          {{ post.date | date_to_string}}
-        </span>
-        <li>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-      {% endfor %}
-      </ul>
-    </div>
-  </div>
-</div> -->

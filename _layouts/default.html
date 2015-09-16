@@ -4,93 +4,131 @@
   {% include head.html %}
 
   <body>
-
-    <a href="https://github.com/Scalingo/documentation"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-2 sidebar-nav">
-          <a href="/"><img src="https://scalingo.com/logo.svg" class="h1 logo img-responsive"></a>
 
-          <strong>{{ site.title }}</strong>
-          <ul class="list-unstyled">
-            <li><a href="https://scalingo.com/">Main site</a></li>
-            <li><a href="http://developers.scalingo.com/">Scalingo API</a></li>
-            <li><a href="">HowTos</a></li>
-            <li><a href="">Q&amp;A</a></li>
-          </ul>
+      <!-- Header nav -->
+      <div class="row header">
+        <!-- Limit global width -->
+        <div class="col-lg-7">
+          <div class="row vertical-align">
 
-          {% include related_category_posts %}
-          {% include related_posts %}
-
-          {% if page.url == '/index.html' %}
-          <strong>Recent Activity</strong>
-          <ul class='list-unstyled'>
-          {% for post in site.posts limit:5 %}
-            <span class="last-article-date pull-right">
-              {{ post.date | date_to_string}}
-            </span>
-            <li>
-              <a href="{{ post.url }}">{{ post.title }}</a>
-            </li>
-          {% endfor %}
-          </ul>
-          {% endif %}
-        </div>
-
-        <!-- Right pane -->
-        <div class="col-lg-5 col-md-8 col-sm-10 col-sm-offset-2 main">
-          <div class="container-fluid">
-            <!-- Spacing -->
-            <div class="row" style="height:25px;"></div>
+            <!-- Brand -->
+            <div class="col-xs-6">
+              <a href="/">
+                <img src="https://scalingo.com/logo-inverse.svg" class="h1 logo img-responsive">
+              </a><strong>{{ site.title }}</strong>
+            </div><!-- End Brand -->
 
             <!-- Search bar -->
-            <div class="row">
-              <div class="col-xs-12">
-                <form action="">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div id="search-icon" class="input-group-addon">
-                        <i class="fa fa-search"></i>
-                      </div>
-                      <input type="search" id="st-search-input" class="form-control" placeholder="Search"></input>
+            <div class="col-xs-6 col-lg-5 col-lg-offset-2 search-bar">
+              <form action="">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="search" id="st-search-input" class="form-control input-sm" placeholder="Search"></input>
+                    <div id="search-icon" class="input-group-addon">
+                      <i class="fa fa-search"></i>
                     </div>
                   </div>
-                </form>
-                <div id="search-modal" class="modal fade">
-
-                  <div class="modal-dialog search-dialog">
-
-                    <div class="modal-content">
-
-                      <div class="modal-header">
-
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
-                          <span aria-label="Close">&times;</span>
-                        <h4>Search results</h4>
-                      </div>
-                      <div class="modal-body">
-                        <div id="search-results"></div>
-                      </div>
-                      <div class="modal-footer">
-                        <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
-                      </div>
+                </div>
+              </form>
+              <div id="search-modal" class="modal fade">
+                <div class="modal-dialog search-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+                        <span aria-label="Close">&times;</span>
+                      <h4>Search results</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div id="search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>
               </div>
+            </div><!-- End Search bar -->
+
+          </div>
+        </div><!-- End Limit global width -->
+      </div><!-- End Header nav -->
+
+      <div class="row">
+        <!-- Limit global width -->
+        <div class="col-lg-7">
+          <div class="row main">
+
+            <!-- Nav -->
+            <div class="col-sm-3 sidebar-nav">
+              {% include related_category_posts %}
+              {% include related_posts %}
+
+              {% if page.url == '/index.html' %}
+              <strong>Recent Activity</strong>
+              <ul class='list-unstyled'>
+              {% for post in site.posts limit:5 %}
+                <span class="last-article-date pull-right">
+                  {{ post.date | date_to_string}}
+                </span>
+                <li>
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                </li>
+              {% endfor %}
+              </ul>
+              {% endif %}
             </div>
 
-            <!-- Page content -->
-            {{ content }}
+            <!-- Right pane -->
+            <div class=" col-sm-9 content">
+              <!-- <div class="container-fluid"> -->
+                <!-- Page content -->
+                {{ content }}
+              <!-- </div> -->
+            </div><!-- End right pane -->
 
-            <!-- Spacing -->
-            <div class="row" style="height:25px;"></div>
           </div>
-        </div><!-- End right pane -->
+        </div><!-- End Limit global width -->
 
       </div>
-    </div>
 
+      <!-- Footer -->
+      <div class="row footer">
+
+        <!-- Limit global width -->
+        <div class="col-lg-7">
+          <div class="row">
+
+            <div class="col-sm-2 col-sm-offset-3">
+              <a href="/">
+                <img src="https://scalingo.com/logo-inverse.svg" class="h1 logo img-responsive">
+              </a>
+              <p>
+                Scalingo SAS
+                <br>
+                15 avenue du Rhin
+                <br>
+                67100 Strasbourg
+                <br>
+                France
+                <br>
+                SIRET 80866548300018
+              </p>
+            </div>
+            <div class="col-sm-2">
+              <ul class="list-unstyled">
+                <li><a href="https://scalingo.com/">Main site</a></li>
+                <li><a href="http://developers.scalingo.com/">Scalingo API</a></li>
+                <li><a href="">HowTos</a></li>
+                <li><a href="">Q&amp;A</a></li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- End Limit global width -->
+
+      </div><!-- End Footer -->
+
+    </div>
   </body>
 
 </html>
