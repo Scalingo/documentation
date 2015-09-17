@@ -15,14 +15,14 @@ requirejs([
 
     headers.each(function (index, el) {
       // make id from cotent
-      var id = slugify(el.innerHTML)
+      var id = slugify(el.innerText)
 
       // inject id
       el.id = id
 
       var a = $('<a>')
         .attr('href','#' + id)
-        .text(el.innerHTML)
+        .text(el.innerText)
 
       var li = $('<li>')
         .append(a)
