@@ -1,6 +1,6 @@
 ---
 title: Heroku Compatibility
-modified_at: 2015-01-29 00:00:00
+modified_at: 2015-09-17 21:00:00
 category: getting-started
 tags: heroku
 permalink: /heroku-compatibility
