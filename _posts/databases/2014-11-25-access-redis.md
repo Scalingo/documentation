@@ -4,6 +4,7 @@ modified_at: 2014-11-25 00:00:00
 category: databases
 tags: databases redis
 index: 2
+permalink: /databases/redis/access
 ---
 
 {% include info_command_line_tool.md %}

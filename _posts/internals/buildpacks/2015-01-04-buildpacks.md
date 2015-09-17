@@ -1,8 +1,9 @@
 ---
 title: Buildpacks
 modified_at: 2015-01-04 00:00:00
-category: internals
+categories: internals
 tags: buildpacks build image
+permalink: /buildpacks
 ---
 
 ## Introduction
@@ -19,9 +20,9 @@ A buildpack is a set of scripts which aims at:
 
 ## Buidpacks included on Scalingo
 
-* `Ruby` — [Documentation]({% post_url /languages/ruby/2015-06-23-intro-ruby %}) — [Source](https://github.com/Scalingo/ruby-buildpack)
+* `Ruby` — [Documentation]({% post_url /languages/ruby/2015-06-23-ruby %}) — [Source](https://github.com/Scalingo/ruby-buildpack)
 * `Node.js / io.js / Meteor` — [Documentation]({% post_url /languages/javascript/nodejs/2015-03-22-nodejs %}) — [Source](https://github.com/Scalingo/nodejs-buildpack)
-* `PHP` — [Documentation]({% post_url /languages/php/2014-07-02-intro-php %}) — [Source](https://github.com/Scalingo/php-buildpack)
+* `PHP` — [Documentation]({% post_url /languages/php/2014-07-02-php %}) — [Source](https://github.com/Scalingo/php-buildpack)
 * `Java` — [Source](https://github.com/Scalingo/java-buildpack)
 * `Python` — [Source](https://github.com/Scalingo/python-buildpack)
 * `Go` — [Source](https://github.com/Scalingo/go-buildpack)

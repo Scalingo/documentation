@@ -3,6 +3,7 @@ title: Heroku Compatibility
 modified_at: 2015-01-29 00:00:00
 category: getting-started
 tags: heroku
+permalink: /heroku-compatibility
 ---
 
 Scalingo uses buildpack technology. Thus, if your application works on Heroku, it will work on Scalingo.

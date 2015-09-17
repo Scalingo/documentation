@@ -4,6 +4,7 @@ modified_at: 2015-02-17 00:00:00
 category: getting-started
 tags: ruby rails tutorial getting-started-tutorial
 index: 3
+permalink: /languages/ruby/getting-started-with-rails
 ---
 
 ## Initialize your application

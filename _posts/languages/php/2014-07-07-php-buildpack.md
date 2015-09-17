@@ -1,8 +1,7 @@
 ---
 title: PHP buildpack
 modified_at: 2014-07-07 00:00:00
-category: languages
-subcategory: php
+category: languages php
 tags: php buildpack
 ---
 
