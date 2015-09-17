@@ -8,4 +8,4 @@ tags: nodejs iojs javascript
 ## Supported interpreters
 
 * [Node.js]({% post_url languages/javascript/nodejs/2015-03-22-nodejs %})
-* [io.js]({% post_url languages/javascript/iojs/2015-02-09-intro-iojs %})
+* [io.js]({% post_url languages/javascript/iojs/2015-02-09-iojs %})

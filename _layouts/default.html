@@ -8,7 +8,7 @@
         <div class="col-sm-3 hidden-xs sidebar-nav">
           {% include related_category_posts %}
           {% include related_posts %}
-          {% if page.url == '/index.html' %}
+          {% if page.url == '/index.html' or page.url == '/404.html' %}
           <span class="space-between">
             <strong>Recent Activity</strong>
             <a href="/feed.xml" >
