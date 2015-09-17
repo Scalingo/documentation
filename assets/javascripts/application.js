@@ -31,7 +31,7 @@ requirejs([
     })
 
     sidebar_nav.prepend(ul)
-    sidebar_nav.prepend('<strong>Table of content<strong>')
+    sidebar_nav.prepend('<strong>Table of Content<strong>')
 })
 
 function slugify(s) {

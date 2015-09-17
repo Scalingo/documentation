@@ -3,6 +3,7 @@ title: Getting Started with Node.js
 modified_at: 2015-02-09 00:00:00
 category: getting-started
 tags: nodejs express tutorial getting-started-tutorial
+index: 3
 ---
 
 {% include info_tutorial_requirements.md %}

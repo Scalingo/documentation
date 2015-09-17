@@ -3,6 +3,7 @@ title: Scala
 modified_at: 2015-01-26 00:00:00
 category: languages
 tags: scala
+index: 11
 show_in_toc: true
 ---
 

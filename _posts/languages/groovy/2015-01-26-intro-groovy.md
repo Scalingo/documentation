@@ -3,6 +3,7 @@ title: Groovy
 modified_at: 2015-01-26 00:00:00
 category: languages
 tags: groovy
+index: 12
 show_in_toc: true
 ---
 

@@ -3,6 +3,7 @@ title: Python
 modified_at: 2015-04-05 00:00:00
 category: languages
 tags: python
+index: 7
 show_in_toc: true
 ---
 

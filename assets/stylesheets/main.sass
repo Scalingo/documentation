@@ -6,9 +6,13 @@
 
 body
   background-color: darken(#fafafa, 5%)
-  font-size: 13px
   font-family: Roboto,HelveticaNeue,Helvetica,Arial,sans-serif
-  // font-family: HelveticaNeue,Helvetica,Arial,sans-serif
+  // Sticky footer, expand middle row
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  .container
+    flex: 1
 
 pre
   border: 0
@@ -38,20 +42,17 @@ h2
 h3
   font-size: 120%
 
-// Sticky footer, expand middle row
-.container-fluid
-  display: flex
-  flex-direction: column
-  min-height: 100vh
-.header + .row
-  flex: 1
+.homepage
+  margin-top: 0
+  + ul
+    margin-bottom: 0
 
 .navbar
   height: 54px
   margin-bottom: 40px
   background-color: #2196F3
   border: 0
-  box-shadow: rgba(0, 0, 0, 0.0117647) 0px 0.148168px 0.148168px 0px, rgba(0, 0, 0, 0.0156863) 0px 0.222251px 0.0740838px -0.148168px, rgba(0, 0, 0, 0.00784314) 0px 0.0740838px 0.370419px 0px
+  box-shadow: rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.117647) 0px 1px 5px 0px
   .navbar-nav
     a
       color: white
@@ -81,6 +82,17 @@ footer
   ul
     margin-bottom: 0
 
+.navbar-form
+  display: flex
+  margin-top: 14px
+  border-top: 0
+  i
+    line-height: 21px
+    font-size: 16px
+    margin-right: 5px
+    align-self: center
+    color: rgb(255, 255, 255)
+
 .logo
   margin-top: 10px
   margin-bottom: 5px
@@ -90,8 +102,28 @@ footer
 
 #st-search-input
   width: 80px
+  background-color: rgba(0, 0, 0, 0)
+  border-width: 0 0 1px 0
+  outline: 0
   transition: all ease-in-out .3s
   float: right
+  border-bottom-color: rgba(0, 0, 0, 0.117647)
+  border-bottom-style: solid
+  border-collapse: collapse
+  color: rgb(255, 255, 255)
+  cursor: auto
+  display: block
+  font-family: Roboto
+  font-size: 16px
+  &::-webkit-input-placeholder
+    color: white
+  &:-moz-placeholder
+    color: white
+  &::-moz-placeholder
+    color: white
+  &:-ms-input-placeholder
+    color: white
+
 #st-search-input:focus
   width: 100%
 
@@ -111,17 +143,31 @@ footer
     font-size: 120%
   a
     color: #212121
+    .fa-rss
+      color: #fa9b39
   ul
     margin-bottom: 30px
   > ul
     padding-top: 5px
 
+.space-between
+  display: flex
+  justify-content: space-between
+  align-items: baseline
+  small
+    font-size: 80%
+    flex-shrink: 0
+    padding-left: 5px
+
 .content
   background-color: white
-  padding: 0 15px
+  padding: 15px
+  border-radius: 2px
+  box-shadow: rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.117647) 0px 1px 5px 0px
+  h1
+    margin-top: 0
 
 .github-edit
-  margin-top: 0.5em
   a
     opacity: 0.5
     font-size: 12px
@@ -130,28 +176,44 @@ footer
     text-decoration: none
     color: #222
 
+.modified-at
+  opacity: 0.5
+  font-size: 12px
+  color: #888
+
 @media (min-width: 1200px)
   .container
     width: 970px
 
-
 @media (min-width: 768px)
+  .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand
+    margin-left: 0
+  .navbar-right
+    margin-right: -30px
   .sidebar-nav
-    // height: 100%
-    // left: 0
     overflow: auto
-    // position: fixed
-    // top: 0
     display: block
-  // .main
-  //   padding-right: 0
-  //   display: table
-  //   > .row
-  //     display: table-row
-  //     > div[class*='col-']
-  //       display: table-cell
-  //       float: none
 
 @media (max-width: 768px)
   .logo
     margin-right: 0
+  .navbar-header
+    display: flex
+    justify-content: center
+  .navbar-form
+    margin-top: 10px
+    justify-content: center
+    i
+      color: #2196F3
+  #st-search-input
+    width: 100%
+    color: #2196F3
+    border-bottom-color: rgba(33, 150, 243, 0.5)
+    &::-webkit-input-placeholder
+      color: #2196F3
+    &:-moz-placeholder
+      color: #2196F3
+    &::-moz-placeholder
+      color: #2196F3
+    &:-ms-input-placeholder
+      color: #2196F3

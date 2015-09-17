@@ -2,8 +2,8 @@
 title: io.js
 modified_at: 2015-02-09 00:00:00
 category: languages
+index: 4
 tags: iojs javascript
-show_in_toc: true
 ---
 
 ## Getting started tutorial
