@@ -7,6 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://doc.scalingo.com"
 twitter_username: ScalingoHQ
 github_username:  Scalingo
+excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
