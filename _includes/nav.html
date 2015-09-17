@@ -1,0 +1,36 @@
+<nav class="navbar navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://scalingo.com">
+        <img src="https://scalingo.com/logo-white.svg" class="">
+      </a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav collapse navbar-collapse">
+        <li><a href="/">{{ site.title }}</a></li>
+      </ul>
+
+      <form class="navbar-form navbar-right">
+        <i class="fa fa-search"></i>
+        <input type="search" id="st-search-input" class="mdl-scalingo-input" placeholder="Search"></input>
+      </form>
+      <div id="search-modal" class="modal fade">
+        <div class="modal-dialog search-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+                <span aria-label="Close">&times;</span>
+              <h4>Search results</h4>
+            </div>
+            <div class="modal-body">
+              <div id="search-results"></div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

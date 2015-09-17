@@ -1,0 +1,30 @@
+---
+title: Haskell
+modified_at: 2015-01-26 00:00:00
+category: languages
+tags: haskell
+show_in_toc: true
+---
+
+Haskell is officially supported on Scalingo
+
+It uses cabal-1.14.0.
+
+## Usage
+
+{% highlight bash %}
+$ ls
+Procfile app.cabal src
+
+$ scalingo create haskell-app
+
+$ git push scalingo master
+...
+-----> Haskell app detected
+-----> Building app with cabal
+-----> Running: cabal install
+{% endhighlight %}
+
+## Buildpack
+
+For more information, go to https://github.com/Scalingo/haskell-buildpack

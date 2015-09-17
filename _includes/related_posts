@@ -1,0 +1,32 @@
+{% comment %}
+
+  Usage: {% include related_posts %}
+
+  For each tag of current page we find other posts that has the same tag.
+
+{% endcomment %}
+
+
+{% assign rel_posts = site.array %}
+{% for tag in page.tags %}
+  {% for post in site.tags[tag] %}
+
+    {% unless post.url == page.url or rel_posts contains post or rel_cat_posts contains post %}
+
+      {% assign rel_posts = rel_posts | push: post %}
+
+    {% endunless %}
+
+  {% endfor %}
+{% endfor %}
+
+
+{% assign size = (rel_posts | size) %}
+{% if size > 0 %}
+  <strong>Related posts</strong>
+  <ul class="list-unstyled">
+  {% for rel_post in rel_posts group_by: "category" %}
+    <li><a href="{{ rel_post.url }}">{{ rel_post.title }}</a></li>
+  {% endfor %}
+  </ul>
+{% endif %}
