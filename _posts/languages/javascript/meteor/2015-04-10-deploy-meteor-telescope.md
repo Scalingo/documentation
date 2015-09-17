@@ -1,7 +1,7 @@
 ---
 title: Deployment of a Meteor application - Telescope
 modified_at: 2015-04-10 00:00:00
-category: languages
+categories: languages javascript
 tags: nodejs meteor tutorial telescope
 ---
 
