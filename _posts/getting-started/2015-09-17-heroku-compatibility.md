@@ -18,7 +18,7 @@ Most buildpacks and their functionnalities work exactly the same as on Heroku. S
 
 ## Environment variables
 
-Because we'd like to conform as much as possible to the [12 factor](http://12factor.net/) principle, you can configure your app through [environment variales](app/environment.html) which are injected into the context of your application.
+Because we'd like to conform as much as possible to the [12 factor](http://12factor.net/) principle, you can configure your app through [environment variables](/app/environment.html) which are injected into the context of your application.
 
 ## Realtime deployment
 
