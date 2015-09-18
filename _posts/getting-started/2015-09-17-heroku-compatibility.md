@@ -14,7 +14,7 @@ If a Procfile is available in the source of your app, it will be used. See the [
 
 ## Buildpacks
 
-Most buildpacks and their functionnalities work exactly the same as on Heroku. Some buildpacks are written and maintained by our own. It's open source. Check your [Github account](https://github.com/Scalingo/) to see the whole list.
+Most buildpacks and their functionnalities work exactly the same as on Heroku. Some buildpacks are written and maintained by our own. It's open source. Check your [Github account](https://github.com/Scalingo/?query=buildpack) to see the whole list.
 
 ## Environment variables
 
