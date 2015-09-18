@@ -10,7 +10,7 @@ Our aim for Scalingo is to be fully compatible with Heroku. If your app works on
 
 ## Procfile
 
-If a Procfile is available in the source of your app, it will be used.
+If a Procfile is available in the source of your app, it will be used. See the [dedicated Procfile page](/internals/procfile.html) for more informations.
 
 ## Buildpacks
 
