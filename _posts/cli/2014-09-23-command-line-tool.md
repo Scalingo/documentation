@@ -29,11 +29,11 @@ You can find the download link and changelog here [http://cli.scalingo.com](http
 * Get bash completion script in the directory:
   * Linux users `/etc/bash_completion.d/`:
 {% highlight bash %}
-curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_bash" > /etc/bash_completion.d/scalingo_complete_bash.sh
+sudo curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_bash" -o /etc/bash_completion.d/scalingo_complete_bash.sh
 {% endhighlight %}
   * Mac users `/usr/local/etc/bash_completion.d/`:
 {% highlight bash %}
-curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_bash" > /usr/local/etc/bash_completion.d/scalingo_complete_bash.sh
+sudo curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete_bash" -o /usr/local/etc/bash_completion.d/scalingo_complete_bash.sh
 {% endhighlight %}
 
 * Reload your shell in order to make the completion available: `exec bash -l`
