@@ -9,7 +9,7 @@ tags: cli interface app
 
 We provide a command line tool able to interact with the platform.
 
-You can find it here with its documentation [http://cli.scalingo.com](http://cli.scalingo.com)
+You can find the download link and changelog here [http://cli.scalingo.com](http://cli.scalingo.com)
 
 ## Tips
 
