@@ -13,7 +13,7 @@ You can find the download link and changelog here [http://cli.scalingo.com](http
 
 ## Tips
 
-* You can use tne environment `SCALINGO_APP` instead of using the `--app` flag
+* You can use the environment variable `SCALINGO_APP` instead of using the `--app` flag
 * If your current directory is the base directory of your project
   and that your git repository has a remote named 'scalingo', you
   don't need to specify `--app <name>` it will be detected automatically.
