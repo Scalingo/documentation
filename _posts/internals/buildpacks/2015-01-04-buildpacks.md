@@ -23,15 +23,15 @@ A buildpack is a set of scripts which aims at:
 * `Ruby` — [Documentation]({% post_url /languages/ruby/2015-06-23-ruby %}) — [Source](https://github.com/Scalingo/ruby-buildpack)
 * `Node.js / io.js / Meteor` — [Documentation]({% post_url /languages/javascript/nodejs/2015-03-22-nodejs %}) — [Source](https://github.com/Scalingo/nodejs-buildpack)
 * `PHP` — [Documentation]({% post_url /languages/php/2014-07-02-php %}) — [Source](https://github.com/Scalingo/php-buildpack)
-* `Java` — [Source](https://github.com/Scalingo/java-buildpack)
-* `Python` — [Source](https://github.com/Scalingo/python-buildpack)
+* `Java` — [Documentation]({% post_url /languages/java/2015-09-01-java %}) — [Source](https://github.com/Scalingo/java-buildpack)
+* `Python` — [Documentation]({% post_url /languages/python/2015-04-05-python %}) — [Source](https://github.com/Scalingo/python-buildpack)
 * `Go` — [Source](https://github.com/Scalingo/go-buildpack)
-* `Scala` — [Source](https://github.com/Scalingo/scala-buildpack)
+* `Scala` — [Documentation]({% post_url /languages/scala/2015-01-26-scala %}) — [Source](https://github.com/Scalingo/scala-buildpack)
 * `Erlang` — [Source](https://github.com/Scalingo/erlang-buildpack)
 * `Haskell` — [Source](https://github.com/Scalingo/haskell-buildpack)
 * `Clojure` — [Source](https://github.com/Scalingo/clojure-buildpack)
 * `Grails Framework` — [Source](https://github.com/Scalingo/grails-buildpack)
-* `Play Framework` — [Source](https://github.com/Scalingo/play-buildpack)
+* `Play Framework` — [Documentation]({% post_url /languages/java/2015-01-26-play %}) — [Source](https://github.com/Scalingo/play-buildpack)
 
 ## Use a custom buildpack
 
