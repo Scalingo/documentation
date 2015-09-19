@@ -29,7 +29,7 @@ A buildpack is a set of scripts which aims at:
 * `Scala` — [Documentation]({% post_url /languages/scala/2015-01-26-scala %}) — [Source](https://github.com/Scalingo/scala-buildpack)
 * `Erlang` — [Source](https://github.com/Scalingo/erlang-buildpack)
 * `Haskell` — [Source](https://github.com/Scalingo/haskell-buildpack)
-* `Clojure` — [Source](https://github.com/Scalingo/clojure-buildpack)
+* `Clojure` — [Documentation]({% post_url /languages/clojure/2015-01-26-clojure %}) — [Source](https://github.com/Scalingo/clojure-buildpack)
 * `Grails Framework` — [Source](https://github.com/Scalingo/grails-buildpack)
 * `Play Framework` — [Documentation]({% post_url /languages/java/2015-01-26-play %}) — [Source](https://github.com/Scalingo/play-buildpack)
 
