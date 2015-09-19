@@ -1,5 +1,5 @@
 ---
-title: Command Line Tool
+title: CLI Command Line Tool
 modified_at: 2015-09-18 18:20:00
 category: app
 tags: cli interface app
@@ -7,7 +7,7 @@ tags: cli interface app
 
 ## Installation
 
-We provide a command line tool able to interact with the platform.
+We provide a command line tool (CLI) able to interact with the platform.
 
 You can find the download link and changelog here [http://cli.scalingo.com](http://cli.scalingo.com)
 
