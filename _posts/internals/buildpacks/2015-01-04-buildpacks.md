@@ -21,7 +21,7 @@ A buildpack is a set of scripts which aims at:
 ## Buidpacks included on Scalingo
 
 * `Ruby` — [Documentation]({% post_url /languages/ruby/2015-06-23-ruby %}) — [Source](https://github.com/Scalingo/ruby-buildpack)
-* `Node.js / io.js / Meteor` — [Documentation]({% post_url /languages/javascript/nodejs/2015-03-22-nodejs %}) — [Source](https://github.com/Scalingo/nodejs-buildpack)
+* `Node.js / io.js / Meteor` — [Documentation]({% post_url /languages/javascript/nodejs/2015-09-20-nodejs %}) — [Source](https://github.com/Scalingo/nodejs-buildpack)
 * `PHP` — [Documentation]({% post_url /languages/php/2014-07-02-php %}) — [Source](https://github.com/Scalingo/php-buildpack)
 * `Java` — [Documentation]({% post_url /languages/java/2015-09-01-java %}) — [Source](https://github.com/Scalingo/java-buildpack)
 * `Python` — [Documentation]({% post_url /languages/python/2015-04-05-python %}) — [Source](https://github.com/Scalingo/python-buildpack)
