@@ -31,7 +31,7 @@ For any operating system, you need to copy the content of the public key to your
 
 With our dashbaord:
 
-https://my.scalingo.com/apps/keys
+[https://my.scalingo.com/apps/keys](https://my.scalingo.com/apps/keys)
 
 With our command line client:
 
