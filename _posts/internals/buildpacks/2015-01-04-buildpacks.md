@@ -33,6 +33,11 @@ A buildpack is a set of scripts which aims at:
 * `Grails Framework` — [Source](https://github.com/Scalingo/grails-buildpack)
 * `Play Framework` — [Documentation]({% post_url /languages/java/2015-01-26-play %}) — [Source](https://github.com/Scalingo/play-buildpack)
 
+## Available buildpacks for uncommon usage
+ 
+* `Multi Buildpack` - [Source](https://github.com/Scalingo/multi-buildpack.git) - Combine different buildpacks during the deployment of your applicaiton.
+* `FFMPEG Buildpack` - [Source](https://github.com/Scalingo/ffmpeg-buildpack.git) - Install a working version of the ffmpeg binary alongside your application
+ 
 ## Use a custom buildpack
 
 We want our users to be able to use the technologies they love, we try to provide the support for
