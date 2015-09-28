@@ -36,7 +36,7 @@ A buildpack is a set of scripts which aims at:
 ## Available buildpacks for specific usage
  
 * `Multi Buildpack` - [Documentation]({% post_url /internals/buildpacks/2015-09-28-multi-buildpack %}) - [Source](https://github.com/Scalingo/multi-buildpack.git) - Combine different buildpacks during the deployment of your applicaiton.
-* `FFMPEG Buildpack` - [Documentation]({% post_url /internals/buildpacks/2015-09-28-ffmpeg-buildpack %}) - [Source](https://github.com/Scalingo/ffmpeg-buildpack.git) - Install a working version of the ffmpeg binary alongside your application
+* `FFmpeg Buildpack` - [Documentation]({% post_url /internals/buildpacks/2015-09-28-ffmpeg-buildpack %}) - [Source](https://github.com/Scalingo/ffmpeg-buildpack.git) - Install a working version of the ffmpeg binary alongside your application
  
 ## Use a custom buildpack
 
