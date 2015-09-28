@@ -16,11 +16,12 @@
             </a>
           </span>
           <ul class='list-unstyled'>
-          {% for post in site.posts limit:8 %}
+          {% assign recent_posts = (site.posts | sort: 'modified_at' | reverse) %}
+          {% for post in recent_posts | limit: 8 %}
             <li class="space-between">
               <a href="{{ post.url }}">{{ post.title }}</a>
               <small class="text-muted">
-                {{ post.date | date_to_string }}
+                {{ post.modified_at | date_to_string }}
               </small>
             </li>
           {% endfor %}
