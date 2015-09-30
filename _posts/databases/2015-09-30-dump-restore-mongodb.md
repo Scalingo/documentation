@@ -4,7 +4,7 @@ modified_at: 2015-09-30 18:34:00
 category: databases
 tags: databases mongodb tunnel
 index: 3
-permalink: /databases/mongodb/dump
+permalink: /databases/mongodb/dump-restore
 ---
 
 {% include info_command_line_tool.md %}
