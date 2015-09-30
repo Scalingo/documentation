@@ -9,9 +9,9 @@ permalink: /databases/mongodb/dump
 
 {% include info_command_line_tool.md %}
 
-## Dump and Restore locally
+## Dump and Restore from your local workstation
 
-You can dump and restore your database locally using [Scalingo CLI]({% post_url cli/2015-09-18-command-line-tool %}) to [create a tunnel]({% post_url /databases/2014-11-24-tunnel %}) to your database:
+You can dump and restore your database from your local workstation using [Scalingo CLI]({% post_url cli/2015-09-18-command-line-tool %}) to [create a tunnel]({% post_url /databases/2014-11-24-tunnel %}) to your database:
 
 A mongodb URL is usually formatted like: <br>
 `mongodb://<username>:<password>@<host>:<port>/<db>`
