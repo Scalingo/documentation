@@ -9,7 +9,7 @@ permalink: /databases/mongodb/dump-restore
 
 {% include info_command_line_tool.md %}
 
-There's two ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})).
+There are two ways to dump a remote database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url /app/2014-10-02-tasks %})).
 
 ## Dump and Restore from your local workstation
 
@@ -52,9 +52,9 @@ You can access your database on '127.0.0.1:54321'
 $ mongorestore --username user --password pass --host 127.0.0.1 --port 54321 -d myapp-123 dump_directory/my-db
 {% endhighlight %}
 
-## Dump and Restore from your Scalingo app
+## Dump and Restore from Scalingo one-off container
 
-You can dump and restore your database remotely using [the command-line-tool]({% post_url cli/2015-09-18-command-line-tool %}) and a one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})).
+You can dump and restore your database remotely using [the command-line-tool]({% post_url cli/2015-09-18-command-line-tool %}) and a one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})). The advantage of this method is the network. From your workstation you don't always have a good bandwidth. From our infrastructure, data transfers will be way faster.
 
 {% highlight bash %}
 $ scalingo -a myapp run bash
