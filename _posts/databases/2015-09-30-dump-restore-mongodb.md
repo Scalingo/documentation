@@ -1,6 +1,6 @@
 ---
 title: How to dump and restore my MongoDB database on Scalingo
-modified_at: 2015-09-30 18:34:00
+modified_at: 2015-10-01 10:06:00
 category: databases
 tags: databases mongodb tunnel
 index: 3
@@ -9,7 +9,7 @@ permalink: /databases/mongodb/dump-restore
 
 {% include info_command_line_tool.md %}
 
-There's two ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involved doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})).
+There's two ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})).
 
 ## Dump and Restore from your local workstation
 
