@@ -1,6 +1,6 @@
 ---
 title: How to dump and restore my MongoDB database on Scalingo
-modified_at: 2015-09-30 18:34:00
+modified_at: 2015-10-01 14:22:00
 category: databases
 tags: databases mongodb tunnel
 index: 3
@@ -42,6 +42,8 @@ $ scalingo -a <app_name> db-tunnel <db_url>
 $ mongorestore --username <user> --password <pass> --host <host> --port <port> -d <db> <directory>
 {% endhighlight %}
 
+If your Scalingo database URL is : `mongodb://myapp-123:H_grwjqBteMMrVye442Zw6@myapp-123.mongo.dbs.scalingo.com:12345/myapp-123`
+
 Example:
 {% highlight bash %}
 $ scalingo -a myapp db-tunnel SCALINGO_MONGO_URL &
@@ -49,7 +51,7 @@ scalingo -a myapp db-tunnel SCALINGO_MONGO_URL
 Building tunnel to myapp-123.mongo.dbs.scalingo.eu:12345
 You can access your database on '127.0.0.1:54321'
 
-$ mongorestore --username user --password pass --host 127.0.0.1 --port 54321 -d myapp-123 dump_directory/my-db
+$ mongorestore --username myapp-123 --password H_grwjqBteMMrVye442Zw6 --host 127.0.0.1 --port 54321 -d myapp-123 dump_directory/my-db
 {% endhighlight %}
 
 ## Dump and Restore from Scalingo one-off container
@@ -60,7 +62,7 @@ You can dump and restore your database remotely using [the command-line-tool]({%
 $ scalingo -a myapp run bash
 
 [00:01] Scalingo ~ $ env | grep SCALINGO_MONGO_URL
-SCALINGO_MONGO_URL=mongodb://example-123:H_grwjqBteMMrVye442Zw6@example-123.mongo.dbs.scalingo.com:30000/example-123
+SCALINGO_MONGO_URL=mongodb://myapp-123:H_grwjqBteMMrVye442Zw6@myapp-123.mongo.dbs.scalingo.com:12345/myapp-123
 
 [00:01] Scalingo ~ $ exit
 exit
@@ -72,7 +74,7 @@ exit
 $ mongodump --username <user> --password <pass> --host <host> --port <port> -d <db> --out <directory>
 {% endhighlight %}
 {% highlight bash %}
-mongorestore --username <user> --password <pass> --host <host> --port <port> -d <db> <directory>
+$ mongorestore --username <user> --password <pass> --host <host> --port <port> -d <db> <directory>
 {% endhighlight %}
 
 Example:
@@ -83,7 +85,7 @@ $ scalingo -a myapp run bash
 
 [00:02] Scalingo /tmp $ mongodump --username user --password pass --host my-db.mongo.dbs.com --port 30000 -d my-db --out dump_directory
 
-[00:03] Scalingo /tmp $ mongorestore --username example-123 --password H_grwjqBteMMrVye442Zw6 --host example-123.mongo.dbs.scalingo.com --port 30000 -d example-123 /tmp/dump_directory/my-db
+[00:03] Scalingo /tmp $ mongorestore --username myapp-123 --password H_grwjqBteMMrVye442Zw6 --host myapp-123.mongo.dbs.scalingo.com --port 12345 -d myapp-123 /tmp/dump_directory/my-db
 
 [00:03] Scalingo /tmp $ exit
 exit
