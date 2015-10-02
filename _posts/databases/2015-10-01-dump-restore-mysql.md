@@ -21,14 +21,14 @@ A mysql URL is usually formatted like: <br>
 ### Dump
 
 {% highlight bash %}
-$ mysqldump -u <username> -p <password> -h <host> -P <port> <db> > output_sql_file.sql
+$ mysqldump -u <username> --password=<password> -h <host> -P <port> <db> > output_sql_file.sql
 {% endhighlight %}
 
 If your remote database URL is : `mysql://user:pass@my-db.mysql.dbs.com:30000/my-db`
 
 Example:
 {% highlight bash %}
-$ mysqldump -u user -p pass -h my-db.mysql.dbs.com -P 30000 my-db > /tmp/dumped_db.sql
+$ mysqldump -u user --password=pass -h my-db.mysql.dbs.com -P 30000 my-db > /tmp/dumped_db.sql
 {% endhighlight %}
 
 ### Restore
@@ -39,7 +39,7 @@ To restore a database to Scalingo, you need to [create a tunnel]({% post_url /da
 $ scalingo -a <app_name> db-tunnel <db_url>
 {% endhighlight %}
 {% highlight bash %}
-$ mysql -u <user> -p <password> -h <host> -P <port> <db> < input_sql_file.sql
+$ mysql -u <user> --password=<password> -h <host> -P <port> <db> < input_sql_file.sql
 {% endhighlight %}
 
 If your Scalingo database URL is : `mysql://myapp-123:H_grwjqBteMMrVye442Zw6@myapp-123.mysql.dbs.scalingo.com:30000/myapp-123`
@@ -51,7 +51,7 @@ scalingo -a myapp db-tunnel SCALINGO_MYSQL_URL
 Building tunnel to myapp-123.mysql.dbs.scalingo.eu:12345
 You can access your database on '127.0.0.1:54321'
 
-$ mysql -u myapp-123 -p H_grwjqBteMMrVye442Zw6 -h 127.0.0.1 -P 54321 myapp-123 < /tmp/dumped_db.sql
+$ mysql -u myapp-123 --password=H_grwjqBteMMrVye442Zw6 -h 127.0.0.1 -P 54321 myapp-123 < /tmp/dumped_db.sql
 {% endhighlight %}
 
 ## Dump and Restore from Scalingo one-off container
@@ -71,19 +71,19 @@ exit
 ### Dump & Restore
 
 {% highlight bash %}
-$ mysqldump -u <username> -p <password> -h <host> -P <port> <db> > output_sql_file.sql
+$ mysqldump -u <username> --password=<password> -h <host> -P <port> <db> > output_sql_file.sql
 {% endhighlight %}
 {% highlight bash %}
-$ mysql -u <user> -p <password> -h <host> -P <port> <db> < input_sql_file.sql
+$ mysql -u <user> --password=<password> -h <host> -P <port> <db> < input_sql_file.sql
 {% endhighlight %}
 
 Example:
 {% highlight bash %}
 $ scalingo -a myapp run bash
 
-[00:02] Scalingo ~ $ mysqldump -u user -p pass -h my-db.mysql.dbs.com -P 30000 my-db > /tmp/dumped_db.sql
+[00:02] Scalingo ~ $ mysqldump -u user --password=pass -h my-db.mysql.dbs.com -P 30000 my-db > /tmp/dumped_db.sql
 
-[00:02] Scalingo ~ $ mysql -u myapp-123 -p H_grwjqBteMMrVye442Zw6 -h myapp-123.mysql.dbs.scalingo.com -P 12345 myapp-123 < /tmp/dumped_db.sql
+[00:02] Scalingo ~ $ mysql -u myapp-123 --password=H_grwjqBteMMrVye442Zw6 -h myapp-123.mysql.dbs.scalingo.com -P 12345 myapp-123 < /tmp/dumped_db.sql
 
 [00:03] Scalingo ~ $ exit
 exit
