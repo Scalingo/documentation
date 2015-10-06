@@ -4,7 +4,7 @@ modified_at: 2014-11-24 00:00:00
 category: databases
 tags: databases mongodb
 index: 2
-permalink: /databases/mongodb/access
+permalink: /databases/mongodb/access/
 ---
 
 {% include info_command_line_tool.md %}

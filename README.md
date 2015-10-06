@@ -20,6 +20,8 @@ tags: time
 
 Be aware that the `categories` will be used in the final URL. In the case of the previous *front matter*, the generated URL will be: `/unix/what-is-epoch.html`.
 
+If you add a `permalink` that doesn't ends with `.html` in the *front matter* you have to append a trailing slash. Otherwise, the generated URL will not match the real accessible URL, which is troublesome for crawlers.
+
 ## Modifying an article
 
 You are welcome to modify any article, but please remember to update `modified_at` before sending your pull request.

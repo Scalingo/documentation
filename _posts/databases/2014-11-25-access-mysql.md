@@ -4,7 +4,7 @@ modified_at: 2014-11-25 00:00:00
 category: databases
 tags: databases mysql
 index: 2
-permalink: /databases/mysql/access
+permalink: /databases/mysql/access/
 ---
 
 {% include info_command_line_tool.md %}

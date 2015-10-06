@@ -4,7 +4,7 @@ modified_at: 2014-11-25 00:00:00
 categor: databases
 tags: databases elasticsearch
 index: 2
-permalink: /databases/elasticsearch/access
+permalink: /databases/elasticsearch/access/
 ---
 
 {% include info_command_line_tool.md %}
