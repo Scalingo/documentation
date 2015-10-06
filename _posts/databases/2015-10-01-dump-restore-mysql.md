@@ -4,7 +4,7 @@ modified_at: 2015-10-01 14:22:00
 category: databases
 tags: databases mysql tunnel
 index: 3
-permalink: /databases/mysql/dump-restore
+permalink: /databases/mysql/dump-restore/
 ---
 
 {% include info_command_line_tool.md %}
