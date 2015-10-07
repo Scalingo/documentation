@@ -35,6 +35,7 @@ $ ->
       </div>'
 
     preRenderFunction: (data) ->
+      $('#st-search-input').get(0).value = ''
       $("#search-modal").modal('show')
 
   $('#st-search-input').swiftype
