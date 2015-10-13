@@ -20,6 +20,8 @@ On Scalingo, you don't need to specify the Ruby version "externally" to your pro
 
 ## environment
 
+
+
 ## domains
 
 To use your own domain on Shelly Cloud, you were used to add your domain to your `Cloudfile`.
@@ -38,3 +40,20 @@ SPDY is not yet available on Scalingo. If you need SPDY support, ping us on [sup
 Websocket is **enabled by default** for all projects, **you don't need to do anything special**.
 
 ## servers
+
+To configure your servers, you will now use a `Procfile` instead of your `Cloudfile`:
+
+Cloudfile:
+{% highlight bash %}
+servers:
+  server1:
+    option1: value1
+    option2: value2
+{% endhighlight %}
+
+Procfile:
+{% highlight bash %}
+server1:
+{% endhighlight %}
+
+Usefull links: [Ruby web server]({% post_url /languages/ruby/2015-06-23-web-server %}).
