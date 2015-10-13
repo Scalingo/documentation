@@ -4,7 +4,7 @@ modified_at: 2015-10-12 18:04:00
 category: databases
 tags: databases postgresql tunnel
 index: 3
-permalink: /databases/postgresql/dump-restore
+permalink: /databases/postgresql/dump-restore/
 ---
 
 {% include info_command_line_tool.md %}
