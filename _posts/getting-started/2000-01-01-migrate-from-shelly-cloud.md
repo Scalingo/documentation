@@ -2,7 +2,10 @@
 title: Migrate from Shelly Cloud
 modified_at: 2015-10-13 16:23:00
 category: getting-started
-tags: shelly cloud, ror, ruby on rails
+tags:
+- shelly cloud
+- ror
+- ruby on rails
 permalink: /migrate-from-shelly-cloud/
 ---
 
