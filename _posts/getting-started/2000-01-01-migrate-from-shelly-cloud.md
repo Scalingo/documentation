@@ -28,7 +28,7 @@ On Scalingo, you don't need to specify the Ruby version "externally" to your pro
 
 ## spdy
 
-SPDY is not yet available on Scalingo. If you really need SPDY support, ping us on [support@scalingo.com](support@scalingo.com).
+SPDY is not yet available on Scalingo. If you need SPDY support, ping us on [support@scalingo.com](support@scalingo.com).
 
 ## websockets
 
