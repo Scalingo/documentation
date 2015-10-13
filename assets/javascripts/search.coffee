@@ -2,17 +2,20 @@
 ---
 
 $ ->
+  searchIcon = $("#search-icon")
   spinner =
     nbRequests: 0
     isSpinning: false
 
     start: () ->
       if not @isSpinning
-        $("#search-icon").html("<i class=\"fa fa-spinner fa-spin\"></i>")
+        searchIcon.removeClass("fa-search")
+        searchIcon.addClass("fa-spinner fa-spin")
         @isSpinning = true
     stop: ->
       if @nbRequests == 0
-        $("#search-icon").html("<i class=\"fa fa-search\"></i>")
+        searchIcon.addClass("fa-search")
+        searchIcon.removeClass("fa-spinner fa-spin")
         @isSpinning = false
 
   htmlEscape = (str) ->
@@ -32,6 +35,7 @@ $ ->
       </div>'
 
     preRenderFunction: (data) ->
+      $('#st-search-input').get(0).value = ''
       $("#search-modal").modal('show')
 
   $('#st-search-input').swiftype
