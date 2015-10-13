@@ -20,14 +20,32 @@ On Scalingo, you don't need to specify the Ruby version "externally" to your pro
 
 ## environment
 
+Shelly Cloud uses two specific environment variables, Scalingo allows you to have any number of environment variables.
+If you want to add or remove some environment variables of your app, we suggest you to manage it from [Scalingo dashboard](https://my.scalingo.com/) "Mass edit" option.
+You can also do it by using our [Command line client]({% post_url /cli/2015-09-18-command-line-tool %}) with the following commands:
 
+* `scalingo -a myapp env-set MYVAR=myvalue`
+* `scalingo -a myapp env-unset MYVAR`
+
+More information about app environment can be found [here]({% post_url /app/2014-09-15-environment %})
+
+------------
+
+Shelly Cloud allowed you to have a "production" and a "staging" environment within the same app.<br>
+On Scalingo, you will have to create as many apps as you need to simulate these environments, i.e using [Scalingo CLI]({% post_url /cli/2015-09-18-command-line-tool %}):
+
+* `scalingo create myapp`
+* `scalingo create myapp-prod`
+* `scalingo create myapp-staging`
+* `scalingo create myapp-staging`
 
 ## domains
 
 To use your own domain on Shelly Cloud, you were used to add your domain to your `Cloudfile`.
-On Scalingo, you will have to add it either:<br>
-- using our [CLI]({% post_url /cli/2015-09-18-command-line-tool %}) **->** `scalingo -a my-app domains-add mydomain.com` <br>
-- or using our [dashboard](https://my.scalingo.com/) **->** https://my.scalingo.com/apps/**my-app**/domains
+On Scalingo, you will have to add it either:
+
+* using our [CLI]({% post_url /cli/2015-09-18-command-line-tool %}) **->** `scalingo -a my-app domains-add mydomain.com`
+* or using our [dashboard](https://my.scalingo.com/) **->** https://my.scalingo.com/apps/**my-app**/domains
 
 For more informations about domains on Scalingo, take a look at our domains page [Configure your domain name]({% post_url /app/2015-04-01-domain %}#configure-your-domain-name).
 
