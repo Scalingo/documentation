@@ -27,31 +27,31 @@ You can also do it by using our [Command line client]({% post_url /cli/2015-09-1
 * `scalingo -a myapp env-set MYVAR=myvalue`
 * `scalingo -a myapp env-unset MYVAR`
 
-More information about app environment can be found [here]({% post_url /app/2014-09-15-environment %})
+More information about app environment can be found [here]({% post_url /app/2014-09-15-environment %}).
 
 ------------
 
-Shelly Cloud allowed you to have a "production" and a "staging" environment within the same app.<br>
+Shelly Cloud allows you to have a "production" and a "staging" environment within the same app.  
 On Scalingo, you will have to create as many apps as you need to simulate these environments, i.e using [Scalingo CLI]({% post_url /cli/2015-09-18-command-line-tool %}):
 
 * `scalingo create myapp`
-* `scalingo create myapp-prod`
+* `scalingo create myapp-production`
 * `scalingo create myapp-staging`
 * `scalingo create myapp-production`
 
 You can manage your working environments and work in the same git project, by adding corresponding remotes to your `.git/config` file, i.e:
 
 * `git remote add scalingo git@scalingo.com:myapp.git`
-* `git remote add scalingo-prod git@scalingo.com:myapp-prod.git`
+* `git remote add scalingo-production git@scalingo.com:myapp-production.git`
 * `git remote add scalingo-staging git@scalingo.com:myapp-staging.git`
-* `git remote add myapp-prod git@scalingo.com:myapp-production.git`
+* `git remote add myapp-production git@scalingo.com:myapp-production.git`
 
 Deploying your app on multiple environments:
 
 * `git push scalingo master`
-* `git push scalingo-prod master`
+* `git push scalingo-production master`
 * `git push scalingo-staging master`
-* `git push myapp-prod master`
+* `git push myapp-production master`
 
 ## domains
 
