@@ -37,7 +37,21 @@ On Scalingo, you will have to create as many apps as you need to simulate these 
 * `scalingo create myapp`
 * `scalingo create myapp-prod`
 * `scalingo create myapp-staging`
-* `scalingo create myapp-staging`
+* `scalingo create myapp-production`
+
+You can manage your working environments and work in the same git project, by adding corresponding remotes to your `.git/config` file, i.e:
+
+* `git remote add scalingo git@scalingo.com:myapp.git`
+* `git remote add scalingo-prod git@scalingo.com:myapp-prod.git`
+* `git remote add scalingo-staging git@scalingo.com:myapp-staging.git`
+* `git remote add myapp-prod git@scalingo.com:myapp-production.git`
+
+Deploying your app on multiple environments:
+
+* `git push scalingo master`
+* `git push scalingo-prod master`
+* `git push scalingo-staging master`
+* `git push myapp-prod master`
 
 ## domains
 
@@ -59,19 +73,51 @@ Websocket is **enabled by default** for all projects, **you don't need to do any
 
 ## servers
 
-To configure your servers, you will now use a `Procfile` instead of your `Cloudfile`:
+To configure your servers on Scalingo, you will have to configure your settings independantly. We will see each point of this sample Cloudfile below:
 
 Cloudfile:
 {% highlight bash %}
 servers:
-  server1:
-    option1: value1
-    option2: value2
+  size:
+  databases:
+  processes:
 {% endhighlight %}
 
-Procfile:
+### <u>size</u>
+
+### <u>databases</u>
+
+Databases on Scalingo are part of our [addons collection](https://scalingo.com/addons).<br>
+Addons work with plans from 512MB (free tier) to 32G for a [MySQL database addon](https://scalingo.com/addons/scalingo-mysql) for example.<br>
+You can add databases using:
+
+* using our [CLI]({% post_url /cli/2015-09-18-command-line-tool %}) **->** `scalingo -a my-app addons-add scalingo-mysql`
+* or using our [dashboard](https://my.scalingo.com/) **->** https://my.scalingo.com/apps/**my-app**/addons
+
+### <u>processes</u>
+
+To set processes which must run on your app, you need to add them to your `Procfile` (at the root of your git project).<br>
+format: `<container_name>: <command>`
+
+Cloudfile implementation:
 {% highlight bash %}
-server1:
+servers:
+  processes:
+    - "rake environment resque:work QUEUE=high"
+    - "rake environment resque:work QUEUE=general"
+    - "rake environment resque:work QUEUE=low_priority"
 {% endhighlight %}
+
+Procfile implementation:
+{% highlight bash %}
+worker_high: rake environment resque:work QUEUE=high
+worker_general: rake environment resque:work QUEUE=general
+worker_low: rake environment resque:work QUEUE=low_priority
+{% endhighlight %}
+
+You will then need to scale these workers to 1 at least (or more if you care about redundancy):
+
+* using [Scalingo CLI]({% post_url /cli/2015-09-18-command-line-tool %}) **->** `scalingo -a my-app scale worker_high:1`
+* or using [Scalingo dashboard](https://my.scalingo.com/) **->** https://my.scalingo.com/apps/**my-app**/containers
 
 Usefull links: [Ruby web server]({% post_url /languages/ruby/2015-06-23-web-server %}).
