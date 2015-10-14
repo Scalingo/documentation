@@ -61,7 +61,7 @@ On Scalingo, you will have to add it either:
 * using our [CLI]({% post_url /cli/2015-09-18-command-line-tool %}) **->** `scalingo -a my-app domains-add mydomain.com`
 * or using our [dashboard](https://my.scalingo.com/) **->** https://my.scalingo.com/apps/**my-app**/domains
 
-For more informations about domains on Scalingo, take a look at our domains page [Configure your domain name]({% post_url /app/2015-04-01-domain %}#configure-your-domain-name).
+For more informations about domains on Scalingo, take a look at our dedicated [domain name management page]({% post_url /app/2015-04-01-domain %}#configure-your-domain-name).
 
 ## spdy
 
