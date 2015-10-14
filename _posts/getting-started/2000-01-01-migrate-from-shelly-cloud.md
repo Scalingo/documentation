@@ -10,7 +10,7 @@ Scalingo's approach to Platform as a Service is closer to the Heroku model than 
 
 In the following sections we'll get through the different bits of configuration present in your **Cloudfile** and explain what to do on Scalingo to achieve the same.
 
-One you've read that, you could take a look at our more generic [Getting Started with Rails]({% post_url /languages/ruby/2015-02-17-getting-started-with-rails %}) page.
+Once you've read that, you could take a look at our more generic [Getting Started with Rails]({% post_url /languages/ruby/2015-02-17-getting-started-with-rails %}) page.
 
 ## ruby_version
 
