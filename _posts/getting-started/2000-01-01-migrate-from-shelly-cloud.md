@@ -96,8 +96,31 @@ You can add databases using:
 
 ### <u>processes</u>
 
-To set processes which must run on your app, you need to add them to your `Procfile` (at the root of your git project).<br>
+On Scalingo, process definition is done through the Procfile file (take a look at our [dedicated Procfile page](/internals/procfile.html) for more informations).
+
 format: `<container_name>: <command>`
+
+Cloudfile implementation:
+{% highlight bash %}
+servers:
+  puma: 1
+{% endhighlight %}
+
+Procfile equivalent:
+{% highlight bash %}
+web: bundle exec puma
+{% endhighlight %}
+
+Cloudfile implementation:
+{% highlight bash %}
+servers:
+  thin: 1
+{% endhighlight %}
+
+Procfile equivalent:
+{% highlight bash %}
+web: bundle exec thin
+{% endhighlight %}
 
 Cloudfile implementation:
 {% highlight bash %}
@@ -125,7 +148,7 @@ You will then need to scale these workers to 1 at least (or more if you care abo
 
 ### Memcaching
 
-On Shelly Cloud, each of your servers is running a Memcache server.<br>
+On Shelly Cloud, each of your servers is running a Memcache server.  
 On Scalingo, you can use Redis to fill the same purpose.
 
 Usefull links: [Ruby web server]({% post_url /languages/ruby/2015-06-23-web-server %}).
