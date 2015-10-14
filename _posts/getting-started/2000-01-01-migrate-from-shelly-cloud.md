@@ -73,7 +73,7 @@ Websocket is **enabled by default** for all projects, **you don't need to do any
 
 ## servers
 
-To configure your servers on Scalingo, you will have to configure your settings independantly. We will see each point of this sample Cloudfile below:
+To configure your servers on Scalingo, you will have to configure your settings independantly. We will see each point of the sample Cloudfile below:
 
 Cloudfile:
 {% highlight bash %}
@@ -117,7 +117,15 @@ worker_low: rake environment resque:work QUEUE=low_priority
 
 You will then need to scale these workers to 1 at least (or more if you care about redundancy):
 
-* using [Scalingo CLI]({% post_url /cli/2015-09-18-command-line-tool %}) **->** `scalingo -a my-app scale worker_high:1`
+* using [Scalingo CLI]({% post_url /cli/2015-09-18-command-line-tool %}) **->**
+  * `scalingo -a myapp scale worker_high:1`
+  * `scalingo -a myapp scale worker_general:1`
+  * `scalingo -a myapp scale worker_low:1`
 * or using [Scalingo dashboard](https://my.scalingo.com/) **->** https://my.scalingo.com/apps/**my-app**/containers
+
+### Memcaching
+
+On Shelly Cloud, each of your servers is running a Memcache server.<br>
+On Scalingo, you can use Redis to fill the same purpose.
 
 Usefull links: [Ruby web server]({% post_url /languages/ruby/2015-06-23-web-server %}).
