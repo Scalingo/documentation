@@ -146,9 +146,9 @@ You will then need to scale these workers to 1 at least (or more if you care abo
   * `scalingo -a myapp scale worker_low:1`
 * or using [Scalingo dashboard](https://my.scalingo.com/) **->** https://my.scalingo.com/apps/**my-app**/containers
 
-### Memcaching
+Related link: [Ruby web server]({% post_url /languages/ruby/2015-06-23-web-server %}).
+
+## Memcaching
 
 On Shelly Cloud, each of your servers is running a Memcache server.  
 On Scalingo, you can use Redis to fill the same purpose.
-
-Usefull links: [Ruby web server]({% post_url /languages/ruby/2015-06-23-web-server %}).
