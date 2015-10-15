@@ -31,7 +31,7 @@ Edit the file `nginx-basic-auth.conf` in this directory with the following conte
 {% highlight bash %}
 location / {
     auth_basic           "Protected Site";
-    auth_basic_user_file "/app/config/htpasswd;
+    auth_basic_user_file "/app/config/htpasswd";
 }
 {% endhighlight %}
 
