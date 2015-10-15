@@ -1,5 +1,5 @@
 ---
-title: Migrate from Shelly Cloud
+title: How to migrate from Shelly Cloud
 modified_at: 2015-10-13 16:23:00
 category: getting-started
 tags: shelly cloud ror ruby rails tutorial
