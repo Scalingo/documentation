@@ -6,8 +6,6 @@ tags: php, http, security, basic-auth
 permalink: /languages/php/basic-auth/
 ---
 
-# Secure your app with HTTP Basic Auth
-
 ## Introduction
 
 Our PHP deployment stack is using Nginx and PHP-fpm to answer your application request.
