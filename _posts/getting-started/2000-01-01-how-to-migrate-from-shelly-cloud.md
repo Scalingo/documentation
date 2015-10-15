@@ -13,7 +13,7 @@ In the following sections we'll get through the different bits of configuration 
 Once you've read that, you could take a look at our more generic [Getting Started with Rails]({% post_url /languages/ruby/2015-02-17-getting-started-with-rails %}) page.
 
 <blockquote class="bg-info">
-  Even though we think this migration documentation is comprehensive enough, don't hesittate to contact our <a href="mailto:support@scalingo.com">support</a> to help you in the migration process.
+  Even though we think this migration documentation is comprehensive enough, don't hesitate to contact our <a href="mailto:support@scalingo.com">support</a> to help you in the migration process.
 </blockquote>
 
 ## ruby_version
