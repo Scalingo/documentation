@@ -29,10 +29,8 @@ mkdir config
 Edit the file `nginx-basic-auth.conf` in this directory with the following content:
 
 {% highlight bash %}
-location / {
-    auth_basic           "Protected Site";
-    auth_basic_user_file "/app/config/htpasswd";
-}
+auth_basic           "Protected Site";
+auth_basic_user_file "/app/config/htpasswd";
 {% endhighlight %}
 
 Create the `config/htpasswd` file with the couples user/encrypted password using the following command:
