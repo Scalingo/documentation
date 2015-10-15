@@ -38,7 +38,7 @@ location / {
 Create the `config/htpasswd` file with the couples user/encrypted password using the following command:
 
 {% highlight bash %}
-htpasswd -c config/htpassword username
+htpasswd -c config/htpasswd username
 
 # Then a prompt will ask for the password
 {% endhighlight %}
@@ -67,7 +67,7 @@ This process requires you to edit the `composer.json` file of your project. Edit
 ## Redeploy your app
 
 {% highlight bash %}
-git add config/nginx-basic-auth.conf config/htpassword composer.json
+git add config/nginx-basic-auth.conf config/htpasswd composer.json
 git commit -m "setup basic auth"
 git push scalingo master
 {% endhighlight %}
