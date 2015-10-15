@@ -3,7 +3,7 @@ title: How to migrate from Shelly Cloud
 modified_at: 2015-10-13 16:23:00
 category: getting-started
 tags: shelly cloud ror ruby rails tutorial
-permalink: /migrate-from-shelly-cloud/
+permalink: /how-to-migrate-from-shelly-cloud/
 ---
 
 Scalingo's approach to Platform as a Service is closer to the Heroku model than the one from Shelly Cloud. It's very easy to understand and you'll be able to quickly migrate your Ruby on Rails project from Shelly Cloud to Scalingo.
