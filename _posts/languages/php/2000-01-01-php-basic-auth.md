@@ -28,7 +28,7 @@ Create a directory `config` in your project:
 
 {% highlight bash %}
 mkdir config
-{% endhighlight %>}
+{% endhighlight %}
 
 Edit the file `nginx-basic-auth.conf` in this directory with the following content:
 
@@ -37,7 +37,7 @@ location / {
     auth_basic           "Protected Site";
     auth_basic_user_file "/app/config/htpasswd;
 }
-{% endhighlight %>}
+{% endhighlight %}
 
 Create the `config/htpasswd` file with the couples user/encrypted password using the following command:
 
@@ -45,7 +45,7 @@ Create the `config/htpasswd` file with the couples user/encrypted password using
 htpasswd -c config/htpassword username
 
 # Then a prompt will ask for the password
-{% endhighlight %>}
+{% endhighlight %}
 
 That's it with those two files, nginx will be able to ask for basic authentication, the last thing
 you have to do is to instruct Scalingo's deployment process to use your configuration file.
@@ -63,7 +63,7 @@ This process requires you to edit the `composer.json` file of your project. Edit
     }
   }
 }
-{% endhighlight %>}
+{% endhighlight %}
 
 > Tip: You can find more information about extra configuration in [the buildpack configuration page](%{ post_url /languages/php/2014-07-07-buildpack }).
 
@@ -74,6 +74,6 @@ This process requires you to edit the `composer.json` file of your project. Edit
 git add config/nginx-basic-auth.conf config/htpassword composer.json
 git commit -m "setup basic auth"
 git push scalingo master
-{% endhighlight %>}
+{% endhighlight %}
 
 That's it basic auth will be asked when connecting to the website.
