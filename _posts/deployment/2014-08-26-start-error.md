@@ -13,7 +13,7 @@ If something wrong happens, the first reflex to have is to look at the logs
 of your app, in most of the case, all the information you need is displayed
 here.
 
-<h2><a id="timeout" href="#">Boot Timeout</a></h2>
+<h2>Boot Timeout</h2>
 
 When started on our servers, your application has __60 seconds__ to bind the
 port defined by the environment variable `PORT`. After this delay, we consider
@@ -25,7 +25,7 @@ that your application is not able to boot and this error happens.
   `PORT`. Then your application is running correctly but it is not reachable.
 
 
-<h2><a id="crashed", href="#">Crash of the application</a></h2>
+<h2>Crash of the application</h2>
 
 When your application starts, it may stops unexpectedly for various reasons
 related to your project.
