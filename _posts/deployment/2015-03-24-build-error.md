@@ -8,7 +8,7 @@ tags: app error deployment quota
 When your application is deployed, the dependencies are gathered and are packaged
 into an _application image_
 
-<h2><a id="buildpack" href="#">Invalid return code from buildpack</a></h2>
+<h2>Invalid return code from buildpack</h2>
 
 You application image is built using a buildpack ([List of buildpacks]({% post_url /internals/buildpacks/2015-01-04-buildpacks %})).
 If the buildpack exits with an error, it is probably linked to your project. You should 
@@ -17,7 +17,7 @@ be able to see the content of the error in your console, then adapt your code ac
 If you think the error comes from our buildpacks, feel free to contact us and we will fix
 it as soon as we can.
 
-<h2><a id="size" href="#">Image too large</a></h2>
+<h2>Image too large</h2>
 
 The maximal size of an application image is __500MB__. If your assets, your
 dependencies and the code of your application is weighing more that this limit.
