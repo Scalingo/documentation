@@ -29,7 +29,7 @@ If the project you want to deploy is not at the root of your GIT repository, you
 ### Technology detection
 
 To do so, we are iterating over technologies alphabetically.
-If your project contains multiple technologies you will need to specify it by setting an environment variable whose value is the custom multi-buildpack's URL.
+If your project contains multiple technologies you will need to specify it by setting an environment variable `BUILDPACK_URL` whose value is the custom multi-buildpack's URL.
 
 More information on [buildpacks](http://doc.scalingo.com/buildpacks/) or [multi-buildpacks](http://doc.scalingo.com/buildpacks/multi)
 
