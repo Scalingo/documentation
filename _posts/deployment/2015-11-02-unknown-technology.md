@@ -2,7 +2,7 @@
 title: Unknown Technology
 modified_at: 2015-11-03 17:03:00
 category: deployment
-tags: app error crash detection
+tags: app error detection
 ---
 
 When pushing your app to Scalingo, you might get the following error:
@@ -27,6 +27,11 @@ When pushing your app to Scalingo, you might get the following error:
 If the project you want to deploy is not at the root of your GIT repository, you need to define the `PROJECT_DIR` environment variable ([see documentation]({% post_url /deployment/2015-06-02-project-dir %})).
 
 ### Technology detection
+
+To do so, we are iterating over technologies alphabetically.
+If your project contains multiple technologies you will need to specify it by setting an environment variable whose value is the custom multi-buildpack's URL.
+
+More information on [buildpacks](http://doc.scalingo.com/buildpacks/) or [multi-buildpacks](http://doc.scalingo.com/buildpacks/multi)
 
 See how we detect your technology:
 
