@@ -29,6 +29,7 @@ If the project you want to deploy is not at the root of your GIT repository, you
 ### Technology detection
 
 See how we detect your technology:
+
 * [Clojure]({% post_url /languages/clojure/2015-01-26-clojure %})
 * [Erlang]({% post_url /languages/erlang/2015-01-26-erlang %})
 * [Go]({% post_url /languages/go/2014-12-22-go %})
