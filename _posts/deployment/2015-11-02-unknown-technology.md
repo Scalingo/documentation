@@ -11,7 +11,11 @@ When pushing your app to Scalingo, you might get the following error:
 <-- Start deployment of [my-app] -->
  !     We didn't find the type of technology your are using...
        We're sorry this build is failing!
-       If you can't find the issue in your application code,
+       
+       Refer to the documentation to find out why:
+       http://doc.scalingo.com/deployment/unknown-technology
+       
+       If you can't find the issue in your application,
        please send us an email at support@scalingo.com
 
        <3,
