@@ -32,11 +32,11 @@ To do so, we are iterating over technologies alphabetically.
 
 That means that if your project contains multiple technologies, we will pick the first one detected.
 
-You can specify a specific buildpack to use by adding the environment variable BUILDPACK_NAME to your project.
+If you want to force the detection page to a specific buildpack to use by adding the environment variable `BUILDPACK_NAME` to your project.
 
 If you want to have all the technologies detected (needed for your build to be successful for example), you can use the multi-buildpack.
 
-You can also add the environment variable `BUILDPACK_URL` to have complete control on the detection and build phasses.
+You can also develop your own buildpack and add the environment variable `BUILDPACK_URL` to have complete control on the detection and build phases.
 
 More information on [buildpacks](http://doc.scalingo.com/buildpacks/) or [multi-buildpacks](http://doc.scalingo.com/buildpacks/multi)
 
