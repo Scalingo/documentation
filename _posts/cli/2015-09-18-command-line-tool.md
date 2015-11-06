@@ -1,6 +1,6 @@
 ---
 title: CLI Command Line Tool
-modified_at: 2015-09-18 18:20:00
+modified_at: 2015-11-05 17:21:00
 category: app
 tags: cli interface app
 ---
@@ -10,6 +10,40 @@ tags: cli interface app
 We provide a command line tool (CLI) able to interact with the platform.
 
 You can find the download link and changelog here [http://cli.scalingo.com](http://cli.scalingo.com)
+
+### Linux
+
+You need to download the binary and put it in your `$PATH`. Downloading and running the `install` script on [http://cli.scalingo.com](http://cli.scalingo.com) is recommended, i.e:
+{% highlight bash %}
+curl -O https://cli-dl.scalingo.io/install && bash install
+{% endhighlight %}
+
+### Windows
+
+We highly recommend to use [git-bash](https://git-for-windows.github.io/) to have an all-in-one deployment environment.
+
+Then, you need to download Scalingo command-line tool:
+
+* [Windows 64 bits users](http://cli-dl.scalingo.io/release/scalingo_latest_windows_amd64.zip)
+* [Windows 32 bits users](http://cli-dl.scalingo.io/release/scalingo_latest_windows_386.zip)
+
+Place the `scalingo.exe` file in the path you want, e.g "C:/Program Files".
+
+From git-bash add this path to your `$PATH` environment variable:
+
+{% highlight bash %}
+$ export PATH=$PATH:/c/Program\ Files/
+{% endhighlight %}
+
+Now you should be able to run `scalingo.exe` from git-bash.
+
+Note that you set `$PATH` for this specific git-bash instance and that you should add the command line above to a `.bashrc` file at the root of your `$HOME`:
+
+{% highlight bash %}
+$ echo "export PATH=$PATH:/c/Program\ Files/" >> $HOME/.bashrc
+{% endhighlight %}
+
+Now `scalingo.exe` will be available from git-bash for your next sessions.
 
 ## Tips
 
@@ -27,19 +61,14 @@ You can find the download link and changelog here [http://cli.scalingo.com](http
 * Make sure bash completion is installed. If you use a current Linux in a non-minimal installation, bash completion should be available. On a Mac, install with `brew install bash-completion`
 
 * Get bash completion script in the directory:
-
   * Linux users `/etc/bash_completion.d/`:
-
-    {% highlight bash %}
+  {% highlight bash %}
     sudo curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete.bash" -o /etc/bash_completion.d/scalingo_complete.sh
-    {% endhighlight %}
-
+  {% endhighlight %}
   * Mac users `/usr/local/etc/bash_completion.d/`:
-
-    {% highlight bash %}
+  {% highlight bash %}
     sudo curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete.bash" -o /usr/local/etc/bash_completion.d/scalingo_complete.sh
-    {% endhighlight %}
-
+  {% endhighlight %}
 * Reload your shell in order to make the completion available:
 
   {% highlight bash %}
