@@ -190,6 +190,17 @@ scalingo -a myapp run --env CUSTOM_ENV=value --env ENV_EXAMPLE=custom
 scalingo -a myapp run --file ./dump.sql
 {% endhighlight %}
 
+### Get metrics of your application
+`scalingo stats`
+
+{% highlight bash %}
+# Get the current stats of the containers of your app
+scalingo -a myapp stats
+
+# Display and update every 10 seconds the stats of the containers of your app
+scalingo -a myapp stats --stream
+{% endhighlight %}
+
 ### Access your database
 `scalingo mongo-console|redis-console|mysql-console|pgsql-console|db-tunnel`
 {% highlight bash %}
