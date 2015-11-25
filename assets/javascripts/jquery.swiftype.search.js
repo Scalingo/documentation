@@ -258,11 +258,11 @@
         previousPage, nextPage;
       if (currentPage != 1) {
         previousPage = currentPage - 1;
-        pages = pages + '<a href="#" class="st-prev" data-hash="true" data-page="' + previousPage + '">&laquo; previous</a>';
+        pages = pages + '<a href="#" class="st-prev mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-hash="true" data-page="' + previousPage + '">previous</a><div class="mdl-layout-spacer"></div>';
       }
       if (currentPage < totalPages) {
         nextPage = currentPage + 1;
-        pages = pages + '<a href="#" class="st-next" data-hash="true" data-page="' + nextPage + '">next &raquo;</a>';
+        pages = pages + '<a href="#" class="st-next mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-hash="true" data-page="' + nextPage + '">next</a>';
       }
       pages += '</div>';
       return pages;
