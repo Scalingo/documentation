@@ -9,7 +9,7 @@ define(['jquery'], function ($) {
 
   if (window.location.pathname !== '/404.html' && document.title.indexOf('404 Not found') == -1) {
     var sidebar_nav = $('.sidebar-nav')
-    var headers = $('.content').find('h2')
+    var headers = $('.main-content').find('h2')
     var ul = $('<ul>').addClass('list-unstyled')
 
     headers.each(function (index, el) {
@@ -35,7 +35,7 @@ define(['jquery'], function ($) {
     })
 
     sidebar_nav.prepend(ul)
-    sidebar_nav.prepend('<strong>Table of content<strong>')
+    sidebar_nav.prepend('<h2>Table of content</h2>')
   }
 
 })
