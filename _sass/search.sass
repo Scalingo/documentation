@@ -1,0 +1,151 @@
+.search-block
+  height: 164px
+  padding: 64px 0px
+  background-image: url("http://www.getmdl.io/assets/demos/transparent.jpg")
+  background-size: cover
+  width: 100%
+  filter: grayscale(60%)
+  -webkit-filter: grayscale(60%)
+  background-position: -700px
+  h2
+    text-align: center
+    a
+      margin: 0px 0px 20px 0px
+      font-weight: 900
+      font-size: 40px
+      color: whitesmoke
+
+.search-form
+  margin-left: auto
+  margin-right: auto
+  max-width: 640px
+  widht: 66%
+
+.search-input
+  padding: 24px 24px 24px 32px
+  width: 100%
+
+.search-label
+  display: block
+  position: relative
+  &:before
+    top: 21px
+    left: 8px
+    font-family: 'Material Icons'
+    color: #424242
+    content: "search"
+    position: absolute
+
+.search-dialog
+  width: 100%
+  height: 100%
+  overflow-x: hidden
+  overflow-y: auto
+  background-color: rgba(0, 0, 0, 0.3)
+  position: fixed
+  z-index: 1040
+  display: none
+  .search-card
+    width: auto
+    margin: 10px
+    position: relative
+    overflow-x: hidden
+  .mdl-card__supporting-text
+    width: auto
+
+@media screen and (min-width: 768px)
+  .search-dialog .search-card
+    margin: 30px auto
+    width: 600px
+
+@media screen and (min-width: 1024px)
+  .search-dialog .search-card
+    margin: 30px auto
+    width: 1024px
+
+.is-hidden
+  visibility: hidden
+
+.st-page
+  display: flex
+  align-items: flex-end
+  flex-direction: row
+
+.st-page, .st-no-results
+  padding-left: 12px
+  padding-right: 12px
+  padding-bottom: 12px
+  padding-top: 12px
+
+.st-prev
+  align-self: flex-start
+
+.st-next
+  align-self: flex-end
+
+div.st-result:first-child
+  padding-top: 20px
+
+.st-result-listing
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-size: 13px
+  letter-spacing: 0.8px
+  margin-top: 40px
+
+div.st-search-summary
+  border-bottom: 1px solid #ccc
+  padding-bottom: 7px
+  margin: 12px 0
+
+div.st-result-listing
+  width: 600px
+
+div.st-result-listing h2
+  font-size: 13px
+  font-weight: normal
+  color: #333
+  margin: 0
+
+div.st-result-listing h2 .st-query
+  font-style: italic
+  color: #666
+
+div.st-result-listing h3
+  font-size: 12px
+  margin: 5px 0
+
+div.st-result
+  border-bottom: 1px solid #ddd
+  padding-left: 12px
+  padding-right: 12px
+  padding-bottom: 12px
+  padding-top: 12px
+
+div.st-result:hover
+  background-color: #eee
+
+div.st-result em
+  color: #2196F3
+  font-size: 16px
+  font-weight: 1000
+
+div.st-result.final
+  border-bottom: none
+  margin-bottom: 0
+
+div.st-result .st-snippet
+  color: #333
+
+div.st-result .st-date
+  color: #999
+
+.st-pagination
+  border-top: 1px solid #ccc
+  margin-top: 5px
+  padding-top: 5px
+
+.st-loading-message
+  font-size: 16px
+  font-style: italic
+  color: #999
+  margin: 10px auto
