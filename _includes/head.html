@@ -6,12 +6,12 @@
   <meta name="twitter:site" content="@ScalingoHQ" />
   <meta name="twitter:title" content="Scalingo - Documentation Center" />
   <meta name="twitter:description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-  <meta name="twitter:image" content="{% if page.twitter_image %}{{ page.twitter_image }}{% elsif page.fb_image %}{{ page.fb_image }}{% else %}{{ 'https://scalingo.com/logo.svg' }}{% endif %}"/>
+  <meta name="twitter:image" content="{% if page.twitter_image %}{{ page.twitter_image }}{% elsif page.fb_image %}{{ page.fb_image }}{% else %}{{ '/assets/images/social_share.jpg' }}{% endif %}"/>
   <title>Scalingo - {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="{% if page.fb_image %}{{ page.fb_image }}{% elsif page.twitter_image %}{{ page.twitter_image }}{% else %}{{ 'https://scalingo.com/logo.svg' }}{% endif %}"/>
+  <meta property="og:image" content="{% if page.fb_image %}{{ page.fb_image }}{% elsif page.twitter_image %}{{ page.twitter_image }}{% else %}{{ '/assets/images/social_share.jpg }}{% endif %}"/>
   <meta property="og:description" content="{{ page.excerpt | strip_html | newline_to_br | strip_newlines | replace: "<br /><br />", " " | replace: "<br />", " " | split: " " | join: " " | truncate: 190 }}" />
   <link rel="alternate" type="application/atom+xml" title="Recent Activity" href="/feed.xml" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
