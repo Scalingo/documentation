@@ -56,7 +56,7 @@
           var $el = $(this);
           e.preventDefault();
           Swiftype.pingSearchResultClick(config.engineKey, data['id'], function() {
-            window.location = $el.attr('href');
+            config.onComplete($el);
           });
         };
       };
@@ -228,6 +228,10 @@
       $resultContainer.html('<p class="st-loading-message">loading...</p>');
     };
 
+  var defaultOnComplete = function(elem) {
+    window.location = elem.attr('href');
+  };
+
   var defaultPostRenderFunction = function(data) {
     var totalResultCount = 0;
     var $resultContainer = this.getContext().resultContainer;
@@ -258,11 +262,11 @@
         previousPage, nextPage;
       if (currentPage != 1) {
         previousPage = currentPage - 1;
-        pages = pages + '<a href="#" class="st-prev mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-hash="true" data-page="' + previousPage + '">previous</a><div class="mdl-layout-spacer"></div>';
+        pages = pages + '<a href="#" class="st-prev" data-hash="true" data-page="' + previousPage + '">&laquo; previous</a>';
       }
       if (currentPage < totalPages) {
         nextPage = currentPage + 1;
-        pages = pages + '<a href="#" class="st-next mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-hash="true" data-page="' + nextPage + '">next</a>';
+        pages = pages + '<a href="#" class="st-next" data-hash="true" data-page="' + nextPage + '">next &raquo;</a>';
       }
       pages += '</div>';
       return pages;
@@ -286,6 +290,7 @@
     renderResultsFunction: defaultRenderResultsFunction,
     renderFunction: defaultRenderFunction,
     renderPaginationForType: defaultRenderPaginationForType,
+    onComplete: defaultOnComplete,
     perPage: 10,
     spelling: 'strict'
   };
