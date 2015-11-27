@@ -49,7 +49,7 @@ $ ->
         </h3>
         <p>' + hl + '</p>
       </div>'
-    renderPaginationForType: (type, totalPages, currentPage) ->
+    renderPaginationForType: (type, currentPage, totalPages) ->
       pages = '<div class="st-page">'
       if currentPage != 1
         previousPage = currentPage - 1
