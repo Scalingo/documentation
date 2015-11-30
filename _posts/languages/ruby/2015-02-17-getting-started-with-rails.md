@@ -47,9 +47,9 @@ Add the gem `pg` to your `Gemfile`
 
 Add the gem `mysql` to your `Gemfile`:
 
-```
+{% highlight ruby %}
 gem 'mysql2', '~> v0.3.18'
-```
+{% endhighlight %}
 
 Then set the following environment variable:
 
