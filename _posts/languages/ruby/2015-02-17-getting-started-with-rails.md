@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Rails
-modified_at: 2015-02-17 00:00:00
+modified_at: 2015-11-30 00:00:00
 category: getting-started
 tags: ruby rails tutorial getting-started-tutorial
 index: 3
@@ -45,7 +45,13 @@ Add the gem `pg` to your `Gemfile`
 
 ### MySQL
 
-Add the gem `mysql2` to your `Gemfile` and set the following environment variable:
+Add the gem `mysql` to your `Gemfile`:
+
+```
+gem 'mysql2', '~> v0.3.18'
+```
+
+Then set the following environment variable:
 
 * `DATABASE_URL`
   → Copy the value of `SCALINGO_MYSQL_URL` and replace 'mysql://' by 'mysql2://'
