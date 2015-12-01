@@ -9,7 +9,8 @@ requirejs.config({
     'jquery.swiftype.search': ['jquery'],
     'search': ['jquery', 'jquery.swiftype.autocomplete', 'jquery.swiftype.search', 'bootstrap-modal'],
     'jquery.ba-hashchange.min': ['jquery'],
-    'highlight': ['highlight.pack']
+    'highlight': ['highlight.pack'],
+    'anchor': ['jquery', 'table-of-content']
   }
 })
 
@@ -17,6 +18,6 @@ requirejs([
   'table-of-content',
   'jquery.ba-hashchange.min',
   'highlight',
-  'search'
+  'search',
+  'anchor'
   ])
-
