@@ -5,14 +5,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@ScalingoHQ" />
   <meta name="twitter:title" content="Scalingo - Documentation Center" />
-  <meta name="twitter:description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta name="twitter:description" content="{% if page.title and page.url != '/index.html' %}{{ page.title }}{% else %}{{ 'Getting started' }}{% endif %}" />
   <meta name="twitter:image" content="{% if page.twitter_image %}{{ page.twitter_image }}{% elsif page.fb_image %}{{ page.fb_image }}{% else %}{{ 'http://doc.scalingo.com/assets/images/social_share.jpg' }}{% endif %}"/>
   <title>Scalingo - {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="{% if page.fb_image %}{{ page.fb_image }}{% elsif page.twitter_image %}{{ page.twitter_image }}{% else %}{{ 'http://doc.scalingo.com/assets/images/social_share.jpg' }}{% endif %}"/>
-  <meta property="og:description" content="{{ page.excerpt | strip_html | newline_to_br | strip_newlines | replace: "<br /><br />", " " | replace: "<br />", " " | split: " " | join: " " | truncate: 190 }}" />
+  <meta property="og:description" content="{% if page.url == '/index.html' %}{{ 'Getting started' }}{% else %}{{ page.excerpt | strip_html | newline_to_br | strip_newlines | replace: "<br /><br />", " " | replace: "<br />", " " | split: " " | join: " " | truncate: 190 }}{% endif %}" />
   <link rel="alternate" type="application/atom+xml" title="Recent Activity" href="/feed.xml" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="shortcut icon" href="https://scalingo.com/favicon.ico" type="image/vnd.microsoft.icon">
@@ -22,7 +22,6 @@
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" media="screen">
   <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/stylesheets/main.css">
-  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
