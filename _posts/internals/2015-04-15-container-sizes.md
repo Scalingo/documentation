@@ -1,6 +1,6 @@
 ---
 title: Container Sizes
-modified_at: 2015-04-15 00:00:00
+modified_at: 2015-12-02 00:00:00
 category: internals
 tags: internals containers sizes
 ---
@@ -54,5 +54,5 @@ tags: internals containers sizes
 
 Our 30 days free trial only gives you access to small and medium containers, if you want
 to use another kind of size, please [fill your billing profile and payment
-method](https://my.scalingo.com/apps/billing)
+method](https://my.scalingo.com/billing)
 

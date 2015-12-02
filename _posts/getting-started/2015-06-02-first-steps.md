@@ -1,6 +1,6 @@
 ---
 title: First Steps On Scalingo
-modified_at: 2015-06-02 00:00:00
+modified_at: 2015-12-02 00:00:00
 category: getting-started
 tags: follow-the-light ssh
 index: 0
@@ -31,7 +31,7 @@ For any operating system, you need to copy the content of the public key to your
 
 With our dashbaord:
 
-[https://my.scalingo.com/apps/keys](https://my.scalingo.com/apps/keys)
+[https://my.scalingo.com/keys](https://my.scalingo.com/keys)
 
 With our command line client:
 

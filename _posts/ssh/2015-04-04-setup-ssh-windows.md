@@ -1,6 +1,6 @@
 ---
 title: Setup SSH on Windows
-modified_at: 2015-11-06 10:17:00
+modified_at: 2015-12-02 10:17:00
 category: getting-started
 tags: follow-the-light ssh windows git
 index: 2
@@ -44,4 +44,4 @@ $ scalingo keys-add <key_name> $HOME/.ssh/id_rsa.pub
 
 And if you are using [Scalingo Dashboard](https://my.scalingo.com):
 
-Just go to [https://my.scalingo.com/apps/keys](https://my.scalingo.com/apps/keys) and create a new key with the content of `id_rsa.pub`.
+Just go to [https://my.scalingo.com/keys](https://my.scalingo.com/keys) and create a new key with the content of `id_rsa.pub`.
