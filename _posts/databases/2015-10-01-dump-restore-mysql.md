@@ -1,6 +1,6 @@
 ---
 title: How to dump and restore my MySQL database on Scalingo
-modified_at: 2015-10-01 14:22:00
+modified_at: 2015-12-03 00:00:00
 category: databases
 tags: databases mysql tunnel
 index: 3
@@ -18,73 +18,78 @@ You can dump and restore your database from your local workstation using [Scalin
 A mysql URL is usually formatted like: <br>
 `mysql://<username>:<password>@<host>:<port>/<db>`
 
+To get the URL of your database, go to the 'Environment' part of your dashboard or
+run the following command:
+
+{% highlight bash %}
+$ scalingo -a myapp env | grep MYSQL
+{% endhighlight %}
+
+If your remote database URL is:
+
+{% highlight bash %}
+mysql://user:pass@my-db.mysql.dbs.com:30000/my-db
+{% endhighlight %}
+
+### Setup the tunnel
+
+{% highlight bash %}
+$ scalingo -a myapp db-tunnel SCALINGO_MYSQL_URL
+scalingo -a myapp db-tunnel SCALINGO_MYSQL_URL
+Building tunnel to my-db.mysql.dbs.scalingo.eu:30000
+You can access your database on '127.0.0.1:10000'
+{% endhighlight %}
+
 ### Dump
 
+The command definition is:
 {% highlight bash %}
-$ mysqldump -u <username> --password=<password> -h <host> -P <port> <db> > output_sql_file.sql
+$ mysqldump -u <username> --password=<password> -h <host> -P <port> <db> > dump.sql
 {% endhighlight %}
 
-If your remote database URL is : `mysql://user:pass@my-db.mysql.dbs.com:30000/my-db`
+Applied to our example:
 
-Example:
 {% highlight bash %}
-$ mysqldump -u user --password=pass -h my-db.mysql.dbs.com -P 30000 my-db > /tmp/dumped_db.sql
+$ mysqldump -u my-db --password=pass -h 127.0.0.1 -P 10000 my-db > /tmp/dumped_db.sql
 {% endhighlight %}
+
+As you can see we're using the host and port provided by the tunnel, not those of the URL
 
 ### Restore
 
-To restore a database to Scalingo, you need to [create a tunnel]({% post_url /databases/2014-11-24-tunnel %}) and simply run `mysql` with your dumped database as standart input:
-
+The command definition is:
 {% highlight bash %}
-$ scalingo -a <app_name> db-tunnel <db_url>
-{% endhighlight %}
-{% highlight bash %}
-$ mysql -u <user> --password=<password> -h <host> -P <port> <db> < input_sql_file.sql
+$ mysql -u <username> --password=<password> -h <host> -P <port> <db> < dump.sql
 {% endhighlight %}
 
-If your Scalingo database URL is : `mysql://myapp-123:H_grwjqBteMMrVye442Zw6@myapp-123.mysql.dbs.scalingo.com:30000/myapp-123`
-
-Example:
+With our example:
 {% highlight bash %}
-$ scalingo -a myapp db-tunnel SCALINGO_MYSQL_URL &
-scalingo -a myapp db-tunnel SCALINGO_MYSQL_URL
-Building tunnel to myapp-123.mysql.dbs.scalingo.eu:12345
-You can access your database on '127.0.0.1:54321'
-
-$ mysql -u myapp-123 --password=H_grwjqBteMMrVye442Zw6 -h 127.0.0.1 -P 54321 myapp-123 < /tmp/dumped_db.sql
+$ mysql -u my-db --password=pass -h 127.0.0.1 -P 10000 my-db < /tmp/dumped_db.sql
 {% endhighlight %}
 
 ## Dump and Restore from Scalingo one-off container
 
-You can dump and restore your database remotely using [the command-line-tool]({% post_url cli/2015-09-18-command-line-tool %}) and a one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})). The advantage of this method is the network. From your workstation you don’t always have a good bandwidth. From our infrastructure, data transfers will be way faster.
-
-{% highlight bash %}
-$ scalingo -a myapp run bash
-
-[00:01] Scalingo ~ $ env | grep SCALINGO_MYSQL_URL
-SCALINGO_MYSQL_URL=mysql://myapp-123:H_grwjqBteMMrVye442Zw6@myapp-123.mysql.dbs.scalingo.com:12345/myapp-123
-
-[00:01] Scalingo ~ $ exit
-exit
-{% endhighlight %}
+You can dump and restore your database remotely using
+[the command-line-tool]({% post_url cli/2015-09-18-command-line-tool %})
+and a one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})).
+The advantage of this method is the network.
+From your workstation you don’t always have a good bandwidth. From our infrastructure,
+data transfers will be way faster.
 
 ### Dump & Restore
 
 {% highlight bash %}
-$ mysqldump -u <username> --password=<password> -h <host> -P <port> <db> > output_sql_file.sql
-{% endhighlight %}
-{% highlight bash %}
-$ mysql -u <user> --password=<password> -h <host> -P <port> <db> < input_sql_file.sql
-{% endhighlight %}
-
-Example:
-{% highlight bash %}
 $ scalingo -a myapp run bash
 
-[00:02] Scalingo ~ $ mysqldump -u user --password=pass -h my-db.mysql.dbs.com -P 30000 my-db > /tmp/dumped_db.sql
+[00:00] Scalingo ~ $ mysqldump -u user --password=pass -h my-db.mysql.dbs.scalingo.com -P 30000 my-db > /tmp/dumped_db.sql
+...
 
-[00:02] Scalingo ~ $ mysql -u myapp-123 --password=H_grwjqBteMMrVye442Zw6 -h myapp-123.mysql.dbs.scalingo.com -P 12345 myapp-123 < /tmp/dumped_db.sql
+# Do something with the dump, i.e.e send through FTP or to an external server
 
-[00:03] Scalingo ~ $ exit
+[00:00] Scalingo ~ $ mysql -u my-db --password=pass -h my-db.mysql.dbs.scalingo.com -P 30000 my-db < /tmp/dumped_db.sql
+...
+[00:00] Scalingo ~ $ exit
 exit
 {% endhighlight %}
+
+After exiting the one-off container, the dump will be lost, you've to do something with it in the container.
