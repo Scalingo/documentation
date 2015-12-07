@@ -1,5 +1,5 @@
 ---
-title: About Databases
+title: Scalingo database add-ons
 modified_at: 2014-11-24 00:00:00
 category: databases
 tags: index-databases polydbs
