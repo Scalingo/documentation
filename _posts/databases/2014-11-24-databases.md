@@ -46,8 +46,8 @@ where you will find the connection chain named: `SCALINGO_<TYPE>_URL`
 
 ## Backups
 
-If your database is in a paid plan (ie it's not in a "free plan") we'll make backups of your database on a daily basis around 1AM Central European Time (CET or UTC+0100), however we don't keep those backups forever. The following rules are applied:
+If your database is in a paid plan (ie it's not in a "free plan") we'll make backups of your database on a daily basis around 1AM Central European Time (CET or UTC+0100), however we don't keep those backups forever. The following rules are applied for backups storing:
 
-* Everyday of 1 month
+* Everyday for the past 30 days (1 month)
 * One per week during the 2nd and 3rd months
 * One per month during the 4th, 5th and 6th months
