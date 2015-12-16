@@ -7,6 +7,8 @@ tags: app deployment one-click
 
 If you want to give people the opportunity to deploy your project instantly on Scalingo, you can setup a deploy button on your github project or even on your website. A `scalingo.json` file is needed at the root of your github project in order to generate the deployment page.
 
+At the moment, **only public projects hosted on Github are supported**.
+
 ##Display a one-click deploy button
 
 To do so, you will need to add a link to `https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>`.
@@ -36,7 +38,7 @@ Example:
    <img src="https://cdn.scalingo.com/deploy/button.svg" alt="Deploy on Scalingo" data-canonical-src="https://cdn.scalingo.com/deploy/button.svg" style="max-width:100%;">
 </a>
 
-##Manifest scalingo.json
+## Example manifest scalingo.json
 
 {% highlight json %}
 {
