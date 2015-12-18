@@ -11,7 +11,7 @@ We provide a command line tool (CLI) able to interact with the platform.
 
 You can find the download link and changelog here [http://cli.scalingo.com](http://cli.scalingo.com)
 
-### Linux
+### Linux & MacOS X
 
 You need to download the binary and put it in your `$PATH`. Downloading and running the `install` script on [http://cli.scalingo.com](http://cli.scalingo.com) is recommended, i.e:
 {% highlight bash %}
