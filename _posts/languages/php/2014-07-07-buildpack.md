@@ -78,7 +78,7 @@ will be managed automatically, you have nothing to specify yourself.
 
 List of frameworks:
 
-* Symfony 2
+* [Symfony 2]({% post_url /languages/php/2000-01-01-php-symfony2-deployment %})
 * Zend Framework 2
 * Magento
 * Slim
