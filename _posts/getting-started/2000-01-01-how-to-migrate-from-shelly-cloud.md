@@ -159,10 +159,10 @@ On Scalingo, you can use Redis to fill the same purpose.
 
 ## Data migration from Shelly Cloud to Scalingo
 
-To migration out of Shelly Cloud to Scalingo databases, you can read our generic data migration guides:
+To migrate data out of Shelly Cloud database to Scalingo ones, you can read our generic data migration guides:
 
 * [How to dump and restore my MySQL database on Scalingo]({% post_url /databases/2015-10-01-dump-restore-mysql %})
 * [How to dump and restore my PostgreSQL database on Scalingo]({% post_url /databases/2015-10-01-dump-restore-postgresql %})
 * [How to dump and restore my MongoDB database on Scalingo]({% post_url /databases/2015-09-30-dump-restore-mongodb %})
 
-There's no specific migration guide for Redis database but you can follow the same logic written in the guides liste above. Furthermore, is your Redis is only used for cache data you may not need to transfer them, it will be simpler to rebuild them from your Scalingo app.
+There's no specific migration guide for Redis database but you can follow the same logic written in the guides listed above. Furthermore, if your Redis is only used for cache data you may prefer not to transfer them, it will be simpler to rebuild them from your Scalingo app.
