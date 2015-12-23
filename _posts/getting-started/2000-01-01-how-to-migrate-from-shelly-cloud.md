@@ -160,6 +160,7 @@ On Scalingo, you can use Redis to fill the same purpose.
 ## Data migration from Shelly Cloud to Scalingo
 
 To migration out of Shelly Cloud to Scalingo databases, you can read our generic data migration guides:
+
 * [How to dump and restore my MySQL database on Scalingo]({% post_url /databases/2015-10-01-dump-restore-mysql %})
 * [How to dump and restore my PostgreSQL database on Scalingo]({% post_url /databases/2015-10-01-dump-restore-postgresql %})
 * [How to dump and restore my MongoDB database on Scalingo]({% post_url /databases/2015-09-30-dump-restore-mongodb %})
