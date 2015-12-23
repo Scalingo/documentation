@@ -1,6 +1,6 @@
 ---
 title: How to migrate from Shelly Cloud
-modified_at: 2015-10-13 16:23:00
+modified_at: 2015-12-23 11:14:00
 category: getting-started
 tags: shelly cloud ror ruby rails tutorial
 permalink: /how-to-migrate-from-shelly-cloud/
@@ -156,3 +156,12 @@ Related link: [Ruby web server]({% post_url /languages/ruby/2015-06-23-web-serve
 
 On Shelly Cloud, each of your servers is running a Memcache server.  
 On Scalingo, you can use Redis to fill the same purpose.
+
+## Data migration from Shelly Cloud to Scalingo
+
+To migration out of Shelly Cloud to Scalingo databases, you can read our generic data migration guides:
+* [How to dump and restore my MySQL database on Scalingo]({% post_url /databases/2015-10-01-dump-restore-mysql %})
+* [How to dump and restore my PostgreSQL database on Scalingo]({% post_url /databases/2015-10-01-dump-restore-postgresql %})
+* [How to dump and restore my MongoDB database on Scalingo]({% post_url /databases/2015-09-30-dump-restore-mongodb %})
+
+There's no specific migration guide for Redis database but you can follow the same logic written in the guides liste above. Furthermore, is your Redis is only used for cache data you may not need to transfer them, it will be simpler to rebuild them from your Scalingo app.
