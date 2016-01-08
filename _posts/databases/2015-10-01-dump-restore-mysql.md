@@ -1,6 +1,6 @@
 ---
 title: How to dump and restore my MySQL database on Scalingo
-modified_at: 2015-12-03 00:00:00
+modified_at: 2016-01-08 00:00:00
 category: databases
 tags: databases mysql tunnel
 index: 3
@@ -15,7 +15,7 @@ There's two ways to dump a distant database and restore the data in your Scaling
 
 You can dump and restore your database from your local workstation using [Scalingo CLI]({% post_url cli/2015-09-18-command-line-tool %}) to [create a tunnel]({% post_url /databases/2014-11-24-tunnel %}) to your database:
 
-A mysql URL is usually formatted like: <br>
+A MySQL URL is usually formatted like: <br>
 `mysql://<username>:<password>@<host>:<port>/<db>`
 
 To get the URL of your database, go to the 'Environment' part of your dashboard or

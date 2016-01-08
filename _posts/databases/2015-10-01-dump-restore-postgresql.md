@@ -1,6 +1,6 @@
 ---
 title: How to dump and restore my PostgreSQL database on Scalingo
-modified_at: 2015-10-12 18:04:00
+modified_at: 2016-01-08 18:04:00
 category: databases
 tags: databases postgresql tunnel
 index: 3
@@ -9,82 +9,87 @@ permalink: /databases/postgresql/dump-restore/
 
 {% include info_command_line_tool.md %}
 
-There are two ways to dump a remote database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url /app/2014-10-02-tasks %})).
+There's two ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})).
 
 ## Dump and Restore from your local workstation
 
 You can dump and restore your database from your local workstation using [Scalingo CLI]({% post_url cli/2015-09-18-command-line-tool %}) to [create a tunnel]({% post_url /databases/2014-11-24-tunnel %}) to your database:
 
 A PostgreSQL URL is usually formatted like: <br>
-`postgres://<username>:<password>@<host>:<port>/<db>`
+`postgresql://<username>:<password>@<host>:<port>/<db>`
+
+To get the URL of your database, go to the 'Environment' part of your dashboard or
+run the following command:
+
+{% highlight bash %}
+$ scalingo -a myapp env | grep POSTGRESQL
+{% endhighlight %}
+
+If your remote database URL is:
+
+{% highlight bash %}
+postgresql://user:pass@my-db.postgresql.dbs.com:30000/my-db
+{% endhighlight %}
+
+### Setup the tunnel
+
+{% highlight bash %}
+$ scalingo -a myapp db-tunnel SCALINGO_POSTGRESQL_URL
+scalingo -a myapp db-tunnel SCALINGO_POSTGRESQL_URL
+Building tunnel to my-db.postgresql.dbs.scalingo.eu:30000
+You can access your database on '127.0.0.1:10000'
+{% endhighlight %}
 
 ### Dump
 
+The command definition is:
 {% highlight bash %}
-$ PGPASSWORD=<password> pg_dump -U <username> -h <host> -p <port> <db> > dump_sql_file.sql
+$ PGPASSWORD=<password> pg_dump -O -n public -U <username> -h <host> -p <port> <db> > dump.sql
 {% endhighlight %}
 
-If your remote database URL is : `postgres://user:pass@my-db.postgresql.dbs.com:30000/my-db`
+Applied to our example:
 
-Example:
 {% highlight bash %}
-$ PGPASSWORD=pass pg_dump -U user -h my-db.postgresql.dbs.com -p 30000 my-db > dump_sql_file.sql
+$ PGPASSWORD=pass pg_dump -O -n public -U my-db -h 127.0.0.1 -p 10000 my-db > dump.sql
 {% endhighlight %}
+
+As you can see we're using the host and port provided by the tunnel, not those of the URL.
 
 ### Restore
 
-To restore a database to Scalingo, you need to [create a tunnel]({% post_url /databases/2014-11-24-tunnel %}) and run pg_restore:
-
+The command definition is:
 {% highlight bash %}
-$ scalingo -a <app_name> db-tunnel <db_url>
-{% endhighlight %}
-{% highlight bash %}
-$ PGPASSWORD=<password> pg_restore -U <username> -h <host> -p <port> -d <db> dump_sql_file.sql
+$ PGPASSWORD=<password> psql -U <username> -h <host> -p <port> -d <db> < dump.sql
 {% endhighlight %}
 
-If your Scalingo database URL is : `postgres://myapp-123:H_grwjqBteMMrVye442Zw6@myapp-123.postgresql.dbs.scalingo.com:12345/myapp-123`
-
-Example:
+With our example:
 {% highlight bash %}
-$ scalingo -a myapp db-tunnel SCALINGO_POSTGRESQL_URL &
-scalingo -a myapp db-tunnel SCALINGO_POSTGRESQL_URL
-Building tunnel to myapp-123.postgresql.dbs.scalingo.eu:12345
-You can access your database on '127.0.0.1:54321'
-
-$ PGPASSWORD=H_grwjqBteMMrVye442Zw6 pg_restore -U myapp-123 -h 127.0.0.1 -p 54321 -d myapp-123 dump_sql_file.sql
+$ PGPASSWORD=pass psql -U my-db -h 127.0.0.1 -p 10000 -d my-db < dump.sql
 {% endhighlight %}
 
 ## Dump and Restore from Scalingo one-off container
 
-You can dump and restore your database remotely using [the command-line-tool]({% post_url cli/2015-09-18-command-line-tool %}) and a one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})). The advantage of this method is the network. From your workstation you don't always have a good bandwidth. From our infrastructure, data transfers will be way faster.
-
-{% highlight bash %}
-$ scalingo -a myapp run bash
-
-[00:01] Scalingo ~ $ env | grep SCALINGO_POSTGRESQL_URL
-SCALINGO_POSTGRESQL_URL=postgres://myapp-123:H_grwjqBteMMrVye442Zw6@myapp-123.postgresql.dbs.scalingo.com:12345/myapp-123
-
-[00:01] Scalingo ~ $ exit
-exit
-{% endhighlight %}
+You can dump and restore your database remotely using
+[the command-line-tool]({% post_url cli/2015-09-18-command-line-tool %})
+and a one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})).
+The advantage of this method is the network.
+From your workstation you don’t always have a good bandwidth. From our infrastructure,
+data transfers will be way faster.
 
 ### Dump & Restore
 
 {% highlight bash %}
-$ PGPASSWORD=<password> pg_dump -U <username> -h <host> -p <port> <db> > dump_sql_file.sql
-{% endhighlight %}
-{% highlight bash %}
-$ PGPASSWORD=<password> pg_restore -U <user> -h <host> -p <port> -d <db> dump_sql_file.sql
-{% endhighlight %}
-
-Example:
-{% highlight bash %}
 $ scalingo -a myapp run bash
 
-[00:02] Scalingo ~ $ PGPASSWORD=pass pg_dump -U user -h my-db.postgresql.dbs.com -p 30000 my-db > dump_sql_file.sql
+[00:00] Scalingo ~ $ PGPASSWORD=pass pg_dump -U user -h my-db.postgresql.dbs.scalingo.com -P 30000 my-db > /tmp/dump.sql
+...
 
-[00:03] Scalingo ~ $ PGPASSWORD=H_grwjqBteMMrVye442Zw6 pg_restore -U myapp-123 -h myapp-123.postgresql.dbs.scalingo.com -p 12345 -d myapp-123 dump_sql_file.db
+# Do something with the dump, i.e.e send through FTP or to an external server
 
-[00:03] Scalingo ~ $ exit
+[00:00] Scalingo ~ $ PGPASSWORD=pass psql -U my-db -h my-db.postgresql.dbs.scalingo.com -P 30000 my-db < /tmp/dump.sql
+...
+[00:00] Scalingo ~ $ exit
 exit
 {% endhighlight %}
+
+After exiting the one-off container, the dump will be lost, you've to do something with it in the container.
