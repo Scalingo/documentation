@@ -18,14 +18,14 @@ your data are.
 
 ### SQL
 
-* PostgreSQL
-* MySQL
+* [PostgreSQL]({% post_url /databases/2000-01-01-scalingo-postgresql-addon %})
+* [MySQL]({% post_url /databases/2000-01-01-scalingo-mysql-addon %})
 
 ### NoSQL
 
-* [MongoDB]({% post_url /databases/2000-01-01-mongodb-addon %})
-* Redis
-* Elasticsearch
+* [MongoDB]({% post_url /databases/2000-01-01-scalingo-mongodb-addon %})
+* [Redis]({% post_url /databases/2000-01-01-scalingo-redis-addon %})
+* [Elasticsearch]({% post_url /databases/2000-01-01-scalingo-elasticsearch-addon %})
 
 ## Backups
 

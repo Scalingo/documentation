@@ -53,6 +53,8 @@ $ scalingo addons-plans scalingo-mongodb
 
 Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_MONGO_URL` and `MONGO_URL`. `MONGO_URL` is an alias to `SCALINGO_MONGO_URL` for the convenience of some libraries such as the framework [Meteor]({% post_url /languages/javascript/meteor/2015-02-09-getting-started-with-meteor %}) or the Ruby gem **mongoid**, but using `SCALINGO_MONGO_URL` is prefered in most cases. To find out how to use them in your code please refer to [Application environment]({% post_url /app/2014-09-15-environment %}).
 
+In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
+
 You can get those variables from the Dashboard or the command-line interface.
 
 ### From the Dashboard
@@ -61,7 +63,7 @@ You can get those variables from the Dashboard or the command-line interface.
 2. Click on **Environment** tab
 3. `MONGO_URL` and `SCALINGO_MONGO_URL` are displayed
 
-{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_environment.png" %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_environment_mongo.png" %}
 {% include mdl_img.html %}
 
 ### From the command-line interface
@@ -72,8 +74,6 @@ $ scalingo -a example-app env | grep MONGO
 MONGO_URL=$SCALINGO_MONGO_URL
 SCALINGO_MONGO_URL=mongodb://example-app-3030:2rj5FYoiKRFp8eZhpMz7@example-app-3030.mongo.dbs.appsdeck.eu:30949/example-app-3030
 {% endhighlight %}
-
-In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
 
 ## Remote access your database
@@ -150,6 +150,14 @@ The Scalingo MongoDB dashboard is the central place for administrative tasks suc
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_overview.png" %}
 {% include mdl_img.html %}
 
+### Database Upgrade
+
+When the database vendor releases a new version of your database engine, we will try to provide it as soon as possible. You will have the choice to upgrade your database with just one click through your database dashboard.
+
+This operation is similar to changing your database plan; your database will be stopped and restarted with new database environment. Thanks to Docker containers this happens seamlessly and quickly without manual action. When this operation finishes, your application will be restarted.
+
+{% assign data = "Beware that no downgrade is possible once your database is upgraded." %}
+{% include danger %}
 
 ### Container Stats
 
@@ -189,11 +197,22 @@ The Scalingo MongoDB dashboard is the central place for administrative tasks suc
   </tbody>
 </table>
 
-## Activate MongoDB Oplog
+## MongoDB Oplog
 
-Oplog is a MongoDB feature which logs all the operations achieved on a MongoDB cluster. Meteor uses this feature to sync different instances of an application. If you wish to use Oplog in your non-Meteor application please refer to the official [MongoDB documentation](https://docs.mongodb.org/manual/core/replica-set-oplog/).
+Oplog is a MongoDB feature which logs all the operations achieved on a MongoDB cluster. This feature is tightly related to MongoDB replication, but is also used by Meteor to increase app performance. If you wish to use Oplog in your application please refer to the official [MongoDB documentation](https://docs.mongodb.org/manual/core/replica-set-oplog/). Oplog can be enabled from the database dashboard, when activated it wil automatically add the `MONGO_OPLOG_URL` variable in your application.
 
-Oplog can be enabled from the database dashboard. When activated it wil automatically add the `MONGO_OPLOG_URL` variable in your application. This variable name is the standard name to configure Meteor. As a result, you juste have to restart your application.
+### Activating Oplog
+
+1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
+2. Click on **Addons** tab
+3. Click **Link to dashboard** which will take you to the **Scalingo MongoDB dashboard**
+4. Click on **Advanced** tab
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_advanced.png" %}
 {% include mdl_img.html %}
+
+### Meteor specific
+
+Meteor uses this feature to sync different instances of an application. Your can read more about how to scale Meteor <a href="http://doc.scalingo.com/languages/javascript/nodejs/meteor/#how-to-scale-meteor">here</a>.
+
+The variable `MONGO_OPLOG_URL` is the one used by Meteor. As a result, after activating Oplog you juste have to restart your application.
