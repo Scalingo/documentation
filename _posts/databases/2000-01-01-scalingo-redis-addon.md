@@ -81,24 +81,6 @@ SCALINGO_REDIS_URL=redis://example-app-3030:l2ebPNwe-IWVJmV8OlLX@example-app-303
 If you need to access your database from other places than your app please follow the [Access your database]({% post_url /databases/2015-06-24-access-database %}) guide.
 
 
-## Backups
-
-{% include database_backups.md %}
-
-### Download automated backups
-
-Automated backups are listed in the database specific dashboard. 
-
-1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
-2. Click on **Addons** tab
-3. Click **Link to dashboard** which will take you to the **Scalingo Redis dashboard**
-4. Click on **Backups** tab
-5. Download the backup you want
-
-{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_redis_backups.png" %}
-{% include mdl_img.html %}
-
-
 ## Changing plans
 
 You can upgrade or downgrade your database plan whenever you need it. This operation happens instantly thanks to Docker containers and no manual input is required. When you change the plan, your database will be stopped then simply restarted on a new host with new parameters of the chosen plan. During the operation the connection is dropped bewteen your app and the database. Finally, after the operation is successful, the related app will be restarted. 
@@ -152,7 +134,7 @@ When the database vendor releases a new version of your database engine, we will
 
 This operation is similar to changing your database plan; your database will be stopped and restarted with new database environment. Thanks to Docker containers this happens seamlessly and quickly without manual action. When this operation finishes, your application will be restarted.
 
-{% assign data = "Beware that no downgrade is possible once your database is upgraded." %}
+{% assign data = "Beware that no downgrade is possible once your database has been upgraded." %}
 {% include danger %}
 
 
@@ -185,3 +167,21 @@ This operation is similar to changing your database plan; your database will be 
     </tr>
   </tbody>
 </table>
+
+
+## Backups
+
+{% include database_backups.md %}
+
+### Download automated backups
+
+Automated backups are listed in the database specific dashboard. 
+
+1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
+2. Click on **Addons** tab
+3. Click **Link to dashboard** which will take you to the **Scalingo Redis dashboard**
+4. Click on **Backups** tab
+5. Download the backup you want
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_redis_backups.png" %}
+{% include mdl_img.html %}

@@ -87,28 +87,6 @@ If you’re using the <em>mysql2</em> gem, you will need to copy the value of `S
 If you need to access your database from other places than your app please follow the [Access your database]({% post_url /databases/2015-06-24-access-database %}) guide.
 
 
-## Backups
-
-{% include database_backups.md %}
-
-### Download automated backups
-
-Automated backups are listed in the database specific dashboard. 
-
-1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
-2. Click on **Addons** tab
-3. Click **Link to dashboard** which will take you to the **Scalingo MySQL dashboard**
-4. Click on **Backups** tab
-5. Download the backup you want
-
-{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mysql_backups.png" %}
-{% include mdl_img.html %}
-
-### Manual database backup
-
-If you wish to manually backup your database, please follow [How to dump and restore my MySQL database on Scalingo]({% post_url /databases/2015-10-01-dump-restore-mysql %}) guide.
-
-
 ## Changing plans
 
 You can upgrade or downgrade your database plan whenever you need it. This operation happens instantly thanks to Docker containers and no manual input is required. When you change the plan, your database will be stopped then simply restarted on a new host with new parameters of the chosen plan. During the operation the connection is dropped bewteen your app and the database. Finally, after the operation is successful, the related app will be restarted. 
@@ -162,7 +140,7 @@ When the database vendor releases a new version of your database engine, we will
 
 This operation is similar to changing your database plan; your database will be stopped and restarted with new database environment. Thanks to Docker containers this happens seamlessly and quickly without manual action. When this operation finishes, your application will be restarted.
 
-{% assign data = "Beware that no downgrade is possible once your database is upgraded." %}
+{% assign data = "Beware that no downgrade is possible once your database has been upgraded." %}
 {% include danger %}
 
 
@@ -203,3 +181,25 @@ This operation is similar to changing your database plan; your database will be 
     </tr>
   </tbody>
 </table>
+
+
+## Backups
+
+{% include database_backups.md %}
+
+### Download automated backups
+
+Automated backups are listed in the database specific dashboard. 
+
+1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
+2. Click on **Addons** tab
+3. Click **Link to dashboard** which will take you to the **Scalingo MySQL dashboard**
+4. Click on **Backups** tab
+5. Download the backup you want
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mysql_backups.png" %}
+{% include mdl_img.html %}
+
+### Manual database backup
+
+If you wish to manually backup your database, please follow [How to dump and restore my MySQL database on Scalingo]({% post_url /databases/2015-10-01-dump-restore-mysql %}) guide.
