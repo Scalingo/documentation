@@ -52,7 +52,7 @@ delayedjob: bin/delayed_job run
 <blockquote class="bg-danger">
 Do not use <code>delayed_job start</code> to start the process.
 <code>start</code> starts the process in background and our crash detection
-system will consider it as crashed, it as to run in the foreground thanks to
+system will consider it as crashed, it has to run in the foreground thanks to
 the <code>run</code> command.
 </blockquote>
 
