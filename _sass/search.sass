@@ -14,143 +14,97 @@
       color: whitesmoke
 
 .search-form
+  position: relative
   margin-left: auto
   margin-right: auto
   max-width: 640px
   width: 66%
-
-.search-input
-  font-size: 15px
-  padding: 24px 24px 24px 32px
-  width: 100%
-  -webkit-appearance: none
-  border: 0px
-
-.search-label
-  display: block
-  position: relative
-  &:before
-    top: 21px
-    left: 8px
-    font-family: 'Material Icons'
-    color: #424242
-    content: "search"
+  .search-icon
     position: absolute
+    z-index: 1
+    top: 22px
+    left: 16px
+    color: #424242
 
-.search-subsection-link
-  color: #333333
-  font-weight: 300
-
-.search-dialog
+#search-input
+  -webkit-appearance: none
+  background-color: #FAFAFA
+  border-radius: 2px
+  border: 0px
+  box-sizing: border-box
+  font-size: 15px
+  outline: none
+  padding: 0
+  padding: 24px 24px 24px 56px
+  transition: box-shadow .4s ease, background-color .4s ease
   width: 100%
-  height: 100%
-  overflow-x: hidden
-  overflow-y: auto
-  background-color: rgba(0, 0, 0, 0.3)
-  position: fixed
-  z-index: 1040
-  display: none
-  .search-card
-    width: auto
-    margin: 10px
-    position: relative
-    overflow-x: hidden
-  .mdl-card__supporting-text
-    width: auto
+  &:focus
+    background-color: white
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2)
 
-@media screen and (min-width: 768px)
-  .search-dialog .search-card
-    margin: 30px auto
-    width: 600px
+//
+// Algolia Docsearch
+//
 
-@media screen and (min-width: 1024px)
-  .search-dialog .search-card
-    margin: 30px auto
-    width: 1024px
+$color-border: #2196F3
+$color-border-light: lighten($color-border, 15%)
+$color-category-header-background: #2196F3
+$color-highlight-header-background: lighten($color-category-header-background, 15%)
+$color-highlight-text: #03A9F4
+$color-selected-background: aliceblue
+$color-selected-text: #03A9F4
+$color-left-column-bg: #E1F5FE
+$color-left-column: #424242
 
-.is-hidden
-  visibility: hidden
+$breakpoint-large: 768px
 
-.st-page
-  display: flex
-  align-items: flex-end
-  flex-direction: row
+.algolia-autocomplete
+  width: 100%
 
-.st-page, .st-no-results
-  padding-left: 12px
-  padding-right: 12px
-  padding-bottom: 12px
-  padding-top: 12px
+.algolia-docsearch-footer
+  padding-right: 4px
 
-.st-prev
-  align-self: flex-start
+.aa-dropdown-menu
+  border-radius: 2px
+  border: 0
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2)
+  font-size: 14px
+  overflow: hidden
+  padding-left: 0
+  padding-right: 0
+  padding-top: 0
+  transition: all .2s ease
+  width: 100%
 
-.st-next
-  align-self: flex-end
+.algolia-docsearch-suggestion
+  border-bottom: 1px solid $color-border
 
-div.st-result:first-child
-  padding-top: 20px
+.algolia-docsearch-suggestion--category-header
+  background: $color-category-header-background
 
-.st-result-listing
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
-  font-size: 13px
-  letter-spacing: 0.8px
-  margin-top: 40px
+.algolia-docsearch-suggestion--highlight
+  color: black
+  background: #E1F5FE
+.algolia-docsearch-suggestion--category-header
+  .algolia-docsearch-suggestion--highlight
+    background: $color-highlight-header-background
 
-div.st-search-summary
-  border-bottom: 1px solid #ccc
-  padding-bottom: 7px
-  margin: 12px 0
+.aa-cursor .algolia-docsearch-suggestion--content
+  color: $color-selected-text
+  .algolia-docsearch-suggestion--highlight
+    color: $color-selected-text
 
-div.st-result-listing
-  width: 600px
+.aa-cursor .algolia-docsearch-suggestion
+  background: white
 
-div.st-result-listing h2
-  font-size: 13px
-  font-weight: normal
-  color: #333
-  margin: 0
+.algolia-docsearch-footer
+  border-top: 1px solid $color-border-light
 
-div.st-result-listing h2 .st-query
-  font-style: italic
-  color: #666
+@media (min-width: $breakpoint-large)
+  .algolia-docsearch-suggestion
+    border-bottom: 1px solid $color-border-light
 
-div.st-result-listing h3
-  font-size: 12px
-  margin: 5px 0
-
-div.st-result
-  border-bottom: 1px solid #ddd
-  padding-left: 12px
-  padding-right: 12px
-  padding-bottom: 12px
-  padding-top: 12px
-
-div.st-result:hover
-  background-color: #eee
-
-div.st-result em
-  color: #2196F3
-  font-size: 16px
-  font-weight: 1000
-
-div.st-result.final
-  border-bottom: none
-  margin-bottom: 0
-
-div.st-result .st-snippet
-  color: #333
-
-div.st-result .st-date
-  color: #999
-
-.st-pagination
-  border-top: 1px solid #ccc
-  margin-top: 5px
-  padding-top: 5px
-
-.st-loading-message
-  font-size: 16px
-  font-style: italic
-  color: #999
-  margin: 10px auto
+  .algolia-docsearch-suggestion--subcategory-column
+    border-right: 1px solid $color-border-light
+    background: $color-left-column-bg
+    color: $color-left-column
