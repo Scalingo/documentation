@@ -13,10 +13,10 @@ In Ruby you can use [clockwork](http://rubygems.org/gems/clockwork), [resque-sch
 
 With clockwork, you would end up with a Procfile similar to this one:
 
-```ruby
+{% highlight ruby %}
 web: bundle exec puma -t 1:3 -p $PORT
 clock: bundle exec clockwork clock.rb
-```
+{% endhighlight %}
 
 ## PHP
 
