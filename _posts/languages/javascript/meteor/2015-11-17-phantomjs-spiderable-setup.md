@@ -61,7 +61,7 @@ Error: Meteor code must always run within a Fiber. Try wrapping callbacks that y
     at Function.Router.createController (packages/iron_router/lib/router.js:201:1)
     at Function.Router.dispatch (packages/iron_router/lib/router_server.js:39:1)
     at Object.router (packages/iron_router/lib/router.js:15:1)
-    at next (/app/demeteorized/bundle/programs/server/npm/webapp/node_modules/connect/lib/proto.js:190:15)
+    at next (/app/.app-build/bundle/programs/server/npm/webapp/node_modules/connect/lib/proto.js:190:15)
     at packages/spiderable/spiderable_server.js:128:1
     at ChildProcess.exithandler (child_process.js:656:7)
     at ChildProcess.emit (events.js:98:17)
