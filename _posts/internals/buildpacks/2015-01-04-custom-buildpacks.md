@@ -1,6 +1,6 @@
 ---
 title: Use a custom buildpack
-modified_at: 2015-01-04 00:00:00
+modified_at: 2016-01-28 00:00:00
 category: internals
 tags: custom buildpacks build image
 ---
@@ -29,11 +29,12 @@ Then during the deployment, you'll be able to see:
 ## Build a custom buildpack
 
 Our execution stack is public and can be found as a docker image on the __Docker Hub__
-Its name is [appsdeck/builder:latest](https://registry.hub.docker.com/u/appsdeck/builder/)
+Its name is [scalingo/builder:latest](https://hub.docker.com/u/scalingo/builder/). The base
+image is based on Ubuntu 14.04, so you'll find every tool from the `ubuntu:14.04` docker image.
 
 {% highlight bash %}
-docker pull appsdeck/builder
-docker run -v ./custom-buildpack:/buildpack appsdeck/builder:latest bash
+docker pull scalingo/builder
+docker run -v ./custom-buildpack:/buildpack scalingoa/builder:latest bash
 {% endhighlight %}
 
 Then if you need to build third-party binaries, you'll be assured that they will work
