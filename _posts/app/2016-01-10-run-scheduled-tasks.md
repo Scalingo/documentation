@@ -35,9 +35,9 @@ scalingo scale clock:1
 With PHP, you can use the package [`cron/cron`](https://github.com/Cron/Cron),
 otherwise each framework has its own task scheduler you may want to use:
 
-* https://packagist.org/packages/cron/cron
-* https://packagist.org/packages/liebig/cron
-* https://packagist.org/packages/heartsentwined/zf2-cron
+* [https://packagist.org/packages/cron/cron](https://packagist.org/packages/cron/cron)
+* [https://packagist.org/packages/liebig/cron](https://packagist.org/packages/liebig/cron)
+* [https://packagist.org/packages/heartsentwined/zf2-cron](https://packagist.org/packages/heartsentwined/zf2-cron)
 
 ### Example
 
