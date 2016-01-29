@@ -56,7 +56,6 @@ The file which implements the cron-like process is defined in `cron.php`:
 
 {% highlight php %}
 <?php
-<?php
   require(__DIR__ . '/vendor/autoload.php');
 
   echo "[CRON] Starting tasks scheduler\n";
