@@ -7,7 +7,7 @@ tags: app
 
 Running scheduled tasks on Scalingo should be done by yourself. We don't
 implement cron or cron-like features in our container system. Most langages
-have alternative that are listed below.
+have alternative that are listed below.  
 
 ## Ruby
 

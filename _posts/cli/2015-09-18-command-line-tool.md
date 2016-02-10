@@ -14,6 +14,7 @@ You can find the download link and changelog here [http://cli.scalingo.com](http
 ### Linux & MacOS X
 
 You need to download the binary and put it in your `$PATH`. Downloading and running the `install` script on [http://cli.scalingo.com](http://cli.scalingo.com) is recommended, i.e:
+
 ```bash
 curl -O https://cli-dl.scalingo.io/install && bash install
 ```
@@ -62,13 +63,17 @@ Now `scalingo.exe` will be available from git-bash for your next sessions.
 
 * Get bash completion script in the directory:
   * Linux users `/etc/bash_completion.d/`:
+
   ```bash
     sudo curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete.bash" -o /etc/bash_completion.d/scalingo_complete.sh
   ```
+
   * Mac users `/usr/local/etc/bash_completion.d/`:
+
   ```bash
     sudo curl "https://raw.githubusercontent.com/Scalingo/cli/master/cmd/autocomplete/scripts/scalingo_complete.bash" -o /usr/local/etc/bash_completion.d/scalingo_complete.sh
   ```
+
 * Reload your shell in order to make the completion available:
 
   ```bash
@@ -104,7 +109,9 @@ Now `scalingo.exe` will be available from git-bash for your next sessions.
 ## Features
 
 ### Create new apps
+
 `scalingo create`
+
 ```bash
 scalingo create my-new-app
 
@@ -116,6 +123,7 @@ scalingo create my-new-app --remote custom
 
 ### Setup your account SSH keys
 `scalingo keys|keys-add|keys-remove`
+
 ```bash
 scalingo keys
 scalingo keys-add "Laptop SSH key" $HOME/.ssh/id_rsa.pub
@@ -124,6 +132,7 @@ scalingo keys-remove "Laptop SSH key"
 
 ### Configure their environment
 `scalingo env|env-set|env-unset`
+
 ```bash
 scalingo -a myapp env
 scalingo -a myapp env-set NODE_ENV=production
@@ -132,6 +141,7 @@ scalingo -a myapp env-unset NODE_ENV
 
 ### Configure custom domain names
 `scalingo domains|domains-add|domains-ssl|domains-remove`
+
 ```bash
 scalingo -a myapp domains
 scalingo -a myapp domains-add example.com
@@ -141,6 +151,7 @@ scalingo -a myapp domains-remove example.com
 
 ### Manage collaborators of the application
 `scalingo collaborators|collaborators-add|collaborators-remove`
+
 ```bash
 scalingo -a myapp collaborators
 scalingo -a myapp collaborators-add user@example.com
@@ -149,6 +160,7 @@ scalingo -a myapp collaborators-remove user@example.com
 
 ### List existing addons and plans
 `scalingo addons-list|addons-plans`
+
 ```bash
 scalingo addons-list
 scalingo addons-plans scalingo-mongodb
@@ -156,6 +168,7 @@ scalingo addons-plans scalingo-mongodb
 
 ### Manage addons of your applications
 `scalingo addons|addons-add|addons-remove|addons-upgrade`
+
 ```bash
 scalingo -a myapp addons
 scalingo -a myapp addons-add scalingo-mongodb 1g
@@ -165,6 +178,7 @@ scalingo -a myapp addons-upgrade myapp_12345 2g
 
 ### Read and watch the logs
 `scalingo logs`
+
 ```bash
 # Display the last 1000 lines of log
 scalingo -a myapp logs -n 1000
@@ -180,6 +194,7 @@ scalingo -a myapp logs -F "web|worker"
 
 ### Run custom job
 `scalingo run`
+
 ```bash
 scalingo -a myapp run bundle exec rails console
 
@@ -203,6 +218,7 @@ scalingo -a myapp stats --stream
 
 ### Access your database
 `scalingo mongo-console|redis-console|mysql-console|pgsql-console|db-tunnel`
+
 ```bash
 scalingo -a myapp mongo-console
 scalingo -a myapp redis-console
@@ -215,7 +231,9 @@ scalingo -a myapp db-tunnel MONGO_URL
 
 ### Manage containers, scale
 `scalingo ps|restart|scale`
-```bashscalingo -a myapp ps
+
+```bash
+scalingo -a myapp ps
 scalingo -a myapp restart web:1
 scalingo -a myapp scale web:2
 scalingo -a myapp scale worker:2:L

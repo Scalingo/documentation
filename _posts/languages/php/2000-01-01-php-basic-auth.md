@@ -59,7 +59,7 @@ This process requires you to edit the `composer.json` file of your project. Edit
 }
 ```
 
-> Tip: You can find more information about extra configuration in [the PHP support page]({% post_url /languages/php/2014-07-02-php %}).
+> Tip: You can find more information about extra configuration in [the PHP support page]({% post_url 2014-07-02-php %}).
 
 
 ## Redeploy your app

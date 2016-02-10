@@ -14,7 +14,7 @@ You can download git-bash [here](https://github.com/git-for-windows/git/releases
 
 ## Install Scalingo command-line tool
 
-You can install Scalingo CLI by following [these instructions]({% post_url /cli/2015-09-18-command-line-tool %}).
+You can install Scalingo CLI by following [these instructions]({% post_url 2015-09-18-command-line-tool %}).
 
 ## Create a new SSH key pair
 
@@ -36,7 +36,7 @@ By default both private and public keys will be located in your current director
 
 ## Add ssh key to Scalingo
 
-If you are using [Scalingo CLI](http://cli.scalingo.com/), you can do it by using `scalingo keys-add` command ([See scalingo keys]({% post_url /cli/2015-09-18-command-line-tool %}#setup-your-account-ssh-keys))
+If you are using [Scalingo CLI](http://cli.scalingo.com/), you can do it by using `scalingo keys-add` command ([See scalingo keys]({% post_url 2015-09-18-command-line-tool %}#setup-your-account-ssh-keys))
 
 ```bash
 $ scalingo keys-add <key_name> $HOME/.ssh/id_rsa.pub

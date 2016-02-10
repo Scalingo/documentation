@@ -6,13 +6,11 @@ requirejs.config({
   },
   shim: {
     'search': ['docsearch'],
-    'highlight': ['highlight.pack'],
     'anchor': ['jquery', 'table-of-content']
   }
 })
 
 requirejs([
-  'highlight',
   'search',
   'anchor'
 ])
