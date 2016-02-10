@@ -1,5 +1,5 @@
 ---
-title: [Private Beta] Scalingo VPNC IPSec Addon
+title: "[Private Beta] Scalingo VPNC IPSec Addon"
 modified_at: 2016-02-03 00:00:00
 category: addons
 tags: vpn addon custom feature
@@ -28,9 +28,9 @@ working correctly.
 First add, your need to provision the add to your application. This can be done
 through the dashboard or with our command line tool.
 
-{% highlight bash %}
+```bash
 scalingo scalingo-vpn-ipsec base
-{% endhighlight %}
+```
 
 ### Setup the configuration
 
@@ -40,22 +40,22 @@ contains a text area in which you've to write your `vpnc.conf` file.
 
 Usually such configuration file looks like this:
 
-{% highlight bash %}
+```bash
 IPSec gateway [server]
 IPSec ID [VPN group]
 IPSec secret [shared secret]
 Xauth username [username]
 Xauth password [password]
-{% endhighlight %}
+```
 
 Once you've validated the configuration, the environment variable
 `SCALINGO_VPNC_CONF` will be added to your application, the app will be
 restarted. You'll be able to see in the logs:
 
-{% highlight bash %}
+```bash
 2016-02-03 13:59:31.321065492 +0100 CET [web-1] -----> Starting VPN connection
 2016-02-03 13:59:31.321223270 +0100 CET [web-1] -----> VPNC started in background (pid: 70)...
-{% endhighlight %}
+```
 
 ### Forbidden configuration
 
