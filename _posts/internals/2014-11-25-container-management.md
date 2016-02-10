@@ -23,7 +23,7 @@ cleanly shutdown your process.
 
 ### Example
 
-{% highlight go %}
+```go
 listener, err := net.Listen("tcp", ":"+port)
 if err != nil {
   panic(err)
@@ -36,4 +36,4 @@ signal.Notify(sigs, syscall.SIGTERM)
 <-sigs
 fmt.Println("SIGTERM, time to shutdown")
 listener.Close()
-{% endhighlight %}
+```

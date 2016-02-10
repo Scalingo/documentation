@@ -15,34 +15,34 @@ You may need to have the binary `ffmpeg` installed alongside your application, t
 This buildpack won't work alone, you need to combine it with the buildpack of the technology you are using. To achieve
 that you need to setup the [Multi Buildpack](http://doc.scalingo.com/buildpacks/multi):
 
-{% highlight bash %}
+```bash
 scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack.git
-{% endhighlight %}
+```
 
 Then you have to write a `.buildpacks` file with the reference to this buildpack and the one
 you want to use:
 
-{% highlight bash %}
+```bash
 https://github.com/Scalingo/ffmpeg-buildpack.git
 https://github.com/Scalingo/go-buildpack.git
-{% endhighlight %}
+```
 
 Add this file to your git repository:
 
-{% highlight bash %}
+```bash
 git add .buildpacks
 git commit -m "Setup .buildpacks to install ffmpeg alongside the application on Scalingo"
-{% endhighlight %}
+```
 
 ## Deploy your application
 
-{% highlight bash %}
+```bash
 git push scalingo master
-{% endhighlight %}
+```
 
 ## Check everything is working
 
-{% highlight bash %}
+```bash
 $ scalingo run 'ffmpeg -version'
 
 ffmpeg version 2.8-static http://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2015 the FFmpeg developers
@@ -56,7 +56,7 @@ libavfilter     5. 40.101 /  5. 40.101
 libswscale      3.  1.101 /  3.  1.101
 libswresample   1.  2.101 /  1.  2.101
 libpostproc    53.  3.100 / 53.  3.100
-{% endhighlight %}
+```
 
 You should see ffmpeg output.
 

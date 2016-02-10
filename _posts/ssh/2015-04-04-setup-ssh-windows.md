@@ -21,12 +21,12 @@ You can install Scalingo CLI by following [these instructions]({% post_url /cli/
 Then you need to create an ssh key pair in the correct directory.
 
 [git-bash]
-{% highlight bash %}
+```bash
 $ cd $HOME
 $ mkdir .ssh
 $ cd .ssh
 $ ssh-keygen.exe -t rsa
-{% endhighlight %}
+```
 
 Follow the instructions to generate a new SSH key pair. You will be asked to encrypt
 you private key with a password. This step is optional but for further security you may
@@ -38,9 +38,9 @@ By default both private and public keys will be located in your current director
 
 If you are using [Scalingo CLI](http://cli.scalingo.com/), you can do it by using `scalingo keys-add` command ([See scalingo keys]({% post_url /cli/2015-09-18-command-line-tool %}#setup-your-account-ssh-keys))
 
-{% highlight bash %}
+```bash
 $ scalingo keys-add <key_name> $HOME/.ssh/id_rsa.pub
-{% endhighlight %}
+```
 
 And if you are using [Scalingo Dashboard](https://my.scalingo.com):
 

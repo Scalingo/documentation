@@ -9,13 +9,13 @@ To setup **Continuous Deployment** from Semaphore to Scalingo, please follow the
 
 ### Setup Deploy Commands
 
-{% highlight bash %}
+```bash
 # Add Scalingo as a known host
 ssh-keyscan -H -p 22 scalingo.com >> ~/.ssh/known_hosts
 
 # Push the branch you've setup on Semaphore
 git push --force git@scalingo.com:example-app.git $BRANCH_NAME:master
-{% endhighlight %}
+```
 
 ### SSH Keys
 

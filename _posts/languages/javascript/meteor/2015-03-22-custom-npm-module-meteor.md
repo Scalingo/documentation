@@ -10,18 +10,18 @@ permalink: /languages/javascript/nodejs/meteor/npm/
 
 ### Install the package meteorhacks:npm
 
-{% highlight bash %}
+```bash
 $ meteor add meteorhacks:npm
                                               
 Changes to your project's package version selections:
                                               
 meteorhacks:async  added, version 1.0.0       
 meteorhacks:npm    added, version 1.2.2
-{% endhighlight %}
+```
 
 ### Run the project to initialize the module
 
-{% highlight bash %}
+```bash
 $ meteor
 [[[[[ ~/path/to/app ]]]]]                 
 
@@ -36,10 +36,10 @@ $ meteor
 
 -> npm support has been initialized.
 -> please start your app again.
-{% endhighlight %}
+```
 
 ### Re-run the project to define the version
-{% highlight bash %}
+```bash
 $ meteor
 [[[[[ ~/path/to/app ]]]]]                 
 
@@ -53,7 +53,7 @@ npm-container  added, version 1.0.0
 => Started your app.                          
 
 => App running at: http://localhost:3000/
-{% endhighlight %}
+```
 
 At that point your application is initialized to install and deploy custom
 NPM modules by adding them to the `packages.json` file at the root of your
@@ -66,22 +66,22 @@ ensure the application will be deployed correctly.
 
 * Add  the `npm-container` package to your project
 
-{% highlight bash %}
+```bash
 $ echo 'npm-container' >> .meteor/packages
-{% endhighlight %}
+```
 
 * Check in in your GIT repository all the generated files.
 
-{% highlight bash %}
+```bash
 $ git add -f packages/npm-container .meteor/packages .meteor/versions packages.json
 $ git commit -m "Add NPM package handling"
-{% endhighlight %}
+```
 
 That's it, all the required files are staged for commit:
 
-{% highlight bash %}
+```bash
 $ git push scalingo master
-{% endhighlight %}
+```
 
 ## Common errors:
 
@@ -89,7 +89,7 @@ $ git push scalingo master
 
 #### Complete message
 
-{% highlight bash %}
+```bash
   => Creating container package for npm modules
   
   -> npm support has been initialized.
@@ -103,7 +103,7 @@ $ git push scalingo master
 fs.js:666
   return binding.readdir(pathModule._makeLong(path));
                  ^
-{% endhighlight %}
+```
 
 #### Solution
 
@@ -116,10 +116,10 @@ the `.meteor/packages` file.
 
 #### Complete message
 
-{% highlight bash %}
+```bash
 Could not resolve the specified constraints for this project:
 Error: unknown package: npm-container
-{% endhighlight %}
+```
 
 #### Solution
 
@@ -132,12 +132,12 @@ not been added correctly to the GIT repository, please ensure this point.
 
 #### Complete message
 
-{% highlight bash %}
+```bash
 => Errors while initializing project: 
 
 While building package npm-container: 
 error: couldn't read npm version lock information
-{% endhighlight %}
+```
 
 ### Solution
 
@@ -145,12 +145,12 @@ This error happened when the internal files of `npm-container` are already defin
 and that you've added or updated a npm package in your project. To fix this you have
 to remove these data from your git repository
 
-{% highlight bash %}
+```bash
 git rm -r --cached packages/npm-container/.npm
 echo packages/npm-container/.npm >> .gitignore
 git commit -m "remove internal data of npm-container from repository"
 git push scalingo master
-{% endhighlight %}
+```
 
 That should do the trick and your application will be deployed correctly.
 

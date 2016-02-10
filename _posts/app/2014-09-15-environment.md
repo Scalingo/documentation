@@ -34,33 +34,33 @@ The following example is to get the value of the `PORT` variable.
 
 #### Ruby
 
-{% highlight ruby %}
+```ruby
 ENV["PORT"]
-{% endhighlight %}
+```
 
 #### Go
 
-{% highlight go %}
+```go
 os.Getenv("PORT")
-{% endhighlight %}
+```
 
 #### Javascript
 
-{% highlight js %}
+```js
 process.env.PORT
-{% endhighlight %}
+```
 
 #### Python
 
-{% highlight python %}
+```python
 os.getenv("PORT")
-{% endhighlight %}
+```
 
 #### PHP
 
-{% highlight ruby %}
+```ruby
 $_ENV["PORT"]
-{% endhighlight %}
+```
 
 #### Other languages
 

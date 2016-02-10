@@ -21,51 +21,51 @@ A PostgreSQL URL is usually formatted like: <br>
 To get the URL of your database, go to the 'Environment' part of your dashboard or
 run the following command:
 
-{% highlight bash %}
+```bash
 $ scalingo -a myapp env | grep POSTGRESQL
-{% endhighlight %}
+```
 
 If your remote database URL is:
 
-{% highlight bash %}
+```bash
 postgresql://user:pass@my-db.postgresql.dbs.com:30000/my-db
-{% endhighlight %}
+```
 
 ### Setup the tunnel
 
-{% highlight bash %}
+```bash
 $ scalingo -a myapp db-tunnel SCALINGO_POSTGRESQL_URL
 scalingo -a myapp db-tunnel SCALINGO_POSTGRESQL_URL
 Building tunnel to my-db.postgresql.dbs.scalingo.eu:30000
 You can access your database on '127.0.0.1:10000'
-{% endhighlight %}
+```
 
 ### Dump
 
 The command definition is:
-{% highlight bash %}
+```bash
 $ PGPASSWORD=<password> pg_dump -O -n public -U <username> -h <host> -p <port> <db> > dump.sql
-{% endhighlight %}
+```
 
 Applied to our example:
 
-{% highlight bash %}
+```bash
 $ PGPASSWORD=pass pg_dump -O -n public -U my-db -h 127.0.0.1 -p 10000 my-db > dump.sql
-{% endhighlight %}
+```
 
 As you can see we're using the host and port provided by the tunnel, not those of the URL.
 
 ### Restore
 
 The command definition is:
-{% highlight bash %}
+```bash
 $ PGPASSWORD=<password> psql -U <username> -h <host> -p <port> -d <db> < dump.sql
-{% endhighlight %}
+```
 
 With our example:
-{% highlight bash %}
+```bash
 $ PGPASSWORD=pass psql -U my-db -h 127.0.0.1 -p 10000 -d my-db < dump.sql
-{% endhighlight %}
+```
 
 ## Dump and Restore from Scalingo one-off container
 
@@ -78,7 +78,7 @@ data transfers will be way faster.
 
 ### Dump & Restore
 
-{% highlight bash %}
+```bash
 $ scalingo -a myapp run bash
 
 [00:00] Scalingo ~ $ PGPASSWORD=pass pg_dump -U user -h my-db.postgresql.dbs.scalingo.com -P 30000 my-db > /tmp/dump.sql
@@ -90,6 +90,6 @@ $ scalingo -a myapp run bash
 ...
 [00:00] Scalingo ~ $ exit
 exit
-{% endhighlight %}
+```
 
 After exiting the one-off container, the dump will be lost, you've to do something with it in the container.

@@ -19,19 +19,19 @@ By default it will deploy the branch `master` of your project, but you can event
 
 * Markdown implementation (README.md)
 
-{% highlight text %}
+```text
 [![Deploy on Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>#custom_branch)
-{% endhighlight %}
+```
 
 Example: [![Deploy on Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/sample-go-martini)
 
 * Html implementation
 
-{% highlight html %}
+```html
 <a href="https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>#custom_branch">
    <img src="https://cdn.scalingo.com/deploy/button.svg" alt="Deploy on Scalingo" data-canonical-src="https://cdn.scalingo.com/deploy/button.svg" style="max-width:100%;">
 </a>
-{% endhighlight %}
+```
 
 Example:
 <a href="https://my.scalingo.com/deploy?source=https://github.com/Scalingo/sample-go-martini/">
@@ -40,7 +40,7 @@ Example:
 
 ## Example manifest scalingo.json
 
-{% highlight json %}
+```json
 {
   "name": "Sample Go Martini",
   "description": "Sample web application using the Go framework Martini",
@@ -59,6 +59,6 @@ Example:
   },
   "addons": ["scalingo-redis"]
 }
-{% endhighlight %}
+```
 
 You can find everything about the `scalingo.json` file on our [API dedicated page](http://developers.scalingo.com/one-click/).

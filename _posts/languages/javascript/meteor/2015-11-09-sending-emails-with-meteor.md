@@ -12,22 +12,22 @@ Meteor is automatically reading the address of the email server it
 will send emails from the environment variable `MAIL_URL`. The URL
 has the following structure:
 
-{% highlight bash %}
+```bash
 smtp://user:password@host:port
-{% endhighlight %}
+```
 
 To add the environment variable, run the following command or add it through
 [your dashboard](https://my.scalingo.com)
 
-{% highlight bash %}
+```bash
 scalingo env-set MAIL_URL <smtp_url>
-{% endhighlight %}
+```
 
 More information in [the official Meteor documentation](http://docs.meteor.com/#/full/email)
 
 ## Snippet to send an email with Meteor
 
-{% highlight javascript %}
+```javascript
 recipient = "user@example.com"
 Email.send({
   from: process.env.EMAIL_FROM,
@@ -35,7 +35,7 @@ Email.send({
   subject: "Test email to " + recipient,
   text: "Hello " + recipient + "\n\nThis is a simple test email\n"
 });
-{% endhighlight %}
+```
 
 Automatically Meteor will use the `MAIL_URL` server address and send the email.
 

@@ -14,9 +14,9 @@ It is so easy that you can use [heroku2scalingo](https://github.com/Scalingo/her
 
 ### Usage
 
-{% highlight bash %}
+```bash
 ./heroku2scalingo <herokuAppName>
-{% endhighlight %}
+```
 
 It works by performing the following operations in the same order as below:
 

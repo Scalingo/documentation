@@ -19,7 +19,7 @@ To read an environment variable, you just have to read from the
 `$_ENV` associative array. For instance if you want to read the variable
 `MONGO_URL`
 
-{% highlight php %}
+```php
 $mongo_url_str = $_ENV["MONGO_URL"];
 $mongo_url = parse_url($mongo_url_str);
 
@@ -32,4 +32,4 @@ $mongo_url = parse_url($mongo_url_str);
  *   Database Name: substr($mongo_url.path, 1) after removing prefixed '/'
  */
 
-{% endhighlight %}
+```

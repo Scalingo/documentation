@@ -16,7 +16,7 @@ to your need.
 
 To enable the extensions you want for your application, run the following command:
 
-{% highlight bash %}
+```bash
 $ scalingo -a <appname> pgsql-console
 psql (9.4.5)
 Type "help" for help.
@@ -25,7 +25,7 @@ user=> CREATE extension hstore;
 CREATE EXTENSION
 user=> CREATE extension postgis;
 CREATE EXTENSION
-{% endhighlight %}
+```
 
 This example uses 'hstore' and 'postgis' but you can do that for all the underneath list of
 extensions.

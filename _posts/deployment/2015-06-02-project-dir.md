@@ -19,7 +19,7 @@ a valid directory, otherwise the deployment process will fail.
 
 If your project has the following architecture:
 
-{% highlight text %}
+```text
 /server
 /server/server.go
 /server/public/img/logo.png
@@ -27,7 +27,7 @@ If your project has the following architecture:
 /server/public/js/app.js
 /doc
 /doc/api.md
-{% endhighlight %}
+```
 
 You want to deploy what is in the `/server` directory, so you have to define
 `PROJECT_DIR=server`. That's it, it will be taken into account at your next

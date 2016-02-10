@@ -7,7 +7,7 @@ tags: app error detection
 
 When pushing your app to Scalingo, you might get the following error:
 
-{% highlight text %}
+```text
 <-- Start deployment of [my-app] -->
  !     We didn't find the type of technology your are using...
        We're sorry this build is failing!
@@ -22,7 +22,7 @@ When pushing your app to Scalingo, you might get the following error:
        Scalingo
  !   Error deploying the application
  !   → Invalid return code from buildpack
-{% endhighlight %}
+```
 
 ## Solutions
 

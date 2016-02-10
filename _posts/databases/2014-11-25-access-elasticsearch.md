@@ -16,9 +16,9 @@ is using it.
 
 ## Use `scalingo run`
 
-{% highlight bash %}
+```bash
 scalingo -a <application name> run curl http://<user>:<password>@<host>:<port>
-{% endhighlight %}
+```
 
 ### Example
 
@@ -27,7 +27,7 @@ If my application's name is 'example' and it has the environment variable
 
 You can run:
 
-{% highlight bash %}
+```bash
 $ scalingo -a example run curl $SCALINGO_ELASTICSEARCH_URL
 {
   "status" : 200,
@@ -41,4 +41,4 @@ $ scalingo -a example run curl $SCALINGO_ELASTICSEARCH_URL
   },
   "tagline" : "You Know, for Search"
 }
-{% endhighlight %}
+```

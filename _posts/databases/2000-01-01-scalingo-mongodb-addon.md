@@ -31,22 +31,22 @@ You can add the MongoDB addon through the **Dashboard** or through the **command
 
 ### Through the command-line interface
 
-{% highlight bash %}
+```bash
 $ scalingo -a example-app addons-add scalingo-mongodb 1g
 
 -----> Addon scalingo-mongodb has been provisionned
        ID: example-app-3030
        Modified variables: [MONGO_URL SCALINGO_MONGO_URL]
        Message from addon provider: Database successfully created
-{% endhighlight %}
+```
 
 This command will provision the application `example-app` with a `1g` MongoDB database plan.
 
 To find out what other plans are available:
 
-{% highlight bash %}
+```bash
 $ scalingo addons-plans scalingo-mongodb
-{% endhighlight %}
+```
 
 
 ## Getting your connection URI
@@ -68,12 +68,12 @@ You can get those variables from the Dashboard or the command-line interface.
 
 ### From the command-line interface
 
-{% highlight bash %}
+```bash
 $ scalingo -a example-app env | grep MONGO
 
 MONGO_URL=$SCALINGO_MONGO_URL
 SCALINGO_MONGO_URL=mongodb://example-app-3030:2rj5FYoiKRFp8eZhpMz7@example-app-3030.mongo.dbs.appsdeck.eu:30949/example-app-3030
-{% endhighlight %}
+```
 
 
 ## Remote access your database
@@ -97,15 +97,15 @@ You can upgrade or downgrade your database plan whenever you need it. This opera
 
 To upgrade or downgrade your addon the sub-command is the same: `addons-upgrade`.
 
-{% highlight bash %}
+```bash
 $ scalingo -a example-app addons-upgrade example-app-3030 2g
-{% endhighlight %}
+```
 
 In this example, `example-app-3030` is the ID of the addon, and `2g` is the plan we want to upgrade to.
 
 To find out the addon ID:
 
-{% highlight bash %}
+```bash
 $ scalingo -a example-app addons 
 
 +------------------+------------------+------+
@@ -113,7 +113,7 @@ $ scalingo -a example-app addons
 +------------------+------------------+------+
 | Scalingo MongoDB | example-app-3030 |   1g |
 +------------------+------------------+------+
-{% endhighlight %}
+```
 
 ## Database dashboard
 

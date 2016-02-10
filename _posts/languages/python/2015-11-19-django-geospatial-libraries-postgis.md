@@ -19,10 +19,10 @@ Scalingo PostgreSQL includes [several extensions]({% post_url /databases/2000-01
 Postgis the extension to handle geospatial data is among them. To use it with your application, your need
 to enable it.
 
-{% highlight bash %}
+```bash
 $ scalingo -a appname pgsql-console
 > CREATE EXTENSION postgis;
-{% endhighlight %}
+```
 
 Then the database is ready, next step is to install the libraries django requires to manipulate these data.
 
@@ -42,33 +42,33 @@ More information about <a href="{% post_url /internals/buildpacks/2015-01-04-bui
 
 Create a `.buildpacks` file at the root of your project with the following content:
 
-{% highlight bash %}
+```bash
 https://github.com/Scalingo/geo-buildpack
 https://github.com/Scalingo/python-buildpack
-{% endhighlight %}
+```
 
 Then setup the [multi buildpack]({% post_url /internals/buildpacks/2015-09-28-multi-buildpack %}) for your project to handle this file:
 
-{% highlight bash %}
+```bash
 scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack
-{% endhighlight %}
+```
 
 ### Deploy your application
 
-{% highlight bash %}
+```bash
 git add .buildpacks
 git commit -m "Use geo-buildpack as long as python-buildpack"
 git push scalingo master
-{% endhighlight %}
+```
 
 Then you'll see in your deployment output:
 
-{% highlight text %}
+```text
 =====> Downloading Buildpack: https://github.com/Scalingo/geo-buildpack.git
 =====> Detected Framework: geos/gdal/proj
        Using geos version: 3.4.2
        Using gdal version: 1.11.1
        Using proj version: 4.8.0_1
        ...
-{% endhighlight %}
+```
 

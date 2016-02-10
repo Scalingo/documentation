@@ -7,7 +7,7 @@ tags: ruby mongoid mongodb
 
 You need to create the file `config/mongoid.yml` in order to configure Mongoid.
 
-{% highlight yaml %}
+```yaml
 development:
   sessions:
     default:
@@ -18,7 +18,7 @@ production:
   sessions:
     default:
       uri: <%= ENV['SCALINGO_MONGO_URL'] %>
-{% endhighlight %}
+```
 
 If you want to modify connection options or the connections pooling, you can
 find all the information in the [official

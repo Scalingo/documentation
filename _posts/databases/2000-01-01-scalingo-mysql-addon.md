@@ -31,22 +31,22 @@ You can add the MySQL addon through the **Dashboard** or through the **command-l
 
 ### Through the command-line interface
 
-{% highlight bash %}
+```bash
 $ scalingo -a example-app addons-add scalingo-mysql 1g
 
 -----> Addon scalingo-mysql has been provisionned
        ID: example-app-3030
        Modified variables: [DATABASE_URL SCALINGO_MYSQL_URL]
        Message from addon provider: Database successfully created
-{% endhighlight %}
+```
 
 This command will provision the application `example-app` with a `1g` MySQL database plan.
 
 To find out what other plans are available:
 
-{% highlight bash %}
+```bash
 $ scalingo addons-plans scalingo-mysql
-{% endhighlight %}
+```
 
 
 ## Getting your connection URI
@@ -68,12 +68,12 @@ You can get environment variables from the Dashboard or the command-line interfa
 
 ### From the command-line interface
 
-{% highlight bash %}
+```bash
 $ scalingo -a example-app env | grep MYSQL
 
 DATABASE_URL=$SCALINGO_MYSQL_URL
 SCALINGO_MYSQL_URL=mysql://example_app_3030:CaUrq1MdUkAzCSEq-1Fg@example-app-3030.mysql.dbs.appsdeck.eu:30999/example_app_3030
-{% endhighlight %}
+```
 
 ### Ruby rails specific
 
@@ -103,15 +103,15 @@ You can upgrade or downgrade your database plan whenever you need it. This opera
 
 To upgrade or downgrade your addon the sub-command is the same: `addons-upgrade`.
 
-{% highlight bash %}
+```bash
 $ scalingo -a example-app addons-upgrade example-app-3030 2g
-{% endhighlight %}
+```
 
 In this example, `example-app-3030` is the ID of the addon, and `2g` is the plan we want to upgrade to.
 
 To find out the addon ID:
 
-{% highlight bash %}
+```bash
 $ scalingo -a example-app addons 
 
 +----------------+------------------+------+
@@ -119,7 +119,7 @@ $ scalingo -a example-app addons
 +----------------+------------------+------+
 | Scalingo MySQL | example-app-3030 |   1g |
 +----------------+------------------+------+
-{% endhighlight %}
+```
 
 ## Database dashboard
 

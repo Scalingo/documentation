@@ -9,7 +9,7 @@ tags: iojs javascript tutorial getting-started-tutorial
 
 ## Initialize your application
 
-{% highlight bash %}
+```bash
 $ mkdir iojs-app
 $ cd iojs-app
 $ npm init
@@ -20,13 +20,13 @@ $ npm init
 
 $ npm install express --save
 $ echo "node_modules" > .gitignore
-{% endhighlight %}
+```
 
 ## Write a base server file
 
 server.js
 
-{% highlight js %}
+```js
 // Node.js - Express Sample application
 
 var express = require('express')
@@ -41,7 +41,7 @@ var server = app.listen(process.env.PORT || 3000, function () {
   var port = server.address().port
   console.log('App listening at http://%s:%s', host, port)
 })
-{% endhighlight %}
+```
 
 <blockquote class="bg-info">
   The `process.env.PORT` will read the environment variable PORT dynamically provided by our container manager.
@@ -51,50 +51,50 @@ var server = app.listen(process.env.PORT || 3000, function () {
 
 Procfile
 
-{% highlight yaml %}
+```yaml
 web: iojs server.js
-{% endhighlight %}
+```
 
 ## Define io.js as javascript engine
 
 In your `package.json`, add the following block:
 
-{% highlight js %}
+```js
 "engines": {
   "iojs": "1.1.x"
 }
-{% endhighlight %}
+```
 
 This will instruct the deployment scripts to install iojs at
 the given version instead of Node.js
 
 ## Commit your application
 
-{% highlight bash %}
+```bash
 $ git init
 $ git add .
 $ git commit -m "Base io.js application"
-{% endhighlight %}
+```
 
 ## Create your application on Scalingo and deploy
 
 > This operation has to be done in the directory of your project.
 
-{% highlight bash %}
+```bash
 
 $ scalingo create iojs-app
 Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
 
 $ git push scalingo master
-{% endhighlight %}
+```
 
 ## Access your application
 
-{% highlight bash %}
+```bash
 …
 Waiting for your application to boot...
 <-- https://iojs-app.scalingo.io -->
-{% endhighlight %}
+```
 
 Now develop your project and build something amazing!

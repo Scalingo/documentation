@@ -28,7 +28,7 @@ The following commands let you open a console for the database
 of your choice. Note that your should have added the appropriate addon from
 your application dashboard prior to run one of these commands.
 
-{% highlight bash %}
+```bash
 # Open a console using the `mysql` client
 scalingo -a example-app mysql-console
 
@@ -40,7 +40,7 @@ scalingo -a example-app mongo-console
 
 # Open a console using the `redis-cli` client
 scalingo -a example-app redis-console
-{% endhighlight %}
+```
 
 ## Connect your workstation to the database
 

@@ -33,9 +33,9 @@ This way doesn't need extra stuff to work with Scalingo. You just have to
 create a `Procfile` file at the root of your project: [more doc about
 Procfiles]({% post_url /internals/2014-12-01-procfile %})
 
-{% highlight yaml %}
+```yaml
 web: java $JAVA_OPTS -jar target/*.jar --spring.profiles.active=YOUR_PROD_PROFILE
-{% endhighlight %}
+```
 
 _Don't forget to specify the production profile (if you use [Spring
 profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html))
@@ -57,7 +57,7 @@ This one is more complicated as we need to:
 To replace the classic `web.xml` file, you have to create new class that
 sources the Spring Boot application.
 
-{% highlight java %}
+```java
 public class ApplicationWebXml extends SpringBootServletInitializer {
 
     @Override
@@ -66,24 +66,24 @@ public class ApplicationWebXml extends SpringBootServletInitializer {
     }
 
 }
-{% endhighlight %}
+```
 
 ### pom.xml (or build.gradle)
 
 1. Avoid conflicts between Tomcat
 
-{% highlight xml %}
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-tomcat</artifactId>
     <!-- Add this -->
     <scope>provided</scope>
 </dependency>   
-{% endhighlight %}
+```
 
 2. Add webapp-runner **8.0.24.0** (Spring Boot needs Tomcat 8.x for websockets)
 
-{% highlight xml %}
+```xml
 <build>
   ...
   <plugins>
@@ -111,26 +111,26 @@ public class ApplicationWebXml extends SpringBootServletInitializer {
     </plugin>
   </plugins>
 </build>
-{% endhighlight %}
+```
 
 ### Listen on ${PORT}
 
 Specify the good port to listen in your Spring Boot application [configuration
 file](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html).
 
-{% highlight text %}
+```text
 server:
     port: ${PORT}
-{% endhighlight %}
+```
 
 ### Define your Procfile
 
 To define how to start your application, you need to create a `Procfile` file
 at the root of your project: [more doc about Procfiles]({% post_url /internals/2014-12-01-procfile %})
 
-{% highlight yaml %}
+```yaml
 web: java $JAVA_OPTS -Dspring.profiles.active=YOUR_PROD_PROFILE -jar target/dependency/webapp-runner.jar --port $PORT --expand-war target/*.war
-{% endhighlight %}
+```
 
 _Don't forget to specify the production profile (if you use [Spring
 profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html))

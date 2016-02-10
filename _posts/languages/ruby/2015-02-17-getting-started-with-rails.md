@@ -9,7 +9,7 @@ permalink: /languages/ruby/getting-started-with-rails/
 
 ## Initialize your application
 
-{% highlight bash %}
+```bash
 $ rails new rails-app
 
 #
@@ -19,7 +19,7 @@ $ rails new rails-app
 $ git init
 $ git add .
 $ git commit -m "Base rails application"
-{% endhighlight %}
+```
 
 ## Create your application on Scalingo
 
@@ -27,11 +27,11 @@ $ git commit -m "Base rails application"
   You can also use our web dashboard to achieve this operation
 </blockquote>
 
-{% highlight bash %}
+```bash
 $ scalingo create ruby-app
 Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
-{% endhighlight %}
+```
 
 ## Provision and configure your database
 
@@ -47,9 +47,9 @@ Add the gem `pg` to your `Gemfile`
 
 Add the gem `mysql` to your `Gemfile`:
 
-{% highlight ruby %}
+```ruby
 gem 'mysql2', '~> v0.3.18'
-{% endhighlight %}
+```
 
 Then set the following environment variable:
 
@@ -74,20 +74,20 @@ according to their nature, in accordance to the [12 factors](http://12factor.net
 
 ## Finalize and deploy
 
-{% highlight bash %}
+```bash
 $ bundle install
 $ git add .
 $ git commit -m "Configure application for Scalingo"
 $ git push scalingo master
-{% endhighlight %}
+```
 
 ## Access your application
 
-{% highlight bash %}
+```bash
 …
 Waiting for your application to boot...
 <-- https://ruby-app.scalingo.io -->
-{% endhighlight %}
+```
 
 Yes a new application will render a 404 error `The page you were looking for doesn't exist.`,
 but it's normal, there is nothing in the project, it's time to build your product!

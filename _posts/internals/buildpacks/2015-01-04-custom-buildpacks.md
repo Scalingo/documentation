@@ -13,18 +13,18 @@ the environment of the concerned application: `BUILDPACK_URL`.
 
 Example:
 
-{% highlight text %}
+```text
 BUILDPACK_URL=https://github.com/cloudfoundry/java-buildpack
-{% endhighlight %}
+```
 
 Then during the deployment, you'll be able to see:
 
-{% highlight text %}
+```text
 <-- Start deployment of myapp -->
 -----> Cloning custom buildpack: 'https://github.com/cloudfoundry/java-buildpack'
 
 -- SNIP --
-{% endhighlight %}
+```
 
 ## Build a custom buildpack
 
@@ -32,10 +32,10 @@ Our execution stack is public and can be found as a docker image on the __Docker
 Its name is [scalingo/builder:latest](https://hub.docker.com/u/scalingo/builder/). The base
 image is based on Ubuntu 14.04, so you'll find every tool from the `ubuntu:14.04` docker image.
 
-{% highlight bash %}
+```bash
 docker pull scalingo/builder
 docker run -v ./custom-buildpack:/buildpack scalingoa/builder:latest bash
-{% endhighlight %}
+```
 
 Then if you need to build third-party binaries, you'll be assured that they will work
 on our platform.

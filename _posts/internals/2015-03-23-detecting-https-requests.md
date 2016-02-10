@@ -24,7 +24,7 @@ request.
 
 ## Simple Go example
 
-{% highlight go %}
+```go
 package main
 
 import (
@@ -50,11 +50,11 @@ func main() {
 
   log.Fatalln(http.ListenAndServe(":" + os.Getenv("PORT"), nil))
 }
-{% endhighlight %}
+```
 
 ## Simple Java+Wicket example
 
-{% highlight java %}
+```java
 public class RequestUtil {
 
 	private static final Logger log = LoggerFactory.getLogger(RequestUtil.class);
@@ -88,4 +88,4 @@ public class RequestUtil {
 		}
 	}
 }
-{% endhighlight %}
+```

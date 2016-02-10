@@ -36,9 +36,9 @@ in production. You might want to exclude them during th deployment:
 
 `.slugignore` content:
 
-{% highlight text %}
+```text
 spec
-{% endhighlight %}
+```
 
 ### Java application
 
@@ -48,9 +48,9 @@ classes and jar archives from the build:
 
 `.slugignore` content:
 
-{% highlight text %}
+```text
 .m2
-{% endhighlight %}
+```
 
 <blockquote class="bg-info">
   <code>.m2</code> directory is the maven local repository which is used to store
@@ -65,6 +65,6 @@ directory containing all the third party dependency source code in the image:
 
 `.slugignore` content:
 
-{% highlight text %}
+```text
 Godeps
-{% endhighlight %}
+```

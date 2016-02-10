@@ -20,9 +20,9 @@ to generate the static rendering of your application.
 
 ## Meteor package 'ongoworks:spiderable'
 
-{% highlight bash %}
+```bash
 meteor add ongoworks:spiderable
-{% endhighlight %}
+```
 
 By adding this package, your website will automatically respond to the requests of
 static fragment. You can try the following request on your application in development:
@@ -40,7 +40,7 @@ containers, that is why we are advising you to use `ongoworks:spiderable` instea
 
 ### 'spiderable' package is used
 
-{% highlight text %}
+```text
 Resolved Spiderable request / to http://localhost:8080/
 spiderable: phantomjs failed at http://localhost:8080/
 stderr:
@@ -68,15 +68,15 @@ Error: Meteor code must always run within a Fiber. Try wrapping callbacks that y
     at maybeClose (child_process.js:766:16)
     at Process.ChildProcess._handle.onexit (child_process.js:833:5)
 spiderable: phantomjs failed at http://localhost:8080/: null
-{% endhighlight %}
+```
 
 As stated in this article the package `ongoworks:spiderable` should be used as in-place replacement
 of the `spiderable` package, please run the following commands:
 
-{% highlight bash %}
+```bash
 meteor remove spiderable
 meteor add ongoworks:spiderable
 git add .meteor/versions .meteor/packages
 git commit -m "use ongoworks:spiderable instead of spiderable"
 git push scalingo master
-{% endhighlight %}
+```

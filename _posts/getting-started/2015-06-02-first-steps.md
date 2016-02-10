@@ -35,13 +35,13 @@ With our dashbaord:
 
 With our command line client:
 
-{% highlight bash %}
+```bash
 scalingo keys-add [name of the key] [path to the key]
 
 # Example:
 
 scalingo keys-add Laptop ~/.ssh/id_rsa.pub
-{% endhighlight %}
+```
 
 ## Some tutorials to start with
 

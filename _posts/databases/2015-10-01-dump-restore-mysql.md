@@ -21,51 +21,51 @@ A MySQL URL is usually formatted like: <br>
 To get the URL of your database, go to the 'Environment' part of your dashboard or
 run the following command:
 
-{% highlight bash %}
+```bash
 $ scalingo -a myapp env | grep MYSQL
-{% endhighlight %}
+```
 
 If your remote database URL is:
 
-{% highlight bash %}
+```bash
 mysql://user:pass@my-db.mysql.dbs.com:30000/my-db
-{% endhighlight %}
+```
 
 ### Setup the tunnel
 
-{% highlight bash %}
+```bash
 $ scalingo -a myapp db-tunnel SCALINGO_MYSQL_URL
 scalingo -a myapp db-tunnel SCALINGO_MYSQL_URL
 Building tunnel to my-db.mysql.dbs.scalingo.eu:30000
 You can access your database on '127.0.0.1:10000'
-{% endhighlight %}
+```
 
 ### Dump
 
 The command definition is:
-{% highlight bash %}
+```bash
 $ mysqldump -u <username> --password=<password> -h <host> -P <port> <db> > dump.sql
-{% endhighlight %}
+```
 
 Applied to our example:
 
-{% highlight bash %}
+```bash
 $ mysqldump -u my-db --password=pass -h 127.0.0.1 -P 10000 my-db > /tmp/dumped_db.sql
-{% endhighlight %}
+```
 
 As you can see we're using the host and port provided by the tunnel, not those of the URL
 
 ### Restore
 
 The command definition is:
-{% highlight bash %}
+```bash
 $ mysql -u <username> --password=<password> -h <host> -P <port> <db> < dump.sql
-{% endhighlight %}
+```
 
 With our example:
-{% highlight bash %}
+```bash
 $ mysql -u my-db --password=pass -h 127.0.0.1 -P 10000 my-db < /tmp/dumped_db.sql
-{% endhighlight %}
+```
 
 ## Dump and Restore from Scalingo one-off container
 
@@ -78,7 +78,7 @@ data transfers will be way faster.
 
 ### Dump & Restore
 
-{% highlight bash %}
+```bash
 $ scalingo -a myapp run bash
 
 [00:00] Scalingo ~ $ mysqldump -u user --password=pass -h my-db.mysql.dbs.scalingo.com -P 30000 my-db > /tmp/dumped_db.sql
@@ -90,6 +90,6 @@ $ scalingo -a myapp run bash
 ...
 [00:00] Scalingo ~ $ exit
 exit
-{% endhighlight %}
+```
 
 After exiting the one-off container, the dump will be lost, you've to do something with it in the container.

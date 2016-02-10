@@ -11,23 +11,23 @@ When a PHP application is deployed we're looking at the file 'composer.json' to
 know if it is using a particular framework. For Symfony 2, we're looking if the
 project has contains the module 'symfony/symfony' as dependency.
 
-{% highlight javascript %}
+```javascript
 {
   "require": {
     "symfony/symfony": "~2.8",
     // ....
   }
 }
-{% endhighlight %}
+```
 
 During the deployment process you'll see the following output, mentionning that
 the framework has correctly been detected.
 
-{% highlight bash %}
+```bash
 -----> Detected Symfony2 App
 ...
 -----> Setting up Symfony2 App
-{% endhighlight %}
+```
 
 ```
 
@@ -49,17 +49,17 @@ to see the content of these log files in your app dashboard.
 
 During the deployment process you'll see the following output:
 
-{% highlight bash %}
+```bash
        Warmuping cache
-{% endhighlight %}
+```
 
 It means that we are preparing the cache of your application to avoid
 making it at runtime and loosing performance. Underneath, the following
 command is executed at each deployment:
 
-{% highlight bash %}
+```bash
 php app/console cache:warmup --env=prod --no-debug
-{% endhighlight %}
+```
 
 ## Asset management with Assetic
 
@@ -67,7 +67,7 @@ If you are using to handle your assets, you may need to run a custom command
 once Symfony has been installed, to do so, you need to add the following piece
 of configuration in your `composer.json`
 
-{% highlight javascript %}
+```javascript
 {
   // ...,
   "extra": {
@@ -78,7 +78,7 @@ of configuration in your `composer.json`
     }
   }
 }
-{% endhighlight %}
+```
 
 This piece of configuration is defining that after installing symfony, the 'assetic:dump'
 command will be executed preparing your assets for your application.

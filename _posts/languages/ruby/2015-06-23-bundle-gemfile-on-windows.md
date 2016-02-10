@@ -24,15 +24,15 @@ As Scalingo's stack is based on Linux, we can't install these precise versions.
 As a result, the `Gemfile.lock` won't be considered when a Windows machine is deploying a ruby application.
 So you need to lock the versions manually.
 
-{% highlight text %}
+```text
 gem 'rails'
-{% endhighlight %}
+```
 
 should become 
 
-{% highlight text %}
+```text
 gem 'rails', '4.2.0'
-{% endhighlight %}
+```
 
 If the version has not been specified, it will let Bundler install the last version compatible for your
 project. That's probably not what you want and may probably break your application. So you have to ensure

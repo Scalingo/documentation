@@ -24,6 +24,6 @@ the best of your containers, you need to use a real production-ready application
 
 To handle several requests in parallel, we recommend [puma](http://puma.io). To use it, just add it as dependency in your Gemfile:
 
-{% highlight text %}
+```text
 gem 'puma'
-{% endhighlight %}
+```

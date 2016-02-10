@@ -10,13 +10,13 @@ This page describes steps to setup **Continuous Deployment** from CircleCI to Sc
 ### Setup `circle.yml`
 
 To trigger a deployment after a success build on Circle you have to add the `deployment` section to your `circle.yml`:
-{% highlight yaml %}
+```yaml
 deployment:
   production:
     branch: master
     commands:
       - git push git@scalingo.com:example-app.git $CIRCLE_SHA1:master
-{% endhighlight %}
+```
 
 You can read more about Configuring CircleCI [Deployment](https://circleci.com/docs/configuration#deployment) on the CircleCI documentation.
 

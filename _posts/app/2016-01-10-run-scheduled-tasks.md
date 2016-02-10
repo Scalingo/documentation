@@ -18,17 +18,17 @@ Enterprise has cron-like feature built-in) for example.
 
 With clockwork, you would end up with a Procfile similar to this one:
 
-{% highlight yaml %}
+```yaml
 web: bundle exec puma -t 1:3 -p $PORT
 clock: bundle exec clockwork clock.rb
-{% endhighlight %}
+```
 
 Once your application has been deployed, scale your 'clock' to 1 to start the task
 scheduler:
 
-{% highlight bash %}
+```bash
 scalingo scale clock:1
-{% endhighlight %}
+```
 
 ## PHP
 
@@ -48,13 +48,13 @@ It uses the package [`cron/cron`](https://github.com/Cron/Cron) to implement the
 Its initialization is done in the file `cron.php` and a new kind of container is defined in the
 `Procfile` of the project, the container type `clock`:
 
-{% highlight yaml %}
+```yaml
 clock: php cron.php
-{% endhighlight %}
+```
 
 The file which implements the cron-like process is defined in `cron.php`:
 
-{% highlight php %}
+```php
 <?php
   require(__DIR__ . '/vendor/autoload.php');
 
@@ -94,4 +94,4 @@ The file which implements the cron-like process is defined in `cron.php`:
     sleep(60);
   }
 ?>
-{% endhighlight %}
+```

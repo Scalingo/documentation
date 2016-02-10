@@ -21,37 +21,37 @@ A MongoDB URL is usually formatted like: <br>
 To get the URL of your database, go to the 'Environment' part of your dashboard or
 run the following command:
 
-{% highlight bash %}
+```bash
 $ scalingo -a myapp env | grep MONGO
-{% endhighlight %}
+```
 
 If your remote database URL is:
 
-{% highlight bash %}
+```bash
 mongodb://user:pass@my-db.mongo.dbs.com:30000/my-db
-{% endhighlight %}
+```
 
 ### Setup the tunnel
 
-{% highlight bash %}
+```bash
 $ scalingo -a myapp db-tunnel SCALINGO_MONGO_URL
 scalingo -a myapp db-tunnel SCALINGO_MONGO_URL
 Building tunnel to my-db.mongo.dbs.scalingo.eu:30000
 You can access your database on '127.0.0.1:10000'
-{% endhighlight %}
+```
 
 ### Dump
 
 The command definition is:
-{% highlight bash %}
+```bash
 $ mongodump -u <username> -p <password> -h <host>:<port> -d <db> 
-{% endhighlight %}
+```
 
 Applied to our example:
 
-{% highlight bash %}
+```bash
 $ mongodump -u my-db -p pass -h 127.0.0.1:10000 -d my-db
-{% endhighlight %}
+```
 
 The command will create a dump directory in your current working directory.
 
@@ -60,14 +60,14 @@ As you can see we're using the host and port provided by the tunnel, not those o
 ### Restore
 
 The command definition is:
-{% highlight bash %}
+```bash
 $ mongorestore -u <username> -p <password> -h <host>:<port> -d <db> <dump directory>
-{% endhighlight %}
+```
 
 With our example:
-{% highlight bash %}
+```bash
 $ mongorestore -u my-db -p pass -h 127.0.0.1:10000 -d my-db dump
-{% endhighlight %}
+```
 
 ## Dump and Restore from Scalingo one-off container
 
@@ -80,23 +80,23 @@ data transfers will be way faster.
 
 ### Dump
 
-{% highlight bash %}
+```bash
 $ scalingo -a myapp run bash
 
 [00:00] Scalingo ~ $ mongodump -u user -p pass -h my-db.mongo.dbs.scalingo.com:30000 my-db
 
 # Do something with the dump, i.e send it with FTP or to an external server
-{% endhighlight %}
+```
 
 ### Restore
 
 
-{% highlight bash %}
+```bash
 $ scalingo -a myapp run bash
 
 # Get a dump from a remote place, with 'curl' or 'ftp'
 
 [00:00] Scalingo ~ $ mongorestore -u my-db -p pass -h my-db.mongo.dbs.scalingo.com:30000 -d my-db dump
-{% endhighlight %}
+```
 
 After exiting the one-off container, the dump will be lost, you've to do something with it in the container.

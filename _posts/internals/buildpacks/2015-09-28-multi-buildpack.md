@@ -15,25 +15,25 @@ You may need to combine several technologies in your project, this buildpack is 
 By setting the configuration variable `BUILDPACK_URL`, the Scalingo's deployment stack will
 automatically fetch the given buildpack to deploy your application.
 
-{% highlight bash %}
+```bash
 scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack.git
-{% endhighlight %}
+```
 
 ## Choice of the buildpacks to use
 
 Create a file named `.buildpacks` in your project which will define the buildpacks to use:
 
-{% highlight bash %}
+```bash
 https://github.com/Scalingo/nodejs-buildpack.git
 https://github.com/Scalingo/go-buildpack.git
-{% endhighlight %}
+```
 
 Add this file to your git repository:
 
-{% highlight bash %}
+```bash
 git add .buildpacks
 git commit -m "Setup .buildpacks for using multiple buildpacks on Scalingo"
-{% endhighlight %}
+```
 
 Finally in this example, thanks to this method, both NodeJS buildpack and Go buildpack will be applied
 on your project.
@@ -42,9 +42,9 @@ on your project.
 
 ## Deploy your application
 
-{% highlight bash %}
+```bash
 git push scalingo master
-{% endhighlight %}
+```
 
 
 > Source: [https://github.com/Scalingo/multi-buildpack](https://github.com/Scalingo/multi-buildpack)

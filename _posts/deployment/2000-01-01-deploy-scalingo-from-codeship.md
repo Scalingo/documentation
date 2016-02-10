@@ -14,10 +14,10 @@ To setup **Continuous Deployment** from Codeship to Scalingo, please follow the 
 3. Choose **Custom Script** deployment type.
 4. Fill the deployment commands:
 
-{% highlight bash %}
+```bash
 git fetch --unshallow || true
 git push --force git@scalingo.com:example-app.git ${CI_COMMIT_ID}:master
-{% endhighlight %}
+```
 
 Or you can use the [deployments/git_push.sh](https://github.com/codeship/scripts/blob/master/deployments/git_push.sh) script provided by Codeship.
 

@@ -52,7 +52,7 @@ your application will be detected as a Node.js application and as a PHP applicat
 
 In this situation you need to specify the buildpack you want to use by defining the environment variable:
 
-{% highlight text %}
+```text
 BUILDPACK_NAME=php
-{% endhighlight %}
+```
 

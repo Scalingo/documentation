@@ -19,9 +19,9 @@ Two features are not enabled by default with Ruby on Rails:
 
 Don't worry there is a gem for that:
 
-{% highlight text %}
+```text
 gem 'rails_12factor'
-{% endhighlight %}
+```
 
 Add it to your `Gemfile` and your application will behaves as expected.
 
