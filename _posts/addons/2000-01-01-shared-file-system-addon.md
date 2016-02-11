@@ -24,6 +24,11 @@ is still one step longer than using an external storage service directly as the
 file has to be downloaded first in your container and then send to the user
 browser.</blockquote>
 
+The addon is backed by a S3-like storage facility and is using the
+[s3fs](https://github.com/s3fs-fuse/s3fs-fuse) to mount a bucket in your
+containers. Thus, accessing your file corresponds to make HTTP calls to the
+storage facility, creating some overhead compared to direct file access.
+
 ## Setup
 
 When you're adding the addon from our dashboard or with our command line tool:
