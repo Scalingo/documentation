@@ -77,13 +77,13 @@ scalingo addons-plans scalingo-postgresql
 scalingo addons-add -a cloud-app scalingo-postgresql 1g
 ```
 
-You'll find more information about these addon at
+You'll find more information about these addons at
 [https://scalingo.com/addons](https://scalingo.com/addons)
 
 If an addon does not have an equivalent on Scalingo, you can use the environment
 variables of your CloudControl app, directly in your Scalingo app.
 
-## 4. Configure your account to push your code
+## 5. Configure your account to push your code
 
 Before pushing your code, youd should setup your SSH key to authenticate your
 GIT pushes. With the dashboard, go on the ['Keys'
@@ -95,7 +95,7 @@ page](https://my.scalingo.com/keys) and upload your public SSH key (usually
 scalingo keys-add workstation-key $HOME/.ssh/id_rsa.pub
 ```
 
-## 5. Push your application
+## 6. Push your application
 
 We're using the same workflow as CloudControl, so you first need to add a
 remote to your git repository:
@@ -110,7 +110,7 @@ git push scalingo master
 
 That's it, your application will be live in a minute.
 
-## 6. Move your data from CloudControl to Scalingo
+## 7. Move your data from CloudControl to Scalingo
 
 You can find in CloudControl
 [documentation](https://www.cloudcontrol.com/dev-center/add-on-documentation),
@@ -125,7 +125,7 @@ To import them on Scalingo, it will depend the type of database you're using.
 You'll find all the pieces of information you may need in the [Databases]({%
 post_url 2015-06-24-access-database %}) page of this documentation.
 
-## 7. Handling the custom domain names
+## 8. Handling the custom domain names
 
 What is called 'alias' on cloudcontrol is named 'custom domain names' on
 Scalingo. To migrate your app you've to modify the configuration of your app on
