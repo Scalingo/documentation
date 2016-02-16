@@ -80,6 +80,9 @@ scalingo addons-add -a cloud-app scalingo-postgresql 1g
 You'll find more information about these addon at
 [https://scalingo.com/addons](https://scalingo.com/addons)
 
+If an addon does not have an equivalent on Scalingo, you can use the environment
+variables of your CloudControl app, directly in your Scalingo app.
+
 ## 4. Configure your account to push your code
 
 Before pushing your code, youd should setup your SSH key to authenticate your
@@ -114,7 +117,12 @@ You can find in CloudControl
 for each database addon, the way to export your data.
 
 To import them on Scalingo, it will depend the type of database you're using.
-You'll find all the pieces of information you need in the [Databases]({%
+
+* [Import/Export your MySQL Database]({% post_url 2015-10-01-dump-restore-mysql %})
+* [Import/Export your PostgreSQL Database]({% post_url 2015-10-01-dump-restore-postgresql %})
+* [Import/Export your MongoDB Database]({% post_url 2015-10-01-dump-restore-mongodb %})
+
+You'll find all the pieces of information you may need in the [Databases]({%
 post_url 2015-06-24-access-database %}) page of this documentation.
 
 ## 7. Handling the custom domain names

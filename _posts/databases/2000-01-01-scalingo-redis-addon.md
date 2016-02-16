@@ -6,7 +6,7 @@ tags: databases redis addon
 ---
 
 <blockquote class="bg-info">
-	Some operation requires our command-line tool to be installed.
+  Some operation requires our command-line tool to be installed.
   <br>
   Instructions are detailed in <a href="{% post_url 2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
 </blockquote>
