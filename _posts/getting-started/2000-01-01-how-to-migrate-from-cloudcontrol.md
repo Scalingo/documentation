@@ -120,7 +120,7 @@ To import them on Scalingo, it will depend the type of database you're using.
 
 * [Import/Export your MySQL Database]({% post_url 2015-10-01-dump-restore-mysql %})
 * [Import/Export your PostgreSQL Database]({% post_url 2015-10-01-dump-restore-postgresql %})
-* [Import/Export your MongoDB Database]({% post_url 2015-10-01-dump-restore-mongodb %})
+* [Import/Export your MongoDB Database]({% post_url 2015-09-30-dump-restore-mongodb %})
 
 You'll find all the pieces of information you may need in the [Databases]({%
 post_url 2015-06-24-access-database %}) page of this documentation.
