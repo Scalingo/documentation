@@ -80,6 +80,7 @@ Websocket is **enabled by default** for all projects, **you don't need to do any
 To configure your servers on Scalingo, you will have to configure your settings independantly. We will see each point of the sample Cloudfile below:
 
 Cloudfile:
+
 ```bash
 servers:
   size:
@@ -105,28 +106,33 @@ On Scalingo, process definition is done through the Procfile file (take a look a
 format: `<container_name>: <command>`
 
 Cloudfile implementation:
+
 ```bash
 servers:
   puma: 1
 ```
 
 Procfile equivalent:
+
 ```bash
 web: bundle exec puma
 ```
 
 Cloudfile implementation:
+
 ```bash
 servers:
   thin: 1
 ```
 
 Procfile equivalent:
+
 ```bash
 web: bundle exec thin
 ```
 
 Cloudfile implementation:
+
 ```bash
 servers:
   processes:
@@ -136,6 +142,7 @@ servers:
 ```
 
 Procfile implementation:
+
 ```bash
 worker_high: rake environment resque:work QUEUE=high
 worker_general: rake environment resque:work QUEUE=general
