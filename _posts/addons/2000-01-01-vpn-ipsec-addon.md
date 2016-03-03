@@ -1,6 +1,6 @@
 ---
-title: Private Beta - Scalingo VPNC IPSec Addon
-modified_at: 2016-02-03 00:00:00
+title: Scalingo VPNC IPSec Addon
+modified_at: 2016-03-03 00:00:00
 category: addons
 tags: vpn addon custom feature
 ---
@@ -29,7 +29,7 @@ First add, your need to provision the add to your application. This can be done
 through the dashboard or with our command line tool.
 
 ```bash
-scalingo scalingo-vpn-ipsec base
+scalingo scalingo-vpn-ipsec vpn-ipsec-standard
 ```
 
 ### Setup the configuration
