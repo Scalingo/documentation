@@ -25,7 +25,7 @@ working correctly.
 
 ### Provision the addon
 
-First add, your need to provision the add to your application. This can be done
+First, you need to provision the add to your application. This can be done
 through the dashboard or with our command line tool.
 
 ```bash
