@@ -115,7 +115,7 @@ servers:
 Procfile equivalent:
 
 ```bash
-web: bundle exec puma
+web: bundle exec puma -e $RAILS_ENV -p $PORT
 ```
 
 Cloudfile implementation:
@@ -128,7 +128,7 @@ servers:
 Procfile equivalent:
 
 ```bash
-web: bundle exec thin
+web: bundle exec thin -e $RAILS_ENV -p $PORT
 ```
 
 Cloudfile implementation:
