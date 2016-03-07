@@ -69,6 +69,8 @@ With our example:
 $ mongorestore -u my-db -p pass -h 127.0.0.1:10000 -d my-db dump
 ```
 
+In addition you may use the [`--drop` option](https://docs.mongodb.org/v2.6/reference/program/mongorestore/#cmdoption--drop) to delete the existing data in the database.
+
 ## Dump and Restore from Scalingo one-off container
 
 You can dump and restore your database remotely using
