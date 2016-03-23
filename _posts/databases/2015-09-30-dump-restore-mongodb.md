@@ -1,6 +1,6 @@
 ---
 title: How to dump and restore my MongoDB database on Scalingo
-modified_at: 2016-01-08 14:22:00
+modified_at: 2016-03-23 14:22:00
 category: databases
 tags: databases mongodb tunnel
 index: 3
@@ -66,7 +66,7 @@ $ mongorestore -u <username> -p <password> -h <host>:<port> -d <db> <dump direct
 
 With our example:
 ```bash
-$ mongorestore -u my-db -p pass -h 127.0.0.1:10000 -d my-db dump
+$ mongorestore -u my-db -p pass -h 127.0.0.1:10000 -d my-db dump/my-db
 ```
 
 In addition you may use the [`--drop` option](https://docs.mongodb.org/v2.6/reference/program/mongorestore/#cmdoption--drop) to delete the existing data in the database.
@@ -98,7 +98,7 @@ $ scalingo -a myapp run bash
 
 # Get a dump from a remote place, with 'curl' or 'ftp'
 
-[00:00] Scalingo ~ $ mongorestore -u my-db -p pass -h my-db.mongo.dbs.scalingo.com:30000 -d my-db dump
+[00:00] Scalingo ~ $ mongorestore -u my-db -p pass -h my-db.mongo.dbs.scalingo.com:30000 -d my-db dump/my-db
 ```
 
 After exiting the one-off container, the dump will be lost, you've to do something with it in the container.
