@@ -1,12 +1,14 @@
 ---
 title: Custom NPM modules with Meteor
-modified_at: 2015-03-22 00:00:00
+modified_at: 2016-03-30 00:00:00
 category: languages
 tags: nodejs meteor npm
 permalink: /languages/javascript/nodejs/meteor/npm/
 ---
 
 ## Initialization
+
+{% include danger data='This page is no longer valid for Meteor 1.3, see the <a href="http://guide.meteor.com/1.3-migration.html" target="_blank">migration guide</a>' %}
 
 ### Install the package meteorhacks:npm
 
