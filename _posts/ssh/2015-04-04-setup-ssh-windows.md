@@ -21,6 +21,7 @@ You can install Scalingo CLI by following [these instructions]({% post_url 2015-
 Then you need to create an ssh key pair in the correct directory.
 
 [git-bash]
+
 ```bash
 $ cd $HOME
 $ mkdir .ssh
