@@ -43,6 +43,7 @@ You can access your database on '127.0.0.1:10000'
 ### Dump
 
 The command definition is:
+
 ```bash
 $ mongodump -u <username> -p <password> -h <host>:<port> -d <db> 
 ```
@@ -60,11 +61,13 @@ As you can see we're using the host and port provided by the tunnel, not those o
 ### Restore
 
 The command definition is:
+
 ```bash
 $ mongorestore -u <username> -p <password> -h <host>:<port> -d <db> <dump directory>
 ```
 
 With our example:
+
 ```bash
 $ mongorestore -u my-db -p pass -h 127.0.0.1:10000 -d my-db dump/my-db
 ```
