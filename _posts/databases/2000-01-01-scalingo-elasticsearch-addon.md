@@ -1,6 +1,6 @@
 ---
 title: Scalingo Elasticsearch Addon
-modified_at: 2016-01-11 00:00:00
+modified_at: 2016-04-27 00:00:00
 category: databases
 tags: databases elasticsearch addon
 ---
@@ -184,3 +184,7 @@ Automated backups are listed in the database specific dashboard.
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_elasticsearch_backups.png" %}
 {% include mdl_img.html %}
+
+### Restoring a backup
+
+Follow our guide: [Restore locally an Elasticsearch backups]({% post_url 2000-01-01-restore-elasticsearch-backup %})
