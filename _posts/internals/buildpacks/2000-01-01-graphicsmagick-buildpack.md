@@ -7,7 +7,9 @@ tags: buildpacks build image graphicsmagick
 
 # Purpose of this buildpack
 
-You may need to have the tools of GraphicsMagick installed alongside your application, this buildpack will fit this need.
+By default, our runtime image embeds ImageMagick as image manipulation toolset.
+However, you may prefer to have GraphicsMagick tools installed alongside your
+application, this buildpack will fit this need.
 
 ## Set up this buildpack for your application
 
