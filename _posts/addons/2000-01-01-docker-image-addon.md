@@ -72,19 +72,26 @@ The entrypoint of the image is a script located at `/start`. Its usage is:
 The compelete docker command to start your app on port 4000 looks like the following:
 
 ```bash
-docker run -it -e PORT=4000 -p 4000:4000 registry.scalingo.com/app-myappname:0123456789abcdef /start web
+docker run -it \
+  -e PORT=4000
+  -p 4000:4000 \
+  registry.scalingo.com/app-myappname:0123456789abcdef /start web
 ```
 
 In this case no environment variable has been set, you need to add the environment variables required by your
-app by adding multiple '-e' flags:
+app by adding multiple `-e` flags:
 
 ```bash
 docker run -it \
   -e PORT=4000 \
   -e RAILS_ENV=production \
   -e RACK_ENV=production \
+  -e DATABASE_URL=postgres://172.17.0.1:5432 \
+  -e MAIL_URL=smtp://user:password@mailprovider.com:587 \
   -p 4000:4000 \
   registry.scalingo.com/app-myappname:0123456789abcdef /start web
 ```
+
+> We're using `172.17.0.1` as `DATABASE_URL` host because in a container, your computer will be reachable at this IP.
 
 That's it, your app is running with your environment.
