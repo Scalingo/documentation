@@ -10,7 +10,7 @@ permalink: /databases/mongodb/dump-restore/
 {% include info_command_line_tool.md %}
 
 There's two ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url 2014-10-02-tasks %})).
-
+m
 ## Dump and Restore from your local workstation
 
 You can dump and restore your database from your local workstation using [Scalingo CLI]({% post_url 2015-09-18-command-line-tool %}) to [create a tunnel]({% post_url 2014-11-24-tunnel %}) to your database:
@@ -88,7 +88,7 @@ data transfers will be way faster.
 ```bash
 $ scalingo -a myapp run bash
 
-[00:00] Scalingo ~ $ mongodump -u user -p pass -h my-db.mongo.dbs.scalingo.com:30000 my-db
+[00:00] Scalingo ~ $ mongodump -u user -p pass -h my-db.mongo.dbs.scalingo.com:30000 -d my-db
 
 # Do something with the dump, i.e send it with FTP or to an external server
 ```
