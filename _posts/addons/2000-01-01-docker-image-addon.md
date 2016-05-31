@@ -26,12 +26,13 @@ Once this is done, has been added, the deployments panel of your app dashboard
 will change, a **Docker logo** will be present. Click on it to get the instructions
 to download the image of a given deployment.
 
-![Dashboard example](https://cdn.scalingo.com/documentation/docker-image-addon/dashboard-example.png)
+{% assign img_url = "https://cdn.scalingo.com/documentation/docker-image-addon/dashboard-example.png" %}
+{% include mdl_img.html %}
 
 ### Login to your application registry
 
 ```bash
-$ docker login registry-2.scalingo.com
+$ docker login registry.scalingo.com
 Username: <scalingo username>
 Password: <scalingo API key>
 Email:    <scalingo email>
@@ -43,7 +44,7 @@ The API key is available on [your profile](https://my.scalingo.com/profile), cop
 ### Download your image
 
 ```bash
-$ docker pull registry-2.scalingo.com/app-myappname:0123456789abcdef
+$ docker pull registry.scalingo.com/app-myappname:0123456789abcdef
 0123456789abcdef: Pulling from app-myappname
 6599cadaf950: Downloading 59.99 MB/65.69 MB
 23eda618d451: Download complete 
@@ -65,14 +66,13 @@ The entrypoint of the image is a script located at `/start`. Its usage is:
 /start <container type>
 
 # Example, start the web (default) process
-
 /start web
 ```
 
 The compelete docker command to start your app on port 4000 looks like the following:
 
 ```bash
-docker run -it -e PORT=4000 -p 4000:4000 registry-2.scalingo.com/app-myappname:0123456789abcdef /start web
+docker run -it -e PORT=4000 -p 4000:4000 registry.scalingo.com/app-myappname:0123456789abcdef /start web
 ```
 
 In this case no environment variable has been set, you need to add the environment variables required by your
@@ -84,7 +84,7 @@ docker run -it \
   -e RAILS_ENV=production \
   -e RACK_ENV=production \
   -p 4000:4000 \
-  registry-2.scalingo.com/app-myappname:0123456789abcdef /start web
+  registry.scalingo.com/app-myappname:0123456789abcdef /start web
 ```
 
 That's it, your app is running with your environment.
