@@ -8,9 +8,14 @@ tags: docker images download feature
 ## Introduction
 
 Thanks to this addon, you'll be able to get back the docker image we're
-building when delpoying your application in our infrastructure. You
+building when deploying your application in our infrastructure. You
 can use it to debug your production code for instance or as a pledge
 of reversibility.
+
+This is not the only use case, thanks to this addon you can use Scalingo as a
+Docker Integration Platform. You push your code from one side and get a
+generic Docker Image on the other. Deploy your production environment wherever
+you want and enjoy quickly setup staging environments hosted on Scalingo.
 
 ## Setup of the addon
 
