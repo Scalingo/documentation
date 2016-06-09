@@ -108,3 +108,8 @@ git push scalingo master
 Waiting for your application to boot...
 <-- https://crystal-app.scalingo.io -->
 ```
+
+
+## Live demo
+
+This application is currently running on scalingo [here](http://sample-crystal.scalingo.io/).
