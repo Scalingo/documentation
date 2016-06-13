@@ -5,7 +5,7 @@ categories: internals
 tags: buildpacks build image cairo pango fontconfig pixman harfbuzz gitlib
 ---
 
-# Purpose of this buildpack
+## Purpose of this buildpack
 
 This is a buildpack that installs [Cairo](http://cairographics.org/) and
 its dependencies ([Pango](http://www.pango.org/), [Pixman](http://pixman.org/),
