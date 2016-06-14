@@ -39,6 +39,6 @@ deployment:
         - git push git@scalingo.com:example-app.git $CIRCLE_SHA1:master
         - curl -LO https://github.com/Scalingo/cli/releases/download/1.3.1/scalingo_1.3.1_linux_amd64.tar.gz
         - tar xvf scalingo_1.3.1_linux_amd64.tar.gz
-        - scalingo_1.3.1_linux_amd64/scalingo login --ssh
-        - scalingo_1.3.1_linux_amd64/scalingo run rake db:migrate
+        - scalingo_1.3.1_linux_amd64/scalingo -a example-app login --ssh
+        - scalingo_1.3.1_linux_amd64/scalingo -a example-app run rake db:migrate
 ```
