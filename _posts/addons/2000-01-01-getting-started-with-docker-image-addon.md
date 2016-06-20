@@ -96,14 +96,14 @@ Once you've donloaded all the needed images, you must run them on your system.
 ### Run the database image
 
 To run pour database image you need to have a folder which will be used to
-store your database data. Here we will be using `/tmp/mongodb-data`.
+store your database data. Here we will be using `/var/scalingo/my-app/mongo`.
 
 To launch the DB image type:
 
 ```bash
 docke run \
   --name=<container-name> \
-  -v /tmp/mongodb-data:/var/lib/<database-version> \
+  -v /var/scalingo/my-app/mongo:/var/lib/<database-version> \
   scalingo/<database-type>:<database-version> \
   /mongo <user> <password> <admin_password>
 ```
@@ -116,9 +116,9 @@ In our case:
 
 ```bash
 docke run -d --name=mongo_my-app \
-    -v /tmp/mongodb-data:/var/lib/mongodb \
+    -v /var/scalingo/my-app/mongo:/var/lib/mongodb \
     scalingo/mongo:3.2.6-2 \
-    /mongo my-app password password
+    /mongo my-app password adminpassword
 ```
 
 ### Run the application image
