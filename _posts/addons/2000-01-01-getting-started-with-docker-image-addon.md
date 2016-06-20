@@ -71,6 +71,8 @@ the docker hub.
 
 You'll need to get your database version from your database dashboard. In the
 `Docker Image Version` field.
+
+{% assign width = "350px" %}
 {% assign img_url = "https://cdn.scalingo.com/documentation/docker-image-addon/database-addon.png" %}
 {% include mdl_img.html %}
 
