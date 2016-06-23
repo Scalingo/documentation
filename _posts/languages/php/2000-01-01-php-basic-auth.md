@@ -9,7 +9,7 @@ permalink: /languages/php/basic-auth/
 ## Introduction
 
 Our PHP deployment stack is using Nginx and PHP-fpm to answer your application request.
-If you want to setup basic auth in front of your app, there are two ways to do it.
+If you want to setup basic auth in front of your app or a part of your app, there are two ways to do it.
 
 Either you implement this in your application, here is an [example with Symfony2](http://symfony.com/doc/current/book/security.html),
 or you have to configure the authentication before your application reaches the PHP code.
@@ -28,9 +28,20 @@ mkdir config
 
 Edit the file `nginx-basic-auth.conf` in this directory with the following content:
 
+For the complete website:
+
 ```bash
 auth_basic           "Protected Site";
 auth_basic_user_file "/app/config/htpasswd";
+```
+
+Part of a website, here everything under `/wp-admin`:
+
+```bash
+location ~ /wp-admin {
+  auth_basic           "Protected Site";
+  auth_basic_user_file "/app/config/htpasswd";
+}
 ```
 
 Create the `config/htpasswd` file with the couples user/encrypted password using the following command:
