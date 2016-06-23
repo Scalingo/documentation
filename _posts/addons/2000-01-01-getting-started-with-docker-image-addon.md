@@ -18,7 +18,7 @@ Before doing this tutorial, you need to setup your environment:
 
 ## Introduction
 
-First, delpoy your app on Scalingo. You should have a working
+First, deploy your app on Scalingo. You should have a working
 application on scalingo. Here we will use our [meteor todo list
 example](https://github.com/Scalingo/sample-meteor-todo).
 
