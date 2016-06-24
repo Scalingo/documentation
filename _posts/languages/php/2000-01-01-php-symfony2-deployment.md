@@ -1,6 +1,6 @@
 ---
 title: PHP - Deploying a Symfony 2 application
-modified_at: 2015-12-21 00:00:00
+modified_at: 2016-06-24 00:00:00
 category: languages
 tags: php, http, framework, symfony, assetic, deployment
 ---
@@ -31,6 +31,35 @@ the framework has correctly been detected.
 
 ```
 
+## Configuration
+
+Symfony configuration is used to handle its configuration with different `.yml`
+files.  However this is not always a good practice: especially when it concerns
+credentials.  You don't want your production credentials being stored in a file
+stored in your GIT repository.
+
+The solution is to use environment variables to interpolate constants. Here is
+an example of doctrine configuration yaml file:
+
+```yml
+doctrine:
+    dbal:
+        driver    pdo_mysql
+        dbname:   symfony_project
+        user:     '%database.user%'
+        password: '%database.password%'
+```
+
+Note the values `%database.user%` and `%database.password%` they are constants
+you can define from your environment:
+
+```bash
+SYMFONY__DATABASE__USER=database-user
+SYMFONY__DATABASE__PASSWORD=database-secret
+```
+
+You will find more information in the [Symfony Documentation
+Center](https://symfony.com/doc/current/cookbook/configuration/external_parameters.html)
 
 ## Log files
 
@@ -57,8 +86,16 @@ It means that we are preparing the cache of your application to avoid
 making it at runtime and loosing performance. Underneath, the following
 command is executed at each deployment:
 
+Symfony 2:
+
 ```bash
 php app/console cache:warmup --env=prod --no-debug
+```
+
+Symfony 3:
+
+```bash
+php bin/console cache:warmup --env=prod --no-debug
 ```
 
 ## Asset management with Assetic
