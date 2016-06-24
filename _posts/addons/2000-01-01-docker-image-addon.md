@@ -23,7 +23,7 @@ generic Docker Image on the other. You can then use Scalingo for your staging en
 Provision the add for your application from our web dashboard or with our CLI:
 
 ```bash
-$ scalingo addons-add scalingo-docker-image-addon base-plan
+$ scalingo addons-add scalingo-docker-image base-plan
 ```
 
 ## Usage of the addon

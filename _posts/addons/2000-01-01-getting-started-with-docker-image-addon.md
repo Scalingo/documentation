@@ -30,11 +30,11 @@ here](https://my.scalingo.com/deploy?source=https://github.com/johnsudaar/sample
 ### Add the docker-image-addon
 
 To get the *Docker Image* of your application, you must add the
-`scalingo-docker-image-addon`. You can do it with our CLI or through your
+`scalingo-docker-image`. You can do it with our CLI or through your
 application dashboard.
 
 ```bash
-$ scalingo -a my-app addons-add scalingo-docker-image-addon base-plan
+$ scalingo -a my-app addons-add scalingo-docker-image base-plan
 ```
 
 Once this is done, the "Deployments" panel of your app dashboard will change,
