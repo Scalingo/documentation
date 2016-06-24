@@ -29,8 +29,6 @@ the framework has correctly been detected.
 -----> Setting up Symfony2 App
 ```
 
-```
-
 ## Configuration
 
 Symfony configuration is used to handle its configuration with different `.yml`
