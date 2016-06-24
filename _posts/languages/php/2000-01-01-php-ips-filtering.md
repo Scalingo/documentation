@@ -23,18 +23,12 @@ mkdir config
 Edit the file `nginx-ips-filtering.conf` in this directory with the following content:
 
 ```bash
-map $http_x_forwarded_for $allowed {
-    default deny;
-    <ip1> allow;
-    <ip2> allow;
-}
-
 location / {
-    if ( $allowed = "deny" ) { return 403; }
+    allow <ip1>;
+    allow <ip2>;
+    deny all;
 }
 ```
-
-> Note that you can use patterns as IP: `10.11.12.*` would match all the IPs starting by `10.11.12`
 
 The last thing you have to do is to instruct Scalingo's deployment process to
 use your configuration file.
