@@ -1,6 +1,6 @@
 ---
 title: PHP - Secure your app with HTTP Basic Auth
-modified_at: 2015-12-21 00:00:00
+modified_at: 2016-06-24 00:00:00
 category: languages
 tags: php, http, security, basic-auth
 permalink: /languages/php/basic-auth/
@@ -69,6 +69,9 @@ This process requires you to edit the `composer.json` file of your project. Edit
   }
 }
 ```
+
+If you are not using composer, create a composer.json file with the previous content, and also create
+a file `composer.lock` containing an empty JSON string `{}`
 
 > Tip: You can find more information about extra configuration in [the PHP support page]({% post_url 2014-07-02-php %}).
 
