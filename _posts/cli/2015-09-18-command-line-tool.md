@@ -240,7 +240,7 @@ scalingo -a myapp scale worker:2:L
 scalingo -a myapp scale clock:0
 ```
 
-##Configuration
+## Configuration
 
 ### Application Detection
 
