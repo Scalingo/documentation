@@ -9,6 +9,21 @@ permalink: /languages/scala/scalatra/getting-started-with-scalatra/
 
 {% include info_tutorial_requirements.md %}
 
+## Prerequisites
+
+You will need to download a few utilities to initialize your Scalatra app.
+
+Conscript is a tool for installing and updating Scala code. Giter8, which depends on conscript, allows you to check out project templates directly from Github. It's the recommended way to generate Scalatra project skeletons.
+
+```bash
+#
+# Install conscript and giter8
+#
+
+$ curl https://raw.githubusercontent.com/foundweekends/conscript/master/setup.sh | sh
+$ cs foundweekends/giter8
+```
+
 ## Initialize your application
 
 ```bash
