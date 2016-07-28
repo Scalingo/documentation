@@ -1,5 +1,5 @@
 ---
-title: PHP - Deploying a wordpress application
+title: PHP - Deploying a WordPress application
 modified_at: 2016-07-28 00:00:00
 category: languages
 tags: php, http, framework, wordpress, deployment
@@ -14,14 +14,14 @@ During the deployment process you'll see the following output, mentioning
 that the framework has correctly been detected.
 
 ```bash
------> Detected Wordpress
+-----> Detected WordPress
 ...
------> Setting up Wordpress
+-----> Setting up WordPress
 ```
 
 ## Configuration
 
-By default Wordpress do not use configuration file.
+By default WordPress do not use configuration file.
 To add environment variable support you must edit the `wp-config.php` file
 to listen to the `DATABASE_URL` environment variable.
 
@@ -65,7 +65,7 @@ scalingo -a myapp env-set SECURE_KEY A_RANDOM_TOKEN_HERE
 Since the container filesystem is volatile, plugins and addon should
 be installed and updated within your git repository and never via
 the web interface. You must de-activate autoupdate of all
-your wordpress components.
+your WordPress components.
 
 To do that just add the following line to your `wp-config.php`
 
