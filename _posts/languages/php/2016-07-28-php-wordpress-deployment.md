@@ -60,6 +60,8 @@ using our CLI:
 scalingo -a myapp env-set SECURE_KEY A_RANDOM_TOKEN_HERE
 ```
 
+> You can generate a random token with the command: `openssl rand -hex 32`
+
 ## Plugins and updates
 
 Since the container filesystem is volatile, plugins and addon should
