@@ -67,7 +67,7 @@ be installed and updated within your git repository and never via
 the web interface. You must de-activate autoupdate of all
 your wordpress components.
 
-To do that just add the following lien to your `wp-config.php`
+To do that just add the following line to your `wp-config.php`
 
 ```php
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
