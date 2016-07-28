@@ -79,5 +79,5 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
 
 The container filesystem is volatile and not synchronised through
 all your instances. So the uploads should not be stored on
-the filesystem itself. We recommend using an external service like amazon s3
-to store them.
+the filesystem itself. We recommend using an external service like the
+Amazon service: AWS S3 to store them.
