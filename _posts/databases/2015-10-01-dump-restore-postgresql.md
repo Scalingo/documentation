@@ -43,6 +43,7 @@ You can access your database on '127.0.0.1:10000'
 ### Dump
 
 The command definition is:
+
 ```bash
 $ PGPASSWORD=<password> pg_dump -O -n public -U <username> -h <host> -p <port> <db> > dump.sql
 ```
@@ -58,11 +59,13 @@ As you can see we're using the host and port provided by the tunnel, not those o
 ### Restore
 
 The command definition is:
+
 ```bash
 $ PGPASSWORD=<password> psql -U <username> -h <host> -p <port> -d <db> < dump.sql
 ```
 
 With our example:
+
 ```bash
 $ PGPASSWORD=pass psql -U my-db -h 127.0.0.1 -p 10000 -d my-db < dump.sql
 ```
