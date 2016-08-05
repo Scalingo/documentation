@@ -12,7 +12,7 @@ image is open source and can be found on the docker hub under the name [scalingo
 The build process
 -----------------
 
-Each time any user deploys a new release of their application, a new Docker image is created. A new layer is added on top of the `scalingo/builder` base image. It's built using the buildpack and contains the application code and all its dependencies. When the build is done, the resulting Docker image is sent to our private repository and our orchestrator will us it subsequently to actually run the application in our infrastructure.
+Each time any user deploys a new release of their applications, a new Docker image is created. A new layer is added on top of the `scalingo/builder` base image. It's built using the buildpack and contains the application code and all its dependencies. When the build is done, the resulting Docker image is sent to our private repository and our orchestrator will us it subsequently to actually run the application in our infrastructure.
 
 Installed libraries
 -----------------
@@ -28,7 +28,7 @@ You'll find:
 * ImageMagick
 * Mysql, Postgresql MongoDB, Redis clients and development libraries
 
-Not all application will use these libraries but we've considered that managing a set of builder images instead of only one isn't worth it.
+Not all applications will use these libraries but we've considered that managing a set of builder images instead of only one isn't worth it.
 
 The advantage of using a single builder image is that **once it has been fetched on a hosting node, we're done**. Even if we sacrifice a few megabytes of disk space, when a new container starts, only the application layer is fetched and nothing else.
 
