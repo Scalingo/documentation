@@ -31,3 +31,9 @@ You'll find:
 Not all application will use these libraries but we've considered that managing a set of builder images instead of only one isn't worth it.
 
 The advantage of using a single builder image is that **once it has been fetched on a hosting node, we're done**. Even if we sacrifice a few megabytes of disk space, when a new container starts, only the application layer is fetched and nothing else.
+
+Of course you can inspect this base image: it's a completely standard Docker image after all! You can use something like:
+
+```
+docker pull scalingo/builder
+```
