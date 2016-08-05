@@ -43,7 +43,7 @@ In this case:
 
 Fill the fields accordingly:
 
-{% assign img_url = "https://cdn.scalingo.com/documentation/robomongo/20160420-robomongo-authentication.png" %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/robomongo/20160805-robomongo-authentication.png" %}
 {% include mdl_img.html %}
 
 ### Advanced
