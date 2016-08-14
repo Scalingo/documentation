@@ -1,6 +1,6 @@
 ---
 title: Using PhantomJS and Spiderable to build static pages with Meteor
-modified_at: 2015-11-17 00:00:00
+modified_at: 2016-08-14 00:00:00
 category: languages
 tags: nodejs meteor tutorial fragment phantomjs spiderable crawler static
 permalink: /languages/javascript/meteor/spiderable-phantomjs-static-fragment/
@@ -35,6 +35,24 @@ curl http://localhost:3000?_escaped_fragment_=
 
 The package named 'spiderable' is not compatible with restricted environment like Scalingo's
 containers, that is why we are advising you to use `ongoworks:spiderable` instead of `spiderable`
+
+## Installation of PhantomJS
+
+### Meteor version ≥ 1.3
+
+PhantomJS installation has to be done from the NPM package of the same name.
+
+```bash
+meteor npm install --save phantomjs
+```
+
+### Meteor version < 1.3
+
+NPM modules can't be used easily, so we have to use a wrapper around the original NPM module, use the package `dfischer:phantomjs` from atmosphere:
+
+```bash
+meteor add dfischer:phantomjs
+```
 
 ## Common problem
 
