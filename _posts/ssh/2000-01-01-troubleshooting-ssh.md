@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting git push and SSH common issues
-modified_at: 2015-04-03 00:00:00
+modified_at: 2016-09-10 00:00:00
 category: getting-started
 tags: follow-the-light ssh linux git troubleshoot problem connect git push
 ---
