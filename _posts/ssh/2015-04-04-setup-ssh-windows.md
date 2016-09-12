@@ -6,43 +6,60 @@ tags: follow-the-light ssh windows git
 index: 2
 ---
 
-To setup SSH on Windows, you will need to generate an ssh key pair using git-bash + `ssh-keygen.exe` and then add it to Scalingo using either [git-bash](https://git-for-windows.github.io/) and [Scalingo CLI](http://cli.scalingo.com/) or [Scalingo Dashboard](https://my.scalingo.com/).
+Setup SSH is required to be able to push you code using `git`, to configure
+everything correctly, you need to install the terminal `git-bash`
 
-## Install git-bash
+### 1. Download and Install git-bash
 
-You can download git-bash [here](https://github.com/git-for-windows/git/releases/tag/v2.6.2.windows.1) and install it by selecting `git-bash` during the installation process.
+You can download git-bash
+[here](https://github.com/git-for-windows/git/releases/tag/v2.6.2.windows.1)
+and install it by selecting `git-bash` during the installation process.
 
-## Install Scalingo command-line tool
+### 2. Create a new SSH key pair
 
-You can install Scalingo CLI by following [these instructions]({% post_url 2015-09-18-command-line-tool %}).
-
-## Create a new SSH key pair
-
-Then you need to create an ssh key pair in the correct directory.
-
-[git-bash]
+GIT authentication is based on SSH, so you need to be able to authenticate with
+t his technology, here is the guide how to do it. The following commands have
+to be written and executed in a 'git-bash' terminal, installed in the previous
+section.
 
 ```bash
 $ cd $HOME
 $ mkdir .ssh
 $ cd .ssh
-$ ssh-keygen.exe -t rsa
+$ ssh-keygen.exe
 ```
 
-Follow the instructions to generate a new SSH key pair. You will be asked to encrypt
-you private key with a password. This step is optional but for further security you may
-want to set one.
+Follow the instructions to generate a new SSH key pair. You will be asked to
+encrypt you private key with a password. This step is optional but for further
+security you may want to set one.
 
-By default both private and public keys will be located in your current directory, i.e: `$HOME/.ssh`.
+### 3. Add the public SSH key to Scalingo
 
-## Add ssh key to Scalingo
-
-If you are using [Scalingo CLI](http://cli.scalingo.com/), you can do it by using `scalingo keys-add` command ([See scalingo keys]({% post_url 2015-09-18-command-line-tool %}#setup-your-account-ssh-keys))
+To get the content of the public SSH key, you need to run the following command
+in git-bash:
 
 ```bash
-$ scalingo keys-add <key_name> $HOME/.ssh/id_rsa.pub
+$ cat $HOME/.ssh/id_rsa.pub
 ```
 
-And if you are using [Scalingo Dashboard](https://my.scalingo.com):
+The file content should start with `ssh-rsa`
 
-Just go to [https://my.scalingo.com/keys](https://my.scalingo.com/keys) and create a new key with the content of `id_rsa.pub`.
+Once you have the public key, go to Scalingo Dashboard [SSH key secion](https://my.scalingo.com/keys) and
+create a new key with the content of the public key.
+
+### 4. Check everything is working
+
+Still in a git-bash terminal run the following command:
+
+```bash
+$ ssh.exe -T git@scalingo.com
+```
+
+It should display the following output:
+
+```
+You've successfully authenticated on Scalingo, but there is no shell access
+```
+
+If it doesn't something has been donw wrong please recheck the different step
+of this guide.
