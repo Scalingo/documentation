@@ -21,7 +21,7 @@ Your application is located in the directory: `/app`
 
 Two directories are writable by your application:
 
-* Its directory `/app` where it can read and write as wished (ie. Ruby on Rails
+* Its directory `/app` where it can read and write as wished (eg. Ruby on Rails
   storing upload in the `tmp` directory inside the project)
 
 * The global temporary directory `/tmp`.
