@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting git push and SSH common issues
-modified_at: 2016-09-10 00:00:00
+modified_at: 2016-09-20 00:00:00
 category: getting-started
 tags: follow-the-light ssh linux git troubleshoot problem connect git push
 ---
@@ -54,3 +54,47 @@ $ git add .
 $ git commit -m "initial commit"
 $ git push scalingo master
 ```
+
+## Invalid SSH key error when adding it to account
+
+The platform is expecting SSH keys to be in the OpenSSH format. This is the default
+format when a SSH keypair is generated on *Linux* or *MacOS*, however on Windows, if
+you've generated your key with `PuTTy`, there are chances the format is wrong.
+
+### Solving the problem
+
+There are two methods to solve this issue:
+
+1. Windows only - PuTTy Key generator tool
+
+Using PuTTY Key generator tool also named `PuTTyGen`, you can import
+your SSH key and convert it to the OpenSSH format.
+
+2. All platforms: Using ssh-keygen tool
+
+By using the following command:
+
+```
+ssh-keygen -l -f public_key_file
+```
+
+It will automatically convert it to OpenSSH format.
+
+Example, your key looks like:
+
+```
+---- BEGIN SSH2 PUBLIC KEY ----
+Comment: "Name of the key"
+AAAAB3NzaC1yc2EAAAABJQAAAgEAvHiFU0R8sWBT1dsKMW7HsEHta5adFei0J1AR
+qtGbaALDJnKzK0Ihf9YxlIt1kHGtN6pXOiIj8DClb8YcLeVRIoe63BE0GXtFebdO
+[...]
+```
+
+After converting to ssh format, it should look like:
+
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAvHiFU0R8sWBT1dsKMW7[...]
+```
+
+This key will be accepted by the platform.
+
