@@ -13,16 +13,12 @@ platform is temporary, it means that each time your application is restarted or
 redeployed, it gets a new file system, files stored previously on it won't be
 present anymore.
 
-## Location of your app build
-
-Your application is located in the directory: `/app`
-
-## Where you can write for temporary files
+## Where you can write temporary files
 
 Two directories are writable by your application:
 
-* Its directory `/app` where it can read and write as wished (eg. Ruby on Rails
-  storing upload in the `tmp` directory inside the project)
+* The application directory `/app` where it can read and write as wished (eg. Ruby on Rails
+  storing upload in the `tmp` directory inside the project, so it will write in `/app/tmp`)
 
 * The global temporary directory `/tmp`.
 
