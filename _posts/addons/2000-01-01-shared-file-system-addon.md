@@ -85,8 +85,8 @@ Create a `.s3cfg` file in your user directory with the following content:
 access_key = "access key id"
 secret_key = "secret token"
 bucket_location = generic
-host_base = s3.myagora.fr:8082
-host_bucket = s3.myagora.fr:8082/%(bucket)
+host_base = s3.myagora.fr
+host_bucket = s3.myagora.fr/%(bucket)
 signature_v2 = True
 use_https = True
 ```
