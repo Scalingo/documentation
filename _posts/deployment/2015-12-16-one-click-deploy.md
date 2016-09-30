@@ -9,7 +9,7 @@ If you want to give people the opportunity to deploy your project instantly on S
 
 At the moment, **only public projects hosted on Github are supported**.
 
-##Display a one-click deploy button
+## Display a one-click deploy button
 
 To do so, you will need to add a link to `https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>`.
 
