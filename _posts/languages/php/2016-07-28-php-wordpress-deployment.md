@@ -62,6 +62,19 @@ scalingo -a myapp env-set SECURE_KEY A_RANDOM_TOKEN_HERE
 
 > You can generate a random token with the command: `openssl rand -hex 32`
 
+### HTTPS
+
+By default, WordPress tries to detect if the website is reached with HTTPS, however in an environment like Scalingo, applications are behind a routing layer which acts as proxy, so by default WordPress won't detect it.
+
+To fix this problem, you need to add the following in your `wp-config.php` file ([official documentation](https://codex.wordpress.org/Function_Reference/is_ssl#Notes)):
+
+```php
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+    $_SERVER['HTTPS'] = 'on';
+```
+
+Thanks to this snippet, WordPress will look at the HTTP header `X-Forwarded-Proto` set by our router to 'http' or 'https' whether the website is access with HTTP or HTTPS, have a look at our [routing documentation](http://doc.scalingo.com/internals/routing.html) for more information about this header.
+
 ## Plugins and updates
 
 Since the container filesystem is volatile, plugins and addon should
