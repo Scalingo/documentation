@@ -81,3 +81,8 @@ The container filesystem is volatile and not synchronised through
 all your instances. So the uploads should not be stored on
 the filesystem itself. We recommend using an external service like the
 Amazon service: AWS S3 to store them.
+
+You may want to have a look at a plugin such as 
+[S3 Uploads](https://github.com/humanmade/S3-Uploads) to ease the storage 
+of your uploads on S3. As usual, this plugin must be downloaded locally 
+and pushed to our git repository, never via the web interface.
