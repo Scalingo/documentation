@@ -54,7 +54,7 @@ A common example to this feature is to apply migrations, for instance with a
 rails application:
 
 ```yaml
-postdelpoy: bundle exec rake db:migrate
+postdeploy: bundle exec rake db:migrate
 ```
 
 > Keep in mind that migrations may fail, design them knowing that, here is an
