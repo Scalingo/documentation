@@ -72,7 +72,7 @@ postdeploy: newrelic deployments --revision=$CONTAINER_VERSION
 #### Rollbar
 
 ```yaml
-postdeploy: curl https://api.rollbar.com/api/1/deploy/ -F access_token=$ROLLBAR_TOKEN -F environment=$RAILS_ENV -F revision=$CONTAINER_VERSION -F local_username=scalingo
+postdeploy: curl https://api.rollbar.com/api/1/deploy/ -F access_token=$ROLLBAR_ACCESS_TOKEN -F environment=$RAILS_ENV -F revision=$CONTAINER_VERSION -F local_username=scalingo
 ```
 
 ## What you should not do
