@@ -15,6 +15,10 @@ This is a buildpack that installs [wkhtmltopdf](http://wkhtmltopdf.org) into a c
 
 You may find useful to use such a tool as part of your web application. Hence, we developed a [specific buildpack](https://github.com/Scalingo/wkhtmltopdf-buildpack) to ease the installation of this tool. Such a buildpack should be use as part of a [multi-buildpack](http://doc.scalingo.com/buildpacks/multi/). 
 
+## Disclaimer
+
+Please be aware that this software is known to have different rendering depending on the installed version. This buildpack install a specific version known to work on our infrastructure that might render things differently than your local installation.
+
 ## Set up this buildpack for your application
 
 We describe in this section the different step to reproduce in order to use this buildpack depending on the technology you use.
