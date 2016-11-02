@@ -84,12 +84,12 @@ data transfers will be way faster.
 ```bash
 $ scalingo -a myapp run bash
 
-[00:00] Scalingo ~ $ PGPASSWORD=pass pg_dump -U user -h my-db.postgresql.dbs.scalingo.com -P 30000 my-db > /tmp/dump.sql
+[00:00] Scalingo ~ $ PGPASSWORD=pass pg_dump -U user -h my-db.postgresql.dbs.scalingo.com -p 30000 my-db > /tmp/dump.sql
 ...
 
 # Do something with the dump, i.e.e send through FTP or to an external server
 
-[00:00] Scalingo ~ $ PGPASSWORD=pass psql -U my-db -h my-db.postgresql.dbs.scalingo.com -P 30000 my-db < /tmp/dump.sql
+[00:00] Scalingo ~ $ PGPASSWORD=pass psql -U my-db -h my-db.postgresql.dbs.scalingo.com -p 30000 my-db < /tmp/dump.sql
 ...
 [00:00] Scalingo ~ $ exit
 exit
