@@ -25,7 +25,7 @@ When a new `web` container is started, its environment contain the `PORT`
 environment variable. Your application has to listen on this port in order to
 receive request. Once the application has been started, the container scheduler
 will try to connect to your application on the port defined previously during
-60 seconds. Once a TCP connection is accepted by your container, we consider
+**60 seconds**. Once a TCP connection is accepted by your container, we consider
 the container ready to get requests. Otherwise, the operation is aborted with a
 [Boot Timeout Error]({% post_url 2014-08-26-start-error %}):
 
@@ -40,13 +40,11 @@ the container ready to get requests. Otherwise, the operation is aborted with a
 Once the application is ready, the traffic is diverted to the newly booted
 container(s), and the order to stop old containers is passed.
 
-### With multiple 'web' containers
-
 When **deploying** an application using multiple web containers, we're waiting
-for **all of them** to be available before making the switch to this new
+for **all web containers** to be available before making the switch to this new
 release and stopping old containers.
 
-> <h3 style="margin-top:0.3em">Short period with double containers</h3>
+> <h4 style="margin-top:0.3em">Short period with double containers</h4>
 >
 > For a short period both old and new containers are running. If your application
 > is based on schedule tasks, or asynchronous workers, you need to take care of
