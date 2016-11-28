@@ -12,7 +12,7 @@ A Meteor application is a fully dynamic website. When a request is done
 to the application it returns an almost empty page containing one javascript
 file which takes care to start the app on the client browser.
 
-When a crawler like **GoogleBot** is looking at your website website it is specifying
+When a crawler like **GoogleBot** is looking at your website it is specifying
 the following query parameter `_escaped_fragment_=`
 
 In this case Meteor has been built to use PhantomJS through the 'spiderable' package
