@@ -45,13 +45,13 @@ You can access your database on '127.0.0.1:10000'
 The command definition is:
 
 ```bash
-$ PGPASSWORD=<password> pg_dump -O -n public -U <username> -h <host> -p <port> <db> > dump.sql
+$ PGPASSWORD=<password> pg_dump --format c --host <host> --port <port> --username <username> --no-owner --no-privileges --schema public --dbname <db> --file dump.pgsql
 ```
 
 Applied to our example:
 
 ```bash
-$ PGPASSWORD=pass pg_dump -O -n public -U my-db -h 127.0.0.1 -p 10000 my-db > dump.sql
+$ PGPASSWORD=pass pg_dump --format c --host 127.0.0.1 --port 10000 --username my-db --no-owner --no-privileges --schema public --dbname my-db --file dump.pgsql
 ```
 
 As you can see we're using the host and port provided by the tunnel, not those of the URL.
@@ -61,13 +61,13 @@ As you can see we're using the host and port provided by the tunnel, not those o
 The command definition is:
 
 ```bash
-$ PGPASSWORD=<password> psql -U <username> -h <host> -p <port> -d <db> < dump.sql
+$ PGPASSWORD=<password> pg_restore --host <host> --port <port> --username <username> --no-owner --no-privileges --dbname <db> dump.pgsql
 ```
 
 With our example:
 
 ```bash
-$ PGPASSWORD=pass psql -U my-db -h 127.0.0.1 -p 10000 -d my-db < dump.sql
+$ PGPASSWORD=pass pg_restore --host 127.0.0.1 --port 10000 --username my-db --no-owner --no-privileges --dbname my-db dump.pgsql
 ```
 
 ## Dump and Restore from Scalingo one-off container
@@ -84,12 +84,12 @@ data transfers will be way faster.
 ```bash
 $ scalingo -a myapp run bash
 
-[00:00] Scalingo ~ $ PGPASSWORD=pass pg_dump -U user -h my-db.postgresql.dbs.scalingo.com -p 30000 my-db > /tmp/dump.sql
+[00:00] Scalingo ~ $ PGPASSWORD=pass pg_dump --format c --host my-db.postgresql.dbs.scalingo.com --port 30000 --username user --no-owner --no-privileges --schema public --dbname my-db --file dump.pgsql
 ...
 
 # Do something with the dump, i.e.e send through FTP or to an external server
 
-[00:00] Scalingo ~ $ PGPASSWORD=pass psql -U my-db -h my-db.postgresql.dbs.scalingo.com -p 30000 my-db < /tmp/dump.sql
+[00:00] Scalingo ~ $ PGPASSWORD=pass pg_restore --host my-db.postgresql.dbs.scalingo.com --port 30000 --username user --no-owner --no-privileges --dbname my-db dump.pgsql
 ...
 [00:00] Scalingo ~ $ exit
 exit
