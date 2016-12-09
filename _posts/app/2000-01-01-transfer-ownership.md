@@ -25,7 +25,7 @@ This operation is only achievable from the [Scalingo dashboard](https://my.scali
 
 *this step should be done by the user which has been invited*
 
-1 Click on the validation link you've received by email, you'll have to login if you were unauthenticated.
+1. Click on the validation link you've received by email, you'll have to login if you were unauthenticated.
 
 The account is now collaborator of the application
 
