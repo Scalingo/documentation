@@ -49,6 +49,20 @@ To allow sbt to create a binary for your app you **should** have:
 * `addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.0.0-M1")` in ./project/plugins.sbt
 * `enablePlugins(JavaAppPackaging)` in ./project/build.scala
 
+## Fix jetty installation scope
+
+In the file `project/build.scala`, your should see a line like the following, defining the dependency `jetty-webapp`
+
+```scala
+        "org.eclipse.jetty" % "jetty-webapp" % "9.3.9.v20160517",
+```
+
+You need to modify this line to add the use of the package in the `compile` stage:
+
+```scala
+        "org.eclipse.jetty" % "jetty-webapp" % "9.3.9.v20160517" % "compile",
+```
+
 ## Write a base server file
 
 server.scala

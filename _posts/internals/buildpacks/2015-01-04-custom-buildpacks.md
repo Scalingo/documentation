@@ -34,7 +34,7 @@ image is based on Ubuntu 14.04, so you'll find every tool from the `ubuntu:14.04
 
 ```bash
 docker pull scalingo/builder
-docker run -v ./custom-buildpack:/buildpack scalingoa/builder:latest bash
+docker run --interactive --tty -v /path/to/custom-buildpack:/buildpack scalingo/builder:latest bash
 ```
 
 Then if you need to build third-party binaries, you'll be assured that they will work
