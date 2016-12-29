@@ -35,7 +35,7 @@ mongodb://user:pass@my-db.mongo.dbs.com:30000/my-db
 
 ```bash
 $ scalingo -a myapp db-tunnel SCALINGO_MONGO_URL
-scalingo -a myapp db-tunnel SCALINGO_MONGO_URL
+
 Building tunnel to my-db.mongo.dbs.scalingo.eu:30000
 You can access your database on '127.0.0.1:10000'
 ```
