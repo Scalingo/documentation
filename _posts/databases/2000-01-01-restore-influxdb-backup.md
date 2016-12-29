@@ -1,8 +1,8 @@
 ---
-title: Restore locally an Elasticsearch backups
+title: Restore locally an InfluxDB backups
 modified_at: 2016-04-27 00:00:00
 category: databases
-tags: databases elasticsearch backups
+tags: databases influxdb backups
 ---
 
 ## Download the backup file
@@ -14,8 +14,6 @@ The archive is a **.tar.gz** containing a dump of your database which has been
 done following the instructions from [InfluxDB documentation](https://docs.influxdata.com/influxdb/v1.1/administration/backup_and_restore/).
 
 ## Restoring backup
-
-### Restore
 
 You can first start a one-off container of your application:
 
