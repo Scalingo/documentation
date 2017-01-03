@@ -1,14 +1,14 @@
 ---
 title: File system and file storage
-modified_at: 2016-09-20 00:00:00
+modified_at: 2017-01-03 00:00:00
 category: app
-tags: app runtime file system
+tags: app runtime file system disk storage
 ---
 
 ## Introduction
 
 Applications often need to store files, users uploads or simply runtime
-temporary files for instance. The file system located alongside your app on the
+temporary files for instance. The file system located on the disk alongside your app on the
 platform is temporary, it means that each time your application is restarted or
 redeployed, it gets a new file system, files stored previously on it won't be
 present anymore.
