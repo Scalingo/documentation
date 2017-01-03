@@ -19,6 +19,11 @@ If you forget to renew your custom certificate and it expires, or if you delete 
 Encrypt certificate will automatically and immediately replace it. Hence your application will
 always be available using HTTPS.
 
+<blockquote class="bg-info">
+  Note that Let's Encrypt do not deliver wildcard certificates. If you add such a custom domain, we
+  will not be able to create Let's Encrypt certificate.
+</blockquote>
+
 ## Let's Encrypt certificate statuses
 
 On the dashboard, you may find your Let's Encrypt certificate with various statuses:
