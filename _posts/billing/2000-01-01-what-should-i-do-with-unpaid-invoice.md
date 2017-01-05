@@ -1,7 +1,7 @@
 ---
 title: What should I do with unpaid invoices
 modified_at: 2017-01-05 00:00:00
-category: getting-started
+category: billing
 tags: billing invoicing
 ---
 
