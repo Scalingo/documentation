@@ -26,6 +26,7 @@ your data are.
 * [MongoDB]({% post_url 2000-01-01-scalingo-mongodb-addon %})
 * [Redis]({% post_url 2000-01-01-scalingo-redis-addon %})
 * [Elasticsearch]({% post_url 2000-01-01-scalingo-elasticsearch-addon %})
+* [InfluxDB]({% post_url 2000-01-01-scalingo-influxdb-addon %})
 
 ## Backups
 
