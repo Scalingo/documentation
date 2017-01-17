@@ -77,7 +77,7 @@ it by the MySQL driver.
 ```bash
 pip uninstall psycopg2
 pip install mysqlclient
-pip freeze > requirement.tt
+pip freeze > requirement.txt
 ```
 
 ## Application configuration
