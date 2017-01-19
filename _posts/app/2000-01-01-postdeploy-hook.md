@@ -75,6 +75,14 @@ postdeploy: newrelic deployments --revision=$CONTAINER_VERSION
 postdeploy: curl https://api.rollbar.com/api/1/deploy/ -F access_token=$ROLLBAR_ACCESS_TOKEN -F environment=$RAILS_ENV -F revision=$CONTAINER_VERSION -F local_username=scalingo
 ```
 
+### Both Applying migrations and notifying external service
+
+Use the standard && bash operator:
+
+```yaml
+postdeploy: bundle exec rake db:migrate && newrelic deployments --revision=$CONTAINER_VERSION
+```
+
 ## What you should not do
 
 ### Build assets
