@@ -20,7 +20,7 @@ To add the environment variable, run the following command or add it through
 [your dashboard](https://my.scalingo.com)
 
 ```bash
-scalingo env-set MAIL_URL <smtp_url>
+scalingo env-set MAIL_URL=<smtp_url>
 ```
 
 More information in [the official Meteor documentation](http://docs.meteor.com/#/full/email)
