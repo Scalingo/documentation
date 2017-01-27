@@ -104,7 +104,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 ### Configure the Database access
 
-Replace:
+Still in the `myapp/settings.py`, replace:
 
 ```python
 DATABASES = {
