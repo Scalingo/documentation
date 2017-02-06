@@ -27,8 +27,11 @@ Daily backups done by Scalingo are listed in the database specific dashboard:
 ### Restore
 
 You can restore your data on your local environment if needed. Download a backup on your database
-dashboard. It is a **.tar.gz** containing a dump of your database. Before starting the restore
-process, you need to stop the InfluxDB daemon. Then just type the following commands:
+dashboard. It is a **.tar.gz** containing a dump of your database which has been
+done following the instructions from the [InfluxDB 
+documentation](https://docs.influxdata.com/influxdb/v1.2/administration/backup_and_restore/).
+Before starting the restore process, you need to stop the InfluxDB daemon. Then just type 
+the following commands:
 
 ```bash
 $ tar xfz /path/to/backup.tar.gz

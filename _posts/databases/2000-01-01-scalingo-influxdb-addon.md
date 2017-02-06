@@ -189,7 +189,7 @@ Automated backups are listed in the database specific dashboard.
 
 ### Restoring a backup
 
-Follow our guide: [Restore locally an InfluxDB backups]({% post_url 2000-01-01-restore-influxdb-backup %})
+Follow our guide: [How to dump and restore my InfluxDB database on Scalingo]({% post_url 2000-01-01-dump-restore-influxdb %})
 
 ## Add Retention Policies
 
