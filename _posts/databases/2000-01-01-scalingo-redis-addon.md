@@ -75,11 +75,38 @@ REDIS_URL=$SCALINGO_REDIS_URL
 SCALINGO_REDIS_URL=redis://example-app-3030:l2ebPNwe-IWVJmV8OlLX@example-app-3030.redis.dbs.appsdeck.eu:30996
 ```
 
-
 ## Remote access your database
 
 If you need to access your database from other places than your app please follow the [Access your database]({% post_url 2015-06-24-access-database %}) guide.
 
+## Redis configuration
+
+### Number of databases
+
+Each redis instance can use 5 databases (numbered from 1 to 5)
+
+### Idle connections timeout
+
+Redis configuration:
+
+```
+timeout 150
+```
+
+It means that if a connection has not been used during 150 seconds, it will be automatically closed by redis. This is done to avoid accumulating staled connections. If your application is using a pool of connection to connect to the redis database. This value has to been used for its configuration.
+
+### Asynchronous disk save
+
+Redis does not write all the operations requested by users on disk instantly, the write operations are done asynchronously by following different rules. Those used on the platform are defined here:
+
+```
+# Save to disk every 15 minutes if at least 1 operation has been done
+save 900 1
+# Save to disk every 5 minutes if at least 10 operations have been done
+save 300 10
+# Save to disk every minute if at least 10,000 operations have been done
+save 60 10000
+```
 
 ## Changing plans
 
@@ -136,7 +163,6 @@ This operation is similar to changing your database plan; your database will be 
 
 {% assign data = "Beware that no downgrade is possible once your database has been upgraded." %}
 {% include danger %}
-
 
 ### Container Stats
 
