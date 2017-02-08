@@ -42,6 +42,8 @@ $ influxd restore -database my-db -datadir /var/lib/influxdb/data/ ./
 Note that `/var/lib/influxdb` is the default folder for a Linux installation. You need to modify it
 depending on your configuration.
 
+If you need to restore a backup on your Scalingo server, please contact our support at support@scalingo.com.
+
 ## Why you cannot manage the backups for InfluxDB on Scalingo
 
 Unfortunately, backing up and restoring your data from the InfluxDB on Scalingo is not possible
