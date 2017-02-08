@@ -161,7 +161,7 @@ This operation is similar to changing your database plan; your database will be 
   <tbody>
     <tr>
       <td class="mdl-data-table__cell--non-numeric">Data size</td>
-      <td class="mdl-data-table__cell--non-numeric">TODO</td>
+      <td class="mdl-data-table__cell--non-numeric">Size of your data provided by InfluxDB</td>
     </tr>
     <tr>
       <td class="mdl-data-table__cell--non-numeric">Database on disk size</td>
