@@ -29,7 +29,7 @@ always be available using HTTPS.
 On the dashboard, you may find your Let's Encrypt certificate with various statuses:
 
 * Pending DNS: when you link a domain name to your application, we wait for it to target our
-  infrastructure before generating the certificate.
+  infrastructure before generating the certificate. We check the DNS record automatically every 60 seconds.
 * Creating: our infrastructure is exchanging messages with Let's Encrypt servers to generate your
   certificate.
 * In use: your website is available using HTTPS connections thanks to a Let's Encrypt certificate.
