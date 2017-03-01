@@ -26,7 +26,7 @@ You can add the InfluxDB addon through the **Dashboard** or through the **comman
 4. In the dialog select the database plan you need
 5. Validate your choice
 
-{% assign img_url = "/assets/images/database/influxdb-activate.png" %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_influxdb_activate.png" %}
 {% include mdl_img.html %}
 
 ### Through the command-line interface
@@ -63,7 +63,7 @@ You can get environment variables from the Dashboard or the command-line interfa
 2. Click on **Environment** tab
 3. `SCALINGO_INFLUX_URL` is displayed
 
-{% assign img_url = "/assets/images/database/influxdb-environment.png" %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_influxdb_environment.png" %}
 {% include mdl_img.html %}
 
 ### From the command-line interface
@@ -123,7 +123,7 @@ The Scalingo InfluxDB dashboard is the central place for administrative tasks su
 - Manage database users
 - Manage backups
 
-{% assign img_url = "/assets/images/database/influxdb-dashboard.png" %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_influxdb_dashboard.png" %}
 {% include mdl_img.html %}
 
 ### Database Upgrade
@@ -170,7 +170,6 @@ This operation is similar to changing your database plan; your database will be 
   </tbody>
 </table>
 
-
 ## Backups
 
 {% include database_backups.md %}
@@ -185,9 +184,24 @@ Automated backups are listed in the database specific dashboard.
 4. Click on **Backups** tab
 5. Download the backup you want
 
-{% assign img_url = "/assets/images/database/influxdb-backups.png" %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_influxdb_backups.png" %}
 {% include mdl_img.html %}
 
 ### Restoring a backup
 
 Follow our guide: [Restore locally an InfluxDB backups]({% post_url 2000-01-01-restore-influxdb-backup %})
+
+## Add Retention Policies
+
+InfluxDB provides a way to automatically delete records older than a certain date called retention
+policy:
+
+```
+CREATE RETENTION POLICY "one_hour" ON "tweets" DURATION 1h REPLICATION 1 DEFAULT
+```
+
+Creating retention policy is not available to simple database users. If you wish to create one,
+you can log into your database dashboard, and go to the "Advanced" tab.
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_influxdb_retention_policies.png" %}
+{% include mdl_img.html %}
