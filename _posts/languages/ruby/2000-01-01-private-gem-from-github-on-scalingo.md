@@ -25,7 +25,7 @@ Add this line to your Gemfile replacing "your_token" with the token you got from
 gem 'ventana', git: "https://your_token:x-oauth-basic@github.com/thoughtbot/ventana.git"
 ```
 
-## EXPERIMENTAL ALTERNATIVE: Storing the OAuth token in an environment variable (more secure)
+## Storing the OAuth token in an environment variable (more secure)
 
 For additional security you can store your OAuth token in an environment variable. This way your token is not included in your codebase which is insecure.
 
