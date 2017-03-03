@@ -1,6 +1,6 @@
 ---
 title: Scalingo InfluxDB Addon
-modified_at: 2016-12-29 00:00:00
+modified_at: 2017-03-03 00:00:00
 category: databases
 tags: databases influxdb addon
 ---
