@@ -180,7 +180,7 @@ Automated backups are listed in the database specific dashboard.
 
 1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
 2. Click on **Addons** tab
-3. Click **Link to dashboard** which will take you to the **Scalingo Elasticsearch dashboard**
+3. Click **Link to dashboard** which will take you to the **Scalingo InfluxDB dashboard**
 4. Click on **Backups** tab
 5. Download the backup you want
 
@@ -189,7 +189,7 @@ Automated backups are listed in the database specific dashboard.
 
 ### Restoring a backup
 
-Follow our guide: [Restore locally an InfluxDB backups]({% post_url 2000-01-01-restore-influxdb-backup %})
+Follow our guide: [How to dump and restore my InfluxDB database on Scalingo]({% post_url 2000-01-01-dump-restore-influxdb %})
 
 ## Add Retention Policies
 
