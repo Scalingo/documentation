@@ -9,9 +9,9 @@ Review apps are a *powerful collaboration tool* to discuss about a new features 
 
 ## What are review apps?
 
-Let say that you have worked some hours on an awesome new feature. It's time to show the world your work and to open a new Pull Request (PR) on GitHub (even if it's not fully done). With review apps enabled on Scalingo, we will create new application, called a review app with the code of the new feature. You can now easily share the result of your work, to get it validated, with all people involved, even if they are not in the tech field.
+Let say that you have worked some hours on an awesome new feature. It's time to show the world your work and to open a new Pull Request (PR) on GitHub (even if it's not fully done). With Review Apps enabled on Scalingo, we will create a new application (a Review App) with the code of the new feature. You can now easily share the result of your work, to get it validated, with all people involved, even if they are not in the tech field.
 
-Maybe they will tell you to change something like adding tests or to change a button color. You just have to push your modification on the branch involved in the PR to update the review app.
+Maybe they will tell you to change something like adding tests or to change a button color. You just have to push your modification on the branch involved in the PR to update the Review App.
 
 Once all of our teammates are satisfied and the PR is closed, we will automatically delete the review app. You can disable this behavior or add a delay to fit your needs. This latter setting means that you can still review PR after your dev team has closed the PR.
 
@@ -22,7 +22,7 @@ If you don't want to create a new review app for each PR you can also choose amo
 
 ## What about Addons, collaborators and environment variables?
 
-If you've enabled Review Apps, a new application will be created every time a new Pull Request is opened in your GitHub repository. This new application is a child application (we'll see later this year which new exciting stuff this link will help us build). This child app will have a copy of add-ons, collaborators and environment variables from the parent application.
+If you've enabled Review Apps, a new application will be created every time a new Pull Request is opened in your GitHub repository. This new application is a child application (we'll see later this year which new exciting stuff this specification will help us build). This child app will have a copy of add-ons, collaborators and environment variables from the parent application.
 
 Most of the time you want to customize those 3 things. That's where the new postdeploy hooks and manifest come in handy. Combining those two powerful features, you can tailor exactly how child apps are configured and their behaviors.
 
@@ -38,9 +38,9 @@ As a quick example, here is a sample `scalingo.json` that customize the environm
 }
 ```
 
-Here, the value of this of the variable will contain the URL to reach the newly deployed app. The `scalingo.json` configuration always takes precedence on parent app configuration.
+Here, the value of the environment variable CANONICAL_HOST_URL will contain the URL to reach the newly deployed app. The `scalingo.json` configuration always takes precedence on parent app configuration.
 
-## Is it possible to create review apps if my code is hosted at a different place?
+## Is it possible to create Review Apps if my code is hosted at a different place?
 
 You can create review apps with the code being hosted anywhere thanks to the two following endpoint of our API:
 
