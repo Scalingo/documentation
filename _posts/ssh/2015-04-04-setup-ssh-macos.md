@@ -25,4 +25,4 @@ Follow the instructions to generate a new SSH key pair. You will be asked to enc
 you private key with a password. This step is optional but for further security you may
 want to set one.
 
-By default both private an d public keys will be located in your `$HOME/.ssh` directory.
+By default both private and public keys will be located in your `$HOME/.ssh` directory.
