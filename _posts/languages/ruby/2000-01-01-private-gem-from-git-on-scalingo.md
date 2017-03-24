@@ -35,7 +35,7 @@ the `GIT_SSH` environment variable which is automatically used by the
 executable `git`.
 
 ```
-scalingo env-set GIT_SSH=bin/git-ssh
+scalingo env-set GIT_SSH=git-ssh
 ```
 
 ## Set the private SSH key in the app environment
