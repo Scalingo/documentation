@@ -44,7 +44,7 @@ $ cat $HOME/.ssh/id_rsa.pub
 
 The file content should start with `ssh-rsa`
 
-Once you have the public key, go to Scalingo Dashboard [SSH key secion](https://my.scalingo.com/keys) and
+Once you have the public key, go to Scalingo Dashboard [SSH key section](https://my.scalingo.com/keys) and
 create a new key with the content of the public key.
 
 ### 4. Check everything is working
@@ -61,5 +61,5 @@ It should display the following output:
 You've successfully authenticated on Scalingo, but there is no shell access
 ```
 
-If it doesn't something has been donw wrong please recheck the different step
+If it doesn't, something has been done wrong please recheck the different step
 of this guide.
