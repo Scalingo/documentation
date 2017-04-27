@@ -56,8 +56,8 @@ release and stopping old containers.
 We have adopted a standard process:
 
 1. Send SIGTERM to the process started in the container
-2. Wait 10 seconds
+2. Wait 30 seconds
 3. Send SIGKILL if the process is still alive
 
-In other words, your application has 10 seconds to catch the SIGTERM signal and
+In other words, your application has 30 seconds to catch the SIGTERM signal and
 clean its state before we force it to stop.
