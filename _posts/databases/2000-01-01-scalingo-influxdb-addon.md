@@ -36,7 +36,7 @@ $ scalingo -a example-app addons-add scalingo-influxdb 1g
 
 -----> Addon scalingo-influxdb has been provisionned
        ID: sample_influxdb_3707
-       Modified variables: [SCALINGO_INFLUX_URL]
+       Modified variables: [INFLUX_URL SCALINGO_INFLUX_URL]
        Message from addon provider: Database successfully created
 ```
 
@@ -51,7 +51,7 @@ $ scalingo addons-plans scalingo-influxdb
 
 ## Getting your connection URI
 
-Once the addon is provisioned, one environment variable is added to your app: `SCALINGO_INFLUX_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url 2014-09-15-environment %}).
+Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_INFLUX_URL` and `INFLUX_URL`. `INFLUX_URL` is an alias to `SCALINGO_INFLUX_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url 2014-09-15-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
