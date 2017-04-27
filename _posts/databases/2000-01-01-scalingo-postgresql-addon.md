@@ -1,6 +1,6 @@
 ---
 title: Scalingo PostgreSQL Addon
-modified_at: 2016-01-11 00:00:00
+modified_at: 2017-04-27 00:00:00
 category: databases
 tags: databases postgresql addon
 ---
@@ -36,7 +36,7 @@ $ scalingo -a example-app addons-add scalingo-postgresql 1g
 
 -----> Addon scalingo-postgresql has been provisionned
        ID: example-app-3030
-       Modified variables: [SCALINGO_POSTGRESQL_URL]
+       Modified variables: [DATABASE_URL SCALINGO_POSTGRESQL_URL]
        Message from addon provider: Database successfully created
 ```
 
@@ -51,7 +51,7 @@ $ scalingo addons-plans scalingo-postgresql
 
 ## Getting your connection URI
 
-Once the addon is provisioned, 1 environment variable is added to your app: `SCALINGO_POSTGRESQL_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url 2014-09-15-environment %}).
+Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_POSTGRESQL_URL` and `DATABASE_URL`. `DATABASE_URL` is an alias to `SCALINGO_POSTGRESQL_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url 2014-09-15-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
@@ -71,9 +71,9 @@ You can get environment variables from the Dashboard or the command-line interfa
 ```bash
 $ scalingo -a example-app env | grep POSTGRESQL
 
+DATABASE_URL=$SCALINGO_POSTGRESQL_URL
 SCALINGO_POSTGRESQL_URL=postgres://example_app_3030:ptojfrxzRi-lDfDYyahe@example-app-3030.postgresql.dbs.appsdeck.eu:31000/example_app_3030
 ```
-
 
 ## Remote access your database
 
