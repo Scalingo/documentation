@@ -11,8 +11,6 @@ permalink: /languages/php/migration/
 Artisan is the command-line interface included with Laravel. It provides a number of helpful commands that can assist you while you build your application.
 Migrations are like version control for your database, allowing your team to easily modify and share the application's database schema. Migrations are typically paired with Laravel's schema builder to easily build your application's database schema. If you have ever had to tell a teammate to manually add a column to their local database schema, you've faced the problem that database migrations solve.
 
-Sources : `http://laravel.sillo.org/laravel-4-chapitre-12-les-bases-de-donnees-1/`
-
 To begin, we can usually begin with the installation of the migration. It is posible that this installation was already done in your project.
 
 ```bash
