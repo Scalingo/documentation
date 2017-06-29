@@ -23,9 +23,9 @@ Deploying an application on Scalingo requires you to have GIT installed.
 To identify that you are allowed to push to your application, you need to setup SSH
 authentication.
 
-* [Guide for Linux]({% post_url 2015-04-03-setup-ssh-linux %})
-* [Guide for MacOS]({% post_url 2015-04-04-setup-ssh-macos %})
-* [Guide for Windows]({% post_url 2015-04-04-setup-ssh-windows %})
+* [Guide for Linux]({% post_url ssh/2015-04-03-setup-ssh-linux %})
+* [Guide for MacOS]({% post_url ssh/2015-04-04-setup-ssh-macos %})
+* [Guide for Windows]({% post_url ssh/2015-04-04-setup-ssh-windows %})
 
 For any operating system, you need to copy the content of the public key to your account.
 

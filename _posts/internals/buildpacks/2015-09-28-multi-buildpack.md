@@ -64,7 +64,7 @@ https://github.com/Scalingo/java-buildpack#javaonly
 https://github.com/Scalingo/nodejs-buildpack
 ```
 
-Without doing that, if you don't have a [Procfile]({% post_url 2014-12-01-procfile %}), your application will fail to boot.
+Without doing that, if you don't have a [Procfile]({% post_url internals/2014-12-01-procfile %}), your application will fail to boot.
 
 ## Deploy your application
 

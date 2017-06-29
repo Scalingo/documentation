@@ -31,7 +31,7 @@ Scalingo.
 
 This way doesn't need extra stuff to work with Scalingo. You just have to
 create a `Procfile` file at the root of your project: [more doc about
-Procfiles]({% post_url 2014-12-01-procfile %})
+Procfiles]({% post_url internals/2014-12-01-procfile %})
 
 ```yaml
 web: java $JAVA_OPTS -jar target/*.jar --spring.profiles.active=YOUR_PROD_PROFILE
@@ -126,7 +126,7 @@ server:
 ### Define your Procfile
 
 To define how to start your application, you need to create a `Procfile` file
-at the root of your project: [more doc about Procfiles]({% post_url 2014-12-01-procfile %})
+at the root of your project: [more doc about Procfiles]({% post_url internals/2014-12-01-procfile %})
 
 ```yaml
 web: java $JAVA_OPTS -Dspring.profiles.active=YOUR_PROD_PROFILE -jar target/dependency/webapp-runner.jar --port $PORT --expand-war target/*.war

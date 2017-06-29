@@ -8,7 +8,7 @@ tags: databases elasticsearch addon
 <blockquote class="bg-info">
 	Some operation requires our command-line tool to be installed.
   <br>
-  Instructions are detailed in <a href="{% post_url 2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
+  Instructions are detailed in <a href="{% post_url cli/2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
 </blockquote>
 
 Scalingo Elasticsearch addon is the official addon provided by Scalingo, details on the available plans can be found [here](https://scalingo.com/addons/scalingo-elasticsearch). This addon gives your app instant access to a Elasticsearch database running in its own Docker container.
@@ -51,7 +51,7 @@ $ scalingo addons-plans scalingo-elasticsearch
 
 ## Getting your connection URI
 
-Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_ELASTICSEARCH_URL` and `ELASTICSEARCH_URL`. `ELASTICSEARCH_URL` is an alias to `SCALINGO_ELASTICSEARCH_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url 2014-09-15-environment %}).
+Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_ELASTICSEARCH_URL` and `ELASTICSEARCH_URL`. `ELASTICSEARCH_URL` is an alias to `SCALINGO_ELASTICSEARCH_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url app/2014-09-15-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
@@ -78,7 +78,7 @@ SCALINGO_ELASTICSEARCH_URL=http://example-app-3030:MpIxXstskccB3Ab2iwKH@example-
 
 ## Remote access your database
 
-If you need to access your database from other places than your app please follow the [Access your database]({% post_url 2015-06-24-access-database %}) guide.
+If you need to access your database from other places than your app please follow the [Access your database]({% post_url databases/2015-06-24-access-database %}) guide.
 
 
 ## Changing plans
@@ -188,4 +188,4 @@ Automated backups are listed in the database specific dashboard.
 
 ### Restoring a backup
 
-Follow our guide: [Restore locally an Elasticsearch backups]({% post_url 2000-01-01-restore-elasticsearch-backup %})
+Follow our guide: [Restore locally an Elasticsearch backups]({% post_url databases/2000-01-01-restore-elasticsearch-backup %})

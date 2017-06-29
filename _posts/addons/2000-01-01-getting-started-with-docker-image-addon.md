@@ -13,7 +13,7 @@ built with Meteor and running it locally by getting the docker image.
 Before doing this tutorial, you need to setup your environment:
 
   * [Install `scalingo` Command Line
-    Interface]({% post_url 2015-09-18-command-line-tool %})
+    Interface]({% post_url cli/2015-09-18-command-line-tool %})
   * [Install docker](https://docs.docker.com/engine/installation/)
 
 ## Introduction
@@ -159,4 +159,4 @@ $ scalingo run \
 That's it, the exact identical application running on Scalingo is running on
 your workstation: [http://localhost:4000](http://localhost:4000). You want to
 copy your database data from your production app, have a look at our [database
-addons]({% post_url 2014-11-24-databases %}) documentation.
+addons]({% post_url databases/2014-11-24-databases %}) documentation.

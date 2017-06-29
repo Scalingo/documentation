@@ -11,7 +11,7 @@ The Scalingo model of configuration includes using
 the environment instead of writing hard-coded configuration
 files which are handled in the source code repository of a
 project. You can see and modify them from your [dashboard](https://my.scalingo.com)
-or with our [command line utility]({% post_url 2015-09-18-command-line-tool %})
+or with our [command line utility]({% post_url cli/2015-09-18-command-line-tool %})
 
 ## Read a variable from the environment
 

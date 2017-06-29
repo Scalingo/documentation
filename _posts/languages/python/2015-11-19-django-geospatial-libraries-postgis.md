@@ -15,7 +15,7 @@ an application which is using such extensions, a bit of work is required:
 
 ## Enable PostgreSQL 'postgis' extension
 
-Scalingo PostgreSQL includes [several extensions]({% post_url 2000-01-01-postgresql-extensions %}).
+Scalingo PostgreSQL includes [several extensions]({% post_url databases/2000-01-01-postgresql-extensions %}).
 Postgis the extension to handle geospatial data is among them. To use it with your application, your need
 to enable it.
 
@@ -37,7 +37,7 @@ To deploy an application with these libraries you need to use an additional the 
 
 <blockquote class="info">
 Reminder, a buildpack is a piece of software able to detect and install dependencies of a given technology.
-More information about <a href="{% post_url 2015-01-04-buildpacks %}">Scalingo's buildpacks</a>.
+More information about <a href="{% post_url internals/buildpacks/2015-01-04-buildpacks %}">Scalingo's buildpacks</a>.
 </blockquote>
 
 Create a `.buildpacks` file at the root of your project with the following content:
@@ -47,7 +47,7 @@ https://github.com/Scalingo/geo-buildpack
 https://github.com/Scalingo/python-buildpack
 ```
 
-Then setup the [multi buildpack]({% post_url 2015-09-28-multi-buildpack %}) for your project to handle this file:
+Then setup the [multi buildpack]({% post_url internals/buildpacks/2015-09-28-multi-buildpack %}) for your project to handle this file:
 
 ```bash
 scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack
