@@ -29,5 +29,12 @@ defaults:
 gems:
   - jekyll-sitemap
   - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - config.ru
+  - vendor
+  - Procfile
+  - config/puma.rb
 
 array: [] # hack for creating array
