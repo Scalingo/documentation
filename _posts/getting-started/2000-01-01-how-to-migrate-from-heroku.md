@@ -6,7 +6,7 @@ tags: heroku tutorial
 permalink: /how-to-migrate-from-heroku/
 ---
 
-Scalingo is a Platform as a Service [highly compatible with Heroku]({% post_url 2015-09-17-heroku-compatibility %}). It's very easy to understand and you shouldn't have any problem migrating your app from Heroku to Scalingo. <br>
+Scalingo is a Platform as a Service [highly compatible with Heroku]({% post_url getting-started/2015-09-17-heroku-compatibility %}). It's very easy to understand and you shouldn't have any problem migrating your app from Heroku to Scalingo. <br>
 
 It is so easy that you can use [heroku2scalingo](https://github.com/Scalingo/heroku2scalingo/releases/latest), a tool to migrate a simple Heroku app to Scalingo.
 
@@ -37,12 +37,12 @@ You can download the latest version by following this link : [https://github.com
 
 ## Advanced apps migration
 
-* The [Procfile]({% post_url 2014-12-01-procfile %}) can remain the same
+* The [Procfile]({% post_url internals/2014-12-01-procfile %}) can remain the same
 * You need to set the same environment variables as the ones defined on your Heroku app
 * You have to set your Scalingo addons according to the addons you had on your Heroku app.
   If you require an addon that is not present in [this list](https://scalingo.com/addons),
   feel free to [send us an email](mailto:support@scalingo.com).
 * You will need to migrate any database manually, dumping it from Heroku and restoring it to Scalingo:
-  * [Dump and restore a MongoDB database]({% post_url 2015-09-30-dump-restore-mongodb %})
-  * [Dump and restore a PostgreSQL database]({% post_url 2015-10-01-dump-restore-postgresql %})
-  * [Dump and restore a MySQL database]({% post_url 2015-10-01-dump-restore-mysql %})
+  * [Dump and restore a MongoDB database]({% post_url databases/2015-09-30-dump-restore-mongodb %})
+  * [Dump and restore a PostgreSQL database]({% post_url databases/2015-10-01-dump-restore-postgresql %})
+  * [Dump and restore a MySQL database]({% post_url databases/2015-10-01-dump-restore-mysql %})

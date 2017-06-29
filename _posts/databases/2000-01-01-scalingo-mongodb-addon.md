@@ -8,7 +8,7 @@ tags: databases mongodb addon
 <blockquote class="bg-info">
 	Some operation requires our command-line tool to be installed.
   <br>
-  Instructions are detailed in <a href="{% post_url 2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
+  Instructions are detailed in <a href="{% post_url cli/2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
 </blockquote>
 
 Scalingo MongoDB addon is the official addon provided by Scalingo, details on the available plans can be found [here](https://scalingo.com/addons/scalingo-mongodb). This addon gives your app instant access to a MongoDB database running in its own Docker container.
@@ -51,7 +51,7 @@ $ scalingo addons-plans scalingo-mongodb
 
 ## Getting your connection URI
 
-Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_MONGO_URL` and `MONGO_URL`. `MONGO_URL` is an alias to `SCALINGO_MONGO_URL` for the convenience of some libraries such as the framework [Meteor]({% post_url 2015-02-09-getting-started-with-meteor %}) or the Ruby gem **mongoid**, but using `SCALINGO_MONGO_URL` is prefered in most cases. To find out how to use them in your code please refer to [Application environment]({% post_url 2014-09-15-environment %}).
+Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_MONGO_URL` and `MONGO_URL`. `MONGO_URL` is an alias to `SCALINGO_MONGO_URL` for the convenience of some libraries such as the framework [Meteor]({% post_url languages/javascript/meteor/2015-02-09-getting-started-with-meteor %}) or the Ruby gem **mongoid**, but using `SCALINGO_MONGO_URL` is prefered in most cases. To find out how to use them in your code please refer to [Application environment]({% post_url app/2014-09-15-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
@@ -78,7 +78,7 @@ SCALINGO_MONGO_URL=mongodb://example-app-3030:2rj5FYoiKRFp8eZhpMz7@example-app-3
 
 ## Remote access your database
 
-If you need to access your database from other places than your app please follow the [Access your database]({% post_url 2015-06-24-access-database %}) guide.
+If you need to access your database from other places than your app please follow the [Access your database]({% post_url databases/2015-06-24-access-database %}) guide.
 
 
 ## Changing plans
@@ -195,7 +195,7 @@ Automated backups are listed in the database specific dashboard.
 
 ### Manual database backup
 
-If you wish to manually backup your database, please follow [How to dump and restore my MongoDB database on Scalingo]({% post_url 2015-09-30-dump-restore-mongodb %}) guide.
+If you wish to manually backup your database, please follow [How to dump and restore my MongoDB database on Scalingo]({% post_url databases/2015-09-30-dump-restore-mongodb %}) guide.
 
 
 ## MongoDB Oplog

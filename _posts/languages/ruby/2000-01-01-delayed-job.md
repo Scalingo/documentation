@@ -42,7 +42,7 @@ That's it your application is ready, you can find more information on their
 
 Once `delayed_job` has been installed, you need to add a new type of containers
 in your application which will actually start delayed_job. Add the following
-line to the [**Procfile**]({% post_url 2014-12-01-procfile %}) of
+line to the [**Procfile**]({% post_url internals/2014-12-01-procfile %}) of
 your project.  Create the file if it doesn't exist.
 
 ```yaml

@@ -8,7 +8,7 @@ tags: databases mysql addon
 <blockquote class="bg-info">
 	Some operation requires our command-line tool to be installed.
   <br>
-  Instructions are detailed in <a href="{% post_url 2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
+  Instructions are detailed in <a href="{% post_url cli/2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
 </blockquote>
 
 Scalingo MySQL addon is the official addon provided by Scalingo, details on the available plans can be found [here](https://scalingo.com/addons/scalingo-mysql). This addon gives your app instant access to a MySQL database running in its own Docker container.
@@ -51,7 +51,7 @@ $ scalingo addons-plans scalingo-mysql
 
 ## Getting your connection URI
 
-Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_MYSQL_URL` and `DATABASE_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url 2014-09-15-environment %}).
+Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_MYSQL_URL` and `DATABASE_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url app/2014-09-15-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
@@ -84,7 +84,7 @@ If you’re using the <em>mysql2</em> gem, you will need to copy the value of `S
 
 ## Remote access your database
 
-If you need to access your database from other places than your app please follow the [Access your database]({% post_url 2015-06-24-access-database %}) guide.
+If you need to access your database from other places than your app please follow the [Access your database]({% post_url databases/2015-06-24-access-database %}) guide.
 
 
 ## Changing plans
@@ -202,4 +202,4 @@ Automated backups are listed in the database specific dashboard.
 
 ### Manual database backup
 
-If you wish to manually backup your database, please follow [How to dump and restore my MySQL database on Scalingo]({% post_url 2015-10-01-dump-restore-mysql %}) guide.
+If you wish to manually backup your database, please follow [How to dump and restore my MySQL database on Scalingo]({% post_url databases/2015-10-01-dump-restore-mysql %}) guide.

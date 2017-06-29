@@ -5,7 +5,7 @@ category: integration
 tags: app review apps
 ---
 
-Review apps are a *powerful collaboration tool* to discuss about a new features between members of your organization. We implemented this feature as part of our [GitHub integration]({% post_url 2000-01-01-github-integration %}).
+Review apps are a *powerful collaboration tool* to discuss about a new features between members of your organization. We implemented this feature as part of our [GitHub integration]({% post_url integrations/2000-01-01-github-integration %}).
 
 ## What are review apps?
 
@@ -44,5 +44,5 @@ Here, the value of the environment variable CANONICAL_HOST_URL will contain the 
 
 We only implement directly Review Apps for code hosted on GitHub. However it is very easy for you to set it up for your specific case thanks to the Scalingo API:
 
-* Create a [child application]({% post_url 2017-03-10-child-apps %})
+* Create a [child application]({% post_url app/2017-03-10-child-apps %})
 * Deploy a gzipped tar archive containing your code: [http://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive](http://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive)

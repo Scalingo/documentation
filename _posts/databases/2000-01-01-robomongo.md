@@ -12,9 +12,9 @@ access to most databases are unencrypted, so unsecure. Applications are on the s
 network than your database, but you can not connect your machine to it directly.
 
 It is possible to use Robomongo, but you have to setup an encrypted tunnel to your
-database thanks to our [Command line utility]({% post_url 2015-09-18-command-line-tool %})
+database thanks to our [Command line utility]({% post_url cli/2015-09-18-command-line-tool %})
 
-→ How-to: [build an uncrypted tunnel to your database]({% post_url 2014-11-24-tunnel %})
+→ How-to: [build an uncrypted tunnel to your database]({% post_url databases/2014-11-24-tunnel %})
 
 ## Configuration of Robomongo
 
