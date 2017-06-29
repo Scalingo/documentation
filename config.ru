@@ -2,6 +2,7 @@ require 'rack/jekyll'
 require 'rack/rewrite'
 require 'rack/ssl-enforcer'
 require 'rack/canonical_host'
+require 'yaml'
 
 class Object
   def blank?
