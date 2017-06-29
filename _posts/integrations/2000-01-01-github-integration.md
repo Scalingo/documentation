@@ -46,4 +46,4 @@ The manual deploy feature lets you instantly deploy a branch from the GitHub rep
 
 Review apps are a **powerful collaboration tool** to discuss about a new features between members of your organization.
 
-This feature is related to Pull Requests and has a [dedicated documentation page]({% post_url 2017-03-10-review-apps %}).
+This feature is related to Pull Requests and has a [dedicated documentation page]({% post_url integrations/2017-03-10-review-apps %}).

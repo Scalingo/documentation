@@ -47,4 +47,4 @@ scalingo -a example-app redis-console
  To access them remotely
 from your workstation you need to setup an encrypted connection.
 
-How-to: [build an encrypted tunnel to your database]({% post_url 2014-11-24-tunnel %})
+How-to: [build an encrypted tunnel to your database]({% post_url databases/2014-11-24-tunnel %})

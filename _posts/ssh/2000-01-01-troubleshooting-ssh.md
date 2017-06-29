@@ -9,9 +9,9 @@ tags: follow-the-light ssh linux git troubleshoot problem connect git push
 
 At this point we consider you have correctly setup your environment as detailed here:
 
-* [Linux]({% post_url 2015-04-03-setup-ssh-linux %})
-* [Mac OS]({% post_url 2015-04-04-setup-ssh-macos %})
-* [Windows]({% post_url 2015-04-04-setup-ssh-windows %})
+* [Linux]({% post_url ssh/2015-04-03-setup-ssh-linux %})
+* [Mac OS]({% post_url ssh/2015-04-04-setup-ssh-macos %})
+* [Windows]({% post_url ssh/2015-04-04-setup-ssh-windows %})
 
 ## GIT authentication error: `Please make sure you have the correct access rights`
 

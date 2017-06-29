@@ -36,8 +36,7 @@ The command line interface (CLI) is pretty simple to install. Just go at
 It is essentialy like installing a single binary on your system, there is no
 dependency to install, it just works.
 
-You will find its documentation at following page: [Introducing the CLI]({% post_url
-2015-09-18-command-line-tool %}).
+You will find its documentation at following page: [Introducing the CLI]({% post_url cli/2015-09-18-command-line-tool %}).
 
 Everything which can be done in the web dashboard can be done with the CLI, and even
 more, like accessible your databases with helper commands or running one-off jobs for
@@ -118,12 +117,12 @@ for each database addon, the way to export your data.
 
 To import them on Scalingo, it will depend the type of database you're using.
 
-* [Import/Export your MySQL Database]({% post_url 2015-10-01-dump-restore-mysql %})
-* [Import/Export your PostgreSQL Database]({% post_url 2015-10-01-dump-restore-postgresql %})
-* [Import/Export your MongoDB Database]({% post_url 2015-09-30-dump-restore-mongodb %})
+* [Import/Export your MySQL Database]({% post_url databases/2015-10-01-dump-restore-mysql %})
+* [Import/Export your PostgreSQL Database]({% post_url databases/2015-10-01-dump-restore-postgresql %})
+* [Import/Export your MongoDB Database]({% post_url databases/2015-09-30-dump-restore-mongodb %})
 
 You'll find all the pieces of information you may need in the [Databases]({%
-post_url 2015-06-24-access-database %}) page of this documentation.
+post_url databases/2015-06-24-access-database %}) page of this documentation.
 
 ## 8. Handling the custom domain names
 
@@ -137,7 +136,7 @@ scalingo -a cloud-app domains-add my.cloudapp.com
 ```
 
 For more informations about domains on Scalingo, take a look at our dedicated
-[domain name management page]({% post_url 2015-04-01-domain
+[domain name management page]({% post_url app/2015-04-01-domain
 %}#configure-your-domain-name).
 
 

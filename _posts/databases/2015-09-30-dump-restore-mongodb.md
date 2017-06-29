@@ -9,11 +9,11 @@ permalink: /databases/mongodb/dump-restore/
 
 {% include info_command_line_tool.md %}
 
-There's two ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url 2014-10-02-tasks %})).
+There's two ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})).
 
 ## Dump and Restore from your local workstation
 
-You can dump and restore your database from your local workstation using [Scalingo CLI]({% post_url 2015-09-18-command-line-tool %}) to [create a tunnel]({% post_url 2014-11-24-tunnel %}) to your database:
+You can dump and restore your database from your local workstation using [Scalingo CLI]({% post_url cli/2015-09-18-command-line-tool %}) to [create a tunnel]({% post_url databases/2014-11-24-tunnel %}) to your database:
 
 A MongoDB URL is usually formatted like: <br>
 `mongodb://<username>:<password>@<host>:<port>/<db>`
@@ -77,8 +77,8 @@ In addition you may use the [`--drop` option](https://docs.mongodb.org/v2.6/refe
 ## Dump and Restore from Scalingo one-off container
 
 You can dump and restore your database remotely using
-[the command-line-tool]({% post_url 2015-09-18-command-line-tool %})
-and a one-off container (see [application tasks]({% post_url 2014-10-02-tasks %})).
+[the command-line-tool]({% post_url cli/2015-09-18-command-line-tool %})
+and a one-off container (see [application tasks]({% post_url app/2014-10-02-tasks %})).
 The advantage of this method is the network.
 From your workstation you don’t always have a good bandwidth. From our infrastructure,
 data transfers will be way faster.

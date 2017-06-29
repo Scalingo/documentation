@@ -51,7 +51,7 @@ var server = app.listen(process.env.PORT || 3000, function () {
 
 ## Define how to start your application
 
-The 'Procfile' (with a capital 'P') is the file defining how your application is supposed to start ([more info about Procfile]({% post_url 2014-12-01-procfile %})), here is the content you have to write in the 'Procfile' file for this project:
+The 'Procfile' (with a capital 'P') is the file defining how your application is supposed to start ([more info about Procfile]({% post_url internals/2014-12-01-procfile %})), here is the content you have to write in the 'Procfile' file for this project:
 
 ```yaml
 web: node server.js

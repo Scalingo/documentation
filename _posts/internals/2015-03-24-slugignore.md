@@ -43,7 +43,7 @@ spec
 ### Java application
 
 Your application build process result [in a `.war`
-file]({% post_url 2015-03-25-war %}) and your don't want to keep all the generated
+file]({% post_url languages/java/2015-03-25-war %}) and your don't want to keep all the generated
 classes and jar archives from the build:
 
 `.slugignore` content:
