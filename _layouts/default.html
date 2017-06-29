@@ -18,8 +18,8 @@
               </a>
             </span>
             <ul class='list-unstyled'>
-              {% assign recent_posts = (site.posts | sort: 'modified_at' | reverse) %}
-              {% for post in recent_posts | limit: 8 %}
+              {% assign recent_posts = (site.posts | sort: 'modified_at' | reverse) | limit: 8 %}
+              {% for post in recent_posts %}
               <li class="space-between">
                 <a href="{{ post.url }}">{{ post.title }}</a>
                 <small class="text-muted">
