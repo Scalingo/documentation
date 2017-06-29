@@ -41,8 +41,3 @@ array: [] # hack for creating array
 
 sass:
   sass_dir: _sass
-
-assets:
-  sources:
-    - _assets/fonts
-    - _assets/javascripts
