@@ -1,0 +1,51 @@
+<aside class="sidebar">
+  <section class="description">
+    {{ site.description }}
+    <p style="margin-top:40px;">
+    <strong>Join our mailing list to be informed about our latest advancements!</strong>
+    <br/>
+    <small>(max 1 mail/week, avg 2 mails/month)</small>
+    <form action="//scalingo.us7.list-manage.com/subscribe/post?u=208037d122a791275e9a8465a&amp;id=b91688b390" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <div class="mdl-textfield mdl-js-textfield">
+        <input type="text" value="" name="FNAME" class="mdl-textfield__input" id="mce-FNAME">
+        <label class="mdl-textfield__label" for="mce-FNAME">First Name </label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield" style="margin-top:-25px;">
+        <input type="text" value="" name="LNAME" class="mdl-textfield__input" id="mce-LNAME">
+        <label class="mdl-textfield__label" for="mce-LNAME">Last Name </label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield" style="margin-top:-25px;">
+        <input type="email" value="" name="EMAIL" class="mdl-textfield__input" id="mce-EMAIL">
+        <label class="mdl-textfield__label" for="mce-EMAIL">Email Address </label>
+      </div>
+      <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+      </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <input type="text" name="b_208037d122a791275e9a8465a_b91688b390" tabindex="-1" value="">
+      </div>
+      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="color:white;">
+    </form>
+    </p>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      if (typeof $ != 'undefined') {
+        var $d = $('#page .description')
+        var $inputs = $d.find('.mdl-textfield input[type=text], .mdl-textfield input[type=email]')
+
+        $inputs.each(function(i, el) {
+          var $el = $(el)
+          var $siblings = $el.siblings()
+          $el.attr('placeholder', $siblings[0].innerHTML)
+          $siblings.remove()
+        })
+
+        $d.find('.mdl-textfield').css({display: 'inline-block', 'margin-bottom': '4px'})
+        $d.find('input[type=submit]').css({color: '#444'})
+      }
+    });
+    </script>
+  </section>
+</aside>
