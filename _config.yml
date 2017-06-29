@@ -38,3 +38,6 @@ exclude:
   - config/puma.rb
 
 array: [] # hack for creating array
+
+sass:
+  sass_dir: _sass

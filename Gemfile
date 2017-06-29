@@ -27,6 +27,10 @@ end
 # gem 'jekyll-import', github: 'yannski/jekyll-import'
 # gem 'pry'
 
+gem 'jekyll-assets'
+gem 'coffee-script'
+gem 'sass'
+
 gem 'rack-jekyll', git: 'https://github.com/adaoraul/rack-jekyll.git'
 gem 'rack-rewrite'
 gem 'rack-ssl-enforcer'
