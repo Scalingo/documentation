@@ -2,21 +2,27 @@
   <h1>
     <a href="https://scalingo.com/">Scalingo Documentation</a>
   </h1>
-  {% assign posts = (site.categories.presentation | sort: 'index', 'last') %}
+  <p>{{ page.absolute_url }}</p>
+  {% assign posts = (site.categories.presentation | sort: 'title') %}
   {% for post in posts %}
-  <details>
-    <summary>
-      <a href="{{ post.url }}" style="list-style: none;">{{ post.title }}</a>
+  {% if page.url contains post.tags.first %}
+    <details open>
+  {% else %}
+    <details>
+  {% endif %}
+    <summary style="list-style: none;">
+      <a href="{{ post.url }}">{{ post.title }}</a>
     </summary>
     {% if site.categories.[post.tags.first] %}
-      {% assign subposts = (site.categories.[post.tags.first] | sort: 'index', 'last') %}
+      {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
       {% for subpost in subposts %}
-        {% if subpost.url == page.url %}
-          <a href="{{ subpost.url }}" style="font-weight: bold;">{{ subpost.title }}</a>
-        {% else %}
-          <a href="{{ subpost.url }}" style="font-weight: normal;">{{ subpost.title }}</a>
-        {% endif %}
-        <br>
+        <li>
+          {% if subpost.url == page.url %}
+            <a href="{{ subpost.url }}" style="font-weight: bold;">{{ subpost.title }}</a>
+          {% else %}
+            <a href="{{ subpost.url }}" style="font-weight: normal;">{{ subpost.title }}</a>
+          {% endif %}
+        </li>
       {% endfor %}
     {% endif %}
   </details>
