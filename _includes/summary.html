@@ -1,0 +1,23 @@
+<div class="summary">
+  <h1>
+    <a href="https://scalingo.com/">Scalingo Documentation</a>
+  </h1>
+  {% assign posts = (site.categories.presentation | sort: 'index', 'last') %}
+  {% for post in posts %}
+  <br>
+  <details>
+    <summary  style="list-style: none;">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </summary>
+    {% if site.categories.[post.tags.first] %}
+      {% assign subposts = (site.categories.[post.tags.first] | sort: 'index', 'last') %}
+      {% for subpost in subposts %}
+        <br>
+        <a href="{{ subpost.url }}">{{ subpost.title }}</a>
+      {% endfor %}
+    {% endif %}
+  </details>
+
+  <br>
+  {% endfor %}
+</div>
