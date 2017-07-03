@@ -1,0 +1,43 @@
+
+<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+  <div class="mdl-card__title" id="language-documentation">
+    <h2 class="mdl-card__title-text">Language documentation</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <ul class="list-unstyled">
+{% assign posts = (site.categories.languages | sort: 'title') %}
+{% for post in posts %}
+  {% if post.show_in_toc %}
+    {% unless page.url contains {{post.url}} %}
+    <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endunless%}
+  {% endif %}
+{% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+  <div class="mdl-card__title" id="language-documentation">
+    <h2 class="mdl-card__title-text">Some suggestions</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <ul class="list-unstyled">
+{% for category in page.tags %}
+  {% if site.categories.[category] %}
+    {% assign posts = (site.categories.[category] | sort: 'index', 'last') %}
+    {% for post in posts limit:3 %}
+        {% unless page.url contains {{post.url}} %}
+        <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endunless%}
+      
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+    </ul>
+  </div>
+</div>

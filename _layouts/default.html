@@ -32,15 +32,16 @@
               </ul>
             {% endif %}
             <div class="main-content mdl-cell mdl-cell--9-col mdl-cell--12-col-phone mdl-cell--12-col-tablet
-            {% if page.url != '/' %}page-content mdl-card mdl-shadow--2dp{% endif %}">
+            {% if page.url != '/' %}page-content mdl-card mdl-shadow--2dp{% endif %}" style="width: calc(100% - 16px);">
 
               {{ content }}
             </div>
+            <div class="mdl-grid">
+              {% if page.url != '/' %}
+                {% include articles_suggestions.html %}
+              {% endif %}
+            </div>
           </div>
-          {% if page.url != '/' %}
-            {% include language.html %}
-          {% endif %}
-  
         </div>
         {% include footer.html %}
       </main>
