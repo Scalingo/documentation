@@ -89,3 +89,79 @@ details[open]
     list-style: none
     margin-left: 10%
     padding: 0
+
+.breadcrumb
+  list-style: none
+  overflow: hidden
+  font: 18px Sans-Serif
+  padding-left: 8px
+  margin-bottom: 40px
+
+.breadcrumb li 
+  float: left
+
+.breadcrumb li a
+  color: white
+  text-decoration: none
+  background: brown
+  background: hsla(195,85%,35%,1) 
+  position: relative
+  display: block
+  float: left
+  padding: 5px
+
+.breadcrumb li a::after
+  content: " "
+  display: block
+  width: 0
+  height: 0
+  border-top: 50px solid transparent
+  border-bottom: 50px solid transparent
+  border-left: 30px solid hsla(195,85%,35%,1)
+  position: absolute
+  top: 50%
+  margin-top: -50px
+  left: 100%
+  z-index: 2
+
+.breadcrumb li a::before
+  content: " "
+  display: block
+  width: 0
+  height: 0
+  position: absolute
+  top: 50%
+  margin-top: -50px
+  left: 100%
+  z-index: 1
+
+.breadcrumb li:nth-child(2) a
+  background: hsla(195,85%,45%,1)
+  padding-left: 40px
+
+.breadcrumb li:nth-child(2) a:after
+  border-left-color: hsla(195,85%,45%,1)
+
+.breadcrumb li:nth-child(3) a
+  background: hsla(195,85%,55%,1)
+  padding-left: 40px
+
+.breadcrumb li:nth-child(3) a:after
+  border-left-color: hsla(195,85%,55%,1)
+
+.breadcrumb li:nth-child(4) a
+  background: hsla(195,85%,65%,1)
+  padding-left: 40px
+
+.breadcrumb li:nth-child(4) a:after
+  border-left-color: hsla(195,85%,65%,1)
+
+.breadcrumb li:last-child a::after
+  border: 0
+
+.breadcrumb li a:hover
+  background: hsla(195, 85%, 25%, 1)
+
+.breadcrumb li a:hover:after
+  border-left-color: hsla(195, 85%, 25%, 1) !important
+
