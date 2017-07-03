@@ -19,6 +19,20 @@
           </div>
           <div class="main-content mdl-cell mdl-cell--9-col mdl-cell--12-col-phone mdl-cell--12-col-tablet
           {% if page.url != '/' %}page-content mdl-card mdl-shadow--2dp{% endif %}">
+
+            {% assign crumbs = page.url | split: '/' %}
+
+            <ul class="lv-breadcrumbs">
+                <li><a href="/">Documentation</a></li>
+                {% for crumb in crumbs offset: 1 %}
+                    {% if forloop.last %}
+                        <li class="active">{{ crumb | replace:'-',' ' }}</li>
+                    {% else %}
+                        <li><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
             {{ content }}
           </div>
         </div>
