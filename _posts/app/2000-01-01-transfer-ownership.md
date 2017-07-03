@@ -2,7 +2,7 @@
 title: Transfer the ownership of an app
 modified_at: 2016-12-09 00:00:00
 category: app
-tags: app transfer ownership
+tags: transfer ownership app
 ---
 
 You may want to transfer an application to someone else. In this case you've to

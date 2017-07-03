@@ -5,27 +5,44 @@
   <p>{{ page.absolute_url }}</p>
   {% assign posts = (site.categories.presentation | sort: 'title') %}
   {% for post in posts %}
-  {% if page.url contains post.tags.first %}
-    <details open>
-  {% else %}
-    <details>
-  {% endif %}
-    <summary style="list-style: none;">
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </summary>
-    {% if site.categories.[post.tags.first] %}
-      {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
-      {% for subpost in subposts %}
-        <li>
-          {% if subpost.url == page.url %}
-            <a href="{{ subpost.url }}" style="font-weight: bold;">{{ subpost.title }}</a>
-          {% else %}
-            <a href="{{ subpost.url }}" style="font-weight: normal;">{{ subpost.title }}</a>
-          {% endif %}
-        </li>
-      {% endfor %}
+    {% if page.url contains /{{post.tags.first}}/ %}
+      <details open>
+    {% else %}
+      <details>
     {% endif %}
-  </details>
+      <summary style="list-style: none;">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </summary>
+      {% if site.categories.[post.tags.first] %}
+        {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
+        {% for subpost in subposts %}
+          <li>
+          {% if subpost.url == page.url %}
+            <details open>
+              <summary style="list-style: none;">
+                <a href="{{ subpost.url }}" style="font-weight: bold;">{{ subpost.title }}</a>
+          {% else %}
+            <details>
+              <summary style="list-style: none;">
+                <a href="{{ subpost.url }}" style="font-weight: normal;">{{ subpost.title }}</a>
+          {% endif %}
+          {% if site.categories.[subpost.tags.first] %}
+            {% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'title') %}
+            {% for subpost2 in subposts2 %}
+              <li style="margin-left: 15%;">
+                {% if subpost2.url == page.url %}
+                  <a href="{{ subpost.url }}" style="font-weight: bold;">{{ subpost2.title }}</a>
+                {% else %}
+                  <a href="{{ subpost.url }}" style="font-weight: normal;">{{ subpost2.title }}</a>
+                {% endif %}
+              </li>
+            {% endfor %}
+            </details>
+          {% endif %}
+          </li>
+        {% endfor %}
+      {% endif %}
+    </details>
 
   {% endfor %}
 </div>

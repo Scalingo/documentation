@@ -2,7 +2,7 @@
 title: Child application
 modified_at: 2017-03-10 00:00:00
 category: app
-tags: app child
+tags: child app
 ---
 
 You may want to create an application that inherit from an existing

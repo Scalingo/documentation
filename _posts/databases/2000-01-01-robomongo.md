@@ -2,7 +2,7 @@
 title: Access your MongoDB database with Robomongo
 modified_at: 2016-04-20 00:00:00
 category: databases
-tags: databases mongodb robomongo tunnel
+tags: mongodb robomongo tunnel databases
 ---
 
 ## Requirements

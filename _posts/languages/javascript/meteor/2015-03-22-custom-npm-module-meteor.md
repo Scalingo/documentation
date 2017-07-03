@@ -1,8 +1,8 @@
 ---
 title: Custom NPM modules with Meteor
 modified_at: 2016-03-30 00:00:00
-category: languages
-tags: nodejs meteor npm
+category: javascript
+tags: nodejs meteor npm languages
 permalink: /languages/javascript/nodejs/meteor/npm/
 ---
 

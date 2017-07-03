@@ -1,9 +1,9 @@
 ---
 title: Javascript
 modified_at: 2015-02-09 00:00:00
-category: languages
+category: javascript
 permalink: /languages/javascript/
-tags: nodejs iojs javascript
+tags: nodejs iojs javascript languages
 ---
 
 ## Supported interpreters

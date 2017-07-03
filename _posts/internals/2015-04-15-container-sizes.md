@@ -2,7 +2,7 @@
 title: Container Sizes
 modified_at: 2015-12-02 00:00:00
 category: internals
-tags: internals containers sizes
+tags: containers sizes internals
 ---
 
 ## Comparative table

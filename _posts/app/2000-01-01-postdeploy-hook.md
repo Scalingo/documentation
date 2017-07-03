@@ -2,7 +2,7 @@
 title: Post-deployment hook
 modified_at: 2016-10-04 00:00:00
 category: app
-tags: app deployment hook postdeploy
+tags: deployment hook postdeploy app
 ---
 
 ## Context

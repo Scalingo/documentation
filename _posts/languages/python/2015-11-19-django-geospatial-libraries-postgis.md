@@ -1,8 +1,8 @@
 ---
 title: Setup your GeoDjango application
 modified_at: 2015-11-19 00:00:00
-category: languages
-tags: python django tutorial postgis geospatial geodjango
+category: python
+tags: python django tutorial postgis geospatial geodjango languages
 index: 3
 permalink: /languages/python/setup-geodjango-postgis-libraries/
 ---

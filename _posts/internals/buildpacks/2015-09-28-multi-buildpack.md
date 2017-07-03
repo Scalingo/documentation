@@ -1,8 +1,8 @@
 ---
 title: Multi Buildpack
 modified_at: 2016-05-17 00:00:00
-categories: internals
-tags: buildpacks build image multi
+categories: buildpacks
+tags: buildpacks build image multi internals
 permalink: /buildpacks/multi/
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Getting Started with Django
 modified_at: 2015-02-17 00:00:00
-category: getting-started
+category: getting-started python
 tags: python django tutorial getting-started-tutorial
 index: 3
 permalink: /languages/python/getting-started-with-django/

@@ -2,7 +2,7 @@
 title: Access your Elasticsearch search engine
 modified_at: 2014-11-25 00:00:00
 categor: databases
-tags: databases elasticsearch
+tags: elasticsearch databases
 index: 2
 permalink: /databases/elasticsearch/access/
 ---

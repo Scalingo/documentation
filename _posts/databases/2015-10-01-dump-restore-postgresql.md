@@ -2,7 +2,7 @@
 title: How to dump and restore my PostgreSQL database on Scalingo
 modified_at: 2016-01-08 18:04:00
 category: databases
-tags: databases postgresql tunnel
+tags: postgresql tunnel databases
 index: 3
 permalink: /databases/postgresql/dump-restore/
 ---
