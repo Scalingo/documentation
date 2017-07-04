@@ -5,7 +5,7 @@
   <p>{{ page.absolute_url }}</p>
   {% assign posts = (site.categories.presentation | sort: 'title') %}
   {% for post in posts %}
-    {% if page.url contains /{{post.tags.first}}/ %}
+    {% if crumbs contains {{post.tags.first}} %}
       <details open>
     {% else %}
       <details>

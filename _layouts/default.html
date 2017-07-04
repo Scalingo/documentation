@@ -2,6 +2,7 @@
 <html>
   {% include head.html %}
   <body>
+    {% assign crumbs = page.url | split: '/' %}
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       {% include nav.html %}
       <main class="mdl-layout__content">
@@ -22,7 +23,6 @@
             <div class="main-content mdl-cell mdl-cell--9-col mdl-cell--12-col-phone mdl-cell--12-col-tablet
             {% if page.url != '/' %}page-content mdl-card mdl-shadow--2dp{% endif %}" style="width: calc(100% - 16px);">
               {% if page.url != '/' %}
-              {% assign crumbs = page.url | split: '/' %}
                 <ul class="breadcrumb">
                     <li><a href="/">documentation</a></li>
                     {% for crumb in crumbs offset: 1 %}
