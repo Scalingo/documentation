@@ -5,35 +5,35 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       {% include nav.html %}
       <main class="mdl-layout__content">
-        {% include search.html %}
         <div class="main-container mdl-grid">
-          <div class="mdl-cell mdl-cell--3-col">
-            <a href="/feed.xml" >
-              <i class="fa fa-rss side-bar-rss"></i>
-            </a>
-            <div class="search-form" style="width: 100%;">
-              <span class="material-icons search-icon">search</span>
-              <input type="text" id="search-input" placeholder="Search the Documentation" autofocus="true">
-            </div>
+          <div class="mdl-cell mdl-cell--3-col" style="margin-top: 34px;">
+            {% if page.url != '/' %}
+              {% include search.html %}
+            {% endif %}
             {% include menu.html %}
           </div>
           <div class="mdl-cell mdl-cell--9-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
-            {% if page.url != '/' %}
-              {% assign crumbs = page.url | split: '/' %}
-              <ul class="breadcrumb">
-                  <li><a href="/">documentation</a></li>
-                  {% for crumb in crumbs offset: 1 %}
-                      {% if forloop.last %}
-                          <li><a href="{{ page.url }}">{{ crumb | replace:'-',' ' | replace:'.html',' ' }}</a></li>
-                      {% else %}
-                          <li><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' }}</a></li>
-                      {% endif %}
-                  {% endfor %}
-              </ul>
-            {% endif %}
+            <h2 class="doc-center">
+              <a href="/">Documentation Center </a>
+              <a href="/feed.xml" >
+                <i class="fa fa-rss side-bar-rss"></i>
+              </a>
+            </h2>
             <div class="main-content mdl-cell mdl-cell--9-col mdl-cell--12-col-phone mdl-cell--12-col-tablet
             {% if page.url != '/' %}page-content mdl-card mdl-shadow--2dp{% endif %}" style="width: calc(100% - 16px);">
-
+              {% if page.url != '/' %}
+              {% assign crumbs = page.url | split: '/' %}
+                <ul class="breadcrumb">
+                    <li><a href="/">documentation</a></li>
+                    {% for crumb in crumbs offset: 1 %}
+                        {% if forloop.last %}
+                            <li><a href="{{ page.url }}">{{ crumb | replace:'-',' ' | replace:'.html',' ' }}</a></li>
+                        {% else %}
+                            <li><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+              {% endif %}
               {{ content }}
             </div>
             <div class="mdl-grid">

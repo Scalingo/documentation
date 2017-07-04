@@ -4,6 +4,9 @@ title: Documentation Center
 date: 2015-09-09 00:00:00
 ---
 
+<div class="search-background">
+  {% include search.html %}
+</div>
 <div class="mdl-grid">
   <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
     <div class="mdl-card__title" id="getting-started">
