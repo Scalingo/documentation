@@ -1,8 +1,10 @@
 <div class="menu">
+  {% if page.url != '/' %}
+    {% include search.html %}
+  {% endif %}
   <h1>
-    <a href="https://scalingo.com/">Scalingo Documentation</a>
+    <a href="/">Scalingo Documentation</a>
   </h1>
-  <p>{{ page.absolute_url }}</p>
   {% assign posts = (site.categories.presentation | sort: 'title') %}
   {% for post in posts %}
     {% if crumbs contains {{post.tags.first}} %}

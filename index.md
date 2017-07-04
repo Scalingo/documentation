@@ -4,6 +4,12 @@ title: Documentation Center
 date: 2015-09-09 00:00:00
 ---
 
+<h2 class="doc-center">
+  <a href="/">Documentation Center </a>
+  <a href="/feed.xml" >
+    <i class="fa fa-rss side-bar-rss"></i>
+  </a>
+</h2>
 <div class="search-background">
   {% include search.html %}
 </div>

@@ -106,22 +106,20 @@ details[open]
   list-style: none
   overflow: hidden
   font: 12px Sans-Serif
-  margin-top: 15px
-  margin-bottom: 32px
-  overflow: hidden
-  height: 34px
+  background-color: rgb(3,169,244)
+  padding-left: 0
 
 .breadcrumb li 
-  float: right
+  float: left
 
 .breadcrumb li a
   color: white
   text-decoration: none
   background: brown
-  background: hsla(195,85%,35%,1) 
+  background: hsla(199,97%,45%,1) 
   position: relative
   display: block
-  float: right
+  float: left
   padding: 10px 19px 10px 18px
 
 .breadcrumb li a::after
@@ -131,11 +129,11 @@ details[open]
   height: 0
   border-top: 50px solid transparent
   border-bottom: 50px solid transparent
-  border-right: 20px solid hsla(195,85%,35%,1)
+  border-left: 20px solid hsla(199,97%,45%,1)
   position: absolute
   top: 50%
   margin-top: -50px
-  right: 100%
+  left: 100%
   z-index: 2
 
 .breadcrumb li a::before
@@ -146,40 +144,49 @@ details[open]
   position: absolute
   top: 50%
   margin-top: -50px
-  right: 100%
+  left: 100%
   z-index: 1
 
 .breadcrumb li:nth-child(2) a
-  background: hsla(195,85%,45%,1)
-  padding-right: 40px
+  background: hsla(199,97%,55%,1)
+  padding-left: 40px
 
 .breadcrumb li:nth-child(2) a:after
-  border-right-color: hsla(195,85%,45%,1)
+  border-left-color: hsla(199,97%,55%,1)
 
 .breadcrumb li:nth-child(3) a
-  background: hsla(195,85%,55%,1)
-  padding-right: 40px
+  background: hsla(199,97%,65%,1)
+  padding-left: 40px
 
 .breadcrumb li:nth-child(3) a:after
-  border-right-color: hsla(195,85%,55%,1)
+  border-left-color: hsla(199,97%,65%,1)
 
 .breadcrumb li:nth-child(4) a
-  background: hsla(195,85%,65%,1)
-  padding-right: 40px
+  background: hsla(199,97%,75%,1)
+  padding-left: 40px
 
 .breadcrumb li:nth-child(4) a:after
-  border-right-color: hsla(195,85%,65%,1)
+  border-left-color: hsla(199,97%,75%,1)
 
 .breadcrumb li:last-child a::after
   border: 0
 
 .breadcrumb li a:hover
-  background: hsla(195, 85%, 25%, 1)
+  background: hsla(199, 97%, 40%, 1)
 
 .breadcrumb li a:hover:after
-  border-right-color: hsla(195, 85%, 25%, 1) !important
+  border-left-color: hsla(199, 97%, 40%, 1) !important
 
 .menu
-  margin-right: 10px
+  display: flex
+  flex-direction: column
+  position: fixed
+  bottom: 0
+  left: auto
+  overflow-y: scroll
+  overflow-x: hidden
+  width: calc(26% - 16px)
+  max-width: 300px
+  height: calc(100% - 107px)
   h1
     margin: 30px 0px
