@@ -30,7 +30,7 @@
             {% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'title') %}
             {% for subpost2 in subposts2 %}
               <li style="margin-left: 15%;">
-                {% if subpost2.url == page.url %}
+                {% if subpost2.title == page.title %}
                   <a href="{{ subpost.url }}" style="font-weight: bold;">{{ subpost2.title }}</a>
                 {% else %}
                   <a href="{{ subpost.url }}" style="font-weight: normal;">{{ subpost2.title }}</a>
