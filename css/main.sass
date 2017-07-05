@@ -92,16 +92,6 @@ h3
 .fa-rss
   color: #fa9b39
 
-details
-  padding: 6px 0
-
-details[open]
-  font-weight: bold
-  li
-    list-style: none
-    margin-left: 10%
-    padding: 0
-
 .breadcrumb
   list-style: none
   overflow: hidden
@@ -190,6 +180,29 @@ details[open]
   max-height: calc(100% - 112px)
   h1
     margin: 30px 0px
+  ul
+    margin: 0px 0px 6px
+    padding: 0
+  h6
+    color: hsla(199,97%,45%,1)
+    font-weight: bold
+  li
+    list-style: none
+    margin: 0
+    a
+      color: hsla(199, 97%, 52%, 1)
+  li
+    a
+      color: hsla(199, 97%, 45%, 1)
+  p
+    overflow: hidden
+    text-overflow: ellipsis
+    -o-text-overflow: ellipsis
+    white-space: nowrap
+    padding: 0px 3px
+    margin: 0
+  p:hover
+    background-color: gainsboro
 
 .menu:hover
   overflow-y: auto

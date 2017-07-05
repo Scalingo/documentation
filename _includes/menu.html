@@ -3,45 +3,41 @@
     <a href="/">Scalingo Documentation</a>
   </h1>
   {% assign posts = (site.categories.presentation | sort: 'title') %}
-  {% for post in posts %}
-    {% if crumbs contains {{post.tags.first}} %}
-      <details open>
-    {% else %}
-      <details>
-    {% endif %}
-      <summary style="list-style: none;">
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </summary>
+    {% for post in posts %}
+  <ul>
+      <h6>{{ post.title }}</h6>
       {% if site.categories.[post.tags.first] %}
         {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
         {% for subpost in subposts %}
           <li>
-          {% if subpost.url == page.url %}
-            <details open>
-              <summary style="list-style: none;">
-                <a href="{{ subpost.url }}" style="font-weight: bold;">{{ subpost.title }}</a>
-          {% else %}
-            <details>
-              <summary style="list-style: none;">
-                <a href="{{ subpost.url }}" style="font-weight: normal;">{{ subpost.title }}</a>
-          {% endif %}
-          {% if site.categories.[subpost.tags.first] %}
-            {% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'title') %}
-            {% for subpost2 in subposts2 %}
-              <li style="margin-left: 15%;">
-                {% if subpost2.title == page.title %}
-                  <a href="{{ subpost.url }}" style="font-weight: bold;">{{ subpost2.title }}</a>
-                {% else %}
-                  <a href="{{ subpost.url }}" style="font-weight: normal;">{{ subpost2.title }}</a>
-                {% endif %}
-              </li>
-            {% endfor %}
+            {% if subpost.url == page.url %}
+              <details open>
+                <summary style="list-style: none;">
+            {% else %}
+              <details>
+                <summary style="list-style: none;">
+            {% endif %}
+              <a title="{{ subpost.title }}" href="{{ subpost.url }}"><p>{{ subpost.title }}</p></a>
+            </summary>
+              {% if site.categories.[subpost.tags.first] %}
+                {% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'title') %}
+                {% for subpost2 in subposts2 %}
+                  <li style="margin-left: 5%;">
+                    {% if subpost2.title == page.title %}
+                      <a id="currentpage" href="{{ subpost.url }}" style="font-weight: bold;"><p>{{ subpost2.title }}</p></a>
+                      <script type="text/javascript">
+                        currentpage.scrollIntoView();
+                      </script>
+                    {% else %}
+                      <a href="{{ subpost.url }}" style="font-weight: normal;"><p>{{ subpost2.title }}</p></a>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              {% endif %}
             </details>
-          {% endif %}
           </li>
         {% endfor %}
       {% endif %}
-    </details>
-
-  {% endfor %}
+  </ul>
+    {% endfor %}
 </div>
