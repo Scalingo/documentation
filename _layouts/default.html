@@ -7,18 +7,22 @@
       {% include nav.html %}
       <main class="mdl-layout__content">
         <div class="main-container mdl-grid">
-          <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone mdl-cell--hide-tablet" style="overflow: hidden;">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone mdl-cell--hide-tablet" style="overflow: hidden;">
             {% include menu.html %}
           </div>
-          <div class="mdl-cell mdl-cell--9-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
-            <div class="main-content mdl-cell mdl-cell--9-col mdl-cell--12-col-phone mdl-cell--12-col-tablet
+          <div class="mdl-cell mdl-cell--8-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+            <div class="main-content mdl-cell mdl-cell--8-col mdl-cell--12-col-phone mdl-cell--12-col-tablet
             {% if page.url != '/' %}page-content mdl-card mdl-shadow--2dp{% endif %}" style="width: calc(100% - 16px);">
               {{ content }}
             </div>
-            <div class="mdl-grid">
+          </div>
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone mdl-cell--hide-tablet">
+            <div class="search-content">
               {% if page.url != '/' %}
-                {% include articles_suggestions.html %}
+                {% include search.html %}
               {% endif %}
+              <div class="sidebar-nav">
+              </div>
             </div>
           </div>
         </div>
