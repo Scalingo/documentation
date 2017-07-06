@@ -9,7 +9,7 @@
       {% if site.categories.[post.tags.first] %}
         {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
         {% for subpost in subposts %}
-          <li>
+          <li id="currentpage">
             {% if subpost.url == page.url %}
               <details open>
                 <summary style="list-style: none;">
@@ -24,10 +24,7 @@
                 {% for subpost2 in subposts2 %}
                   <li style="margin-left: 5%;">
                     {% if subpost2.title == page.title %}
-                      <a id="currentpage" href="{{ subpost.url }}" style="font-weight: bold;"><p>{{ subpost2.title }}</p></a>
-                      <script type="text/javascript">
-                        currentpage.scrollIntoView();
-                      </script>
+                      <a href="{{ subpost.url }}" style="font-weight: bold;"><p>{{ subpost2.title }}</p></a>
                     {% else %}
                       <a href="{{ subpost.url }}" style="font-weight: normal;"><p>{{ subpost2.title }}</p></a>
                     {% endif %}
@@ -41,3 +38,6 @@
   </ul>
     {% endfor %}
 </div>
+<script type="text/javascript">
+  document.getElementById("currentpage").scrollIntoView()
+</script>
