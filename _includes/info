@@ -1,7 +1,0 @@
-<blockquote class="bg-info">
-  {% unless include.data%}
-    {{data}}
-  {% else %}
-    {{include.data}}
-  {% endunless %}
-</blockquote>
