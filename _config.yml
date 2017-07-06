@@ -28,7 +28,7 @@ markdown: kramdown
 highlighter: pygments
 
 theme: minima
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
