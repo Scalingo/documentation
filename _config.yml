@@ -25,6 +25,8 @@ excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
+highlighter: pygments
+
 theme: minima
 gems:
   - jekyll-feed
@@ -43,3 +45,5 @@ exclude:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+sass:
+  sass_dir: _sass
