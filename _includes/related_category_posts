@@ -1,0 +1,39 @@
+{% comment %}
+
+  Usage: {% include related_category_posts %}
+
+  Display posts of same category.
+
+{% endcomment %}
+
+{% assign rel_cat_posts = site.array %}
+{% for rel_cat_post in site.categories[page.category] %}
+
+    {% unless rel_cat_post.url == page.url or rel_posts contains rel_cat_post %}
+
+      {% comment %} Show only top level pages for languages. {% endcomment %}
+      {% if page.category == 'languages' and rel_cat_post.show_in_toc != true %}
+        {% continue %}
+      {% endif %}
+
+      {% assign rel_cat_posts = rel_cat_posts | push: rel_cat_post %}
+
+    {% endunless %}
+
+{% endfor %}
+
+
+{% assign rel_cat_posts = (rel_cat_posts | sort: 'title' | sort: 'index', 'last') %}
+{% assign size = (rel_cat_posts | size) %}
+
+
+{% if size > 0 %}
+  <strong>More in: {{ page.category | capitalize | replace: '-', ' ' }}</strong>
+  <ul class="list-unstyled">
+  {% for rel_cat_post in rel_cat_posts %}
+    {% unless rel_cat_post.url == page.url %}
+    <li><a href="{{ rel_cat_post.url }}">{{ rel_cat_post.title }}</a></li>
+    {% endunless %}
+  {% endfor %}
+  </ul>
+{% endif %}
