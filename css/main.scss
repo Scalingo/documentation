@@ -3,10 +3,19 @@
 
 @import "bootstrap";
 
+.navbar-default {
+	background-color: #03a9f4;
+	font-family: 'lato', sans-serif;
+	padding: 0 17%;
+}
 
-// define a colour based on a bootstrap colour
+.navbar-default .navbar-nav > li > a {
+	color: white;
+	&:hover, &:focus, &.active {
+		color: #215f8b;
+	}
+}
 
-// remainder of sass goes here
-p {
-    color: red;
+.logo-img {
+	height: 100%;
 }

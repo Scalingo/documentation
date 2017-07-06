@@ -27,7 +27,6 @@ excerpt_separator: <!--more-->
 markdown: kramdown
 highlighter: pygments
 
-theme: minima
 plugins:
   - jekyll-feed
 exclude:
