@@ -1,8 +1,12 @@
+---
+---
+
 @import "bootstrap";
+
+
 // define a colour based on a bootstrap colour
-$my-gray: $gray;
 
 // remainder of sass goes here
 p {
-    color: my-gray;
+    color: red;
 }
