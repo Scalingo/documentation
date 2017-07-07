@@ -4,6 +4,13 @@ title: Documentation Center
 date: 2017-07-06 00:00:00
 ---
 
+<h2 class="doc-center">
+  <a href="/">Documentation Center </a>
+  <a href="/feed.xml" >
+    <i class="fa fa-rss side-bar-rss"></i>
+  </a>
+</h2>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-6 col-sm-4">
