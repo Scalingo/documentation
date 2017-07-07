@@ -3,8 +3,25 @@
 
 @import "bootstrap";
 
+$font-color: #03a9f4;
+
+h2 {
+  text-align: center;
+    margin: 50px 0px;
+  a {
+    color: $font-color;
+    font-weight: 900;
+    font-size: 40px;
+  }
+  a:hover, a:focus, a:active {
+    color: $font-color;
+    text-decoration: none;
+  }
+
+}
+
 .navbar-default {
-	background-color: #03a9f4;
+	background-color: $font-color;
 	font-family: 'lato', sans-serif;
 	padding: 0 17%;
 }
