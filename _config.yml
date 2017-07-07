@@ -25,13 +25,24 @@ excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
 highlighter: pygments
 
 plugins:
   - jekyll-feed
+  - jekyll-assets
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
+
+assets:
+  sources:
+    - _assets/
+  compress:
+    css: false
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

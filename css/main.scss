@@ -5,6 +5,11 @@
 
 $font-color: #03a9f4;
 
+.list-unstyled {
+  list-style-type: none;
+  padding: 0;
+}
+
 .navbar-default {
   position: fixed;
   width: 100%;
@@ -24,7 +29,7 @@ $font-color: #03a9f4;
   height: 100%;
 }
 
-h2 {
+.doc-center {
   text-align: center;
     margin: 60px 0px;
   a {
@@ -47,7 +52,7 @@ h2 {
   overflow: hidden;
   width: calc(16% - 16px);
   max-width: 186px;
-  max-height: calc(100% - 56px);
+  max-height: calc(100% - 60px);
   h1 {
     margin: 30px 0px;
     font-size: 20px;
@@ -98,3 +103,4 @@ h2 {
 .menu:hover {
   overflow-y: auto;
 }
+
