@@ -1,0 +1,31 @@
+{% assign posts = (site.categories.presentation | sort: 'title') %}
+<ul class="nav flex-column menu">
+  <li class="nav-item">
+      <h1><a class="nav-link" href="/">Scalingo Documentation</a></h1>
+  </li>
+  {% for post in posts %}
+  <ul>
+    <li class="nav-item">
+      <h6>{{ post.title }}</h6>
+    </li>
+    {% if site.categories.[post.tags.first] %}
+      {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
+      {% for subpost in subposts %}
+        <li>
+          <a title="{{ subpost.title }}" href="{{ subpost.url }}" role="button"><p>{{ subpost.title }}</p></a>
+          <ul>
+            {% if site.categories.[subpost.tags.first] %}
+              {% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'title') %}
+              {% for subpost2 in subposts2 %}
+                <li>
+                  <a title="{{ subpost.title }}" href="{{ subpost.url }}"><p>{{ subpost2.title }}</p></a>
+                </li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+  {% endfor %}
+</ul>
