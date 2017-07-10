@@ -3,13 +3,9 @@ $font-color: #03a9f4;
 .menu {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 56px;
   left: auto;
   overflow: hidden;
-  width: calc(16% - 16px);
-  max-width: 186px;
-  max-height: calc(100% - 60px);
+  max-width: 207.5px;
   h1 {
     margin: 30px 0px;
     font-size: 20px;
