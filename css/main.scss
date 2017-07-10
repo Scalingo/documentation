@@ -57,10 +57,5 @@ a {
 .card {
   margin: 15px 0;
   word-wrap: break-word;
-  .card-deck > .card:not(:last-child) {
-    margin: 0 15px;
-  }
-  .card-deck > .card:not(:first-child) {
-    margin: 0 15px;
-  }
+  box-shadow: 5px 5px 5px #888888;
 }
