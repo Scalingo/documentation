@@ -3,6 +3,7 @@
 
 @import "search";
 @import "menu";
+@import "syntax-highlighting";
 
 $font-color: #03a9f4;
 
@@ -50,10 +51,44 @@ $font-color: #03a9f4;
 
 a {
   color: $font-color;
+  text-decoration: none;
+  font-weight: 500;
+}
+a:hover, a:focus, a:active {
+  color: $font-color;
+  text-decoration: none;
 }
 
 .card {
   margin: 15px 0;
   word-wrap: break-word;
   box-shadow: 5px 5px 5px #888888;
+}
+
+
+code, a > code {
+  font-family: 'Inconsolata', monospace;
+  border-radius: 0;
+  font-size: 100%;
+  padding: 2px 4px;
+  color: #c7254e;
+  background-color: #f9f2f4;
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  border: 0;
+  background-color: #272822;
+  color: white;
+  border-radius: 0;
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+  }
 }
