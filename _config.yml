@@ -28,7 +28,17 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-highlighter: pygments
+highlighter: rouge
+
+permalink: none
+
+defaults:
+  - # set default layout on all pages
+    scope:
+      path: ""
+      type: "posts" # in jekyll files outside of _posts are of type pages
+    values:
+      layout: "page"
 
 plugins:
   - jekyll-feed
@@ -37,6 +47,10 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - config.ru
+  - vendor
+  - Procfile
+  - config/puma.rb
 
 assets:
   sources:
