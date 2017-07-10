@@ -1,57 +1,4 @@
----
----
-
-$icon-font-path: '/assets/fonts/bootstrap/';
-
-@import "bootstrap";
-@import "search";
-
 $font-color: #03a9f4;
-
-.list-unstyled {
-  list-style-type: none;
-  padding: 0;
-}
-
-.navbar {
-  position: fixed;
-  width: 100%;
-  background-color: $font-color;
-  font-family: 'lato', sans-serif;
-  padding: 0 17%;
-}
-
-.navbar .navbar-nav > li > a {
-  color: white;
-  margin: 0 20px;
-  &:hover, &:focus, &.active {
-    color: #215f8b;
-    text-decoration: none;
-  }
-
-}
-
-.logo-img {
-  height: 100%;
-}
-
-.doc-center {
-  text-align: center;
-    margin: 80px 0px 55px;
-  a {
-    color: $font-color;
-    font-weight: 900;
-    font-size: 40px;
-  }
-  a:hover, a:focus, a:active {
-    color: $font-color;
-    text-decoration: none;
-  }
-}
-
-a {
-  color: $font-color;
-}
 
 .menu {
   display: flex;
@@ -120,4 +67,3 @@ a {
 .menu:hover {
   overflow-y: auto;
 }
-
