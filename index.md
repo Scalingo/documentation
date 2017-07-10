@@ -13,7 +13,7 @@ date: 2017-07-06 00:00:00
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-sm-4">
+    <div class="card-deck card-columns" style="width: 100%; column-count: 2;">
       <div class="card">
         <div class="card-block">
           <h2 class="card-title">Getting started</h2>
@@ -29,8 +29,6 @@ date: 2017-07-06 00:00:00
           </p>
         </div>
       </div>
-    </div>
-    <div class="col-xs-6 col-sm-4">
       <div class="card">
         <div class="card-block">
           <h2 class="card-title">Recent activities</h2>
@@ -47,12 +45,8 @@ date: 2017-07-06 00:00:00
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-sm-4">
+    <div class="card-deck card-columns" style="width: 100%; column-count: 2;">
       <div class="card">
         <div class="card-block">
           <h2 class="card-title">Language documentation</h2>
@@ -68,8 +62,6 @@ date: 2017-07-06 00:00:00
           </p>
         </div>
       </div>
-    </div>
-    <div class="col-xs-6 col-sm-4">
       <div class="card">
         <div class="card-block">
           <h2 class="card-title">The most seen</h2>
