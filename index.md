@@ -4,15 +4,20 @@ title: Documentation Center
 date: 2017-07-06 00:00:00
 ---
 
-<h1 class="doc-center">
-  <a href="/">Documentation Center </a>
-  <a href="/feed.xml" >
-    <i class="fa fa-rss side-bar-rss"></i>
-  </a>
-</h1>
 
 <div class="container">
   <div class="row">
+    <h1 class="doc-center">
+      <a href="/">Documentation Center </a>
+      <a href="/feed.xml" >
+        <i class="fa fa-rss side-bar-rss"></i>
+      </a>
+    </h1>
+
+    <div class="search-background">
+      {% include search.html %}
+    </div>
+
     <div class="card-deck card-columns" style="width: 100%; column-count: 2;">
       <div class="card">
         <div class="card-block">
