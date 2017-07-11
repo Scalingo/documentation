@@ -14,3 +14,16 @@
     </ul>
   </div>
 </nav>
+{% if page.url != '/' %}
+  <nav class="breadcrumb" style="padding: .75rem 17%">
+    {% assign crumbs = page.url | split: '/' %}
+    <li class="breadcrumb-item"><a href="/">documentation</a></li>
+    {% for crumb in crumbs offset: 1 %}
+      {% if forloop.last %}
+        <li class="breadcrumb-item active"><a href="{{ page.url }}">{{ crumb | replace:'-',' ' | replace:'.html',' ' }}</a></li>
+      {% else %}
+        <li class="breadcrumb-item"><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </nav>
+{% endif %}
