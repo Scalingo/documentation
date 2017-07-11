@@ -12,8 +12,13 @@ GEM
   specs:
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     colorator (1.1.0)
     concurrent-ruby (1.0.5)
+    execjs (2.7.0)
     extras (0.2.0)
       forwardable-extended (~> 2.5)
     fastimage (2.1.0)
@@ -79,6 +84,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coffee-script
   jekyll (= 3.5.0)
   jekyll-assets
   jekyll-feed (~> 0.6)
@@ -92,6 +98,9 @@ DEPENDENCIES
   rack-ssl-enforcer
   sass
   tzinfo-data
+
+RUBY VERSION
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.15.1
