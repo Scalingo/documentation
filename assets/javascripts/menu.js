@@ -12,7 +12,7 @@ define(['jquery'], function ($){
                 menu.css({
                     'position': 'fixed',
                     'top': '0',
-                    'max-height': '100%',
+                    'height': '100%',
                     'width': '13%'
                 });
                 isFixed = true;
@@ -22,7 +22,7 @@ define(['jquery'], function ($){
                 menu.css({
                     'position': 'absolute',
                     'top': 'auto',
-                    'max-height': $(window).height()-20,
+                    'height': $(window).height()-20,
                     'width': '86%'
                 });
                 isFixed = false;
