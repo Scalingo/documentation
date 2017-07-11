@@ -41,9 +41,9 @@ defaults:
       layout: "page"
 
 plugins:
+  - jekyll-sitemap
   - jekyll-feed
   - jekyll-assets
-  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -58,17 +58,8 @@ assets:
   compress:
     css: false
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+array: []
+
 sass:
   sass_dir: _sass
   style: :compressed

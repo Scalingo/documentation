@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+ruby RUBY_VERSION
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -27,6 +28,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jekyll-assets'
+gem 'coffee-script'
 gem 'sass'
 
 gem 'rack-jekyll', git: 'https://github.com/adaoraul/rack-jekyll.git'
