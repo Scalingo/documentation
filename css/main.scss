@@ -7,6 +7,44 @@
 
 $font-color: #03a9f4;
 
+body {
+  font-family: Roboto, HelveticaNeue, Helvetica, Arial, sans-serif;
+  background-color: #FAFAFA;
+  p {
+    margin: 0 0 10px;
+  }
+  ul {
+    margin: 0 0 10px;
+  }
+  a {
+    color: hsla(199,97%,45%,1);
+    outline: none;
+  }
+}
+
+blockquote {
+  background-color: #D9EDF7;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  letter-spacing: normal;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  &:after {
+    content: none !important
+  }
+  &:before {
+    content: none !important
+  }
+}
+
 .list-unstyled {
   list-style-type: none;
   padding: 0;
