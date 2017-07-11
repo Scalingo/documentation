@@ -3,6 +3,7 @@ title: PHP - Automatic HTTPS redirection
 modified_at: 2017-01-12 00:00:00
 category: php
 tags: php, https, security, nginx languages
+permalink: /languages/php/php-https-redirect/
 ---
 
 ## Introduction
