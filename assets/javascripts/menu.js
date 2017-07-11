@@ -28,6 +28,8 @@ define(['jquery'], function ($){
                 isFixed = false;
             }
         });
-        $(".menu").scrollTop($("#currentpage").offset().top-70);
+        if ( $("#currentpage") ){
+            $(".menu").scrollTop($("#currentpage").offset().top-70);
+        }
     }
 });
