@@ -6,7 +6,7 @@ $font-color: #03a9f4;
   left: auto;
   overflow: hidden;
   max-width: 207.5px;
-  max-height: 920px;
+  max-height: 915px;
   h1 {
     margin: 30px 0px;
     font-size: 20px;
@@ -33,7 +33,6 @@ $font-color: #03a9f4;
       color: hsla(199,97%,30%,1);
       text-decoration: none;
       p {
-        width: calc(100% - 3px);
         background-color: hsla(0, 0%, 86%, 1);
       }
     }
@@ -44,6 +43,7 @@ $font-color: #03a9f4;
     }
   }
   p {
+    width: calc(100% - 3px);
     overflow: hidden;
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
@@ -53,7 +53,7 @@ $font-color: #03a9f4;
   }
   ul > li > ul {
     display: none;
-    margin: 0 5px 0;
+    margin: 0 10px 0;
   }
 
   ul li:hover ul{
