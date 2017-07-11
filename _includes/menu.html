@@ -12,13 +12,21 @@
       {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
       {% for subpost in subposts %}
         <li>
-          <a title="{{ subpost.title }}" href="{{ subpost.url }}" role="button"><p>{{ subpost.title }}</p></a>
+          {% if subpost.url == page.url %}
+            <a title="{{ subpost.title }}" id="currentpage" href="{{ subpost.url }}" style="display: block;"><p style="background-color: hsla(0, 0%, 76%, 1);">{{ subpost.title }}</p></a>
+          {% else %}
+            <a title="{{ subpost.title }}" href="{{ subpost.url }}" role="button"><p>{{ subpost.title }}</p></a>
+          {% endif %}
           <ul>
             {% if site.categories.[subpost.tags.first] %}
               {% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'title') %}
               {% for subpost2 in subposts2 %}
                 <li>
-                  <a title="{{ subpost.title }}" href="{{ subpost.url }}"><p>{{ subpost2.title }}</p></a>
+                  {% if subpost2.url == page.url %}
+                    <a title="{{ subpost2.title }}" id="currentpage" href="{{ subpost2.url }}" style="display: block;"><p style="background-color: hsla(0, 0%, 76%, 1);">{{ subpost2.title }}</p></a>
+                  {% else %}
+                    <a title="{{ subpost.title }}" href="{{ subpost.url }}"><p>{{ subpost2.title }}</p></a>
+                  {% endif %}
                 </li>
               {% endfor %}
             {% endif %}

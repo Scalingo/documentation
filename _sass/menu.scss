@@ -6,6 +6,7 @@ $font-color: #03a9f4;
   left: auto;
   overflow: hidden;
   max-width: 207.5px;
+  max-height: 920px;
   h1 {
     margin: 30px 0px;
     font-size: 20px;
@@ -55,7 +56,7 @@ $font-color: #03a9f4;
     margin: 0 5px 0;
   }
 
-  ul li:hover  ul{
+  ul li:hover ul{
     display: block;
   }
 }

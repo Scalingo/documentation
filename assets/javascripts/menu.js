@@ -22,11 +22,12 @@ define(['jquery'], function ($){
                 menu.css({
                     'position': 'absolute',
                     'top': 'auto',
-                    'max-height': 'calc(100% - 60px)',
-                    'width': '76%'
+                    'max-height': $(window).height()-20,
+                    'width': '86%'
                 });
                 isFixed = false;
             }
         })
+        $(".menu").scrollTop($("#currentpage").offset().top-70)
     }
 });
