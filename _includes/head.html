@@ -10,4 +10,14 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js"></script>
 	<script src="{{ site.baseurl }}/assets/javascripts/application.js"></script>
+
+	<!-- OpenGraph -->
+
+	<meta property="og:site_name" content="{{ site.title }}"/>
+	{% if page.og_image %}<meta property="og:image" content="{{ page.og_image }}"/>{% endif %}
+	<meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}"/>
+	<meta property="og:type" content="article"/>
+
+	<meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}"/>
+	<meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}"/>
 </head>
