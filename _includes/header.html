@@ -14,10 +14,16 @@
     </ul>
   </div>
 </nav>
-{% if page.url != '/' %}
-  <nav class="breadcrumb">
+<nav class="breadcrumb">
+  {% if page.url == '/' %}
+    <div class="container">
+      <ul class="navbar-nav" style="width: 100%">
+        {% include search.html %}
+      </ul>
+    </div>
+  {% else %}
     {% assign crumbs = page.url | split: '/' %}
-    <li class="breadcrumb-item"><a href="/">documentation</a></li>
+    <li class="breadcrumb-item pull-left"><a href="/">documentation</a></li>
     {% for crumb in crumbs offset: 1 %}
       {% if forloop.last %}
         <li class="breadcrumb-item active"><a href="{{ page.url }}">{{ crumb | replace:'-',' ' | replace:'.html',' ' }}</a></li>
@@ -26,8 +32,8 @@
       {% endif %}
     {% endfor %}
 
-    <ul class="navbar-nav align-items-end" style="min-width: 131px">
+    <ul class="navbar-nav pull-right" style="min-width: 131px">
       {% include search.html %}
     </ul>
-  </nav>
-{% endif %}
+  {% endif %}
+</nav>

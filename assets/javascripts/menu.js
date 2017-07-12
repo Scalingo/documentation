@@ -2,13 +2,13 @@ define(['jquery'], function ($){
     // Stick the #menu to the top of the window
     if (window.location.pathname !== '/404.html' && document.title.indexOf('404 Not found') == -1) {
         var menu = $('.menu');
-        var menuHomeY = menu.scrollTop();
+        var menuHomeY = 111;
         var $w = $(window);
         $(document).ready(function(){
             menu.css({
                 'position': 'absolute',
-                'bottom': 'auto',
-                'height': $(window).height()-100,
+                'top': 'auto',
+                'height': $(window).height()-111,
                 'width': '90%'
             });
             isFixed = false;
@@ -21,7 +21,7 @@ define(['jquery'], function ($){
                     'position': 'fixed',
                     'top': '0',
                     'height': '100%',
-                    'width': '13%'
+                    'width': '18.5%',
                 });
                 isFixed = true;
             }
@@ -29,8 +29,8 @@ define(['jquery'], function ($){
             {
                 menu.css({
                     'position': 'absolute',
-                    'bottom': 'auto',
-                    'height': $(window).height()-100,
+                    'top': 'auto',
+                    'height': $(window).height()-111,
                     'width': '90%'
                 });
                 isFixed = false;
