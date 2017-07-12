@@ -14,14 +14,16 @@ $font-color: #03a9f4;
       color: hsla(0, 0%, 65%, 1);
       font-size: 14px;
     }
-    a:hover, a:focus {
-      text-decoration: underline;
-    }
+  }
+  h1, h2, h3, h4 {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
 
 .sidebar-nav {
-  margin-bottom: 2%;
+  margin-bottom: 3%;
+  margin-top: 6%;
   padding: 4%;
   border-top: .15rem solid #eceeef;
   border-bottom: .15rem solid #eceeef;
