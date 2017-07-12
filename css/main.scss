@@ -7,6 +7,16 @@
 
 $font-color: #03a9f4;
 
+.main-content {
+  border-left: .25rem solid #eceeef;
+  .github-edit {
+    a, a:hover, a:focus {
+      color: hsla(0, 0%, 65%, 1);
+      font-size: 14px;
+    }
+  }
+}
+
 .search-background {
   background-image: url("/assets/images/search-bg.jpg");
   background-position: -700px;

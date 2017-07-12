@@ -9,7 +9,7 @@ define(['jquery'], function ($){
                 'position': 'absolute',
                 'bottom': 'auto',
                 'height': $(window).height()-100,
-                'width': '86%'
+                'width': '90%'
             });
             isFixed = false;
         });
@@ -31,7 +31,7 @@ define(['jquery'], function ($){
                     'position': 'absolute',
                     'bottom': 'auto',
                     'height': $(window).height()-100,
-                    'width': '86%'
+                    'width': '90%'
                 });
                 isFixed = false;
             }
