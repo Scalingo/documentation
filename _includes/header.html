@@ -7,7 +7,7 @@
   </a>
 
 <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item"><a href="/">Documentation</a></li>
       <li class="nav-item"><a href="http://developers.scalingo.com/">API</a></li>
@@ -25,5 +25,9 @@
         <li class="breadcrumb-item"><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' }}</a></li>
       {% endif %}
     {% endfor %}
+
+    <ul class="navbar-nav align-items-end" style="min-width: 131px">
+      {% include search.html %}
+    </ul>
   </nav>
 {% endif %}
