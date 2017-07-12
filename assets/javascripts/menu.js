@@ -7,8 +7,8 @@ define(['jquery'], function ($){
         $(document).ready(function(){
             menu.css({
                 'position': 'absolute',
-                'top': 'auto',
-                'height': $(window).height()-40,
+                'bottom': 'auto',
+                'height': $(window).height()-100,
                 'width': '86%'
             });
             isFixed = false;
@@ -29,8 +29,8 @@ define(['jquery'], function ($){
             {
                 menu.css({
                     'position': 'absolute',
-                    'top': 'auto',
-                    'height': $(window).height()-40,
+                    'bottom': 'auto',
+                    'height': $(window).height()-100,
                     'width': '86%'
                 });
                 isFixed = false;
