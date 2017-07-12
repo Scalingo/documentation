@@ -15,7 +15,7 @@
   </div>
 </nav>
 {% if page.url != '/' %}
-  <nav class="breadcrumb" style="padding: .75rem 17%">
+  <nav class="breadcrumb">
     {% assign crumbs = page.url | split: '/' %}
     <li class="breadcrumb-item"><a href="/">documentation</a></li>
     {% for crumb in crumbs offset: 1 %}
