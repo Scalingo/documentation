@@ -6,33 +6,29 @@ $font-color: #03a9f4;
   left: auto;
   overflow: hidden;
   max-width: 207.5px;
-  h1 {
-    margin: 30px 0px;
-    font-size: 20px;
-    font-weight: bold;
-    color: $font-color;
-  }
   ul {
     margin: 0px 0px 5px;
     padding: 0;
   }
   h6 {
-    color: hsla(199,97%,45%,1);
+    color: hsla(0, 0%, 50%, 1);
     font-weight: bold;
-    font-size: 17px;
+    font-size: 16px;
+    margin-top: 1rem;
   }
   li {
     display: block;
     list-syle: none;
+    font-size: 14px;
     margin: 0;
     a {
-      color: hsla(199, 97%, 52%, 1);
+      color: hsla(0, 0%, 73%, 1);
     }
     a:hover {
-      color: hsla(199,97%,30%,1);
+      color: hsla(0, 0%, 32%, 1);
       text-decoration: none;
       p {
-        background-color: hsla(0, 0%, 86%, 1);
+        background-color: hsla(0, 0%, 92%, 1);
       }
     }
     h1 {
@@ -47,12 +43,13 @@ $font-color: #03a9f4;
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
     white-space: nowrap;
-    padding: 0px 3px;
+    padding: 1px 5px;
     margin: 0;
   }
   ul > li > ul {
     display: none;
-    margin: 0 10px 0;
+    margin: 0 15px 0;
+    font-size: 13px;
   }
 
   ul li:hover ul{
