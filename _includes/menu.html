@@ -10,7 +10,7 @@
       {% for subpost in subposts %}
         <li>
           {% if page.url contains subpost.url %}
-            <a title="{{ subpost.title }}" id="currentpage" href="{{ subpost.url }}" style="display: block;"><p style="background-color: hsla(0, 0%, 76%, 1);">{{ subpost.title }}</p></a>
+            <a title="{{ subpost.title }}" id="currentpage" href="{{ subpost.url }}" style="display: block;"><p style="color: hsla(0, 0%, 60%, 1); background-color: hsla(199, 97%, 82%, 1);">{{ subpost.title }}</p></a>
           {% else %}
             <a title="{{ subpost.title }}" href="{{ subpost.url }}" role="button"><p>{{ subpost.title }}</p></a>
           {% endif %}
