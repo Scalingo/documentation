@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="card">
+<div class="pagecontent">
   <div class="card-block">
     <div class="github-edit pull-right">
       <a href="https://github.com/{{ site.github_username }}/documentation/edit/gh-pages/{{ page.path }}">
@@ -11,6 +11,7 @@ layout: default
     </div>
     <h1 class="card-title">{{ page.title }}</h1>
     <p class="card-text">
+      <div class="sidebar-nav"></div>
       {{ content }}
     </p>
     <div class="modified-at pull-right">
