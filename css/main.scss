@@ -14,6 +14,25 @@ $font-color: #03a9f4;
       color: hsla(0, 0%, 65%, 1);
       font-size: 14px;
     }
+    a:hover, a:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.sidebar-nav {
+  margin-bottom: 2%;
+  padding: 4%;
+  border-top: .15rem solid #eceeef;
+  border-bottom: .15rem solid #eceeef;
+  color: hsla(0, 0%, 40%, 1);
+  a, a:hover, a:focus {
+    color: hsla(0, 0%, 40%, 1);
+    font-size: 15px;
+    margin-left: 7px;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
   }
 }
 
