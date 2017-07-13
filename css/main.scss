@@ -103,21 +103,6 @@ blockquote {
   height: 29px;
 }
 
-.doc-center {
-  text-align: center;
-  margin: 80px 0px 55px;
-  width: 100%;
-  a {
-    color: $font-color;
-    font-weight: 900;
-    font-size: 40px;
-  }
-  a:hover, a:focus, a:active {
-    color: $font-color;
-    text-decoration: none;
-  }
-}
-
 a {
   color: $font-color;
   text-decoration: none;
@@ -128,12 +113,27 @@ a:hover, a:focus, a:active {
   text-decoration: none;
 }
 
-.card {
-  margin: 15px 0;
-  word-wrap: break-word;
-  box-shadow: 5px 5px 5px #888888;
+.languages {
+  .thumbnail {
+    oberflow: hidden;
+    margin: 35% 0;
+  }
+  a {
+    text-align: center;
+  }
+  img {
+    width: 100%;
+    height: 95px;
+  }
+  h4 {
+    font-size: 1.1em;
+  }
 }
 
+.card {
+  word-wrap: break-word;
+  margin-bottom: 8%;
+}
 
 code, a > code {
   font-family: 'Inconsolata', monospace;
