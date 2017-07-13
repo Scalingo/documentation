@@ -159,4 +159,4 @@ $ scalingo run \
 That's it, the exact identical application running on Scalingo is running on
 your workstation: [http://localhost:4000](http://localhost:4000). You want to
 copy your database data from your production app, have a look at our [database
-addons]({% post_url presentation/2014-11-24-databases %}) documentation.
+addons]({% post_url databases/2014-11-24-databases %}) documentation.
