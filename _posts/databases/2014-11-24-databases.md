@@ -1,8 +1,8 @@
 ---
 title: Scalingo Databases
 modified_at: 2014-11-24 00:00:00
-category: presentation
-tags: databases index-databases polydbs
+category: databases
+tags: index-databases polydbs databases
 permalink: /databases/
 index: 0
 ---

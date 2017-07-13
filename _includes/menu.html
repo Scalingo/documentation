@@ -1,33 +1,33 @@
-{% assign posts = (site.categories.presentation | sort: 'title') %}
+{% assign listcategories = site.categories.scalingo.first %}
 <ul class="nav flex-column">
-  {% for post in posts %}
+  {% for categorie in listcategories.tags %}
   <ul>
     <li class="nav-item">
-      <h6>{{ post.title }}</h6>
+      <h6>{{ categorie }}</h6>
     </li>
-    {% if site.categories.[post.tags.first] %}
-      {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
-      {% for subpost in subposts %}
+    {% if site.categories.[categorie] %}
+      {% assign posts = (site.categories.[categorie] | sort: 'title') %}
+      {% for post in posts %}
         <li>
-          {% if page.url contains subpost.url %}
-            <a title="{{ subpost.title }}" id="currentpage" href="{{ subpost.url }}" style="display: block;"><p style="color: hsla(0, 0%, 60%, 1); background-color: hsla(199, 97%, 82%, 1);">{{ subpost.title }}</p></a>
+          {% if page.url contains post.url %}
+            <a title="{{ post.title }}" id="currentpage" href="{{ post.url }}" style="display: block;"><p style="color: hsla(0, 0%, 60%, 1); background-color: hsla(199, 97%, 82%, 1);">{{ post.title }}</p></a>
           {% else %}
-            <a title="{{ subpost.title }}" href="{{ subpost.url }}" role="button"><p>{{ subpost.title }}</p></a>
+            <a title="{{ post.title }}" href="{{ post.url }}" role="button"><p>{{ post.title }}</p></a>
           {% endif %}
           <ul>
-            {% if site.categories.[subpost.tags.first] %}
-              {% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'title') %}
-              {% for subpost2 in subposts2 %}
+            {% if site.categories.[post.tags.first] %}
+              {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
+              {% for subpost in subposts %}
                 <li>
-                  {% if page.url contains subpost2.url %}
-                    <a title="{{ subpost2.title }}" id="currentpost" href="{{ subpost2.url }}" style="display: block;"><p style="font-weight: bold;">{{ subpost2.title }}</p></a>
+                  {% if page.url contains subpost.url %}
+                    <a title="{{ subpost.title }}" id="currentpost" href="{{ subpost.url }}" style="display: block;"><p style="font-weight: bold;">{{ subpost.title }}</p></a>
 
                     <script type="text/javascript">
                       $("#currentpost").parent().parent().css({'display': 'block'});
                     </script>
 
                   {% else %}
-                    <a title="{{ subpost2.title }}" href="{{ subpost2.url }}"><p>{{ subpost2.title }}</p></a>
+                    <a title="{{ subpost.title }}" href="{{ subpost.url }}"><p>{{ subpost.title }}</p></a>
                   {% endif %}
                 </li>
               {% endfor %}
