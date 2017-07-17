@@ -11,7 +11,7 @@
         <li>
 
           {% if page.url == post.url %}
-            <a title="{{ post.title }}" id="currentlink" class="currentlink" href="{{ post.url }}"><p style="font-weight: bold;">{{ post.title }}</p></a>
+            <a title="{{ post.title }}" class="currentlink" href="{{ post.url }}"><p style="font-weight: bold;">{{ post.title }}</p></a>
 
             <script type="text/javascript">
               $(".currentlink").parent().css({'display': 'block'});
