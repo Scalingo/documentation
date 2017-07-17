@@ -1,7 +1,7 @@
 ---
 title: Getting Started with Celery and Flask
 modified_at: 2016-06-09 00:00:00
-category: getting-started python
+category: python
 tags: celery flask redis tutorial getting-started-tutorial
 index: 15
 permalink: /languages/python/celery/getting-started-with-celery-and-flask/

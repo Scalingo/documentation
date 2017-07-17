@@ -20,6 +20,18 @@ date: 2017-07-06 00:00:00
           <h4 class="caption">NodeJS</h4>
         </a>
       </div>
+      <div class="thumbnail">
+        <a href="/languages/crystal">
+          <img src="https://crystal-lang.org/images/icon.png" alt="Crystal" />
+          <h4 class="caption">Crystal</h4>
+        </a>
+      </div>
+      <div class="thumbnail">
+        <a href="/languages/haskell">
+          <img src="https://metova.com/wp-content/uploads/2016/01/Haskell-Logo1-300x212.png" alt="Haskell" />
+          <h4 class="caption">Haskell</h4>
+        </a>
+      </div>
     </div>
     <div class="col-3">
       <div class="thumbnail">
@@ -32,6 +44,18 @@ date: 2017-07-06 00:00:00
         <a href="/languages/php">
           <img src="https://cdn.scalingo.com/homepage/assets/technologies/svg/php-2d71f5f01eca45da137e01d2b6cb337d56becb8d89be6076bbe821ff75431cee.svg" alt="Php" />
           <h4 class="caption">PHP</h4>
+        </a>
+      </div>
+      <div class="thumbnail">
+        <a href="/languages/erlang">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Erlang_logo.svg/876px-Erlang_logo.svg.png" alt="Erlang" />
+          <h4 class="caption">Erlang</h4>
+        </a>
+      </div>
+      <div class="thumbnail">
+        <a href="/languages/javascript">
+          <img src="http://codeslo.com/wp-content/uploads/2017/05/javascript-cup.png" alt="Javascript" />
+          <h4 class="caption">Javascript</h4>
         </a>
       </div>
     </div>
@@ -48,6 +72,12 @@ date: 2017-07-06 00:00:00
           <h4 class="caption">Java</h4>
         </a>
       </div>
+      <div class="thumbnail">
+        <a href="/languages/go">
+          <img src="https://cdn.scalingo.com/homepage/assets/technologies/svg/go-5495fcdd380aac80f6708324a9786d5de34a11269858157c7aba144e291464c8.svg" alt="Go" />
+          <h4 class="caption">Go</h4>
+        </a>
+      </div>
     </div>
     <div class="col-3">
       <div class="thumbnail">
@@ -60,6 +90,12 @@ date: 2017-07-06 00:00:00
         <a href="/languages/clojure">
           <img src="https://cdn.scalingo.com/homepage/assets/technologies/svg/clojure-6c3983a5616989b60b5dcd2aa4cab0c2fa6c475335730dd6d9f48bc490455383.svg" alt="Clojure" />
           <h4 class="caption">Clojure</h4>
+        </a>
+      </div>
+      <div class="thumbnail">
+        <a href="/languages/groovy">
+          <img src="https://cdn.scalingo.com/homepage/assets/technologies/svg/groovy-0ed0753bfd69245ae5e00dcd87db63d6a41c951ef1a535872c7d4744c8073b7d.svg" alt="Groovy" />
+          <h4 class="caption">Groovy</h4>
         </a>
       </div>
     </div>

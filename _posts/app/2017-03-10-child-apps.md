@@ -1,7 +1,7 @@
 ---
 title: Child application
 modified_at: 2017-03-10 00:00:00
-category: app
+category: application
 tags: child app
 ---
 

@@ -2,7 +2,7 @@
 layout:      page
 title:       "GitHub integration, Auto Deploy and Review Apps"
 modified_at: 2017-03-13 10:00:00
-category: integration
+category: application
 tags: github integration
 ---
 

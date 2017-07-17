@@ -1,7 +1,7 @@
 ---
 title: Getting started with Docker Image Addon
 modified_at: 2016-06-10 00:00:00
-category: [addons, cli, getting-started, app]
+category: docker
 tags: docker images download feature
 ---
 

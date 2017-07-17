@@ -1,7 +1,7 @@
 ---
 title: Scalingo Builder - Our base Docker image
 modified_at: 2016-08-05 00:00:00
-category: internals
+category: scalingo
 tags: docker, image, builder, buildpack
 ---
 
