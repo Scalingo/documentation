@@ -1,7 +1,7 @@
 ---
 title: Sending emails from your application
 modified_at: 2016-07-22 00:00:00
-category: app
+category: application
 tags: email smtp app
 ---
 

@@ -60,3 +60,14 @@ $font-color: #03a9f4;
 .menu:hover {
   overflow-y: auto;
 }
+
+.currentlink {
+  p {
+    background-color: hsla(199, 97%, 82%, 1);
+    color: hsla(0, 0%, 60%, 1);
+  }
+  ul > li > a > p {
+    background-color: transparent;
+  }
+}
+

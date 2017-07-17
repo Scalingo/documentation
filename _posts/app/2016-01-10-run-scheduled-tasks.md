@@ -1,7 +1,7 @@
 ---
 title: Run scheduled tasks
 modified_at: 2016-01-28 12:22:00
-category: app
+category: application
 tags: tasks app
 ---
 

@@ -1,4 +1,4 @@
-{% assign listcategories = site.categories.scalingo.first %}
+{% assign listcategories = site.categories.index.first %}
 <ul class="nav flex-column">
   {% for categorie in listcategories.tags %}
   <ul>
@@ -9,21 +9,30 @@
       {% assign posts = (site.categories.[categorie] | sort: 'title') %}
       {% for post in posts %}
         <li>
-          {% if page.url contains post.url %}
-            <a title="{{ post.title }}" id="currentpage" href="{{ post.url }}" style="display: block;"><p style="color: hsla(0, 0%, 60%, 1); background-color: hsla(199, 97%, 82%, 1);">{{ post.title }}</p></a>
+
+          {% if page.url == post.url %}
+            <a title="{{ post.title }}" id="currentlink" class="currentlink" href="{{ post.url }}"><p style="font-weight: bold;">{{ post.title }}</p></a>
+
+            <script type="text/javascript">
+              $(".currentlink").parent().css({'display': 'block'});
+            </script>
+
           {% else %}
             <a title="{{ post.title }}" href="{{ post.url }}" role="button"><p>{{ post.title }}</p></a>
           {% endif %}
+
           <ul>
+
             {% if site.categories.[post.tags.first] %}
               {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
               {% for subpost in subposts %}
                 <li>
-                  {% if page.url contains subpost.url %}
-                    <a title="{{ subpost.title }}" id="currentpost" href="{{ subpost.url }}" style="display: block;"><p style="font-weight: bold;">{{ subpost.title }}</p></a>
+                  {% if page.url == subpost.url %}
+                    <a title="{{ subpost.title }}" id="currentpost" href="{{ subpost.url }}"><p style="font-weight: bold;">{{ subpost.title }}</p></a>
 
                     <script type="text/javascript">
                       $("#currentpost").parent().parent().css({'display': 'block'});
+                      $("#currentpost").parent().parent().parent().addClass("currentlink");
                     </script>
 
                   {% else %}
@@ -32,6 +41,7 @@
                 </li>
               {% endfor %}
             {% endif %}
+
           </ul>
         </li>
       {% endfor %}

@@ -1,8 +1,8 @@
 ---
 title: About Internals
 modified_at: 2015-03-22 00:00:00
-category: internals
-tags: index internals
+category: scalingo
+tags: internals index
 index: 0
 ---
 

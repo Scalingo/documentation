@@ -1,7 +1,7 @@
 ---
 title: Review apps
 modified_at: 2017-03-10 00:00:00
-category: integration
+category: github
 tags: review apps app
 ---
 

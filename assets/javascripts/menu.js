@@ -36,8 +36,13 @@ define(['jquery'], function ($){
                 isFixed = false;
             }
         });
-        if ( $("#currentpage").offset() ){
-            $(".menu").scrollTop($("#currentpage").offset().top-70);
-        }
+        $(document).ready(function() {
+            if ( $("#currentlink").offset() ){
+                $(".menu").scrollTop($("#currentlink").offset().top-70);
+            }
+            if ( $(".currentlink").offset() ){
+                $(".menu").scrollTop($(".currentlink").offset().top-80);
+            }
+        });
     }
 });
