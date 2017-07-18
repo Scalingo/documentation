@@ -8,7 +8,7 @@
 $font-color: #03a9f4;
 
 .main-content {
-  border-left: .2rem solid #eceeef;
+  border-left: 2px solid hsla(0, 0%, 84%, 1);
   .github-edit {
     a, a:hover, a:focus {
       color: hsla(0, 0%, 65%, 1);
@@ -25,8 +25,8 @@ $font-color: #03a9f4;
   margin-bottom: 3%;
   margin-top: 6%;
   padding: 4%;
-  border-top: .15rem solid #eceeef;
-  border-bottom: .15rem solid #eceeef;
+  border-top: 1.5px solid hsla(0, 0%, 78%, 1);
+  border-bottom: 1.5px solid hsla(0, 0%, 78%, 1);
   color: hsla(0, 0%, 40%, 1);
   a, a:hover, a:focus {
     color: hsla(0, 0%, 40%, 1);
@@ -98,7 +98,7 @@ blockquote {
 .breadcrumb {
   margin: auto;
   padding: 0.35rem 1rem;
-  border-bottom: 1px solid #dee5e8;
+  border-bottom: 1px solid hsla(0, 0%, 78%, 1);
   .pull-right {
     min-width: 131px;
     direction: rtl;
