@@ -8,7 +8,7 @@
 $font-color: #03a9f4;
 
 .main-content {
-  border-left: .25rem solid #eceeef;
+  border-left: .2rem solid #eceeef;
   .github-edit {
     a, a:hover, a:focus {
       color: hsla(0, 0%, 65%, 1);
@@ -97,6 +97,13 @@ blockquote {
 
 .breadcrumb {
   margin: auto;
+  padding: 0.35rem 1rem;
+  border-bottom: 1px solid #dee5e8;
+  .pull-right {
+    min-width: 131px;
+    direction: rtl;
+    padding: 0;
+  }
 }
 
 .logo-img {

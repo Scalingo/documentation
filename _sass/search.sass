@@ -1,25 +1,35 @@
 .search-block
   padding: 0
-  width: 70%
+  width: 100%
+  max-width: 780px
+  height: 100%
   margin: auto
+  -webkit-transition: all .5s ease
+  -moz-transition: all .5s ease
+  transition: all .5s ease
+
+.search-block:hover, .search-block:focus, .search-block:active
+  width: 130%
 
 .search-form
   position: relative
   width: 100%
+  vertical-align: middle
 
   .search-icon
     position: absolute
     z-index: 1
-    top: 20%
-    left: 9px
+    top: 24%
+    left: 2.3%
     color: #424242
+    font-size: 75%
 
 #search-input
   -webkit-appearance: none
   box-sizing: border-box
-  font-size: 13px
+  font-size: 14.5px
   outline: none
-  padding: 0 0 0 24px
+  padding: 1.5px 1.5px 1.5px 8.5%
   width: 100%
 
 //
@@ -56,6 +66,8 @@ $breakpoint-large: 768px
   transition: all .2s ease
   width: 100%
   background-color: hsla(0, 0%, 100%, 1)
+  right: 0px !important
+  left: auto !important
 
 .algolia-docsearch-suggestion
   border-bottom: 1px solid $color-border
