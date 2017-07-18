@@ -97,8 +97,12 @@ blockquote {
 
 .breadcrumb {
   margin: auto;
-  padding: 0.35rem 1rem;
+  padding: 0 1rem;
   border-bottom: 1px solid hsla(0, 0%, 78%, 1);
+  .breadcrumb-item {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
   .pull-right {
     min-width: 131px;
     direction: rtl;
@@ -120,7 +124,15 @@ a:hover, a:focus, a:active {
   text-decoration: none;
 }
 
+.title-index {
+  text-align: center;
+  color: gray;
+  margin: auto;
+  
+}
+
 .languages {
+  margin: 6% 1%;
   .thumbnail {
     oberflow: hidden;
     margin: auto;

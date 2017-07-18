@@ -6,7 +6,10 @@ date: 2017-07-06 00:00:00
 
 
 <div class="container">
-  <div class="row languages" style="margin: 3.5% 0;">
+  <div class="row">
+    <h1 class="title-index">Take a look at our documentation</h1>
+  </div>
+  <div class="row languages">
     <div class="col-12 col-sm-6">
       <div class="row">
         <div class="col-6">
