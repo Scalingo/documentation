@@ -10,6 +10,9 @@ $font-color: #03a9f4;
   ul {
     margin: 0px 0px 5px;
     padding: 0;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
   }
   h6 {
     color: hsla(0, 0%, 50%, 1);
@@ -58,9 +61,18 @@ $font-color: #03a9f4;
     display: none;
     margin: 0 15px 0;
     font-size: 13px;
+    p {
+      padding: 1px 5px 1px 5px;
+    }
   }
 
   ul li:hover ul{
+    display: block;
+  }
+  ul li:active ul{
+    display: block;
+  }
+  ul li:focus ul{
     display: block;
   }
 }
