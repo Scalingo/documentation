@@ -5,13 +5,13 @@ layout: default
 <div class="pagecontent">
   <div class="block">
     <div class="github-edit pull-right">
-      <a href="https://github.com/{{ site.github_username }}/documentation/edit/gh-pages/{{ page.path }}">
-        <i class="fa fa-pencil fa-fw"></i> Suggest edits
+      <a href="https://github.com/{{ site.github_username }}/documentation/edit/gh-pages/{{ page.path }}" title="Suggest edits">
+        <i class="fa fa-pencil fa-fw"></i>Edit
       </a>
     </div>
     <h1 class="title">{{ page.title }}</h1>
+    <div class="sidebar-nav"></div>
     <p class="text">
-      <div class="sidebar-nav"></div>
       {{ content }}
     </p>
     <div class="modified-at pull-right">
