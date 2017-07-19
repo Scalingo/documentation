@@ -2,6 +2,7 @@
 title: Scalingo Elasticsearch Addon
 modified_at: 2016-04-27 00:00:00
 category: addons
+permalink: /elasticsearch/
 tags: elasticsearch addon databases
 ---
 
