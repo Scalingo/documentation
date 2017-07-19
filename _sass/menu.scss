@@ -4,11 +4,12 @@ $font-color: #03a9f4;
   display: flex;
   flex-direction: column;
   left: auto;
-  overflow: hidden;
-  max-width: 257px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 270px;
   padding-top: 23px;
   ul {
-    margin: 0px 0px 5px;
+    margin: 0px 7px 5px 0px;
     padding: 0;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -42,9 +43,9 @@ $font-color: #03a9f4;
       }
     }
     span {
-      right: 11px;
+      right: 25px;
       position: absolute;
-      margin-top: 6px;
+      margin-top: 3px;
       font-size: 11px;
     }
   p {
@@ -75,10 +76,6 @@ $font-color: #03a9f4;
   ul li:focus ul{
     display: block;
   }
-}
-
-.menu:hover {
-  overflow-y: auto;
 }
 
 .currentlink {

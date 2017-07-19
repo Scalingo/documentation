@@ -8,8 +8,8 @@ define(['jquery'], function ($){
             menu.css({
                 'position': 'absolute',
                 'top': 'auto',
-                'height': $(window).height()-111,
-                'width': '90%'
+                'height': $(window).height()-91,
+                'width': '94%'
             });
             isFixed = false;
         });
@@ -30,8 +30,8 @@ define(['jquery'], function ($){
                 menu.css({
                     'position': 'absolute',
                     'top': 'auto',
-                    'height': $(window).height()-111,
-                    'width': '90%'
+                    'height': $(window).height()-91,
+                    'width': '94%'
                 });
                 isFixed = false;
             }
