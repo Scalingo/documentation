@@ -59,7 +59,7 @@ body {
 }
 
 blockquote {
-  background-color: #D9EDF7;
+  background-color: #D9EDF7 !important;
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
@@ -74,11 +74,15 @@ blockquote {
   padding-right: 20px;
   padding-top: 10px;
   &:after {
-    content: none !important
+    content: none !important;
   }
   &:before {
-    content: none !important
+    content: none !important;
   }
+}
+
+.bg-info {
+  background-color: #D9EDF7 !important;
 }
 
 .list-unstyled {
