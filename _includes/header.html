@@ -1,39 +1,49 @@
 <nav class="navbar navbar-fixed-top navbar-toggleable-md navbar-light bg-faded">
-  <button type="button" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="www.scalingo.com">
-    <img class="logo-img" src="http://scalingo.com/logo-white.svg">
-  </a>
+  <div class="container">
+    <div class="row">
+      <button type="button" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="www.scalingo.com">
+        <img class="logo-img" src="http://scalingo.com/logo-white.svg">
+      </a>
 
-<!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a href="/">Documentation</a></li>
-      <li class="nav-item"><a href="http://developers.scalingo.com/">API</a></li>
-    </ul>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a href="/">Documentation</a></li>
+          <li class="nav-item"><a href="http://developers.scalingo.com/">API</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>
 <nav class="breadcrumb">
-  {% if page.url == '/' %}
-    <div class="container">
-      <ul class="navbar-nav" style="width: 100%;">
-        {% include search.html %}
-      </ul>
-    </div>
-  {% else %}
-    {% assign crumbs = page.url | split: '/' %}
-    <li class="breadcrumb-item pull-left"><a href="/">documentation</a></li>
-    {% for crumb in crumbs offset: 1 %}
-      {% if forloop.last %}
-        <li class="breadcrumb-item active"><a href="{{ page.url }}">{{ crumb | replace:'-',' ' | replace:'.html',' ' }}</a></li>
-      {% else %}
-        <li class="breadcrumb-item"><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' }}</a></li>
-      {% endif %}
-    {% endfor %}
+  <div class="container">
+    <div class="row">
+      <nav class="breadcrumb-content">
+        {% if page.url == '/' %}
+          <div class="container">
+            <ul class="navbar-nav" style="width: 100%;">
+              {% include search.html %}
+            </ul>
+          </div>
+        {% else %}
+          {% assign crumbs = page.url | split: '/' %}
+          <li class="breadcrumb-item pull-left"><a href="/">documentation</a></li>
+          {% for crumb in crumbs offset: 1 %}
+            {% if forloop.last %}
+              <li class="breadcrumb-item active"><a href="{{ page.url }}">{{ crumb | replace:'-',' ' | replace:'.html',' ' }}</a></li>
+            {% else %}
+              <li class="breadcrumb-item"><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' }}</a></li>
+            {% endif %}
+          {% endfor %}
 
-    <ul class="navbar-nav pull-right">
-      {% include search.html %}
-    </ul>
-  {% endif %}
+          <ul class="navbar-nav pull-right">
+            {% include search.html %}
+          </ul>
+        {% endif %}
+      </nav>
+    </div>
+  </div>
 </nav>
