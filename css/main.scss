@@ -117,16 +117,13 @@ blockquote {
 
 .breadcrumb-content {
   width: 100%;
-  margin: auto;
-  padding: 0;
   .breadcrumb-item {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
   }
   .pull-right {
-    min-width: 131px;
-    direction: rtl;
     padding: 0;
+    width: 130px;
   }
 }
 
