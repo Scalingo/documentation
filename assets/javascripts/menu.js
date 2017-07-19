@@ -8,7 +8,7 @@ define(['jquery'], function ($){
             menu.css({
                 'position': 'absolute',
                 'top': 'auto',
-                'height': $(window).height()-78,
+                'height': $(window).height()-76,
                 'width': '94.5%'
             });
             isFixed = false;
@@ -30,7 +30,7 @@ define(['jquery'], function ($){
                 menu.css({
                     'position': 'absolute',
                     'top': 'auto',
-                    'height': $(window).height()-78,
+                    'height': $(window).height()-76,
                     'width': '94.5%'
                 });
                 isFixed = false;
