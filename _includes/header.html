@@ -22,13 +22,7 @@
   <div class="container">
     <div class="row">
       <nav class="breadcrumb-content">
-        {% if page.url == '/' %}
-          <div class="container">
-            <ul class="navbar-nav" style="width: 100%;">
-              {% include search.html %}
-            </ul>
-          </div>
-        {% else %}
+        {% if page.url != '/' %}
           {% assign crumbs = page.url | split: '/' %}
           <li class="breadcrumb-item pull-left"><a href="/">documentation</a></li>
           {% for crumb in crumbs offset: 1 %}
