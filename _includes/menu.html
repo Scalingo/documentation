@@ -11,16 +11,22 @@
         <li>
 
           {% if page.url == post.url %}
-            <a title="{{ post.title }}" class="currentlink" href="{{ post.url }}"><p style="font-weight: bold;">{{ post.title }}</p></a>
+            <a title="{{ post.title }}" class="currentlink" href="{{ post.url }}"><p style="font-weight: bold;">
 
             <script type="text/javascript">
               $(".currentlink").parent().css({'display': 'block'});
             </script>
 
           {% else %}
-            <a title="{{ post.title }}" href="{{ post.url }}" role="button"><p>{{ post.title }}</p></a>
+            <a title="{{ post.title }}" href="{{ post.url }}" role="button"><p>
           {% endif %}
 
+              {% if site.categories.[post.tags.first] %}
+                <span class="fa fa-chevron-down"></span>
+              {% endif %}
+              {{ post.title }}
+            </p>
+          </a>
           <ul>
 
             {% if site.categories.[post.tags.first] %}
