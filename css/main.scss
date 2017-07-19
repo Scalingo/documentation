@@ -15,13 +15,16 @@ $font-color: #03a9f4;
     }
   }
   h1, h2, h3, h4 {
-    margin: 21px 7px;
+    padding: 40px 0 20px 20px;
+  }
+  .pull-right {
+    margin-top: 10px;
   }
 }
 
 .sidebar-nav {
   margin-bottom: 3%;
-  padding: 3%;
+  padding: 20px;
   border-top: 1px solid hsla(0, 0%, 78%, 1);
   border-bottom: 1px solid hsla(0, 0%, 78%, 1);
   color: hsla(0, 0%, 40%, 1);
