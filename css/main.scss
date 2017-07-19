@@ -15,10 +15,10 @@ $font-color: #03a9f4;
     }
   }
   h1, h2, h3, h4 {
-    padding: 40px 0 20px 20px;
+    padding: 32px 0 20px 20px;
   }
   .pull-right {
-    margin-top: 10px;
+    margin-top: 8px;
   }
 }
 
@@ -90,6 +90,14 @@ blockquote {
 .navbar {
   background-color: $font-color;
   font-family: 'lato', sans-serif;
+  padding: 2px;
+  .collapse {
+    width: auto;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .navbar .navbar-nav > li > a {
@@ -102,9 +110,15 @@ blockquote {
 }
 
 .breadcrumb {
-  margin: auto;
-  padding: 0 1rem;
   border-bottom: 1px solid hsla(0, 0%, 78%, 1);
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb-content {
+  width: 100%;
+  margin: auto;
+  padding: 0;
   .breadcrumb-item {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
@@ -117,7 +131,7 @@ blockquote {
 }
 
 .logo-img {
-  height: 29px;
+  height: 24px;
 }
 
 a {
