@@ -10,36 +10,38 @@
       {% for post in posts %}
         <li>
 
-          {% if page.url == post.url %}
-            <a title="{{ post.title }}" class="currentlink" href="{{ post.url }}"><p style="font-weight: bold;">
-
-            <script type="text/javascript">
-              $(".currentlink").parent().css({'display': 'block'});
-            </script>
-
-          {% else %}
-            <a title="{{ post.title }}" href="{{ post.url }}" role="button"><p>
-          {% endif %}
-
+          {% if page.url contains post.url %}
+            {% if page.url == post.url %}
+              <a title="{{ post.title }}" class="currentsection currentlink" href="{{ post.url }}">
+            {% else %}
+              <a title="{{ post.title }}" class="currentsection" href="{{ post.url }}">
+            {% endif %}
+              <p style="font-weight: bold;">
               {% if site.categories.[post.tags.first] %}
                 <span class="fa fa-chevron-down"></span>
               {% endif %}
               {{ post.title }}
             </p>
           </a>
+          <ul style="display: block;">
+
+          {% else %}
+            <a title="{{ post.title }}" href="{{ post.url }}" role="button"><p>
+              {% if site.categories.[post.tags.first] %}
+                <span class="fa fa-chevron-right"></span>
+              {% endif %}
+              {{ post.title }}
+            </p>
+          </a>
           <ul>
+          {% endif %}
 
             {% if site.categories.[post.tags.first] %}
               {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
               {% for subpost in subposts %}
                 <li>
                   {% if page.url == subpost.url %}
-                    <a title="{{ subpost.title }}" id="currentpost" href="{{ subpost.url }}"><p style="font-weight: bold;">{{ subpost.title }}</p></a>
-
-                    <script type="text/javascript">
-                      $("#currentpost").parent().parent().css({'display': 'block'});
-                      $("#currentpost").parent().parent().parent().addClass("currentlink");
-                    </script>
+                    <a title="{{ subpost.title }}" class="currentlink" href="{{ subpost.url }}"><p style="font-weight: bold;">{{ subpost.title }}</p></a>
 
                   {% else %}
                     <a title="{{ subpost.title }}" href="{{ subpost.url }}"><p>{{ subpost.title }}</p></a>
