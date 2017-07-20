@@ -15,39 +15,8 @@ date: 2017-07-06 00:00:00
         <div class="row languages">
           {% include languages.html %}
         </div>
-        <div class="row">
-          <div class="card-deck" style="width: 100%;">
-            <div class="card">
-              <div class="card-block">
-                <h2 class="card-title">Getting started</h2>
-                <p class="card-text">
-                  <ul class="list-unstyled">
-                    {% assign posts = site.categories.getting-started | sort: 'index', 'last' %}
-                    {% for post in posts limit:12 %}
-                      <li>
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-block">
-                <h2 class="card-title">Recent activities</h2>
-                <p class="card-text">
-                  <ul class="list-unstyled">
-                    {% assign posts = site.posts | sort: 'modified_at' | reverse %}
-                    {% for post in posts limit:12 %}
-                      <li>
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="row addons">
+          {% include addons.html %}
         </div>
       </div>
     </main>
