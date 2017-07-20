@@ -160,7 +160,7 @@ a:hover, a:focus, a:active {
   text-decoration: none;
 }
 
-.languages, .addons, .platform {
+.languages, .addons {
   color: #292b2c;
   .thumbnail {
     overflow: hidden;
@@ -189,10 +189,27 @@ a:hover, a:focus, a:active {
       color: #292b2c;
     }
     a:after {
-      content: ', ';
+      content: ',';
     }
     a:last-child:after {
       content: '.';
+    }
+  }
+}
+
+.platform {
+  h4, a {
+    padding: 0;
+    color: #292b2c;
+  }
+  ul {
+    column-count: 2;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    padding: 0;
+    width: 100%;
+    li {
+      margin: auto 15px;
     }
   }
 }

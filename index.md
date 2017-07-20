@@ -23,17 +23,18 @@ date: 2017-07-06 00:00:00
           {% include addons.html %}
         </div>
         <div class="row platform">
-          <h3>Our platform</h3>
+          <h3>Some usefull links about our platform</h3>
           <div class="col-12">
-            <ul>
-              Some usefull links:
-              <div class="row">
+            <div class="row">
+              <ul>
                 {% assign posts = site.categories.platform | sort: 'index', 'last' %}
                 {% for post in posts %}
-                  <a href="{{ post.url }}"> {{ post.title }}</a>
+                  <li>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                  </li>
                 {% endfor %}
-              </div>
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
