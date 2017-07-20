@@ -10,7 +10,11 @@ date: 2017-07-06 00:00:00
       {% include header.html %}
       <div class="container main-content">
         <div class="row">
-          <h1 class="title-index">Take a look at our documentation</h1>
+          <div class="search-index">
+            <div class="search-form">
+              <input type="text" class="form-control" id="search-input" placeholder="Search the documentation" autofocus="true">
+            </div>
+          </div>
         </div>
         <div class="row languages">
           {% include languages.html %}
