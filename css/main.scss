@@ -166,12 +166,11 @@ a:hover, a:focus, a:active {
   margin: auto;
 }
 
-.languages, .addons {
+.languages, .addons, .platform {
   color: gray;
   .thumbnail {
-    oberflow: hidden;
+    overflow: hidden;
     margin: auto;
-    max-width: 94px;
   }
   a {
     text-align: center;
@@ -185,6 +184,17 @@ a:hover, a:focus, a:active {
     font-size: 1.1em;
     padding: 20px 0;
     font-weight: bold;
+  }
+}
+
+.languages {
+  .thumbnail {
+    width: 94px;
+  }
+}
+.addons {
+  .thumbnail {
+    width: 115px;
   }
 }
 
