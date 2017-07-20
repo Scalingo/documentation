@@ -1,7 +1,7 @@
 ---
 title: Recovery management after Platform problem
 modified_at: 2016-05-31 00:00:00
-category: scalingo
+category: platform
 tags: faq crash recovery internals
 ---
 

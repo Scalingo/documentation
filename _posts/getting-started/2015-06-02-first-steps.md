@@ -1,7 +1,7 @@
 ---
 title: First Steps On Scalingo
 modified_at: 2015-12-02 00:00:00
-category: getting-started
+category: platform getting-started
 tags: follow-the-light ssh
 index: 0
 permalink: /first-steps/
