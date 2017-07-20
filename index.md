@@ -8,7 +8,7 @@ date: 2017-07-06 00:00:00
   <body>
     <main>
       {% include header.html %}
-      <div class="container main-content">
+      <div class="container index">
         <div class="row">
           <div class="search-index">
             <div class="search-form">
