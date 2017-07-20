@@ -25,16 +25,15 @@ date: 2017-07-06 00:00:00
         <div class="row platform">
           <h3>Our platform</h3>
           <div class="col-12">
-            <div class="row">
-              {% assign posts = site.categories.platform | sort: 'index', 'last' %}
-              {% for post in posts %}
-                <div class="thumbnail">
-                  <a href="{{ post.url }}">
-                    <h4 class="caption">{{ post.title }}</h4>
-                  </a>
-                </div>
-              {% endfor %}
-            </div>
+            <ul>
+              Some usefull links:
+              <div class="row">
+                {% assign posts = site.categories.platform | sort: 'index', 'last' %}
+                {% for post in posts %}
+                  <a href="{{ post.url }}"> {{ post.title }}</a>
+                {% endfor %}
+              </div>
+            </ul>
           </div>
         </div>
       </div>

@@ -161,29 +161,45 @@ a:hover, a:focus, a:active {
 }
 
 .languages, .addons, .platform {
-  color: gray;
+  color: #292b2c;
   .thumbnail {
     overflow: hidden;
     margin: auto;
   }
   a {
     text-align: center;
-    color: gray;
+    color: $font-color;
   }
   img {
     width: 100%;
-    height: 95px;
+    height: 80px;
+    filter: grayscale(100%) brightness(125%);
+    -webkit-filter: grayscale(100%) brightness(125%);
+    -moz-filter: grayscale(100%) brightness(125%);
+    -ms-filter: grayscale(100%) brightness(125%);
+    -o-filter: grayscale(100%) brightness(125%);
   }
   h4 {
-    font-size: 1.1em;
+    font-size: 1em;
     padding: 20px 0;
-    font-weight: bold;
+  }
+  ul {
+    h4, a {
+      padding: 0;
+      color: #292b2c;
+    }
+    a:after {
+      content: ', ';
+    }
+    a:last-child:after {
+      content: '.';
+    }
   }
 }
 
 .languages {
   .thumbnail {
-    width: 94px;
+    width: 90px;
   }
 }
 .addons {
