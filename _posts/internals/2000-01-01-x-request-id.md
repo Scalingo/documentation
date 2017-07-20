@@ -1,7 +1,7 @@
 ---
 title: The X-Request-ID header
 modified_at: 2017-06-08 00:00:00
-category: scalingo
+category: platform
 tags: reverse-proxy routing http header internals
 ---
 
