@@ -25,6 +25,18 @@
             </a>
             {% if site.categories.[post.tags.first] %}
               <ul style="display: block;">
+                {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
+                {% for subpost in subposts %}
+                  <li>
+                    {% if page.url == subpost.url %}
+                      <a title="{{ subpost.title }}" class="currentlink" href="{{ subpost.url }}"><p style="font-weight: bold;">{{ subpost.title }}</p></a>
+
+                    {% else %}
+                      <a title="{{ subpost.title }}" href="{{ subpost.url }}"><p>{{ subpost.title }}</p></a>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
             {% endif %}
 
           {% else %}
@@ -36,21 +48,6 @@
                 {{ post.title }}
               </p>
             </a>
-          {% endif %}
-
-          {% if site.categories.[post.tags.first] %}
-              {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
-              {% for subpost in subposts %}
-                <li>
-                  {% if page.url == subpost.url %}
-                    <a title="{{ subpost.title }}" class="currentlink" href="{{ subpost.url }}"><p style="font-weight: bold;">{{ subpost.title }}</p></a>
-
-                  {% else %}
-                    <a title="{{ subpost.title }}" href="{{ subpost.url }}"><p>{{ subpost.title }}</p></a>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
           {% endif %}
         </li>
       {% endfor %}
