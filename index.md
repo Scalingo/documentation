@@ -10,11 +10,7 @@ modified_at: 2017-07-06 00:00:00
       {% include header.html %}
       <div class="container index">
         <div class="row">
-          <div class="search-index">
-            <div class="search-form">
-              <input type="text" class="form-control" id="search-input" placeholder="Search the documentation" autofocus="true">
-            </div>
-          </div>
+          {% include search.html %}
         </div>
         <div class="row languages">
           {% include languages.html %}
