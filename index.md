@@ -10,7 +10,12 @@ modified_at: 2017-07-06 00:00:00
       {% include header.html %}
       <div class="container index">
         <div class="row">
-          {% include search.html %}
+          <div class="search-block">
+            <div class="search-form">
+              <span class="fa fa-search search-icon"></span>
+              <input type="text" class="form-control" id="search-input" placeholder="Search" autofocus="true">
+            </div>
+          </div>
         </div>
         <div class="row languages">
           {% include languages.html %}
