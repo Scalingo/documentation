@@ -6,7 +6,7 @@
       <h6>{{ categorie }}</h6>
     </li>
     {% if site.categories.[categorie] %}
-      {% assign posts = (site.categories.[categorie] | sort: 'title') %}
+      {% assign posts = (site.categories.[categorie] | sort: 'order') %}
       {% for post in posts %}
         <li>
 
@@ -37,7 +37,7 @@
           {% endif %}
 
             {% if site.categories.[post.tags.first] %}
-              {% assign subposts = (site.categories.[post.tags.first] | sort:'order') %}
+              {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
               {% for subpost in subposts %}
                 <li>
                   {% if page.url == subpost.url %}
