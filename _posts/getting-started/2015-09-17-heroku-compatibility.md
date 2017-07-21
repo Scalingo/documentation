@@ -2,6 +2,7 @@
 title: Heroku Compatibility
 modified_at: 2015-09-17 21:00:00
 category: platform
+order: 3
 tags: heroku
 permalink: /heroku-compatibility/
 ---

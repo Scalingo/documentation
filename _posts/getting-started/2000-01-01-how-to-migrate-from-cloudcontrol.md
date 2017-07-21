@@ -2,6 +2,7 @@
 title: How to migrate from CloudControl
 modified_at: 2016-02-16 11:14:00
 category: platform
+order: 1
 tags: cloudcontrol control cloud ror ruby rails tutorial
 permalink: /how-to-migrate-from-cloudcontrol/
 ---
