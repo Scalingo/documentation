@@ -37,7 +37,7 @@
           {% endif %}
 
             {% if site.categories.[post.tags.first] %}
-              {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
+              {% assign subposts = (site.categories.[post.tags.first] | sort:'order') %}
               {% for subpost in subposts %}
                 <li>
                   {% if page.url == subpost.url %}

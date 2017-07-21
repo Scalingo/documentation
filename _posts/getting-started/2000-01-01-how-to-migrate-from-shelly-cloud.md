@@ -3,6 +3,7 @@ title: How to migrate from Shelly Cloud
 modified_at: 2016-02-16 11:14:00
 category: platform
 tags: shelly cloud ror ruby rails tutorial
+order: 1
 permalink: /how-to-migrate-from-shelly-cloud/
 ---
 

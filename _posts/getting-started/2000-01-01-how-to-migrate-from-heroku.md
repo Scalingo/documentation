@@ -3,6 +3,7 @@ title: How to migrate from Heroku
 modified_at: 2015-10-14 17:21:00
 category: platform
 tags: heroku tutorial
+order: 1
 permalink: /how-to-migrate-from-heroku/
 ---
 

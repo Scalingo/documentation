@@ -1,6 +1,6 @@
 ---
 title: Documentation Center
-date: 2017-07-06 00:00:00
+modified_at: 2017-07-06 00:00:00
 ---
 
 <html>
@@ -27,7 +27,7 @@ date: 2017-07-06 00:00:00
           <div class="col-12">
             <div class="row">
               <ul>
-                {% assign posts = site.categories.platform | sort: 'index', 'last' %}
+                {% assign posts = site.categories.platform | sort:'order' %}
                 {% for post in posts %}
                   <li>
                     <a href="{{ post.url }}">{{ post.title }}</a>
