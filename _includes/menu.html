@@ -17,26 +17,28 @@
               <a title="{{ post.title }}" class="currentsection" href="{{ post.url }}">
             {% endif %}
               <p style="font-weight: bold;">
-              {% if site.categories.[post.tags.first] %}
-                <span class="fa fa-chevron-down"></span>
-              {% endif %}
-              {{ post.title }}
-            </p>
-          </a>
-          <ul style="display: block;">
+                {% if site.categories.[post.tags.first] %}
+                  <span class="fa fa-chevron-down"></span>
+                {% endif %}
+                {{ post.title }}
+              </p>
+            </a>
+            {% if site.categories.[post.tags.first] %}
+              <ul style="display: block;">
+            {% endif %}
 
           {% else %}
-            <a title="{{ post.title }}" href="{{ post.url }}" role="button"><p>
-              {% if site.categories.[post.tags.first] %}
-                <span class="fa fa-chevron-right"></span>
-              {% endif %}
-              {{ post.title }}
-            </p>
-          </a>
-          <ul>
+            <a title="{{ post.title }}" href="{{ post.url }}" role="button">
+              <p>
+                {% if site.categories.[post.tags.first] %}
+                  <span class="fa fa-chevron-right"></span>
+                {% endif %}
+                {{ post.title }}
+              </p>
+            </a>
           {% endif %}
 
-            {% if site.categories.[post.tags.first] %}
+          {% if site.categories.[post.tags.first] %}
               {% assign subposts = (site.categories.[post.tags.first] | sort: 'title') %}
               {% for subpost in subposts %}
                 <li>
@@ -48,9 +50,8 @@
                   {% endif %}
                 </li>
               {% endfor %}
-            {% endif %}
-
-          </ul>
+            </ul>
+          {% endif %}
         </li>
       {% endfor %}
     {% endif %}
