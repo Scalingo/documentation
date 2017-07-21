@@ -1,9 +1,6 @@
 .search-block
   padding: 0
   width: 100%
-  -webkit-transition: all 1.5s ease
-  -moz-transition: all 1.5s ease
-  transition: all 1.5s ease
 
 .search-form
   position: relative
@@ -12,7 +9,7 @@
     position: absolute
     z-index: 1
     top: 27%
-    left: 10px
+    right: 15px
     color: #464a4c
     font-size: 80%
 
@@ -21,11 +18,15 @@
   box-sizing: border-box
   font-size: 14.5px
   outline: none
-  padding: 7px 0 6px 28px
+  padding: 7px 0 6px 36px
   background: transparent
   border: 0 none
+  direction: ltr !important
+  -webkit-transition: all 0.2s linear
+  -moz-transition: all 0.2s linear
+  transition: all 0.2s linear
 
-.search-block:hover, .search-block:focus, .search-block:active
+#search-input:focus
   width: 220%
 
 .index
@@ -42,6 +43,8 @@
       box-shadow: 0px 0px 7px rgba(0,0,0,.12)
       border: 1px solid rgba(0,0,0,.1)
       border-radius: 0
+  #search-input:active, #search-input:focus
+    width: 100%
 
 //
 // Algolia Docsearch

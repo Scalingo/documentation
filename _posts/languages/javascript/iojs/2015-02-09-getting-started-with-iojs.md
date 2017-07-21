@@ -3,6 +3,7 @@ title: Getting started with io.js
 modified_at: 2015-02-09 00:00:00
 categories: javascript
 tags: iojs javascript tutorial getting-started-tutorial languages
+permalink: /languages/javascript/getting-started-with-iojs
 ---
 
 {% include info_tutorial_requirements.md %}
