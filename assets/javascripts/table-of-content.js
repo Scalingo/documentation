@@ -29,7 +29,7 @@ define(['jquery'], function ($) {
       })
 
       var li = $('<li>')
-        .append('<span class="fa fa-chevron-right"></span>')
+        .append('<span class="fa fa-angle-right"></span>')
         .append(a)
 
       ul.append(li)
