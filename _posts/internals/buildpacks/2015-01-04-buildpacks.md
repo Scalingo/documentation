@@ -1,7 +1,8 @@
 ---
 title: Buildpacks
 modified_at: 2015-09-28 00:00:00
-categories: application
+categories: platform
+order: 5
 tags: buildpacks internals build image
 permalink: /buildpacks/
 ---

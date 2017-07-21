@@ -1,7 +1,7 @@
 ---
 title: Setup SSH on Mac OS
 modified_at: 2015-04-04 00:00:00
-category: getting-started ssh
+category: ssh
 tags: follow-the-light ssh macos git
 index: 2
 ---
