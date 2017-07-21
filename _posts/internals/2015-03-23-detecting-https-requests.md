@@ -1,7 +1,8 @@
 ---
 title: Detecting HTTPS requests
 modified_at: 2015-03-23 00:00:00
-category: application
+category: platform
+order: 5
 tags: routing request https internals
 ---
 

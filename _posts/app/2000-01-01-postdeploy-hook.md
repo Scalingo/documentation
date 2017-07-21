@@ -1,7 +1,8 @@
 ---
 title: Post-deployment hook
 modified_at: 2016-10-04 00:00:00
-category: application
+category: platform
+order: 5
 tags: hook postdeploy app deployment
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: Child application
 modified_at: 2017-03-10 00:00:00
-category: application
+category: platform
+order: 5
 tags: child app
 ---
 

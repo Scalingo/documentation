@@ -1,7 +1,8 @@
 ---
 title: File system and file storage
 modified_at: 2017-01-03 00:00:00
-category: application
+category: platform
+order: 5
 tags: runtime file system disk storage app
 ---
 

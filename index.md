@@ -34,6 +34,22 @@ modified_at: 2017-07-06 00:00:00
             </div>
           </div>
         </div>
+        <div class="row recent">
+          <h3>Latest written articles</h3>
+          <div class="col-12">
+            <div class="row">
+              <ul>
+                {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
+                {% for post in recent_posts limit:12 %}
+                  <li>
+                    <span class="fa fa-angle-right"></span>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>

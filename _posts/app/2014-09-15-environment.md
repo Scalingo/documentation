@@ -1,7 +1,8 @@
 ---
 title: Application environment
 modified_at: 2014-09-15 00:00:00
-category: application
+category: platform
+order: 5
 tags: configuration environment app
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: Let's Encrypt availability
 modified_at: 2016-12-23 00:00:00
-category: application
+category: platform
+order: 5
 tags: certificate ssl https app
 ---
 
