@@ -23,7 +23,7 @@ modified_at: 2017-07-06 00:00:00
           {% include addons.html %}
         </div>
         <div class="row platform">
-          <h3>Some usefull links about our platform</h3>
+          <h3>Some useful links about our platform</h3>
           <div class="col-12">
             <div class="row">
               <ul>
