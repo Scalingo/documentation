@@ -30,6 +30,7 @@ modified_at: 2017-07-06 00:00:00
                 {% assign posts = site.categories.platform | sort:'order' %}
                 {% for post in posts %}
                   <li>
+                    <span class="fa fa-angle-right"></span>
                     <a href="{{ post.url }}">{{ post.title }}</a>
                   </li>
                 {% endfor %}
