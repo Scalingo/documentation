@@ -40,7 +40,7 @@ modified_at: 2017-07-06 00:00:00
           </div>
         </div>
         <div class="row recent">
-          <h3>Latest written articles</h3>
+          <h3>Latest modified articles</h3>
           <div class="col-12">
             <div class="row">
               <ul>
@@ -49,6 +49,9 @@ modified_at: 2017-07-06 00:00:00
                   <li>
                     <span class="fa fa-angle-right"></span>
                     <a href="{{ post.url }}">{{ post.title }}</a>
+                    <small class="text-muted pull-right">
+                      {{ post.modified_at | date_to_string }}
+                    </small>
                   </li>
                 {% endfor %}
               </ul>

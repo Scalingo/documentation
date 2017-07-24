@@ -96,3 +96,12 @@ $font-color: #03a9f4;
     background-color: transparent;
   }
 }
+
+.currentsection2 {
+  p {
+    background-color: hsla(0, 0%, 86%, 1);
+  }
+  ul > li > a > p {
+    background-color: transparent;
+  }
+}
