@@ -42,7 +42,7 @@
                       </a>
 
 <!-- Sub-subcategories -->
-      <ul style="display: block; border-left: 1px solid #a6a6a6;">
+      <ul style="display: block;">
         {% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'title') %}
         {% for subpost2 in subposts2 %}
           <li>
@@ -62,7 +62,11 @@
                         </a>
                       {% endif %}
                     {% else %}
-                      <a title="{{ subpost.title }}" href="{{ subpost.url }}"><p>
+                      <a title="{{ subpost.title }}" href="{{ subpost.url }}">
+                        <p>
+                          {% if site.categories.[subpost.tags.first] %}
+                            <span class="fa fa-chevron-right"></span>
+                          {% endif %}
                           {{ subpost.title }}
                         </p>
                       </a>
