@@ -39,7 +39,7 @@
                       {% if page.url == subpost.url %}
                         <a title="{{ subpost.title }}" class="currentlink" href="{{ subpost.url }}">
                       {% else %}
-                        <a title="{{ post.title }}" href="{{ post.url }}">
+                        <a title="{{ post.title }}" class="currentsection2" href="{{ post.url }}">
                       {% endif %}
                       <p style="font-weight: bold;">
                         {% if site.categories.[subpost.tags.first] %}
