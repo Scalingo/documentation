@@ -2,7 +2,7 @@
 title: Wkhtmltopdf Buildpack
 modified_at: 2016-10-27 00:00:00
 categories: buildpacks
-tags: buildpacks build wkhtmltopdf internals
+tags: build buildpacks wkhtmltopdf internals
 ---
 
 ## Purpose of this buildpack

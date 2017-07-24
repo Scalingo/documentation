@@ -2,7 +2,7 @@
 title: FFmpeg Buildpack
 modified_at: 2015-09-28 00:00:00
 categories: buildpacks
-tags: buildpacks build image ffmpeg internals
+tags: build buildpacks image ffmpeg internals
 permalink: /buildpacks/ffmpeg/
 ---
 

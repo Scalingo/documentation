@@ -2,7 +2,7 @@
 title: GraphicsMagick Buildpack
 modified_at: 2016-05-24 00:00:00
 categories: buildpacks
-tags: internals buildpacks build image graphicsmagick
+tags: build internals buildpacks image graphicsmagick
 ---
 
 # Purpose of this buildpack

@@ -2,7 +2,7 @@
 title: Getting started with Docker Image Addon
 modified_at: 2016-06-10 00:00:00
 category: docker
-tags: docker images download feature
+tags: images docker download feature
 ---
 
 Our goal in this tutorial will be to deploy a sample TODO list application

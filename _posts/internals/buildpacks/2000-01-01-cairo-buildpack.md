@@ -2,7 +2,7 @@
 title: Cairo Buildpack
 modified_at: 2016-06-13 00:00:00
 categories: buildpacks
-tags: internals buildpacks build image cairo pango fontconfig pixman harfbuzz gitlib
+tags: build internals buildpacks image cairo pango fontconfig pixman harfbuzz gitlib
 ---
 
 ## Purpose of this buildpack
