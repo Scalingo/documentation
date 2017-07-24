@@ -2,7 +2,7 @@
 title: How to dump and restore my MongoDB database on Scalingo
 modified_at: 2016-03-23 14:22:00
 category: mongodb
-tags: mongodb addon tunnel databases
+tags: restore mongodb addon tunnel databases
 index: 3
 permalink: /addons/mongodb/dump-restore/
 ---
