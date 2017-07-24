@@ -11,11 +11,7 @@
         <li>
 
           {% if page.url contains post.url %}
-            {% if page.url == post.url %}
-              <a title="{{ post.title }}" class="currentsection currentlink" href="{{ post.url }}">
-            {% else %}
-              <a title="{{ post.title }}" class="currentsection" href="{{ post.url }}">
-            {% endif %}
+            <a title="{{ post.title }}" class="currentsection" href="{{ post.url }}">
               <p style="font-weight: bold;">
                 {% if site.categories.[post.tags.first] %}
                   <span class="fa fa-chevron-down"></span>
@@ -25,14 +21,25 @@
             </a>
             {% if site.categories.[post.tags.first] %}
               <ul style="display: block;">
+                <li>
+                  {% if page.url == post.url %}
+                    <a title="{{ post.title }}" class="currentlink" href="{{ post.url }}">
+                  {% else %}
+                    <a title="{{ post.title }}" href="{{ post.url }}">
+                  {% endif %}
+                    <p>
+                      {{ post.title }}
+                    </p>
+                  </a>
+                </li>
                 {% assign subposts = (site.categories.[post.tags.first] | sort: 'order') %}
                 {% for subpost in subposts %}
                   <li>
                     {% if page.url contains subpost.url %}
                       {% if page.url == subpost.url %}
-                        <a title="{{ subpost.title }}" class="currentsection currentlink" href="{{ subpost.url }}">
+                        <a title="{{ subpost.title }}" class="currentlink" href="{{ subpost.url }}">
                       {% else %}
-                        <a title="{{ post.title }}" class="currentsection" href="{{ post.url }}">
+                        <a title="{{ post.title }}" href="{{ post.url }}">
                       {% endif %}
                       <p style="font-weight: bold;">
                         {% if site.categories.[subpost.tags.first] %}

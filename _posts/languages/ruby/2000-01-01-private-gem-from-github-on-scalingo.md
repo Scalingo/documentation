@@ -2,7 +2,7 @@
 title: Installing a Gem on Scalingo from a Private GitHub Repo
 modified_at: 2015-10-17 17:39:00
 categories: ruby
-tags: ruby gem private github languages
+tags: gem ruby private github languages
 permalink: /languages/ruby/private-gem-from-github-on-scalingo/
 ---
 
