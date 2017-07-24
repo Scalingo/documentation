@@ -3,7 +3,8 @@ title: Application environment
 modified_at: 2014-09-15 00:00:00
 category: platform
 order: 5
-tags: configuration environment app
+tags: environment configuration app
+permalink: /environment/
 ---
 
 The environment should be used to configure your application. When your
