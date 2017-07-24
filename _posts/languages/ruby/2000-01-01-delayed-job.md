@@ -2,7 +2,7 @@
 title: Using Delayed Job (DJ) to Handle Background Tasks
 modified_at: 2016-01-13 10:39:00
 categories: ruby
-tags: ruby gem async jobs delayed languages
+tags: gem ruby async jobs delayed languages
 permalink: /languages/ruby/delayed-job/
 ---
 

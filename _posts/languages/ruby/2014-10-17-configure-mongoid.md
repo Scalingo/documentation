@@ -2,7 +2,7 @@
 title: Configure Mongoid
 modified_at: 2014-10-17 00:00:00
 categories: ruby
-tags: ruby mongoid mongodb languages
+tags: mongoid ruby mongodb languages
 permalink: /languages/ruby/configure-mongoid/
 ---
 
