@@ -5,6 +5,7 @@ category: platform
 order: 3
 tags: internals index
 index: 0
+permalink: /internals/
 ---
 
 ## [Procfile management]({% post_url internals/2014-12-01-procfile %})
