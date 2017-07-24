@@ -4,6 +4,7 @@ modified_at: 2016-09-20 00:00:00
 category: platform
 order: 4
 tags: ssh follow-the-light linux git troubleshoot problem connect git push
+permalink: /ssh/
 ---
 
 ## Prerequisite

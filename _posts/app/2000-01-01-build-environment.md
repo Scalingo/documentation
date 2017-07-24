@@ -1,8 +1,7 @@
 ---
 title: Deployment Environment
 modified_at: 2016-04-26 00:00:00
-category: platform
-order: 5
+category: environment
 tags: build deployment configuration environment app
 ---
 
