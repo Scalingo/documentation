@@ -1,7 +1,7 @@
 ---
 title: The X-Request-ID header
 modified_at: 2017-06-08 00:00:00
-category: your-application
+category: configuration
 order: 3
 tags: request reverse-proxy routing http header internals
 ---

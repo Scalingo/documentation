@@ -4,7 +4,7 @@ modified_at: 2016-12-23 00:00:00
 category: domain
 order: 5
 tags: certificate ssl https app
-permalink: /your-application/domain/letsencrypt/
+permalink: /configuration/domain/letsencrypt/
 ---
 
 ## Let's Encrypt certificates on Scalingo
