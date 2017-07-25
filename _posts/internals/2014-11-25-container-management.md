@@ -1,10 +1,10 @@
 ---
 title: Container Management
 modified_at: 2016-11-16 00:00:00
-category: platform
+category: our-platform
 order: 4
 tags: containers internals
-permalink: /containers/
+permalink: /our-platform/containers/
 ---
 
 ## Zero-downtime operations

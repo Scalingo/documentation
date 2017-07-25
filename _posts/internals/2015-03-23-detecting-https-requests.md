@@ -4,6 +4,7 @@ modified_at: 2015-03-23 00:00:00
 category: routing
 order: 5
 tags: https routing request internals
+permalink: /your-application/routing/detecting-https-requests/
 ---
 
 ## Background

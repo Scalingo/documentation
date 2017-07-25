@@ -1,10 +1,10 @@
 ---
 title: How to migrate from CloudControl
 modified_at: 2016-02-16 11:14:00
-category: first-steps
+category: how-to-migrate
 order: 1
 tags: cloudcontrol control cloud ror ruby rails tutorial
-permalink: /first-steps/how-to-migrate-from-cloudcontrol/
+permalink: /getting-started/how-to-migrate/how-to-migrate-from-cloudcontrol/
 ---
 
 Scalingo's approach to Platform as a Service is close to CloudControl model.

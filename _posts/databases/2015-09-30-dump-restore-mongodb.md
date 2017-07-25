@@ -4,7 +4,6 @@ modified_at: 2016-03-23 14:22:00
 category: mongodb
 tags: restore mongodb addon tunnel databases
 index: 3
-permalink: /addons/mongodb/dump-restore/
 ---
 
 {% include info_command_line_tool.md %}

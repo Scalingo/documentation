@@ -4,7 +4,7 @@ modified_at: 2015-11-19 00:00:00
 category: python
 tags: django python tutorial postgis geospatial geodjango languages
 index: 3
-permalink: /languages/python/setup-geodjango-postgis-libraries/
+permalink: /python/setup-geodjango-postgis-libraries/
 ---
 
 The Django framework integrates extensions to handle geospatial data. To setup

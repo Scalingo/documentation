@@ -4,6 +4,7 @@ modified_at: 2016-04-26 00:00:00
 category: environment
 order: 5
 tags: runtime configuration environment app
+permalink: /your-application/environment/runtime-environment/
 ---
 
 When an application container is started, the platform is using the environment

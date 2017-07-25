@@ -3,6 +3,7 @@ title: Use a custom buildpack
 modified_at: 2016-01-28 00:00:00
 category: buildpacks
 tags: custom buildpacks build image internals
+permalink: /getting-started/buildpacks/custom-buildpacks/
 ---
 
 If you need to deploy a technology which is not supported by Scalingo,

@@ -4,7 +4,7 @@ modified_at: 2015-02-09 00:00:00
 category: meteor
 tags: nodejs meteor tutorial getting-started-tutorial
 index: 3
-permalink: /languages/javascript/meteor/getting-started-with-meteor/
+permalink: /javascript/meteor/getting-started-with-meteor/
 ---
 
 {% include info_tutorial_requirements.md %}

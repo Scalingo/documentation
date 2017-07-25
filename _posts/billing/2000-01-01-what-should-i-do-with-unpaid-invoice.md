@@ -4,6 +4,7 @@ modified_at: 2017-01-05 00:00:00
 category: billing
 order: 4
 tags: invoicing billing
+permalink: /our-platform/billing/what-should-i-do-with-unpaid-invoice/
 ---
 
 ## Issue

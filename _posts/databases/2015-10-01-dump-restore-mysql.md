@@ -4,7 +4,6 @@ modified_at: 2016-01-08 00:00:00
 category: mysql
 tags: restore mysql addon tunnel databases
 index: 3
-permalink: /addons/mysql/dump-restore/
 ---
 
 {% include info_command_line_tool.md %}
