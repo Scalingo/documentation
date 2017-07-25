@@ -3,6 +3,7 @@ title: One Click Deploy
 modified_at: 2015-12-16 11:40:00
 category: platform
 tags: deployment one-click app
+order: 5
 permalink: /deployment/
 ---
 
