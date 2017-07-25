@@ -1,5 +1,5 @@
 ---
-title: Scalingo Databases
+title: Databases
 modified_at: 2014-11-24 00:00:00
 category: platform
 order: 4
