@@ -2,7 +2,7 @@
 title: PHP - Deploying a Symfony 2 or Symfony 3 application
 modified_at: 2016-06-27 00:25:00
 category: php
-tags: php, http, framework, symfony, assetic, deployment languages
+tags: symfony php http framework assetic deployment languages
 ---
 
 ## Detection

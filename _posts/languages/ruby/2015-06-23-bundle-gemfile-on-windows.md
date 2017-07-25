@@ -2,8 +2,7 @@
 title: Deploy a ruby project developped on Windows
 modified_at: 2015-06-23 00:00:00
 categories: ruby
-tags: application ruby server languages
-permalink: /ruby/bundle-gemfile-on-windows/
+tags: windows deploy application ruby server
 ---
 
 ## Context

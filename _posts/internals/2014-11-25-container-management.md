@@ -4,7 +4,6 @@ modified_at: 2016-11-16 00:00:00
 category: our-platform
 order: 4
 tags: containers internals
-permalink: /our-platform/containers/
 ---
 
 ## Zero-downtime operations

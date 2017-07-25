@@ -3,7 +3,6 @@ title: Installing a Gem on Scalingo from a Private GitHub Repo
 modified_at: 2015-10-17 17:39:00
 categories: ruby
 tags: gem ruby private github languages
-permalink: /ruby/private-gem-from-github-on-scalingo/
 ---
 
 Sometimes you want to use a gem on Scalingo that is in a private repository on GitHub.

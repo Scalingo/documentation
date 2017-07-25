@@ -2,7 +2,7 @@
 title: Deploy to Scalingo from Codeship
 modified_at: 2016-01-20 00:00:00
 category: deployment
-tags: ci deployment build codeship
+tags: codeship ci deployment build codeship
 ---
 
 To setup **Continuous Deployment** from Codeship to Scalingo, please follow the following steps. You can read more about [Deployment Pipelines](https://codeship.com/documentation/continuous-deployment/deployment-pipelines/) on the Codeship documentation.

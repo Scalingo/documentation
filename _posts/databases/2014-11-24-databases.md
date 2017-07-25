@@ -4,7 +4,6 @@ modified_at: 2014-11-24 00:00:00
 category: platform
 order: 2
 tags: databases index-databases polydbs
-permalink: /databases/
 index: 0
 ---
 

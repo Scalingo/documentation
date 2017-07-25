@@ -4,7 +4,6 @@ modified_at: 2014-09-15 00:00:00
 category: your-application
 order: 5
 tags: environment configuration app
-permalink: /your-application/environment/
 ---
 
 The environment should be used to configure your application. When your
