@@ -2,7 +2,7 @@
 title: How to dump and restore my InfluxDB database on Scalingo
 modified_at: 2017-02-06 18:04:00
 category: influxdb
-tags: sump-restore influxdb databases addons
+tags: restore sump-restore influxdb databases addons
 ---
 
 {% include info_command_line_tool.md %}

@@ -2,7 +2,6 @@
 title: Scalingo PostgreSQL Addon
 modified_at: 2017-04-27 00:00:00
 category: addons
-permalink: /postgresql/
 tags: postgresql addon databases
 ---
 

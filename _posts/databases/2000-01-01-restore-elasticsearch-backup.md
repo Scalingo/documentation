@@ -2,7 +2,7 @@
 title: Restore locally an Elasticsearch backups
 modified_at: 2016-04-27 00:00:00
 category: elasticsearch
-tags: backups elasticsearch addons databases
+tags: backup elasticsearch addons databases
 ---
 
 ## Download the backup file

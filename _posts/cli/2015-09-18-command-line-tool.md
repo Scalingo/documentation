@@ -3,7 +3,7 @@ title: CLI Command Line Tool
 modified_at: 2015-11-05 17:21:00
 category: our-platform
 order: 5
-tags: interface app cli
+tags: command tool interface app cli
 ---
 
 ## Installation

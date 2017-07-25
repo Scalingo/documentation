@@ -1,7 +1,7 @@
 ---
 title: Buildpacks
 modified_at: 2015-09-28 00:00:00
-categories: getting-started
+categories: buildpack
 order: 5
 tags: buildpacks internals build image
 permalink: /getting-started/buildpacks/
