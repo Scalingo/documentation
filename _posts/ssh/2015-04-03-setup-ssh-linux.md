@@ -4,6 +4,7 @@ modified_at: 2015-04-03 00:00:00
 category: ssh
 tags: follow-the-light ssh linux git
 index: 2
+permalink: /common-issues/ssh/setup-ssh-linux/
 ---
 
 ## Check if you already have an available SSH key

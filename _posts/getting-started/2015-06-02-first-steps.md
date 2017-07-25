@@ -2,10 +2,10 @@
 title: First Steps On Scalingo
 modified_at: 2015-12-02 00:00:00
 category: platform
-tags: first-steps follow-the-light ssh
+tags: getting-started first-steps follow-the-light ssh
 index: 0
 order: 0
-permalink: /first-steps/
+permalink: /getting-started/first-steps/
 ---
 
 ## Deployment requirements

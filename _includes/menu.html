@@ -10,16 +10,16 @@
       {% for post in posts %}
         <li>
 
-          {% if page.url contains post.url %}
-            <a title="{{ post.title }}" class="currentsection" href="{{ post.url }}">
+          {% assign crumbs = page.url | split: '/' %}
+
+          {% if crumbs contains post.tags.first %}
+            {% if site.categories.[post.tags.first] %}
+              <a title="{{ post.title }}" class="currentsection" href="{{ post.url }}">
               <p style="font-weight: bold;">
-                {% if site.categories.[post.tags.first] %}
-                  <span class="fa fa-chevron-down"></span>
-                {% endif %}
+                <span class="fa fa-chevron-down"></span>
                 {{ post.title }}
               </p>
             </a>
-            {% if site.categories.[post.tags.first] %}
               <ul style="display: block;">
                 <li>
                   {% if page.url == post.url %}
@@ -35,7 +35,7 @@
                 {% assign subposts = (site.categories.[post.tags.first] | sort: 'order') %}
                 {% for subpost in subposts %}
                   <li>
-                    {% if page.url contains subpost.url %}
+                    {% if crumbs contains subpost.tags.first %}
                       {% if page.url == subpost.url %}
                         <a title="{{ subpost.title }}" class="currentlink" href="{{ subpost.url }}">
                       {% else %}
@@ -82,10 +82,19 @@
                   </li>
                 {% endfor %}
               </ul>
+            
+            {% else %}
+              {% if page.url == post.url %}
+                <a title="{{ post.title }}" class="currentsection currentlink" href="{{ post.url }}">
+              {% else %}
+                <a title="{{ post.title }}" href="{{ post.url }}">
+              {% endif %}
+                <p>{{ post.title }}</p>
+              </a>
             {% endif %}
 
           {% else %}
-            <a title="{{ post.title }}" href="{{ post.url }}" role="button">
+            <a title="{{ post.title }}" href="{{ post.url }}">
               <p>
                 {% if site.categories.[post.tags.first] %}
                   <span class="fa fa-chevron-right"></span>

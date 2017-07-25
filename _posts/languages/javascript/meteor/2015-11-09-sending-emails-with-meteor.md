@@ -3,7 +3,7 @@ title: Sending emails with Meteor
 modified_at: 2015-11-09 00:00:00
 category: meteor
 tags: nodejs meteor tutorial emails languages
-permalink: /languages/javascript/meteor/sending-emails-with-meteor/
+permalink: /javascript/meteor/sending-emails-with-meteor/
 ---
 
 ## Setup of MAIL\_URL

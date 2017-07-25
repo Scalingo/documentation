@@ -4,7 +4,7 @@ modified_at: 2015-02-09 00:00:00
 category: nodejs
 tags: javascript nodejs express tutorial getting-started-tutorial
 index: 3
-permalink: /languages/javascript/nodejs/getting-started-with-nodejs/
+permalink: /javascript/nodejs/getting-started-with-nodejs/
 ---
 
 {% include info_tutorial_requirements.md %}

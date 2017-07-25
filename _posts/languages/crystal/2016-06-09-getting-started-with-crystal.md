@@ -5,7 +5,7 @@ category: languages
 tags: crystal tutorial getting-started-tutorial
 index: 13
 order: 3
-permalink: /languages/crystal/
+permalink: /crystal/
 ---
 
 {% include info_tutorial_requirements.md %}

@@ -1,9 +1,9 @@
 ---
 title: The X-Request-ID header
 modified_at: 2017-06-08 00:00:00
-category: platform
+category: common-issues
 order: 3
-tags: reverse-proxy routing http header internals
+tags: request reverse-proxy routing http header internals
 ---
 
 The request ID represented in the HTTP header `X-Request-ID` let you to link

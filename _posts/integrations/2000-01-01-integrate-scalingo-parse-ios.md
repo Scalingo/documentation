@@ -3,6 +3,7 @@ title: Integrate the open-source Parse server with your iOS app
 modified_at: 2016-02-11 00:00:00
 category: github
 tags: parse ios integration
+permalink: /common-issues/github/integrate-scalingo-parse-ios/
 ---
 
 ## Introduction

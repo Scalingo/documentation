@@ -3,8 +3,8 @@ title: Javascript
 modified_at: 2015-02-09 00:00:00
 category: languages
 order: 1
-permalink: /languages/javascript/
-tags: javascript nodejs iojs languages
+permalink: /javascript/
+tags: javascript nodejs iojs
 ---
 
 ## Supported interpreters

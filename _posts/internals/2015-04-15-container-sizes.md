@@ -4,6 +4,7 @@ modified_at: 2015-12-02 00:00:00
 category: containers
 order: 4
 tags: sizes containers internals
+permalink: /our-platform/containers/container-sizes/
 ---
 
 ## Comparative table

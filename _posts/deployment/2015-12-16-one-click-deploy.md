@@ -1,8 +1,9 @@
 ---
 title: One Click Deploy
 modified_at: 2015-12-16 11:40:00
-category: deployment
-tags: one-click app deployment
+category: platform
+tags: deployment one-click app
+permalink: /deployment/
 ---
 
 If you want to give people the opportunity to deploy your project instantly on Scalingo, you can setup a deploy button on your github project or even on your website. A `scalingo.json` file is needed at the root of your github project in order to generate the deployment page.
