@@ -25,7 +25,7 @@ $font-color: #03a9f4;
     font-size: 14px;
     margin: 0;
     a {
-      color: hsla(0, 0%, 60%, 1);
+      color: hsla(0, 0%, 55%, 1);
     }
     a:hover {
       color: hsla(0, 0%, 32%, 1);
@@ -59,10 +59,7 @@ $font-color: #03a9f4;
     display: none;
     margin: 9px 0px 9px 18px;
     font-size: 13px;
-    border-left: 2px solid hsla(0, 0%, 65%, 1);
-    p {
-      color: hsla(0, 0%, 58%, 1);
-    }
+    border-left: 1px solid hsla(0, 0%, 65%, 1);
     li {
       span {
         font-size: 9px;
@@ -71,7 +68,7 @@ $font-color: #03a9f4;
     }
   }
   ul > li > ul > li > ul {
-    border-left: 1px solid hsla(0, 0%, 65%, 1);
+    border-left: 0.1px solid hsla(0, 0%, 65%, 1);
     li {
       font-size: 13.5px;
     }
@@ -88,20 +85,12 @@ $font-color: #03a9f4;
   }
 }
 
-.currentsection {
-  p {
-    background-color: hsla(0, 0%, 90%, 1);
-  }
-  ul > li > a > p {
-    background-color: transparent;
-  }
+.currentsection > a > p {
+  background-color: hsla(0, 0%, 90%, 1);
+  color: hsla(0, 0%, 50%, 1);
 }
 
-.currentsection2 {
-  p {
-    background-color: hsla(0, 0%, 86%, 1);
-  }
-  ul > li > a > p {
-    background-color: transparent;
-  }
+.currentsection1 > a > p {
+  background-color: hsla(0, 0%, 86%, 1);
+  color: hsla(0, 0%, 45%, 1);
 }

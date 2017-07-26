@@ -1,0 +1,86 @@
+{% assign listcategories = site.categories.index.first %}
+<ul class="nav flex-column">
+  {% for categorie in listcategories.tags %}
+  <ul>
+    <li class="nav-item">
+      <h6>{{ categorie }}</h6>
+    </li>
+    {% if site.categories.[categorie] %}
+{% assign posts = (site.categories.[categorie] | sort: 'order') %}
+      {% for post in posts %}
+        {% if page.url == post.url %}
+          <li class="currentsection">
+        {% else %}
+          <li>
+        {% endif %}
+          <a title="{{ post.title }}" href="{{ post.url }}">
+            <p>
+              {% if site.categories.[post.tags.first] %}
+                <span class="fa fa-chevron-right"></span>
+              {% endif %}
+              {{ post.title }}
+            </p>
+          </a>
+          {% if site.categories.[post.tags.first] %}
+            <ul>
+              <li>
+                <a title="{{ post.title }}" href="{{ post.url }}">
+                  <p>
+                    Index
+                  </p>
+                </a>
+              </li>
+{% assign subposts = (site.categories.[post.tags.first] | sort: 'order') %}
+        {% for subpost in subposts %}
+          {% if page.url == subpost.url %}
+            <li class="currentsection1">
+          {% else %}
+            <li>
+          {% endif %}
+            <a title="{{ subpost.title }}" href="{{ subpost.url }}">
+              <p>
+                {% if site.categories.[subpost.tags.first] %}
+                  <span class="fa fa-chevron-right"></span>
+                {% endif %}
+                {{ subpost.title }}
+              </p>
+            </a>
+            {% if site.categories.[subpost.tags.first] %}
+              <ul>
+                <li>
+                  <a title="{{ subpost.title }}" href="{{ subpost.url }}">
+                    <p>
+                      Index
+                    </p>
+                  </a>
+                </li>
+{% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'order') %}
+        {% for subpost2 in subposts2 %}
+          {% if page.url == subpost2.url %}
+            <li class="currentsection2">
+          {% else %}
+            <li>
+          {% endif %}
+          <a title="{{ subpost2.title }}" href="{{ subpost2.url }}">
+              <p>
+                {{ subpost2.title }}
+              </p>
+            </a>
+          </li>
+        {% endfor %}
+
+
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+
+
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+  {% endfor %}
+</ul>

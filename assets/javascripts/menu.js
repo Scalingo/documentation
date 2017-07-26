@@ -38,8 +38,47 @@ define(['jquery'], function ($){
         });
         $(document).ready(function() {
             if ( $(".currentsection").offset() ){
-                $(".menu").scrollTop($(".currentsection").offset().top-140);
+                if ( $(".currentsection > ul").offset() ) {
+                    $(".currentsection > ul > li:first-child").addClass("currentlink");
+                    $(".currentsection > ul").css({'display': 'block'});
+                }
+                else {
+                    $(".currentsection > a").addClass("currentlink");
+                }
             }
+            else if ( $(".currentsection1").offset() ){
+                if ( $(".currentsection1 > ul").offset() ) {
+                    $(".currentsection1 > ul > li:first-child").addClass("currentlink");
+                    $(".currentsection1 > ul").css({'display': 'block'});
+                }
+                else {
+                    $(".currentsection1 > a").addClass("currentlink");
+                }
+                $(".currentsection1").parent().css({'display': 'block'});
+                $(".currentsection1").parent().parent().addClass("currentsection");
+            }
+            else if ( $(".currentsection2").offset() ){
+                if ( $(".currentsection2 > ul").offset() ) {
+                    $(".currentsection2 > ul > li:first-child").addClass("currentlink");
+                    $(".currentsection2 > ul").css({'display': 'block'});
+                }
+                else {
+                    $(".currentsection2 > a").addClass("currentlink");
+                }
+                $(".currentsection2").parent().css({'display': 'block'});
+                $(".currentsection2").parent().parent().addClass("currentsection1");
+                $(".currentsection1").parent().css({'display': 'block'});
+                $(".currentsection1").parent().parent().addClass("currentsection");
+            }
+            if ( $(".currentsection span") ){
+                $(".currentsection > a > p > span").removeClass("fa-chevron-right");
+                $(".currentsection > a > p > span").addClass("fa-chevron-down");
+            }
+            if ( $(".currentsection1 span") ){
+                $(".currentsection1 > a > p > span").removeClass("fa-chevron-right");
+                $(".currentsection1 > a > p > span").addClass("fa-chevron-down");
+            }
+            $(".menu").scrollTop($(".currentsection").offset().top-140);
         });
     }
 });
