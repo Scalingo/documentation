@@ -5,7 +5,6 @@ category: platform
 tags: getting-started first-steps follow-the-light ssh
 index: 0
 order: 0
-permalink: /getting-started/first-steps/
 ---
 
 ## Deployment requirements

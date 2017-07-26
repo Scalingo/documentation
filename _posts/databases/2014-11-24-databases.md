@@ -1,7 +1,7 @@
 ---
 title: Databases
 modified_at: 2014-11-24 00:00:00
-category: platform
+category: addons
 order: 4
 tags: databases index-databases polydbs
 index: 0

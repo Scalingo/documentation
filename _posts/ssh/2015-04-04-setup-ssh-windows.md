@@ -4,7 +4,6 @@ modified_at: 2016-09-10 10:17:00
 category: ssh
 tags: follow-the-light ssh windows git
 index: 2
-permalink: /common-issues/ssh/setup-ssh-windows/
 ---
 
 Setup SSH is required to be able to push you code using `git`, to configure

@@ -2,9 +2,8 @@
 layout: page
 title: "GitHub integration, Auto Deploy and Review Apps"
 modified_at: 2017-03-13 10:00:00
-category: common-issues
+category: deployment
 order: 5
-permalink: /common-issues/github/
 tags: github integration
 ---
 

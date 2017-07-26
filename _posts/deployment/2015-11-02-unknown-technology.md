@@ -1,7 +1,7 @@
 ---
 title: Unknown Technology
 modified_at: 2015-11-03 17:03:00
-category: common-issues
+category: management
 order: 5
 tags: technology error detection app
 ---

@@ -6,14 +6,16 @@ layout: default
   <div class="block categories">
     <h1 class="title">{{ page.title }}</h1>
     <h3>Suggest Links</h3>
-    {% assign posts = site.categories[page.tags.first] | sort: 'modified_at' | reverse %}
-    <ul>
-      {% for post in posts limit:12 %}
-        <li>
-          <span class="fa fa-angle-right"></span>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+    {% if site.categories[page.tags.first] %}
+      {% assign posts = site.categories[page.tags.first] | sort: 'modified_at' | reverse %}
+      <ul>
+        {% for post in posts limit:12 %}
+          <li>
+            <span class="fa fa-angle-right"></span>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   </div>
 </div>

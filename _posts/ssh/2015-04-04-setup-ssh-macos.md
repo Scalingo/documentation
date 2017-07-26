@@ -4,7 +4,6 @@ modified_at: 2015-04-04 00:00:00
 category: ssh
 tags: follow-the-light ssh macos git
 index: 2
-permalink: /common-issues/ssh/setup-ssh-macos/
 ---
 
 ## Check if you already have an available SSH key

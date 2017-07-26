@@ -1,7 +1,7 @@
 ---
 title: CLI Command Line Tool
 modified_at: 2015-11-05 17:21:00
-category: our-platform
+category: misc
 order: 5
 tags: command tool interface app cli
 ---
