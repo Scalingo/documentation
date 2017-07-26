@@ -4,7 +4,6 @@ modified_at: 2015-11-30 00:00:00
 category: ruby
 tags: rails ruby tutorial getting-started-tutorial
 index: 3
-permalink: /ruby/rails/
 ---
 
 ## Initialize your application

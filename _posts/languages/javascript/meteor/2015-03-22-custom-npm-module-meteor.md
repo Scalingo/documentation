@@ -3,7 +3,6 @@ title: Custom NPM modules with Meteor
 modified_at: 2016-03-30 00:00:00
 category: meteor
 tags: nodejs meteor npm languages
-permalink: /javascript/meteor/npm/
 ---
 
 ## Initialization

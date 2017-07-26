@@ -4,7 +4,6 @@ modified_at: 2015-02-17 00:00:00
 category: python
 tags: django python tutorial getting-started-tutorial
 index: 3
-permalink: /python/django/
 ---
 
 {% include info_tutorial_requirements.md %}
