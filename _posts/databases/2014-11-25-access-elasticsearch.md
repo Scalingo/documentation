@@ -3,7 +3,7 @@ title: Access your Elasticsearch search engine
 modified_at: 2014-11-25 00:00:00
 categor: elasticsearch
 tags: engine elasticsearch addons databases
-index: 2
+order: 2
 ---
 
 {% include info_command_line_tool.md %}

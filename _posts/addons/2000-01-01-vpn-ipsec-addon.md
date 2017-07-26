@@ -3,6 +3,7 @@ title: Scalingo VPNC IPSec Addon
 modified_at: 2016-03-03 00:00:00
 category: addons
 tags: vpn addon custom feature
+order: 3
 ---
 
 ## Introduction

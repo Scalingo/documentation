@@ -3,6 +3,7 @@ title: Review apps
 modified_at: 2017-03-10 00:00:00
 category: deployment
 tags: review apps app
+order: 3
 ---
 
 Review apps are a *powerful collaboration tool* to discuss about a new features between members of your organization. We implemented this feature as part of our [GitHub integration]({% post_url integrations/2000-01-01-github-integration %}).

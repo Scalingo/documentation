@@ -3,7 +3,7 @@ title: How to dump and restore my PostgreSQL database on Scalingo
 modified_at: 2016-01-08 18:04:00
 category: postgresql
 tags: restore postgresql addon tunnel databases
-index: 3
+order: 2
 ---
 
 {% include info_command_line_tool.md %}

@@ -4,7 +4,7 @@ modified_at: 2015-03-22 00:00:00
 category: platform
 order: 3
 tags: internals index
-index: 0
+index: 5
 ---
 
 ## [Procfile management]({% post_url internals/2014-12-01-procfile %})

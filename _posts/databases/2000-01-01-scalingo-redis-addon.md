@@ -2,6 +2,7 @@
 title: Scalingo Redis Addon
 modified_at: 2016-01-11 00:00:00
 category: addons
+order: 2
 tags: redis addon databases
 ---
 

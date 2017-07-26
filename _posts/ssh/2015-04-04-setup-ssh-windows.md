@@ -1,7 +1,7 @@
 ---
 title: Setup SSH on Windows
 modified_at: 2016-09-10 10:17:00
-category: ssh
+category: getting-started
 tags: follow-the-light ssh windows git
 index: 2
 ---

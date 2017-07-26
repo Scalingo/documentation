@@ -57,7 +57,8 @@ $font-color: #03a9f4;
   }
   ul > li > ul {
     display: none;
-    margin: 9px 0px 9px 18px;
+    margin: 9px 0px 9px 10px;
+    padding-left: 5px;
     font-size: 13px;
     border-left: 1px solid hsla(0, 0%, 65%, 1);
     li {
@@ -68,9 +69,13 @@ $font-color: #03a9f4;
     }
   }
   ul > li > ul > li > ul {
-    border-left: 0.1px solid hsla(0, 0%, 65%, 1);
+    border-left: none;
+    margin-top: 5px;
     li {
       font-size: 13.5px;
+    }
+    p {
+      padding: 0 auto;
     }
   }
 }

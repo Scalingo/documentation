@@ -3,6 +3,7 @@ title: Integrate the open-source Parse server with your iOS app
 modified_at: 2016-02-11 00:00:00
 category: deployment
 tags: parse ios integration
+order: 4
 ---
 
 ## Introduction
