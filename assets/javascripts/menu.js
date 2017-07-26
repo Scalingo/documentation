@@ -78,7 +78,9 @@ define(['jquery'], function ($){
                 $(".currentsection1 > a > p > span").removeClass("fa-chevron-right");
                 $(".currentsection1 > a > p > span").addClass("fa-chevron-down");
             }
-            $(".menu").scrollTop($(".currentsection").offset().top-140);
+            if ( $(".currentsection").offset() ){
+                $(".menu").scrollTop($(".currentsection").offset().top-140);
+            }
         });
     }
 });

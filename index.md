@@ -31,8 +31,9 @@ modified_at: 2017-07-06 00:00:00
                 {% assign posts = site.categories.platform | sort:'order' %}
                 {% for post in posts %}
                   <li>
-                    <span class="fa fa-angle-right"></span>
-                    <a href="{{ post.url }}">{{ post.title }}</a>
+                    <a href="{{ post.url }}">
+                      <span class="fa fa-angle-right"></span>{{ post.title }}
+                    </a>
                   </li>
                 {% endfor %}
               </ul>
@@ -41,15 +42,16 @@ modified_at: 2017-07-06 00:00:00
         </div>
         <div class="row recent">
           <h3>Latest modified articles</h3>
-          <div class="col-12">
+          <div class="container">
             <div class="row">
               <ul>
                 {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
                 {% for post in recent_posts limit:12 %}
                   <li>
-                    <span class="fa fa-angle-right"></span>
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                    <small class="text-muted pull-right">
+                    <a href="{{ post.url }}">
+                      <span class="fa fa-angle-right"></span>{{ post.title }}
+                    </a>
+                    <small class="text-muted">
                       {{ post.modified_at | date_to_string }}
                     </small>
                   </li>
