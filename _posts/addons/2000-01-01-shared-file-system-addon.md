@@ -3,7 +3,6 @@ title: Private Beta - Scalingo Shared Filesystem Addon
 modified_at: 2016-02-03 00:00:00
 category: addons
 tags: filesystem fs addon custom feature storage
-permalink: /addons/filesystem/
 ---
 
 ## Introduction

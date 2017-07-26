@@ -30,7 +30,7 @@ kramdown:
   hard_wrap: false
 highlighter: rouge
 
-permalink: none
+permalink: /:title/
 
 defaults:
   - # set default layout on all pages

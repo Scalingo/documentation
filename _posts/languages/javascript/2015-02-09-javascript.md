@@ -4,7 +4,6 @@ modified_at: 2015-02-09 00:00:00
 category: languages
 order: 1
 tags: javascript nodejs iojs
-permalink: /javascript/
 ---
 
 ## Supported interpreters
