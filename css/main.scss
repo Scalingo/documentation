@@ -24,8 +24,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   h1, h2, h3, h4 {
-    padding: 32px 0 20px 20px;
-    font-weight: 400;
+    padding: 32px 0 20px;
   }
   .pull-right {
     margin-top: 8px;
@@ -138,6 +137,7 @@ blockquote {
   a {
     color: #464a4c;
     font-size: 13.5px;
+    margin: auto 2px;
   }
   a:hover, a:focus, a:active {
     color: hsla(0, 0%, 30%, 1);

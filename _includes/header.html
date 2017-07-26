@@ -1,20 +1,24 @@
-<nav class="navbar navbar-fixed-top navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar">
   <div class="container" style="min-width: 60%;">
-    <div class="row">
-      <button type="button" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: transparent; right: 0;">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="https://www.scalingo.com">
-        <img class="logo-img" src="https://scalingo.com/logo-white.svg">
-      </a>
+      <div class="row">
+        <div class="col-12">
+          <nav class="navbar navbar-fixed-top navbar-toggleable-md navbar-light bg-faded">
+            <button type="button" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: transparent; right: 0;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="https://www.scalingo.com">
+            <img class="logo-img" src="https://scalingo.com/logo-white.svg">
+          </a>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><a href="/">Documentation</a></li>
-          <li class="nav-item"><a href="/first-steps">Getting Started</a></li>
-          <li class="nav-item"><a href="https://developers.scalingo.com/">API</a></li>
-        </ul>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a href="/">Documentation</a></li>
+              <li class="nav-item"><a href="/first-steps">Getting Started</a></li>
+              <li class="nav-item"><a href="https://developers.scalingo.com/">API</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </div>
   </div>
@@ -22,23 +26,25 @@
 <nav class="breadcrumb">
   <div class="container">
     <div class="row">
-      <nav class="breadcrumb-content">
-        {% if page.url != '/' %}
-          {% assign crumbs = page.url | split: '/' %}
-          <li class="breadcrumb-item pull-left"><a href="/">documentation</a></li>
-          {% for crumb in crumbs offset: 1 %}
-            {% if forloop.last %}
-              <li class="breadcrumb-item active"><a href="{{ page.url }}">{{ crumb | replace:'-',' ' | replace:'.html',' ' }}</a></li>
-            {% else %}
-              <li class="breadcrumb-item"><a>{{ crumb | replace:'-',' ' }}</a></li>
-            {% endif %}
-          {% endfor %}
+      <div class="col-12">
+        <nav class="breadcrumb-content">
+          {% if page.url != '/' %}
+            {% assign crumbs = page.url | split: '/' %}
+            <li class="breadcrumb-item pull-left"><a href="/">documentation</a></li>
+            {% for crumb in crumbs offset: 1 %}
+              {% if forloop.last %}
+                <li class="breadcrumb-item active"><a href="{{ page.url }}">{{ crumb | replace:'-',' ' | replace:'.html',' ' }}</a></li>
+              {% else %}
+                <li class="breadcrumb-item"><a>{{ crumb | replace:'-',' ' }}</a></li>
+              {% endif %}
+            {% endfor %}
 
-          <ul class="navbar-nav pull-right">
-            {% include search.html %}
-          </ul>
-        {% endif %}
-      </nav>
+            <ul class="navbar-nav pull-right">
+              {% include search.html %}
+            </ul>
+          {% endif %}
+        </nav>
+      </div>
     </div>
   </div>
 </nav>

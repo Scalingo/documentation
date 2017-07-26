@@ -16,8 +16,8 @@ $font-color: #03a9f4;
     color: hsla(0, 0%, 50%, 1);
     font-weight: bold;
     font-size: 16px;
-    margin: 1rem 0.8rem;
     text-transform: capitalize;
+    padding: 15px 4px;
   }
   li {
     display: block;
@@ -51,13 +51,13 @@ $font-color: #03a9f4;
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
     white-space: nowrap;
-    padding: 1px 30px 1px 5px;
+    padding: 1px 30px 1px 3px;
     margin: 3px 0;
     }
   }
   ul > li > ul {
     display: none;
-    margin: 10px 0px 10px 19px;
+    margin: 9px 0px 9px 18px;
     font-size: 13px;
     border-left: 2px solid hsla(0, 0%, 65%, 1);
     p {
