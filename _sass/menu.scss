@@ -15,11 +15,13 @@ $font-color: #03a9f4;
     padding: 0;
   }
   h6 {
-    color: hsla(0, 0%, 50%, 1);
-    font-weight: bold;
+    color: hsla(0, 0%, 40%, 1);
+    font-weight: 700;
     font-size: 16px;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     padding: 15px 4px;
+    margin: 0
   }
   li {
     display: block;

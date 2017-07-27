@@ -2,7 +2,7 @@
 title: Let's Encrypt availability
 modified_at: 2016-12-23 00:00:00
 category: config
-order: 6
+order: 10
 tags: certificate ssl https app
 ---
 

@@ -2,7 +2,7 @@
 title: Detecting HTTPS requests
 modified_at: 2015-03-23 00:00:00
 category: config
-order: 5
+order: 9
 tags: https routing request internals
 ---
 
