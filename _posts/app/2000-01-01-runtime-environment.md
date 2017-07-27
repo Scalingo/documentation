@@ -1,7 +1,7 @@
 ---
 title: Runtime Environment
 modified_at: 2016-04-26 00:00:00
-category: config
+category: configuration
 order: 7
 tags: runtime configuration environment app
 ---
