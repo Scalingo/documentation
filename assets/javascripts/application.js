@@ -6,7 +6,8 @@ requirejs.config({
     'table-of-content': '/assets/javascripts/table-of-content',
     'search': '/assets/javascripts/search',
     'anchor': '/assets/javascripts/anchor',
-    'menu' : '/assets/javascripts/menu'
+    'menu' : '/assets/javascripts/menu',
+    'default-page': '/assets/javascripts/default-page',
   },
   shim: {
     'search': ['docsearch'],
@@ -17,5 +18,6 @@ requirejs.config({
 requirejs([
   'search',
   'anchor',
-  'menu'
+  'menu',
+  'default-page'
 ])

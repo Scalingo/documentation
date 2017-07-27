@@ -8,8 +8,7 @@ define(['jquery'], function ($){
             menu.css({
                 'position': 'absolute',
                 'top': 'auto',
-                'height': $(window).height()-80,
-                'width': '94.5%'
+                'height': $(window).height()-80
             });
             isFixed = false;
         });
@@ -20,8 +19,7 @@ define(['jquery'], function ($){
                 menu.css({
                     'position': 'fixed',
                     'top': '0',
-                    'height': '100%',
-                    'width': '18.5%',
+                    'height': '100%'
                 });
                 isFixed = true;
             }
@@ -30,8 +28,7 @@ define(['jquery'], function ($){
                 menu.css({
                     'position': 'absolute',
                     'top': 'auto',
-                    'height': $(window).height()-80,
-                    'width': '94.5%'
+                    'height': $(window).height()-80
                 });
                 isFixed = false;
             }

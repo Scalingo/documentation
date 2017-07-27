@@ -6,8 +6,10 @@ $font-color: #03a9f4;
   left: auto;
   overflow-x: hidden;
   overflow-y: auto;
-  max-width: 270px;
+  width: 300px;
   padding-top: 23px;
+  z-index: 2;
+
   ul {
     margin: 0;
     padding: 0;
