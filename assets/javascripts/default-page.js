@@ -28,11 +28,7 @@ define(['jquery'], function ($){
             $('.column').css({
                 'column-count': 1,
                 '-webkit-column-count': 1,
-                '-moz-column-count': 1,
-
-                '-webkit-column-gap': '10px',
-                '-moz-column-gap': '10px',
-                'column-gap': '10px'
+                '-moz-column-count': 1
             })
 
         }
