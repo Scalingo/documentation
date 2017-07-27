@@ -29,7 +29,7 @@ $font-color: #03a9f4;
     font-size: 14px;
     margin: 0;
     a {
-      color: hsla(0, 0%, 55%, 1);
+      color: hsla(0, 0%, 60%, 1);
     }
     a:hover {
       color: hsla(0, 0%, 32%, 1);
@@ -44,7 +44,7 @@ $font-color: #03a9f4;
       }
     }
     span {
-      right: 25px;
+      right: 30.3px;
       position: absolute;
       margin-top: 5px;
       font-size: 11px;
@@ -57,6 +57,7 @@ $font-color: #03a9f4;
     white-space: nowrap;
     padding: 1px 30px 1px 3px;
     margin: 3px 0;
+    letter-spacing: 0.3px;
     }
   }
   ul > li > ul {

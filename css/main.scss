@@ -9,11 +9,12 @@
 $font-color: #03a9f4;
 
 .page-content {
-  padding: 10px 0 80px 10px;
+  padding-bottom: 80px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
 .main-content {
@@ -24,7 +25,8 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   h1, h2, h3, h4 {
-    padding: 20px 0 20px;
+    padding: 25px 0;
+    margin: 0;
   }
   .pull-right {
     margin-top: 8px;
@@ -37,17 +39,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar-nav {
-  margin-bottom: 3%;
   padding: 20px;
-  border-top: 1px solid hsla(0, 0%, 78%, 1);
-  border-bottom: 1px solid hsla(0, 0%, 78%, 1);
-  color: hsla(0, 0%, 40%, 1);
+  border-top: 1px solid hsla(0, 0%, 85%, 1);
+  border-bottom: 1px solid hsla(0, 0%, 85%, 1);
+  color: hsla(0, 0%, 60%, 1);
   a, a:hover, a:focus {
-    color: hsla(0, 0%, 40%, 1);
+    color: hsla(0, 0%, 60%, 1);
     font-size: 15px;
     margin-left: 10.5px;
   }
   a:hover, a:focus {
+    color: hsla(0, 0%, 40%, 1);
     text-decoration: underline;
   }
   span {

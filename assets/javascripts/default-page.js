@@ -3,7 +3,7 @@ define(['jquery'], function ($){
     $w.on('load resize', function() {
         if ($w.width() >= 768) {
             $('.main-content').css({
-                'width': 'calc(100% - 315px)',
+                'width': 'calc(100% - 330px)',
                 'position': 'absolute',
                 'right': '0',
                 'top': '0'  
