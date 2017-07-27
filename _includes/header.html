@@ -30,7 +30,7 @@
         <nav class="breadcrumb-content">
           {% if page.url != '/' %}
             <li class="breadcrumb-item pull-left"><a href="/">Documentation</a></li>
-                <li class="breadcrumb-item"><a href="{{ page.url }}" style="text-transform: capitalize;">{{ page.categories.first }}</a></li>
+                <li class="breadcrumb-item"><a style="text-transform: capitalize;">{{ page.categories.first }}</a></li>
                 <li class="breadcrumb-item active"><a href="{{ page.url }}">{{ page.title }}</a></li>
 
             <ul class="navbar-nav pull-right">
