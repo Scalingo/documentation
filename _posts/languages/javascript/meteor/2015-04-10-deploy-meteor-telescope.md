@@ -2,7 +2,7 @@
 title: Deployment of a Meteor application - Telescope
 modified_at: 2015-04-10 00:00:00
 category: meteor
-tags: meteor nodejs tutorial telescope languages
+tags: tutorial meteor nodejs telescope languages
 ---
 
 This guide will go through the deployment of a un-modified instance of Telescope,
