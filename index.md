@@ -24,10 +24,10 @@ modified_at: 2017-07-06 00:00:00
           {% include addons.html %}
         </div>
         <div class="row platform">
-          <h3>Some useful links about our platform</h3>
           <div class="col-12">
+            <h3>Some useful links about our platform</h3>
             <div class="row">
-              <ul>
+              <ul class="column">
                 {% assign posts = site.categories.platform | sort:'order' %}
                 {% for post in posts %}
                   <li>
@@ -41,10 +41,10 @@ modified_at: 2017-07-06 00:00:00
           </div>
         </div>
         <div class="row recent">
-          <h3>Latest modified articles</h3>
           <div class="container">
+            <h3>Latest modified articles</h3>
             <div class="row">
-              <ul>
+              <ul class="column">
                 {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
                 {% for post in recent_posts limit:12 %}
                   <li>

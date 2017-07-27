@@ -8,6 +8,15 @@ define(['jquery'], function ($){
                 'right': '0',
                 'top': '0'  
             })
+            $('.column').css({
+                'column-count': 2,
+                '-webkit-column-count': 2,
+                '-moz-column-count': 2,
+
+                '-webkit-column-gap': '40px',
+                '-moz-column-gap': '40px',
+                'column-gap': '40px'
+            })
         }
         else {
             $('.main-content').css({
@@ -15,6 +24,15 @@ define(['jquery'], function ($){
                 'position': 'relative',
                 'right': 'auto',
                 'top': 'auto'
+            })
+            $('.column').css({
+                'column-count': 1,
+                '-webkit-column-count': 1,
+                '-moz-column-count': 1,
+
+                '-webkit-column-gap': '10px',
+                '-moz-column-gap': '10px',
+                'column-gap': '10px'
             })
 
         }
