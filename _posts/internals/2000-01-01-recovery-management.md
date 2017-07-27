@@ -2,7 +2,7 @@
 title: Recovery management after Platform problem
 modified_at: 2016-05-31 00:00:00
 category: internals
-order: 3
+order: 9
 tags: recovery faq crash internals
 ---
 

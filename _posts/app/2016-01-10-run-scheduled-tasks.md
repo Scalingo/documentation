@@ -2,7 +2,7 @@
 title: Run scheduled tasks
 modified_at: 2016-01-28 12:22:00
 category: management
-order: 5
+order: 3
 tags: tasks app
 ---
 

@@ -2,7 +2,7 @@
 title: Transfer the ownership of an app
 modified_at: 2016-12-09 00:00:00
 category: management
-order: 5
+order: 8
 tags: transfer ownership app
 ---
 
