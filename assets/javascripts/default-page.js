@@ -33,4 +33,12 @@ define(['jquery'], function ($){
 
         }
     });
+    $('.menu').on({
+        'mouseenter': function () {
+            $('body').addClass('noscroll');
+        },
+        'mouseleave': function () {
+            $('body').removeClass('noscroll');
+        }
+    });
 });

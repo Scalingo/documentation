@@ -12,6 +12,10 @@ body {
   color: hsl(210, 6%, 25%);
 }
 
+body.noscroll {
+    overflow: hidden;
+}
+
 .page-content {
   padding-bottom: 80px;
 }
