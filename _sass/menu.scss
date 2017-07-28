@@ -3,11 +3,10 @@ $font-color: #03a9f4;
 .menu {
   display: flex;
   flex-direction: column;
-  left: auto;
   overflow-x: hidden;
   overflow-y: auto;
   width: 300px;
-  padding-top: 23px;
+  padding-top: 20px;
   z-index: 2;
 
   ul {

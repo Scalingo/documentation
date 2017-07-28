@@ -4,12 +4,11 @@ layout: default
 
 <div class="page-content">
   <div class="block categories">
-    <h1 class="title">{{ page.title }}</h1>
-    <h3>Suggest Links</h3>
-    {% if site.categories[page.tags.first] %}
-      {% assign posts = site.categories[page.tags.first] | sort: 'modified_at' | reverse %}
+    <h1 class="title" style="text-transform: capitalize;">{{ page.title }}</h1>
+    {% if site.categories[page.title] %}
+      {% assign posts = site.categories[page.title] | sort: 'order' %}
       <ul>
-        {% for post in posts limit:12 %}
+        {% for post in posts %}
           <li>
             <span class="fa fa-angle-right"></span>
             <a href="{{ post.url }}">{{ post.title }}</a>

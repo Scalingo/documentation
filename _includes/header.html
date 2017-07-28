@@ -37,10 +37,21 @@
               {% if post.tags.first == page.categories.first and post.title != 'Categories' %}
                 {% for post2 in posts %}
                   {% if post2.tags.first == post.categories.first and post2.title != 'Categories' %}
-                    <li class="breadcrumb-item"><a href="{{ post2.url }}" style="text-transform: capitalize;">{{ post2.title }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ post2.url }}">{{ post2.title }}</a></li>
                   {% endif %}
                 {% endfor %}
-                <li class="breadcrumb-item"><a href="{{ post.url }}" style="text-transform: capitalize;">{{ post.title }}</a></li>
+
+{% assign categories = site.categories.category %}
+{% for category in categories %}
+  {% if category.title == post.tags.first %}
+    <li class="breadcrumb-item"><a href="/{{ post.tags.first }}">{{ post.tags.first }}</a></li>
+    {% assign crumb = 'true' %}
+  {% endif %}
+{% endfor %}
+{% unless crumb %}
+  <li class="breadcrumb-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endunless %}
+
               {% endif %}
             {% endfor %}
 
