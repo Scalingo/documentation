@@ -49,15 +49,16 @@ $font-color: #03a9f4;
       margin-top: 5px;
       font-size: 11px;
     }
-  p {
-    width: calc(100% - 6px);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    white-space: nowrap;
-    padding: 1px 35px 1px 3px;
-    margin: 3px 0;
-    letter-spacing: 0.3px;
+    p {
+      width: calc(100% - 6px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 1px 35px 1px 3px;
+      margin: 3px 0;
+      letter-spacing: 0.3px;
+      text-transform: capitalize;
     }
   }
   ul > li > ul {

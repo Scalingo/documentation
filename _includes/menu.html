@@ -17,8 +17,14 @@
             <p>
               {% if site.categories.[post.tags.first] %}
                 <span class="fa fa-chevron-right"></span>
+                {% if post.categories.first == 'languages' or post.categories.first == 'addons' %}
+                  {{ post.title }}
+                {% else %}
+                  {{ post.tags.first }}
+                {% endif %}
+              {% else %}
+                {{ post.title }}
               {% endif %}
-              {{ post.title }}
             </p>
           </a>
           {% if site.categories.[post.tags.first] %}
@@ -26,7 +32,11 @@
               <li>
                 <a title="{{ post.title }}" href="{{ post.url }}">
                   <p>
-                    Index
+                    {% if post.categories.first == 'languages' or post.categories.first == 'addons' %}
+                      Introduction
+                    {% else %}
+                      {{ post.title }}
+                    {% endif %}
                   </p>
                 </a>
               </li>
