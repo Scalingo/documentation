@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Django
+title: Tutorial Django
 modified_at: 2015-02-17 00:00:00
 category: python
 tags: django python tutorial getting-started-tutorial
