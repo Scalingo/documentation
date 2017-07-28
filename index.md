@@ -25,7 +25,7 @@ modified_at: 2017-07-06 00:00:00
         </div>
         <div class="row platform">
           <div class="col-12">
-            <h3>Some useful links about our platform</h3>
+            <h3>Useful categories for your application</h3>
             <div class="row">
               <ul class="column">
                 {% assign posts = site.categories.platform | sort:'order' %}
