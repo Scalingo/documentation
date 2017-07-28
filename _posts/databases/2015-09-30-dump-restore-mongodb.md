@@ -13,6 +13,8 @@ There's two ways to dump a distant database and restore the data in your Scaling
 
 ## Dump and Restore from your local workstation
 
+To dump and restore database from your local workstation, you will need the mongodb cli tools. Installation procedures can be found [here](https://docs.mongodb.com/v3.0/tutorial/).
+
 You can dump and restore your database from your local workstation using [Scalingo CLI]({% post_url cli/2015-09-18-command-line-tool %}) to [create a tunnel]({% post_url databases/2014-11-24-tunnel %}) to your database:
 
 A MongoDB URL is usually formatted like: <br>
