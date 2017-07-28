@@ -1,8 +1,8 @@
 ---
 title: CLI Command Line Tool
 modified_at: 2015-11-05 17:21:00
-category: configuration
-order: 5
+category: getting-started
+order: 1
 tags: command tool interface app cli
 ---
 

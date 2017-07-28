@@ -3,7 +3,7 @@ title: Git Submodule on Scalingo
 modified_at: 2017-04-27 00:00:00
 category: configuration
 tags: git submodule
-order: 12
+order: 13
 ---
 
 If your project repository uses Git submodules, please be aware that Scalingo

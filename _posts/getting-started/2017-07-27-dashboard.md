@@ -1,5 +1,5 @@
 ---
-title: Scalingo Dashboard
+title:  Dashboard
 modified_at: 2017-07-27 00:00:00
 category: getting-started
 tags: dashboard
