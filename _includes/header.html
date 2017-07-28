@@ -44,7 +44,7 @@
 {% assign categories = site.categories.category %}
 {% for category in categories %}
   {% if category.title == post.tags.first %}
-    <li class="breadcrumb-item"><a href="/{{ post.tags.first }}">{{ post.tags.first }}</a></li>
+    <li class="breadcrumb-item"><a href="/{{ post.tags.first }}-index">{{ post.tags.first }}</a></li>
     {% assign crumb = 'true' %}
   {% endif %}
 {% endfor %}
