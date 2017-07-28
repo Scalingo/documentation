@@ -78,6 +78,10 @@ define(['jquery'], function ($){
             if ( $(".currentsection").offset() ){
                 $(".menu").scrollTop($(".currentsection").offset().top-140);
             }
+            else if ( $(".currentcategorie").offset() ){
+                $(".currentcategorie > ul").css({'display': 'block'});
+                $(".menu").scrollTop($(".currentcategorie").offset().top-130);
+            }
         });
     }
 });

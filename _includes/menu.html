@@ -11,7 +11,11 @@
         {% if page.url == post.url %}
           <li class="currentsection">
         {% else %}
-          <li>
+          {% if page.title == post.tags.first %}
+            <li class="currentcategorie">
+          {% else %}
+            <li>
+          {% endif %}
         {% endif %}
           <a title="{{ post.title }}" href="{{ post.url }}">
             <p>

@@ -95,7 +95,7 @@ $font-color: #03a9f4;
   }
 }
 
-.currentsection > a > p {
+.currentsection > a > p, .currentcategorie > a > p {
   background-color: hsla(0, 0%, 90%, 1);
   color: hsla(0, 0%, 50%, 1);
 }
