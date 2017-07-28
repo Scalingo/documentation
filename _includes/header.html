@@ -30,18 +30,19 @@
         <nav class="breadcrumb-content">
           {% if page.url != '/' %}
             <li class="breadcrumb-item pull-left"><a href="/">Documentation</a></li>
+
             {% assign posts = site.posts %}
             {% for post in posts %}
               {% if post.tags.first == page.categories.first and post.title != 'Categories' %}
                 {% for post2 in posts %}
                   {% if post2.tags.first == post.categories.first and post2.title != 'Categories' %}
-                    <li class="breadcrumb-item"><a style="text-transform: capitalize;">{{ post2.categories.first }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ post2.url }}" style="text-transform: capitalize;">{{ post2.title }}</a></li>
                   {% endif %}
                 {% endfor %}
-                <li class="breadcrumb-item"><a style="text-transform: capitalize;">{{ post.categories.first }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ post.url }}" style="text-transform: capitalize;">{{ post.title }}</a></li>
               {% endif %}
             {% endfor %}
-            <li class="breadcrumb-item"><a style="text-transform: capitalize;">{{ page.categories.first }}</a></li>
+
             <li class="breadcrumb-item active"><a href="{{ page.url }}">{{ page.title }}</a></li>
 
             <ul class="navbar-nav pull-right">
