@@ -17,18 +17,23 @@
             <li>
           {% endif %}
         {% endif %}
+        {% if site.categories.[post.tags.first] %}
+          {% if post.categories.first == 'languages' or post.categories.first == 'addons' %}
+            <a title="{{ post.title }}" href="{{ post.url }}">
+              <p>
+                <span class="fa fa-chevron-right"></span>
+                {{ post.title }}
+          {% else %}
+            <a title="{{ post.title }}" href="/{{ post.tags.first }}">
+              <p>
+                <span class="fa fa-chevron-right"></span>
+                {{ post.tags.first }}
+          {% endif %}
+        {% else %}
           <a title="{{ post.title }}" href="{{ post.url }}">
             <p>
-              {% if site.categories.[post.tags.first] %}
-                <span class="fa fa-chevron-right"></span>
-                {% if post.categories.first == 'languages' or post.categories.first == 'addons' %}
-                  {{ post.title }}
-                {% else %}
-                  {{ post.tags.first }}
-                {% endif %}
-              {% else %}
-                {{ post.title }}
-              {% endif %}
+              {{ post.title }}
+        {% endif %}
             </p>
           </a>
           {% if site.categories.[post.tags.first] %}
