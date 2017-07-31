@@ -22,6 +22,7 @@ use Rack::Rewrite do
   rewrite    %r{(^.+)}, "$1.html", if: Proc.new {|env|
     env["REQUEST_PATH"].start_with?("/tagged")
   }
+  rewrite    %r{.*/([^\./]+)/?$}, 'articles/$1'
   rewrite    %r{/\d{4}(/.+)+/([^\./]+)$}, '$1/$2.html'
 end
 
