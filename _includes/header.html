@@ -1,33 +1,33 @@
-<nav class="navbar">
-        <div class="col-*">
-  <div class="container">
-          <nav class="navbar navbar-fixed-top navbar-toggleable-md navbar-light bg-faded">
-            <button type="button" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: transparent; right: -15px; top: -3px">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="https://www.scalingo.com">
-            <img class="logo-img" src="https://scalingo.com/logo-white.svg">
-          </a>
+<nav class="navbar" style="border-bottom: 1px solid hsla(0, 0%, 67%, 1);">
+  <div class="col-*">
+    <div class="container">
+      <nav class="navbar navbar-fixed-top navbar-toggleable-md navbar-light bg-faded">
+        <button type="button" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: transparent; right: -15px; top: -3px">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.scalingo.com">
+        <img class="logo-img" src="https://scalingo.com/logo-white.svg">
+      </a>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="/">Documentation</a></li>
-              <li class="nav-item"><a href="/first-steps">Getting Started</a></li>
-              <li class="nav-item"><a href="https://developers.scalingo.com/">API</a></li>
-              <li class="nav-item"><a href="https://status.scalingo.com/">Status</a></li>
-            </ul>
-          </div>
-        </nav>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a href="/">Documentation</a></li>
+            <li class="nav-item"><a href="/first-steps">Getting Started</a></li>
+            <li class="nav-item"><a href="https://developers.scalingo.com/">API</a></li>
+            <li class="nav-item"><a href="https://status.scalingo.com/">Status</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </div>
 </nav>
-<nav class="breadcrumb">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <nav class="breadcrumb-content">
-          {% if page.url != '/' %}
+{% if page.url != '/' %}
+  <nav class="breadcrumb">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="breadcrumb-content">
             <li class="breadcrumb-item pull-left"><a href="/">Documentation</a></li>
 
             {% assign posts = site.posts %}
@@ -58,9 +58,9 @@
             <ul class="navbar-nav pull-right">
               {% include search.html %}
             </ul>
-          {% endif %}
-        </nav>
+          </nav>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+{% endif %}
