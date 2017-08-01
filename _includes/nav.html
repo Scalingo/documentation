@@ -1,50 +1,70 @@
-<header data-swiftype-index="false" class="mdl-layout__header mdl-color--light-blue">
-  <div class="mdl-layout__header-row header-row">
-    <a class="mdl-layout-title" href="https://scalingo.com/">
-      <img class="logo-img" src="http://scalingo.com/logo-white.svg">
-    </a>
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-layout--large-screen-only">
-      <nav class="mdl-navigation sub-nav">
-        <a class="mdl-navigation__link mdl-typography--text-capitalize" href="http://blog.scalingo.com">Blog</a>
-        <a class="mdl-navigation__link mdl-typography--text-capitalize" href="http://doc.scalingo.com">Documentation</a>
-        <a class="mdl-navigation__link mdl-typography--text-capitalize" href="http://changelog.scalingo.com">Changelog</a>
-        <a class="mdl-navigation__link mdl-typography--text-capitalize" href="http://cli.scalingo.com">CLI</a>
-        <a class="mdl-navigation__link mdl-typography--text-capitalize" href="https://my.scalingo.com">Dashboard</a>
-      </nav>
-      <nav class="mdl-navigation main-nav">
-        <!-- <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://scalingo.com/tour">Tour</a> -->
-        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://scalingo.com/pricing">Pricing</a>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://scalingo.com/technologies">Technologies</a>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://scalingo.com/addons">Add-ons</a>
+<nav class="navbar" style="border-bottom: 1px solid hsla(0, 0%, 67%, 1);">
+  <div class="col-*">
+    <div class="container">
+      <nav class="navbar navbar-fixed-top navbar-toggleable-md navbar-light bg-faded">
+        <button type="button" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: transparent; right: -15px; top: -3px">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.scalingo.com">
+        <img class="logo-img" src="https://scalingo.com/logo-white.svg">
+      </a>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a href="/">Documentation</a></li>
+            <li class="nav-item"><a href="/articles/first-steps">Getting Started</a></li>
+            <li class="nav-item"><a href="https://developers.scalingo.com/">API</a></li>
+            <li class="nav-item"><a href="https://status.scalingo.com/">Status</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
-    <a href="https://scalingo.com/users/signup">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-layout--large-screen-only mdl-color--light-green call-to-action">Sign up for free</button>
-    </a>
-    <button id="menu-button-small-screen" class="mdl-button mdl-js-button mdl-button--icon mdl-layout--small-screen-only">
-      <i class="material-icons">more_vert</i>
-    </button>
-    <nav class="mdl-navigation mdl-layout--small-screen-only small-screen-nav">
-      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu" for="menu-button-small-screen">
-        <!-- <li class="mdl-menu__item">
-          <a class="mdl-navigation__link" href="https://scalingo.com/tour">Tour</a>
-	      </li> -->
-        <li class="mdl-menu__item">
-          <a class="mdl-navigation__link" href="https://scalingo.com/pricing">Pricing</a>
-        </li>
-        <li class="mdl-menu__item">
-          <a class="mdl-navigation__link" href="https://scalingo.com/technologies">Technologies</a>
-        </li>
-        <li class="mdl-menu__item">
-          <a class="mdl-navigation__link" href="https://scalingo.com/addons">Add-ons</a>
-        </li>
-        <li class="mdl-menu__item">
-	  <a href="https://scalingo.com/users/signup">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--light-green call-to-action">Sign up for free</button>
-	  </a>
-        </li>
-      </ul>
-    </nav>
   </div>
-</header>
+</nav>
+{% if page.url != '/' %}
+  <nav class="breadcrumb">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="breadcrumb-content">
+            <li class="breadcrumb-item pull-left"><a href="/">Documentation</a></li>
+
+            {% if page.title != '404 Not found' %}
+
+              {% assign posts = site.posts %}
+              {% for post in posts %}
+                {% if post.tags.first == page.categories.first and post.title != 'Categories' %}
+                  {% for post2 in posts %}
+                    {% if post2.tags.first == post.categories.first and post2.title != 'Categories' %}
+                      <li class="breadcrumb-item"><a href="{{ post2.url }}">{{ post2.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+
+{% assign categories = site.categories.category %}
+{% for category in categories %}
+  {% if category.title == post.tags.first %}
+    <li class="breadcrumb-item"><a href="/articles/{{ post.tags.first }}-index">{{ post.tags.first | replace: '-', ' ' }}</a></li>
+    {% assign crumb = 'true' %}
+  {% endif %}
+{% endfor %}
+{% unless crumb %}
+  <li class="breadcrumb-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endunless %}
+
+                {% endif %}
+              {% endfor %}
+
+            {% endif %}
+
+            <li class="breadcrumb-item active"><a href="{{ page.url }}">{{ page.title }}</a></li>
+
+            <ul class="navbar-nav pull-right">
+              {% include search.html %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </nav>
+{% endif %}
