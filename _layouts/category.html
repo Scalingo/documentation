@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="page-content">
+  <div class="block categories">
+    <h1 class="title" style="text-transform: capitalize;">{{ page.title }}</h1>
+    {% if site.categories[page.title] %}
+      {% assign posts = site.categories[page.title] | sort: 'order' %}
+      <ul>
+        {% for post in posts %}
+          <li>
+            <span class="fa fa-angle-right"></span>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div>
