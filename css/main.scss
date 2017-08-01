@@ -8,14 +8,6 @@
 
 $font-color: #03a9f4;
 
-body {
-  color: hsl(210, 6%, 25%);
-}
-
-body.noscroll {
-    overflow: hidden;
-}
-
 .page-content {
   padding-bottom: 80px;
   width: 100%;
@@ -68,8 +60,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  font-family: Roboto, HelveticaNeue, Helvetica, Arial, sans-serif;
   background-color: #FAFAFA;
+  color: hsl(210, 6%, 25%);
+  font-family: 'Roboto', sans-serif;
   p {
     margin: 5px 0;
   }
@@ -80,6 +73,10 @@ body {
     color: hsla(199,97%,45%,1);
     outline: none;
   }
+}
+
+body.noscroll {
+    overflow: hidden;
 }
 
 blockquote {
