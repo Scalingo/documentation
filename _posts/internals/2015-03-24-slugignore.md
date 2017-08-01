@@ -3,7 +3,7 @@ title: .slugignore file
 modified_at: 2015-03-24 00:00:00
 category: configuration
 tags: slugignore internals image size
-order: 5
+order: 3
 ---
 
 ## Background

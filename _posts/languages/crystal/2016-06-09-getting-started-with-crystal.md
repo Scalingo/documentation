@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Crystal
+title: Crystal
 modified_at: 2016-06-09 00:00:00
 category: languages
 tags: crystal tutorial getting-started-tutorial

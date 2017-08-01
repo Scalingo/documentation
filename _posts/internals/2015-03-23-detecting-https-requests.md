@@ -1,7 +1,7 @@
 ---
 title: Detecting HTTPS requests
 modified_at: 2015-03-23 00:00:00
-category: internals
+category: configuration
 tags: https internals routing request
 order: 10
 ---
