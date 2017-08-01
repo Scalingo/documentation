@@ -11,7 +11,7 @@ date: 2015-09-09 00:00:00
     </div>
     <div class="mdl-card__supporting-text">
       <ul class="list-unstyled">
-	{% assign posts = (site.categories.getting-started | sort: 'index', 'last') %}
+	{% assign posts = site.categories.getting-started | sort: 'index', 'last' %}
 	{% for post in posts %}
 	<li>
           <a href="{{ post.url }}">{{ post.title }}</a>
@@ -26,7 +26,7 @@ date: 2015-09-09 00:00:00
     </div>
     <div class="mdl-card__supporting-text">
       <ul class="list-unstyled">
-	{% assign posts = (site.categories.languages | sort: 'title' | sort: 'index', 'last') %}
+	{% assign posts = site.categories.languages | sort: 'title' | sort: 'index', 'last' %}
 	{% for post in posts %}
 	{% if post.show_in_toc %}
 	<li>
@@ -43,7 +43,7 @@ date: 2015-09-09 00:00:00
     </div>
     <div class="mdl-card__supporting-text">
       <ul class="list-unstyled">
-	{% assign posts = (site.categories.databases | sort: 'index', 'last') %}
+	{% assign posts = site.categories.databases | sort: 'index', 'last' %}
 	{% for post in posts %}
 	<li>
           <a href="{{ post.url }}">{{ post.title }}</a>
@@ -58,13 +58,13 @@ date: 2015-09-09 00:00:00
     </div>
     <div class="mdl-card__supporting-text">
       <ul class="list-unstyled">
-	{% assign posts = (site.categories.internals | sort: 'index', 'last') %}
+	{% assign posts = site.categories.internals | sort: 'index', 'last' %}
 	{% for post in posts %}
 	<li>
           <a href="{{ post.url }}">{{ post.title }}</a>
 	</li>
 	{% endfor %}
-	{% assign posts = (site.categories.app | sort: 'index', 'last') %}
+	{% assign posts = site.categories.app | sort: 'index', 'last' %}
 	{% for post in posts %}
 	<li>
           <a href="{{ post.url }}">{{ post.title }}</a>
