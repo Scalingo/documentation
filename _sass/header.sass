@@ -1,71 +1,54 @@
-$font-stack: "Roboto","Helvetica","Arial",sans-serif
-$font-color: white
-$margin-from-top: 40px
-$header-height: 72px
-$logo-height: 35px
-
-=nav_link_properties
-  color: $font-color
-  line-height: 1
-  height: auto
-  padding: 5px
-  margin-left: 10px
-  &:hover
-    color: #424242
-    transition: color 0.3s ease 0s
-
-header
-  .call-to-action
-    color: $font-color
-    font-weight: bold
-    margin-left: 25px
-    margin-right: 15px
-    &:hover
-      background-color: darken(#8BC34A, 10%) !important
-
+.navbar
+  background-color: $font-color
+  font-family: 'lato', sans-serif
+  padding: 2px
+  .collapse
+    width: auto
+  
+  ul
+    display: flex
+    align-items: center
+    margin: 0
+  
+  .navbar-brand
+    height: 32px
+    padding: 0
+  
 .logo-img
-  height: $logo-height
+  height: 24px
+  margin: 4px auto
 
-.header-row
-  color: $font-color
-  font-family: $font-stack
-  height: $header-height
-  padding: 0 10px 0 15px
-  .main-nav
-    float: right
-    height: auto
-    margin: 0 0 0 0
-    clear: both
-    .mdl-navigation__link
-      +nav_link_properties
-      font-size: 120%
-      font-weight: bold
-  .sub-nav
-    height: auto
-    float: right
-    margin: 0 0 0 0
-    clear: both
-    .mdl-navigation__link
-      +nav_link_properties
-      font-weight: 300
+.navbar .navbar-nav > li > a
+  color: white
+  margin: 0 20px
+  &:hover, &:focus, &.active
+    color: #215f8b
+    text-decoration: none
 
-.small-screen-nav
-  color: black
-  .call-to-action
-    padding: 0 8px
-    margin-left: 10px
-  .mdl-navigation__link
-    line-height: 48px
-    padding: 0 16px 0 16px
-    height: inherit
-  .mdl-menu
-    .mdl-menu__item
-      width: 156px
-      margin: 0 0 0 0
-      padding: 0 0 0 0
-      &:last-child
-        &:hover, &:focus
-          background-color: transparent
+.breadcrumb
+  border-bottom: 1px solid hsla(0, 0%, 78%, 1)
+  padding: 0
+  margin: 0
 
-.header-spacer
-  height: 40px
+.breadcrumb-content
+  width: 100%
+  a
+    color: #464a4c
+    font-size: 13.5px
+    margin: auto 2px
+  
+  a:hover, a:focus, a:active
+    color: hsla(0, 0%, 30%, 1)
+  
+  .breadcrumb-item
+    padding-top: 0.25rem
+    padding-bottom: 0.25rem
+    text-transform: capitalize
+  
+  .breadcrumb-item::before
+    color: hsla(0, 0%, 60%, 1)
+  
+  .pull-right
+    padding: 0
+    width: 130px
+    margin: 0
