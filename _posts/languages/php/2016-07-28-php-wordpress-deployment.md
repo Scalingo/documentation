@@ -1,8 +1,8 @@
 ---
 title: Deploying a WordPress application
 modified_at: 2016-07-28 00:00:00
-category: languages
-tags: php, http, framework, wordpress, deployment
+category: php
+tags: http php framework wordpress deployment
 ---
 
 ## Detection

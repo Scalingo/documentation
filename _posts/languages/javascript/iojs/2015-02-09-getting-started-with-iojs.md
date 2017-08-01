@@ -1,8 +1,8 @@
 ---
-title: Getting started with io.js
+title: Tutorial io.js
 modified_at: 2015-02-09 00:00:00
-categories: languages javascript iojs
-tags: iojs javascript tutorial getting-started-tutorial
+category: iojs
+tags: tutorial iojs javascript getting-started-tutorial
 ---
 
 {% include info_tutorial_requirements.md %}

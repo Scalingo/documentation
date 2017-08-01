@@ -1,8 +1,8 @@
 ---
 title: Filter IPs allowed to access your app
 modified_at: 2016-06-24 00:00:00
-category: languages
-tags: php, http, security, filtering
+category: php
+tags: http php security filtering
 ---
 
 ## Introduction

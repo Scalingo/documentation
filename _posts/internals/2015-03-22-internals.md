@@ -1,9 +1,9 @@
 ---
-title: About Internals
+title: Internals
 modified_at: 2015-03-22 00:00:00
-category: internals
+category: platforms
 tags: internals index
-index: 0
+order: 7
 ---
 
 ## [Procfile management]({% post_url internals/2014-12-01-procfile %})

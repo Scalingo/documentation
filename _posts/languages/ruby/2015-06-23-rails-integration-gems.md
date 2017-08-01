@@ -1,8 +1,8 @@
 ---
 title: Rails integration to the platform
 modified_at: 2015-06-23 00:00:00
-categories: languages ruby
-tags: ruby application server rails
+categories: ruby
+tags: rails ruby application server
 ---
 
 To completely integrate Ruby on Rails to the Scalingo platform, it has to respect the

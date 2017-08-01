@@ -1,8 +1,9 @@
 ---
 title: Restore locally an Elasticsearch backups
 modified_at: 2016-04-27 00:00:00
-category: databases
-tags: databases elasticsearch backups
+category: elasticsearch
+tags: backups databases elasticsearch
+order: 2
 ---
 
 ## Download the backup file

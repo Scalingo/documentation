@@ -1,9 +1,9 @@
 ---
-title: Access your database
+title: Access your database by addons
 modified_at: 2015-06-24 00:00:00
-category: databases
+category: addons
 tags: databases
-index: 1
+order: 1
 ---
 
 Databases hosted on Scalingo are not directly available on the Internet. By default

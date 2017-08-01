@@ -1,8 +1,9 @@
 ---
 title: Sending emails from your application
 modified_at: 2016-07-22 00:00:00
-category: app
+category: management
 tags: app email smtp
+order: 8
 ---
 
 For various reasons (transactional, marketing, etc.) you might want to send

@@ -1,8 +1,8 @@
 ---
 title: Using Delayed Job (DJ) to Handle Background Tasks
 modified_at: 2016-01-13 10:39:00
-categories: languages ruby
-tags: ruby gem async jobs delayed
+categories: ruby
+tags: gem ruby async jobs delayed
 ---
 
 ## What is `delayed_job`?

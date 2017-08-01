@@ -3,7 +3,7 @@ title: Setup SSH on Mac OS
 modified_at: 2015-04-04 00:00:00
 category: getting-started
 tags: follow-the-light ssh macos git
-index: 2
+order: 2
 ---
 
 ## Check if you already have an available SSH key

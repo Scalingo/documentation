@@ -1,8 +1,9 @@
 ---
 title: Run scheduled tasks
 modified_at: 2016-01-28 12:22:00
-category: app
+category: management
 tags: app
+order: 3
 ---
 
 Running scheduled tasks on Scalingo should be done by yourself. We don't

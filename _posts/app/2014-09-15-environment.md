@@ -1,8 +1,9 @@
 ---
 title: Application environment
 modified_at: 2014-09-15 00:00:00
-category: app
+category: configuration
 tags: app configuration environment
+order: 6
 ---
 
 The environment should be used to configure your application. When your

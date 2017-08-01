@@ -1,9 +1,9 @@
 ---
 title: Buildpacks
 modified_at: 2015-09-28 00:00:00
-categories: internals
+categories: deployment
 tags: buildpacks build image
-permalink: /buildpacks/
+order: 1
 ---
 
 ## Introduction

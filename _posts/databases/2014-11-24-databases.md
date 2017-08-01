@@ -1,9 +1,9 @@
 ---
-title: Scalingo database add-ons
+title: Database and Addons
 modified_at: 2014-11-24 00:00:00
-category: databases
+category: addons
 tags: index-databases polydbs
-index: 0
+order: 0
 ---
 
 You applications need databases to store your data. As we believe your data

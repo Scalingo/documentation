@@ -1,8 +1,9 @@
 ---
 title: Container Sizes
 modified_at: 2015-12-02 00:00:00
-category: internals
-tags: internals containers sizes
+category: configuration
+tags: containers internals sizes
+order: 5
 ---
 
 ## Comparative table

@@ -1,8 +1,9 @@
 ---
 title: Scalingo MongoDB Addon
 modified_at: 2016-01-11 00:00:00
-category: databases
-tags: databases mongodb addon
+category: addons
+tags: mongodb databases addon
+order: 2
 ---
 
 <blockquote class="bg-info">

@@ -1,9 +1,10 @@
 ---
-layout:      page
-title:       "GitHub integration, Auto Deploy and Review Apps"
+layout: page
+title: GitHub integration, Auto Deploy and Review Apps
 modified_at: 2017-03-13 10:00:00
-category: integration
+category: deployment
 tags: integration github
+order: 3
 ---
 
 Scalingo provides a deep **GitHub integration** with new capabilities of autodeployment when the code is hosted in a GitHub repository, deploying directly from a GitHub branch, automatic building and deployment of *Pull Requests*, and much more. GitHub has particularly good interoperability capabilities that we've used to deliver a powerful and well integrated GitHub based workflow.

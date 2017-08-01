@@ -3,7 +3,7 @@ title: Setup SSH on Linux
 modified_at: 2015-04-03 00:00:00
 category: getting-started
 tags: follow-the-light ssh linux git
-index: 2
+order: 2
 ---
 
 ## Check if you already have an available SSH key

@@ -1,7 +1,7 @@
 ---
 title: Use a custom buildpack
 modified_at: 2016-01-28 00:00:00
-category: internals
+category: buildpacks
 tags: custom buildpacks build image
 ---
 

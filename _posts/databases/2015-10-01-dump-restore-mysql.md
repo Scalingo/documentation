@@ -1,10 +1,9 @@
 ---
 title: How to dump and restore my MySQL database on Scalingo
 modified_at: 2016-01-08 00:00:00
-category: databases
+category: mysql
 tags: databases mysql tunnel
-index: 3
-permalink: /databases/mysql/dump-restore/
+order: 2
 ---
 
 {% include info_command_line_tool.md %}

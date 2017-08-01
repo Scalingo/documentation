@@ -3,6 +3,7 @@ title: Deploy to Scalingo from Semaphore
 modified_at: 2016-01-20 00:00:00
 category: deployment
 tags: ci deployment build semaphore-ci
+order: 7
 ---
 
 To setup **Continuous Deployment** from Semaphore to Scalingo, please follow the [official guide](https://semaphoreci.com/docs/deploying-with-git-deploy.html) which will take you through the steps. Once you are at the **deploy commands** step the following section will help you to fill it.

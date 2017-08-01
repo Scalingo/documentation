@@ -3,6 +3,7 @@ title: Private Beta - Scalingo Docker Image Addon
 modified_at: 2016-05-30 00:00:00
 category: addons
 tags: docker images download feature
+order: 3
 ---
 
 ## Introduction

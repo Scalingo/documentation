@@ -1,8 +1,9 @@
 ---
 title: Runtime Environment
 modified_at: 2016-04-26 00:00:00
-category: app
+category: configuration
 tags: app runtime configuration environment
+order: 8
 ---
 
 When an application container is started, the platform is using the environment

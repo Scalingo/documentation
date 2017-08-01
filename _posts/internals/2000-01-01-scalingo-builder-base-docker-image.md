@@ -2,7 +2,8 @@
 title: Scalingo Builder - Our base Docker image
 modified_at: 2016-08-05 00:00:00
 category: internals
-tags: docker, image, builder, buildpack
+tags: image docker builder buildpack
+order: 2
 ---
 
 Every application deployed on Scalingo are built over our base Docker image. Internally we name it Scalingo Builder. This

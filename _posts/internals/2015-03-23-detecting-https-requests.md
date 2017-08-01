@@ -2,7 +2,8 @@
 title: Detecting HTTPS requests
 modified_at: 2015-03-23 00:00:00
 category: internals
-tags: internals routing request https
+tags: https internals routing request
+order: 10
 ---
 
 ## Background

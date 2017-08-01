@@ -2,7 +2,8 @@
 title: Use a custom directory from the GIT repository
 modified_at: 2015-06-02 00:00:00
 category: deployment
-tags: deployment build customize
+tags: build deployment customize
+order: 2
 ---
 
 It may happen that your project is in a subfolder of your GIT repository.
