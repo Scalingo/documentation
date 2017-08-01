@@ -1,0 +1,106 @@
+$font-color: #03a9f4;
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 300px;
+  padding-top: 20px;
+  z-index: 2;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  h6 {
+    color: hsla(210, 6%, 30%, 1);
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 4px;
+    margin: 0
+  }
+  li {
+    display: block;
+    list-syle: none;
+    font-size: 14px;
+    margin: 0;
+    a {
+      color: hsla(0, 0%, 60%, 1);
+    }
+    a:hover {
+      color: hsla(0, 0%, 32%, 1);
+      text-decoration: none;
+      p {
+        background-color: hsla(0, 0%, 92%, 1);
+      }
+    }
+    h1 {
+      a:hover, a:focus, a:active {
+        color: $font-color;
+      }
+    }
+    span {
+      left: 269.7px;
+      position: absolute;
+      margin-top: 5px;
+      font-size: 11px;
+    }
+    p {
+      width: calc(100% - 6px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 1px 35px 1px 3px;
+      margin: 3px 0;
+      letter-spacing: 0.3px;
+      text-transform: capitalize;
+    }
+  }
+  ul > li > ul {
+    display: none;
+    margin: 9px 0px 9px 10px;
+    padding-left: 5px;
+    font-size: 13px;
+    border-left: 1px solid hsla(0, 0%, 65%, 1);
+    li {
+      span {
+        font-size: 9px;
+        left: 268px;
+      }
+    }
+  }
+  ul > li > ul > li > ul {
+    border-left: none;
+    margin-top: 5px;
+    li {
+      font-size: 13.5px;
+    }
+    p {
+      padding: 0 auto;
+    }
+  }
+}
+
+.currentlink {
+  p {
+    background-color: $font-color !important;
+    color: white !important;
+  }
+  ul > li > a > p {
+    background-color: transparent;
+  }
+}
+
+.currentsection > a > p, .currentcategorie > a > p {
+  background-color: hsla(0, 0%, 90%, 1);
+  color: hsla(0, 0%, 50%, 1);
+}
+
+.currentsection1 > a > p {
+  background-color: hsla(0, 0%, 86%, 1);
+  color: hsla(0, 0%, 45%, 1);
+}
