@@ -42,7 +42,7 @@
 {% assign categories = site.categories.category %}
 {% for category in categories %}
   {% if category.title == post.tags.first %}
-    <li class="breadcrumb-item"><a href="/articles/{{ post.tags.first }}-index">{{ post.tags.first }}</a></li>
+    <li class="breadcrumb-item"><a href="/articles/{{ post.tags.first }}-index">{{ post.tags.first | replace: '-', ' ' }}</a></li>
     {% assign crumb = 'true' %}
   {% endif %}
 {% endfor %}
