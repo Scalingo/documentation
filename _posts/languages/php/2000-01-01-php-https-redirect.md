@@ -1,5 +1,5 @@
 ---
-title: PHP - Automatic HTTPS redirection
+title: Automatic HTTPS redirection
 modified_at: 2017-01-12 00:00:00
 category: php
 tags: https php security nginx languages
