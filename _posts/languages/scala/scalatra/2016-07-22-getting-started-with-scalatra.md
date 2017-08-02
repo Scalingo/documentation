@@ -1,10 +1,9 @@
 ---
 title: Getting Started with Scalatra
 modified_at: 2016-07-22 00:00:00
-category: getting-started
+category: scala
 tags: scalatra tutorial getting-started-tutorial
 index: 3
-permalink: /languages/scala/scalatra/getting-started-with-scalatra/
 ---
 
 {% include info_tutorial_requirements.md %}

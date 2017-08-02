@@ -29,13 +29,14 @@ define(['jquery'], function ($) {
       })
 
       var li = $('<li>')
+        .append('<span class="fa fa-angle-right"></span>')
         .append(a)
 
       ul.append(li)
     })
 
     sidebar_nav.prepend(ul)
-    sidebar_nav.prepend('<h2>Table of content</h2>')
+    sidebar_nav.prepend('<h5>Table of content</h5>')
   }
 
 })

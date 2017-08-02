@@ -1,10 +1,10 @@
 ---
-title: Getting Started with Crystal
+title: Crystal
 modified_at: 2016-06-09 00:00:00
-category: getting-started
+category: languages
 tags: crystal tutorial getting-started-tutorial
 index: 13
-permalink: /languages/crystal/getting-started-with-crystal/
+order: 3
 ---
 
 {% include info_tutorial_requirements.md %}

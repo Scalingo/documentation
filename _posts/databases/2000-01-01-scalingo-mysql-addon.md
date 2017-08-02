@@ -1,8 +1,9 @@
 ---
 title: Scalingo MySQL Addon
 modified_at: 2016-01-11 00:00:00
-category: databases
-tags: databases mysql addon
+category: addons
+order: 2
+tags: mysql addon databases
 ---
 
 <blockquote class="bg-info">

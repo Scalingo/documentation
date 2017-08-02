@@ -1,8 +1,8 @@
 ---
 title: Installing a Gem on Scalingo from a Private Git Repository
 modified_at: 2017-02-08 17:39:00
-categories: languages ruby
-tags: ruby gem private git
+categories: ruby
+tags: gem ruby private git languages
 ---
 
 You may want to use a gem in your app which is private and stored in a custom Git repository. Note that if this

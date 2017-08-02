@@ -1,8 +1,9 @@
 ---
 title: Managing PostgreSQL extensions
 modified_at: 2015-11-05 00:00:00
-category: databases
-tags: databases postgresql extensions
+category: postgresql
+order: 2
+tags: extensions postgresql addons databases
 ---
 
 {% include info_command_line_tool.md %}

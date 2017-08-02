@@ -1,8 +1,9 @@
 ---
 title: Child application
 modified_at: 2017-03-10 00:00:00
-category: app
-tags: app child
+category: management
+order: 10
+tags: child app
 ---
 
 You may want to create an application that inherit from an existing

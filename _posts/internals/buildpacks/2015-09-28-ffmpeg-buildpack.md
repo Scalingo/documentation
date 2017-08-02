@@ -1,9 +1,8 @@
 ---
 title: FFmpeg Buildpack
 modified_at: 2015-09-28 00:00:00
-categories: internals
-tags: buildpacks build image ffmpeg
-permalink: /buildpacks/ffmpeg/
+categories: buildpacks
+tags: build buildpacks image ffmpeg internals
 ---
 
 # Purpose of this buildpack

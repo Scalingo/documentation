@@ -1,9 +1,8 @@
 ---
-title: PHP - Secure your app with HTTP Basic Auth
+title: Secure your app with HTTP Basic Auth
 modified_at: 2016-06-24 00:00:00
-category: languages
-tags: php, http, security, basic-auth
-permalink: /languages/php/basic-auth/
+category: php
+tags: auth php http security basic-auth languages
 ---
 
 ## Introduction

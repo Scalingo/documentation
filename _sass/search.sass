@@ -1,46 +1,51 @@
 .search-block
-  height: 164px
-  padding: 64px 0px
-  background-image: url("/assets/images/search-bg.jpg")
-  background-size: cover
+  padding: 0
   width: 100%
-  background-position: -700px
-  h2
-    text-align: center
-    a
-      margin: 0px 0px 20px 0px
-      font-weight: 900
-      font-size: 40px
-      color: whitesmoke
 
 .search-form
   position: relative
-  margin-left: auto
-  margin-right: auto
-  max-width: 640px
-  width: 66%
+
   .search-icon
     position: absolute
     z-index: 1
-    top: 22px
-    left: 16px
-    color: #424242
+    top: 27%
+    right: 0
+    color: #464a4c
+    font-size: 80%
 
 #search-input
   -webkit-appearance: none
-  background-color: #FAFAFA
-  border-radius: 2px
-  border: 0px
   box-sizing: border-box
-  font-size: 15px
+  font-size: 14.5px
   outline: none
-  padding: 0
-  padding: 24px 24px 24px 56px
-  transition: box-shadow .4s ease, background-color .4s ease
-  width: 100%
-  &:focus
-    background-color: white
-    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14),0 6px 30px 5px rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2)
+  padding: 7px 0 6px 55px
+  background: transparent
+  border: 0 none
+  direction: ltr !important
+  -webkit-transition: all 0.2s linear
+  -moz-transition: all 0.2s linear
+  transition: all 0.2s linear
+
+#search-input:focus
+  width: 220%
+
+.index
+  .search-block
+    margin: 65px 15% 20px
+    width: 100%
+    .search-icon
+      top: 34%
+      left: 15px
+    #search-input
+      color: #03a9f4
+      font-size: 20px
+      padding: auto
+      background: white
+      box-shadow: 0px 0px 7px rgba(0,0,0,.12)
+      border: 1px solid rgba(0,0,0,.1)
+      border-radius: 0
+  #search-input:focus
+    width: 100%
 
 //
 // Algolia Docsearch
@@ -75,6 +80,9 @@ $breakpoint-large: 768px
   padding-top: 0
   transition: all .2s ease
   width: 100%
+  background-color: white
+  right: 0px !important
+  left: auto !important
 
 .algolia-docsearch-suggestion
   border-bottom: 1px solid $color-border

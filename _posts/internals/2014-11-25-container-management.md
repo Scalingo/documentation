@@ -1,8 +1,9 @@
 ---
 title: Container Management
 modified_at: 2016-11-16 00:00:00
-category: internals
-tags: internals containers
+category: configuration
+order: 4
+tags: containers internals
 ---
 
 ## Zero-downtime operations

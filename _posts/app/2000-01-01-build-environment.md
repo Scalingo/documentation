@@ -1,8 +1,9 @@
 ---
 title: Deployment Environment
 modified_at: 2016-04-26 00:00:00
-category: app
-tags: app build deployment configuration environment
+category: configuration
+tags: build deployment configuration environment app
+order: 7
 ---
 
 When your application is deployed, the build container is containing the environment

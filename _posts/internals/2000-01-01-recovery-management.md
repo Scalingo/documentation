@@ -2,7 +2,8 @@
 title: Recovery management after Platform problem
 modified_at: 2016-05-31 00:00:00
 category: internals
-tags: internals faq crash recovery
+order: 9
+tags: recovery faq crash internals
 ---
 
 ## What happen when a server of the platform is unavailable (crash, fire, hardware problem)?

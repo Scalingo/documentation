@@ -1,8 +1,9 @@
 ---
-title: Scalingo database add-ons
+title: Databases and Addons
 modified_at: 2014-11-24 00:00:00
-category: databases
-tags: index-databases polydbs
+category: addons
+order: 0
+tags: databases index-databases polydbs
 index: 0
 ---
 

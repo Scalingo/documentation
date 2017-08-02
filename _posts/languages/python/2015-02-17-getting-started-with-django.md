@@ -1,10 +1,9 @@
 ---
-title: Getting Started with Django
+title: Tutorial Django
 modified_at: 2015-02-17 00:00:00
-category: getting-started
-tags: python django tutorial getting-started-tutorial
+category: python
+tags: django python tutorial getting-started-tutorial
 index: 3
-permalink: /languages/python/getting-started-with-django/
 ---
 
 {% include info_tutorial_requirements.md %}

@@ -1,9 +1,8 @@
 ---
 title: Multi Buildpack
 modified_at: 2016-05-17 00:00:00
-categories: internals
-tags: buildpacks build image multi
-permalink: /buildpacks/multi/
+categories: buildpacks
+tags: buildpack build image multi internals
 ---
 
 # Purpose of this buildpack

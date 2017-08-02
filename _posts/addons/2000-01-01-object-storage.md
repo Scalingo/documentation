@@ -2,7 +2,8 @@
 title: Private Beta - Scalingo Object Storage Addon
 modified_at: 2016-07-29 00:00:00
 category: addons
-tags: fs filesystem addon custom feature storage
+tags: object-storage fs filesystem addon custom feature storage
+order: 3
 ---
 
 ## Introduction

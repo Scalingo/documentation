@@ -3,6 +3,7 @@ title: Deploy to Scalingo from CircleCI
 modified_at: 2016-06-14 00:00:00
 category: deployment
 tags: ci deployment build circle-ci
+order: 7
 ---
 
 This page describes steps to setup **Continuous Deployment** from CircleCI to Scalingo. Follow this guide to automatically deploy to Scalingo after a successful build.

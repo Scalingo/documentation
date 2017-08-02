@@ -1,8 +1,9 @@
 ---
 title: Let's Encrypt availability
 modified_at: 2016-12-23 00:00:00
-category: app
-tags: app certificate ssl https
+category: configuration
+order: 11
+tags: certificate ssl https app
 ---
 
 ## Let's Encrypt certificates on Scalingo
