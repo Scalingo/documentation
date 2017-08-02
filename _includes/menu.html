@@ -8,93 +8,58 @@
     {% if site.categories.[categorie] %}
 {% assign posts = (site.categories.[categorie] | sort: 'order') %}
       {% for post in posts %}
-        {% if page.url == post.url %}
-          <li class="currentsection">
-        {% else %}
-          {% if page.title == post.tags.first %}
-            <li class="currentcategorie">
-          {% else %}
-            <li>
+        {% if page.url == post.url %} <li class="currentsection">
+        {% else %} 
+          {% if page.title == post.tags.first %} <li class="currentcategorie">
+          {% else %} <li>
           {% endif %}
         {% endif %}
           <a title="{{ post.title }}" href="{{ post.url }}">
-            <p>
-              {% if site.categories.[post.tags.first] %}
-                <span class="fa fa-chevron-right"></span>
-                {% if post.categories.first == 'languages' or post.categories.first == 'addons' %}
-                  {{ post.title }}
-                {% else %}
-                  {{ post.tags.first | replace: '-', ' ' }}
-                {% endif %}
-              {% else %}
-                {{ post.title }}
+            <p>{% if site.categories.[post.tags.first] %}
+              <span class="fa fa-chevron-right"></span>
+              {% if post.categories.first == 'languages' or post.categories.first == 'addons' %} {{ post.title }}
+              {% else %} {{ post.tags.first | replace: '-', ' ' }}
               {% endif %}
-            </p>
+            {% else %}
+              {{ post.title }}
+            {% endif %}</p>
           </a>
           {% if site.categories.[post.tags.first] %}
             <ul>
               <li>
                 <a title="{{ post.title }}" href="{{ post.url }}">
-                  <p>
-                    {% if post.categories.first == 'languages' or post.categories.first == 'addons' %}
-                      Introduction
-                    {% else %}
-                      {{ post.title }}
-                    {% endif %}
-                  </p>
+                  <p>{% if post.categories.first == 'languages' or post.categories.first == 'addons' %}Introduction{% else %}{{ post.title }}{% endif %}</p>
                 </a>
               </li>
 {% assign subposts = (site.categories.[post.tags.first] | sort: 'order') %}
         {% for subpost in subposts %}
-          {% if page.url == subpost.url %}
-            <li class="currentsection1">
-          {% else %}
-            <li>
+          {% if page.url == subpost.url %} <li class="currentsection1">
+          {% else %} <li>
           {% endif %}
             <a title="{{ subpost.title }}" href="{{ subpost.url }}">
-              <p>
-                {% if site.categories.[subpost.tags.first] %}
-                  <span class="fa fa-chevron-right"></span>
-                {% endif %}
-                {{ subpost.title }}
-              </p>
+              <p>{% if site.categories.[subpost.tags.first] %}<span class="fa fa-chevron-right"></span>{% endif %}{{ subpost.title }}</p>
             </a>
             {% if site.categories.[subpost.tags.first] %}
               <ul>
                 <li>
                   <a title="{{ subpost.title }}" href="{{ subpost.url }}">
-                    <p>
-                      Index
-                    </p>
+                    <p>Index</p>
                   </a>
                 </li>
 {% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'order') %}
         {% for subpost2 in subposts2 %}
-          {% if page.url == subpost2.url %}
-            <li class="currentsection2">
-          {% else %}
-            <li>
+          {% if page.url == subpost2.url %} <li class="currentsection2">
+          {% else %} <li>
           {% endif %}
           <a title="{{ subpost2.title }}" href="{{ subpost2.url }}">
-              <p>
-                {{ subpost2.title }}
-              </p>
+              <p>{{ subpost2.title }}</p>
             </a>
           </li>
         {% endfor %}
-
-
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-
-
             </ul>
-          {% endif %}
-        </li>
+              {% endif %}</li>
+          {% endfor %}</ul>
+        {% endif %}</li>
       {% endfor %}
-    {% endif %}
-  </ul>
-  {% endfor %}
-</ul>
+    {% endif %}</ul>
+  {% endfor %}</ul>

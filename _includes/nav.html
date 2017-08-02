@@ -29,36 +29,22 @@
         <div class="col-12">
           <nav class="breadcrumb-content">
             <li class="breadcrumb-item pull-left"><a href="/">Documentation</a></li>
-
-            {% if page.title != '404 Not found' %}
-
-              {% assign posts = site.posts %}
-              {% for post in posts %}
-                {% if post.tags.first == page.categories.first and post.title != 'Categories' %}
-                  {% for post2 in posts %}
-                    {% if post2.tags.first == post.categories.first and post2.title != 'Categories' %}
-                      <li class="breadcrumb-item"><a href="{{ post2.url }}">{{ post2.title }}</a></li>
-                    {% endif %}
-                  {% endfor %}
-
+            {% if page.title != '404 Not found' %} {% assign posts = site.posts %}
+              {% for post in posts %}{% if post.tags.first == page.categories.first and post.title != 'Categories' %}
+                {% for post2 in posts %}{% if post2.tags.first == post.categories.first and post2.title != 'Categories' %}
+                  <li class="breadcrumb-item"><a href="{{ post2.url }}">{{ post2.title }}</a></li>
+                {% endif %}{% endfor %}
 {% assign categories = site.categories.category %}
-{% for category in categories %}
-  {% if category.title == post.tags.first %}
-    <li class="breadcrumb-item"><a href="/articles/{{ post.tags.first }}-index">{{ post.tags.first | replace: '-', ' ' }}</a></li>
-    {% assign crumb = 'true' %}
-  {% endif %}
-{% endfor %}
+{% for category in categories %}{% if category.title == post.tags.first %}
+  <li class="breadcrumb-item"><a href="/articles/{{ post.tags.first }}-index">{{ post.tags.first | replace: '-', ' ' }}</a></li>
+  {% assign crumb = 'true' %}
+{% endif %}{% endfor %}
 {% unless crumb %}
   <li class="breadcrumb-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endunless %}
-
-                {% endif %}
-              {% endfor %}
-
+              {% endif %}{% endfor %}
             {% endif %}
-
             <li class="breadcrumb-item active"><a href="{{ page.url }}">{{ page.title }}</a></li>
-
             <ul class="navbar-nav pull-right">
               {% include search.html %}
             </ul>
