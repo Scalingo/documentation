@@ -15,10 +15,13 @@ title: What is Epoch
 modified_at: 1970-01-01 00:00:00
 categories: unix
 tags: time
+order: 5
 ---
 ```
 
-Be aware that the `categories` will be used in the final URL. In the case of the previous *front matter*, the generated URL will be: `/unix/what-is-epoch.html`.
+Be aware that the `tags` will not begin with an existing categorie that must not be placed here.
+
+If you forget the order, the article will be placed on the first place.
 
 If you add a `permalink` that doesn't ends with `.html` in the *front matter* you have to append a trailing slash. Otherwise, the generated URL will not match the real accessible URL, which is troublesome for crawlers.
 
