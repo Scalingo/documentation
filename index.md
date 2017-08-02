@@ -61,6 +61,8 @@ date: 2015-09-09 00:00:00
           </div>
         </div>
       </div>
+{% include ga_tracker.html %}
+{% include fb_pixel.html %}
     </main>
   </body>
 </html>

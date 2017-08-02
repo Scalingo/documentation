@@ -2,13 +2,13 @@ define(['jquery'], function ($){
     // Stick the #menu to the top of the window
     if (window.location.pathname !== '/404.html' && document.title.indexOf('404 Not found') == -1) {
         var menu = $('.menu');
-        var menuHomeY = 111;
+        var menuHomeY = $(".navbar").first().height()+$(".breadcrumb").first().height();
         var $w = $(window);
         $(document).ready(function(){
             menu.css({
                 'position': 'absolute',
                 'top': 'auto',
-                'height': $(window).height()-74
+                'height': $(window).height()-$(".navbar").first().height()-$(".breadcrumb").first().height()-6
             });
             isFixed = false;
         });
@@ -28,7 +28,7 @@ define(['jquery'], function ($){
                 menu.css({
                     'position': 'absolute',
                     'top': 'auto',
-                    'height': $(window).height()-74
+                    'height': $(window).height()-$(".navbar").first().height()-$(".breadcrumb").first().height()-6
                 });
                 isFixed = false;
             }
