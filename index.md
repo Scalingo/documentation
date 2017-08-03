@@ -39,7 +39,7 @@ date: 2015-09-09 00:00:00
                   <div class="col-12">
                     <h1>Platform documentation main chapters</h1>
                     <div class="row">
-                      <ul>
+                      <ul class="mb-0 mt-0">
                         {% assign posts = site.categories.platform | sort:'order' %}
                         {% for post in posts %}
                           <li>
@@ -62,7 +62,7 @@ date: 2015-09-09 00:00:00
                   <div class="container">
                     <h1>Latest modified articles</h1>
                     <div class="row">
-                      <ul>
+                      <ul class="mb-0 mt-0">
                         {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
                         {% for post in recent_posts limit:12 %}
                           <li>
