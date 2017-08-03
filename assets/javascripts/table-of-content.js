@@ -36,7 +36,7 @@ define(['jquery'], function ($) {
     })
 
     sidebar_nav.prepend(ul)
-    sidebar_nav.prepend('<h2>Table of content</h2>')
+    sidebar_nav.prepend('<div class="title h3">Table of content</div>')
   }
 
 })

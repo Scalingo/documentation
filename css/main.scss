@@ -45,9 +45,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar-nav {
   padding: 20px;
+  margin-bottom: 20px;
   border-top: 1px solid hsla(0, 0%, 85%, 1);
   border-bottom: 1px solid hsla(0, 0%, 85%, 1);
   color: hsla(0, 0%, 60%, 1);
+  .title {
+    padding-top: 0;
+  }
   a, a:hover, a:focus {
     color: hsla(0, 0%, 60%, 1);
     font-size: 15px;
