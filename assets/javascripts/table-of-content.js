@@ -10,7 +10,7 @@ define(['jquery'], function ($) {
   if (window.location.pathname !== '/404.html' && document.title.indexOf('404 Not found') == -1) {
     var sidebar_nav = $('.sidebar-nav')
     var headers = $('.main-content').find('h2')
-    var ul = $('<ul>').addClass('fa-ul')
+    var ul = $('<ul>').addClass('fa-ul mb-0')
 
     headers.each(function (index, el) {
       // make id from cotent
