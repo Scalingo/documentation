@@ -64,9 +64,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background-color: #FAFAFA;
-  color: hsl(210, 6%, 25%);
-  font-family: 'Roboto', sans-serif;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: whitesmoke;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   p {
     margin: 5px 0;
   }
@@ -81,6 +81,10 @@ body {
 
 body.noscroll {
     overflow: hidden;
+}
+
+nav.navbar {
+  border-bottom: 0;
 }
 
 blockquote {
@@ -125,9 +129,34 @@ a:hover, a:focus, a:active {
   text-decoration: none;
 }
 
+// .card {
+//   word-wrap: break-word;
+//   margin-bottom: 8%;
+// }
+
 .card {
-  word-wrap: break-word;
-  margin-bottom: 8%;
+  border: 0;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+  .card-block {
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 2rem;
+    margin: 0;
+  }
+  h2 {
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.25rem;
+    color: rgba(0, 0, 0, 0.87);
+    margin:  0.8rem 0 0 0;
+  }
 }
 
 code, a > code {

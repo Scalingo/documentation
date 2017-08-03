@@ -10,53 +10,77 @@ date: 2015-09-09 00:00:00
       {% include nav.html %}
       <div class="container index">
         <div class="row">
-          <div class="search-block">
-            <div class="search-form">
-              <span class="fa fa-search search-icon"></span>
-              <input type="text" class="form-control" id="search-input" placeholder="Search" autofocus="true">
-            </div>
-          </div>
-        </div>
-        <div class="row languages">
-          {% include languages.html %}
-        </div>
-        <div class="row addons">
-          {% include addons.html %}
-        </div>
-        <div class="row platform">
           <div class="col-12">
-            <h3>Useful categories for your application</h3>
-            <div class="row">
-              <ul class="column">
-                {% assign posts = site.categories.platform | sort:'order' %}
-                {% for post in posts %}
-                  <li>
-                    <a href="{{ post.url }}">
-                      <span class="fa fa-angle-right"></span>{{ post.title }}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
+            <div class="card">
+              <div class="card-block">
+                <div class="row">
+                  <div class="col-12 col-sm-8 offset-sm-2">
+                    <div class="search-block mt-5">
+                      <div class="search-form">
+                        <span class="fa fa-search search-icon"></span>
+                        <input type="text" class="form-control" id="search-input" placeholder="Search" autofocus="true">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="languages mt-5">
+                  {% include languages.html %}
+                </div>
+                <div class="addons mt-5">
+                  {% include addons.html %}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="row recent">
-          <div class="container">
-            <h3>Latest modified articles</h3>
-            <div class="row">
-              <ul class="column">
-                {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
-                {% for post in recent_posts limit:12 %}
-                  <li>
-                    <a href="{{ post.url }}">
-                      <span class="fa fa-angle-right"></span>{{ post.title }}
-                    </a>
-                    <small class="text-muted">
-                      {{ post.modified_at | date_to_string }}
-                    </small>
-                  </li>
-                {% endfor %}
-              </ul>
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <div class="card mt-4">
+              <div class="card-block">
+                <div class="row platform">
+                  <div class="col-12">
+                    <h1>Platform documentation main chapters</h1>
+                    <div class="row">
+                      <ul>
+                        {% assign posts = site.categories.platform | sort:'order' %}
+                        {% for post in posts %}
+                          <li>
+                            <a href="{{ post.url }}">
+                              <span class="fa fa-angle-right"></span>{{ post.title }}
+                            </a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="card mt-4">
+              <div class="card-block">
+                <div class="row recent">
+                  <div class="container">
+                    <h1>Latest modified articles</h1>
+                    <div class="row">
+                      <ul>
+                        {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
+                        {% for post in recent_posts limit:12 %}
+                          <li>
+                            <a href="{{ post.url }}">
+                              <span class="fa fa-angle-right"></span>{{ post.title }}
+                            </a>
+                            <small class="text-muted">
+                              {{ post.modified_at | date_to_string }}
+                            </small>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

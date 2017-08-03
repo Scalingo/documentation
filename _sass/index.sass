@@ -8,23 +8,30 @@
     padding: 0 25px
     a
       text-align: center
+    &:hover
+      a
+        text-decoration: underline
+        color: rgba(0, 0, 0, 0.87)
 
   img
     width: 100%
     height: 80px
-    filter: grayscale(50%)
-    -webkit-filter: grayscale(50%) brightness(100%)
-    -moz-filter: grayscale(50%) brightness(100%)
-    -ms-filter: grayscale(50%) brightness(100%)
-    -o-filter: grayscale(50%) brightness(100%)
+    filter: grayscale(1) contrast(0.8)
+    opacity: 0.9
+    transition-duration: .3s
+    transition-property: all
+    transition-timing-function: cubic-bezier(.4,0,.2,1)
+    &:hover
+      filter: unset
 
   h3
-    margin: 45px 0
-    color: hsla(0, 0%, 30%, 1)
+    // margin: 45px 0
+    // color: hsla(0, 0%, 30%, 1)
 
   h4
     font-size: 1em
-    padding: 20px 0
+    margin: 20px 0
+    font-weight: 500
 
   h4
     color: #03a9f4
@@ -33,13 +40,8 @@
     ul
       padding: 0
       a
-        color: hsla(0, 0%, 55%, 1)
+        color: rgba(17,17,17,0.6)
         text-decoration: underline
-      a:after
-        color: #292b2c
-        content: ','
-      a:last-child:after
-        content: '.'
 
   .platform, .recent
     ul
@@ -51,11 +53,6 @@
         span
           color: hsla(0, 0%, 50%, 1)
           margin-right: 5px
-
-  .platform
-    li:first-child
-      a
-        font-weight: bold
 
   .recent
     li
