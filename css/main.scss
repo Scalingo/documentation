@@ -51,11 +51,13 @@ h1, h2, h3, h4, h5, h6 {
   color: hsla(0, 0%, 60%, 1);
   .title {
     padding-top: 0;
+    font-weight: 300;
   }
   .fa-li {
     margin-top: 1px;
   }
   a {
+    font-weight: 300;
     color: hsla(0, 0%, 60%, 1);
     &:hover, &:focus {
       color: hsla(0, 0%, 40%, 1);
