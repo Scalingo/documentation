@@ -24,3 +24,4 @@ If you want to deploy an application since a branch doesn't called `master`, put
 ```bash
 git push scalingo yourbranche:master
 ```
+
