@@ -25,3 +25,10 @@ If you want to deploy an application since a branch doesn't called `master`, put
 git push scalingo yourbranche:master
 ```
 
+### Git authentication and SSH
+
+If you have any problem to create the application, it must be due to a git autentication error or an invalid SSH key error. Please see [Troubleshooting git push and SSH common issues]({% post_url ssh/2000-01-01-troubleshooting-ssh %})
+
+### And after?
+
+See [Deployment Environment]({% post_url app/2000-01-01-build-environment %}) to configure your application and [Procfile]({% post_url internals/2014-12-01-procfile %}).
