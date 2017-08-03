@@ -3,6 +3,7 @@ title: Deploy with Git
 modified_at: 2017-08-03 00:00:00
 category: deployment
 tags: git deployment
+order: 0
 ---
 
 To deploy with git, you'll have to create a new application on Scalingo, choose your addon if you need one and follow the command on the section deployment. 
