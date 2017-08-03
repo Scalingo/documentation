@@ -10,7 +10,7 @@ define(['jquery'], function ($) {
   if (window.location.pathname !== '/404.html' && document.title.indexOf('404 Not found') == -1) {
     var sidebar_nav = $('.sidebar-nav')
     var headers = $('.main-content').find('h2')
-    var ul = $('<ul>').addClass('list-unstyled')
+    var ul = $('<ul>').addClass('fa-ul')
 
     headers.each(function (index, el) {
       // make id from cotent
@@ -29,7 +29,7 @@ define(['jquery'], function ($) {
       })
 
       var li = $('<li>')
-        .append('<span class="fa fa-angle-right"></span>')
+        .append('<i class="fa-li fa fa-angle-right"></i>')
         .append(a)
 
       ul.append(li)

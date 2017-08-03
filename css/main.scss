@@ -52,14 +52,15 @@ h1, h2, h3, h4, h5, h6 {
   .title {
     padding-top: 0;
   }
-  a, a:hover, a:focus {
-    color: hsla(0, 0%, 60%, 1);
-    font-size: 15px;
-    margin-left: 10.5px;
+  .fa-li {
+    margin-top: 1px;
   }
-  a:hover, a:focus {
-    color: hsla(0, 0%, 40%, 1);
-    text-decoration: underline;
+  a {
+    color: hsla(0, 0%, 60%, 1);
+    &:hover, &:focus {
+      color: hsla(0, 0%, 40%, 1);
+      text-decoration: underline;
+    }
   }
   span {
     position: absolute;
