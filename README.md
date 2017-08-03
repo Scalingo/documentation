@@ -19,7 +19,7 @@ order: 5
 ---
 ```
 
-Be aware that the `tags` will not begin with an existing categorie that must not be placed here.
+Be aware that the `tags` will not begin with an existing category that must not be placed here.
 
 If you forget the order, the article will be placed on the first place.
 
