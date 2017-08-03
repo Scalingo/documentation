@@ -52,7 +52,7 @@ $ scalingo addons-plans scalingo-mongodb
 
 ## Getting your connection URI
 
-Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_MONGO_URL` and `MONGO_URL`. `MONGO_URL` is an alias to `SCALINGO_MONGO_URL` for the convenience of some libraries such as the framework [Meteor]({% post_url languages/javascript/meteor/2015-02-09-getting-started-with-meteor %}) or the Ruby gem **mongoid**, but using `SCALINGO_MONGO_URL` is prefered in most cases. To find out how to use them in your code please refer to [Application environment]({% post_url app/2014-09-15-environment %}).
+Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_MONGO_URL` and `MONGO_URL`. `MONGO_URL` is an alias to `SCALINGO_MONGO_URL` for the convenience of some libraries such as the framework [Meteor]({% post_url languages/javascript/meteor/2015-02-09-getting-started-with-meteor %}) or the Ruby gem **mongoid**, but using `SCALINGO_MONGO_URL` is prefered in most cases. To find out how to use them in your code please refer to [Application environment]({% post_url configuration/2000-01-01-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 

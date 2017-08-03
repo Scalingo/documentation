@@ -25,7 +25,7 @@ dependencies and the code of your application is weighing more that this limit.
 Different solutions are available to lighten the image of your application:
 
 * Try to remove unused external dependencies or assets.
-* Define a [.slugignore file]({% post_url internals/2015-03-24-slugignore %}) to exclude files from the
+* Define a [.slugignore file]({% post_url configuration/2000-01-01-slugignore %}) to exclude files from the
   image.
 
 If you absolutely need all these data, please contact us at

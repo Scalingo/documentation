@@ -15,7 +15,7 @@ your deployment.
 
 ## Configuration
 
-To setup a Post-deployment hook, you just have to add a `postdeploy` entry in your [Procfile]({% post_url internals/2014-12-01-procfile %}):
+To setup a Post-deployment hook, you just have to add a `postdeploy` entry in your [Procfile]({% post_url configuration/2000-01-01-procfile %}):
 
 ```yml
 postdeploy: command you want to run
@@ -44,8 +44,8 @@ The Post-deployment hook will be part of the deployment process, things will hap
 
 The environment available in the context of the container running the
 `postdeploy` hook will be exactly the same as the one of your running app. It
-contains the environment variables from your app, with the one we inject in any
-[runtime environment]({% post_url app/2000-01-01-runtime-environment %})
+contains the [environment variables]({% post_url configuration/2000-01-01-environment %}) from your app, with the one we inject in any
+[runtime environment]({% post_url configuration/2000-01-01-environment %}).
 
 ## Examples
 

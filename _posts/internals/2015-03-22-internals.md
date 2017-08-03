@@ -6,11 +6,11 @@ tags: internals index
 order: 7
 ---
 
-## [Procfile management]({% post_url internals/2014-12-01-procfile %})
+## [Procfile management]({% post_url configuration/2000-01-01-procfile %})
 
 Define how the platform will start your application.
 
-[Documentation]({% post_url internals/2014-12-01-procfile %})
+[Documentation]({% post_url configuration/2000-01-01-procfile %})
 
 <hr>
 
@@ -33,5 +33,5 @@ applicaion expect and how to handle long running connections.
 
 In your application you may want to know either a user has accessed your
 application through HTTPS or HTTP, the following guide will tell your more
-about this: [Detecting HTTPS requests]({% post_url internals/2015-03-23-detecting-https-requests %}).
+about this: [Detecting HTTPS requests]({% post_url management/2000-01-01-detecting-https-requests %}).
 

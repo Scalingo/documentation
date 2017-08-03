@@ -37,7 +37,7 @@ You can download the latest version by following this link : [https://github.com
 
 ## Advanced apps migration
 
-* The [Procfile]({% post_url internals/2014-12-01-procfile %}) can remain the same
+* The [Procfile]({% post_url configuration/2000-01-01-procfile %}) can remain the same
 * You need to set the same environment variables as the ones defined on your Heroku app
 * You have to set your Scalingo addons according to the addons you had on your Heroku app.
   If you require an addon that is not present in [this list](https://scalingo.com/addons),

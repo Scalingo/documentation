@@ -52,7 +52,7 @@ $ scalingo addons-plans scalingo-redis
 
 ## Getting your connection URI
 
-Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_REDIS_URL` and `REDIS_URL`. `REDIS_URL` is an alias to `SCALINGO_REDIS_URL` for the convenience of some libraries such as the Ruby gem [sidekiq](http://sidekiq.org/), but using `SCALINGO_REDIS_URL` is prefered in most cases. To find out how to use it in your code please refer to [Application environment]({% post_url app/2014-09-15-environment %}).
+Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_REDIS_URL` and `REDIS_URL`. `REDIS_URL` is an alias to `SCALINGO_REDIS_URL` for the convenience of some libraries such as the Ruby gem [sidekiq](http://sidekiq.org/), but using `SCALINGO_REDIS_URL` is prefered in most cases. To find out how to use it in your code please refer to [Application environment]({% post_url configuration/2000-01-01-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 

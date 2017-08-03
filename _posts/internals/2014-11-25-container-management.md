@@ -1,7 +1,7 @@
 ---
 title: Container Management
 modified_at: 2016-11-16 00:00:00
-category: configuration
+category: internals
 tags: containers internals
 order: 4
 ---

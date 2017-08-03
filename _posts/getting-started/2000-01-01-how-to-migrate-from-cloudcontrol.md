@@ -136,7 +136,7 @@ scalingo -a cloud-app domains-add my.cloudapp.com
 ```
 
 For more informations about domains on Scalingo, take a look at our dedicated
-[domain name management page]({% post_url app/2015-04-01-domain
+[domain name management page]({% post_url configuration/2000-01-01-domain
 %}#configure-your-domain-name).
 
 

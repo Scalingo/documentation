@@ -3,7 +3,7 @@ title: Application environment
 modified_at: 2014-09-15 00:00:00
 category: configuration
 tags: app configuration environment
-order: 6
+order: 3
 ---
 
 The environment should be used to configure your application. When your
@@ -11,6 +11,22 @@ project is deployed and a new container is started, all the variables defined
 in your environment are automatically injected into it.
 
 {% include info_environment_how_to.md %}
+
+## Build Environment
+
+During the build phase some environment variables are injected by our platform: [read more]({% post_url deployment/2000-01-01-build-environment %}).
+
+## Runtime Environment
+
+When an application container is started, the platform is using the environment
+variables defined in the application configuration but is also injecting a set of
+environment variables in its environment. In the case of `web` containers, an
+additional variable `$PORT` is defined.
+
+* `$PORT`: Port number your server has to bind on.
+* `$CONTAINER`: Type and index of the container, `web-1` or `worker-1` for instance
+* `$CONTAINER_VERSION`: Version of the container started, usually the GIT commit SHA.
+* `$APP`: Name of the application deployed
 
 ## Variable alias
 

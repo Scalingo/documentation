@@ -31,7 +31,7 @@ You can also do it by using our [Command line client]({% post_url cli/2015-09-18
 * `scalingo -a myapp env-set MYVAR=myvalue`
 * `scalingo -a myapp env-unset MYVAR`
 
-More information about app environment can be found [here]({% post_url app/2014-09-15-environment %}).
+More information about app environment can be found [here]({% post_url configuration/2000-01-01-environment %}).
 
 ------------
 
@@ -65,7 +65,7 @@ On Scalingo, you will have to add it either:
 * using our [CLI]({% post_url cli/2015-09-18-command-line-tool %}) **->** `scalingo -a my-app domains-add mydomain.com`
 * or using our [dashboard](https://my.scalingo.com/) **->** https://my.scalingo.com/apps/**my-app**/domains
 
-For more informations about domains on Scalingo, take a look at our dedicated [domain name management page]({% post_url app/2015-04-01-domain %}#configure-your-domain-name).
+For more informations about domains on Scalingo, take a look at our dedicated [domain name management page]({% post_url configuration/2000-01-01-domain %}#configure-your-domain-name).
 
 ## spdy
 
@@ -101,7 +101,7 @@ You can add databases using:
 
 ### <u>processes</u>
 
-On Scalingo, process definition is done through the Procfile file (take a look at our [dedicated Procfile page](/internals/procfile.html) for more informations).
+On Scalingo, process definition is done through the Procfile file (take a look at our [dedicated Procfile page]({% post_url configuration/2000-01-01-procfile %}) for more informations).
 
 format: `<container_name>: <command>`
 
