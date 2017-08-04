@@ -31,7 +31,7 @@
                   <p>{% if post.categories.first == 'languages' or post.categories.first == 'addons' %}Introduction{% else %}{{ post.title }}{% endif %}</p>
                 </a>
               </li>
-{% assign subposts = (site.categories.[post.tags.first] | sort: 'order') %}
+{% assign subposts = (site.categories.[post.tags.first] | sort: 'order', 'last') %}
         {% for subpost in subposts %}
           {% if page.url == subpost.url %} <li class="currentsection1">
           {% else %} <li>
@@ -46,7 +46,7 @@
                     <p>Index</p>
                   </a>
                 </li>
-{% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'order') %}
+{% assign subposts2 = (site.categories.[subpost.tags.first] | sort: 'order', 'last') %}
         {% for subpost2 in subposts2 %}
           {% if page.url == subpost2.url %} <li class="currentsection2">
           {% else %} <li>

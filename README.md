@@ -21,7 +21,7 @@ order: 5
 
 Be aware that the `tags` will not begin with an existing category that must not be placed here.
 
-If you forget the order, the article will be placed on the first place.
+If you forget the order, the article will be placed on the lastest places.
 
 If you add a `permalink` that doesn't ends with `.html` in the *front matter* you have to append a trailing slash. Otherwise, the generated URL will not match the real accessible URL, which is troublesome for crawlers.
 
