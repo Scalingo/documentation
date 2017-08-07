@@ -59,9 +59,11 @@ web: iojs server.js
 
 In your `package.json`, add the following block:
 
-```js
-"engines": {
-  "iojs": "1.1.x"
+```json
+{
+  "engines": {
+    "iojs": "1.1.x"
+  }
 }
 ```
 
