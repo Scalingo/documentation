@@ -6,35 +6,33 @@ tags: git deployment
 order: 1
 ---
 
-To deploy with GitHub, you'll have to create a new application on Scalingo, choose your addon if you need one and follow the command on the section deployment, like in Deploy with Git.
+To deploy with GitHub you'll have to create a new application on Scalingo and link it to a GitHub repository and branch.
 
 ## Link your app to GitHub
 
-In the section Code in your Dashboard, you'll find a category Deploy with GitHub. Please click on `Link this app to GitHub` and check you are in the right account, choose your GitHub user, and find your GitHub repo in the list or with the searchbar.
+In the section Code in your Dashboard, you'll find a category *Deploy with GitHub*. Please click on `Link this app to GitHub` and check you are in the right account, choose your GitHub user, and find your GitHub repo in the list or with the searchbar.
+
+In order to link your Scalingo app to a GitHub repo, GitHub will prompt for your authorization. You must accept for our GitHub integration to work.
 
 ## Auto deploy or manual deploy?
 
-Once your repo is linked, you'll have the choose to deploy automatically or manually your application in the same category Deploy with GitHub actualized. You'll have to select the branch that you want to deploy.
+Once your repo is linked, you'll have the choose to deploy automatically or manually your application. You'll have to select the branch that you want to deploy.
 
-If you choose to deploy automatically, your application will be updated each time you'll push on your repo GitHub and we will add a new SSH key to your GitHub account.
+With auto deploy enabled, your application will be updated each time you'll push on your GitHub repo.
 
-If you choose to deploy manually you will have to active the deployment each time you want to update your application.
+You can still trigger a manual deployment by going to the "Manual deploy" section and choose the branch to deploy.
 
 <img src="/assets/images/auto-manual-deploy.jpg" width="100%">
 
 ## Review apps
 
-As for the deployment, the review apps could be create automatically for each pull request or for only certains pull requests, manually.
+Review apps are special [child apps]({% post_url app/2017-03-10-child-apps %}) linked to a GitHub pull request.
 
-If you choose to create automatically review app, you'll have multiple option: to detroy the review app when the pull request is closed, to detroy the review app after some hours.
+Review apps can be created automatically every time a pull request is opened or they can be created manually by selecting the Pull Request to deploy among the currently opened ones (our Pull Request viewer will help you with this).
 
-Your child aplication will have the same addons and environment variables, like your first application.
+By default Review Apps are automatically destroyed when the pull request is closed. But you can specify a duration after which the Review App is destroyed.
 
-For more information, you must see the posts [GitHub integration, Auto Deploy and Review Apps]({% post_url integrations/2000-01-01-github-integration %}) and [Review apps]({% post_url integrations/2017-03-10-review-apps %}).
-
-## Unlink your repo GitHub
-
-The first line under the title of the category Deploy with GitHub remembers you your repo link. There is also the button to `unlink` the application.
+For more information, you can read the more specific documentation pages [GitHub integration, Auto Deploy and Review Apps]({% post_url integrations/2000-01-01-github-integration %}) and [Review apps]({% post_url integrations/2017-03-10-review-apps %}).
 
 ## Some suggestions
 
