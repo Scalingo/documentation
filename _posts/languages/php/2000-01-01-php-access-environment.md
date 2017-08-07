@@ -20,16 +20,17 @@ To read an environment variable, you just have to read from the
 `MONGO_URL`
 
 ```php
-$mongo_url_str = $_ENV["MONGO_URL"];
-$mongo_url = parse_url($mongo_url_str);
+<?php
+  $mongo_url_str = $_ENV["MONGO_URL"];
+  $mongo_url = parse_url($mongo_url_str);
 
-/*
- * Then configure your app with
- *   Hostname:      $mongo_url.host
- *   Port:          $mongo_url.port
- *   Username:      $mongo_url.user
- *   Password:      $mongo_url.pass
- *   Database Name: substr($mongo_url.path, 1) after removing prefixed '/'
- */
+  /*
+   * Then configure your app with
+   *   Hostname:      $mongo_url.host
+   *   Port:          $mongo_url.port
+   *   Username:      $mongo_url.user
+   *   Password:      $mongo_url.pass
+   *   Database Name: substr($mongo_url.path, 1) after removing prefixed '/'
+   */
 
 ```

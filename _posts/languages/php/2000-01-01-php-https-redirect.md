@@ -25,7 +25,7 @@ mkdir config
 
 Edit the file `nginx-https-redirection.conf` in this directory with the following content:
 
-```bash
+```C++
 add_header Strict-Transport-Security max-age=31536000;
 
 if ($http_x_forwarded_proto != "https") {
@@ -48,9 +48,9 @@ use your configuration file.
 This process requires you to edit the `composer.json` file of your project.
 Edit the file the following way:
 
-```javascript
+```json
 {
-  ...
+  "..."
   "extra": {
     "paas": {
       "nginx-includes": ["config/nginx-https-redirection.conf"]

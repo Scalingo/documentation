@@ -9,11 +9,11 @@ tags: http php framework symfony assetic deployment
 
 When a PHP application is deployed, we're looking at the `composer.json` file to know if it is using a particular framework. For Symfony 2 and 3, we're looking if the Composer dependencies contain `symfony/symfony`. If so, your app is deployed as a Symfony application.
 
-```javascript
+```json
 {
   "require": {
     "symfony/symfony": "~2.8",
-    // ....
+    "...":"..."
   }
 }
 ```
@@ -38,7 +38,7 @@ Now, you will have to choose between two solutions to make your Symfony configur
 
 Luckily, [Incenteev/ParameterHandler](https://github.com/Incenteev/ParameterHandler) (the package in charge of managing your parameters) supports environment parameters. Go to the Scalingo dashboard, and add the needed environment variables, ideally respecting the UPPERCASE_SNAKE_CASE. Then, edit your `composer.json` file and add a `extra.incenteev-parameters` key that describes the mapping between Symfony parameters and the environment variables:
 
-```js
+```json
 {
     "extra": {
         "incenteev-parameters": {
@@ -66,7 +66,7 @@ If you still want to only work with environment variables, let's remove Incentee
 Now, you'll find that Symfony [provides a native support for environement variables](https://symfony.com/doc/current/cookbook/configuration/external_parameters.html), but when Incenteev/ParameterHandler is installed (it is, by default), they are overwritten by it, since it is loaded at higher level in the framework.
 
 > Symfony will grab any environment variable prefixed with SYMFONY__ and set it as a parameter in the service container. Some transformations are applied to the resulting parameter name:
-> 
+>
 >  - SYMFONY__ prefix is removed;
 >  - Parameter name is lowercased;
 >  - Double underscores are replaced with a period, as a period is not a valid character in an environment variable name.
@@ -101,9 +101,9 @@ By default, this command executes the default _cache warmers_ that the framework
 
 If you are using Assetic to handle your assets, you may need to run a custom command once Symfony has been installed. To do so, you need to add the following piece of configuration in your `composer.json`:
 
-```javascript
+```json
 {
-  // ...,
+  "..."
   "extra": {
     "paas": {
       "compile": [

@@ -28,13 +28,14 @@ to listen to the `DATABASE_URL` environment variable.
 Eg:
 
 ```php
-$mysql_url = parse_url($_ENV["DATABASE_URL"]);
-$db = substr($mysql_url['path'], 1);
+<?php
+  $mysql_url = parse_url($_ENV["DATABASE_URL"]);
+  $db = substr($mysql_url['path'], 1);
 
-define('DB_NAME', $db);
-define('DB_USER', $mysql_url['user']);
-define('DB_PASSWORD', $mysql_url['pass']);
-define('DB_HOST', $mysql_url['host'] . ":" . $mysql_url['port']);
+  define('DB_NAME', $db);
+  define('DB_USER', $mysql_url['user']);
+  define('DB_PASSWORD', $mysql_url['pass']);
+  define('DB_HOST', $mysql_url['host'] . ":" . $mysql_url['port']);
 ```
 
 You must do the same things for all your salts and key.
@@ -42,15 +43,16 @@ We recommend using a common environment variable and set it to a random string.
 So you must adapt your `wp-config.php` to use this variable.
 
 ```php
-$key = $_ENV["SECURE_KEY"];
-define('AUTH_KEY',         $key);
-define('SECURE_AUTH_KEY',  $key);
-define('LOGGED_IN_KEY',    $key);
-define('NONCE_KEY',        $key);
-define('AUTH_SALT',        $key);
-define('SECURE_AUTH_SALT', $key);
-define('LOGGED_IN_SALT',   $key);
-define('NONCE_SALT',       $key);
+<?php
+  $key = $_ENV["SECURE_KEY"];
+  define('AUTH_KEY',         $key);
+  define('SECURE_AUTH_KEY',  $key);
+  define('LOGGED_IN_KEY',    $key);
+  define('NONCE_KEY',        $key);
+  define('AUTH_SALT',        $key);
+  define('SECURE_AUTH_SALT', $key);
+  define('LOGGED_IN_SALT',   $key);
+  define('NONCE_SALT',       $key);
 ```
 
 The only thing left is to define the `SECURE_KEY` from the dashboard or by
@@ -69,8 +71,9 @@ By default, WordPress tries to detect if the website is reached with HTTPS, howe
 To fix this problem, you need to add the following in your `wp-config.php` file ([official documentation](https://codex.wordpress.org/Function_Reference/is_ssl#Notes)):
 
 ```php
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
-    $_SERVER['HTTPS'] = 'on';
+<?php
+  $protocol = $_SERVER['HTTP_X_FORWARDED_PROTO'] ?? null;
+  $_SERVER['HTTPS'] = $protocol == 'https';
 ```
 
 Thanks to this snippet, WordPress will look at the HTTP header `X-Forwarded-Proto` set by our router to 'http' or 'https' whether the website is access with HTTP or HTTPS, have a look at our [routing documentation](http://doc.scalingo.com/internals/routing.html) for more information about this header.
@@ -85,7 +88,8 @@ your WordPress components.
 To do that just add the following line to your `wp-config.php`
 
 ```php
-define( 'AUTOMATIC_UPDATER_DISABLED', true );
+<?php
+  define( 'AUTOMATIC_UPDATER_DISABLED', true );
 ```
 
 ## Uploads
@@ -95,7 +99,7 @@ all your instances. So the uploads should not be stored on
 the filesystem itself. We recommend using an external service like the
 Amazon service: AWS S3 to store them.
 
-You may want to have a look at a plugin such as 
-[S3 Uploads](https://github.com/humanmade/S3-Uploads) to ease the storage 
-of your uploads on S3. As usual, this plugin must be downloaded locally 
+You may want to have a look at a plugin such as
+[S3 Uploads](https://github.com/humanmade/S3-Uploads) to ease the storage
+of your uploads on S3. As usual, this plugin must be downloaded locally
 and pushed to our git repository, never via the web interface.

@@ -38,9 +38,9 @@ use your configuration file.
 This process requires you to edit the `composer.json` file of your project.
 Edit the file the following way:
 
-```javascript
+```json
 {
-  ...
+  "..."
   "extra": {
     "paas": {
       "nginx-includes": ["config/nginx-ips-filtering.conf"]

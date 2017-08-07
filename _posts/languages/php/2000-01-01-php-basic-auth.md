@@ -58,9 +58,9 @@ you have to do is to instruct Scalingo's deployment process to use your configur
 
 This process requires you to edit the `composer.json` file of your project. Edit the file the following way:
 
-```javascript
+```json
 {
-  ...
+  "..."
   "extra": {
     "paas": {
       "nginx-includes": ["config/nginx-basic-auth.conf"]
