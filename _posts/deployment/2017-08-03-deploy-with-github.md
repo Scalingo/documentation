@@ -14,13 +14,15 @@ In the section Code in your Dashboard, you'll find a category *Deploy with GitHu
 
 In order to link your Scalingo app to a GitHub repo, GitHub will prompt for your authorization. You must accept for our GitHub integration to work.
 
-## Auto deploy or manual deploy?
+Once your repo is linked, you'll be able to choose select the branch that you want to deploy and if you want to deploy automatically (*Auto deploy*) or manually (*Manual deploy*).
 
-Once your repo is linked, you'll have the choose to deploy automatically or manually your application. You'll have to select the branch that you want to deploy.
+## Auto deploy
 
-With auto deploy enabled, your application will be updated each time you'll push on your GitHub repo.
+With Auto deploy Enabled, your application will be updated each time you'll push on your GitHub repo.
 
-You can still trigger a manual deployment by going to the "Manual deploy" section and choose the branch to deploy.
+## Manual deploy
+
+You can trigger a manual deployment by going to the "Manual deploy" section and choose the branch to deploy.
 
 <img src="/assets/images/auto-manual-deploy.jpg" width="100%">
 
