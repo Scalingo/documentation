@@ -8,7 +8,7 @@ define(['jquery'], function ($){
             menu.css({
                 'position': 'absolute',
                 'top': 'auto',
-                'height': $(window).height()-$(".navbar").first().height()-$(".breadcrumb").first().height()-6
+                'height': $(window).height()-$(".navbar").first().height()-$(".breadcrumb").first().height()-12
             });
             isFixed = false;
         });
@@ -28,7 +28,7 @@ define(['jquery'], function ($){
                 menu.css({
                     'position': 'absolute',
                     'top': 'auto',
-                    'height': $(window).height()-$(".navbar").first().height()-$(".breadcrumb").first().height()-6
+                    'height': $(window).height()-$(".navbar").first().height()-$(".breadcrumb").first().height()-12
                 });
                 isFixed = false;
             }

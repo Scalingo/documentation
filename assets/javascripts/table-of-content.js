@@ -36,7 +36,12 @@ define(['jquery'], function ($) {
     })
 
     sidebar_nav.prepend(ul)
-    sidebar_nav.prepend('<div class="title h3">Table of content</div>')
+    if ($(".fa-ul > li").length > 0) {
+      sidebar_nav.prepend('<div class="title h3">Table of content</div>')
+    }
+    else {
+      $(".sidebar-nav").css({'border': 'none', 'margin': '0'})
+    }
   }
 
 })
