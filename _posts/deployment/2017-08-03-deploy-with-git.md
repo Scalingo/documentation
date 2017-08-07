@@ -32,7 +32,7 @@ git push scalingo mybranch:master
 
 ### Git authentication and SSH
 
-The git server create by Scalingo uses SSH authentication. If you have any problem setting up SSH please read [Troubleshooting git push and SSH common issues]({% post_url ssh/2000-01-01-troubleshooting-ssh %}).
+The git server created by Scalingo uses SSH authentication. If you have any problem setting up SSH please read [Troubleshooting git push and SSH common issues]({% post_url ssh/2000-01-01-troubleshooting-ssh %}).
 
 ### And after?
 
