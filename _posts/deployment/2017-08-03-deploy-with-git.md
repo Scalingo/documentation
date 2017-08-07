@@ -6,13 +6,16 @@ tags: git deployment
 order: 0
 ---
 
-To deploy with git, you'll have to create a new application on Scalingo, choose your addon if you need one and follow the command on the section deployment. 
+To deploy with git you'll have to create a new application on Scalingo. A git repository will be automatically created. Every push on the master branch of this repository will trigger a new deployment.
 
-### Setup Deploy Commands
+### How to create an app
 
 ```bash
+# Create app with the CLI (or create one from the dashboard)
+scalingo create myapplication
+
 # Setup the git remote:
-git remote add scalingo git@scalingo.com:yourapplication.git
+git remote add scalingo git@scalingo.com:myapplication.git
 
 # Deploy your app:
 git push scalingo master
@@ -20,15 +23,16 @@ git push scalingo master
 
 ### Deploy with an other branch than master
 
-If you want to deploy an application since a branch doesn't called `master`, put the command :
+If you want to deploy another branch than master:
 
 ```bash
-git push scalingo yourbranche:master
+# Here we want do deploy 'mybranch' which is a local branch
+git push scalingo mybranch:master
 ```
 
 ### Git authentication and SSH
 
-If you have any problem to create the application, it must be due to a git autentication error or an invalid SSH key error. Please see [Troubleshooting git push and SSH common issues]({% post_url ssh/2000-01-01-troubleshooting-ssh %})
+The git server create by Scalingo uses SSH authentication. If you have any problem setting up SSH please read [Troubleshooting git push and SSH common issues]({% post_url ssh/2000-01-01-troubleshooting-ssh %}).
 
 ### And after?
 
