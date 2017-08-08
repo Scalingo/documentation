@@ -55,4 +55,4 @@ On the dashboard to manage your application, you will select the application whi
 
 ### Others
 
-To learn more about applications, please see the doc [Application Configuration]({% post_url /2000-01-01-application-configuration %}).
+To learn more about applications, please see the doc Application Configuration.
