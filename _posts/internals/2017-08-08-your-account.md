@@ -19,7 +19,7 @@ Here, you can change your [Basic Informations](https://my.scalingo.com/profile) 
 There is a section to [change your Email](https://my.scalingo.com/profile). 
 
 You will find your [API Token](https://my.scalingo.com/profile) for our Platform that you can regenerate.
-Indeed Scalingo proposes an API, an Applications Programming Interface. This is a set of functions that allows you, the developer, to use Scalingo.
+Indeed Scalingo proposes an [API](https://developers.scalingo.com/?_ga=2.37678688.1146730661.1502089790-47712416.1497343097), an Applications Programming Interface. This is a set of functions that allows you, the developer, to use Scalingo.
 
 Another section is about [Integrations](https://my.scalingo.com/profile) like GitHub.
 
