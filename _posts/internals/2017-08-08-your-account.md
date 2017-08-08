@@ -18,15 +18,18 @@ Here, you can change your [Basic Informations](https://my.scalingo.com/profile) 
 
 There is a section to [change your Email](https://my.scalingo.com/profile). 
 
-You will find your [API Token](https://my.scalingo.com/profile) for our Platform and you can regenerate it.
+You will find your [API Token](https://my.scalingo.com/profile) for our Platform that you can regenerate.
+Indeed Scalingo proposes an API, an Applications Programming Interface. This is a set of functions that allows you, the developer, to use Scalingo.
 
 Another section is about [Integrations](https://my.scalingo.com/profile) like GitHub.
 
 Finally you will find the button to delete your account.
 
+To change your password, you have to pass by [Logout](https://my.scalingo.com/#). At the new connection, click on the link [Reset it](https://my.scalingo.com/account/reset) will reset your password.
+
 ### [SSH Keys](https://my.scalingo.com/keys)
 
-It is in that page that you can import or delete a SSH key.
+It is in that page that you can import or delete a SSH key. That is really important because SSH keys are used to authenticate the remote computer and assure the good fonctionment of Scalingo. 
 
 ### [Billing](https://my.scalingo.com/billing)
 
