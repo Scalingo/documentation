@@ -6,27 +6,27 @@ tags: source deploy
 order: 1
 ---
 
-A way to deploy your application on Scalingo is to use an url where your application code is upload on the format archive.
+A way to deploy your application on Scalingo is to use an url where your application code is uploaded on the format archive.
 
 ## The Workflow
 
-If you want to deploy an application without git or github, you can put your application code in an archive `tar.gz`.
+If you want to deploy an application without Git or GitHub, you can archive your application code in a `tar.gz` format.
 
-Then you need to upload your application on a source, a repo on the web where your application will be conserved. If you do not know how do that, see the section [Create a Repo for the Archive]({% post_url deployment/2017-08-04-deploy-from-archive %}create-a-repo-for-the-archive).
+Then you need to upload your application on a web server for Scalingo to be able to fetch the archive containing your application source code. More information on how to do that in the section [Create a Repo for the Archive]({% post_url deployment/2017-08-04-deploy-from-archive %}#create-a-source-for-the-archive).
 
 From your source, your repo, you must have a download_url that Scalingo can use to deploy your application.
 
-Thus, you have to provide your download_url on the Scalingo Api (https://api.scalingo.com/v1/apps/[:app]/deployments) with a request POST, see the section [Deployment]({% post_url deployment/2017-08-04-deploy-from-archive %}#to-deploy-an-archive).
+You have to provide your download_url on the Scalingo Api (https://api.scalingo.com/v1/apps/[:app]/deployments) with a POST request, see the section [Deployment]({% post_url deployment/2017-08-04-deploy-from-archive %}#to-deploy-an-archive).
 
-Once our platform receives your achive, the deployment begins.
+Once our platform downloads your archive, the deployment begins.
 
-## To deploy an archive
+## To Deploy an Archive
 
-To deploy your archive, you have to make a POST request on `https://api.scalingo.com/v1/apps/[:app]/deployments`, like this:
+To deploy your archive, you have to make a POST request on `https://api.scalingo.com/v1/apps/[:app]/deployments`:
 
 ```bash
 curl -H "Accept: application/json" -H "Content-Type: application/json" -u ":$AUTH_TOKEN" \
-    -X POST https://api.scalingo.com/v1/apps/[example-app]/deployments -d \
+    -X POST https://api.scalingo.com/v1/apps/[:app]/deployments -d \
         '{
             "deployment": {
                 "git_ref": "v0.0.2",
@@ -37,23 +37,23 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -u ":$AUT
 
 * The `auth-token` is specific for Scalingo, you can find it on your [dashboard](https://my.scalingo.com/profile) or from our API. Every information are [here](https://developers.scalingo.com/index.html#authentication).
 
-* You have to replace `[example-app]` by your application name which must be created before. You can do that on our platform [my.scalingo.com](https://my.scalingo.com) or [from your shell](https://developers.scalingo.com/apps.html#create-an-application).
+* You have to replace `[example-app]` by your application name which must be created in the first place. You can do that on our platform [my.scalingo.com](https://my.scalingo.com), [with our CLI]({% post_url cli/2015-09-18-command-line-tool %}#features) or [with a curl](https://developers.scalingo.com/apps.html#create-an-application).
 
 * The `git_ref` is optional. This attribute must provide any string identifying your archive.
 
-* The `download_url` is the link where our platform can access to your archive.
+* The `download_url` is the link where our platform can download your archive.
 
 ##### And after?
 
 Your application is deployed! If there is any problem, please see our page [Application crash]({% post_url app/2014-09-10-crash %}).
 We strongly advise you to look at the logs of your application using the web dashboard or by using the [CLI tool](http://cli.scalingo.com).
 
-If you do not know how create the repo to provide to our platform the download_url, see the next [section]({% post_url deployment/2017-08-04-deploy-from-archive %}create-a-repo-for-the-archive).
+If you do not know how create the source to provide to our platform the download_url, see the next [section]({% post_url deployment/2017-08-04-deploy-from-archive %}#create-a-source-for-the-archive).
 
 ## Create a Repo for the Archive
 
-It is possible to create your repo with Scalingo, that will be a source.
-A source is a place from which data can be took.
+It is possible to create your source with Scalingo, that will be a source.
+A source is a place from which data can be uploaded and downloaded.
 
 ### Create a Source
 
@@ -77,14 +77,14 @@ The source provide two important url:
 
 * a `upload_url`: used to upload your code on the source. 
 
-* a `download_url`: used to recover the data from the source.
+* a `download_url`: used to download the archive from the source.
 
 ### Upload on the Source
 
-To upload your data on the source, you have to make a 'PUT' request on the source upload_url.
+To upload your data on the source, you have to make a PUT request on the source `upload_url`.
 
 ```bash
-curl -L -X PUT --upload-file ./archive.tar.gz '$upload_url'
+curl -L -X PUT --upload-file ./archive.tar.gz 'https://api.scalingo.com/v1/sources/123e4567-e89b-12d3-a456-426655440000?token=dc958153c3cd32659ffad5deeda9405d'
 ```
 
 More information [here](https://developers.scalingo.com/sources.html).
