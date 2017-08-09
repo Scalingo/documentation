@@ -31,7 +31,7 @@ scalingo create my-new-app --remote production
 scalingo create my-new-app --remote custom
 ```
 
-### [Use a curl](https://developers.scalingo.com/apps.html#create-an-application)
+### [Use the API](https://developers.scalingo.com/apps.html#create-an-application)
 
 You need to make a POST request on `https://api.scalingo.com/v1/apps`:
 
@@ -51,7 +51,7 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -u :$AUTH
 
 You have to select your application on the menu and go on `Settings`. There you will see a link called `RENAME THIS APP`.
 
-### [Use a curl](https://developers.scalingo.com/apps.html#rename-an-application)
+### [Use the API](https://developers.scalingo.com/apps.html#rename-an-application)
 
 You need to make a POST request on `https://api.scalingo.com/v1/apps/[:app]/rename`:
 
@@ -76,7 +76,7 @@ If you have no collaborator yet, there is a link `Add one!` to add one.
 
 See [Transfer the Ownership of an App]({% post_url app/2000-01-01-transfer-ownership %}) for more informations.
 
-### [Use a curl](https://developers.scalingo.com/apps.html#transfer-ownership-of-an-application)
+### [Use the API](https://developers.scalingo.com/apps.html#transfer-ownership-of-an-application)
 
 You need to make a PATCH request on `https://api.scalingo.com/v1/apps/[:app]`:
 
@@ -93,3 +93,24 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -u :$AUTH
 ```
 
 ## Delete an Application
+
+### [Use the Dashboard](https://my.scalingo.com)
+
+You have to select your application on the menu and go on `Settings`. There you will see a link called 'DELETE THIS APP'.
+
+### Use the CLI
+
+The command will be `scalingo destroy`:
+
+```bash
+scalingo destroy my-app
+```
+
+### [Use the API](https://developers.scalingo.com/apps.html#delete-an-application)
+
+You need to make a DELETE request on `https://api.scalingo.com/v1/apps/[:app]`:
+
+```bash
+curl -H "Accept: application/json" -H "Content-Type: application/json" -u :$AUTH_TOKEN \
+    -X DELETE 'https://api.scalingo.com/v1/apps/example-app?current_name=example-app'
+```
