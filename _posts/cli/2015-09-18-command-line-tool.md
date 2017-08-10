@@ -199,10 +199,13 @@ scalingo -a myapp logs -F "web|worker"
 scalingo -a myapp run bundle exec rails console
 
 # Define custom environment variables into the one-off container
-scalingo -a myapp run --env CUSTOM_ENV=value --env ENV_EXAMPLE=custom
+scalingo -a myapp run --env CUSTOM_ENV=value --env ENV_EXAMPLE=custom <command>
 
 # Upload a file to the one-off container (target is /tmp/uploads)
-scalingo -a myapp run --file ./dump.sql
+scalingo -a myapp run --file ./dump.sql <command>
+
+# Start the one-off container with a specific size of container
+scalingo -a myapp run --size 2XL <command>
 ```
 
 ### Get metrics of your application
