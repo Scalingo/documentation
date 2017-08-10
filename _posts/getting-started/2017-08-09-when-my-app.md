@@ -14,13 +14,23 @@ We know that how it's painful to have issues on production.
 
 ## The procedure
 
-That's why we will try to help you in **5 steps** :
+We will try to help with few advices
 
-1. See if you can run it locally
-2. Check the log, it can save a lot of times to find what it isn't working
-3. You can also see if your problem  is already solved in our [documentation](doc.scalingo.com)
-4. [Google](https://www.google.com/) is a wonderful tool, use it. If you have this problem, someone probably had it too.
-5. Contact us in our plateform support on our [dashboard](https://my.scalingo.com/apps) or send us an [email](support@scalingo.com), it will be a pleasure to help you.
+### Find the problem
+
+1. Have you check your tests units ?
+
+2. Does it run locally ?
+
+3. Have you check the log on your [dashboard](https://my.scalingo.com/apps) ?
+
+### Solve it
+
+1. Have you check our [documentation](doc.scalingo.com) ? It possible that's your problem is already solved
+
+2. Have you search on the internet ? Perhaps, someone had solved it.
+
+3. Contact us in our plateform support on our [dashboard](https://my.scalingo.com/apps) or send us an [email](support@scalingo.com), it will be a pleasure to help you.
 
 ## Frequently Asked Questions
 
