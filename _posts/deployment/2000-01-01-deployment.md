@@ -34,3 +34,7 @@ One app can have multiple containers:
 
 * When you [scale your app](), we create copy of your first container and requests are dispatched randomly between them.
 * You can run different part of your code, for example the main app and a cron-like manager, in different containers. You can take a look at how [Procfile]() works.
+* When you run a [one-off container]() from the [Scalingo CLI](), it's actually a new container created on the fly.
+* A [post deployment hook]() is like a one-off but is run automatically when a deployment is launched for the first time.
+
+There is more informations on containers on the [Container Management Page]()
