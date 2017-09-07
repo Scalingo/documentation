@@ -1,6 +1,6 @@
 ---
 title: Scalingo MongoDB Addon
-modified_at: 2016-01-11 00:00:00
+modified_at: 2017-09-07 00:00:00
 category: databases
 tags: databases mongodb addon
 ---
@@ -113,7 +113,7 @@ dashboard.
 After downloading it, you can specify its path to the `mongo` CLI:
 
 ```shell
-mongo --ssl --sslCAFile=~/Downloads/ca.pem "<connection string>"
+mongo --ssl --sslCAFile=/path/to/ca.pem "<connection string>"
 ```
 
 ## Changing plans
