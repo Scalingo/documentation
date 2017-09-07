@@ -1,6 +1,6 @@
 ---
 title: Runtime Environment
-modified_at: 2016-04-26 00:00:00
+modified_at: 2017-09-07 00:00:00
 category: app
 tags: app runtime configuration environment
 ---
@@ -13,4 +13,6 @@ additional variable `$PORT` is defined.
 * `$PORT`: Port number your server has to bind on.
 * `$CONTAINER`: Type and index of the container, `web-1` or `worker-1` for instance
 * `$CONTAINER_VERSION`: Version of the container started, usually the GIT commit SHA.
+* `$CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL` etc.
+* `$CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
 * `$APP`: Name of the application deployed
