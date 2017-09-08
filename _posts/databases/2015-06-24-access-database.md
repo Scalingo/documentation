@@ -53,7 +53,8 @@ How-to: [build an encrypted tunnel to your database]({% post_url databases/2014-
   It will be expanded to others databases in the future.
 </blockquote>
 
-It is then required to force encrypted connections to the database first,
-before enabling the accessibility from the Internet. Just head to your
-database dashboard and click on the toggle button to make it reachable from
-internet.
+It is possible to make your database reachable from anywhere on internet. You
+first need to [force TLS connections]({% post_url
+databases/2000-01-01-scalingo-mongodb-addon %}) to your databases. Then head to
+your database dashboard and click on the toggle button to make it reachable
+from internet.

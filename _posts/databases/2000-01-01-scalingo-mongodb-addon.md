@@ -1,6 +1,6 @@
 ---
 title: Scalingo MongoDB Addon
-modified_at: 2016-01-11 00:00:00
+modified_at: 2017-09-08 00:00:00
 category: databases
 tags: databases mongodb addon
 ---
@@ -51,7 +51,7 @@ $ scalingo addons-plans scalingo-mongodb
 
 ## Getting your connection URI
 
-Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_MONGO_URL` and `MONGO_URL`. `MONGO_URL` is an alias to `SCALINGO_MONGO_URL` for the convenience of some libraries such as the framework [Meteor]({% post_url languages/javascript/meteor/2015-02-09-getting-started-with-meteor %}) or the Ruby gem **mongoid**, but using `SCALINGO_MONGO_URL` is prefered in most cases. To find out how to use them in your code please refer to [Application environment]({% post_url app/2014-09-15-environment %}).
+Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_MONGO_URL` and `MONGO_URL`. `MONGO_URL` is an alias to `SCALINGO_MONGO_URL` for the convenience of some libraries such as the framework [Meteor]({% post_url languages/javascript/meteor/2015-02-09-getting-started-with-meteor %}) or the Ruby gem **mongoid**, but using `SCALINGO_MONGO_URL` is preferred in most cases. To find out how to use them in your code please refer to [Application environment]({% post_url app/2014-09-15-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
@@ -75,15 +75,52 @@ MONGO_URL=$SCALINGO_MONGO_URL
 SCALINGO_MONGO_URL=mongodb://example-app-3030:2rj5FYoiKRFp8eZhpMz7@example-app-3030.mongo.dbs.appsdeck.eu:30949/example-app-3030
 ```
 
-
 ## Remote access your database
 
-If you need to access your database from other places than your app please follow the [Access your database]({% post_url databases/2015-06-24-access-database %}) guide.
+If you need to access your database from other places than your app please
+follow the [Access your database]({% post_url
+databases/2015-06-24-access-database %}) guide.
 
+### Force TLS connections
+
+MongoDB [support
+TLS](https://docs.mongodb.com/manual/core/security-transport-encryption/) to
+encrypt all of MongoDB's network traffic: either between the client and the
+server or between the different replicas of your database.
+
+By default, all new MongoDB databases have TLS activated. If you want to
+connect to it, just use the `--ssl` option:
+
+```shell
+mongo --ssl --sslAllowInvalidCertificates "<connection string>"
+```
+
+Some existing databases may not have yet TLS support. To activate TLS, you need
+to restart the database.  Any action leading to the restart will activate TLS
+(e.g. plan update, upgrade of the database).
+
+TLS is just an option, you can still access your database without it if needed.
+
+The `--sslAllowInvalidCertificates` option is mandatory as the generated
+certificates for your databases are
+[self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate). If you
+want the certificate to be trust-able, you need to download our certification
+authority certificate and specify it to the MongoDB CLI tool.
+
+### Download the CA certificate
+
+The certificate of our certification authority is available on the database
+dashboard.
+
+After downloading it, you can specify its path to the `mongo` CLI:
+
+```shell
+mongo --ssl --sslCAFile=/path/to/ca.pem "<connection string>"
+```
 
 ## Changing plans
 
-You can upgrade or downgrade your database plan whenever you need it. This operation happens instantly thanks to Docker containers and no manual input is required. When you change the plan, your database will be stopped then simply restarted on a new host with new parameters of the chosen plan. During the operation the connection is dropped bewteen your app and the database. Finally, after the operation is successful, the related app will be restarted. 
+You can upgrade or downgrade your database plan whenever you need it. This operation happens instantly thanks to Docker containers and no manual input is required. When you change the plan, your database will be stopped then simply restarted on a new host with new parameters of the chosen plan. During the operation the connection is dropped between your app and the database. Finally, after the operation is successful, the related app will be restarted.
 
 ### From the Dashboard
 
@@ -106,7 +143,7 @@ In this example, `example-app-3030` is the ID of the addon, and `2g` is the plan
 To find out the addon ID:
 
 ```bash
-$ scalingo -a example-app addons 
+$ scalingo -a example-app addons
 
 +------------------+------------------+------+
 |       ADDON      |        ID        | PLAN |
@@ -182,7 +219,7 @@ This operation is similar to changing your database plan; your database will be 
 
 ### Download automated backups
 
-Automated backups are listed in the database specific dashboard. 
+Automated backups are listed in the database specific dashboard.
 
 1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
 2. Click on **Addons** tab
@@ -197,10 +234,9 @@ Automated backups are listed in the database specific dashboard.
 
 If you wish to manually backup your database, please follow [How to dump and restore my MongoDB database on Scalingo]({% post_url databases/2015-09-30-dump-restore-mongodb %}) guide.
 
-
 ## MongoDB Oplog
 
-Oplog is a MongoDB feature which logs all the operations achieved on a MongoDB cluster. This feature is tightly related to MongoDB replication, but is also used by Meteor to increase app performance. If you wish to use Oplog in your application please refer to the official [MongoDB documentation](https://docs.mongodb.org/manual/core/replica-set-oplog/). Oplog can be enabled from the database dashboard, when activated it wil automatically add the `MONGO_OPLOG_URL` variable in your application.
+Oplog is a MongoDB feature which logs all the operations achieved on a MongoDB cluster. This feature is tightly related to MongoDB replication, but is also used by Meteor to increase app performance. If you wish to use Oplog in your application please refer to the official [MongoDB documentation](https://docs.mongodb.org/manual/core/replica-set-oplog/). Oplog can be enabled from the database dashboard, when activated it will automatically add the `MONGO_OPLOG_URL` variable in your application.
 
 ### Activating Oplog
 

@@ -1,7 +1,7 @@
-FROM ruby:2.3.1
+FROM ruby:2.4.1
 
-ENV BUNDLE_BIN /usr/src/app/vendor/.bundle/ruby/2.3.1/bin
-ENV BUNDLE_PATH /usr/src/app/vendor/.bundle/ruby/2.3.1
+ENV BUNDLE_BIN /usr/src/app/vendor/.bundle/ruby/2.4.1/bin
+ENV BUNDLE_PATH /usr/src/app/vendor/.bundle/ruby/2.4.1
 ENV BUNDLE_APP_CONFIG /usr/src/app/.bundle
 
 COPY . /usr/src/app
