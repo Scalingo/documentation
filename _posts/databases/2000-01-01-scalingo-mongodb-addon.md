@@ -1,6 +1,6 @@
 ---
 title: Scalingo MongoDB Addon
-modified_at: 2017-09-07 00:00:00
+modified_at: 2017-09-08 00:00:00
 category: databases
 tags: databases mongodb addon
 ---
@@ -77,9 +77,11 @@ SCALINGO_MONGO_URL=mongodb://example-app-3030:2rj5FYoiKRFp8eZhpMz7@example-app-3
 
 ## Remote access your database
 
-If you need to access your database from other places than your app please follow the [Access your database]({% post_url databases/2015-06-24-access-database %}) guide.
+If you need to access your database from other places than your app please
+follow the [Access your database]({% post_url
+databases/2015-06-24-access-database %}) guide.
 
-### Using TLS
+### Force TLS connections
 
 MongoDB [support
 TLS](https://docs.mongodb.com/manual/core/security-transport-encryption/) to
