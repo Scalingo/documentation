@@ -32,5 +32,3 @@ of your communication between your computer and the server.
 
 Just head to your database dashboard and click on the toggle button to make it
 reachable from internet.
-
-TODO: add a screenshot
