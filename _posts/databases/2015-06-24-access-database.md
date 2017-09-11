@@ -1,21 +1,18 @@
 ---
 title: Access your database
-modified_at: 2015-06-24 00:00:00
+modified_at: 2017-09-08 00:00:00
 category: databases
 tags: databases
 index: 1
 ---
 
-Databases hosted on Scalingo are not directly available on the Internet. By default
-access to most databases are unencrypted, so unsecure. Applications are on the same
-network than your database, but you can not connect your machine to it directly.
-
-We've built two different solutions to access Scalingo's databases:
+There are three different solutions to access Scalingo's databases:
 
 * Remote console: an interactive console is started and you access it directly.
 * Encrypted tunnel: if you want a full access to the database, you have to build an
   SSH-encrypted tunnel, then you'll be able to access the database as if it was running locally.
   You have to use this solution if you want to import/export data.
+* Direct encrypted access to the database.
 
 ## Open an interactive remote console
 
@@ -44,7 +41,19 @@ scalingo -a example-app redis-console
 
 ## Connect your workstation to the database
 
- To access them remotely
-from your workstation you need to setup an encrypted connection.
+To access them remotely from your workstation you need to setup an encrypted
+connection.
 
-How-to: [build an encrypted tunnel to your database]({% post_url 2014-11-24-tunnel %})
+How-to: [build an encrypted tunnel to your database]({% post_url databases/2014-11-24-tunnel %})
+
+## Direct encrypted access to the database
+
+<blockquote class="warning">
+  This feature is only available for MongoDB databases.
+  It will be expanded to others databases in the future.
+</blockquote>
+
+It is then required to force encrypted connections to the database first,
+before enabling the accessibility from the Internet. Just head to your
+database dashboard and click on the toggle button to make it reachable from
+internet.

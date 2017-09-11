@@ -8,7 +8,7 @@ tags: databases influxdb addon
 <blockquote class="bg-info">
 	Some operation requires our command-line tool to be installed.
   <br>
-  Instructions are detailed in <a href="{% post_url 2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
+  Instructions are detailed in <a href="{% post_url cli/2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
 </blockquote>
 
 Scalingo InfluxDB addon is the official addon provided by Scalingo, details on the available plans can be found [here](https://scalingo.com/addons/scalingo-influxdb). This addon gives your app instant access to an InfluxDB database running in its own Docker container.
@@ -51,7 +51,7 @@ $ scalingo addons-plans scalingo-influxdb
 
 ## Getting your connection URI
 
-Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_INFLUX_URL` and `INFLUX_URL`. `INFLUX_URL` is an alias to `SCALINGO_INFLUX_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url 2014-09-15-environment %}).
+Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_INFLUX_URL` and `INFLUX_URL`. `INFLUX_URL` is an alias to `SCALINGO_INFLUX_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url app/2014-09-15-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
@@ -77,7 +77,7 @@ SCALINGO_INFLUX_URL=http://sample_influxdb_3707:RCtlmiQDXuXosYJ4mIOP@sample-infl
 
 ## Remote access your database
 
-If you need to access your database from other places than your app please follow the [Access your database]({% post_url 2015-06-24-access-database %}) guide.
+If you need to access your database from other places than your app please follow the [Access your database]({% post_url databases/2015-06-24-access-database %}) guide.
 
 ## Changing plans
 
@@ -189,7 +189,7 @@ Automated backups are listed in the database specific dashboard.
 
 ### Restoring a backup
 
-Follow our guide: [How to dump and restore my InfluxDB database on Scalingo]({% post_url 2000-01-01-dump-restore-influxdb %})
+Follow our guide: [How to dump and restore my InfluxDB database on Scalingo]({% post_url databases/2000-01-01-dump-restore-influxdb %})
 
 ## Add Retention Policies
 

@@ -6,7 +6,7 @@ tags: ruby gem private git
 ---
 
 You may want to use a gem in your app which is private and stored in a custom Git repository. Note that if this
-repository is on GitHub, you should follow [the page specific to it]({% post_url 2000-01-01-private-gem-from-github-on-scalingo %}).
+repository is on GitHub, you should follow [the page specific to it]({% post_url languages/ruby/2000-01-01-private-gem-from-github-on-scalingo %}).
 Otherwise, if you're using Gitlab, Bitbucket or your own server, you're at the right place.
 
 ## Create a Git wrapper

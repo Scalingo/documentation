@@ -62,7 +62,7 @@ Then set the following environment variable:
 
 To use a MongoDB database your need to add the gem `mongoid` to your `Gemfile`
 
-[Configure Mongoid]({% post_url 2014-10-17-configure-mongoid %})
+[Configure Mongoid]({% post_url languages/ruby/2014-10-17-configure-mongoid %})
 
 ## Setup your application logging
 

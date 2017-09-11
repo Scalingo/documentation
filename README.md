@@ -37,13 +37,13 @@ Please do not use first-level HTML/Markdown headers (*i.e. `<h1></h1>`*) as it w
 To install dependancies locally:
 
 ```
-bundle install
+docker-compose run web bundle install
 ```
 
 To build the static site and spin-up a file server:
 
 ```
-bundle exec jekyll server
+docker-compose up
 ```
 
 ## Links
