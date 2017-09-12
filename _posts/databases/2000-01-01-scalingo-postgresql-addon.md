@@ -79,10 +79,49 @@ SCALINGO_POSTGRESQL_URL=postgres://example_app_3030:ptojfrxzRi-lDfDYyahe@example
 
 If you need to access your database from other places than your app please follow the [Access your database]({% post_url databases/2015-06-24-access-database %}) guide.
 
+### Force TLS connections
+
+PostgreSQL [support
+TLS](https://www.postgresql.org/docs/current/static/ssl-tcp.html) to
+encrypt all of PostgreSQL network traffic between the client and the
+server.
+
+By default, all new PostgreSQL databases have TLS activated. If you want to
+connect to it, you have nothing to do. `psql` will automatically first try to
+connect using TLS, and if it fails will try without TLS. `psql` will display an
+informative message if you succeed to connect using TLS:
+
+```shell
+> psql "<connection string>"
+psql (9.6.5)
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+dbname_6246=#
+```
+
+Some existing databases may not have yet TLS support. To activate TLS, you need
+to restart the database.  Any action leading to the restart will activate TLS
+(e.g. plan update, upgrade of the database).
+
+TLS is just an option, you can still access your database without it if needed.
+
+If you want to force connections to your database to use TLS, just head to the
+database dashboard and click on the toggle button:
+
+TODO: Screenshot
+
+Note that you must have configured your application to use TLS when connecting
+to the database.
 
 ## Changing plans
 
-You can upgrade or downgrade your database plan whenever you need it. This operation happens instantly thanks to Docker containers and no manual input is required. When you change the plan, your database will be stopped then simply restarted on a new host with new parameters of the chosen plan. During the operation the connection is dropped bewteen your app and the database. Finally, after the operation is successful, the related app will be restarted. 
+You can upgrade or downgrade your database plan whenever you need it. This
+operation happens instantly thanks to Docker containers and no manual input is
+required. When you change the plan, your database will be stopped then simply
+restarted on a new host with new parameters of the chosen plan. During the
+operation the connection is dropped between your app and the database. Finally,
+after the operation is successful, the related app will be restarted.
 
 ### From the Dashboard
 
@@ -105,7 +144,7 @@ In this example, `example-app-3030` is the ID of the addon, and `2g` is the plan
 To find out the addon ID:
 
 ```bash
-$ scalingo -a example-app addons 
+$ scalingo -a example-app addons
 
 +---------------------+------------------+------+
 |        ADDON        |        ID        | PLAN |
@@ -182,7 +221,7 @@ This operation is similar to changing your database plan; your database will be 
 
 ### Download automated backups
 
-Automated backups are listed in the database specific dashboard. 
+Automated backups are listed in the database specific dashboard.
 
 1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
 2. Click on **Addons** tab

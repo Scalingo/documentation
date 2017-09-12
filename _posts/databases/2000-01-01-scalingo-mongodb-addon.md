@@ -107,6 +107,14 @@ certificates for your databases are
 want the certificate to be trust-able, you need to download our certification
 authority certificate and specify it to the MongoDB CLI tool.
 
+If you want to force connections to your database to use TLS, just head to the
+database dashboard and click on the toggle button:
+
+TODO: Screenshot
+
+Note that you must have configured your application to use TLS when connecting
+to the database.
+
 ### Download the CA certificate
 
 The certificate of our certification authority is available on the database

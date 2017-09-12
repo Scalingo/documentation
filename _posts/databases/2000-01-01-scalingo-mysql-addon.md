@@ -86,10 +86,44 @@ If you’re using the <em>mysql2</em> gem, you will need to copy the value of `S
 
 If you need to access your database from other places than your app please follow the [Access your database]({% post_url databases/2015-06-24-access-database %}) guide.
 
+### Force TLS connections
+
+MySQL [support
+TLS](https://dev.mysql.com/doc/refman/5.7/en/encrypted-connections.html) to
+encrypt all of its network traffic between the client and the
+server.
+
+By default, all new MySQL databases have TLS activated. If you want to connect
+to it, you have nothing to do. The `mysql` client will automatically first try
+to connect using TLS, and if it fails will try without TLS. If you want to
+ensure it connects using TLS, you can use the `--ssl-mode` argument:
+
+```shell
+mysql --ssl-mode REQUIRE -u <user> --password=<password> -h <host> -P <port> dbname
+```
+
+Some existing databases may not have yet TLS support. To activate TLS, you need
+to restart the database.  Any action leading to the restart will activate TLS
+(e.g. plan update, upgrade of the database).
+
+TLS is just an option, you can still access your database without it if needed.
+
+If you want to force connections to your database to use TLS, just head to the
+database dashboard and click on the toggle button:
+
+TODO: Screenshot
+
+Note that you must have configured your application to use TLS when connecting
+to the database.
 
 ## Changing plans
 
-You can upgrade or downgrade your database plan whenever you need it. This operation happens instantly thanks to Docker containers and no manual input is required. When you change the plan, your database will be stopped then simply restarted on a new host with new parameters of the chosen plan. During the operation the connection is dropped bewteen your app and the database. Finally, after the operation is successful, the related app will be restarted. 
+You can upgrade or downgrade your database plan whenever you need it. This
+operation happens instantly thanks to Docker containers and no manual input is
+required. When you change the plan, your database will be stopped then simply
+restarted on a new host with new parameters of the chosen plan. During the
+operation the connection is dropped between your app and the database. Finally,
+after the operation is successful, the related app will be restarted.
 
 ### From the Dashboard
 
@@ -112,7 +146,7 @@ In this example, `example-app-3030` is the ID of the addon, and `2g` is the plan
 To find out the addon ID:
 
 ```bash
-$ scalingo -a example-app addons 
+$ scalingo -a example-app addons
 
 +----------------+------------------+------+
 |      ADDON     |        ID        | PLAN |
@@ -189,7 +223,7 @@ This operation is similar to changing your database plan; your database will be 
 
 ### Download automated backups
 
-Automated backups are listed in the database specific dashboard. 
+Automated backups are listed in the database specific dashboard.
 
 1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
 2. Click on **Addons** tab
