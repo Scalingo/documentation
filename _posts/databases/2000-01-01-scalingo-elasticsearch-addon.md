@@ -97,14 +97,31 @@ Note that you must have configured your application to use TLS when connecting
 to the database.
 
 ```shell
-> curl -X GET <URL>
+> curl --insecure -X GET <URL>
 ```
 
 With `URL` starting with `https://`.
 
+The `--insecure` option is mandatory as the generated certificates for your
+databases are
+[self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate). If you
+want the certificate to be trust-able, you need to download our certification
+authority certificate and specify it to the MongoDB CLI tool.
+
 Some existing databases may not have yet TLS support. To activate TLS, you need
 to restart the database. Any action leading to the restart will activate TLS
 (e.g. plan update, upgrade of the database).
+
+### Download the CA certificate
+
+The certificate of our certification authority is available on the database
+dashboard.
+
+After downloading it, you can specify its path to the `mongo` CLI:
+
+```shell
+curl --cacert=/path/to/ca.pem -X GET "<URL>"
+```
 
 ## Changing plans
 
