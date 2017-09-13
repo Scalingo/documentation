@@ -97,8 +97,10 @@ Note that you must have configured your application to use TLS when connecting
 to the database.
 
 ```shell
-> curl -X GET https://<URL>
+> curl -X GET <URL>
 ```
+
+With `URL` starting with `https://`.
 
 Some existing databases may not have yet TLS support. To activate TLS, you need
 to restart the database. Any action leading to the restart will activate TLS
