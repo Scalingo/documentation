@@ -1,6 +1,6 @@
 ---
 title: Scalingo MySQL Addon
-modified_at: 2016-01-11 00:00:00
+modified_at: 2017-09-13 00:00:00
 category: databases
 tags: databases mysql addon
 ---
@@ -96,7 +96,7 @@ server.
 By default, all new MySQL databases have TLS activated. If you want to connect
 to it, you have nothing to do. The `mysql` client will automatically first try
 to connect using TLS, and if it fails will try without TLS. If you want to
-ensure it connects using TLS, you can use the `--ssl-mode` argument:
+ensure it connects using TLS, you can use the `--ssl-mode` option:
 
 ```shell
 mysql --ssl-mode REQUIRE -u <user> --password=<password> -h <host> -P <port> dbname

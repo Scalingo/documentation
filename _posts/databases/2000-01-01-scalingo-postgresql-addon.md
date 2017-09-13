@@ -1,6 +1,6 @@
 ---
 title: Scalingo PostgreSQL Addon
-modified_at: 2017-04-27 00:00:00
+modified_at: 2017-09-13 00:00:00
 category: databases
 tags: databases postgresql addon
 ---
@@ -83,7 +83,7 @@ If you need to access your database from other places than your app please follo
 
 PostgreSQL [support
 TLS](https://www.postgresql.org/docs/current/static/ssl-tcp.html) to
-encrypt all of PostgreSQL network traffic between the client and the
+encrypt all of its network traffic between the client and the
 server.
 
 By default, all new PostgreSQL databases have TLS activated. If you want to
