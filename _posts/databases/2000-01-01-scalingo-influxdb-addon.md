@@ -84,13 +84,13 @@ databases/2015-06-24-access-database %}) guide.
 ### Force TLS connections
 
 InfluxDB [support
-TLS](https://www.postgresql.org/docs/current/static/ssl-tcp.html) to encrypt
-all of its network traffic between the client and the server.
+TLS](https://docs.influxdata.com/influxdb/v1.2/administration/https_setup) to
+encrypt all of its network traffic between the client and the server.
 
 InfluxDB cannot listen to connections with and without TLS. If you want to
 encrypt communications with your InfluxDB databases, you need to force all
 connections to use TLS. Forcing TLS connections is as simple as heading to the
-database dashboard and click on the toggle button:
+database dashboard and clicking on the toggle button:
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
 {% include mdl_img.html %}
@@ -102,8 +102,11 @@ When in force TLS mode, you must specify the `influx` client to connect to your
 database using HTTPS with the `-ssl` option:
 
 ```shell
-> influx -ssl -username <user> -password <password> -host <host> -port <port> -database dbname
+> influx -ssl -unsafeSsl -username <user> -password <password> -host <host> -port <port> -database dbname
 ```
+The `--unsafeSsl` option is mandatory as the generated certificates for your
+databases are
+[self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate).
 
 Some existing databases may not have yet TLS support. To activate TLS, you need
 to restart the database. Any action leading to the restart will activate TLS

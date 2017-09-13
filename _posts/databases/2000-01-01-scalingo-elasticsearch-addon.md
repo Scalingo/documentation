@@ -1,6 +1,6 @@
 ---
 title: Scalingo Elasticsearch Addon
-modified_at: 2016-04-27 00:00:00
+modified_at: 2017-09-13 00:00:00
 category: databases
 tags: databases elasticsearch addon
 ---
@@ -80,6 +80,29 @@ SCALINGO_ELASTICSEARCH_URL=http://example-app-3030:MpIxXstskccB3Ab2iwKH@example-
 
 If you need to access your database from other places than your app please follow the [Access your database]({% post_url databases/2015-06-24-access-database %}) guide.
 
+### Force TLS connections
+
+Our Elasticsearch image support TLS to encrypt all of its network traffic
+between the client and the server.
+
+Elasticsearch cannot listen to connections with and without TLS. If you want to
+encrypt communications with your Elasticsearch databases, you need to force all
+connections to use TLS. Forcing TLS connections is as simple as heading to the
+database dashboard and clicking on the toggle button:
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
+{% include mdl_img.html %}
+
+Note that you must have configured your application to use TLS when connecting
+to the database.
+
+```shell
+> curl -X GET https://<URL>
+```
+
+Some existing databases may not have yet TLS support. To activate TLS, you need
+to restart the database. Any action leading to the restart will activate TLS
+(e.g. plan update, upgrade of the database).
 
 ## Changing plans
 
