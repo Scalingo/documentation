@@ -1,6 +1,6 @@
 ---
 title: Scalingo Elasticsearch Addon
-modified_at: 2016-04-27 00:00:00
+modified_at: 2017-09-13 00:00:00
 category: databases
 tags: databases elasticsearch addon
 ---
@@ -80,10 +80,52 @@ SCALINGO_ELASTICSEARCH_URL=http://example-app-3030:MpIxXstskccB3Ab2iwKH@example-
 
 If you need to access your database from other places than your app please follow the [Access your database]({% post_url databases/2015-06-24-access-database %}) guide.
 
+### Force TLS connections
+
+Our Elasticsearch image support TLS to encrypt all of its network traffic
+between the client and the server.
+
+Elasticsearch cannot listen to connections with and without TLS. If you want to
+encrypt communications with your Elasticsearch databases, you need to force all
+connections to use TLS. Forcing TLS connections is as simple as heading to the
+database dashboard and clicking on the toggle button:
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
+{% include mdl_img.html %}
+
+Note that you must have configured your application to use TLS when connecting
+to the database.
+
+```shell
+> curl --insecure -X GET <URL>
+```
+
+With `URL` starting with `https://`.
+
+The `--insecure` option is mandatory as the generated certificates for your
+databases are
+[self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate). If you
+want the certificate to be trust-able, you need to download our certification
+authority certificate and specify it to the MongoDB CLI tool.
+
+Some existing databases may not have yet TLS support. To activate TLS, you need
+to restart the database. Any action leading to the restart will activate TLS
+(e.g. plan update, upgrade of the database).
+
+### Download the CA certificate
+
+The certificate of our certification authority is available on the database
+dashboard.
+
+After downloading it, you can specify its path to the `mongo` CLI:
+
+```shell
+curl --cacert=/path/to/ca.pem -X GET "<URL>"
+```
 
 ## Changing plans
 
-You can upgrade or downgrade your database plan whenever you need it. This operation happens instantly thanks to Docker containers and no manual input is required. When you change the plan, your database will be stopped then simply restarted on a new host with new parameters of the chosen plan. During the operation the connection is dropped bewteen your app and the database. Finally, after the operation is successful, the related app will be restarted. 
+You can upgrade or downgrade your database plan whenever you need it. This operation happens instantly thanks to Docker containers and no manual input is required. When you change the plan, your database will be stopped then simply restarted on a new host with new parameters of the chosen plan. During the operation the connection is dropped between your app and the database. Finally, after the operation is successful, the related app will be restarted.
 
 ### From the Dashboard
 
@@ -106,7 +148,7 @@ In this example, `example-app-3030` is the ID of the addon, and `2g` is the plan
 To find out the addon ID:
 
 ```bash
-$ scalingo -a example-app addons 
+$ scalingo -a example-app addons
 
 +------------------------+------------------+------+
 |          ADDON         |        ID        | PLAN |
@@ -175,7 +217,7 @@ This operation is similar to changing your database plan; your database will be 
 
 ### Download automated backups
 
-Automated backups are listed in the database specific dashboard. 
+Automated backups are listed in the database specific dashboard.
 
 1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
 2. Click on **Addons** tab

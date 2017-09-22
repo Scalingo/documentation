@@ -110,7 +110,7 @@ save 60 10000
 
 ## Changing plans
 
-You can upgrade or downgrade your database plan whenever you need it. This operation happens instantly thanks to Docker containers and no manual input is required. When you change the plan, your database will be stopped then simply restarted on a new host with new parameters of the chosen plan. During the operation the connection is dropped bewteen your app and the database. Finally, after the operation is successful, the related app will be restarted. 
+You can upgrade or downgrade your database plan whenever you need it. This operation happens instantly thanks to Docker containers and no manual input is required. When you change the plan, your database will be stopped then simply restarted on a new host with new parameters of the chosen plan. During the operation the connection is dropped between your app and the database. Finally, after the operation is successful, the related app will be restarted.
 
 ### From the Dashboard
 
@@ -133,7 +133,7 @@ In this example, `example-app-3030` is the ID of the addon, and `2g` is the plan
 To find out the addon ID:
 
 ```bash
-$ scalingo -a example-app addons 
+$ scalingo -a example-app addons
 
 +----------------+------------------+------+
 |      ADDON     |        ID        | PLAN |
@@ -201,7 +201,7 @@ This operation is similar to changing your database plan; your database will be 
 
 ### Download automated backups
 
-Automated backups are listed in the database specific dashboard. 
+Automated backups are listed in the database specific dashboard.
 
 1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
 2. Click on **Addons** tab

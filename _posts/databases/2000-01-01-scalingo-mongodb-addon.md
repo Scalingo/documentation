@@ -1,6 +1,6 @@
 ---
 title: Scalingo MongoDB Addon
-modified_at: 2017-09-08 00:00:00
+modified_at: 2017-09-13 00:00:00
 category: databases
 tags: databases mongodb addon
 ---
@@ -85,7 +85,7 @@ databases/2015-06-24-access-database %}) guide.
 
 MongoDB [support
 TLS](https://docs.mongodb.com/manual/core/security-transport-encryption/) to
-encrypt all of MongoDB's network traffic: either between the client and the
+encrypt all of its network traffic: either between the client and the
 server or between the different replicas of your database.
 
 By default, all new MongoDB databases have TLS activated. If you want to
@@ -106,6 +106,15 @@ certificates for your databases are
 [self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate). If you
 want the certificate to be trust-able, you need to download our certification
 authority certificate and specify it to the MongoDB CLI tool.
+
+If you want to force connections to your database to use TLS, just head to the
+database dashboard and click on the toggle button:
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
+{% include mdl_img.html %}
+
+Note that you must have configured your application to use TLS when connecting
+to the database.
 
 ### Download the CA certificate
 
@@ -252,4 +261,4 @@ Oplog is a MongoDB feature which logs all the operations achieved on a MongoDB c
 
 Meteor uses this feature to sync different instances of an application. Your can read more about how to scale Meteor <a href="http://doc.scalingo.com/languages/javascript/nodejs/meteor/#how-to-scale-meteor">here</a>.
 
-The variable `MONGO_OPLOG_URL` is the one used by Meteor. As a result, after activating Oplog you juste have to restart your application.
+The variable `MONGO_OPLOG_URL` is the one used by Meteor. As a result, after activating Oplog you just have to restart your application.
