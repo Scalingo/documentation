@@ -20,7 +20,7 @@ A notifier have:
 * addon_provisioned: Addon provisioned, An addon was provisioned
 * addon_resumed: Addon resumed, An addon was provisioned
 * addon_suspended: Addon suspended, An addon was suspended
-* app_alert_triggered: App alert triggered, An app alert was triggered
+* app_alert_triggered: App alert triggered, An app alert was triggered (no triggered at the moment, feature is in alpha)
 * app_command_ran: App command ran, A command was ran in an app
 * app_crashed: App crashed, An app was crashed
 * app_crashed_repeated: App crashed repeated, An app was crashed. This event is sent on each crash.
