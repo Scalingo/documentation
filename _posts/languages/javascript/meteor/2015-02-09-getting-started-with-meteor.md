@@ -34,7 +34,7 @@ $ scalingo create meteor-app
 Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
 
-$ scalingo -a meteor-app addons-add scalingo-mongodb free
+$ scalingo -a meteor-app addons-add scalingo-mongodb mongo-sandbox
 -----> Addon scalingo-mongodb has been provisionned
        ID: meteor-app-7247
        Modified variables: [MONGO_URL SCALINGO_MONGO_URL]
