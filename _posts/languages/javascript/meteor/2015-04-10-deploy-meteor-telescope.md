@@ -37,7 +37,7 @@ The meteor framework uses extensively MongoDB as a datastore,
 so you need an available instance for you application.
 
 ```bash
-$ scalingo -a my-telescope addons-add scalingo-mongodb free
+$ scalingo -a my-telescope addons-add scalingo-mongodb mongo-sandbox
 -----> Addon scalingo-mongodb has been provisionned
        ID: my-telescope-1234
        Modified variables: [MONGO_URL SCALINGO_MONGO_URL]
