@@ -43,7 +43,7 @@ Here is an example with [https://github.com/Scalingo/sample-go-martini](https://
 ```toml
 [metadata.scalingo]
   root-package = "github.com/Scalingo/sample-go-martini"
-  go-version = "1.8.3"
+  go-version = "go1.8.3"
   install = [ "./..." ]
 ...
 ```
