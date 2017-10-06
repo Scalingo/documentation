@@ -1,208 +1,159 @@
 ---
-title: PHP - How to run migration with artisan in a postdeploy hook
-modified_at: 2017-06-22 00:00:00
+title: PHP - Running database migrations with 'artisan'
+modified_at: 2017-09-11 00:00:00
 category: languages
 tags: php, artisan, laravel, migration
-permalink: /languages/php/migration/
 ---
 
 ## Introduction
 
-Artisan is the command-line interface included with Laravel. It provides a number of helpful commands that can assist you while you build your application.
-Migrations are like version control for your database, allowing your team to easily modify and share the application's database schema. Migrations are typically paired with Laravel's schema builder to easily build your application's database schema. If you have ever had to tell a teammate to manually add a column to their local database schema, you've faced the problem that database migrations solve.
+Artisan is the command-line interface included with Laravel. It provides a
+number of helpful commands that can assist you while you build your
+application.
 
-## Addons Scalingo MySQL
+Migrations are like version control for your database, allowing your team to
+easily modify and share the application's database schema. Migrations are
+typically paired with Laravel's schema builder to easily build your
+application's database schema. If you have ever had to tell a teammate to
+manually add a column to their local database schema, you've faced the problem
+that database migrations solve.
 
-If you use `artisan` on `Laravel`, you must have a database. We are going to see the method with the addon Scalingo MySQL. Once the addon selected, your application environment change, see ([our documentation](http://doc.scalingo.com/databases/scalingo-mysql-addon.html)).
+## Scalingo MySQL Addon
 
-We can decompose the url of your database in environment like that : 
+A **Laravel** application requires a database, often a SQL database like MySQL
+or PostgreSQL, this article will be using MySQL, but it should be identical with
+a PostgreSQL database.
+
+First, a [Scalingo MySQL addon]({% post_url
+databases/2000-01-01-scalingo-mysql-addon %}) has to be added to your
+application. This addon will inject the environment variable `SCALINGO_MYSQL_URL`
+and its alias `DATABASE_URL`.
 
 ```bash
-mysql://user:pass@my-db.mysql.dbs.com:30000/my-db
+DATABASE_URL=mysql://user:pass@my-db.mysql.dbs.com:30000/my-db
 ```
 
-There are two ways to use it.
-Your can decompose these URL in your scalingo environment :
+To use this URL in your application, add at the top of your `app/config/database.php` file
+the following lines. They decompose the URL into the different fields and let you configure
+your app.
 
-```bash
-DB_DATABASE=my-db
-DB_HOST=my-db.mysql.dbs.com
-DB_PASSWORD=pass
-DB_PORT=30000
-DB_USERNAME=user
 ```
-
-Or you can use a parse fonction in your code :
-
-```php
 $url = parse_url(getenv("DATABASE_URL"));
+
 $host = $url["host"];
 $username = $url["user"];
 $password = $url["pass"];
 $database = substr($url["path"], 1);
 ```
 
-## Begin with artisan
+Then find the `mysql` entry in the `database.php` file and modify it like:
 
-To begin, we can usually run the installation of the migration. It is posible that this installation was already done in your project.
-
-```bash
-scalingo -a your_app run php artisan migrate:install
+```
+    'mysql' => array(
+        'driver'    => 'mysql',
+        'host'      => $host,
+        'database'  => $database,
+        'username'  => $username,
+        'password'  => $password,
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => '',
+    ),
 ```
 
-If you have some interogation about the writting of your command, you can run the following command to see what you have to do. The section the most important is 'migrate:*'.
+Now your application database is configured, let's work on the migrations.
+
+## First Migration
+
+Creating a migration with **Laravel** is done with the following command on your
+workstation.
 
 ```bash
-scalingo -a your_app run php artisan
+./artisan make:migration create_plants
 ```
 
-## Migration
-
-Our first migration : 
-
-```bash
-scalingo -a your_app run php artisan make:migration create_essences
-```
-
-You can also run this commande without scalingo : `php artisan make:migration create_essences`, as many following command, but don't forget to push the result with `git`.
-`create_essence` is the name of our migration that you can change.
-
-Our first migration is create but don't make anything for the moment. We have to modify the file created `/database/migrations/date_yourmigration` to express what we want to do. For us, it will be the file `/database/migrations/date_create_essences`.
+The file is created at the location `database/migrations/date_yourmigration`. Edit
+it to write the content of the migration.
 
 ```php
 public function up()
 {
-    Schema::create('essences', function($table) {
+    Schema::create('plants', function($table) {
         $table->increments('id');
-        $table->string('nom_vulgaire', 100);
-        $table->string('nom_latin', 100);
+        $table->string('common_name', 100);
+        $table->string('latin_name', 100);
         $table->text('description');
     });
 }
-```
 
-We have set our type of data. Then, we execute the migration with artisan.
-
-```bash
-scalingo -a your_app run php artisan migrate
-```
-
-For every migration file, we have to complete the section down too. Here it would be :
-
-```php
 public function down()
 {
-    Schema::drop('essences');
+    Schema::drop('plants');
 }
 ```
 
-This is really important to have the posibility to cancel our migration with the command `migrate:rollback`.
+To run locally the migration to see if the syntax is right, run the following command:
+
+```
+./artisan migrate
+```
+
+If everything went well, add this file to your GIT repository and deploy the application
+on the platform. Once the app has been deployed, apply the migration to your production
+database.
 
 ```bash
-scalingo -a your_app run php artisan migrate:rollback
+scalingo -a appname run php artisan migrate
 ```
 
+### What about the `down` method of the migration
 
-In apparte: you can make another command to cancelled all the n last migration:
+For every migration file, a `down` method should be written in the case we want
+to rollback database migrations.
 
 ```bash
-scalingo -a your_app run php artisan migrate:rollback --step=5
+scalingo -a appname run php artisan migrate:rollback
 ```
 
-or there is a command tu come back at the beginnig of the migrations, but also delete all our data saved.
+## Another example: alter a database table.
 
-```bash
-php artisan migrate:reset
-```
-
-## Generate some data
-
-It is also possible to generate some data to have an exemple in our database. You must create a file in the folder `database/seeds/`, we create the file `/database/seeds/EssenceTableSeeder.php`. We put in that file the data we want to insere :
-
-```php
-class EssenceTableSeeder extends Seeder {
- 
-    public function run()
-    {
-        DB::table('essences')->insert(
- 
-            array(
-                array(
-                    'nom_vulgaire' => 'Basilic exotique',
-                    'nom_latin' => 'Ocimum basilicum ssp basilicum',
-                    'description' => 'Cette huile essentielle est antibactérienne...'
-                ),
- 
-                array(
-                    'nom_vulgaire' => 'Bergamotier',
-                    'nom_latin' => 'Citrus bergamia',
-                    'description' => 'Cette huile essentielle est...'
-                )
-            )
- 
-        );
-    }
- 
-}
-```
-
-
-To introduce our modifications, we have also to change the file `/database/seeds/DatabaseSeeder.php`.
-
-```php
-class DatabaseSeeder extends Seeder {
- 
-    public function run()
-    {
-        $this->call('EssenceTableSeeder');
-    }
- 
-}
-```
-
-Then, to actualise the database, run the command:
-
-```bash
-scalingo -a your_app run php artisan db:seed
-```
-
-
-If there is a problem, please check that you have this at the beginning of your files : 
-
-```php 
-use Illuminate\Database\Seeder;
-```
-
-## Modify Database
-
-Now we know how to create a table. Let's see how we can modify it without using `rollback`. You can make a new migration. Put for example: 
+The previous example created a 'table creation' migration, here is an example of
+table alteration.
 
 ```php
 public function up()
 {
-    Schema::table('essences', function($table) {
-        $table->unique('nom_latin', 'essences_nom_latin_unique');
+    Schema::table('plants', function($table) {
+        $table->unique('latin_name', 'plants_unique_latin_name');
     });
 }
-```
 
-and
-
-```php
 public function down()
 {
     Schema::table('authors', function($table) {
-        $table->dropUnique('essences_nom_latin_unique');
+        $table->dropUnique('plants_unique_latin_name');
     });
 }
 ```
 
-Don't forget the down partie, it is really important. So let's migrate all of this:
+As previously, running the migration on the hosted application once deployed:
 
 ```bash
-scalingo -a your_app run php artisan migrate
+scalingo -a appname run php artisan migrate
 ```
 
-## Conclusion
+For more examples, refer to [the official Laravel documentation](https://laravel.com/docs/5.5/migrations)
 
-The fonctionment of artisan is quite the same as in a local project PHP. You only need to add `scalingo -a your_app run` before every command. Keep on mind you have to commit too.
+## Apply migrations automatically after deployment
+
+So far the action to apply migrations on the production database was manual. It
+is possible to automate it by using [a postdeploy hook]({% post_url
+app/2000-01-01-postdeploy-hook %}) All you have to do is to create a `Procfile`
+file at the root of your project with the following content:
+
+```
+postdeploy: php artisan migrate
+```
+
+That's it, if a deployment is a success, the command applying migrations will
+be automatically run.
