@@ -6,5 +6,5 @@ Before doing this tutorial you should have setup your environment:
 * [Install 'scalingo' Command Line Interface]({% post_url cli/2015-09-18-command-line-tool %})
 
 <blockquote class="bg-info">
-  All the operation achieved with the <a href="http://cli.scalingo.com">'scalingo' CLI</a> can also be done on our <a href="https://my.scalingo.com">web dashbaord</a>.
+  All the operation achieved with the <a href="http://cli.scalingo.com">'scalingo' CLI</a> can also be done on our <a href="https://my.scalingo.com">web dashboard</a>.
 </blockquote>
