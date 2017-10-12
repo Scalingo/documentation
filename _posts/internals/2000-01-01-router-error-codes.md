@@ -1,6 +1,6 @@
 ---
 title: Router error codes
-modified_at: 2017-06-08 00:00:00
+modified_at: 2017-10-12 00:00:00
 category: internals
 tags: internals reverse-proxy routing http https
 ---
@@ -10,6 +10,7 @@ tags: internals reverse-proxy routing http https
 Here is the list of error codes emitted by our routing layer:
 
 * `499 Client Closed Request`: client closed the connection before the server answered the request. It is usually caused by client side timeout.
+* `503 Service Unavailable`: the application [requests queue]({% post_url internals/2015-03-22-routing %}#requests-queue) is full, so the newly coming request has not been unqueued.
 * `504 Gateway Timeout`: application behind the proxy has timed out.
 
 
