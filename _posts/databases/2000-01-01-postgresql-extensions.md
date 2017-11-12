@@ -25,6 +25,8 @@ user=> CREATE extension hstore;
 CREATE EXTENSION
 user=> CREATE extension postgis;
 CREATE EXTENSION
+user=> CREATE extension "uuid-ossp";
+CREATE EXTENSION
 ```
 
 This example uses 'hstore' and 'postgis' but you can do that for all the underneath list of
