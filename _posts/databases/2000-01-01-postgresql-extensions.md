@@ -25,6 +25,8 @@ user=> CREATE extension hstore;
 CREATE EXTENSION
 user=> CREATE extension postgis;
 CREATE EXTENSION
+user=> CREATE extension "uuid-ossp";
+CREATE EXTENSION
 ```
 
 This example uses 'hstore' and 'postgis' but you can do that for all the underneath list of
@@ -43,22 +45,22 @@ extensions.
 	<tbody>
 		<tr>
 			<td>btree_gist</td>
-			<td>1.0</td>
+			<td>1.0, 1.2</td>
 			<td>support for indexing common datatypes in GiST</td>
 		</tr>
 		<tr>
 			<td>citext</td>
-			<td>1.0</td>
+			<td>1.0, 1.3</td>
 			<td>data type for case-insensitive character strings</td>
 		</tr>
 		<tr>
 			<td>cube</td>
-			<td>1.0</td>
+			<td>1.0, 1.2</td>
 			<td>data type for multidimensional cubes</td>
 		</tr>
 		<tr>
 			<td>dblink</td>
-			<td>1.1</td>
+			<td>1.1, 1.2</td>
 			<td>connect to other PostgreSQL databases from within a database</td>
 		</tr>
 		<tr>
@@ -68,52 +70,52 @@ extensions.
 		</tr>
 		<tr>
 			<td>earthdistance</td>
-			<td>1.0</td>
+			<td>1.0, 1.1</td>
 			<td>calculate great-circle distances on the surface of the Earth</td>
 		</tr>
 		<tr>
 			<td>fuzzystrmatch</td>
-			<td>1.0</td>
+			<td>1.0, 1.1</td>
 			<td>determine similarities and distance between strings</td>
 		</tr>
 		<tr>
 			<td>hstore</td>
-			<td>1.3</td>
+			<td>1.3, 1.4</td>
 			<td>data type for storing sets of (key, value) pairs</td>
 		</tr>
 		<tr>
 			<td>intarray</td>
-			<td>1.0</td>
+			<td>1.0, 1.2</td>
 			<td>functions, operators, and index support for 1-D arrays of integers</td>
 		</tr>
 		<tr>
 			<td>isn</td>
-			<td>1.0</td>
+			<td>1.0, 1.1</td>
 			<td>data types for international product numbering standards</td>
 		</tr>
 		<tr>
 			<td>ltree</td>
-			<td>1.0</td>
+			<td>1.0, 1.1</td>
 			<td>data type for hierarchical tree-like structures</td>
 		</tr>
 		<tr>
 			<td>pg_stat_statements</td>
-			<td>1.2</td>
+			<td>1.2, 1.4</td>
 			<td>track execution statistics of all SQL statements executed</td>
 		</tr>
 		<tr>
 			<td>pg_trgm</td>
-			<td>1.1</td>
+			<td>1.1, 1.3</td>
 			<td>text similarity measurement and index searching based on trigrams</td>
 		</tr>
 		<tr>
 			<td>pgcrypto</td>
-			<td>1.1</td>
+			<td>1.1, 1.3</td>
 			<td>cryptographic functions</td>
 		</tr>
 		<tr>
 			<td>pgrowlocks</td>
-			<td>1.1</td>
+			<td>1.1, 1.2</td>
 			<td>show row-level locking information</td>
 		</tr>
 		<tr>
@@ -123,17 +125,17 @@ extensions.
 		</tr>
 		<tr>
 			<td>postgis</td>
-			<td>2.1.8</td>
+			<td>2.1.8, 2.3.0, 2.3.1, 2.4.0</td>
 			<td>PostGIS geometry, geography, and raster spatial types and functions</td>
 		</tr>
 		<tr>
 			<td>postgis_tiger_geocoder</td>
-			<td>2.1.8</td>
+			<td>2.1.8, 2.4.0</td>
 			<td>PostGIS tiger geocoder and reverse geocoder</td>
 		</tr>
 		<tr>
 			<td>postgis_topology</td>
-			<td>2.1.8</td>
+			<td>2.1.8, 2.4.0</td>
 			<td>PostGIS topology spatial types and functions</td>
 		</tr>
 		<tr>
@@ -143,12 +145,12 @@ extensions.
 		</tr>
 		<tr>
 			<td>unaccent</td>
-			<td>1.0</td>
+			<td>1.0, 1.1</td>
 			<td>text search dictionary that removes accents</td>
 		</tr>
 		<tr>
 			<td>uuid-ossp</td>
-			<td>1.0</td>
+			<td>1.0, 1.1</td>
 			<td>generate universally unique identifiers (UUIDs)</td>
 		</tr>
 	</tbody>
