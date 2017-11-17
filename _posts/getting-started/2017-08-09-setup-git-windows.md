@@ -9,17 +9,17 @@ Git is a version control system really useful for tracking changes in computer f
 
 ## Installation on Windows
 
-To install Git on Windows you have to download an exe file that you will find [here](https://git-for-windows.github.io/). To begin the download directly you can click [here](http://git-scm.com/download/win).
+To install Git on Windows you have to download [Git for Windows](https://git-for-windows.github.io/).
 
-You will find an useful SSH, see our page [Setup SSH on Windows]({% post_url ssh/2015-04-04-setup-ssh-windows %}), and the standard graphic interface.
+Once the installation is complete, you will need SSH as well. Take a look at [Setup SSH on Windows]({% post_url ssh/2015-04-04-setup-ssh-windows %}).
 
 ## Git Setup
 
-To setup Git you will use the tool `git config`, there are more informations on the site [https://git-scm.com/](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup).
+To setup Git you will use the command `git config`. More informations can be found in [https://git-scm.com/](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup).
 
 ### Config your Identity
 
-At the first time you have to config your user name and your user email.
+Your identity (user name and email) must be configured:
 
 ```bash
 git config --global user.name "John Doe"
