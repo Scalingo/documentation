@@ -2,7 +2,7 @@
 title: Scalingo OpenVPN Addon
 modified_at: 2017-12-01 00:00:00
 category: addons
-tags: vpn addon OpenVPN feature
+tags: vpn addon OpenVPN
 ---
 
 ## Introduction
@@ -118,8 +118,8 @@ The app will be restarted and you should see the output of the OpenVPN being set
 - What happen if the connection is cut?
 
 The openvpn automatically schedules reconnections, using an exponential backoff
-logics. (Restart instantly first time, then wait longer and longer according to
-the number of consecutive failures)
+logics (restart instantly first time, then wait longer and longer according to
+the number of consecutive failures).
 
 - Where can I find an comprehensive documentation of OpenVPN Config files?
 
