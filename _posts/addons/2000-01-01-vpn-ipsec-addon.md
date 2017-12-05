@@ -1,6 +1,6 @@
 ---
 title: Scalingo VPNC IPSec Addon
-modified_at: 2016-03-03 00:00:00
+modified_at: 2017-12-05 00:00:00
 category: addons
 tags: vpn addon custom feature
 ---
@@ -86,3 +86,8 @@ The [Ubuntu
 manpage](http://manpages.ubuntu.com/manpages/trusty/man8/vpnc-connect.8.html)
 about vpnc contains all the properties which can be set in the configuration
 file.
+
+- Do we support Fortigate IPSec VPN
+
+Yes we do. Just check the box in the VPN configuration dashboard. We'll automatically
+use the `vpnc` [client patched](https://github.com/hekar/vpnc-fortigate) for Fortigate.
