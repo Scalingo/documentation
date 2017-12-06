@@ -99,7 +99,7 @@ to connect using TLS, and if it fails will try without TLS. If you want to
 ensure it connects using TLS, you can use the `--ssl-mode` option:
 
 ```shell
-mysql --ssl-mode REQUIRE -u <user> --password=<password> -h <host> -P <port> dbname
+mysql --ssl-mode REQUIRED -u <user> --password=<password> -h <host> -P <port> dbname
 ```
 
 Some existing databases may not have yet TLS support. To activate TLS, you need
