@@ -1,6 +1,6 @@
 ---
 title: Scalingo Redis Addon
-modified_at: 2016-01-11 00:00:00
+modified_at: 2017-12-13 00:00:00
 category: databases
 tags: databases redis addon
 ---
@@ -83,7 +83,7 @@ If you need to access your database from other places than your app please follo
 
 ### Number of databases
 
-Each redis instance can use 5 databases (numbered from 1 to 5)
+Each redis instance can use 6 databases (numbered from 0, the default DB, to 5)
 
 ### Idle connections timeout
 
