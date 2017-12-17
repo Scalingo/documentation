@@ -125,7 +125,7 @@ extensions.
 		</tr>
 		<tr>
 			<td>postgis</td>
-			<td>2.1.8, 2.3.0, 2.3.1, 2.4.0</td>
+			<td>2.1.8, 2.3.0, 2.3.1, 2.4.0, 2.4.1</td>
 			<td>PostGIS geometry, geography, and raster spatial types and functions</td>
 		</tr>
 		<tr>
