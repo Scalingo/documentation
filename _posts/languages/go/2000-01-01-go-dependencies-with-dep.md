@@ -2,7 +2,7 @@
 title: Manage Go dependencies with dep
 modified_at: 2017-10-06 00:00:00
 category: languages
-tags: go
+tags: go depndencies
 ---
 
 This tutorial explains how to deploy a Go application which is using `dep`
