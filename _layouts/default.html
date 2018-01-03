@@ -2,6 +2,7 @@
 <html>
   {% include head.html %}
   <body>
+    {% include google_tag_manager_body.html %}
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       {% include nav.html %}
       <main class="mdl-layout__content">
@@ -38,8 +39,6 @@
         {% include footer.html %}
       </main>
     </div>
-    {% include ga_tracker.html %}
-    {% include fb_pixel.html %}
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     <script data-main="{{ site.baseurl }}/assets/javascripts/application" src="{{ site.baseurl }}/assets/javascripts/require.js"></script>
   </body>
