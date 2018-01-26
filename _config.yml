@@ -41,3 +41,6 @@ array: [] # hack for creating array
 
 sass:
   sass_dir: _sass
+
+extlinks:
+  followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]
