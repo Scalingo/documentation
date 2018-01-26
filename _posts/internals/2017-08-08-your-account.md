@@ -1,61 +1,64 @@
 ---
-title: Your Account
-modified_at: 2017-08-08 00:00:00
+title: Manage your Account
+modified_at: 2018-01-26 00:00:00
 category: platform
 tags: account
 order: 6
 ---
 
-Welcome on the Scalingo Platform!
+The configuration of your account is done using the
+[dashboard](https://my.scalingo.com). The following sections are reachable from
+the top right menu:
 
-## How to Manage your Account
+## Profile [<i class="fa fa-external-link"></i>](https://my.scalingo.com/profile)
 
-On the dashboard, you can see your account name at the top on the right. When you click, there is a menu with: [Profile](https://my.scalingo.com/profile), [SSH Keys](https://my.scalingo.com/keys), [Billing](https://my.scalingo.com/billing), [Referrals](https://my.scalingo.com/referrals), [Timeline](https://my.scalingo.com/timeline), [Logout](https://my.scalingo.com/#).
+Personal information can be managed from this page. It includes changing
+username/email/password as well as configuring Scalingo's newsletter
+subscription.
 
-### [Profile](https://my.scalingo.com/profile)
+On this page, the API token associated to your account is available. This
+token let you authenticate to our API if you need to build tools manage the
+platform in a programmative way. Have a look at our [API
+documentation](https://developers.scalingo.com) to learn how to use it.
 
-Here, you can change your [Basic Informations](https://my.scalingo.com/profile) like Username, First Name, Last Name, Location and Company. You can also subscibe to our newsletter or unsubscribe.
+Account deletion is located here. The action is possible only once your account
+does not own any application anymore, make sure to delete them all first.
 
-There is a section to [change your Email](https://my.scalingo.com/profile). 
+## SSH Keys [<i class="fa fa-external-link"></i>](https://my.scalingo.com/keys)
 
-You will find your [API Token](https://my.scalingo.com/profile) for our Platform that you can regenerate.
-Indeed Scalingo proposes an [API](https://developers.scalingo.com/?_ga=2.37678688.1146730661.1502089790-47712416.1497343097), an Applications Programming Interface. This is a set of functions that allows you, the developer, to use Scalingo.
+SSH keys serve as a means of identifying yourself to Scalingo's git server.
+Each time a deployment is triggered using the `git push` command, your account
+need to be authenticated with one of your SSH Keys.
 
-Another section is about [Integrations](https://my.scalingo.com/profile) like GitHub.
+[Learn how to configure your SSH key for your operating system]({% post_url getting-started/2015-06-02-first-steps %})
 
-Finally you will find the button to delete your account.
+## Billing [<i class="fa fa-external-link"></i>](https://my.scalingo.com/billing)
 
-To change your password, you have to pass by [Logout](https://my.scalingo.com/#). At the new connection, click on the link [Reset it](https://my.scalingo.com/account/reset) will reset your password.
+Configure your payment methods in this section. The platform support 3 methods:
 
-### [SSH Keys](https://my.scalingo.com/keys)
+* Debit/Credit card payments: the beginning of each month, the platform charges
+on the cards what has been consumed the month before.
 
-It is in that page that you can import or delete a SSH key. That is really important because SSH keys are used to authenticate the remote computer and assure the good fonctionment of Scalingo. 
+* Prepaid credit bought with PayPal: buy credit in advance and we'll use them to pay
+the invoices. Payment fallback on the bank card if there is not enough credit to
+pay an invoice.
 
-### [Billing](https://my.scalingo.com/billing)
+* SEPA payment: for customers located in the European Union, SEPA debit can be used to pay
+invoices, an electronic SEPA mandat is generated during the setup process.
 
-There are different ways to pay our services like the credit card or paypal. Here you can add your favorite payment method or add a voucher code. To review our tarifs you can see [Container Sizes]({% post_url internals/2015-04-15-container-sizes %}).
+Payment history can also be found on this page, including links to download
+your past invoices.
 
-Your recent payments are also listed.
+## Referrals [<i class="fa fa-external-link"></i>](https://my.scalingo.com/referrals)
 
-### [Referrals](https://my.scalingo.com/referrals)
+Scalingo embeds a referral program: recommend us and share your referral link,
+you'll get discounts worth of 20% of the invoices amount received by the people
+you've invited, each month during 12 months.
 
-Scalingo provides you a link to sponsor someone in our platform. If someone registers himself with this link, you will earn 20% of his bill.
+## Timeline [<i class="fa fa-external-link"></i>](https://my.scalingo.com/timeline)
 
-### [Timeline](https://my.scalingo.com/timeline)
-
-All your deployments and activities on your applications are listed in that page.
-
-
-## How to Manage your Applications
-
-### [Create an Application](https://my.scalingo.com/apps)
-
-To create an application, you will find a link in the dashbord homepage on our platform [my.scalingo.com](https://my.scalingo.com). You can also create your application [with our CLI]({% post_url cli/2015-09-18-command-line-tool %}#features) or [with a curl](https://developers.scalingo.com/apps.html#create-an-application).
-
-### [Manage an Application](https://my.scalingo.com/apps)
-
-On the dashboard to manage your application, you will select the application which have to be changed. On the section `Settings` you are able to rename your application, delete it, or transfer ownership (see [Transfer the Ownership of an App]({% post_url app/2000-01-01-transfer-ownership %})).
-
-### Others
-
-To learn more about applications, please see the doc Application Configuration.
+All the activities attached to your account are present in this view. It
+gathers events you have done to your account applications, owned or as
+collaborators, and those related to your account directly (ie. Add/Remove SSH
+Key). Events achieved by application collaborators are not present here, go to
+the application's timline to get them.
