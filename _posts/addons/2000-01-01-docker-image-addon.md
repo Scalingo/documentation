@@ -50,8 +50,8 @@ The API key is available on [your profile](https://my.scalingo.com/profile), cop
 ### Download your image
 
 ```bash
-$ docker pull registry.scalingo.com/app-myappname:0123456789abcdef
-0123456789abcdef: Pulling from app-myappname
+$ docker pull registry.scalingo.com/my-app:0123456789abcdef
+0123456789abcdef: Pulling from my-app
 6599cadaf950: Downloading 59.99 MB/65.69 MB
 23eda618d451: Download complete
 f0be3084efe9: Download complete
@@ -81,7 +81,7 @@ The complete docker command to start your app on port 4000 looks like the follow
 docker run -it \
   -e PORT=4000
   -p 4000:4000 \
-  registry.scalingo.com/app-myappname:0123456789abcdef /start web
+  registry.scalingo.com/my-app:0123456789abcdef /start web
 ```
 
 In this case no environment variable has been set, you need to add the environment variables required by your
@@ -95,7 +95,7 @@ docker run -it \
   -e DATABASE_URL=postgres://172.17.0.1:5432 \
   -e MAIL_URL=smtp://user:password@mailprovider.com:587 \
   -p 4000:4000 \
-  registry.scalingo.com/app-myappname:0123456789abcdef /start web
+  registry.scalingo.com/my-app:0123456789abcdef /start web
 ```
 
 > We are using `172.17.0.1` as `DATABASE_URL` host because in a container, your computer will be reachable at this IP.

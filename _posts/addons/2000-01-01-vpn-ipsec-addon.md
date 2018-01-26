@@ -29,7 +29,7 @@ First, you need to provision the add to your application. This can be done
 through the dashboard or with our command line tool.
 
 ```bash
-scalingo -a appname addons-add scalingo-vpn-ipsec vpn-ipsec-standard
+scalingo --app my-app addons-add scalingo-vpn-ipsec vpn-ipsec-standard
 ```
 
 ### Setup the configuration

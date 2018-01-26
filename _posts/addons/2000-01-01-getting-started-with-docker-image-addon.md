@@ -34,7 +34,7 @@ To get the *Docker Image* of your application, you must add the
 application dashboard.
 
 ```bash
-$ scalingo -a my-app addons-add scalingo-docker-image base-plan
+$ scalingo --app my-app addons-add scalingo-docker-image base-plan
 ```
 
 Once this is done, the "Deployments" panel of your app dashboard will change,
