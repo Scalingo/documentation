@@ -14,7 +14,7 @@ application, this buildpack will fit this need.
 ## Set up this buildpack for your application
 
 This buildpack won't work alone, you need to combine it with the buildpack of the technology you are using. To achieve
-that you need to setup the [Multi Buildpack](http://doc.scalingo.com/buildpacks/multi):
+that you need to setup the [multi-buildpacks]({% post_url internals/buildpacks/2015-09-28-multi-buildpack %}):
 
 ```bash
 scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack.git

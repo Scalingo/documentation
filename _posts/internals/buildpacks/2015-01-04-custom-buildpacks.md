@@ -20,7 +20,7 @@ BUILDPACK_URL=https://github.com/cloudfoundry/java-buildpack
 Then during the deployment, you'll be able to see:
 
 ```text
-<-- Start deployment of myapp -->
+<-- Start deployment of my-app -->
 -----> Cloning custom buildpack: 'https://github.com/cloudfoundry/java-buildpack'
 
 -- SNIP --

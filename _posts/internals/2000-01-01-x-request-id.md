@@ -15,7 +15,7 @@ received by the platform routing servers. It is added to the request which is
 passed to your application containers. The header is called `X-Request-ID`.
 
 If the `X-Request-ID` header is already defined by the client, it won't be
-overriden except if it doesn't respect the following format:
+overridden except if it doesn't respect the following format:
 
 * 20-128 alphanumerical characters and the symbols `+`, `=`, `/` and `-`.
 
@@ -55,7 +55,7 @@ Then redeploy your application and you should see the IDs appearing for each req
 2017-05-31 18:42:30 [web-1] [9caa8d15-7851-41b0-91c4-512b34f20ea4] Completed 200 OK in 7ms (Views: 0.9ms)
 ```
 
-### Node.JS
+### Node.js
 
 The header will appear in the request object usually named `req` and you can access it the following way:
 
@@ -71,5 +71,5 @@ app.use(logfmt.requestLogger({immediate: true}, logfmt.commonFormatter))
 
 ### Other languages
 
-Each language should be able the header as it's a standard HTTP header. Don't hesitate to reach us
-if you need help getting the header information.
+Each language should be able to read the header as it is a standard HTTP header.
+Don't hesitate to reach us if you need help getting the header information.

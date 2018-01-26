@@ -1,5 +1,5 @@
 ---
-title: Multi Buildpack
+title: Multi Buildpacks
 modified_at: 2016-05-17 00:00:00
 categories: internals
 tags: buildpacks build image multi
@@ -35,7 +35,7 @@ git add .buildpacks
 git commit -m "Setup .buildpacks for using multiple buildpacks on Scalingo"
 ```
 
-Finally in this example, thanks to this method, both NodeJS buildpack and Go buildpack will be applied
+Finally in this example, thanks to this method, both Node.js buildpack and Go buildpack will be applied
 on your project.
 
 > List of the available buildpacks: [http://doc.scalingo.com/buildpacks](http://doc.scalingo.com/buildpacks)
@@ -55,9 +55,9 @@ https://github.com/Scalingo/java-buildpack#javaonly
 Yes.
 
 The multi buildpack tries to detect the way to start your application from the
-last buildpack you are installing. As a result, if your application is a **Nodejs**
+last buildpack you are installing. As a result, if your application is a **Node.js**
 application and you need to run the **Java** buildpack to install a custom JDK.
-You need to have the **Nodejs** buildpack last:
+You need to have the **Node.js** buildpack last:
 
 ```
 https://github.com/Scalingo/java-buildpack#javaonly
@@ -71,6 +71,5 @@ Without doing that, if you don't have a [Procfile]({% post_url internals/2014-12
 ```bash
 git push scalingo master
 ```
-
 
 > Source: [https://github.com/Scalingo/multi-buildpack](https://github.com/Scalingo/multi-buildpack)

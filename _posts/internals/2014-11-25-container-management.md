@@ -9,7 +9,7 @@ tags: internals containers
 
 The platform is ensuring **zero downtime deployments**: when a new version of
 your application is deployed, the system is waiting for the new version of the
-container to be online and well, before stopping the old version.
+container to be online, before stopping the old version.
 
 This is the same principle when you're **restarting** one or several containers
 of your application, new containers have to be available at first, then the
@@ -17,13 +17,13 @@ order to stop old containers is done.
 
 With this feature, it let you achieve **rolling release/continuous delivery**
 easily, there is no friction when a new version of your software is deployed,
-your users won't even remark it.
+your users won't even notice it.
 
 ## Starting new containers
 
-When a new `web` container is started, its environment contain the `PORT`
-environment variable. Your application has to listen on this port in order to
-receive request. Once the application has been started, the container scheduler
+When a new `web` container is started, its environment contains the `PORT`
+environment variable. Your application must listen on this port in order to
+receive requests. Once the application has been started, the container scheduler
 will try to connect to your application on the port defined previously during
 **60 seconds**. Once a TCP connection is accepted by your container, we consider
 the container ready to get requests. Otherwise, the operation is aborted with a
@@ -34,7 +34,7 @@ the container ready to get requests. Otherwise, the operation is aborted with a
   listening in time on the corresponding port.
 
 * In a restart operation, we'll retry to start the container 20 times with
-  exponential backoff, then you'll receive a notifciation email with a notice
+  exponential backoff, then you'll receive a notification email with a notice
   telling you that the scheduler didn't manage to restart your container.
 
 Once the application is ready, the traffic is diverted to the newly booted
@@ -48,7 +48,7 @@ release and stopping old containers.
 >
 > For a short period both old and new containers are running. If your application
 > is based on schedule tasks, or asynchronous workers, you need to take care of
-> developing them idempotent in the potential case where a schedule task is handled
+> developing them idempotent in the potential case where a scheduled task is handled
 > twice.
 
 ## Shutdown of old containers
