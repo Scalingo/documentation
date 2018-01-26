@@ -10,7 +10,7 @@ emails from your application. Scalingo does not provide an embedded email
 server, we are not an email provider.  If you try to use the `sendmail`
 executable, you will not find it.
 
-However it's is totally possible to send email, thanks to an external SMTP
+However it is is totally possible to send emails, thanks to an external SMTP
 server.
 
 ## Use of an external SMTP server
@@ -30,8 +30,8 @@ address, add the credentials in your app environment variables and use them.
 
 ## Port 25 disabled
 
-SMTP servers are usually available on differents ports: 25 (SMTP), 465 (SMTPS),
-587 (submission).  Port 25 is usually unencrypted are sometimes
+SMTP servers are usually available on different ports: 25 (SMTP), 465 (SMTPS),
+587 (submission). Port 25 is usually unencrypted and sometimes
 unauthenticated. For this reason, such servers are often used as spam relay.
 
 Our decision has been to **block the port 25**, but don't worry, all providers

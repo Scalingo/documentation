@@ -33,15 +33,15 @@ git remote add child-app-1 git@scalingo.com:child-app-1.git
 git push child-app-1 master
 ```
 
-Or you can use our API to directly deploy an archive from Github/Gitlab/Bitbucket
-according to you setup.
+Or you can use our API to directly deploy an archive from GitHub/GitLab/Bitbucket
+according to your setup.
 
 The API documentation to trigger this deployment can be found here:
 [http://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive](http://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive)
 
-## Example with Gitlab
+## Example with GitLab
 
-The following script let your create and deploy a child app from any Gitlab instance:
+The following script lets you create and deploy a child app from any GitLab instance:
 
 ```sh
 export AUTH_TOKEN=<scalingo auth token>
@@ -62,7 +62,7 @@ Child apps for <scalingo app name>:
 * my-child-app-1 (58d2a7416547b65316b6690e) - https://my-child-app-1.scalingo.io
 ```
 
-Here is the code of the script:
+Here is the code of the `child-app-gitlab.rb` script:
 
 <script src="https://gist.github.com/Soulou/2a97e6adfa232526472336ef991489a9.js"></script>
 

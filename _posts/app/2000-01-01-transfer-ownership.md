@@ -5,14 +5,19 @@ category: app
 tags: app transfer ownership
 ---
 
-You may want to transfer an application to someone else. In this case you've to
-invite this person as collaborator to the application, then you'll be able to
+You may want to transfer an application to someone else. In this case you have to
+invite this person as a collaborator of the application. Then you will be able to
 transfer them the application.
 
-This operation won't affect the application, nothing concerning the configuration
+This operation will not affect the application, nothing regarding the configuration
 or the runtime of the app will be modified.
 
-This operation is only achievable from the [Scalingo dashboard](https://my.scalingo.com)
+This operation is only achievable from the [Scalingo
+dashboard](https://my.scalingo.com).
+
+> The billing is done the last day of the month to the owner of the application at that date. Hence,
+  transfering the ownership of an application the 4th of the month or the 30th at 11:59PM will not
+  change anything. The owner at the date of billing is taken into account.
 
 ## Details of the operation
 
@@ -27,7 +32,7 @@ This operation is only achievable from the [Scalingo dashboard](https://my.scali
 
 1. Click on the validation link you've received by email, you'll have to login if you were unauthenticated.
 
-The account is now collaborator of the application
+The account is now collaborator of the application.
 
 ### Transfer to the new owner
 

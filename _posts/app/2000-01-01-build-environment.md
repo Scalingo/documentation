@@ -9,4 +9,4 @@ When your application is deployed, the build container is containing the environ
 variables defined in the application configuration and the platform is also injecting
 the following variable:
 
-* `$SOURCE_VERSION`: SHA of the currently deployed GIT commit.
+* `$SOURCE_VERSION`: SHA of the currently deployed Git commit.
