@@ -15,7 +15,7 @@ request via standard methods of your web framework.
 
 That is why the HTTP headers of the external request are enriched with
 a `X-Forwarded-Proto` header (among others) by the load balancer and handed
-over to your `web` contaner(s).
+over to your `web` container(s).
 
 {% include info data = 'Learn more about proxying on the platform: <a href="/internals/routing.html">Documentation</a>' %}
 
