@@ -20,7 +20,7 @@ containers using the **OpenVPN** technology.
 ### Provision the addon
 
 First, you need to provision the add to your application. This can be done
-through the dashboard or with our command line tool.
+through the web dashboard or with our command line tool:
 
 ```bash
 scalingo -a appname addons-add scalingo-vpn-openvpn vpn-openvpn-standard
@@ -117,11 +117,11 @@ The app will be restarted and you should see the output of the OpenVPN being set
 
 - What happen if the connection is cut?
 
-The openvpn automatically schedules reconnections, using an exponential backoff
+The OpenVPN automatically schedules reconnections, using an exponential backoff
 logics (restart instantly first time, then wait longer and longer according to
 the number of consecutive failures).
 
-- Where can I find an comprehensive documentation of OpenVPN Config files?
+- Where can I find an comprehensive documentation of OpenVPN config files?
 
 The [official OpenVPN wiki](https://community.openvpn.net/openvpn/wiki) contains
 everything you might need to configure the OpenVPN client and server.

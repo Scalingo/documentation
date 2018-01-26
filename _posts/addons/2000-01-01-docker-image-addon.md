@@ -9,18 +9,18 @@ tags: docker images download feature
 
 Thanks to this addon, you'll be able to get back the **Docker Images** that have been built when deploying your application in our infrastructure.
 
-Everytime you push code to Scalingo, a *build* is triggered resulting in the construction of a Docker Image. When this build phase is successful we try to *deploy* this **Docker Image** by trying to run it on our cloud. This addon lets you download every Docker Image that has been built by Scalingo.
+Each time you push code to Scalingo, a *build* is triggered resulting in the construction of a Docker Image. When this build phase is successful we try to *deploy* this **Docker Image** by trying to run it on our cloud. This addon lets you download every Docker Image that has been built by Scalingo.
 
 ## Use cases
 
-Because the docker image is the exact same one we're running in our cloud, you can use it to debug your production code or as a **pledge of reversibility**.
+Because the Docker image is the exact same one we are running in our cloud, you can use it to debug your production code or as a **pledge of reversibility**.
 
 You can also use Scalingo as a **Docker Integration Platform**. You push your code from one side and get a
-generic Docker Image on the other. You can then use Scalingo for your staging environments and run the final Docker image on your own private cloud or the one from your customers. It's especially useful when your customers ask to run your application in their own environments for various reasons (Big Co wanting to controll their infrastructure, legal reasons like in the MedTech world for instance).
+generic Docker Image on the other. You can then use Scalingo for your staging environments and run the final Docker image on your own private cloud or the one from your customers. It's especially useful when your customers ask to run your application in their own environments for various reasons (Big Co wanting to control their infrastructure, legal reasons like in the MedTech world for instance).
 
 ## Setup of the addon
 
-Provision the add for your application from our web dashboard or with our CLI:
+Provision the addon for your application from our web dashboard or with our CLI:
 
 ```bash
 $ scalingo addons-add scalingo-docker-image base-plan
@@ -28,7 +28,7 @@ $ scalingo addons-add scalingo-docker-image base-plan
 
 ## Usage of the addon
 
-Once this is done, has been added, the deployments panel of your app dashboard
+Once the addon is provisioned, the deployments panel of your app dashboard
 will change, a **Docker logo** will be present. Click on it to get the instructions
 to download the image of a given deployment.
 
@@ -53,20 +53,20 @@ The API key is available on [your profile](https://my.scalingo.com/profile), cop
 $ docker pull registry.scalingo.com/app-myappname:0123456789abcdef
 0123456789abcdef: Pulling from app-myappname
 6599cadaf950: Downloading 59.99 MB/65.69 MB
-23eda618d451: Download complete 
-f0be3084efe9: Download complete 
-52de432f084b: Download complete 
-a3ed95caeb02: Download complete 
-b11499e07372: Download complete 
-40d9c9cec188: Download complete 
+23eda618d451: Download complete
+f0be3084efe9: Download complete
+52de432f084b: Download complete
+a3ed95caeb02: Download complete
+b11499e07372: Download complete
+40d9c9cec188: Download complete
 b7c87d00e3ba: Downloading 31.84 MB/362.9 MB
 9aac245cd453: Downloading 23.74 MB/60.04 MB
-f1ac1758a0cb: Waiting 
+f1ac1758a0cb: Waiting
 ```
 
 ### Run your app
 
-The entrypoint of the image is a script located at `/start`. Its usage is:
+The entry point of the image is a script located at `/start`. Its usage is:
 
 ```bash
 /start <container type>
@@ -75,7 +75,7 @@ The entrypoint of the image is a script located at `/start`. Its usage is:
 /start web
 ```
 
-The compelete docker command to start your app on port 4000 looks like the following:
+The complete docker command to start your app on port 4000 looks like the following:
 
 ```bash
 docker run -it \
@@ -98,6 +98,6 @@ docker run -it \
   registry.scalingo.com/app-myappname:0123456789abcdef /start web
 ```
 
-> We're using `172.17.0.1` as `DATABASE_URL` host because in a container, your computer will be reachable at this IP.
+> We are using `172.17.0.1` as `DATABASE_URL` host because in a container, your computer will be reachable at this IP.
 
 That's it, your app is running with your environment.
