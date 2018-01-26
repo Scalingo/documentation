@@ -10,25 +10,25 @@ permalink: /databases/elasticsearch/access/
 {% include info_command_line_tool.md %}
 
 The difference between this data storage engine and the others is that Elasticsearch
-communicates over HTTP, so you can use any tool built for that, you don't have to use
-an official client. The most common command line tool is `curl`, the following example
-is using it.
+communicates over HTTP, so you can use any tool built for that. You don't have to use
+an official client. The most common command line tool is `curl`. The following example
+uses it.
 
 ## Use `scalingo run`
 
 ```bash
-scalingo -a <application name> run curl http://<user>:<password>@<host>:<port>
+scalingo --app <application name> run curl http://<user>:<password>@<host>:<port>
 ```
 
 ### Example
 
-If my application's name is 'example' and it has the environment variable
-`SCALINGO_ELASTICSEARCH_URL = "http://example-123:H_grwjqBteMMrVye442Zw6@example-123.elasticsearch.dbs.scalingo.com:30000/example-123"`
+If my application's name is 'my-app' and it has the environment variable
+`SCALINGO_ELASTICSEARCH_URL = "http://my-app-123:H_grwjqBteMMrVye442Zw6@my-app-123.elasticsearch.dbs.scalingo.com:30000/my-app-123"`
 
 You can run:
 
 ```bash
-$ scalingo -a example run curl $SCALINGO_ELASTICSEARCH_URL
+$ scalingo --app my-app run curl $SCALINGO_ELASTICSEARCH_URL
 {
   "status" : 200,
   "name" : "the Tomorrow Man Zarrko",

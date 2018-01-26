@@ -8,7 +8,7 @@ tags: databases postgresql extensions
 {% include info_command_line_tool.md %}
 
 PostgreSQL is a database engine which is extensible thanks to
-a large set of extensions. A lot of them a installed alongside
+a large set of extensions. A lot of them are installed alongside
 your PostgreSQL but you need to enable those manually according
 to your need.
 
@@ -17,7 +17,7 @@ to your need.
 To enable the extensions you want for your application, run the following command:
 
 ```bash
-$ scalingo -a <appname> pgsql-console
+$ scalingo --app my-app pgsql-console
 psql (9.4.5)
 Type "help" for help.
 

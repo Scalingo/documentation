@@ -16,7 +16,7 @@ Scalingo MongoDB addon is the official addon provided by Scalingo, details on th
 
 ## Adding Scalingo MongoDB addon to your app
 
-You can add the MongoDB addon through the **Dashboard** or through the **command-line interface**. The capacity of your database is elastic, you will be able to upgrade it later.
+You can add the MongoDB addon through the **Dashboard** or through the **command line interface**. The capacity of your database is elastic, you will be able to upgrade it later.
 
 ### Through the Dashboard
 
@@ -32,15 +32,15 @@ You can add the MongoDB addon through the **Dashboard** or through the **command
 ### Through the command-line interface
 
 ```bash
-$ scalingo -a example-app addons-add scalingo-mongodb 1g
+$ scalingo --app my-app addons-add scalingo-mongodb 1g
 
 -----> Addon scalingo-mongodb has been provisionned
-       ID: example-app-3030
+       ID: my-app-3030
        Modified variables: [MONGO_URL SCALINGO_MONGO_URL]
        Message from addon provider: Database successfully created
 ```
 
-This command will provision the application `example-app` with a `1g` MongoDB database plan.
+This command will provision the application `my-app` with a `1g` MongoDB database plan.
 
 To find out what other plans are available:
 
@@ -69,10 +69,10 @@ You can get those variables from the Dashboard or the command-line interface.
 ### From the command-line interface
 
 ```bash
-$ scalingo -a example-app env | grep MONGO
+$ scalingo --app my-app env | grep MONGO
 
 MONGO_URL=$SCALINGO_MONGO_URL
-SCALINGO_MONGO_URL=mongodb://example-app-3030:2rj5FYoiKRFp8eZhpMz7@example-app-3030.mongo.dbs.appsdeck.eu:30949/example-app-3030
+SCALINGO_MONGO_URL=mongodb://my-app-3030:2rj5FYoiKRFp8eZhpMz7@my-app-3030.mongo.dbs.appsdeck.eu:30949/my-app-3030
 ```
 
 ## Remote access your database
@@ -144,20 +144,20 @@ You can upgrade or downgrade your database plan whenever you need it. This opera
 To upgrade or downgrade your addon the sub-command is the same: `addons-upgrade`.
 
 ```bash
-$ scalingo -a example-app addons-upgrade example-app-3030 2g
+$ scalingo --app my-app addons-upgrade my-app-3030 2g
 ```
 
-In this example, `example-app-3030` is the ID of the addon, and `2g` is the plan we want to upgrade to.
+In this example, `my-app-3030` is the ID of the addon, and `2g` is the plan we want to upgrade to.
 
 To find out the addon ID:
 
 ```bash
-$ scalingo -a example-app addons
+$ scalingo --app my-app addons
 
 +------------------+------------------+------+
 |       ADDON      |        ID        | PLAN |
 +------------------+------------------+------+
-| Scalingo MongoDB | example-app-3030 |   1g |
+| Scalingo MongoDB | my-app-3030      |   1g |
 +------------------+------------------+------+
 ```
 
@@ -259,6 +259,6 @@ Oplog is a MongoDB feature which logs all the operations achieved on a MongoDB c
 
 ### Meteor specific
 
-Meteor uses this feature to sync different instances of an application. Your can read more about how to scale Meteor <a href="http://doc.scalingo.com/languages/javascript/nodejs/meteor/#how-to-scale-meteor">here</a>.
+Meteor uses this feature to sync different instances of an application. Your can read more about how to scale Meteor [here]({% post_url languages/javascript/meteor/2015-03-22-meteor %}#how-to-scale-meteor).
 
 The variable `MONGO_OPLOG_URL` is the one used by Meteor. As a result, after activating Oplog you just have to restart your application.
