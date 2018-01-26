@@ -19,11 +19,7 @@ If you forget to renew your custom certificate and it expires, or if you delete 
 Encrypt certificate will automatically and immediately replace it. Hence your application will
 always be available using HTTPS.
 
-<blockquote class="bg-info">
-  Note that we do not support yet Let's Encrypt wildcard certificates. If you
-  add such a custom domain, we will not be able to create Let's Encrypt
-  certificate.
-</blockquote>
+{% include letsencrypt_wildcard.html %}
 
 ## Let's Encrypt certificate statuses
 
