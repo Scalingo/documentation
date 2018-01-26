@@ -17,8 +17,8 @@ username/email/password as well as configuring Scalingo's newsletter
 subscription.
 
 On this page, the API token associated to your account is available. This
-token let you authenticate to our API if you need to build tools manage the
-platform in a programmative way. Have a look at our [API
+token let you authenticate to our API if you need to build tools to manage the
+platform in a programmable way. Have a look at our [API
 documentation](https://developers.scalingo.com) to learn how to use it.
 
 Account deletion is located here. The action is possible only once your account
@@ -44,7 +44,7 @@ the invoices. Payment fallback on the bank card if there is not enough credit to
 pay an invoice.
 
 * SEPA payment: for customers located in the European Union, SEPA debit can be used to pay
-invoices, an electronic SEPA mandat is generated during the setup process.
+invoices, an electronic SEPA mandate is generated during the setup process.
 
 Payment history can also be found on this page, including links to download
 your past invoices.
@@ -59,6 +59,6 @@ you've invited, each month during 12 months.
 
 All the activities attached to your account are present in this view. It
 gathers events you have done to your account applications, owned or as
-collaborators, and those related to your account directly (ie. Add/Remove SSH
+collaborators, and those related to your account directly (i.e. Add/Remove SSH
 Key). Events achieved by application collaborators are not present here, go to
-the application's timline to get them.
+the application's timeline to get them.
