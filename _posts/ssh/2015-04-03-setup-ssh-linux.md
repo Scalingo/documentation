@@ -12,8 +12,8 @@ index: 2
 ls ~/.ssh
 ```
 
-if the files `id_rsa` and `id_rsa.pub` you don't need to follow this guide,
-you already have your SSH key.
+If the files `id_rsa` and `id_rsa.pub` are in the `~/.ssh` folder, you don't
+need to follow this guide, you already have your SSH key.
 
 ## Create a new SSH key pair
 
@@ -25,4 +25,4 @@ Follow the instructions to generate a new SSH key pair. You will be asked to enc
 you private key with a password. This step is optional but for further security you may
 want to set one.
 
-By default both private an d public keys will be located in your `$HOME/.ssh` directory.
+By default both private and public keys will be located in your `$HOME/.ssh` directory.
