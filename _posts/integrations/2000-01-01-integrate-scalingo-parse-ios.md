@@ -28,11 +28,13 @@ will be deployed on Scalingo in a minute and you can start working with it direc
 
 Once your server has been deployed, it is reachable at the URL:
 `https://<appname>.scalingo.io`. The credentials for your server have been
-defined befoore the deployment, if you need to recover them, they can be found
+defined before the deployment, if you need to recover them, they can be found
 on your [dashboard](https://my.scalingo.com) in the 'Environment' tab, or with
 our command line tool:
 
-```bash scalingo -a <appname> env ```
+```bash
+scalingo --app <appname> env
+```
 
 Look at the variables:
 
@@ -53,5 +55,5 @@ The following snippet shows you how to configure your parse integration:
 }]];
 ```
 
-Note that the clientKey has to be kept empty when using your own server. That's
+Note that the `clientKey` has to be kept empty when using your own server. That's
 it, your app will be able to communicate with your own Parse service.
