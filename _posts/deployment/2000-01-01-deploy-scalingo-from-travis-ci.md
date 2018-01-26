@@ -14,13 +14,15 @@ Deploying to Scalingo is supported by the official [dpl](https://github.com/trav
 ### Setup `.travis.yml`
 
 The **dpl** tool is used by Travis itself for deployment after builds. To trigger a deployment after a success build on Travis you have to add the `deploy` section to your `.travis.yml`:
+
 ```yaml
 deploy:
   provider: scalingo
   api_key: <your Scalingo api token>
 ```
 
-The recommanded way to add your `api_key` is to encrypt it through the `travis` tool:
+The recommended way to add your `api_key` is to encrypt it through the `travis` tool:
+
 ```bash
 # Install the travis command if you don't have it yet
 gem install travis
@@ -35,18 +37,18 @@ You can read more about [Environment Variables](https://docs.travis-ci.com/user/
 
 ### Scalingo API Token
 
-Your API token is available on the Profile page of [Scalingo Dashboard](https://my.scalingo.com/profile).
+Your API token is available on the 'Profile' page of [Scalingo Dashboard](https://my.scalingo.com/profile).
 
 ### Options
 
-Beside of `provider` and `api_key` you can customize these optional parameters:
+Beside `provider` and `api_key` you can customize these optional parameters:
 
-- **app**: App is the name of your app on Scalingo, it is extracted from the remote option. 
+- **app**: App is the name of your app on Scalingo, it is extracted from the remote option.
 - **on**: Specify the branch to deploy from, default is `master`. Change this if your code is not on master. You can also trigger the deploy from any branch:
 ```yaml
 deploy:
   on:
     all_branches: true
 ```
-- **remote**: Default remote is `scalingo`. Change this if you have a different git remote name. 
+- **remote**: Default remote is `scalingo`. Change this if you have a different git remote name.
 - **username** and **password**: replace the `api_key` option.

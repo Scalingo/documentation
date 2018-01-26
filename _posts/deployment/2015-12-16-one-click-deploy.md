@@ -5,15 +5,18 @@ category: deployment
 tags: app deployment one-click
 ---
 
-If you want to give people the opportunity to deploy your project instantly on Scalingo, you can setup a deploy button on your github project or even on your website. A `scalingo.json` file is needed at the root of your github project in order to generate the deployment page.
+If you want to give people the opportunity to deploy your project instantly on
+Scalingo, you can setup a deploy button on your GitHub project or even on your
+website. A `scalingo.json` file is required at the root of your GitHub project in
+order to generate the deployment page.
 
-At the moment, **only public projects hosted on Github are supported**.
+At the moment, **only public projects hosted on GitHub are supported**.
 
 ## Display a one-click deploy button
 
 To do so, you will need to add a link to `https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>`.
 
-By default it will deploy the branch `master` of your project, but you can eventually specify the branch you want to deploy by adding a '#' followed by the branch itself, like shown below:
+By default it will deploy the branch `master` of your project, but you can optionally specify the branch you want to deploy by adding a '#' followed by the branch itself, like shown below:
 
 `https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>#custom_branch`
 
@@ -25,7 +28,7 @@ By default it will deploy the branch `master` of your project, but you can event
 
 Example: [![Deploy on Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/sample-go-martini)
 
-* Html implementation
+* HTML implementation
 
 ```html
 <a href="https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>#custom_branch">
