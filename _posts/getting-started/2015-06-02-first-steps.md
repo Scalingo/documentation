@@ -9,14 +9,14 @@ permalink: /first-steps/
 
 ## Deployment requirements
 
-### GIT
+### Git
 
-Deploying an application on Scalingo requires you to have GIT installed.
+Deploying an application on Scalingo requires you to have Git installed.
 
 * Linux: Use your package manager to install it. (example: `apt-get install git`)
-* Mac OS: If you've installed XCode, GIT has been automatically installed. Otherwise
-  install it from [GIT official website](http://git-scm.com/download/mac)
-* Windows: Install if from [GIT official website](http://git-scm.com/download/windows)
+* Mac OS: If you've installed XCode, Git has been automatically installed. Otherwise
+  install it from [Git official website](http://git-scm.com/download/mac)
+* Windows: Install if from [Git official website](http://git-scm.com/download/windows)
 
 ### SSH Key setup
 
@@ -29,7 +29,7 @@ authentication.
 
 For any operating system, you need to copy the content of the public key to your account.
 
-With our dashbaord:
+With our dashboard:
 
 [https://my.scalingo.com/keys](https://my.scalingo.com/keys)
 

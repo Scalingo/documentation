@@ -5,7 +5,7 @@ category: getting-started
 tags: git windows
 ---
 
-Git is a version control system really useful for tracking changes in computer files and coordinating work on those files among multiple people. 
+Git is a version control system really useful for tracking changes in computer files and coordinating work on those files among multiple people.
 
 ## Installation on Windows
 
@@ -17,7 +17,7 @@ Once the installation is complete, you will need SSH as well. Take a look at [Se
 
 To setup Git you will use the command `git config`. More informations can be found in [https://git-scm.com/](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup).
 
-### Config your Identity
+### Configure your Identity
 
 Your identity (user name and email) must be configured:
 
@@ -26,9 +26,9 @@ git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
 
-The `--global` option will config your Git durably. If for one project you want to config another user name or email you have to run the same command without `--global`.
+The `--global` option will configure your Git durably. If for one project you want to configure another user name or email you have to run the same command without `--global`.
 
-### Config your Editor
+### Configure your Editor
 
 For example if you want to change your default text editor to Nodepad++, the command is:
 
