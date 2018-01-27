@@ -66,7 +66,7 @@ f1ac1758a0cb: Waiting
 
 ### Run your app
 
-The entry point of the image is a script located at `/start`. Its usage is:
+The entrypoint of the image is a script located at `/start`. Its usage is:
 
 ```bash
 /start <container type>
