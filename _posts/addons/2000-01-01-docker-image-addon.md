@@ -28,7 +28,7 @@ $ scalingo addons-add scalingo-docker-image base-plan
 
 ## Usage of the addon
 
-Once the addon is provisioned, the deployments panel of your app dashboard
+Once the addon has been provisioned, the deployments panel of your app dashboard
 will change, a **Docker logo** will be present. Click on it to get the instructions
 to download the image of a given deployment.
 
