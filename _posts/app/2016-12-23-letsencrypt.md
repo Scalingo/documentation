@@ -7,7 +7,7 @@ tags: app certificate ssl https
 
 ## Let's Encrypt certificates on Scalingo
 
-If you want a Let's Encrypt certificate on Scalingo, it is as simple as adding [your own 
+If you want a Let's Encrypt certificate on Scalingo, it is as simple as adding [your own
 domain name]({% post_url app/2015-04-01-domain %}). We automatically generate a certificate for every
 domain added to the platform. Let's Encrypt certificates have a 90 days validity. We follow Let's Encrypt
 recommendation and renew them every 60 days automatically. You do not need to do anything manually!
@@ -19,10 +19,7 @@ If you forget to renew your custom certificate and it expires, or if you delete 
 Encrypt certificate will automatically and immediately replace it. Hence your application will
 always be available using HTTPS.
 
-<blockquote class="bg-info">
-  Note that Let's Encrypt do not deliver wildcard certificates. If you add such a custom domain, we
-  will not be able to create Let's Encrypt certificate.
-</blockquote>
+{% include letsencrypt_wildcard.html %}
 
 ## Let's Encrypt certificate statuses
 
@@ -34,6 +31,6 @@ On the dashboard, you may find your Let's Encrypt certificate with various statu
   certificate.
 * In use: your website is available using HTTPS connections thanks to a Let's Encrypt certificate.
 * Not used: your website is available using HTTPS connections thanks to a custom certificate. If it
-  expires or if you remove it, your website will be available using HTTPS connections thanks to a 
+  expires or if you remove it, your website will be available using HTTPS connections thanks to a
   Let's Encrypt certificate.
 

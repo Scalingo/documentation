@@ -6,7 +6,7 @@ tags: heroku tutorial
 permalink: /how-to-migrate-from-heroku/
 ---
 
-Scalingo is a Platform as a Service [highly compatible with Heroku]({% post_url getting-started/2015-09-17-heroku-compatibility %}). It's very easy to understand and you shouldn't have any problem migrating your app from Heroku to Scalingo. <br>
+Scalingo is a Platform as a Service [highly compatible with Heroku]({% post_url getting-started/2015-09-17-heroku-compatibility %}). It's very easy to understand and you shouldn't have any problem migrating your app from Heroku to Scalingo.
 
 It is so easy that you can use [heroku2scalingo](https://github.com/Scalingo/heroku2scalingo/releases/latest), a tool to migrate a simple Heroku app to Scalingo.
 
@@ -24,7 +24,7 @@ It works by performing the following operations in the same order as below:
 * Authentication to Heroku API
 * Creation of Scalingo app
 * Get/Set environment variables
-* `git clone` your heroku app repository
+* `git clone` your Heroku app repository
 * `git push scalingo master` -> Auto-deployment using the `Procfile`
 
 ### Notes

@@ -8,11 +8,11 @@ tags: fs filesystem addon custom feature storage
 ## Introduction
 
 This addon will provision a bucket and credentials to access a S3-like Object
-Storage service hosted in our infrastructure. The solution built ontop of
+Storage service hosted in our infrastructure. The solution is built on top of
 *NetApp StorageGrid*.
 
-As Use this addon to store medias uploaded by your users and **persist them
-through deployments, restart and scalingo operations**. If you were using the
+Use this addon to store medias uploaded by your users and **persist them
+through deployments, restart and other Scalingo operations**. If you were using the
 standard, ephemeral file system of the container, the file will only be visible
 from one of the two containers and will disappear when the application is
 deployed/restarted.
@@ -35,12 +35,12 @@ SCALINGO_STORAGE_ENDPOINT=<S3 endpoint>
 SCALINGO_STORAGE_REGION=<S3 region>
 ```
 
-Your application, if deployed, will be restart with the newly created addon.
+Your application, if deployed, will be restarted with the newly created addon.
 
 ## Import/export Data
 
 You may want to import or export data to or from your object storage bucket, in
-this case you'll need some specific tools. There is an Amazon S3 compatible API
+this case you will need some specific tools. There is an Amazon S3 compatible API
 to access the data so any tool working with S3 will work with our solution.
 
 ### The case of 's3cmd'

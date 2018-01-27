@@ -25,7 +25,7 @@ Learn how the platform manages your container's life cycle and the good practice
 ## [HTTP Routing]({% post_url internals/2015-03-22-routing %})
 
 Discover the routing settings of the platform. What headers should your
-applicaion expect and how to handle long running connections.
+application expect and how to handle long running connections.
 
 [Documentation]({% post_url internals/2015-03-22-routing %})
 

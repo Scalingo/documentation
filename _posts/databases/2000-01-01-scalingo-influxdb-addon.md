@@ -11,12 +11,11 @@ tags: databases influxdb addon
   Instructions are detailed in <a href="{% post_url cli/2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
 </blockquote>
 
-Scalingo InfluxDB addon is the official addon provided by Scalingo, details on the available plans can be found [here](https://scalingo.com/addons/scalingo-influxdb). This addon gives your app instant access to an InfluxDB database running in its own Docker container.
-
+Scalingo InfluxDB addon is the official addon provided by Scalingo, details on the available plans can be found [here](https://scalingo.com/addons/scalingo-influxdb). This addon gives your app instant access to an InfluxDB database.
 
 ## Adding Scalingo InfluxDB addon to your app
 
-You can add the InfluxDB addon through the **Dashboard** or through the **command-line interface**. The capacity of your database is elastic, you will be able to upgrade it later.
+You can add the InfluxDB addon through the **Dashboard** or through the **command line interface**. The capacity of your database is elastic, you will be able to upgrade it later.
 
 ### Through the Dashboard
 
@@ -32,15 +31,15 @@ You can add the InfluxDB addon through the **Dashboard** or through the **comman
 ### Through the command-line interface
 
 ```bash
-$ scalingo -a example-app addons-add scalingo-influxdb 1g
+$ scalingo -a my-app addons-add scalingo-influxdb 1g
 
 -----> Addon scalingo-influxdb has been provisionned
-       ID: sample_influxdb_3707
+       ID: my_app_3707
        Modified variables: [INFLUX_URL SCALINGO_INFLUX_URL]
        Message from addon provider: Database successfully created
 ```
 
-This command will provision the application `sample-influxdb` with a `1g` InfluxDB database plan.
+This command will provision the application `my-app` with a `1g` InfluxDB database plan.
 
 To find out what other plans are available:
 
@@ -55,7 +54,7 @@ Once the addon is provisioned, 2 environment variables are added to your app: `S
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
-You can get environment variables from the Dashboard or the command-line interface.
+You can get environment variables from the dashboard or the command-line interface.
 
 ### From the Dashboard
 
@@ -69,10 +68,10 @@ You can get environment variables from the Dashboard or the command-line interfa
 ### From the command-line interface
 
 ```bash
-$ scalingo --app sample-influxdb env
+$ scalingo --app my-app env
 
 INFLUX_URL=$SCALINGO_INFLUX_URL
-SCALINGO_INFLUX_URL=http://sample_influxdb_3707:RCtlmiQDXuXosYJ4mIOP@sample-influxdb-3707.influxdb.dbs.appsdeck.eu:31061/sample_influxdb_3707
+SCALINGO_INFLUX_URL=http://sample_influxdb_3707:RCtlmiQDXuXosYJ4mIOP@my-app-3707.influxdb.dbs.appsdeck.eu:31061/sample_influxdb_3707
 ```
 
 ## Remote access your database
@@ -134,7 +133,7 @@ after the operation is successful, the related app will be restarted.
 To upgrade or downgrade your addon the sub-command is the same: `addons-upgrade`.
 
 ```bash
-$ scalingo --app sample-influxdb addons-upgrade sample_influxdb_3707 2g
+$ scalingo --app my-app addons-upgrade sample_influxdb_3707 2g
 ```
 
 In this example, `sample_influxdb_3707` is the ID of the addon, and `2g` is the plan we want to upgrade to.
@@ -142,12 +141,12 @@ In this example, `sample_influxdb_3707` is the ID of the addon, and `2g` is the 
 To find out the addon ID:
 
 ```bash
-$ scalingo --app sample-influxdb addons
+$ scalingo --app my-app addons
 
 +-------------------+----------------------+------+
 |       ADDON       |          ID          | PLAN |
 +-------------------+----------------------+------+
-| Scalingo InfluxDB | sample_influxdb_3707 | 1g   |
+| Scalingo InfluxDB | my_app_3707          | 1g   |
 +-------------------+----------------------+------+
 ```
 

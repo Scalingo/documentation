@@ -19,13 +19,13 @@ Before doing this tutorial, you need to setup your environment:
 ## Introduction
 
 First, deploy your app on Scalingo. You should have a working
-application on scalingo. Here we will use our [meteor todo list
+application on Scalingo. Here we will use our [meteor todo list
 example](https://github.com/Scalingo/sample-meteor-todo).
 
-To deploy it on scalingo, just [click
+To deploy it on Scalingo, just [click
 here](https://my.scalingo.com/deploy?source=https://github.com/johnsudaar/sample-meteor-todo)
 
-## Get your docker image
+## Get your Docker image
 
 ### Add the docker-image-addon
 
@@ -34,7 +34,7 @@ To get the *Docker Image* of your application, you must add the
 application dashboard.
 
 ```bash
-$ scalingo -a my-app addons-add scalingo-docker-image base-plan
+$ scalingo --app my-app addons-add scalingo-docker-image base-plan
 ```
 
 Once this is done, the "Deployments" panel of your app dashboard will change,
@@ -52,6 +52,7 @@ Username: <scalingo username>
 Password: <scalingo API key>
 Email:    <scalingo email>
 ```
+
 The API key is available on [your profile](https://my.scalingo.com/profile),
 copy it from there.
 
@@ -67,7 +68,7 @@ $ docker pull registry.scalingo.com/myapp:da03fc67e7c52d6
 ## Get your database image
 
 If you are using a database with your application, you must download it from
-the docker hub.
+the Docker hub.
 
 You'll need to get your database version from your database dashboard. In the
 `Docker Image Version` field.
@@ -76,8 +77,8 @@ You'll need to get your database version from your database dashboard. In the
 {% assign img_url = "https://cdn.scalingo.com/documentation/docker-image-addon/database-addon.png" %}
 {% include mdl_img.html %}
 
-In our case, we are using Mongodb on version `3.2.6-2`. To download the image
-you can use the docker official repository:
+In our case, we are using MongoDB on version `3.2.6-2`. To download the image
+you can use the Docker official repository:
 
 ```bash
 docker pull scalingo/<database-type>:<databse-version>
@@ -91,7 +92,7 @@ docker pull scalingo/mongo:3.2.6-2
 
 ## Launch your application
 
-Once you've donloaded all the needed images, you must run them on your system.
+Once all the needed images have been downloaded, you must run them on your system.
 
 ### Run the database image
 

@@ -10,16 +10,21 @@ tags: databases elasticsearch backups
 Go to your database dashboard, in the *Backups* tab and download the last dump
 you want to restore locally.
 
-The archive is a **.tar.gz** containing a dump of your database which has been
-done with [Elasticsearch
-Knapsack](https://github.com/jprante/elasticsearch-knapsack)
+The archive is a **.tar.gz** containing a dump of your database. Backups are
+done using [Elasticsearch
+Knapsack](https://github.com/jprante/elasticsearch-knapsack) for Elasticsearch
+1.x or 2.x.
 
-This is a plugin to handle dump and restore of Elasticsearch data, you need to install
+Knapsack is a plugin to handle dump and restore of Elasticsearch data, you need to install
 it locally, please follow instructions on the *README* of the project.
 
-## Restoring backup
+Since Elasticsearch 5.x, we use the [snapshot/restore
+feature](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/modules-snapshots.html)
+of Elasticsearch.
 
-**Knapsack** is expecting to find a file named `_all.tar.gz` in the directory `path.logs`
+## Restoring Knapsack Backup
+
+**Knapsack** expects to find a file named `_all.tar.gz` in the directory `path.logs`
 of Elasticsearch. This parameter can be set in your Elasticsearch configuration file, otherwise
 it will be equivalent to `/`
 
@@ -40,7 +45,7 @@ That's it the importation has started, you can follow it by running a request ag
 
 ```bash
 └> curl '172.17.0.2:9200/_import/state' -d ''
-{"count":2,"states":[{"mode":"import","started":"2016-04-27T09:38:41.202Z","path":"file:///_all.tar.gz","node_name":"Miguel Espinosa"},{"mode":"import","started":"2016-04-27T09:40:11.889Z","path":"file:///_all.tar.gz","node_name":"Miguel Espinosa"}]}%   
+{"count":2,"states":[{"mode":"import","started":"2016-04-27T09:38:41.202Z","path":"file:///_all.tar.gz","node_name":"Miguel Espinosa"},{"mode":"import","started":"2016-04-27T09:40:11.889Z","path":"file:///_all.tar.gz","node_name":"Miguel Espinosa"}]}%
 ```
 
 Once ended, you'll have all your data locally.

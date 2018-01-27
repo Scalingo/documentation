@@ -12,8 +12,8 @@ index: 2
 ls $HOME/.ssh
 ```
 
-if the files `id_rsa` and `id_rsa.pub` you don't need to follow this guide,
-you already have your SSH key.
+If the files `id_rsa` and `id_rsa.pub` are in the `~/.ssh` folder, you don't
+need to follow this guide, you already have your SSH key.
 
 ## Create a new SSH key pair
 

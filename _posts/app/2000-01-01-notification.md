@@ -5,11 +5,11 @@ category: app
 tags: app notification
 ---
 
-Notification can be defined per application. You can find the settings into the "Notitication" tab of your app.
+Notification can be defined per application. You can find the settings into the "Notification" tab of your app.
 
 A notifier have:
 * a name
-* a communication channel (Slack, Webhook, Rocket.Chat, Email).
+* a communication channel (Slack, webhook, Rocket.Chat, email).
 * a group of events to react to (or a precise list of events)
 
 ## Events list
@@ -37,8 +37,8 @@ A notifier have:
 * domain_added: Domain added, A domain was added
 * domain_edited: Domain edited, A domain was edited
 * domain_removed: Domain removed, A domain was removed
-* github_link: Github link, A GitHub repo was linked to an app
-* github_unlink: Github unlink, A GitHub repo was unlinked from an app
+* github_link: GitHub link, A GitHub repository was linked to an app
+* github_unlink: GitHub unlink, A GitHub repository was unlinked from an app
 * notifier_added: Notifier added, A notifier was added
 * notifier_edited: Notifier edited, A notifier was edited
 * notifier_removed: Notifier removed, A notifier was removed

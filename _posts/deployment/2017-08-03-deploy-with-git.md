@@ -12,16 +12,16 @@ To deploy with git you'll have to create a new application on Scalingo. A git re
 
 ```bash
 # Create app with the CLI (or create one from the dashboard)
-scalingo create myapplication
+scalingo create my-app
 
 # Setup the git remote:
-git remote add scalingo git@scalingo.com:myapplication.git
+git remote add scalingo git@scalingo.com:my-app.git
 
 # Deploy your app:
 git push scalingo master
 ```
 
-### Deploy with an other branch than master
+### Deploy with another branch than master
 
 If you want to deploy another branch than master:
 

@@ -14,7 +14,7 @@ your deployment.
 
 ## Configuration
 
-To setup a Post-deployment hook, you just have to add a `postdeploy` entry in your [Procfile]({% post_url internals/2014-12-01-procfile %}):
+To setup a post-deployment hook, you just have to add a `postdeploy` entry in your [Procfile]({% post_url internals/2014-12-01-procfile %}):
 
 ```yml
 postdeploy: command you want to run
@@ -51,7 +51,7 @@ contains the environment variables from your app, with the one we inject in any
 ### Applying migrations
 
 A common example to this feature is to apply migrations, for instance with a
-rails application:
+Rails application:
 
 ```yaml
 postdeploy: bundle exec rake db:migrate
@@ -77,7 +77,7 @@ postdeploy: curl https://api.rollbar.com/api/1/deploy/ -F access_token=$ROLLBAR_
 
 ### Both Applying migrations and notifying external service
 
-Use the standard && bash operator:
+Use the standard `&&` bash operator:
 
 ```yaml
 postdeploy: bundle exec rake db:migrate && newrelic deployments --revision=$CONTAINER_VERSION

@@ -17,7 +17,7 @@ All the libs are installable separately using the `CAIRO_BUILDPACK_LIBS`
 environment variable.
 
 When used with
-[multi-buildpack](https://github.com/Scalingo/multi-buildpack),
+[multi-buildpacks](https://github.com/Scalingo/multi-buildpack),
 it enables subsequent buildpacks / steps to any of these libraries.
 
 ## Set up this buildpack for your application
@@ -65,6 +65,6 @@ CAIRO_BUILDPACK_LIBS=giflib,pixman
 CAIRO_BUILDPACK_LIBS=pango,freetype
 ```
 
-## Contibuting to the buildpack
+## Contributing to the buildpack
 
-Github: [Scalingo/cairo-buildpack](https://github.com/Scalingo/cairo-buildpack#hacking-building-librairies)
+GitHub: [Scalingo/cairo-buildpack](https://github.com/Scalingo/cairo-buildpack#hacking-building-librairies)

@@ -17,14 +17,14 @@ to update your application.
 2. The archive has to be uploaded somewhere accessible in order to let the
    platform fetch the code during the deployment process. You can either upload
    it yourself directly or use the [`Sources`
-   resource](https://developers.scalingo.com/sources.html) of the API
+   resource](https://developers.scalingo.com/sources.html) of the API.
 3. From the created source, a property named `download_url` should be used in
    order to create a new [`Deployment`
    resource](https://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive)
    for your application.
 
 That's it the deployment is starting, once finished with success it will
-replace the replace the current containers with the new version of the code.
+replace the current containers with the new version of the code.
 
 ## Create a `Deployment` resource with API
 
@@ -41,7 +41,7 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -u ":$AUT
     }'
 ```
 
-* The `$AUTH_TOKEN` is a token authenticating the request, you can find tokens
+* The `AUTH_TOKEN` is a token authenticating the request, you can find tokens
   on your [dashboard](https://my.scalingo.com/profile) or from our API.
   Information are available
   [here](https://developers.scalingo.com/index.html#authentication).
@@ -59,13 +59,13 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -u ":$AUT
 ## Follow the deployment process
 
 You can see your deployment progress and output in [your
-dashboard](https://my.scalingo.com), in the `Deployments` section of your
+dashboard](https://my.scalingo.com), in the 'Deployments' section of your
 application, or using the `deployments-follow` command of [our command line
 tool](http://cli.scalingo.com).
 
 ## Create a Source for the Archive
 
-If the code archive has to be uploaded from your workstation, you can optionnaly
+If the code archive has to be uploaded from your workstation, you can optionally
 create a `Source` resource using the API. The source let you upload temporarily
 code archives to trigger deployments with them.
 
@@ -88,7 +88,7 @@ The response will look like:
 }
 ```
 
-The source provide two important url:
+The source provide two important URL:
 
 * a `upload_url`: used to upload your code on the source.
 * a `download_url`: used to download the archive from the source.

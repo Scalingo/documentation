@@ -11,10 +11,10 @@ When pushing your app to Scalingo, you might get the following error:
 <-- Start deployment of [my-app] -->
  !     We didn't find the type of technology your are using...
        We're sorry this build is failing!
-       
+
        Refer to the documentation to find out why:
        http://doc.scalingo.com/deployment/unknown-technology
-       
+
        If you can't find the issue in your application,
        please send us an email at support@scalingo.com
 
@@ -28,23 +28,30 @@ When pushing your app to Scalingo, you might get the following error:
 
 ### Project in a subdirectory of the git repository
 
-If the project you want to deploy is not at the root of your GIT repository, you need to define the `PROJECT_DIR` environment variable ([see documentation]({% post_url deployment/2015-06-02-project-dir %})).
+If the project you want to deploy is not at the root of your Git repository,
+you need to define the `PROJECT_DIR` environment variable ([see
+documentation]({% post_url deployment/2015-06-02-project-dir %})).
 
 ### Technology detection
 
-To do so, we are iterating over technologies alphabetically.
+In order to detect the technology used by your application, we iterate over the
+technologies alphabetically. It means that if your project contains multiple
+technologies, we will pick the first one detected.
 
-That means that if your project contains multiple technologies, we will pick the first one detected.
+If you want to skip the detection phase and force the use of a specific
+buildpack, add the environment variable `BUILDPACK_NAME` to your project.
 
-If you want to force the detection page to a specific buildpack to use by adding the environment variable `BUILDPACK_NAME` to your project.
+If you need to use multiple technologies you can use the [multi-buildpacks]({%
+post_url internals/buildpacks/2015-09-28-multi-buildpack %}).
 
-If you want to have all the technologies detected (needed for your build to be successful for example), you can use the multi-buildpack.
+You can also develop your own buildpack and add the environment variable
+`BUILDPACK_URL` to have complete control on the detection and build phases.
 
-You can also develop your own buildpack and add the environment variable `BUILDPACK_URL` to have complete control on the detection and build phases.
+More information are available on [buildpacks]({% post_url
+internals/buildpacks/2015-01-04-buildpacks %}) or [multi-buildpacks]({%
+post_url internals/buildpacks/2015-09-28-multi-buildpack %}).
 
-More information on [buildpacks](http://doc.scalingo.com/buildpacks/) or [multi-buildpacks](http://doc.scalingo.com/buildpacks/multi)
-
-See how we detect your technology:
+Here is how we detect your technology:
 
 #### [Ruby]({% post_url languages/ruby/2015-06-23-ruby %})
 
@@ -60,7 +67,7 @@ The directory `.meteor` should be present at the root of your project.
 
 #### [PHP]({% post_url languages/php/2014-07-02-php %})
 
-You need to have either an `index.php` file or both `composer.json` + `composer.lock` files at the root of your project.
+You need to have either an `index.php` file or both `composer.json` and `composer.lock` files at the root of your project.
 
 #### [Python]({% post_url languages/python/2015-04-05-python %})
 
@@ -93,4 +100,4 @@ A file `*.cabal` must be at the root of your project.
 
 #### [Erlang]({% post_url languages/erlang/2015-01-26-erlang %})
 
-You need to have either a `rebar.config` file or a 'ebin` file at the root of your project.
+You need to have either a `rebar.config` file or a `ebin` file at the root of your project.

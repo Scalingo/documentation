@@ -13,7 +13,7 @@ At this point we consider you have correctly setup your environment as detailed 
 * [Mac OS]({% post_url ssh/2015-04-04-setup-ssh-macos %})
 * [Windows]({% post_url ssh/2015-04-04-setup-ssh-windows %})
 
-## GIT authentication error: `Please make sure you have the correct access rights`
+## Git authentication error: `Please make sure you have the correct access rights`
 
 When pushing to the platform, if you get the following error:
 
@@ -33,7 +33,7 @@ app.
 Please redo the "Setup SSH" tutorial for your operating system. You have not configured your system
 correctly.
 
-## GIT push error: `error: src refspec master does not match any`
+## Git push error: `error: src refspec master does not match any`
 
 ```bash
 $ git push scalingo master
@@ -42,7 +42,7 @@ error: failed to push some refs to 'git@scalingo.com:appname.git'
 ```
 
 When we tell you to run `git push scalingo master`, we consider you are already
-using GIT for your project. This error mean that there is a git environment but
+using Git for your project. This error mean that there is a git environment but
 no *commit* (git name for 'version') has been done.
 
 ### Solving the problem
@@ -58,16 +58,16 @@ $ git push scalingo master
 ## Invalid SSH key error when adding it to account
 
 The platform is expecting SSH keys to be in the OpenSSH format. This is the default
-format when a SSH keypair is generated on *Linux* or *MacOS*. However on Windows, if
-`PuTTy` generated your key, there are chances the format is wrong.
+format when a SSH key pair is generated on *Linux* or *MacOS*. However on Windows, if
+`PuTTY` generated your key, there are chances the format is wrong.
 
 ### Solving the problem
 
 There are two methods to solve this issue:
 
-1. Windows only - PuTTy Key generator tool
+1. Windows only - PuTTY Key generator tool
 
-Using PuTTY Key generator tool also named `PuTTyGen`, you can import
+Using PuTTY Key generator tool also named `PuTTYGen`, you can import
 your SSH key and convert it to the OpenSSH format.
 
 2. All platforms - Using ssh-keygen tool

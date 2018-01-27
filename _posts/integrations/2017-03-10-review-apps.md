@@ -38,7 +38,7 @@ As a quick example, here is a sample `scalingo.json` that customize the environm
 }
 ```
 
-Here, the value of the environment variable CANONICAL_HOST_URL will contain the URL to reach the newly deployed app. The `scalingo.json` configuration always takes precedence on parent app configuration.
+Here, the value of the environment variable `CANONICAL_HOST_URL` will contain the URL to reach the newly deployed app. The `scalingo.json` configuration always takes precedence on parent app configuration.
 
 ## Is it possible to create Review Apps if my code is hosted at a different place?
 

@@ -6,11 +6,11 @@ category: integration
 tags: integration github
 ---
 
-Scalingo provides a deep **GitHub integration** with new capabilities of autodeployment when the code is hosted in a GitHub repository, deploying directly from a GitHub branch, automatic building and deployment of *Pull Requests*, and much more. GitHub has particularly good interoperability capabilities that we've used to deliver a powerful and well integrated GitHub based workflow.
+Scalingo provides a deep **GitHub integration** with new capabilities of auto-deployment when the code is hosted in a GitHub repository, deploying directly from a GitHub branch, automatic building and deployment of *Pull Requests*, and much more. GitHub has particularly good interoperability capabilities that we've used to deliver a powerful and well integrated GitHub based workflow.
 
 ## The GitHub Flow
 
-Like most team of developers on GitHub, we follow the [GitHub flow](https://guides.github.com/introduction/flow) to integrate new lines of code in our codebase. This worflow follows these rules:
+Like most team of developers on GitHub, we follow the [GitHub flow](https://guides.github.com/introduction/flow) to integrate new lines of code in our code base. This workflow follows these rules:
 
 * Anything in the **master** branch is always deployable
 * Create a new branch **based on master** for each new feature or fix

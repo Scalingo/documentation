@@ -16,7 +16,7 @@ Scalingo MySQL addon is the official addon provided by Scalingo, details on the 
 
 ## Adding Scalingo MySQL addon to your app
 
-You can add the MySQL addon through the **Dashboard** or through the **command-line interface**. The capacity of your database is elastic, you will be able to upgrade it later.
+You can add the MySQL addon through the dashboard or through the command line interface. The capacity of your database is elastic, you will be able to upgrade it later.
 
 ### Through the Dashboard
 
@@ -32,15 +32,15 @@ You can add the MySQL addon through the **Dashboard** or through the **command-l
 ### Through the command-line interface
 
 ```bash
-$ scalingo -a example-app addons-add scalingo-mysql 1g
+$ scalingo --app my-app addons-add scalingo-mysql 1g
 
 -----> Addon scalingo-mysql has been provisionned
-       ID: example-app-3030
+       ID: my-app-3030
        Modified variables: [DATABASE_URL SCALINGO_MYSQL_URL]
        Message from addon provider: Database successfully created
 ```
 
-This command will provision the application `example-app` with a `1g` MySQL database plan.
+This command will provision the application `my-app` with a `1g` MySQL database plan.
 
 To find out what other plans are available:
 
@@ -48,14 +48,13 @@ To find out what other plans are available:
 $ scalingo addons-plans scalingo-mysql
 ```
 
-
 ## Getting your connection URI
 
 Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_MYSQL_URL` and `DATABASE_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url app/2014-09-15-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
-You can get environment variables from the Dashboard or the command-line interface.
+You can get environment variables from the dashboard or the command line interface.
 
 ### From the Dashboard
 
@@ -69,13 +68,13 @@ You can get environment variables from the Dashboard or the command-line interfa
 ### From the command-line interface
 
 ```bash
-$ scalingo -a example-app env | grep MYSQL
+$ scalingo --app my-app env | grep MYSQL
 
 DATABASE_URL=$SCALINGO_MYSQL_URL
-SCALINGO_MYSQL_URL=mysql://example_app_3030:CaUrq1MdUkAzCSEq-1Fg@example-app-3030.mysql.dbs.appsdeck.eu:30999/example_app_3030
+SCALINGO_MYSQL_URL=mysql://my_app_3030:CaUrq1MdUkAzCSEq-1Fg@my-app-3030.mysql.dbs.appsdeck.eu:30999/my_app_3030
 ```
 
-### Ruby rails specific
+### Ruby on Rails specific
 
 `DATABASE_URL` is an alias to `SCALINGO_MYSQL_URL`, the Ruby buildpack will read the value of `DATABASE_URL` and create the `database.yml` configuration file accordingly.
 
@@ -139,20 +138,20 @@ after the operation is successful, the related app will be restarted.
 To upgrade or downgrade your addon the sub-command is the same: `addons-upgrade`.
 
 ```bash
-$ scalingo -a example-app addons-upgrade example-app-3030 2g
+$ scalingo --app my-app addons-upgrade my-app-3030 2g
 ```
 
-In this example, `example-app-3030` is the ID of the addon, and `2g` is the plan we want to upgrade to.
+In this example, `my-app-3030` is the ID of the addon, and `2g` is the plan we want to upgrade to.
 
 To find out the addon ID:
 
 ```bash
-$ scalingo -a example-app addons
+$ scalingo --app my-app addons
 
 +----------------+------------------+------+
 |      ADDON     |        ID        | PLAN |
 +----------------+------------------+------+
-| Scalingo MySQL | example-app-3030 |   1g |
+| Scalingo MySQL | my-app-3030      |   1g |
 +----------------+------------------+------+
 ```
 

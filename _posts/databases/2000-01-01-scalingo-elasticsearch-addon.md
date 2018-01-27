@@ -11,8 +11,10 @@ tags: databases elasticsearch addon
   Instructions are detailed in <a href="{% post_url cli/2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
 </blockquote>
 
-Scalingo Elasticsearch addon is the official addon provided by Scalingo, details on the available plans can be found [here](https://scalingo.com/addons/scalingo-elasticsearch). This addon gives your app instant access to a Elasticsearch database running in its own Docker container.
-
+Scalingo Elasticsearch addon is the official addon provided by Scalingo.
+Details on the available plans can be found
+[here](https://scalingo.com/addons/scalingo-elasticsearch). This addon gives
+your app instant access to an Elasticsearch database.
 
 ## Adding Scalingo Elasticsearch addon to your app
 
@@ -20,7 +22,7 @@ You can add the Elasticsearch addon through the **Dashboard** or through the **c
 
 ### Through the Dashboard
 
-1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
+1. Go to your app on the [Scalingo dashboard](https://my.scalingo.com/apps)
 2. Click on **Addons** tab
 3. Select the addon you want to add
 4. In the dialog select the database plan you need
@@ -32,15 +34,15 @@ You can add the Elasticsearch addon through the **Dashboard** or through the **c
 ### Through the command-line interface
 
 ```bash
-$ scalingo -a example-app addons-add scalingo-elasticsearch 1g
+$ scalingo -a my-app addons-add scalingo-elasticsearch 1g
 
 -----> Addon scalingo-elasticsearch has been provisionned
-       ID: example-app-3030
+       ID: my-app-3030
        Modified variables: [ELASTICSEARCH_URL SCALINGO_ELASTICSEARCH_URL]
        Message from addon provider: Database successfully created
 ```
 
-This command will provision the application `example-app` with a `1g` Elasticsearch database plan.
+This command will provision the application `my-app` with a `1g` Elasticsearch database plan.
 
 To find out what other plans are available:
 
@@ -48,14 +50,13 @@ To find out what other plans are available:
 $ scalingo addons-plans scalingo-elasticsearch
 ```
 
-
 ## Getting your connection URI
 
 Once the addon is provisioned, 2 environment variables are added to your app: `SCALINGO_ELASTICSEARCH_URL` and `ELASTICSEARCH_URL`. `ELASTICSEARCH_URL` is an alias to `SCALINGO_ELASTICSEARCH_URL`. To find out how to use it in your code please refer to [Application environment]({% post_url app/2014-09-15-environment %}).
 
 In most cases, you can pass the variable directly to the client library you are using in your code. But sometimes the library requires a specific URI format, you'll need to add a little bit of code to suit the library.
 
-You can get environment variables from the Dashboard or the command-line interface.
+You can get environment variables from the dashboard or the command line interface.
 
 ### From the Dashboard
 
@@ -66,15 +67,14 @@ You can get environment variables from the Dashboard or the command-line interfa
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_environment_elasticsearch.png" %}
 {% include mdl_img.html %}
 
-### From the command-line interface
+### From the command line interface
 
 ```bash
-$ scalingo -a example-app env | grep ELASTIC
+$ scalingo -a my-app env | grep ELASTIC
 
 ELASTICSEARCH_URL=$SCALINGO_ELASTICSEARCH_URL
 SCALINGO_ELASTICSEARCH_URL=http://example-app-3030:MpIxXstskccB3Ab2iwKH@example-app-3030.elasticsearch.dbs.appsdeck.eu:30995
 ```
-
 
 ## Remote access your database
 
@@ -117,7 +117,7 @@ to restart the database. Any action leading to the restart will activate TLS
 The certificate of our certification authority is available on the database
 dashboard.
 
-After downloading it, you can specify its path to the `mongo` CLI:
+After downloading it, you can specify its path:
 
 ```shell
 curl --cacert=/path/to/ca.pem -X GET "<URL>"
@@ -129,7 +129,7 @@ You can upgrade or downgrade your database plan whenever you need it. This opera
 
 ### From the Dashboard
 
-1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
+1. Go to your app on [Scalingo dashboard](https://my.scalingo.com/apps)
 2. Click on **Addons** tab
 3. Select the addon you want to change
 4. In the dialog select the plan you want to upgrade/downgrade to
@@ -140,10 +140,10 @@ You can upgrade or downgrade your database plan whenever you need it. This opera
 To upgrade or downgrade your addon the sub-command is the same: `addons-upgrade`.
 
 ```bash
-$ scalingo -a example-app addons-upgrade example-app-3030 2g
+$ scalingo -a my-app addons-upgrade example-app-3030 2g
 ```
 
-In this example, `example-app-3030` is the ID of the addon, and `2g` is the plan we want to upgrade to.
+In this example, `my-app-3030` is the ID of the addon, and `2g` is the plan we want to upgrade to.
 
 To find out the addon ID:
 
@@ -174,7 +174,7 @@ The Scalingo Elasticsearch dashboard is the central place for administrative tas
 
 When the database vendor releases a new version of your database engine, we will try to provide it as soon as possible. You will have the choice to upgrade your database with just one click through your database dashboard.
 
-This operation is similar to changing your database plan; your database will be stopped and restarted with new database environment. Thanks to Docker containers this happens seamlessly and quickly without manual action. When this operation finishes, your application will be restarted.
+This operation is similar to changing your database plan. Your database will be stopped and restarted with new database environment. Thanks to Docker containers this happens seamlessly and quickly without manual action. When this operation finishes, your application will be restarted.
 
 {% assign data = "Beware that no downgrade is possible once your database has been upgraded." %}
 {% include danger %}

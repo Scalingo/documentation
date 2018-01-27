@@ -7,7 +7,7 @@ tags: app
 
 Running scheduled tasks on Scalingo should be done by yourself. We don't
 implement cron or cron-like features in our container system. Most languages
-have alternative that are listed below.  
+have alternatives. We list some of them below:
 
 ## Ruby
 
@@ -27,7 +27,7 @@ Once your application has been deployed, scale your 'clock' to 1 to start the ta
 scheduler:
 
 ```bash
-scalingo scale clock:1
+scalingo --app my-app scale clock:1
 ```
 
 ## PHP

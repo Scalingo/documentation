@@ -17,7 +17,7 @@ You can define aliases of environment variables:
 
 For example:
 
-* `DATABASE_URL` -&gt; `$SCALINGO_MONGO_URL`
+* `DATABASE_URL=$SCALINGO_MONGO_URL`
 
 In this case the `DATABASE_URL` becomes an alias of `SCALINGO_MONGO_URL` value.
 
@@ -26,7 +26,7 @@ In this case the `DATABASE_URL` becomes an alias of `SCALINGO_MONGO_URL` value.
 Using the environment to configure your application is one of twelve good practices
 defined in [the 12 factors](http://12factor.net/).
 
-You should avoid writing any credentials in the files managed by `git`.
+You should avoid writing any credentials in the files managed by Git.
 
 ## Accessing the environment from your app
 
@@ -64,5 +64,5 @@ $_ENV["PORT"]
 
 #### Other languages
 
-The process shoul not be really different, refer to the documentation of
+The process should not be really different. Refer to the documentation of
 the standard library of your language.
