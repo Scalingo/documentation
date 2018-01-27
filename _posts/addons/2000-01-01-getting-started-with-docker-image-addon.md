@@ -92,7 +92,7 @@ docker pull scalingo/mongo:3.2.6-2
 
 ## Launch your application
 
-Once you have downloaded all the needed images, you must run them on your system.
+Once all the needed images have been downloaded, you must run them on your system.
 
 ### Run the database image
 
