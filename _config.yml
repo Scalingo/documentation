@@ -16,7 +16,7 @@ kramdown:
    hard_wrap: false
 highlighter: rouge
 
-permalink: none
+permalink: pretty
 
 defaults:
   - # set default layout on all pages

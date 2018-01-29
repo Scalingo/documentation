@@ -23,6 +23,7 @@ use Rack::Rewrite do
     env["REQUEST_PATH"].start_with?("/tagged")
   }
   rewrite    %r{/\d{4}(/.+)+/([^\./]+)$}, '$1/$2.html'
+  r301    %r{^(.+).html$}, '$1/'
 end
 
 if ENV['FORCE_SSL'].present?
