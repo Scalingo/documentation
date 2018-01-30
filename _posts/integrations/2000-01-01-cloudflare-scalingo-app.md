@@ -82,7 +82,7 @@ my-app.scalingo.io.
 > precises the URL is a fully qualified domain name (FQDN) and not a relative
 > domain of the current one. (ie. `my-app.scalingo.io.example.com`)
 
-![cloudflare-add-record](http://cdn.scalingo.com/documentation/integrations/cloudflare-create-record-02.png)
+![cloudflare-add-record](http://cdn.scalingo.com/documentation/integrations/cloudflare-create-record-03.png)
 
 ## Cloudflare as DNS server
 
