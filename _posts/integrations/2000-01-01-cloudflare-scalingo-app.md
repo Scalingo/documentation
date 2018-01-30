@@ -46,9 +46,11 @@ the domain). This process might take up to 24h.
 To go through this process, you are encouraged to follow [their official
 documentation](https://support.cloudflare.com/hc/en-us/articles/201720164-Step-2-Create-a-Cloudflare-account-and-add-a-website)
 
-## Configuration of your application
+## Configuration of your application on Scalingo
 
 ### Add the domains to your application
+
+You need to declare to Scalingo all domains that your app will have to respond to.
 
 #### Dashboard
 
