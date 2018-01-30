@@ -15,7 +15,7 @@ themselves, located in Scalingo infrastructure. Then several features can be
 used:
 
 * **Proxy Cache**: Cloudflare automatically caches static assets like images,
-  javascripts and stylesheets. It means that the first time such file is
+  javascripts and stylesheets. It means that the first time such files are
   requested, the request is forwarded to your application, and all the
   subsequent queries will be responded directly by Cloudflare infrastructure,
   allowing your application to use its CPU to serve content dynamic requests
@@ -23,8 +23,8 @@ used:
 
 * **HTTPS Termination**: By using Cloudflare, you don't have to care anymore about
   TLS certificates, they are automatically handled by them. At the precise
-  moment your domains is configured to use their proxy, a valid certificate.
-  will be served to your users. The result is identical as Scalingo [automatic
+  moment your domain is configured to use their proxy, a valid certificate
+  will be served to your users. The result is identical to Scalingo [automatic
   certificate generation with Let's Encrypt]({% post_url app/2016-12-23-letsencrypt %}).
 
 * **Application Firewall**: Cloudflare proxies are looking at incoming requests
@@ -33,8 +33,8 @@ used:
   are automatically dropped without threatening your application.
 
 * **DDoS Protection**: If the case an application might be likely to be
-  attacked.  Cloudflare positions itself as shield against a wide variety of
-  distributed DDoS attacks, legitimate keeps being transfered to your
+  attacked.  Cloudflare positions itself as a shield against a wide variety of
+  distributed DDoS attacks, legitimate keeps being transferred to your
   application while unwanted ones are dropped.
 
 ## Setup of your Cloudflare account
@@ -44,7 +44,7 @@ to change your domain nameservers at the registrar level (the entity which sold
 the domain). This process might take up to 24h.
 
 To go through this process, you are encouraged to follow [their official
-documentation](https://support.cloudflare.com/hc/en-us/articles/201720164-Step-2-Create-a-Cloudflare-account-and-add-a-website)
+documentation](https://support.cloudflare.com/hc/en-us/articles/201720164-Step-2-Create-a-Cloudflare-account-and-add-a-website).
 
 ## Configuration of your application on Scalingo
 
@@ -61,8 +61,8 @@ What: Type your domain in the text field and click on `LINK DOMAIN NAME TO THE A
 #### CLI
 
 ```bash
-scalingo -a my-app domains-add my-domain.com
-scalingo -a my-app domains-add www.my-domain.com
+scalingo --app my-app domains-add example.com
+scalingo --app my-app domains-add www.example.com
 
 # etc. according the the domains you want to target
 ```
@@ -79,14 +79,14 @@ my-app.scalingo.io.
 ```
 
 > The `.` (dot) character at the end of `my-app.scalingo.io.` is required, it
-> precises the URL is a fully qualified domain name (fqdn) and not a relative
+> precises the URL is a fully qualified domain name (FQDN) and not a relative
 > domain of the current one. (ie. `my-app.scalingo.io.example.com`)
 
 ![cloudflare-add-record](http://cdn.scalingo.com/documentation/integrations/cloudflare-create-record-02.png)
 
 ## Cloudflare as DNS server
 
-Cloudflare can also be used as simple DNS server to configure how your DNS zone
+Cloudflare can also be used as a simple DNS server to configure how your DNS zone
 is configured. In this case requests won't be routed to their infrastructure,
 but it is also not possible to use their features caching or application
 firewalling. To use it as DNS server only, change the status of the concerned
@@ -94,11 +94,9 @@ subdomains as `DNS only`.
 
 An advantage of using Cloudflare as DNS provider is that it provides **CNAME
 flattening** on root domains. Usually DNS providers only let you configure
-**CNAME** fields on subdomains (ie. `www.example.com`) but not on root domains
-(ie. `example.com`). It obliges you to create a **A** field targeting an
+**CNAME** fields on subdomains (i.e. `www.example.com`) but not on root domains
+(i.e. `example.com`). It obliges you to create a **A** field targeting a
 precise `IP` to reach your application, which is not flexible and internal
-changes at Scalingo might impact your app.  Their DNS service will let you
+changes at Scalingo might impact your app. Their DNS service will let you
 configure a **CNAME** entry for a root domain, removing the **static IP**
 limit.
-
-
