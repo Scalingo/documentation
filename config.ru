@@ -37,4 +37,6 @@ elsif ENV['CANONICAL_HOST'].present?
   use Rack::CanonicalHost, ENV["CANONICAL_HOST"]
 end
 
+use Rack::CommonLogger
+
 run Rack::Jekyll.new
