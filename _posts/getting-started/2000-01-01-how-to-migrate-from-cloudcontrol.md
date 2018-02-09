@@ -85,7 +85,7 @@ variables of your CloudControl app, directly in your Scalingo app.
 ## 5. Configure your account to push your code
 
 Before pushing your code, youd should setup your SSH key to authenticate your
-GIT pushes. With the dashboard, go on the ['Keys'
+Git pushes. With the dashboard, go on the ['Keys'
 page](https://my.scalingo.com/keys) and upload your public SSH key (usually
 `$HOME/.ssh/id_rsa.pub`). Or obviously, you can do it with the CLI:
 

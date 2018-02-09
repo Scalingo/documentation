@@ -16,27 +16,27 @@ permalink: /languages/javascript/nodejs/getting-started-with-meteor/
 $ curl https://install.meteor.com | /bin/sh
 
 # Create your app
-$ meteor create meteor-app
-$ cd meteor-app
+$ meteor create my-app
+$ cd my-app
 
-# Add everything in the GIT repository
+# Add everything in the Git repository
 $ git init .
 $ git commit -m "Init meteor application"
 ```
 
 ## Create your application and provision a MongoDB database
 
-The meteor framework uses extensively MongoDB as a datastore,
-so you need an available instance for you application.
+The Meteor framework uses extensively MongoDB as a database. Hence you need to
+provision a new instance of this database to your application.
 
 ```bash
-$ scalingo create meteor-app
+$ scalingo create my-app
 Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
 
-$ scalingo -a meteor-app addons-add scalingo-mongodb mongo-sandbox
+$ scalingo --app my-app addons-add scalingo-mongodb mongo-sandbox
 -----> Addon scalingo-mongodb has been provisionned
-       ID: meteor-app-7247
+       ID: my-app-7247
        Modified variables: [MONGO_URL SCALINGO_MONGO_URL]
        Message from addon provider: Database successfully created
 ```
@@ -54,7 +54,8 @@ $ git push scalingo master
 ```bash
 …
 Waiting for your application to boot...
-<-- https://meteor-app.scalingo.io -->
+<-- https://my-app.scalingo.io -->
 ```
 
-Now you can have fun with meteor and all its real-time feature. Of course, we support websocket!
+Now you can have fun with meteor and all its real-time feature. Of course, we
+support WebSocket!

@@ -120,7 +120,7 @@ Now `scalingo.exe` will be available from git-bash for your next sessions.
 ```bash
 scalingo create my-app
 
-# Create a new app with a custom GIT remote
+# Create a new app with a custom Git remote
 scalingo create my-app --remote staging
 scalingo create my-app --remote production
 scalingo create my-app --remote custom
@@ -256,5 +256,5 @@ We try to detect automatically the name of your application according to:
 
 * `SCALINGO_APP` environment variable
 * `-a|--app`     flag of the command line to specify an application name
-* `-r|--remote`  flag of the command line to specify a remote GIT
-* `scalingo` remote of your GIT repository
+* `-r|--remote`  flag of the command line to specify a remote Git
+* `scalingo` remote of your Git repository

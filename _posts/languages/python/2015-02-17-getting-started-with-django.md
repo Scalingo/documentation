@@ -166,7 +166,7 @@ application = Cling(get_wsgi_application())
 
 `Cling` is part of the `dj_static` module and is designed to serve static files.
 
-## Save your app with GIT
+## Save your app with Git
 
 ### Setup Gitignore
 

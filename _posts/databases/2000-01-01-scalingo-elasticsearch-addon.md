@@ -73,7 +73,7 @@ You can get environment variables from the dashboard or the command line interfa
 $ scalingo -a my-app env | grep ELASTIC
 
 ELASTICSEARCH_URL=$SCALINGO_ELASTICSEARCH_URL
-SCALINGO_ELASTICSEARCH_URL=http://example-app-3030:MpIxXstskccB3Ab2iwKH@example-app-3030.elasticsearch.dbs.appsdeck.eu:30995
+SCALINGO_ELASTICSEARCH_URL=http://my-app-3030:MpIxXstskccB3Ab2iwKH@my-app-3030.elasticsearch.dbs.appsdeck.eu:30995
 ```
 
 ## Remote access your database
@@ -140,7 +140,7 @@ You can upgrade or downgrade your database plan whenever you need it. This opera
 To upgrade or downgrade your addon the sub-command is the same: `addons-upgrade`.
 
 ```bash
-$ scalingo -a my-app addons-upgrade example-app-3030 2g
+$ scalingo -a my-app addons-upgrade my-app-3030 2g
 ```
 
 In this example, `my-app-3030` is the ID of the addon, and `2g` is the plan we want to upgrade to.
@@ -148,13 +148,13 @@ In this example, `my-app-3030` is the ID of the addon, and `2g` is the plan we w
 To find out the addon ID:
 
 ```bash
-$ scalingo -a example-app addons
+$ scalingo -a my-app addons
 
-+------------------------+------------------+------+
-|          ADDON         |        ID        | PLAN |
-+------------------------+------------------+------+
-| Scalingo Elasticsearch | example-app-3030 |   1g |
-+------------------------+------------------+------+
++------------------------+-------------+------+
+|          ADDON         |      ID     | PLAN |
++------------------------+-------------+------+
+| Scalingo Elasticsearch | my-app-3030 |   1g |
++------------------------+-------------+------+
 ```
 
 ## Database dashboard

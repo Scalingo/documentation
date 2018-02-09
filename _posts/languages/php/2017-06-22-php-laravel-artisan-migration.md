@@ -98,7 +98,7 @@ To run locally the migration to see if the syntax is right, run the following co
 ./artisan migrate
 ```
 
-If everything went well, add this file to your GIT repository and deploy the application
+If everything went well, add this file to your Git repository and deploy the application
 on the platform. Once the app has been deployed, apply the migration to your production
 database.
 
