@@ -21,13 +21,13 @@ can be directly deployed on Scalingo.
 JAR and WAR archives can be deployed using the platform command line interface, first
 step is to install it: [CLI Documentation]({% post_url cli/2015-09-18-command-line-tool %})
 
-## Usage the **deploy** command
+## Usage of the `deploy` command
 
 The following example applies for **WAR** archives but **also for autonomous JAR**
 archives:
 
 ```sh
-$ scalingo -a my-app deploy ./application.war
+$ scalingo --app my-app deploy ./application.war
 -----> Deploying WAR archive: ./application.war
 -----> Uploading archive…
        Deployment started, streaming output:
@@ -44,15 +44,15 @@ $ scalingo -a my-app deploy ./application.war
 
 ## Configuration
 
-### JVM Version selection
+### JVM version selection
 
-The used version of OpenJDK (java runtime) can be defined by the environment
+The used version of OpenJDK (Java runtime) can be defined by the environment
 variable `JAVA_VERSION`. By default the **1.8** version will be used.
 
 ```sh
 # Configure the application to use OpenJDK version 1.9
 
-$ scalingo -a my-app env-set JAVA_VERSION=1.9
+$ scalingo --app my-app env-set JAVA_VERSION=1.9
 ```
 
 ### Webapp Runner / Tomcat version selection
