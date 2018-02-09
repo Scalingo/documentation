@@ -1,6 +1,6 @@
 ---
 title: Application Lifecycle Management
-modified_at: 2018-01-26 00:00:00
+modified_at: 2018-02-09 00:00:00
 category: platform
 order: 5
 tags: management
