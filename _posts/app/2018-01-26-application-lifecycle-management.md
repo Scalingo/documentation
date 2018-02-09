@@ -22,30 +22,30 @@ applications in a programmative way, you can directly target our API.
 
 ## Create an Application
 
-Creating an application is the first thing done on the platform, once an app is
+Creating an application is the first thing done on the platform. Once an app is
 created, the possibility to deploy your code, provision databases, invite
 collaborators are available.
 
 ### Web Dashboard
 
-Where:
+**Where**:
 * Dashboard homepage, button `+ CREATE NEW APP`
 * Any page of the dashboard, bottom-left button `+`
 
-Action: Give a name, choose addons and validate
+**Actions**: Give a name, choose addons and validate
 
 ### Command Line
 
-The subcommand `create` is dedicated at creating applications:
+The subcommand `create` is dedicated to creating applications:
 
 ```bash
 $ scalingo create <appname>
 
-# Create a new app with a custom GIT remote
-$ scalingo create my-new-app --remote staging
+# Create a new app with a custom Git remote
+$ scalingo create my-app --remote staging
 
 # Create a new app with a custom buildpack
-$ scalingo create my-new-app --buildpack https://github.com/Scalingo/multi-buildpack
+$ scalingo create my-app --buildpack https://github.com/Scalingo/multi-buildpack
 ```
 
 ## Rename an Application
@@ -56,9 +56,9 @@ $ scalingo create my-new-app --buildpack https://github.com/Scalingo/multi-build
 
 **Condition**: Logged in user should be the application owner
 
-**Action**: Fill confirmation form, choose a new name and click on `RENAME`
+**Actions**: Fill confirmation form, choose a new name and click on `RENAME`
 
-## Transfer ownership of an Application
+## Transfer Ownership of an Application
 
 ### Web Dashboard
 
@@ -69,9 +69,9 @@ $ scalingo create my-new-app --buildpack https://github.com/Scalingo/multi-build
 * Logged in user should be the application owner
 * The receiver account should be collaborator of the application
 
-**Action**: Choose the collaborator and validate operation
+**Actions**: Choose the collaborator and validate operation
 
-See [Transfer the Ownership of an App]({% post_url app/2000-01-01-transfer-ownership %}) for more informations.
+See [Transfer the Ownership of an App]({% post_url app/2000-01-01-transfer-ownership %}) for more information.
 
 ## Delete an Application
 
@@ -81,11 +81,11 @@ See [Transfer the Ownership of an App]({% post_url app/2000-01-01-transfer-owner
 
 **Condition**: Logged in user should be the application owner
 
-**Action**: Fill confirmation form and validate operation
+**Actions**: Fill confirmation form and validate operation
 
 ### Command Line
 
-Subdommand `destroy`:
+Subcommand `destroy`:
 
 ```bash
 $ scalingo destroy <appname>
