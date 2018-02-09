@@ -97,7 +97,7 @@ scalingo keys-add workstation-key $HOME/.ssh/id_rsa.pub
 ## 6. Push your application
 
 We're using the same workflow as CloudControl, so you first need to add a
-remote to your git repository:
+remote to your Git repository:
 
 ```bash
 # Add Scalingo remote for 'cloud-app'

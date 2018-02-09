@@ -53,7 +53,7 @@ Now `scalingo.exe` will be available from git-bash for your next sessions.
 
 * You can use the environment variable `SCALINGO_APP` instead of using the `--app` flag
 * If your current directory is the base directory of your project
-  and that your git repository has a remote named `scalingo`, you
+  and that your Git repository has a remote named `scalingo`, you
   don't need to specify `--app <name>`. It will be detected automatically.
 * If you want to specify a different remote name, you can do it by using
   `--remote` or `-r` flag followed by the name

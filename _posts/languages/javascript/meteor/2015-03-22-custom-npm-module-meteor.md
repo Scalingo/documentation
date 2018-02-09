@@ -1,5 +1,5 @@
 ---
-title: Custom NPM modules with Meteor
+title: Custom npm modules with Meteor
 modified_at: 2016-03-30 00:00:00
 category: languages
 tags: nodejs meteor npm
@@ -77,7 +77,7 @@ $ echo 'npm-container' >> .meteor/packages
 
 ```bash
 $ git add -f packages/npm-container .meteor/packages .meteor/versions packages.json
-$ git commit -m "Add NPM package handling"
+$ git commit -m "Add npm package handling"
 ```
 
 That's it, all the required files are staged for commit:
@@ -88,7 +88,7 @@ $ git push scalingo master
 
 ## Common errors:
 
-### NPM support has been initialized
+### npm support has been initialized
 
 #### Complete message
 

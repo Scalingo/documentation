@@ -13,39 +13,40 @@ permalink: /languages/python/getting-started-with-django/
 
 ```bash
 # Create your project
-mkdir myproject
-cd myproject
+mkdir my-project
+cd my-project
 
 # Create a virtualenv
 virtualenv venv
 source venv/bin/activate
 
-# Install django toolbelt
+# Install Django toolbelt
 pip install django-toolbelt
 
-# Initialize django project, this command will
-# create a manage.py file and a myapp directory
-django-admin.py startproject myapp .
+# Initialize Django project, this command will
+# create a manage.py file and a my-app directory
+django-admin.py startproject my-app .
 ```
 
 ## Define the how to start your application
 
-You have to create a file named `Procfile` at the root of the project.
+You have to create a file named `Procfile` at the root of the project
+containing:
 
 ```yaml
-web: gunicorn myapp.wsgi --log-file -
+web: gunicorn my-app.wsgi --log-file -
 ```
 
-By default, the platform is looking for the web process type to start,
-the previous command defines it and tell gunicorn, the applicative HTTP
-server to display logs on `stdout` to fit the [12 factor](http://12factor.net/)
+By default, the platform is looking for the web process type to start. The
+previous command defines it and tells Gunicorn, the applicative HTTP server, to
+display logs on `stdout` to fit the [12-factor](http://12factor.net/)
 principles.
 
 ## Python app recognition and dependencies definition.
 
-The platform will understand that your app is a __Python__ application if
-it contains a `requirements.txt` file. To create it, your have to run the
-following command:
+The platform will understand that your app is a __Python__ application if it
+contains a `requirements.txt` file at the root of the project. To create it,
+your have to run the following command:
 
 ```bash
 pip freeze > requirements.txt
@@ -58,7 +59,7 @@ pip freeze > requirements.txt
 </blockquote>
 
 ```bash
-$ scalingo create django-app
+$ scalingo create my-app
 ```
 
 * Go on the [dashboard](https://my.scalingo.com/apps) of your application.
@@ -82,11 +83,11 @@ pip freeze > requirement.txt
 
 ## Application configuration
 
-The configuration of the application has to be done throught the environment
-variables, no credentials should be present statically in the code, it is usually
-a bad practice.
+The configuration of the application has to be done through the environment
+variables, no credentials should be present statically in the code. It is
+usually a bad practice.
 
-The configuration file in our example is located at `myapp/settings.py`.
+The configuration file in our example is located at `my-app/settings.py`.
 
 ### Ensure that the base directory of the application is defined
 
@@ -94,8 +95,8 @@ The configuration file in our example is located at `myapp/settings.py`.
   This instruction may be already set according to your Django version
 </blockquote>
 
-Add (if not already set) the following definition after the top comment header of
-the `myapp/settings.py` file:
+Add (if not already set) the following definition after the top comment header
+of the `my-app/settings.py` file:
 
 ```python
 import os
@@ -104,7 +105,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 ### Configure the Database access
 
-Still in the `myapp/settings.py`, replace:
+Still in the `my-app/settings.py`, replace:
 
 ```python
 DATABASES = {
@@ -128,14 +129,14 @@ except KeyError:
 DATABASES = { 'default': dj_database_url.config() }
 ```
 
-This has no effect on the default behaviour, if no `DATABASE_URL` has been set,
-the application will fallback on your development backend, sqlite3. However,
-we advise you to use the same database in development and in production to ensure
-bugfree migrations.
+This has no effect on the default behavior. If no `DATABASE_URL` has been set,
+the application will fallback on your development backend, sqlite3. However, we
+advise you to use the same database in development and in production to ensure
+bug free migrations.
 
 ### Static file serving
 
-`myapp/settings.py`:
+`my-app/settings.py`:
 
 ```python
 STATIC_ROOT = 'staticfiles'
@@ -146,7 +147,7 @@ STATICFILES_DIRS = (
 )
 ```
 
-`myapp/wsgi.py`
+`my-app/wsgi.py`
 
 Replace
 
@@ -168,10 +169,11 @@ application = Cling(get_wsgi_application())
 
 ## Save your app with Git
 
-### Setup Gitignore
+### Setup `.gitignore`
 
-You don't want to save everything, create the file `.gitignore` at the root of
-your project with the following content:
+You don't want to keep track of everything on your version control system. To
+prevent such files to be added to Git, create the file `.gitignore` at the root
+of your project with the following content:
 
 ```text
 venv
@@ -199,5 +201,5 @@ git push scalingo master
 ```bash
 …
 Waiting for your application to boot...
-<-- https://django-app.scalingo.io -->
+<-- https://my-app.scalingo.io -->
 ```

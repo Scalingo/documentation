@@ -7,8 +7,9 @@ tags: php, http, security, filtering
 
 ## Introduction
 
-Our PHP deployment stack is using Nginx and PHP-fpm to answer your application request.
-You can setup IPs filtering to allow only some IP to access your app.
+Our PHP deployment stack is using Nginx and PHP-FPM to answer your application
+request. You can setup IP addresses filtering to allow only some IP address to
+access your application.
 
 ## Configuration
 
@@ -20,7 +21,8 @@ Create a directory `config` in your project:
 mkdir config
 ```
 
-Edit the file `nginx-ips-filtering.conf` in this directory with the following content:
+Edit the file `nginx-ips-filtering.conf` in this directory with the following
+content:
 
 ```bash
 location / {
@@ -30,30 +32,13 @@ location / {
 }
 ```
 
-The last thing you have to do is to instruct Scalingo's deployment process to
-use your configuration file.
+Last thing you need to do is to instruct Scalingo's deployment process to use
+your configuration file.
 
 ### Deployment process configuration
 
-This process requires you to edit the `composer.json` file of your project.
-Edit the file the following way:
-
-```javascript
-{
-  ...
-  "extra": {
-    "paas": {
-      "nginx-includes": ["config/nginx-ips-filtering.conf"]
-    }
-  }
-}
-```
-
-If you are not using composer, create a composer.json file with the previous content, and also create
-a file `composer.lock` containing an empty JSON string `{}`
-
-> Tip: You can find more information about extra configuration in [the PHP support page]({% post_url languages/php/2014-07-02-php %}).
-
+{% assign nginx-include = "config/nginx-ips-filtering.conf" %}
+{% include nginx_includes.md %}
 
 ## Redeploy your app
 
@@ -63,4 +48,4 @@ git commit -m "setup ip filtering"
 git push scalingo master
 ```
 
-That's it, only the IPs you've specified will be able to access your app.
+That's it, only the specified IP addresses will be able to access your app.

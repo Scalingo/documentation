@@ -35,7 +35,7 @@ More information about app environment can be found [here]({% post_url app/2014-
 
 ------------
 
-Shelly Cloud allows you to have a "production" and a "staging" environment within the same app.  
+Shelly Cloud allows you to have a "production" and a "staging" environment within the same app.
 On Scalingo, you will have to create as many apps as you need to simulate these environments, i.e using [Scalingo CLI]({% post_url cli/2015-09-18-command-line-tool %}):
 
 * `scalingo create myapp`
@@ -43,7 +43,7 @@ On Scalingo, you will have to create as many apps as you need to simulate these 
 * `scalingo create myapp-staging`
 * `scalingo create myapp-production`
 
-You can manage your working environments and work in the same git project, by adding corresponding remotes to your `.git/config` file, i.e:
+You can manage your working environments and work in the same Git project, by adding corresponding remotes to your `.git/config` file, i.e:
 
 * `git remote add scalingo git@scalingo.com:myapp.git`
 * `git remote add scalingo-production git@scalingo.com:myapp-production.git`
@@ -161,7 +161,7 @@ Related link: [Ruby web server]({% post_url languages/ruby/2015-06-23-web-server
 
 ## Memcaching
 
-On Shelly Cloud, each of your servers is running a Memcache server.  
+On Shelly Cloud, each of your servers is running a Memcache server.
 On Scalingo, you can use Redis to fill the same purpose.
 
 ## Data migration from Shelly Cloud to Scalingo

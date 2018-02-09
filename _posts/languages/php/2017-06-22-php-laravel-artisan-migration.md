@@ -21,7 +21,7 @@ that database migrations solve.
 ## Scalingo MySQL Addon
 
 A **Laravel** application requires a database, often a SQL database like MySQL
-or PostgreSQL, this article will be using MySQL, but it should be identical with
+or PostgreSQL. This article will be using MySQL, but it should be identical with
 a PostgreSQL database.
 
 First, a [Scalingo MySQL addon]({% post_url
@@ -33,9 +33,9 @@ and its alias `DATABASE_URL`.
 DATABASE_URL=mysql://user:pass@my-db.mysql.dbs.com:30000/my-db
 ```
 
-To use this URL in your application, add at the top of your `app/config/database.php` file
-the following lines. They decompose the URL into the different fields and let you configure
-your app.
+To use this URL in your application, add at the top of your
+`app/config/database.php` file the following lines. They decompose the URL into
+the different fields and let you configure your application.
 
 ```
 $url = parse_url(getenv("DATABASE_URL"));
@@ -61,7 +61,7 @@ Then find the `mysql` entry in the `database.php` file and modify it like:
     ),
 ```
 
-Now your application database is configured, let's work on the migrations.
+Now that your application database is configured, let's work on the migrations.
 
 ## First Migration
 
@@ -98,21 +98,21 @@ To run locally the migration to see if the syntax is right, run the following co
 ./artisan migrate
 ```
 
-If everything went well, add this file to your Git repository and deploy the application
-on the platform. Once the app has been deployed, apply the migration to your production
-database.
+If everything went well, add this file to your Git repository and deploy the
+application on the platform. Once the application has been deployed, apply the
+migration to your production database:
 
 ```bash
-scalingo -a appname run php artisan migrate
+scalingo --app my-app run php artisan migrate
 ```
 
 ### What about the `down` method of the migration
 
 For every migration file, a `down` method should be written in the case we want
-to rollback database migrations.
+to rollback database migrations:
 
 ```bash
-scalingo -a appname run php artisan migrate:rollback
+scalingo --app my-app run php artisan migrate:rollback
 ```
 
 ## Another example: alter a database table.
@@ -139,10 +139,11 @@ public function down()
 As previously, running the migration on the hosted application once deployed:
 
 ```bash
-scalingo -a appname run php artisan migrate
+scalingo --app my-app run php artisan migrate
 ```
 
-For more examples, refer to [the official Laravel documentation](https://laravel.com/docs/5.5/migrations)
+For more examples, refer to [the official Laravel
+documentation](https://laravel.com/docs/5.5/migrations).
 
 ## Apply migrations automatically after deployment
 
@@ -155,5 +156,5 @@ file at the root of your project with the following content:
 postdeploy: php artisan migrate
 ```
 
-That's it, if a deployment is a success, the command applying migrations will
+That's it! If a deployment is a success, the command applying migrations will
 be automatically run.

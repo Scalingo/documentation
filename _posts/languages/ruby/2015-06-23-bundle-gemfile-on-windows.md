@@ -7,28 +7,29 @@ tags: ruby application server
 
 ## Context
 
-Applications running in Scalingo's infrastructure are running on a distribution of Linux
-with the architecture `amd64`. If you are using Windows to develop your application. Incompatibility
-may occure.
+Applications running in Scalingo's infrastructure are running on a distribution
+of Linux with the architecture `amd64`. If you are using Windows to develop
+your application, incompatibility may occur.
 
-When you are running `bundle install` to install the dependencies of your project, Bundler will
-select the best versions possible for each gem you've listed in your `Gemfile`. Some of these gems
-have special version for Windows.
+When you are running `bundle install` to install the dependencies of your
+project, Bundler will select the best versions possible for each gem you've
+listed in your `Gemfile`. Some of these gems have special version for Windows.
 
 > Gems with suffixes like `-mingw32 or -mswin` in your `Gemfile.lock` have special versions for Windows.
 
 As Scalingo's stack is based on Linux, we can't install these precise versions.
 
-## Specify explicitely your gems version
+## Specify explicitly your gems version
 
-As a result, the `Gemfile.lock` won't be considered when a Windows machine is deploying a ruby application.
-So you need to lock the versions manually.
+As a result, the `Gemfile.lock` won't be considered when a Windows machine is
+deploying a Ruby application. So you need to lock the versions manually by
+modifying the `Gemfile`:
 
 ```text
 gem 'rails'
 ```
 
-should become 
+should become
 
 ```text
 gem 'rails', '4.2.0'

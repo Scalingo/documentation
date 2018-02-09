@@ -12,7 +12,7 @@ permalink: /languages/javascript/nodejs/getting-started-with-meteor/
 ## Initialize your application
 
 ```bash
-# Install meteor
+# Install Meteor
 $ curl https://install.meteor.com | /bin/sh
 
 # Create your app

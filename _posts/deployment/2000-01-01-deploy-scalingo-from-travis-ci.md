@@ -50,5 +50,5 @@ deploy:
   on:
     all_branches: true
 ```
-- **remote**: Default remote is `scalingo`. Change this if you have a different git remote name.
+- **remote**: Default remote is `scalingo`. Change this if you have a different Git remote name.
 - **username** and **password**: replace the `api_key` option.
