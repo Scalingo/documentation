@@ -29,7 +29,7 @@ It works by performing the following operations in the same order as below:
 
 ### Notes
 
-Other advanced operations are planned, for more informations take a look at [the github project](https://github.com/Scalingo/heroku2scalingo/#todo).
+Other advanced operations are planned, for more informations take a look at [the GitHub project](https://github.com/Scalingo/heroku2scalingo/#todo).
 
 ### Release
 

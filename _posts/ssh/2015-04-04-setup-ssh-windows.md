@@ -17,8 +17,8 @@ and install it by selecting `git-bash` during the installation process.
 
 ### 2. Create a new SSH key pair
 
-GIT authentication is based on SSH, so you need to be able to authenticate with
-t his technology, here is the guide how to do it. The following commands have
+Git authentication is based on SSH, so you need to be able to authenticate with
+this technology, here is the guide how to do it. The following commands have
 to be written and executed in a 'git-bash' terminal, installed in the previous
 section.
 

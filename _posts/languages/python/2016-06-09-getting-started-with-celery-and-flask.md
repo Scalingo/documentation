@@ -13,8 +13,8 @@ permalink: /languages/python/celery/getting-started-with-celery-and-flask/
 ## Initialize your application
 
 ```bash
-$ mkdir celery-flask-app
-$ cd celery-flask-app
+$ mkdir my-app
+$ cd my-app
 $ pip install virtualenv
 $ virtualenv venv
 $ . venv/bin/activate
@@ -22,15 +22,18 @@ $ . venv/bin/activate
 
 ## Application infrastructure
 
-Our goal is to create two applications communicating via redis using the Celery platform:
-  * The Celery app that will provide a custom hello task
-  * The Flask app that will provide a web server that will send a task to the Celery app and display the answer in a web page.
+Our goal is to create two applications communicating via Redis using the Celery
+platform:
 
-The redis connection URL will be send using the `REDIS_URL` environment variable.
+* The Celery app will provide a custom hello task.
+* The Flask app will provide a web server that will send a task to the Celery
+app and display the answer in a web page.
+
+The Redis connection URL will be send using the `REDIS_URL` environment variable.
 
 ## Create a Celery server
 
-### Install celery
+### Install Celery
 
 ```bash
 pip install celery
@@ -39,7 +42,7 @@ pip install redis
 
 ### Defining a custom task
 
-task.py
+Create a file named `task.py` containing:
 
 ```python
 import celery
@@ -65,7 +68,7 @@ pip install Flask
 
 ### Creating a custom web server
 
-app.py
+Create file named `app.py` containing:
 
 ```python
 import os
@@ -84,7 +87,7 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port)
 ```
 
-templates/index.html
+And create a file named `templates/index.html` containing a basic HTML page:
 
 ```html
 <!DOCTYPE html>
@@ -101,9 +104,11 @@ templates/index.html
 
 ### Communication between Celery and Flask
 
-In order to have some communication between Flask and Celery, we will provide a form that will take user input, send it to Celery, get the Celery response and display it on the Web page.
+In order to have some communication between Flask and Celery, we will provide a
+form that will take user input, send it to Celery, get the Celery response and
+display it on the Web page.
 
-app.py
+Modify the `app.py` file:
 
 ```python
 import os
@@ -127,7 +132,7 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port)
 ```
 
-templates/index.html
+And our template `templates/index.html`:
 
 ```html
 <!DOCTYPE html>
@@ -153,7 +158,7 @@ templates/index.html
 
 ## Define how to start your application
 
-Procfile
+Create a `Procfile` at the root of your project:
 
 ```yaml
 worker: celery worker --app=task.app
@@ -161,11 +166,13 @@ web: python app.py
 ```
 
 ## Freeze all your dependencies
+
 ```bash
 $ pip freeze > requirements.txt
 ```
 
 ## Commit your application
+
 ```bash
 $ git init
 $ echo "venv/" >> .gitignore
@@ -177,12 +184,13 @@ $ git commit -m "Base Celery and flask application"
 ## Create your application on Scalingo
 
 ```bash
-$ scalingo create flask-celery-app
+$ scalingo create my-app
 ```
 
-## Add a redis addon to your app
+## Add a Redis addon to your app
+
 ```bash
-$ scalingo -a flask-celery-app addons-add scalingo-redis free
+$ scalingo --app my-app addons-add scalingo-redis free
 ```
 
 ## Deploy your app
@@ -193,12 +201,12 @@ $ git push scalingo master
 
 ## Scaling your application
 
-By default scalingo only launch your web application. You must manually start the worker container
+By default Scalingo only launch your web application. You must manually start the worker container:
 
 ```bash
-$ scalingo -a flask-celery-app scale web:1 worker:1
+$ scalingo --app my-app scale web:1 worker:1
 ```
 
 ## Live demo
 
-This application is currently running on scalingo [here]( https://sample-python-celery.scalingo.io).
+This application is currently running on Scalingo [here]( https://sample-python-celery.scalingo.io).

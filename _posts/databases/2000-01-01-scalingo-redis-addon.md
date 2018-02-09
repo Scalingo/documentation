@@ -83,7 +83,7 @@ If you need to access your database from other places than your app please follo
 
 ### Number of databases
 
-Each redis instance can use 6 databases (numbered from 0, the default DB, to 5)
+Each Redis instance can use 6 databases (numbered from 0, the default DB, to 5)
 
 ### Idle connections timeout
 
@@ -93,7 +93,7 @@ Redis configuration:
 timeout 150
 ```
 
-It means that if a connection has not been used during 150 seconds, it will be automatically closed by redis. This is done to avoid accumulating staled connections. If your application is using a pool of connection to connect to the redis database. This value has to been used for its configuration.
+It means that if a connection has not been used during 150 seconds, it will be automatically closed by Redis. This is done to avoid accumulating staled connections. If your application is using a pool of connection to connect to the Redis database. This value has to been used for its configuration.
 
 ### Asynchronous disk save
 

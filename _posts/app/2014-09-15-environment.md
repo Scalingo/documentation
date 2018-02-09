@@ -24,7 +24,7 @@ In this case the `DATABASE_URL` becomes an alias of `SCALINGO_MONGO_URL` value.
 ## Good practices
 
 Using the environment to configure your application is one of twelve good practices
-defined in [the 12 factors](http://12factor.net/).
+defined in [the 12-factor](http://12factor.net/).
 
 You should avoid writing any credentials in the files managed by Git.
 

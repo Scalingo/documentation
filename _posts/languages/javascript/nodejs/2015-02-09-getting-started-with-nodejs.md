@@ -12,8 +12,8 @@ permalink: /languages/javascript/nodejs/getting-started-with-nodejs/
 ## Initialize your application
 
 ```bash
-$ mkdir nodejs-app
-$ cd nodejs-app
+$ mkdir my-app
+$ cd my-app
 $ npm init
 
 #
@@ -26,10 +26,10 @@ $ echo "node_modules" > .gitignore
 
 ## Write a base server file
 
-server.js
+The main file for this sample project is `server.js`:
 
 ```js
-// Node.js - Express Sample application
+// Node.js - Express sample application
 
 var express = require('express')
 var app = express()
@@ -51,7 +51,10 @@ var server = app.listen(process.env.PORT || 3000, function () {
 
 ## Define how to start your application
 
-The 'Procfile' (with a capital 'P') is the file defining how your application is supposed to start ([more info about Procfile]({% post_url internals/2014-12-01-procfile %})), here is the content you have to write in the 'Procfile' file for this project:
+The `Procfile` (with a capital 'P') is the file defining how your application
+is supposed to start ([more info about Procfile]({% post_url
+internals/2014-12-01-procfile %})), here is the content you have to write in
+the `Procfile` file for this project:
 
 ```yaml
 web: node server.js
@@ -70,7 +73,7 @@ $ git commit -m "Base Node.js application"
 > This operation has to be done in the directory of your project.
 
 ```bash
-$ scalingo create nodejs-app
+$ scalingo create my-app
 Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
 
@@ -79,15 +82,16 @@ $ git push scalingo master
 
 ## Access your application
 
-```bash
+```text
 …
 Waiting for your application to boot...
-<-- https://nodejs-app.scalingo.io -->
+<-- https://my-app.scalingo.io -->
 ```
 
 ## How to keep your application alive
 
-For Node.js apps we recommend to use a tool such as ​`forever`​ https://github.com/foreverjs/forever.
+For Node.js apps we recommend to use a tool such as
+[`forever`](https://github.com/foreverjs/forever).
 
 
 Now develop your project and build something amazing!

@@ -9,7 +9,7 @@ permalink: /git-submodule/
 If your project repository uses Git submodules, please be aware that Scalingo
 will not pull them. This Git feature is not supported on the platform for
 different reasons. The main reason being that we currently have no way to
-authenticate the `git pull` operation to a private git repository when doing
+authenticate the `git pull` operation to a private Git repository when doing
 the deployment. Actually Git submodules are often considered as a broken
 feature of Git, that is why we do not encourage its usage or support it today.
 

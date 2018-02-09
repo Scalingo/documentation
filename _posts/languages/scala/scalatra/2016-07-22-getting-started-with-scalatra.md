@@ -13,7 +13,9 @@ permalink: /languages/scala/scalatra/getting-started-with-scalatra/
 
 You will need to download a few utilities to initialize your Scalatra app.
 
-Conscript is a tool for installing and updating Scala code. Giter8, which depends on conscript, allows you to check out project templates directly from Github. It's the recommended way to generate Scalatra project skeletons.
+Conscript is a tool for installing and updating Scala code. Giter8, which
+depends on conscript, allows you to check out project templates directly from
+GitHub. It's the recommended way to generate Scalatra project skeletons.
 
 ```bash
 #
@@ -49,9 +51,10 @@ To allow sbt to create a binary for your app you **should** have:
 * `addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.0.0-M1")` in ./project/plugins.sbt
 * `enablePlugins(JavaAppPackaging)` in ./project/build.scala
 
-## Fix jetty installation scope
+## Fix Jetty installation scope
 
-In the file `project/build.scala`, your should see a line like the following, defining the dependency `jetty-webapp`
+In the file `project/build.scala`, your should see a line like the following,
+defining the dependency `jetty-webapp`:
 
 ```scala
         "org.eclipse.jetty" % "jetty-webapp" % "9.3.9.v20160517",
@@ -65,7 +68,7 @@ You need to modify this line to add the use of the package in the `compile` stag
 
 ## Write a base server file
 
-server.scala
+The main file for this sample is `server.scala` with the following content:
 
 ```scala
 // Scalatra Sample application
@@ -107,10 +110,10 @@ $ git commit -m "Base Scalatra application"
 
 ## Create your application on Scalingo and deploy
 
-> This operation has to be done in the directory of your project.
+> This operation has to be done in the root directory of your project.
 
 ```bash
-$ scalingo create scalatra-app
+$ scalingo create my-app
 Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
 
@@ -122,7 +125,7 @@ $ git push scalingo master
 ```bash
 …
 Waiting for your application to boot...
-<-- https://scalatra-app.scalingo.io -->
+<-- https://my-app.scalingo.io -->
 ```
 
 Now develop your project and build something amazing!
