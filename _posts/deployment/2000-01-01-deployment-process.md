@@ -30,14 +30,14 @@ Once the deployment has been triggered, the next phase is named **build**.
 During this step, the deployment system detects the technologies used by the
 application and installs everything required in order to make it runnable.
 
-> For instance, in the case of a Ruby On Rails application, the correct version
-> of ruby is installed, then all the gems are downloaded using `bundle` and the
+> For instance, in the case of a Ruby on Rails application, the correct version
+> of Ruby is installed, then all the gems are downloaded using `bundle` and the
 > assets are precompiled.
 
 This process to detect the technology and to install all its dependencies is
 based on open-source tools named [*buildpack*]({% post_url
 internals/buildpacks/2015-01-04-buildpacks %}). At the beginning of the build, the
-[officialy supported buildpacks]({% post_url
+[officially supported buildpacks]({% post_url
 internals/buildpacks/2015-01-04-buildpacks %}#buildpacks-included-on-scalingo)
 are automatically used to detect which one can be used to build the
 application, they usually cover most use cases.
@@ -47,15 +47,15 @@ application is using multiple stacks (ie. Python + NodeJS), both these cases
 are also covered.
 
 As mentionned before buildpacks are open-source and other hosting providers are
-also using them to deploy application, thus the developer community has
+also using them to deploy applications, thus the developer community has
 developed a wide range of buildpacks for almost any kind of technology. The
 platform has been designed to be extended by community buildpacks, [learn how
-to do it her]({% post_url internals/buildpacks/2015-01-04-custom-buildpacks
+to do it here]({% post_url internals/buildpacks/2015-01-04-custom-buildpacks
 %}).
 
 If a project is based on multiple language runtimes, buildpacks can be combined
-to install dependencies of multiple stacks. A custom buildpack has been create
-to achieve this goal: [The Multi buildpacks]({% post_url
+to install dependencies of multiple stacks. A custom buildpack has been created
+to achieve this goal: [the multi buildpacks]({% post_url
 internals/buildpacks/2015-09-28-multi-buildpack %}).
 
 ## Rolling out the new version of the application
@@ -82,4 +82,4 @@ following:
 Once these 4 steps have ended successfuly, the deployment is considered as
 successful, and the [order to shutdown]({% post_url
 internals/2014-11-25-container-management %}#shutdown-of-old-containers) is
-sent to old containers, they then have 30 seconds to cleanup cleanly.
+sent to old containers. They now have 30 seconds to cleanup cleanly.
