@@ -7,17 +7,17 @@ tags: php, configuration, environment
 
 ## Context
 
-The Scalingo model of configuration includes using
-the environment instead of writing hard-coded configuration
-files which are handled in the source code repository of a
-project. You can see and modify them from your [dashboard](https://my.scalingo.com)
-or with our [command line utility]({% post_url cli/2015-09-18-command-line-tool %})
+The Scalingo model of configuration includes using the environment instead of
+writing hard-coded configuration files which are handled in the source code
+repository of a project. You can see and modify them from your
+[dashboard](https://my.scalingo.com) or with our [command line utility]({%
+post_url cli/2015-09-18-command-line-tool %})
 
 ## Read a variable from the environment
 
 To read an environment variable, you just have to read from the
 `$_ENV` associative array. For instance if you want to read the variable
-`MONGO_URL`
+`MONGO_URL`:
 
 ```php
 $mongo_url_str = $_ENV["MONGO_URL"];

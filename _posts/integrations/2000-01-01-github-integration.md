@@ -37,7 +37,7 @@ You may have continuous integration tools associated to your repository like [Co
 
 ## Manual Deploy
 
-The manual deploy feature lets you instantly deploy a branch from the GitHub repository linked to your Scalingo app. It can be useful to quickly deploy your app or in the case of you're not having access to a computer having a proper git installation and you edited code directly on GitHub.
+The manual deploy feature lets you instantly deploy a branch from the GitHub repository linked to your Scalingo app. It can be useful to quickly deploy your app or in the case of you're not having access to a computer having a proper Git installation and you edited code directly on GitHub.
 
 {% assign img_url = "https://cdn.scalingo.com/blog/20161020-github-integration/auto_deploy.png" %}
 {% include mdl_img.html %}

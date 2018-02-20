@@ -23,6 +23,8 @@ use Rack::Rewrite do
     env["REQUEST_PATH"].start_with?("/tagged")
   }
   rewrite    %r{/\d{4}(/.+)+/([^\./]+)$}, '$1/$2.html'
+
+  r301     %r{^(.+).html$}, '$1'
 end
 
 if ENV['FORCE_SSL'].present?
@@ -34,5 +36,7 @@ if ENV['CANONICAL_HOST_URL'].present?
 elsif ENV['CANONICAL_HOST'].present?
   use Rack::CanonicalHost, ENV["CANONICAL_HOST"]
 end
+
+use Rack::CommonLogger
 
 run Rack::Jekyll.new

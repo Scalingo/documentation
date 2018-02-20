@@ -8,13 +8,16 @@ permalink: /languages/php/basic-auth/
 
 ## Introduction
 
-Our PHP deployment stack is using Nginx and PHP-fpm to answer your application request.
-If you want to setup basic auth in front of your app or a part of your app, there are two ways to do it.
+Our PHP deployment stack is using Nginx and PHP-FPM to answer your application
+request. If you want to setup basic auth in front of your app or a part of
+your app, there are two ways to do it.
 
-Either you implement this in your application, here is an [example with Symfony2](http://symfony.com/doc/current/book/security.html),
-or you have to configure the authentication before your application reaches the PHP code.
+Either you configure the authentication before your application reaches the PHP
+code or you implement this in your application. Here is an example of the
+latter [with Symfony2](http://symfony.com/doc/current/book/security.html).
 
-This article deals with this second case, to configure the HTTP basic auth independantly from your app.
+We present in this article how to configure the HTTP basic auth, independently
+from your application.
 
 ## Configuration
 
@@ -44,7 +47,8 @@ location ~ /wp-admin {
 }
 ```
 
-Create the `config/htpasswd` file with the couples user/encrypted password using the following command:
+Create the `config/htpasswd` file with the couples user/encrypted password
+using the following command:
 
 ```bash
 htpasswd -c config/htpasswd username
@@ -52,29 +56,14 @@ htpasswd -c config/htpasswd username
 # Then a prompt will ask for the password
 ```
 
-That's it with those two files, nginx will be able to ask for basic authentication, the last thing
-you have to do is to instruct Scalingo's deployment process to use your configuration file.
+That's it with those two files, Nginx will be able to ask for basic auth! Last
+thing you need to do is to instruct Scalingo's deployment process to use your
+configuration file.
 
 ### Deployment process configuration
 
-This process requires you to edit the `composer.json` file of your project. Edit the file the following way:
-
-```javascript
-{
-  ...
-  "extra": {
-    "paas": {
-      "nginx-includes": ["config/nginx-basic-auth.conf"]
-    }
-  }
-}
-```
-
-If you are not using composer, create a composer.json file with the previous content, and also create
-a file `composer.lock` containing an empty JSON string `{}`
-
-> Tip: You can find more information about extra configuration in [the PHP support page]({% post_url languages/php/2014-07-02-php %}).
-
+{% assign nginx-include = "config/nginx-basic-auth.conf" %}
+{% include nginx_includes.md %}
 
 ## Redeploy your app
 

@@ -21,7 +21,7 @@ your users won't even notice it.
 
 ## Starting new containers
 
-When a new `web` container is started, its environment contains the `PORT`
+When a new `web` or `tcp` container is started, its environment contains the `PORT`
 environment variable. Your application must listen on this port in order to
 receive requests. Once the application has been started, the container scheduler
 will try to connect to your application on the port defined previously during

@@ -10,12 +10,12 @@ tags: iojs javascript tutorial getting-started-tutorial
 ## Initialize your application
 
 ```bash
-$ mkdir iojs-app
-$ cd iojs-app
+$ mkdir my-app
+$ cd my-app
 $ npm init
 
 #
-# You need to fill the different info field for your project
+# You need to fill the different info fields for your project
 #
 
 $ npm install express --save
@@ -24,7 +24,7 @@ $ echo "node_modules" > .gitignore
 
 ## Write a base server file
 
-server.js
+The main file for this sample project is `server.js`:
 
 ```js
 // Node.js - Express Sample application
@@ -49,24 +49,24 @@ var server = app.listen(process.env.PORT || 3000, function () {
 
 ## Define how to start your application
 
-Procfile
+Add a `Procfile` at the root of your project containing:
 
 ```yaml
 web: iojs server.js
 ```
 
-## Define io.js as javascript engine
+## Define io.js as JavaScript engine
 
 In your `package.json`, add the following block:
 
-```js
+```json
 "engines": {
   "iojs": "1.1.x"
 }
 ```
 
-This will instruct the deployment scripts to install iojs at
-the given version instead of Node.js
+This will instruct the deployment scripts to install io.js and the given
+version instead of Node.js.
 
 ## Commit your application
 
@@ -78,11 +78,11 @@ $ git commit -m "Base io.js application"
 
 ## Create your application on Scalingo and deploy
 
-> This operation has to be done in the directory of your project.
+> This operation has to be done in the root directory of your project.
 
 ```bash
 
-$ scalingo create iojs-app
+$ scalingo create my-app
 Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
 
@@ -94,7 +94,7 @@ $ git push scalingo master
 ```bash
 …
 Waiting for your application to boot...
-<-- https://iojs-app.scalingo.io -->
+<-- https://my-app.scalingo.io -->
 ```
 
 Now develop your project and build something amazing!

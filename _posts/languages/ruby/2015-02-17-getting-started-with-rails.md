@@ -10,10 +10,10 @@ permalink: /languages/ruby/getting-started-with-rails/
 ## Initialize your application
 
 ```bash
-$ rails new rails-app
+$ rails new my-app
 
 #
-# It creates file and run 'bundle install'
+# It creates files and run 'bundle install'
 #
 
 $ git init
@@ -24,11 +24,11 @@ $ git commit -m "Base rails application"
 ## Create your application on Scalingo
 
 <blockquote class="bg-info">
-  You can also use our web dashboard to achieve this operation
+You can also use our web dashboard to achieve this operation
 </blockquote>
 
 ```bash
-$ scalingo create ruby-app
+$ scalingo create my-app
 Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
 ```
@@ -60,15 +60,16 @@ Then set the following environment variable:
 
 ### MongoDB
 
-To use a MongoDB database your need to add the gem `mongoid` to your `Gemfile`
-
-[Configure Mongoid]({% post_url languages/ruby/2014-10-17-configure-mongoid %})
+To use a MongoDB database your need to add the gem `mongoid` to your `Gemfile`.
+Please refer to [this guide]({% post_url
+languages/ruby/2014-10-17-configure-mongoid %}).
 
 ## Setup your application logging
 
-By default, rails application don't write their logs to STDOUT but in a custom file.
-We expect your applications to write all their logging entries to STDOUT and STDERR
-according to their nature, in accordance to the [12 factors](http://12factor.net)
+By default, Rails applications don't write their logs to STDOUT but in a custom
+file. We expect your application to write all its logging entries to STDOUT
+and STDERR according to their nature, in accordance to the
+[12-factor](http://12factor.net).
 
 * Add the following gem in your `Gemfile`: `gem "rails_12factor"`
 
@@ -86,8 +87,8 @@ $ git push scalingo master
 ```bash
 …
 Waiting for your application to boot...
-<-- https://ruby-app.scalingo.io -->
+<-- https://my-app.scalingo.io -->
 ```
 
-Yes a new application will render a 404 error `The page you were looking for doesn't exist.`,
-but it's normal, there is nothing in the project, it's time to build your product!
+A new application will render a 404 error `The page you were looking for doesn't exist.`,
+but it's expected. There is nothing in the project, it's time to build your product!

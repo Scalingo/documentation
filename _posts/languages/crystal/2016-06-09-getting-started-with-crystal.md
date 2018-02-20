@@ -12,16 +12,18 @@ permalink: /languages/crystal/getting-started-with-crystal/
 ## Initialize your application
 
 ```bash
-$ crystal init app scalingo01
-$ cd scalingo01
+$ crystal init app my-app
+$ cd my-app
 ```
 
-The `shard.yml` file declares the name of the project in his `name` field. This name will be used by Scalingo to determine the main source file to compile: `./src/<NAME>.cr`. Here it will be `./src/scalingo01.cr`.
+The `shard.yml` file declares the name of the project in his `name` field. This name will be used by
+Scalingo to determine the main source file to compile: `./src/<NAME>.cr`. In this example, it will be
+`./src/my-app.cr`.
 
 
 ## Write a base server file
 
-src/scalingo01.cr
+The main file of this sample application is `src/my-app.cr`:
 
 ```ruby
 require "http/server"
@@ -41,16 +43,17 @@ server.listen
 To launch the web server type :
 
 ```bash
-$ crystal src/scalingo01.cr
+$ crystal src/my-app.cr
 ```
 
 ## Modify it for Scalingo
 
-Here your server lisnten on `0.0.0.0:8080` but scalingo need to configure the listening port in order to deploy your app.
+Here your server listen on `0.0.0.0:8080` but Scalingo need to configure the listening port in order
+to deploy your app.
 
 You must add a `--port` flag to set a custom listening port.
 
-src/scalingo01.cr
+The `src/my-app.cr` file now looks like:
 
 ```ruby
 require "http/server"
@@ -75,6 +78,7 @@ server.listen
 ```
 
 ## Commit your application
+
 ```bash
 git init
 git add .
@@ -86,14 +90,16 @@ git commit -m "Base Crystal application"
 ### Create your application
 
 ```bash
-$ scalingo create crystal-app
+$ scalingo create my-app
 ```
 
 ### Specify a custom buildpack
-Crystal is not natively supported by Scalingo. To deploy a Crystal code you should use a custom buildpack.
+
+Crystal is not natively supported by Scalingo. To deploy a Crystal code you should use a custom
+buildpack.
 
 ```bash
-$ scalingo -a crystal-app env-set BUILDPACK_URL=https://github.com/crystal-lang/heroku-buildpack-crystal.git
+$ scalingo --app my-app env-set BUILDPACK_URL=https://github.com/crystal-lang/heroku-buildpack-crystal.git
 ```
 
 ### Send your application to Scalingo
@@ -106,10 +112,10 @@ git push scalingo master
 ```bash
 …
 Waiting for your application to boot...
-<-- https://crystal-app.scalingo.io -->
+<-- https://my-app.scalingo.io -->
 ```
 
 
 ## Live demo
 
-This application is currently running on scalingo [here](http://sample-crystal.scalingo.io/).
+This application is currently running on Scalingo [here](http://sample-crystal.scalingo.io/).

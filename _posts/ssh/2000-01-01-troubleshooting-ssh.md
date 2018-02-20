@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting git push and SSH common issues
+title: Troubleshooting Git push and SSH common issues
 modified_at: 2016-09-20 00:00:00
 category: getting-started
 tags: follow-the-light ssh linux git troubleshoot problem connect git push
@@ -42,8 +42,8 @@ error: failed to push some refs to 'git@scalingo.com:appname.git'
 ```
 
 When we tell you to run `git push scalingo master`, we consider you are already
-using Git for your project. This error mean that there is a git environment but
-no *commit* (git name for 'version') has been done.
+using Git for your project. This error mean that there is a Git environment but
+no *commit* (Git name for 'version') has been done.
 
 ### Solving the problem
 

@@ -26,7 +26,7 @@ When pushing your app to Scalingo, you might get the following error:
 
 ## Solutions
 
-### Project in a subdirectory of the git repository
+### Project in a subdirectory of the Git repository
 
 If the project you want to deploy is not at the root of your Git repository,
 you need to define the `PROJECT_DIR` environment variable ([see

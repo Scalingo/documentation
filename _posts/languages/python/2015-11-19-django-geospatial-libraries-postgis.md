@@ -10,44 +10,52 @@ permalink: /languages/python/setup-geodjango-postgis-libraries/
 The Django framework integrates extensions to handle geospatial data. To setup
 an application which is using such extensions, a bit of work is required:
 
-* PostgreSQL with postgis extension
-* Geospatial Libraries
+* PostgreSQL with PostGIS extension
+* Geospatial libraries
 
-## Enable PostgreSQL 'postgis' extension
+## Enable PostgreSQL PostGIS Extension
 
-Scalingo PostgreSQL includes [several extensions]({% post_url databases/2000-01-01-postgresql-extensions %}).
-Postgis the extension to handle geospatial data is among them. To use it with your application, your need
-to enable it.
+Scalingo PostgreSQL includes [several extensions]({% post_url
+databases/2000-01-01-postgresql-extensions %}). PostGIS is an extension to
+handle geospatial data. After adding a PostgreSQL database to your application,
+you can enable the PostGIS extension with:
 
 ```bash
-$ scalingo -a appname pgsql-console
+$ scalingo --app my-app pgsql-console
 > CREATE EXTENSION postgis;
 ```
 
-Then the database is ready, next step is to install the libraries django requires to manipulate these data.
+Next step is to install the libraries Django requires to manipulate these data.
 
-## Install Geospatial libraries
+## Install Geospatial Libraries
 
-These libraries are **proj**, **geos** and **gdal**. Considered that they are not used commonly, they are
-not included in our default environment so you need to install them at deployment time.
+These libraries are **proj**, **geos** and **gdal**. Considering that they are
+not used commonly, they are not included in our default environment so you need
+to install them at deployment time.
 
 ### Usage of the geo-buildpack
 
-To deploy an application with these libraries you need to use an additional the default python buildpack.
+To deploy an application with these libraries you need to use an additional
+buildpack along with the default Python buildpack.
 
 <blockquote class="info">
-Reminder, a buildpack is a piece of software able to detect and install dependencies of a given technology.
-More information about <a href="{% post_url internals/buildpacks/2015-01-04-buildpacks %}">Scalingo's buildpacks</a>.
+Reminder: a buildpack is a piece of software able to detect and install
+dependencies of a given technology.  More information about <a href="{%
+post_url internals/buildpacks/2015-01-04-buildpacks %}">Scalingo's
+buildpacks</a>.
 </blockquote>
 
-Create a `.buildpacks` file at the root of your project with the following content:
+Create a `.buildpacks` file at the root of your project with the following
+content:
 
-```bash
+```text
 https://github.com/Scalingo/geo-buildpack
 https://github.com/Scalingo/python-buildpack
 ```
 
-Then setup the [multi buildpack]({% post_url internals/buildpacks/2015-09-28-multi-buildpack %}) for your project to handle this file:
+Then setup the [multi buildpack]({% post_url
+internals/buildpacks/2015-09-28-multi-buildpack %}) for your project to handle
+this file:
 
 ```bash
 scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack

@@ -1,5 +1,5 @@
 ---
-title: Custom NPM modules with Meteor
+title: Custom npm modules with Meteor
 modified_at: 2016-03-30 00:00:00
 category: languages
 tags: nodejs meteor npm
@@ -14,10 +14,10 @@ permalink: /languages/javascript/nodejs/meteor/npm/
 
 ```bash
 $ meteor add meteorhacks:npm
-                                              
+
 Changes to your project's package version selections:
-                                              
-meteorhacks:async  added, version 1.0.0       
+
+meteorhacks:async  added, version 1.0.0
 meteorhacks:npm    added, version 1.2.2
 ```
 
@@ -25,10 +25,10 @@ meteorhacks:npm    added, version 1.2.2
 
 ```bash
 $ meteor
-[[[[[ ~/path/to/app ]]]]]                 
+[[[[[ ~/path/to/app ]]]]]
 
-=> Started proxy.                             
-=> Started MongoDB.                           
+=> Started proxy.
+=> Started MongoDB.
    Loading plugin `initializing-npm-supp...  |
 
 -> creating `packages.json` for the first time.
@@ -41,29 +41,30 @@ $ meteor
 ```
 
 ### Re-run the project to define the version
+
 ```bash
 $ meteor
-[[[[[ ~/path/to/app ]]]]]                 
+[[[[[ ~/path/to/app ]]]]]
 
-=> Started proxy.                             
-=> Started MongoDB.                           
-                                              
+=> Started proxy.
+=> Started MongoDB.
+
 Changes to your project's package version selections:
-                                              
-npm-container  added, version 1.0.0           
 
-=> Started your app.                          
+npm-container added, version 1.0.0
+
+=> Started your app.
 
 => App running at: http://localhost:3000/
 ```
 
 At that point your application is initialized to install and deploy custom
-NPM modules by adding them to the `packages.json` file at the root of your
+npm modules by adding them to the `packages.json` file at the root of your
 project.
 
 ## Deployment
 
-Once the application has been initalized, different steps are required to
+Once the application has been initialized, different steps are required to
 ensure the application will be deployed correctly.
 
 * Add  the `npm-container` package to your project
@@ -72,11 +73,11 @@ ensure the application will be deployed correctly.
 $ echo 'npm-container' >> .meteor/packages
 ```
 
-* Check in in your GIT repository all the generated files.
+* Check in your Git repository all the generated files.
 
 ```bash
 $ git add -f packages/npm-container .meteor/packages .meteor/versions packages.json
-$ git commit -m "Add NPM package handling"
+$ git commit -m "Add npm package handling"
 ```
 
 That's it, all the required files are staged for commit:
@@ -87,13 +88,13 @@ $ git push scalingo master
 
 ## Common errors:
 
-### NPM support has been initialized
+### npm support has been initialized
 
 #### Complete message
 
 ```bash
   => Creating container package for npm modules
-  
+
   -> npm support has been initialized.
   -> please start your app again.
   This command has been deprecated in favor of 'meteor build', which allows you
@@ -110,8 +111,8 @@ fs.js:666
 #### Solution
 
 Ensure that all the steps in the [deployment](#deployment) part have been done,
-this error is directly linked the an oblivion of checking in
-`packages/npm-container` to the GIT repository and adding `npm-container` in
+this error is directly linked to an oblivion of checking in
+`packages/npm-container` to the Git repository and adding `npm-container` in
 the `.meteor/packages` file.
 
 ### Unknown package: npm-container
@@ -127,17 +128,16 @@ Error: unknown package: npm-container
 
 This error is due to the fact that the package `npm-container` is present in
 the `.meteor/packages` file but that the directory `packages/npm-container` has
-not been added correctly to the GIT repository, please ensure this point.
-
+not been added correctly to the Git repository. Please ensure this point.
 
 ### error: couldn't read npm version lock information
 
 #### Complete message
 
 ```bash
-=> Errors while initializing project: 
+=> Errors while initializing project:
 
-While building package npm-container: 
+While building package npm-container:
 error: couldn't read npm version lock information
 ```
 
@@ -145,7 +145,7 @@ error: couldn't read npm version lock information
 
 This error happened when the internal files of `npm-container` are already defined
 and that you've added or updated a npm package in your project. To fix this you have
-to remove these data from your git repository
+to remove these data from your Git repository
 
 ```bash
 git rm -r --cached packages/npm-container/.npm

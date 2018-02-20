@@ -5,13 +5,17 @@ categories: languages ruby
 tags: ruby gem private git
 ---
 
-You may want to use a gem in your app which is private and stored in a custom Git repository. Note that if this
-repository is on GitHub, you should follow [the page specific to it]({% post_url languages/ruby/2000-01-01-private-gem-from-github-on-scalingo %}).
-Otherwise, if you're using Gitlab, Bitbucket or your own server, you're at the right place.
+You may want to use a gem in your app which is private and stored in a custom
+Git repository. Note that if this repository is on GitHub, you should follow
+[the page specific to it]({% post_url
+languages/ruby/2000-01-01-private-gem-from-github-on-scalingo %}). Otherwise,
+if you're using GitLab, Bitbucket or your own server, you're at the right
+place.
 
 ## Create a Git wrapper
 
-In the `bin` directory of your project create a file named `git-ssh` with the following content:
+In the `bin` directory of your project create a file named `git-ssh` with the
+following content:
 
 ```
 #!/bin/bash
@@ -40,13 +44,15 @@ scalingo env-set GIT_SSH=git-ssh
 
 ## Set the private SSH key in the app environment
 
-The script expect a private key stored in an environment variable named `PKEY` in base64.
+The script expects a private key stored in an environment variable named `PKEY`
+in base64. If `private_key` is your private SSH key:
 
 ```
 scalingo env-set "PKEY=$(cat private_key | base64 -w 0)"
 ```
 
-Obviously, this key should have the permission to clone your private gem repository.
+Obviously, this key should have the permission to clone your private gem
+repository.
 
 ## Gemfile: use the SSH URL
 

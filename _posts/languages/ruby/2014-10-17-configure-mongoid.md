@@ -5,7 +5,7 @@ categories: languages ruby
 tags: ruby mongoid mongodb
 ---
 
-You need to create the file `config/mongoid.yml` in order to configure Mongoid.
+You need to create the file `config/mongoid.yml` in order to configure Mongoid:
 
 ```yaml
 development:
@@ -22,5 +22,5 @@ production:
 
 If you want to modify connection options or the connections pooling, you can
 find all the information in the [official
-documentation](http://mongoid.org/en/mongoid/docs/installation.html)
+documentation](http://mongoid.org/en/mongoid/docs/installation.html).
 

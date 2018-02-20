@@ -1,0 +1,16 @@
+{
+  "engines": {
+    "node": "~8"
+  },
+  "dependencies": {
+    "@rails/webpacker": "^3.2.2",
+    "image-webpack-loader": "^3.6.0",
+    "scalingo-styles": "https://github.com/Scalingo/scalingo-styles",
+    "svg-sprite-loader": "^3.6.2",
+    "svgo": "^1.0.4",
+    "svgo-loader": "^2.1.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.11.1"
+  }
+}
