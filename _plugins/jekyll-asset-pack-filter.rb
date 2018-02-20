@@ -21,10 +21,14 @@ module Jekyll
     def asset_pack_path(input)
       Webpacker::Configuration.module_eval do
         def public_path
-          Rails.root
+          Rails.root.join("_site")
         end
       end
-      Webpacker.manifest.lookup!(input)
+      if ENV['JEKYLL_ENV'] == 'production'
+        Webpacker.manifest.lookup!(input)
+      else
+        ["http://localhost:4301/packs/", input].join("")
+      end
     end
   end
 end

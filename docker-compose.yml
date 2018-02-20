@@ -22,5 +22,8 @@ services:
       - 4301:4301
     volumes:
       - ./:/usr/src/app
-    command: webpack --watch --progress --config config/webpack/development.js
+    command: webpack-dev-server --config config/webpack/development.js
+    environment:
+      NODE_ENV: "development"
+      RAILS_ENV: "development"
 
