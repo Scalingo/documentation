@@ -18,6 +18,9 @@ highlighter: rouge
 
 permalink: /:categories/:title/
 
+keep_files:
+  - packs
+
 defaults:
   - # set default layout on all pages
     scope:
@@ -29,18 +32,23 @@ defaults:
 gems:
   - jekyll-sitemap
   - jekyll-feed
+
 exclude:
   - Gemfile
   - Gemfile.lock
   - config.ru
   - vendor
   - Procfile
-  - config/puma.rb
+  - config
+  - node_modules
+  - package.json
+  - yarn.lock
+  - tmp
+  - app/javascript
+  - Dockerfile
+  - docker-compose.yml
 
 array: [] # hack for creating array
-
-sass:
-  sass_dir: _sass
 
 extlinks:
   followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]
