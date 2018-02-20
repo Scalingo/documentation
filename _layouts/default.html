@@ -3,8 +3,8 @@
   {% include head.html %}
   <body>
     {% include google_tag_manager_body.html %}
+    {% include header.html %}
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      {% include nav.html %}
       <main class="mdl-layout__content">
         {% include search.html %}
         <div class="main-container mdl-grid">
@@ -36,10 +36,9 @@
             {{ content | extlinks }}
           </div>
         </div>
-        {% include footer.html %}
       </main>
     </div>
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
-    <script data-main="{{ site.baseurl }}/assets/javascripts/application" src="{{ site.baseurl }}/assets/javascripts/require.js"></script>
+    {% include footer.html %}
+    <script src="{{ "bundle.js" | asset_pack_path }}"></script>
   </body>
 </html>
