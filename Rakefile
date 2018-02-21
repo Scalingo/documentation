@@ -3,6 +3,10 @@ require 'nokogiri'
 
 HOMEPAGE_URL = ENV['HOMEPAGE_URL'] || "https://scalingo.com/"
 
+task "assets:precompile" do
+  exec("jekyll build")
+end
+
 namespace :fetch_from_homepage do
   task :all do
     Rake::Task["fetch_from_homepage:header"].execute

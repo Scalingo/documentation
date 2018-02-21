@@ -1,7 +1,0 @@
-{
-  "env": {
-    "BUILDPACK_URL": {
-      "value": "https://github.com/Scalingo/multi-buildpack.git"
-    }
-  }
-}
