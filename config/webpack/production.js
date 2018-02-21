@@ -1,7 +1,7 @@
 const environment = require('./environment')
 
 console.log("++++++++++++++++++++++++++++++++++++++++++++")
-
+const fs = require('fs')
 const { config } = require('@rails/webpacker')
 const {
   basename, dirname, join, relative, resolve
@@ -23,6 +23,11 @@ console.log(join(rootPath, glob))
 const paths = sync(join(rootPath, glob))
 console.log(paths)
 
+console.log("********************")
+console.log(fs.readdirSync("."))
+console.log(fs.readdirSync("app"))
+console.log(fs.readdirSync("app/javascript"))
+console.log(fs.readdirSync("app/javascript/packs"))
 
 console.log("++++++++++++++++++++++++++++++++++++++++++++")
 
