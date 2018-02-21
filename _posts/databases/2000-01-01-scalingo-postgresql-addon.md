@@ -5,11 +5,11 @@ category: databases
 tags: databases postgresql addon
 ---
 
-<blockquote class="bg-info">
+<aside class="note">
 	Some operation requires our command-line tool to be installed.
   <br>
   Instructions are detailed in <a href="{% post_url cli/2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
-</blockquote>
+</aside>
 
 Scalingo PostgreSQL addon is the official addon provided by Scalingo, details on the available plans can be found [here](https://scalingo.com/addons/scalingo-postgresql). This addon gives your app instant access to a PostgreSQL database running in its own Docker container.
 

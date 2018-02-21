@@ -8,9 +8,9 @@ tags: nodejs meteor tutorial telescope
 This guide will go through the deployment of a un-modified instance of Telescope,
 but if you've applied some modifications to it, it should work the same manner.
 
-<blockquote class="bg-info">
+<aside class="note">
   All the operations achieved with the <a href="http://cli.scalingo.com">'scalingo' CLI</a> can also be done on our <a href="https://my.scalingo.com">web dashbaord</a>.
-</blockquote>
+</aside>
 
 {% include info_tutorial_requirements.md %}
 

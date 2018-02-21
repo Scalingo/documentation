@@ -54,9 +54,9 @@ pip freeze > requirements.txt
 
 ## Create your application and databases on Scalingo
 
-<blockquote class="bg-info">
+<aside class="note">
   You can also use our web dashboard to achieve this operation
-</blockquote>
+</aside>
 
 ```bash
 $ scalingo create my-app
@@ -91,9 +91,9 @@ The configuration file in our example is located at `my-app/settings.py`.
 
 ### Ensure that the base directory of the application is defined
 
-<blockquote class="bg-info">
+<aside class="note">
   This instruction may be already set according to your Django version
-</blockquote>
+</aside>
 
 Add (if not already set) the following definition after the top comment header
 of the `my-app/settings.py` file:

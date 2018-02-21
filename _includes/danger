@@ -1,7 +1,7 @@
-<blockquote class="bg-danger">
+<aside class="warning">
   {% unless include.data%}
     {{data}}
   {% else %}
     {{include.data}}
   {% endunless %}
-</blockquote>
+</aside>

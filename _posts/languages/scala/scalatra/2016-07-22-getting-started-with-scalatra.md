@@ -96,9 +96,9 @@ object JettyLauncher {
 }
 ```
 
-<blockquote class="bg-info">
+<aside class="note">
   The `System.getenv("PORT")` will read the environment variable PORT dynamically provided by our container manager.
-</blockquote>
+</aside>
 
 ## Commit your application
 

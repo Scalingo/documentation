@@ -10,11 +10,11 @@ Scalingo's approach to Platform as a Service is close to CloudControl model.
 Both services are based on buildpacks and Procfile. Thanks to these
 similarities, the process only takes a few minute.
 
-<blockquote class="bg-info">
+<aside class="note">
   Even though we think this migration documentation is comprehensive enough,
   don't hesitate to contact our <a href="mailto:support@scalingo.com">support</a>
   to help you in the migration process.
-</blockquote>
+</aside>
 
 ## 1. Create an account on Scalingo
 

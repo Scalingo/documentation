@@ -30,8 +30,8 @@ different solutions are available to lighten the image of your application:
 If you absolutely need all these data, please contact us at
 [support@scalingo.com](mailto:support@scalingo.com).
 
-<blockquote class="bg-info">
+<aside class="note">
   Why this quota? Besides being a simple security limit, this quota is also present to
   preserve the PaaS user experience. A large image results in longer deployments, the
   instantaneity aspect is lost.
-</blockquote>
+</aside>
