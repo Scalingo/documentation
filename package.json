@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^2.11.1"
+  },
+  "scripts": {
+    "scalingo-postbuild": "webpack --config config/webpack/production.js"
   }
 }
