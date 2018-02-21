@@ -29,9 +29,14 @@ defaults:
     values:
       layout: "page"
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-toc
+
+toc:
+  min_level: 2
+  max_level: 3
 
 exclude:
   - Gemfile
@@ -47,8 +52,37 @@ exclude:
   - app/javascript
   - Dockerfile
   - docker-compose.yml
+  - _plugins
 
 array: [] # hack for creating array
+
+highlighted:
+  technologies:
+    - name: Ruby on Rails
+      url: /languages/ruby/getting-started-with-rails/
+    - name: MeteorJS
+      url: "/languages/javascript/nodejs/getting-started-with-meteor/"
+    - name: NodeJS
+      url: "/languages/javascript/nodejs/getting-started-with-nodejs/"
+    - name: PHP
+      url: "/"
+    - name: Python
+      url: "/"
+    - name: Java
+      url: "/"
+  addons:
+    - name: PostgreSQL
+      url: "/"
+    - name: MySQL
+      url: "/"
+    - name: MongoDB
+      url: "/"
+    - name: Redis
+      url: "/"
+    - name: Elasticsearch
+      url: "/"
+    - name: InfluxDB
+      url: "/"
 
 extlinks:
   followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]

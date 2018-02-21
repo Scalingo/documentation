@@ -1,14 +1,28 @@
 ---
 layout: default
+toc: true
 ---
 
-<div class="github-edit pull-right mdl-layout--large-screen-only">
-  <a href="https://github.com/{{ site.github_username }}/documentation/edit/master/{{ page.path }}">
-    <i class="material-icons">edit</i> Suggest edits
-  </a>
-</div>
-<h1>{{ page.title }}</h1>
-{{ content }}
-<div class="modified-at pull-right">
-  <i class="material-icons">schedule</i> {{ page.modified_at | date_to_string }}
+<div class="row">
+  <div class="col-12 col-md-10">
+    <div class="page-content">
+      <div class="d-flex">
+        <h1>{{ page.title }}</h1>
+        <a href="https://github.com/{{ site.github_username }}/documentation/edit/master/{{ page.path }}" class="github-edit text-muted ml-auto">
+          <i class="material-icons">edit</i> Suggest edits
+        </a>
+      </div>
+      {{ content | inject_anchors }}
+      <hr/>
+      <p class="footer-date" itemprop="datePublished" content="{{ page.modified_at }}">
+        Last update: {{ page.modified_at | date_to_string }}
+      </p>
+    </div>
+  </div>
+  <div class="col-12 col-md-2">
+    <nav class="page-nav">
+      <a href="#top" class="heading">Table of contents</a>
+      {% include toc.html html=content h_min=2 h_max=3 %}
+    </div>
+  </div>
 </div>

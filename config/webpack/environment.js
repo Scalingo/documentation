@@ -44,72 +44,8 @@ environment.loaders.append('svg-no-sprite', {
   ]
 })
 
-environment.loaders.append('svg-no-sprite-addons', {
-  test: /technologies\/addons\/(.*)\.svg$/,
-  use: [
-    {
-      loader: 'file-loader', options: {
-        name: 'technologies/addons/[name]-[hash].[ext]',
-        context: source_path
-      }
-    },
-    {
-      loader: 'svgo-loader', options: {
-        plugins: [
-          {cleanupIDs: false},
-          {removeViewBox: false},
-          {removeDimensions: true}
-        ]
-      }
-    }
-  ]
-})
-
-environment.loaders.append('svg-no-sprite-languages', {
-  test: /technologies\/languages\/(.*)\.svg$/,
-  use: [
-    {
-      loader: 'file-loader', options: {
-        name: 'technologies/languages/[name]-[hash].[ext]',
-        context: source_path
-      }
-    },
-    {
-      loader: 'svgo-loader', options: {
-        plugins: [
-          {cleanupIDs: false},
-          {removeViewBox: false},
-          {removeDimensions: true}
-        ]
-      }
-    }
-  ]
-})
-
-environment.loaders.append('svg-no-sprite-without-path-conversion', {
-  test: /homepage\/(.*)\.svg$/,
-  use: [
-    {
-      loader: 'file-loader', options: {
-        name: '[path][name]-[hash].[ext]',
-        context: source_path
-      }
-    },
-    {
-      loader: 'svgo-loader', options: {
-        plugins: [
-          {convertShapeToPath: false},
-          {cleanupIDs: false},
-          {removeViewBox: false},
-          {removeDimensions: true}
-        ]
-      }
-    }
-  ]
-})
-
 environment.loaders.append('svg-sprite', {
-  test: /(icons|logos|brands)\/(.*)\.svg$/,
+  test: /(icons|logos|brands|technologies)\/(.*)\.svg$/,
   use: [
     { loader: 'svg-sprite-loader' },
     {
