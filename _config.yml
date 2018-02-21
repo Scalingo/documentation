@@ -53,6 +53,7 @@ exclude:
   - Dockerfile
   - docker-compose.yml
   - _plugins
+  - ld_library_path
 
 array: [] # hack for creating array
 
