@@ -4,13 +4,13 @@ title: Documentation Center
 date: 2015-09-09 00:00:00
 ---
 
-<div class="h1">Getting Started on Scalingo</div>
+<h1>Getting Started on Scalingo</h1>
 
 <p class="mb-5">
   No server to manage, nor operating system, just git push your code, we take care of everything from there. And voilà, 2 minutes later, your website is online.
 </p>
 
-<div class="h2">Learn about building, deploying and scaling with</div>
+<h2>Learn about building, deploying and scaling with</h2>
 
 <div class="row">
   {% for item in site.highlighted.technologies %}
@@ -40,7 +40,7 @@ date: 2015-09-09 00:00:00
   {% endfor %}
 </div>
 
-<div class="h2">Learn about using built-in databases and addons</div>
+<h2>Learn about using built-in databases and addons</h2>
 
 <div class="row">
   {% for item in site.highlighted.addons %}
@@ -93,17 +93,15 @@ date: 2015-09-09 00:00:00
         </div>
       </div>
       <div class="card-body pt-0">
-        <ul class='list-unstyled mb-0'>
-          {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
-          {% for post in recent_posts limit:8 %}
-          <li>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <small class="text-muted">
-              {{ post.modified_at | date_to_string }}
-            </small>
-          </li>
-          {% endfor %}
-        </ul>
+        {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
+        {% for post in recent_posts limit:8 %}
+        <div class="d-flex justify-content-between">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <small class="text-muted">
+            {{ post.modified_at | date_to_string }}
+          </small>
+        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
