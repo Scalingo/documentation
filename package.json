@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "@rails/webpacker": "^3.2.2",
+    "docsearch.js": "^2.5.2",
     "image-webpack-loader": "^3.6.0",
     "scalingo-styles": "https://github.com/Scalingo/scalingo-styles",
     "svg-sprite-loader": "^3.6.2",

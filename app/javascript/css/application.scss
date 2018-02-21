@@ -1,4 +1,5 @@
 @import "scalingo-styles/style";
+@import "docsearch";
 
 $section-padding-top-desktop: 4rem;
 $section-padding-bottom-desktop: 4rem;
@@ -25,7 +26,7 @@ section {
         text-decoration: none;
       }
     }
-    .mdc-card {
+    .mdc-text-field {
       width: 100%;
       background-color: rgba(255, 255, 255, 0.90);
       @extend .mdc-elevation--z5;
@@ -38,6 +39,10 @@ section {
       }
     }
   }
+}
+
+.algolia-autocomplete {
+  width: 100%;
 }
 
 @media (min-width: 768px) {
