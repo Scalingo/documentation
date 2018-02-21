@@ -24,6 +24,7 @@ const paths = sync(join(rootPath, glob))
 console.log(paths)
 
 console.log("********************")
+console.log(process.cwd())
 console.log(fs.readdirSync("."))
 console.log(fs.readdirSync("app"))
 console.log(fs.readdirSync("app/javascript"))
