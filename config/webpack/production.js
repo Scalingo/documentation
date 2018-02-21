@@ -19,6 +19,7 @@ console.log(config.source_path)
 console.log(config.source_entry_path)
 const rootPath = join(config.source_path, config.source_entry_path)
 console.log(rootPath)
+console.log(join(rootPath, glob))
 const paths = sync(join(rootPath, glob))
 console.log(paths)
 
