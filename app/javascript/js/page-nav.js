@@ -1,9 +1,12 @@
 require('scrollspy-js')
 
-var spy = new ScrollSpy('#article', {
-  nav: '.page-nav li > a',
-  className: 'active'
-})
+var article = document.getElementById('article')
+if (article !== null) {
+  var spy = new ScrollSpy('#article', {
+    nav: '.page-nav li > a',
+    className: 'active'
+  })
+}
 
 var scrollToElement = require('scroll-to-element')
 
