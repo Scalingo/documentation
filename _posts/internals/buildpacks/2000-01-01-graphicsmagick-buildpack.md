@@ -93,4 +93,6 @@ Final Build Parameters:
 
 You should see GraphicsMagick output.
 
-> Source: [https://github.com/Scalingo/graphicsmagick-buildpack](https://github.com/Scalingo/graphicsmagick-buildpack)
+<aside class="note">
+  Source: [https://github.com/Scalingo/graphicsmagick-buildpack](https://github.com/Scalingo/graphicsmagick-buildpack)
+</aside>

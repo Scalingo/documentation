@@ -78,7 +78,9 @@ $ git commit -m "Base io.js application"
 
 ## Create your application on Scalingo and deploy
 
-> This operation has to be done in the root directory of your project.
+<aside class="note">
+  This operation has to be done in the root directory of your project.
+</aside>
 
 ```bash
 

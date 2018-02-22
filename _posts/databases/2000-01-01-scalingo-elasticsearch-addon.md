@@ -97,7 +97,7 @@ Note that you must have configured your application to use TLS when connecting
 to the database.
 
 ```shell
-> curl --insecure -X GET <URL>
+curl --insecure -X GET <URL>
 ```
 
 With `URL` starting with `https://`.

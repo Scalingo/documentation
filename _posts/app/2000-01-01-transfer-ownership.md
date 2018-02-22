@@ -15,9 +15,11 @@ or the runtime of the app will be modified.
 This operation is only achievable from the [Scalingo
 dashboard](https://my.scalingo.com).
 
-> The billing is done the last day of the month to the owner of the application at that date. Hence,
+<aside class="note">
+  The billing is done the last day of the month to the owner of the application at that date. Hence,
   transfering the ownership of an application the 4th of the month or the 30th at 11:59PM will not
   change anything. The owner at the date of billing is taken into account.
+</aside>
 
 ## Details of the operation
 
@@ -40,5 +42,7 @@ The account is now collaborator of the application.
 2. In the '*Transfer the application*' part, choose the collaborator which should receive the app
 3. Validate the transfer
 
-> *Note*: if you're handling both accounts, don't forget to log out between each step, otherwise the
-> collaboration invitation won't be considered valid.
+<aside class="note">
+  *Note*: if you're handling both accounts, don't forget to log out between each step, otherwise the
+  collaboration invitation won't be considered valid.
+</aside>

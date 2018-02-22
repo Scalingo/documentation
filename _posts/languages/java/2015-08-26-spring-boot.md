@@ -5,11 +5,12 @@ categories: languages java
 tags: war java spring spring-boot
 ---
 
-> Takes an opinionated view of building production-ready Spring applications.
-> Spring Boot favors convention over configuration and is designed to get you up
-> and running as quickly as possible.
-
-> [Sprint Boot official website](http://projects.spring.io/spring-boot/)
+<aside class="note">
+  Takes an opinionated view of building production-ready Spring applications.
+  Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.
+  <br/>
+  [Sprint Boot official website](http://projects.spring.io/spring-boot/)
+</aside>
 
 Scalingo supports Spring Boot as well as any other Java framework deployable
 with Maven. The only condition is to configure your application to listen on

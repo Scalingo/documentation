@@ -38,7 +38,9 @@ git commit -m "Setup .buildpacks for using multiple buildpacks on Scalingo"
 Finally in this example, thanks to this method, both Node.js buildpack and Go buildpack will be applied
 on your project.
 
-> List of the available buildpacks: [http://doc.scalingo.com/buildpacks](http://doc.scalingo.com/buildpacks)
+<aside class="note">
+  List of the available buildpacks: [http://doc.scalingo.com/buildpacks](http://doc.scalingo.com/buildpacks)
+</aside>
 
 ### Can I checkout a custom buildpack branch?
 
@@ -72,4 +74,6 @@ Without doing that, if you don't have a [Procfile]({% post_url internals/2014-12
 git push scalingo master
 ```
 
-> Source: [https://github.com/Scalingo/multi-buildpack](https://github.com/Scalingo/multi-buildpack)
+<aside class="note">
+  Source: [https://github.com/Scalingo/multi-buildpack](https://github.com/Scalingo/multi-buildpack)
+</aside>

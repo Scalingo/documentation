@@ -39,10 +39,9 @@ To deploy an application with these libraries you need to use an additional
 buildpack along with the default Python buildpack.
 
 <aside class="note">
-Reminder: a buildpack is a piece of software able to detect and install
-dependencies of a given technology.  More information about <a href="{%
-post_url internals/buildpacks/2015-01-04-buildpacks %}">Scalingo's
-buildpacks</a>.
+  Reminder: a buildpack is a piece of software able to detect and install
+  dependencies of a given technology.  More information about <a href="{% post_url internals/buildpacks/2015-01-04-buildpacks %}">Scalingo's
+  buildpacks</a>.
 </aside>
 
 Create a `.buildpacks` file at the root of your project with the following

@@ -70,7 +70,9 @@ $ git commit -m "Base Node.js application"
 
 ## Create your application on Scalingo and deploy
 
-> This operation has to be done in the directory of your project.
+<aside class="note">
+  This operation has to be done in the directory of your project.
+</aside>
 
 ```bash
 $ scalingo create my-app

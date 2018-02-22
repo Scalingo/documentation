@@ -9,7 +9,9 @@ tags: buildpacks build wkhtmltopdf
 
 This is a buildpack that installs [wkhtmltopdf](http://wkhtmltopdf.org) into a container image.
 
-> `wkhtmltopdf` is a command line tools to render HTML into PDF using the Qt WebKit rendering engine.
+<aside class="note">
+  `wkhtmltopdf` is a command line tools to render HTML into PDF using the Qt WebKit rendering engine.
+</aside>
 
 You may find useful to use such a tool as part of your web application. Hence, we developed a [specific buildpack](https://github.com/Scalingo/wkhtmltopdf-buildpack) to ease the installation of this tool. Such a buildpack should be use as part of a [multi-buildpack]({% post_url internals/buildpacks/2015-09-28-multi-buildpack %}).
 

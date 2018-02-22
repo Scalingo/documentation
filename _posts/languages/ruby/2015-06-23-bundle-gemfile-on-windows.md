@@ -15,7 +15,9 @@ When you are running `bundle install` to install the dependencies of your
 project, Bundler will select the best versions possible for each gem you've
 listed in your `Gemfile`. Some of these gems have special version for Windows.
 
-> Gems with suffixes like `-mingw32 or -mswin` in your `Gemfile.lock` have special versions for Windows.
+<aside class="note">
+  Gems with suffixes like `-mingw32 or -mswin` in your `Gemfile.lock` have special versions for Windows.
+</aside>
 
 As Scalingo's stack is based on Linux, we can't install these precise versions.
 
