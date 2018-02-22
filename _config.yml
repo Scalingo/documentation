@@ -73,17 +73,17 @@ highlighted:
       url: "/"
   addons:
     - name: PostgreSQL
-      url: "/"
+      url: "/databases/scalingo-postgresql-addon/"
     - name: MySQL
-      url: "/"
+      url: "/databases/scalingo-mysql-addon/"
     - name: MongoDB
-      url: "/"
+      url: "/databases/scalingo-mongodb-addon/"
     - name: Redis
-      url: "/"
+      url: "/databases/scalingo-redis-addon/"
     - name: Elasticsearch
-      url: "/"
+      url: "/databases/scalingo-elasticsearch-addon/"
     - name: InfluxDB
-      url: "/"
+      url: "/databases/scalingo-influxdb-addon/"
 
 extlinks:
   followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]
