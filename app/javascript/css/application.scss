@@ -1,10 +1,10 @@
 @import "scalingo-styles/style";
 @import "docsearch";
 
-$section-padding-top-desktop: 4rem;
-$section-padding-bottom-desktop: 4rem;
-$section-padding-top-mobile: 3rem;
-$section-padding-bottom-mobile: 3rem;
+$section-padding-top-desktop: 40px;
+$section-padding-bottom-desktop: 40px;
+$section-padding-top-mobile: 40px;
+$section-padding-bottom-mobile: 40px;
 
 body {
   background-color: white;
@@ -110,6 +110,51 @@ h1, h2 {
   color: $material-color-grey-800;
 }
 
+$nav-element-margin-left: 12px;
+$nav-element-font-size: 13px;
+$nav-element-line-height: 16px;
+$page-nav-width: 160px;
+.page-nav {
+  width: $page-nav-width;
+  nav {
+    @supports (position: sticky) {
+      position: sticky;
+      top: 94px;
+    }
+    border-left: 4px solid $brand-primary;
+  }
+  .heading {
+    color: $material-color-grey-600;
+    font-weight: bold;
+    font-size: $nav-element-font-size;
+    line-height: $nav-element-line-height;
+    margin-left: $nav-element-margin-left;
+  }
+  ul {
+    @extend .list-unstyled, .mb-0;
+    margin-left: $nav-element-margin-left;
+    li {
+      margin-top: 8px;
+    }
+  }
+  a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: $nav-element-font-size;
+    line-height: $nav-element-line-height;
+    color: $body-color;
+    &:hover, &:focus {
+      color: $brand-primary;
+      text-decoration: none;
+    }
+    &.active {
+      font-weight: bold;
+      color: $brand-primary;
+    }
+  }
+}
+
 .page-content {
   h1 {
     color: $material-color-grey-600;
@@ -140,40 +185,10 @@ h1, h2 {
   }
 }
 
-$nav-element-margin-left: 12px;
-$nav-element-font-size: 13px;
-$nav-element-line-height: 16px;
-.page-nav {
-  @supports (position: sticky) {
-    position: sticky;
-    top: 94px;
-  }
-  border-left: 4px solid $brand-primary;
-  .heading {
-    color: $material-color-grey-600;
-    font-weight: bold;
-    font-size: $nav-element-font-size;
-    line-height: $nav-element-line-height;
-    margin-left: $nav-element-margin-left;
-  }
-  ul {
-    @extend .list-unstyled, .mb-0;
-    margin-left: $nav-element-margin-left;
-    li {
-      margin-top: 8px;
-    }
-  }
-  a {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: $nav-element-font-size;
-    line-height: $nav-element-line-height;
-    color: $body-color;
-    &:hover, &:focus {
-      color: $brand-primary;
-      text-decoration: none;
-    }
+@include media-breakpoint-up(md) {
+  .page-content {
+    // width: calc(100% - $page-nav-width);
+    width: calc(100% - 160px);
+    padding-right: 40px;
   }
 }
-

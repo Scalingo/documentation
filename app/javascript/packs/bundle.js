@@ -7,22 +7,11 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 require('scalingo-styles')
+require('js/search.js')
+require('js/page-nav.js')
 
 function importAll(r) {
   return r.keys().map(r);
 }
 
 importAll(require.context('svg/', true, /\.svg$/))
-
-var docsearch = require('docsearch.js')
-
-docsearch({
-  apiKey: '6967a402f012b8a7c4122180616aace0',
-  indexName: 'scalingo-doc',
-  inputSelector: '#search-input',
-  debug: true,
-  autocompleteOptions: {
-    hint: false,
-    appendTo: 'body'
-  }
-})
