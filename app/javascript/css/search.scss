@@ -1,5 +1,7 @@
+@import "docsearch.css";
+
 #algolia-autocomplete-listbox-0 {
-  @extend .mdc-card;
+  @extend .mdc-elevation--z2;
 }
 
 /* Bottom border of each suggestion */
