@@ -96,8 +96,8 @@ date: 2015-09-09 00:00:00
         {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
         {% for post in recent_posts limit:8 %}
         <div class="d-flex justify-content-between">
-          <a href="{{ post.url }}">{{ post.title }}</a>
-          <small class="text-muted">
+          <a href="{{ post.url }}" class="text-truncate">{{ post.title }}</a>
+          <small class="text-muted text-nowrap pl-1" style="position:relative;bottom:-4px;">
             {{ post.modified_at | date_to_string }}
           </small>
         </div>
