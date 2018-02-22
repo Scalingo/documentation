@@ -8,7 +8,9 @@ permalink: /languages/javascript/nodejs/meteor/npm/
 
 ## Initialization
 
-{% include danger data='This page is no longer valid for Meteor 1.3, see the <a href="http://guide.meteor.com/1.3-migration.html" target="_blank">migration guide</a>' %}
+{% warning %}
+This page is no longer valid for Meteor 1.3, see the <a href="http://guide.meteor.com/1.3-migration.html" target="_blank">migration guide</a>
+{% endwarning %}
 
 ### Install the package meteorhacks:npm
 

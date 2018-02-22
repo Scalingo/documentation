@@ -1,7 +1,0 @@
-<aside class="note">
-  {% unless include.data%}
-    {{data}}
-  {% else %}
-    {{include.data}}
-  {% endunless %}
-</aside>

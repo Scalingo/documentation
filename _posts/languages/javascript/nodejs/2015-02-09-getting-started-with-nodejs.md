@@ -45,9 +45,9 @@ var server = app.listen(process.env.PORT || 3000, function () {
 })
 ```
 
-<aside class="note">
+{% note %}
   The `process.env.PORT` will read the environment variable PORT dynamically provided by our container manager.
-</aside>
+{% endnote %}
 
 ## Define how to start your application
 
@@ -70,9 +70,9 @@ $ git commit -m "Base Node.js application"
 
 ## Create your application on Scalingo and deploy
 
-<aside class="note">
+{% note %}
   This operation has to be done in the directory of your project.
-</aside>
+{% endnote %}
 
 ```bash
 $ scalingo create my-app

@@ -94,7 +94,7 @@ variables](https://symfony.com/doc/current/cookbook/configuration/external_param
 but when Incenteev/ParameterHandler is installed (it is, by default), they are
 overwritten by it, since it is loaded at higher level in the framework.
 
-<aside class="note">
+{% note %}
   Symfony will grab any environment variable prefixed with SYMFONY__ and set it
   as a parameter in the service container. Some transformations are applied to
   the resulting parameter name:
@@ -102,7 +102,7 @@ overwritten by it, since it is loaded at higher level in the framework.
   - Parameter name is lowercased;
   - Double underscores are replaced with a period, as a period is not a valid
     character in an environment variable name.
-</aside>
+{% endnote %}
 
 So, if you have a `%some.awesome.parameter%` in your config, define the
 `SYMFONY__SOME__AWESOME_PARAMETER` variable in Scalingo's dashboard.

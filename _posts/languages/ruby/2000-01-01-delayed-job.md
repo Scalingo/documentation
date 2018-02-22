@@ -50,12 +50,12 @@ your project. Create the file if it doesn't exist.
 delayedjob: bin/delayed_job run
 ```
 
-<aside class="warning">
-Do not use <code>delayed_job start</code> to start the process.
-<code>start</code> starts the process in background and our crash detection
-system will consider it as crashed, it has to run in the foreground thanks to
-the <code>run</code> command.
-</aside>
+{% warning %}
+  Do not use <code>delayed_job start</code> to start the process.
+  <code>start</code> starts the process in background and our crash detection
+  system will consider it as crashed, it has to run in the foreground thanks to
+  the <code>run</code> command.
+{% endwarning %}
 
 All you have to do now is to write your jobs by following [delayed_job
 documentation](https://github.com/collectiveidea/delayed_job) and deploy your

@@ -5,11 +5,11 @@ category: databases
 tags: databases elasticsearch addon
 ---
 
-<aside class="note">
+{% note %}
 	Some operation requires our command-line tool to be installed.
   <br>
   Instructions are detailed in <a href="{% post_url cli/2015-09-18-command-line-tool %}">Command-Line Tool Documentation</a> and <a href="http://cli.scalingo.com">installer</a> page.
-</aside>
+{% endnote %}
 
 Scalingo Elasticsearch addon is the official addon provided by Scalingo.
 Details on the available plans can be found
@@ -176,9 +176,9 @@ When the database vendor releases a new version of your database engine, we will
 
 This operation is similar to changing your database plan. Your database will be stopped and restarted with new database environment. Thanks to Docker containers this happens seamlessly and quickly without manual action. When this operation finishes, your application will be restarted.
 
-{% assign data = "Beware that no downgrade is possible once your database has been upgraded." %}
-{% include danger %}
-
+{% warning %}
+Beware that no downgrade is possible once your database has been upgraded.
+{% endwarning %}
 
 ### Container Stats
 

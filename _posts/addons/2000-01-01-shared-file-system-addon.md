@@ -19,10 +19,10 @@ In the case the file is stored on this shared storage facility. It will be visib
 from all the containers and persistant between deployments or any application
 operation.
 
-<aside class="note">Please keep it mind that using a shared file system
+{% note %}Please keep it mind that using a shared file system
 is still one step longer than using an external storage service directly as the
 file has to be downloaded first in your container and then send to the user
-browser.</aside>
+browser.{% endnote %}
 
 The addon is backed by a S3-like storage facility and is using the
 [s3fs](https://github.com/s3fs-fuse/s3fs-fuse) to mount a bucket in your

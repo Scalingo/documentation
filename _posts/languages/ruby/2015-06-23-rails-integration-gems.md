@@ -47,7 +47,7 @@ In a more traditional way to host a Ruby on Rails application, assets would not
 be served by the application server, but by a proxy web server (Apache/Nginx
 for instance), but you don't need that on Scalingo.
 
-<aside class="note">
+{% note %}
   Protip: use CDN to host your assets, it will spare your containers which will be used for more useful requests.
-</aside>
+{% endnote %}
 

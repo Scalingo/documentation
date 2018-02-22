@@ -23,9 +23,9 @@ $ git commit -m "Base rails application"
 
 ## Create your application on Scalingo
 
-<aside class="note">
+{% note %}
 You can also use our web dashboard to achieve this operation
-</aside>
+{% endnote %}
 
 ```bash
 $ scalingo create my-app

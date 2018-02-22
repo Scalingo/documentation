@@ -60,6 +60,6 @@ libpostproc    53.  3.100 / 53.  3.100
 
 You should see ffmpeg output.
 
-<aside class="note">
+{% note %}
   Source: [https://github.com/Scalingo/ffmpeg-buildpack](https://github.com/Scalingo/ffmpeg-buildpack)
-</aside>
+{% endnote %}

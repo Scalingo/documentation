@@ -43,9 +43,9 @@ $ scalingo --app my-app addons-add scalingo-mongodb mongo-sandbox
 
 ## Deploy your application!
 
-<aside class="note">
+{% note %}
   This operation has to be done in the directory of your project.
-</aside>
+{% endnote %}
 
 ```bash
 $ git push scalingo master

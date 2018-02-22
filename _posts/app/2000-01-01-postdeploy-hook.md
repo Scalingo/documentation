@@ -34,12 +34,12 @@ The Post-deployment hook will be part of the deployment process, things will hap
    configuration, the new containers start to get requests and the deployment
    is considered a **success**
 
-<aside class="note">
+{% note %}
   If the `postdeploy` command fails, the deployment will fail with the status
   `hook-error` and the old version of the application will keep running, the
   application will have to get pushed again, with a new `postdeploy` hook or a
   code update.
-</aside>
+{% endnote %}
 
 ## Environment
 
@@ -59,11 +59,11 @@ Rails application:
 postdeploy: bundle exec rake db:migrate
 ```
 
-<aside class="note">
+{% note %}
   Keep in mind that migrations may fail, design them knowing that, here is an
   [article from Codeship](https://blog.codeship.com/rails-migrations-zero-downtime/)
   explaining this process.
-</aside>
+{% endnote %}
 
 ### Notifying external service
 

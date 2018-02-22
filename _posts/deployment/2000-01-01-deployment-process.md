@@ -30,11 +30,11 @@ Once the deployment has been triggered, the next phase is named **build**.
 During this step, the deployment system detects the technologies used by the
 application and installs everything required in order to make it runnable.
 
-<aside class="note">
+{% note %}
   For instance, in the case of a Ruby on Rails application, the correct version
   of Ruby is installed, then all the gems are downloaded using `bundle` and the
   assets are precompiled.
-</aside>
+{% endnote %}
 
 This process to detect the technology and to install all its dependencies is
 based on open-source tools named [*buildpack*]({% post_url

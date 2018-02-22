@@ -98,8 +98,8 @@ docker run -it \
   registry.scalingo.com/my-app:0123456789abcdef /start web
 ```
 
-<aside class="note">
+{% note %}
   We are using `172.17.0.1` as `DATABASE_URL` host because in a container, your computer will be reachable at this IP.
-</aside>
+{% endnote %}
 
 That's it, your app is running with your environment.

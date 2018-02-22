@@ -16,10 +16,10 @@ There are three different solutions to access Scalingo's databases:
 
 ## Open an interactive remote console
 
-<aside class="note">
+{% note %}
 You need to have Scalingo's <a href="http://cli.scalingo.com" target="_blank">command line interface</a> to
 achieve this action.
-</aside>
+{% endnote %}
 
 The following commands let you open a console for the database
 of your choice. Note that your should have added the appropriate addon from

@@ -44,12 +44,12 @@ When **deploying** an application using multiple web containers, we're waiting
 for **all web containers** to be available before making the switch to this new
 release and stopping old containers.
 
-<aside class="note">
+{% note %}
   <strong>Short period with double containers</strong>
   For a short period both old and new containers are running. If your application
   is based on schedule tasks, or asynchronous workers, you need to take care of
   developing them idempotent in the potential case where a scheduled task is handled twice.
-</aside>
+{% endnote %}
 
 ## Shutdown of old containers
 

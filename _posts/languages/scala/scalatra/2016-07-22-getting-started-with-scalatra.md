@@ -96,9 +96,9 @@ object JettyLauncher {
 }
 ```
 
-<aside class="note">
+{% note %}
   The `System.getenv("PORT")` will read the environment variable PORT dynamically provided by our container manager.
-</aside>
+{% endnote %}
 
 ## Commit your application
 
@@ -110,9 +110,9 @@ $ git commit -m "Base Scalatra application"
 
 ## Create your application on Scalingo and deploy
 
-<aside class="note">
+{% note %}
   This operation has to be done in the root directory of your project.
-</aside>
+{% endnote %}
 
 ```bash
 $ scalingo create my-app

@@ -52,11 +52,11 @@ classes and jar archives from the build:
 .m2
 ```
 
-<aside class="note">
+{% note %}
   <code>.m2</code> directory is the maven local repository which is used to store
   all the dependencies which are downloaded during the build. You don't need them once
   your application is packaged into a `.war` file.
-</aside>
+{% endnote %}
 
 ### Go application
 
