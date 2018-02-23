@@ -6,12 +6,8 @@ $section-padding-bottom-desktop: 40px;
 $section-padding-top-mobile: 40px;
 $section-padding-bottom-mobile: 40px;
 
-body {
-  background-color: white;
-}
-
-.mdc-typography--display2 {
-  font-weight: 500;
+h1 {
+  @extend .mdc-typography--display1;
 }
 
 .text-nowrap {
@@ -46,6 +42,10 @@ section {
       input {
         padding-top: 10px;
         padding-bottom: 10px;
+        transition: background-color .2s;
+        &:hover, &:focus {
+          background-color: white;
+        }
       }
     }
   }
@@ -80,7 +80,8 @@ $logo-width: 3em;
 
 .text-muted {
   color: $material-color-grey-500;
-  font-size: 90%;
+  font-size: 13px;
+  line-height: 20px;
   .material-icons {
     font-size: inherit;
     line-height: inherit;
@@ -103,46 +104,32 @@ a {
   vertical-align: bottom;
 }
 
-h1, h2 {
-  font: 300 34px/40px Roboto, sans-serif;
-  letter-spacing: -.01em;
-  margin-bottom: 16px;
-  color: $material-color-grey-800;
-}
-
-$nav-element-margin-left: 12px;
-$nav-element-font-size: 13px;
-$nav-element-line-height: 16px;
 $page-nav-width: 160px;
 .page-nav {
   width: $page-nav-width;
+  @extend small;
   nav {
     @supports (position: sticky) {
       position: sticky;
       top: 94px;
     }
-    border-left: 4px solid $brand-primary;
   }
   .heading {
-    color: $material-color-grey-600;
-    font-weight: bold;
-    font-size: $nav-element-font-size;
-    line-height: $nav-element-line-height;
-    margin-left: $nav-element-margin-left;
+    @extend strong, .mb-2;
   }
   ul {
     @extend .list-unstyled, .mb-0;
-    margin-left: $nav-element-margin-left;
+    ul {
+      @extend .ml-4;
+    }
     li {
-      margin-top: 8px;
+      @extend .mt-2;
     }
   }
   a {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: $nav-element-font-size;
-    line-height: $nav-element-line-height;
     color: $body-color;
     &:hover, &:focus {
       color: $brand-primary;
@@ -156,32 +143,8 @@ $page-nav-width: 160px;
 }
 
 .page-content {
-  h1 {
-    color: $material-color-grey-600;
-    font: 300 34px/40px Roboto,sans-serif;
-    letter-spacing: -.01em;
-    margin: 40px 0 20px;
-    &:first-of-type {
-      position: relative;
-      margin-top: 0;
-      top: -4px;
-      margin-bottom: 0;
-    }
-  }
-  h2 {
-    border-bottom: 1px solid #ebebeb;
-    font: 300 24px/32px Roboto,sans-serif;
-    letter-spacing: -.01em;
-    margin: 40px 0 20px;
-    padding-bottom: 3px;
-  }
-  h3 {
-    font: 400 20px/32px Roboto,sans-serif;
-    margin: 32px 0 16px;
-  }
   .footer-date {
-    color: $material-color-grey-600;
-    font: italic 13px/20px Roboto,sans-serif;
+    @extend .text-muted;
   }
 }
 
