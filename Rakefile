@@ -60,12 +60,11 @@ end
 
 namespace :fetch_from_homepage do
   task :all do
-    Rake::Task["fetch_from_homepage:header"].execute
-    Rake::Task["fetch_from_homepage:footer"].execute
+    task all: [:header, :footer]
   end
 
   task :header do
-    doc = Nokogiri::HTML(open(HOMEPAGE_URL))
+    doc = fetch_homepage
     toolbar = doc.css("header.mdc-toolbar").to_xhtml
     sidebar = doc.css("aside").to_xhtml
     template_path = "_includes/header.html"
@@ -75,11 +74,24 @@ namespace :fetch_from_homepage do
     }
   end
   task :footer do
-    doc = Nokogiri::HTML(open(HOMEPAGE_URL))
+    doc = fetch_homepage
     footer = doc.css("footer").to_xhtml
     template_path = "_includes/footer.html"
     File.open(template_path, 'w+') { |file|
       file.write(footer)
     }
+  end
+
+  def fetch_homepage
+    uri = URI.parse(HOMEPAGE_URL)
+    str = if uri.user || uri.password?
+      uri2 = uri.clone
+      uri2.user = nil
+      uri2.password = nil
+      open(uri.to_s, http_basic_authentication: [uri.user, uri.password])
+    else
+      open(uri)
+    end
+    Nokogiri::HTML(str)
   end
 end
