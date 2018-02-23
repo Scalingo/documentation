@@ -61,6 +61,7 @@ http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_lin
 
 At the next deployment, the APT buildpack should be doing its job (example with `popplers-utils` package):
 
+```
 =====> Downloading Buildpack: https://github.com/Scalingo/apt-buildpack
 =====> Detected Framework: Apt
 -----> Reusing cache
