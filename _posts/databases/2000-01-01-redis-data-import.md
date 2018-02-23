@@ -36,6 +36,11 @@ $ scalingo -a my-app redis-console
 
 ## Copy data from the remote Redis instance
 
+<aside class="warning" markdown="1">
+These actions will erase all the existing content of the Scalingo redis
+instance, don't do it if you've precious data stored.
+</aside>
+
 You need to own the source Redis connection information in order to copy its
 content. Let's consider the following example:
 
