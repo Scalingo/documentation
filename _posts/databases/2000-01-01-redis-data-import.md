@@ -6,8 +6,8 @@ tags: databases redis dump restore migration
 ---
 
 This tutorial aims at transfering all the data from a remote Redis database
-(from another provider) to a Redis instance provisioned through the Scalingo
-Redis Addon.
+(from another provider) to a Redis instance provisioned through the [Scalingo
+Redis Addon]({% post_url databases/2000-01-01-scalingo-redis-addon %}).
 
 {% include info_command_line_tool.md %}
 
