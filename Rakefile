@@ -59,9 +59,7 @@ namespace :webpacker do
 end
 
 namespace :fetch_from_homepage do
-  task :all do
-    task all: [:header, :footer]
-  end
+  task all: [:header, :footer]
 
   task :header do
     doc = fetch_homepage
@@ -84,7 +82,7 @@ namespace :fetch_from_homepage do
 
   def fetch_homepage
     uri = URI.parse(HOMEPAGE_URL)
-    str = if uri.user || uri.password?
+    str = if uri.user || uri.password
       uri2 = uri.clone
       uri2.user = nil
       uri2.password = nil
