@@ -1,6 +1,6 @@
 ---
 title: Manage Go dependencies with dep
-modified_at: 2017-10-06 00:00:00
+modified_at: 2018-02-23 00:00:00
 category: languages
 tags: go depndencies
 ---
@@ -43,7 +43,7 @@ Here is an example with [https://github.com/Scalingo/sample-go-martini](https://
 ```toml
 [metadata.scalingo]
   root-package = "github.com/Scalingo/sample-go-martini"
-  go-version = "go1.9.1"
+  go-version = "go1.10.0"
   install = [ "./..." ]
 ...
 ```
