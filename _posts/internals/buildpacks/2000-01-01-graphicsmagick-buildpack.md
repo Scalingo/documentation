@@ -5,7 +5,7 @@ categories: internals
 tags: buildpacks build image graphicsmagick
 ---
 
-# Purpose of this buildpack
+## Purpose of this buildpack
 
 By default, our runtime image embeds ImageMagick as image manipulation toolset.
 However, you may prefer to have GraphicsMagick tools installed alongside your

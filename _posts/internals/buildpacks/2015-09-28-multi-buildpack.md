@@ -6,7 +6,7 @@ tags: buildpacks build image multi
 permalink: /buildpacks/multi/
 ---
 
-# Purpose of this buildpack
+## Purpose of this buildpack
 
 You may need to combine several technologies in your project, this buildpack is here to fulfill this need.
 
