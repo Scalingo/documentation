@@ -94,5 +94,5 @@ Once the synchronization is over, you need to disable the replication configurat
 [host:port] > SLAVEOF NO ONE
 ```
 
-That's it, you Scalingo redis instance, owns all the data of your remote Redis, and is
+That's it, your Scalingo Redis instance, owns all the data of your remote Redis, and is
 ready to accept queries from your application.
