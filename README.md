@@ -32,12 +32,31 @@ Please do not use the `date` metadata as it will conflict with the date extracte
 
 Please do not use first-level HTML/Markdown headers (*i.e. `<h1></h1>`*) as it will be pulled from the `title ` metadata.
 
+Don't use blockquote if you're not writing a blockquote.
+
+## Do's
+
+If you want to write a useful note:
+```
+{% note %}
+  My useful note here
+{% endnote %}
+```
+
+If you want to write a warning note:
+```
+{% warning %}
+  My warning note here
+{% endwarning %}
+```
+
 ## Running locally
 
 To install dependancies locally:
 
 ```
 docker-compose run web bundle install
+docker-compose run web yarn install
 ```
 
 To build the static site and spin-up a file server:
