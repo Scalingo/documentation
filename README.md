@@ -32,7 +32,8 @@ Please do not use the `date` metadata as it will conflict with the date extracte
 
 Please do not use first-level HTML/Markdown headers (*i.e. `<h1></h1>`*) as it will be pulled from the `title ` metadata.
 
-Don't use blockquote if you're not writing a blockquote.
+__Blockquotes__ should be **only used for quotes**. If you'd like to incorporate a useful
+note please use
 
 ## Do's
 
