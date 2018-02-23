@@ -6,7 +6,7 @@ tags: follow-the-light ssh
 index: 1
 ---
 
-## Deployment requirements
+## Deployment Requirements
 
 ### Git
 
@@ -17,7 +17,7 @@ Deploying an application on Scalingo requires you to have Git installed.
   install it from [Git official website](http://git-scm.com/download/mac)
 * Windows: Install if from [Git official website](http://git-scm.com/download/windows)
 
-### SSH Key setup
+### SSH Key Setup
 
 To identify that you are allowed to push to your application, you need to setup SSH
 authentication.
@@ -42,7 +42,7 @@ scalingo keys-add [name of the key] [path to the key]
 scalingo keys-add Laptop ~/.ssh/id_rsa.pub
 ```
 
-## Some tutorials to start with
+## Some Tutorials to Start With
 
 <ul class="list-unstyled">
   {% for post in site.tags["getting-started-tutorial"] %}
