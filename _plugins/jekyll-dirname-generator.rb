@@ -7,7 +7,7 @@ module Dirname
       data = {
         'title' => matchedPage ? (matchedPage.data['nav'] || matchedPage.title) : path.split('/').compact.last.capitalize,
         'type'  => 'dir',
-        'url'   => matchedPage ? matchedPage.url : path.gsub('_posts/', '')
+        'url'   => matchedPage ? matchedPage.url : path.gsub('_posts', '')
       }
       data['children'] = children = []
       Dir.foreach(path) do |entry|

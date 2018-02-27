@@ -6,6 +6,7 @@
     "@rails/webpacker": "^3.2.2",
     "docsearch.js": "^2.5.2",
     "image-webpack-loader": "^3.6.0",
+    "mdn-polyfills": "^5.5.0",
     "scalingo-styles": "https://github.com/Scalingo/scalingo-styles",
     "scroll-to-element": "^2.0.0",
     "scrollspy-js": "^0.1.3",

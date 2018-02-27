@@ -104,6 +104,33 @@ a {
   vertical-align: bottom;
 }
 
+ul.breadcrumb {
+  @extend .list-inline;
+  @extend small;
+  li {
+    @extend .list-inline-item;
+    a {
+      @extend .text-muted;
+      transition: color .2s;
+    }
+    &:before {
+      content: 'chevron_right';
+      font-family: 'Material Icons';
+      margin-left: 4px;
+      margin-right: 4px;
+      position: relative;
+      top: 2px;
+    }
+    &:first-child {
+      &:before {
+        margin-left: 0;
+        margin-right: 0;
+        content: '';
+      }
+    }
+  }
+}
+
 $site-nav-width: 220px;
 .site-nav {
   flex: 0 0 $site-nav-width;
@@ -197,6 +224,12 @@ $page-nav-width: 160px;
 .page-content {
   .footer-date {
     @extend .text-muted;
+  }
+}
+
+a.mdc-button {
+  &:hover, &:active, &:focus {
+    text-decoration: none;
   }
 }
 

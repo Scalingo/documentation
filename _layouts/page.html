@@ -13,9 +13,12 @@ toc: true
   </div>
   <div class="page-content">
     <div class="d-none d-md-flex">
-      <h1 id="top-of-page">{{ page.title }}</h1>
-      <a href="https://github.com/{{ site.github_username }}/documentation/edit/master/{{ page.path }}" class="github-edit text-muted ml-auto text-nowrap">
-        <i class="material-icons">edit</i> Suggest edits
+      <div class="d-flex flex-column">
+        {% include breadcrumb.html %}
+        <h1 id="top-of-page">{{ page.title }}</h1>
+      </div>
+      <a href="https://github.com/{{ site.github_username }}/documentation/edit/master/{{ page.path }}" class="mdc-button ml-auto">
+        Suggest edits
       </a>
     </div>
     {{ content | inject_anchors }}

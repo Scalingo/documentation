@@ -9,6 +9,8 @@
 require('scalingo-styles')
 require('js/search.js')
 require('js/page-nav.js')
+require('js/site-nav.js')
+require('js/breadcrumb.js')
 
 function importAll(r) {
   return r.keys().map(r);
@@ -20,18 +22,3 @@ let lastHeaderLink = document.querySelector('header > .mdc-toolbar__row > .flex-
 if (lastHeaderLink !== null) {
   lastHeaderLink.classList.add('active')
 }
-
-let navTitles = document.querySelectorAll('.nav-title')
-navTitles.forEach((element) => {
-  element.addEventListener('click', (e) => {
-    e.preventDefault()
-    let node = e.target
-    let parent = node.parentElement
-    let currentState = parent.getAttribute('data-state')
-    if (currentState == 'open') {
-      parent.setAttribute('data-state', 'closed')
-    } else {
-      parent.setAttribute('data-state', 'open')
-    }
-  })
-})
