@@ -37,6 +37,7 @@ A buildpack is a set of scripts which aims at:
 ## Available buildpacks for specific usage
 
 * `Multi Buildpack` - [Documentation]({% post_url internals/buildpacks/2015-09-28-multi-buildpack %}) — [Source](https://github.com/Scalingo/multi-buildpack.git) - Combine different buildpacks during the deployment of your applicaiton
+* `APT Buildpack` - [Documentation]({% post_url internals/buildpacks/2000-01-01-apt-buildpack %}) — [Source](https://github.com/Scalingo/apt-buildpack.git)
 * `FFmpeg Buildpack` - [Documentation]({% post_url internals/buildpacks/2015-09-28-ffmpeg-buildpack %}) — [Source](https://github.com/Scalingo/ffmpeg-buildpack.git) - Install a working version of the ffmpeg binary alongside your application
 * `GraphicsMagic Buildpack` - [Documentation]({% post_url internals/buildpacks/2000-01-01-graphicsmagick-buildpack %}) — [Source](https://github.com/Scalingo/graphicsmagick-buildpack) - Install graphicsmagick and replace imagemagick in the container environment
 * `Cairo Buildpack` - [Documentation]({% post_url internals/buildpacks/2000-01-01-cairo-buildpack %}) — [Source](https://github.com/Scalingo/cairo-buildpack) Install the cairo graphics library and its dependencies

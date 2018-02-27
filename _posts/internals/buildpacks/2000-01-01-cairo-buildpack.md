@@ -22,8 +22,8 @@ it enables subsequent buildpacks / steps to any of these libraries.
 
 ## Set up this buildpack for your application
 
-You'll almost certainly want to use this in conjunction with one or more
-additional buildpacks.
+This buildpack is designed to be used in conjunction with one or more additional
+buildpacks, thanks to the [multi buildpack]({% post_url internals/buildpacks/2015-09-28-multi-buildpack %})
 
 When creating a new Scalingo app:
 

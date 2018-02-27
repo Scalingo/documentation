@@ -6,7 +6,7 @@ tags: buildpacks build image ffmpeg
 permalink: /buildpacks/ffmpeg/
 ---
 
-# Purpose of this buildpack
+## Purpose of this buildpack
 
 You may need to have the binary `ffmpeg` installed alongside your application, this buildpack will fit this need.
 
