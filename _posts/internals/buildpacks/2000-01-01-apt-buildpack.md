@@ -7,7 +7,7 @@ tags: buildpacks build apt dependencies
 
 ## Purpose of this buildpack
 
-The environment used to build and run applications, based on Ubtnu, is
+The environment used to build and run applications, based on Ubuntu, is
 embedding a wide set of libraries and binaries. However it is possible that
 your application requires one or multiple dependencies which are not present by
 default. The [APT buildpack](https://github.com/Scalingo/apt-buildpack) aims at
@@ -40,8 +40,8 @@ example, the APT buildpack, and the Ruby builidpack.
 
 ## Configuration
 
-Once the buildpack is configured for your app, the packages to install have to be defined.
-This is done in a file named `Aptfile` which should be located at the root of the application.
+Once the buildpack is configured for your app, the packages to install have to be defined in a file named 
+`Aptfile` which should be located at the root of the application.
 
 It can contain three types of information:
 
