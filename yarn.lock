@@ -6511,8 +6511,8 @@ sax@~1.2.1, sax@~1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
 "scalingo-styles@https://github.com/Scalingo/scalingo-styles":
-  version "0.3.1"
-  resolved "https://github.com/Scalingo/scalingo-styles#50eeebf34519a8a22c9de9c6e778d835e67c4a3f"
+  version "0.3.2"
+  resolved "https://github.com/Scalingo/scalingo-styles#335c7a04cf166916cd567b93966b393c23448148"
   dependencies:
     bootstrap "^4.0.0"
     material-components-web "~0.30.0"
