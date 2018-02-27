@@ -20,8 +20,10 @@ toc: true
     </div>
     {{ content | inject_anchors }}
     <hr class="mt-5" />
+    {% if page.modified_at %}
     <p class="footer-date" itemprop="datePublished" content="{{ page.modified_at }}">
       Last update: {{ page.modified_at | date_to_string }}
     </p>
+    {% endif %}
   </div>
 </article>

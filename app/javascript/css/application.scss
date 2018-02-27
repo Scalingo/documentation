@@ -104,9 +104,52 @@ a {
   vertical-align: bottom;
 }
 
+$site-nav-width: 220px;
+.site-nav {
+  flex: 0 0 $site-nav-width;
+  max-width: $site-nav-width;
+  padding-right: 0;
+  background-color: $material-color-blue-grey-50;
+  padding: 10px;
+  li[data-state='closed'] {
+    ul {
+      display: none;
+    }
+    cursor: pointer;
+  }
+  a {
+    padding-left: 12px;
+  }
+  li[data-type='dir'] {
+    > .nav-title {
+      padding-left: 0;
+      &:before {
+        color: #bdbdbd;
+        content: 'arrow_drop_down';
+        font: normal normal normal 18px/1 'Material Icons';
+        margin-left: -6px;
+        width: 18px;
+        float: left;
+        font-feature-settings: 'liga';
+        text-rendering: optimizeLegibility;
+        word-wrap: normal;
+      }
+    }
+  }
+}
+
+main {
+  flex: 0 0 calc(100% - #{ $site-nav-width });
+  max-width: calc(100% - #{ $site-nav-width });
+  padding-left: 0 !important;
+}
+
 $page-nav-width: 160px;
 .page-nav {
   width: $page-nav-width;
+}
+
+.page-nav, .site-nav {
   @extend small;
   nav {
     @supports (position: sticky) {
@@ -121,6 +164,15 @@ $page-nav-width: 160px;
     @extend .list-unstyled, .mb-0;
     ul {
       @extend .ml-4;
+      ul {
+        @extend .ml-4;
+        ul {
+          @extend .ml-4;
+          ul {
+            @extend .ml-4;
+          }
+        }
+      }
     }
     li {
       @extend .mt-2;
@@ -150,8 +202,8 @@ $page-nav-width: 160px;
 
 @include media-breakpoint-up(md) {
   .page-content {
-    // width: calc(100% - $page-nav-width);
-    width: calc(100% - 160px);
+    width: calc(100% - #{ $page-nav-width });
     padding-right: 40px;
+    padding-left: 40px;
   }
 }

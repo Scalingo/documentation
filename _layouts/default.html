@@ -6,12 +6,15 @@
     {% include header.html %}
     {% include search.html %}
     <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-10 mx-lg-auto">
-            {{ content | extlinks }}
-          </div>
-        </div>
+      <div class="container d-flex flex-row">
+        <aside class="site-nav">
+          <nav>
+          {% include navigation.html subtree=site.data.tree %}
+          </nav>
+        </aside>
+        <main>
+          {{ content | extlinks }}
+        </main>
       </div>
     </section>
     {% include footer.html %}

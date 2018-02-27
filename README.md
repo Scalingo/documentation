@@ -35,6 +35,8 @@ Please do not use first-level HTML/Markdown headers (*i.e. `<h1></h1>`*) as it w
 __Blockquotes__ should be **only used for quotes**. If you'd like to incorporate a useful
 note please use
 
+Do not put `categories`, `category` or `permalink` in the Front Matter, everything is handled by the jekyll-dirname-generator plugin.
+
 ## Do's
 
 If you want to write a useful note:

@@ -13,7 +13,7 @@ excerpt_separator: <!--more-->
 markdown: kramdown
 highlighter: rouge
 
-permalink: /:categories/:title/
+permalink: /:categories/:slug
 
 keep_files:
   - packs
