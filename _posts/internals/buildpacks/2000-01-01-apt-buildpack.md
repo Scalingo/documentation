@@ -49,6 +49,11 @@ It can contain three types of information:
 * An URL to a `.deb` package which will be downloaded and installed
 * A `:repo:deb` instruction to add a APT repository to download packages from
 
+<aside class="warning" markdown="1">
+Current base image is based on **Ubuntu 14:04 Trusty**, you have to make sure
+the chosen packages are compatible with this release.
+</aside>
+
 Example:
 
 ```
