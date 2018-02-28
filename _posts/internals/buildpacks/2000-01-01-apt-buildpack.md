@@ -20,12 +20,12 @@ internals/2000-01-01-scalingo-builder-base-docker-image %})
 ## Set up this buildpack for your application
 
 This buildpack is designed to be used in conjunction with one or more additional
-buildpacks, thanks to the [multi buildpack]({% post_url internals/buildpacks/2015-09-28-multi-buildpack %})
+buildpacks, thanks to the [multi buildpack]({% post_url internals/buildpacks/2015-09-28-multi-buildpack %}).
 
 When creating a new Scalingo app:
 
 ```console
-$ scalingo create <appname>
+$ scalingo create my-app
 $ scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack.git
 
 $ cat << EOF > .buildpacks
@@ -35,19 +35,20 @@ EOF
 ```
 
 The above commands configure your application to use the multi buildpack, and
-defines the `.buildpacks` file, defining the different buildpacks to apply, in this
-example, the APT buildpack, and the Ruby builidpack.
+define the `.buildpacks` file. This file configures the different buildpacks to
+apply. In this example, we configure the APT and the Ruby buildpack.
 
 ## Configuration
 
-Once the buildpack is configured for your app, the packages to install have to be defined in a file named 
-`Aptfile` which should be located at the root of the application.
+Once the buildpack is configured for your app, the packages to install have to
+be defined in a file named `Aptfile` which should be located at the root of the
+application.
 
 It can contain three types of information:
 
 * A package name present in the Ubuntu repository
 * An URL to a `.deb` package which will be downloaded and installed
-* A `:repo:deb` instruction to add a APT repository to download packages from
+* A `:repo:deb` instruction to add an APT repository to download packages from
 
 <aside class="warning" markdown="1">
 Current base image is based on **Ubuntu 14:04 Trusty**, you have to make sure
