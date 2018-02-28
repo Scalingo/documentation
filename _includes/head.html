@@ -8,7 +8,9 @@
 
   <meta name="keywords" content="paas{% for tag in post.tags %},{{ tag }}{% endfor %}" />
   <meta name="viewport" content="width=device-width">
+  {% if jekyll.environment != "development" %}
   {% include google_tag_manager_head.html %}
+  {% endif %}
   {% include favicons.html %}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:400,500|Material+Icons">
   <link rel="stylesheet" href="{{ "style.css" | asset_pack_path }}">

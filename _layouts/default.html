@@ -2,7 +2,9 @@
 <html>
   {% include head.html %}
   <body class="mdc-typography">
+    {% if jekyll.environment != "development" %}
     {% include google_tag_manager_body.html %}
+    {% endif %}
     {% include header.html %}
     {% include search.html %}
     <section>
