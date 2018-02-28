@@ -1,13 +1,19 @@
+require "pry"
+
 module Dirname
   class Generator < Jekyll::Generator
     FORWARD_SLASH = "/".freeze
 
     def directory_hash(path, name=nil)
-      matchedPage = @all_posts.detect{|x| x.path.ends_with?(path) }
+      url_path = path.gsub("_posts", "")
+      matchedPage = @all_posts.detect{|x|
+        x.url == url_path
+      }
       data = {
         'title' => matchedPage ? (matchedPage.data['nav'] || matchedPage.title) : path.split('/').compact.last.capitalize,
         'type'  => 'dir',
-        'url'   => matchedPage ? matchedPage.url : path.gsub('_posts', '')
+        'url'   => matchedPage ? matchedPage.url : path.gsub('_posts', ''),
+        'index' => matchedPage && matchedPage.data['index'] && matchedPage.data['index']
       }
       data['children'] = children = []
       Dir.foreach(path) do |entry|
@@ -22,10 +28,31 @@ module Dirname
           children << {
             'title' => matchedPage ? (matchedPage.data['nav'] || matchedPage.title) : nil,
             'type'  => "file",
-            'url'   => matchedPage ? matchedPage.url : "UNMATCHED PAGE"
+            'url'   => matchedPage ? matchedPage.url : "UNMATCHED PAGE",
+            'index' => matchedPage && matchedPage.data['index'] && matchedPage.data['index']
           }
         end
       end
+      children = data['children']
+      # In case of multiple entries with the same title, keep the one which is
+      # a dir. Assuming the other ones is a "fake" file whose only purpose is to
+      # customize index or title attributes of the dir entry
+      children = children.group_by{|x| x['title']}.inject([]){|memo, x|
+        ary = x.last
+        if ary.length == 1
+          memo << ary.first
+        else
+          memo << ary.detect{|x| x['type'] == "dir"} || ary.first
+        end
+        memo
+      }
+      # Sort by index
+      children = children.sort_by!{|a,b|
+        index_a = a && a['index']
+        index_b = b && b['index']
+        index_a && index_b ? index_a <=> index_b : index_a ? -1 : 1
+      }
+      data['children'] = children
       return data
     end
 

@@ -147,7 +147,7 @@ $site-nav-width: 220px;
   a {
     padding-left: 12px;
   }
-  li[data-type='dir'] {
+  li[data-type='dir'], li[data-type='heading'] {
     > .nav-title {
       padding-left: 0;
       &:before {
@@ -234,9 +234,13 @@ a.mdc-button {
 }
 
 @include media-breakpoint-up(md) {
+  .site-nav {
+    margin-right: 40px;
+  }
+  .page-nav {
+    margin-left: 40px;
+  }
   .page-content {
     width: calc(100% - #{ $page-nav-width });
-    padding-right: 40px;
-    padding-left: 40px;
   }
 }
