@@ -1,5 +1,3 @@
-require "pry"
-
 module Dirname
   class Generator < Jekyll::Generator
     FORWARD_SLASH = "/".freeze
