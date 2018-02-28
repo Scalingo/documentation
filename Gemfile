@@ -25,6 +25,11 @@ group :jekyll_plugins do
    gem "jekyll-toc"
 end
 
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-nav'
+end
+
 # gem 'jekyll-import', github: 'yannski/jekyll-import'
 # gem 'pry'
 
