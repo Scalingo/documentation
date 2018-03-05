@@ -11,7 +11,7 @@ Once deployed an application can be accessed either with HTTP or HTTPS:
 * `http://my-app.scalingo.io`
 * `https://my-app.scalingo.io`
 
-Or once a custom domain has been added:
+Or, once a custom domain has been added:
 
 * `http://example.com`
 * `https://example.com`
@@ -72,7 +72,8 @@ Network](https://developer.mozilla.org/fr/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Tr
   Infrastructure, if that is something you want to avoid, you can completely
   implement it at your application levels. Libraries exist for most languages
   and framework to create the exact same behavior. Here are a few examples:
-  * Ruby: [rack-ssl-enforcer](https://github.com/tobmatth/rack-ssl-enforcer)
+  * Ruby, Rack: [rack-ssl-enforcer](https://github.com/tobmatth/rack-ssl-enforcer)
+  * Ruby, Rails 4+: [ssl options configuration](http://api.rubyonrails.org/v5.1/classes/ActionDispatch/SSL.html)
   * Java, Springboot: [HttpSecurity configuration](https://docs.spring.io/spring-security/site/docs/current/reference/html/headers.html)
   * Java/Scala, Play2: [HTTP filters](https://www.playframework.com/documentation/2.6.x/RedirectHttpsFilter)
   * Python: Django: [Security Middleware](https://docs.djangoproject.com/en/2.0/ref/middleware/#http-strict-transport-security)
