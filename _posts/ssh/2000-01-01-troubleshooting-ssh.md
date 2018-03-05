@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting Git push and SSH common issues
-modified_at: 2016-09-20 00:00:00
+modified_at: 2018-03-05 00:00:00
 category: getting-started
 tags: follow-the-light ssh linux git troubleshoot problem connect git push
 ---
@@ -96,3 +96,41 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAvHiFU0R8sWBT1dsKMW7[...]
 
 The latter will be accepted by the platform.
 
+## Invalid SSH key error: key is already taken
+
+SSH key pairs are used as authentication credentials for an account. It let us
+authenticate the user who is deploying an application using the `git push`
+command. As it is required for account authentication, SSH keys are unique: the
+same public key can't be associated with multiple accounts.
+
+### Solving the problem
+
+* You have multiple accounts (ie. professional/personal)
+
+In this case, the **simplest way is the account owning the key is either owner
+or collaborator** with all the applications you want to deploy.
+
+An alternative method is to create a second key for the second account, modify
+how Git is using ssh to connect to the remote server (Linux/MacOS only):
+
+Define a wrapper script, in `$HOME/.ssh/scalingo-personal.sh` with the following content:
+
+```
+#!/usr/bin/bash
+
+exec ssh -i $HOME/.ssh/path-to-alternative-key $@
+```
+
+Then, to push with this second key:
+
+```
+GIT_SSH=$HOME/.ssh/scalingo-personal.sh git push scalingo master
+```
+
+Then Git will correctly used authenticate using the second alternative key
+authenticating the second account.
+
+* It is your only account
+
+Please reach the support which will investigate the reason why your key is
+considered already used.
