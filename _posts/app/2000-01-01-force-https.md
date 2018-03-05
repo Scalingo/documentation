@@ -5,7 +5,7 @@ category: app
 tags: app routing https security tls
 ---
 
-The **Force HTTPS** feature will ensure that your users will be reaching the application through **HTTPS only**
+The **Force HTTPS** feature will ensure that your users will be reaching an application through **HTTPS only**.
 
 ## Context
 
@@ -20,7 +20,7 @@ Or, once a custom domain has been added:
 * `http://example.com`
 * `https://example.com`
 
-Activating the **Force HTTPS** feature will force the redirection from HTTP to HTTPS for all your domains. It's done by doing a permanent redirection and injecting the HSTS header.
+Activating the **Force HTTPS** feature enforces HTTPS access to all the domains attached to the application. It is achieved by activating a permanent redirection from HTTP to HTTPS and injecting the HSTS header in HTTPS responses.
 
 ## Technical details
 
