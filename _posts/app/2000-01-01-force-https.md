@@ -1,9 +1,13 @@
 ---
-title: "Routing setting: Force HTTPS"
+title: "Force HTTPS"
 modified_at: 2018-03-05 00:00:00
 category: app
 tags: app routing https security tls
 ---
+
+The **Force HTTPS** feature will ensure that your users will be reaching an application through **HTTPS only**.
+
+## Context
 
 HTTPS is enabled by default for all the applications deployed on the platform.
 Once deployed an application can be accessed either with HTTP or HTTPS:
@@ -16,9 +20,11 @@ Or, once a custom domain has been added:
 * `http://example.com`
 * `https://example.com`
 
-The *Force HTTPS* feature will ensure that your users will be reaching the application through **HTTPS only**
+Activating the **Force HTTPS** feature enforces HTTPS access to all the domains attached to the application. It is achieved by activating a permanent redirection from HTTP to HTTPS and injecting the HSTS header in HTTPS responses.
 
-## Permanent Redirect (301) from HTTP to HTTPS
+## Technical details
+
+### Permanent Redirect (301) from HTTP to HTTPS
 
 Any request done to the application using simple **HTTP** will be redirected
 using the status code `301`. It means browsers will remind this redirection
@@ -35,7 +41,7 @@ X-Request-ID: aa5e0e4e-5e3f-4e36-b4d4-c5f65a47812f
 Location: https://my-app.scalingo.io/
 ```
 
-## Injection of HSTS header
+### Injection of HSTS header
 
 The HTTP Strict Transport Security header (also known as HSTS) is a HTTP header
 which aims at instructing clients like browsers, to avoid connecting to a given
