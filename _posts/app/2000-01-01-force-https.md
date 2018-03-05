@@ -68,10 +68,10 @@ Network](https://developer.mozilla.org/fr/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Tr
   **Force HTTPS** feature. Once enabled, the application won't be reachable without HTTPS.
 
 * Once the feature is enabled and that some users have received the HSTS header,
-  they will **always** keep using HTTPS to reach your application. Hance, make sure HTTPS
-  access keep working correctly, even if the feature disabled.
+  they will **always** keep using HTTPS to reach your application. Hence, make sure HTTPS
+  access keep working correctly, even if the feature is disabled.
 
-* This feature adds a small lock-in to the platform as it depends of Scalingo's
+* This feature adds a small lock-in to the platform as it depends on Scalingo's
   infrastructure. If that is something you want to avoid, you can  implement it
   at the application level. Libraries exist for most languages and framework to
   create the exact same behavior. Here are a few examples:
