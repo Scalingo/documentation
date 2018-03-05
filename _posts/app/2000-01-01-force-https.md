@@ -55,7 +55,7 @@ strict-transport-security: max-age=31536000
 
 The `strict-transport-security: max-age=31536000` ensures that browsers won't
 access the domain in an unsecure way during 1 year. By combining it with the
-HTTP to HTTPS redirection, it is now sure that users can only access the the
+HTTP to HTTPS redirection, it is now sure that users can only access the
 application once without using an encrypted connection: at their first
 connection which is usually unauthenticated.
 
@@ -64,14 +64,17 @@ Network](https://developer.mozilla.org/fr/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Tr
 
 ## Disclaimers
 
-* Once the feature is enabled and that some users received the HSTS header,
-  they will **always** keep using HTTPS to reach your application, make sure it
-  works correctly, even after if the feature is disabled.
+* Make sure your application works correctly using HTTPS before enabling the
+  **Force HTTPS** feature. Once enabled, the application won't be reachable without HTTPS.
 
-* This feature adds a small lock-in to the platform as it depends of our
-  Infrastructure, if that is something you want to avoid, you can completely
-  implement it at your application levels. Libraries exist for most languages
-  and framework to create the exact same behavior. Here are a few examples:
+* Once the feature is enabled and that some users have received the HSTS header,
+  they will **always** keep using HTTPS to reach your application. Hance, make sure HTTPS
+  access keep working correctly, even if the feature disabled.
+
+* This feature adds a small lock-in to the platform as it depends of Scalingo's
+  infrastructure. If that is something you want to avoid, you can  implement it
+  at the application level. Libraries exist for most languages and framework to
+  create the exact same behavior. Here are a few examples:
   * Ruby, Rack: [rack-ssl-enforcer](https://github.com/tobmatth/rack-ssl-enforcer)
   * Ruby, Rails 4+: [ssl options configuration](http://api.rubyonrails.org/v5.1/classes/ActionDispatch/SSL.html)
   * Java, Springboot: [HttpSecurity configuration](https://docs.spring.io/spring-security/site/docs/current/reference/html/headers.html)
