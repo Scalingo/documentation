@@ -66,7 +66,7 @@ Network](https://developer.mozilla.org/fr/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Tr
 
 * Once the feature is enabled and that some users received the HSTS header,
   they will **always** keep using HTTPS to reach your application, make sure it
-  works correctly, even after disabling the feature.
+  works correctly, even after if the feature is disabled.
 
 * This feature adds a small lock-in to the platform as it depends of our
   Infrastructure, if that is something you want to avoid, you can completely
