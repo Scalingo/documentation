@@ -11,7 +11,7 @@ module Dirname
         'title' => matchedPage && (matchedPage.data['nav'] || matchedPage.title) ? (matchedPage.data['nav'] || matchedPage.title) : path.split('/').compact.last.capitalize,
         'type'  => 'dir',
         'url'   => matchedPage ? matchedPage.url : path.gsub('_posts', ''),
-        'index' => matchedPage && matchedPage.data['index'] && matchedPage.data['index']
+        'index' => matchedPage && matchedPage.data['index'] ? matchedPage.data['index'] : nil
       }
       data['children'] = children = []
       Dir.foreach(path) do |entry|
@@ -27,7 +27,7 @@ module Dirname
             'title' => matchedPage ? (matchedPage.data['nav'] || matchedPage.title) : nil,
             'type'  => "file",
             'url'   => matchedPage ? matchedPage.url : "UNMATCHED PAGE",
-            'index' => matchedPage && matchedPage.data['index'] && matchedPage.data['index']
+            'index' => matchedPage && matchedPage.data['index'] ? matchedPage.data['index'] : nil
           }
         end
       end
