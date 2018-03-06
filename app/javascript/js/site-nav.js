@@ -38,4 +38,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
   computeSiteNavHeight(siteNav)
 
+  function scrollIfNeeded(element, container) {
+    if (element.offsetTop < container.scrollTop) {
+      container.scrollTop = element.offsetTop
+    } else {
+      const offsetBottom = element.offsetTop + element.offsetHeight
+      const scrollBottom = container.scrollTop + container.offsetHeight
+      if (offsetBottom > scrollBottom) {
+        container.scrollTop = offsetBottom - container.offsetHeight
+      }
+    }
+  }
+
+  let activeLink = document.querySelector('.site-nav a.active')
+  if (activeLink !== null && siteNav !== null) {
+    scrollIfNeeded(activeLink, siteNav)
+  }
 })
