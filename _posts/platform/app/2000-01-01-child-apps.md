@@ -17,7 +17,7 @@ When creating a child application, the following elements are cloned:
 * Notifications settings
 
 This feature can be very interesting to implement your own [Review Apps]({%
-post_url integrations/2017-03-10-review-apps %}) for codes that are not hosted on GitHub.
+post_url platform/app/2000-01-01-review-apps %}) for codes that are not hosted on GitHub.
 
 ## Deployment of a child app
 

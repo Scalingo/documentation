@@ -24,7 +24,7 @@ or PostgreSQL. This article will be using MySQL, but it should be identical with
 a PostgreSQL database.
 
 First, a [Scalingo MySQL addon]({% post_url
-databases/2000-01-01-scalingo-mysql-addon %}) has to be added to your
+addons/scalingo-mysql/2000-01-01-start %}) has to be added to your
 application. This addon will inject the environment variable `SCALINGO_MYSQL_URL`
 and its alias `DATABASE_URL`.
 
@@ -148,7 +148,7 @@ documentation](https://laravel.com/docs/5.5/migrations).
 
 So far the action to apply migrations on the production database was manual. It
 is possible to automate it by using [a postdeploy hook]({% post_url
-app/2000-01-01-postdeploy-hook %}) All you have to do is to create a `Procfile`
+platform/app/2000-01-01-postdeploy-hook %}) All you have to do is to create a `Procfile`
 file at the root of your project with the following content:
 
 ```

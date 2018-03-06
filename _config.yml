@@ -57,30 +57,30 @@ array: [] # hack for creating array
 highlighted:
   technologies:
     - name: Ruby on Rails
-      url: /languages/ruby/getting-started-with-rails/
+      url: /languages/ruby/rails/start
     - name: MeteorJS
-      url: "/languages/javascript/nodejs/getting-started-with-meteor/"
+      url: "/languages/meteorjs/start"
     - name: NodeJS
-      url: "/languages/javascript/nodejs/getting-started-with-nodejs/"
+      url: "/languages/nodejs/start"
     - name: PHP
-      url: "/"
+      url: "/languages/php/start"
     - name: Python
-      url: "/"
+      url: "/languages/php/python"
     - name: Java
-      url: "/"
+      url: "/languages/java/start"
   addons:
     - name: PostgreSQL
-      url: "/databases/scalingo-postgresql-addon/"
+      url: "/addons/scalingo-postgresql/start"
     - name: MySQL
-      url: "/databases/scalingo-mysql-addon/"
+      url: "/addons/scalingo-mysql/start"
     - name: MongoDB
-      url: "/databases/scalingo-mongodb-addon/"
+      url: "/addons/scalingo-mongodb/start"
     - name: Redis
-      url: "/databases/scalingo-redis-addon/"
+      url: "/addons/scalingo-redis/start"
     - name: Elasticsearch
-      url: "/databases/scalingo-elasticsearch-addon/"
+      url: "/addons/scalingo-elasticsearch/start"
     - name: InfluxDB
-      url: "/databases/scalingo-influxdb-addon/"
+      url: "/addons/scalingo-influxdb/start"
 
 extlinks:
   followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]

@@ -38,7 +38,7 @@ header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transpo
 to order browsers to only navigate this website with HTTPS.
 
 The second instruction checks if the Scalingo [routing layer]({% post_url
-internals/2015-03-22-routing %}) has transfered a HTTP request or HTTPS
+platform/internals/2000-01-01-routing %}) has transfered a HTTP request or HTTPS
 request. If it's not HTTPS, it redirects the user to HTTPS.
 
 The last thing you have to do is to instruct Scalingo's deployment process to

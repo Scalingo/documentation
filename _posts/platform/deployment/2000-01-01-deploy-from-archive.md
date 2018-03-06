@@ -48,7 +48,7 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -u ":$AUT
 * Replace `[:app]` by your application name which must be created in the first
   place. You can do that on our platform
   [my.scalingo.com](https://my.scalingo.com), [with our CLI]({% post_url
-  cli/2015-09-18-command-line-tool %}#features) or [by using directly our API
+  platform/cli/2000-01-01-start %}#features) or [by using directly our API
   ](https://developers.scalingo.com/apps.html#create-an-application).
 
 * The `git_ref` is optional. This attribute must provide any string identifying

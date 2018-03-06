@@ -28,14 +28,14 @@ You can trigger a manual deployment by going to the "Manual deploy" section and 
 
 ## Review apps
 
-Review apps are special [child apps]({% post_url app/2017-03-10-child-apps %}) linked to a GitHub pull request.
+Review apps are special [child apps]({% post_url platform/app/2000-01-01-child-apps %}) linked to a GitHub pull request.
 
 Review apps can be created automatically every time a pull request is opened or they can be created manually by selecting the Pull Request to deploy among the currently opened ones (our Pull Request viewer will help you with this).
 
 By default Review apps are automatically destroyed when the pull request is closed. But you can specify a duration after which the Review App is destroyed.
 
-For more information, you can read the more specific documentation pages [GitHub integration, Auto Deploy and Review Apps]({% post_url integrations/2000-01-01-github-integration %}) and [Review apps]({% post_url integrations/2017-03-10-review-apps %}).
+For more information, you can read the more specific documentation pages [GitHub integration, Auto Deploy and Review Apps]({% post_url platform/app/2000-01-01-github-integration %}) and [Review apps]({% post_url platform/app/2000-01-01-review-apps %}).
 
 ## Some suggestions
 
-You can also create a [child app]({% post_url app/2017-03-10-child-apps %}) which is not a review app.
+You can also create a [child app]({% post_url platform/app/2000-01-01-child-apps %}) which is not a review app.

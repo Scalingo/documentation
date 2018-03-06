@@ -31,8 +31,8 @@ git push scalingo mybranch:master
 
 ### Git authentication and SSH
 
-The Git server created by Scalingo uses SSH authentication. If you have any problem setting up SSH please read [Troubleshooting `git push` and SSH common issues]({% post_url ssh/2000-01-01-troubleshooting-ssh %}).
+The Git server created by Scalingo uses SSH authentication. If you have any problem setting up SSH please read [Troubleshooting `git push` and SSH common issues]({% post_url platform/getting-started/2000-01-01-troubleshooting-ssh %}).
 
 ### And after?
 
-See [Deployment Environment]({% post_url app/2000-01-01-build-environment %}) to configure your application and [Procfile]({% post_url internals/2014-12-01-procfile %}).
+See [Deployment Environment]({% post_url platform/app/2000-01-01-build-environment %}) to configure your application and [Procfile]({% post_url platform/app/2000-01-01-procfile %}).

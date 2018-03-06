@@ -10,7 +10,7 @@ Git is a version control system really useful for tracking changes in computer f
 
 To install Git on Windows you have to download [Git for Windows](https://git-for-windows.github.io/).
 
-Once the installation is complete, you will need SSH as well. Take a look at [Setup SSH on Windows]({% post_url ssh/2015-04-04-setup-ssh-windows %}).
+Once the installation is complete, you will need SSH as well. Take a look at [Setup SSH on Windows]({% post_url platform/getting-started/2000-01-01-setup-ssh-windows %}).
 
 ## Git Setup
 

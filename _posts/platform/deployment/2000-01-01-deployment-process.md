@@ -15,13 +15,13 @@ The first step to trigger a deployment is to send the application itself to the
 platform (either the code or a build version of it). Multiple methods are
 available to achieve this step:
 
-* [Sending the code using git]({% post_url deployment/2017-08-03-deploy-with-git %})
-* [Let the platform fetch the code from GitHub]({% post_url deployment/2017-08-03-deploy-with-github %})
-* [Sending the code in a tar achive]({% post_url deployment/2000-01-01-deploy-from-archive %})
+* [Sending the code using git]({% post_url platform/deployment/2000-01-01-deploy-with-git %})
+* [Let the platform fetch the code from GitHub]({% post_url platform/deployment/2000-01-01-deploy-with-github %})
+* [Sending the code in a tar achive]({% post_url platform/deployment/2000-01-01-deploy-from-archive %})
 
 Special deployment methods are available for JVM-based applications:
 
-* [Sending a built JAR or WAR archive]({% post_url deployment/2000-01-01-deploy-java-jar-war %})
+* [Sending a built JAR or WAR archive]({% post_url platform/deployment/2000-01-01-deploy-java-jar-war %})
 
 ## Building the application
 
@@ -37,9 +37,9 @@ application and installs everything required in order to make it runnable.
 
 This process to detect the technology and to install all its dependencies is
 based on open-source tools named [*buildpack*]({% post_url
-internals/buildpacks/2015-01-04-buildpacks %}). At the beginning of the build, the
+platform/deployment/buildpacks/2000-01-01-buildpacks %}). At the beginning of the build, the
 [officially supported buildpacks]({% post_url
-internals/buildpacks/2015-01-04-buildpacks %}#buildpacks-included-on-scalingo)
+platform/deployment/buildpacks/2000-01-01-buildpacks %}#buildpacks-included-on-scalingo)
 are automatically used to detect which one can be used to build the
 application, they usually cover most use cases.
 
@@ -51,13 +51,13 @@ As mentionned before buildpacks are open-source and other hosting providers are
 also using them to deploy applications, thus the developer community has
 developed a wide range of buildpacks for almost any kind of technology. The
 platform has been designed to be extended by community buildpacks, [learn how
-to do it here]({% post_url internals/buildpacks/2015-01-04-custom-buildpacks
+to do it here]({% post_url platform/deployment/buildpacks/2000-01-01-custom
 %}).
 
 If a project is based on multiple language runtimes, buildpacks can be combined
 to install dependencies of multiple stacks. A custom buildpack has been created
 to achieve this goal: [the multi buildpacks]({% post_url
-internals/buildpacks/2015-09-28-multi-buildpack %}).
+platform/deployment/buildpacks/2000-01-01-multi %}).
 
 ## Rolling out the new version of the application
 
@@ -72,8 +72,8 @@ following:
    to check if the process inside them has correctly started and is listening
    to the port defined by the environment variable `PORT`. More details about
    container start operations is available [here]({% post_url
-   internals/2014-11-25-container-management %}#starting-new-containers).
-3. If a [postdeploy hook]({% post_url app/2000-01-01-postdeploy-hook %}) is
+   platform/internals/2000-01-01-container-management %}#starting-new-containers).
+3. If a [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %}) is
    defined, it is executed in a **one-off** container of the new version of the
    application. In the case the hook fails, the deployment would stop and the
    previous version would keep running.
@@ -82,5 +82,5 @@ following:
 
 Once these 4 steps have ended successfuly, the deployment is considered as
 successful, and the [order to shutdown]({% post_url
-internals/2014-11-25-container-management %}#shutdown-of-old-containers) is
+platform/internals/2000-01-01-container-management %}#shutdown-of-old-containers) is
 sent to old containers. They now have 30 seconds to cleanup cleanly.

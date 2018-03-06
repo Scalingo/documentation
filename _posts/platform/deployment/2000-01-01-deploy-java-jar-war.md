@@ -18,7 +18,7 @@ can be directly deployed on Scalingo.
 ## Install Scalingo CLI
 
 JAR and WAR archives can be deployed using the platform command line interface, first
-step is to install it: [CLI Documentation]({% post_url cli/2015-09-18-command-line-tool %})
+step is to install it: [CLI Documentation]({% post_url platform/cli/2000-01-01-start %})
 
 ## Usage of the `deploy` command
 

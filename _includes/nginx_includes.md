@@ -17,4 +17,4 @@ content, and also create a file `composer.lock` containing an empty JSON
 dictionary `{}`.
 
 > Tip: You can find more information about extra configuration in [the PHP
-support page]({% post_url languages/php/2014-07-02-php %}).
+support page]({% post_url languages/php/2000-01-01-start %}).
