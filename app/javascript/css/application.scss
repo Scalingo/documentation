@@ -202,7 +202,7 @@ $page-nav-width: 160px;
   flex: 0 0 $site-nav-width;
   max-width: $site-nav-width;
   padding-right: 0;
-  background-color: $material-color-blue-grey-50;
+  background-color: $material-color-grey-100;
   nav {
     overflow-y: auto;
   }
@@ -215,7 +215,7 @@ $page-nav-width: 160px;
   a {
     padding-left: 12px;
   }
-  li[data-type='heading'] {
+  li.heading {
     margin-top: 0;
     margin-bottom: 0;
     border-top: 1px solid $material-color-blue-grey-100;
@@ -228,7 +228,6 @@ $page-nav-width: 160px;
       padding-right: 18px;
       &:after {
         color: #bdbdbd;
-        content: 'expand_more';
         font: normal normal normal 22px/1 'Material Icons';
         width: 18px;
         margin-right: -18px;
@@ -236,6 +235,21 @@ $page-nav-width: 160px;
         font-feature-settings: 'liga';
         text-rendering: optimizeLegibility;
         word-wrap: normal;
+      }
+    }
+    &[data-type='heading'] {
+      > .nav-title {
+        &:after {
+          content: 'expand_more';
+        }
+      }
+    }
+    &[data-type='link'] {
+      > .nav-title {
+        &:after {
+          content: 'open_in_new';
+          font: normal normal normal 18px/1 'Material Icons';
+        }
       }
     }
     &[data-state='open'] {
@@ -274,8 +288,25 @@ $page-nav-width: 160px;
   }
 }
 
-.site-nav > nav > ul > li:first-child {
-  border-top: 0;
+.site-nav > nav > ul > li.heading {
+  background-color: $material-color-grey-200;
+  &:first-child {
+    border-top: 0;
+  }
+  &:last-child {
+    border-bottom: 1px solid $material-color-blue-grey-100;
+  }
+}
+
+.site-nav > nav > ul + ul > li.heading {
+  // background-color: $material-color-blue-grey-100;
+  background-color: $material-color-grey-100;
+  fint: 400 12px/16px Roboto, sans-serif;
+  border-top: 1px solid $material-color-blue-grey-100;
+  &:first-child {
+    border-top: 1px solid $material-color-blue-grey-100;
+    margin-top: 60px;
+  }
 }
 
 .page-content {
