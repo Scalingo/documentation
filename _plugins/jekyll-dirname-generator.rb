@@ -44,6 +44,12 @@ module Dirname
         end
         memo
       }
+      # Create index if not existent
+      max_index = children.length + 1
+      children = children.map{|x|
+        x["index"] ||= max_index
+        x
+      }
       # Sort by index
       children = children.sort_by!{|a,b|
         index_a = a && a['index']
