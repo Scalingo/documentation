@@ -1,7 +1,6 @@
 ---
 title: PHP - Access your app environment
 modified_at: 2015-12-02 00:00:00
-category: languages
 tags: php, configuration, environment
 ---
 

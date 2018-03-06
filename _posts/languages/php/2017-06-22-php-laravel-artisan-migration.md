@@ -1,7 +1,6 @@
 ---
 title: PHP - Running database migrations with 'artisan'
 modified_at: 2017-09-11 00:00:00
-category: languages
 tags: php, artisan, laravel, migration
 ---
 

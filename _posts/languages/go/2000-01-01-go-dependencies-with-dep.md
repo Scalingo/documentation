@@ -1,7 +1,6 @@
 ---
 title: Manage Go dependencies with dep
 modified_at: 2018-02-23 00:00:00
-category: languages
 tags: go depndencies
 ---
 

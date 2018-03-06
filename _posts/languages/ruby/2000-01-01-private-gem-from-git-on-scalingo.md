@@ -1,7 +1,6 @@
 ---
 title: Installing a Gem on Scalingo from a Private Git Repository
 modified_at: 2017-02-08 17:39:00
-categories: languages ruby
 tags: ruby gem private git
 ---
 

@@ -1,9 +1,7 @@
 ---
 title: Using PhantomJS and Spiderable to build static pages with Meteor
 modified_at: 2016-08-14 00:00:00
-category: languages
 tags: nodejs meteor tutorial fragment phantomjs spiderable crawler static
-permalink: /languages/javascript/meteor/spiderable-phantomjs-static-fragment/
 ---
 
 ## Context
