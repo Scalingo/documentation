@@ -133,7 +133,7 @@ To run the application image you must:
 The general command is:
 
 ```bash
-$ scalingo run \
+$ docker run \
   -e MY_ENVIRONMENT_VARIBLE=SOME_VALUE \
   -p EXPOSED_PORT:EXPOSED_PORT \
   --link MY_DATABASE_CONTAINER:NAME \
@@ -148,7 +148,7 @@ Since it's a meteor application, we need to set the `ROOT_URL` environment
 variable to `http://localhost:4000`
 
 ```bash
-$ scalingo run \
+$ docker run \
   -e PORT=4000 \
   -e ROOT_URL=http://localhost:4000 \
   -e MONGO_URL=mongo://my-app:password@mongo/my-app \
