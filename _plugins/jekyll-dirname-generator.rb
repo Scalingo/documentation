@@ -8,7 +8,7 @@ module Dirname
         x.url == url_path
       }
       data = {
-        'title' => matchedPage ? (matchedPage.data['nav'] || matchedPage.title) : path.split('/').compact.last.capitalize,
+        'title' => matchedPage && (matchedPage.data['nav'] || matchedPage.title) ? (matchedPage.data['nav'] || matchedPage.title) : path.split('/').compact.last.capitalize,
         'type'  => 'dir',
         'url'   => matchedPage ? matchedPage.url : path.gsub('_posts', ''),
         'index' => matchedPage && matchedPage.data['index'] && matchedPage.data['index']
