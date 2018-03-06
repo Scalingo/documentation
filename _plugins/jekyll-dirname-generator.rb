@@ -51,10 +51,8 @@ module Dirname
         x
       }
       # Sort by index
-      children = children.sort_by!{|a,b|
-        index_a = a && a['index']
-        index_b = b && b['index']
-        index_a && index_b ? index_a <=> index_b : index_a ? -1 : 1
+      children = children.sort_by{|x|
+        x['index']
       }
       data['children'] = children
       return data
