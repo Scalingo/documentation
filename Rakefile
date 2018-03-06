@@ -63,7 +63,7 @@ namespace :fetch_from_homepage do
 
   task :header do
     doc = fetch_homepage
-    toolbar = doc.css("header.mdc-toolbar").to_xhtml
+    toolbar = hack(doc.css("header.mdc-toolbar")).to_xhtml
     sidebar = doc.css("aside").to_xhtml
     template_path = "_includes/header.html"
     File.open(template_path, 'w+') { |file|
@@ -71,6 +71,7 @@ namespace :fetch_from_homepage do
       file.write(sidebar)
     }
   end
+
   task :footer do
     doc = fetch_homepage
     footer = doc.css("footer").to_xhtml
@@ -78,6 +79,14 @@ namespace :fetch_from_homepage do
     File.open(template_path, 'w+') { |file|
       file.write(footer)
     }
+  end
+
+  # Don't know why but the default SVG button make the page scroll automatically
+  # This hack is here to circumvent this problem by replacing the SVG by the same
+  # glyph coming from the material design font icon
+  def hack doc
+    doc.css('button svg').first.replace('<i class="material-icons">menu</i>')
+    doc
   end
 
   def fetch_homepage
