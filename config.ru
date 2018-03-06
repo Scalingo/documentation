@@ -17,7 +17,7 @@ end
 use Rack::Rewrite do
   r301    %r{^(.+).html$}, '$1'
   rewrite %r{^(.+)$}, '$1.html', if: Proc.new {|rack_env|
-    rack_env['PATH_INFO'] !~ /\.(jpg|jpeg|png|gif|ico|eot|otf|ttf|woff|woff2|css|js)$/i || rack_env['PATH_INFO'].present? || rack_env['PATH_INFO'] != '/'
+    rack_env['PATH_INFO'].present? && rack_env['PATH_INFO'] != '/' && rack_env['PATH_INFO'] !~ /\.(jpg|jpeg|png|gif|ico|eot|otf|ttf|woff|woff2|css|js)$/i
   }
 end
 
