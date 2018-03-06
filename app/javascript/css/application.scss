@@ -138,9 +138,7 @@ ul.breadcrumb {
 }
 
 main {
-  flex: 0 0 calc(100% - #{ $site-nav-width });
-  max-width: calc(100% - #{ $site-nav-width });
-  padding-left: 0 !important;
+  max-width: 100%;
 }
 
 $page-nav-width: 160px;
@@ -322,6 +320,11 @@ a.mdc-button {
 }
 
 @include media-breakpoint-up(md) {
+  main {
+    flex: 0 0 calc(100% - #{ $site-nav-width });
+    max-width: calc(100% - #{ $site-nav-width });
+    padding-left: 0 !important;
+  }
   .site-nav {
     margin-right: 40px;
   }
