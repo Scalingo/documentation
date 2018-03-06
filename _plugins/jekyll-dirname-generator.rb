@@ -55,19 +55,19 @@ module Dirname
     end
 
     def generate(site)
-      site.posts.docs.each{|post|
-        path = post.path
+      site.posts.docs.each{|doc|
+        path = doc.path
         dirname = if path.end_with?(FORWARD_SLASH)
           path
         else
           path_dir = File.dirname(path)
           path_dir.end_with?(FORWARD_SLASH) ? path_dir : "#{path_dir}/"
         end
-        post.data['dirname'] = dirname
+        doc.data['dirname'] = dirname
         categories = dirname.gsub(Dir.pwd + "/_posts/", "").split("/").delete_if{|x| x.blank?}
-        post.data['category'] = nil
-        post.data['categories'] = categories
-        post.data['permalink'] = nil
+        doc.data['category'] = nil
+        doc.data['categories'] = categories
+        doc.data['permalink'] = nil
       }
 
       @all_posts = site.posts.docs
