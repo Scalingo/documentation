@@ -15,16 +15,8 @@ class Object
 end
 
 use Rack::Rewrite do
-  rewrite    '/rss', '/feed.xml'
-  rewrite    %r{(^.+).html}, "$1/index.html", if: Proc.new {|env|
-    env["REQUEST_PATH"].start_with?("/post")
-  }
-  rewrite    %r{(^.+)}, "$1.html", if: Proc.new {|env|
-    env["REQUEST_PATH"].start_with?("/tagged")
-  }
-  rewrite    %r{/\d{4}(/.+)+/([^\./]+)$}, '$1/$2.html'
-
   r301     %r{^(.+).html$}, '$1'
+  rewrite   %r{^(.+)$}, '$1.html'
 end
 
 if ENV['FORCE_SSL'].present?
