@@ -8,7 +8,7 @@ module Dirname
         x.url == url_path
       }
       data = {
-        'title' => matchedPage && (matchedPage.data['nav'] || matchedPage.title) ? (matchedPage.data['nav'] || matchedPage.title) : path.split('/').compact.last.capitalize,
+        'title' => matchedPage && (matchedPage.data['nav'] || matchedPage.data['title']) ? (matchedPage.data['nav'] || matchedPage.data['title']) : path.split('/').compact.last.capitalize,
         'type'  => 'dir',
         'url'   => matchedPage ? matchedPage.url : path.gsub('_posts', ''),
         'index' => matchedPage && matchedPage.data['index'] ? matchedPage.data['index'] : nil
@@ -24,7 +24,7 @@ module Dirname
             x.path.ends_with?(full_path)
           }
           children << {
-            'title' => matchedPage ? (matchedPage.data['nav'] || matchedPage.title) : nil,
+            'title' => matchedPage ? (matchedPage.data['nav'] || matchedPage.data['title']) : nil,
             'type'  => "file",
             'url'   => matchedPage ? matchedPage.url : "UNMATCHED PAGE",
             'index' => matchedPage && matchedPage.data['index'] ? matchedPage.data['index'] : nil

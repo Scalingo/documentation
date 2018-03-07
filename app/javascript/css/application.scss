@@ -97,10 +97,8 @@ $logo-width: 3em;
 
 a {
   &.text-muted {
-    opacity: 0.7;
     &:hover, &:focus {
-      opacity: 1;
-      color: $material-color-grey-500;
+      color: $material-color-grey-600;
       text-decoration: none;
     }
   }

@@ -12,21 +12,22 @@ toc: true
     </nav>
   </div>
   <div class="page-content">
-    <div class="d-none d-md-flex">
-      <div class="mr-auto">
-        {% include breadcrumb.html %}
-        <h1 id="top-of-page">{{ page.title }}</h1>
-      </div>
-      <a href="https://github.com/{{ site.github_username }}/documentation/edit/master/{{ page.path }}" class="mdc-button text-nowrap">
-        Suggest edits
-      </a>
+    <div class="d-none d-md-block">
+      {% include breadcrumb.html %}
+      <h1 id="top-of-page">{{ page.title }}</h1>
     </div>
     {{ content | inject_anchors }}
     <hr class="mt-5" />
     {% if page.modified_at %}
-    <p class="footer-date" itemprop="datePublished" content="{{ page.modified_at }}">
-      Last update: {{ page.modified_at | date_to_string }}
-    </p>
+    <div class="d-flex flex-row justify-content-between mt-4">
+      <span class="footer-date" itemprop="datePublished" content="{{ page.modified_at }}">
+        Last update: {{ page.modified_at | date_to_string }}
+      </span>
+      <a href="https://github.com/{{ site.github_username }}/documentation/edit/master/{{ page.path }}" class="text-muted">
+        <i class="material-icons">mode_edit</i>
+        Suggest edits
+      </a>
+    </div>
     {% endif %}
   </div>
 </article>
