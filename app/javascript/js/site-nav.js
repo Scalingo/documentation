@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
-  let navTitles = document.querySelectorAll('li:not([data-type=\'link\']) .nav-title')
+  let navTitles = document.querySelectorAll('.nav-title')
   navTitles.forEach((element) => {
     element.addEventListener('click', (e) => {
       e.preventDefault()

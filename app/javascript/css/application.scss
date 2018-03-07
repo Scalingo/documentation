@@ -200,8 +200,8 @@ $page-nav-width: 160px;
   flex: 0 0 $site-nav-width;
   max-width: $site-nav-width;
   padding-right: 0;
-  background-color: $material-color-grey-100;
   nav {
+    background-color: $material-color-grey-100;
     overflow-y: auto;
   }
   li[data-state='closed'] {
@@ -239,14 +239,6 @@ $page-nav-width: 160px;
       > .nav-title {
         &:after {
           content: 'expand_more';
-        }
-      }
-    }
-    &[data-type='link'] {
-      > .nav-title {
-        &:after {
-          content: 'open_in_new';
-          font: normal normal normal 18px/1 'Material Icons';
         }
       }
     }
@@ -293,17 +285,6 @@ $page-nav-width: 160px;
   }
   &:last-child {
     border-bottom: 1px solid $material-color-blue-grey-100;
-  }
-}
-
-.site-nav > nav > ul + ul > li.heading {
-  // background-color: $material-color-blue-grey-100;
-  background-color: $material-color-grey-100;
-  fint: 400 12px/16px Roboto, sans-serif;
-  border-top: 1px solid $material-color-blue-grey-100;
-  &:first-child {
-    border-top: 1px solid $material-color-blue-grey-100;
-    margin-top: 60px;
   }
 }
 
