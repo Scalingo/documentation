@@ -7,8 +7,12 @@ module Jekyll
     end
 
     def render(context)
-      contents = super
-      content = Liquid::Template.parse(contents).render context
+      # Gather settings
+      site = context.registers[:site]
+      converter = site.find_converter_instance(::Jekyll::Converters::Markdown)
+
+      source = super
+      content = converter.convert(source.strip).gsub(/<\/?p[^>]*>/, '').chomp
       "<aside class=\"note\">#{content}</aside>"
     end
   end
