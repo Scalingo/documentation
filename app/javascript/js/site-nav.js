@@ -16,15 +16,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
   })
 
   function computeSiteNavHeight(siteNav) {
+    let footer = document.querySelector('footer.realfooter')
+    let footerRect = footer.getBoundingClientRect()
+    let footerVisible = footerRect.top - window.innerHeight <= 0
+
     let rect = siteNav.getBoundingClientRect()
     let top = rect.top
     let height = 200
-    if (top >= 94) {
-      height = window.innerHeight - top
+    if (footerVisible) {
+      height = footerRect.top - 94 - 40
+      siteNav.style.maxHeight = height + "px"
+      siteNav.style.position = "fixed"
+      siteNav.style.top = "94px"
+      siteNav.style.width = "220px"
     } else {
-      height = rect.bottom - 94
+      siteNav.style.removeProperty('position')
+      siteNav.style.removeProperty('top')
+      siteNav.style.removeProperty('width')
+      if (top >= 94) {
+        height = window.innerHeight - top
+      } else {
+        height = rect.bottom - 94
+      }
+      siteNav.style.maxHeight = height - 20 + "px"
     }
-    siteNav.style.height = height - 20 + "px"
   }
 
   let siteNav = document.querySelector('.site-nav > nav')
