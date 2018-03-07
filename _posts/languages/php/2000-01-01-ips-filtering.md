@@ -1,5 +1,6 @@
 ---
-title: PHP - Filter IPs allowed to access your app
+title: Filter IPs allowed to access your app
+nav: IPs Filtering
 modified_at: 2016-06-24 00:00:00
 tags: php, http, security, filtering
 ---
