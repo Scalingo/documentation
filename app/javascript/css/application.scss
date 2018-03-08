@@ -202,11 +202,17 @@ $page-nav-width: 160px;
     background-color: $material-color-grey-100;
     overflow-y: auto;
   }
-  li[data-state='closed'] {
-    ul {
-      display: none;
+  li[data-type='dir'], li[data-type='heading'] {
+    > ul {
+      overflow: hidden;
+      transition: height 0.3s ease-out;
+      height: 0;
     }
-    cursor: pointer;
+  }
+  li[data-state='open'] {
+    > ul {
+      height: auto;
+    }
   }
   a {
     padding-left: 12px;
