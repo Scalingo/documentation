@@ -88,10 +88,10 @@
     new: "/languages/crystal/start"
   -
     old: "/languages/javascript/nodejs"
-    old: "/languages/nodejs/start"
+    new: "/languages/nodejs/start"
   -
     old: "/languages/javascript/nodejs/"
-    old: "/languages/nodejs/start"
+    new: "/languages/nodejs/start"
   -
     old: "/languages/javascript/nodejs/getting-started-with-meteor/"
     new: "/languages/meteorjs/tutorial"
@@ -235,7 +235,7 @@
     new: "/addons/scalingo-postgresql/extensions"
   -
     old: "/databases/scalingo-elasticsearch-addon.html"
-    new:
+    new: "/addons/scalingo-elasticsearch/start"
   -
     old: "/databases/scalingo-influxdb-addon.html"
     new: "/addons/scalingo-influxdb/start"
