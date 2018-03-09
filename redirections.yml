@@ -268,13 +268,13 @@
     new: "/platform/internals/container-sizes"
   -
     old: "/internals/procfile"
-    new: "/platform/internals/procfile"
+    new: "/platform/app/procfile"
   -
     old: "/internals/procfile/"
-    new: "/platform/internals/procfile"
+    new: "/platform/app/procfile"
   -
     old: "/internals/procfile.html"
-    new: "/platform/internals/procfile"
+    new: "/platform/app/procfile"
   -
     old: "/internals/routing"
     new: "/platform/internals/routing"
