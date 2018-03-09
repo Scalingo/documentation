@@ -32,4 +32,4 @@ $ git add .buildpacks
 $ git commit -m 'Add multi-buildpack'
 ```
 
-You will find a comprehensive list of our buildpacks on [this page]({% post_url platform/deployment/buildpacks/2000-01-01-buildpacks %}#buildpacks-included-on-scalingo).
+You will find a comprehensive list of our buildpacks on [this page]({% post_url platform/deployment/buildpacks/2000-01-01-intro %}#buildpacks-included-on-scalingo).

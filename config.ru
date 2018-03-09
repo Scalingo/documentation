@@ -15,6 +15,16 @@ class Object
 end
 
 use Rack::Rewrite do
+  r301 /\/internals\/(.*)-buildpack/, "/platform/deployment/buildpacks/$1"
+
+  redirections = YAML.load_file('redirections.yml')
+  redirections['301'].each{|redir|
+    r301 redir["old"], redir["new"]
+  }
+  redirections['obsolete'].each{|redir|
+    r301 redir, "/"
+  }
+
   r301    %r{^(.+).html$}, '$1'
   rewrite %r{^(.+)$}, '$1.html', if: Proc.new {|rack_env|
     rack_env['PATH_INFO'].present? && rack_env['PATH_INFO'] != '/' && rack_env['PATH_INFO'] !~ /\.(jpg|jpeg|png|gif|ico|eot|otf|ttf|woff|woff2|css|js|xml)$/i

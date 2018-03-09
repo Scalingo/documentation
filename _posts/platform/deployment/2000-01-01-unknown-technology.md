@@ -47,7 +47,7 @@ You can also develop your own buildpack and add the environment variable
 `BUILDPACK_URL` to have complete control on the detection and build phases.
 
 More information are available on [buildpacks]({% post_url
-platform/deployment/buildpacks/2000-01-01-buildpacks %}) or [multi-buildpacks]({%
+platform/deployment/buildpacks/2000-01-01-intro %}) or [multi-buildpacks]({%
 post_url platform/deployment/buildpacks/2000-01-01-multi %}).
 
 Here is how we detect your technology:
