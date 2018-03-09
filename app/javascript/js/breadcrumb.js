@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   if (activeLink !== null && breadcrumbElement !== null) {
     let ary = []
     let grandParentLink = activeLink.parentElement.parentElement.previousElementSibling
-    while ((grandParentLink !== null) && (grandParentLink.classList.contains("nav-title"))) {
+    while ((grandParentLink !== null) && (grandParentLink.nodeName.toUpperCase() == "A")) {
       ary.push(grandParentLink)
       grandParentLink = grandParentLink.parentElement.parentElement.previousElementSibling
     }
