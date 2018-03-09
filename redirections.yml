@@ -348,9 +348,6 @@
     old: "/databases/mongodb/dump-restore/"
     new: "/addons/scalingo-mongodb/dump-restore"
   -
-    old: "/languages/java/spring-boot"
-    new: "/languages/java/spring-boot"
-  -
     old: "/languages/java/spring-boot/"
     new: "/languages/java/spring-boot"
   -
