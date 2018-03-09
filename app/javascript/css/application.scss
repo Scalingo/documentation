@@ -144,7 +144,7 @@ $page-nav-width: 160px;
   width: $page-nav-width;
 }
 
-.page-nav, .site-nav {
+.page-nav, .site-nav, .dir-nav {
   @extend small;
   nav {
     @supports (position: sticky) {
@@ -191,7 +191,7 @@ $page-nav-width: 160px;
   }
 }
 
-.page-nav {
+.page-nav, .dir-nav {
   .heading {
     @extend strong, .mb-2;
   }
