@@ -56,6 +56,17 @@ exclude:
 array: [] # hack for creating array
 
 highlighted:
+  first_steps:
+    - /platform/getting-started/first-steps
+    - /platform/getting-started/troubleshooting-ssh
+    - /platform/databases/intro
+    - /platform/app/application-lifecycle-management
+    - /platform/cli/start
+    - /platform/app/domain
+    - /platform/app/ssl
+    - /platform/account/your-account
+    - /platform/app/filesystem
+    - /platform/getting-started/heroku-compatibility
   technologies:
     - name: Ruby on Rails
       url: /languages/ruby/rails/start
