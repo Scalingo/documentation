@@ -78,6 +78,14 @@ date: 2015-09-09 00:00:00
       <div class="card-body">
         <h3 class="mdc-typography--title mb-0">First steps on Scalingo</h3>
       </div>
+      <div class="card-body pt-0">
+        <div class="d-flex flex-column">
+        {% for page_url in site.highlighted.first_steps %}
+          {% assign apage = site.posts | where:'url', page_url | first %}
+          <a href="{{ page_url }}">{{apage.title}}</a>
+        {% endfor %}
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-12 col-md-6">
@@ -94,7 +102,7 @@ date: 2015-09-09 00:00:00
       </div>
       <div class="card-body pt-0">
         {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
-        {% for post in recent_posts limit:8 %}
+        {% for post in recent_posts limit:10 %}
         <div class="d-flex justify-content-between">
           <a href="{{ post.url }}" class="text-truncate">{{ post.title }}</a>
           <small class="text-muted text-nowrap pl-1" style="position:relative;bottom:-4px;">
