@@ -1,3 +1,19 @@
+module Jekyll
+  class CategoryPage < Page
+    def initialize(site, base, dir, name, title)
+      @site = site
+      @base = base
+      @dir = dir
+
+      @name = "#{name}.html"
+
+      self.process(@name)
+      self.read_yaml(File.join(base, '_layouts'), 'dir.html')
+      self.data['title'] = title
+    end
+  end
+end
+
 module Dirname
   class Generator < Jekyll::Generator
     FORWARD_SLASH = "/".freeze
@@ -36,20 +52,21 @@ module Dirname
       if url_path != "/"
         if page_for_dir
           page_for_dir.data['layout'] = 'dir'
-          # require "pry"
-          # binding.pry
           page_for_dir.data['slug'] = url_path
           page_for_dir.data['links'] = data['children'].inject([]){|memo,obj|
             memo << {"url" => obj['url'], "title" => obj['title']}
             memo
           }
         else
-          # relative_dir = File.dirname(path)
-          # new_file_name = "2000-01-01-#{ File.basename(path) }.md"
-          # new_page = Jekyll::Page.new(@site, Dir.pwd, relative_dir, new_file_name)
-          # new_page.data['layout'] = 'dir'
-          # @site.posts.docs << new_page
-          # @site.pages << new_page
+          relative_dir = File.dirname path.gsub("_posts/", "")
+          name = File.basename(path)
+          title = data['title']
+          new_page = Jekyll::CategoryPage.new(@site, @site.source, relative_dir, name, title)
+          new_page.data['links'] = data['children'].inject([]){|memo,obj|
+            memo << {"url" => obj['url'], "title" => obj['title']}
+            memo
+          }
+          @site.pages << new_page
         end
       end
 
