@@ -51,6 +51,7 @@ exclude:
   - docker-compose.yml
   - _plugins
   - ld_library_path
+  - redirections.yml
 
 array: [] # hack for creating array
 

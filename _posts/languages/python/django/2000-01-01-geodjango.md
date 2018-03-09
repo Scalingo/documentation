@@ -39,7 +39,7 @@ buildpack along with the default Python buildpack.
 
 {% note %}
   Reminder: a buildpack is a piece of software able to detect and install
-  dependencies of a given technology.  More information about <a href="{% post_url platform/deployment/buildpacks/2000-01-01-buildpacks %}">Scalingo's
+  dependencies of a given technology.  More information about <a href="{% post_url platform/deployment/buildpacks/2000-01-01-intro %}">Scalingo's
   buildpacks</a>.
 {% endnote %}
 

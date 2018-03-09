@@ -1,0 +1,484 @@
+"301":
+  -
+    old: "/languages/ruby/getting-started-with-rails/"
+    new: "/languages/ruby/rails/start"
+  -
+    old: "/languages/ruby/getting-started-with-rails"
+    new: "/languages/ruby/rails/start"
+  -
+    old: "/languages/go/"
+    new: "/languages/go/start"
+  -
+    old: "/languages/govendor/"
+    new: "/languages/go/govendor"
+  -
+    old: "/languages/godep/"
+    new: "/languages/go/godep"
+  -
+    old: "/languages/go-dependencies-with-dep"
+    new: "/languages/go/dep"
+  -
+    old: "/languages/go-dependencies-with-dep/"
+    new: "/languages/go/dep"
+  -
+    old: "/languages/go-dependencies-with-dep.html"
+    new: "/languages/go/dep"
+  -
+    old: "/databases/redis-data-import/"
+    new: "/addons/scalingo-redis/data-import"
+  -
+    old: "/languages/python/celery/getting-started-with-celery-and-flask/"
+    new: "/languages/python/celery-flask"
+  -
+    old: "/first-steps/"
+    new: "/platform/getting-started/first-steps"
+  -
+    old: "/first-steps"
+    new: "/platform/getting-started/first-steps"
+  -
+    old: "/getting-started/troubleshooting-ssh/"
+    new: "/platform/getting-started/troubleshooting-ssh"
+  -
+    old: "/getting-started/troubleshooting-ssh.html"
+    new: "/platform/getting-started/troubleshooting-ssh"
+  -
+    old: "/getting-started/setup-ssh-linux/"
+    new: "/platform/getting-started/setup-ssh-linux"
+  -
+    old: "/getting-started/setup-ssh-macos"
+    new: "/platform/getting-started/setup-ssh-macos"
+  -
+    old: "/getting-started/setup-ssh-macos/"
+    new: "/platform/getting-started/setup-ssh-macos"
+  -
+    old: "/getting-started/setup-ssh-macos.html"
+    new: "/platform/getting-started/setup-ssh-macos"
+  -
+    old: "/getting-started/setup-ssh-windows/"
+    new: "/platform/getting-started/setup-ssh-windows"
+  -
+    old: "/getting-started/setup-ssh-windows.html"
+    new: "/platform/getting-started/setup-ssh-windows"
+  -
+    old: "/getting-started/setup-git-windows"
+    new: "/platform/getting-started/setup-git-windows"
+  -
+    old: "/getting-started/setup-git-windows/"
+    new: "/platform/getting-started/setup-git-windows"
+  -
+    old: "/getting-started/setup-git-windows.html"
+    new: "/platform/getting-started/setup-git-windows"
+  -
+    old: "/app/force-https/"
+    new: "/platform/app/force-https"
+  -
+    old: "/git-submodule/"
+    new: "/platform/deployment/git-submodule"
+  -
+    old: "/billing/"
+    new: "/platform/getting-started/billing"
+  -
+    old: "/how-to-migrate-from-heroku/"
+    new: "/platform/getting-started/how-to-migrate-from-heroku"
+  -
+    old: "/heroku-compatibility/"
+    new: "/platform/getting-started/heroku-compatibility"
+  -
+    old: "/languages/crystal/getting-started-with-crystal/"
+    new: "/languages/crystal/start"
+  -
+    old: "/languages/javascript/nodejs"
+    old: "/languages/nodejs/start"
+  -
+    old: "/languages/javascript/nodejs/"
+    old: "/languages/nodejs/start"
+  -
+    old: "/languages/javascript/nodejs/getting-started-with-meteor/"
+    new: "/languages/meteorjs/tutorial"
+  -
+    old: "/languages/javascript/nodejs/getting-started-with-nodejs/"
+    new: "/languages/nodejs/tutorial"
+  -
+    old: "/languages/javascript/nodejs/getting-started-with-nodejs.html"
+    new: "/languages/nodejs/tutorial"
+  -
+    old: "/languages/python/getting-started-with-django/"
+    new: "/languages/python/django/start"
+  -
+    old: "/languages/ruby/getting-started-with-rails/"
+    new: "/languages/ruby/rails/start"
+  -
+    old: "/languages/scala/scalatra/getting-started-with-scalatra/"
+    new: "/languages/scala/scalatra/start"
+  -
+    old: "/app/domain"
+    new: "/platform/app/domain"
+  -
+    old: "/app/domain/"
+    new: "/platform/app/domain"
+  -
+    old: "/app/letsencrypt.html"
+    new: "/platform/app/letsencrypt"
+  -
+    old: "/app/ssl"
+    new: "/platform/app/ssl"
+  -
+    old: "/billing/what-should-i-do-with-unpaid-invoice"
+    new: "/platform/account/what-should-i-do-with-unpaid-invoice"
+  -
+    old: "/deployment/one-click-deploy"
+    new: "/platform/deployment/one-click-deploy"
+  -
+    old: "/deployment/one-click-deploy.html"
+    new: "/platform/deployment/one-click-deploy"
+  -
+    old: "/internals/container-sizes"
+    new: "/platform/internals/container-sizes"
+  -
+    old: "/deployment/unknown-technology"
+    new: "/platform/deployment/unknown-technology"
+  -
+    old: "/addons/vpn-ipsec-addon.html"
+    new: "/addons/scalingo-vpn-ipsec/start"
+  -
+    old: "/app/command-line-tool"
+    new: "/platform/cli/start"
+  -
+    old: "/app/command-line-tool/"
+    new: "/platform/cli/start"
+  -
+    old: "/app/command-line-tool.html"
+    new: "/platform/cli/start"
+  -
+    old: "/app/crash"
+    new: "/platform/app/crash"
+  -
+    old: "/deployment/project-dir/"
+    new: "/platform/deployment/project-dir"
+  -
+    old: "/internals/slugignore"
+    new: "/platform/app/slugignore"
+  -
+    old: "/internals/slugignore/"
+    new: "/platform/app/slugignore"
+  -
+    old: "/internals/slugignore.html"
+    new: "/platform/app/slugignore"
+  -
+    old: "/languages/javascript/nodejs/meteor"
+    new: "/languages/meteorjs/start"
+  -
+    old: "/addons/getting-started-with-docker-image-addon.html"
+    new: "/addons/scalingo-docker-image/start"
+  -
+    old: "/addons/openvpn-addon.html"
+    new: "/addons/scalingo-openvpn/start"
+  -
+    old: "/app/notification.html"
+    new: "/platform/app/notification"
+  -
+    old: "/app/postdeploy-hook.html"
+    new: "/platform/app/postdeploy-hook"
+  -
+    old: "/app/environment"
+    new: "/platform/app/environment"
+  -
+    old: "/app/environment/"
+    new: "/platform/app/environment"
+  -
+    old: "/app/environment.html"
+    new: "/platform/app/environment"
+  -
+    old: "/app/runtime-environment"
+    new: "/platform/app/runtime-environment"
+  -
+    old: "/app/runtime-environment/"
+    new: "/platform/app/runtime-environment"
+  -
+    old: "/app/runtime-environment.html"
+    new: "/platform/app/runtime-environment"
+  -
+    old: "/app/build-environment"
+    new: "/platform/app/build-environment"
+  -
+    old: "/app/build-environment/"
+    new: "/platform/app/build-environment"
+  -
+    old: "/app/build-environment.html"
+    new: "/platform/app/build-environment"
+  -
+    old: "/app/tasks.html"
+    new: "/platform/app/tasks"
+  -
+    old: "/buildpacks"
+    new: "/platform/deployment/buildpacks/intro"
+  -
+    old: "/buildpacks/"
+    new: "/platform/deployment/buildpacks/intro"
+  -
+    old: "/buildpacks/custom"
+    new: "/platform/deployment/buildpacks/custom"
+  -
+    old: "/buildpacks/custom/"
+    new: "/platform/deployment/buildpacks/custom"
+  -
+    old: "/buildpacks/multi"
+    new: "/platform/deployment/buildpacks/multi"
+  -
+    old: "/buildpacks/multi/"
+    new: "/platform/deployment/buildpacks/multi"
+  -
+    old: "/databases/databases.html"
+    new: "/platform/databases/intro"
+  -
+    old: "/databases/postgresql-extensions.html"
+    new: "/addons/scalingo-postgresql/extensions"
+  -
+    old: "/databases/scalingo-elasticsearch-addon.html"
+    new:
+  -
+    old: "/databases/scalingo-influxdb-addon.html"
+    new: "/addons/scalingo-influxdb/start"
+  -
+    old: "/databases/scalingo-mongodb-addon.html"
+    new: "/addons/scalingo-mongodb/start"
+  -
+    old: "/databases/scalingo-mysql-addon.html"
+    new: "/addons/scalingo-mysql/start"
+  -
+    old: "/databases/scalingo-postgresql-addon.html"
+    new: "/addons/scalingo-postgresql/start"
+  -
+    old: "/databases/scalingo-redis-addon.html"
+    new: "/addons/scalingo-redis/start"
+  -
+    old: "/databases/tunnel"
+    new: "/platform/databases/tunnel"
+  -
+    old: "/databases/tunnel/"
+    new: "/platform/databases/tunnel"
+  -
+    old: "/databases/tunnel.html"
+    new: "/platform/databases/tunnel"
+  -
+    old: "/integration/review-apps.html"
+    new: "/platform/app/review-apps"
+  -
+    old: "/internals/container-sizes.html"
+    new: "/platform/internals/container-sizes"
+  -
+    old: "/internals/procfile"
+    new: "/platform/internals/procfile"
+  -
+    old: "/internals/procfile/"
+    new: "/platform/internals/procfile"
+  -
+    old: "/internals/procfile.html"
+    new: "/platform/internals/procfile"
+  -
+    old: "/internals/routing"
+    new: "/platform/internals/routing"
+  -
+    old: "/internals/routing.html"
+    new: "/platform/internals/routing"
+  -
+    old: "/internals/scalingo-builder-base-docker-image.html"
+    new: "/platform/internals/base-docker-image"
+  -
+    old: "/internals/x-request-id"
+    new: "/platform/internals/x-request-id"
+  -
+    old: "/internals/x-request-id/"
+    new: "/platform/internals/x-request-id"
+  -
+    old: "/internals/x-request-id.html"
+    new: "/platform/internals/x-request-id"
+  -
+    old: "/languages/java/gradle.html"
+    new: "/languages/java/gradle"
+  -
+    old: "/languages/java/"
+    new: "/languages/java/start"
+  -
+    old: "/languages/javascript/nodejs/meteor/"
+    new: "/languages/meteorjs/start"
+  -
+    old: "/languages/php/"
+    new: "/languages/php/start"
+  -
+    old: "/addons/tcp-addon"
+    new: "/addons/lab/scalingo-tcp/start"
+  -
+    old: "/addons/tcp-addon/"
+    new: "/addons/lab/scalingo-tcp/start"
+  -
+    old: "/addons/tcp-addon.html"
+    new: "/addons/lab/scalingo-tcp/start"
+  -
+    old: "/languages/php-symfony2-deployment"
+    new: "/languages/php/symfony"
+  -
+    old: "/languages/php-symfony2-deployment/"
+    new: "/languages/php/symfony"
+  -
+    old: "/languages/php-symfony2-deployment.html"
+    new: "/languages/php/symfony"
+  -
+    old: "/databases/postgresql/dump-restore/"
+    new: "/addons/scalingo-postgresql/dump-restore"
+  -
+    old: "/databases/robomongo.html"
+    new: "/addons/scalingo-mongodb/robo3t"
+  -
+    old: "/databases/robomongo"
+    new: "/addons/scalingo-mongodb/robo3t"
+  -
+    old: "/databases/robomongo/"
+    new: "/addons/scalingo-mongodb/robo3t"
+  -
+    old: "/databases/robo3t"
+    new: "/addons/scalingo-mongodb/robo3t"
+  -
+    old: "/databases/robo3t/"
+    new: "/addons/scalingo-mongodb/robo3t"
+  -
+    old: "/databases/robo3t.html"
+    new: "/addons/scalingo-mongodb/robo3t"
+  -
+    old: "/databases/mongodb/dump-restore/"
+    new: "/addons/scalingo-mongodb/dump-restore"
+  -
+    old: "/languages/java/spring-boot"
+    new: "/languages/java/spring-boot"
+  -
+    old: "/languages/java/spring-boot/"
+    new: "/languages/java/spring-boot"
+  -
+    old: "/languages/java/spring-boot.html"
+    new: "/languages/java/spring-boot"
+  -
+    old: "/databases/mysql/dump-restore/"
+    new: "/addons/scalingo-mysql/dump-restore"
+  -
+    old: "/databases/influxdb/dump-restore/"
+    new: "/addons/scalingo-influxdb/dump-restore"
+  -
+    old: "/databases/access-database"
+    new: "/platform/databases/access"
+  -
+    old: "/databases/access-database/"
+    new: "/platform/databases/access"
+  -
+    old: "/databases/access-database.html"
+    new: "/platform/databases/access"
+  -
+    old: "/languages/javascript/meteor/sending-emails-with-meteor/"
+    new: "/languages/meteorjs/sending-emails"
+  -
+    old: "/getting-started/setup-ssh-linux.html"
+    new: "/platform/getting-started/setup-ssh-linux"
+  -
+    old: "/internals/detecting-https-requests"
+    new: "/platform/internals/detecting-https-requests"
+  -
+    old: "/internals/detecting-https-requests/"
+    new: "/platform/internals/detecting-https-requests"
+  -
+    old: "/internals/detecting-https-requests.html"
+    new: "/platform/internals/detecting-https-requests"
+  -
+    old: "/deployment/start-error"
+    new: "/platform/deployment/start-error"
+  -
+    old: "/app/domain.html"
+    new: "/platform/app/domain"
+  -
+    old: "/languages/php/basic-auth/"
+    new: "/languages/php/basic-auth"
+  -
+    old: "/app/run-scheduled-tasks.html"
+    new: "/platform/app/run-scheduled-tasks"
+  -
+    old: "/deployment/deploy-with-git"
+    new: "/platform/deployment/deploy-with-git"
+  -
+    old: "/deployment/deploy-with-git/"
+    new: "/platform/deployment/deploy-with-git"
+  -
+    old: "/deployment/deploy-with-git.html"
+    new: "/platform/deployment/deploy-with-git"
+  -
+    old: "/app/ssl.html"
+    new: "/platform/app/ssl"
+  -
+    old: "/languages/javascript/meteor/spiderable-phantomjs-static-fragment/"
+    new: "/languages/meteorjs/phantomjs-spiderable-setup"
+  -
+    old: "/languages/python/"
+    new: "/languages/python/start"
+  -
+    old: "/languages/crystal/getting-started-with-crystal/"
+    new: "/languages/crystal/start"
+  -
+    old: "/languages/ruby/sidekiq.html"
+    new: "/languages/ruby/sidekiq"
+  -
+    old: "/languages/ruby/"
+    new: "/languages/ruby/start"
+  -
+    old: "/internals/custom-buildpacks.html"
+    new: "/deployments/buildpacks/custom"
+  -
+    old: "/languages/govendor.html"
+    new: "/languages/go/govendor"
+  -
+    old: "/languages/php-laravel-artisan-migration.html"
+    new: "/languages/php/laravel"
+  -
+    old: "/languages/javascript/nodejs/meteor/npm/"
+    new: "/languages/meteor/npm"
+  -
+    old: "/deployment/deploy-with-github.html"
+    new: "/platform/deployment/deploy-with-github"
+  -
+    old: "/languages/php-wordpress-deployment.html"
+    new: "/languages/php/wordpress"
+  -
+    old: "/app/filesystem.html"
+    new: "/platform/app/filesystem"
+  -
+    old: "/languages/ruby/delayed-job.html"
+    new: "/languages/ruby/delayed-job"
+  -
+    old: "/deployment/deploy-scalingo-from-circle-ci.html"
+    new: "/platform/deployment/deploy-scalingo-from-circle-ci"
+  -
+    old: "/internals/container-management.html"
+    new: "/platform/internals/container-management"
+  -
+    old: "/languages/ruby/rails-integration-gems"
+    new: "/languages/ruby/rails/start"
+  -
+    old: "/languages/ruby/rails-integration-gems/"
+    new: "/languages/ruby/rails/start"
+  -
+    old: "/languages/ruby/rails-integration-gems.html"
+    new: "/languages/ruby/rails/start"
+  -
+    old: "/app/child-apps.html"
+    new: "/platform/app/child-apps"
+  -
+    old: "/addons/object-storage.html"
+    new: "/addons/lab/scalingo-object-storage/start"
+  -
+    old: "/addons/shared-file-system-addon.html"
+    new: "/addons/lab/scalingo-shared-filesystem/start"
+  -
+    old: "/databases/restore-elasticsearch-backup.html"
+    new: "/addons/scalingo-elasticsearch/start"
+
+obsolete:
+  - "/how-to-migrate-from-cloudcontrol/"
+  - "/how-to-migrate-from-shelly-cloud/"
+  - "/languages/javascript/iojs"
+  - "/languages/javascript/iojs/getting-started-with-iojs.html"

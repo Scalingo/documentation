@@ -37,9 +37,9 @@ application and installs everything required in order to make it runnable.
 
 This process to detect the technology and to install all its dependencies is
 based on open-source tools named [*buildpack*]({% post_url
-platform/deployment/buildpacks/2000-01-01-buildpacks %}). At the beginning of the build, the
+platform/deployment/buildpacks/2000-01-01-intro %}). At the beginning of the build, the
 [officially supported buildpacks]({% post_url
-platform/deployment/buildpacks/2000-01-01-buildpacks %}#buildpacks-included-on-scalingo)
+platform/deployment/buildpacks/2000-01-01-intro %}#buildpacks-included-on-scalingo)
 are automatically used to detect which one can be used to build the
 application, they usually cover most use cases.
 

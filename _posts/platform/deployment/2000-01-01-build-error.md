@@ -9,7 +9,7 @@ into an _application image_
 
 ## Invalid return code from buildpack
 
-You application image is built using a buildpack ([List of buildpacks]({% post_url platform/deployment/buildpacks/2000-01-01-buildpacks %})).
+You application image is built using a buildpack ([List of buildpacks]({% post_url platform/deployment/buildpacks/2000-01-01-intro %})).
 If the buildpack exits with an error, it is probably linked to your project. You should
 be able to see the content of the error in your console. Then adapt your code according to it.
 
