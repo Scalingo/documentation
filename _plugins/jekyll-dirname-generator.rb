@@ -4,14 +4,14 @@ module Dirname
 
     def directory_hash(path, name=nil)
       url_path = path.gsub("_posts", "")
-      matchedPage = @all_posts.detect{|x|
+      page_for_dir = @all_posts.detect{|x|
         x.url == url_path
       }
       data = {
-        'title' => matchedPage && (matchedPage.data['nav'] || matchedPage.data['title']) ? (matchedPage.data['nav'] || matchedPage.data['title']) : path.split('/').compact.last.split("-").map(&:capitalize).join(" "),
+        'title' => page_for_dir && (page_for_dir.data['nav'] || page_for_dir.data['title']) ? (page_for_dir.data['nav'] || page_for_dir.data['title']) : path.split('/').compact.last.split("-").map(&:capitalize).join(" "),
         'type'  => 'dir',
-        'url'   => matchedPage ? matchedPage.url : path.gsub('_posts', ''),
-        'index' => matchedPage && matchedPage.data['index'] ? matchedPage.data['index'] : nil
+        'url'   => page_for_dir ? page_for_dir.url : path.gsub('_posts', ''),
+        'index' => page_for_dir && page_for_dir.data['index'] ? page_for_dir.data['index'] : nil
       }
       data['children'] = children = []
       Dir.foreach(path) do |entry|
@@ -20,18 +20,39 @@ module Dirname
         if File.directory?(full_path)
           children << directory_hash(full_path, entry)
         else
-          matchedPage = @all_posts.detect{|x|
+          matched_page = @all_posts.detect{|x|
             x.path.ends_with?(full_path)
           }
           children << {
-            'title' => matchedPage ? (matchedPage.data['nav'] || matchedPage.data['title']) : nil,
+            'title' => matched_page ? (matched_page.data['nav'] || matched_page.data['title']) : nil,
             'type'  => "file",
-            'url'   => matchedPage ? matchedPage.url : "UNMATCHED PAGE",
-            'index' => matchedPage && matchedPage.data['index'] ? matchedPage.data['index'] : nil
+            'url'   => matched_page ? matched_page.url : "UNMATCHED PAGE",
+            'index' => matched_page && matched_page.data['index'] ? matched_page.data['index'] : nil
           }
         end
       end
       children = data['children']
+
+      if url_path != "/"
+        if page_for_dir
+          page_for_dir.data['layout'] = 'dir'
+          # require "pry"
+          # binding.pry
+          page_for_dir.data['slug'] = url_path
+          page_for_dir.data['links'] = data['children'].inject([]){|memo,obj|
+            memo << {"url" => obj['url'], "title" => obj['title']}
+            memo
+          }
+        else
+          # relative_dir = File.dirname(path)
+          # new_file_name = "2000-01-01-#{ File.basename(path) }.md"
+          # new_page = Jekyll::Page.new(@site, Dir.pwd, relative_dir, new_file_name)
+          # new_page.data['layout'] = 'dir'
+          # @site.posts.docs << new_page
+          # @site.pages << new_page
+        end
+      end
+
       # In case of multiple entries with the same title, keep the one which is
       # a dir. Assuming the other ones is a "fake" file whose only purpose is to
       # customize index or title attributes of the dir entry
@@ -74,6 +95,7 @@ module Dirname
         doc.data['permalink'] = nil
       }
 
+      @site = site
       @all_posts = site.posts.docs
       tree = directory_hash('_posts/')
       site.data['tree'] = tree['children']

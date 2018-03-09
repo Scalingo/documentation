@@ -2,7 +2,7 @@
   {% for item in include.subtree %}
     <li data-index="{{ item.index }}" data-type="{% if include.level == 0 %}heading{% else %}{{item.type}}{% endif %}" data-state="{% if page.url contains item.url %}open{% else %}closed{% endif %}"{% if include.level == 0 %}class="heading"{% endif %}>
       {% if item.type == "dir" %}
-        <span href="{{ item.url }}" class="nav-title">
+        <span class="nav-title" data-url="{{ item.url }}">
           {{item.title}}
         </span>
         {% include navigation.html subtree=item.children %}
