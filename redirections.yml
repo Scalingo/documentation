@@ -376,13 +376,13 @@
     new: "/platform/getting-started/setup-ssh-linux"
   -
     old: "/internals/detecting-https-requests"
-    new: "/platform/internals/detecting-https-requests"
+    new: "/platform/app/detecting-https-requests"
   -
     old: "/internals/detecting-https-requests/"
-    new: "/platform/internals/detecting-https-requests"
+    new: "/platform/app/detecting-https-requests"
   -
     old: "/internals/detecting-https-requests.html"
-    new: "/platform/internals/detecting-https-requests"
+    new: "/platform/app/detecting-https-requests"
   -
     old: "/deployment/start-error"
     new: "/platform/deployment/start-error"
