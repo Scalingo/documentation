@@ -65,43 +65,53 @@ document.addEventListener("DOMContentLoaded", function(event) {
     })
   })
 
-  function computeSiteNavHeight(siteNav) {
-    let footer = document.querySelector('footer.realfooter')
-    let footerRect = footer.getBoundingClientRect()
-    let footerVisible = footerRect.top - window.innerHeight <= 0
+  function manageSiteNav(siteNavNode, mainNode, mainHeight) {
+    let mainRect = mainNode.getBoundingClientRect()
 
-    let rect = siteNav.getBoundingClientRect()
-    let top = rect.top
+    let articleBottomVisible = (mainRect.bottom - window.innerHeight) <= 0
+    let articleTopVisible = (mainRect.top > 94) && (mainRect.top < window.innerHeight)
+
     let height = 200
-    if (footerVisible) {
-      height = footerRect.top - 94 - 40
-      siteNav.style.maxHeight = height + "px"
-      siteNav.style.position = "fixed"
-      siteNav.style.top = "94px"
-      siteNav.style.width = "220px"
-    } else {
-      siteNav.style.removeProperty('position')
-      siteNav.style.removeProperty('top')
-      siteNav.style.removeProperty('width')
-      if (top >= 94) {
-        height = window.innerHeight - top
+
+    let siteNavHeight = siteNavNode.offsetHeight
+
+    if (mainHeight > siteNavHeight) {
+      if (articleBottomVisible && !articleTopVisible) {
+        height = mainRect.bottom - 94
+        siteNavNode.style.height = height + "px"
+        siteNavNode.style.position = "fixed"
+        siteNavNode.style.top = "94px"
+        siteNavNode.style.width = "220px"
       } else {
-        height = rect.bottom - 94
+        siteNavNode.style.removeProperty('position')
+        siteNavNode.style.removeProperty('top')
+        siteNavNode.style.removeProperty('width')
+
+        let siteNavRect = siteNavNode.getBoundingClientRect()
+        let siteNavTop = siteNavRect.top
+
+        if (siteNavTop >= 94) {
+          height = window.innerHeight - siteNavTop
+        } else {
+          height = siteNavRect.bottom - 94
+        }
+        siteNavNode.style.height = height - 20 + "px"
       }
-      siteNav.style.maxHeight = height - 20 + "px"
     }
   }
 
-  let siteNav = document.querySelector('.site-nav > nav')
-  if (siteNav !== null) {
+  let siteNavNode = document.querySelector('.site-nav > nav')
+  let mainNode = document.querySelector('main')
+  if (siteNavNode !== null && mainNode !== null) {
+    let mainHeight = mainNode.offsetHeight
     window.addEventListener('scroll', function(ev) {
-      computeSiteNavHeight(siteNav)
+      manageSiteNav(siteNavNode, mainNode, mainHeight)
     })
     window.addEventListener('resize', function(ev) {
-      computeSiteNavHeight(siteNav)
+      manageSiteNav(siteNavNode, mainNode, mainHeight)
     })
+    manageSiteNav(siteNavNode, mainNode, mainHeight)
   }
-  computeSiteNavHeight(siteNav)
 
   function scrollIfNeeded(element, container) {
     if (element.offsetTop < container.scrollTop) {
@@ -116,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   let activeLink = document.querySelector('.site-nav a.active')
-  if (activeLink !== null && siteNav !== null) {
-    scrollIfNeeded(activeLink, siteNav)
+  if (activeLink !== null && siteNavNode !== null) {
+    scrollIfNeeded(activeLink, siteNavNode)
   }
 })
