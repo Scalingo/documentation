@@ -8,7 +8,7 @@
         {% include navigation.html subtree=item.children %}
         </li>
       {% else %}
-        <a href="{{ item.url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
+        <a href="{{ item.url }}" class="nav-title{% if page.url == item.url %} active{% endif %}">{{ item.title }}</a>
       {% endif %}
     </li>
   {% endfor %}
