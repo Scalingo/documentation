@@ -2,7 +2,29 @@ version: '2'
 services:
   web:
     build: .
+    # links:
+    #   - webpack
     ports:
       - 4300:4300
     volumes:
-      - .:/usr/src/app
+      - ./:/usr/src/app
+    environment:
+      AUTH_API_BASE_URI: "https://api.scalingo.com/"
+      API_BASE_URI: "https://api.scalingo.com/"
+      BLOG_ROOT_URL: "https://blog.scalingo.io"
+      REDIS_URL: "redis://:pipo@redis:6379"
+      BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/2.5.0/bin"
+      BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/2.5.0"
+      JEKYLL_ENV: "development"
+    command: bundle exec jekyll serve --watch --host 0.0.0.0 --port 4300 --trace
+  webpack:
+    build: .
+    ports:
+      - 4301:4301
+    volumes:
+      - ./:/usr/src/app
+    command: webpack-dev-server --config config/webpack/development.js
+    environment:
+      NODE_ENV: "development"
+      RAILS_ENV: "development"
+

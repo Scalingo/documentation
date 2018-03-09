@@ -1,14 +1,33 @@
 ---
 layout: default
+toc: true
 ---
 
-<div class="github-edit pull-right mdl-layout--large-screen-only">
-  <a href="https://github.com/{{ site.github_username }}/documentation/edit/master/{{ page.path }}">
-    <i class="material-icons">edit</i> Suggest edits
-  </a>
-</div>
-<h1>{{ page.title }}</h1>
-{{ content }}
-<div class="modified-at pull-right">
-  <i class="material-icons">schedule</i> {{ page.modified_at | date_to_string }}
-</div>
+<article class="d-md-flex flex-md-row-reverse" id="article">
+  <h1 class="d-block d-md-none">{{ page.title }}</h1>
+  <div class="page-nav">
+    <nav>
+      <a href="#top-of-page" class="heading">Table of contents</a>
+      {% include toc.html html=content h_min=2 h_max=3 %}
+    </nav>
+  </div>
+  <div class="page-content">
+    <div class="d-none d-md-block">
+      {% include breadcrumb.html %}
+      <h1 id="top-of-page">{{ page.title }}</h1>
+    </div>
+    {{ content | inject_anchors }}
+    <hr class="mt-5" />
+    {% if page.modified_at %}
+    <div class="d-flex flex-row justify-content-between mt-4">
+      <span class="footer-date" itemprop="datePublished" content="{{ page.modified_at }}">
+        Last update: {{ page.modified_at | date_to_string }}
+      </span>
+      <a href="https://github.com/{{ site.github_username }}/documentation/edit/master/{{ page.path }}" class="text-muted">
+        <i class="material-icons">mode_edit</i>
+        Suggest edits
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</article>

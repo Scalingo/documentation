@@ -32,12 +32,34 @@ Please do not use the `date` metadata as it will conflict with the date extracte
 
 Please do not use first-level HTML/Markdown headers (*i.e. `<h1></h1>`*) as it will be pulled from the `title ` metadata.
 
+__Blockquotes__ should be **only used for quotes**. If you'd like to incorporate a useful
+note please use
+
+Do not put `categories`, `category` or `permalink` in the Front Matter, everything is handled by the jekyll-dirname-generator plugin.
+
+## Do's
+
+If you want to write a useful note:
+```
+{% note %}
+  My useful note here
+{% endnote %}
+```
+
+If you want to write a warning note:
+```
+{% warning %}
+  My warning note here
+{% endwarning %}
+```
+
 ## Running locally
 
 To install dependancies locally:
 
 ```
 docker-compose run web bundle install
+docker-compose run web yarn install
 ```
 
 To build the static site and spin-up a file server:

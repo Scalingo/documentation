@@ -1,6 +1,10 @@
 _site
+public
 .sass-cache
 .jekyll-metadata
 .bundle
 vendor
 TODO.txt
+tmp
+node_modules
+yarn-error.log

@@ -15,16 +15,10 @@ class Object
 end
 
 use Rack::Rewrite do
-  rewrite    '/rss', '/feed.xml'
-  rewrite    %r{(^.+).html}, "$1/index.html", if: Proc.new {|env|
-    env["REQUEST_PATH"].start_with?("/post")
+  r301    %r{^(.+).html$}, '$1'
+  rewrite %r{^(.+)$}, '$1.html', if: Proc.new {|rack_env|
+    rack_env['PATH_INFO'].present? && rack_env['PATH_INFO'] != '/' && rack_env['PATH_INFO'] !~ /\.(jpg|jpeg|png|gif|ico|eot|otf|ttf|woff|woff2|css|js|xml)$/i
   }
-  rewrite    %r{(^.+)}, "$1.html", if: Proc.new {|env|
-    env["REQUEST_PATH"].start_with?("/tagged")
-  }
-  rewrite    %r{/\d{4}(/.+)+/([^\./]+)$}, '$1/$2.html'
-
-  r301     %r{^(.+).html$}, '$1'
 end
 
 if ENV['FORCE_SSL'].present?

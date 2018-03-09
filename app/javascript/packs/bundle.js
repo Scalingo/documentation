@@ -1,0 +1,24 @@
+/* eslint no-console:0 */
+// This file is automatically compiled by Webpack, along with any other files
+// present in this directory. You're encouraged to place your actual application logic in
+// a relevant structure within app/javascript and only use these pack files to reference
+// that code so it'll be compiled.
+//
+// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
+// layout file, like app/views/layouts/application.html.erb
+require('scalingo-styles')
+require('js/search.js')
+require('js/page-nav.js')
+require('js/site-nav.js')
+require('js/breadcrumb.js')
+
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+importAll(require.context('svg/', true, /\.svg$/))
+
+let lastHeaderLink = document.querySelector('header > .mdc-toolbar__row > .flex-row > a:last-child')
+if (lastHeaderLink !== null) {
+  lastHeaderLink.classList.add('active')
+}

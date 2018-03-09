@@ -1,0 +1,14 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - 4302:4302
+    volumes:
+      - ./:/usr/src/app
+    environment:
+      BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/2.5.0/bin"
+      BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/2.5.0"
+      JEKYLL_ENV: "production"
+      RAILS_ENV: "production"
+    command: bundle exec puma -C config/puma.rb -p 4302
