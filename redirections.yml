@@ -210,6 +210,9 @@
     old: "/app/tasks.html"
     new: "/platform/app/tasks"
   -
+    old: "/app/tasks"
+    new: "/platform/app/tasks"
+  -
     old: "/buildpacks"
     new: "/platform/deployment/buildpacks/intro"
   -
