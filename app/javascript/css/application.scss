@@ -172,7 +172,10 @@ $page-nav-width: 160px;
       }
     }
   }
-  a {
+  .nav-title {
+    cursor: pointer;
+  }
+  a, .nav-title {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
