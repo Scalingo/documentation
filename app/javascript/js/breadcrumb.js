@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       let line = document.createElement('li')
       let link = document.createElement('a')
       link.innerHTML = text
-      link.setAttribute('href', grandParentLink.getAttribute('href'))
+      link.setAttribute('href', grandParentLink.getAttribute('data-url'))
       line.appendChild(link)
       breadcrumbElement.append(line)
     })
