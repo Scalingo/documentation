@@ -286,13 +286,13 @@
     new: "/platform/internals/base-docker-image"
   -
     old: "/internals/x-request-id"
-    new: "/platform/internals/x-request-id"
+    new: "/platform/app/x-request-id"
   -
     old: "/internals/x-request-id/"
-    new: "/platform/internals/x-request-id"
+    new: "/platform/app/x-request-id"
   -
     old: "/internals/x-request-id.html"
-    new: "/platform/internals/x-request-id"
+    new: "/platform/app/x-request-id"
   -
     old: "/languages/java/gradle.html"
     new: "/languages/java/gradle"
@@ -433,7 +433,7 @@
     new: "/languages/php/laravel"
   -
     old: "/languages/javascript/nodejs/meteor/npm/"
-    new: "/languages/meteor/npm"
+    new: "/languages/meteorjs/npm"
   -
     old: "/deployment/deploy-with-github.html"
     new: "/platform/deployment/deploy-with-github"
