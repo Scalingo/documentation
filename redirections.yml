@@ -1,5 +1,14 @@
 "301":
   -
+    old: "/deployment/project-dir"
+    new: "/platform/deployment/project-dir"
+  -
+    old: "/deployment/project-dir/"
+    new: "/platform/deployment/project-dir"
+  -
+    old: "/deployment/project-dir.html"
+    new: "/platform/deployment/project-dir"
+  -
     old: "/languages/ruby/getting-started-with-rails/"
     new: "/languages/ruby/rails/start"
   -
