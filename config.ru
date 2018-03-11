@@ -35,10 +35,9 @@ if ENV['FORCE_SSL'].present?
   use Rack::SslEnforcer
 end
 
-if ENV['CANONICAL_HOST_URL'].present?
-  use Rack::CanonicalHost, URI(ENV["CANONICAL_HOST_URL"]).host
-elsif ENV['CANONICAL_HOST'].present?
-  use Rack::CanonicalHost, ENV["CANONICAL_HOST"]
+if ENV['CANONICAL_HOST'].present? && ENV['CANONICAL_HOST_DISABLED'].blank?
+  canonical_hosts_ignore = ENV['CANONICAL_HOSTS_IGNORE'].present? ? ENV['CANONICAL_HOSTS_IGNORE'].split(",").map(&:strip) : []
+  use Rack::CanonicalHost, ENV['CANONICAL_HOST'], ignore: canonical_hosts_ignore
 end
 
 use Rack::CommonLogger

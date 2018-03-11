@@ -1,0 +1,13 @@
+{
+  "env": {
+    "CANONICAL_HOST": {
+      "value": "false"
+    },
+    "CANONICAL_HOST_DISABLED": {
+      "value": "true"
+    },
+    "DISABLE_TRACKERS": {
+      "value": "true"
+    }
+  }
+}
