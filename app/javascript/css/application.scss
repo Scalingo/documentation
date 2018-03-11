@@ -140,6 +140,7 @@ main {
 }
 
 $page-nav-width: 160px;
+$page-nav-margin: 40px;
 .page-nav {
   width: $page-nav-width;
 }
@@ -309,17 +310,20 @@ a.mdc-button {
 
 @include media-breakpoint-up(md) {
   main {
-    flex: 0 0 calc(100% - #{ $site-nav-width });
-    max-width: calc(100% - #{ $site-nav-width });
+    flex: 0 0 calc(100% - #{ $site-nav-width +  $page-nav-margin });
+    max-width: calc(100% - #{ $site-nav-width + $page-nav-margin });
     padding-left: 0 !important;
   }
   .site-nav {
     margin-right: 40px;
   }
-  .page-nav {
-    margin-left: 40px;
-  }
-  .page-content {
-    width: calc(100% - #{ $page-nav-width });
+  article {
+    position: relative;
+    width: calc(100% - #{ $page-nav-width + $page-nav-margin });
+    .page-nav {
+      position: absolute;
+      top: 0;
+      right: -#{ $page-nav-width + $page-nav-margin };
+    }
   }
 }
