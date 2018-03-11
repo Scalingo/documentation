@@ -4,7 +4,7 @@ email: hello@scalingo.com
 description: > # this means to ignore newlines until "baseurl:"
   Scalingo Documentation Center
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://doc.scalingo.com"
+url: "https://doc.scalingo.com"
 twitter_username: ScalingoHQ
 github_username:  Scalingo
 excerpt_separator: <!--more-->
