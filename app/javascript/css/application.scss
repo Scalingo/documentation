@@ -203,7 +203,6 @@ $page-nav-margin: 40px;
   max-width: $site-nav-width;
   padding-right: 0;
   nav {
-    background-color: $material-color-grey-100;
     overflow-y: auto;
   }
   li[data-type='dir'], li[data-type='heading'] {
@@ -290,9 +289,6 @@ $page-nav-margin: 40px;
   background-color: $material-color-grey-200;
   &:first-child {
     border-top: 0;
-  }
-  &:last-child {
-    border-bottom: 1px solid $material-color-blue-grey-100;
   }
 }
 
