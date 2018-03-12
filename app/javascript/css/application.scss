@@ -232,15 +232,18 @@ $page-nav-margin: 40px;
       @extend strong;
       padding-left: 0;
       padding-right: 18px;
+      position: relative;
       &:after {
         color: #bdbdbd;
         font: normal normal normal 22px/1 'Material Icons';
         width: 18px;
-        margin-right: -18px;
         float: right;
         font-feature-settings: 'liga';
         text-rendering: optimizeLegibility;
         word-wrap: normal;
+        position: absolute;
+        right: 0;
+        top: 0;
       }
     }
     &[data-type='heading'] {
@@ -254,6 +257,7 @@ $page-nav-margin: 40px;
       > .nav-title {
         &:after {
           transform: rotate(-180deg);
+          transform-origin: 11px 50%;
         }
       }
     }
