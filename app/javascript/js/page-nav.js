@@ -13,7 +13,7 @@
     var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
 
     for (i in sections) {
-      if (sections[i] <= (scrollPosition + 64)) {
+      if (sections[i] <= scrollPosition) {
         let activeLink = document.querySelector('.page-nav li > a.active')
         if (activeLink !== null) {
           activeLink.setAttribute('class', ' ')
