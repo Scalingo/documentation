@@ -14,7 +14,7 @@
           {% include navigation.html subtree=site.data.tree level=0 %}
           </nav>
         </aside>
-        <main>
+        <main{% if layout.main_class %} class="{{ layout.main_class }}"{% endif %}>
           {{ content | extlinks }}
         </main>
       </div>

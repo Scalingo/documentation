@@ -319,7 +319,6 @@ a.mdc-button {
 
 @include media-breakpoint-up(md) {
   main {
-    @extend .d-md-flex;
     padding-left: 0 !important;
   }
   .site-nav {
