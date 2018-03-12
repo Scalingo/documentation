@@ -2,7 +2,7 @@
 title: Setup SSH on Windows
 modified_at: 2016-09-10 10:17:00
 tags: follow-the-light ssh windows git
-index: 3
+index: 5
 ---
 
 Setup SSH is required to be able to push you code using `git`, to configure
