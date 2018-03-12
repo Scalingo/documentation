@@ -1,26 +1,26 @@
-require('scrollspy-js')
-const scrollToElement = require('scroll-to-element')
+(function() {
+  'use strict'
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  var article = document.getElementById('article')
-  if (article !== null) {
-    var spy = new ScrollSpy('#article', {
-      nav: '.page-nav li > a',
-      className: 'active'
-    })
-  }
+  var section = document.querySelectorAll("article h2, article h3")
+  var sections = {}
+  var i = 0
 
-  document.querySelectorAll('.page-nav a').forEach((el) => {
-    el.addEventListener('click', function(e) {
-      e.preventDefault()
-      let node = e.target
-      var targetId = node.getAttribute('href')
-      location.hash = targetId
-      scrollToElement(targetId, {
-        offset: -64,
-        ease: 'in-out-quad',
-        duration: 500
-      })
-    })
+  Array.prototype.forEach.call(section, function(e) {
+    sections[e.id] = e.offsetTop
   })
-})
+
+  window.onscroll = function() {
+    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
+
+    for (i in sections) {
+      if (sections[i] <= (scrollPosition + 64)) {
+        document.querySelector('.page-nav li > a.active').setAttribute('class', ' ')
+        document.querySelector('.page-nav li > a[href*=' + i + ']').setAttribute('class', 'active')
+      }
+    }
+  }
+})()
+
+import SmoothScroll from 'smooth-scroll'
+
+let scroll = new SmoothScroll(".page-nav a")

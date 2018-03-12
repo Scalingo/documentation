@@ -13,7 +13,8 @@ h1 {
 }
 
 article h1 {
-  margin-top: 20px;
+  padding-top: 64px;
+  margin-top: -44px;
 }
 
 .text-nowrap {
@@ -142,10 +143,10 @@ main {
 $page-nav-width: 160px;
 $page-nav-margin: 40px;
 .page-nav {
-  width: $page-nav-width;
+  width: $page-nav-width + $page-nav-margin;
 }
 
-.page-nav, .site-nav, .dir-nav {
+.page-nav, .site-nav, .dir-nav, .mobile-nav {
   @extend small;
   nav {
     @supports (position: sticky) {
@@ -192,7 +193,7 @@ $page-nav-margin: 40px;
   }
 }
 
-.page-nav, .dir-nav {
+.page-nav, .dir-nav, .mobile-nav {
   .heading {
     @extend strong, .mb-2;
   }
@@ -293,6 +294,11 @@ $page-nav-margin: 40px;
 }
 
 .page-content {
+  h2, h3 {
+    margin-top: 0;
+    padding-top: 64px;
+    margin-top: -54px;
+  }
   p {
     .material-icons {
       font-size: inherit;
@@ -313,20 +319,13 @@ a.mdc-button {
 
 @include media-breakpoint-up(md) {
   main {
-    flex: 0 0 calc(100% - #{ $site-nav-width +  $page-nav-margin });
-    max-width: calc(100% - #{ $site-nav-width + $page-nav-margin });
+    @extend .d-md-flex;
     padding-left: 0 !important;
   }
   .site-nav {
     margin-right: 40px;
   }
-  article {
-    position: relative;
-    width: calc(100% - #{ $page-nav-width + $page-nav-margin });
-    .page-nav {
-      position: absolute;
-      top: 0;
-      right: -#{ $page-nav-width + $page-nav-margin };
-    }
+  .page-nav {
+    padding-left: $page-nav-margin;
   }
 }
