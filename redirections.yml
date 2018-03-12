@@ -120,7 +120,13 @@
     old: "/getting-started/setup-git-windows.html"
     new: "/platform/getting-started/setup-git-windows"
   -
+    old: "/app/force-https"
+    new: "/platform/app/force-https"
+  -
     old: "/app/force-https/"
+    new: "/platform/app/force-https"
+  -
+    old: "/app/force-https.html"
     new: "/platform/app/force-https"
   -
     old: "/git-submodule/"
