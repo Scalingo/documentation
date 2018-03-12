@@ -2,6 +2,7 @@
 title: Setup Git on Windows
 modified_at: 2017-08-09 11:00:00
 tags: git windows
+index: 6
 ---
 
 Git is a version control system really useful for tracking changes in computer files and coordinating work on those files among multiple people.

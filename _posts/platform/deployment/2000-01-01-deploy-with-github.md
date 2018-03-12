@@ -1,8 +1,9 @@
 ---
 title: Deploy with GitHub
+nav: GitHub
 modified_at: 2017-08-03 00:00:00
 tags: git deployment
-order: 1
+index: 3
 ---
 
 To deploy with GitHub you'll have to create a new application on Scalingo and link it to a GitHub repository and branch.

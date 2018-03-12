@@ -1,5 +1,6 @@
 ---
-title: App Notification
+title: App Notifications
+nav: Notifications
 modified_at: 2017-09-25 00:00:00
 tags: app notification
 ---

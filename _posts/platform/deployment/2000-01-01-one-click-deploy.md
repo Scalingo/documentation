@@ -2,6 +2,7 @@
 title: One Click Deploy
 modified_at: 2015-12-16 11:40:00
 tags: app deployment one-click
+index: 7
 ---
 
 If you want to give people the opportunity to deploy your project instantly on

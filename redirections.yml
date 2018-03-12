@@ -1,5 +1,47 @@
 "301":
   -
+    old: "/languages/ruby/private-gem-from-git-on-scalingo/"
+    new: "/languages/ruby/private-gem-from-git-on-scalingo"
+  -
+    old: "/platform/app/transfer-ownership"
+    new: "/platform/app/lifecycle-management#transfer-ownership-of-an-application"
+  -
+    old: "/platform/app/application-lifecycle-management"
+    new: "/platform/app/lifecycle-management"
+  -
+    old: "/platform/deployment/git-submodule"
+    new: "/platform/getting-started/common-deployment-errors#git-submodule"
+  -
+    old: "/platform/deployment/project-dir"
+    new: "/platform/getting-started/common-deployment-errors#project-in-a-subdirectory"
+  -
+    old: "/platform/app/build-environment"
+    new: "/platform/app/environment#build-environment"
+  -
+    old: "/platform/app/runtime-environment"
+    new: "/platform/app/environment#runtime-environment"
+  -
+    old: "/platform/app/letsencrypt"
+    new: "/platform/app/ssl#automatic-https-certificate-with-lets-encrypt"
+  -
+    old: "/platform/deployment/build-error"
+    new: "/platform/getting-started/common-deployment-errors#build-errors"
+  -
+    old: "/platform/deployment/start-error"
+    new: "/platform/getting-started/common-deployment-errors#start-errors"
+  -
+    old: "/platform/deployment/unknown-technology"
+    new: "/platform/getting-started/common-deployment-errors#unknown-technology"
+  -
+    old: "/platform/databases/tunnel"
+    new: "/platform/databases/access#encrypted-tunnel"
+  -
+    old: "/platform/account/your-account"
+    new: "/platform/account/manage"
+  -
+    old: "/platform/account/what-should-i-do-with-unpaid-invoice"
+    new: "/platform/account/manage#billing"
+  -
     old: "/deployment/project-dir"
     new: "/platform/deployment/project-dir"
   -
