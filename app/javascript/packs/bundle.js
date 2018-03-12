@@ -6,7 +6,9 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
+
 require('scalingo-styles')
+require('js/header-active-link.js')
 require('js/search.js')
 require('js/page-nav.js')
 require('js/site-nav.js')
@@ -18,7 +20,3 @@ function importAll(r) {
 
 importAll(require.context('svg/', true, /\.svg$/))
 
-let lastHeaderLink = document.querySelector('header > .mdc-toolbar__row > .flex-row > a:last-child')
-if (lastHeaderLink !== null) {
-  lastHeaderLink.classList.add('active')
-}
