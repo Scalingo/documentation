@@ -14,7 +14,10 @@
 
     for (i in sections) {
       if (sections[i] <= (scrollPosition + 64)) {
-        document.querySelector('.page-nav li > a.active').setAttribute('class', ' ')
+        let activeLink = document.querySelector('.page-nav li > a.active')
+        if (activeLink !== null) {
+          activeLink.setAttribute('class', ' ')
+        }
         document.querySelector('.page-nav li > a[href*=' + i + ']').setAttribute('class', 'active')
       }
     }
