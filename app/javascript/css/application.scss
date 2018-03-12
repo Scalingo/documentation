@@ -324,6 +324,12 @@ a.mdc-button {
   .site-nav {
     margin-right: 40px;
   }
+  main {
+    max-width: calc(100% - #{ $site-nav-width });
+  }
+  article {
+    max-width: calc(100% - #{ $page-nav-width + $page-nav-margin });
+  }
   .page-nav {
     padding-left: $page-nav-margin;
   }
