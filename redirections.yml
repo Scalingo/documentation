@@ -7,7 +7,7 @@
     new: "/platform/app/lifecycle-management#transfer-ownership-of-an-application"
   -
     old: "/platform/app/application-lifecycle-management"
-    old: "/platform/app/lifecycle-management"
+    new: "/platform/app/lifecycle-management"
   -
     old: "/platform/deployment/git-submodule"
     new: "/platform/getting-started/common-deployment-errors#git-submodule"
