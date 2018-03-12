@@ -1,8 +1,9 @@
 ---
 title: Deploy with Git
+nav: "Git"
 modified_at: 2017-08-03 00:00:00
 tags: git deployment
-order: 0
+index: 2
 ---
 
 To deploy with Git you'll have to create a new application on Scalingo. A Git repository will be automatically created. Every push on the master branch of this repository will trigger a new deployment.
@@ -35,4 +36,4 @@ The Git server created by Scalingo uses SSH authentication. If you have any prob
 
 ### And after?
 
-See [Deployment Environment]({% post_url platform/app/2000-01-01-build-environment %}) to configure your application and [Procfile]({% post_url platform/app/2000-01-01-procfile %}).
+See [Deployment Environment]({% post_url platform/app/2000-01-01-environment %}#build-environment) to configure your application and [Procfile]({% post_url platform/app/2000-01-01-procfile %}).

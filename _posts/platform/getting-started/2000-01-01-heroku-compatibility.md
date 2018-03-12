@@ -2,7 +2,7 @@
 title: Heroku Compatibility
 modified_at: 2015-09-17 21:00:00
 tags: heroku
-index: 4
+index: 10
 ---
 
 Our aim for Scalingo is to be fully compatible with Heroku. If your app works on Heroku, it will work on Scalingo. We've added several compatibility layers for that matter.

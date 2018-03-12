@@ -1,8 +1,9 @@
 ---
 title: Deploy Directly from an Archive
+nav: Archive/Tarball
 modified_at: 2017-09-11 00:00:00
 tags: source deploy
-order: 1
+index: 6
 ---
 
 Another way to deploy your application is to directly create a deployment from

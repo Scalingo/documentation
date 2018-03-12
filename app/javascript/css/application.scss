@@ -293,6 +293,13 @@ $page-nav-margin: 40px;
 }
 
 .page-content {
+  p {
+    .material-icons {
+      font-size: inherit;
+      line-height: inherit;
+      vertical-align: bottom;
+    }
+  }
   .footer-date {
     @extend .text-muted;
   }

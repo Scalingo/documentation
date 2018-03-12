@@ -2,6 +2,7 @@
 title: "Force HTTPS"
 modified_at: 2018-03-05 00:00:00
 tags: app routing https security tls
+index: 22
 ---
 
 The **Force HTTPS** feature will ensure that your users will be reaching an application through **HTTPS only**.

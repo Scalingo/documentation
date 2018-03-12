@@ -2,6 +2,7 @@
 title: Post-deployment hook
 modified_at: 2016-10-04 00:00:00
 tags: app deployment hook postdeploy
+index: 13
 ---
 
 ## Context
@@ -27,7 +28,7 @@ The Post-deployment hook will be part of the deployment process, things will hap
 
 1. The application is built
 2. Containers from the new version of the application are started
-3. We wait until they started successfully (see common [deployment start errors]({% post_url platform/deployment/2000-01-01-start-error %}))
+3. We wait until they started successfully (see common [deployment start errors]({% post_url platform/getting-started/2000-01-01-common-deployment-errors %}))
 4. An extra container is started to run the `postdeploy` command
 5. If the `postdeploy` command has succeeded, we update the routing
    configuration, the new containers start to get requests and the deployment
@@ -45,7 +46,7 @@ The Post-deployment hook will be part of the deployment process, things will hap
 The environment available in the context of the container running the
 `postdeploy` hook will be exactly the same as the one of your running app. It
 contains the environment variables from your app, with the one we inject in any
-[runtime environment]({% post_url platform/app/2000-01-01-runtime-environment %})
+[runtime environment]({% post_url platform/app/2000-01-01-environment %}#runtime-environment-variables)
 
 ## Examples
 

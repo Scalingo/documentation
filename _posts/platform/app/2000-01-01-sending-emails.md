@@ -1,5 +1,6 @@
 ---
 title: Sending emails from your application
+nav: Sending emails
 modified_at: 2016-07-22 00:00:00
 tags: app email smtp
 ---
