@@ -205,6 +205,7 @@ $page-nav-margin: 40px;
   padding-right: 0;
   nav {
     overflow-y: auto;
+    width: $site-nav-width;
   }
   li[data-type='dir'], li[data-type='heading'] {
     > ul {
