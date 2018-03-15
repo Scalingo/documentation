@@ -536,10 +536,6 @@
   -
     old: "/databases/restore-elasticsearch-backup.html"
     new: "/addons/scalingo-elasticsearch/start"
-  -
-    old: "/deployment/build-error"
-    new: "/platform/getting-started/common-deployment-errors"
-
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
