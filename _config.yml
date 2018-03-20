@@ -62,11 +62,11 @@ highlighted:
     - /platform/getting-started/first-steps
     - /platform/getting-started/troubleshooting-ssh
     - /platform/databases/intro
-    - /platform/app/application-lifecycle-management
+    - /platform/app/lifecycle-management
     - /platform/cli/start
     - /platform/app/domain
     - /platform/app/ssl
-    - /platform/account/your-account
+    - /platform/account/manage
     - /platform/app/filesystem
     - /platform/getting-started/heroku-compatibility
   technologies:
