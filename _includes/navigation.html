@@ -6,7 +6,6 @@
           {{item.title}}
         </span>
         {% include navigation.html subtree=item.children %}
-        </li>
       {% else %}
         <a href="{{ item.url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
       {% endif %}
