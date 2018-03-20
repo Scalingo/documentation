@@ -1,0 +1,6 @@
+---
+date:	2016-12-14 10:35:06
+title:	'InfluxDB - New default version: 1.1.1'
+---
+
+https://docs.influxdata.com/influxdb/v1.1/administration/differences/

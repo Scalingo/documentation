@@ -7,7 +7,13 @@ page_exclude: true
 {% for post in site.posts %}
   <url>
     <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
-    <priority>0.7</priority>
+    <priority>{% if post.categories contains 'changelog' %}0.6{% else%}0.9{% endif %}</priority>
+  </url>
+{% endfor %}
+{% for post in site.pages %}
+  <url>
+    <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
+    <priority>0.5</priority>
   </url>
 {% endfor %}
 </urlset>

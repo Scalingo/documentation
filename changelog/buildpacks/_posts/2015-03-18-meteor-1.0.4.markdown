@@ -1,0 +1,6 @@
+---
+date:	2015-03-18 22:50:30
+title:	'Meteor - Support of version 1.0.4 added'
+---
+
+https://www.meteor.com/blog/2015/03/17/meteor-104-mongo-cordova-template-subscriptions

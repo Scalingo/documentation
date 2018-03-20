@@ -1,0 +1,7 @@
+---
+date:	2017-11-24 12:54:32
+title:	'PHP - Support of PHP 7.0.26'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+[http://php.net/ChangeLog-7.php#7.0.26](http://php.net/ChangeLog-7.php#7.0.26)

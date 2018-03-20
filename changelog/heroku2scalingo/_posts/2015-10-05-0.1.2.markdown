@@ -1,0 +1,16 @@
+---
+date:	2015-10-02 17:40:00
+title:	'Release of 0.1.2'
+github: 'https://github.com/Scalingo/heroku2scalingo/releases'
+---
+
+Installation:
+
+[http://github.com/Scalingo/heroku2scalingo](http://github.com/Scalingo/heroku2scalingo#installation)
+
+Changelog:
+
+### v0.1.2 - 02/10/2015
+
+* [Improvement - User Experience] Better output, bold important lines
+* [Bugfix] Retry routine when app name is not available

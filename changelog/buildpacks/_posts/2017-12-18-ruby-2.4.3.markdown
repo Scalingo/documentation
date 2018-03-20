@@ -1,0 +1,7 @@
+---
+date:	2017-12-18 08:50:00
+title:	'Ruby - Version 2.4.3 support added'
+github: 'https://github.com/Scalingo/ruby-buildpack'
+---
+
+[https://www.ruby-lang.org/en/news/2017/12/14/ruby-2-4-3-released/](https://www.ruby-lang.org/en/news/2017/12/14/ruby-2-4-3-released/)

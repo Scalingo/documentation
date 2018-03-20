@@ -1,0 +1,16 @@
+---
+date:	2015-09-28 17:20:00
+title:	'Release of 0.1.1'
+github: 'https://github.com/Scalingo/heroku2scalingo/releases'
+---
+
+Installation:
+
+[http://github.com/Scalingo/heroku2scalingo](http://github.com/Scalingo/heroku2scalingo#installation)
+
+Changelog:
+
+### v0.1.1 - 28/09/2015
+
+* [Improvment - API Calls] Multiple environment variables set in one api request
+* [Bugfix] Filtering empty heroku environment variables

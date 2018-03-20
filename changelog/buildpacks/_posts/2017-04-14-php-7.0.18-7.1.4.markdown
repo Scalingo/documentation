@@ -1,0 +1,8 @@
+---
+date:	2017-04-14 05:27:30
+title:	'PHP - Support of PHP 7.1.4 and 7.0.18'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+[http://www.php.net/ChangeLog-7.php#7.0.18](http://www.php.net/ChangeLog-7.php#7.0.18)
+[http://www.php.net/ChangeLog-7.php#7.1.18](http://www.php.net/ChangeLog-7.php#7.1.18)

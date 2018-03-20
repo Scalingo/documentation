@@ -1,0 +1,12 @@
+---
+date:	2015-04-16 16:51:50
+title:	'PHP - Add support of Lumen framework'
+---
+
+* Official annoucement [https://laravel-news.com/2015/04/lumen/](https://laravel-news.com/2015/04/lumen/)
+* Demo app [https://sample-php-lumen.scalingo.io](https://sample-php-lumen.scalingo.io)
+* Demo app source [https://github.com/Scalingo/sample-php-lumen](https://github.com/Scalingo/sample-php-lumen)
+* PHP Documentation [http://doc.scalingo.com/languages/php/buildpack](http://doc.scalingo.com/languages/php/buildpack)
+
+What should your do? Nothing it works out of the box.
+

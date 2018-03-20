@@ -1,0 +1,7 @@
+---
+date:	2017-01-19 05:27:30
+title:	'PHP - Support of PHP 7.1.1'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+https://secure.php.net/ChangeLog-7.php#7.1.1

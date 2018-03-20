@@ -1,0 +1,8 @@
+---
+date:   2015-01-28 18:01:26
+title: 'Version v16 - CVE-2015-0235 – GHOST and renaming to Scalingo'
+---
+
+* Renaming image from appsdeck/builder to scalingo/builder
+* Change user prompt to `Scalingo $`
+* Update libc to 2.19-0ubuntu6.5

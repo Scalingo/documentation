@@ -1,0 +1,8 @@
+---
+date:	2017-08-08 11:41:00
+title:	'MySQL - New version: 5.6.37'
+---
+
+Docker image is now `scalingo/mysql:5.6.37-1` and is based on Debian.
+
+MySQL changelog: [https://dev.mysql.com/doc/relnotes/mysql/5.6/en/](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/)

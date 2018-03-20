@@ -1,0 +1,16 @@
+---
+date:	2017-02-06 18:00:00
+title:	'Release of 1.4.1'
+github: 'https://github.com/Scalingo/cli/releases'
+---
+
+Installation:
+
+[http://cli.scalingo.com](http://cli.scalingo.com)
+
+Changelog:
+
+### v1.4.1
+
+* [Fix] Fix error message when a user tries to break its free trial before the end #458
+* [Feature] Add `influxdb-console` to run an influxdb interactive shell in a one-off container

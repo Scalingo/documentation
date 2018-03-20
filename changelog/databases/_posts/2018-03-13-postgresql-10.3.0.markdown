@@ -1,0 +1,6 @@
+---
+date:	2018-03-13 10:35:06
+title:	'PostgreSQL - New default version: 10.3.0'
+---
+
+[https://www.postgresql.org/docs/10/static/release-10-3.html](https://www.postgresql.org/docs/10/static/release-10-3.html)

@@ -1,0 +1,9 @@
+---
+date:	2015-02-20 12:17:54
+title:	'Go - Version 1.4.2 available'
+github: 'https://github.com/Scalingo/go-buildpack'
+---
+
+If not using [godep](https://github.com/tools/godep), it is used
+as default version. Otherwise, the buildpack will respect the version
+from your `Godeps/Godeps.json`

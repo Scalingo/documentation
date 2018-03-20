@@ -1,0 +1,7 @@
+---
+date:	2015-09-03 16:54:30
+title:	'Ruby - Version 2.2.3 support added'
+github: 'https://github.com/Scalingo/ruby-buildpack'
+---
+
+https://www.ruby-lang.org/en/news/2015/08/18/ruby-2-2-3-released/

@@ -147,12 +147,12 @@ $page-nav-margin: 40px;
   width: $page-nav-width + $page-nav-margin;
 }
 
-.page-nav, .site-nav, .dir-nav, .mobile-nav {
+.page-nav, .site-nav, .dir-nav, .mobile-nav, .changelog-card {
   @extend small;
   nav {
     @supports (position: sticky) {
       position: sticky;
-      top: 94px;
+      top: #{ 64 * 3 + 30 }px;
     }
   }
   ul {
@@ -208,6 +208,9 @@ $page-nav-margin: 40px;
     overflow-y: auto;
     width: $site-nav-width;
   }
+}
+
+.site-nav, .changelog-card {
   li[data-type='dir'], li[data-type='heading'] {
     > ul {
       overflow: hidden;

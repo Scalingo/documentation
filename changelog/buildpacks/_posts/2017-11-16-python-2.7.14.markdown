@@ -1,0 +1,9 @@
+---
+date:	2017-11-16 13:49:00
+title:	'Python - Version 2.7.14 support added'
+github: 'https://github.com/Scalingo/python-buildpack'
+---
+
+[Full Changelog](https://raw.githubusercontent.com/python/cpython/84471935ed2f62b8c5758fd544c7d37076fe0fa5/Misc/NEWS)
+
+New default version

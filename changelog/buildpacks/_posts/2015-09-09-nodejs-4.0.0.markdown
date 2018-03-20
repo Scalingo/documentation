@@ -1,0 +1,7 @@
+---
+date:	2015-09-09 01:50:30
+title:	'NodeJS - Support of version 4.0.0 added'
+github: 'https://github.com/Scalingo/nodejs-buildpack'
+---
+
+https://nodejs.org/en/blog/release/v4.0.0/

@@ -1,0 +1,7 @@
+---
+date:	2015-03-24 01:50:30
+title:	'NodeJS - Support of version 0.10.38 added'
+github: 'https://github.com/Scalingo/nodejs-buildpack'
+---
+
+http://blog.nodejs.org/2015/03/23/node-v0-10-38-maintenance/

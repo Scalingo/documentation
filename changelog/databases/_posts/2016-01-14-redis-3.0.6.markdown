@@ -1,0 +1,4 @@
+---
+date:	2016-01-14 16:35:06
+title:	'Redis - New default version: 3.0.6'
+---

@@ -1,0 +1,24 @@
+---
+date:	2015-11-20 23:08:06
+title:	'Release of 1.2.0'
+github: 'https://github.com/Scalingo/cli/releases'
+---
+
+Installation:
+
+[http://cli.scalingo.com](http://cli.scalingo.com)
+
+Setup completion:
+
+[http://doc.scalingo.com/app/command-line-tool.html](http://doc.scalingo.com/app/command-line-tool.html)
+
+Changelog:
+
+### v1.2.0 - 20/11/2015
+
+* [Feature - DB Tunnel] Reconnect automatically in case of connection problem
+* [Feature - DB Tunnel] Default port at 10000, if not available 10001 etc.
+* [Feature - One-off] More verbose output and spinner when starting a one-off container #180 #184
+* [Feature - Logs] Automatically reconnect to logs streaming if anything wrong happen #182
+* [Feature] Add `stats` command to get containers CPU and memory metrics
+* [Bugfix] Fix delete command (app name wasn't read correctly) #177

@@ -1,0 +1,7 @@
+---
+date:	2016-10-14 10:27:30
+title:	'PHP - Support of PHP 7.0.12'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+https://secure.php.net/archive/2016.php#id2016-10-13-1

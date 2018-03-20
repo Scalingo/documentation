@@ -1,0 +1,6 @@
+---
+date:	2015-03-26 01:50:30
+title:	'Meteor - Support of version 1.0.5 added'
+---
+
+https://github.com/meteor/meteor/wiki/Facebook-Graph-API-Upgrade

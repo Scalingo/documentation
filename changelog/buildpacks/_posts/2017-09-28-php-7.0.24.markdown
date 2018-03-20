@@ -1,0 +1,7 @@
+---
+date:	2017-09-28 05:27:31
+title:	'PHP - Support of PHP 7.0.24'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+[http://php.net/ChangeLog-7.php#7.0.24](http://php.net/ChangeLog-7.php#7.0.24)

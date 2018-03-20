@@ -1,0 +1,6 @@
+---
+date:	2015-04-01 11:10:30
+title:	'Meteor - Support of version 1.1 added'
+---
+
+https://www.meteor.com/blog/2015/03/31/meteor-11-microsoft-windows-mongodb-30

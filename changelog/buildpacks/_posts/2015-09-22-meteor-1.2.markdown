@@ -1,0 +1,7 @@
+---
+date:	2015-09-22 18:34:30
+title:	'Meteor - Support of version 1.2 added'
+---
+
+Getting started on Scalingo: [http://doc.scalingo.com/languages/javascript/nodejs/getting-started-with-meteor/](http://doc.scalingo.com/languages/javascript/nodejs/getting-started-with-meteor/)
+Meteor 1.2 blog post: [http://info.meteor.com/blog/announcing-meteor-1.2](http://info.meteor.com/blog/announcing-meteor-1.2)

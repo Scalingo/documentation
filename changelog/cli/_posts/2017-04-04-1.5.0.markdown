@@ -1,0 +1,19 @@
+---
+date:	2017-04-04 18:00:00
+title:	'Release of 1.5.0'
+github: 'https://github.com/Scalingo/cli/releases'
+---
+
+Installation:
+
+[http://cli.scalingo.com](http://cli.scalingo.com)
+
+Changelog:
+
+* [Feature] Add `deploy` command to deploy a tarball or a war archive directly
+
+```
+scalingo deploy archive.tar.gz
+scalingo deploy project.war
+scalingo deploy https://github.com/Scalingo/sample-go-martini/archive/master.tar.gz
+```

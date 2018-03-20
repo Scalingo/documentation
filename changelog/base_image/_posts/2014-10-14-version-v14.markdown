@@ -1,0 +1,7 @@
+---
+date:   2014-10-14 22:23:26
+title: 'Version v14 - Install `mcrypt-dev` and `postgresql-client`'
+---
+
+* `mcrypt-dev` is necessary to compile ruby-mcrypt gem
+* `postgresql-client` has been added alongside the PostgreSQL addon
