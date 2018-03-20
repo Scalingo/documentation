@@ -52,6 +52,8 @@ exclude:
   - _plugins
   - ld_library_path
   - redirections.yml
+  - Rakefile
+  - lib/tasks
 
 array: [] # hack for creating array
 
