@@ -60,7 +60,7 @@ postdeploy: bundle exec rake db:migrate
 ```
 
 {% note %}
-  Keep in mind that migrations may fail, design them knowing that, here is an
+  Keep in mind that migrations may fail. You should design them *knowing* that they may fail. Here is an
   [article from Codeship](https://blog.codeship.com/rails-migrations-zero-downtime/)
   explaining this process.
 {% endnote %}
