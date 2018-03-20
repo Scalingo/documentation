@@ -1,5 +1,7 @@
 <header class="mdc-toolbar mdc-toolbar--fixed scalingo-toolbar--custom">
-<div class="mdc-toolbar__row container d-flex justify-content-center justify-content-md-start">
+<div class="mdc-toolbar__row flex-column">
+<section class="supnav">
+<div class="container d-flex justify-content-center justify-content-md-start">
 <button aria-controls="scalingo-main-menu" aria-label="Click to show the navigation menu" class="mdc-toolbar__menu-icon mdc-ripple-surface d-block d-md-none drawer-opener">
 <i class="material-icons">menu</i>
 </button>
@@ -17,6 +19,42 @@
 <a class="scalingo-custom-title d-none d-md-inline-block mdc-button green-filled-button" href="https://scalingo.com/users/signup">Sign up</a>
 </div>
 </div>
+</section><div class="mdc-toolbar__subrow">
+  <div class="container">
+    <span class="mdc-toolbar__title">
+      Resources for Developers
+    </span>
+  </div>
+</div>
+
+</div><div class="mdc-toolbar__row">
+  <div class="container">
+    <div class="d-flex justify-content-start">
+      <nav class="mdc-tab-bar">
+        <a class="mdc-tab" href="/">
+          Guides
+        </a>
+        <a class="mdc-tab" href="/samples" data-index="samples">
+          Samples
+        </a>
+        <a class="mdc-tab" href="/platform/cli/start" data-index="cli">
+          CLI
+        </a>
+        <a class="mdc-tab" href="/changelog" data-index="changelog">
+          Changelog
+        </a>
+        <a class="mdc-tab" href="https://developers.scalingo.com" data-index="api">
+          API Reference
+        </a>
+      </nav>
+      <div class="search mdc-text-field mdc-text-field--with-leading-icon">
+        <i class="material-icons mdc-text-field__icon" tabindex="0">search</i>
+        <input type="text" id="search-input" placeholder="Search" autofocus="" class="mdc-text-field__input" />
+      </div>
+    </div>
+  </div>
+</div>
+
 </header><aside class="mdc-drawer mdc-drawer--temporary" id="scalingo-main-menu">
 <nav class="mdc-drawer__drawer">
 <header class="mdc-temporary-drawer__header"></header>

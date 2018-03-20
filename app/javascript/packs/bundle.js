@@ -9,9 +9,9 @@
 
 require('scalingo-styles')
 require('js/header-active-link.js')
+require('js/site-nav.js')
 require('js/search.js')
 require('js/page-nav.js')
-require('js/site-nav.js')
 require('js/breadcrumb.js')
 
 function importAll(r) {
@@ -19,4 +19,3 @@ function importAll(r) {
 }
 
 importAll(require.context('svg/', true, /\.svg$/))
-

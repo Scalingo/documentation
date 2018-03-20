@@ -1,4 +1,5 @@
 @import "scalingo-styles/style";
+@import "header-custom";
 @import "search";
 
 $section-padding-top-desktop: 40px;
@@ -291,18 +292,58 @@ $page-nav-margin: 40px;
   }
 }
 
-.site-nav > nav > ul > li.heading {
-  background-color: $material-color-grey-200;
-  &:first-child {
-    border-top: 0;
+.site-nav, .changelog-card {
+  > nav > ul > li.heading {
+    background-color: $material-color-grey-200;
+    &:first-child {
+      border-top: 0;
+    }
+  }
+}
+
+.changelog {
+  .changelog--year {
+    color: $material-color-grey-500;
+  }
+  .changelog-card {
+    a {
+      overflow: unset;
+      display: inline-block;
+    }
+    .nav-title {
+      &:hover, &:focus {
+        color: inherit;
+      }
+      a {
+              padding-left: unset;
+
+      }
+    }
+    .changelog-entry--category, .changelog-entry--title {
+      font-weight: normal;
+    }
+    li {
+      p {
+        margin-bottom: 0;
+        a {
+          color: $brand-primary;
+          &:hover, &:focus {
+            color: darken($brand-primary, 15%);
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 }
 
 .page-content {
   h2, h3 {
     margin-top: 0;
-    padding-top: 64px;
-    margin-top: -54px;
+    padding-top: 148px;
+    margin-top: -138px;
   }
   p {
     .material-icons {
