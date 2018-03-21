@@ -1,5 +1,5 @@
 ---
-date:	2015-03-24 01:50:30
+modified_at:	2015-03-24 01:50:30
 title:	'NodeJS - Support of version 0.10.38 added'
 github: 'https://github.com/Scalingo/nodejs-buildpack'
 ---

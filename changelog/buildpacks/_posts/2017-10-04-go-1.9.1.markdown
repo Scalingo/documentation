@@ -1,5 +1,5 @@
 ---
-date:	2017-10-04 12:17:54
+modified_at:	2017-10-04 12:17:54
 title:	'Go - Version 1.9.1 available'
 github: 'https://github.com/Scalingo/go-buildpack'
 ---

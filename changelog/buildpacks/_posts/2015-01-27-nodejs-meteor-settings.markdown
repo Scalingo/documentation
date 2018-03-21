@@ -1,5 +1,5 @@
 ---
-date:	2015-01-27 00:16:50
+modified_at:	2015-01-27 00:16:50
 title:	'NodeJS/Meteor - Correctly handle settings.json for Meteor'
 ---
 

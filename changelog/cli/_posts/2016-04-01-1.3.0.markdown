@@ -1,5 +1,5 @@
 ---
-date:	2016-04-05 15:08:06
+modified_at:	2016-04-05 15:08:06
 title:	'Release of 1.3.0'
 github: 'https://github.com/Scalingo/cli/releases'
 ---

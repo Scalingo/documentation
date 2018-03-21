@@ -1,5 +1,5 @@
 ---
-date:	2017-11-16 13:50:00
+modified_at:	2017-11-16 13:50:00
 title:	'Go - Support of "dep" as dependencies manager'
 github: 'https://github.com/Scalingo/python-buildpack'
 ---

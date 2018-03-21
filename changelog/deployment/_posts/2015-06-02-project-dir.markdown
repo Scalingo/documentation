@@ -1,5 +1,5 @@
 ---
-date:	2015-06-02 21:25:06
+modified_at:	2015-06-02 21:25:06
 title:	'PROJECT_DIR: use a subfolder of your repository as applicaation directory'
 ---
 

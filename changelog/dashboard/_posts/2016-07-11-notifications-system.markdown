@@ -1,5 +1,5 @@
 ---
-date: 2016-07-11 12:00:00
+modified_at: 2016-07-11 12:00:00
 title:  'Notifications, Slack integration and webhooks'
 ---
 

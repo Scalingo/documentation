@@ -1,5 +1,5 @@
 ---
-date:	2014-12-22 10:23:54
+modified_at:	2014-12-22 10:23:54
 title:	'Go - default build to Go 1.4'
 github: 'https://github.com/Scalingo/heroku-buildpack-go'
 ---

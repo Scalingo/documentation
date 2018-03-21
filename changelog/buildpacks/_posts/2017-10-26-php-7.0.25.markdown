@@ -1,5 +1,5 @@
 ---
-date:	2017-10-26 05:27:31
+modified_at:	2017-10-26 05:27:31
 title:	'PHP - Support of PHP 7.0.25'
 github: 'https://github.com/Scalingo/php-buildpack'
 ---

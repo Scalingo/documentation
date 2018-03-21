@@ -1,5 +1,5 @@
 ---
-date:	2015-04-17 16:51:50
+modified_at:	2015-04-17 16:51:50
 title:	'SSL - Certificates renewal with SHA-2 only, no more SHA-1'
 ---
 

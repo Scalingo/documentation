@@ -1,5 +1,5 @@
 ---
-date:	2015-10-17 10:35:06
+modified_at:	2015-10-17 10:35:06
 title:	'PostgreSQL - New default version: 9.4.5'
 blog:   'http://blog.scalingo.com/post/131342051228/postgresql-94-is-now-available-and-our-future'
 ---
