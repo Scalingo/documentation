@@ -87,7 +87,7 @@ namespace :fetch_from_homepage do
             </nav>
             <div class="search mdc-text-field mdc-text-field--with-leading-icon">
               <i class="material-icons mdc-text-field__icon" tabindex="0">search</i>
-              <input type="text" id="search-input" placeholder="Search" autofocus class="mdc-text-field__input">
+              <input type="text" id="search-input" placeholder="Search" class="mdc-text-field__input">
             </div>
           </div>
         </div>

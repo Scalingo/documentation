@@ -61,6 +61,11 @@
         padding-top: 8px;
         padding-bottom: 8px;
         font-size: 0.875rem;
+        width: 200px;
+        transition: width 0.3s ease-out;
+        &:focus {
+          width: 350px;
+        }
       }
       .mdc-text-field__input, .mdc-text-field__input::placeholder {
         color: white;
