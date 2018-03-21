@@ -363,6 +363,10 @@ a.mdc-button {
   }
 }
 
+.rss {
+  color: #f26522;
+}
+
 @include media-breakpoint-up(md) {
   main {
     padding-left: 0 !important;

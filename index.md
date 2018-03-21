@@ -95,9 +95,7 @@ modified_at: 2015-09-09 00:00:00
         <div class="d-flex">
           <h3 class="mdc-typography--title mb-0">Last modified articles</h3>
           <a href="/feed.xml" class="ml-auto">
-            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <use xlink:href="#rss"></use>
-            </svg>
+            <i class="material-icons rss">rss_feed</i>
           </a>
         </div>
       </div>
