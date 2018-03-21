@@ -48,7 +48,7 @@ let navTitles = document.querySelectorAll('.nav-title')
 navTitles.forEach((element) => {
   element.addEventListener('click', (e) => {
     e.preventDefault()
-    let node = e.target
+    let node = e.currentTarget
     let parent = node.parentElement
     let currentState = parent.getAttribute('data-state')
     let isCollapsed = currentState == 'closed'
