@@ -91,37 +91,44 @@ function computeSizes() {
 }
 
 function loop(){
-  // Avoid calculations if not needed
-  if (lastPosition == window.pageYOffset) {
-    scroll(loop)
-    return false
-  } else lastPosition = window.pageYOffset
+  if (articleHeight >= siteNavMaxHeight) {
+    // Avoid calculations if not needed
+    if (lastPosition == window.pageYOffset) {
+      scroll(loop)
+      return false
+    } else lastPosition = window.pageYOffset
 
-  if (lastPosition <= articleTop) {
-    // top of page above article top
+    if (lastPosition <= articleTop) {
+      // top of page above article top
+      siteNavNode.style.position = "sticky"
+      siteNavNode.style.top = headerHeightPlusMargin + "px"
+      if (pageNavNode !== null) {
+        pageNavNode.style.top = headerHeightPlusMargin + "px"
+      }
+      siteNavNode.style.height = windowInnerHeight - (articleTop - lastPosition + headerHeightPlusMargin) - siteNavBottomMargin + "px"
+    } else {
+      if (lastPosition <= articleBottomWithMargin) {
+        // Between article top and article bottom
+        if (siteNavNode.style.height != siteNavMaxHeight) {
+          // We've already set the infos
+          siteNavNode.style.position = "sticky"
+          siteNavNode.style.top = headerHeightPlusMargin + "px"
+          if (pageNavNode !== null) {
+            pageNavNode.style.top = headerHeightPlusMargin + "px"
+          }
+          siteNavNode.style.height = siteNavMaxHeight + "px"
+        }
+      } else {
+        // Towards bottom of page
+        siteNavNode.style.position = "fixed"
+        siteNavNode.style.height = windowInnerHeight - (lastPosition + windowInnerHeight - articleBottom) + "px"
+      }
+    }
+  } else {
+    // If article is too small, get back to normal
     siteNavNode.style.position = "sticky"
     siteNavNode.style.top = headerHeightPlusMargin + "px"
-    if (pageNavNode !== null) {
-      pageNavNode.style.top = headerHeightPlusMargin + "px"
-    }
-    siteNavNode.style.height = windowInnerHeight - (articleTop - lastPosition + headerHeightPlusMargin) - siteNavBottomMargin + "px"
-  } else {
-    if (lastPosition <= articleBottomWithMargin) {
-      // Between article top and article bottom
-      if (siteNavNode.style.height != siteNavMaxHeight) {
-        // We've already set the infos
-        siteNavNode.style.position = "sticky"
-        siteNavNode.style.top = headerHeightPlusMargin + "px"
-        if (pageNavNode !== null) {
-          pageNavNode.style.top = headerHeightPlusMargin + "px"
-        }
-        siteNavNode.style.height = siteNavMaxHeight + "px"
-      }
-    } else {
-      // Towards bottom of page
-      siteNavNode.style.position = "fixed"
-      siteNavNode.style.height = windowInnerHeight - (lastPosition + windowInnerHeight - articleBottom) + siteNavBottomMargin + "px"
-    }
+    siteNavNode.style.height = null
   }
 
   scroll(loop)
