@@ -15,6 +15,16 @@ class Object
 end
 
 use Rack::Rewrite do
+  r301 %r{.*}, "https://#{ ENV['CANONICAL_HOST'] }/samples$&", if: Proc.new {|rack_env|
+    ['samples.scalingo.com'].include?(rack_env['SERVER_NAME'])
+  }
+  r301 %r{.*}, "https://#{ ENV['CANONICAL_HOST'] }/changelog$&", if: Proc.new {|rack_env|
+    ['changelog.scalingo.com'].include?(rack_env['SERVER_NAME'])
+  }
+  r301 %r{.*}, "https://#{ ENV['CANONICAL_HOST'] }/platform/cli/start$&", if: Proc.new {|rack_env|
+    ['cli.scalingo.com'].include?(rack_env['SERVER_NAME'])
+  }
+
   r301 /\/internals\/(.*)-buildpack/, "/platform/deployment/buildpacks/$1"
 
   redirections = YAML.load_file('redirections.yml')
