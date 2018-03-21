@@ -134,10 +134,12 @@ function loop(){
   scroll(loop)
 }
 
-window.onresize = computeSizes
+if (siteNavNode !== null) {
+  window.onresize = computeSizes
 
-computeSizes()
-loop()
+  computeSizes()
+  loop()
+}
 
 function scrollIfNeeded(element, container) {
   if (element.offsetTop < container.scrollTop) {
