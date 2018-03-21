@@ -315,8 +315,7 @@ $page-nav-margin: 40px;
         color: inherit;
       }
       a {
-              padding-left: unset;
-
+        padding-left: unset;
       }
     }
     .changelog-entry--category, .changelog-entry--title {
@@ -376,6 +375,9 @@ a.mdc-button {
   }
   main {
     max-width: calc(100% - #{ $site-nav-width });
+    &.full {
+      max-width: 100%;
+    }
   }
   article {
     max-width: calc(100% - #{ $page-nav-width + $page-nav-margin });

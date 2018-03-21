@@ -3,9 +3,7 @@ layout: default
 ---
 
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      {{ content | extlinks }}
-    </div>
-  </div>
+  <main class="full"{% if page.subnav_index %} data-subnav-index="{{ page.subnav_index }}"{% endif %}>
+    {{ content | extlinks }}
+  </main>
 </div>

@@ -31,12 +31,6 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-  -
-    scope:
-      path: "changelog"
-      type: "posts"
-    values:
-      layout: "changelog_entry"
 plugins:
   - jekyll-sitemap
   - jekyll-feed

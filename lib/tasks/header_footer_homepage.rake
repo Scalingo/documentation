@@ -74,14 +74,15 @@ namespace :fetch_from_homepage do
               <a class="mdc-tab" href="/samples" data-index="samples">
                 Samples
               </a>
-              <a class="mdc-tab" href="/platform/cli/start" data-index="cli">
+              <a class="mdc-tab" href="/cli" data-index="cli">
                 CLI
               </a>
               <a class="mdc-tab" href="/changelog" data-index="changelog">
                 Changelog
               </a>
-              <a class="mdc-tab" href="https://developers.scalingo.com" data-index="api">
+              <a class="mdc-tab" href="https://developers.scalingo.com" target="_blank" data-index="api">
                 API Reference
+                <i class="material-icons">open_in_new</i>
               </a>
             </nav>
             <div class="search mdc-text-field mdc-text-field--with-leading-icon">

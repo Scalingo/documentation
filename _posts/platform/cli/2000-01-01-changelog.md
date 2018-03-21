@@ -2,7 +2,6 @@
 title: Changelog
 date: 2015-09-09 00:00:00
 index: 3
-subnav_index: cli
 ---
 
 __1.7.0__
