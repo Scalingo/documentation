@@ -61,3 +61,10 @@ backend `web` container.
 * Applications hosted on the platform car be cycled an any time for internal
   infrastructure management purposes (like dynamic load balancing of the server),
   when such event happens, the sticky session is also invalidated.
+
+## The case of Meteor Framework
+
+For [Meteor]({% post_url languages/meteorjs/2000-01-01-start %}) applications,
+**Sticky Sessions** are enabled by default because it is
+[required](http://www.meteorpedia.com/read/Scaling_your_Meteor_App) to scale
+properly.
