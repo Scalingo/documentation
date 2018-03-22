@@ -135,8 +135,9 @@ function loop(){
         siteNavNode.style.position = "fixed"
         siteNavNode.style.top = headerHeightPlusMargin + "px"
         siteNavNode.style.maxHeight = windowInnerHeight - (lastPosition + windowInnerHeight - articleBottom) + "px"
-
-        pageNavNode.style.top = headerHeightPlusMargin + "px"
+        if (pageNavNode !== null) {
+          pageNavNode.style.top = headerHeightPlusMargin + "px"
+        }
       }
     }
   } else {
