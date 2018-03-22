@@ -73,12 +73,17 @@ var mainNode = document.querySelector('main')
 var siteNavBottomMargin = 20
 var mainMargin = 40
 
-var windowInnerHeight, siteNavMaxHeight, lastPosition = -1
+var windowInnerHeight, siteNavMaxHeight, lastPosition = -1, lastHeaderHeight = -1
 var articleRect, articleTop, articleBottom, articleBottomWithMargin, articleHeight
 var headerHeightPlusMargin = headerNode.offsetHeight + 30
 
-function computeSizes() {
+function recomputeSizes() {
   lastPosition = -1
+  lastHeaderHeight = -1
+  computeSizes()
+}
+
+function computeSizes() {
   windowInnerHeight = window.innerHeight
 
   headerHeightPlusMargin = headerNode.offsetHeight + 30
@@ -92,10 +97,17 @@ function computeSizes() {
 
 function loop(){
   // Avoid calculations if not needed
-  if (lastPosition == window.pageYOffset) {
+  let condition = lastPosition == window.pageYOffset && lastHeaderHeight == headerNode.offsetHeight
+  if (condition) {
     scroll(loop)
     return false
-  } else lastPosition = window.pageYOffset
+  } else {
+    lastPosition = window.pageYOffset
+    lastHeaderHeight = headerNode.offsetHeight
+    computeSizes()
+  }
+
+  headerHeightPlusMargin = lastHeaderHeight + 30
 
   if (articleHeight >= siteNavMaxHeight) {
     if (lastPosition <= articleTop) {
@@ -121,7 +133,10 @@ function loop(){
       } else {
         // Towards bottom of page
         siteNavNode.style.position = "fixed"
+        siteNavNode.style.top = headerHeightPlusMargin + "px"
         siteNavNode.style.maxHeight = windowInnerHeight - (lastPosition + windowInnerHeight - articleBottom) + "px"
+
+        pageNavNode.style.top = headerHeightPlusMargin + "px"
       }
     }
   } else {
@@ -135,9 +150,9 @@ function loop(){
 }
 
 if (siteNavNode !== null) {
-  window.onresize = computeSizes
+  window.onresize = recomputeSizes
 
-  computeSizes()
+  recomputeSizes()
   loop()
 }
 
@@ -170,7 +185,6 @@ if (subrowNode !== null) {
     var computedHeight = mdcToolbarRowHeight * flexibleExpansionRatio
     var remainingHeight = mdcToolbarRowHeight - computedHeight
     subrowNode.style.marginTop = -remainingHeight + "px"
-    computeSizes()
   })
 }
 
