@@ -16,5 +16,5 @@
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}"/>
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}"/>
-  <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}"/>
+  <meta property="og:description" content="{{ page.excerpt | default: page.description | strip_html | normalize_whitespace | truncate: 300 | escape }}"/>
 </head>
