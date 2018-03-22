@@ -26,6 +26,11 @@ You can customize these pages by modifying the following environment variables:
 The usage is the following:
 `SCALINGO_STOPPED_PAGE_URL="https://cdn.example.com/stopped_page.html"`.
 
+{% note %}
+Set these variables to have a custom maintenance page as it will display when
+the application is stopped for maintenance operations.
+{% endnote %}
+
 In order to prevent the page to be fetched at each request, the content is
 cached in the router's memory. Hence we limit the size of this page to 10MB.
 
