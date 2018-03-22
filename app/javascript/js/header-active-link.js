@@ -23,3 +23,22 @@ if (subnavNode !== null && mainNode !== null) {
     subnavTarget.append(indicatorNode)
   }
 }
+
+let docDrawerHeaderLink = document.querySelector('.drawer-nav nav > ul > li.heading:nth-child(4) > a')
+if (docDrawerHeaderLink !== null) {
+  docDrawerHeaderLink.classList.add('active')
+}
+
+let drawerSubnavNode = document.querySelector('.drawer-nav nav > ul > li.heading:nth-child(4) > ul')
+if (drawerSubnavNode !== null && mainNode !== null) {
+  let subnavTarget = document.querySelector('.drawer-nav nav > ul > li.heading:nth-child(4) > ul > li > a')
+
+  if (subnavTarget !== null) {
+    let subnavIndexName = mainNode.getAttribute('data-subnav-index')
+    if (subnavIndexName !== null) {
+      subnavTarget = drawerSubnavNode.querySelector(`[data-index='${ subnavIndexName }']`)
+    }
+
+    subnavTarget.classList.add("active")
+  }
+}

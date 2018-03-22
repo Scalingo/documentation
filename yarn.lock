@@ -6480,8 +6480,8 @@ sax@~1.2.1, sax@~1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
 "scalingo-styles@https://github.com/Scalingo/scalingo-styles":
-  version "0.4.3"
-  resolved "https://github.com/Scalingo/scalingo-styles#34ed3ce8036bb53438f10173e3be62e69f8bde30"
+  version "0.5.0"
+  resolved "https://github.com/Scalingo/scalingo-styles#f5d6160fb079d9ed19afc4327b540e48f21f4a8b"
   dependencies:
     bootstrap "^4.0.0"
     material-components-web "~0.30.0"

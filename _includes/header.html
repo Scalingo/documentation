@@ -30,7 +30,7 @@
 </div><div class="mdc-toolbar__row">
   <div class="container">
     <div class="d-flex justify-content-start">
-      <nav class="mdc-tab-bar">
+      <nav class="mdc-tab-bar d-none d-md-block">
         <a class="mdc-tab" href="/">
           Guides
         </a>
@@ -57,15 +57,58 @@
 </div>
 
 </header><aside class="mdc-drawer mdc-drawer--temporary" id="scalingo-main-menu">
-<nav class="mdc-drawer__drawer">
-<header class="mdc-temporary-drawer__header"></header>
-<nav class="mdc-temporary-drawer__content mdc-list">
-<a class="mdc-list-item" href="https://scalingo.com/technologies">Technologies</a>
-<a class="mdc-list-item" href="https://scalingo.com/pricing">Pricing</a>
-<a class="mdc-list-item" href="https://scalingo.com/articles">Articles</a>
-<a class="mdc-list-item" href="https://doc.scalingo.com">Docs</a>
-<a class="mdc-list-item" href="https://my.scalingo.com">Sign in</a>
-<a class="mdc-list-item" href="https://scalingo.com/users/signup">Sign up</a>
+<div class="mdc-drawer__drawer">
+<div class="drawer-nav">
+<nav>
+<ul>
+<li class="heading">
+<a class="nav-title" href="https://scalingo.com/technologies">Technologies</a>
+</li>
+<li class="heading">
+<a class="nav-title" href="https://scalingo.com/pricing">Pricing</a>
+</li>
+<li class="heading">
+<a class="nav-title" href="https://scalingo.com/articles">Articles</a>
+</li>
+<li class="heading">
+<a class="nav-title" href="https://doc.scalingo.com">Docs</a><ul>
+  <li>
+    <a href="/">
+      Guides
+    </a>
+  </li>
+  <li>
+    <a href="/samples" data-index="samples">
+    Samples
+    </a>
+  </li>
+  <li>
+    <a href="/cli" data-index="cli">
+    CLI
+    </a>
+  </li>
+  <li>
+    <a href="/changelog" data-index="changelog">
+    Changelog
+    </a>
+  </li>
+  <li>
+    <a href="https://developers.scalingo.com" target="_blank" data-index="api">
+    API Reference
+    <i class="material-icons">open_in_new</i>
+    </a>
+  </li>
+</ul>
+
+</li>
+<li class="heading">
+<a class="nav-title" href="https://my.scalingo.com">Sign in</a>
+</li>
+<li class="heading">
+<a class="nav-title" href="https://scalingo.com/users/signup">Sign up</a>
+</li>
+</ul>
 </nav>
-</nav>
+</div>
+</div>
 </aside>
