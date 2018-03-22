@@ -7,7 +7,7 @@ tags: app custom error page
 Our routers may return an error page in various cases, when an application is unreachable:
 
 - There is no running container.
-- The application has no web container running but other type of containers are.
+- The application has no web container running but other types of containers are.
 - The application crashed or cut the connection unexpectedly.
 - The application <a href="{% post_url platform/internals/2000-01-01-routing %}#timeouts">timed out</a>.
 
