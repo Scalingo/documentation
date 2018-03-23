@@ -55,8 +55,8 @@ backend `web` container.
 ## Disclaimers
 
 * If one of the container becomes unhealthy, because it has crashed or because
-  it is overloaded, users associated to this container might get multiple errors,
-  until a new container is spawn.
+  it is overloaded, our routers will quarantine it and the sticky session cookie
+  will be invalidated.
 
 * Each operation changing the routing rules of the application will invalidate
   current cookies and end-users will receive a new version of the cookie and will
