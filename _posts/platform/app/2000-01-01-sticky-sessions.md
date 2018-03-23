@@ -21,7 +21,7 @@ or database-stored sessions for instance)
 
 By default the routing of requests is done using the *Round Robin* algorithm,
 learn more about it in our [dedicated page]({% post_url
-platform/internal/2000-01-01-routing %}).  As an example: if you have 2 web
+platform/internals/2000-01-01-routing %}).  As an example: if you have 2 web
 containers, and a single user is making 2 requests to your application, each
 container will receive one request.
 
