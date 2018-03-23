@@ -17,7 +17,7 @@ unreachable:
 
 In these cases, Scalingo's routers return an error page like the following:
 
-{% assign img_url = "http://cdn.scalingo.com/documentation/screenshot_application_error.png" %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_application_error.png" %}
 {% include mdl_img.html %}
 
 You can customize these pages by modifying the following environment variables:
