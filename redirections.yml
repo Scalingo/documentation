@@ -24,6 +24,9 @@
     old: "/platform/app/letsencrypt"
     new: "/platform/app/ssl#automatic-https-certificate-with-lets-encrypt"
   -
+    old: "/deployment/build-error#size"
+    new: "/platform/getting-started/common-deployment-errors#image-too-large"
+  -
     old: "/platform/deployment/build-error"
     new: "/platform/getting-started/common-deployment-errors#build-errors"
   -
@@ -533,10 +536,6 @@
   -
     old: "/databases/restore-elasticsearch-backup.html"
     new: "/addons/scalingo-elasticsearch/start"
-  -
-    old: "/deployment/build-error"
-    new: "/platform/getting-started/common-deployment-errors"
-
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
