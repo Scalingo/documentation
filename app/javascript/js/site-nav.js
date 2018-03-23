@@ -34,7 +34,7 @@ function expandSection(element) {
   // when the next css transition finishes (which should be the one we just triggered)
   element.addEventListener('transitionend', function(e) {
     // remove this event listener so it only gets triggered once
-    element.removeEventListener('transitionend', arguments.callee);
+    // element.removeEventListener('transitionend', arguments.callee);
 
     // remove "height" from the element's inline styles, so it can return to its initial value
     element.style.height = null;
