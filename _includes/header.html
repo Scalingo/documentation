@@ -1,5 +1,7 @@
 <header class="mdc-toolbar mdc-toolbar--fixed scalingo-toolbar--custom">
-<div class="mdc-toolbar__row container d-flex justify-content-center justify-content-md-start">
+<div class="mdc-toolbar__row flex-column">
+<section class="supnav">
+<div class="container d-flex justify-content-center justify-content-md-start">
 <button aria-controls="scalingo-main-menu" aria-label="Click to show the navigation menu" class="mdc-toolbar__menu-icon mdc-ripple-surface d-block d-md-none drawer-opener">
 <i class="material-icons">menu</i>
 </button>
@@ -10,23 +12,103 @@
 </a><a class="mdc-toolbar__title scalingo-custom-title d-none d-md-inline-block" href="https://scalingo.com/technologies">Technologies</a>
 <a class="mdc-toolbar__title scalingo-custom-title d-none d-md-inline-block" href="https://scalingo.com/pricing">Pricing</a>
 <a class="mdc-toolbar__title scalingo-custom-title d-none d-md-inline-block" href="https://scalingo.com/articles">Articles</a>
-<a class="mdc-toolbar__title scalingo-custom-title d-none d-md-inline-block" href="https://doc.scalingo.com">Documentation</a>
+<a class="mdc-toolbar__title scalingo-custom-title d-none d-md-inline-block" href="https://doc.scalingo.com">Docs</a>
 </div>
 <div class="d-flex flex-row">
 <a class="mdc-toolbar__title scalingo-custom-title d-none d-md-inline-block" href="https://my.scalingo.com">Sign in</a>
 <a class="scalingo-custom-title d-none d-md-inline-block mdc-button green-filled-button" href="https://scalingo.com/users/signup">Sign up</a>
 </div>
 </div>
+</section><div class="mdc-toolbar__subrow">
+  <div class="container">
+    <span class="mdc-toolbar__title">
+      Resources for Developers
+    </span>
+  </div>
+</div>
+
+</div><div class="mdc-toolbar__row">
+  <div class="container">
+    <div class="d-flex justify-content-start">
+      <nav class="mdc-tab-bar d-none d-md-block">
+        <a class="mdc-tab" href="/">
+          Guides
+        </a>
+        <a class="mdc-tab" href="/samples" data-index="samples">
+          Samples
+        </a>
+        <a class="mdc-tab" href="/cli" data-index="cli">
+          CLI
+        </a>
+        <a class="mdc-tab" href="/changelog" data-index="changelog">
+          Changelog
+        </a>
+        <a class="mdc-tab" href="https://developers.scalingo.com" target="_blank" data-index="api">
+          API Reference
+          <i class="material-icons">open_in_new</i>
+        </a>
+      </nav>
+      <div class="search mdc-text-field mdc-text-field--with-leading-icon">
+        <i class="material-icons mdc-text-field__icon" tabindex="0">search</i>
+        <input type="text" id="search-input" placeholder="Search" class="mdc-text-field__input" />
+      </div>
+    </div>
+  </div>
+</div>
+
 </header><aside class="mdc-drawer mdc-drawer--temporary" id="scalingo-main-menu">
-<nav class="mdc-drawer__drawer">
-<header class="mdc-temporary-drawer__header"></header>
-<nav class="mdc-temporary-drawer__content mdc-list">
-<a class="mdc-list-item" href="https://scalingo.com/technologies">Technologies</a>
-<a class="mdc-list-item" href="https://scalingo.com/pricing">Pricing</a>
-<a class="mdc-list-item" href="https://scalingo.com/articles">Articles</a>
-<a class="mdc-list-item" href="https://doc.scalingo.com">Documentation</a>
-<a class="mdc-list-item" href="https://my.scalingo.com">Sign in</a>
-<a class="mdc-list-item" href="https://scalingo.com/users/signup">Sign up</a>
+<div class="mdc-drawer__drawer">
+<div class="drawer-nav">
+<nav>
+<ul>
+<li class="heading">
+<a class="nav-title" href="https://scalingo.com/technologies">Technologies</a>
+</li>
+<li class="heading">
+<a class="nav-title" href="https://scalingo.com/pricing">Pricing</a>
+</li>
+<li class="heading">
+<a class="nav-title" href="https://scalingo.com/articles">Articles</a>
+</li>
+<li class="heading">
+<a class="nav-title" href="https://doc.scalingo.com">Docs</a><ul>
+  <li>
+    <a href="/">
+      Guides
+    </a>
+  </li>
+  <li>
+    <a href="/samples" data-index="samples">
+    Samples
+    </a>
+  </li>
+  <li>
+    <a href="/cli" data-index="cli">
+    CLI
+    </a>
+  </li>
+  <li>
+    <a href="/changelog" data-index="changelog">
+    Changelog
+    </a>
+  </li>
+  <li>
+    <a href="https://developers.scalingo.com" target="_blank" data-index="api">
+    API Reference
+    <i class="material-icons">open_in_new</i>
+    </a>
+  </li>
+</ul>
+
+</li>
+<li class="heading">
+<a class="nav-title" href="https://my.scalingo.com">Sign in</a>
+</li>
+<li class="heading">
+<a class="nav-title" href="https://scalingo.com/users/signup">Sign up</a>
+</li>
+</ul>
 </nav>
-</nav>
+</div>
+</div>
 </aside>

@@ -1,0 +1,8 @@
+---
+modified_at:	2016-11-17 13:50:00
+title:	'Ruby - Version 2.3.2, 2.2.6, 2.1.10  support added'
+github: 'https://github.com/Scalingo/ruby-buildpack'
+---
+
+https://www.ruby-lang.org/en/news/2016/11/15/ruby-2-3-2-released/
+https://www.ruby-lang.org/en/news/2016/11/15/ruby-2-2-6-released/

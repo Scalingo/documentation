@@ -1,0 +1,17 @@
+---
+modified_at:	2015-04-15 20:08:06
+title:	'Release of 1.0.0-rc1'
+github: 'https://github.com/Scalingo/cli/releases'
+---
+
+http://cli.scalingo.com
+
+Changelog:
+
+### v1.0.0-rc1 - 15/04/2015
+
+* [Feature] Modify size of containers with `scalingo scale` - #102
+* [Bugfix] Fix ssh-agent error when no private key is available - Fixed #100
+* [Bugfix] Fix domain-add issue. (error about domain.crt file) - Fixed #98
+* [Bugfix] Fix addon plans description, no more HTML in them  - #96
+* [Bugfix] Correctly handle db-tunnel when alias is given as argument - Fixed #93

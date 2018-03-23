@@ -1,0 +1,7 @@
+---
+modified_at:   2016-09-28 14:59:26
+title: 'Version v23 - Unzip and OpenSSL update'
+---
+
+* Update OpenSSL to fix several `severe` CVEs
+* Add package and tool `unzip`

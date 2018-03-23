@@ -34,7 +34,7 @@ function expandSection(element) {
   // when the next css transition finishes (which should be the one we just triggered)
   element.addEventListener('transitionend', function(e) {
     // remove this event listener so it only gets triggered once
-    element.removeEventListener('transitionend', arguments.callee);
+    // element.removeEventListener('transitionend', arguments.callee);
 
     // remove "height" from the element's inline styles, so it can return to its initial value
     element.style.height = null;
@@ -44,147 +44,149 @@ function expandSection(element) {
   // element.setAttribute('data-collapsed', 'false');
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
-
-  let navTitles = document.querySelectorAll('.nav-title')
-  navTitles.forEach((element) => {
-    element.addEventListener('click', (e) => {
-      e.preventDefault()
-      let node = e.target
-      let parent = node.parentElement
-      let currentState = parent.getAttribute('data-state')
-      let isCollapsed = currentState == 'closed'
-      let section = parent.querySelector('ul')
-      if(isCollapsed) {
-        expandSection(section)
-        parent.setAttribute('data-state', 'open')
-      } else {
-        collapseSection(section)
-        parent.setAttribute('data-state', 'closed')
-      }
-    })
+let navTitles = document.querySelectorAll('.nav-title')
+navTitles.forEach((element) => {
+  element.addEventListener('click', (e) => {
+    e.preventDefault()
+    let node = e.currentTarget
+    let parent = node.parentElement
+    let currentState = parent.getAttribute('data-state')
+    let isCollapsed = currentState == 'closed'
+    let section = parent.querySelector('ul')
+    if(isCollapsed) {
+      expandSection(section)
+      parent.setAttribute('data-state', 'open')
+    } else {
+      collapseSection(section)
+      parent.setAttribute('data-state', 'closed')
+    }
   })
+})
 
-  // function manageSiteNav(siteNavNode, mainNode, mainHeight) {
-  //   let mainRect = mainNode.getBoundingClientRect()
+var scroll = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60) }
 
-  //   let articleBottomVisible = (mainRect.bottom - window.innerHeight) <= 0
-  //   let articleTopVisible = (mainRect.top > 94) && (mainRect.top < window.innerHeight)
+var headerNode = document.querySelector('header')
+var siteNavNode = document.querySelector('.site-nav > nav')
+var pageNavNode = document.querySelector('.page-nav > nav')
+var mainNode = document.querySelector('main')
 
-  //   let height = 200
+var siteNavBottomMargin = 20
+var mainMargin = 40
 
-  //   let siteNavHeight = siteNavNode.offsetHeight
+var windowInnerHeight, siteNavMaxHeight, lastPosition = -1, lastHeaderHeight = -1
+var articleRect, articleTop, articleBottom, articleBottomWithMargin, articleHeight
+var headerHeightPlusMargin = headerNode.offsetHeight + 30
 
-  //   if (mainHeight > siteNavHeight) {
-  //     if (articleBottomVisible && !articleTopVisible) {
-  //       height = mainRect.bottom - 94
-  //       siteNavNode.style.height = height + "px"
-  //       siteNavNode.style.position = "fixed"
-  //       siteNavNode.style.top = "94px"
-  //       siteNavNode.style.width = "220px"
-  //     } else {
-  //       siteNavNode.style.removeProperty('position')
-  //       siteNavNode.style.removeProperty('top')
-  //       siteNavNode.style.removeProperty('width')
+function recomputeSizes() {
+  lastPosition = -1
+  lastHeaderHeight = -1
+  computeSizes()
+}
 
-  //       let siteNavRect = siteNavNode.getBoundingClientRect()
-  //       let siteNavTop = siteNavRect.top
+function computeSizes() {
+  windowInnerHeight = window.innerHeight
 
-  //       if (siteNavTop >= 94) {
-  //         height = window.innerHeight - siteNavTop
-  //       } else {
-  //         height = siteNavRect.bottom - 94
-  //       }
-  //       siteNavNode.style.height = height - 20 + "px"
-  //     }
-  //   }
-  // }
+  headerHeightPlusMargin = headerNode.offsetHeight + 30
+  articleRect = mainNode.getBoundingClientRect()
+  articleTop = articleRect.top + window.pageYOffset - headerHeightPlusMargin
+  articleBottom = articleTop + mainNode.offsetHeight
+  articleBottomWithMargin = articleBottom + mainMargin - windowInnerHeight + headerHeightPlusMargin
+  articleHeight = mainNode.offsetHeight
+  siteNavMaxHeight = windowInnerHeight - headerHeightPlusMargin - siteNavBottomMargin
+}
 
-  // Detect css transform
-  var cssTransform = (function(){
-      var prefixes = 'transform webkitTransform mozTransform oTransform msTransform'.split(' ')
-        , el = document.createElement('div')
-        , cssTransform
-        , i = 0
-      while( cssTransform === undefined ){
-          cssTransform = document.createElement('div').style[prefixes[i]] != undefined ? prefixes[i] : undefined
-          i++
-       }
-       return cssTransform
-  })()
-
-  var scroll = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60) }
-  var has3d = document.body.style.transform
-
-  var siteNavNode = document.querySelector('.site-nav > nav')
-  var articleNode = document.querySelector('article')
-
-  var siteNavBottomMargin = 20
-  var mainMargin = 40
-
-  var windowInnerHeight, siteNavMaxHeight, lastPosition = -1
-  var articleRect, articleTop, articleBottom, articleBottomWithMargin, articleHeight
-
-  function computeSizes() {
-    lastPosition = -1
-    windowInnerHeight = window.innerHeight
-
-    articleRect = articleNode.getBoundingClientRect()
-    articleTop = articleRect.top + window.pageYOffset - 94
-    articleBottom = articleTop + articleNode.offsetHeight
-    articleBottomWithMargin = articleBottom + mainMargin - windowInnerHeight + 94
-    articleHeight = articleNode.offsetHeight
-    siteNavMaxHeight = windowInnerHeight - 94 - siteNavBottomMargin
+function loop(){
+  // Avoid calculations if not needed
+  let condition = lastPosition == window.pageYOffset && lastHeaderHeight == headerNode.offsetHeight
+  if (condition) {
+    scroll(loop)
+    return false
+  } else {
+    lastPosition = window.pageYOffset
+    lastHeaderHeight = headerNode.offsetHeight
+    computeSizes()
   }
 
-  function loop(){
-    // Avoid calculations if not needed
-    if (lastPosition == window.pageYOffset) {
-      scroll(loop)
-      return false
-    } else lastPosition = window.pageYOffset
+  headerHeightPlusMargin = lastHeaderHeight + 30
 
+  if (articleHeight >= siteNavMaxHeight) {
     if (lastPosition <= articleTop) {
       // top of page above article top
       siteNavNode.style.position = "sticky"
-      siteNavNode.style.height = windowInnerHeight - (articleTop - lastPosition + 94) - siteNavBottomMargin + "px"
+      siteNavNode.style.top = headerHeightPlusMargin + "px"
+      if (pageNavNode !== null) {
+        pageNavNode.style.top = headerHeightPlusMargin + "px"
+      }
+      siteNavNode.style.maxHeight = windowInnerHeight - (articleTop - lastPosition + headerHeightPlusMargin) - siteNavBottomMargin + "px"
     } else {
       if (lastPosition <= articleBottomWithMargin) {
         // Between article top and article bottom
-        if (siteNavNode.style.height != siteNavMaxHeight) {
+        if (siteNavNode.style.maxHeight != siteNavMaxHeight) {
           // We've already set the infos
           siteNavNode.style.position = "sticky"
-          siteNavNode.style.height = siteNavMaxHeight + "px"
+          siteNavNode.style.top = headerHeightPlusMargin + "px"
+          if (pageNavNode !== null) {
+            pageNavNode.style.top = headerHeightPlusMargin + "px"
+          }
+          siteNavNode.style.maxHeight = siteNavMaxHeight + "px"
         }
       } else {
         // Towards bottom of page
         siteNavNode.style.position = "fixed"
-        siteNavNode.style.height = windowInnerHeight - (lastPosition + windowInnerHeight - articleBottom) + siteNavBottomMargin + "px"
+        siteNavNode.style.top = headerHeightPlusMargin + "px"
+        siteNavNode.style.maxHeight = windowInnerHeight - (lastPosition + windowInnerHeight - articleBottom) + "px"
+        if (pageNavNode !== null) {
+          pageNavNode.style.top = headerHeightPlusMargin + "px"
+        }
       }
     }
-
-    scroll(loop)
+  } else {
+    // Article is too small, get back to normal
+    siteNavNode.style.position = "sticky"
+    siteNavNode.style.top = headerHeightPlusMargin + "px"
+    siteNavNode.style.maxHeight = articleHeight + siteNavBottomMargin + "px"
   }
 
-  window.onresize = computeSizes
+  scroll(loop)
+}
 
-  computeSizes()
+if (siteNavNode !== null) {
+  window.onresize = recomputeSizes
+
+  recomputeSizes()
   loop()
+}
 
-  function scrollIfNeeded(element, container) {
-    if (element.offsetTop < container.scrollTop) {
-      container.scrollTop = element.offsetTop
-    } else {
-      const offsetBottom = element.offsetTop + element.offsetHeight
-      const scrollBottom = container.scrollTop + container.offsetHeight
-      if (offsetBottom > scrollBottom) {
-        container.scrollTop = offsetBottom - container.offsetHeight
-      }
+function scrollIfNeeded(element, container) {
+  if (element.offsetTop < container.scrollTop) {
+    container.scrollTop = element.offsetTop
+  } else {
+    const offsetBottom = element.offsetTop + element.offsetHeight
+    const scrollBottom = container.scrollTop + container.offsetHeight
+    if (offsetBottom > scrollBottom) {
+      container.scrollTop = offsetBottom - container.offsetHeight
     }
   }
+}
 
-  let activeLink = document.querySelector('.site-nav a.active')
-  if (activeLink !== null && siteNavNode !== null) {
-    scrollIfNeeded(activeLink, siteNavNode)
-  }
-})
+let activeLink = document.querySelector('.site-nav a.active')
+if (activeLink !== null && siteNavNode !== null) {
+  scrollIfNeeded(activeLink, siteNavNode)
+}
+
+import {MDCToolbar} from '@material/toolbar'
+
+var toolbar = new MDCToolbar(document.querySelector('.mdc-toolbar'))
+var subrowNode = document.querySelector('header > .mdc-toolbar__row:first-child .mdc-toolbar__subrow')
+var mdcToolbarRowHeight = 64
+
+if (subrowNode !== null) {
+  toolbar.listen('MDCToolbar:change', function(evt) {
+    var flexibleExpansionRatio = evt.detail.flexibleExpansionRatio
+    var computedHeight = mdcToolbarRowHeight * flexibleExpansionRatio
+    var remainingHeight = mdcToolbarRowHeight - computedHeight
+    subrowNode.style.marginTop = -remainingHeight + "px"
+  })
+}
+
+toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust')

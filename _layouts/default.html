@@ -6,18 +6,8 @@
     {% include google_tag_manager_body.html %}
     {% endconditionaltrackers %}
     {% include header.html %}
-    {% include search.html %}
-    <section id="top-of-page">
-      <div class="container d-flex flex-row">
-        <aside class="site-nav d-none d-md-block">
-          <nav>
-          {% include navigation.html subtree=site.data.tree level=0 %}
-          </nav>
-        </aside>
-        <main{% if layout.main_class %} class="{{ layout.main_class }}"{% endif %}>
-          {{ content | extlinks }}
-        </main>
-      </div>
+    <section id="top-of-page" class="mdc-toolbar-fixed-adjust">
+      {{ content | extlinks }}
     </section>
     {% include footer.html %}
     <script src="{{ "bundle.js" | asset_pack_path }}"></script>

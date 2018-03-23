@@ -1,0 +1,6 @@
+---
+modified_at:	2016-11-12 10:35:06
+title:	'InfluxDB - New default version: 1.0.2'
+---
+
+https://docs.influxdata.com/influxdb/v1.0/administration/013_vs_1/

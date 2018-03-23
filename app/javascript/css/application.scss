@@ -1,4 +1,5 @@
 @import "scalingo-styles/style";
+@import "header-custom";
 @import "search";
 
 $section-padding-top-desktop: 40px;
@@ -146,12 +147,12 @@ $page-nav-margin: 40px;
   width: $page-nav-width + $page-nav-margin;
 }
 
-.page-nav, .site-nav, .dir-nav, .mobile-nav {
+.page-nav, .site-nav, .dir-nav, .mobile-nav, .changelog-card {
   @extend small;
   nav {
     @supports (position: sticky) {
       position: sticky;
-      top: 94px;
+      top: #{ 64 * 3 + 30 }px;
     }
   }
   ul {
@@ -207,6 +208,9 @@ $page-nav-margin: 40px;
     overflow-y: auto;
     width: $site-nav-width;
   }
+}
+
+.site-nav, .changelog-card {
   li[data-type='dir'], li[data-type='heading'] {
     > ul {
       overflow: hidden;
@@ -262,9 +266,6 @@ $page-nav-margin: 40px;
         }
       }
     }
-    > ul {
-      padding-top: 8px;
-    }
   }
   li[data-type='dir'] {
     > .nav-title {
@@ -291,18 +292,57 @@ $page-nav-margin: 40px;
   }
 }
 
-.site-nav > nav > ul > li.heading {
-  background-color: $material-color-grey-200;
-  &:first-child {
-    border-top: 0;
+.site-nav, .changelog-card {
+  > nav > ul > li.heading {
+    background-color: $material-color-grey-200;
+    &:first-child {
+      border-top: 0;
+    }
+  }
+}
+
+.changelog {
+  .changelog--year {
+    color: $material-color-grey-500;
+  }
+  .changelog-card {
+    a {
+      overflow: unset;
+      display: inline-block;
+    }
+    .nav-title {
+      &:hover, &:focus {
+        color: inherit;
+      }
+      a {
+        padding-left: unset;
+      }
+    }
+    .changelog-entry--category, .changelog-entry--title {
+      font-weight: normal;
+    }
+    li {
+      p {
+        margin-bottom: 0;
+        a {
+          color: $brand-primary;
+          &:hover, &:focus {
+            color: darken($brand-primary, 15%);
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 }
 
 .page-content {
   h2, h3 {
     margin-top: 0;
-    padding-top: 64px;
-    margin-top: -54px;
+    padding-top: 148px;
+    margin-top: -138px;
   }
   p {
     .material-icons {
@@ -322,6 +362,10 @@ a.mdc-button {
   }
 }
 
+.rss {
+  color: #f26522;
+}
+
 @include media-breakpoint-up(md) {
   main {
     padding-left: 0 !important;
@@ -331,6 +375,9 @@ a.mdc-button {
   }
   main {
     max-width: calc(100% - #{ $site-nav-width });
+    &.full {
+      max-width: 100%;
+    }
   }
   article {
     max-width: calc(100% - #{ $page-nav-width + $page-nav-margin });

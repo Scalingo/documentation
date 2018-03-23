@@ -1,0 +1,7 @@
+---
+modified_at:	2017-10-25 12:17:54
+title:	'Go - Version 1.9.2 available'
+github: 'https://github.com/Scalingo/go-buildpack'
+---
+
+[Go 1.9.2 Changelog](https://golang.org/doc/devel/release.html#go1.9.minor)

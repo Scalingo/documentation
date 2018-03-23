@@ -1,0 +1,7 @@
+---
+modified_at:	2017-01-19 05:27:30
+title:	'PHP - Support of PHP 7.0.15'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+https://secure.php.net/ChangeLog-7.php#7.0.15

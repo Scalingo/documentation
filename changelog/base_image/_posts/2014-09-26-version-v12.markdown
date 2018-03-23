@@ -1,0 +1,4 @@
+---
+modified_at:   2014-09-26 10:38:33
+title: 'Version v12 - Second shellshock security patch on `bash`'
+---

@@ -1,0 +1,6 @@
+---
+modified_at:	2016-07-26 10:12:30
+title:	'Meteor - Support of version 1.4 added'
+---
+
+http://info.meteor.com/blog/announcing-meteor-1.4

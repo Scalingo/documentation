@@ -1,0 +1,7 @@
+---
+modified_at:	2017-01-20 05:27:30
+title:	'PHP - Support of PHP 5.6.30'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+http://www.php.net/ChangeLog-5.php#5.6.30

@@ -1,0 +1,6 @@
+---
+modified_at:	2017-11-29 10:35:06
+title:	'PostgreSQL - New default version: 10.1.0'
+---
+
+[https://www.postgresql.org/docs/10/static/release-10-1.html](https://www.postgresql.org/docs/10/static/release-10-1.html)

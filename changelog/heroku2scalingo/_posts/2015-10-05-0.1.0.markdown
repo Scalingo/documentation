@@ -1,0 +1,17 @@
+---
+modified_at:	2015-09-28 17:05:00
+title:	'Release of 0.1.0'
+github: 'https://github.com/Scalingo/heroku2scalingo/releases'
+---
+
+Installation:
+
+[http://github.com/Scalingo/heroku2scalingo](http://github.com/Scalingo/heroku2scalingo#installation)
+
+Changelog:
+
+### v0.1.0 - 28/09/2015
+
+Initial release
+
+* [Feature] Migrate a simple Heroku app to Scalingo

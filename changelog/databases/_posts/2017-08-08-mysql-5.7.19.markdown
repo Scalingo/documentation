@@ -1,0 +1,8 @@
+---
+modified_at:	2017-08-08 11:41:00
+title:	'MySQL - New default version: 5.7.19'
+---
+
+Docker image is now `scalingo/mysql:5.7.19-1` and is based on Debian.
+
+MySQL changelog: [https://dev.mysql.com/doc/relnotes/mysql/5.7/en/](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/)

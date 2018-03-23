@@ -1,0 +1,21 @@
+---
+modified_at:	2015-05-06 20:08:06
+title:	'Release of 1.0.0'
+github: 'https://github.com/Scalingo/cli/releases'
+---
+
+http://cli.scalingo.com
+
+Changelog:
+
+### v1.0.0 - 06/05/2015
+
+* [Feature - Databases] Add helper to run interactive console for MySQL, PostgreSQL, MongoDB and Redis #111
+* [Feature - Collaborators] Handle collaborators directly from the command line client #113
+* [Feature - Proxy] Add support and documentation about how to use a HTTPS proxy #104 #110
+* [Refactoring - API calls] Completely refactor error management for Scalingo API calls #112
+* [Improvement - SSL] Embed Scalingo new SSL certificate SHA-256 only #109
+* [Bugfix - Macos] #105 #114
+* [Bugfix - Logs] No more weird error message when no log is available for an app #108
+* [Bugfix - Logs] Use of websocket for log streaming #86 #115 #116
+* [Bugfix - Windows] Babun shell compatibility #106

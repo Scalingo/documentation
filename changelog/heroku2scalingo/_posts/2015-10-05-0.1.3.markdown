@@ -1,0 +1,15 @@
+---
+modified_at:	2015-10-02 17:48:00
+title:	'Release of 0.1.3'
+github: 'https://github.com/Scalingo/heroku2scalingo/releases'
+---
+
+Installation:
+
+[http://github.com/Scalingo/heroku2scalingo](http://github.com/Scalingo/heroku2scalingo#installation)
+
+Changelog:
+
+### v0.1.3 - 02/10/2015
+
+* [Bugfix] Fix windows compatibility

@@ -1,0 +1,4 @@
+---
+modified_at:   2014-09-25 00:00:13
+title: 'Version v11 - First shellshock security patch on `bash`'
+---

@@ -1,0 +1,26 @@
+---
+modified_at:	2015-03-01 20:35:06
+title:	'Improve 404 Not found errors'
+---
+
+Previous format:
+
+```
+{
+  "error": "not found"
+}
+```
+
+New format:
+
+```
+{
+  "resource": "app",
+  "error": "not found"
+}
+```
+
+The name of the resource has been added to improve error handling in clients,
+mostly in the case of subresources.
+
+Documentation: [http://developers.scalingo.com](http://developers.scalingo.com)

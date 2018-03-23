@@ -1,11 +1,10 @@
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>{% if page.title %}{{ page.title | escape }} - Scalingo{% else %}{{ site.title | escape }} - Scalingo{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: page.description | strip_html | normalize_whitespace | truncate: 300 | escape }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
-  <meta name="viewport" content="width=device-width">
   {% conditionaltrackers %}
   {% include google_tag_manager_head.html %}
   {% endconditionaltrackers %}
@@ -17,5 +16,5 @@
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}"/>
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}"/>
-  <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}"/>
+  <meta property="og:description" content="{{ page.excerpt | default: page.description | strip_html | normalize_whitespace | truncate: 300 | escape }}"/>
 </head>

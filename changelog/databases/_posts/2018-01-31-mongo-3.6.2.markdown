@@ -1,0 +1,8 @@
+---
+modified_at:	2018-01-31 08:39:06
+title:	'MongoDB - New default version: 3.6.2'
+---
+
+Docker Image: `scalingo/mongo:3.6.2-1`
+
+MongoDB CHANGELOG: [https://docs.mongodb.com/manual/release-notes/3.6/](https://docs.mongodb.com/manual/release-notes/3.6/)

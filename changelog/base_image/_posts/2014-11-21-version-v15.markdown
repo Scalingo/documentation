@@ -1,0 +1,8 @@
+---
+modified_at:   2014-11-21 22:23:26
+title: 'Version v15 - Packages update and backend modifications'
+---
+
+* Decrease amount of Docker layer
+* Externalize starting script because we may need to modify it
+* Directly exec process, do not run an additional bash

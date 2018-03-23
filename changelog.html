@@ -1,0 +1,58 @@
+---
+layout: default_with_only_main
+title: Changelog
+subnav_index: changelog
+modified_at: 2015-09-09 00:00:00
+---
+
+<div class="changelog">
+  <h1 class="d-flex">
+    Changelog
+    <a href="/changelog/feed.xml" class="ml-auto">
+      <i class="material-icons rss">rss_feed</i>
+    </a>
+  </h1>
+
+  {% assign postsByYear = site.categories.changelog | group_by_exp:"post", "post.modified_at | date: '%Y'" %}
+  {% for year in postsByYear %}
+    <div class="mdc-typography--title mt-5 mb-3 changelog--year">{{ year.name }}</div>
+    <div class="mdc-card changelog-card">
+      <nav>
+        <ul>
+          {% for post in year.items %}
+            {% assign body = post.content | xml_escape | strip_html | strip_newlines | remove:' ' %}
+            <li id="{{post.id | slugify}}" class="heading" data-type="heading" data-state="{% if body != "" %}closed{% else %}empty{% endif %}">
+              <div class="nav-title d-flex">
+                <div class="col-12 col-md-2">
+                  {{ post.modified_at | date: "%b %-d, %Y" }}
+                </div>
+                <div class="col-12 col-md-2 changelog-entry--category">
+                  {{ post.categories | last | split: "_" | join: " " }}
+                </div>
+                <div class="col-12 col-md-8 changelog-entry--title">
+                  {{ post.title }}
+                </div>
+              </div>
+              {% if body != "" %}
+              <ul>
+                {% if post.github %}
+                <li>
+                  <p>
+                    <a target="_blank" href="{{ post.github }}">
+                      {{ post.github }}
+                    </a>
+                  </p>
+                </li>
+                {% endif %}
+                <li>
+                  {{ post.content }}
+                </li>
+              </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  {% endfor %}
+</div>

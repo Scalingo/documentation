@@ -1,0 +1,7 @@
+---
+modified_at:   2016-05-10 14:59:26
+title: 'Version v21 - Include JDK to ensure buildpack compatibility'
+---
+
+* Update base environment (bin/libs)
+* Include java development kit (openjdk7)

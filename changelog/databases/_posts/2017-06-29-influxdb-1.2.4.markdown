@@ -1,0 +1,6 @@
+---
+modified_at:	2017-06-29 10:35:06
+title:	'InfluxDB - New default version: 1.2.4'
+---
+
+https://docs.influxdata.com/influxdb/v1.2/administration/differences/

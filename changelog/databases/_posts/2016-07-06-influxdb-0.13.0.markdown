@@ -1,0 +1,6 @@
+---
+modified_at:	2016-07-06 10:35:06
+title:	'InfluxDB - New default version: 0.13.0'
+---
+
+https://docs.influxdata.com/influxdb/v0.13/

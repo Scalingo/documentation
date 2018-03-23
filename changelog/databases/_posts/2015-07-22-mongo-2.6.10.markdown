@@ -1,0 +1,5 @@
+---
+modified_at:	2015-07-22 11:39:06
+title:	'MongoDB - New default version: 2.6.10'
+---
+

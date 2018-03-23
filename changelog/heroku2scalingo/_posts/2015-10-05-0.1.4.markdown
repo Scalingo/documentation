@@ -1,0 +1,16 @@
+---
+modified_at:	2015-10-05 17:57:00
+title:	'Release of 0.1.4'
+github: 'https://github.com/Scalingo/heroku2scalingo/releases'
+---
+
+Installation:
+
+[http://github.com/Scalingo/heroku2scalingo](http://github.com/Scalingo/heroku2scalingo#installation)
+
+Changelog:
+
+### v0.1.4 - 05/10/2015
+
+* [Bugfix] Fix usage, print it before anything else
+* [Bugfix] Fix [#8](http://github.com/Scalingo/heroku2scalingo/issues/8)

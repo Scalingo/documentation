@@ -1,0 +1,20 @@
+---
+modified_at:	2016-05-02 15:08:06
+title:	'Release of 1.3.1'
+github: 'https://github.com/Scalingo/cli/releases'
+---
+
+Installation:
+
+[http://cli.scalingo.com](http://cli.scalingo.com)
+
+Setup completion:
+
+[http://doc.scalingo.com/app/command-line-tool.html](http://doc.scalingo.com/app/command-line-tool.html)
+
+Changelog:
+
+### v1.3.1 - 02/05/2016
+
+* [Bugfix - Auth] Fix authentication configuration for --ssh or --apikey, two attempts were necessary #208 #209
+

@@ -1,0 +1,6 @@
+---
+modified_at:   2015-05-18 14:59:26
+title: 'Version v18 - PostgreSQL Server development headers and minor upgrades for various libs'
+---
+
+* Add `postgresql-server-dev-all` package (`do_postgres` gem compatibility)

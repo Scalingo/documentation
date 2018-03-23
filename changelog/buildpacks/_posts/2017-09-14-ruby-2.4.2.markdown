@@ -1,0 +1,7 @@
+---
+modified_at:	2017-09-14 13:50:00
+title:	'Ruby - Version 2.4.2 support added'
+github: 'https://github.com/Scalingo/ruby-buildpack'
+---
+
+[https://www.ruby-lang.org/en/news/2017/09/14/ruby-2-4-2-released/](https://www.ruby-lang.org/en/news/2017/09/14/ruby-2-4-2-released/)

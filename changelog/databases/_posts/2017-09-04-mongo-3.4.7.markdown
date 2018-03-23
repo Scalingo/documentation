@@ -1,0 +1,8 @@
+---
+modified_at:	2017-09-04 11:39:06
+title:	'MongoDB - New default version: 3.4.7'
+---
+
+Docker Image: `scalingo/mongo:3.4.7-1`
+
+MongoDB CHANGELOG: [https://docs.mongodb.com/manual/release-notes/3.4/](https://docs.mongodb.com/manual/release-notes/3.4/)

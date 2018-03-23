@@ -1,0 +1,6 @@
+---
+modified_at:   2014-09-01 14:17:34
+title: 'Version v10 - Install `libsasl2-dev`'
+---
+
+Add libsasl2-dev to compile PHP memcached module

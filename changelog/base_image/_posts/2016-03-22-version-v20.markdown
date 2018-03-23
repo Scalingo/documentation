@@ -1,0 +1,11 @@
+---
+modified_at:   2016-03-22 14:59:26
+title: 'Version v20 - Include JRE and fix Java certificates problems, database clients upgrades and minor fixes'
+---
+
+* Update base environment (bin/libs)
+* Include java runtime
+* Fix java certificates issues
+* Update pg client to 9.4
+* Update redis client to 3.0.7
+* Update mongo client to 2.6.11

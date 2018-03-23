@@ -19,13 +19,18 @@ keep_files:
   - packs
 
 defaults:
-  - # set default layout on all pages
+  -
     scope:
       path: ""
-      type: "posts" # in jekyll files outside of _posts are of type pages
+      type: "posts"
     values:
       layout: "page"
-
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
 plugins:
   - jekyll-sitemap
   - jekyll-feed
@@ -52,6 +57,8 @@ exclude:
   - _plugins
   - ld_library_path
   - redirections.yml
+  - Rakefile
+  - lib/tasks
 
 array: [] # hack for creating array
 
@@ -60,11 +67,11 @@ highlighted:
     - /platform/getting-started/first-steps
     - /platform/getting-started/troubleshooting-ssh
     - /platform/databases/intro
-    - /platform/app/application-lifecycle-management
+    - /platform/app/lifecycle-management
     - /platform/cli/start
     - /platform/app/domain
     - /platform/app/ssl
-    - /platform/account/your-account
+    - /platform/account/manage
     - /platform/app/filesystem
     - /platform/getting-started/heroku-compatibility
   technologies:
@@ -93,6 +100,71 @@ highlighted:
       url: "/addons/scalingo-elasticsearch/start"
     - name: InfluxDB
       url: "/addons/scalingo-influxdb/start"
+
+samples:
+  - url: sample-ruby-sinatra
+    name: Ruby/Sinatra
+    logo: sinatra
+  - url: sample-go-martini
+    name: Go/Martini
+    logo: go
+  - url: sample-meteor-todo
+    name: MeteorJS
+    logo: meteorjs
+  - url: sample-node-express
+    name: NodeJS/Express
+    logo: nodejs
+  - url: sample-node-meanjs
+    name: NodeJS/MeanJS
+    logo: mean-js
+  - url: sample-scala-scalatra
+    name: Scala/Scalatra
+    logo: scala
+  - url: sample-php-laravel
+    name: PHP/Laravel
+    logo: php-laravel
+  - url: sample-php-symfony
+    name: PHP/Symfony
+    logo: php-symfony
+  - url: sample-php-lumen
+    name: PHP/Lumen
+    logo: php-lumen
+  - url: sample-php-base
+    name: PHP
+    logo: php
+  - url: sample-php-cron
+    name: PHP/Cron
+    logo: php
+  - url: sample-php-nodejs
+    name: PHP/NodeJS
+    logo: php
+  - url: sample-php-yii2
+    name: PHP/Yii 2
+    logo: php-yii
+  - url: sample-php-slim
+    name: PHP/Slim
+    logo: php-slim
+  - url: sample-python-celery
+    name: Python/Celery
+    logo: python
+  - url: sample-python-flask
+    name: Python/Flask
+    logo: python-flask
+  - url: sample-python2-flask
+    name: Python 2/Flask
+    logo: python-flask
+  - url: sample-crystal
+    name: Crystal
+    logo: crystal
+  - url: sample-java-spark
+    name: Java/Spark
+    logo: java-spark
+  - url: sample-influxdb
+    name: Go/InfluxDB
+    logo: scalingo-influxdb
+  - url: sample-java-grails3
+    name: Java/Grails 3
+    logo: groovy-grails
 
 extlinks:
   followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]
