@@ -40,6 +40,7 @@ Do not put `categories`, `category` or `permalink` in the Front Matter, everythi
 ## Do's
 
 If you want to write a useful note:
+
 ```
 {% note %}
   My useful note here
@@ -47,10 +48,26 @@ If you want to write a useful note:
 ```
 
 If you want to write a warning note:
+
 ```
 {% warning %}
   My warning note here
 {% endwarning %}
+```
+
+If you want to insert a link to another blog post:
+
+```html
+<a href="{% post_url platform/internals/2000-01-01-routing %}">text of the link</a>
+```
+
+To insert an image, first upload it to our CDN, inside the documentation
+folder. Give it a public permission `Grant public read access to this
+object(s)`. Then, insert it with:
+
+```liquid
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_*" %}
+{% include mdl_img.html %}
 ```
 
 ## Running locally
