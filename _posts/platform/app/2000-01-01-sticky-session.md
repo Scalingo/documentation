@@ -58,7 +58,7 @@ backend `web` container.
   * Restart
   * Scaling
 
-* Applications hosted on the platform can be recycled at any time for internal
+* Applications hosted on the platform can be cycled at any time for internal
   infrastructure management purposes (like dynamic load balancing of the server),
   when such event happens, the sticky sessions are also invalidated.
 
