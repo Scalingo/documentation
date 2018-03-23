@@ -1,8 +1,10 @@
 ---
-title: Custom error page
+title: Custom Error and Maintenance Page
 modified_at: 2018-03-22 00:00:00
 tags: app custom error page
 ---
+
+## Custom Error Page
 
 Our routers may return an error page in various cases, when an application is unreachable:
 
@@ -37,3 +39,7 @@ cached in the router's memory. Hence we limit the size of this page to 10MB.
 {% note %}
 We advise you to develop the simplest page, with everything inlined (CSS, image, etc.)
 {% endnote %}
+
+## Custom Maintenance Page
+
+Explain here the possible workflow to setup a maintenance page
