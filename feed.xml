@@ -12,8 +12,8 @@ page_exclude: true
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% assign posts = site.posts | sort: 'modified_at' | reverse | limit:10 %}
-    {% for post in posts %}
+    {% assign posts = site.posts | sort: 'modified_at' | reverse %}
+    {% for post in posts limit:20 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>{{ post.content | xml_escape }}</description>
