@@ -9,6 +9,13 @@ The **Sticky Sessions** feature, also known as **Session Affinity**, changes the
 routing configuration of your application. It associates all HTTP requests from an end-user
 to a single `web` application container.
 
+{% warning %}
+Sticky Sessions might help you to scale out applications keeping states about about users
+across connections (ie. sessions in memory). However this feature come with drawbacks explained later
+on this page and it is a good practice to avoid using it when possible. (stateless sessions,
+or database-stored sessions for instance)
+{% endwarning %}
+
 ## Description
 
 By default the routing of requests is done using the *Round Robin* algorithm,
