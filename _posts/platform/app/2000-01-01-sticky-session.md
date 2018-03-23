@@ -53,14 +53,14 @@ backend `web` container.
 
 * Each operation changing the routing rules of the application will invalidate
   current cookies and end-users will receive a new version of the cookie and will
-  be routed to a new instance.
+  be routed to a new instance. More precisely, those operations made on your app will invalidate current cookies:
   * Deployment
   * Restart
   * Scaling
 
-* Applications hosted on the platform car be cycled at any time for internal
+* Applications hosted on the platform can be recycled at any time for internal
   infrastructure management purposes (like dynamic load balancing of the server),
-  when such event happens, the sticky session is also invalidated.
+  when such event happens, the sticky sessions are also invalidated.
 
 ## The case of Meteor Framework
 
