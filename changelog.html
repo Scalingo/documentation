@@ -23,7 +23,7 @@ modified_at: 2015-09-09 00:00:00
           {% for post in year.items %}
             {% assign body = post.content | xml_escape | strip_html | strip_newlines | remove:' ' %}
             <li id="{{post.id | slugify}}" class="heading" data-type="heading" data-state="{% if body != "" %}closed{% else %}empty{% endif %}">
-              <div class="nav-title d-flex">
+              <div class="nav-title d-flex flex-column flex-md-row">
                 <div class="col-12 col-md-2">
                   {{ post.modified_at | date: "%b %-d, %Y" }}
                 </div>
