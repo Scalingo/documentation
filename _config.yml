@@ -108,7 +108,7 @@ samples:
   - url: sample-go-martini
     name: Go/Martini
     logo: go
-  - url: sample-meteor-todo
+  - url: sample-meteor
     name: MeteorJS
     logo: meteorjs
   - url: sample-node-express
@@ -165,6 +165,9 @@ samples:
   - url: sample-java-grails3
     name: Java/Grails 3
     logo: groovy-grails
+  - url: sample-node-mosca
+    name: NodeJS/Mosca/MQTT
+    logo: mosca
 
 extlinks:
   followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]
