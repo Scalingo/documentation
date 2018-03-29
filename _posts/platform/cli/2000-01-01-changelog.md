@@ -4,6 +4,13 @@ date: 2015-09-09 00:00:00
 index: 3
 ---
 
+__1.8.0__
+
+This release mostly changes internals of the CLI, as Scalingo authentication API has bee rewamped: [https://developers.scalingo.com](https://developers.scalingo.com)
+
+* [Logs] accepts filter for postdeploy and one-off container [#343](https://github.com/Scalingo/cli/pull/343)
+* [Authentication] use of the new authentication API `auth.scalingo.com`, compatibility with 2 factor authentication [#328](https://github.com/Scalingo/cli/pull/328)
+
 __1.7.0__
 
 * [Commands] Add `rename` command to rename an application [#330](https://github.com/Scalingo/cli/issues/330)
