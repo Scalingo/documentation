@@ -11,4 +11,4 @@ Ruby versions 2.2.10, 2.3.7, 2.4.4, and 2.5.1 are security releases made due to 
 * CVE-2018-8779: Unix domain socket and a path containing a null character
 * CVE-2018-8778: controlled buffer under-read in pack_unpack_internal()
 * CVE-2018-8780: NUL-character treatment with Dir
-* RubyGem 2.7.6 (see https://www.ruby-lang.org/en/news/2018/02/17/multiple-vulnerabilities-in-rubygems/)
+* RubyGem 2.7.6 (see [https://www.ruby-lang.org/en/news/2018/02/17/multiple-vulnerabilities-in-rubygems/])
