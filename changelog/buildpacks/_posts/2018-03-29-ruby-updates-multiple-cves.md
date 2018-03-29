@@ -4,6 +4,8 @@ title:	'Ruby - Version 2.5.1, 2.4.4, 2.3.7, 2.2.10 support added'
 github: 'https://github.com/Scalingo/ruby-buildpack'
 ---
 
+[Official Ruby news](https://www.ruby-lang.org/en/news/)
+
 Ruby versions 2.2.10, 2.3.7, 2.4.4, and 2.5.1 are security releases made due to these vulnerabilities:
 * CVE-2017-17742: Response splitting vulnerability in WEBrick
 * CVE-2018-6914: Directory traversal with Dir.mktmpdir and Tempfile
