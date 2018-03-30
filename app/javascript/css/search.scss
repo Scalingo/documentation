@@ -1,46 +1,80 @@
-@import "docsearch.css";
+// SEARCHBOX
+$searchbox-config: (
+  input-width: 200px,
+  input-height: 32px,
+  border-width: 1px,
+  border-radius: 16px,
+  input-border-color: #CCCCCC,
+  input-focus-border-color: #AAAAAA,
+  input-background: #FFFFFF,
+  input-focus-background: #FFFFFF,
+  font-size: 12px,
+  placeholder-color: #AAAAAA,
+  icon-size: 14px,
+  icon-position: left,
+  icon-color: #6D7E96,
+  icon-background: #458EE1,
+  icon-background-opacity: 0,
+  icon-clear-size: 8px
+) !default;
 
-#algolia-autocomplete-listbox-0 {
-  @extend .mdc-elevation--z2;
+// DROPDOWN
+$dropdown-config: (
+  main-color: #458EE1,
+  layout-type: normal,
+  layout-width: normal,
+  layout-alignment: align,
+  background-color: #fff,
+  border-radius: 4,
+  border-width: 1,
+  border-color: #d9d9d9,
+  box-shadow: light,
+  branding-position: bottom,
+  spacing: normal,
+  include-desc: yes,
+  background-category-header:  #ffffff,
+  font-size: normal,
+  header-color: #33363D,
+  title-color: #02060C,
+  subtitle-color: #A4A7AE,
+  text-color: #63676D,
+  highlight-color: #3881FF,
+  highlight-opacity: .1,
+  highlight-type: underline
+) !default;
+
+$builder-height: 260px;
+
+@import "docsearch.js/dist/npm/styles/dropdown";
+@import "docsearch.js/dist/npm/styles/searchbox";
+
+$searchbox: true!default;
+
+@if($searchbox == true){
+  @include searchbox($searchbox-config...);
 }
 
-/* Bottom border of each suggestion */
-.algolia-docsearch-suggestion {
-  border-bottom-color: $brand-primary-dark;
-}
-.algolia-docsearch-suggestion--content {
-  background-color: white;
-}
-/* Main category headers */
-.algolia-docsearch-suggestion--category-header {
-  background-color: $brand-primary;
-}
-/* Highlighted search terms */
-.algolia-docsearch-suggestion--highlight {
-  color: $brand-primary-dark;
-}
-/* Highligted search terms in the main category headers */
-.algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--highlight  {
-  background-color: $brand-primary-dark;
-}
-/* Currently selected suggestion */
-.aa-cursor .algolia-docsearch-suggestion--content {
-  color: #272296;
-}
-.aa-cursor .algolia-docsearch-suggestion {
-  background: #EBEBFB;
-}
+@include dropdown($dropdown-config...);
 
-/* For bigger screens, when displaying results in two columns */
-@media (min-width: 768px) {
-  /* Bottom border of each suggestion */
-  .algolia-docsearch-suggestion {
-    border-bottom-color: $material-color-grey-600;
+.algolia-autocomplete {
+  .ds-dropdown-menu {
+    margin-top: 13px;
+    width: 100%;
+    max-width: unset;
+    &:before {
+      display: none;
+    }
+    [class^="ds-dataset-"] {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+      border: 0;
+      @extend .mdc-card;
+    }
   }
-  /* Left column, with secondary category header */
-  .algolia-docsearch-suggestion--subcategory-column {
-    border-right-color: $material-color-grey-600;
-    background-color: $material-color-grey-200;
-    color: inherit;
+  .algolia-docsearch-suggestion--category-header {
+    margin-top: 0;
   }
 }
+
