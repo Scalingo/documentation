@@ -19,9 +19,16 @@
     padding-bottom: unset;
     color: white;
     width: 100%;
-
     .mdc-tab-bar {
       height: 64px;
+      overflow: hidden;
+      transition: width 0.3s ease-out;
+      &.search-expanded {
+        width: 0;
+        + .search {
+          width: 100%;
+        }
+      }
       .mdc-tab {
         line-height: 64px;
         .material-icons {
@@ -56,6 +63,7 @@
       height: 36px;
       margin-top: 14px;
       margin-bottom: 14px;
+      transition: width 0.3s ease-out;
       width: 100%;
       .mdc-text-field__input {
         border-bottom-width: 0;
@@ -95,11 +103,8 @@
       .search {
         width: auto;
         .mdc-text-field__input {
-          width: 200px;
+          max-width: 100%;
           transition: width 0.3s ease-out;
-          &:focus {
-            width: 350px;
-          }
         }
       }
     }

@@ -15,7 +15,7 @@ modified_at: 2015-09-09 00:00:00
 
 <div class="row">
   {% for item in site.highlighted.technologies %}
-  <div class="col-12 col-md-3 col-lg-4">
+  <div class="col-12 col-md-6 col-lg-4">
     <div class="mdc-card mb-5">
       <div class="card-body">
         <div class="d-flex">
@@ -45,7 +45,7 @@ modified_at: 2015-09-09 00:00:00
 
 <div class="row">
   {% for item in site.highlighted.addons %}
-  <div class="col-12 col-md-3 col-lg-4">
+  <div class="col-12 col-md-6 col-lg-4">
     <div class="mdc-card mb-5">
       <div class="card-body">
         <div class="d-flex">
