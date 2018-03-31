@@ -22,12 +22,12 @@ $searchbox-config: (
 $dropdown-config: (
   main-color: #458EE1,
   layout-type: normal,
-  layout-width: normal,
+  layout-width: full,
   layout-alignment: align,
   background-color: #fff,
-  border-radius: 4,
-  border-width: 1,
-  border-color: #d9d9d9,
+  border-radius: 2,
+  border-width: 0,
+  border-color: transparent,
   box-shadow: light,
   branding-position: bottom,
   spacing: normal,
@@ -59,17 +59,12 @@ $searchbox: true!default;
 .algolia-autocomplete {
   .ds-dropdown-menu {
     margin-top: 13px;
-    width: 100%;
-    max-width: unset;
     &:before {
       display: none;
     }
     [class^="ds-dataset-"] {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      border-bottom-left-radius: 2px;
-      border-bottom-right-radius: 2px;
-      border: 0;
       @extend .mdc-card;
     }
   }

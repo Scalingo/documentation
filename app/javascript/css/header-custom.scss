@@ -63,6 +63,7 @@
       height: 36px;
       margin-top: 14px;
       margin-bottom: 14px;
+      transition: width 0.3s ease-out;
       width: 100%;
       .mdc-text-field__input {
         border-bottom-width: 0;
