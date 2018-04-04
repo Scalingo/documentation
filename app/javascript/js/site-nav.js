@@ -44,7 +44,7 @@ function expandSection(element) {
   // element.setAttribute('data-collapsed', 'false');
 }
 
-let navTitles = document.querySelectorAll('.nav-title')
+let navTitles = document.querySelectorAll('.site-nav .nav-title')
 navTitles.forEach((element) => {
   element.addEventListener('click', (e) => {
     e.preventDefault()
