@@ -5,7 +5,8 @@ modified_at: 2017-09-25 00:00:00
 tags: app notification
 ---
 
-Notification can be defined per application. You can find the settings into the "Notification" tab of your app.
+Notification can be defined per application. You can find the settings into the
+"Notifications" tab of your app.
 
 A notifier have:
 * a name
