@@ -11,7 +11,7 @@ routing configuration of your application. It associates all HTTP requests from 
 to a single `web` application container.
 
 {% warning %}
-Sticky Sessions might help you to scale out applications keeping states about about users
+Sticky Sessions might help you to scale out applications keeping states about users
 across connections (ie. sessions in memory). However this feature come with drawbacks explained later
 on this page and it is a good practice to avoid using it when possible. (stateless sessions,
 or database-stored sessions for instance)
