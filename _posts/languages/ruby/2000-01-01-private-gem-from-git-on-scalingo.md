@@ -12,43 +12,19 @@ languages/ruby/2000-01-01-private-gem-from-github-on-scalingo %}). Otherwise,
 if you're using GitLab, Bitbucket or your own server, you're at the right
 place.
 
-## Create a Git wrapper
-
-In the `bin` directory of your project create a file named `git-ssh` with the
-following content:
-
-```
-#!/bin/bash
-
-if [ ! -e "$HOME/.pkey" ] ; then
-  echo "$(echo $PKEY | base64 -d)" > "$HOME/.pkey"
-  chmod 400 "$HOME/.pkey"
-fi
-
-ssh -i "$HOME/.pkey" -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $1 $2
-```
-
-Make it executable by running `chmod` on it:
-
-```
-chmod +x bin/git-ssh
-```
-
-This script should be used as a SSH wrapper by Git, to do so you must define
-the `GIT_SSH` environment variable which is automatically used by the
-executable `git`.
-
-```
-scalingo env-set GIT_SSH=git-ssh
-```
+The recommended method to achieve this operation is to use the [SSH Private
+Key Buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-ssh-key %}).
+This page explains how to use this buildpack.
 
 ## Set the private SSH key in the app environment
 
-The script expects a private key stored in an environment variable named `PKEY`
-in base64. If `private_key` is your private SSH key:
+The buildpack expects a private key stored in an environment variable named `SSH_KEY`
+in base64. It also need the location of the gems you'll be installing using the `SSH_HOSTS`
+variable.
 
 ```
-scalingo env-set "PKEY=$(cat private_key | base64 -w 0)"
+scalingo env-set "SSH_KEY=$(cat private_key | base64 -w 0)"
+scalingo env-set "SSH_HOSTS=git@gitlab.com"
 ```
 
 Obviously, this key should have the permission to clone your private gem
@@ -62,10 +38,23 @@ The gems you want to checkout should be defined in your `Gemfile` with the follo
 gem "name-of-gem", git: "git@private-server.com:namespace/private-gem.git"
 ```
 
-## Conclusion
+## Configure the buildpack
 
-That's it everything is ready to pull out your private gems during the deployment of your application.
+To use the private key buildpack, your application should be using the multi buildpack,
+allowing to chain multiple buildpacks.
 
-1. The `bundler` gem will call the `git` executable to get the gems
-2. The `git` binary is the reading the environment variable `GIT_SSH` to use a custom SSH wrapper
-3. The wrapper dynamically prepare the private key to authenticate to ssh connection
+```
+$ scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack.git
+```
+
+Chain the private key buildpack, and the ruby buildpack:
+
+```
+$ cat << EOF > .buildpacks
+https://github.com/Scalingo/ssh-private-key-buildpack.git
+https://github.com/Scalingo/ruby-buildpack.git
+EOF
+```
+
+Commit the files and that's it. At the next deployment your private gem will be downloaded
+as expected.
