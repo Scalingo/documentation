@@ -1,5 +1,5 @@
 ---
-title: Environment
+title: Environment Variables
 modified_at: 2014-09-15 00:00:00
 tags: app configuration environment
 index: 3
@@ -67,7 +67,7 @@ $_ENV["PORT"]
 The process should not be really different. Refer to the documentation of
 the standard library of your language.
 
-## Build environment
+## Build Environment Variables
 
 When your application is deployed, the build container is containing the environment
 variables defined in the application configuration and the platform is also injecting
@@ -75,7 +75,7 @@ the following variable:
 
 * `$SOURCE_VERSION`: SHA of the currently deployed Git commit.
 
-## Runtime environment
+## Runtime Environment Variables
 
 When an application container is started, the platform is using the environment
 variables defined in the application configuration but is also injecting a set of
