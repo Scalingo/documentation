@@ -35,7 +35,7 @@ scalingo --app my-app scale clock:1
 With PHP, you can use the package [`cron/cron`](https://github.com/Cron/Cron),
 otherwise each framework has its own task scheduler. You may want to use:
 
-* [Laravel Command Scheduler]({% post_url languages/php/2000-01-01-laravel-scheduling %})
+* [Laravel scheduler]({% post_url languages/php/2000-01-01-laravel %}#laravel-tasks-scheduler)
 * [https://packagist.org/packages/cron/cron](https://packagist.org/packages/cron/cron)
 * [https://packagist.org/packages/liebig/cron](https://packagist.org/packages/liebig/cron)
 * [https://packagist.org/packages/heartsentwined/zf2-cron](https://packagist.org/packages/heartsentwined/zf2-cron)

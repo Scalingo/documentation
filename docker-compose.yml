@@ -27,4 +27,3 @@ services:
     environment:
       NODE_ENV: "development"
       RAILS_ENV: "development"
-
