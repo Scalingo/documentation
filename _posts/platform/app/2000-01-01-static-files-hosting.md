@@ -1,18 +1,19 @@
 ---
 title: Static files only application
-modified_at: 2018-04-20 00:00:00
+modified_at: 2018-04-23 00:00:00
 tags: nodejs express static
 ---
 
-On some occasion, you might need to deploy an application containing only static files. To handle
-such use case, we advise you to deploy a simple Express server to serve these files. Express is
-minimalist web framework for Node.js. You just need to write a `server.js` file containing:
+On some occasions, you might need to deploy an application containing only static files. To handle
+this use case, the recommanded method is to delpoy a simple **Node.JS** server using Express, a
+minimalist web framework. Only one file is required (name it `server.js`):
 
 ```js
 var express = require('express');
 
 var app = express();
-app.use(express.static(__dirname + '/dist'));
+var directory = '/' + (process.env.STATIC_DIR || 'dist')
+app.use(express.static(__dirname + directory));
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
@@ -21,8 +22,8 @@ app.listen(port, function () {
 ```
 
 With this piece of code, all your static files must be in the `dist` folder, in the same directory
-as your `server.js` file. You can use a different folder if you need by modifying the folder defined
-by the call to `express.static`.
+as your `server.js` file. A different directory can be used by modifying the `STATIC_DIR` environment
+variable with the right value.
 
 Your server will listen on the port 3000 in your development environment and on the port defined in
 the environment variable `PORT` when deployed on Scalingo.
@@ -42,5 +43,5 @@ Don't forget to add a `package.json` file in order to add the `express` dependen
 }
 ```
 
-That's it! Push your code to Scalingo and your application will be up and running, ready to serve
-your static files.
+That's it! Push your code to Scalingo and your application will be up and
+running, ready to serve your static files.
