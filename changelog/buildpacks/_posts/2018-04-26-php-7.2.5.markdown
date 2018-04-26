@@ -1,0 +1,7 @@
+---
+modified_at:	2018-04-26 08:54:32
+title:	'PHP - Support of PHP 7.2.5'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+[http://php.net/ChangeLog-7.php#7.2.5](http://php.net/ChangeLog-7.php#7.2.5)
