@@ -85,7 +85,7 @@ my-app.scalingo.io.
   domain of the current one. (ie. `my-app.scalingo.io.example.com`)
 {% endnote %}
 
-![cloudflare-add-record](http://cdn.scalingo.com/documentation/integrations/cloudflare-create-record-03.png)
+![cloudflare-add-record](https://cdn.scalingo.com/documentation/integrations/cloudflare-create-record-03.png)
 
 ## Cloudflare as DNS server
 
