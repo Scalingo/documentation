@@ -72,7 +72,7 @@ object(s)`. Then, insert it with:
 
 ## Running locally
 
-To install dependancies locally:
+To install dependencies locally:
 
 ```
 docker-compose run web bundle install
