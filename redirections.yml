@@ -536,6 +536,9 @@
   -
     old: "/databases/restore-elasticsearch-backup.html"
     new: "/addons/scalingo-elasticsearch/start"
+  -
+    old: "/platform/app/alert"
+    new: "/platform/app/alerts"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
