@@ -96,3 +96,52 @@ The file which implements the cron-like process is defined in `cron.php`:
   }
 ?>
 ```
+
+## Node.js
+
+In Node.js you can use different package such as [`node-cron`](https://www.npmjs.com/package/cron)
+or [`node-schedule`](https://www.npmjs.com/package/node-schedule).
+
+### Example
+
+The following example uses the `node-cron` package.
+
+Its initialization is done in the file `cron.js` and a new kind of container must be defined in the
+`Procfile` of the project, the container type `clock`:
+
+```yaml
+clock: node cron.js
+```
+
+The file which implements the cron-like process is defined in `cron.js`:
+
+```js
+var cron = require('cron');
+
+var job1 = new cron.CronJob({
+	cronTime: '*/2 * * * *',
+	onTick: function() {
+		now = new Date();
+		console.log(now + ': job 1 ticked');
+	},
+	start: true,
+	timeZone: 'Europe/Paris'
+});
+
+var job2 = new cron.CronJob({
+	cronTime: '* * * * *',
+	onTick: function() {
+		now = new Date();
+		console.log(now + ': job 2 ticked');
+	},
+	start: true,
+	timeZone: 'Europe/Paris'
+});
+
+console.log('Started 2 cron jobs')
+```
+
+With this example, the `job1` ticks every 2 minutes and the `job2` ticks every minute. Each job just
+display a message in the log of the application.
+
+The code is available in [sample-node-express](https://github.com/Scalingo/sample-node-express).
