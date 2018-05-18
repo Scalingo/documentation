@@ -3,6 +3,9 @@
     old: "/languages/ruby/private-gem-from-git-on-scalingo/"
     new: "/languages/ruby/private-gem-from-git-on-scalingo"
   -
+    old: "/languages/ruby/web-server"
+    new: "/languages/ruby/start#ruby-application-web-server"
+  -
     old: "/platform/app/transfer-ownership"
     new: "/platform/app/lifecycle-management#transfer-ownership-of-an-application"
   -
