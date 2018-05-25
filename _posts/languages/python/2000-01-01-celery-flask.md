@@ -189,7 +189,7 @@ $ scalingo create my-app
 ## Add a Redis addon to your app
 
 ```bash
-$ scalingo --app my-app addons-add scalingo-redis free
+$ scalingo --app my-app addons-add redis free
 ```
 
 ## Deploy your app

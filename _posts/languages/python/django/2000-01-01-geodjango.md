@@ -14,8 +14,8 @@ an application which is using such extensions, a bit of work is required:
 
 ## Enable PostgreSQL PostGIS Extension
 
-Scalingo PostgreSQL includes [several extensions]({% post_url
-addons/scalingo-postgresql/2000-01-01-extensions %}). PostGIS is an extension to
+PostgreSQL includes [several extensions]({% post_url
+databases/postgresql/2000-01-01-extensions %}). PostGIS is an extension to
 handle geospatial data. After adding a PostgreSQL database to your application,
 you can enable the PostGIS extension with:
 

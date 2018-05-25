@@ -60,7 +60,7 @@ Example:
       "generator": "secret"
     }
   },
-  "addons": ["scalingo-redis"]
+  "addons": ["redis"]
 }
 ```
 

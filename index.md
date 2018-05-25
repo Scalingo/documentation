@@ -41,7 +41,37 @@ modified_at: 2015-09-09 00:00:00
   {% endfor %}
 </div>
 
-<h2>Learn about using built-in databases and addons</h2>
+<h2>Learn about using built-in databases</h2>
+
+<div class="row">
+  {% for item in site.highlighted.databases %}
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="mdc-card mb-5">
+      <div class="card-body">
+        <div class="d-flex">
+          <h3 class="mdc-typography--title mb-0">
+            {{ item.name }}
+          </h3>
+          <div class="logo ml-auto">
+            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <use xlink:href="#{{ item.name | slugify }}"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="mdc-card__actions">
+        <div class="mdc-card__action-buttons">
+          <a href="{{ item.url }}" class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--text-primary-on-background">
+            View details
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<h2>Addons for specific needs</h2>
 
 <div class="row">
   {% for item in site.highlighted.addons %}

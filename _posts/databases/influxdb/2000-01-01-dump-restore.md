@@ -20,7 +20,7 @@ Daily backups done by Scalingo are listed in the database specific dashboard:
 
 1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
 2. Click on **Addons** tab
-3. Click **Link to dashboard** which will take you to the **Scalingo InfluxDB dashboard**
+3. Click **Link to dashboard** which will take you to the **InfluxDB dashboard**
 4. Click on **Backups** tab
 5. Download the backup you want
 
