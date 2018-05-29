@@ -20,7 +20,7 @@ Each time any user deploys a new release of their applications, a new Docker
 image is created. A new layer is added on top of the `scalingo/builder` base
 image. It's built using the buildpack and contains the application code and all
 its dependencies. When the build is done, the resulting Docker image is sent to
-our private repository and our orchestrator will us it subsequently to actually
+our private repository and our orchestrator will use it subsequently to actually
 run the application in our infrastructure.
 
 ## Installed libraries
