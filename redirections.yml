@@ -1,5 +1,11 @@
 "301":
   -
+    old: "/addons/lab/scalingo-tcp/start"
+    new: "/addons/tcp-gateway/start"
+  -
+    old: "/addons/lab/scalingo-tcp"
+    new: "/addons/tcp-gateway"
+  -
     old: "/languages/ruby/private-gem-from-git-on-scalingo/"
     new: "/languages/ruby/private-gem-from-git-on-scalingo"
   -
