@@ -5,10 +5,10 @@ modified_at: 2018-04-05 00:00:00
 tags: app scaling metrics autoscaler
 ---
 
-<blockquote class="bg-info">
+{% note %}
   You might want to read first the page <a href="{% post_url platform/app/2000-01-01-scaling %}">about
   scaling an application</a>.
-</blockquote>
+{% endnote %}
 
 The autoscaling feature lets you scale automatically your application up and down, depending on a
 user-defined metric.
