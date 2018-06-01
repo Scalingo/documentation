@@ -14,7 +14,8 @@ your deployment.
 
 ## Configuration
 
-To setup a post-deployment hook, you just have to add a `postdeploy` entry in your [Procfile]({% post_url platform/app/2000-01-01-procfile %}):
+To setup a post-deployment hook, you just have to add a `postdeploy` entry in your [Procfile]({%
+post_url platform/app/2000-01-01-procfile %}):
 
 ```yml
 postdeploy: command you want to run
