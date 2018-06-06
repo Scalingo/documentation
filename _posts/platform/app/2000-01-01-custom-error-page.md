@@ -28,7 +28,7 @@ You can customize these pages by modifying the following environment variables:
 - `SCALINGO_TIMEOUT_ERROR_URL`
 
 The usage is the following:
-`SCALINGO_STOPPED_PAGE_URL="https://cdn.example.com/stopped_page.html"`.
+`SCALINGO_STOPPED_PAGE_URL=https://cdn.example.com/stopped_page.html`.
 
 In order to prevent the page to be fetched at each request, the content is
 cached in the router's memory. Hence we limit the size of this page to 10MB.
