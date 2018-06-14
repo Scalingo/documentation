@@ -1,0 +1,8 @@
+---
+modified_at:	2018-06-14 08:35:06
+title:	'Redis - New default version: 4.0.10'
+---
+
+Docker image is now [`scalingo/redis:4.0.10-1`](https://hub.docker.com/r/scalingo/redis/)
+
+Redis CHANGELOG: [https://raw.githubusercontent.com/antirez/redis/4.0/00-RELEASENOTES](https://raw.githubusercontent.com/antirez/redis/4.0/00-RELEASENOTES)
