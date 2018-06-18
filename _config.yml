@@ -87,19 +87,26 @@ highlighted:
       url: "/languages/php/python"
     - name: Java
       url: "/languages/java/start"
-  addons:
+  databases:
     - name: PostgreSQL
-      url: "/addons/scalingo-postgresql/start"
+      url: "/databases/postgresql/start"
     - name: MySQL
-      url: "/addons/scalingo-mysql/start"
+      url: "/databases/mysql/start"
     - name: MongoDB
-      url: "/addons/scalingo-mongodb/start"
+      url: "/databases/mongodb/start"
     - name: Redis
-      url: "/addons/scalingo-redis/start"
+      url: "/databases/redis/start"
     - name: Elasticsearch
-      url: "/addons/scalingo-elasticsearch/start"
+      url: "/databases/elasticsearch/start"
     - name: InfluxDB
-      url: "/addons/scalingo-influxdb/start"
+      url: "/databases/influxdb/start"
+  addons:
+    - name: OpenVPN
+      url: "/addons/scalingo-openvpn/start"
+    - name: VPN IPSec
+      url: "/addons/scalingo-vpn-ipsec/start"
+    - name: Docker Image
+      url: "/addons/scalingo-docker-image/start"
 
 samples:
   - url: sample-ruby-sinatra

@@ -42,6 +42,6 @@ You can download the latest version by following this link : [https://github.com
   If you require an addon that is not present in [this list](https://scalingo.com/addons),
   feel free to [send us an email](mailto:support@scalingo.com).
 * You will need to migrate any database manually, dumping it from Heroku and restoring it to Scalingo:
-  * [Dump and restore a MongoDB database]({% post_url addons/scalingo-mongodb/2000-01-01-dump-restore %})
-  * [Dump and restore a PostgreSQL database]({% post_url addons/scalingo-postgresql/2000-01-01-dump-restore %})
-  * [Dump and restore a MySQL database]({% post_url addons/scalingo-mysql/2000-01-01-dump-restore %})
+  * [Dump and restore a MongoDB database]({% post_url databases/mongodb/2000-01-01-dump-restore %})
+  * [Dump and restore a PostgreSQL database]({% post_url databases/postgresql/2000-01-01-dump-restore %})
+  * [Dump and restore a MySQL database]({% post_url databases/mysql/2000-01-01-dump-restore %})

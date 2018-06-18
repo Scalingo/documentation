@@ -32,6 +32,12 @@ use Rack::Rewrite do
 
   r301 /\/internals\/(.*)-buildpack/, "/platform/deployment/buildpacks/$1"
 
+  r301 /\/addons\/scalingo-postgresql(.*)/,    "/databases/postgresql$1"
+  r301 /\/addons\/scalingo-mysql(.*)/,         "/databases/mysql$1"
+  r301 /\/addons\/scalingo-mongodb(.*)/,       "/databases/mongodb$1"
+  r301 /\/addons\/scalingo-elasticsearch(.*)/, "/databases/elasticsearch$1"
+  r301 /\/addons\/scalingo-influxdb(.*)/,      "/databases/influxdb$1"
+
   redirections = YAML.load_file('redirections.yml')
   redirections['301'].each{|redir|
     r301 redir["old"], redir["new"]

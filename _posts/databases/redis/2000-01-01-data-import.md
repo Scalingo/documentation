@@ -8,7 +8,7 @@ index: 2
 
 This tutorial aims at transfering all the data from a remote Redis database
 (from another provider) to a Redis instance provisioned through the [Scalingo
-Redis Addon]({% post_url addons/scalingo-redis/2000-01-01-start %}).
+Redis Addon]({% post_url databases/redis/2000-01-01-start %}).
 
 {% include info_command_line_tool.md %}
 
@@ -95,5 +95,5 @@ Once the synchronization is over, you need to disable the replication configurat
 [host:port] > SLAVEOF NO ONE
 ```
 
-That's it, your Scalingo Redis instance, owns all the data of your remote Redis, and is
+That's it, your Redis instance, owns all the data of your remote Redis, and is
 ready to accept queries from your application.
