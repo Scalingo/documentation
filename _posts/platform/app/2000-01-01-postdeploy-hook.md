@@ -7,10 +7,9 @@ index: 13
 
 ## Context
 
-When you deploy your application, you may want to trigger custom action after
-the deployment succeeded automatically, this hook is then exactly what you
-need. This hook will automatically starts the specified command at the end of
-your deployment.
+When you deploy your application, you may want to trigger automatically custom actions after the
+deployment succeeded, this hook is then exactly what you need. This hook will automatically starts
+the specified command at the end of your deployment.
 
 ## Configuration
 
