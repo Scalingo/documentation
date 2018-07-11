@@ -30,7 +30,7 @@ We recommend to generate a new key pair for integrating CircleCI with Scalingo.
 
 ### Executing post-deployment commands
 
-You have to download our command line tool in the CircleCI environment and use the `scalingo run` command.
+You can define [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %}) integrated in your Procfile. If you still prefer to run post-deployment commands at CircleCI level, you will have to download our command line tool in the CircleCI environment and use the `scalingo run` command.
 
 ```yaml
 deployment:
