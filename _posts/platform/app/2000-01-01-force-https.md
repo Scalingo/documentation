@@ -90,3 +90,16 @@ Network](https://developer.mozilla.org/fr/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Tr
   * NodeJS, Meteor: [force-ssl](https://atmospherejs.com/meteor/force-ssl)
   * PHP, Symfony: [Nelmio Security Bundle](https://github.com/nelmio/NelmioSecurityBundle)
   * PHP, Laravel: [zae/strict-transport-security](https://packagist.org/packages/zae/strict-transport-security)
+* In case of not GET request, tools (browers, Postman, language libraries, ...) may not follow the RFC and will request GET on the redirection.
+
+  >    If the 301 status code is received in response to a request other
+  >   than GET or HEAD, the user agent MUST NOT automatically redirect the
+  >   request unless it can be confirmed by the user, since this might
+  >   change the conditions under which the request was issued.
+  >
+  >      Note: When automatically redirecting a POST request after
+  >      receiving a 301 status code, some existing HTTP/1.0 user agents
+  >      will erroneously change it into a GET request.
+  (from [ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt) section 10.3.2)
+
+  For example with Postman, POST on HTTP will display the result of GET on HTTPS.  
