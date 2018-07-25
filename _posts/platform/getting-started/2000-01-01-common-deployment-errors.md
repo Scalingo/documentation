@@ -25,7 +25,7 @@ When pushing your app to Scalingo, you might get the following error:
  !   → Invalid return code from buildpack
 ```
 
-There's two main solutions to this problem.
+There are two main solutions to this problem.
 
 ### Project in a subdirectory
 
