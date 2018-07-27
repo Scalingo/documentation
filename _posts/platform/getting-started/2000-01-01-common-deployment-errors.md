@@ -14,7 +14,7 @@ When pushing your app to Scalingo, you might get the following error:
        We're sorry this build is failing!
 
        Refer to the documentation to find out why:
-       http://doc.scalingo.com/deployment/unknown-technology
+       https://doc.scalingo.com/deployment/unknown-technology
 
        If you can't find the issue in your application,
        please send us an email at support@scalingo.com
