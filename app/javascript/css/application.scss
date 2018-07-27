@@ -351,6 +351,13 @@ $page-nav-margin: 40px;
       vertical-align: bottom;
     }
   }
+  ol {
+    .material-icons {
+      font-size: inherit;
+      line-height: inherit;
+      vertical-align: bottom;
+    }
+  }
   .footer-date {
     @extend .text-muted;
   }
