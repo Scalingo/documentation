@@ -27,7 +27,7 @@ run the application in our infrastructure.
 
 We've installed different libraries and softwares which are commonly used in
 the build process or used by human when running [one-off
-container](http://doc.scalingo.com/app/tasks.html).
+container]({% post_url platform/app/2000-01-01-tasks %}).
 
 You'll find:
 

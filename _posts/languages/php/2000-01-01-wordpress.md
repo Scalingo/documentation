@@ -84,7 +84,7 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 Thanks to this snippet, WordPress will look at the HTTP header
 `X-Forwarded-Proto` set by our router to 'http' or 'https' whether the website
 is accessed with HTTP or HTTPS. Have a look at our [routing
-documentation](http://doc.scalingo.com/internals/routing.html) for more
+documentation]({% post_url platform/internals/2000-01-01-routing %}) for more
 information about this header.
 
 ## Plugins and updates
