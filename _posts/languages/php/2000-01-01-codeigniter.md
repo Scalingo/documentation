@@ -57,9 +57,6 @@ $db['production'] = array(
 
 ## Log files
 
-By default, we are getting the logs written on stdout and send them to our log aggregator system.
-The PHP logging does not work the same way (since the standard output is what is sent back to the
-browser), and CodeIgniter is using its own log files.
+By default all logs written on stdout are aggregated by Scalingo. For CodeIgniter all files named `application/logs/log-$(date).php` (default CodeIgniter log files) are also aggregated.
 
-These files are named `application/logs/log-$(date).php` by default. Logs stored in those files are
-visible in the _Logs_ section of the dashboard.
+Aggregated logs can be seen in the _Logs_ section of the web dashboard or through the _logs_ subcommand of our <a href="{% post_url platform/cli/2000-01-01-start %}">Command-Line Tool</a>.
