@@ -8,7 +8,7 @@ tags: php, http, framework, CodeIgniter, deployment
 ## Detection
 
 When a PHP application is deployed, we're looking at the existence of a
-`system/core/CodeIgniter.php` file to know if it is using a CodeIgniter 3.
+`system/core/CodeIgniter.php` file to know if it is using a CodeIgniter.
 
 During the deployment process you'll see the following output, mentioning that
 the framework has correctly been detected.
