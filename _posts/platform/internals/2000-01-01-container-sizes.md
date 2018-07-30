@@ -65,7 +65,6 @@ Containers have various limits depending on their size. Here is a comprehensive 
 - RAM: cf. above-mentioned table
 - Swap: twice the amount of RAM.
 - CPU access: high priority means twice as much priority compared to standard priority.
-- Bandwidth: the bandwidth is by default un-throttled but might be throttled for management reason.
 - PID limits: from 128 (S) to 2048 (2XL).
 - Ulimit nproc: from 128 (S) to 2048 (2XL). Maximum amount of processes.
 - Ulimit nofile: 10000. Maximum number of files an application can open.
