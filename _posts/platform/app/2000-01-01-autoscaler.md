@@ -11,7 +11,7 @@ tags: app scaling metrics autoscaler
 {% endnote %}
 
 The autoscaling feature lets you scale automatically your application up and down, depending on a
-user-defined metric.
+user-defined threshold on the application metric.
 
 An autoscaler can be added to an application by going to the "Containers" tab of your app:
 
@@ -20,9 +20,8 @@ TODO: Better screenshot
 {% assign img_url = 'https://cdn.scalingo.com/documentation/screenshot_dashboard_autoscalers.png' %}
 {% include mdl_img.html %}
 
-The **Desired Target** is used by the autoscaler to adapt the number of containers of your
-application. We also provide you with the 95th percentile average over the last 24 hours as a
-recommendation value.
+The **Target** is used by the autoscaler to adapt the number of containers of your application. We
+also provide you with the 95th percentile average over the last 24 hours as a recommended value.
 
 ## Autoscaling Logic
 
@@ -42,9 +41,11 @@ The autoscaling of an application can depend on five different metrics:
 
 * Containers resource consumption: RAM, CPU and swap,
 * 95th percentile of the requests response time,
-* Requests per minute per container,
+* Requests per minute (RPM),
+* and RPM per container: if your application has multiple `web` containers, it is the RPM divided by
+the number of containers.
 
-The last two metrics are only available for `web` containers.
+The last three metrics are only available for `web` containers.
 
 ## Monitoring Autoscaling Events
 
