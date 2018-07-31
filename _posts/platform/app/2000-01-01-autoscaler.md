@@ -15,8 +15,6 @@ user-defined threshold on the application metric.
 
 An autoscaler can be added to an application by going to the "Containers" tab of your app:
 
-TODO: Better screenshot
-
 {% assign img_url = 'https://cdn.scalingo.com/documentation/screenshot_dashboard_autoscalers.png' %}
 {% include mdl_img.html %}
 
