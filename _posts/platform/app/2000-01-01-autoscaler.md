@@ -6,8 +6,8 @@ tags: app scaling metrics autoscaler
 ---
 
 {% note %}
-  You might want to read first the page <a href="{% post_url platform/app/2000-01-01-scaling %}">about
-  scaling an application</a>.
+  You might want to read first the page about [scaling an application]({% post_url
+  platform/app/2000-01-01-scaling %}).
 {% endnote %}
 
 The autoscaling feature lets you scale automatically your application up and down, depending on a
