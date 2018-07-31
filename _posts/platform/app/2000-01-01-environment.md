@@ -74,6 +74,7 @@ variables defined in the application configuration and the platform is also inje
 the following variable:
 
 * `$SOURCE_VERSION`: SHA of the currently deployed Git commit.
+* `$APP`: Name of the application the build has been triggered for.
 
 ## Runtime Environment Variables
 
