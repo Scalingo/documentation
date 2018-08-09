@@ -1,6 +1,6 @@
 ---
 title: Review apps
-modified_at: 2017-03-10 00:00:00
+modified_at: 2018-08-10 00:00:00
 tags: app review apps
 index: 31
 ---
@@ -34,18 +34,19 @@ among open PRs of your app to manually deploy a review app.
 {% assign img_url = "https://cdn.scalingo.com/blog/20161020-github-integration/review_apps.png" %}
 {% include mdl_img.html %}
 
-## What about Addons, collaborators and environment variables?
+## Addons, collaborators and environment variables
 
 If you've enabled Review Apps, a new application will be created every time a
-new Pull Request is opened in your GitHub repository. This new application is a
-child application (we'll see later this year which new exciting stuff this
-specification will help us build). This child app will have a copy of add-ons,
+new Pull Request is opened in your linked GitHub repository. This new
+application is a child application. This child app will have a copy of add-ons,
 collaborators and environment variables from the parent application.
 
-Most of the time you want to customize those 3 things. That's where the new
-postdeploy hooks and manifest come in handy. Combining those two powerful
-features, you can tailor exactly how child apps are configured and their
-behaviors.
+## Configuration of review apps
+
+Having a strict copy of the parent application is sometimes not wishable. You
+might not want to copy production credentials, or it is sometimes required to
+start a custom task after the initialization of the app, that's where the [scalingo
+JSON manifest]({% post_url platform/app/2000-01-01-app-manifest %}) becomes useful.
 
 As a quick example, here is a sample `scalingo.json` that customize the
 environment variable `CANONICAL_HOST_URL` for a child app:
@@ -64,7 +65,7 @@ Here, the value of the environment variable `CANONICAL_HOST_URL` will contain
 the URL to reach the newly deployed app. The `scalingo.json` configuration
 always takes precedence on parent app configuration.
 
-## Run a task after the first deployment of a Review App
+### Run a task after the first deployment of a review app
 
 When a review app is created, you might want to execute a custom action like
 seeding its database. This can be done using the `first-deploy` scripts in the
@@ -85,7 +86,7 @@ If a `postdeploy` is defined in your `scalingo.json` or `Procfile`, it won't be 
 }
 ```
 
-## Run a task after each deployment of a Review App
+### Run a task after each deployment of a review app
 
 To run a custom command after each deployment of a review app, you need to
 define a [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook
@@ -108,7 +109,7 @@ custom environment variable in the `scalingo.json` file
 And use the environment variable in your postdeploy task to check if it is
 executed in the scope of a review app or not.
 
-## Is it possible to create Review Apps if my code is hosted at a different place?
+## Is it possible to create review apps if my code is hosted at a different place?
 
 We only implement directly Review Apps for code hosted on GitHub. However it is
 very easy for you to set it up for your specific case thanks to the Scalingo
