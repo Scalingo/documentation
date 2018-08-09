@@ -64,18 +64,17 @@ Here, the value of the environment variable `CANONICAL_HOST_URL` will contain
 the URL to reach the newly deployed app. The `scalingo.json` configuration
 always takes precedence on parent app configuration.
 
-## Run a task after the 1st deployment of a review app
+## Run a task after the first deployment of a Review App
 
 When a review app is created, you might want to execute a custom action like
-seeding its database, this can be done using the `first-deploy` scripts in the
+seeding its database. This can be done using the `first-deploy` scripts in the
 manifest `scalingo.json`. If such a property is defined, the given command will
 be executed as a [postdeploy hook]({% post_url
 platform/app/2000-01-01-postdeploy-hook %}) after the first deployment.
 
 {% warning %}
-This script replaces the postdeploy hook. If you want to execute both, make
-sure to adapt the `first-deploy` has the same effect that your `postdeploy`
-additionally to the special action you want to achieve at the first deployment.
+This script replaces the `postdeploy` hook for the first deployment of a review app.
+If a `postdeploy` is defined in your `scalingo.json` or `Procfile`, it won't be executed.
 {% endwarning %}
 
 ```json
@@ -86,7 +85,7 @@ additionally to the special action you want to achieve at the first deployment.
 }
 ```
 
-## Run a task after each deployment of a review app
+## Run a task after each deployment of a Review App
 
 To run a custom command after each deployment of a review app, you need to
 define a [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook
@@ -106,7 +105,7 @@ custom environment variable in the `scalingo.json` file
 }
 ```
 
-And use the environment variable in your postdeploy task to check if its is
+And use the environment variable in your postdeploy task to check if it is
 executed in the scope of a review app or not.
 
 ## Is it possible to create Review Apps if my code is hosted at a different place?
