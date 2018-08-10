@@ -5,7 +5,7 @@ tags: internals containers sizes
 index: 2
 ---
 
-## Comparative table
+## Comparative Table
 
 <table class="table">
 	<thead>
@@ -50,9 +50,23 @@ index: 2
 	</tbody>
 </table>
 
-## Availability of the sizes
+Bigger container sizes are available upon request on the support.
+
+## Availability of the Sizes
 
 Our 30 days free trial only gives you access to small and medium containers, if you want
 to use another kind of size, please [fill your billing profile and payment
 method](https://my.scalingo.com/billing)
 
+## Container Limits
+
+Containers have various limits depending on their size. Here is a comprehensive list:
+
+- RAM: cf. above-mentioned table
+- Swap: twice the amount of RAM.
+- CPU access: high priority means twice as much priority compared to standard priority. For example,
+  consider three containers, one has a high priority and two others have a standard priority. When
+  processes in all three containers attempt to use 100% of CPU, the first container would receive
+  50% of the total CPU time and the two others would receive 25%.
+- PID limits: from 128 (S) to 2048 (2XL).
+- Ulimit nofile: 10000. Maximum number of files an application can open.
