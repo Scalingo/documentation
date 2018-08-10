@@ -39,7 +39,7 @@ can still customize them before triggering the deployment.
       "template": "%URL%/admin"
     }
     "SECRET_KEY": {
-      "generator": "secret",
+      "generator": "secret"
     }
   }
 }
