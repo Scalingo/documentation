@@ -64,6 +64,9 @@ Containers have various limits depending on their size. Here is a comprehensive 
 
 - RAM: cf. above-mentioned table
 - Swap: twice the amount of RAM.
-- CPU access: high priority means twice as much priority compared to standard priority.
+- CPU access: high priority means twice as much priority compared to standard priority. For example,
+  consider three containers, one has a high priority and two others have a standard priority. When
+  processes in all three containers attempt to use 100% of CPU, the first container would receive
+  50% of the total CPU time and the two others would receive 25%.
 - PID limits: from 128 (S) to 2048 (2XL).
 - Ulimit nofile: 10000. Maximum number of files an application can open.
