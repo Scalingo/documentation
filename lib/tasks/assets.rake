@@ -18,17 +18,17 @@ end
 
 Webpacker::Compiler.module_eval do
   def webpack_env
-    env.merge("NODE_ENV" => @webpacker.env, "WEBPACKER_ASSET_HOST" => "")
+    env.merge('NODE_ENV' => @webpacker.env, 'WEBPACKER_ASSET_HOST' => '')
   end
 end
 
-HOMEPAGE_URL = ENV['HOMEPAGE_URL'] || "https://scalingo.com/"
+HOMEPAGE_URL = ENV['HOMEPAGE_URL'] || 'https://scalingo.com/'
 
 namespace :assets do
-  desc "assets precompilation"
+  desc 'assets precompilation'
   task :precompile do
-    Rake::Task["webpacker:compile"].execute
-    exec("jekyll build")
+    Rake::Task['webpacker:compile'].execute
+    exec('jekyll build')
   end
 end
 
@@ -43,7 +43,7 @@ ensure
 end
 
 namespace :webpacker do
-  desc "Compile JavaScript packs using webpack for production with digests"
+  desc 'Compile JavaScript packs using webpack for production with digests'
   task :compile do
     ensure_log_goes_to_stdout do
       if Webpacker.compile
@@ -52,6 +52,6 @@ namespace :webpacker do
         # Failed compilation
         exit!
       end
-   end
+    end
   end
 end
