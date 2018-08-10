@@ -130,6 +130,9 @@ samples:
   - url: sample-php-laravel
     name: PHP/Laravel
     logo: php-laravel
+  - url: sample-laravel-mix
+    name: PHP/Laravel Mix
+    logo: php-laravel
   - url: sample-php-symfony
     name: PHP/Symfony
     logo: php-symfony
