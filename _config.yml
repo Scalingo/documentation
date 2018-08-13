@@ -157,6 +157,9 @@ samples:
   - url: sample-php-slim
     name: PHP/Slim
     logo: php-slim
+  - url: sample-php-codeigniter
+    name: PHP/CodeIgniter
+    logo: php-codeigniter
   - url: sample-python-celery
     name: Python/Celery
     logo: python
