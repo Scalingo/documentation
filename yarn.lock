@@ -1288,8 +1288,8 @@ boom@5.x.x:
     hoek "4.x.x"
 
 bootstrap@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0.tgz#ceb03842c145fcc1b9b4e15da2a05656ba68469a"
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.3.tgz#0eb371af2c8448e8c210411d0cb824a6409a12be"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -2970,8 +2970,8 @@ flush-write-stream@^1.0.0:
     readable-stream "^2.0.4"
 
 focus-trap@^2.3.0:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-2.4.3.tgz#95edc23e77829b7772cb2486d61fd6371ce112f9"
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-2.4.6.tgz#332b475b317cec6a4a129f5307ce7ebc0da90b40"
   dependencies:
     tabbable "^1.0.3"
 
@@ -6480,8 +6480,8 @@ sax@~1.2.1, sax@~1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
 "scalingo-styles@https://github.com/Scalingo/scalingo-styles":
-  version "0.6.0"
-  resolved "https://github.com/Scalingo/scalingo-styles#4fef02cb9405ad186461caf67942c281468ae1c8"
+  version "0.8.4"
+  resolved "https://github.com/Scalingo/scalingo-styles#df3d6522b565cbbbb835a9b2dbe98e8d81123492"
   dependencies:
     bootstrap "^4.0.0"
     material-components-web "~0.30.0"
@@ -7125,8 +7125,8 @@ svgo@^1.0.4:
     util.promisify "~1.0.0"
 
 tabbable@^1.0.3:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-1.1.2.tgz#b171680aea6e0a3e9281ff23532e2e5de11c0d94"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-1.1.3.tgz#0e4ee376f3631e42d7977a074dbd2b3827843081"
 
 tapable@^0.2.7:
   version "0.2.8"
@@ -7735,8 +7735,8 @@ websocket-extensions@>=0.1.1:
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
 
 whatwg-fetch@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
 
 whet.extend@~0.9.9:
   version "0.9.9"
