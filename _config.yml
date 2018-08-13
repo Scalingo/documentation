@@ -109,6 +109,9 @@ highlighted:
       url: "/addons/scalingo-docker-image/start"
 
 samples:
+  - url: sample-ruby-rails
+    name: Ruby/Rails
+    logo: ruby-on-rails
   - url: sample-ruby-sinatra
     name: Ruby/Sinatra
     logo: sinatra
