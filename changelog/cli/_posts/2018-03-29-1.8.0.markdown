@@ -10,7 +10,7 @@ Installation:
 
 Changelog:
 
-This release mostly changes internals of the CLI, as Scalingo authentication API has bee rewamped: [https://developers.scalingo.com](https://developers.scalingo.com)
+This release mostly changes internals of the CLI, as Scalingo authentication API has bee revamped: [https://developers.scalingo.com](https://developers.scalingo.com)
 
 * [Logs] accepts filter for postdeploy and one-off container [#343](https://github.com/Scalingo/cli/pull/343)
 * [Authentication] use of the new authentication API `auth.scalingo.com`, compatibility with 2 factor authentication [#328](https://github.com/Scalingo/cli/pull/328)
