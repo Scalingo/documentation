@@ -28,7 +28,7 @@ The Post-deployment hook will be part of the deployment process, things will hap
 
 1. The application is built
 2. Containers from the new version of the application are started
-3. We wait until they started successfully (see common [deployment start errors]({% post_url platform/getting-started/2000-01-01-common-deployment-errors %})#start-errors)
+3. We wait until they started successfully (see common [deployment start errors]({% post_url platform/getting-started/2000-01-01-common-deployment-errors %}#start-errors))
 4. An extra container is started to run the `postdeploy` command
 5. If the `postdeploy` command has succeeded, we update the routing
    configuration, the new containers start to get requests and the deployment
