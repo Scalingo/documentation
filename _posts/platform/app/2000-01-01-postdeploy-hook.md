@@ -74,7 +74,7 @@ postdeploy: bundle exec rake db:migrate
 
 ### Notifying external service
 
-#### Newrelic
+#### New Relic
 
 ```yaml
 postdeploy: newrelic deployments --revision=$CONTAINER_VERSION
@@ -84,6 +84,12 @@ postdeploy: newrelic deployments --revision=$CONTAINER_VERSION
 
 ```yaml
 postdeploy: curl https://api.rollbar.com/api/1/deploy/ -F access_token=$ROLLBAR_ACCESS_TOKEN -F environment=$RAILS_ENV -F revision=$CONTAINER_VERSION -F local_username=scalingo
+```
+
+#### AppSignal
+
+```yaml
+postdeploy: bundle exec appsignal notify_of_deploy --name=$APP --user=scalingo --environment=$RAILS_ENV --revision=$CONTAINER_VERSION
 ```
 
 ### Both Applying migrations and notifying external service
