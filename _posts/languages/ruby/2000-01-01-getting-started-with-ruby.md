@@ -160,4 +160,4 @@ Here are some links that you could find useful:
 
 * Need to store data? Look at our [database addons](https://scalingo.com/fr/databases)
 * Want your own [domain name]({% post_url platform/app/2000-01-01-domain %})?
-* Using GitHub? Our [GitHub integration]({% post_url integrations/2000-01-01-github-integration %}) will make your life easier.
+* Using GitHub? Our [GitHub integration]({% post_url platform/app/2000-01-01-github-integration %}) will make your life easier.
