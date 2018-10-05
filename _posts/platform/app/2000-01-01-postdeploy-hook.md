@@ -88,9 +88,17 @@ postdeploy: curl https://api.rollbar.com/api/1/deploy/ -F access_token=$ROLLBAR_
 
 #### AppSignal
 
+The `appsignal` CLI `notify_of_deploy` command is deprecated. But you can notify AppSignal of a new
+deployment by adding the file `config/appsignal.yml` with the following content:
+
 ```yaml
-postdeploy: bundle exec appsignal notify_of_deploy --name=$APP --user=scalingo --environment=$RAILS_ENV --revision=$CONTAINER_VERSION
+default: &defaults
+  revision: <%= ENV.fetch("CONTAINER_VERSION") { nil } %>
+  production:
+<<: *defaults
 ```
+
+This solution works for the AppSignal Ruby gem version above `2.6.1`.
 
 ### Both Applying migrations and notifying external service
 
