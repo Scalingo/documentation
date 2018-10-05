@@ -12,6 +12,14 @@ Using Git over HTTP you can authenticate to GitHub using basic authentication.
 However, we don't want to embed usernames and passwords in `Gemfile`s. Instead,
 we can use authentication tokens.
 
+## When using Bundler
+
+Bundler now supports credentials for gem sources using environment variable. Here is a guide from
+the [Bundler
+documentation](https://bundler.io/man/bundle-config.1.html#CREDENTIALS-FOR-GEM-SOURCES).
+
+If this solution does not work for you, here is another solution to do the same thing:
+
 ## Get an OAuth Token from  GitHub
 
 First you will need to get an OAuth token from GitHub using your own username and "note"
