@@ -9,14 +9,16 @@ permalink: /languages/ruby/getting-started-with-ruby/
 
 ## Installing the tools
 
-This tutorial will show you how to deploy a ruby app in minutes.
+This tutorial is depicting how to deploy a ruby application on Scalingo
 
-Note: This tutorial does not cover the rails installation, if you want to start a rails project use our [getting started with rails tutorial]({% post_url languages/ruby/2015-02-17-getting-started-with-rails %})
+<aside class="note" markdown="1">
+Note: This tutorial does not cover the Ruby on Rails installation, If you're looking to deploy a Ruby on Rails project, follow the [getting started with Ruby on Rails tutorial]({% post_url languages/ruby/rails/2000-01-01-start %})
+</aside>
 
 To be able to follow this tutorial, we assume that you have:
 
 * A [Scalingo account](https://scalingo.com/users/signup)
-* Ruby version 2.3.5+ -- see the gorails setup guide [window](https://gorails.com/setup/windows/10), [mac](https://gorails.com/setup/osx/10.13-high-sierra), [linux](ihttps://gorails.com/setup/ubuntu/17.10)
+* Ruby version 2.3.5+ -- see the gorails setup guide [window](https://gorails.com/setup/windows/10), [mac](https://gorails.com/setup/osx/10.13-high-sierra), [linux](https://gorails.com/setup/ubuntu/17.10)
 * [Bundler](http://bundler.io/) installed locally: `gem install bundler`
 * The [Scalingo cli](http://cli.scalingo.com/)
 
@@ -40,9 +42,9 @@ This will create a file name `Gemfile`. This file will be used for describing ge
 
 ## Create your ruby application
 
-<blockquote class="bg-info">
+<aside class="note" markdown="1">
 For this example we will use the sinatra http framework but any ruby http framework works on Scalingo
-</blockquote>
+</aside>
 
 Let's start by adding the `sinatra` gem to our `Gemfile` by adding the following line at the end of the file:
 ```Gemfile
@@ -65,15 +67,15 @@ get '/' do
 end
 ```
 
-This will create a http server using the sinatra framework which will respond `Hello World` when asked for the `/` endpoint.
+This will create a HTTP server using the Sinatra framework which will respond `Hello World` when asked for the `/` endpoint.
 
-You can try it by running:
+To run your application, use:
 
 ```bash
 $ ruby app.rb
 ```
 
-And openning a browser to [localhost:4567](http://localhost:4567).
+And open a browser to [localhost:4567](http://localhost:4567).
 
 ## Using a custom port
 
@@ -91,7 +93,7 @@ get '/' do
 end
 ```
 
-This line will tell sinatra to listen to the port `4567` or the port defined in the `PORT` environment variable if the `PORT` environment variable is defined.
+This line will tell Sinatra to listen to the port `4567` or the port defined in the `PORT` environment variable if the `PORT` environment variable is defined.
 
 You can try this by setting the `PORT` environment variable while launching your app:
 
@@ -104,7 +106,7 @@ Now your app will be available at the following address: [localhost:3000](http:/
 ## Tell Scalingo how to start your application
 
 The last step before the deployment is to tell Scalingo how to start your application.
-This is done using a special file call [Procfile]({% post_url internals/2014-12-01-procfile %}).
+This is done using a special file call [Procfile]({% post_url platform/app/2000-01-01-procfile %}).
 
 To tell Scalingo to start the `web` process with the `ruby app.rb` command by creating a file called `Procfile` with the following content:
 
@@ -134,7 +136,7 @@ $ scalingo create my-ruby-app
 
 ## Deploy on Scalingo
 
-Now all the hardwork is done, just push your application to Scalingo and let the magic happen.
+Now all the hard work is done, just push your application to Scalingo and let the magic happen.
 
 ```
 $ git push scalingo master
@@ -156,7 +158,7 @@ You now know how to deploy a ruby app,
 
 Here are some link that you could find useful:
 
-* Need to store data? Look at our [database addons]({% post_url databases/2014-11-24-databases %})
-* Want your own [domain name]({% post_url app/2015-04-01-domain %})?
+* Need to store data? Look at our [database addons](https://scalingo.com/fr/databases)
+* Want your own [domain name]({% post_url platform/app/2000-01-01-domain %})?
 * Using GitHub? Our [GitHub integration]({% post_url integrations/2000-01-01-github-integration %}) will make your life easier.
 
