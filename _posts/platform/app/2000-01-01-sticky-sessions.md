@@ -12,18 +12,17 @@ to a single `web` application container.
 
 {% warning %}
 Sticky Sessions might help you to scale out applications keeping states about users
-across connections (ie. sessions in memory). However this feature come with drawbacks explained later
+across connections (i.e. sessions in memory). However this feature come with drawbacks explained later
 on this page and it is a good practice to avoid using it when possible. (stateless sessions,
 or database-stored sessions for instance)
 {% endwarning %}
 
 ## Description
 
-By default the routing of requests is done using the *Round Robin* algorithm,
-learn more about it in our [dedicated page]({% post_url
-platform/internals/2000-01-01-routing %}).  As an example: if you have 2 web
-containers, and a single user is making 2 requests to your application, each
-container will receive one request.
+By default the routing of requests is done using the *Round Robin* algorithm, learn more about it in
+our [dedicated page]({% post_url platform/internals/2000-01-01-routing %}). As an example: if you
+have 2 web containers, and a single user is making 2 requests to your application, each container
+will receive one request.
 
 Once **Sticky Sessions** have been enabled, each end-user will be associated to
 a container and consecutive requests from this entity will all target the same
@@ -34,10 +33,9 @@ request.
 
 ### Sticky Session Cookie
 
-Any request done to the application having **Sticky Sessions** enabled, will receive
-a `sc-sticky-session` cookie in the request response. This cookie should be sent back,
-the default behavior of most web clients, to ensure the end-user gets to the same
-container.
+Any request done to the application having **Sticky Sessions** enabled, will receive a
+`sc-sticky-session` cookie in the request response. This cookie has a 24 hours duration. At each
+client's request, a new sticky session cookie is returned, with a duration of 24 hours.
 
 ```console
 └> curl my-app.scalingo.io -I
@@ -50,25 +48,27 @@ X-Request-ID: d2df9e31-7415-46bf-beff-8ba31623a817
 Set-Cookie: sc-sticky-session=GCLlOQs/Ttbrq5u1Y76yc4mI0uJjTE8vpoOUS/RG5jo=; Expires=Thu, 22-Mar-18 17:51:09 GMT; Max-Age=86400; Domain=my-app.scalingo.io; Path=/; HttpOnly
 ```
 
-If the cookie is not correctly sent back, the request may be routed to another
-backend `web` container.
+If the cookie is not correctly sent back, the request may be routed to another backend `web`
+container.
 
-## Disclaimers
+### Sticky Session Cookie Invalidation
 
-* If one of the container becomes unhealthy, because it has crashed or because
-  it is overloaded, our routers will quarantine it and the sticky session cookie
-  will be invalidated.
+* If one of the container becomes unhealthy, because it has crashed or because it is overloaded, our
+  routers will quarantine it and the sticky session cookie will be invalidated.
 
-* Each operation changing the routing rules of the application will invalidate
-  current cookies and end-users will receive a new version of the cookie and will
-  be routed to a new instance. More precisely, those operations made on your app will invalidate current cookies:
+* Each operation changing the routing rules of the application will invalidate current cookies and
+  end-users will receive a new version of the cookie and will be routed to a new instance. More
+  precisely, those operations made on your app will invalidate current cookies:
   * Deployment
   * Restart
   * Scaling
 
-* Applications hosted on the platform can be cycled at any time for internal
-  infrastructure management purposes (like dynamic load balancing of the server),
-  when such event happens, the sticky sessions are also invalidated.
+* Applications hosted on the platform can be cycled at any time for internal infrastructure
+  management purposes (like dynamic load balancing of the server), when such event happens, the
+  sticky sessions are also invalidated.
+
+* If the sticky session cookie expires, the client's request is directed toward a randomly chosen
+  container, and a new sticky session cookie is returned.
 
 ## The case of Meteor Framework
 
