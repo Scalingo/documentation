@@ -5,7 +5,6 @@ tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
 
-
 The Elastic Stack (formerly known as the ELK Stack) is a powerful collection of
 softwares that lets you collect data from any source using any format. It gives
 you the tools to search, visualize and analyze it in real time.
@@ -35,10 +34,10 @@ dashboards.
 ## Logstash
 
 Let's start by bootstrapping the Logstash container. This instance will take
-his data from an authenticated input and send them to an Elasticsearch
+data from an authenticated input and send them to an Elasticsearch
 database. This is the *EL* part in *ELK*.
 
-To get started, you can use [our boilerplate](https://github.gom/Scalingo/logstash-boilerplate)
+To get started, you can use [our boilerplate](https://github.gom/Scalingo/logstash-boilerplate):
 
 ```bash
 $ git clone https://github.com/Scalingo/logstash-boilerplate
@@ -57,13 +56,13 @@ Add the Elasticsearch addon to this application:
 $ scalingo --app my-awesome-logstash addons-add scalingo-elasticsearch 1g
 ```
 
-All the Elasticsearch plans are described [here](/addons/scalingo-elasticsearch).
+All the Elasticsearch plans are described [here](https://scalingo.com/addons/scalingo-elasticsearch).
 
 Of course, not everyone should be able to send data to your Logstash instance, it should be
 protected via HTTP basic auth. It is already handled in the boilerplate but the
-environment variables `USER` and `PASSWORD` should be set first.
+environment variables `USER` and `PASSWORD` should be set first:
 
-```
+```bash
 $ scalingo --app my-awesome-logstash env-set USER=my-awesome-logstash-user PASSWORD=iloveunicorns
 ```
 
@@ -157,14 +156,12 @@ Logstash application should be used in the deployment process:
 scalingo --app my-awesome-logstash env | grep SCALINGO_ELASTICSEARCH_URL
 ```
 
-Then, a username and a password should be defined for to configure Kibana
-authentication.
+Then, a username and a password should be defined to configure Kibana authentication.
 
 Once deployed, index patterns need to be configured. This is required to inform
 Kibana about the indices of Elasticsearch it need to look at.
 
-{% assign img_url =
-"https://cdn.scalingo.com/documentation/elk/index-creation.png"%}
+{% assign img_url = "https://cdn.scalingo.com/documentation/elk/index-creation.png"%}
 {% include mdl_img.html %}
 
 In this example, the `unicorns-*` pattern will be used.
@@ -174,7 +171,6 @@ should appear in the Discover tab of Kibana dashboard.
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/elk/success.png" %}
 {% include mdl_img.html %}
-
 
 ## Send your application logs to your own ELK stack
 
@@ -188,8 +184,7 @@ just contact the Scalingo team via the in-chat support or via email at
 When using this configuration, the application name and container index will be
 passed in the http query and the message will be in the request body. To parse
 this and create meaningful index, you can use the following configuration (if
-your logs are JSON formatted).
-
+your logs are JSON formatted):
 
 ```
 input {
