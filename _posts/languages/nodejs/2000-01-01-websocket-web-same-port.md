@@ -12,7 +12,7 @@ platform dynamically defines.
 If your application uses both a HTTP server and a WebSocket, you can configure it to use the same
 port. Here is a snippet to do that with an Express server and Socket.IO for the WebSocket part:
 
-```nodejs
+```js
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
