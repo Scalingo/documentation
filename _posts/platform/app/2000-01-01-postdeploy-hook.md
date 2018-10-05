@@ -98,7 +98,7 @@ default: &defaults
 <<: *defaults
 ```
 
-This solution works for the AppSignal Ruby gem version above `2.6.1`.
+This solution works for the AppSignal Ruby gem version `>= 2.6.1`.
 
 ### Both Applying migrations and notifying external service
 
