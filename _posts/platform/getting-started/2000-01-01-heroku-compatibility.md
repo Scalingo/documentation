@@ -15,9 +15,8 @@ If a **Procfile** is available in the source of your app, it will be used. See
 the [dedicated Procfile page]({% post_url platform/app/2000-01-01-procfile %})
 for more informations.
 
-If a `release` entry is defined in your **Procfile**, you should use our
-[postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %})
-instead, the *release* entry would not be executed. The difference is that the
+The Procfile `release` entry does not exist on Scalingo thus it won't be executed. The
+[postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %}) exists with similar functionnality. The difference is that the
 *postdeploy* hook is only getting executed at the end of a successful
 deployment, not at each change of variable/addon modification (creating a
 release).
