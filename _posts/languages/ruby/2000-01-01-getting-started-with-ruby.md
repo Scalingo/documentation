@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Ruby
+title: Get Started with Ruby on Scalingo
 modified_at: 2018-02-23 00:00:00
 category: getting-started
 tags: ruby sinatra tutorial getting-started-tutorial
@@ -9,10 +9,10 @@ permalink: /languages/ruby/getting-started-with-ruby/
 
 ## Installing the tools
 
-This tutorial is depicting how to deploy a ruby application on Scalingo
+This tutorial is depicting how to deploy a Ruby application on Scalingo
 
 <aside class="note" markdown="1">
-Note: This tutorial does not cover the Ruby on Rails installation, If you're looking to deploy a Ruby on Rails project, follow the [getting started with Ruby on Rails tutorial]({% post_url languages/ruby/rails/2000-01-01-start %})
+Note: This tutorial does not cover the Ruby on Rails installation, If you're looking to deploy a Ruby on Rails project, follow the [Get Started with Ruby on Rails tutorial]({% post_url languages/ruby/rails/2000-01-01-start %})
 </aside>
 
 To be able to follow this tutorial, we assume that you have:
@@ -24,7 +24,7 @@ To be able to follow this tutorial, we assume that you have:
 
 ## Bootstrap your project
 
-Let's start by creating a new ruby application:
+Let's start by creating a new Ruby application:
 
 ```bash
 $ mkdir my-ruby-app
@@ -37,13 +37,15 @@ And create your `Gemfile`
 $ bundle init
 ```
 
-This will create a file name `Gemfile`. This file will be used for describing gem dependencies for your ruby application.
+This will create a file name `Gemfile`. This file will be used for describing gem dependencies for
+your Ruby application.
 
 
-## Create your ruby application
+## Create your Ruby application
 
 <aside class="note" markdown="1">
-For this example we will use the sinatra http framework but any ruby http framework works on Scalingo
+For this example we will use the Sinatra HTTP framework, but any Ruby HTTP framework works on
+Scalingo.
 </aside>
 
 Let's start by adding the `sinatra` gem to our `Gemfile` by adding the following line at the end of the file:
@@ -57,7 +59,7 @@ And start the gem installation:
 $ bundle install
 ```
 
-Once install create a file name `app.rb` with the following content:
+Once installed, create a file name `app.rb` with the following content:
 
 ```ruby
 require 'sinatra'
@@ -79,9 +81,9 @@ And open a browser to [localhost:4567](http://localhost:4567).
 
 ## Using a custom port
 
-There is one issue with that code, it is that the application will always listen to the `4567` port. But when deploying on Scalingo, the port that you should listen to is defined in the `PORT` environment variable.
-
-We should adapt our code to use this environment variable:
+There is one issue with that code, it is that the application will always listen to the `4567` port.
+But when deploying on Scalingo, the port that you should listen to is defined in the `PORT`
+environment variable. We should adapt our code to use this environment variable:
 
 ```ruby
 require 'sinatra'
@@ -106,11 +108,12 @@ Now your app will be available at the following address: [localhost:3000](http:/
 ## Tell Scalingo how to start your application
 
 The last step before the deployment is to tell Scalingo how to start your application.
-This is done using a special file call [Procfile]({% post_url platform/app/2000-01-01-procfile %}).
+This is done using a special file called [Procfile]({% post_url platform/app/2000-01-01-procfile %}).
 
-To tell Scalingo to start the `web` process with the `ruby app.rb` command by creating a file called `Procfile` with the following content:
+Tell Scalingo to start the `web` process with the `ruby app.rb` command by creating a file called
+`Procfile` with the following content:
 
-```Procfile
+```yaml
 web: ruby app.rb
 ```
 
@@ -118,7 +121,7 @@ web: ruby app.rb
 
 It's now time to commit our changes:
 
-```
+```bash
 $ git init
 $ git add .
 $ git commit -m "Initial commit"
@@ -126,9 +129,8 @@ $ git commit -m "Initial commit"
 
 ## Create the app on Scalingo
 
-Time do deploy our app! First we need to create our app on Scalingo.
-
-To create our app, we can use the CLI with the following syntax:
+Time to deploy our app! First we need to create our app on Scalingo. We can use the CLI with the
+following syntax:
 
 ```
 $ scalingo create my-ruby-app
@@ -136,7 +138,7 @@ $ scalingo create my-ruby-app
 
 ## Deploy on Scalingo
 
-Now all the hard work is done, just push your application to Scalingo and let the magic happen.
+Now all the hard work is done, just push your application to Scalingo and let the magic happen:
 
 ```
 $ git push scalingo master
@@ -149,16 +151,15 @@ $ git push scalingo master
 -----> Build complete, uploading deployment cache.
  Build complete, shipping your container...
  Waiting for your application to boot...
- <-- https://my-ruby-app.staging.scalingo.io -->
+ <-- https://my-ruby-app.scalingo.io -->
 ```
 
 ## Where to go next
 
-You now know how to deploy a ruby app,
+You know how to deploy a Ruby app, now develop your project and build something amazing!
 
-Here are some link that you could find useful:
+Here are some links that you could find useful:
 
 * Need to store data? Look at our [database addons](https://scalingo.com/fr/databases)
 * Want your own [domain name]({% post_url platform/app/2000-01-01-domain %})?
 * Using GitHub? Our [GitHub integration]({% post_url integrations/2000-01-01-github-integration %}) will make your life easier.
-
