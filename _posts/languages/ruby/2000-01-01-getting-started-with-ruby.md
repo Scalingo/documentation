@@ -1,10 +1,8 @@
 ---
 title: Get Started with Ruby on Scalingo
 modified_at: 2018-02-23 00:00:00
-category: getting-started
 tags: ruby sinatra tutorial getting-started-tutorial
 index: 3
-permalink: /languages/ruby/getting-started-with-ruby/
 ---
 
 ## Installing the tools
