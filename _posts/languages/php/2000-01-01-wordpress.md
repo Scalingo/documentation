@@ -22,17 +22,19 @@ the framework has correctly been detected.
 
 ## Configuration
 
-By default WordPress use configuration file to configure a deployed
-application. In order to add environment variable support, you must edit the
+By default WordPress uses a configuration file to configure a deployed
+application. In order to add environment variables support, you must edit the
 `wp-config.php` file to read the `DATABASE_URL` environment variable.
 
-This can be done by adding those line:
+This can be done by adding those lines:
+
 ```php
 $mysql_url = parse_url($_ENV["DATABASE_URL"]);
 $db = substr($mysql_url['path'], 1);
 ```
 
 And changing the `DB_*` definitions to:
+
 ```php
 define('DB_NAME', $db);
 define('DB_USER', $mysql_url['user']);
