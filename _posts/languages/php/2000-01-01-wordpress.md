@@ -58,7 +58,7 @@ The only thing left is to define the `SECURE_KEY` from the dashboard or by
 using our CLI:
 
 ```bash
-scalingo -a myapp env-set SECURE_KEY A_RANDOM_TOKEN_HERE
+scalingo -a myapp env-set SECURE_KEY=A_RANDOM_TOKEN_HERE
 ```
 
 {% note %}
