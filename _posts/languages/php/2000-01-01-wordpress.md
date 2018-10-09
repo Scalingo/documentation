@@ -22,16 +22,20 @@ the framework has correctly been detected.
 
 ## Configuration
 
-By default WordPress use configuration file to configure a deployed
-application. In order to add environment variable support, you must edit the
+By default WordPress uses a configuration file to configure a deployed
+application. In order to add environment variables support, you must edit the
 `wp-config.php` file to read the `DATABASE_URL` environment variable.
 
-Example:
+This can be done by adding those lines:
 
 ```php
 $mysql_url = parse_url($_ENV["DATABASE_URL"]);
 $db = substr($mysql_url['path'], 1);
+```
 
+And changing the `DB_*` definitions to:
+
+```php
 define('DB_NAME', $db);
 define('DB_USER', $mysql_url['user']);
 define('DB_PASSWORD', $mysql_url['pass']);
@@ -58,7 +62,7 @@ The only thing left is to define the `SECURE_KEY` from the dashboard or by
 using our CLI:
 
 ```bash
-scalingo -a myapp env-set SECURE_KEY A_RANDOM_TOKEN_HERE
+scalingo -a myapp env-set SECURE_KEY=A_RANDOM_TOKEN_HERE
 ```
 
 {% note %}
