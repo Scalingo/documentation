@@ -20,8 +20,8 @@ An autoscaler can be added to an application by going to the "Containers" tab of
 
 The **Target** is used by the autoscaler to adapt the number of containers of your application. We
 also provide you with a recommended value you can use as the target. This recommended value is based
-on the 95th percentile average over the last 24 hours of your application for most metric. It is 90%
-for the CPU and the RAM usage.
+on the median over the last 24 hours of your application for most metrics. It is 90% for the CPU and
+the RAM usage.
 
 ## Autoscaling Logic
 
