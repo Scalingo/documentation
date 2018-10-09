@@ -19,7 +19,9 @@ An autoscaler can be added to an application by going to the "Containers" tab of
 {% include mdl_img.html %}
 
 The **Target** is used by the autoscaler to adapt the number of containers of your application. We
-also provide you with the 95th percentile average over the last 24 hours as a recommended value.
+also provide you with a recommended value you can use as the target. This recommended value is based
+on the 95th percentile average over the last 24 hours of your application for most metric. It is 90%
+for the CPU and the RAM usage.
 
 ## Autoscaling Logic
 
