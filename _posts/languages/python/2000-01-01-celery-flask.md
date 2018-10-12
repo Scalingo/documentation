@@ -6,7 +6,6 @@ tags: python celery flask redis tutorial getting-started-tutorial
 index: 2
 ---
 
-
 {% include info_tutorial_requirements.md %}
 
 ## Initialize your application
