@@ -3,6 +3,8 @@ modified_at:	2018-10-15 08:39:06
 title:	'MongoDB - New versions: 3.6.8, 3.4.17, 3.2.21'
 ---
 
+New default version: **3.6.8**
+
 Docker Images:
 
 * `scalingo/mongo:3.6.8-1`
