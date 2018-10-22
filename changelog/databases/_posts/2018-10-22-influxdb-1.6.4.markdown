@@ -1,0 +1,18 @@
+---
+modified_at:	2018-10-22 10:35:06
+title:	'InfluxDB - New versions: 1.3.9, 1.4.3, 1.5.4 and 1.6.4'
+---
+
+New default version: **1.6.4**
+
+Docker Images:
+
+* `scalingo/influxdb:1.6.4-1`
+* `scalingo/influxdb:1.5.4-1`
+* `scalingo/influxdb:1.4.3-1`
+* `scalingo/influxdb:1.3.9-1`
+
+Changelog 1.3.9: [https://docs.influxdata.com/influxdb/v1.3/administration/differences/](https://docs.influxdata.com/influxdb/v1.3/administration/differences/)
+Changelog 1.4.3: [https://docs.influxdata.com/influxdb/v1.4/administration/differences/](https://docs.influxdata.com/influxdb/v1.4/administration/differences/)
+Changelog 1.5.4: [https://docs.influxdata.com/influxdb/v1.5/about_the_project/whats_new/](https://docs.influxdata.com/influxdb/v1.5/about_the_project/whats_new/)
+Changelog 1.6.4: [https://docs.influxdata.com/influxdb/v1.6/about_the_project/releasenotes-changelog/](https://docs.influxdata.com/influxdb/v1.6/about_the_project/releasenotes-changelog/)
