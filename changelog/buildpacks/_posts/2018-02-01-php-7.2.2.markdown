@@ -1,7 +1,8 @@
 ---
 modified_at:	2018-02-01 08:54:32
-title:	'PHP - Support of PHP 7.2.2'
+title:	'PHP - Support of versions 7.1.14 and 7.2.2'
 github: 'https://github.com/Scalingo/php-buildpack'
 ---
 
+[http://php.net/ChangeLog-7.php#7.1.14](http://php.net/ChangeLog-7.php#7.1.14)
 [http://php.net/ChangeLog-7.php#7.2.2](http://php.net/ChangeLog-7.php#7.2.2)
