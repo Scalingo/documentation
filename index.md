@@ -2,7 +2,6 @@
 layout: default_with_main_navigation
 title: Documentation Center
 description: "From the deployment of your app to complex scaling operations you'll find all the resources you need to understand and benefit from Scalingo's powerful Platform as a Service. All major languages are supported: Ruby, NodeJS, MeteorJS, Python, PHP, Java and more."
-modified_at: 2015-09-09 00:00:00
 ---
 
 <h1>Getting Started on Scalingo</h1>
@@ -135,7 +134,7 @@ modified_at: 2015-09-09 00:00:00
         <div class="d-flex justify-content-between">
           <a href="{{ post.url }}" class="text-truncate">{{ post.title }}</a>
           <small class="text-muted text-nowrap pl-1" style="position:relative;bottom:-4px;">
-            {{ post.modified_at | date_to_string }}
+            {{ post.last_modified_at | date_to_string }}
           </small>
         </div>
         {% endfor %}

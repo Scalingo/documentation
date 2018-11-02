@@ -35,6 +35,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-toc
+  - jekyll-last-modified-at
 
 toc:
   min_level: 2
