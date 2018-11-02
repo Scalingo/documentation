@@ -1,6 +1,5 @@
 ---
 title: "Force HTTPS"
-modified_at: 2018-03-05 00:00:00
 tags: app routing https security tls
 index: 22
 ---

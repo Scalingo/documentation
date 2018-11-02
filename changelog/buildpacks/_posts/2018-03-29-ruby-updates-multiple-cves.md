@@ -1,5 +1,4 @@
 ---
-modified_at:	2018-03-29 10:45:00
 title:	'Ruby - Version 2.5.1, 2.4.4, 2.3.7, 2.2.10 support added'
 github: 'https://github.com/Scalingo/ruby-buildpack'
 ---

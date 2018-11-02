@@ -1,5 +1,4 @@
 ---
-modified_at:	2018-06-14 08:35:06
 title:	'Redis - New default version: 4.0.10'
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Router Error Codes
-modified_at: 2017-10-12 00:00:00
 tags: internals reverse-proxy routing http https
 index: 4
 ---

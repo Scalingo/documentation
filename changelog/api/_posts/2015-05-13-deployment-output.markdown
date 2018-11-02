@@ -1,5 +1,4 @@
 ---
-modified_at:	2015-05-13 20:35:06
 title:	'Add hyperlink `output` to deployment'
 ---
 

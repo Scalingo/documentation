@@ -1,5 +1,4 @@
 ---
-modified_at:	2016-11-28 12:35:06
 title:	'Redis - New default version: 3.2.5'
 ---
 

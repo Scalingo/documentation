@@ -1,5 +1,4 @@
 ---
-modified_at:	2017-03-13 10:35:06
 title:	'InfluxDB - New default version: 1.2.1'
 ---
 

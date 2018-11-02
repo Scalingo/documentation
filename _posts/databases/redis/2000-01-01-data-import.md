@@ -1,7 +1,6 @@
 ---
 title: Importing data from an external Redis database
 nav: Importing data
-modified_at: 2018-02-23 00:00:00
 tags: databases redis dump restore migration
 index: 2
 ---

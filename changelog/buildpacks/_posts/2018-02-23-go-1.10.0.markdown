@@ -1,5 +1,4 @@
 ---
-modified_at:	2018-02-23 12:00:54
 title:	'Go - Version 1.10.0 available'
 github: 'https://github.com/Scalingo/go-buildpack'
 ---

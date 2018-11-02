@@ -1,6 +1,5 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2018-10-05 14:21:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---

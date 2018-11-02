@@ -1,7 +1,6 @@
 ---
 title: Application Lifecycle Management
 nav: Lifecycle Management
-modified_at: 2018-02-09 00:00:00
 index: 10
 tags: management
 ---

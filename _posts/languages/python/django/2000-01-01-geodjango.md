@@ -1,7 +1,6 @@
 ---
 title: Setup your GeoDjango application
 nav: GeoDjango
-modified_at: 2015-11-19 00:00:00
 tags: python django tutorial postgis geospatial geodjango
 index: 2
 ---

@@ -1,5 +1,4 @@
 ---
-modified_at:   2014-08-26 10:00:00
 title: 'Version v9 - Add `sass` executable'
 ---
 

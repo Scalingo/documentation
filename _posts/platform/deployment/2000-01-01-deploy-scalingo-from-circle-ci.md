@@ -1,7 +1,6 @@
 ---
 title: Deploy to Scalingo from CircleCI
 nav: Deploy from CircleCI
-modified_at: 2016-06-14 00:00:00
 tags: ci deployment build circle-ci
 index: 22
 ---

@@ -1,7 +1,6 @@
 ---
 title: Deployment Process
 nav: Introduction
-modified_at: 2018-02-09 01:00:00
 index: 1
 tags: deployment
 ---

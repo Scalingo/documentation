@@ -1,6 +1,5 @@
 ---
 title: Setup Git on Windows
-modified_at: 2017-08-09 11:00:00
 tags: git windows
 index: 6
 ---

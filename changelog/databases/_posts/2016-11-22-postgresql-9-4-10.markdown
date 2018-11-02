@@ -1,5 +1,4 @@
 ---
-modified_at:	2016-11-22 10:35:06
 title:	'PostgreSQL - New default version: 9.4.10'
 ---
 

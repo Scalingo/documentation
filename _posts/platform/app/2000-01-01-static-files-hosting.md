@@ -1,6 +1,5 @@
 ---
 title: Static files only application
-modified_at: 2018-04-23 00:00:00
 tags: nodejs express static
 ---
 

@@ -1,5 +1,4 @@
 ---
-modified_at:	2014-10-30 00:57:48
 title:	'Ruby - Remove `.git` directories of gems'
 ---
 

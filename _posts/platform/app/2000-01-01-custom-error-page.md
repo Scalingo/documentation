@@ -1,6 +1,5 @@
 ---
 title: Custom Error and Maintenance Pages
-modified_at: 2018-03-22 00:00:00
 tags: app custom error page
 ---
 

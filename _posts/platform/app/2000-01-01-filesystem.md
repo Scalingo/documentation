@@ -1,6 +1,5 @@
 ---
 title: File System and File Storage
-modified_at: 2017-01-03 00:00:00
 tags: app runtime file system disk storage
 index: 1
 ---

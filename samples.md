@@ -3,7 +3,6 @@ layout: default_with_only_main
 title: Samples
 subnav_index: samples
 description: Here is a list of samples built with various technologies than you can deploy by yourself and take inspiration of.
-modified_at: 2015-09-09 00:00:00
 ---
 
 <h1>{{ page.title }}</h1>

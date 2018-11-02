@@ -1,7 +1,6 @@
 ---
 title: Scale automatically your application
 nav: Autoscaling
-modified_at: 2018-04-05 00:00:00
 tags: app scaling metrics autoscaler
 ---
 

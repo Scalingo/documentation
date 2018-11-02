@@ -1,6 +1,5 @@
 ---
 title: Container Management
-modified_at: 2016-11-16 00:00:00
 tags: internals containers
 index: 1
 ---

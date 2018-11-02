@@ -1,6 +1,5 @@
 ---
 title: .slugignore file
-modified_at: 2015-03-24 00:00:00
 tags: internals slugignore image size
 ---
 

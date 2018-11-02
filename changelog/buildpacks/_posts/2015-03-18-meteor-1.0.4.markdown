@@ -1,5 +1,4 @@
 ---
-modified_at:	2015-03-18 22:50:30
 title:	'Meteor - Support of version 1.0.4 added'
 ---
 

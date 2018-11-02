@@ -1,7 +1,6 @@
 ---
 title: Secure your app with HTTP Basic Auth
 nav: Basic Auth
-modified_at: 2016-06-24 00:00:00
 tags: php, http, security, basic-auth
 ---
 

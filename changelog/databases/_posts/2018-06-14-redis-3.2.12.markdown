@@ -1,5 +1,4 @@
 ---
-modified_at:	2018-06-14 08:35:05
 title:	'Redis - New version: 3.2.12'
 ---
 

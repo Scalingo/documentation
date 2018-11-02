@@ -1,7 +1,6 @@
 ---
 title: Get Started with Python, Celery and Flask
 nav: Celery and Flask
-modified_at: 2016-06-09 00:00:00
 tags: python celery flask redis tutorial getting-started-tutorial
 index: 2
 ---

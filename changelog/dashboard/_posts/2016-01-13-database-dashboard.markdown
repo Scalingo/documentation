@@ -1,5 +1,4 @@
 ---
-modified_at:   2016-01-13 11:56:17
 title: 'New Database Dashboard'
 ---
 

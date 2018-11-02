@@ -1,5 +1,4 @@
 ---
-modified_at:	2018-07-19 12:54:32
 title:	'PHP - Support of versions 5.6.37, 7.0.31 and 7.2.8'
 github: 'https://github.com/Scalingo/php-buildpack'
 ---

@@ -1,7 +1,6 @@
 ---
 title: Deploy to Scalingo from Travis CI
 nav: Deploy from Travis
-modified_at: 2016-01-19 00:00:00
 tags: ci deployment build travis-ci
 index: 21
 ---

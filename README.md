@@ -12,7 +12,6 @@ The minimal *front matter* that you need to add is:
 ```
 ---
 title: What is Epoch
-modified_at: 1970-01-01 00:00:00
 categories: unix
 tags: time
 ---
@@ -24,11 +23,9 @@ If you add a `permalink` that doesn't ends with `.html` in the *front matter* yo
 
 ## Modifying an article
 
-You are welcome to modify any article, but please remember to update `modified_at` before sending your pull request.
+You are welcome to modify any article.
 
 ## Don'ts
-
-Please do not use the `date` metadata as it will conflict with the date extracted from the file name. Instead, use `modified_at` to record when a modification is made to an article.
 
 Please do not use first-level HTML/Markdown headers (*i.e. `<h1></h1>`*) as it will be pulled from the `title ` metadata.
 

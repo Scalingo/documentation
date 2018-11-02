@@ -2,7 +2,6 @@
 layout: page
 title: Configure Cloudflare to access Scalingo applications
 nav: Configure Cloudflare
-modified_at: 2018-01-30 10:00:00
 tags: integration cloudflare
 index: 98
 ---

@@ -1,6 +1,5 @@
 ---
 title: Scalingo JSON Manifest
-modified_at: 2018-09-10 00:00:00
 tags: app review apps one-click manifest
 ---
 

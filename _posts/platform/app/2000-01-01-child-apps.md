@@ -1,6 +1,5 @@
 ---
 title: Child application
-modified_at: 2017-03-10 00:00:00
 tags: app child
 index: 30
 ---

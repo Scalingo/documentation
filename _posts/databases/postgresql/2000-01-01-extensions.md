@@ -1,7 +1,6 @@
 ---
 title: Managing PostgreSQL extensions
 nav: PG Extensions
-modified_at: 2015-11-05 00:00:00
 tags: databases postgresql extensions
 index: 3
 ---

@@ -1,6 +1,5 @@
 ---
 title: Recovery Management
-modified_at: 2016-05-31 00:00:00
 tags: internals faq crash recovery
 index: 5
 ---

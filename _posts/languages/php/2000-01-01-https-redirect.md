@@ -1,7 +1,6 @@
 ---
 title: Automatic HTTPS redirection
 nav: HTTPS redirection
-modified_at: 2017-01-12 00:00:00
 tags: php, https, security, nginx
 ---
 

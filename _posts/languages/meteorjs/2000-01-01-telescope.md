@@ -1,7 +1,6 @@
 ---
 title: Deployment of a Meteor application - Telescope
 nav: Deployment of Telescope
-modified_at: 2015-04-10 00:00:00
 tags: nodejs meteor tutorial telescope
 ---
 

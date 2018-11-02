@@ -1,5 +1,4 @@
 ---
-modified_at:	2017-03-24 10:12:30
 title:	'Support of yarn dependency management tool'
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Deploy to Scalingo from Codeship
 nav: Deploy from Codeship
-modified_at: 2016-01-20 00:00:00
 tags: ci deployment build codeship
 index: 20
 ---

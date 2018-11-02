@@ -1,7 +1,6 @@
 ---
 title: Troubleshooting Git push and SSH common issues
 nav: Troubleshoot Git and SSH
-modified_at: 2018-03-05 00:00:00
 tags: follow-the-light ssh linux git troubleshoot problem connect git push
 index: 2
 ---

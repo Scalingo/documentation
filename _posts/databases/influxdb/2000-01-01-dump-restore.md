@@ -1,7 +1,6 @@
 ---
 title: How to dump and restore my InfluxDB database on Scalingo
 nav: Dump and Restore
-modified_at: 2017-02-06 18:04:00
 index: 2
 ---
 

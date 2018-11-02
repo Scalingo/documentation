@@ -1,6 +1,5 @@
 ---
 title: Restore your database backup
-modified_at: 2018-07-27 00:00:00
 tags: databases backups
 ---
 

@@ -1,5 +1,4 @@
 ---
-modified_at:	2015-07-09 20:35:06
 title:	'Logo URL in addon provider resource'
 ---
 

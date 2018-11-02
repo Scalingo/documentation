@@ -1,7 +1,6 @@
 ---
 title: Deploying CodeIgniter on Scalingo
 nav: CodeIgniter
-modified_at: 2018-07-30 00:25:00
 tags: php, http, framework, CodeIgniter, deployment
 ---
 

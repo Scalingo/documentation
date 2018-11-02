@@ -1,6 +1,5 @@
 ---
 title: Post-deployment hook
-modified_at: 2016-10-04 00:00:00
 tags: app deployment hook postdeploy
 index: 13
 ---

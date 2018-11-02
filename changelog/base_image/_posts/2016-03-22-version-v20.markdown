@@ -1,5 +1,4 @@
 ---
-modified_at:   2016-03-22 14:59:26
 title: 'Version v20 - Include JRE and fix Java certificates problems, database clients upgrades and minor fixes'
 ---
 

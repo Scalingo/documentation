@@ -1,5 +1,4 @@
 ---
-modified_at:	2017-03-16 05:27:30
 title:	'PHP - Support of PHP 7.0.17'
 github: 'https://github.com/Scalingo/php-buildpack'
 ---

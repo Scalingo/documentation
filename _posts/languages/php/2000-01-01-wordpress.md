@@ -1,7 +1,6 @@
 ---
 title: Deploying WordPress on Scalingo
 nav: Wordpress
-modified_at: 2016-07-28 00:00:00
 tags: php, http, framework, wordpress, deployment
 index: 99
 ---

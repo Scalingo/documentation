@@ -1,5 +1,4 @@
 ---
-modified_at:	2016-01-09 16:51:50
 title:	'SSL - Certificate renewal for all domains'
 ---
 

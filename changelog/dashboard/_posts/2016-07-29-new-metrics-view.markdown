@@ -1,5 +1,4 @@
 ---
-modified_at:	2016-07-29 12:00:00
 title:	'New Metrics view'
 ---
 

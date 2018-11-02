@@ -1,7 +1,6 @@
 ---
 title: How to dump and restore my MongoDB database on Scalingo
 nav: Dump and Restore
-modified_at: 2016-03-23 14:22:00
 tags: databases mongodb tunnel
 index: 2
 ---

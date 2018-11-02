@@ -1,7 +1,6 @@
 ---
 title: How to dump and restore my MySQL database on Scalingo
 nav: Dump and Restore
-modified_at: 2016-01-08 00:00:00
 tags: databases mysql tunnel
 index: 2
 ---

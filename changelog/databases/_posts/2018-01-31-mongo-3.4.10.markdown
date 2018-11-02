@@ -1,5 +1,4 @@
 ---
-modified_at:	2018-01-31 08:39:06
 title:	'MongoDB - New version: 3.4.10'
 ---
 

@@ -16,7 +16,7 @@ page_exclude: true
       <item>
         <title>{{ post.categories | last | split: "_" | join: " " }} - {{ post.title | xml_escape }}</title>
         <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.modified_at | date_to_rfc822 }}</pubDate>
+        <pubDate>{{ post.last_modified_at | date_to_rfc822 }}</pubDate>
         <link>
           {{ post.id | slugify | prepend: "/changelog#" | prepend: site.baseurl | prepend: site.url }}
         </link>

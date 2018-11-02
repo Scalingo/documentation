@@ -1,5 +1,4 @@
 ---
-modified_at:   2015-05-13 11:56:17
 title: 'New feature: live deployments'
 ---
 

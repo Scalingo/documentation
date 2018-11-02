@@ -1,5 +1,4 @@
 ---
-modified_at:	2015-02-18 15:48:50
 title:	'PHP - Update mongo extension to 1.6.3'
 ---
 

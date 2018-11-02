@@ -2,7 +2,6 @@
 layout: page
 title: Configure Datadog to monitor Scalingo applications
 nav: Configure Datadog
-modified_at: 2018-06-15 10:00:00
 tags: integration datadog
 ---
 
