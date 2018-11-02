@@ -33,7 +33,7 @@ You can restore your data on your local environment if needed. Download a backup
 dashboard. It is a **.tar.gz** containing a dump of your database which has been
 done following the instructions from the [InfluxDB
 documentation](https://docs.influxdata.com/influxdb/v1.2/administration/backup_and_restore/).
-Before starting the restore process, you need to stop the InfluxDB daemon. Then just type
+Before starting the restore process, you need to stop the InfluxDB daemon. Then type
 the following commands:
 
 ```bash

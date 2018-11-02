@@ -16,11 +16,11 @@ Let say that you have worked some hours on an awesome new feature. It's time to
 show the world your work and to open a new Pull Request (PR) on GitHub (even if
 it's not fully done). With Review Apps enabled on Scalingo, we will create a
 new application (a Review App) with the code of the new feature. You can now
-easily share the result of your work, to get it validated, with all people
+share the result of your work, to get it validated, with all people
 involved, even if they are not in the tech field.
 
 Maybe they will tell you to change something like adding tests or to change a
-button color. You just have to push your modification on the branch involved in
+button color. You have to push your modification on the branch involved in
 the PR to update the Review App.
 
 Once all of our teammates are satisfied and the PR is closed, we will
@@ -90,7 +90,7 @@ If a `postdeploy` is defined in your `scalingo.json` or `Procfile`, it won't be 
 
 To run a custom command after each deployment of a review app, you need to
 define a [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook
-%}) for your application. However just defining a postdeploy hook would also
+%}) for your application. However defining a postdeploy hook would also
 impact the parent application.
 
 To make sure only review apps are impacted, the common practice is to define a
@@ -111,9 +111,8 @@ executed in the scope of a review app or not.
 
 ## Is it possible to create review apps if my code is hosted at a different place?
 
-We only implement directly Review Apps for code hosted on GitHub. However it is
-very easy for you to set it up for your specific case thanks to the Scalingo
-API:
+We only implement directly Review Apps for code hosted on GitHub. However you can set it up for your
+specific case thanks to the Scalingo API:
 
 * Create a [child application]({% post_url platform/app/2000-01-01-child-apps %})
 * Deploy a gzipped tar archive containing your code:

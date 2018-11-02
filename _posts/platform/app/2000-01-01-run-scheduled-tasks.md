@@ -141,7 +141,7 @@ var job2 = new cron.CronJob({
 console.log('Started 2 cron jobs')
 ```
 
-With this example, the `job1` ticks every 2 minutes and the `job2` ticks every minute. Each job just
+With this example, the `job1` ticks every 2 minutes and the `job2` ticks every minute. Each job
 display a message in the log of the application.
 
 The code is available in [sample-node-express](https://github.com/Scalingo/sample-node-express).

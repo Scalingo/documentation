@@ -97,7 +97,7 @@ Since the container file system is volatile, plugins and addon should be
 installed and updated within your Git repository and never via the web
 interface. You must de-activate auto-update of all your WordPress components.
 
-To do that just add the following line to your `wp-config.php`
+To do that add the following line to your `wp-config.php`:
 
 ```php
 define( 'AUTOMATIC_UPDATER_DISABLED', true );

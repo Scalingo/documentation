@@ -18,11 +18,11 @@ consequence is: the lighter the faster.
 The `.slugignore` file allows you to select files and directory which won't be
 include in the image after the build of your application. When you have heavy
 build dependencies, you often don't need them after the build, so why keeping
-them? They would just slow down your application starting duration.
+them? They would slow down your application starting duration.
 
 ## Usage
 
-You just need to create a `.slugignore` file at the root of your project
+You need to create a `.slugignore` file at the root of your project
 containing on each line the name of a file or directory you want to exclude
 from your image.
 

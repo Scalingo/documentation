@@ -68,5 +68,5 @@ git push scalingo master
 ```
 
 The process won't be started directly, but by going to the dashboard of your
-application or by running the `scalingo ps` command, you'll see that's the new
-container type is present, just scale it to 1 to start it.
+application or by running the `scalingo ps` command, you'll see that the new
+container type is present. Scale it to 1 to start it.

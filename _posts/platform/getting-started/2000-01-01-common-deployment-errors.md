@@ -171,9 +171,9 @@ If you absolutely need all these data, please contact us at
 [support@scalingo.com](mailto:support@scalingo.com).
 
 {% note %}
-  Why this quota? Besides being a simple security limit, this quota is also present to
+  Why this quota? Besides being a security limit, this quota is also present to
   preserve the PaaS user experience. A large image results in longer deployments, the
-  instantaneity aspect is lost.
+  instantness aspect is lost.
 {% endnote %}
 
 ## Start Errors

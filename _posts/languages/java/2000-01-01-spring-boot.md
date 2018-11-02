@@ -29,7 +29,7 @@ Scalingo.
 
 ## As a JAR
 
-This way doesn't need extra stuff to work with Scalingo. You just have to
+This way doesn't need extra stuff to work with Scalingo. You have to
 create a `Procfile` file at the root of your project: [more documentation about
 Procfile]({% post_url platform/app/2000-01-01-procfile %})
 
@@ -41,7 +41,7 @@ _Don't forget to specify the production profile (if you use [Spring
 profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html))
 as a parameter._
 
-That's it, just commit your `Procfile` and your app will deploy in the blink of
+That's it, commit your `Procfile` and your app will deploy in the blink of
 an eye.
 
 ## As a WAR
@@ -138,5 +138,5 @@ _Don't forget to specify the production profile (if you use [Spring
 profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html))
 as a parameter._
 
-That's it, just commit your `pom.xml` and your `Procfile` and your app will
+That's it, commit your `pom.xml` and your `Procfile` and your app will
 deploy in the blink of an eye.
