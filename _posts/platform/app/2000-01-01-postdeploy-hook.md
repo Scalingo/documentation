@@ -13,7 +13,7 @@ the specified command at the end of your deployment.
 
 ## Configuration
 
-To setup a post-deployment hook, you just have to add a `postdeploy` entry in your [Procfile]({%
+To setup a post-deployment hook, you have to add a `postdeploy` entry in your [Procfile]({%
 post_url platform/app/2000-01-01-procfile %}):
 
 ```yaml

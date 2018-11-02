@@ -26,8 +26,8 @@ Activating the **Force HTTPS** feature enforces HTTPS access to all the domains 
 
 ### Permanent Redirect (301) from HTTP to HTTPS
 
-Any request done to the application using simple **HTTP** will be redirected
-using the status code `301`. It means browsers will remind this redirection
+Any request done to the application using **HTTP** will be redirected
+using the status code `301`. It means browsers will remember this redirection
 over time:
 
 ```console
@@ -102,4 +102,4 @@ Network](https://developer.mozilla.org/fr/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Tr
   >      will erroneously change it into a GET request.
   (from [ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt) section 10.3.2)
 
-  For example with Postman, POST on HTTP will display the result of GET on HTTPS.  
+  For example with Postman, POST on HTTP will display the result of GET on HTTPS.

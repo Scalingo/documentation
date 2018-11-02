@@ -23,7 +23,7 @@ overridden except if it doesn't respect the following format:
 
 ### Ruby on Rails
 
-Rails is aware of the `X-Request-ID` header, you just have to configure the logger
+Rails is aware of the `X-Request-ID` header, you have to configure the logger
 to use it. Modify your `config/environment/production.rb` configuration file:
 
 Before Rails 5.0

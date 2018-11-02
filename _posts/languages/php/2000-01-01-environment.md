@@ -15,7 +15,7 @@ post_url platform/cli/2000-01-01-start %})
 
 ## Read a variable from the environment
 
-To read an environment variable, you just have to read from the
+To read an environment variable, you have to read from the
 `$_ENV` associative array. For instance if you want to read the variable
 `MONGO_URL`:
 

@@ -16,7 +16,7 @@ of your application, new containers have to be available at first, then the
 order to stop old containers is done.
 
 With this feature, it let you achieve **rolling release/continuous delivery**
-easily, there is no friction when a new version of your software is deployed,
+easily. There is no friction when a new version of your software is deployed,
 your users won't even notice it.
 
 ## Starting new containers

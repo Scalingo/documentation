@@ -25,7 +25,7 @@ post_url platform/app/2000-01-01-review-apps %}) for codes that are not hosted o
 When you create a child app of an application, it inherits resources from its
 parent app, but you still need to deploy it.
 
-It can be done thanks to a simple Git push:
+It can be done thanks to a git push:
 
 ```sh
 # child app name is 'child-app-1'

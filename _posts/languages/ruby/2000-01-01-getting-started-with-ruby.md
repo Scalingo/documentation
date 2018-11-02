@@ -136,7 +136,7 @@ $ scalingo create my-ruby-app
 
 ## Deploy on Scalingo
 
-Now all the hard work is done, just push your application to Scalingo and let the magic happen:
+Now all the hard work is done, push your application to Scalingo and let the magic happen:
 
 ```
 $ git push scalingo master
