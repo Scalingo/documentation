@@ -47,6 +47,17 @@ modified_at: 2015-09-09 00:00:00
                 {% endif %}
                 <li>
                   {{ post.content }}
+                  <a
+                    target="_blank"
+                    rel="nofollow external noopener"
+                    class="mdc-fab mdc-fab--mini mb-0 mr-3 mr-md-4 my-2 my-md-0 share_twitter"
+                    href="https://twitter.com/intent/tweet?text=%5BChangelog%5D%20{{
+                      post.title | cgi_escape
+                    }}%20https%3A//doc.scalingo.com/changelog%20%23changelog%20%23paas%20%23{{
+                      post.categories | last | split: "_" | join: " " | cgi_escape
+                    }}">
+                      <svg class="svg-inline--fa fa-twitter fa-w-auto icon" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><use xlink:href="#twitter"></use></svg>
+                  </a>
                 </li>
               </ul>
               {% endif %}
