@@ -9,8 +9,8 @@ index: 1
 
 Applications often need to store files such as users uploads or runtime
 temporary files for instance. The file system located on the disk alongside your app on the
-platform is temporary, it means that each time your application is restarted or
-redeployed, it gets a new file system, files stored previously on it won't be
+platform is temporary. It means that each time your application is restarted or
+redeployed, it gets a new file system. Files stored previously on it won't be
 present anymore.
 
 ## Where you can write temporary files
