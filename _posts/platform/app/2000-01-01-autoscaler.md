@@ -5,6 +5,8 @@ modified_at: 2018-04-05 00:00:00
 tags: app scaling metrics autoscaler
 ---
 
+{% include beta_feature.md %}
+
 {% note %}
   You might want to read first the page about [scaling an application]({% post_url
   platform/app/2000-01-01-scaling %}).
