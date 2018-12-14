@@ -45,10 +45,10 @@ are automatically used to detect which one can be used to build the
 application, they usually cover most use cases.
 
 However it may happen your application technology is not detected, or your
-application is using multiple stacks (ie. Python + NodeJS), both these cases
+application is using multiple stacks (i.e. Python + Node.js), both these cases
 are also covered.
 
-As mentionned before buildpacks are open-source and other hosting providers are
+As mentioned before buildpacks are open-source and other hosting providers are
 also using them to deploy applications, thus the developer community has
 developed a wide range of buildpacks for almost any kind of technology. The
 platform has been designed to be extended by community buildpacks, [learn how
@@ -81,7 +81,7 @@ following:
 4. Network traffic is routed to the containers hosting the new version of the
    application.
 
-Once these 4 steps have ended successfuly, the deployment is considered as
+Once these 4 steps have ended successfully, the deployment is considered as
 successful, and the [order to shutdown]({% post_url
 platform/internals/2000-01-01-container-management %}#shutdown-of-old-containers) is
 sent to old containers. They now have 30 seconds to cleanup cleanly.
