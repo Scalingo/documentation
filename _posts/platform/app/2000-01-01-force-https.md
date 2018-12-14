@@ -86,8 +86,8 @@ Network](https://developer.mozilla.org/fr/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Tr
   * Java, Springboot: [HttpSecurity configuration](https://docs.spring.io/spring-security/site/docs/current/reference/html/headers.html)
   * Java/Scala, Play2: [HTTP filters](https://www.playframework.com/documentation/2.6.x/RedirectHttpsFilter)
   * Python: Django: [Security Middleware](https://docs.djangoproject.com/en/2.0/ref/middleware/#http-strict-transport-security)
-  * NodeJS, Express middleware: [hsts](https://github.com/helmetjs/hsts)
-  * NodeJS, Meteor: [force-ssl](https://atmospherejs.com/meteor/force-ssl)
+  * Node.js, Express middleware: [hsts](https://github.com/helmetjs/hsts)
+  * Node.js, Meteor: [force-ssl](https://atmospherejs.com/meteor/force-ssl)
   * PHP, Symfony: [Nelmio Security Bundle](https://github.com/nelmio/NelmioSecurityBundle)
   * PHP, Laravel: [zae/strict-transport-security](https://packagist.org/packages/zae/strict-transport-security)
 * In case of not GET request, tools (browers, Postman, language libraries, ...) may not follow the RFC and will request GET on the redirection.
