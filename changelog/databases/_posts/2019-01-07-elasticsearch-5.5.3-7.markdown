@@ -1,6 +1,6 @@
 ---
-modified_at:	2018-10-15 08:39:06
-title:	'MongoDB - New versions: 3.6.8, 3.4.17, 3.2.21'
+modified_at:	2019-01-07 11:05:00
+title:	'Elasticsearch - New version: 5.5.3-7'
 ---
 
 New default version: **5.5.3-7**
