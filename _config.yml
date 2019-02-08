@@ -84,7 +84,7 @@ highlighted:
     - name: PHP
       url: "/languages/php/start"
     - name: Python
-      url: "/languages/php/python"
+      url: "/languages/python/start"
     - name: Java
       url: "/languages/java/start"
   databases:
