@@ -22,8 +22,8 @@ Then add a file named `.buildpacks` at the root of your application containing (
 lines is important):
 
 ```text
-https://github.com/Scalingo/php-buildpack#nonode
 https://github.com/Scalingo/nodejs-buildpack
+https://github.com/Scalingo/php-buildpack#nonode
 ```
 
 With this setup, Scalingo will first execute the PHP buildpack without the basic Node.js support it
