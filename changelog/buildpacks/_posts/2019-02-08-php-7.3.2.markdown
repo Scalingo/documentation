@@ -4,5 +4,7 @@ title:	'PHP - Support of versions 7.3.2 and 7.2.15'
 github: 'https://github.com/Scalingo/php-buildpack'
 ---
 
+Default version of PHP is now on the 7.3 branch.
+
 [http://php.net/ChangeLog-7.php#7.3.2](http://php.net/ChangeLog-7.php#7.3.2)
 [http://php.net/ChangeLog-7.php#7.2.15](http://php.net/ChangeLog-7.php#7.2.15)

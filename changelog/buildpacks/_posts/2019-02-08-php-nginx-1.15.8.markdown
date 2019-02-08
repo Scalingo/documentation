@@ -1,0 +1,9 @@
+---
+modified_at:	2019-02-08 08:54:32
+title:	'PHP - Support nginx 1.15.8'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+Default version for PHP apps is now: `1.15.8`
+
+[http://nginx.org/en/CHANGES](http://nginx.org/en/CHANGES)
