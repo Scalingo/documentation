@@ -114,5 +114,10 @@ postdeploy: bundle exec rake db:migrate && newrelic deployments --revision=$CONT
 
 The `postdeploy` hook is not the right place to build your assets. Keep in mind
 that the action is executed in a dedicated one-off container, the other
-containers from your application won't be impacted by any file change. All
-operation relative to assets should be done in the build process.
+containers from your application won't be impacted by any file change.
+
+All operations related to assets should be done in the build process. The location of the
+instruction to build the assets depends on the technology:
+
+* PHP Symfony ([doc]({% post_url languages/php/2000-01-01-symfony %}#asset-management-with-assetic))
+* Node.js ([doc]({% post_url languages/nodejs/2000-01-01-start %}#nodejs-build-hooks))
