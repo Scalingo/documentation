@@ -1,5 +1,8 @@
 "301":
   -
+    old: "/platform/cli/changelog"
+    new: "/changelog/"
+  -
     old: "/addons/lab/scalingo-tcp/start"
     new: "/addons/tcp-gateway/start"
   -
