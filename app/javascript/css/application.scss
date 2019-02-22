@@ -209,6 +209,9 @@ $page-nav-margin: 40px;
     overflow-y: auto;
     width: $site-nav-width;
   }
+  a {
+    padding-left: 12px;
+  }
 }
 
 .site-nav, .changelog-card {
