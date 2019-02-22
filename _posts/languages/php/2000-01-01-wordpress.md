@@ -20,6 +20,46 @@ distribution](https://github.com/Scalingo/scalingo-wordpress). It is based on
 [Bedrock](https://roots.io/bedrock/), and install everything for your WordPress to work perfectly on
 a modern platform like Scalingo.
 
+### Customize Scalingo Distribution
+
+You may need to customize a bit the above-mentioned distribution in order to add a plugin or a them
+for instance. In order to do that, you first need to clone the distribution:
+
+```bash
+git clone https://github.com/Scalingo/scalingo-wordpress
+cd scalingo-wordpress
+```
+
+Then, update your application environment through the dashboard or with the
+[Scalingo command line](http://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`:
+
+* `DATABASE_URL`: Connection string to the MySQL database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL addon
+* `WP_ENV`: Set to environment (`development`, `staging`, `production`)
+* `WP_HOME`: Full URL to WordPress home (https://my-wordpress.scalingo.io)
+* `WP_SITEURL`: Full URL to WordPress including subdirectory (https://my-wordpress.scalingo.io/wp)
+* `S3_UPLOADS_BUCKET`: Name of the S3 bucket to upload files to
+* `S3_UPLOADS_KEY`: AWS Access Key ID for S3 authentication
+* `S3_UPLOADS_SECRET`: AWS Secret Key for S3 authentication
+* `S3_UPLOADS_REGION`: Region of the S3 bucket
+* `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
+
+You can get some random salts on the [Roots WordPress Salt Generator](https://roots.io/salts.html).
+
+3. Add themes in `web/app/themes` as you would for a normal WordPress site.
+
+4. Deploy the application on Scalingo
+
+```
+# Optionally add theme to your git repository
+git add web/app/themes
+git commit -m "Add themes"
+
+# Then push to Scalingo
+git push scalingo master
+```
+
+5. Access WP admin at `https://my-wordpress.scalingo.io/wp/wp-admin`
+
 ## Detection
 
 When a PHP application is deployed, we're looking if the `wp-settings.php` file
