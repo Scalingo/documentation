@@ -30,6 +30,10 @@ curl -O https://cli-dl.scalingo.io/install && bash install
 
 Read everything in our [Documentation Center](/platform/cli/features).
 
+## Changelog
+
+Complete changelog is available [here](/changelog).
+
 ## Supported operating systems
 
 <ul class='list-inline mb-0'>
