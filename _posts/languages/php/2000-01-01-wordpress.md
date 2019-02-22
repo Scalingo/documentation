@@ -6,6 +6,20 @@ tags: php, http, framework, wordpress, deployment
 index: 99
 ---
 
+## Bedrock: a Scalingo Friendly WordPress Boilerplate
+
+WordPress is not well suited to be directly deployed on Scalingo. They do not follow the best modern
+practices of web development such as [12 factor](https://12factor.net/). The easiest way to get
+started with WordPress on Scalingo is to click on this button:
+
+[![Deploy on
+Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-wordpress)
+
+This one-click deploy button uses this [Scalingo
+distribution](https://github.com/Scalingo/scalingo-wordpress). It is based on
+[Bedrock](https://roots.io/bedrock/), and install everything for your WordPress to work perfectly on
+a modern platform like Scalingo.
+
 ## Detection
 
 When a PHP application is deployed, we're looking if the `wp-settings.php` file
@@ -20,7 +34,13 @@ the framework has correctly been detected.
 -----> Setting up WordPress
 ```
 
-## Configuration
+## Deploying Pure WordPress on Scalingo
+
+Even though it is not advised to deploy an out-of-the-box WordPress on Scalingo, there are some
+situations where you do not have the choice. Here are a few things you must now before going down
+that road.
+
+### Configuration
 
 By default WordPress uses a configuration file to configure a deployed
 application. In order to add environment variables support, you must edit the
@@ -91,7 +111,7 @@ is accessed with HTTP or HTTPS. Have a look at our [routing
 documentation]({% post_url platform/internals/2000-01-01-routing %}) for more
 information about this header.
 
-## Plugins and updates
+### Plugins and Updates
 
 Since the container file system is volatile, plugins and addon should be
 installed and updated within your Git repository and never via the web
