@@ -5,7 +5,7 @@ tags: nodejs express static
 ---
 
 On some occasions, you might need to deploy an application containing only static files. To handle
-this use case, the recommended method is to deploy a **Node.JS** server using Express, a
+this use case, the recommended method is to deploy a **Node.js** server using Express, a
 minimalist web framework. Only one file is required (name it `server.js`):
 
 ```js
