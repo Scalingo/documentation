@@ -1,6 +1,6 @@
 ---
 modified_at:	2019-02-08 08:54:32
-title:	'PHP - Support of the Phalcon Framework
+title:	'PHP - Support of the Phalcon Framework'
 github: 'https://github.com/Scalingo/php-buildpack'
 ---
 
