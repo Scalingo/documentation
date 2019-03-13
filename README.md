@@ -84,6 +84,7 @@ To build the static site and spin-up a file server:
 ```
 docker-compose up
 ```
+
 And visit http://localhost:4300
 
 If you want to serve the doc like in production (through the rack stack), generate the site first (see above) and then:
@@ -91,7 +92,17 @@ If you want to serve the doc like in production (through the rack stack), genera
 ```
 docker-compose -f docker-compose-prod.yml up
 ```
+
 This will run puma in parallel and serve the site at http://localhost:4302
+
+### Changelog
+
+For a reason I ignore and I don't want to spend time understanding, we need to manually re-build
+the pages when adding a new changelog entry. This is done with:
+
+```
+docker-compose exec web bundle exec jekyll build
+```
 
 ## Links
 
