@@ -43,7 +43,7 @@ Then, configure PHP to use the Redis session handler. Once again, modify the `co
     "paas": {
       "php-config": [
         "session.save_handler = redis",
-        "session.save_path = 'tcp://host:6379?auth=:password'"
+        "session.save_path = 'tcp://host:port?auth=password'"
       ]
     }
   }
