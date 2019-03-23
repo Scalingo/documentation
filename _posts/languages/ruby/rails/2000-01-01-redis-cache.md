@@ -1,5 +1,6 @@
 ---
 title: Using Redis as Rails Cache Store
+nav: Redis as Cache Store
 modified_at: 2018-10-08 00:00:00
 tags: ruby rails databases redis cache
 ---
