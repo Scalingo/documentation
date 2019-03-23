@@ -1,0 +1,50 @@
+---
+title: Deploy to Scalingo from Bitbucket
+nav: Deploy from Bitbucket
+modified_at: 2019-03-22 00:00:00
+tags: ci cd deployment bitbucket
+index: 25
+---
+
+To setup **Continuous Deployment** from Bitbucket to Scalingo, please follow the
+following steps. You can read more about Deployment Pipelines on the [Bitbucket
+documentation](https://confluence.atlassian.com/bitbucket/how-to-write-a-pipe-for-bitbucket-pipelines-966051288.html).
+
+### Setup a Deployment Pipeline
+
+#### On Bitbucket
+
+1. First add an SSH key to Bitbucket Pipelines. This keys will authenticate the
+   user who deploys on Scalingo.
+   [Documentation](https://confluence.atlassian.com/bitbucket/use-ssh-keys-in-bitbucket-pipelines-847452940.html).
+2. Add a file named `bitbucket-pipelines.yml` at the root of your project
+   containing:
+
+```yml
+pipelines:
+  default:
+    - step:
+        name: Deploy to Scalingo
+        deployment: production
+        script:
+          - echo "Deploying to production environment"
+          - git push git@scalingo.com/my-app.git HEAD
+```
+
+3. Commit this new file and push it to Bitbucket.
+
+#### On Scalingo
+
+To deploy to Scalingo from Bitbucket, you'll have to add the public key
+generated for Bitbucket Pipelines to the [SSH Keys
+page](https://my.scalingo.com/keys) on Scalingo dashboard.
+
+{% note %}
+You can create a dedicated user only for deployment from Bitbucket. You would
+need to create a new user on Scalingo and add the SSH key to this account. One
+of the pro is that if you name the user `scalingo-bitbucket-pipelines`, you
+would see where the deployment event comes from in your timeline:
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_bitbucket_deployment_event.png" %}
+{% include mdl_img.html %}
+{% endnote %}
