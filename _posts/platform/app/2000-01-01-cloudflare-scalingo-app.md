@@ -22,11 +22,13 @@ used:
   allowing your application to use its CPU to serve content dynamic requests
   instead of serving static files.
 
-* **HTTPS Termination**: By using Cloudflare, you don't have to care anymore about
-  TLS certificates, they are automatically handled by them. At the precise
-  moment your domain is configured to use their proxy, a valid certificate
-  will be served to your users. The result is identical to Scalingo [automatic
-  certificate generation with Let's Encrypt]({% post_url platform/app/2000-01-01-ssl %}#automatic-https-certificate-with-lets-encrypt).
+* **HTTPS Termination**: By using Cloudflare, you don't have to care anymore
+  about TLS certificates, they are automatically handled by them. At the precise
+  moment your domain is configured to use their proxy, a valid certificate will
+  be served to your users. Cloudflare full encryption will work out of the box
+  along with Scalingo [automatic certificate generation with Let's Encrypt]({%
+  post_url platform/app/2000-01-01-ssl
+  %}#automatic-https-certificate-with-lets-encrypt).
 
 * **Application Firewall**: Cloudflare proxies are looking at incoming requests
   to check for common attempt to exploit security holes like SQL injections,
