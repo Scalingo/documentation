@@ -6,7 +6,7 @@ tags: databases redis dump restore migration
 index: 2
 ---
 
-This tutorial aims at transfering all the data from a remote Redis database
+This tutorial aims at transferring all the data from a remote Redis database
 (from another provider) to a Redis instance provisioned through the [Scalingo
 Redis Addon]({% post_url databases/redis/2000-01-01-start %}).
 
@@ -14,7 +14,7 @@ Redis Addon]({% post_url databases/redis/2000-01-01-start %}).
 
 ## Requirements
 
-The remote redis instance should be accessible on the Internet, and you could connect with:
+The remote Redis instance should be accessible on the Internet, and you could connect with:
 
 ```console
 $ redis-cli -a <password> -h <host> -p <port>
@@ -38,7 +38,7 @@ $ scalingo -a my-app redis-console
 ## Copy data from the remote Redis instance
 
 <aside class="warning" markdown="1">
-These actions will erase all the existing content of the Scalingo redis
+These actions will erase all the existing content of the Scalingo Redis
 instance, don't do it if you've precious data stored.
 </aside>
 
