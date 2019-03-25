@@ -63,7 +63,7 @@ $ PGPASSWORD=<password> pg_restore --clean --if-exists --host <host> --port <por
 
 With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
 
-Alternatively you use Adminer provided by Scalingo at [https://adminer.scalingo.com/](https://adminer.scalingo.com/).
+Alternatively you can use the Adminer instance provided by Scalingo at [https://adminer.scalingo.com/](https://adminer.scalingo.com/).
 
 ## Dump and Restore from Scalingo one-off container
 
