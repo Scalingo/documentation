@@ -8,7 +8,7 @@ index: 2
 
 {% include info_command_line_tool.md %}
 
-There are two ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url platform/app/2000-01-01-tasks %})).
+There are different ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url platform/app/2000-01-01-tasks %})).
 
 ## Dump and Restore from your local workstation
 
@@ -46,16 +46,10 @@ You can access your database on '127.0.0.1:10000'
 The command definition is:
 
 ```bash
-$ PGPASSWORD=<password> pg_dump --clean --format c --host <host> --port <port> --username <username> --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --dbname <db> --file dump.pgsql
+$ PGPASSWORD=<password> pg_dump --clean --if-exists --format c --host <host> --port <port> --username <username> --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --dbname <db> --file dump.pgsql
 ```
 
-If your PostgreSQL version is 9.4 or higher, you should consider also using the `--if-exists` flag.
-
-Applied to our example:
-
-```bash
-$ PGPASSWORD=pass pg_dump --clean --if-exists --format c --host 127.0.0.1 --port 10000 --username my-db --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --dbname my-db --file dump.pgsql
-```
+With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
 
 As you can see we use the host and port provided by the tunnel, not those of the URL.
 
@@ -64,16 +58,12 @@ As you can see we use the host and port provided by the tunnel, not those of the
 The command definition is:
 
 ```bash
-$ PGPASSWORD=<password> pg_restore --clean --host <host> --port <port> --username <username> --no-owner --no-privileges --dbname <db> dump.pgsql
+$ PGPASSWORD=<password> pg_restore --clean --if-exists --host <host> --port <port> --username <username> --no-owner --no-privileges --dbname <db> dump.pgsql
 ```
 
-If your PostgreSQL version is 9.4 or higher, you should consider also using the `--if-exists` flag.
+With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
 
-With our example:
-
-```bash
-$ PGPASSWORD=pass pg_restore --clean --host 127.0.0.1 --port 10000 --username my-db --no-owner --no-privileges --dbname my-db dump.pgsql
-```
+Alternatively you can use the Adminer instance provided by Scalingo at [https://adminer.scalingo.com/](https://adminer.scalingo.com/).
 
 ## Dump and Restore from Scalingo one-off container
 
