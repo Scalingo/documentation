@@ -22,6 +22,13 @@ One of the solution could be to store the session in a cookie (with encryption t
 from modifying it). An other one is to store the session in a database. [Redis]({% post_url
 databases/redis/2000-01-01-start %}) is especially suitable in such case.
 
+{% note %}
+Some PHP framework ease the process of using session in a database. It might be
+interesting to take a look at your framework documentation. Here is an example
+with the Laravel framework: [Laravel
+documentation](https://laravel.com/docs/5.8/session).
+{% endnote %}
+
 On Scalingo, the PHP Redis extension is available. Activate it by modifying the `composer.json`
 with:
 
