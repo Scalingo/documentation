@@ -211,3 +211,6 @@ related to your project.
   addons, we create an environment variable with a name following this scheme:
   `SCALINGO_{DB_TYPE}_URL`. Your application must use this value or you can
   rename it to fit your needs.
+* The way your application is starting is incorrect and it results in a crash.
+  To define or change how your application is started by the platform, use the
+  [Procfile file]({% post_url platform/app/2000-01-01-procfile %}).
