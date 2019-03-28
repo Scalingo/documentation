@@ -1,6 +1,6 @@
 ---
 modified_at:	2017-08-22 18:00:00
-title:	'Release of 1.6.0'
+title:	'CLI - New version: 1.6.0'
 github: 'https://github.com/Scalingo/cli/releases'
 ---
 

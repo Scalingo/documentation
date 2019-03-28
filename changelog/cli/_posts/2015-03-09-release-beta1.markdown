@@ -1,6 +1,6 @@
 ---
 modified_at:	2015-03-09 14:28:06
-title:	'Release of 1.0.0-beta1'
+title:	'CLI - New version: 1.0.0-beta1'
 github: 'https://github.com/Scalingo/cli/releases'
 ---
 

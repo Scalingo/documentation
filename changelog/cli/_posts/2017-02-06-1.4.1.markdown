@@ -1,6 +1,6 @@
 ---
 modified_at:	2017-02-06 18:00:00
-title:	'Release of 1.4.1'
+title:	'CLI - New version: 1.4.1'
 github: 'https://github.com/Scalingo/cli/releases'
 ---
 
