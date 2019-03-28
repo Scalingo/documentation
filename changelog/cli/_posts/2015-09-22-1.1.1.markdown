@@ -1,6 +1,6 @@
 ---
 modified_at:	2015-09-22 23:08:06
-title:	'Release of 1.1.1'
+title:	'CLI - New version: 1.1.1'
 github: 'https://github.com/Scalingo/cli/releases'
 ---
 
