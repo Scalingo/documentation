@@ -24,11 +24,18 @@ Our **deep GitHub integration** aims at automating this workflow.
 
 ## The GitHub Integration
 
-The GitHub Integration is available in the ‘Code' section of your dashboard. It is composed of two mains parts: **Auto deploy** and **Review apps**.
+The GitHub Integration is available in the ‘Code' section of your dashboard. It
+is composed of two mains parts: **Auto deploy** and **Review apps**.
 
-To enable GitHub relative features on your Scalingo app, you have to link it to a GitHub repository. You can only link your app to a repository that you owned or which is owned by one of your organizations. *Note: If it is an organization repository make sure that you have admin access on it*.
+To enable GitHub relative features on your Scalingo app, you have to link it to
+a GitHub repository. You can only link your app to a repository that you owned
+or which is owned by one of your organizations.
 
-Under the hood, we will add a webhook on your repository that will notify the Scalingo platform for each event generated in your repository life cycle: like ‘Push', ‘New pull request', etc.
+Under the hood, we will add a webhook on your repository that will notify the
+Scalingo platform for each event generated in your repository life cycle: like
+‘Push', ‘New pull request', etc.
+
+{% include github_permission.md %}
 
 ## Auto Deploy
 
