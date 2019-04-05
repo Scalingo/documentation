@@ -6,15 +6,24 @@ tags: git deployment
 index: 3
 ---
 
-To deploy with GitHub you'll have to create a new application on Scalingo and link it to a GitHub repository and branch.
+To deploy with GitHub you'll have to create a new application on Scalingo and
+link it to a GitHub repository and branch.
 
 ## Link your app to GitHub
 
-In the section Code in your Dashboard, you'll find a category *Deploy with GitHub*. Please click on `Link this app to GitHub` and check you are in the right account, choose your GitHub user, and find your GitHub repository in the list or with the search bar.
+In the section Code in your Dashboard, you'll find a category *Deploy with
+GitHub*. Please click on `Link this app to GitHub` and check you are in the
+right account, choose your GitHub user, and find your GitHub repository in the
+list or with the search bar.
 
-In order to link your Scalingo app to a GitHub repository, GitHub will prompt for your authorization. You must accept for our GitHub integration to work.
+In order to link your Scalingo app to a GitHub repository, GitHub will prompt
+for your authorization. You must accept for our GitHub integration to work.
 
-Once your repository is linked, you'll be able to choose select the branch that you want to deploy and if you want to deploy automatically (*Auto deploy*) or manually (*Manual deploy*).
+Once your repository is linked, you'll be able to choose select the branch that
+you want to deploy and if you want to deploy automatically (*Auto deploy*) or
+manually (*Manual deploy*).
+
+{% include github_permission.md %}
 
 ## Auto deploy
 
