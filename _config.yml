@@ -184,6 +184,9 @@ samples:
   - url: sample-node-mosca
     name: NodeJS/Mosca/MQTT
     logo: mosca
+  - url: sample-kotlin
+    name: Kotlin
+    logo: kotlin
 
 extlinks:
   followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]
