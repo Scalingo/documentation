@@ -68,8 +68,10 @@ Addons declared in the manifest will be provisioned before starting the deployme
 ```
 
 {% note %}
-You can use the CLI `scalingo addons-list` and `scalingo addons-plans {addon-name}` to get addon
-names and their plans
+You can use the CLI  
+`scalingo addons-list`  
+`scalingo addons-plans {addon-name}`  
+to get addon names and their plans.
 {% endnote %}
 
 ## Deployment hooks
