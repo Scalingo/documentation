@@ -1,0 +1,7 @@
+---
+modified_at:	2019-04-12 08:00:54
+title:	'Go - Version 1.12.3 available'
+github: 'https://github.com/Scalingo/go-buildpack'
+---
+
+[Go 1.12.3 Changelog](https://golang.org/doc/devel/release.html#go1.12)
