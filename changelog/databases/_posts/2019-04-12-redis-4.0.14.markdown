@@ -1,0 +1,13 @@
+---
+modified_at:	2019-04-12 15:30:00
+title:	'Redis - High Availability is Now Available'
+---
+
+New default version: **4.0.14-1**
+
+More information on our [blog
+article](https://scalingo.com/articles/2019/04/11/introducing-high-availability-scalingo-redis.html).
+
+Docker Image:
+
+* `scalingo/redis:4.0.14-1`
