@@ -63,9 +63,12 @@ Addons declared in the manifest will be provisioned before starting the deployme
 
 ```json
 {
-  "addons": ["mongodb:sandbox", "redis:free"]
+  "addons": ["mongodb:mongo-sandbox", "redis:redis-sandbox"]
 }
 ```
+
+> You can use the CLI `scalingo addons-list` and `scalingo addons-plans {addon-name}` to get addon names
+  and their plans
 
 ## Deployment hooks
 
