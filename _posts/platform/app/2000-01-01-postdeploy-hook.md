@@ -100,6 +100,12 @@ default: &defaults
 
 This solution works for the AppSignal Ruby gem version `>= 2.6.1`.
 
+You can also use AppSignal Push API to manually create a deploy marker with this postdeploy command:
+
+```yaml
+postdeploy: curl -X POST -d "{\"revision\":\"$CONTAINER_VERSION\",\"user\":\"scalingo\"}" "https://push.appsignal.com/1/markers?api_key=$APPSIGNAL_PUSH_API_KEY&name=$APPSIGNAL_APP_NAME&environment=$APPSIGNAL_APP_ENV"
+```
+
 ### Both Applying migrations and notifying external service
 
 Use the standard `&&` bash operator:
