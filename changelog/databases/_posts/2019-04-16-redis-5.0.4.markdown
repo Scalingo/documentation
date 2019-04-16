@@ -1,0 +1,13 @@
+---
+modified_at:	2019-04-16 10:00:00
+title:	'Redis - New version: 5.0.4-1'
+---
+
+New default version: **5.0.4-1**
+
+More information on our [blog
+article](https://scalingo.com/articles/2019/04/16/redis-5.html).
+
+Docker Image:
+
+* `scalingo/redis:5.0.4-1`
