@@ -188,7 +188,7 @@ $ scalingo create my-app
 ## Add a Redis addon to your app
 
 ```bash
-$ scalingo --app my-app addons-add redis free
+$ scalingo --app my-app addons-add redis redis-sandbox
 ```
 
 ## Deploy your app
