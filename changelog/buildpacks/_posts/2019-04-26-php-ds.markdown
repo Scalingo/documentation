@@ -1,0 +1,19 @@
+---
+modified_at:	2019-04-26 08:54:32
+title:	'PHP - Support of extension: Data Structures (ds)'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+[https://www.php.net/manual/fr/book.ds.php](https://www.php.net/manual/fr/book.ds.php)
+
+To use it, add the following requirement in your `composer.json`
+
+```
+{
+  "require": {
+    "ext-ds": "*",
+    ...
+  }
+}
+```
+
