@@ -11,7 +11,7 @@ in your environment are automatically injected into it.
 
 {% include info_environment_how_to.md %}
 
-## Variable alias
+## Variable Alias
 
 You can define aliases of environment variables:
 
@@ -21,14 +21,14 @@ For example:
 
 In this case the `DATABASE_URL` becomes an alias of `SCALINGO_MONGO_URL` value.
 
-## Good practices
+## Good Practices
 
 Using the environment to configure your application is one of twelve good practices
 defined in [the 12-factor](http://12factor.net/).
 
 You should avoid writing any credentials in the files managed by Git.
 
-## Accessing the environment from your app
+## Accessing the Environment from your App
 
 The following example is to get the value of the `PORT` variable.
 
@@ -62,7 +62,7 @@ os.getenv("PORT")
 $_ENV["PORT"]
 ```
 
-#### Other languages
+#### Other Languages
 
 The process should not be really different. Refer to the documentation of
 the standard library of your language.
@@ -89,3 +89,11 @@ additional variable `$PORT` is defined.
 * `$CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL` etc.
 * `$CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
 * `$APP`: Name of the application deployed
+
+## One-off Environment Variables
+
+When starting a [one-off container]({% post_url platform/app/2000-01-01-tasks
+%}) for an application, the platform injects the runtime environment variables
+plus the following:
+
+* `$SCALINGO_USER_ID`: Scalingo user ID of the user executing the one-off.
