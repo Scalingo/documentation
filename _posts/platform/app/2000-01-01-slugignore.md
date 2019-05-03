@@ -1,6 +1,6 @@
 ---
 title: .slugignore file
-modified_at: 2015-03-24 00:00:00
+modified_at: 2019-05-03 00:00:00
 tags: internals slugignore image size
 ---
 
@@ -26,12 +26,12 @@ You need to create a `.slugignore` file at the root of your project
 containing on each line the name of a file or directory you want to exclude
 from your image.
 
-## Example
+## Examples
 
-### Ruby application
+### Ruby Application
 
-Your ruby application doesn't need to have all its test suites when running
-in production. You might want to exclude them during th deployment:
+Your Ruby application doesn't need to have all its test suites when running
+in production. You might want to exclude them during the deployment:
 
 `.slugignore` content:
 
@@ -39,10 +39,22 @@ in production. You might want to exclude them during th deployment:
 spec
 ```
 
-### Java application
+### Rails Application
 
-Your application build process result [in a `.war`
-file]({% post_url languages/java/2000-01-01-war %}) and your don't want to keep all the generated
+Most Rails applications also use Webpacker. For such application, you can safely
+remove the following folders that are not necessary to run the application:
+
+```text
+doc
+/tmp/cache
+/node_modules
+/.cache/yarn
+```
+
+### Java Application
+
+Your application build process result [in a `.war` file]({% post_url
+languages/java/2000-01-01-war %}) and you don't want to keep all the generated
 classes and jar archives from the build:
 
 `.slugignore` content:
@@ -57,7 +69,7 @@ classes and jar archives from the build:
   your application is packaged into a `.war` file.
 {% endnote %}
 
-### Go application
+### Go Application
 
 You're deploying a Go application but you don't want to keep the Godeps
 directory containing all the third party dependency source code in the image:
