@@ -1,0 +1,13 @@
+---
+modified_at:	2019-05-15 10:00:00
+title:	'PostgreSQL - High Availability is Now Available'
+---
+
+New default version: **10.7.0-2**
+
+More information on our [blog
+article](https://homepage-pr798.scalingo.io/articles/2019/04/15/introducing-high-availability-scalingo-postgresql.html).
+
+Docker Image:
+
+* `scalingo/postgresql:10.7.0-2`
