@@ -6,7 +6,7 @@ modified_at: 2019-05-17 13:00:00
 tags: integration dynatrace
 ---
 
-## Integration purposes
+## Integration Purposes
 
 [Dynatrace](https://www.dynatrace.fr/) is a SaaS product helping you to
 monitor your web applications.
