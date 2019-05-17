@@ -551,6 +551,9 @@
   -
     old: "/platform/app/alert"
     new: "/platform/app/alerts"
+  -
+    old: "/platform/app/datadog-scalingo"
+    new: "/platform/app/datadog"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
