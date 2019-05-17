@@ -18,7 +18,7 @@ the service. You can eventually build dashboards to visualize the different
 information gathered and get a better understanding of your application
 resources consumption.
 
-## Configuration of your application on Scalingo
+## Configuration of your Application on Scalingo
 
 In order to install the Dynatrace agent, you must use a specific buildpack. Hence you need to
 configure your application to [use a multi buildpack]({% post_url
