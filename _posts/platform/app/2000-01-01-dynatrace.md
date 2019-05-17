@@ -8,7 +8,8 @@ tags: integration dynatrace
 
 ## Integration purposes
 
-Dynatrace is a SaaS product helping you to monitor your web applications.
+[Dynatrace](https://www.dynatrace.fr/) is a SaaS product helping you to
+monitor your web applications.
 It provides APM (Application Performance Management) and cloud infrastructure
 monitoring to give you insights into how your application behaves, list
 potential performance bottlenecks, etc.
