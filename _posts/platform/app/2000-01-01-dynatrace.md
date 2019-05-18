@@ -8,7 +8,7 @@ tags: integration dynatrace
 
 ## Integration Purposes
 
-[Dynatrace](https://www.dynatrace.fr/) is a SaaS product helping you to
+[Dynatrace](https://www.dynatrace.com/) is a SaaS product helping you to
 monitor your web applications.
 It provides APM (Application Performance Management) and cloud infrastructure
 monitoring to give you insights into how your application behaves, list
