@@ -3,7 +3,7 @@ let searchSelector = '#search-input'
 let searchNode = document.querySelector(searchSelector)
 if (searchNode !== null) {
 
-  let mdcTabBarNode = document.querySelector("header .mdc-toolbar__row + .mdc-toolbar__row .mdc-tab-bar")
+  let mdcTabBarNode = document.querySelector('.scalingo-toolbar--custom .mdc-tab-bar')
 
   searchNode.addEventListener('focus', (e) => {
     mdcTabBarNode.classList.add('search-expanded')
@@ -21,6 +21,7 @@ if (searchNode !== null) {
     autocompleteOptions: {
       hint: false,
       openOnFocus: true,
-    }
+    },
+    debug: true
   })
 }

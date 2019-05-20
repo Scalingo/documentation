@@ -1,6 +1,7 @@
 ---
 layout: default_with_main_navigation
 title: Documentation Center
+subnav_index: 0
 description: "From the deployment of your app to complex scaling operations you'll find all the resources you need to understand and benefit from Scalingo's powerful Platform as a Service. All major languages are supported: Ruby, NodeJS, MeteorJS, Python, PHP, Java and more."
 modified_at: 2015-09-09 00:00:00
 ---

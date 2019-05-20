@@ -4,7 +4,7 @@
   },
   "dependencies": {
     "@rails/webpacker": "^3.2.2",
-    "docsearch.js": "^2.5.2",
+    "docsearch.js": "^2.6.3",
     "image-webpack-loader": "^3.6.0",
     "mdn-polyfills": "^5.5.0",
     "scalingo-styles": "https://github.com/Scalingo/scalingo-styles",

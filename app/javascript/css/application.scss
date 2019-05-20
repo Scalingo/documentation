@@ -10,8 +10,14 @@ $section-padding-bottom-mobile: 40px;
 
 $site-nav-width: 220px;
 
+a.mdc-tab:hover {
+  text-decoration: none;
+}
+
 h1 {
-  @extend .mdc-typography--display1;
+  font-weight: 500;
+  font-size: 2.125rem;
+  line-height: 2.5rem;
 }
 
 article h1 {
@@ -138,8 +144,10 @@ ul.breadcrumb {
   }
 }
 
-main {
-  max-width: 100%;
+main.main-content {
+  main {
+    max-width: 100%;
+  }
 }
 
 $page-nav-width: 160px;
@@ -375,16 +383,16 @@ a.mdc-button {
 }
 
 @include media-breakpoint-up(md) {
-  main {
-    padding-left: 0 !important;
-  }
   .site-nav {
     margin-right: 40px;
   }
-  main {
-    max-width: calc(100% - #{ $site-nav-width });
-    &.full {
-      max-width: 100%;
+  main.main-content {
+    main {
+      padding-left: 0 !important;
+      max-width: calc(100% - #{ $site-nav-width });
+      &.full {
+        max-width: 100%;
+      }
     }
   }
   article {
