@@ -21,7 +21,6 @@ if (searchNode !== null) {
     autocompleteOptions: {
       hint: false,
       openOnFocus: true,
-    },
-    debug: true
+    }
   })
 }
