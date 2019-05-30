@@ -91,7 +91,7 @@ The account is now collaborator of the application.
 
 ### Transfer to the new owner
 
-1. Go in the 'Settings' tag
+1. Go in the 'Settings' tab
 2. In the '*Transfer the application*' part, choose the collaborator which should receive the app
 3. Validate the transfer
 
