@@ -25,9 +25,6 @@ let drawerSubnavNode = document.querySelector('.mdc-drawer > .mdc-drawer__conten
 if (drawerSubnavNode !== null && mainNode !== null) {
   let subnavIndexName = mainNode.getAttribute('data-subnav-index')
   if (subnavIndexName !== null) {
-    console.log(drawerSubnavNode)
-    console.log(subnavIndexName)
-
     let subnavTarget = drawerSubnavNode.querySelector(`[data-index='${ subnavIndexName }']`)
     subnavTarget.classList.add("active")
   }
