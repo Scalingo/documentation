@@ -13,11 +13,7 @@ if (subnavNode !== null && mainNode !== null) {
   const tabBar = new MDCTabBar(tabBarNode)
 
   let subnavIndexName = mainNode.getAttribute('data-subnav-index')
-  try {
-    tabBar.activateTab(subnavIndexName)
-  } catch(e) {
-    console.log(e)
-  }
+  tabBar.activateTab(subnavIndexName)
 }
 
 let docDrawerHeaderLink = document.querySelector('.mdc-drawer > .mdc-drawer__content > .mdc-list > .mdc-list-item:nth-child(6)')
