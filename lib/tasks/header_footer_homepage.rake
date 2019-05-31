@@ -110,7 +110,7 @@ namespace :fetch_from_homepage do
                       <span class="mdc-tab__ripple"></span>
                     </a>
 
-                    <a href="/changelog" class="mdc-tab" role="tab" aria-selected="false"
+                    <a href="/changelog" class="mdc-tab" role="tab" aria-selected="false">
                       <span class="mdc-tab__content">
                         <span class="mdc-tab__text-label">Changelog</span>
                       </span>
