@@ -48,7 +48,7 @@ $builder-height: 260px;
 @import "docsearch.js/dist/npm/styles/dropdown";
 @import "docsearch.js/dist/npm/styles/searchbox";
 
-$searchbox: true!default;
+$searchbox: true !default;
 
 @if($searchbox == true){
   @include searchbox($searchbox-config...);
@@ -58,18 +58,19 @@ $searchbox: true!default;
 
 .algolia-autocomplete {
   .ds-dropdown-menu {
-    margin-top: 13px;
     &:before {
       display: none;
     }
+    margin-top: 0;
+    border-top: 0;
     [class^="ds-dataset-"] {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       @extend .mdc-card;
+      box-shadow: none;
     }
   }
   .algolia-docsearch-suggestion--category-header {
     margin-top: 0;
   }
 }
-

@@ -1,7 +1,7 @@
 ---
 layout: default_with_only_main
 title: Command Line Tool
-subnav_index: cli
+subnav_index: 2
 description: Interact with Scalingo's Platform as a Service from your command line.
 modified_at: 2015-09-09 00:00:00
 oses:

@@ -65,7 +65,8 @@ navTitles.forEach((element) => {
 
 var scroll = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60) }
 
-var headerNode = document.querySelector('header')
+var headerNode = document.querySelector('header.scalingo-toolbar--custom')
+var headerNode2 = document.querySelector('header.scalingo-toolbar--custom + .scalingo-toolbar--custom')
 var siteNavNode = document.querySelector('.site-nav > nav')
 var pageNavNode = document.querySelector('.page-nav > nav')
 var mainNode = document.querySelector('main')
@@ -75,7 +76,7 @@ var mainMargin = 40
 
 var windowInnerHeight, siteNavMaxHeight, lastPosition = -1, lastHeaderHeight = -1
 var articleRect, articleTop, articleBottom, articleBottomWithMargin, articleHeight
-var headerHeightPlusMargin = headerNode.offsetHeight + 30
+var headerHeightPlusMargin = headerNode2.getBoundingClientRect().bottom + 40
 
 function recomputeSizes() {
   lastPosition = -1
@@ -86,7 +87,7 @@ function recomputeSizes() {
 function computeSizes() {
   windowInnerHeight = window.innerHeight
 
-  headerHeightPlusMargin = headerNode.offsetHeight + 30
+  headerHeightPlusMargin = headerNode2.getBoundingClientRect().bottom + 40
   articleRect = mainNode.getBoundingClientRect()
   articleTop = articleRect.top + window.pageYOffset - headerHeightPlusMargin
   articleBottom = articleTop + mainNode.offsetHeight
@@ -97,17 +98,17 @@ function computeSizes() {
 
 function loop(){
   // Avoid calculations if not needed
-  let condition = lastPosition == window.pageYOffset && lastHeaderHeight == headerNode.offsetHeight
+  let condition = lastPosition == window.pageYOffset && lastHeaderHeight == headerNode2.getBoundingClientRect().bottom
   if (condition) {
     scroll(loop)
     return false
   } else {
     lastPosition = window.pageYOffset
-    lastHeaderHeight = headerNode.offsetHeight
+    lastHeaderHeight = headerNode2.getBoundingClientRect().bottom
     computeSizes()
   }
 
-  headerHeightPlusMargin = lastHeaderHeight + 30
+  headerHeightPlusMargin = lastHeaderHeight + 40
 
   if (articleHeight >= siteNavMaxHeight) {
     if (lastPosition <= articleTop) {
@@ -134,7 +135,7 @@ function loop(){
         // Towards bottom of page
         siteNavNode.style.position = "fixed"
         siteNavNode.style.top = headerHeightPlusMargin + "px"
-        siteNavNode.style.maxHeight = windowInnerHeight - (lastPosition + windowInnerHeight - articleBottom) + "px"
+        siteNavNode.style.maxHeight = windowInnerHeight - (lastPosition + windowInnerHeight - articleBottom + mainMargin) + "px"
         if (pageNavNode !== null) {
           pageNavNode.style.top = headerHeightPlusMargin + "px"
         }
@@ -173,20 +174,3 @@ let activeLink = document.querySelector('.site-nav a.active')
 if (activeLink !== null && siteNavNode !== null) {
   scrollIfNeeded(activeLink, siteNavNode)
 }
-
-import {MDCToolbar} from '@material/toolbar'
-
-var toolbar = new MDCToolbar(document.querySelector('.mdc-toolbar'))
-var subrowNode = document.querySelector('header > .mdc-toolbar__row:first-child .mdc-toolbar__subrow')
-var mdcToolbarRowHeight = 64
-
-if (subrowNode !== null) {
-  toolbar.listen('MDCToolbar:change', function(evt) {
-    var flexibleExpansionRatio = evt.detail.flexibleExpansionRatio
-    var computedHeight = mdcToolbarRowHeight * flexibleExpansionRatio
-    var remainingHeight = mdcToolbarRowHeight - computedHeight
-    subrowNode.style.marginTop = -remainingHeight + "px"
-  })
-}
-
-toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust')

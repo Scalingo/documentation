@@ -2,23 +2,32 @@ require 'open-uri'
 require 'nokogiri'
 
 namespace :fetch_from_homepage do
-  task all: [:header, :footer]
+  task all: [:drawer, :header, :footer]
+
+  task :drawer do
+    doc = fetch_homepage
+
+    drawer = doc.css('aside.mdc-drawer')
+    scrim = doc.css('.mdc-drawer-scrim')
+    drawer = add_drawer_subnav(drawer)
+
+    template_path = "_includes/drawer.html"
+    File.open(template_path, 'w+') { |file|
+      file.write(drawer.to_xhtml)
+      file.write(scrim.to_xhtml)
+    }
+  end
 
   task :header do
     doc = fetch_homepage
 
-    toolbar = doc.css("header.mdc-toolbar")
-    toolbar = hack(toolbar)
-    toolbar = add_subrow(toolbar)
-    toolbar = add_subnav(toolbar)
-
-    drawer = doc.css("aside.mdc-drawer")
-    drawer = add_drawer_subnav(drawer)
+    toolbar = doc.css('header.scalingo-toolbar--custom')
+    toolbar.css('.locale-chooser').remove()
 
     template_path = "_includes/header.html"
     File.open(template_path, 'w+') { |file|
       file.write(toolbar.to_xhtml)
-      file.write(drawer.to_xhtml)
+      file.write(subnav)
     }
   end
 
@@ -32,108 +41,133 @@ namespace :fetch_from_homepage do
   end
 
   def fetch_homepage
-    uri = URI.parse(HOMEPAGE_URL)
-    str = if uri.user || uri.password
-      uri2 = uri.clone
-      uri2.user = nil
-      uri2.password = nil
-      open(uri.to_s, http_basic_authentication: [uri.user, uri.password])
-    else
-      open(uri)
+    @homepage_content ||= begin
+      uri = URI.parse(HOMEPAGE_URL)
+      str = if uri.user || uri.password
+        uri2 = uri.clone
+        uri2.user = nil
+        uri2.password = nil
+        open(uri.to_s, http_basic_authentication: [uri.user, uri.password])
+      else
+        open(uri)
+      end
+      Nokogiri::HTML(str) do |config|
+        config.strict.noblanks
+      end
     end
-    Nokogiri::HTML(str)
-  end
-
-  def add_subrow doc
-    doc.css('.supnav').after(subrow)
-    doc
-  end
-
-  def add_subnav doc
-    doc.css('header > .mdc-toolbar__row:first-child').after(subnav)
-    doc
   end
 
   def add_drawer_subnav doc
-    doc.css('nav > ul > li.heading:nth-child(4) > a').after(drawer_subnav)
+    doc.css('.mdc-drawer nav > .mdc-list-item:nth-child(6)').after(drawer_subnav)
     doc
-  end
-
-  def subrow
-    <<~HEREDOC
-      <div class="mdc-toolbar__subrow">
-        <div class="container">
-          <span class="mdc-toolbar__title">
-            Resources for Developers
-          </span>
-        </div>
-      </div>
-    HEREDOC
   end
 
   def subnav
     <<~HEREDOC
-      <div class="mdc-toolbar__row">
+    <div class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-top-app-bar--fixed-scrolled scalingo-toolbar--custom">
+      <div class="mdc-top-app-bar__row">
+        <div class="container subrow">
+          <span class="mdc-top-app-bar__title">
+            Resources for Developers
+          </span>
+        </div>
+      </div>
+      <div class="mdc-top-app-bar__row">
         <div class="container">
           <div class="d-flex justify-content-start">
-            <nav class="mdc-tab-bar d-none d-md-block">
-              <a class="mdc-tab" href="/">
-                Guides
-              </a>
-              <a class="mdc-tab" href="/samples" data-index="samples">
-                Samples
-              </a>
-              <a class="mdc-tab" href="/cli" data-index="cli">
-                CLI
-              </a>
-              <a class="mdc-tab" href="/changelog" data-index="changelog">
-                Changelog
-              </a>
-              <a class="mdc-tab" href="https://developers.scalingo.com" target="_blank" data-index="api">
-                API Reference
-                <i class="material-icons">open_in_new</i>
-              </a>
+            <nav class="mdc-tab-bar d-none d-md-flex">
+              <div class="mdc-tab-scroller">
+                <div class="mdc-tab-scroller__scroll-area">
+                  <div class="mdc-tab-scroller__scroll-content">
+
+                    <a href="/" class="mdc-tab" role="tab" aria-selected="false">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">Guides</span>
+                      </span>
+                      <span class="mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                      </span>
+                      <span class="mdc-tab__ripple"></span>
+                    </a>
+
+                    <a href="/samples" class="mdc-tab" role="tab" aria-selected="false">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">Samples</span>
+                      </span>
+                      <span class="mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                      </span>
+                      <span class="mdc-tab__ripple"></span>
+                    </a>
+
+                    <a href="/cli" class="mdc-tab" role="tab" aria-selected="false">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">CLI</span>
+                      </span>
+                      <span class="mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                      </span>
+                      <span class="mdc-tab__ripple"></span>
+                    </a>
+
+                    <a href="/changelog" class="mdc-tab" role="tab" aria-selected="false">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">Changelog</span>
+                      </span>
+                      <span class="mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                      </span>
+                      <span class="mdc-tab__ripple"></span>
+                    </a>
+
+                    <a href="https://developers.scalingo.com" target="_blank" class="mdc-tab" role="tab" aria-selected="false">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__text-label">
+                          API Reference
+                          <i class="material-icons">open_in_new</i>
+                        </span>
+                      </span>
+                      <span class="mdc-tab-indicator">
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                      </span>
+                      <span class="mdc-tab__ripple"></span>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
             </nav>
-            <div class="search mdc-text-field mdc-text-field--with-leading-icon">
+            <div class="search mdc-text-field mdc-text-field--with-leading-icon mdc-text-field--no-label">
               <i class="material-icons mdc-text-field__icon" tabindex="0">search</i>
               <input type="text" id="search-input" placeholder="Search" class="mdc-text-field__input">
             </div>
           </div>
         </div>
       </div>
+    </div>
     HEREDOC
   end
 
   def drawer_subnav
     <<~HEREDOC
-      <ul>
-        <li>
-          <a href="/">
-            Guides
-          </a>
-        </li>
-        <li>
-          <a href="/samples" data-index="samples">
-          Samples
-          </a>
-        </li>
-        <li>
-          <a href="/cli" data-index="cli">
-          CLI
-          </a>
-        </li>
-        <li>
-          <a href="/changelog" data-index="changelog">
-          Changelog
-          </a>
-        </li>
-        <li>
-          <a href="https://developers.scalingo.com" target="_blank" data-index="api">
-          API Reference
-          <i class="material-icons">open_in_new</i>
-          </a>
-        </li>
-      </ul>
+      <div class="mdc-list">
+        <a href="/" data-index="0" class="mdc-list-item">
+          Guides
+        </a>
+        <a href="/samples" data-index="1" class="mdc-list-item">
+        Samples
+        </a>
+        <a href="/cli" data-index="2" class="mdc-list-item">
+        CLI
+        </a>
+        <a href="/changelog" data-index="3" class="mdc-list-item">
+        Changelog
+        </a>
+        <a href="https://developers.scalingo.com" target="_blank" data-index="4" class="mdc-list-item">
+        API Reference
+        <i class="material-icons">open_in_new</i>
+        </a>
+      </div>
     HEREDOC
   end
 
@@ -144,5 +178,9 @@ namespace :fetch_from_homepage do
   def hack doc
     doc.css('button svg').first.replace('<i class="material-icons">menu</i>')
     doc
+  end
+
+  def add_scrim(txt)
+    txt << '<div class="mdc-drawer-scrim"></div>'
   end
 end

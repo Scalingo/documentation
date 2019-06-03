@@ -9,7 +9,7 @@
     sections[e.id] = e.offsetTop
   })
 
-  window.onscroll = function() {
+  window.addEventListener('scroll', function(e) {
     var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
 
     for (i in sections) {
@@ -21,7 +21,7 @@
         document.querySelector('.page-nav li > a[href*=' + i + ']').setAttribute('class', 'active')
       }
     }
-  }
+  })
 })()
 
 import SmoothScroll from 'smooth-scroll'

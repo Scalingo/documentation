@@ -9,7 +9,7 @@ toc: true
     {% include navigation.html subtree=site.data.tree level=0 %}
     </nav>
   </aside>
-  <main{% if layout.main_class %} class="{{ layout.main_class }}"{% endif %}{% if page.subnav_index %} data-subnav-index="{{ page.subnav_index }}"{% endif %}>
+  <main{% if layout.main_class %} class="{{ layout.main_class }}"{% endif %}>
     {{ content | extlinks }}
   </main>
 </div>
