@@ -100,7 +100,7 @@ You need to have either an `index.php` file or both `composer.json` and `compose
 
 [Python]({% post_url languages/python/2000-01-01-start %})
 
-The file `requirements.txt` and `setup.py` should be present at the root of your project.
+The file `Pipfile`, `requirements.txt` or `setup.py` must be present at the root of your project.
 
 [Java]({% post_url languages/java/2000-01-01-start %})
 
