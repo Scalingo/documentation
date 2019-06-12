@@ -1,0 +1,7 @@
+---
+modified_at:	2019-06-12 16:55:32
+title:	'jemalloc - Support of versions 5.2.0'
+github: 'https://github.com/Scalingo/jemalloc-buildpack'
+---
+
+[https://github.com/jemalloc/jemalloc/releases/tag/5.2.0](https://github.com/jemalloc/jemalloc/releases/tag/5.2.0)
