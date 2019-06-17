@@ -95,7 +95,7 @@ docker-compose -f docker-compose-prod.yml up
 
 This will run puma in parallel and serve the site at http://localhost:4302
 
-### Changelog
+### Changelog and Samples
 
 For a reason I ignore and I don't want to spend time understanding, we need to manually re-build
 the pages when adding a new changelog entry. This is done with:
