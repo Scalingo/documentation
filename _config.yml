@@ -177,7 +177,7 @@ samples:
     logo: java-spark
   - url: sample-influxdb
     name: Go/InfluxDB
-    logo: scalingo-influxdb
+    logo: influxdb
   - url: sample-java-grails3
     name: Java/Grails 3
     logo: groovy-grails
