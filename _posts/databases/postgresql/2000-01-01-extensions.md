@@ -1,7 +1,7 @@
 ---
 title: Managing PostgreSQL extensions
-nav: PG Extensions
-modified_at: 2015-11-05 00:00:00
+nav: Extensions
+modified_at: 2019-07-30 00:00:00
 tags: databases postgresql extensions
 index: 3
 ---
@@ -19,7 +19,7 @@ To enable the extensions you want for your application, run the following comman
 
 ```bash
 $ scalingo --app my-app pgsql-console
-psql (9.4.5)
+psql (11.4)
 Type "help" for help.
 
 user=> CREATE extension hstore;
