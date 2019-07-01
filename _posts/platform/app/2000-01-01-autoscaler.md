@@ -23,9 +23,19 @@ of your app:
 
 The **Target** is used by the autoscaler to adapt the number of containers of
 your application. We also provide you with a recommended value you can use as
-the target. This recommended value is based on the median over the last 24
-hours of your application for most metrics. It is 90% for the CPU and the RAM
-usage.
+the target. This recommended value is based on the median over the last 24 hours
+of your application for most metrics. It means that it is only based on
+historical usage and not on predictions on the future. The recommended value for
+the CPU and the RAM usage is fixed and is 90%.
+
+Finding the best target for your application is not an easy task. One should run
+benchmarks on its application to detect which metric is the bottleneck. A good
+procedure can be to scale the application to 1 container and execute a load
+testing tool (e.g. [Vegeta](https://github.com/tsenart/vegeta)) against it. For
+instance, if you observe your application does not respond after 100 RPM,
+configuring the target to 80 RPM per container so that Scalingo automatically
+scales up the application seems a good idea. These load tests should be executed
+against the most greedy endpoints for better results.
 
 ## Autoscaling Logic
 
