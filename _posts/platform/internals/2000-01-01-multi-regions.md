@@ -7,10 +7,10 @@ index: 10
 
 Scalingo is available on multiple regions. Here is the list of publicly available regions:
 
-| Name  | Code name | Provider | API endpoint URL | |
+| Name  | Code name | Provider | API endpoint | Dashboard |
 | ------------- | ------------- | ------------- | ------------- |
-| 3DS Outscale Paris  | osc-fr1  | [3DS Outscale](https://outscale.com/) | | [web dashboard](https://my.agora-fr1.scalingo.com) |
-| Agora Calycé Paris  | agora-fr1  | [Agora Calycé](https://www.agoracalyce.com) | | [web dashboard](https://my.agora-fr1.scalingo.com) |
+| 3DS Outscale Paris  | osc-fr1  | [3DS Outscale](https://outscale.com/) | [link](https://api.osc-fr1.scalingo.com) | [link](https://my.agora-fr1.scalingo.com) |
+| Agora Calycé Paris  | agora-fr1  | [Agora Calycé](https://www.agoracalyce.com) | |link](https://api.agora-fr1.scalingo.com) | [link](https://my.agora-fr1.scalingo.com) |
 
 ## Accessing a specific region
 
