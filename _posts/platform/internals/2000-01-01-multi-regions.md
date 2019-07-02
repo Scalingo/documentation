@@ -14,7 +14,7 @@ Scalingo is available on multiple regions. Here is the list of publicly availabl
 
 ## Accessing a Specific Region
 
-### Using the web dashboard
+### Using the Web Dashboard
 
 When using the web dashboard at
 [https://my.scalingo.com](https://my.scalingo.com), you will automatically be
