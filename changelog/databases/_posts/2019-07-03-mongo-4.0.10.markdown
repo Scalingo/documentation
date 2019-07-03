@@ -1,0 +1,16 @@
+---
+modified_at:	2019-07-03 08:39:06
+title:	'MongoDB - New versions: 4.0.10, 3.6.13 and 3.4.21'
+---
+
+New default version: **4.0.10**
+
+Docker Image:
+
+* `scalingo/mongo:4.0.10-1`
+* `scalingo/mongo:3.6.13-1`
+* `scalingo/mongo:3.4.21-1`
+
+MongoDB CHANGELOG v4.0: [https://docs.mongodb.com/manual/release-notes/4.0/](https://docs.mongodb.com/manual/release-notes/4.0/)
+MongoDB CHANGELOG v3.6: [https://docs.mongodb.com/manual/release-notes/3.6/](https://docs.mongodb.com/manual/release-notes/3.6/)
+MongoDB CHANGELOG v3.4: [https://docs.mongodb.com/manual/release-notes/3.6/](https://docs.mongodb.com/manual/release-notes/3.4/)
