@@ -1,0 +1,8 @@
+---
+modified_at:	2019-04-16 10:00:00
+title:	'Redis High Availability clusters are now available'
+---
+
+New `business-*` plans have been added to our Redis Addons. Those plans are deploying a highly available Redis cluster.
+
+More information on [our blog post](https://scalingo.com/articles/2019/04/11/introducing-high-availability-scalingo-redis.html)
