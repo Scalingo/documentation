@@ -2,5 +2,5 @@
   - SSH Hostname: scalingo.com
   - SSH Port: 22
 - 3DS Outscale Paris:
-  - SSH Hostname: ssh-1.osc-fr1.scalingo.com
+  - SSH Hostname: ssh.osc-fr1.scalingo.com
   - SSH Port: 2200

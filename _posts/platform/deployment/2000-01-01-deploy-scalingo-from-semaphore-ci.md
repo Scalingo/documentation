@@ -15,7 +15,7 @@ take you through the mandatory steps. This documentation page adds some informat
 
 ```bash
 # Add Scalingo as a known host
-ssh-keyscan -H -p 2200 ssh-1.osc-fr1.scalingo.com >> ~/.ssh/known_hosts
+ssh-keyscan -H -p 2200 ssh.osc-fr1.scalingo.com >> ~/.ssh/known_hosts
 ```
 
 The SSH port and host actually depend on the region of your application:
