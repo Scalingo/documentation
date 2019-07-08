@@ -20,12 +20,7 @@ ssh-keyscan -H -p 2200 ssh-1.osc-fr1.scalingo.com >> ~/.ssh/known_hosts
 
 The SSH port and host actually depend on the region of your application:
 
-- Agora Calycé:
-  - SSH Hostname: scalingo.com
-  - SSH Port: 22
-- 3DS Outscale Paris:
-  - SSH Hostname: ssh-1.osc-fr1.scalingo.com
-  - SSH Port: 2200
+{% include ssh_urls.md %}
 
 ```bash
 # Push the branch you've setup on Semaphore
