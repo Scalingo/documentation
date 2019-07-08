@@ -1,7 +1,7 @@
 ---
 title: Deploy with Git
 nav: "Git"
-modified_at: 2017-08-03 00:00:00
+modified_at: 2019-07-08 00:00:00
 tags: git deployment
 index: 2
 ---
@@ -15,9 +15,19 @@ To deploy with Git you'll have to create a new application on Scalingo. A Git re
 scalingo create my-app
 
 # Setup the Git remote:
-git remote add scalingo git@scalingo.com:my-app.git
+git remote add scalingo ssh://git@ssh.osc-fr1.scalingo.com:2200/my-app.git
+```
 
-# Deploy your app:
+Note that the remote URL depends on the region of your application. You can get
+it using our CLI with:
+
+```bash
+scalingo --app my-app git-show
+```
+
+Deploy your application:
+
+```bash
 git push scalingo master
 ```
 
@@ -32,8 +42,8 @@ git push scalingo mybranch:master
 
 ### Deploy a Previous Version of an App
 
-If you want to deploy a version of your code that is not the current head of master, you first need
-to get the commit ID with `git log`. Then:
+If you want to deploy a version of your code that is not the current head of
+master, you first need to get the commit ID with `git log`. Then:
 
 ```bash
 git push --force scalingo <commit ID>:master
@@ -42,8 +52,12 @@ git push --force scalingo <commit ID>:master
 
 ### Git Authentication and SSH
 
-The Git server created by Scalingo uses SSH authentication. If you have any problem setting up SSH please read [Troubleshooting `git push` and SSH common issues]({% post_url platform/getting-started/2000-01-01-troubleshooting-ssh %}).
+The Git server created by Scalingo uses SSH authentication. If you have any
+problem setting up SSH please read [Troubleshooting `git push` and SSH common
+issues]({% post_url platform/getting-started/2000-01-01-troubleshooting-ssh %}).
 
 ### And After?
 
-See [Deployment Environment]({% post_url platform/app/2000-01-01-environment %}#build-environment) to configure your application and [Procfile]({% post_url platform/app/2000-01-01-procfile %}).
+See [Deployment Environment]({% post_url platform/app/2000-01-01-environment
+%}#build-environment) to configure your application and [Procfile]({% post_url
+platform/app/2000-01-01-procfile %}).

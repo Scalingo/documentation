@@ -1,7 +1,7 @@
 ---
 title: Deploy to Scalingo from Semaphore
 nav: Deploy from Semaphore
-modified_at: 2016-01-20 00:00:00
+modified_at: 2019-07-08 00:00:00
 tags: ci deployment build semaphore-ci
 index: 23
 ---
@@ -15,10 +15,28 @@ take you through the mandatory steps. This documentation page adds some informat
 
 ```bash
 # Add Scalingo as a known host
-ssh-keyscan -H -p 22 scalingo.com >> ~/.ssh/known_hosts
+ssh-keyscan -H -p 2200 ssh-1.osc-fr1.scalingo.com >> ~/.ssh/known_hosts
+```
 
+The SSH port and host actually depend on the region of your application:
+
+- Agora Calycé:
+  - SSH Hostname: scalingo.com
+  - SSH Port: 22
+- 3DS Outscale Paris:
+  - SSH Hostname: ssh-1.osc-fr1.scalingo.com
+  - SSH Port: 2200
+
+```bash
 # Push the branch you've setup on Semaphore
-git push --force git@scalingo.com:my-app.git $BRANCH_NAME:master
+git push --force ssh://git@ssh.osc-fr1.scalingo.com/my-app.git $BRANCH_NAME:master
+```
+
+Note that the remote URL depends on the region of your application. You can get
+it using our CLI with:
+
+```bash
+scalingo --app my-app git-show
 ```
 
 ### SSH Keys

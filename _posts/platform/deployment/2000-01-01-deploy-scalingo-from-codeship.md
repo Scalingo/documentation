@@ -1,12 +1,15 @@
 ---
 title: Deploy to Scalingo from Codeship
 nav: Deploy from Codeship
-modified_at: 2016-01-20 00:00:00
+modified_at: 2019-07-08 00:00:00
 tags: ci deployment build codeship
 index: 20
 ---
 
-To setup **Continuous Deployment** from Codeship to Scalingo, please follow the following steps. You can read more about [Deployment Pipelines](https://codeship.com/documentation/continuous-deployment/deployment-pipelines/) on the Codeship documentation.
+To setup **Continuous Deployment** from Codeship to Scalingo, please follow the
+following steps. You can read more about [Deployment
+Pipelines](https://codeship.com/documentation/continuous-deployment/deployment-pipelines/)
+on the Codeship documentation.
 
 ### Setup a Deployment Pipeline
 
@@ -19,10 +22,12 @@ On Codeship:
 
 ```bash
 git fetch --unshallow || true
-git push --force git@scalingo.com:my-app.git ${CI_COMMIT_ID}:master
+git push --force ssh://git@ssh.osc-fr1.scalingo.com:2200/my-app.git ${CI_COMMIT_ID}:master
 ```
 
-Or you can use the [deployments/git_push.sh](https://github.com/codeship/scripts/blob/master/deployments/git_push.sh) script provided by Codeship.
+Or you can use the
+[deployments/git_push.sh](https://github.com/codeship/scripts/blob/master/deployments/git_push.sh)
+script provided by Codeship.
 
 ### SSH Keys
 
