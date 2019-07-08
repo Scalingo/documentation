@@ -25,6 +25,13 @@ git fetch --unshallow || true
 git push --force ssh://git@ssh.osc-fr1.scalingo.com:2200/my-app.git ${CI_COMMIT_ID}:master
 ```
 
+Note that the remote URL depends on the region of your application. You can get
+it using our CLI with:
+
+```bash
+scalingo --app my-app git-show
+```
+
 Or you can use the
 [deployments/git_push.sh](https://github.com/codeship/scripts/blob/master/deployments/git_push.sh)
 script provided by Codeship.
