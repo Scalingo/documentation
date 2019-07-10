@@ -46,7 +46,7 @@ You can access your database on '127.0.0.1:10000'
 The command definition is:
 
 ```bash
-$ PGPASSWORD=<password> pg_dump --clean --if-exists --format c --host <host> --port <port> --username <username> --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --dbname <db> --file dump.pgsql
+$ pg_dump --clean --if-exists --format c --dbname $DATABASE_URL --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
 ```
 
 With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
@@ -58,7 +58,7 @@ As you can see we use the host and port provided by the tunnel, not those of the
 The command definition is:
 
 ```bash
-$ PGPASSWORD=<password> pg_restore --clean --if-exists --host <host> --port <port> --username <username> --no-owner --no-privileges --dbname <db> dump.pgsql
+$ pg_restore --clean --if-exists --no-owner --no-privileges --dbname $DATABASE_URL dump.pgsql
 ```
 
 With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
@@ -79,12 +79,12 @@ data transfers will be way faster.
 ```bash
 $ scalingo --app my-app run bash
 
-[00:00] Scalingo ~ $ PGPASSWORD=pass pg_dump --clean --if-exists --format c --host my-db.postgresql.dbs.scalingo.com --port 30000 --username user --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --dbname my-db --file dump.pgsql
+[00:00] Scalingo ~ $ pg_dump --clean --if-exists --format c --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --dbname $DATABASE_URL --file dump.pgsql
 ...
 
 # Do something with the dump, i.e.e send through FTP or to an external server
 
-[00:00] Scalingo ~ $ PGPASSWORD=pass pg_restore --clean --if-exists --host my-db.postgresql.dbs.scalingo.com --port 30000 --username user --no-owner --no-privileges --dbname my-db dump.pgsql
+[00:00] Scalingo ~ $ pg_restore --clean --if-exists --no-owner --no-privileges --dbname $DATABASE_URL dump.pgsql
 ...
 [00:00] Scalingo ~ $ exit
 exit
