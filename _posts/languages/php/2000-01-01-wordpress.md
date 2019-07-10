@@ -13,7 +13,7 @@ practices of web development such as [12 factor](https://12factor.net/). The eas
 started with WordPress on Scalingo is to click on this button:
 
 [![Deploy on
-Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-wordpress)
+Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.osc-fr1.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-wordpress)
 
 This one-click deploy button uses this [Scalingo
 distribution](https://github.com/Scalingo/scalingo-wordpress). It is based on
