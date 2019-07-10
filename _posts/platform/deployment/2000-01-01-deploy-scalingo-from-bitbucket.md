@@ -1,7 +1,7 @@
 ---
 title: Deploy to Scalingo from Bitbucket
 nav: Deploy from Bitbucket
-modified_at: 2019-03-22 00:00:00
+modified_at: 2019-07-08 00:00:00
 tags: ci cd deployment bitbucket
 index: 25
 ---
@@ -28,7 +28,14 @@ pipelines:
         deployment: production
         script:
           - echo "Deploying to production environment"
-          - git push git@scalingo.com/my-app.git HEAD
+          - git push ssh://git@ssh.osc-fr1.scalingo.com:2200/my-app.git HEAD
+```
+
+Note that the remote URL depends on the region of your application. You can get
+it using our CLI with:
+
+```bash
+scalingo --app my-app git-show
 ```
 
 3. Commit this new file and push it to Bitbucket.

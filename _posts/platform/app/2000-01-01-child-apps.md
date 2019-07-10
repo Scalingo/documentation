@@ -1,6 +1,6 @@
 ---
 title: Child application
-modified_at: 2017-03-10 00:00:00
+modified_at: 2019-07-08 00:00:00
 tags: app child
 index: 30
 ---
@@ -29,15 +29,23 @@ It can be done thanks to a git push:
 
 ```sh
 # child app name is 'child-app-1'
-git remote add child-app-1 git@scalingo.com:child-app-1.git
+git remote add child-app-1 ssh://git@ssh.osc-fr1.scalingo.com:2200/child-app-1.git
 git push child-app-1 master
 ```
 
-Or you can use our API to directly deploy an archive from GitHub/GitLab/Bitbucket
-according to your setup.
+Note that the remote URL depends on the region of your application. You can get
+it using our CLI with:
 
-The API documentation to trigger this deployment can be found here:
-[http://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive](http://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive)
+```bash
+scalingo --app child-app-1 git-show
+```
+
+
+Or you can use our API to directly deploy an archive from
+GitHub/GitLab/Bitbucket according to your setup.
+
+The API documentation to trigger this deployment can be found
+[here](https://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive)
 
 ## Example with GitLab
 
