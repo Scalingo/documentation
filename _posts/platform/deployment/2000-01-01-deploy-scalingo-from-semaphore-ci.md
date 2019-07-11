@@ -15,7 +15,7 @@ take you through the mandatory steps. This documentation page adds some informat
 
 ```bash
 # Add Scalingo as a known host
-ssh-keyscan -H -p 2200 ssh.osc-fr1.scalingo.com >> ~/.ssh/known_hosts
+ssh-keyscan -H -ssh.osc-fr1.scalingo.com >> ~/.ssh/known_hosts
 ```
 
 The SSH port and host actually depend on the region of your application:
@@ -24,7 +24,7 @@ The SSH port and host actually depend on the region of your application:
 
 ```bash
 # Push the branch you've setup on Semaphore
-git push --force ssh://git@ssh.osc-fr1.scalingo.com/my-app.git $BRANCH_NAME:master
+git push --force git@ssh.osc-fr1.scalingo.com/my-app.git $BRANCH_NAME:master
 ```
 
 Note that the remote URL depends on the region of your application. You can get
