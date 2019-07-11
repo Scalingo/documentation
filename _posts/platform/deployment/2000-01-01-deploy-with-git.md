@@ -15,7 +15,7 @@ To deploy with Git you'll have to create a new application on Scalingo. A Git re
 scalingo create my-app
 
 # Setup the Git remote:
-git remote add scalingo ssh://git@ssh.osc-fr1.scalingo.com:2200/my-app.git
+git remote add scalingo git@ssh.osc-fr1.scalingo.com:my-app.git
 ```
 
 Note that the remote URL depends on the region of your application. You can get

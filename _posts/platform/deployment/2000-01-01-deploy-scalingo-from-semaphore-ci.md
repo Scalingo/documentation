@@ -24,7 +24,7 @@ The SSH port and host actually depend on the region of your application:
 
 ```bash
 # Push the branch you've setup on Semaphore
-git push --force git@ssh.osc-fr1.scalingo.com/my-app.git $BRANCH_NAME:master
+git push --force git@ssh.osc-fr1.scalingo.com:my-app.git $BRANCH_NAME:master
 ```
 
 Note that the remote URL depends on the region of your application. You can get

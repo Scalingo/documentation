@@ -29,7 +29,7 @@ It can be done thanks to a git push:
 
 ```sh
 # child app name is 'child-app-1'
-git remote add child-app-1 ssh://git@ssh.osc-fr1.scalingo.com:2200/child-app-1.git
+git remote add child-app-1 git@ssh.osc-fr1.scalingo.com:child-app-1.git
 git push child-app-1 master
 ```
 

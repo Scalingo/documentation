@@ -28,7 +28,7 @@ pipelines:
         deployment: production
         script:
           - echo "Deploying to production environment"
-          - git push ssh://git@ssh.osc-fr1.scalingo.com:2200/my-app.git HEAD
+          - git push git@ssh.osc-fr1.scalingo.com:my-app.git HEAD
 ```
 
 Note that the remote URL depends on the region of your application. You can get

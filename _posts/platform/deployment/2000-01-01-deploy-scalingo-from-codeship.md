@@ -22,7 +22,7 @@ On Codeship:
 
 ```bash
 git fetch --unshallow || true
-git push --force ssh://git@ssh.osc-fr1.scalingo.com:2200/my-app.git ${CI_COMMIT_ID}:master
+git push --force git@ssh.osc-fr1.scalingo.com:my-app.git ${CI_COMMIT_ID}:master
 ```
 
 Note that the remote URL depends on the region of your application. You can get
