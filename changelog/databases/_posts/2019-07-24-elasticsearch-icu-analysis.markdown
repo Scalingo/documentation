@@ -1,5 +1,5 @@
 ---
-modified_at:	2019-03-24 13:00:00
+modified_at:	2019-07-24 13:00:00
 title:	'Elasticsearch - New plugin: ICU Analysis'
 ---
 
