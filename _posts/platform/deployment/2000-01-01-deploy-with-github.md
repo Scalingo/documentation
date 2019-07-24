@@ -25,6 +25,13 @@ manually (*Manual deploy*).
 
 {% include github_permission.md %}
 
+{% note %}
+If your organization is not listed in the list of users when linking your app to
+GitHub, you might need to give Scalingo access to this organization
+repositories. Head to [this GitHub
+page](https://github.com/settings/connections/applications/dce5163f63352f1a4d45){:target="_blank"}.
+{% endnote %}
+
 ## Auto deploy
 
 With Auto deploy enabled, your application will be deployed every time you push on your GitHub repository.
