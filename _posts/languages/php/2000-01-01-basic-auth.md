@@ -8,7 +8,7 @@ tags: php, http, security, basic-auth
 ## Introduction
 
 Our PHP deployment stack is using Nginx and PHP-FPM to answer your application
-request. If you want to setup basic auth in front of your app or a part of
+request. If you want to setup basic authentication in front of your app or a part of
 your app, there are two ways to do it.
 
 Either you configure the authentication before your application reaches the PHP
