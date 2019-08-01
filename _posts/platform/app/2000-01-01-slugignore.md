@@ -1,5 +1,5 @@
 ---
-title: .slugignore file
+title: .slugignore File
 modified_at: 2019-05-03 00:00:00
 tags: internals slugignore image size
 ---
@@ -41,8 +41,22 @@ spec
 
 ### Rails Application
 
-Most Rails applications also use Webpacker. For such application, you can safely
-remove the following folders that are not necessary to run the application:
+Most Rails applications also use Webpacker to bundle the assets. For such
+application, you can safely remove the following folders that are not necessary
+to run the application:
+
+```text
+doc
+/tmp/cache
+/node_modules
+/.cache/yarn
+```
+
+### PHP Application
+
+Some PHP applications also use Webpacker to bundle the assets. For such
+application, you can safely remove the following folders that are not necessary
+to run the application:
 
 ```text
 doc
