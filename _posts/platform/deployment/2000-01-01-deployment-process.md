@@ -1,7 +1,7 @@
 ---
 title: Deployment Process
 nav: Introduction
-modified_at: 2018-02-09 01:00:00
+modified_at: 2019-08-23 00:00:00
 index: 1
 tags: deployment
 ---
@@ -17,14 +17,14 @@ platform (either the code or a build version of it). Multiple methods are
 available to achieve this step:
 
 * [Sending the code using git]({% post_url platform/deployment/2000-01-01-deploy-with-git %})
-* [Let the platform fetch the code from GitHub]({% post_url platform/deployment/2000-01-01-deploy-with-github %})
+* [Let the platform fetch the code from a SCM tool such as GitHub]({% post_url platform/deployment/2000-01-01-deploy-with-SCM %})
 * [Sending the code in a tar achive]({% post_url platform/deployment/2000-01-01-deploy-from-archive %})
 
 Special deployment methods are available for JVM-based applications:
 
 * [Sending a built JAR or WAR archive]({% post_url platform/deployment/2000-01-01-deploy-java-jar-war %})
 
-## Building the application
+## Building the Application
 
 Once the deployment has been triggered, the next phase is named **build**.
 During this step, the deployment system detects the technologies used by the
