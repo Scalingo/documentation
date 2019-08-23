@@ -1,5 +1,5 @@
 ---
-title: Secure your app with HTTP Basic Auth
+title: Secure Your App with HTTP Basic Auth
 nav: Basic Auth
 modified_at: 2019-08-23 00:00:00
 tags: php http security basic-auth
@@ -20,7 +20,7 @@ from your application.
 
 ## Configuration
 
-### Nginx configuration
+### Nginx Configuration
 
 Create a directory `config` in your project:
 
@@ -74,12 +74,12 @@ That's it with those two files, Nginx will be able to ask for basic auth! Last
 thing you need to do is to instruct Scalingo's deployment process to use your
 configuration file.
 
-### Deployment process configuration
+### Deployment Process Configuration
 
 {% assign nginx-include = "config/nginx-basic-auth.conf" %}
 {% include nginx_includes.md %}
 
-## Redeploy your app
+## Redeploy Your App
 
 ```bash
 git add config/nginx-basic-auth.conf config/htpasswd composer.json
