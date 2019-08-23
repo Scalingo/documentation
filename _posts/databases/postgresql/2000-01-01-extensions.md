@@ -1,7 +1,7 @@
 ---
 title: Managing PostgreSQL extensions
-nav: PG Extensions
-modified_at: 2015-11-05 00:00:00
+nav: Extensions
+modified_at: 2019-07-30 00:00:00
 tags: databases postgresql extensions
 index: 3
 ---
@@ -19,7 +19,7 @@ To enable the extensions you want for your application, run the following comman
 
 ```bash
 $ scalingo --app my-app pgsql-console
-psql (9.4.5)
+psql (11.4)
 Type "help" for help.
 
 user=> CREATE extension hstore;
@@ -46,12 +46,12 @@ extensions.
 	<tbody>
 		<tr>
 			<td>btree_gist</td>
-			<td>1.0, 1.2</td>
+			<td>1.0, 1.5</td>
 			<td>support for indexing common datatypes in GiST</td>
 		</tr>
 		<tr>
 			<td>citext</td>
-			<td>1.0, 1.3</td>
+			<td>1.0, 1.3, 1.4</td>
 			<td>data type for case-insensitive character strings</td>
 		</tr>
 		<tr>
@@ -101,7 +101,7 @@ extensions.
 		</tr>
 		<tr>
 			<td>pg_stat_statements</td>
-			<td>1.2, 1.4</td>
+			<td>1.2, 1.4, 1.5</td>
 			<td>track execution statistics of all SQL statements executed</td>
 		</tr>
 		<tr>
@@ -126,17 +126,17 @@ extensions.
 		</tr>
 		<tr>
 			<td>postgis</td>
-			<td>2.1.8, 2.3.0, 2.3.1, 2.4.0, 2.4.1</td>
+			<td>2.1.8, 2.3.0, 2.3.1, 2.4.0, 2.4.4, 2.5.0</td>
 			<td>PostGIS geometry, geography, and raster spatial types and functions</td>
 		</tr>
 		<tr>
 			<td>postgis_tiger_geocoder</td>
-			<td>2.1.8, 2.4.0</td>
+			<td>2.1.8, 2.4.4, 2.5.0</td>
 			<td>PostGIS tiger geocoder and reverse geocoder</td>
 		</tr>
 		<tr>
 			<td>postgis_topology</td>
-			<td>2.1.8, 2.4.0</td>
+			<td>2.1.8, 2.4.4, 2.5.0</td>
 			<td>PostGIS topology spatial types and functions</td>
 		</tr>
 		<tr>
