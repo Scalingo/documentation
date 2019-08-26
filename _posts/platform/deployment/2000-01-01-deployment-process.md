@@ -1,7 +1,7 @@
 ---
 title: Deployment Process
 nav: Introduction
-modified_at: 2019-08-23 00:00:00
+modified_at: 2019-08-26 00:00:00
 index: 1
 tags: deployment
 ---
@@ -16,13 +16,17 @@ The first step to trigger a deployment is to send the application itself to the
 platform (either the code or a build version of it). Multiple methods are
 available to achieve this step:
 
-* [Sending the code using git]({% post_url platform/deployment/2000-01-01-deploy-with-git %})
-* [Let the platform fetch the code from a SCM tool such as GitHub]({% post_url platform/deployment/2000-01-01-deploy-with-SCM %})
-* [Sending the code in a tar achive]({% post_url platform/deployment/2000-01-01-deploy-from-archive %})
+* [Sending the code using git]({% post_url
+  platform/deployment/2000-01-01-deploy-with-git %})
+* [Let the platform fetch the code from a SCM tool such as GitHub]({% post_url
+  platform/deployment/2000-01-01-deploy-with-scm %})
+* [Sending the code in a tar achive]({% post_url
+  platform/deployment/2000-01-01-deploy-from-archive %})
 
 Special deployment methods are available for JVM-based applications:
 
-* [Sending a built JAR or WAR archive]({% post_url platform/deployment/2000-01-01-deploy-java-jar-war %})
+* [Sending a built JAR or WAR archive]({% post_url
+  platform/deployment/2000-01-01-deploy-java-jar-war %})
 
 ## Building the Application
 
@@ -83,5 +87,6 @@ following:
 
 Once these 4 steps have ended successfully, the deployment is considered as
 successful, and the [order to shutdown]({% post_url
-platform/internals/2000-01-01-container-management %}#shutdown-of-old-containers) is
-sent to old containers. They now have 30 seconds to cleanup cleanly.
+platform/internals/2000-01-01-container-management
+%}#shutdown-of-old-containers) is sent to old containers. They now have 30
+seconds to cleanup cleanly.

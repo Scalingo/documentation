@@ -1,6 +1,6 @@
 ---
 title: Get Started with Ruby on Scalingo
-modified_at: 2018-02-23 00:00:00
+modified_at: 2018-02-26 00:00:00
 tags: ruby sinatra tutorial getting-started-tutorial
 index: 3
 ---
@@ -16,6 +16,10 @@ Note: This tutorial does not cover the Ruby on Rails installation, If you're loo
 To be able to follow this tutorial, we assume that you have:
 
 * A [Scalingo account](https://scalingo.com/users/signup)
+* Ruby version 2.3.5+ -- see the GoRails setup guide
+  [window](https://gorails.com/setup/windows/10),
+  [mac](https://gorails.com/setup/osx/10.13-high-sierra),
+  [linux](https://gorails.com/setup/ubuntu/17.10)
 * [Bundler](http://bundler.io/) installed locally: `gem install bundler`
 * The [Scalingo cli](http://cli.scalingo.com/)
 
@@ -157,6 +161,8 @@ You know how to deploy a Ruby app, now develop your project and build something 
 
 Here are some links that you could find useful:
 
-* Need to store data? Look at our [database addons](https://scalingo.com/fr/databases)
+* Need to store data? Look at our [database
+  addons](https://scalingo.com/fr/databases)
 * Want your own [domain name]({% post_url platform/app/2000-01-01-domain %})?
-* Using a SCM tool such as GitHub? Our [SCM integration]({% post_url platform/app/2000-01-01-scm-integration %}) will make your life easier.
+* Using a SCM tool such as GitHub? Our [SCM integration]({% post_url
+  platform/app/2000-01-01-scm-integration %}) will make your life easier.

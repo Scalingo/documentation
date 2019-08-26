@@ -1,6 +1,6 @@
 ---
 title: Review apps
-modified_at: 2018-08-10 00:00:00
+modified_at: 2019-08-26 00:00:00
 tags: app review apps
 index: 31
 ---
@@ -13,15 +13,15 @@ our [GitHub integration]({% post_url platform/app/2000-01-01-scm-integration
 ## What Are Review Apps?
 
 Let say that you have worked some hours on an awesome new feature. It's time to
-show the world your work and to open a new Pull/Merge Request (PR) on the SCM tool (even if
-it's not fully done). With review apps enabled on Scalingo, we will create a
-new application (called a _review app_) with the code of the new feature. You can now
-share the result of your work, to get it validated, with all people
-involved, even if they are not in the tech field.
+show the world your work and to open a new Pull/Merge Request (PR) on the SCM
+tool (even if it's not fully done). With review apps enabled on Scalingo, we
+will create a new application (called a _review app_) with the code of the new
+feature. You can now share the result of your work, to get it validated, with
+all people involved, even if they are not in the tech field.
 
 Maybe they will tell you to change something like adding tests or to change a
-button color. You need to push your following modifications on the branch involved in
-the PR to update the review app.
+button color. You need to push your following modifications on the branch
+involved in the PR to update the review app.
 
 Once all of our teammates are satisfied and the PR is closed, we will
 automatically delete the review app. You can disable this behavior or add a
@@ -43,7 +43,7 @@ collaborators and environment variables from the parent application.
 
 ## Configuration of Review Apps
 
-Having a strict copy of the parent application is sometimes not wishable. You
+Having a strict copy of the parent application is sometimes not desirable. You
 might not want to copy production credentials, or it is sometimes required to
 start a custom task after the initialization of the app. That's where the [Scalingo
 JSON manifest]({% post_url platform/app/2000-01-01-app-manifest %}) becomes useful.
@@ -74,8 +74,9 @@ be executed as a [postdeploy hook]({% post_url
 platform/app/2000-01-01-postdeploy-hook %}) after the first deployment.
 
 {% warning %}
-This script replaces the `postdeploy` hook for the first deployment of a review app.
-If a `postdeploy` is defined in your `scalingo.json` or `Procfile`, it won't be executed.
+This script replaces the `postdeploy` hook for the first deployment of a review
+app. If a `postdeploy` is defined in your `scalingo.json` or `Procfile`, it
+won't be executed.
 {% endwarning %}
 
 ```json
@@ -111,8 +112,8 @@ executed in the scope of a review app or not.
 
 ## Is It Possible to Create Review Apps If My Code Is Hosted at a Different Place?
 
-We implement review apps for code hosted on GitHub or GitLab. However you can set it up for your
-specific case thanks to the Scalingo API:
+We implement review apps for code hosted on GitHub or GitLab. However you can
+set it up for your specific case thanks to the Scalingo API:
 
 * Create a [child application]({% post_url platform/app/2000-01-01-child-apps %})
 * Deploy a gzipped tar archive containing your code:

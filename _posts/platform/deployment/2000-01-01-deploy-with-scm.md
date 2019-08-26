@@ -1,7 +1,7 @@
 ---
 title: Deploy with SCM
 nav: SCM
-modified_at: 2019-08-23 00:00:00
+modified_at: 2019-08-26 00:00:00
 tags: github gitlab deployment
 index: 3
 ---
@@ -44,7 +44,8 @@ page](https://github.com/settings/connections/applications/dce5163f63352f1a4d45)
 
 ### Using the CLI
 
-You can also use the CLI to link your application to an SCM-hosted repository. You first need to link your Scalingo account with your account on the SCM tool:
+You can also use the CLI to link your application to an SCM-hosted repository.
+You first need to link your Scalingo account with your account on the SCM tool:
 
 ```
 $ scalingo integrations-add github-enterprise --url https://github.example.org --token <token>
@@ -64,11 +65,13 @@ $ scalingo help integration-link-create
 
 ## Auto Deploy
 
-With Auto deploy enabled, your application will be deployed every time you push on your repository.
+With Auto deploy enabled, your application will be deployed every time you push
+on your repository.
 
 ## Manual Deploy
 
-You can trigger a manual deployment by going to the "Manual deploy" section and choose the branch to deploy.
+You can trigger a manual deployment by going to the "Manual deploy" section and
+choose the branch to deploy.
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_github.png" %}
 {% include mdl_img.html %}
@@ -81,14 +84,22 @@ $ scalingo --app my-app integration-link-manual-deploy --branch master
 
 ## Review Apps
 
-Review apps are special [child apps]({% post_url platform/app/2000-01-01-child-apps %}) linked to a pull/merge request.
+Review apps are special [child apps]({% post_url
+platform/app/2000-01-01-child-apps %}) linked to a pull/merge request.
 
-Review apps can be created automatically every time a pull request is opened or they can be created manually by selecting the pull request to deploy among the currently opened ones (our pull request viewer will help you with this).
+Review apps can be created automatically every time a pull request is opened or
+they can be created manually by selecting the pull request to deploy among the
+currently opened ones (our pull request viewer will help you with this).
 
-By default, review apps are automatically destroyed when the pull request is closed. But you can specify a duration after which the review app is destroyed.
+By default, review apps are automatically destroyed when the pull request is
+closed. But you can specify a duration after which the review app is destroyed.
 
-For more information, you can read the more specific documentation pages [GitHub integration, Auto Deploy and Review Apps]({% post_url platform/app/2000-01-01-scm-integration %}) and [Review apps]({% post_url platform/app/2000-01-01-review-apps %}).
+For more information, you can read the more specific documentation pages [GitHub
+integration, Auto Deploy and Review Apps]({% post_url
+platform/app/2000-01-01-scm-integration %}) and [Review apps]({% post_url
+platform/app/2000-01-01-review-apps %}).
 
 ## Some suggestions
 
-You can also create a [child app]({% post_url platform/app/2000-01-01-child-apps %}) which is not a review app.
+You can also create a [child app]({% post_url platform/app/2000-01-01-child-apps
+%}) which is not a review app.
