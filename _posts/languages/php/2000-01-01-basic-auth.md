@@ -1,8 +1,8 @@
 ---
-title: Secure your app with HTTP Basic Auth
+title: Secure Your App with HTTP Basic Auth
 nav: Basic Auth
-modified_at: 2016-06-24 00:00:00
-tags: php, http, security, basic-auth
+modified_at: 2019-08-23 00:00:00
+tags: php http security basic-auth
 ---
 
 ## Introduction
@@ -20,7 +20,7 @@ from your application.
 
 ## Configuration
 
-### Nginx configuration
+### Nginx Configuration
 
 Create a directory `config` in your project:
 
@@ -30,20 +30,35 @@ mkdir config
 
 Edit the file `nginx-basic-auth.conf` in this directory with the following content:
 
-For the complete website:
+1. For the complete website:
 
-```bash
+```nginx
 auth_basic           "Protected Site";
 auth_basic_user_file "/app/config/htpasswd";
 ```
 
-Part of a website, here everything under `/wp-admin`:
+2. Part of a website, here everything under `/wp-admin`:
 
-```bash
+```nginx
 location ~ /wp-admin {
   auth_basic           "Protected Site";
   auth_basic_user_file "/app/config/htpasswd";
 }
+```
+
+3. Depending on the hostname. Useful if you host a staging and a production
+   application on Scalingo and just want to protect the staging application with
+   basic auth:
+
+```nginx
+if ($host ~ "app-staging.osc-fr1.scalingo.io" ) {
+    set $auth_basic "Protected Site";
+}
+if ($host ~ "app.osc-fr1.scalingo.io" ) {
+    set $auth_basic off;
+}
+auth_basic $auth_basic;
+auth_basic_user_file /app/config/htpasswd;
 ```
 
 Create the `config/htpasswd` file with the couples user/encrypted password
@@ -59,12 +74,12 @@ That's it with those two files, Nginx will be able to ask for basic auth! Last
 thing you need to do is to instruct Scalingo's deployment process to use your
 configuration file.
 
-### Deployment process configuration
+### Deployment Process Configuration
 
 {% assign nginx-include = "config/nginx-basic-auth.conf" %}
 {% include nginx_includes.md %}
 
-## Redeploy your app
+## Redeploy Your App
 
 ```bash
 git add config/nginx-basic-auth.conf config/htpasswd composer.json
