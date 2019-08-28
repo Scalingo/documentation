@@ -1,0 +1,6 @@
+---
+modified_at:	2019-08-28 10:35:06
+title:	'PostgreSQL - New version: 10.10'
+---
+
+[https://www.postgresql.org/docs/10/static/release-10-10.html](https://www.postgresql.org/docs/10/static/release-10-10.html)
