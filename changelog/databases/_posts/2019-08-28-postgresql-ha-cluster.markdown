@@ -1,5 +1,5 @@
 ---
-modified_at:	2018-03-13 10:35:06
+modified_at:	2019-08-28 10:35:06
 title:	'PostgreSQL - Business plans with HA Clusters'
 ---
 
