@@ -46,6 +46,9 @@ You can access your database on '127.0.0.1:10000'
 The command definition is:
 
 ```bash
+# We are using the SSH tunnel endpoint:
+$ DATABASE_URL=postgresql://<username>:<password>@127.0.0.1:10000/<db>
+
 $ pg_dump --clean --if-exists --format c --dbname $DATABASE_URL --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
 ```
 
@@ -58,6 +61,9 @@ As you can see we use the host and port provided by the tunnel, not those of the
 The command definition is:
 
 ```bash
+# We are using the SSH tunnel endpoint:
+$ DATABASE_URL=postgresql://<username>:<password>@127.0.0.1:10000/<db>
+
 $ pg_restore --clean --if-exists --no-owner --no-privileges --dbname $DATABASE_URL dump.pgsql
 ```
 
