@@ -57,7 +57,9 @@ $ scalingo integrations-add github
 $ scalingo integrations-add github-enterprise --url https://github.example.org --token <token>
 ```
 
-TODO: HOW TO GET THE TOKEN
+The token you need is a personal access token. Here is the [GitHub
+documentation](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line)
+on how to create one. The only scope you need on Scalingo is `repo`.
 
 Then, add and configure a link to the SCM-hosted repository with:
 
