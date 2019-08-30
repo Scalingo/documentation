@@ -60,7 +60,7 @@ strict-transport-security: max-age=31536000
 ```
 
 The `strict-transport-security: max-age=31536000` ensures that browsers won't
-access the domain in an unsecure way during 1 year. By combining it with the
+access the domain in an insecure way during 1 year. By combining it with the
 HTTP to HTTPS redirection, it is now sure that users can only access the
 application once without using an encrypted connection: at their first
 connection which is usually unauthenticated.
