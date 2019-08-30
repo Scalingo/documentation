@@ -1,0 +1,11 @@
+---
+modified_at:	2019-08-30 00:00:00
+title:	'PHP - Support of versions 7.3.9, 7.2.22 and 7.1.32'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+Changelogs:
+
+* [http://php.net/ChangeLog-7.php#7.3.9](http://php.net/ChangeLog-7.php#7.3.9)
+* [http://php.net/ChangeLog-7.php#7.2.22](http://php.net/ChangeLog-7.php#7.2.22)
+* [http://php.net/ChangeLog-7.php#7.1.32](http://php.net/ChangeLog-7.php#7.1.32)
