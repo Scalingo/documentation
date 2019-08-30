@@ -162,7 +162,7 @@ You know how to deploy a Ruby app, now develop your project and build something 
 Here are some links that you could find useful:
 
 * Need to store data? Look at our [database
-  addons](https://scalingo.com/fr/databases)
+  addons](https://scalingo.com/databases)
 * Want your own [domain name]({% post_url platform/app/2000-01-01-domain %})?
 * Using a SCM tool such as GitHub? Our [SCM integration]({% post_url
   platform/app/2000-01-01-scm-integration %}) will make your life easier.

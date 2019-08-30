@@ -66,7 +66,7 @@ application once without using an encrypted connection: at their first
 connection which is usually unauthenticated.
 
 More documentation about HSTS on [Mozilla Developer
-Network](https://developer.mozilla.org/fr/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Transport_Security)
+Network](https://developer.mozilla.org/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Transport_Security)
 
 ## Disclaimers
 
