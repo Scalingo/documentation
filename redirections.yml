@@ -557,9 +557,6 @@
   -
     old: "/platform/app/github-integration"
     new: "/platform/app/scm-integration"
-  -
-    old: "/platform/deployment/deploy-with-github"
-    new: "/platform/deployment/deploy-with-scm"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

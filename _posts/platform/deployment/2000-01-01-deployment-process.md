@@ -1,7 +1,7 @@
 ---
 title: Deployment Process
 nav: Introduction
-modified_at: 2019-08-26 00:00:00
+modified_at: 2019-08-30 00:00:00
 index: 1
 tags: deployment
 ---
@@ -18,8 +18,10 @@ available to achieve this step:
 
 * [Sending the code using git]({% post_url
   platform/deployment/2000-01-01-deploy-with-git %})
-* [Let the platform fetch the code from a SCM tool such as GitHub]({% post_url
-  platform/deployment/2000-01-01-deploy-with-scm %})
+* [Let the platform fetch the code from GitHub]({% post_url
+  platform/deployment/2000-01-01-deploy-with-github %})
+* [Let the platform fetch the code from GitLab]({% post_url
+  platform/deployment/2000-01-01-deploy-with-gitlab %})
 * [Sending the code in a tar achive]({% post_url
   platform/deployment/2000-01-01-deploy-from-archive %})
 

@@ -2,8 +2,8 @@
 layout: page
 title: SCM integration, Auto Deploy and Review Apps
 nav: SCM integration
-modified_at: 2019-08-26 00:00:00
-tags: integration github gitlab
+modified_at: 2019-08-30 00:00:00
+tags: integration scm github github-enterprise gitlab
 index: 32
 ---
 
@@ -54,34 +54,37 @@ After having linked your application to an SCM-hosted repository, the "Code"
 section of your dashboard is composed of two mains parts: **Auto Deploy** and
 **Review Apps**.
 
-{% include github_permission.md %}
+## Deployments
 
-## Auto Deploy
+You can configure your Scalingo application to be automatically deployed
+whenever a commit occurs on a given branch. This is especially useful, for
+instance, if you want the application to always be in sync with the `production`
+branch of your repository.
 
-Once your app is linked, you can enable "Auto deploy" from a given branch of
-your repository. It means that your app will be **strongly** linked to the
-selected branch, a new deployment of the application will be started each time
-the code of this branch is updated on the SCM repository.
+You may have Continuous Integration (CI) tools associated with your repository
+like [Codeship](https://codeship.com/) or [TravisCI](https://travis-ci.com/)
+which run tasks, tests or whatever. We will always wait that all these tools
+**succeed** before deploying your app.
 
-You may have continuous integration tools associated to your repository like
-[CodeShip](https://codeship.com/) or [TravisCI](https://travis-ci.com/) which
-run tasks, tests or whatever. We will always **wait that all GitHub statuses
-succeeds** before deploying your app.
-
-## Manual Deploy
-
-The manual deploy feature lets you instantly deploy a branch from the repository
-linked to your Scalingo app. It can be useful to quickly deploy your app or in
-the case of you're not having access to a computer having a proper Git
-installation and you edited code directly on the SCM repository.
-
-{% assign img_url = "https://cdn.scalingo.com/blog/20161020-github-integration/auto_deploy.png" %}
-{% include mdl_img.html %}
+You can also manually trigger a deployment of your application from any branch.
 
 ## Review Apps
 
-Review apps are a **powerful collaboration tool** to discuss about a new
-features between members of your organization.
+Review apps are an awesome tool to discuss about new features with your
+teammates. Whenever you create a new Pull Request (or Merge Request in the
+GitLab world), you can create a new application, called a *Review App*, with the
+code of the new feature. It is then easy to share the result of your work! If
+you push a modification to the Pull/Merge Request, it will automatically be
+deployed in your Review App.
+
+When the Pull/Merge Request is closed, Scalingo automatically deletes the
+Review App.
+
+You can either automatically create a new Review App for each Pull/Merge
+Request opened on your repository or manually deploy a Review App.
+
+You can find more information about Review Apps on our [documentation
+page](https://doc.scalingo.com/platform/app/review-apps).
 
 This feature is related to pull/merge requests and has a [dedicated
 documentation page]({% post_url platform/app/2000-01-01-review-apps %}).
