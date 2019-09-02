@@ -1,9 +1,9 @@
 ---
 title: Deploy with GitHub and GitHub Enterprise
-nav: GitHub
+nav: Deploy with GitHub
 modified_at: 2019-08-30 00:00:00
 tags: scm github github-enterprise deployment
-index: 2
+index: 3
 ---
 
 You can deploy your Scalingo application with a code hosted on GitHub or GitHub
@@ -14,7 +14,8 @@ Enterprise. You will have to link it to a GitHub repository and branch.
 ### Using the Web Dashboard
 
 {% warning %}
-The web dashboard is currently only compatible with GitHub. To integrate your
+The web dashboard is currently only compatible with GitHub (not GitHub
+Enterprise). To integrate your
 application with GitHub Enterprise, please refer to the section "Using the CLI"
 below.
 {% endwarning %}

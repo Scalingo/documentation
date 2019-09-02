@@ -1,16 +1,24 @@
 ---
 layout: page
-title: SCM integration, Auto Deploy and Review Apps
-nav: SCM integration
-modified_at: 2019-08-30 00:00:00
+title: Source Code Management Integration, Auto Deploy and Review Apps
+nav: SCM Integration
+modified_at: 2019-09-02 00:00:00
 tags: integration scm github github-enterprise gitlab
-index: 32
+index: 30
 ---
 
-Scalingo provides a deep **integration with SCM tools** such as GitHub and
+Scalingo provides a deep **integration with Source Code Management (SCM)
+tools** such as GitHub and
 GitLab. It includes features like auto-deployment when the code is modified on
 the SCM repository, deploying directly from a branch, automatic building and
 deployment of *Pull Requests*, and much more.
+
+More infos about supported SCM tool:
+
+* [Deploy with GitHub]({%
+post_url platform/deployment/2000-01-01-deploy-with-github %})
+* [Deploy with GitLab]({%
+post_url platform/deployment/2000-01-01-deploy-with-gitlab %})
 
 ## The GitHub Flow
 

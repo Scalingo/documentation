@@ -2,7 +2,7 @@
 title: Child application
 modified_at: 2019-08-26 00:00:00
 tags: app child
-index: 30
+index: 32
 ---
 
 You may want to create an application that inherit from an existing
