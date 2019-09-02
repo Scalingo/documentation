@@ -1,6 +1,6 @@
 ---
 title: Get Started with Ruby on Scalingo
-modified_at: 2019-08-30 00:00:00
+modified_at: 2018-02-26 00:00:00
 tags: ruby sinatra tutorial getting-started-tutorial
 index: 3
 ---
