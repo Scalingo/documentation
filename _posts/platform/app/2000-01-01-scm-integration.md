@@ -13,7 +13,7 @@ GitLab. It includes features like auto-deployment when the code is modified on
 the SCM repository, deploying directly from a branch, automatic building and
 deployment of *Pull Requests*, and much more.
 
-More infos about supported SCM tool:
+More info about supported SCM tool:
 
 * [Deploy with GitHub]({%
 post_url platform/deployment/2000-01-01-deploy-with-github %})
