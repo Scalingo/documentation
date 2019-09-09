@@ -1,7 +1,7 @@
 ---
 title: PHP application with Node.js
 nav: PHP along with Node.js
-modified_at: 2019-02-07 00:00:00
+modified_at: 2019-09-09 00:00:00
 tags: php nodejs assets webpack
 ---
 
@@ -24,8 +24,11 @@ Then add a file named `.buildpacks` at the root of your application containing
 
 ```text
 https://github.com/Scalingo/nodejs-buildpack
-https://github.com/Scalingo/php-buildpack#nonode
+https://github.com/Scalingo/php-buildpack
 ```
+
+Eventually, define the environment variable `PHP_BUILDPACK_NO_NODE=true` in your
+application.
 
 With this setup, Scalingo will first execute the PHP buildpack without the basic
 Node.js support it embeds (the branch `nonode`), then the Node.js buildpack will
