@@ -554,6 +554,9 @@
   -
     old: "/platform/app/datadog-scalingo"
     new: "/platform/app/datadog"
+  -
+    old: "/platform/app/github-integration"
+    new: "/platform/app/scm-integration"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

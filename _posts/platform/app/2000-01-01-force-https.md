@@ -60,13 +60,13 @@ strict-transport-security: max-age=31536000
 ```
 
 The `strict-transport-security: max-age=31536000` ensures that browsers won't
-access the domain in an unsecure way during 1 year. By combining it with the
+access the domain in an insecure way during 1 year. By combining it with the
 HTTP to HTTPS redirection, it is now sure that users can only access the
 application once without using an encrypted connection: at their first
 connection which is usually unauthenticated.
 
 More documentation about HSTS on [Mozilla Developer
-Network](https://developer.mozilla.org/fr/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Transport_Security)
+Network](https://developer.mozilla.org/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Transport_Security)
 
 ## Disclaimers
 

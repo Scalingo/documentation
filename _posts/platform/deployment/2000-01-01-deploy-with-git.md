@@ -1,6 +1,5 @@
 ---
 title: Deploy with Git
-nav: "Git"
 modified_at: 2019-07-08 00:00:00
 tags: git deployment
 index: 2

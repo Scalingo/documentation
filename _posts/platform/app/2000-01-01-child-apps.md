@@ -1,8 +1,8 @@
 ---
 title: Child application
-modified_at: 2019-07-08 00:00:00
+modified_at: 2019-08-26 00:00:00
 tags: app child
-index: 30
+index: 32
 ---
 
 You may want to create an application that inherit from an existing
@@ -18,7 +18,8 @@ When creating a child application, the following elements are cloned:
 * Notifications settings
 
 This feature can be very interesting to implement your own [Review Apps]({%
-post_url platform/app/2000-01-01-review-apps %}) for codes that are not hosted on GitHub.
+post_url platform/app/2000-01-01-review-apps %}) for codes that are not hosted
+on unsupported SCM tools.
 
 ## Deployment of a child app
 
@@ -39,7 +40,6 @@ it using our CLI with:
 ```bash
 scalingo --app child-app-1 git-show
 ```
-
 
 Or you can use our API to directly deploy an archive from
 GitHub/GitLab/Bitbucket according to your setup.
