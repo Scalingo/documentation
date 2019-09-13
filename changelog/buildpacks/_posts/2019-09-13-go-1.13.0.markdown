@@ -1,0 +1,7 @@
+---
+modified_at:	2019-09-13 08:00:54
+title:	'Go - Version 1.13.0 available'
+github: 'https://github.com/Scalingo/go-buildpack'
+---
+
+[Go 1.13.0 Changelog](https://golang.org/doc/devel/release.html#go1.13)
