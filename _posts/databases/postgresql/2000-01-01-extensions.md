@@ -3,7 +3,7 @@ title: Managing PostgreSQL extensions
 nav: Extensions
 modified_at: 2019-07-30 00:00:00
 tags: databases postgresql extensions
-index: 3
+index: 4
 ---
 
 {% include info_command_line_tool.md %}
