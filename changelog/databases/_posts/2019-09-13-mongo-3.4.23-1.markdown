@@ -1,0 +1,10 @@
+---
+modified_at: 2019-09-13 12:00:00
+title: 'MongoDB - New versions: 3.4.23'
+---
+
+Docker Image:
+
+* `scalingo/mongo:3.4.23-1`
+
+MongoDB CHANGELOG v3.4: [https://docs.mongodb.com/manual/release-notes/3.4/](https://docs.mongodb.com/manual/release-notes/3.4/)

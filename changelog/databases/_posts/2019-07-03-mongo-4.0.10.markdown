@@ -13,4 +13,4 @@ Docker Image:
 
 MongoDB CHANGELOG v4.0: [https://docs.mongodb.com/manual/release-notes/4.0/](https://docs.mongodb.com/manual/release-notes/4.0/)
 MongoDB CHANGELOG v3.6: [https://docs.mongodb.com/manual/release-notes/3.6/](https://docs.mongodb.com/manual/release-notes/3.6/)
-MongoDB CHANGELOG v3.4: [https://docs.mongodb.com/manual/release-notes/3.6/](https://docs.mongodb.com/manual/release-notes/3.4/)
+MongoDB CHANGELOG v3.4: [https://docs.mongodb.com/manual/release-notes/3.4/](https://docs.mongodb.com/manual/release-notes/3.4/)
