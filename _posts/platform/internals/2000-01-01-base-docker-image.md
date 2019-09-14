@@ -23,6 +23,8 @@ its dependencies. When the build is done, the resulting Docker image is sent to
 our private repository and our orchestrator will use it subsequently to actually
 run the application in our infrastructure.
 
+The **maximum build time is 30 minutes**. After that duration the build will be canceled by the platform.
+
 ## Installed libraries
 
 We've installed different libraries and softwares which are commonly used in
