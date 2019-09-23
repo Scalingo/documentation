@@ -66,7 +66,7 @@ You can also trigger a manual deployment to choose a specific branch to
 deploy:
 
 ```
-$ scalingo --app my-app integration-link-manual-deploy --branch master
+$ scalingo --app my-app integration-link-manual-deploy master
 ```
 
 You can get all information about your GitLab integration configuration with:
