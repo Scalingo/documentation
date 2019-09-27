@@ -1,0 +1,10 @@
+---
+modified_at: 2019-09-27 10:00:00
+title: 'PHP - Support of versions 7.3.10, 7.2.23'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+Changelogs:
+
+* [http://php.net/ChangeLog-7.php#7.3.10](http://php.net/ChangeLog-7.php#7.3.10)
+* [http://php.net/ChangeLog-7.php#7.2.23](http://php.net/ChangeLog-7.php#7.2.23)
