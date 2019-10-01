@@ -12,8 +12,8 @@ The **Force HTTPS** feature will ensure that your users will be reaching an appl
 HTTPS is enabled by default for all the applications deployed on the platform.
 Once deployed an application can be accessed either with HTTP or HTTPS:
 
-* `http://my-app.scalingo.io`
-* `https://my-app.scalingo.io`
+* `http://my-app.osc-fr1.scalingo.io`
+* `https://my-app.osc-fr1.scalingo.io`
 
 Or, once a custom domain has been added:
 
@@ -31,14 +31,14 @@ using the status code `301`. It means browsers will remember this redirection
 over time:
 
 ```console
-$ curl http://my-app.scalingo.io -I
+$ curl http://my-app.osc-fr1.scalingo.io -I
 HTTP/1.1 301 Moved Permanently
 Server: openresty
 Date: Mon, 05 Mar 2018 10:04:39 GMT
 Content-Type: application/octet-stream
 Connection: keep-alive
 X-Request-ID: aa5e0e4e-5e3f-4e36-b4d4-c5f65a47812f
-Location: https://my-app.scalingo.io/
+Location: https://my-app.osc-fr1.scalingo.io/
 ```
 
 ### Injection of HSTS header
@@ -50,7 +50,7 @@ domain without using an encrypted connection.
 The header will be automatically added to the request response of HTTPS requests:
 
 ```console
-$ curl https://my-app.scalingo.io -I
+$ curl https://my-app.osc-fr1.scalingo.io -I
 HTTP/2 200
 server: nginx
 date: Mon, 05 Mar 2018 10:08:15 GMT

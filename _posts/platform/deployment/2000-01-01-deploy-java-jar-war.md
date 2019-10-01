@@ -39,7 +39,7 @@ $ scalingo --app my-app deploy ./application.war
 [LOG] -----> Build complete, uploading deployment cache.
 [LOG]  Build complete, shipping your container...
 [LOG]  Waiting for your application to boot...
-[LOG] <-- https://my-app.scalingo.io -->
+[LOG] <-- https://my-app.osc-fr1.scalingo.io -->
 ```
 
 ## Configuration

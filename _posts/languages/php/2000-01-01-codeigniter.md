@@ -25,7 +25,7 @@ You need to configure a couple of files to use CodeIgniter on Scalingo. First mo
 `application/config/config.php`:
 
 ```php
-$config['base_url'] = 'https://test-code-igniter.scalingo.io/';
+$config['base_url'] = 'https://test-code-igniter.osc-fr1.scalingo.io/';
 // …
 $config['index_page'] = '';
 // …
