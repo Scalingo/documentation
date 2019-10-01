@@ -57,5 +57,5 @@ At the end of the deployment process, an URL is returned, you application is now
 ```bash
 …
 Waiting for your application to boot...
-<-- https://my-app.scalingo.io -->
+<-- https://my-app.osc-fr1.scalingo.io -->
 ```

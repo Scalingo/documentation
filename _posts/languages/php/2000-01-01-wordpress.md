@@ -35,8 +35,8 @@ Then, update your application environment through the dashboard or with the
 
 * `DATABASE_URL`: Connection string to the MySQL database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL addon
 * `WP_ENV`: Set to environment (`development`, `staging`, `production`)
-* `WP_HOME`: Full URL to WordPress home (https://my-wordpress.scalingo.io)
-* `WP_SITEURL`: Full URL to WordPress including subdirectory (https://my-wordpress.scalingo.io/wp)
+* `WP_HOME`: Full URL to WordPress home (https://my-wordpress.osc-fr1.scalingo.io)
+* `WP_SITEURL`: Full URL to WordPress including subdirectory (https://my-wordpress.osc-fr1.scalingo.io/wp)
 * `S3_UPLOADS_BUCKET`: Name of the S3 bucket to upload files to
 * `S3_UPLOADS_KEY`: AWS Access Key ID for S3 authentication
 * `S3_UPLOADS_SECRET`: AWS Secret Key for S3 authentication
@@ -58,7 +58,7 @@ git commit -m "Add themes"
 git push scalingo master
 ```
 
-5. Access WP admin at `https://my-wordpress.scalingo.io/wp/wp-admin`
+5. Access WP admin at `https://my-wordpress.osc-fr1.scalingo.io/wp/wp-admin`
 
 ## Detection
 

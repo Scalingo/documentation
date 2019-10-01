@@ -78,13 +78,13 @@ added to the Scalingo application. The target of this `CNAME` entry should be
 ```
 # If the application name is 'my-app'
 
-my-app.scalingo.io.
+my-app.osc-fr1.scalingo.io.
 ```
 
 {% note %}
-  The `.` (dot) character at the end of `my-app.scalingo.io.` is required, it
+  The `.` (dot) character at the end of `my-app.osc-fr1.scalingo.io.` is required, it
   precises the URL is a fully qualified domain name (FQDN) and not a relative
-  domain of the current one. (ie. `my-app.scalingo.io.example.com`)
+  domain of the current one. (e.g. `my-app.osc-fr1.scalingo.io.example.com`)
 {% endnote %}
 
 ![cloudflare-add-record](https://cdn.scalingo.com/documentation/integrations/cloudflare-create-record-03.png)

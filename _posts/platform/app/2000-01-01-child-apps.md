@@ -64,10 +64,10 @@ Output:
 ```
 Deployment started (56b226d9-dcab-42cb-bb70-f3ad13beb5b5) for my-child-app-1, waiting.............
 Deployment of app 'my-child-app-1' finished with status 'success'
-URL is: https://my-child-app-1.scalingo.io
+URL is: https://my-child-app-1.osc-fr1.scalingo.io
 
 Child apps for <scalingo app name>:
-* my-child-app-1 (58d2a7416547b65316b6690e) - https://my-child-app-1.scalingo.io
+* my-child-app-1 (58d2a7416547b65316b6690e) - https://my-child-app-1.osc-fr1.scalingo.io
 ```
 
 Here is the code of the `child-app-gitlab.rb` script:

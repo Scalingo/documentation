@@ -95,7 +95,7 @@ will be up and running!
 You can now try to send some data to your Logstash instance:
 
 ```bash
-$ curl --request POST 'http://my-awesome-logstash-user:iloveunicorns@my-awesome-logstash.scalingo.io?name=Alanala' --data 'Hi!'
+$ curl --request POST 'http://my-awesome-logstash-user:iloveunicorns@my-awesome-logstash.osc-fr1.scalingo.io?name=Alanala' --data 'Hi!'
 ok
 ```
 

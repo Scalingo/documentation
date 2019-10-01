@@ -38,14 +38,14 @@ Any request done to the application having **Sticky Sessions** enabled, will rec
 client's request, a new sticky session cookie is returned, with a duration of 24 hours.
 
 ```console
-└> curl my-app.scalingo.io -I
+└> curl my-app.osc-fr1.scalingo.io -I
 HTTP/2 200 OK
 Date: Wed, 21 Mar 2018 17:51:09 GMT
 Content-Type: text/html; charset=utf-8
 Content-Length: 13
 Connection: keep-alive
 X-Request-ID: d2df9e31-7415-46bf-beff-8ba31623a817
-Set-Cookie: sc-sticky-session=GCLlOQs/Ttbrq5u1Y76yc4mI0uJjTE8vpoOUS/RG5jo=; Expires=Thu, 22-Mar-18 17:51:09 GMT; Max-Age=86400; Domain=my-app.scalingo.io; Path=/; HttpOnly
+Set-Cookie: sc-sticky-session=GCLlOQs/Ttbrq5u1Y76yc4mI0uJjTE8vpoOUS/RG5jo=; Expires=Thu, 22-Mar-18 17:51:09 GMT; Max-Age=86400; Domain=my-app.osc-fr1.scalingo.io; Path=/; HttpOnly
 ```
 
 If the cookie is not correctly sent back, the request may be routed to another backend `web`

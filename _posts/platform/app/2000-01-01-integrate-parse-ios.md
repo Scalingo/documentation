@@ -28,7 +28,7 @@ will be deployed on Scalingo in a minute and you can start working with it direc
 ### Get the credentials
 
 Once your server has been deployed, it is reachable at the URL:
-`https://<appname>.scalingo.io`. The credentials for your server have been
+`https://<appname>.osc-fr1.scalingo.io`. The credentials for your server have been
 defined before the deployment, if you need to recover them, they can be found
 on your [dashboard](https://my.scalingo.com) in the 'Environment' tab, or with
 our command line tool:
@@ -51,7 +51,7 @@ The following snippet shows you how to configure your parse integration:
 ```objective-c
 [ParseinitializeWithConfiguration:[ParseClientConfigurationconfigurationWithBlock:^(id<ParseMutableClientConfiguration> _Nonnull configuration) {
   configuration.applicationId = @"<APP_ID>";
-  configuration.server= @"https://<appname>.scalingo.io/parse";
+  configuration.server= @"https://<appname>.osc-fr1.scalingo.io/parse";
   configuration.clientKey = @"";
 }]];
 ```

@@ -152,7 +152,7 @@ $ git push scalingo master
 -----> Build complete, uploading deployment cache.
  Build complete, shipping your container...
  Waiting for your application to boot...
- <-- https://my-ruby-app.scalingo.io -->
+ <-- https://my-ruby-app.osc-fr1.scalingo.io -->
 ```
 
 ## Where to go next
