@@ -41,36 +41,7 @@ it using our CLI with:
 scalingo --app child-app-1 git-show
 ```
 
-Or you can use our API to directly deploy an archive from
-GitHub/GitLab/Bitbucket according to your setup.
+Or you can use our API to directly deploy an archive (.tar.gz).
 
 The API documentation to trigger this deployment can be found
 [here](https://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive)
-
-## Example with GitLab
-
-The following script lets you create and deploy a child app from any GitLab instance:
-
-```sh
-export AUTH_TOKEN=<scalingo auth token>
-export APP=<scalingo app name>
-export GITLAB_TOKEN=<gitlab auth token>
-
-./child-app-gitlab.rb my-child-app-1 user/my-private-app development-branch
-```
-
-Output:
-
-```
-Deployment started (56b226d9-dcab-42cb-bb70-f3ad13beb5b5) for my-child-app-1, waiting.............
-Deployment of app 'my-child-app-1' finished with status 'success'
-URL is: https://my-child-app-1.osc-fr1.scalingo.io
-
-Child apps for <scalingo app name>:
-* my-child-app-1 (58d2a7416547b65316b6690e) - https://my-child-app-1.osc-fr1.scalingo.io
-```
-
-Here is the code of the `child-app-gitlab.rb` script:
-
-<script src="https://gist.github.com/Soulou/2a97e6adfa232526472336ef991489a9.js"></script>
-
