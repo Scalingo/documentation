@@ -41,7 +41,7 @@ it using our CLI with:
 scalingo --app child-app-1 git-show
 ```
 
-Or you can use our API to directly deploy an archive (.tar.gz) according to your setup.
+Or you can use our API to directly deploy an archive (.tar.gz).
 
 The API documentation to trigger this deployment can be found
 [here](https://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive)
