@@ -1,0 +1,10 @@
+---
+modified_at: 2019-11-07 09:30:00
+title: 'MongoDB - New versions: 3.6.15'
+---
+
+Docker Image:
+
+* `scalingo/mongo:3.6.15-1`
+
+MongoDB CHANGELOG v3.6: [https://docs.mongodb.com/manual/release-notes/3.6/](https://docs.mongodb.com/manual/release-notes/3.6/)
