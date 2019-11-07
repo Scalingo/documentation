@@ -23,12 +23,10 @@ used:
   instead of serving static files.
 
 * **HTTPS Termination**: By using Cloudflare, you don't have to care anymore
-  about TLS certificates, they are automatically handled by them. At the precise
-  moment your domain is configured to use their proxy, a valid certificate will
-  be served to your users. Cloudflare full encryption will work out of the box
-  along with Scalingo [automatic certificate generation with Let's Encrypt]({%
-  post_url platform/app/2000-01-01-ssl
-  %}#automatic-https-certificate-with-lets-encrypt).
+    about TLS certificates, they are automatically handled by them. At the
+    precise moment your domain is configured to use their proxy, a valid
+    certificate will be served to your users. Read the [End-to-end
+    HTTPS](#end-to-end-https) section for more information.
 
 * **Application Firewall**: Cloudflare proxies are looking at incoming requests
   to check for common attempt to exploit security holes like SQL injections,
@@ -43,8 +41,8 @@ used:
 ## Setup of your Cloudflare account
 
 The first thing to do is to setup your domain with Cloudflare. It will require
-to change your domain nameservers at the registrar level (the entity which sold
-the domain). This process might take up to 24h.
+to change your domain name servers at the registrar level (the entity which sold
+the domain). This process might take up to 24 hours.
 
 To go through this process, you are encouraged to follow [their official
 documentation](https://support.cloudflare.com/hc/en-us/articles/201720164-Step-2-Create-a-Cloudflare-account-and-add-a-website).
@@ -107,3 +105,19 @@ configure a **CNAME** entry for a root domain, removing the **static IP**
 limit.
 
 ## End-to-end HTTPS
+
+Cloudflare offers HTTPS termination so that your application is always reachable
+via HTTPS. At the precise moment your domain is configured to use their proxy, a
+valid certificate will be served to your users. However, in order to ensure
+complete protection to your clients, your application should use the "Full
+(strict)" mode. With this mode, the traffic to your application is encrypted
+from your customers browser to your Scalingo hosted application going through
+Cloudflare network. Cloudflare "Full (strict)" mode will work out of the box
+along with Scalingo [automatic certificate generation with Let's Encrypt]({%
+post_url platform/app/2000-01-01-ssl
+%}#automatic-https-certificate-with-lets-encrypt).
+
+Here is Cloudflare [documentation
+page](https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options)
+about it.
+
