@@ -62,7 +62,7 @@ Bigger container sizes are available upon request on the support.
 
 Our 30 days free trial only gives you access to small and medium containers, if you want
 to use another kind of size, please [fill your billing profile and payment
-method](https://my.scalingo.com/billing)
+method](https://my.scalingo.com/billing).
 
 ## Container Limits
 
