@@ -1,7 +1,7 @@
 ---
 title: Scalingo Builder - Our base Docker image
 nav: Base Docker Image
-modified_at: 2016-08-05 00:00:00
+modified_at: 2019-11-15 00:00:00
 tags: docker image builder buildpack
 index: 5
 ---
@@ -56,4 +56,13 @@ $ docker pull scalingo/builder
 
 ## Timezone
 
-The timezone configured inside our base image is UTC±00:00.
+The timezone configured inside our base image is UTC±00:00. You can set it to a
+different value by setting the environment variable TZ with the desired
+timezone:
+
+```
+scalingo --app my-app env-set TZ=Europe/Paris
+```
+
+A list of existing timezones is available
+[here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).
