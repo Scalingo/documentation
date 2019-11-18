@@ -85,6 +85,24 @@ Then you can test the presence of this environment variable in your application
 and setup basic auth in case this environment is defined in the environment of
 the application.
 
+You can also generate a different password for each review app by using the
+`secret` generator in the `scalingo.json` file:
+
+```json
+{
+  "env": {
+    // ...
+    "PASSWORD": {
+      "description": "Basic auth password for review apps",
+      "generator": "secret"
+    }
+  }
+}
+```
+
+The environment variable `PASSWORD` should be used by your application to
+configure Basic Auth on your app.
+
 ### Run a Task After the First Deployment of a Review App
 
 When a review app is created, you might want to execute a custom action like
