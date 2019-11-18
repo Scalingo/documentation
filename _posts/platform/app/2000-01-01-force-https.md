@@ -1,11 +1,12 @@
 ---
 title: "Force HTTPS"
-modified_at: 2018-03-05 00:00:00
+modified_at: 2019-11-18 00:00:00
 tags: app routing https security tls
 index: 22
 ---
 
-The **Force HTTPS** feature will ensure that your users will be reaching an application through **HTTPS only**.
+The **Force HTTPS** feature will ensure that your users will be reaching an
+application through **HTTPS only**.
 
 ## Context
 
@@ -20,7 +21,23 @@ Or, once a custom domain has been added:
 * `http://example.com`
 * `https://example.com`
 
-Activating the **Force HTTPS** feature enforces HTTPS access to all the domains attached to the application. It is achieved by activating a permanent redirection from HTTP to HTTPS and injecting the HSTS header in HTTPS responses.
+Activating the **Force HTTPS** feature enforces HTTPS access to all the domains
+attached to the application. It is achieved by activating a permanent
+redirection from HTTP to HTTPS and injecting the HSTS header in HTTPS responses.
+
+## Force HTTPS a Scalingo Application
+
+Scalingo eases the process for you to enable "Force HTTPS" on your application.
+Head to the Settings tab of your web dashboard and check "Force HTTPS":
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_settings.png" %}
+{% include mdl_img.html %}
+
+Or using the CLI:
+
+```
+scalingo --app my-app force-https
+```
 
 ## Technical details
 
