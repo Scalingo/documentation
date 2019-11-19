@@ -1,0 +1,6 @@
+---
+modified_at:	2019-11-19 16:15:00
+title:	'PostgreSQL - New default version: 12.1'
+---
+
+[https://www.postgresql.org/docs/12/release.html](https://www.postgresql.org/docs/12/release.html)
