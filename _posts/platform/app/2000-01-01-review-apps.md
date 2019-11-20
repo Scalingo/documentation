@@ -65,6 +65,44 @@ Here, the value of the environment variable `CANONICAL_HOST_URL` will contain
 the URL to reach the newly deployed app. The `scalingo.json` configuration
 always takes precedence over parent app configuration.
 
+### Protect a Review App with Basic Auth
+
+You may want to protect access to your review apps so that authentication is
+mandatory before reaching the review app. A solution is to update the
+`scalingo.json` file to look like:
+
+```json
+{
+  "env": {
+    "BASIC_AUTH": {
+      "value": true
+    }
+  }
+}
+```
+
+Then you can test the presence of this environment variable in your application
+and setup basic auth in case this environment is defined in the environment of
+the application.
+
+You can also generate a different password for each review app by using the
+`secret` generator in the `scalingo.json` file:
+
+```json
+{
+  "env": {
+    // ...
+    "PASSWORD": {
+      "description": "Basic auth password for review apps",
+      "generator": "secret"
+    }
+  }
+}
+```
+
+The environment variable `PASSWORD` should be used by your application to
+configure Basic Auth on your app.
+
 ### Run a Task After the First Deployment of a Review App
 
 When a review app is created, you might want to execute a custom action like
