@@ -1,0 +1,10 @@
+---
+modified_at: 2019-11-22 11:00:00
+title: 'PHP - Support of versions 7.3.12 and 7.2.25'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+Changelogs:
+
+* [https://www.php.net/ChangeLog-7.php#7.3.12](https://www.php.net/ChangeLog-7.php#7.3.12)
+* [https://www.php.net/ChangeLog-7.php#7.2.25](https://www.php.net/ChangeLog-7.php#7.2.25)
