@@ -53,7 +53,7 @@ $ scalingo create my-awesome-logstash --buildpack https://github.com/Scalingo/mu
 Add the Elasticsearch addon to this application:
 
 ```bash
-$ scalingo --app my-awesome-logstash addons-add scalingo-elasticsearch 1g
+$ scalingo --app my-awesome-logstash addons-add scalingo-elasticsearch elasticsearch-starter-1024
 ```
 
 All the Elasticsearch plans are described [here](https://scalingo.com/addons/scalingo-elasticsearch).
