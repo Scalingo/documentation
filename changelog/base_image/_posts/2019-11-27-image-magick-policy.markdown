@@ -7,7 +7,7 @@ We updated `scalingo-14` and `scalingo-18` stacks to remove a restriction we
 used to impose on the use of ImageMagick. There is no more restriction in the
 `policy.xml` file for PDF generation.
 
-For instance, the following command use to fail and is not executable on
+For instance, the following command use to fail and is now executable on
 Scalingo:
 
 ```
