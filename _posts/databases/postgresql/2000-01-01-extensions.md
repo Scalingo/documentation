@@ -1,7 +1,7 @@
 ---
-title: Managing PostgreSQL extensions
+title: Managing PostgreSQL Extensions
 nav: Extensions
-modified_at: 2019-07-30 00:00:00
+modified_at: 2019-12-03 00:00:00
 tags: databases postgresql extensions
 index: 3
 ---
@@ -13,9 +13,10 @@ a large set of extensions. A lot of them are installed alongside
 your PostgreSQL but you need to enable those manually according
 to your need.
 
-## Enable a specific extension
+## Enable a Specific Extension
 
-To enable the extensions you want for your application, run the following command:
+To enable the extensions you want for your application, run the following
+command:
 
 ```bash
 $ scalingo --app my-app pgsql-console
@@ -30,10 +31,14 @@ user=> CREATE extension "uuid-ossp";
 CREATE EXTENSION
 ```
 
-This example uses 'hstore' and 'postgis' but you can do that for all the underneath list of
-extensions.
+This example uses 'hstore' and 'postgis' but you can do that for all the
+underneath list of extensions.
 
-## List of available extensions
+## List of Available Extensions
+
+{% warning %}
+PostGIS extension requires at least a "Starter 512M" plan to work.
+{% endwarning %}
 
 <table>
 	<thead>
