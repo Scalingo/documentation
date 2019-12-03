@@ -1,5 +1,5 @@
 ---
-modified_at:	2019-11-19 16:15:00
+modified_at:	2019-12-03 12:00:00
 title:	'PostgreSQL - New default version: 12.1'
 ---
 
