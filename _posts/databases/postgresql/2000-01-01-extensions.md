@@ -15,7 +15,8 @@ to your need.
 
 ## Enable a Specific Extension
 
-To enable the extensions you want for your application, run the following command:
+To enable the extensions you want for your application, run the following
+command:
 
 ```bash
 $ scalingo --app my-app pgsql-console
@@ -30,10 +31,14 @@ user=> CREATE extension "uuid-ossp";
 CREATE EXTENSION
 ```
 
-This example uses 'hstore' and 'postgis' but you can do that for all the underneath list of
-extensions.
+This example uses 'hstore' and 'postgis' but you can do that for all the
+underneath list of extensions.
 
 ## List of Available Extensions
+
+{% warning %}
+PostGIS extension requires at least a "Starter 512M" plan to work.
+{% endwarning %}
 
 <table>
 	<thead>
