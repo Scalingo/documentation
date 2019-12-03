@@ -1,0 +1,9 @@
+---
+modified_at: 2019-12-03 16:00:00
+title: 'PHP - Support of version 7.4.0'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+Changelog:
+
+* [https://www.php.net/ChangeLog-7.php#7.4.0](https://www.php.net/ChangeLog-7.php#7.4.0)
