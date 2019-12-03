@@ -32,7 +32,7 @@ If your remote database URL is:
 postgresql://user:pass@my-db.postgresql.dbs.com:30000/my-db
 ```
 
-### Setup the tunnel
+### Setup the Tunnel
 
 ```bash
 $ scalingo --app my-app db-tunnel SCALINGO_POSTGRESQL_URL
@@ -85,6 +85,7 @@ data transfers will be way faster.
 ```bash
 $ scalingo --app my-app run bash
 
+[00:00] Scalingo ~ $ dbclient-fetcher psql
 [00:00] Scalingo ~ $ pg_dump --clean --if-exists --format c --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --dbname $DATABASE_URL --file dump.pgsql
 ...
 
