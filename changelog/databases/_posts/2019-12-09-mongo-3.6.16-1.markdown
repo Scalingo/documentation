@@ -1,0 +1,16 @@
+---
+modified_at: 2019-12-09 11:00:00
+title: 'MongoDB - Important Update 3.6.16'
+---
+
+MongoDB notified us of a possible data corruption in MongoDB 3.6.14 and 3.6.15.
+We will automatically upgrade your database if running one of these versions.
+
+More information about this issue available
+[here](https://jira.mongodb.org/browse/SERVER-44584).
+
+Docker Image:
+
+* `scalingo/mongo:3.6.16-1`
+
+MongoDB CHANGELOG v3.6: [https://docs.mongodb.com/manual/release-notes/3.6/](https://docs.mongodb.com/manual/release-notes/3.6/)
