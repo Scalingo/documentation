@@ -166,6 +166,9 @@ samples:
   - url: sample-python-celery
     name: Python/Celery
     logo: python
+  - url: sample-python-django
+    name: Python/Django
+    logo: python-django
   - url: sample-python-flask
     name: Python/Flask
     logo: python-flask
