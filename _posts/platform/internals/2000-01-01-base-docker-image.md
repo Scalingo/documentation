@@ -12,7 +12,7 @@ found on the docker hub under the name
 [scalingo/builder](https://hub.docker.com/r/scalingo/builder/). The builder
 image is used for all applications hosted on the platform, as a result, it is a
 *generic image* which is *unspecialized*. That's why it's based on a stable
-**Ubuntu LTS** environment (currently 14.04 LTS).
+**Ubuntu LTS** environment (currently 18.04 LTS).
 
 ## The build process
 
