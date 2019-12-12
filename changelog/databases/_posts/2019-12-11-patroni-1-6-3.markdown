@@ -1,0 +1,15 @@
+---
+modified_at:	2019-12-11 11:30:00
+title:	'PostgreSQL - New Patroni Version: 1.6.3'
+---
+
+Patroni powers our PostgreSQL clusters. Patroni 1.6.3 has been released:
+
+[https://github.com/zalando/patroni/blob/master/docs/releases.rst#version-163](https://github.com/zalando/patroni/blob/master/docs/releases.rst#version-163)
+
+We released a new version for PostgreSQL 10.x to 12.x including this new Patroni
+version:
+
+- 10.11.0-2
+- 11.6.0-2
+- 12.1.0-4
