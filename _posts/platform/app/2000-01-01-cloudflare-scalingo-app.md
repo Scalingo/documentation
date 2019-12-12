@@ -117,6 +117,14 @@ along with Scalingo [automatic certificate generation with Let's Encrypt]({%
 post_url platform/app/2000-01-01-ssl
 %}#automatic-https-certificate-with-lets-encrypt).
 
+{% warning %}
+To ensure this configuration is working over time, you should not enable "Always Use HTTPS" in Cloudflare configuration. (SSL/TLS → Edge Certificates).
+
+To generate and renew Let's Encrypt certificate, a specific route should be accessible in plain HTTP, under the path `/.well-known/`, this Cloudflare configuration prevents this operation to happen.
+
+If you want to force HTTPS for your app, please enable the "Force HTTPS" option in your Scalingo app Settings.
+{% endwarning %}
+
 Here is Cloudflare [documentation
 page](https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options)
 about it.
