@@ -6,30 +6,28 @@ index: 2
 ---
 
 {% warning %}
-  Scalingo-14 support ended on December. If you're still using this stack, you [must upgrade]({% post_url platform/internals/stacks/2000-01-01-stacks %}).
+  Scalingo-14 support ended on December 2019. If you're still using this stack, you [must upgrade]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack).
 {% endwarning %}
 
 This article describes the scalingo-14 stack, based on Ubuntu 14.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %}).
 
 ## Support period
 
-Scalingo-14 is based on Ubuntu 14.04. It will be supported through April 2023. Learn more about Scalingo’s stack update policy.
-Testing and upgrading your app
+Scalingo-14 is based on Ubuntu 14.04. Official support ended on December 2019.
 
-Learn how to test and upgrade your app to Scalingo-14.
+## Testing and upgrading your app
+
+Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-14.
 
 ## Scalingo-14 Docker Image
 
 Scalingo-14 is available as two Docker images:
 
-    The runtime image is recommended for most workloads.
-    The build image (heroku/heroku:14-build) is larger and includes development headers. It is only recommended for customers that need to compile source code.
-
 Use the following command in your Dockerfile to use Scalingo-14 as your base image:
 
-FROM heroku/heroku:14
-
-Learn more about deploying Docker images to Scalingo.
+```
+FROM scalingo/scalingo-builder
+```
 
 ## Ubuntu Packages on Scalingo-14
 
