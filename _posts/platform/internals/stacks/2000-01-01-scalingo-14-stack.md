@@ -21,12 +21,10 @@ Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2
 
 ## Scalingo-14 Docker Image
 
-Scalingo-14 is available as two Docker images:
-
-Use the following command in your Dockerfile to use Scalingo-14 as your base image:
+This base image is a completely standard Docker image. You can run it locally with this command:
 
 ```
-FROM scalingo/scalingo-builder
+docker pull scalingo/builder
 ```
 
 ## Ubuntu Packages on Scalingo-14
