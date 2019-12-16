@@ -82,7 +82,7 @@ module Dirname
         end
         memo
       }
-      # Create index if not existent
+      # Create index if not existing
       max_index = children.length + 1
       children = children.map{|x|
         x["index"] ||= max_index
