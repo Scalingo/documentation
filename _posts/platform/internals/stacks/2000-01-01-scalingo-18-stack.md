@@ -21,10 +21,10 @@ Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2
 
 ## Scalingo-18 Docker Image
 
-Use the following command in your Dockerfile to use scalingo-18 as your base image:
+This base image is a completely standard Docker image. You can run it locally with this command:
 
 ```
-FROM scalingo/builder-18
+docker pull scalingo/builder-18
 ```
 
 ## Ubuntu Packages on Scalingo-18
