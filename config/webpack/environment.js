@@ -3,7 +3,7 @@ const { resolve } = require('path')
 
 const source_path = config.source_path
 
-environment.config.set('output.path', resolve('_site', config.public_output_path))
+// environment.config.set('output.path', resolve('_site', config.public_output_path))
 
 environment.loaders.get('sass').use.find(item => item.loader === 'sass-loader').options.includePaths = ['node_modules']
 

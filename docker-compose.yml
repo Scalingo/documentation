@@ -14,9 +14,8 @@ services:
       API_BASE_URI: "https://api.scalingo.com/"
       BLOG_ROOT_URL: "https://blog.scalingo.io"
       REDIS_URL: "redis://:pipo@redis:6379"
-      BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/2.5.0/bin"
-      BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/2.5.0"
       JEKYLL_ENV: "development"
+      WEBPACKER_DEV_SERVER_HOST: 172.17.0.1
     command: bundle exec jekyll serve --watch --host 0.0.0.0 --port 4300 --trace --incremental --livereload --livereload-port 4302
   webpack:
     build: .

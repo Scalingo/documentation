@@ -10,7 +10,7 @@
   {% endconditionaltrackers %}
   {% include favicons.html %}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:400,500|Material+Icons">
-  <link rel="stylesheet" href="{{ "style.css" | asset_pack_path }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | asset_pack_path }}">
   <meta property="og:site_name" content="{{ site.title }}"/>
   {% if page.og_image %}<meta property="og:image" content="{{ page.og_image }}"/>{% endif %}
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}"/>
