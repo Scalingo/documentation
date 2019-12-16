@@ -9,7 +9,7 @@ index: 2
   Scalingo-14 support ended on December. If you're still using this stack, you [must upgrade]({% post_url platform/internals/stacks/2000-01-01-stacks %}).
 {% endwarning %}
 
-This article describes the Scalingo-14 stack, based on Ubuntu 14.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %}).
+This article describes the scalingo-14 stack, based on Ubuntu 14.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %}).
 
 ## Support period
 
