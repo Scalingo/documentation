@@ -31,7 +31,7 @@ docker pull scalingo/builder
 
 The following table lists available packages and versions for the stack scalingo-14.
 
-In general, apps do not typically interact directly with this level of operating system services. Certain app dependencies may, as well as apps that directly rely on the underlying operating system. The list below is provided to document the available operating system packages.
+In general, apps do not typically interact directly with this level of operating system services. Some app dependencies may, as well as apps that directly rely on the underlying operating system. The list below is provided to document the available operating system packages.
 
 {: .table }
 | Name | Version |
