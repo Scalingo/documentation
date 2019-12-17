@@ -6,20 +6,20 @@ index: 2
 ---
 
 {% note %}
-  Scalingo-18 is the current default stack.
+  scalingo-18 is the current default stack.
 {% endnote %}
 
-This article describes the Scalingo-18 stack, based on Ubuntu 18.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %}).
+This article describes the scalingo-18 stack, based on Ubuntu 18.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %}).
 
 ## Support period
 
-Scalingo-18 is based on Ubuntu 18.04. It will be supported through April 2023.
+scalingo-18 is based on Ubuntu 18.04. It will be supported through April 2023.
 
 ## Testing and upgrading your app
 
 Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-18.
 
-## Scalingo-18 Docker Image
+## Docker Image
 
 This base image is a completely standard Docker image. You can run it locally with this command:
 
@@ -27,9 +27,9 @@ This base image is a completely standard Docker image. You can run it locally wi
 docker pull scalingo/builder-18
 ```
 
-## Ubuntu Packages on Scalingo-18
+## Ubuntu Packages
 
-The following table lists available packages and versions for the stack Scalingo-18.
+The following table lists available packages and versions for the stack scalingo-18.
 
 In general, apps do not typically interact directly with this level of operating system services. Certain app dependencies may, as well as apps that directly rely on the underlying operating system. The list below is provided to document the available operating system packages.
 
