@@ -17,7 +17,7 @@ Scalingo-14 is based on Ubuntu 14.04. Official support ended on December 2019.
 
 ## Testing and upgrading your app
 
-Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-14.
+Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-18.
 
 ##  Docker Image
 
