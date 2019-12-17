@@ -14,10 +14,16 @@ a.mdc-tab:hover {
   text-decoration: none;
 }
 
-h1 {
-  font-weight: 500;
-  font-size: 2.125rem;
-  line-height: 2.5rem;
+h1, .h1 {
+  @extend .mdc-typography--headline3;
+}
+
+h2, .h2 {
+  @extend .mdc-typography--headline4;
+}
+
+h3, .h3 {
+  @extend .mdc-typography--headline5;
 }
 
 article h1 {
@@ -156,8 +162,11 @@ $page-nav-margin: 40px;
   width: $page-nav-width + $page-nav-margin;
 }
 
-.page-nav, .site-nav, .dir-nav, .mobile-nav, .changelog-card {
+.page-nav, .site-nav, .mobile-nav, .changelog-card {
   @extend small;
+}
+
+.page-nav, .site-nav, .dir-nav, .mobile-nav, .changelog-card {
   nav {
     @supports (position: sticky) {
       position: sticky;
@@ -203,9 +212,28 @@ $page-nav-margin: 40px;
   }
 }
 
-.page-nav, .dir-nav, .mobile-nav {
+.page-nav, .mobile-nav {
   .heading {
     @extend strong, .mb-2;
+  }
+}
+
+.dir-nav {
+  @extend .mt-5;
+  nav {
+    .heading {
+      @extend strong;
+      font-weight: 120%;
+      line-height: 120%;
+    }
+    ul {
+      @extend .mt-4;
+      li {
+        a {
+          @extend .mt-2;
+        }
+      }
+    }
   }
 }
 

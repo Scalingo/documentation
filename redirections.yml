@@ -1,5 +1,11 @@
 "301":
   -
+    old: "/platform/deployment/stacks"
+    new: "/platform/internals/stacks/intro"
+  -
+    old: "/platform/internals/base-docker-image"
+    new: "/platform/internals/stacks/intro"
+  -
     old: "/platform/cli/changelog"
     new: "/changelog/"
   -

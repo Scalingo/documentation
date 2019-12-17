@@ -10,7 +10,11 @@ layout: default_with_main_navigation
     <ul>
       {% for link in page.links %}
         <li>
-          <a href="{{ link.url }}">{{ link.title }}</a>
+          <a href="{{ link.url }}">
+            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <use xlink:href="#link-variant"></use>
+            </svg>
+            {{ link.title }}</a>
         </li>
       {% endfor %}
     </ul>
