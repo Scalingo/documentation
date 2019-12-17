@@ -1,0 +1,11 @@
+---
+modified_at:	2019-12-17 20:35:06
+title:	'Release of gem scalingo-ruby-api v2'
+github: 'https://github.com/Scalingo/scalingo-ruby-api'
+---
+
+Version v2.0.1 of our Ruby library name 'scalingo-ruby-api' has been released, here is it changelog:
+
+* Compatibility with new API tokens
+* Compatibility with multi-region infrastructure
+* Add missing resources: `regions`, `autoscalers`, `notifiers`, `alerts`
