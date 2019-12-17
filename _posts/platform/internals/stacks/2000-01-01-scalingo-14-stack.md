@@ -19,7 +19,7 @@ Scalingo-14 is based on Ubuntu 14.04. Official support ended on December 2019.
 
 Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-14.
 
-## Scalingo-14 Docker Image
+##  Docker Image
 
 This base image is a completely standard Docker image. You can run it locally with this command:
 
@@ -27,9 +27,9 @@ This base image is a completely standard Docker image. You can run it locally wi
 docker pull scalingo/builder
 ```
 
-## Ubuntu Packages on Scalingo-14
+## Ubuntu Packages
 
-The following table lists available packages and versions for the stack Scalingo-14.
+The following table lists available packages and versions for the stack scalingo-14.
 
 In general, apps do not typically interact directly with this level of operating system services. Certain app dependencies may, as well as apps that directly rely on the underlying operating system. The list below is provided to document the available operating system packages.
 
