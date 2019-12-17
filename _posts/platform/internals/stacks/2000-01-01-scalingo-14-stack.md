@@ -11,7 +11,7 @@ index: 3
 
 This article describes the scalingo-14 stack, based on Ubuntu 14.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
 
-## Support period
+## Support Period
 
 Scalingo-14 is based on Ubuntu 14.04. Official support ended on December 2019.
 
