@@ -21,6 +21,9 @@
     old: "/languages/ruby/web-server"
     new: "/languages/ruby/start#ruby-application-web-server"
   -
+    old: "/languages/ruby/bundle-configuration"
+    new: "/languages/ruby/bundler-configuration"
+  -
     old: "/platform/app/transfer-ownership"
     new: "/platform/app/lifecycle-management#transfer-ownership-of-an-application"
   -
