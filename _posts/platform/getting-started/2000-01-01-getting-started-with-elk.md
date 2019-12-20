@@ -9,7 +9,8 @@ The Elastic Stack (formerly known as the ELK Stack) is a powerful collection of
 softwares that lets you collect data from any source using any format. It gives
 you the tools to search, visualize and analyze it in real time.
 
-This tutorial will show you how to deploy the ELK stack on Scalingo in under 5mn.
+This tutorial will show you how to deploy the ELK stack on Scalingo in under 5
+minutes.
 
 ## What is the ELK Stack?
 
