@@ -11,12 +11,16 @@ the ability to produce dashboards about your application metrics.
 This tutorial will show you how to deploy a Grafana instance on Scalingo in
 under 5 minutes.
 
-## Grafana Deployments
+## Grafana Deployment
 
 We published a repository
 [grafana-scalingo](https://github.com/Scalingo/grafana-scalingo/) on GitHub to
-help you deploy Grafana on Scalingo. It vastly simplifies the steps to achieve
-this.
+help you deploy Grafana on Scalingo. Deploying a Grafana instance is now at a
+click range:
+
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/grafana-scalingo)
+
+## Deployment by Cloning the Repository
 
 You first need to create an application on Scalingo. Let's say its name is
 `my-app`.
