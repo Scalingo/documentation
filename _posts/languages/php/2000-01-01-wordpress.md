@@ -163,6 +163,17 @@ To do that add the following line to your `wp-config.php`:
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
 ```
 
+### TLS Connection to MySQL
+
+If you configured your MySQL with [Force TLS]({% post_url
+databases/mysql/2000-01-01-start %}#force-tls-connections), it is mandatory
+that your application connects to the database using TLS. With WordPress, you
+need to add the following line in your `wp-config.php`:
+
+```php
+define('DB_SSL', true);
+```
+
 ## Uploads
 
 The container file system is volatile and not synchronized through all your
