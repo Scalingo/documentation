@@ -14,9 +14,13 @@ under 5 minutes.
 ## Metabase Deployment
 
 We published a repository
-[metabase-scalingo](https://github.com/Scalingo/metabase-scalingo/) on GitHub to
-help you deploy Metabase on Scalingo. It vastly simplifies the steps to achieve
-this.
+[metabase-scalingo](https://github.com/Scalingo/metabase-scalingo) on GitHub to
+help you deploy Metabase on Scalingo. Deploying a Metabase instance is now at a
+click range:
+
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/metabase-scalingo)
+
+## Deployment by Cloning the Repository
 
 You first need to create an application on Scalingo. Let's say its name is
 `my-app`.
