@@ -1,0 +1,11 @@
+---
+modified_at: 2019-12-24 14:00:00
+title: 'MongoDB - New versions: 4.0.14-1'
+---
+
+Docker Image:
+
+* `scalingo/mongo:4.0.14-1`
+
+MongoDB changelog:
+[https://docs.mongodb.com/manual/release-notes/4.0/#dec-18-2019](https://docs.mongodb.com/manual/release-notes/4.0/#dec-18-2019)
