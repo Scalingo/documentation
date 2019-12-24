@@ -1,0 +1,8 @@
+---
+modified_at:	2019-12-23 11:00:00
+title:	'Go - New Versions: 1.13.5 and 1.12.14. 1.12.14 is the new default'
+github: 'https://github.com/Scalingo/go-buildpack'
+---
+
+* Go 1.13.5 [changelog](https://golang.org/doc/devel/release.html#go1.13)
+* Go 1.12.14 [changelog](https://golang.org/doc/devel/release.html#go1.12)
