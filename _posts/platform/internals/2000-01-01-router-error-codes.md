@@ -1,6 +1,6 @@
 ---
 title: Router Error Codes
-modified_at: 2017-10-12 00:00:00
+modified_at: 2019-12-24 00:00:00
 tags: internals reverse-proxy routing http https
 index: 4
 ---
@@ -10,10 +10,12 @@ index: 4
 Here is the list of error codes emitted by our routing layer:
 
 * `499 Client Closed Request`: client closed the connection before the server
-  answered the request.  It is usually caused by client side timeout
-* `502 Bad Gateway`: your application sent an invalid response to our reverse
-  proxy. This error is often sent when your application is abruptly cutting
-  connections.
+  answered the request. It is usually caused by client side timeout
+* `502 Bad Gateway`:
+  * Your application sent an invalid response to our reverse proxy. This error
+    is often sent when your application is abruptly cutting connections.
+  * This is also the code when all containers are in [quarantine]({% post_url
+    platform/internals/2000-01-01-routing %}#requests-scheduling).
 * `503 Service Unavailable`:
   * The application [requests queue]({% post_url
     platform/internals/2000-01-01-routing %}#requests-queue) is full, so the
