@@ -8,8 +8,7 @@ tags: php nodejs assets webpack
 There are some cases where a PHP application uses also some Node.js. It is for
 example the case if you use webpack to bundle the assets. In this case, one
 should use [multi buildpacks]({% post_url
-platform/deployment/buildpacks/2000-01-01-multi %}) along with a specific branch
-of the PHP buildpack. Here is how to do that.
+platform/deployment/buildpacks/2000-01-01-multi %}). Here is how to do that.
 
 In order to use [multi buildpacks]({% post_url
 platform/deployment/buildpacks/2000-01-01-multi %}), you need to specify the
