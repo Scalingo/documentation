@@ -24,7 +24,7 @@ Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2
 This base image is a completely standard Docker image. You can run it locally with this command:
 
 ```
-docker pull scalingo/builder
+docker pull scalingo/scalingo-14
 ```
 
 ## Ubuntu Packages
