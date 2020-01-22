@@ -13,7 +13,7 @@ your app, there are two ways to do it.
 
 Either you configure the authentication before your application reaches the PHP
 code or you implement this in your application. Here is an example of the
-latter [with Symfony2](http://symfony.com/doc/current/book/security.html).
+latter [with Symfony](http://symfony.com/doc/current/book/security.html).
 
 We present in this article how to configure the HTTP basic auth, independently
 from your application.
