@@ -1,0 +1,11 @@
+---
+modified_at: 2020-01-27 16:00:00
+title: 'PHP - Support of version 7.4.2, 7.3.14 and 7.2.27'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+Changelogs:
+
+* [https://www.php.net/ChangeLog-7.php#7.4.2](https://www.php.net/ChangeLog-7.php#7.4.2)
+* [https://www.php.net/ChangeLog-7.php#7.3.14](https://www.php.net/ChangeLog-7.php#7.3.14)
+* [https://www.php.net/ChangeLog-7.php#7.2.27](https://www.php.net/ChangeLog-7.php#7.2.27)
