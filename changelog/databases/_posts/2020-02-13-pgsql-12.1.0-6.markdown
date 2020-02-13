@@ -1,0 +1,14 @@
+---
+modified_at: 2020-02-13 18:00:00
+title: 'PostgreSQL - New versions: 10.11.0-4, 11.6.0-4 and 12.1.0-6'
+---
+
+Security upgrade for pg 10, 11 and 12
+
+Docker Images:
+
+* `scalingo/postgresql:10.11.0-4`
+* `scalingo/postgresql:11.6.0-4`
+* `scalingo/postgresql:12.1.0-6`
+
+
