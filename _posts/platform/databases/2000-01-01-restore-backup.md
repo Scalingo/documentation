@@ -1,6 +1,6 @@
 ---
-title: Restore your database backup
-modified_at: 2018-07-27 00:00:00
+title: Restore your Database Backup
+modified_at: 2020-02-13 00:00:00
 tags: databases backups
 ---
 
@@ -40,12 +40,14 @@ The file is uploaded to the `/tmp/uploads` directory. Extract the content of the
 the one-off:
 
 ```
-[one-off] $ tar xvfz /tmp/uploads/20180727110302_my-app-3519.tar.gz
+[one-off] $ tar xvfz /tmp/uploads/20190727110302_my-app-3519.tar.gz
 ```
 
-Then restore the backup:
+Then restore the backup. In order to do that you first need to download your
+database client (replace `mongo` with your database type):
 
 ```
+[one-off] $ dbclient-fetcher mongo
 [one-off] $ mongorestore -u <username> -p <password> -h <host>:<port> -d <db> ./my-app-3519
 ```
 
