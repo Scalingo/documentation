@@ -1,6 +1,7 @@
-<aside class="note">
-	You need to have our command-line tool installed.
-  <br>
-  Instructions are detailed in <a href="{% post_url platform/cli/2000-01-01-start %}">Command-Line
-  Tool Documentation</a> and <a href="https://cli.scalingo.com">installer</a> page.
-</aside>
+{% note %}
+These operations require our command-line tool to be installed.
+<br>
+Instructions to install it are detailed in the [CLI documentation]({% post_url
+platform/cli/2000-01-01-start %}) and [installer](https://cli.scalingo.com)
+page.
+{% endnote %}
