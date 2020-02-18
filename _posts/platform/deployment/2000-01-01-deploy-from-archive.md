@@ -1,7 +1,7 @@
 ---
 title: Deploy Directly from an Archive
 nav: Archive/Tarball
-modified_at: 2017-09-11 00:00:00
+modified_at: 2020-02-18 00:00:00
 tags: source deploy
 index: 6
 ---
@@ -26,7 +26,7 @@ to update your application.
 That's it the deployment is starting, once finished with success it will
 replace the current containers with the new version of the code.
 
-## Create a `Deployment` resource with API
+## Create a `Deployment` Resource With API
 
 To deploy your archive, you have to make a POST request on `https://api.scalingo.com/v1/apps/[:app]/deployments`:
 
@@ -56,7 +56,7 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -u ":$AUT
   your archive.
 * The `download_url` is the link where our platform can download your archive.
 
-## Follow the deployment process
+## Follow the Deployment Process
 
 You can see your deployment progress and output in [your
 dashboard](https://my.scalingo.com), in the 'Deployments' section of your
