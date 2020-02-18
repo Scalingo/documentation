@@ -1,6 +1,6 @@
 ---
 title: Deploy Directly from an Archive
-nav: Archive/Tarball
+nav: Deploy from Archive
 modified_at: 2020-02-18 00:00:00
 tags: source deploy
 index: 6

@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
-nav: JAR and WAR archives
-modified_at: 2018-02-09 00:00:00
+nav: Deploy JAR/WAR
+modified_at: 2020-02-18 00:00:00
 index: 5
 tags: deployment, java, jar, war
 ---
