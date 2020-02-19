@@ -9,7 +9,7 @@ index: 22
 This page describes the steps to setup **Continuous Deployment** from CircleCI to Scalingo. Follow this guide to automatically deploy to Scalingo after a successful build.
 
 {% note %}
-Each time to token `<region>` is present in examples, replace it by the name of the region you are actually using (`osc-fr1`, `agora-fr1`, etc.)
+Each time to token `[region]` is present in examples, replace it by the name of the region you are actually using (`osc-fr1`, `agora-fr1`, etc.)
 {% endnote %}
 
 ### Setup `.circleci/config.yml`
@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Deploy on Scalingo
           command: |
-            git push git@ssh.<region>.scalingo.com:my-app.git $CIRCLE_SHA1:master
+            git push git@ssh.[region].scalingo.com:my-app.git $CIRCLE_SHA1:master
 workflows:
   version: 2
   build-and-deploy:
@@ -47,7 +47,7 @@ You can read more about Configuring CircleCI [Deployment](https://circleci.com/d
 
 ### SSH Keys
 
-To deploy to Scalingo from CircleCI, you'll have to add your private key to the CircleCI interface. On CircleCI website, head over to your project's **Project Settings**, then the **SSH keys** page to add your key. You will also need to add the public key to the [SSH Keys page](https://my.<region>.scalingo.com/keys) on Scalingo Dashboard.
+To deploy to Scalingo from CircleCI, you'll have to add your private key to the CircleCI interface. On CircleCI website, head over to your project's **Project Settings**, then the **SSH keys** page to add your key. You will also need to add the public key to the [SSH Keys page](https://my.[region].scalingo.com/keys) on Scalingo Dashboard.
 
 We recommend to generate a new key pair for integrating CircleCI with Scalingo.
 
@@ -57,7 +57,7 @@ You can define [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-
 
 ```yaml
 command: |
-  git push git@ssh.<region>.scalingo.com:my-app.git $CIRCLE_SHA1:master
+  git push git@ssh.[region].scalingo.com:my-app.git $CIRCLE_SHA1:master
   curl -LO https://github.com/Scalingo/cli/releases/download/1.6.0/scalingo_1.6.0_linux_amd64.tar.gz
   tar xvf scalingo_1.6.0_linux_amd64.tar.gz
   scalingo_1.6.0_linux_amd64/scalingo -a my-app login --ssh
