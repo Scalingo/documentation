@@ -16,17 +16,18 @@ command line tool.
 
 To deploy an application without Git or GitHub, you need to archive your
 application code in a `tar.gz` archive format. The archive must contain the
-source code at the root of the archive (i.e. not in a subfolder).
+source code in a subfolder at the root of the archive.
 
 For example, if your archive is named `my-app.tar.gz`, its content should look
 like:
 
 ```sh
 $ tar -ztvf my-app.tar.gz
--rw-rw-r-- root/root       277 2019-12-02 18:26 README.md
--rw-rw-r-- root/root       167 2019-12-02 18:26 composer.json
--rw-rw-r-- root/root         3 2019-12-02 18:26 composer.lock
--rw-rw-r-- root/root        19 2019-12-02 18:26 index.php
+drwxrwxr-x root/root         0 2019-12-02 18:26 master/
+-rw-rw-r-- root/root       277 2019-12-02 18:26 master/README.md
+-rw-rw-r-- root/root       167 2019-12-02 18:26 master/composer.json
+-rw-rw-r-- root/root         3 2019-12-02 18:26 master/composer.lock
+-rw-rw-r-- root/root        19 2019-12-02 18:26 master/index.php
 ```
 
 And you can deploy it using Scalingo CLI:
