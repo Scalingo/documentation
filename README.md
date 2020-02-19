@@ -77,7 +77,7 @@ docker pull scalingo/scalingo-18:latest
 docker run --rm scalingo/scalingo-18:latest bash -c 'dpkg -l | grep "^ii" | awk '\'' { printf "|%30s | %30s |\n", $2, $3} '\'' ' > _includes/scalingo_18_stack_packages.md
 ```
 
-## Running locally
+## Running Locally
 
 To install dependencies locally:
 

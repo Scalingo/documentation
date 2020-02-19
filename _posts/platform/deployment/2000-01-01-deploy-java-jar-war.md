@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
-nav: JAR and WAR archives
-modified_at: 2018-02-09 00:00:00
+nav: Deploy JAR/WAR
+modified_at: 2020-02-18 00:00:00
 index: 5
 tags: deployment, java, jar, war
 ---
@@ -15,6 +15,9 @@ It can be especially useful when using a Continuous Integration platform like
 execute the application test suites against it. Instead of building a second
 time the application code, the JAR and WAR archives generated during the build
 can be directly deployed on Scalingo.
+
+This deployment method currently only supports Tomcat server to execute your
+archive.
 
 ## Install Scalingo CLI
 
