@@ -16,6 +16,9 @@ execute the application test suites against it. Instead of building a second
 time the application code, the JAR and WAR archives generated during the build
 can be directly deployed on Scalingo.
 
+This deployment method currently only supports Tomcat server to execute your
+archive.
+
 ## Install Scalingo CLI
 
 JAR and WAR archives can be deployed using the platform command line interface, first
