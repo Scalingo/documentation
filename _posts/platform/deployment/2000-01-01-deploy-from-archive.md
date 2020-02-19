@@ -22,7 +22,7 @@ For example, if your archive is named `my-app.tar.gz`, its content should look
 like:
 
 ```sh
-$ tar -ztvf master.tar.gz
+$ tar -ztvf my-app.tar.gz
 -rw-rw-r-- root/root       277 2019-12-02 18:26 README.md
 -rw-rw-r-- root/root       167 2019-12-02 18:26 composer.json
 -rw-rw-r-- root/root         3 2019-12-02 18:26 composer.lock
