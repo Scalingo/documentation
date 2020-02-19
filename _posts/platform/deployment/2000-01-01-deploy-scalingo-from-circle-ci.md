@@ -60,7 +60,7 @@ You can define [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-
 
 ```yaml
 command: |
-  command: ssh-keyscan -H ssh.[region].scalingo.com >> ~/.ssh/known_hosts
+  ssh-keyscan -H ssh.[region].scalingo.com >> ~/.ssh/known_hosts
   git push git@ssh.[region].scalingo.com:my-app.git $CIRCLE_SHA1:master
   curl -LO https://github.com/Scalingo/cli/releases/download/1.6.0/scalingo_1.6.0_linux_amd64.tar.gz
   tar xvf scalingo_1.6.0_linux_amd64.tar.gz
