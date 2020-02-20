@@ -138,7 +138,7 @@ Follow these instructions to get started:
    git push scalingo master
    ```
 
-8. Access WP admin at `https://my-app.osc-fr1.scalingo.io/wp/wp-admin`
+8. Access WP Admin at `https://my-app.osc-fr1.scalingo.io/wp/wp-admin`
 
 9. Activate the `S3 Uploads` plugin on WP Admin plugins page and that's it.
 
