@@ -1,78 +1,146 @@
 ---
 title: Deploying WordPress on Scalingo
 nav: WordPress
-modified_at: 2019-02-22 00:00:00
+modified_at: 2020-01-29 00:00:00
 tags: php, http, framework, wordpress, deployment
 index: 99
 ---
 
+## Detection
+
+When a PHP application is deployed, Scalingo checks the existence of
+the `wp-settings.php` file at the root folder of your app.
+
+During the deployment process, you'll see the following output
+mentioning that the framework has correctly been detected:
+
+```text
+-----> Detected WordPress
+-----> Setting up WordPress
+...
+```
+
+Or for Bedrock WordPress:
+
+```text
+-----> Detected Bedrock WordPress
+-----> Setting up Bedrock WordPress
+...
+```
+
 ## Bedrock: a Scalingo Friendly WordPress Boilerplate
 
-WordPress is not well suited to be directly deployed on Scalingo. They do not follow the best modern
-practices of web development such as [12 factor](https://12factor.net/). The easiest way to get
-started with WordPress on Scalingo is to click on this button:
+WordPress is not well suited to be directly deployed on Scalingo. They do not follow the best modern practices
+of web development such as [12 factor](https://12factor.net/).
+
+The easiest way to get started with WordPress on Scalingo is to click on this button:
 
 [![Deploy on
 Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.osc-fr1.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-wordpress)
 
-This one-click deploy button uses this [Scalingo
-distribution](https://github.com/Scalingo/scalingo-wordpress). It is based on
-[Bedrock](https://roots.io/bedrock/), and install everything for your WordPress to work perfectly on
-a modern platform like Scalingo.
+This one-click deploy button uses this [Scalingo Distribution](https://github.com/Scalingo/scalingo-wordpress).
+It is based on [Bedrock](https://roots.io/bedrock/), and install everything for your WordPress
+to work perfectly on a modern platform like Scalingo.
 
-### Customize Scalingo Distribution
+### Customize the Scalingo Distribution
 
-You may need to customize a bit the above-mentioned distribution in order to add a plugin or a them
-for instance. In order to do that, you first need to clone the distribution:
+You may need to customize a bit the above-mentioned distribution in order to add a plugin or a theme for instance.
+Follow these instructions to get started:
 
-```bash
-git clone https://github.com/Scalingo/scalingo-wordpress
-cd scalingo-wordpress
-```
+1. Clone the distribution:
 
-Then, update your application environment through the dashboard or with the
-[Scalingo command line](http://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`:
+   ```bash
+   git clone https://github.com/Scalingo/scalingo-wordpress
+   cd scalingo-wordpress
+   ```
 
-* `DATABASE_URL`: Connection string to the MySQL database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL addon
-* `WP_ENV`: Set to environment (`development`, `staging`, `production`)
-* `WP_HOME`: Full URL to WordPress home (https://my-wordpress.osc-fr1.scalingo.io)
-* `WP_SITEURL`: Full URL to WordPress including subdirectory (https://my-wordpress.osc-fr1.scalingo.io/wp)
-* `S3_UPLOADS_BUCKET`: Name of the S3 bucket to upload files to
-* `S3_UPLOADS_KEY`: AWS Access Key ID for S3 authentication
-* `S3_UPLOADS_SECRET`: AWS Secret Key for S3 authentication
-* `S3_UPLOADS_REGION`: Region of the S3 bucket
-* `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
+2. Create the application on Scalingo
 
-You can get some random salts on the [Roots WordPress Salt Generator](https://roots.io/salts.html).
+   Create the application through the dashboard with a MySQL addon or with the [Scalingo CLI](http://cli.scalingo.com):
 
-3. Add themes in `web/app/themes` as you would for a normal WordPress site.
+   ```bash
+   scalingo create my-app
+   scalingo addons-add mysql mysql-sandbox
+   ```
 
-4. Deploy the application on Scalingo
+3. Create a S3 Bucket on AWS and configure IAM user correctly
 
-```
-# Optionally add theme to your git repository
-git add web/app/themes
-git commit -m "Add themes"
+   IAM user security policy example, with required actions:
 
-# Then push to Scalingo
-git push scalingo master
-```
+   ```bash
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Action": [
+            "s3:PutObject",
+            "s3:PutObjectAcl",
+            "s3:PutObjectAclVersion",
+            "s3:AbortMultipartUpload",
+            "s3:ListBucket",
+            "s3:GetObject"
+          ],
+          "Effect": "Allow",
+          "Resource": "arn:aws:s3:::BUCKETNAME-HERE"
+        },
+        {
+          "Action": [
+            "s3:PutObject",
+            "s3:PutObjectAcl",
+            "s3:PutObjectAclVersion",
+            "s3:AbortMultipartUpload",
+            "s3:ListBucket",
+            "s3:GetObject"
+          ],
+          "Effect": "Allow",
+          "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
+        }
+      ]
+    }
+   ```
 
-5. Access WP admin at `https://my-wordpress.osc-fr1.scalingo.io/wp/wp-admin`
+4. Update application environment variables
 
-## Detection
+   Then, update your application environment through the dashboard or with the
+   [Scalingo CLI](http://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`:
 
-When a PHP application is deployed, we're looking if the `wp-settings.php` file
-is present at the root folder of your app.
+   * `DATABASE_URL`: Connection string to the MySQL database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL addon
+   * `WP_ENV`: Set to environment (`development`, `staging`, `production`)
+   * `WP_HOME`: Full URL to WordPress home (https://my-app.osc-fr1.scalingo.io)
+   * `WP_SITEURL`: Full URL to WordPress including subdirectory (https://my-app.osc-fr1.scalingo.io/wp)
+   * `S3_UPLOADS_BUCKET`: Name of the S3 bucket to upload files to
+   * `S3_UPLOADS_KEY`: AWS Access Key ID for S3 authentication
+   * `S3_UPLOADS_SECRET`: AWS Secret Key for S3 authentication
+   * `S3_UPLOADS_REGION`: Region of the S3 bucket
+   * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
 
-During the deployment process you'll see the following output, mentioning that
-the framework has correctly been detected.
+   You can get some random salts on the [Roots WordPress Salt Generator](https://roots.io/salts.html).
 
-```bash
------> Detected WordPress
-...
------> Setting up WordPress
-```
+5. Add themes in `web/app/themes` as you would for a normal WordPress site.
+
+   ```bash
+   # Optionally add theme to your git repository
+   git add web/app/themes
+   git commit -m "Add themes"
+   ```
+
+6. Add plugins using [Composer](https://getcomposer.org/) and [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=)
+
+   Example to add the `Akismet` plugin:
+
+   ```bash
+   composer require --ignore-platform-reqs wpackagist-plugin/akismet
+   ```
+
+7. Deploy the application on Scalingo
+
+   ```bash
+   git push scalingo master
+   ```
+
+8. Access WP Admin at `https://my-app.osc-fr1.scalingo.io/wp/wp-admin`
+
+9. Activate the `S3 Uploads` plugin on WP Admin plugins page and that's it.
 
 ## Deploying Pure WordPress on Scalingo
 
@@ -142,7 +210,7 @@ documentation](https://codex.wordpress.org/Function_Reference/is_ssl#Notes)):
 
 ```php
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
-    $_SERVER['HTTPS'] = 'on';
+  $_SERVER['HTTPS'] = 'on';
 ```
 
 Thanks to this snippet, WordPress will look at the HTTP header
@@ -160,7 +228,7 @@ interface. You must de-activate auto-update of all your WordPress components.
 To do that add the following line to your `wp-config.php`:
 
 ```php
-define( 'AUTOMATIC_UPDATER_DISABLED', true );
+define('AUTOMATIC_UPDATER_DISABLED', true);
 ```
 
 ### TLS Connection to MySQL
