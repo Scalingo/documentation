@@ -8,13 +8,13 @@ index: 99
 
 ## Detection
 
-When a PHP application is deployed, we're looking if the `wp-settings.php` file
-is present at the root folder of your app.
+When a PHP application is deployed, Scalingo checks the existence of
+the `wp-settings.php` file at the root folder of your app.
 
-During the deployment process you'll see the following output, mentioning that
-the framework has correctly been detected.
+During the deployment process, you'll see the following output
+mentioning that the framework has correctly been detected:
 
-```bash
+```text
 -----> Detected WordPress
 -----> Setting up WordPress
 ...
@@ -22,7 +22,7 @@ the framework has correctly been detected.
 
 Or for Bedrock WordPress:
 
-```bash
+```text
 -----> Detected Bedrock WordPress
 -----> Setting up Bedrock WordPress
 ...
@@ -45,10 +45,9 @@ to work perfectly on a modern platform like Scalingo.
 ### Customize the Scalingo Distribution
 
 You may need to customize a bit the above-mentioned distribution in order to add a plugin or a theme for instance.
+Follow these instructions to get started:
 
-1. Clone the distribution
-
-   In order to do that, you first need to clone the distribution:
+1. Clone the distribution:
 
    ```bash
    git clone https://github.com/Scalingo/scalingo-wordpress
@@ -57,14 +56,14 @@ You may need to customize a bit the above-mentioned distribution in order to add
 
 2. Create the application on Scalingo
 
-   Create the application though the Dashboard with a MySQL addon or with the [Scalingo CLI](http://cli.scalingo.com):
+   Create the application through the dashboard with a MySQL addon or with the [Scalingo CLI](http://cli.scalingo.com):
 
    ```bash
-   scalingo create my-wordpress
+   scalingo create my-app
    scalingo addons-add mysql mysql-sandbox
    ```
 
-3. Create an S3 Bucket on AWS and configure IAM user correctly
+3. Create a S3 Bucket on AWS and configure IAM user correctly
 
    IAM user security policy example, with required actions:
 
@@ -102,13 +101,13 @@ You may need to customize a bit the above-mentioned distribution in order to add
 
 4. Update application environment variables
 
-   Then, update your application environment through the Dashboard or with the
+   Then, update your application environment through the dashboard or with the
    [Scalingo CLI](http://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`:
 
    * `DATABASE_URL`: Connection string to the MySQL database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL addon
    * `WP_ENV`: Set to environment (`development`, `staging`, `production`)
-   * `WP_HOME`: Full URL to WordPress home (https://my-wordpress.osc-fr1.scalingo.io)
-   * `WP_SITEURL`: Full URL to WordPress including subdirectory (https://my-wordpress.osc-fr1.scalingo.io/wp)
+   * `WP_HOME`: Full URL to WordPress home (https://my-app.osc-fr1.scalingo.io)
+   * `WP_SITEURL`: Full URL to WordPress including subdirectory (https://my-app.osc-fr1.scalingo.io/wp)
    * `S3_UPLOADS_BUCKET`: Name of the S3 bucket to upload files to
    * `S3_UPLOADS_KEY`: AWS Access Key ID for S3 authentication
    * `S3_UPLOADS_SECRET`: AWS Secret Key for S3 authentication
@@ -119,9 +118,15 @@ You may need to customize a bit the above-mentioned distribution in order to add
 
 5. Add themes in `web/app/themes` as you would for a normal WordPress site.
 
+   ```bash
+   # Optionally add theme to your git repository
+   git add web/app/themes
+   git commit -m "Add themes"
+   ```
+
 6. Add plugins using [Composer](https://getcomposer.org/) and [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=)
 
-   Example for add the `Akismet` plugin:
+   Example to add the `Akismet` plugin:
 
    ```bash
    composer require --ignore-platform-reqs wpackagist-plugin/akismet
@@ -130,19 +135,12 @@ You may need to customize a bit the above-mentioned distribution in order to add
 7. Deploy the application on Scalingo
 
    ```bash
-   # Optionally add theme to your git repository
-   git add web/app/themes
-   git commit -m "Add themes"
-
-   # Then push to Scalingo
    git push scalingo master
    ```
 
-8. Access WP admin at `https://my-wordpress.osc-fr1.scalingo.io/wp/wp-admin`
+8. Access WP admin at `https://my-app.osc-fr1.scalingo.io/wp/wp-admin`
 
-9. Activate the `S3 Uploads` plugin on WP Admin plugins page.
-
-10. That's it.
+9. Activate the `S3 Uploads` plugin on WP Admin plugins page and that's it.
 
 ## Deploying Pure WordPress on Scalingo
 
