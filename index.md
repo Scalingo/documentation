@@ -42,6 +42,14 @@ modified_at: 2015-09-09 00:00:00
   {% endfor %}
 </div>
 
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="mb-5">
+      <a href="/languages" class="mdc-button">View all</a>
+    </div>
+  </div>
+</div>
+
 <h2>Learn about using built-in databases</h2>
 
 <div class="row">
