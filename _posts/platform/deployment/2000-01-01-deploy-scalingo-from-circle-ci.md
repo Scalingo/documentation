@@ -9,7 +9,7 @@ index: 22
 This page describes the steps to setup **Continuous Deployment** from CircleCI to Scalingo. Follow this guide to automatically deploy to Scalingo after a successful build.
 
 {% note %}
-Each time to token `[region]` is present in examples, replace it by the name of the region you are actually using (`osc-fr1`, `agora-fr1`, etc.)
+Each time to token `[region]` is present in examples, replace it by the name of the region you are actually using (`osc-fr1`, `osc-secnum-fr1`, `agora-fr1`, etc.)
 {% endnote %}
 
 ### Setup `.circleci/config.yml`
