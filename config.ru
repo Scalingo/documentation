@@ -61,6 +61,12 @@ if ENV['CANONICAL_HOST'].present? && ENV['CANONICAL_HOST_DISABLED'].blank?
   use Rack::CanonicalHost, ENV['CANONICAL_HOST'], ignore: canonical_hosts_ignore
 end
 
+if ENV['BASIC_AUTH_ENABLED']
+  use Rack::Auth::Basic, "Protected Area" do |username, password|
+    [username, password] == ENV['BASIC_AUTH'].split(":")
+  end
+end
+
 use Rack::CommonLogger
 
 run Rack::Jekyll.new
