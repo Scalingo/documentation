@@ -1,5 +1,8 @@
 {
   "env": {
+    "BASIC_AUTH_ENABLED": {
+      "value": "true"
+    },
     "CANONICAL_HOST": {
       "value": "false"
     },
