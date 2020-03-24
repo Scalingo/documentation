@@ -1,0 +1,9 @@
+---
+modified_at: 2020-03-24 08:00:00
+title: 'Redis - New version: 5.0.8-1'
+---
+
+Docker image is now [`scalingo/redis:5.0.8-1`](https://hub.docker.com/r/scalingo/redis/)
+
+Redis CHANGELOG:
+[https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES)
