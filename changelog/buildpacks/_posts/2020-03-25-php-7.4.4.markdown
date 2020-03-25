@@ -6,6 +6,6 @@ github: 'https://github.com/Scalingo/php-buildpack'
 
 Changelogs:
 
-* [https://www.php.net/ChangeLog-7.php#PHP_7_4](https://www.php.net/ChangeLog-7.php#7.4)
-* [https://www.php.net/ChangeLog-7.php#PHP_7_3](https://www.php.net/ChangeLog-7.php#PHP_7_3)
-* [https://www.php.net/ChangeLog-7.php#PHP_7_2](https://www.php.net/ChangeLog-7.php#PHP_7_2)
+* [https://www.php.net/ChangeLog-7.php#7.4.4](https://www.php.net/ChangeLog-7.php#7.4.4)
+* [https://www.php.net/ChangeLog-7.php#7.3.16](https://www.php.net/ChangeLog-7.php#7.3.16)
+* [https://www.php.net/ChangeLog-7.php#7.2.29](https://www.php.net/ChangeLog-7.php#7.2.29)
