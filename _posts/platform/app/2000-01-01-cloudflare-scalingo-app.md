@@ -7,7 +7,7 @@ tags: integration cloudflare
 index: 98
 ---
 
-## Integration purposes
+## Integration Purposes
 
 Cloudflare is a SaaS product helping you to optimize and protect your
 applications against a wide variety of attacks. The role of Cloudflare is to
@@ -38,7 +38,7 @@ used:
   distributed DDoS attacks, legitimate keeps being transferred to your
   application while unwanted ones are dropped.
 
-## Setup of your Cloudflare account
+## Setup of Your Cloudflare Account
 
 The first thing to do is to setup your domain with Cloudflare. It will require
 to change your domain name servers at the registrar level (the entity which sold
@@ -47,9 +47,9 @@ the domain). This process might take up to 24 hours.
 To go through this process, you are encouraged to follow [their official
 documentation](https://support.cloudflare.com/hc/en-us/articles/201720164-Step-2-Create-a-Cloudflare-account-and-add-a-website).
 
-## Configuration of your application on Scalingo
+## Configuration of Your Application on Scalingo
 
-### Configure Cloudflare DNS to target Scalingo
+### Configure Cloudflare DNS to Target Scalingo
 
 To configure your domain, you need to create a `CNAME` **DNS** entry for each domain
 added to the Scalingo application. The target of this `CNAME` entry should be
@@ -68,7 +68,7 @@ my-app.osc-fr1.scalingo.io.
 
 ![cloudflare-add-record](https://cdn.scalingo.com/documentation/integrations/cloudflare-create-record-03.png)
 
-### Add the domains to your application
+### Add the Domains to Your Application
 
 You need to declare to Scalingo all domains that your app will have to respond to.
 
@@ -87,7 +87,7 @@ scalingo --app my-app domains-add www.example.com
 # etc. according the the domains you want to target
 ```
 
-## Cloudflare as DNS server
+## Cloudflare as DNS Server
 
 Cloudflare can also be used as a simple DNS server to configure how your DNS zone
 is configured. In this case requests won't be routed to their infrastructure,
@@ -120,12 +120,14 @@ post_url platform/app/2000-01-01-ssl
 {% warning %}
 To ensure this configuration is working over time, you should not enable "Always Use HTTPS" in Cloudflare configuration. (SSL/TLS → Edge Certificates).
 
-To generate and renew Let's Encrypt certificate, a specific route should be accessible in plain HTTP, under the path `/.well-known/`, this Cloudflare configuration prevents this operation to happen.
+To generate and renew Let's Encrypt certificate, a specific route should be
+accessible in plain HTTP, under the path `/.well-known/`. This Cloudflare
+configuration prevents this operation to happen.
 
-If you want to force HTTPS for your app, please enable the "Force HTTPS" option in your Scalingo app Settings.
+If you want to force HTTPS for your app, please enable the "Force HTTPS" option
+in your Scalingo app Settings.
 {% endwarning %}
 
 Here is Cloudflare [documentation
 page](https://support.cloudflare.com/hc/en-us/articles/200170416-End-to-end-HTTPS-with-Cloudflare-Part-3-SSL-options)
 about it.
-
