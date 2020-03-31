@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my PostgreSQL database on Scalingo
 nav: Dump and Restore
-modified_at: 2016-01-08 18:04:00
+modified_at: 2020-03-31 18:04:00
 tags: databases postgresql tunnel
 index: 2
 ---
@@ -69,7 +69,13 @@ $ pg_restore --clean --if-exists --no-owner --no-privileges --dbname $DATABASE_U
 
 With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
 
-Alternatively you can use the Adminer instance provided by Scalingo at [https://adminer.scalingo.com/](https://adminer.scalingo.com/).
+Alternatively you can use the Adminer instance provided by Scalingo. Choose the
+one hosted in the region where your database is hosted.
+
+- `osc-fr1`: [https://adminer.osc-fr1.scalingo.com](https://adminer.osc-fr1.scalingo.com).
+- `osc-secnum-fr1`: [https://adminer.osc-secnum-fr1.scalingo.com](https://adminer.osc-secnum-fr1.scalingo.com).
+- `agora-fr1`: [https://adminer.agora-fr1.scalingo.com](https://adminer.agora-fr1.scalingo.com).
+
 
 ## Dump and Restore from Scalingo one-off container
 
