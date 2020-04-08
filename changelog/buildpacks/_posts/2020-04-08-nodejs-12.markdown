@@ -4,7 +4,7 @@ title: 'Node.js: 12 as default, changes in build hooks'
 github: 'https://github.com/Scalingo/nodejs-buildpack'
 ---
 
-We have updated our Node.js buildpack. Noticeable changes :
+We have updated our Node.js buildpack. Noticeable changes:
 
 - the default version is now the latest from the `12` branch (Node.js LTS)
 - the build hooks behavior has changed: if you have a `scalingo-postbuild` hook, `build` will **not** run
