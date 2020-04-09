@@ -1,6 +1,6 @@
 ---
 title: Child application
-modified_at: 2019-08-26 00:00:00
+modified_at: 2020-04-09 00:00:00
 tags: app child
 index: 32
 ---
@@ -19,7 +19,7 @@ When creating a child application, the following elements are cloned:
 
 This feature can be very interesting to implement your own [Review Apps]({%
 post_url platform/app/2000-01-01-review-apps %}) for codes that are not hosted
-on unsupported SCM tools.
+on officially supported SCM tools.
 
 ## Deployment of a child app
 
