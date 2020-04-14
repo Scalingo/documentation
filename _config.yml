@@ -193,6 +193,9 @@ samples:
   - url: sample-kotlin
     name: Kotlin
     logo: kotlin
+  - url: sample-erlang
+    name: Erlang
+    logo: erlang
 
 extlinks:
   followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]
