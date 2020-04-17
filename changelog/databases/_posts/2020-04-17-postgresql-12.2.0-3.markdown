@@ -1,0 +1,13 @@
+---
+modified_at: 2020-04-17 14:00:00
+title: 'PostgreSQL - New Scalingo release: 12.2.0-3'
+---
+
+New default version: **12.2.0-3**
+
+Changelog:
+- Fix the development mode to let you use the Docker image in a development setup
+
+Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
+
+* `scalingo/postgresql:12.2.0-3`
