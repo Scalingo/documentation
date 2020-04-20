@@ -40,15 +40,28 @@ against the most greedy endpoints for better results.
 ## Autoscaling Logic
 
 Scalingo's autoscaler service bases its decisions on a user defined metric
-(e.g. RPM per container, response time, CPU consumption...). When creating a
-new autoscaling, a target is provided. Our algorithm tries to keep the metric
-as close to the target as possible by scaling up or down the application.
+(e.g. RPM per container, response time, CPU consumption...).
 
-The autoscaler only scale the application up or down by one container. After a
-scale event, the autoscaler will not scale the application up again before at
-least one minute. The scale down is a bit less aggressive with a three minutes
-cooldown. These cooldown values prevent the autoscaler to scale the application
-frantically.
+When creating a new autoscaler, a target is provided: our algorithm tries to
+keep the metric as close to the target as possible by scaling up or down the
+application, up or down, by one container at a time.
+
+A few details to keep in mind :
+
+* the autoscaling is based on the "mean per minute" of the target metric, and requires
+two consecutive means to be over the target value before being triggered;
+* for the metrics where it makes sense (eg. CPU, RAM, swap), the mean of all containers
+is used;
+* after a scale up event, the autoscaler will **not** scale the application up again before at
+least **one** minute;
+* after a scale down, the cooldown is of **three** minutes;
+
+Those rules are here to avoid scaling the application frantically. This makes the autoscaling
+good at handling "reasonably" increasing/decreasing metrics, but not when it comes to dealing
+with huge, sudden spikes.
+
+If you know such events can happen, you should manually scale up the application to a suitable
+container formation.
 
 ## Available Metrics
 
