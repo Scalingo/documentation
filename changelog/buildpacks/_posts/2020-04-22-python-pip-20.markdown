@@ -1,0 +1,7 @@
+---
+modified_at:	2020-04-22 08:50:00
+title:	'Python - Dependency Management - Pip v20'
+github: 'https://github.com/Scalingo/python-buildpack'
+---
+
+[Pip Full Changelog](https://pip.pypa.io/en/stable/news/)
