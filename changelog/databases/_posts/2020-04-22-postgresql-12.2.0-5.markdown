@@ -1,0 +1,13 @@
+---
+modified_at: 2020-04-22 12:30:00
+title: 'PostgreSQL - New Scalingo release: 12.2.0-5'
+---
+
+New default version: **12.2.0-5**
+
+Changelog:
+- Fix permission issue to access a folder
+
+Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
+
+* `scalingo/postgresql:12.2.0-5`
