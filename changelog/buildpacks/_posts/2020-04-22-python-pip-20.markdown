@@ -4,4 +4,6 @@ title:	'Python - Dependency Management - Pip v20'
 github: 'https://github.com/Scalingo/python-buildpack'
 ---
 
+Pip version 20.0.2 is now used by default when installing dependencies with `pip install`
+
 [Pip Full Changelog](https://pip.pypa.io/en/stable/news/)
