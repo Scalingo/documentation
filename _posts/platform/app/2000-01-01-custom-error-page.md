@@ -1,31 +1,28 @@
 ---
 title: Custom Error and Maintenance Pages
-modified_at: 2018-03-22 00:00:00
+modified_at: 2020-04-27 00:00:00
 tags: app custom error page
 ---
 
 ## Custom Error Pages
 
-Our routers may return an error page in various cases, when an application is
-unreachable:
-
-- There is no running container.
-- The application has no web container running but other types of containers
-  are.
-- The application crashed or cut the connection unexpectedly.
-- The application <a href="{% post_url platform/internals/2000-01-01-routing %}#timeouts">timed out</a>.
-
-In these cases, Scalingo's routers return an error page like the following:
+Our routers may return an error page when an application is unreachable. By
+default, the error page looks like the following:
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_application_error.png" %}
 {% include mdl_img.html %}
 
-You can customize these pages by modifying the following environment variables:
+You can customize these pages by providing Scalingo with a custom error page
+URL. Four different error pages can be customized. You need to set one of these
+environment variables depending on which error page you want to customize:
 
-- `SCALINGO_STOPPED_PAGE_URL`
-- `SCALINGO_NO_FRONT_ERROR_URL`
-- `SCALINGO_APP_ERROR_URL`
-- `SCALINGO_TIMEOUT_ERROR_URL`
+- `SCALINGO_NO_FRONT_ERROR_URL`: if the application has no web container running
+    but other types of containers are.
+- `SCALINGO_STOPPED_PAGE_URL`: if the application has no running container.
+- `SCALINGO_APP_ERROR_URL`: if the application crashed or cut the connection
+    unexpectedly.
+- `SCALINGO_TIMEOUT_ERROR_URL`: if the application [timed out]({% post_url
+    platform/internals/2000-01-01-routing %}#timeouts).
 
 The usage is the following:
 `SCALINGO_STOPPED_PAGE_URL=https://cdn.example.com/stopped_page.html`.
