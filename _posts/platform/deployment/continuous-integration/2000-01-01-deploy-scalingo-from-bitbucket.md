@@ -1,7 +1,7 @@
 ---
 title: Deploy to Scalingo from Bitbucket
 nav: Deploy from Bitbucket
-modified_at: 2019-12-12 00:00:00
+modified_at: 2020-04-29 00:00:00
 tags: ci cd deployment bitbucket
 index: 25
 ---
