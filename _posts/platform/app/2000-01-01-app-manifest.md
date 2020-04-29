@@ -79,7 +79,7 @@ to get addon names and their plans.
 The JSON manifest also lets you declare scripts which will be executed as
 [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %})
 
-* `first-deploy`: Executed after the first deployment of a review app or one-click app.
+* `first-deploy`: Executed after the first deployment of a review app or one-click app. It will be executed as many times as necessary until a first depoyment is considered a "success" by the platform.
 * `postdeploy` Executed after each deployment of a review app except the first
   one if `first-deploy` is defined.
 
