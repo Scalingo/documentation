@@ -175,6 +175,9 @@ samples:
   - url: sample-python2-flask
     name: Python 2/Flask
     logo: python-flask
+  - url: sample-elixir-plug
+    name: Elixir/Plug
+    logo: elixir
   - url: sample-crystal
     name: Crystal
     logo: crystal
