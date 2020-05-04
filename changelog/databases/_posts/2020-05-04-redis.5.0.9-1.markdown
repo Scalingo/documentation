@@ -9,6 +9,6 @@ Redis changelog:
 
 * [5.0.9-1](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES)
 
-Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/redis):
+Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/redis):
 
 * `scalingo/redis:5.0.9-1`

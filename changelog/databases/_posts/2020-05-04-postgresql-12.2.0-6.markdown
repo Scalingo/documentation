@@ -8,7 +8,7 @@ New default version: **12.2.0-6**
 Changelog:
 - Fix recovery configuration
 
-Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
 
 * `scalingo/postgresql:12.2.0-6`
 * `scalingo/postgresql:11.7.0-2`
