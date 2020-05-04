@@ -1,0 +1,15 @@
+---
+modified_at: 2020-05-04 12:30:00
+title: 'PostgreSQL - New Scalingo release: 12.2.0-6, 11.7.0-2 and 10.12.0-2'
+---
+
+New default version: **12.2.0-6**
+
+Changelog:
+- Fix recovery configuration
+
+Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
+
+* `scalingo/postgresql:12.2.0-6`
+* `scalingo/postgresql:11.7.0-2`
+* `scalingo/postgresql:10.12.0-2`
