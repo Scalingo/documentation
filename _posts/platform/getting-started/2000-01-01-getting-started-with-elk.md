@@ -234,5 +234,117 @@ output {
 }
 ```
 
-This tutorial is based on an article published on [our
-blog](https://scalingo.com/articles/2018/02/23/running-the-elk-stack-on-scalingo.html).
+## Curator
+
+### Installing curator
+
+Keeping all your application logs is not always feasible due to the huge amount of storage that would be needed. However logs are usually only relevant for a short period of time. That's why it's current practice to destroy documents if they get too old.
+
+This is where [Curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.8/index.html) is needed. This project is designed to let you managed your indices life cycle.
+
+Curator is written in Python, so to install its dependencies, you can modify the `.buildpacks` file to also run the Python buildpack.
+
+The `.buildpacks` file should have the following content:
+
+```
+https://github.com/Scalingo/buildpack-jvm-common.git
+https://github.com/Scalingo/python-buildpack.git
+https://github.com/Scalingo/logstash-buildpack.git
+```
+
+To tell the python buildpack to install curator and its dependencies, create a file named `requirements.txt` at the root of your project.
+
+```
+PyYAML==5.3.1
+elasticsearch-curator==5.8.0
+```
+
+Finally you'll need a file to write a script that will run curator every 12h. This can be achieved via a simple bash script.
+Create a file named `curator.sh` with the following content:
+
+```
+#!/bin/bash
+set -ex
+
+while true; do
+  echo "Running curator"
+  curator --config curator.yml log-clean.yml
+  # Run curator every 12h
+  sleep 43200
+done
+```
+
+Finally you need to tell Scalingo to start curator.
+This can be archived via by adding the following line to your `Procfile`:
+```
+curator: ./curator.sh
+```
+
+### Configuration
+
+All the hard stuff is now done.
+
+Next step is configuring curator.
+First you'll need to configure how curator will connect to your database.
+
+```
+---
+client:
+  hosts:
+    - ${ELASTICSEARCH_HOST}
+  http_auth: ${ELASTICSEARCH_AUTH}
+logging:
+  loglevel: INFO
+  logfile:
+  logformat: default
+```
+
+Sadly curator cannot use the `ELASTICSEARCH_URL` you will need to define 2 other environnement variable on your app:
+
+So if your `ELASTICSEARCH_URL` is set to `http://user:password@host:port`, you'll need to define 2 environnement variables:
+
+```
+ELASTICSEARCH_HOST=host:port
+ELASTICSEARCH_AUTH=user:password
+```
+
+The last step is to configure your indices life cycle. This is based on your index names.
+When you configured logstash, we asked you to configure your index with the following name `sc-apps-%{+YYYY.MM.dd}`.
+We will configure Curator to parse the date contained on those names and delete the ones that are too old.
+
+```
+actions:
+  1:
+    action: delete_indices
+    description: Delete old log indices
+    options:
+      ignore_empty_list: True
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: prefix
+      value: ${LOGS_INDICES_PREFIX}
+    - filtertype: age
+      source: name
+      direction: older
+      timestring: '%Y.%m.%d'
+      unit: days
+      unit_count: ${LOGS_RETENTION_DAYS}
+```
+
+You will now need to add two environnement variables:
+```
+LOGS_INDICES_PREFIX=sc-apps
+```
+
+This variable let you filter index that should be affected by this policy (so you wont delete other index that are stored in the same database);
+
+```
+LOGS_RETENTION_DAYS=10
+```
+
+This variable let you configure the retention time of your logs. Here it will delete an index if it is 10+ days old.
+
+That's all folks!
+
+This tutorial is based on an article published on [our blog](https://scalingo.com/articles/2018/02/23/running-the-elk-stack-on-scalingo.html).
