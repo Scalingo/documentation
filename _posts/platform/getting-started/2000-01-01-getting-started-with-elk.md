@@ -38,7 +38,7 @@ Let's start by bootstrapping the Logstash container. This instance will take
 data from an authenticated input and send them to an Elasticsearch
 database. This is the *EL* part in *ELK*.
 
-To get started, you can use [our boilerplate](https://github.gom/Scalingo/logstash-boilerplate):
+To get started, you can use [our boilerplate](https://github.com/Scalingo/logstash-boilerplate):
 
 ```bash
 $ git clone https://github.com/Scalingo/logstash-boilerplate
