@@ -238,7 +238,7 @@ output {
 
 ### Installing Curator
 
-Keeping all your application logs is not always feasible due to the huge amount of storage that would be needed. However logs are usually only relevant for a short period of time. That's why it's current practice to destroy documents if they get too old.
+Since logs are only relevant for a short period of time, it is current practice to remove logs that are too old to be relevant. This is done to reduce the load on the database and limit the disk usage.
 
 This is where [Curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.8/index.html) is needed. This project is designed to let you managed your indices life cycle.
 
@@ -258,7 +258,8 @@ PyYAML==5.3.1
 elasticsearch-curator==5.8.0
 ```
 
-Finally you'll need a file to write a script that will run curator every 12h. This can be achieved via a simple bash script.
+
+Curator is not a deamon, it is designed as a one-off process. To be able to run it on Scalingo you'll need to write a simple bash script that will launch Curator regularly. This can be achieved via a simple bash script.
 Create a file named `curator.sh` with the following content:
 
 ```bash
