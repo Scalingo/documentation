@@ -236,14 +236,13 @@ output {
 
 ## Curator
 
-### Installing curator
+### Installing Curator
 
 Keeping all your application logs is not always feasible due to the huge amount of storage that would be needed. However logs are usually only relevant for a short period of time. That's why it's current practice to destroy documents if they get too old.
 
 This is where [Curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.8/index.html) is needed. This project is designed to let you managed your indices life cycle.
 
-Curator is written in Python, so to install its dependencies, you can modify the `.buildpacks` file to also run the Python buildpack.
-
+Curator is written in Python. In order to install its dependencies, you can modify the `.buildpacks` file to also contain the Python buildpack.
 The `.buildpacks` file should have the following content:
 
 ```
@@ -252,7 +251,7 @@ https://github.com/Scalingo/python-buildpack.git
 https://github.com/Scalingo/logstash-buildpack.git
 ```
 
-To tell the python buildpack to install curator and its dependencies, create a file named `requirements.txt` at the root of your project.
+In order to instruct the Python buildpack to install Curator and its dependencies, create a file named `requirements.txt` at the root of your project:
 
 ```
 PyYAML==5.3.1
@@ -262,21 +261,21 @@ elasticsearch-curator==5.8.0
 Finally you'll need a file to write a script that will run curator every 12h. This can be achieved via a simple bash script.
 Create a file named `curator.sh` with the following content:
 
-```
+```bash
 #!/bin/bash
 set -ex
 
 while true; do
-  echo "Running curator"
+  echo "Running Curator"
   curator --config curator.yml log-clean.yml
-  # Run curator every 12h
+  # Run Curator every 12h
   sleep 43200
 done
 ```
 
-Finally you need to tell Scalingo to start curator.
-This can be archived via by adding the following line to your `Procfile`:
-```
+Finally you need to tell Scalingo to start Curator.
+This can be achieved by adding the following line to your `Procfile`:
+```yaml
 curator: ./curator.sh
 ```
 
@@ -284,8 +283,7 @@ curator: ./curator.sh
 
 All the hard stuff is now done.
 
-Next step is configuring curator.
-First you'll need to configure how curator will connect to your database.
+Next step is to configure Curator. First you need to configure how Curator connects to your database:
 
 ```
 ---
@@ -299,20 +297,19 @@ logging:
   logformat: default
 ```
 
-Sadly curator cannot use the `ELASTICSEARCH_URL` you will need to define 2 other environnement variable on your app:
-
-So if your `ELASTICSEARCH_URL` is set to `http://user:password@host:port`, you'll need to define 2 environnement variables:
+Curator cannot use the `ELASTICSEARCH_URL`. You need to define 2 other environment variables on your app duplicating `ELASTICSEARCH_URL` content.
+Hence if your `ELASTICSEARCH_URL` variable is set to `http://user:password@host:port`, you need to define 2 environment variables:
 
 ```
 ELASTICSEARCH_HOST=host:port
 ELASTICSEARCH_AUTH=user:password
 ```
 
-The last step is to configure your indices life cycle. This is based on your index names.
-When you configured logstash, we asked you to configure your index with the following name `sc-apps-%{+YYYY.MM.dd}`.
+The last step is to configure your indices life cycle. This is based on your indices names.
+When you configured Logstash, we asked you to configure your index with the following name `sc-apps-%{+YYYY.MM.dd}`.
 We will configure Curator to parse the date contained on those names and delete the ones that are too old.
 
-```
+```yaml
 actions:
   1:
     action: delete_indices
@@ -332,18 +329,18 @@ actions:
       unit_count: ${LOGS_RETENTION_DAYS}
 ```
 
-You will now need to add two environnement variables:
+You now need to add two environment variables:
 ```
 LOGS_INDICES_PREFIX=sc-apps
 ```
 
-This variable let you filter index that should be affected by this policy (so you wont delete other index that are stored in the same database);
+This variable lets you filter index that should be affected by this policy (so you wont delete other indices that are stored in the same database):
 
 ```
 LOGS_RETENTION_DAYS=10
 ```
 
-This variable let you configure the retention time of your logs. Here it will delete an index if it is 10+ days old.
+This variable lets you configure the retention time of your logs. With this configuration, Curator will delete an index if it is 10+ days old.
 
 That's all folks!
 
