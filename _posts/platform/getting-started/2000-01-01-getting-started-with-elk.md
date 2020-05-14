@@ -267,8 +267,8 @@ elasticsearch-curator==5.8.0
 
 
 Curator is not a deamon, it is designed as a one-off process. To be able
-to run it on Scalingo you'll need to write a simple bash script that launch
-Curator regularly. This can be achieved via a simple shell script.
+to run it on Scalingo you need to write a Bash script that executes
+Curator regularly.
 Create a file named `curator.sh` with the following content:
 
 ```bash
@@ -324,8 +324,8 @@ The last step is to configure your indices life cycle. This is based on your
 indices names.
 When you configured Logstash, we asked you to configure your index with the
 following name `sc-apps-%{+YYYY.MM.dd}`.
-Create a file named: `log-clean.yml`. This configuration parse the indices
-names stored in elasticsearch and remove the one that too old.
+Create a file named `log-clean.yml`. This configuration parses the indices
+names stored in Elasticsearch and removes the ones that are too old.
 
 ```yaml
 actions:
