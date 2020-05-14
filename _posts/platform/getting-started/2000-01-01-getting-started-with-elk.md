@@ -238,11 +238,17 @@ output {
 
 ### Installing Curator
 
-Since logs are only relevant for a short period of time, it is current practice to remove logs that are too old to be relevant. This is done to reduce the load on the database and limit the disk usage.
+Since logs are only relevant for a short period of time, it is current
+practice to remove logs that are too old to be relevant. This is done to
+reduce the load on the database and limit the disk usage.
 
-This is where [Curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.8/index.html) is needed. This project is designed to let you manage your indices life cycle.
+This is where
+[Curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.8/index.html)
+is needed. This project is designed to let you manage your indices life cycle.
 
-Curator is written in Python. In order to install its dependencies, you can modify the `.buildpacks` file to also contain the Python buildpack. The `.buildpacks` file should have the following content:
+Curator is written in Python. In order to install its dependencies, you
+can modify the `.buildpacks` file to also contain the Python buildpack. The
+`.buildpacks` file should have the following content:
 
 ```
 https://github.com/Scalingo/buildpack-jvm-common.git
@@ -250,7 +256,9 @@ https://github.com/Scalingo/python-buildpack.git
 https://github.com/Scalingo/logstash-buildpack.git
 ```
 
-In order to instruct the Python buildpack to install Curator and its dependencies, create a file named `requirements.txt` at the root of your project:
+In order to instruct the Python buildpack to install Curator and its
+dependencies, create a file named `requirements.txt` at the root of your
+project:
 
 ```
 PyYAML==5.3.1
@@ -258,7 +266,9 @@ elasticsearch-curator==5.8.0
 ```
 
 
-Curator is not a deamon, it is designed as a one-off process. To be able to run it on Scalingo you'll need to write a simple bash script that launch Curator regularly. This can be achieved via a simple shell script.
+Curator is not a deamon, it is designed as a one-off process. To be able
+to run it on Scalingo you'll need to write a simple bash script that launch
+Curator regularly. This can be achieved via a simple shell script.
 Create a file named `curator.sh` with the following content:
 
 ```bash
@@ -284,7 +294,8 @@ curator: ./curator.sh
 
 All the hard stuff is now done.
 
-Next step is to configure Curator. First you need to configure how Curator connects to your database:
+Next step is to configure Curator. First you need to configure how Curator
+connects to your database:
 
 ```
 ---
@@ -298,17 +309,23 @@ logging:
   logformat: default
 ```
 
-Curator cannot use the `ELASTICSEARCH_URL` environment variable. You need to define two other environment variables on your app, duplicating `ELASTICSEARCH_URL` content.
-Hence if your `ELASTICSEARCH_URL` variable is set to `http://user:password@host:port`, you need to define 2 environment variables:
+Curator cannot use the `ELASTICSEARCH_URL` environment variable. You
+need to define two other environment variables on your app, duplicating
+`ELASTICSEARCH_URL` content.
+Hence if your `ELASTICSEARCH_URL` variable is set to
+`http://user:password@host:port`, you need to define 2 environment variables:
 
 ```
 ELASTICSEARCH_HOST=host:port
 ELASTICSEARCH_AUTH=user:password
 ```
 
-The last step is to configure your indices life cycle. This is based on your indices names.
-When you configured Logstash, we asked you to configure your index with the following name `sc-apps-%{+YYYY.MM.dd}`.
-Create a file named: `log-clean.yml`. This configuration parse the indices names stored in elasticsearch and remove the one that too old.
+The last step is to configure your indices life cycle. This is based on your
+indices names.
+When you configured Logstash, we asked you to configure your index with the
+following name `sc-apps-%{+YYYY.MM.dd}`.
+Create a file named: `log-clean.yml`. This configuration parse the indices
+names stored in elasticsearch and remove the one that too old.
 
 ```yaml
 actions:
@@ -337,10 +354,16 @@ LOGS_INDICES_PREFIX=sc-apps
 LOGS_RETENTION_DAYS=10
 ```
 
-The first environment variable is `LOGS_INDICES_PREFIX`. It configures the index pattern that should be affected by this policy. Setting this variable to `sc-apps` prevent Curator from deleting the other indices that are stored in the same database.
+The first environment variable is `LOGS_INDICES_PREFIX`. It configures the
+index pattern that should be affected by this policy. Setting this variable
+to `sc-apps` prevent Curator from deleting the other indices that are stored
+in the same database.
 
-The second environment variable is `LOGS_RETENTION_DAYS`. It configures the retention time of your logs (in days). Setting this variable to `10`, Curator will delete an index if it is 10+ days old.
+The second environment variable is `LOGS_RETENTION_DAYS`. It configures
+the retention time of your logs (in days). Setting this variable to `10`,
+Curator will delete an index if it is 10+ days old.
 
 That's all folks!
 
-This tutorial is based on an article published on [our blog](https://scalingo.com/articles/2018/02/23/running-the-elk-stack-on-scalingo.html).
+This tutorial is based on an article published on [our
+blog](https://scalingo.com/articles/2018/02/23/running-the-elk-stack-on-scalingo.html).
