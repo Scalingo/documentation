@@ -322,8 +322,6 @@ ELASTICSEARCH_AUTH=user:password
 
 The last step is to configure your indices life cycle. This is based on your
 indices names.
-When you configured Logstash, we asked you to configure your index with the
-following name `sc-apps-%{+YYYY.MM.dd}`.
 Create a file named `log-clean.yml`. This configuration parses the indices
 names stored in Elasticsearch and removes the ones that are too old.
 
