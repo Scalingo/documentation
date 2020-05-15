@@ -1,6 +1,6 @@
 ---
 title: Post-deployment hook
-modified_at: 2016-10-04 00:00:00
+modified_at: 2020-05-15 00:00:00
 tags: app deployment hook postdeploy
 index: 13
 ---
@@ -57,7 +57,7 @@ contains the environment variables from your app, with the one we inject in any
 
 ## Examples
 
-### Applying migrations
+### Applying Migrations
 
 A common example to this feature is to apply migrations, for instance with a
 Rails application:
@@ -72,7 +72,7 @@ postdeploy: bundle exec rake db:migrate
   explaining this process.
 {% endnote %}
 
-### Notifying external service
+### Notifying External Service
 
 #### New Relic
 
@@ -106,7 +106,7 @@ You can also use AppSignal Push API to manually create a deploy marker with this
 postdeploy: curl -X POST -d "{\"revision\":\"$CONTAINER_VERSION\",\"user\":\"scalingo\"}" "https://push.appsignal.com/1/markers?api_key=$APPSIGNAL_PUSH_API_KEY&name=$APPSIGNAL_APP_NAME&environment=$APPSIGNAL_APP_ENV"
 ```
 
-### Both Applying migrations and notifying external service
+### Applying Migrations and Notifying External Service
 
 Use the standard `&&` bash operator:
 
@@ -114,9 +114,9 @@ Use the standard `&&` bash operator:
 postdeploy: bundle exec rake db:migrate && newrelic deployments --revision=$CONTAINER_VERSION
 ```
 
-## What you should not do
+## What You Should Not Do?
 
-### Build assets
+### Build Assets
 
 The `postdeploy` hook is not the right place to build your assets. Keep in mind
 that the action is executed in a dedicated one-off container, the other
