@@ -1,6 +1,6 @@
 ---
 title: Post-deployment hook
-modified_at: 2020-05-15 00:00:00
+modified_at: 2020-05-19 00:00:00
 tags: app deployment hook postdeploy
 index: 13
 ---
@@ -58,8 +58,9 @@ contains the environment variables from your app, with the one we inject in any
 * Duration: a postdeploy hook should be achieved in less than **20 minutes**,
     otherwise the process will be stopped and the status `-128` will be
     returned. If you have long task to achieve after a deployment, it is
-    recommended **not** to use a `postdeploy` hook but a [one-off container]({%
-    post_url platform/app/2000-01-01-tasks%}) once the deployment has been done.
+    recommended **not** to use a `postdeploy` hook but a
+    [one-off container]({% post_url platform/app/2000-01-01-tasks%}) once the
+    deployment has been done.
 
 ## Examples
 
@@ -136,3 +137,15 @@ location of the instruction to build the assets depends on the technology:
 
 * PHP Symfony ([doc]({% post_url languages/php/2000-01-01-symfony %}#asset-management-with-assetic))
 * Node.js ([doc]({% post_url languages/nodejs/2000-01-01-start %}#nodejs-build-hooks))
+
+## Difference With the Heroku Release Phase
+
+The post-deployment hook is close to what Heroku names the _release_ phase.
+There are, however, a few noticeable differences we explain in this section.
+
+On Scalingo, the post-deployment hook is synchronously executed at the end of
+every successful deployment.
+
+On Heroku, the release phase is executed after each new release of the code. A
+new release is created after various events such as a new deployment, but also a
+change in the environment variables or the provisioning of a new addon.
