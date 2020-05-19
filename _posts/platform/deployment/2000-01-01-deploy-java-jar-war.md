@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2020-02-18 00:00:00
+modified_at: 2020-05-19 00:00:00
 index: 5
 tags: deployment, java, jar, war
 ---
@@ -19,10 +19,7 @@ can be directly deployed on Scalingo.
 This deployment method currently only supports Tomcat server to execute your
 archive.
 
-## Install Scalingo CLI
-
-JAR and WAR archives can be deployed using the platform command line interface, first
-step is to install it: [CLI Documentation]({% post_url platform/cli/2000-01-01-start %})
+{% include info_command_line_tool.md %}
 
 ## Usage of the `deploy` command
 
