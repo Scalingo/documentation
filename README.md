@@ -55,10 +55,10 @@ If you want to write a warning note:
 {% endwarning %}
 ```
 
-If you want to insert a link to another blog post:
+If you want to insert a link to another documentation article:
 
-```html
-<a href="{% post_url platform/internals/2000-01-01-routing %}">text of the link</a>
+```markdown
+[text of the link]({% post_url platform/internals/2000-01-01-routing %})
 ```
 
 To insert an image, first upload it to our CDN, inside the documentation
