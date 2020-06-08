@@ -1,0 +1,11 @@
+---
+modified_at: 2020-06-05 11:30:00
+title: 'Stack scalingo-18 v13'
+---
+
+This release contains the following changes:
+* Update of all Ubuntu packages
+* Removal of AddTrust expired Certifcate: [more info](https://www.agwa.name/blog/post/fixing_the_addtrust_root_expiration)
+
+
+* Docker Hub: [https://hub.docker.com/r/scalingo/scalingo-18](https://hub.docker.com/r/scalingo/scalingo-18)
