@@ -5,4 +5,4 @@ title: 'New default image size limit: 1GiB'
 
 Up to today, deployment builds resulting in images were limited to 650MB.
 
-This limit has been raised to [1GB by default](https://doc.scalingo.com/platform/deployment/limits#limits)
+This limit has been raised to [1GiB by default](https://doc.scalingo.com/platform/deployment/limits#limits)
