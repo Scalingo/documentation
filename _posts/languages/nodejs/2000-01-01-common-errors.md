@@ -22,3 +22,27 @@ situation, you have a couple of solutions:
     languages/nodejs/2000-01-01-start %}#install-devdependencies)).
 - Move the `devDependencies` needed for the build into the `dependencies`
     section of the package.json file.
+
+## Boot Timeout
+
+You may see the following log lines at the end of your application deployment
+logs:
+
+```text
+[...]
+ Build complete, shipping your container...
+ Waiting for your application to boot...
+ !   Error deploying the application
+ !   → Timeout: my-app took more than 60 seconds to boot
+ !   Application Logs:  https://my.scalingo.com/apps/my-app/logs
+ !   Documentation:     http://doc.scalingo.com/deployment/start-error#timeout
+
+To ssh.osc-fr1.scalingo.com:my-app.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'ssh.osc-fr1.scalingo.com:my-app.git'
+```
+
+Most of the time, this timeout occurs when your application does not bind the
+port declared by the platform in the environment variable `PORT`. You can see
+how to do that in this [Express example]({% post_url
+languages/nodejs/2000-01-01-tutorial %}#write-a-base-server-file).
