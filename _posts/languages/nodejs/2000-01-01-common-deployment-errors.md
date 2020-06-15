@@ -1,7 +1,7 @@
 ---
 title: Node.js Common Deployment Errors
 nav: Common Deployment Errors
-modified_at: 2020-06-12 00:00:00
+modified_at: 2020-06-15 00:00:00
 tags: nodejs
 index: 3
 ---
@@ -20,6 +20,10 @@ situation, you have a couple of solutions:
 
 - Install all `devDependencies` ([doc]({% post_url
     languages/nodejs/2000-01-01-start %}#install-devdependencies)).
+
+  ```bash
+  $ scalingo --app my-app env-set NPM_CONFIG_PRODUCTION=false
+  ```
 - Move the `devDependencies` needed for the build into the `dependencies`
     section of the package.json file.
 
@@ -46,3 +50,16 @@ Most of the time, this timeout occurs when your application does not bind the
 port declared by the platform in the environment variable `PORT`. You can see
 how to do that in this [Express example]({% post_url
 languages/nodejs/2000-01-01-tutorial %}#write-a-base-server-file).
+
+Here is a short excerpt of this example:
+
+```js
+var express = require('express')
+var app = express()
+
+var server = app.listen(process.env.PORT || 3000, function () {
+  var host = server.address().address
+  var port = server.address().port
+  console.log('App listening at http://%s:%s', host, port)
+})
+```
