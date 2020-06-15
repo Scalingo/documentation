@@ -196,6 +196,7 @@ that your application is not able to boot and this error happens.
 
 * The server is not listening on the port defined by the environment variable
   `PORT`. Then your application is running correctly but it is not reachable.
+  The application must also listen on `0.0.0.0` and not `127.0.0.1`.
 
 ### Crash of the application
 
