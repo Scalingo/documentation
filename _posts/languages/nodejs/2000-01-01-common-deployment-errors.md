@@ -10,7 +10,7 @@ You may experience an error in your Node.js application that many customers
 faced when first deploying such application on Scalingo. Here is a list of the
 most common error messages.
 
-## devDependencies Also Contain the Build Dependencies
+## devDependencies Also Contain the Build Dependencies {#dev-dependencies}
 
 The `devDependencies` section of the package.json file contains both development
 dependencies and build dependencies. By default Scalingo deployments install the
@@ -27,7 +27,7 @@ situation, you have a couple of solutions:
 - Move the `devDependencies` needed for the build into the `dependencies`
     section of the package.json file.
 
-## Boot Timeout
+## Boot Timeout {#boot-timeout}
 
 You may see the following log lines at the end of your application deployment
 logs:
