@@ -11,9 +11,6 @@
     },
     "DISABLE_TRACKERS": {
       "value": "true"
-    },
-    "REVIEW_APP_URL": {
-      "generator": "url"
     }
   }
 }
