@@ -27,7 +27,7 @@ When pushing your app to Scalingo, you might get the following error:
 
 There are two main solutions to this problem.
 
-### Project in a subdirectory
+### Project in a Subdirectory
 
 It may happen that your project is in a subfolder of your Git repository. It's
 completely OK but remind that Scalingo's deployment system looks at the root of
@@ -61,7 +61,7 @@ directory is not added to the application image we are building at the
 deployment phase.
 {% endwarning %}
 
-### Technology detection
+### Technology Detection
 
 In order to detect the technology used by your application, we iterate over the
 technologies alphabetically. It means that if your project contains multiple
@@ -148,7 +148,7 @@ repository in your main repository before pushing.
 When your application is deployed, the dependencies are gathered and are packaged
 into an _application image_
 
-### Invalid return code from buildpack
+### Invalid Return Code From Buildpack
 
 You application image is built using a buildpack ([List of buildpacks]({% post_url platform/deployment/buildpacks/2000-01-01-intro %})).
 If the buildpack exits with an error, it is probably linked to your project. You should
@@ -157,7 +157,7 @@ be able to see the content of the error in your console. Then adapt your code ac
 If you think the error comes from our buildpacks, feel free to contact us and we will fix
 it as soon as we can.
 
-### Image too large
+### Image Too Large
 
 The maximal size of an application image is __650MB__. If your assets, your
 dependencies and the code of your application weigh more than this limit,
@@ -198,7 +198,7 @@ that your application is not able to boot and this error happens.
   `PORT`. Then your application is running correctly but it is not reachable.
   The application must also listen on `0.0.0.0` and not `127.0.0.1`.
 
-### Crash of the application
+### Crash of the Application
 
 When your application starts, it may stop unexpectedly for various reasons
 related to your project.
