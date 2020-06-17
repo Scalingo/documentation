@@ -22,23 +22,5 @@ if (searchNode !== null) {
       hint: false,
       openOnFocus: true,
     },
-    handleSelected: function(input, event, suggestion, datasetNumber, context) {
-      // We customize the behaviour of the click on a search result in dev and
-      // in review apps.
-      if (context.selectionMethod !== 'click') {
-        return
-      }
-
-      const location = new URL(window.location);
-      const newBaseURL = `${location.protocol}//${location.host}/`;
-      const prodBaseURL = 'https://doc.scalingo.com/'
-      if (newBaseURL == prodBaseURL) {
-        return
-      }
-
-      // Replace the domain name doc.scalingo.com with the domain name of the
-      // current review app.
-      window.location = suggestion.url.replace(prodBaseURL, newBaseURL);
-    }
   })
 }
