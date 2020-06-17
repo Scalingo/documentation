@@ -3,7 +3,7 @@ title: Socket.IO and Express server listening on the same port
 nav: Socket.IO and Express on the same port
 modified_at: 2018-10-05 00:00:00
 tags: nodejs
-index: 3
+index: 100
 ---
 
 On Scalingo, your application must listen to the port defined in the `PORT` environment variable the
