@@ -1,7 +1,7 @@
 ---
 title: Node.js Common Deployment Errors
-nav: Common Deployment Errors
-modified_at: 2020-06-15 00:00:00
+nav: Deployment Errors
+modified_at: 2020-06-17 00:00:00
 tags: nodejs
 index: 3
 ---
@@ -10,7 +10,7 @@ You may experience an error in your Node.js application that many customers
 faced when first deploying such application on Scalingo. Here is a list of the
 most common error messages.
 
-## devDependencies Also Contain the Build Dependencies {#dev-dependencies}
+## devDependencies Also Contain the Build Dependencies {#dep}
 
 The `devDependencies` section of the package.json file contains both development
 dependencies and build dependencies. By default Scalingo deployments install the
@@ -27,7 +27,7 @@ situation, you have a couple of solutions:
 - Move the `devDependencies` needed for the build into the `dependencies`
     section of the package.json file.
 
-## Boot Timeout {#boot-timeout}
+## Boot Timeout {#timeout}
 
 You may see the following log lines at the end of your application deployment
 logs:
