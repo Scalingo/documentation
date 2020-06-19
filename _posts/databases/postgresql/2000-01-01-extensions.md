@@ -105,6 +105,11 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 			<td>data type for hierarchical tree-like structures</td>
 		</tr>
 		<tr>
+			<td>pg_repack</td>
+			<td>1.4.5</td>
+			<td>lets you remove bloat from tables and indexes, and optionally restore the physical order of clustered indexes. Unlike CLUSTER and VACUUM FULL it works online</td>
+		</tr>
+		<tr>
 			<td>pg_stat_statements</td>
 			<td>1.2, 1.4, 1.5</td>
 			<td>track execution statistics of all SQL statements executed</td>
@@ -143,6 +148,11 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 			<td>postgis_topology</td>
 			<td>2.1.8, 2.4.4, 2.5.0</td>
 			<td>PostGIS topology spatial types and functions</td>
+		</tr>
+		<tr>
+			<td>postgres_fdw</td>
+			<td>1.4</td>
+			<td>Foreign Data Wrappers affords a developer the ability to specify a foreign server and the tables in a remote database that map to federated tables in the local database.</td>
 		</tr>
 		<tr>
 			<td>tablefunc</td>
