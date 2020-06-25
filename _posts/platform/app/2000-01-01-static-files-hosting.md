@@ -32,8 +32,8 @@ Don't forget to add a `package.json` file in order to add the `express` dependen
 
 ```json
 {
-  "name" : "My Application",
-  "version" : "1.0",
+  "name" : "my-application",
+  "version" : "1.0.0",
   "dependencies" : {
     "express" : "4.x"
   },
