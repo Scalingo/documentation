@@ -50,6 +50,11 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 	</thead>
 	<tbody>
 		<tr>
+			<td>btree_gin</td>
+			<td>1.5</td>
+			<td>support for indexing common datatypes in GiST</td>
+		</tr>
+		<tr>
 			<td>btree_gist</td>
 			<td>1.5</td>
 			<td>support for indexing common datatypes in GiST</td>

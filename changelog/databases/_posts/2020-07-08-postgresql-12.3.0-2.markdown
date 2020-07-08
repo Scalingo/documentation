@@ -1,0 +1,20 @@
+---
+modified_at: 2020-07-08 12:30:00
+title: 'PostgreSQL - New Scalingo release: 12.3.0-2, 11.8.0-2 and 10.13.0-2'
+---
+
+New default version: **12.3.0-2**
+
+Changelog:
+- Bump version of PostgreSQL to last minor
+- Add extension [`btree_gin`](https://www.postgresql.org/docs/12/btree-gin.html)
+- Add extension [`postgres_fdw`](https://www.postgresql.org/docs/12/postgres-fdw.html)
+
+On support demand only:
+- Add extension [`pg_repack`](https://reorg.github.io/pg_repack/)
+
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
+
+* `scalingo/postgresql:12.3.0-2`
+* `scalingo/postgresql:11.8.0-2`
+* `scalingo/postgresql:10.13.0-2`
