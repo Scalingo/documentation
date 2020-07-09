@@ -1,6 +1,6 @@
 {% note %}
 All databases created after the 6th of January 2019 have encryption at rest enabled. In other words,
-all your data are encrypted before being stored on disk.
+all your data is encrypted before being stored on disk.
 <br>
 <br>
 For databases created before this date, encryption at rest is activable on-demand through the
