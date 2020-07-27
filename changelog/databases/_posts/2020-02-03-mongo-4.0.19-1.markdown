@@ -1,0 +1,13 @@
+---
+modified_at: 2020-07-29 15:30:00
+title: 'MongoDB - New versions: 4.0.19-1 and 3.6.19-1'
+---
+
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/mongo):
+
+* `scalingo/mongo:4.0.19-1`
+* `scalingo/mongo:3.6.19-1`
+
+MongoDB changelog:
+* [MongoDB 4.0.19](https://docs.mongodb.com/manual/release-notes/4.0-changelog/#id1)
+* [MongoDB 3.6.19](https://docs.mongodb.com/manual/release-notes/3.6/#july-23-2020)
