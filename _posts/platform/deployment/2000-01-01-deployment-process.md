@@ -1,7 +1,7 @@
 ---
 title: Deployment Process
 nav: Introduction
-modified_at: 2019-08-30 00:00:00
+modified_at: 2020-07-29 00:00:00
 index: 1
 tags: deployment
 ---
@@ -16,7 +16,7 @@ The first step to trigger a deployment is to send the application itself to the
 platform (either the code or a build version of it). Multiple methods are
 available to achieve this step:
 
-* [Sending the code using git]({% post_url
+* [Sending the code using Git]({% post_url
   platform/deployment/2000-01-01-deploy-with-git %})
 * [Let the platform fetch the code from GitHub]({% post_url
   platform/deployment/2000-01-01-deploy-with-github %})

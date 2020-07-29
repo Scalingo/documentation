@@ -2,7 +2,7 @@
 title: Deploy with GitLab
 modified_at: 2019-08-30 00:00:00
 tags: scm gitlab deployment
-index: 4
+index: 6
 ---
 
 You can deploy your Scalingo application with a code hosted on GitLab: either

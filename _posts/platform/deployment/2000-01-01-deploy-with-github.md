@@ -3,7 +3,7 @@ title: Deploy with GitHub and GitHub Enterprise
 nav: Deploy with GitHub
 modified_at: 2019-08-30 00:00:00
 tags: scm github github-enterprise deployment
-index: 3
+index: 5
 ---
 
 You can deploy your Scalingo application with a code hosted on GitHub or GitHub
