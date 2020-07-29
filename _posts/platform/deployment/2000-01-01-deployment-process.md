@@ -25,6 +25,10 @@ available to achieve this step:
 * [Sending the code in a tar achive]({% post_url
   platform/deployment/2000-01-01-deploy-from-archive %})
 
+{% note %}
+It is **NOT** possible to deploy your application using **FTP** on Scalingo.
+{% endnote %}
+
 Special deployment methods are available for JVM-based applications:
 
 * [Sending a built JAR or WAR archive]({% post_url
