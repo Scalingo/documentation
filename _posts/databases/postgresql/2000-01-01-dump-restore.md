@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my PostgreSQL database on Scalingo
 nav: Dump and Restore
-modified_at: 2020-03-31 18:04:00
+modified_at: 2020-07-31 00:00:00
 tags: databases postgresql tunnel
 index: 2
 ---
@@ -49,7 +49,7 @@ The command definition is:
 # We are using the SSH tunnel endpoint:
 $ DATABASE_URL=postgresql://<username>:<password>@127.0.0.1:10000/<db>
 
-$ pg_dump --clean --if-exists --format c --dbname $DATABASE_URL --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
+$ pg_dump --clean --if-exists --format c --dbname $DATABASE_URL --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
 ```
 
 With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
@@ -64,7 +64,7 @@ The command definition is:
 # We are using the SSH tunnel endpoint:
 $ DATABASE_URL=postgresql://<username>:<password>@127.0.0.1:10000/<db>
 
-$ pg_restore --clean --if-exists --no-owner --no-privileges --dbname $DATABASE_URL dump.pgsql
+$ pg_restore --clean --if-exists --no-owner --no-privileges --no-comments --dbname $DATABASE_URL dump.pgsql
 ```
 
 With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
@@ -92,12 +92,12 @@ data transfers will be way faster.
 $ scalingo --app my-app run bash
 
 [00:00] Scalingo ~ $ dbclient-fetcher psql
-[00:00] Scalingo ~ $ pg_dump --clean --if-exists --format c --no-owner --no-privileges --exclude-schema 'information_schema' --exclude-schema '^pg_*' --dbname $DATABASE_URL --file dump.pgsql
+[00:00] Scalingo ~ $ pg_dump --clean --if-exists --format c --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --dbname $DATABASE_URL --file dump.pgsql
 ...
 
 # Do something with the dump, i.e.e send through FTP or to an external server
 
-[00:00] Scalingo ~ $ pg_restore --clean --if-exists --no-owner --no-privileges --dbname $DATABASE_URL dump.pgsql
+[00:00] Scalingo ~ $ pg_restore --clean --if-exists --no-owner --no-privileges --no-comments --dbname $DATABASE_URL dump.pgsql
 ...
 [00:00] Scalingo ~ $ exit
 exit
