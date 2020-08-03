@@ -492,9 +492,6 @@
     old: "/app/ssl.html"
     new: "/platform/app/ssl"
   -
-    old: "/languages/javascript/meteor/spiderable-phantomjs-static-fragment/"
-    new: "/languages/meteorjs/phantomjs-spiderable-setup"
-  -
     old: "/languages/python/"
     new: "/languages/python/start"
   -
