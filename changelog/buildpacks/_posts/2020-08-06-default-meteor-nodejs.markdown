@@ -1,6 +1,6 @@
 ---
 modified_at: 2020-08-06 16:00:00
-title: 'Node.js: Meteor 1.9 and 1.10 uses Node.js 12 as default'
+title: 'Node.js: Meteor 1.9 and 1.10 use Node.js 12 as default'
 github: 'https://github.com/Scalingo/nodejs-buildpack'
 ---
 
