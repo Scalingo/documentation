@@ -27,7 +27,7 @@ modified_at: 2015-09-09 00:00:00
         </div>
         <div class="mdc-card__actions">
           <div class="mdc-card__action-buttons">
-            <a href="https://{{ item.url }}.scalingo.io" class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--text-primary-on-background">
+            <a href="https://{{ item.url }}.is-easy-on-scalingo.com" class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--text-primary-on-background">
               View app
             </a>
           </div>

@@ -109,94 +109,94 @@ highlighted:
       url: "/addons/scalingo-docker-image/start"
 
 samples:
-  - url: sample-ruby-rails
+  - url: ruby-rails
     name: Ruby/Rails
     logo: ruby-on-rails
-  - url: sample-ruby-sinatra
+  - url: ruby-sinatra
     name: Ruby/Sinatra
     logo: sinatra
-  - url: sample-go-martini
+  - url: go-martini
     name: Go/Martini
     logo: go
-  - url: sample-meteor
+  - url: meteor
     name: MeteorJS
     logo: meteorjs
-  - url: sample-node-express
+  - url: node-express
     name: NodeJS/Express
     logo: nodejs
-  - url: sample-node-meanjs
+  - url: node-meanjs
     name: NodeJS/MeanJS
     logo: mean-js
-  - url: sample-scala-scalatra
+  - url: scala-scalatra
     name: Scala/Scalatra
     logo: scala
-  - url: sample-php-laravel
+  - url: php-laravel
     name: PHP/Laravel
     logo: php-laravel
-  - url: sample-laravel-mix
+  - url: laravel-mix
     name: PHP/Laravel Mix
     logo: php-laravel
-  - url: sample-php-symfony
+  - url: php-symfony
     name: PHP/Symfony
     logo: php-symfony
-  - url: sample-php-lumen
+  - url: php-lumen
     name: PHP/Lumen
     logo: php-lumen
-  - url: sample-php-base
+  - url: php
     name: PHP
     logo: php
-  - url: sample-php-cron
+  - url: php-cron
     name: PHP/Cron
     logo: php
-  - url: sample-php-nodejs
+  - url: php-nodejs
     name: PHP/NodeJS
     logo: php
-  - url: sample-php-yii2
+  - url: php-yii2
     name: PHP/Yii 2
     logo: php-yii
-  - url: sample-php-slim
+  - url: php-slim
     name: PHP/Slim
     logo: php-slim
-  - url: sample-php-codeigniter
+  - url: php-codeigniter
     name: PHP/CodeIgniter
     logo: php-codeigniter
-  - url: sample-php-phalcon
+  - url: php-phalcon
     name: PHP/Phalcon
     logo: php-phalcon
-  - url: sample-python-celery
+  - url: python-celery
     name: Python/Celery
     logo: python
-  - url: sample-python-django
+  - url: python-django
     name: Python/Django
     logo: python-django
-  - url: sample-python-flask
+  - url: python-flask
     name: Python/Flask
     logo: python-flask
-  - url: sample-python2-flask
+  - url: python2-flask
     name: Python 2/Flask
     logo: python-flask
-  - url: sample-elixir-plug
+  - url: elixir-plug
     name: Elixir/Plug
     logo: elixir
-  - url: sample-crystal
+  - url: crystal
     name: Crystal
     logo: crystal
-  - url: sample-java-spark
+  - url: java-spark
     name: Java/Spark
     logo: java-spark
-  - url: sample-influxdb
+  - url: influxdb
     name: Go/InfluxDB
     logo: influxdb
-  - url: sample-java-grails3
+  - url: java-grails3
     name: Java/Grails 3
     logo: groovy-grails
-  - url: sample-node-mosca
+  - url: node-mosca
     name: NodeJS/Mosca/MQTT
     logo: mosca
-  - url: sample-kotlin
+  - url: kotlin
     name: Kotlin
     logo: kotlin
-  - url: sample-erlang
+  - url: erlang
     name: Erlang
     logo: erlang
 
