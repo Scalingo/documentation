@@ -1,7 +1,7 @@
 ---
 title: Deployment Process
 nav: Introduction
-modified_at: 2020-07-29 00:00:00
+modified_at: 2020-08-13 00:00:00
 index: 1
 tags: deployment
 ---
@@ -26,7 +26,9 @@ available to achieve this step:
   platform/deployment/2000-01-01-deploy-from-archive %})
 
 {% note %}
-It is **NOT** possible to deploy your application using **FTP** on Scalingo.
+It is **NOT** possible to deploy your application using **FTP** on Scalingo. FTP
+does not allow to efficiently track changes. Hence, it is not considered a good
+deployment practice.
 {% endnote %}
 
 Special deployment methods are available for JVM-based applications:
