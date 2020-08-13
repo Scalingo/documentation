@@ -2,7 +2,7 @@
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
 modified_at: 2020-05-19 00:00:00
-index: 5
+index: 7
 tags: deployment, java, jar, war
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Deployment Process
 nav: Introduction
-modified_at: 2019-08-30 00:00:00
+modified_at: 2020-08-13 00:00:00
 index: 1
 tags: deployment
 ---
@@ -16,7 +16,7 @@ The first step to trigger a deployment is to send the application itself to the
 platform (either the code or a build version of it). Multiple methods are
 available to achieve this step:
 
-* [Sending the code using git]({% post_url
+* [Sending the code using Git]({% post_url
   platform/deployment/2000-01-01-deploy-with-git %})
 * [Let the platform fetch the code from GitHub]({% post_url
   platform/deployment/2000-01-01-deploy-with-github %})
@@ -24,6 +24,12 @@ available to achieve this step:
   platform/deployment/2000-01-01-deploy-with-gitlab %})
 * [Sending the code in a tar achive]({% post_url
   platform/deployment/2000-01-01-deploy-from-archive %})
+
+{% note %}
+It is **NOT** possible to deploy your application using **FTP** on Scalingo. FTP
+does not allow to efficiently track changes. Hence, it is not considered a good
+deployment practice.
+{% endnote %}
 
 Special deployment methods are available for JVM-based applications:
 

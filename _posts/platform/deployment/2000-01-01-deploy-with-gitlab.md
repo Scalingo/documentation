@@ -2,7 +2,7 @@
 title: Deploy with GitLab
 modified_at: 2020-07-29 00:00:00
 tags: scm gitlab deployment
-index: 4
+index: 6
 ---
 
 {% note %}
