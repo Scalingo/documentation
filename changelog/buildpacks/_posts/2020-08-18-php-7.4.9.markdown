@@ -1,6 +1,6 @@
 ---
 modified_at: 2020-08-18 10:00:00
-title: 'PHP - Support of version 7.4.9 and 7.3.21, 7.2.33'
+title: 'PHP - Support of versions 7.4.9, 7.3.21 and 7.2.33'
 github: 'https://github.com/Scalingo/php-buildpack'
 ---
 
