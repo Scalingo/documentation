@@ -53,13 +53,13 @@ all the instances of the replica set to work.
 The command definition is:
 
 ```bash
-$ mongodump -u <username> -p <password> -h <host>:<port> -d <db>
+$ mongodump --username <username> --password <password> --host <host>:<port> --db <db>
 ```
 
 Applied to our example:
 
 ```bash
-$ mongodump -u my-db -p pass -h 127.0.0.1:10000 -d my-db
+$ mongodump --username my-db --password pass --host 127.0.0.1:10000 --db my-db
 ```
 
 The command will create a dump directory in your current working directory.
@@ -71,13 +71,13 @@ As you can see we use the host and port provided by the tunnel, not those of the
 The command definition is:
 
 ```bash
-$ mongorestore -u <username> -p <password> -h <host>:<port> -d <db> <dump directory>
+$ mongorestore --username <username> --password <password> --host <host>:<port> --db <db> <dump directory>
 ```
 
 With our example:
 
 ```bash
-$ mongorestore -u my-db -p pass -h 127.0.0.1:10000 -d my-db dump/my-db
+$ mongorestore --username my-db --password pass --host 127.0.0.1:10000 --db my-db dump/my-db
 ```
 
 In addition you may use the [`--drop`
@@ -98,7 +98,7 @@ data transfers will be way faster.
 ```bash
 $ scalingo --app my-app run bash
 
-[00:00] Scalingo ~ $ mongodump -u user -p pass -h my-db.mongo.dbs.scalingo.com:30000 -d my-db
+[00:00] Scalingo ~ $ mongodump --username user --password pass --host my-db.mongo.dbs.scalingo.com:30000 --db my-db
 
 # Do something with the dump, i.e send it with FTP or to an external server
 ```
@@ -110,7 +110,7 @@ $ scalingo --app my-app run bash
 
 # Get a dump from a remote place, with 'curl' or 'ftp'
 
-[00:00] Scalingo ~ $ mongorestore --uri $SCALINGO_MONGO_URL -d my-db dump/my-db
+[00:00] Scalingo ~ $ mongorestore --uri $SCALINGO_MONGO_URL --db my-db dump/my-db
 ```
 
 After exiting the one-off container, the dump will be lost, you've to do something with it in the container.
