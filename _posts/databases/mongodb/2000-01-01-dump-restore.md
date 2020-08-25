@@ -110,7 +110,7 @@ $ scalingo --app my-app run bash
 
 # Get a dump from a remote place, with 'curl' or 'ftp'
 
-[00:00] Scalingo ~ $ mongorestore -u my-db -p pass -h my-db.mongo.dbs.scalingo.com:30000 -d my-db dump/my-db
+[00:00] Scalingo ~ $ mongorestore --uri $SCALINGO_MONGO_URL -d my-db dump/my-db
 ```
 
 After exiting the one-off container, the dump will be lost, you've to do something with it in the container.
