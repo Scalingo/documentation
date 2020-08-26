@@ -26,6 +26,10 @@ You need to create a `.slugignore` file at the root of your project
 containing on each line the name of a file or directory you want to exclude
 from your image.
 
+{% note %}
+This file is interpreted by Bash. You can use some wildcards such as `*.txt`.
+{% endnote %}
+
 ## Examples
 
 ### Ruby Application
