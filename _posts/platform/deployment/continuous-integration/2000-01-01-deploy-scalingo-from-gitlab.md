@@ -25,7 +25,7 @@ after a success build on GitLab CI/CD, here are the steps to configure in your
 `.gitlab-ci.yml`:
 
 ```yaml
-deploydevelopment:
+deploy:development:
   stage: deploy
   variables:
     SCALINGO_APP_NAME: <app name>
