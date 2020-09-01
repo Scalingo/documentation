@@ -22,7 +22,7 @@ The four steps matches the four commands to be run using the CLI, which are the 
 
 - **migration-create**, where we check that the migration is doable; this step returns a migration ID that will be necessary to run the next steps or to abort the migration.
 - **migration-run --prepare**, where we copy the skeleton (the app, the collaborators, its configuration).
-- **migration-run --data**, where we copy the addons data. This step is **optionnal**. 
+- **migration-run --data**, where we copy the addons data. This step is **optionnal**.
 - **migration-run --finalize**, where we start the new app and redirect the traffic from the old app.
 
 The data migration step is optionnal in case you need to fully control this step, eg. if you have large volumes to migrate or if you want to change an addon version.
@@ -42,7 +42,7 @@ application to the new region. The migration can be prevented if your applicatio
 You can optionally specify the `--new-name` flag if you want a different name
 for your application on the destination region.
 
-The command will output a migration ID that will be required to run any of the next steps, including aborting the migration. 
+The command will output a migration ID that will be required to run any of the next steps, including aborting the migration.
 
 Example output:
 
@@ -68,7 +68,7 @@ In this case, there is nothing preventing the migration, and it is referenced un
 
 ### migration-run --prepare
 
-This step: 
+This step:
 
 - creates the application on the new region
 - replicates the container formation

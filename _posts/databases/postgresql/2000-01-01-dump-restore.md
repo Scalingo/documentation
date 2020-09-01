@@ -74,7 +74,6 @@ one hosted in the region where your database is hosted.
 
 - `osc-fr1`: [https://adminer.osc-fr1.scalingo.com](https://adminer.osc-fr1.scalingo.com).
 - `osc-secnum-fr1`: [https://adminer.osc-secnum-fr1.scalingo.com](https://adminer.osc-secnum-fr1.scalingo.com).
-- `agora-fr1`: [https://adminer.agora-fr1.scalingo.com](https://adminer.agora-fr1.scalingo.com).
 
 
 ## Dump and Restore from Scalingo one-off container

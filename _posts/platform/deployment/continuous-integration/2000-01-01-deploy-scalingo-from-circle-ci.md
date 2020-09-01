@@ -12,7 +12,7 @@ successful build.
 
 {% note %}
 Each time the token `[region]` is present in examples, replace it by the name of
-the region you are actually using (`osc-fr1`, `osc-secnum-fr1`, `agora-fr1`,
+the region you are actually using (`osc-fr1`, `osc-secnum-fr1`,
 etc.)
 {% endnote %}
 
