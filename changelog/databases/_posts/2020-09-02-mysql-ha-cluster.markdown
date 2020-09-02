@@ -1,5 +1,5 @@
 ---
-modified_at: 2020-02-26 10:00:00
+modified_at: 2020-09-02 10:00:00
 title: 'MySQL - Business Plans With HA Clusters'
 ---
 
