@@ -1,6 +1,3 @@
-- Agora Calycé:
-  - SSH Hostname: ssh.agora-fr1.scalingo.com
-  - SSH Port: 22
 - 3DS Outscale Paris:
   - SSH Hostname: ssh.osc-fr1.scalingo.com
   - SSH Port: 22
