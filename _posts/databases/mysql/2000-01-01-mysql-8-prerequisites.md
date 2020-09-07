@@ -50,5 +50,3 @@ proceeding. Here is the command to add a new column and set it as primary:
 ```sql
 ALTER TABLE 'my-table' ADD COLUMN <column description> PRIMARY KEY;
 ```
-
-fzefze
