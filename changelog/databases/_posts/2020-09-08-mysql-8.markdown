@@ -1,0 +1,8 @@
+---
+modified_at: 2020-09-08 10:00:00
+title: 'MySQL - Release of MySQL 8.0.21'
+---
+
+MySQL 8 is now available on Scalingo. There are a few prerequisites to upgrade
+to MySQL 8. You can read more about it on our
+[documentation](https://doc.scalingo.com/databases/mysql/mysql-8-prerequisites).
