@@ -1,5 +1,5 @@
 ---
-title: MySQL 8 Prerequisites
+title: Prerequisites Before Upgrading to MySQL 8
 modified_at: 2020-09-04 00:00:00
 tags: databases mysql addon
 index: 4
