@@ -1,5 +1,6 @@
 ---
-title: MySQL 8 Prerequisites
+title: Prerequisites Before Upgrading to MySQL 8
+nav: Upgrading to MySQL 8
 modified_at: 2020-09-04 00:00:00
 tags: databases mysql addon
 index: 4
@@ -20,11 +21,21 @@ SELECT table_schema, table_name FROM information_schema.tables \
   WHERE table_schema IN ('my-app-3030') AND engine != 'InnoDB';
 ```
 
-If this command returns at least one table, you need to update their storage
-engine with the following command:
+Here is the output of this command if the `foo` table use another storage engine than InnoDB:
+
+```text
++--------------+------------+
+| table_schema | table_name |
++--------------+------------+
+| my-app-3030  | foo        |
++--------------+------------+
+1 row in set (0.00 sec)
+```
+
+In this situation, you need to update `foo`'s storage engine with the following command:
 
 ```sql
-ALTER TABLE 'my-table' ENGINE = 'InnoDB';
+ALTER TABLE 'foo' ENGINE = 'InnoDB';
 ```
 
 ## Mandatory Primary Keys
@@ -43,10 +54,19 @@ SELECT information_schema.tables.table_schema, information_schema.tables.table_n
   c.constraint_name IS NULL;
 ```
 
-If this command returns at least one table, you need to add a primary key to
-these tables. You need to evaluate the impact of this modification before
-proceeding. Here is the command to add a new column and set it as primary:
+Here is the output of this command if the `foo` table does not have a primary key:
+
+```text
++--------------+------------+
+| table_schema | table_name |
++--------------+------------+
+| my-app-3030  | foo        |
++--------------+------------+
+1 row in set (0.00 sec)
+```
+
+In this situation, you need to add a primary key to the `foo` table. You need to evaluate the impact of this modification before proceeding. Here is the command to add a new column and set it as primary:
 
 ```sql
-ALTER TABLE 'my-table' ADD COLUMN <column description> PRIMARY KEY;
+ALTER TABLE 'foo' ADD COLUMN <column description> PRIMARY KEY;
 ```
