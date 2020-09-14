@@ -60,3 +60,28 @@ issues]({% post_url platform/getting-started/2000-01-01-troubleshooting-ssh %}).
 See [Deployment Environment]({% post_url platform/app/2000-01-01-environment
 %}#build-environment) to configure your application and [Procfile]({% post_url
 platform/app/2000-01-01-procfile %}).
+
+### Clone your code
+
+{% warning %}
+  A Scalingo Git repository is intended for deployment purposes only. Cloning
+  from this repository is not officially supported as a feature and should only
+  be attempted as a last resort.  Do not use Scalingo's repository for code
+  storage. Instead, use your own Git server or a Git hosting service like
+  GitHub or GitLab.
+{% endwarning %}
+
+Once a deployment has succeeded, you can recover the code you pushed to Scalingo using:
+
+```
+git clone --origin scalingo git@ssh.osc-fr1.scalingo.com:my-app.git
+```
+
+This will create a copy of the git history hosted in Scalingo repositories.
+It will also add the `scalingo` remote to simplify future pushes.
+
+{% note %}
+  Only git operations will be available via git clone. If you deployed your app
+  in any other way (GitLab / GitHub integration, archive, ...) the changes made
+  to your code wont be available.
+{% endnote %}
