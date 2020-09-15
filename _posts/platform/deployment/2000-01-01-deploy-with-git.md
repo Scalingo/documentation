@@ -77,11 +77,11 @@ Once a deployment has succeeded, you can recover the code you pushed to Scalingo
 git clone --origin scalingo git@ssh.osc-fr1.scalingo.com:my-app.git
 ```
 
-This will create a copy of the git history hosted in Scalingo repositories.
+This will create a copy of the Git history hosted in Scalingo repositories.
 It will also add the `scalingo` remote to simplify future pushes.
 
 {% note %}
-  Only git operations will be available via git clone. If you deployed your app
+  Only Git operations will be available via `git clone`. If you deployed your app
   in any other way (GitLab / GitHub integration, archive, ...) the changes made
-  to your code wont be available.
+  to your code won't be available.
 {% endnote %}
