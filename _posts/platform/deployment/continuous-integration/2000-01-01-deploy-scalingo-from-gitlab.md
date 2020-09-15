@@ -38,8 +38,10 @@ deploy:development:
     - develop
   script:
     - gem install dpl --pre
-    - dpl --provider=scalingo --app=$SCALINGO_APP_NAME --api-token=$SCALINGO_API_TOKEN --region=$SCALINGO_REGION
+    - dpl --provider=scalingo --app=$SCALINGO_APP_NAME --api-token=$SCALINGO_API_TOKEN --region=$SCALINGO_REGION --branch=refs/heads/master
 ```
+
+Specifying the remote branch (```--branch```) is necessary, otherwise you will get an error (```unable to push to unqualified destination: master```).
 
 {% note %}
 It is important to install dpl with the `--pre` flag. This is due to an issue in
