@@ -61,7 +61,7 @@ See [Deployment Environment]({% post_url platform/app/2000-01-01-environment
 %}#build-environment) to configure your application and [Procfile]({% post_url
 platform/app/2000-01-01-procfile %}).
 
-### Clone your code
+### Clone Your Code
 
 {% warning %}
   A Scalingo Git repository is intended for deployment purposes only. Cloning
