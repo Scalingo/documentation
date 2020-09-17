@@ -1,7 +1,7 @@
 ---
 title: Deploying WordPress on Scalingo
 nav: WordPress
-modified_at: 2020-01-29 00:00:00
+modified_at: 2020-09-17 00:00:00
 tags: php, http, framework, wordpress, deployment
 index: 99
 ---
@@ -236,10 +236,10 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 If you configured your MySQL with [Force TLS]({% post_url
 databases/mysql/2000-01-01-start %}#force-tls-connections), it is mandatory
 that your application connects to the database using TLS. With WordPress, you
-need to add the following line in your `wp-config.php`:
+need to add the following line in your `config/application.php`:
 
 ```php
-define('DB_SSL', true);
+Config::define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
 ```
 
 ## Uploads
