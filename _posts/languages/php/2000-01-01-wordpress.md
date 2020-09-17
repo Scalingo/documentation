@@ -152,7 +152,7 @@ that road.
 
 By default WordPress uses a configuration file to configure a deployed
 application. In order to add environment variables support, you must edit the
-`wp-config.php` file to read the `DATABASE_URL` environment variable.
+`config/application.php` file to read the `DATABASE_URL` environment variable.
 
 This can be done by adding those lines:
 
@@ -164,26 +164,26 @@ $db = substr($mysql_url['path'], 1);
 And changing the `DB_*` definitions to:
 
 ```php
-define('DB_NAME', $db);
-define('DB_USER', $mysql_url['user']);
-define('DB_PASSWORD', $mysql_url['pass']);
-define('DB_HOST', $mysql_url['host'] . ":" . $mysql_url['port']);
+Config::define('DB_NAME', $db);
+Config::define('DB_USER', $mysql_url['user']);
+Config::define('DB_PASSWORD', $mysql_url['pass']);
+Config::define('DB_HOST', $mysql_url['host'] . ":" . $mysql_url['port']);
 ```
 
 You must do the same things for all your salts and keys. We recommend using a
 common environment variable and set it to a random string. You must adapt your
-`wp-config.php` to use this variable:
+`config/application.php` to use this variable:
 
 ```php
 $key = $_ENV["SECURE_KEY"];
-define('AUTH_KEY',         $key);
-define('SECURE_AUTH_KEY',  $key);
-define('LOGGED_IN_KEY',    $key);
-define('NONCE_KEY',        $key);
-define('AUTH_SALT',        $key);
-define('SECURE_AUTH_SALT', $key);
-define('LOGGED_IN_SALT',   $key);
-define('NONCE_SALT',       $key);
+Config::define('AUTH_KEY',         $key);
+Config::define('SECURE_AUTH_KEY',  $key);
+Config::define('LOGGED_IN_KEY',    $key);
+Config::define('NONCE_KEY',        $key);
+Config::define('AUTH_SALT',        $key);
+Config::define('SECURE_AUTH_SALT', $key);
+Config::define('LOGGED_IN_SALT',   $key);
+Config::define('NONCE_SALT',       $key);
 ```
 
 The only thing left is to define the `SECURE_KEY` from the dashboard or by
@@ -204,9 +204,9 @@ However in an environment like Scalingo, applications are behind a routing
 layer which acts as proxy, which prevent WordPress to correctly detect the use
 of HTTPS.
 
-To fix this problem, you need to add the following in your `wp-config.php` file
+To fix this problem, you need to add the following in your `config/application.php` file
 ([official
-documentation](https://codex.wordpress.org/Function_Reference/is_ssl#Notes)):
+documentation](https://developer.wordpress.org/reference/functions/is_ssl/)):
 
 ```php
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
@@ -225,10 +225,10 @@ Since the container file system is volatile, plugins and addon should be
 installed and updated within your Git repository and never via the web
 interface. You must de-activate auto-update of all your WordPress components.
 
-To do that add the following line to your `wp-config.php`:
+To do that add the following line to your `config/application.php`:
 
 ```php
-define('AUTOMATIC_UPDATER_DISABLED', true);
+Config::define('AUTOMATIC_UPDATER_DISABLED', true);
 ```
 
 ### TLS Connection to MySQL
