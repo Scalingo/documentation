@@ -40,8 +40,7 @@ ALTER TABLE 'foo' ENGINE = 'InnoDB';
 
 ## Mandatory Primary Keys
 
-All tables **must** have a primary key configured. You can check which tables
-use a different storage engine with the SQL command:
+All tables **must** have a primary key configured. You can check which tables do not have any primary key with the SQL command:
 
 ```sql
 SELECT information_schema.tables.table_schema, information_schema.tables.table_name \
