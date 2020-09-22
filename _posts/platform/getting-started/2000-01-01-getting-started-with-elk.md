@@ -148,7 +148,7 @@ set to `Alenala` and a field `message` set to `Hi!`.
 
 To deploy Kibana on Scalingo, you are invited to use our one-click button
 over here: [![Deploy on
-Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/kibana-scalingo)
+Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.osc-fr1.scalingo.com/deploy?source=https%3A%2F%2Fgithub.com%2FScalingo%2Fkibana-scalingo)
 
 The `ELASTICSEARCH_URL` environment variable from the previously created
 Logstash application should be used in the deployment process:
