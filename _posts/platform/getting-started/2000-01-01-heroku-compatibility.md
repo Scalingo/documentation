@@ -1,6 +1,6 @@
 ---
 title: Heroku Compatibility
-modified_at: 2018-09-10 21:00:00
+modified_at: 2020-09-25 00:00:00
 tags: heroku
 index: 10
 ---
@@ -28,18 +28,18 @@ Some buildpacks are written and maintained by our own. It's open source. Check
 our [GitHub account](https://github.com/Scalingo/?query=buildpack) to see the
 whole list.
 
-## Environment variables
+## Environment Variables
 
 Because we'd like to conform as much as possible to the
 [12-factor](http://12factor.net/) principle, you can configure your app through
 [environment variables]({% post_url platform/app/2000-01-01-environment %})
 which are injected into the context of your application.
 
-## Realtime deployment
+## Realtime Deployment
 
 Based on a Git hook. Just git push your code!
 
-## Open API and command line client
+## Open API and Command Line Client
 
 * [Open API](http://developers.scalingo.com/)
 * [Command Line Interface client](http://cli.scalingo.com/)
