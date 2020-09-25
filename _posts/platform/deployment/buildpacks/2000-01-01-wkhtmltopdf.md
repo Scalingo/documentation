@@ -4,7 +4,7 @@ modified_at: 2016-10-27 00:00:00
 tags: buildpacks build wkhtmltopdf
 ---
 
-## Purpose of this buildpack
+## Purpose of This Buildpack
 
 This is a buildpack that installs [wkhtmltopdf](http://wkhtmltopdf.org) into a container image.
 
@@ -18,7 +18,7 @@ You may find useful to use such a tool as part of your web application. Hence, w
 
 Please be aware that this software is known to have different rendering depending on the installed version. This buildpack installs a specific version known to work on our infrastructure that might render things differently than your local installation.
 
-## Set up this buildpack for your application
+## Set up This Buildpack for Your Application
 
 We describe in this section the different step to reproduce in order to use this buildpack depending on the technology you use.
 
