@@ -58,8 +58,8 @@ os.getenv("PORT")
 
 #### PHP
 
-```ruby
-$_env["port"]
+```php
+$_ENV["port"]
 ```
 
 #### Other Languages
@@ -85,7 +85,7 @@ scalingo -a my-app env-set "MY_VAR=$(cat fichier | base64 -w 0)"
 You can now read the content of this environment variable in your application by decoding the content of the variable. For instance, in PHP:
 
 ```php
-base64_decode(env('MY_VAR'))
+base64_decode($_ENV('MY_VAR'))
 ```
 
 Most programming languages offer a way to decode a Base64 content.
