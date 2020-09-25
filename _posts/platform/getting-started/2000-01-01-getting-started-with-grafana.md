@@ -33,14 +33,9 @@ $ cd grafana-scalingo
 $ git remote add scalingo git@ssh.osc-fr1.scalingo.com:my-app.git
 ```
 
-We now need to slightly configure the Scalingo application. First, this
+We now need to slightly configure the Scalingo application. This
 application needs to use the [multi-buildpacks]({% post_url
-platform/deployment/buildpacks/2000-01-01-multi %}). Add the `BUILDPACK_URL`
-environment variable:
-
-```bash
-$ scalingo --app my-name env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack.git
-```
+platform/deployment/buildpacks/2000-01-01-multi %}).
 
 You also need to add a PostgreSQL addon to your application. Last, configure a
 few Grafana specific environment variables by heading to your application web

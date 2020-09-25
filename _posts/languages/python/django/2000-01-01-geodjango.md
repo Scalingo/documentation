@@ -43,20 +43,11 @@ buildpack along with the default Python buildpack.
   buildpacks</a>.
 {% endnote %}
 
-Create a `.buildpacks` file at the root of your project with the following
-content:
+Create a `.buildpacks` file at the root of your project with the following content to make use of the [multi buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}):
 
 ```text
 https://github.com/Scalingo/geo-buildpack
 https://github.com/Scalingo/python-buildpack
-```
-
-Then setup the [multi buildpack]({% post_url
-platform/deployment/buildpacks/2000-01-01-multi %}) for your project to handle
-this file:
-
-```bash
-scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack
 ```
 
 ### Deploy your application
