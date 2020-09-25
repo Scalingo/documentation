@@ -33,9 +33,9 @@ the container ready to get requests. Otherwise, the operation is aborted with a
   'timeout-error'** and you'll have to fix why your application has not been
   listening in time on the corresponding port.
 
-* In a restart operation, we'll retry to start the container 20 times with
+* In a restart or scale operation, we will retry to start the container 20 times with
   exponential backoff, then you'll receive a notification email with a notice
-  telling you that the scheduler didn't manage to restart your container.
+  telling you that the scheduler didn't manage to start your container.
 
 Once the application is ready, the traffic is diverted to the newly booted
 container(s), and the order to stop old containers is passed.
