@@ -563,6 +563,9 @@
   -
     old: "/platform/app/github-integration"
     new: "/platform/app/scm-integration"
+  -
+    old: "/languages/php/wordpress"
+    new: "/platform/getting-started/getting-started-with-wordpress"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

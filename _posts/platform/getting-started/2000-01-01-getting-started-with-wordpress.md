@@ -1,9 +1,8 @@
 ---
-title: Deploying WordPress on Scalingo
-nav: WordPress
-modified_at: 2020-09-17 00:00:00
+title: Getting Started with WordPres on Scalingo
+modified_at: 2020-09-25 00:00:00
 tags: php, http, framework, wordpress, deployment
-index: 99
+index: 14
 ---
 
 ## Detection
