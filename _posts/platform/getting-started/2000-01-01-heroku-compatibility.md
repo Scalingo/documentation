@@ -16,7 +16,7 @@ the [dedicated Procfile page]({% post_url platform/app/2000-01-01-procfile %})
 for more informations.
 
 The Procfile `release` entry does not exist on Scalingo thus it won't be executed. The
-[postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %}) exists with similar functionnality. The difference is that the
+[postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %}) exists with similar functionality. The difference is that the
 *postdeploy* hook is only getting executed at the end of a successful
 deployment, not at each change of variable/addon modification (creating a
 release).
