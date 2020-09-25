@@ -1,11 +1,11 @@
 ---
 title: Container Management
-modified_at: 2016-11-16 00:00:00
+modified_at: 2020-09-25 00:00:00
 tags: internals containers
 index: 1
 ---
 
-## Zero-downtime operations
+## Zero-Downtime Operations
 
 The platform is ensuring **zero downtime deployments**: when a new version of
 your application is deployed, the system is waiting for the new version of the
@@ -19,7 +19,7 @@ With this feature, it let you achieve **rolling release/continuous delivery**
 easily. There is no friction when a new version of your software is deployed,
 your users won't even notice it.
 
-## Starting new containers
+## Starting New Containers
 
 When a new `web` or `tcp` container is started, its environment contains the `PORT`
 environment variable. Your application must listen on this port in order to
@@ -33,9 +33,9 @@ the container ready to get requests. Otherwise, the operation is aborted with a
   'timeout-error'** and you'll have to fix why your application has not been
   listening in time on the corresponding port.
 
-* In a restart operation, we'll retry to start the container 20 times with
+* In a restart or scale operation, we will retry to start the container 20 times with
   exponential backoff, then you'll receive a notification email with a notice
-  telling you that the scheduler didn't manage to restart your container.
+  telling you that the scheduler didn't manage to start your container.
 
 Once the application is ready, the traffic is diverted to the newly booted
 container(s), and the order to stop old containers is passed.
@@ -51,7 +51,7 @@ release and stopping old containers.
   developing them idempotent in the potential case where a scheduled task is handled twice.
 {% endnote %}
 
-## Shutdown of old containers
+## Shutdown of Old Containers
 
 We have adopted a standard process:
 
