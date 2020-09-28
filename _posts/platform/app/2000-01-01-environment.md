@@ -59,7 +59,7 @@ os.getenv("PORT")
 #### PHP
 
 ```php
-$_ENV["port"]
+$_ENV["PORT"]
 ```
 
 #### Other Languages
