@@ -12,14 +12,9 @@ application, this buildpack will fit this need.
 
 ## Set up this buildpack for your application
 
-This buildpack won't work alone, you need to combine it with the buildpack of the technology you are using. To achieve
-that you need to setup the [multi-buildpacks]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}):
+This buildpack won't work alone, you need to combine it with the buildpack of the technology you are using. To achieve that you need to make use of the [multi-buildpacks]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}).
 
-```bash
-scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack.git
-```
-
-Then you have to write a `.buildpacks` file with the reference to this buildpack and the one
+You have to write a `.buildpacks` file with the reference to this buildpack and the one
 you want to use:
 
 ```bash

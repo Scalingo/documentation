@@ -18,16 +18,7 @@ installation, you better use the real Node.js buildpack. In this case, one
 should use [multi buildpacks]({% post_url
 platform/deployment/buildpacks/2000-01-01-multi %}). Here is how to do that.
 
-In order to use [multi buildpacks]({% post_url
-platform/deployment/buildpacks/2000-01-01-multi %}), you first need to specify
-the `BUILDPACK_URL` environment variable. Head to the web dashboard or use our
-CLI:
-
-```bash
-scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack.git
-```
-
-Then add a file named `.buildpacks` at the root of your application containing
+Add a file named `.buildpacks` at the root of your application containing
 (the order of the two lines is important):
 
 ```text

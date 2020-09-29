@@ -40,14 +40,7 @@ gem "name-of-gem", git: "git@private-server.com:namespace/private-gem.git"
 
 ## Configure the buildpack
 
-To use the private key buildpack, your application should be using the multi buildpack,
-allowing to chain multiple buildpacks.
-
-```
-$ scalingo env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack.git
-```
-
-Chain the private key buildpack, and the ruby buildpack:
+To use the private key buildpack, your application should be using the multi buildpack, allowing to chain multiple buildpacks. Chain the private key buildpack, and the ruby buildpack:
 
 ```
 $ cat << EOF > .buildpacks
