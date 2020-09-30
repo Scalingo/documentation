@@ -34,6 +34,10 @@ among open PRs of your app to manually deploy a review app.
 {% assign img_url = "https://cdn.scalingo.com/blog/20161020-github-integration/review_apps.png" %}
 {% include mdl_img.html %}
 
+{% note %}
+If one manually deletes a review app, it will not be automatically created again after a deployment. You need to manually deploy a new one.
+{% endnote %}
+
 ## Addons, Collaborators and Environment Variables
 
 If you've enabled review apps, a new application will be created every time a
