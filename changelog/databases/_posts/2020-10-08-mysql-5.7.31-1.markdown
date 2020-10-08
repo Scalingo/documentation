@@ -1,0 +1,15 @@
+---
+modified_at: 2020-10-08 12:00:00
+title: 'MySQL - New version: 5.7.31-1 and 5.6.49-1'
+---
+
+New default version: **5.7.31-1**
+
+Changelog:
+* [MySQL 5.7.31](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-31.html)
+* [MySQL 5.6.49](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-49.html)
+
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/mysql):
+
+* `scalingo/mysql:5.7.31-1`
+* `scalingo/mysql:5.6.49-1`
