@@ -94,7 +94,7 @@ $ scalingo --app my-app run bash
 [00:00] Scalingo ~ $ pg_dump --clean --if-exists --format c --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --dbname $DATABASE_URL --file dump.pgsql
 ...
 
-# Do something with the dump, i.e.e send through FTP or to an external server
+# Do something with the dump, e.g. send through FTP or to an external server
 
 [00:00] Scalingo ~ $ pg_restore --clean --if-exists --no-owner --no-privileges --no-comments --dbname $DATABASE_URL dump.pgsql
 ...
