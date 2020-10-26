@@ -1,6 +1,6 @@
 ---
 title: Scalingo JSON Manifest
-modified_at: 2018-09-10 00:00:00
+modified_at: 2020-10-26 00:00:00
 tags: app review apps one-click manifest
 ---
 
@@ -10,18 +10,18 @@ platform/app/2000-01-01-review-apps %}) and [one-click deploy button]({%
 post_url platform/deployment/2000-01-01-one-click-deploy %}), its intent is
 to configure how an application should be created.
 
-## Configuration of the environment
+## Configuration of the Environment
 
 The `scalingo.json` manifest can be used to customize the environment of the
 application.
 
-### Review apps
+### Review Apps
 
 Variables described in the manifest are created when the review app is created,
 if one of those variables is present in the parent app environment, it will be
 replaced following the manifest rule.
 
-### One-click deployment
+### One-Click Deployment
 
 The manifest describes the default values of the environment variables, the user
 can still customize them before triggering the deployment.
@@ -45,17 +45,17 @@ can still customize them before triggering the deployment.
 }
 ```
 
-## Configuration of addons
+## Configuration of Addons
 
 Addons can also be declared in the JSON manifest, it is following the format `name:plan`.
 
-### Review apps
+### Review Apps
 
 By default, addons are copied from the parent app, if you want to change the plan the review app
 will be using, or to avoid using some of them which only make sense in production, you can specify
 the list of addons in the manifest.
 
-### One-click deployments
+### One-Click Deployments
 
 Addons declared in the manifest will be provisioned before starting the deployment of the application.
 
@@ -68,13 +68,13 @@ Addons declared in the manifest will be provisioned before starting the deployme
 ```
 
 {% note %}
-You can use the CLI  
-`scalingo addons-list`  
-`scalingo addons-plans {addon-name}`  
+You can use the CLI
+`scalingo addons-list`
+`scalingo addons-plans {addon-name}`
 to get addon names and their plans.
 {% endnote %}
 
-## Deployment hooks
+## Deployment Hooks
 
 The JSON manifest also lets you declare scripts which will be executed as
 [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %})
@@ -99,7 +99,7 @@ as the `scalingo.json` is only used once at the app creation.
 }
 ```
 
-## Reference documentation
+## Reference Documentation
 
 You can find the comprehensive documentation about the structure of the
 Scalingo JSON Manifest in our [developers documentation](https://developers.scalingo.com/scalingo-json-schema)
