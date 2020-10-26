@@ -1,6 +1,6 @@
 ---
 title: Post-deployment hook
-modified_at: 2020-05-19 00:00:00
+modified_at: 2020-10-26 00:00:00
 tags: app deployment hook postdeploy
 index: 13
 ---
@@ -56,11 +56,12 @@ contains the environment variables from your app, with the one we inject in any
 ## Limits
 
 * Duration: a postdeploy hook should be achieved in less than **20 minutes**,
-    otherwise the process will be stopped and the status `-128` will be
-    returned. If you have long task to achieve after a deployment, it is
-    recommended **not** to use a `postdeploy` hook but a
-    [one-off container]({% post_url platform/app/2000-01-01-tasks%}) once the
-    deployment has been done.
+  otherwise the process will be stopped and the status `-128` will be
+  returned. If you have long task to achieve after a deployment, it is
+  recommended **not** to use a `postdeploy` hook but a
+  [one-off container]({% post_url platform/app/2000-01-01-tasks%}) once the
+  deployment has been done.
+* Memory available: a postdeploy hook is executed in a M container (512 MB RAM available).
 
 ## Examples
 
