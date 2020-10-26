@@ -1,6 +1,6 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2020-08-03 00:00:00
+modified_at: 2020-10-26 00:00:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
@@ -48,7 +48,7 @@ $ cd logstash-boilerplate
 Next, create an application on Scalingo that will run our Logstash app:
 
 ```bash
-$ scalingo create my-awesome-logstash --buildpack https://github.com/Scalingo/multi-buildpack.git
+$ scalingo create my-awesome-logstash
 ```
 
 Add the Elasticsearch addon to this application:
