@@ -47,11 +47,19 @@ can still customize them before triggering the deployment.
 
 ## Configuration of Addons
 
-Addons can also be declared in the JSON manifest, it is following the format `name:plan`.
+Addons can also be declared in the JSON manifest. The format is the following:
+
+```json
+{
+  "addon_provider_id": "mongodb",
+  "plan_id": "mongo-sandbox",
+  "options": {  }
+}
+```
 
 ### Review Apps
 
-By default, addons are copied from the parent app, if you want to change the plan the review app
+By default, addons are copied from the parent app. If you want to change the plan the review app
 will be using, or to avoid using some of them which only make sense in production, you can specify
 the list of addons in the manifest.
 
@@ -63,7 +71,15 @@ Addons declared in the manifest will be provisioned before starting the deployme
 
 ```json
 {
-  "addons": ["mongodb:mongo-sandbox", "redis:redis-sandbox"]
+  "addons": [
+    {
+      "addon_provider_id": "mongodb",
+      "plan_id": "mongo-sandbox",
+      "options": {
+        "version": "4.0.19-1"
+      }
+    }
+  ]
 }
 ```
 
