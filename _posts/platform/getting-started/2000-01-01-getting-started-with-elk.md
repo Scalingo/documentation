@@ -261,7 +261,7 @@ application:
 
 ```
 PyYAML==5.3.1
-elasticsearch-curator==5.8.0
+elasticsearch-curator==5.8.1
 ```
 
 
