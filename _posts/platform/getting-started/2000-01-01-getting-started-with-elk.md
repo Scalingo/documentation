@@ -250,9 +250,9 @@ can modify the `.buildpacks` file to add the Python buildpack. The
 `.buildpacks` file should have the following content:
 
 ```
-https://github.com/Scalingo/buildpack-jvm-common.git
-https://github.com/Scalingo/python-buildpack.git
-https://github.com/Scalingo/logstash-buildpack.git
+https://github.com/Scalingo/buildpack-jvm-common
+https://github.com/Scalingo/python-buildpack
+https://github.com/Scalingo/logstash-buildpack
 ```
 
 In order to instruct the Python buildpack to install Curator and its
