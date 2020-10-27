@@ -183,7 +183,7 @@ platform/app/2000-01-01-log-drain %}) to your application.
 
 When using this configuration, the application name and container index will be
 passed in the http query and the message will be in the request body. To parse
-this and create meaningful index, you can use the following configuration (if
+this and create meaningful index, you can use the following Logstash configuration (if
 your logs are JSON formatted):
 
 ```
