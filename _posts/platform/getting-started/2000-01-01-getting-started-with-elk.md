@@ -257,7 +257,7 @@ https://github.com/Scalingo/logstash-buildpack
 
 In order to instruct the Python buildpack to install Curator and its
 dependencies, create a file named `requirements.txt` at the root of your
-project:
+application:
 
 ```
 PyYAML==5.3.1
