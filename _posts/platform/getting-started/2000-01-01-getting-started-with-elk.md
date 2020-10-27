@@ -245,8 +245,8 @@ This is where
 [Curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.8/index.html)
 is needed. This project is designed to let you manage your indices life cycle.
 
-Curator is written in Python. In order to install its dependencies, you
-can modify the `.buildpacks` file to also contain the Python buildpack. The
+Curator can be installed on the existing Logstash application `my-awesome-logstash`. As Curator is written in Python, you
+can modify the `.buildpacks` file to add the Python buildpack. The
 `.buildpacks` file should have the following content:
 
 ```
