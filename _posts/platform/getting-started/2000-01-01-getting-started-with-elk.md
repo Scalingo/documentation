@@ -265,10 +265,10 @@ elasticsearch-curator==5.8.1
 ```
 
 
-Curator is not a deamon, it is designed as a one-off process. To be able
+Curator is not a daemon, it is designed as a one-off process. To be able
 to run it on Scalingo you need to write a Bash script that executes
 Curator regularly.
-Create a file named `curator.sh` with the following content:
+Create a script named `curator.sh` with the following content:
 
 ```bash
 #!/bin/bash
