@@ -228,7 +228,7 @@ output {
     hosts => "${ELASTICSEARCH_HOST}"
     user => "${ELASTICSEARCH_USER}"
     password => "${ELASTICSEARCH_PASSWORD}"
-    index => "sc-apps-%{+YYYY.MM.dd}"
+    index => "unicorns-%{+YYYY.MM.dd}"
   }
 }
 ```
@@ -294,7 +294,7 @@ curator: ./curator.sh
 All the hard stuff is now done.
 
 Next step is to configure Curator. First you need to configure how Curator
-connects to your database:
+connects to your database. Create a file `curator.yml` with the following content:
 
 ```
 ---
@@ -347,13 +347,13 @@ actions:
 You now need to add two environment variables:
 
 ```
-LOGS_INDICES_PREFIX=sc-apps
+LOGS_INDICES_PREFIX=unicorns
 LOGS_RETENTION_DAYS=10
 ```
 
 The first environment variable is `LOGS_INDICES_PREFIX`. It configures the
 index pattern that should be affected by this policy. Setting this variable
-to `sc-apps` prevent Curator from deleting the other indices that are stored
+to `unicorns` prevent Curator from deleting the other indices that are stored
 in the same database.
 
 The second environment variable is `LOGS_RETENTION_DAYS`. It configures
