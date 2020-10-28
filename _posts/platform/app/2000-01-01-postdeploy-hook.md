@@ -1,6 +1,6 @@
 ---
 title: Post-deployment hook
-modified_at: 2020-10-26 00:00:00
+modified_at: 2020-10-28 00:00:00
 tags: app deployment hook postdeploy
 index: 13
 ---
@@ -61,7 +61,7 @@ contains the environment variables from your app, with the one we inject in any
   recommended **not** to use a `postdeploy` hook but a
   [one-off container]({% post_url platform/app/2000-01-01-tasks%}) once the
   deployment has been done.
-* Memory available: a postdeploy hook is executed in a M container (512 MB RAM available).
+* Memory available: a postdeploy hook is executed in a M container (512 MB RAM available). This size is modifiable upon request on the support.
 
 ## Examples
 
