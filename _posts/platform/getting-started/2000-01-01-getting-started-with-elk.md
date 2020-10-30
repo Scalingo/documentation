@@ -1,6 +1,6 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2020-08-03 00:00:00
+modified_at: 2020-10-26 00:00:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
@@ -48,13 +48,13 @@ $ cd logstash-boilerplate
 Next, create an application on Scalingo that will run our Logstash app:
 
 ```bash
-$ scalingo create my-awesome-logstash --buildpack https://github.com/Scalingo/multi-buildpack.git
+$ scalingo create my-awesome-logstash
 ```
 
 Add the Elasticsearch addon to this application:
 
 ```bash
-$ scalingo --app my-awesome-logstash addons-add scalingo-elasticsearch elasticsearch-starter-1024
+$ scalingo --app my-awesome-logstash addons-add elasticsearch elasticsearch-starter-1024
 ```
 
 All the Elasticsearch plans are described [here](https://scalingo.com/addons/scalingo-elasticsearch).
@@ -96,7 +96,7 @@ will be up and running!
 You can now try to send some data to your Logstash instance:
 
 ```bash
-$ curl --request POST 'http://my-awesome-logstash-user:iloveunicorns@my-awesome-logstash.osc-fr1.scalingo.io?name=Alanala' --data 'Hi!'
+$ curl --request POST 'https://my-awesome-logstash-user:iloveunicorns@my-awesome-logstash.osc-fr1.scalingo.io?name=Alanala' --data 'Hi!'
 ok
 ```
 
@@ -183,7 +183,7 @@ platform/app/2000-01-01-log-drain %}) to your application.
 
 When using this configuration, the application name and container index will be
 passed in the http query and the message will be in the request body. To parse
-this and create meaningful index, you can use the following configuration (if
+this and create meaningful index, you can use the following Logstash configuration (if
 your logs are JSON formatted):
 
 ```
@@ -228,7 +228,7 @@ output {
     hosts => "${ELASTICSEARCH_HOST}"
     user => "${ELASTICSEARCH_USER}"
     password => "${ELASTICSEARCH_PASSWORD}"
-    index => "sc-apps-%{+YYYY.MM.dd}"
+    index => "unicorns-%{+YYYY.MM.dd}"
   }
 }
 ```
@@ -245,30 +245,30 @@ This is where
 [Curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.8/index.html)
 is needed. This project is designed to let you manage your indices life cycle.
 
-Curator is written in Python. In order to install its dependencies, you
-can modify the `.buildpacks` file to also contain the Python buildpack. The
+Curator can be installed on the existing Logstash application `my-awesome-logstash`. As Curator is written in Python, you
+can modify the `.buildpacks` file to add the Python buildpack. The
 `.buildpacks` file should have the following content:
 
 ```
-https://github.com/Scalingo/buildpack-jvm-common.git
-https://github.com/Scalingo/python-buildpack.git
-https://github.com/Scalingo/logstash-buildpack.git
+https://github.com/Scalingo/buildpack-jvm-common
+https://github.com/Scalingo/python-buildpack
+https://github.com/Scalingo/logstash-buildpack
 ```
 
 In order to instruct the Python buildpack to install Curator and its
 dependencies, create a file named `requirements.txt` at the root of your
-project:
+application:
 
 ```
 PyYAML==5.3.1
-elasticsearch-curator==5.8.0
+elasticsearch-curator==5.8.1
 ```
 
 
-Curator is not a deamon, it is designed as a one-off process. To be able
+Curator is not a daemon, it is designed as a one-off process. To be able
 to run it on Scalingo you need to write a Bash script that executes
 Curator regularly.
-Create a file named `curator.sh` with the following content:
+Create a script named `curator.sh` with the following content:
 
 ```bash
 #!/bin/bash
@@ -294,7 +294,7 @@ curator: ./curator.sh
 All the hard stuff is now done.
 
 Next step is to configure Curator. First you need to configure how Curator
-connects to your database:
+connects to your database. Create a file `curator.yml` with the following content:
 
 ```
 ---
@@ -347,13 +347,13 @@ actions:
 You now need to add two environment variables:
 
 ```
-LOGS_INDICES_PREFIX=sc-apps
+LOGS_INDICES_PREFIX=unicorns
 LOGS_RETENTION_DAYS=10
 ```
 
 The first environment variable is `LOGS_INDICES_PREFIX`. It configures the
 index pattern that should be affected by this policy. Setting this variable
-to `sc-apps` prevent Curator from deleting the other indices that are stored
+to `unicorns` prevent Curator from deleting the other indices that are stored
 in the same database.
 
 The second environment variable is `LOGS_RETENTION_DAYS`. It configures
