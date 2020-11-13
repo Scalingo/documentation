@@ -56,8 +56,6 @@ $ DATABASE_URL=postgresql://<username>:<password>@127.0.0.1:10000/<db>
 $ pg_dump --clean --if-exists --format c --dbname $DATABASE_URL --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
 ```
 
-With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
-
 ### Restore
 
 The command definition is:
@@ -68,8 +66,6 @@ $ DATABASE_URL=postgresql://<username>:<password>@127.0.0.1:10000/<db>
 
 $ pg_restore --clean --if-exists --no-owner --no-privileges --no-comments --dbname $DATABASE_URL dump.pgsql
 ```
-
-With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
 
 Alternatively you can use the Adminer instance provided by Scalingo. Choose the
 one hosted in the region where your database is hosted.
