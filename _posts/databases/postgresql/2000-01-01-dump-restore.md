@@ -12,25 +12,21 @@ There are different ways to dump a distant database and restore the data in your
 
 ## Dump and Restore From Your Local Workstation
 
-To dump and restore your database from your local workstation, you need a way
-to [access your database]({% post_url platform/databases/2000-01-01-access %}).
+To dump and restore your database from your local workstation, you need the connection string to connect to your database and a way to [access your database]({% post_url platform/databases/2000-01-01-access %}).
 
-A PostgreSQL URL is usually formatted like:
-
-`postgresql://<username>:<password>@<host>:<port>/<db>`
-
-To get the URL of your database, go to the 'Environment' part of your dashboard or
-run the following command:
+You can get the connection string of your database in your Scalingo application environment. Go to the 'Environment' tab of your dashboard or run the following command:
 
 ```bash
 $ scalingo --app my-app env | grep POSTGRESQL
 ```
 
-If your remote database URL is:
+Your database connection string conforms to the syntax of a generic URI:
 
 ```bash
-postgresql://user:pass@my-db.postgresql.dbs.com:30000/my-db
+postgresql://<username>:<password>@<host>:<port>/<db>
 ```
+
+There are two ways to access your database from your local workstation: setting up a tunnel or making your database accessible from anywhere on the Internet.
 
 ### Setup the Tunnel
 
@@ -41,20 +37,26 @@ Building tunnel to my-db.postgresql.dbs.scalingo.eu:30000
 You can access your database on '127.0.0.1:10000'
 ```
 
+In this situation you need to use a different connection string than the one from your application environment. The `<host>` part is replaced by `127.0.0.1` and the `<port>` is replaced by `10000`.
+
+### Internet Accessibility
+
+In order to make your database reachable from anywhere on the internet, head to your database dashboard. You first need to force TLS connections to your database. Then toggle "Internet Accessibility" to make it reachable from the Internet.
+
+In this situation, the connection string to use is exactly the same as the one from your application environment.
+
 ### Dump
 
 The command definition is:
 
 ```bash
-# We are using the SSH tunnel endpoint:
+# If we are using the SSH tunnel endpoint:
 $ DATABASE_URL=postgresql://<username>:<password>@127.0.0.1:10000/<db>
 
 $ pg_dump --clean --if-exists --format c --dbname $DATABASE_URL --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
 ```
 
 With PostgreSQL version prior to 9.4 the `--if-exists` flag may not exist.
-
-As you can see we use the host and port provided by the tunnel, not those of the URL.
 
 ### Restore
 
