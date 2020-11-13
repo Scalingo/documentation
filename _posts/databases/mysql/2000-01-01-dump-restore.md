@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my MySQL database on Scalingo
 nav: Dump and Restore
-modified_at: 2016-01-08 00:00:00
+modified_at: 2020-11-13 00:00:00
 tags: databases mysql tunnel
 index: 2
 ---
@@ -10,29 +10,25 @@ index: 2
 
 There are two ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url platform/app/2000-01-01-tasks %})).
 
-## Dump and Restore from your local workstation
+## Dump and Restore From Your Local Workstation
 
-To dump and restore your database from your local workstation, you need a way
-to [access your database]({% post_url platform/databases/2000-01-01-access %}).
+To dump and restore your database from your local workstation, you need the connection string to connect to your database and a way to [access your database]({% post_url platform/databases/2000-01-01-access %}).
 
-A MySQL URL is usually formatted like:
-
-`mysql://<username>:<password>@<host>:<port>/<db>`
-
-To get the URL of your database, go to the 'Environment' part of your dashboard or
-run the following command:
+You can get the connection string of your database in your Scalingo application environment. Go to the 'Environment' tab of your dashboard or run the following command:
 
 ```bash
 $ scalingo --app my-app env | grep MYSQL
 ```
 
-If your remote database URL is:
+Your database connection string conforms to the syntax of a generic URI:
 
 ```bash
-mysql://user:pass@my-db.mysql.dbs.com:30000/my-db
+mysql://<username>:<password>@<host>:<port>/<db>
 ```
 
-### Setup the tunnel
+There are two ways to access your database from your local workstation: setting up a tunnel or making your database accessible from anywhere on the Internet.
+
+### Setup the Tunnel
 
 ```bash
 $ scalingo --app my-app db-tunnel SCALINGO_MYSQL_URL
@@ -41,20 +37,21 @@ Building tunnel to my-db.mysql.dbs.scalingo.eu:30000
 You can access your database on '127.0.0.1:10000'
 ```
 
+In this situation you need to use a different connection string than the one from your application environment. The `<host>` part is replaced by `127.0.0.1` and the `<port>` is replaced by `10000`.
+
+### Internet Accessibility
+
+In order to make your database reachable from anywhere on the internet, head to your database dashboard. You first need to force TLS connections to your database. Then toggle "Internet Accessibility" to make it reachable from the Internet.
+
+In this situation, the connection string to use is exactly the same as the one from your application environment.
+
 ### Dump
 
 The command definition is:
+
 ```bash
 $ mysqldump -u <username> --password=<password> -h <host> -P <port> <db> > dump.sql
 ```
-
-Applied to our example:
-
-```bash
-$ mysqldump -u my-db --password=pass -h 127.0.0.1 -P 10000 my-db > /tmp/dumped_db.sql
-```
-
-As you can see we use the host and port provided by the tunnel, not those of the URL.
 
 ### Restore
 
@@ -63,12 +60,9 @@ The command definition is:
 $ mysql -u <username> --password=<password> -h <host> -P <port> <db> < dump.sql
 ```
 
-With our example:
-```bash
-$ mysql -u my-db --password=pass -h 127.0.0.1 -P 10000 my-db < /tmp/dumped_db.sql
-```
+Alternatively you can use the phpMyAdmin instance provided by Scalingo. More information in the [dedicated page]({% post_url databases/mysql/2000-01-01-start %}).
 
-## Dump and Restore from Scalingo one-off container
+## Dump and Restore From Scalingo One-off Container
 
 You can dump and restore your database remotely using
 [the command-line-tool]({% post_url platform/cli/2000-01-01-start %})
