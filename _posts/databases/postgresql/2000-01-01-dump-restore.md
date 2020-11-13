@@ -67,12 +67,7 @@ $ DATABASE_URL=postgresql://<username>:<password>@127.0.0.1:10000/<db>
 $ pg_restore --clean --if-exists --no-owner --no-privileges --no-comments --dbname $DATABASE_URL dump.pgsql
 ```
 
-Alternatively you can use the Adminer instance provided by Scalingo. Choose the
-one hosted in the region where your database is hosted.
-
-- `osc-fr1`: [https://adminer.osc-fr1.scalingo.com](https://adminer.osc-fr1.scalingo.com).
-- `osc-secnum-fr1`: [https://adminer.osc-secnum-fr1.scalingo.com](https://adminer.osc-secnum-fr1.scalingo.com).
-
+Alternatively you can use the Adminer instance provided by Scalingo. More information in the [dedicated page]({% post_url platform/databases/2000-01-01-adminer %}).
 
 ## Dump and Restore From Scalingo One-off Container
 
