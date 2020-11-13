@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my PostgreSQL database on Scalingo
 nav: Dump and Restore
-modified_at: 2020-07-31 00:00:00
+modified_at: 2020-11-13 00:00:00
 tags: databases postgresql tunnel
 index: 2
 ---
@@ -10,7 +10,7 @@ index: 2
 
 There are different ways to dump a distant database and restore the data in your Scalingo database. The first one involves dumping the data on your local workstation and the second one involves doing the same operations from within a Scalingo one-off container (see [application tasks]({% post_url platform/app/2000-01-01-tasks %})).
 
-## Dump and Restore from your local workstation
+## Dump and Restore From Your Local Workstation
 
 To dump and restore your database from your local workstation, you need a way
 to [access your database]({% post_url platform/databases/2000-01-01-access %}).
@@ -76,7 +76,7 @@ one hosted in the region where your database is hosted.
 - `osc-secnum-fr1`: [https://adminer.osc-secnum-fr1.scalingo.com](https://adminer.osc-secnum-fr1.scalingo.com).
 
 
-## Dump and Restore from Scalingo one-off container
+## Dump and Restore From Scalingo One-off Container
 
 You can dump and restore your database remotely using
 [the command-line-tool]({% post_url platform/cli/2000-01-01-start %})
