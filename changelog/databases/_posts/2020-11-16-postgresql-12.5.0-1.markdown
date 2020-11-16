@@ -6,9 +6,8 @@ title: 'PostgreSQL - New Scalingo release: 12.5.0-1, 11.10.0-1, 10.15.0-1 and 9.
 New default version: **12.5.0-1**
 
 Changelog:
-- Bump version of PostgreSQL to last minor. It contains a security fix related
-  to a CVE:
-    - [CVE-2020-25694](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25694)
+- Bump versions of PostgreSQL to last minor. It contains several security fixes related to various CVEs:
+    - [PostgreSQL blog post](https://www.postgresql.org/about/news/postgresql-131-125-1110-1015-9620-and-9524-released-2111/)
 
 Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
 
