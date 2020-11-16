@@ -1,0 +1,17 @@
+---
+modified_at: 2020-11-16 11:00:00
+title: 'PostgreSQL - New Scalingo release: 12.5.0-1, 11.10.0-1, 10.15.0-1 and 9.6.20'
+---
+
+New default version: **12.5.0-1**. All databases will automatically be upgraded in the coming days because of the high severity of the CVEs these releases fix.
+
+Changelog:
+- Bump versions of PostgreSQL to last minor. It contains several security fixes related to various CVEs:
+    - [PostgreSQL blog post](https://www.postgresql.org/about/news/postgresql-131-125-1110-1015-9620-and-9524-released-2111/)
+
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
+
+* `scalingo/postgresql:12.5.0-1`
+* `scalingo/postgresql:11.10.0-1`
+* `scalingo/postgresql:10.15.0-1`
+* `scalingo/postgresql:9.6.20-1`
