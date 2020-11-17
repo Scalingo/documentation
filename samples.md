@@ -32,7 +32,7 @@ modified_at: 2015-09-09 00:00:00
             </a>
           </div>
           <div class="mdc-card__action-buttons">
-            <a href="https://github.com/Scalingo/{{ item.url }}" class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--text-primary-on-background">
+            <a href="https://github.com/Scalingo/sample-{{ item.url }}" class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--text-primary-on-background">
               View source
             </a>
           </div>
