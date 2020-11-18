@@ -1,14 +1,16 @@
 ---
 title: Scalingo JSON Manifest
-modified_at: 2020-10-26 00:00:00
+modified_at: 2020-11-18 00:00:00
 tags: app review apps one-click manifest
 ---
 
 The manifest is an **optional** file named `scalingo.json` you can add at the
 root of your repository to configure [review apps]({% post_url
 platform/app/2000-01-01-review-apps %}) and [one-click deploy button]({%
-post_url platform/deployment/2000-01-01-one-click-deploy %}), its intent is
-to configure how an application should be created.
+post_url platform/deployment/2000-01-01-one-click-deploy %}). Its intent is to
+configure how an application should be created.
+
+If your application code is in a subdirectory configured through the [`PROJECT_DIR`]({% post_url platform/getting-started/2000-01-01-common-deployment-errors %}#project-in-a-subdirectory) environment variable, Scalingo detects the JSON manifest under this subdirectory. If there is no JSON manifest in the `PROJECT_DIR` folder, Scalingo tries to get the `scalingo.json` in every folder up to the root of your repository.
 
 ## Configuration of the Environment
 
@@ -95,7 +97,7 @@ to get addon names and their plans.
 The JSON manifest also lets you declare scripts which will be executed as
 [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %})
 
-* `first-deploy`: Executed after the first deployment of a review app or one-click app. It will be executed as many times as necessary until a first depoyment is considered a "success" by the platform.
+* `first-deploy`: Executed after the first deployment of a review app or one-click app. It will be executed as many times as necessary until a first deployment is considered a "success" by the platform.
 * `postdeploy` Executed after each deployment of a review app except the first
   one if `first-deploy` is defined.
 
