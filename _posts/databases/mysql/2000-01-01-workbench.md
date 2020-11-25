@@ -43,8 +43,9 @@ Then, fill the fields accordingly:
 {% assign img_url = "https://cdn.scalingo.com/documentation/mysql-workbench/connection_ssh_tunnel.png" %}
 {% include mdl_img.html %}
 
-The "Private key" to provide in the "SSH" tab is your private SSH key you
-uploaded on your Scalingo profile.
+### Configuring SSH
+
+The "SSH Key File" should target the private key associated to the public key you've added in the "SSH" tab on your Scalingo Profile.
 
 The "SSH Username" is always `git`.
 
