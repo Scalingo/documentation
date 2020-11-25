@@ -46,6 +46,8 @@ Then, fill the fields accordingly:
 The "Private key" to provide in the "SSH" tab is your private SSH key you
 uploaded on your Scalingo profile.
 
+The "SSH Username" is always `git`.
+
 The "SSH Hostname" and "SSH Port" depends on the region your database is
 deployed on:
 
