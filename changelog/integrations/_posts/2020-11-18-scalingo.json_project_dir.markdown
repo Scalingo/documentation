@@ -1,0 +1,8 @@
+---
+modified_at: 2020-11-18 08:00:00
+title: 'Support for scalingo.json in the PROJECT_DIR environment variable'
+---
+
+We added a new convenient way to configure your [review apps]({% post_url platform/app/2000-01-01-review-apps %}) when using the `PROJECT_DIR` environment variable. We now detect the [scalingo.json]({% post_url platform/app/2000-01-01-app-manifest %}) manifest under the folder configured in `PROJECT_DIR`.
+
+More information in this [documentation page]({% post_url platform/app/2000-01-01-app-manifest %}).
