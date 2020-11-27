@@ -51,7 +51,11 @@ create a new key with the content of the public key.
 Still in a git-bash terminal run the following command:
 
 ```bash
-$ ssh.exe -T git@scalingo.com
+$ ssh.exe -T git@ssh.osc-fr1.scalingo.com
+```
+or 
+```bash
+$ ssh.exe -T git@ssh.osc-secnum-fr1.scalingo.com
 ```
 
 It should display the following output:
