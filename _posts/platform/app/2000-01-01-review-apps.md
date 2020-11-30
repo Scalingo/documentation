@@ -1,5 +1,5 @@
 ---
-title: Review apps
+title: Review Apps
 modified_at: 2019-08-26 00:00:00
 tags: app review apps
 index: 31
@@ -7,7 +7,7 @@ index: 31
 
 Review apps are a *powerful collaboration tool* to discuss about a new features
 between members of your organization. We implemented this feature as part of
-our [GitHub integration]({% post_url platform/app/2000-01-01-scm-integration
+our [SCM integration]({% post_url platform/app/2000-01-01-scm-integration
 %}).
 
 ## What Are Review Apps?
