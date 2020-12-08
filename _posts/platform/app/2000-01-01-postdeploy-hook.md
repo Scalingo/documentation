@@ -65,17 +65,16 @@ contains the environment variables from your app, with the one we inject in any
 
 ## Examples
 
-### Applying Migrations
+### Database Migrations
 
-A common example to this feature is to apply migrations, for instance with a
-Rails application:
+A common example to this feature is to apply database migrations, for instance with a Rails application:
 
 ```yaml
 postdeploy: bundle exec rake db:migrate
 ```
 
 {% note %}
-Keep in mind that migrations may fail. You should design them *knowing* that
+Keep in mind that database migrations may fail. You should design them *knowing* that
 they may fail. Here is an [article from
 Codeship](https://blog.codeship.com/rails-migrations-zero-downtime/) explaining
 this process.
