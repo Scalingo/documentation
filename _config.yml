@@ -124,6 +124,9 @@ samples:
   - url: node-express
     name: NodeJS/Express
     logo: nodejs
+  - url: node-socketio
+    name: NodeJS/Socket.IO
+    logo: nodejs
   - url: node-meanjs
     name: NodeJS/MeanJS
     logo: mean-js
