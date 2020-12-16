@@ -1,0 +1,16 @@
+---
+modified_at: 2020-12-15 11:30:00
+title: 'MySQL - New versions: 5.6.50-1, 5.7.32-2 and 8.0.22-3'
+---
+
+New default version: **5.7.32-2**
+
+Changelog:
+* [MySQL 5.6.50](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-50.html)
+* Other images were build increment: InnoDB Log file resizing is not done manually anymore. Since MySQL 5.6.8, `mysqld` is resizing them automatically.
+
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/mysql):
+
+* `scalingo/mysql:8.0.22-3`
+* `scalingo/mysql:5.7.32-2`
+* `scalingo/mysql:5.6.50-1`
