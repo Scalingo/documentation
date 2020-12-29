@@ -43,7 +43,7 @@ error: failed to push some refs to 'git@scalingo.com:appname.git'
 ```
 
 When we tell you to run `git push scalingo master`, we consider you are already
-using Git for your project. This error mean that there is a Git environment but
+using Git for your project. This error means that there is a Git environment but
 no *commit* (Git name for 'version') has been done on the *master* branch.
 
 ### Solving the problem
