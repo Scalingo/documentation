@@ -44,16 +44,22 @@ error: failed to push some refs to 'git@scalingo.com:appname.git'
 
 When we tell you to run `git push scalingo master`, we consider you are already
 using Git for your project. This error mean that there is a Git environment but
-no *commit* (Git name for 'version') has been done.
+no *commit* (Git name for 'version') has been done on the *master* branch.
 
 ### Solving the problem
 
-You need to make a first commit to your project:
+You need to make a first commit on the *master* branch to your project:
 
 ```bash
 $ git add .
 $ git commit -m "initial commit"
 $ git push scalingo master
+```
+
+If the branch named "master" is not existing (sometime default branch is called "main") you need to create one
+```bash
+git branch master
+git checkout master
 ```
 
 ## Invalid SSH key error when adding it to account
