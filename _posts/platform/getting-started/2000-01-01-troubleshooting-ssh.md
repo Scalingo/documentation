@@ -59,8 +59,7 @@ $ git push scalingo master
 If the branch named `master` does not exist (default branch may be named `main`) you need to create one:
 
 ```bash
-git branch master
-git checkout master
+git checkout -b master
 ```
 
 ## Invalid SSH key error when adding it to account
