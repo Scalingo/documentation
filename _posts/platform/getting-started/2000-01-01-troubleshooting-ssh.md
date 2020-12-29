@@ -48,7 +48,7 @@ no *commit* (Git name for 'version') has been done on the `master` branch.
 
 ### Solving the problem
 
-You need to make a first commit on the *master* branch to your project:
+You need to make a first commit on the `master` branch of your project:
 
 ```bash
 $ git add .
