@@ -56,7 +56,8 @@ $ git commit -m "initial commit"
 $ git push scalingo master
 ```
 
-If the branch named "master" is not existing (sometime default branch is called "main") you need to create one
+If the branch named `master` does not exist (default branch may be named `main`) you need to create one:
+
 ```bash
 git branch master
 git checkout master
