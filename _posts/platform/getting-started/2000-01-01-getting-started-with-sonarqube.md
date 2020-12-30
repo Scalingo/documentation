@@ -1,6 +1,6 @@
 ---
 title: Getting started with SonarQube on Scalingo
-modified_at: 2020-12-08 00:00:00
+modified_at: 2020-12-30 00:00:00
 tags: tutorial sonarqube
 index: 15
 ---
@@ -15,11 +15,13 @@ We published a repository [scalingo-sonarqube](https://github.com/Scalingo/scali
 
 [![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-sonarqube)
 
-By default, Scalingo installs the version declared in the buildpack [here](https://github.com/Scalingo/sonarqube-buildpack/blob/master/bin/compile#L16). At the time of writing this version is `8.5.1.38104`. You may want to install an older or more recent version.
+By default, Scalingo installs the version declared in the buildpack [here](https://github.com/Scalingo/sonarqube-buildpack/blob/master/bin/compile#L16). At the time of writing this version is `8.6.0.39681`. You may want to install an older or more recent version.
+
+By default, SonarQube asks you for a login and a password. The defaults are `admin` and `admin`. After the first successful login, SonarQube asks you to update the admin password.
 
 ## Deploy a Specific SonarQube Version
 
-By default, Scalingo installs the SonarQube version 8.5.1.38104. You can install the version of your choice by adding the environment variable `SONARQUBE_VERSION` to your application. For example:
+By default, Scalingo installs the SonarQube version 8.6.0.39681. You can install the version of your choice by adding the environment variable `SONARQUBE_VERSION` to your application. For example:
 
 ```
 SONARQUBE_VERSION=8.1.0.31237
