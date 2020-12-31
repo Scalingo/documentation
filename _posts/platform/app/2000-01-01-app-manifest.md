@@ -94,16 +94,13 @@ to get addon names and their plans.
 
 ## Deployment Hooks
 
-The JSON manifest also lets you declare scripts which will be executed as
-[postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %})
+The JSON manifest also lets you declare scripts which will be executed as [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %}).
 
 * `first-deploy`: Executed after the first deployment of a review app or one-click app. It will be executed as many times as necessary until a first deployment is considered a "success" by the platform.
-* `postdeploy` Executed after each deployment of a review app except the first
-  one if `first-deploy` is defined.
+* `postdeploy` [Deprecated]: Executed after each deployment of a review app except the first one if `first-deploy` is defined. This feature has been deprecated in favor of postdeploy script in the [`Procfile` file]({% post_url platform/app/2000-01-01-postdeploy-hook %}).
 
 {% note %}
-`first-deploy` and `postdeploy` have the same effect for one-click applications
-as the `scalingo.json` is only used once at the app creation.
+`first-deploy` and `postdeploy` have the same effect for one-click applications as the `scalingo.json` is only used once at the app creation.
 {% endnote %}
 
 ### Example
