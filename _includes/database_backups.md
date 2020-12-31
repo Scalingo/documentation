@@ -25,3 +25,5 @@ The number of manual backups that you can retain is limited by your plan:
 | Starter      | 10               |
 | Business     | 50               |
  {: .table }
+
+In case a database is removed from an application, the retention policy remains untouched: backups are **not** instantly deleted.
