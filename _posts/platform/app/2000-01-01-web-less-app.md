@@ -2,14 +2,16 @@
 layout: page
 title: Deploy a Web-less Application
 nav: Web-less Application
-modified_at: 2021-01-06 00:00:00
+modified_at: 2021-01-20 00:00:00
 tags: app webless
 index: 110
 ---
 
 ## Problematic
 
-You may want to create a Scalingo application which contains no web container. By default, Scalingo expects an application to have a web container. Hence, Scalingo tries to ping your application after a deployment to declare the deployment successful. To circumvent this behaviour, you need to declare a web container in your application and scale it to `0`.
+You may want to create a Scalingo application which contains no web container. This is for example the case if your application only contains workers. Or if your application is developed for [pure TCP]({% post_url addons/tcp-gateway/2000-01-01-start %}), without any HTTP layer.
+
+By default, Scalingo expects an application to have a web container. Hence, Scalingo tries to ping your application after a deployment to declare the deployment successful. To circumvent this behaviour, you need to declare a web container in your application and scale it to `0`.
 
 This page guide you through the steps to deploy an application with no web container.
 
