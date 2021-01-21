@@ -1,12 +1,12 @@
 ---
 title: .slugignore File
-modified_at: 2019-05-03 00:00:00
+modified_at: 2021-01-21 12:06:00
 tags: internals slugignore image size
 ---
 
 ## Background
 
-When you deploy an application, our build system is fetching all the required
+When you deploy an application, our build system fetches all the required
 dependencies according to the programming language and the requirements of your
 project. For compiled languages, their executable or package is then built. All
 these files are gathered in an __application image__. This image is stored and
@@ -15,16 +15,15 @@ consequence is: the lighter the faster.
 
 ## Definition
 
-The `.slugignore` file allows you to select files and directory which won't be
-include in the image after the build of your application. When you have heavy
-build dependencies, you often don't need them after the build, so why keeping
-them? They would slow down your application starting duration.
+The `.slugignore` file allows you to list files and directories that should not
+be included in the image after the build of your application. When you have heavy
+build dependencies, you often don't need them after the build, so why keep them?
+They would only slow down your application's boot time.
 
 ## Usage
 
-You need to create a `.slugignore` file at the root of your project
-containing on each line the name of a file or directory you want to exclude
-from your image.
+Create a `.slugignore` file at the root of your project containing on each line
+the name of a file or directory you want to exclude from your image.
 
 {% note %}
 This file is interpreted by Bash. You can use some wildcards such as `*.txt`.
@@ -35,7 +34,7 @@ This file is interpreted by Bash. You can use some wildcards such as `*.txt`.
 ### Ruby Application
 
 Your Ruby application doesn't need to have all its test suites when running
-in production. You might want to exclude them during the deployment:
+in production, so the `spec` folder can be filtered out:
 
 `.slugignore` content:
 
@@ -45,8 +44,8 @@ spec
 
 ### Rails Application
 
-Most Rails applications also use Webpacker to bundle the assets. For such
-application, you can safely remove the following folders that are not necessary
+Most Rails applications also use Webpacker to bundle the assets. If this is your
+case, you can safely remove the following folders that are not necessary
 to run the application:
 
 ```text
@@ -58,9 +57,9 @@ doc
 
 ### PHP Application
 
-Some PHP applications also use Webpacker to bundle the assets. For such
-application, you can safely remove the following folders that are not necessary
-to run the application:
+Some PHP applications also use Webpack (or Webpack Encore) to bundle the assets.
+If this is your case, you can safely remove the following folders that are not
+necessary to run the application:
 
 ```text
 doc
