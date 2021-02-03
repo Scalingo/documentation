@@ -1,0 +1,14 @@
+---
+modified_at: 2021-02-03 15:05:00
+title: 'Redis - New default version: 6.0.10-1'
+---
+
+New default version: **6.0.10-1**
+
+Redis changelog:
+
+* [6.0.10-1](https://raw.githubusercontent.com/redis/redis/6.0/00-RELEASENOTES)
+
+Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/redis):
+
+* `scalingo/redis:6.0.10-1`
