@@ -1,0 +1,10 @@
+---
+modified_at: 2021-02-03 10:00:00
+title: 'PHP - Support of versions 7.4.14 and 7.3.26'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+Changelogs:
+
+* [PHP 7.4.14](https://www.php.net/ChangeLog-7.php#7.4.14)
+* [PHP 7.3.26](https://www.php.net/ChangeLog-7.php#7.3.26)
