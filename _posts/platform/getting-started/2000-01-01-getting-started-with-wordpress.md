@@ -1,5 +1,5 @@
 ---
-title: Getting Started with WordPres on Scalingo
+title: Getting Started with WordPress on Scalingo
 modified_at: 2020-09-25 00:00:00
 tags: php, http, framework, wordpress, deployment
 index: 14
