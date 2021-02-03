@@ -1,0 +1,14 @@
+---
+modified_at: 2021-02-03 15:00:00
+title: 'Redis - New version: 5.0.10-1'
+---
+
+New default version: **5.0.10-1**
+
+Redis changelog:
+
+* [5.0.10-1](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES)
+
+Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/redis):
+
+* `scalingo/redis:5.0.10-1`
