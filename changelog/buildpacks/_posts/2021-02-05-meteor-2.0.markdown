@@ -1,0 +1,7 @@
+---
+modified_at:	2021-02-05 10:12:30
+title:	'Meteor - Support of version 2.0 added'
+github: 'https://github.com/Scalingo/nodejs-buildpack'
+---
+
+* [Official Meteor 2.0 Announce](https://blog.meteor.com/meteor-2-0-is-here-867b0ab4f8df?gi=c423e09683cb)
