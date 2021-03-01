@@ -1,0 +1,17 @@
+---
+modified_at: 2021-03-01 15:30:00
+title: 'MySQL - New versions: 5.6.51-1, 5.7.33-1 and 8.0.23-1'
+---
+
+New default version: **5.7.33-1**
+
+Changelog:
+* [MySQL 5.6.51](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-51.html)
+* [MySQL 5.7.33](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-33.html)
+* [MySQL 8.0.23](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-23.html)
+
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/mysql):
+
+* `scalingo/mysql:8.0.23-1`
+* `scalingo/mysql:5.7.33-1`
+* `scalingo/mysql:5.6.51-1`
