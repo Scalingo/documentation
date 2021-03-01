@@ -1,0 +1,12 @@
+---
+modified_at: 2021-03-01 08:50:00
+title: 'Python - New versions available: 3.9.2, 3.8.8, 3.7.10 and 3.6.13'
+github: 'https://github.com/Scalingo/python-buildpack'
+---
+
+Changelogs:
+
+* [3.9.2](https://docs.python.org/3/whatsnew/changelog.html#python-3-9-2-final)
+* [3.8.8](https://docs.python.org/3.8/whatsnew/changelog.html#python-3-8-8-final)
+* [3.7.10](https://docs.python.org/3.7/whatsnew/changelog.html#python-3-7-10-final)
+* [3.6.13](https://docs.python.org/3.6/whatsnew/changelog.html#python-3-6-13-final)
