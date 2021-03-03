@@ -1,0 +1,10 @@
+---
+modified_at: 2021-02-22 10:00:00
+title: 'PHP - Support of versions 8.0.2'
+github: 'https://github.com/Scalingo/php-buildpack'
+---
+
+Changelogs:
+
+* [PHP 8.0.2 Changelog](https://www.php.net/ChangeLog-8.php#8.0.2)
+* [PHP 8 Release Article](https://www.php.net/releases/8.0/en.php)
