@@ -85,3 +85,55 @@ It will also add the `scalingo` remote to simplify future pushes.
   in any other way (GitLab / GitHub integration, archive, ...) the changes made
   to your code won't be available.
 {% endnote %}
+
+### Shallow Error
+
+Currently, Scalingo does not support update of shallowed repository (i.e. from a `git push`).
+The shallow error means that the pushed repository on Scalingo does not contains all its history.
+The error can happen whether you are pushing from your workstation or from an online worker.
+
+It is often the result of a clone with the Git parameter `--depth`.
+
+To be able to push the modifications, you need to first unshallow the repository.
+For that purpose, please follow the instructions below.
+
+#### From Your Environment:
+
+You need to get all the repository history with the command:
+
+```bash
+git fetch origin master --unshallow
+```
+
+Then retry to push your code with:
+
+```bash
+git push scalingo master
+```
+
+#### From the Continuous Integration
+
+Some CI offers you the possibility to disable shallow repository by disabling
+the parameter `depth` from configuration file.
+
+- with travis:
+
+  ```yml
+  # .travis.yml
+  git:
+    depth: false
+  ```
+
+- with GitLab CI:
+
+  ```yml
+  # .gitlab-ci.yml
+  variables:
+    GIT_DEPTH: 0
+  ```
+
+If the problem persists, you must surely run the following Git command once:
+
+```bash
+git fetch origin master --unshallow
+```
