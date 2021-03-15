@@ -92,7 +92,7 @@ Currently, Scalingo does not support update of shallowed repository (i.e. from a
 The shallow error means that the pushed repository on Scalingo does not contains all its history.
 The error can happen whether you are pushing from your workstation or from an online worker.
 
-It is often the result of a clone with the Git parameter `--depth`).
+It is often the result of a clone with the Git parameter `--depth`.
 
 To be able to push the modifications, you need to first unshallow the repository.
 For that purpose, please follow the instructions below.
