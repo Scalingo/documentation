@@ -1,6 +1,6 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2020-10-26 00:00:00
+modified_at: 2021-03-18 00:00:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
@@ -197,7 +197,7 @@ input {
 
 filter {
   grok {
-    match => [ "[headers][request_uri]", "%{URIPARAM:url}" ]
+    match => [ "[headers][request_path]", "%{URIPARAM:url}" ]
     remove_field => ["headers"]
   }
 
