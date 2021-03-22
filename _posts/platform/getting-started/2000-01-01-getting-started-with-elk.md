@@ -260,8 +260,7 @@ dependencies, create a file named `requirements.txt` at the root of your
 application:
 
 ```
-PyYAML==5.3.1
-elasticsearch-curator==5.8.1
+elasticsearch-curator==5.8.2
 ```
 
 
