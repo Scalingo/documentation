@@ -1,0 +1,17 @@
+---
+modified_at: 2021-03-23 10:00:00
+title: 'PostgreSQL - New Scalingo release: 12.6.0-1, 11.11.0-1 and 10.16.0-1'
+---
+
+New default version: **12.6.0-1**.
+
+Changelog:
+- Bump versions of PostgreSQL to last minor. It contains several bug fixes:
+    - [PostgreSQL blog post](https://www.postgresql.org/about/news/postgresql-132-126-1111-1016-9621-and-9525-released-2165/)
+- Fix an issue when restoring a database using point-in-time recovery with an _old_ date
+
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
+
+* `scalingo/postgresql:12.6.0-1`
+* `scalingo/postgresql:11.11.0-1`
+* `scalingo/postgresql:10.16.0-1`
