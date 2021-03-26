@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/dunamu-stock/mimemagic.git
+  revision: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  ref: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
+  specs:
+    mimemagic (0.3.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -149,6 +156,7 @@ DEPENDENCIES
   jekyll-feed
   jekyll-sitemap
   jekyll-toc
+  mimemagic!
   pry-nav
   pry-rails
   puma
@@ -164,4 +172,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.3
+   1.16.6
