@@ -47,3 +47,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Performance-booster for watching directories on Windows
 gem 'wdm', '~> 0.1.0' if Gem.win_platform?
+
+gem "mimemagic", github: "dunamu-stock/mimemagic", ref: "01f92d86d15d85cfd0f20dabd025dcbd36a8a60f"
