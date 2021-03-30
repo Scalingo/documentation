@@ -45,7 +45,7 @@ If you want to deploy a version of your code that is not the current head of
 master, you first need to get the commit ID with `git log`. Then:
 
 ```bash
-git push --force scalingo <commit ID>:master
+git push --force scalingo <commit ID>:refs/heads/master
 ```
 
 
