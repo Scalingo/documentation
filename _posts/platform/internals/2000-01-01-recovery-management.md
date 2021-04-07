@@ -7,6 +7,8 @@ index: 5
 
 ## What happen when a server of the platform is unavailable (crash, fire, hardware problem)?
 
+### Applications
+
 If one of our servers is detected as unavailable, our internal scheduler will
 dispatch the containers running on this server, all around the cluster.
 
@@ -21,10 +23,41 @@ It's for this reason that the uptime SLA is different, either you have 1
 container or more. You'll find details about these rules in our [Terms of
 Service](https://scalingo.com/tos).
 
+### Databases
+
+If a database hosting server is detected as unavailable, our team is instantly alarmed.
+
+* If the database is using a **business** plan, a failover will automatically
+  happen in the minute the incident is detected. Keeping your database
+  available in such an event
+* For **sandbox** and **starter** plans, a longer downtime can be expected
+  since the database instance will be kept unavailable until the completely
+  recovery or redeployment of the impacted server.
+
 ## What happens if a complete datacenter is taken down (electricity issue, fire…)?
 
-In the case a full datacenter gets unavailable, we've setup, with our hardware provider,
-a recovery plan able to resume the activity in another DC. Application and
-databases data are replicated which let us restart all containers in a second DC
-as fast as we can. In this, downtime is unavailable, but processes have been setup
-to reduce it and recover your apps the fastest possible way.
+In the case of a disaster incident in which a complete datacenter would be
+wiped out permanently or inaccessible for a long enough period, it can be
+decided to execute our Disaster Recovery Plan. This is a procedure that ensures
+business continuity by defining how to restore our services as fast as possible
+with minimal data loss.
+
+### Locations of backups
+
+All the backups are saved and replicated in multiple geographical locations:
+
+* Replica 1: In the datacenter of the application/database
+* Replica 2: In a datacenter at more than 10km from other replicas (real-time replication)
+* Replica 3: In a datacenter at more than 10km from other replicas (daily
+  snapshot operated by our infrastructure provider Outscale in the scope of
+  their Disaster Recovery Plan)
+
+This redundancy ensure there will always be sufficient data to recover a catastrophic event.
+
+### Hosted Databases - Recovery Point Objective (RPO)
+
+The RPO determines the maximum acceptable amount of data loss measured in time.
+It depends of the type of database you are using:
+
+* MySQL, MongoDB, Elasticsearch, Redis, InfluxDB: last daily backup: at worst 24h of data loss
+* PostgreSQL: continuous backuping, at worst: 15 minutes of data loss
