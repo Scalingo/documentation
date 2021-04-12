@@ -1,0 +1,12 @@
+---
+modified_at: 2021-03-31 11:30:00
+title: 'Stack scalingo-18 v14'
+---
+
+This release contains the following changes:
+* Update of all Ubuntu packages
+  * Addressing recent OpenSSL security issues CVE-3449 and CVE-3450
+* Add `jq` in the stack
+
+
+* Docker Hub: [https://hub.docker.com/r/scalingo/scalingo-18](https://hub.docker.com/r/scalingo/scalingo-18)
