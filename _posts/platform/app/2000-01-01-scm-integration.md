@@ -2,7 +2,7 @@
 layout: page
 title: Source Code Management Integration, Auto Deploy and Review Apps
 nav: SCM Integration
-modified_at: 2019-09-02 00:00:00
+modified_at: 2021-04-14 00:00:00
 tags: integration scm github github-enterprise gitlab
 index: 30
 ---
@@ -70,9 +70,13 @@ instance, if you want the application to always be in sync with the `production`
 branch of your repository.
 
 You may have Continuous Integration (CI) tools associated with your repository
-like [Codeship](https://codeship.com/) or [TravisCI](https://travis-ci.com/)
+like [CodeShip](https://codeship.com/) or [Travis CI](https://travis-ci.com/)
 which run tasks, tests or whatever. We will always wait that all these tools
 **succeed** before deploying your app.
+
+{% warning %}
+If GitHub Actions is configured on your repository, our GitHub integration will **not** wait for it to succeed before deploying your application. We are working on a solution to circumvent this problem.
+{% endwarning %}
 
 You can also manually trigger a deployment of your application from any branch.
 
