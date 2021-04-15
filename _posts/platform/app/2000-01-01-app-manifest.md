@@ -49,15 +49,8 @@ can still customize them before triggering the deployment.
 
 ## Configuration of Addons
 
-Addons can also be declared in the JSON manifest. The format is the following:
-
-```json
-{
-  "addon_provider_id": "mongodb",
-  "plan_id": "mongo-sandbox",
-  "options": {  }
-}
-```
+Addons can also be declared in the JSON manifest and they'll be provisioned before deploying 
+a review app or starting a one-click deploy.
 
 ### Review Apps
 
@@ -71,15 +64,18 @@ Addons declared in the manifest will be provisioned before starting the deployme
 
 ### Example
 
+The `options` attribute is optional, currently only the `version` parameter is allowed in it.
+
 ```json
 {
   "addons": [
     {
-      "addon_provider_id": "mongodb",
-      "plan_id": "mongo-sandbox",
+      "plan": "postgresql:postgresql-starter-512",
       "options": {
-        "version": "4.0.19-1"
+        "version": "11"
       }
+    }, {
+      "plan": "redis:redis-starter-128",
     }
   ]
 }
