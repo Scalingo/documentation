@@ -6,12 +6,10 @@ updates:
       - dependency-type: "all"
     versioning-strategy: lockfile-only
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "monthly"
   - package-ecosystem: "npm"
     directory: "/"
     allow:
       - dependency-type: "all"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "monthly"
