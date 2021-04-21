@@ -1,6 +1,6 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2021-03-18 00:00:00
+modified_at: 2021-04-21 00:00:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
@@ -65,6 +65,12 @@ environment variables `USER` and `PASSWORD` should be set first:
 
 ```bash
 $ scalingo --app my-awesome-logstash env-set USER=my-awesome-logstash-user PASSWORD=iloveunicorns
+```
+
+Logstash is greedy in memory, it requires at least a container of size L, configure the app to use one.
+
+```bash
+$ scalingo --app my-awesome-logstash scale web:1:L
 ```
 
 Edit the `logstash.conf` file to change the index name of the Elasticsearch
