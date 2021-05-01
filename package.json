@@ -6,7 +6,7 @@
     "@rails/webpacker": "^3.2.2",
     "docsearch.js": "^2.6.3",
     "image-webpack-loader": "^3.6.0",
-    "mdn-polyfills": "^5.5.0",
+    "mdn-polyfills": "^5.20.0",
     "scalingo-styles": "https://github.com/Scalingo/scalingo-styles",
     "smooth-scroll": "^12.1.5",
     "svg-sprite-loader": "^3.6.2",
