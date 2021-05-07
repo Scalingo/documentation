@@ -2,6 +2,7 @@ require 'rack/jekyll'
 require 'rack/rewrite'
 require 'rack/ssl-enforcer'
 require 'rack/canonical_host'
+require 'rack/cors'
 require 'yaml'
 
 class Object
@@ -50,6 +51,17 @@ use Rack::Rewrite do
   rewrite %r{^([^?]+)(\??)(.*)}, '$1.html$2$3', if: Proc.new {|rack_env|
     rack_env['PATH_INFO'].present? && rack_env['PATH_INFO'] != '/' && rack_env['PATH_INFO'] !~ /\.(jpg|jpeg|png|gif|ico|eot|otf|ttf|woff|woff2|css|js|xml|txt)$/i
   }
+end
+
+use Rack::Cors do
+  if ENV['ALLOWED_CHANGELOG_FEED_CONSUMERS'].present?
+    allowed_origins = ENV['ALLOWED_CHANGELOG_FEED_CONSUMERS'].split(',')
+
+    allow do
+      origins(*allowed_origins)
+      resource '/changelog/feed.xml', headers: :any, methods: :get
+    end
+  end
 end
 
 if ENV['FORCE_SSL'].present?

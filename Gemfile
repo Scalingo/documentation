@@ -41,6 +41,7 @@ gem 'rack-canonical-host'
 gem 'rack-jekyll'
 gem 'rack-rewrite'
 gem 'rack-ssl-enforcer'
+gem 'rack-cors'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
