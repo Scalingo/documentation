@@ -7,9 +7,13 @@ updates:
     versioning-strategy: lockfile-only
     schedule:
       interval: "monthly"
+    reviewers:
+      - "ksol"
   - package-ecosystem: "npm"
     directory: "/"
     allow:
       - dependency-type: "all"
     schedule:
       interval: "monthly"
+    reviewers:
+      - "ksol"
