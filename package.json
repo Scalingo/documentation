@@ -9,7 +9,7 @@
     "mdn-polyfills": "^5.20.0",
     "scalingo-styles": "https://github.com/Scalingo/scalingo-styles",
     "smooth-scroll": "^12.1.5",
-    "svg-sprite-loader": "^3.6.2",
+    "svg-sprite-loader": "^6.0.6",
     "svgo": "^1.0.4",
     "svgo-loader": "^2.1.0"
   },
