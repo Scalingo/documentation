@@ -1,6 +1,6 @@
 ---
 title: Install Puppeteer
-modified_at: 2020-09-25 00:00:00
+modified_at: 2021-05-12 00:00:00
 tags: nodejs puppeteer
 ---
 
@@ -20,4 +20,10 @@ $ echo 'https://github.com/jontewks/puppeteer-heroku-buildpack' >> .buildpacks
 $ echo 'https://github.com/Scalingo/nodejs-buildpack' >> .buildpacks
 $ git add .buildpacks
 $ git commit -m 'Add multi-buildpack'
+```
+
+This buildpack also requires the environment variable `STACK` to be set with the value `heroku-18`:
+
+```bash
+$ scalingo --app my-app env-set STACK=heroku-18
 ```
