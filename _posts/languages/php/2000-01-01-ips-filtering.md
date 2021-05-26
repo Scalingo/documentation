@@ -25,11 +25,9 @@ Edit the file `nginx-ips-filtering.conf` in this directory with the following
 content:
 
 ```bash
-location / {
-    allow <ip1>;
-    allow <ip2>;
-    deny all;
-}
+allow <ip1>;
+allow <ip2>;
+deny all;
 ```
 
 Last thing you need to do is to instruct Scalingo's deployment process to use
