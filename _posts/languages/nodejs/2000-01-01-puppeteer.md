@@ -22,8 +22,8 @@ $ git add .buildpacks
 $ git commit -m 'Add multi-buildpack'
 ```
 
-This buildpack also requires the environment variable `STACK` to be set with the value `heroku-18`:
+This buildpack also requires the environment variable `STACK` to be set with the value `heroku-20`:
 
 ```bash
-$ scalingo --app my-app env-set STACK=heroku-18
+$ scalingo --app my-app env-set STACK=heroku-20
 ```
