@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby RUBY_VERSION
 
 # Hello! This is where you manage which Jekyll version is used to run.
@@ -30,21 +31,14 @@ group :development, :test do
   gem 'pry-rails'
 end
 
-# gem 'jekyll-import', github: 'yannski/jekyll-import'
-# gem 'pry'
-
-gem 'webpacker'
+gem 'webpacker', '< 5'
 
 gem 'puma'
-gem 'puma-heroku'
 gem 'rack-canonical-host'
-gem 'rack-jekyll'
+gem 'rack-jekyll', github: "adaoraul/rack-jekyll"
 gem 'rack-rewrite'
 gem 'rack-ssl-enforcer'
 gem 'rack-cors'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-# Performance-booster for watching directories on Windows
-gem 'wdm', '~> 0.1.0' if Gem.win_platform?
