@@ -1,4 +1,4 @@
-FROM ruby:2.5.1
+FROM ruby:2.7.3
 
 RUN apt-get update
 RUN apt-get install apt-transport-https
@@ -28,6 +28,8 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
   echo 'LANG="en_US.UTF-8"'>/etc/default/locale && \
   dpkg-reconfigure --frontend=noninteractive locales && \
   update-locale LANG=en_US.UTF-8
+
+RUN gem install bundler -v '2.2.19'
 
 ENV LANG en_US.UTF-8
 
