@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-ruby '2.7.3'
+ruby '3.0.1'
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -11,6 +11,7 @@ ruby '2.7.3'
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem 'jekyll'
+gem 'webrick'
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem 'minima', '~> 2.0'
