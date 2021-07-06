@@ -1,6 +1,6 @@
 ---
 title: Container Management
-modified_at: 2020-09-25 00:00:00
+modified_at: 2021-07-07 00:00:00
 tags: internals containers
 index: 1
 ---
@@ -61,3 +61,17 @@ We have adopted a standard process:
 
 In other words, your application has 30 seconds to catch the SIGTERM signal and
 clean its state before we force it to stop.
+
+## The `.profile` Script
+
+During startup of any container types, the container starts a Bash shell that sources the `.profile` script, before executing the container start command. You can use it to customize the application environment to your needs. You should be careful when overriding an environment variable as the value defined by the buildpack might be important. Here is a couple fo examples on how you could safely define some environment variables:
+
+```bash
+# Add a a new folder to the PATH
+export PATH="$PATH:$HOME/custom/bin"
+
+# Set a default LANG if it does not exist in the environment
+export LANG=${LANG:-en_US.UTF-8}
+```
+
+The `.profile` script is guaranteed to be executed after the scripts in `.profile.d/`.
