@@ -163,9 +163,6 @@ samples:
   - url: php-codeigniter
     name: PHP/CodeIgniter
     logo: php-codeigniter
-  - url: php-phalcon
-    name: PHP/Phalcon
-    logo: php-phalcon
   - url: python-celery
     name: Python/Celery
     logo: python
