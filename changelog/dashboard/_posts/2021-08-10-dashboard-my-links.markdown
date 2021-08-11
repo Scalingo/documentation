@@ -1,5 +1,5 @@
 ---
-modified_at:	2021-07-09 12:00:00
+modified_at:	2021-08-10 12:00:00
 title:	'Links in my.osc-fr1.scalingo.com will target dashboard.scalingo.com'
 ---
 
