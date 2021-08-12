@@ -22,7 +22,7 @@ RUN cd /opt && \
     apt-get update && apt-get install sudo && apt-get clean &&\
     sed -i s+secure_path=.*+secure_path="$PATH"+ /etc/sudoers
 
-ENV PATH "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/node_modules/.bin:/usr/src/app/node_modules/.bin:/usr/src/app/vendor/.bundle/ruby/2.5.0/bin:/opt/node/bin"
+ENV PATH "/opt/node/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/node_modules/.bin:/usr/src/app/node_modules/.bin:/usr/src/app/vendor/.bundle/ruby/3.0.0/bin"
 
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
   echo 'LANG="en_US.UTF-8"'>/etc/default/locale && \
