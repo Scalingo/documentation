@@ -28,3 +28,5 @@ services:
     environment:
       NODE_ENV: "development"
       RAILS_ENV: "development"
+      BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/3.0.0/bin"
+      BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/3.0.0"
