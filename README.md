@@ -83,7 +83,7 @@ To install dependencies locally:
 
 ```
 docker-compose run web bundle install
-docker-compose run web yarn install
+docker-compose run web yarn install --ignore-engines
 ```
 
 To build the static site and spin-up a file server:
