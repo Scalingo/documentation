@@ -1,7 +1,7 @@
 ---
 title: Managing PostgreSQL Extensions
 nav: Extensions
-modified_at: 2019-12-03 00:00:00
+modified_at: 2021-06-30 00:00:00
 tags: databases postgresql extensions
 index: 3
 ---
@@ -51,7 +51,7 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 	<tbody>
 		<tr>
 			<td>btree_gin</td>
-			<td>1.5</td>
+			<td>1.3</td>
 			<td>support for indexing common datatypes in GIN</td>
 		</tr>
 		<tr>
@@ -91,12 +91,12 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 		</tr>
 		<tr>
 			<td>hstore</td>
-			<td>1.6</td>
+			<td>1.7</td>
 			<td>data type for storing sets of (key, value) pairs</td>
 		</tr>
 		<tr>
 			<td>intarray</td>
-			<td>1.2</td>
+			<td>1.3</td>
 			<td>functions, operators, and index support for 1-D arrays of integers</td>
 		</tr>
 		<tr>
@@ -106,12 +106,12 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 		</tr>
 		<tr>
 			<td>ltree</td>
-			<td>1.1</td>
+			<td>1.2</td>
 			<td>data type for hierarchical tree-like structures</td>
 		</tr>
 		<tr>
 			<td>pg_repack</td>
-			<td>1.4.5</td>
+			<td>1.4.6</td>
 			<td>lets you remove bloat from tables and indexes, and optionally restore the physical order of clustered indexes. Unlike CLUSTER and VACUUM FULL it works online</td>
 		</tr>
 		<tr>
@@ -121,7 +121,7 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 		</tr>
 		<tr>
 			<td>pg_trgm</td>
-			<td>1.4</td>
+			<td>1.5</td>
 			<td>text similarity measurement and index searching based on trigrams</td>
 		</tr>
 		<tr>
@@ -141,17 +141,17 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 		</tr>
 		<tr>
 			<td>postgis</td>
-			<td>2.5.3</td>
+			<td>2.5.5</td>
 			<td>PostGIS geometry, geography, and raster spatial types and functions</td>
 		</tr>
 		<tr>
 			<td>postgis_tiger_geocoder</td>
-			<td>2.5.3</td>
+			<td>2.5.5</td>
 			<td>PostGIS tiger geocoder and reverse geocoder</td>
 		</tr>
 		<tr>
 			<td>postgis_topology</td>
-			<td>2.5.3</td>
+			<td>2.5.5</td>
 			<td>PostGIS topology spatial types and functions</td>
 		</tr>
 		<tr>
