@@ -63,3 +63,4 @@ var server = app.listen(process.env.PORT || 3000, function () {
   console.log('App listening at http://%s:%s', host, port)
 })
 ```
+For next.js app, see [this topic](https://doc.scalingo.com/languages/nodejs/start#nextjs)
