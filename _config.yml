@@ -125,7 +125,7 @@ samples:
     name: NodeJS/Express
     logo: nodejs
   - url: node-nuxt
-    name: NodeJS/Nuxt
+    name: NodeJS/Nuxt.js
     logo: nodejs
   - url: node-socketio
     name: NodeJS/Socket.IO
