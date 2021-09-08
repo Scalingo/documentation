@@ -1,7 +1,7 @@
 ---
 title: Node.js Common Deployment Errors
 nav: Deployment Errors
-modified_at: 2020-06-17 00:00:00
+modified_at: 2021-07-08 00:00:00
 tags: nodejs
 index: 3
 ---
@@ -39,7 +39,7 @@ logs:
  !   Error deploying the application
  !   → Timeout: my-app took more than 60 seconds to boot
  !   Application Logs:  https://my.scalingo.com/apps/my-app/logs
- !   Documentation:     http://doc.scalingo.com/deployment/start-error#timeout
+ !   Documentation:     https://doc.scalingo.com/deployment/start-error#timeout
 
 To ssh.osc-fr1.scalingo.com:my-app.git
  ! [remote rejected] master -> master (pre-receive hook declined)
@@ -63,3 +63,5 @@ var server = app.listen(process.env.PORT || 3000, function () {
   console.log('App listening at http://%s:%s', host, port)
 })
 ```
+
+If you face a boot timeout error and use the Next.js framework, please refer to [this specific page](https://doc.scalingo.com/languages/nodejs/start#nextjs).
