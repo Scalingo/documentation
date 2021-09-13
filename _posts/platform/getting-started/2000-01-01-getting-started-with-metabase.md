@@ -33,15 +33,6 @@ $ cd metabase-scalingo
 $ git remote add scalingo git@ssh.osc-fr1.scalingo.com:my-app.git
 ```
 
-We now need to slightly configure the Scalingo application. First, this
-application needs to use the [multi-buildpacks]({% post_url
-platform/deployment/buildpacks/2000-01-01-multi %}). Add the `BUILDPACK_URL`
-environment variable:
-
-```bash
-$ scalingo --app my-name env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack.git
-```
-
 You also need to add a PostgreSQL addon to your application. A "Starter 512"
 plan would be enough.
 
