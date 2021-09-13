@@ -6,4 +6,4 @@ Scalingo supports the following versions of Nginx:
 - 1.17.6
 - 1.18.0
 - 1.19.10
-- 1.20.0
+- 1.20.1
