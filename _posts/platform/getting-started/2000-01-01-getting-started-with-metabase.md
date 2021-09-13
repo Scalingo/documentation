@@ -50,16 +50,3 @@ Last, deploy your application with:
 ```bash
 $ git push scalingo master
 ```
-
-## Update the Metabase Instance
-
-Metabase ships regularly new versions. In order to update, go to the application's dashboard, in the “Code” tab, and click “Deploy” on the `master` branch as the screenshot shows:
-
-{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_metabase_update.png" %}
-{% include mdl_img.html %}
-
-You can also use the CLI and run:
-
-```bash
-scalingo app --my-name integration-link-manual-deploy master
-```
