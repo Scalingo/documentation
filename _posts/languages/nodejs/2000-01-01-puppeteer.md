@@ -1,6 +1,6 @@
 ---
 title: Install Puppeteer
-modified_at: 2021-05-12 00:00:00
+modified_at: 2021-09-14 00:00:00
 tags: nodejs puppeteer
 ---
 
@@ -13,17 +13,11 @@ Puppeteer is a library to headless Chrome API. In short, most things that you ca
 
 ## Install Puppeteer on a Scalingo Application
 
-To install Puppeteer on a Scalingo application, you need to make use of [this buildpack](https://github.com/jontewks/puppeteer-heroku-buildpack) developed by the community. Such a buildpack should be used as part of a [multi-buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}).
+To install Puppeteer on a Scalingo application, you need to make use of [this buildpack](https://github.com/levups/puppeteer-scalingo-buildpack) developed by the community. Such a buildpack should be used as part of a [multi-buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}).
 
 ```bash
-$ echo 'https://github.com/jontewks/puppeteer-heroku-buildpack' >> .buildpacks
+$ echo 'https://github.com/levups/puppeteer-scalingo-buildpack' >> .buildpacks
 $ echo 'https://github.com/Scalingo/nodejs-buildpack' >> .buildpacks
 $ git add .buildpacks
 $ git commit -m 'Add multi-buildpack'
-```
-
-This buildpack also requires the environment variable `STACK` to be set with the value `heroku-18`:
-
-```bash
-$ scalingo --app my-app env-set STACK=heroku-18
 ```
