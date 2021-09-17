@@ -130,9 +130,6 @@ samples:
   - url: node-socketio
     name: NodeJS/Socket.IO
     logo: nodejs
-  - url: node-meanjs
-    name: NodeJS/MeanJS
-    logo: mean-js
   - url: scala-scalatra
     name: Scala/Scalatra
     logo: scala
@@ -174,9 +171,6 @@ samples:
     logo: python-django
   - url: python-flask
     name: Python/Flask
-    logo: python-flask
-  - url: python2-flask
-    name: Python 2/Flask
     logo: python-flask
   - url: elixir-plug
     name: Elixir/Plug
