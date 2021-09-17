@@ -123,10 +123,6 @@ The file `project.clj` must be at the root of your project.
 You need to have at least one `*.go` file at the root of your project.
 Then, we detect the Go language and install any dependency with your `Godeps` directory (see more about [Godeps](https://github.com/tools/godep)).
 
-[Haskell]({% post_url languages/haskell/2000-01-01-start %})
-
-A file `*.cabal` must be at the root of your project.
-
 [Erlang]({% post_url languages/erlang/2000-01-01-start %})
 
 You need to have either a `rebar.config` file or a `ebin` file at the root of your project.
