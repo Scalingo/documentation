@@ -70,13 +70,6 @@ object(s)`. Then, insert it with:
 {% include mdl_img.html %}
 ```
 
-Update the list of packages of the Docker image `scalingo-18`:
-
-```
-docker pull scalingo/scalingo-18:latest
-docker run --rm scalingo/scalingo-18:latest bash -c 'dpkg -l | grep "^ii" | awk '\'' { printf "|%30s | %30s |\n", $2, $3} '\'' ' > _includes/scalingo_18_stack_packages.md
-```
-
 ## Running Locally
 
 To install dependencies locally:
