@@ -24,7 +24,7 @@ config.cache_store = :redis_cache_store, { url: "#{ ENV['REDIS_URL'] }/0:#{ ENV[
 By default, Redis databases on Scalingo have a [timeout]({% post_url databases/redis/2000-01-01-start %}#idle-connections-timeout).
 
 If you don't want to depend on the timeout of the server, you may want to
-change the client connection timeout You can do it like this:
+change the client connection timeout. You can do it like this:
 ```ruby
 config.cache_store = :redis_cache_store, { url: "#{ ENV['REDIS_URL'] }/0:#{ ENV['SOURCE_VERSION'] || ENV['CONTAINER_VERSION'] }", timeout: 30 }
 ```
