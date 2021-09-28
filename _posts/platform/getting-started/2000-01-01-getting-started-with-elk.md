@@ -149,6 +149,21 @@ Logstash has created the unicorn index which can now be requested:
 The result of the above search contains a document having with a field `name`
 set to `Alenala` and a field `message` set to `Hi!`.
 
+### Custom configuration for Logstash
+
+In the logstash configuration repository, clone from
+[Scalingo/logstash-boilerplate](https://github.com/Scalingo/logstash-boilerplate),
+a config directory is present. All the files in this folder will be copied in the
+logstash configuration directory at runtime, allowing you to customize exactly
+how your want logstash to run.
+
+For instance, if you want to edit the logging behavior of logstash, edit `config/log4j2.yml`
+
+```
+git add config/log4j2.yml
+git commit -m "Update how logstash is logging"
+git push scalingo master
+```
 
 ## Kibana
 
