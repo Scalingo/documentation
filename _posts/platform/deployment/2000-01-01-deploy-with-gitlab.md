@@ -1,6 +1,6 @@
 ---
 title: Deploy with GitLab
-modified_at: 2020-07-29 00:00:00
+modified_at: 2021-09-28 00:00:00
 tags: scm gitlab deployment
 index: 6
 ---
@@ -19,12 +19,6 @@ version. You will have to link it to a GitLab repository and branch.
 
 ## Link Your App to the SCM Tool
 
-{% warning %}
-The web dashboard is currently only compatible with GitHub. To integrate your
-application with GitLab, please install our [CLI](https://cli.scalingo.com)
-tool.
-{% endwarning %}
-
 You first need to link your Scalingo account with your GitLab account. This is
 achieved with the following command:
 
@@ -42,7 +36,7 @@ $ scalingo integrations-add gitlab-self-hosted --url https://gitlab.example.org 
 
 The token you need is a personal access token. Here is the [GitLab
 documentation](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
-on how to create one. The scopes you need on Scalingo are `api`, `read_user`. 
+on how to create one. The scopes you need on Scalingo are `api`, `read_user`.
 Your user account must also have [a sufficient role, maintainer or owner](https://docs.gitlab.com/ee/user/permissions.html#project-members-permissions)
 
 Then, add and configure a link between your Scalingo application and the

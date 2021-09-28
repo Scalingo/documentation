@@ -1,7 +1,7 @@
 ---
 title: Deploy with GitHub and GitHub Enterprise
 nav: Deploy with GitHub
-modified_at: 2019-08-30 00:00:00
+modified_at: 2021-09-28 00:00:00
 tags: scm github github-enterprise deployment
 index: 5
 ---
@@ -12,13 +12,6 @@ Enterprise. You will have to link it to a GitHub repository and branch.
 ## Link Your App to GitHub
 
 ### Using the Web Dashboard
-
-{% warning %}
-The web dashboard is currently only compatible with GitHub (not GitHub
-Enterprise). To integrate your
-application with GitHub Enterprise, please refer to the section "Using the CLI"
-below.
-{% endwarning %}
 
 In the "Code" section in your dashboard, you'll find a category *Deploy with
 GitHub*. Please click on `Link this app to GitHub` and check you are in the
