@@ -6,7 +6,9 @@ tags: app
 index: 15
 ---
 
-{% warning %} This feature is currently available only in private beta. Ask the support to be added the waitlist. {% endwarning %}
+{% warning %} 
+This feature is currently available only in private beta. Ask the support to be added to the waitlist. 
+{% endwarning %}
 
 Your application may need to execute some tasks at regular interval. The cron feature is here to help you run scheduled tasks based on [one-off containers]({% post_url platform/app/2000-01-01-tasks %}).
 
