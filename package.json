@@ -13,9 +13,6 @@
     "svgo": "^1.0.4",
     "svgo-loader": "^2.1.0"
   },
-  "resolutions": {
-    "image-webpack-loader/imagemin-pngquant": "5.0.1"
-  },
   "devDependencies": {
     "webpack-dev-server": "^2.11.1"
   }
