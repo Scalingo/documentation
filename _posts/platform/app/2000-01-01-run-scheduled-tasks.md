@@ -1,17 +1,21 @@
 ---
 title: Private Beta - Run Scheduled Tasks
 nav: Cron Tasks
-modified_at: 2021-10-11 10:00:00
+modified_at: 2021-10-11 14:00:00
 tags: app
 index: 15
 ---
 
-{% warning %} 
-This feature is currently available only in private beta. Ask the support to be added to the waitlist.
+{% warning %}
+This feature is currently available only in private beta. Ask the support to get early access.
 {% endwarning %}
 
 Your application may need to execute some tasks at regular interval. The cron feature is here to help you run scheduled
 tasks based on [one-off containers]({% post_url platform/app/2000-01-01-tasks %}).
+
+As Scalingo is a highly distributed platform this feature is not based on the cron software. However the end goal is
+the same: execute tasks at precise time date interval. The syntax used to describe this interval is the same as in
+the cron software.
 
 Instead of running 24/7 a container to execute a task from time-to-time, the cron feature lets you start one-off
 containers only when you need.
@@ -19,7 +23,7 @@ containers only when you need.
 ## Configuring Cron Tasks on Your Application
 
 Configure cron tasks on your application by adding a `cron.json` file at the root of your application. The file will be
-detected at the next deployment and the cron task will be configured for your application.
+detected at the next deployment and the cron-like tasks will be automatically launched.
 
 For instance, here is a file example of how to schedule a task every 10 minutes to execute the command
 `rails orders:check` on a 2XL container:
@@ -36,15 +40,16 @@ For instance, here is a file example of how to schedule a task every 10 minutes 
 ```
 
 Each job is configured as a JSON object with two keys:
+
 - `command`: contains both the cron expression and the command to execute:
-  - The cron expression follows the [crontab standard](https://en.wikipedia.org/wiki/Cron#CRON_expression). You may 
+  - The cron expression follows the [crontab standard](https://en.wikipedia.org/wiki/Cron#CRON_expression). You may
   find the website [crontab.guru](https://crontab.guru/#*/10_*_*_*_*) useful to write your own cron expression.
   - The command is any command you can execute in a one-off container
   (i.e. with the command `scalingo --app my-app run <command>`).
-- `size`: specify the [container size]({% post_url platform/internals/2000-01-01-container-sizes %}) of the one-off 
+- `size`: specify the [container size]({% post_url platform/internals/2000-01-01-container-sizes %}) of the one-off
 container executing the command. This key is optional, it defaults to M (512 MiB RAM).
 
-Your cron expression must be set with at least 10 minutes interval.
+**Your cron expression must be set with at least 10 minutes interval.**
 
 ## Get Configured Cron Tasks
 
@@ -87,6 +92,6 @@ The cron feature in itself is free.
 
 The one-off containers launched to run the commands defined in your cron tasks will
 be like other [one-off containers]({% post_url platform/app/2000-01-01-tasks %}). You will be billed for the type of
-container you defined in you cron task (M is the default container size) for the time it was executed.
+container you defined in your cron task (M is the default container size) and for the time it was executed.
 
 For example if your cron task run during 5 minutes, you will be billed 5 minutes of an M container.
