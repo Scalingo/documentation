@@ -1,13 +1,13 @@
 ---
 title: Private Beta - Run Scheduled Tasks
 nav: Cron Tasks
-modified_at: 2021-09-28 17:00:00
+modified_at: 2021-10-11 10:00:00
 tags: app
 index: 15
 ---
 
 {% warning %} 
-This feature is currently available only in private beta. Ask the support to be added to the waitlist. 
+This feature is currently available only in private beta. Ask the support to be added to the waitlist.
 {% endwarning %}
 
 Your application may need to execute some tasks at regular interval. The cron feature is here to help you run scheduled
@@ -15,8 +15,6 @@ tasks based on [one-off containers]({% post_url platform/app/2000-01-01-tasks %}
 
 Instead of running 24/7 a container to execute a task from time-to-time, the cron feature lets you start one-off
 containers only when you need.
-
-TBD how is it enabled
 
 ## Configuring Cron Tasks on Your Application
 
@@ -63,8 +61,8 @@ scalingo --app my-app cron-tasks
 
 ## Delete Configured Cron Tasks
 
-In order to delete a cron tasks, you must delete the associated entry in the `cron.json`.
-If there is no more tasks, or if you want to remove all tasks, you can also remove the file.
+In order to delete a cron task, you must delete the associated entry in the `cron.json`.
+If there is no more task, or if you want to remove all tasks, you can also remove the file.
 
 The cron tasks configuration will be updated when redeploying the application.
 
@@ -72,23 +70,23 @@ The cron tasks configuration will be updated when redeploying the application.
 
 ### How To Enable Cron Tasks?
 
-The cron feature is enabled by default.
+The cron feature is currently in beta state. It is possible to get access to it by asking the support.
 
 ### How To Disable Cron Tasks?
 
-You may want to disable automatic cron tasks execution, for example for [review apps]({% post_url
-platform/app/2000-01-01-review-apps %}) or staging environments.
-
-TBD
+The cron feature can't be disabled, but you can remove your scheduled tasks by deleting the `cron.json` file.
 
 ### How Precise Is The Cron Feature?
 
-Since the cron feature needs to start a new container to execute the task, the precision will depend on the
-deployment time.
+In order to execute tasks on an application, we need to pull the application image which could take a few minutes
+depending on its size.
 
 ### How Will I Be Billed?
 
-The cron feature in itself is free. The one-off containers launched to run the commands defined in your cron tasks will
-be like other [one-off containers]({% post_url platform/app/2000-01-01-tasks %}) ie you will be billed for the type of
-container you defined in you cron task (M is the default container size) for the time it was executed. For example of
-you cron task ran during 5 minutes, you will be billed 5 minutes of an M container. 
+The cron feature in itself is free.
+
+The one-off containers launched to run the commands defined in your cron tasks will
+be like other [one-off containers]({% post_url platform/app/2000-01-01-tasks %}). You will be billed for the type of
+container you defined in you cron task (M is the default container size) for the time it was executed.
+
+For example if your cron task run during 5 minutes, you will be billed 5 minutes of an M container.
