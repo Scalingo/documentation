@@ -13,6 +13,8 @@ This feature is currently available only in private beta. Ask the support to get
 Your application may need to execute some tasks at regular interval. The cron feature is here to help you run scheduled
 tasks based on [one-off containers]({% post_url platform/app/2000-01-01-tasks %}).
 
+As Scalingo is a highly distributed platform this feature is not based on the cron software. However the end goal is the same: execute tasks at precise time date interval. The syntax used to describe this interval is the same as in the cron software.
+
 As Scalingo is a highly distributed platform this feature is not based on the cron software. However the end goal is
 the same: execute tasks at precise time date interval. The syntax used to describe this interval is the same as in
 the cron software.
