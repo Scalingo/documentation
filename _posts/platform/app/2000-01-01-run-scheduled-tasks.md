@@ -16,6 +16,10 @@ The syntax used to describe this interval is the same as in the cron software.
 
 Scalingo Scheduler launches tasks as [one-off containers]({% post_url platform/app/2000-01-01-tasks %}) in detached mode. Therefore the related one-off documentation and their detached mode applies.
 
+{% warning %}
+Scheduled tasks execution is expected but not guaranteed. Scalingo Scheduler is known to occasionally (but rarely) miss the execution of scheduled jobs. If scheduled tasks are a critical component of your application, it is recommended to [run a custom clock process]() instead for more reliability, control, and visibility.
+{% endwarning %}
+
 ## Defining Tasks
 
 Scheduled tasks are defined by adding a `cron.json` file at the root of your application's source code.
@@ -60,6 +64,16 @@ You will be billed for the type of container you defined in your task (M is the 
 
 For example if your task run during 5 minutes, you will be billed 5 minutes of an M container.
 
+## Long-running Tasks
+
+Scheduled tasks are meant to execute short running tasks. 
+
+A one-off container started by Scalingo Scheduler will not run longer than its scheduling interval. For example, for a job that runs every 10 minutes, one-offs will be terminated after running for 10 minutes.
+
+If your tasks may last more than the in-between interval of two tasks we suggest to enqueue those tasks into a background job queue.
+
+Note that there is some jitter in the dyno termination scheduling. This means that two dynos running the same job may overlap for a brief time when a new one is started.
+
 ## Get The List Of Current Scheduled Tasks
 
 Get the list of tasks configured on your application using the Scalingo CLI:
@@ -96,5 +110,6 @@ platform/app/2000-01-01-review-apps %})) we suggest to modify the tasks related 
 
 ### How Precise Is Scalingo Scheduler?
 
-In order to execute tasks on an application, we need to pull the application image which could take a few minutes depending on its size.
+Execution time can be delayed by a few minutes. Indeed in order to execute tasks on an application we need to pull the application image which could take a few minutes depending on its size. 
 
+If you need more precision we suggest to [run a custom clock process]().
