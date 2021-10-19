@@ -66,7 +66,7 @@ For example if your task run during 5 minutes, you will be billed 5 minutes of a
 
 ## Long-running Tasks
 
-Scheduled tasks are meant to execute short running tasks. 
+Scheduled tasks are meant to execute short running tasks.
 
 A one-off container started by Scalingo Scheduler will not run longer than its scheduling interval. For example, for a job that runs every 10 minutes, one-offs will be terminated after running for 10 minutes.
 
@@ -80,11 +80,11 @@ Get the list of tasks configured on your application using the Scalingo CLI:
 
 ```
 scalingo --app my-app cron-tasks
-+--------------------------+------+
-|         COMMAND          | SIZE |
-+--------------------------+------+
-| */10 * * * * echo biniou |      |
-+--------------------------+------+
++---------------------------------+------+
+|            COMMAND              | SIZE |
++---------------------------------+------+
+| */10 * * * * rails orders:check | 2XL  |
++---------------------------------+------+
 ```
 
 ## Mofify or Delete Scheduled Tasks
