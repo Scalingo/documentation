@@ -112,4 +112,4 @@ platform/app/2000-01-01-review-apps %})) we suggest to modify the tasks related 
 
 Execution time can be delayed by a few minutes. Indeed in order to execute tasks on an application we need to pull the application image which could take a few minutes depending on its size. 
 
-If you need more precision we suggest to [run a custom clock process]().
+If you need more precision we suggest to [run a custom clock process]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %}).

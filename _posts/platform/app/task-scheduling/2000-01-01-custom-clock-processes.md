@@ -1,33 +1,58 @@
 ---
-title: Scheduler Alternatives
-nav: Alternatives
+title: Custom Clock Processes
+nav: Custom Clock Processes
 modified_at: 2021-10-19 10:00:00
 tags: task-scheduling
 index: 2
 ---
 
-## Ruby
+// Benefits of the Custom Clock Processes
+- time precision
+- custom schedule
+- ?..
 
-In Ruby you can use [clockwork](http://rubygems.org/gems/clockwork),
-[resque-scheduler](https://rubygems.org/gems/resque-scheduler) or
-[sidekiq-scheduler](https://rubygems.org/gems/sidekiq-scheduler) (Sidekiq
-Enterprise has cron-like feature built-in) for example.
+## Definition of the Custom Clock
 
- With clockwork, you would end up with a Procfile similar to this one:
+- part of the app
+- defined in the `Procfile`
+
+// Example with ruby using clockwork
 
 ```yaml
 web: bundle exec puma -t 1:3 -p $PORT
 clock: bundle exec clockwork clock.rb
 ```
 
+## Start the Task Scheduler
+
 Once your application has been deployed, scale your 'clock' to 1 to start the task
 scheduler:
 
 ```bash
-scalingo --app my-app scale clock:1
+$ scalingo --app my-app scale clock:1
 ```
 
-## PHP
+## Implementation
+
+### Ruby
+
+In Ruby you can use [clockwork](http://rubygems.org/gems/clockwork),
+[resque-scheduler](https://rubygems.org/gems/resque-scheduler) or
+[sidekiq-scheduler](https://rubygems.org/gems/sidekiq-scheduler) (Sidekiq
+Enterprise has cron-like feature built-in) for example.
+
+#### Example
+
+// using clockwork
+
+`Procfile` content:
+```yaml
+clock: bundle exec clockwork clock.rb
+```
+
+// Find code example
+
+### PHP
 
 With PHP, you can use the package [`cron/cron`](https://github.com/Cron/Cron),
 otherwise each framework has its own task scheduler. You may want to use:
@@ -37,7 +62,7 @@ otherwise each framework has its own task scheduler. You may want to use:
 * [https://packagist.org/packages/liebig/cron](https://packagist.org/packages/liebig/cron)
 * [https://packagist.org/packages/heartsentwined/zf2-cron](https://packagist.org/packages/heartsentwined/zf2-cron)
 
-### Example
+#### Example
 
 A complete example project can be found at the following address:
 [https://github.com/Scalingo/sample-php-cron](https://github.com/Scalingo/sample-php-cron)
@@ -94,12 +119,12 @@ The file which implements the cron-like process is defined in `cron.php`:
 ?>
 ```
 
-## Node.js
+### Node.js
 
 In Node.js you can use different package such as [`node-cron`](https://www.npmjs.com/package/cron)
 or [`node-schedule`](https://www.npmjs.com/package/node-schedule).
 
-### Example
+#### Example
 
 The following example uses the `node-cron` package.
 
