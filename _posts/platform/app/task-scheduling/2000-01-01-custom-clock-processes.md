@@ -16,8 +16,9 @@ index: 2
 - part of the app
 - defined in the `Procfile`
 
-// Example with ruby using clockwork
+#### Example 
 
+- Procfile example using clockwork
 ```yaml
 web: bundle exec puma -t 1:3 -p $PORT
 clock: bundle exec clockwork clock.rb
@@ -43,31 +44,54 @@ Enterprise has cron-like feature built-in) for example.
 
 #### Example
 
-// using clockwork
+The following example uses the `clockwork` package.
 
-`Procfile` content:
+Its initialization is done in the file `clock.rb` and a new kind of container must be defined in the
+`Procfile` of the project, the container type `clock`:
+
 ```yaml
 clock: bundle exec clockwork clock.rb
 ```
 
-// Find code example
+The file which implements the cron-like process is defined in `clock.rb`:
+
+```ruby
+require 'clockwork'
+require 'active_support/time' # Allow numeric durations (eg: 1.minutes)
+
+module Clockwork
+  handler do |job|
+    puts "Running #{job}"
+  end
+
+  # handler receives the time when job is prepared to run in the 2nd argument
+  # handler do |job, time|
+  #   puts "Running #{job}, at #{time}"
+  # end
+
+  every(10.seconds, 'frequent.job')
+  every(3.minutes, 'less.frequent.job')
+  every(1.hour, 'hourly.job')
+
+  every(1.day, 'midnight.job', :at => '00:00')
+end
+```
 
 ### PHP
 
-With PHP, you can use the package [`cron/cron`](https://github.com/Cron/Cron),
+With PHP, you can use the package [cron/cron](https://github.com/Cron/Cron),
 otherwise each framework has its own task scheduler. You may want to use:
 
 * [Laravel scheduler]({% post_url languages/php/2000-01-01-laravel %}#laravel-tasks-scheduler)
-* [https://packagist.org/packages/cron/cron](https://packagist.org/packages/cron/cron)
-* [https://packagist.org/packages/liebig/cron](https://packagist.org/packages/liebig/cron)
-* [https://packagist.org/packages/heartsentwined/zf2-cron](https://packagist.org/packages/heartsentwined/zf2-cron)
+* [cron/cron](https://packagist.org/packages/cron/cron)
+* [liebig/cron](https://packagist.org/packages/liebig/cron)
+* [heartsentwined/zf2-cron](https://packagist.org/packages/heartsentwined/zf2-cron)
 
 #### Example
 
-A complete example project can be found at the following address:
-[https://github.com/Scalingo/sample-php-cron](https://github.com/Scalingo/sample-php-cron)
+A complete example project can be found [here](https://github.com/Scalingo/sample-php-cron)
 
-It uses the package [`cron/cron`](https://github.com/Cron/Cron) to implement the tasks scheduler.
+It uses the package `cron/cron` to implement the tasks scheduler.
 Its initialization is done in the file `cron.php` and a new kind of container is defined in the
 `Procfile` of the project, the container type `clock`:
 
@@ -121,8 +145,8 @@ The file which implements the cron-like process is defined in `cron.php`:
 
 ### Node.js
 
-In Node.js you can use different package such as [`node-cron`](https://www.npmjs.com/package/cron)
-or [`node-schedule`](https://www.npmjs.com/package/node-schedule).
+In Node.js you can use different package such as [node-cron](https://www.npmjs.com/package/cron)
+or [node-schedule](https://www.npmjs.com/package/node-schedule).
 
 #### Example
 
