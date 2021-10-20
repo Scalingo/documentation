@@ -72,16 +72,18 @@ Scheduled tasks are meant to execute short running tasks.
 
 A one-off container started by Scalingo Scheduler will not run longer than its scheduling interval. For example, for a job that runs every 10 minutes, one-offs will be terminated after running for 10 minutes.
 
-If your tasks may last more than the in-between interval of two tasks we suggest to enqueue those tasks into a background job queue.
+If your tasks may last more than the in-between interval of two tasks we suggest to use [custom clock processes]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %})
 
-Note that there is some jitter in the dyno termination scheduling. This means that two dynos running the same job may overlap for a brief time when a new one is started.
+{% warning %}
+Note that two containers running the same job may overlap for a brief time if the task if not finished when a new one is started.
+{% endwarning %}
 
 ## Get The List Of Current Scheduled Tasks
 
 Get the list of tasks configured on your application using the Scalingo CLI:
 
-```
-scalingo --app my-app cron-tasks
+```bash
+$ scalingo --app my-app cron-tasks
 +---------------------------------+------+
 |            COMMAND              | SIZE |
 +---------------------------------+------+

@@ -6,19 +6,17 @@ tags: task-scheduling
 index: 2
 ---
 
-// Benefits of the Custom Clock Processes
-- time precision
-- custom schedule
-- ?..
+With custom clock processes, you have the ability to specify custom schedule. You will also have other benefits like
+environment parity between development and production, or time precision in your task scheduling.
 
 ## Definition of the Custom Clock
 
-- part of the app
-- defined in the `Procfile`
+The implementation of the custom clock will vary depending on the used language. However, defining the clock process
+is very simple and is done in the `Procfile`.
 
 #### Example 
 
-- Procfile example using clockwork
+Here is an example of the process definition using the Ruby library`clockwork`:
 ```yaml
 web: bundle exec puma -t 1:3 -p $PORT
 clock: bundle exec clockwork clock.rb
@@ -76,6 +74,8 @@ module Clockwork
   every(1.day, 'midnight.job', :at => '00:00')
 end
 ```
+
+For more information about using `clockwork`, please refer to the [rubydoc](https://www.rubydoc.info/gems/clockwork/2.0.4).
 
 ### PHP
 
