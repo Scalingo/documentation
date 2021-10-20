@@ -90,7 +90,7 @@ otherwise each framework has its own task scheduler. You may want to use:
 
 #### Example
 
-A complete example project can be found [here](https://github.com/Scalingo/sample-php-cron)
+A complete example project can be found [here](https://github.com/Scalingo/sample-php-cron).
 
 It uses the package `cron/cron` to implement the tasks scheduler.
 Its initialization is done in the file `cron.php` and a new kind of container is defined in the
