@@ -1,5 +1,5 @@
 ---
-title: Custom Clock Processes
+title: Scheduled Jobs with Custom Clock Processes
 nav: Custom Clock Processes
 modified_at: 2021-10-19 10:00:00
 tags: task-scheduling
