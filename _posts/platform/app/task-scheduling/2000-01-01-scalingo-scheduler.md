@@ -51,7 +51,9 @@ For instance, here is a file example of how to schedule a task every 10 minutes 
 }
 ```
 
-**Your cron expression must be set with at least a 10 minutes interval.**
+{% warning %}
+Your cron expression must be set with at least a 10 minutes interval.
+{% endwarning %}
 
 
 ### Costs
