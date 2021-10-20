@@ -16,7 +16,8 @@ is very simple and is done in the `Procfile`.
 
 #### Example 
 
-Here is an example of the process definition using the Ruby library`clockwork`:
+Here is an example of the process definition using the Ruby library `clockwork`:
+
 ```yaml
 web: bundle exec puma -t 1:3 -p $PORT
 clock: bundle exec clockwork clock.rb
