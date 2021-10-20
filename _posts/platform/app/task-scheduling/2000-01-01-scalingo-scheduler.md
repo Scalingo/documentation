@@ -17,7 +17,7 @@ The syntax used to describe this interval is the same as in the cron software.
 Scalingo Scheduler launches tasks as [one-off containers]({% post_url platform/app/2000-01-01-tasks %}) in detached mode. Therefore the related one-off documentation and their detached mode applies.
 
 {% warning %}
-Scheduled tasks execution is expected but not guaranteed. Scalingo Scheduler is known to occasionally (but rarely) miss the execution of scheduled jobs. If scheduled tasks are a critical component of your application, it is recommended to [run a custom clock process]() instead for more reliability, control, and visibility.
+Scheduled tasks execution is expected but not guaranteed. Scalingo Scheduler is known to occasionally (but rarely) miss the execution of scheduled jobs. If scheduled tasks are a critical component of your application, it is recommended to [run a custom clock process]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %}) instead for more reliability, control, and visibility.
 {% endwarning %}
 
 ## Defining Tasks
