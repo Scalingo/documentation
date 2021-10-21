@@ -9,17 +9,16 @@ index: 2
 With custom clock processes, you have the ability to specify custom schedule. You will also have other benefits like
 environment parity between development and production, or time precision in your task scheduling.
 
-## Definition of the Custom Clock
+## Definition of the Custom Clock Process
 
-The implementation of the custom clock will vary depending on the used language. However, defining the clock process
-is very simple and is done in the `Procfile`.
+The implementation of the custom clock will vary depending on the used language. However, defining the clock process is standard and is done in the `Procfile`.
 
-#### Example 
+### Example
 
 Here is an example of the process definition using the Ruby library `clockwork`:
 
 ```yaml
-web: bundle exec puma -t 1:3 -p $PORT
+web: bundle exec puma -C config/puma.rb
 clock: bundle exec clockwork clock.rb
 ```
 
@@ -32,7 +31,7 @@ scheduler:
 $ scalingo --app my-app scale clock:1
 ```
 
-## Implementation
+## Implementation Examples
 
 ### Ruby
 
@@ -41,11 +40,9 @@ In Ruby you can use [clockwork](http://rubygems.org/gems/clockwork),
 [sidekiq-scheduler](https://rubygems.org/gems/sidekiq-scheduler) (Sidekiq
 Enterprise has cron-like feature built-in) for example.
 
-#### Example
+#### Example With the Clockwork Gem
 
-The following example uses the `clockwork` package.
-
-Its initialization is done in the file `clock.rb` and a new kind of container must be defined in the
+Initialization is done in the file `clock.rb` and a new kind of container must be defined in the
 `Procfile` of the project, the container type `clock`:
 
 ```yaml
@@ -76,7 +73,7 @@ module Clockwork
 end
 ```
 
-For more information about using `clockwork`, please refer to the [rubydoc](https://www.rubydoc.info/gems/clockwork/2.0.4).
+For more information about using `clockwork`, please refer to the [official clockwork page](https://github.com/Rykian/clockwork).
 
 ### PHP
 
@@ -105,33 +102,33 @@ The file which implements the cron-like process is defined in `cron.php`:
 ```php
 <?php
   require(__DIR__ . '/vendor/autoload.php');
-  
+
   echo "[CRON] Starting tasks scheduler\n";
-  
+
   function build_cron() {
     // Increment redis key every minute
     $inc_job = new \Cron\Job\ShellJob();
     $inc_job->setCommand('php inc.php');
     $inc_job->setSchedule(new \Cron\Schedule\CrontabSchedule('*/2 * * * *'));
-    
+
     $resolver = new \Cron\Resolver\ArrayResolver();
     $resolver->addJob($inc_job);
-    
+
     $cron = new \Cron\Cron();
     $cron->setExecutor(new \Cron\Executor\Executor());
     $cron->setResolver($resolver);
     return $cron;
   }
-  
+
   $cron = build_cron();
-  
+
   // Every 60 seconds, run the scheduler which will execute the tasks
   // which have to be started at the given minute.
   while(true) {
     echo "[CRON] Running tasks\n";
     $report = $cron->run();
     while ($cron->isRunning()) { }
-    
+
     echo "[CRON] " . count($report->getReports()) . " tasks have been executed\n";
     foreach($report->getReports() as $job_report) {
       $output = $job_report->getOutput();
