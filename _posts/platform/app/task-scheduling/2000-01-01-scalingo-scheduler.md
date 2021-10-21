@@ -2,8 +2,8 @@
 title: Private Beta - Scalingo Scheduler - Run Scheduled Tasks
 nav: Scalingo Scheduler
 modified_at: 2021-10-19 10:00:00
-tags: app
-index: 15
+tags: task-scheduling
+index: 1
 ---
 
 {% warning %}
@@ -17,7 +17,7 @@ The syntax used to describe this interval is the same as in the cron software.
 Scalingo Scheduler launches tasks as [one-off containers]({% post_url platform/app/2000-01-01-tasks %}) in detached mode. Therefore the related one-off documentation and their detached mode applies.
 
 {% warning %}
-Scheduled tasks execution is expected but not guaranteed. Scalingo Scheduler is known to occasionally (but rarely) miss the execution of scheduled jobs. If scheduled tasks are a critical component of your application, it is recommended to [run a custom clock process]() instead for more reliability, control, and visibility.
+Scheduled tasks execution is expected but not guaranteed. Scalingo Scheduler is known to occasionally (but rarely) miss the execution of scheduled jobs. If scheduled tasks are a critical component of your application, it is recommended to [run a custom clock process]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %}) instead for more reliability, control, and visibility.
 {% endwarning %}
 
 ## Defining Tasks
@@ -51,7 +51,9 @@ For instance, here is a file example of how to schedule a task every 10 minutes 
 }
 ```
 
-**Your cron expression must be set with at least a 10 minutes interval.**
+{% warning %}
+Your cron expression must be set with at least a 10 minutes interval.
+{% endwarning %}
 
 
 ### Costs
@@ -70,16 +72,18 @@ Scheduled tasks are meant to execute short running tasks.
 
 A one-off container started by Scalingo Scheduler will not run longer than its scheduling interval. For example, for a job that runs every 10 minutes, one-offs will be terminated after running for 10 minutes.
 
-If your tasks may last more than the in-between interval of two tasks we suggest to enqueue those tasks into a background job queue.
+If your tasks may last more than the in-between interval of two tasks we suggest to use [custom clock processes]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %})
 
-Note that there is some jitter in the dyno termination scheduling. This means that two dynos running the same job may overlap for a brief time when a new one is started.
+{% warning %}
+Note that two containers running the same job may overlap for a brief time if the task if not finished when a new one is started.
+{% endwarning %}
 
 ## Get The List Of Current Scheduled Tasks
 
 Get the list of tasks configured on your application using the Scalingo CLI:
 
-```
-scalingo --app my-app cron-tasks
+```bash
+$ scalingo --app my-app cron-tasks
 +---------------------------------+------+
 |            COMMAND              | SIZE |
 +---------------------------------+------+
@@ -112,4 +116,4 @@ platform/app/2000-01-01-review-apps %})) we suggest to modify the tasks related 
 
 Execution time can be delayed by a few minutes. Indeed in order to execute tasks on an application we need to pull the application image which could take a few minutes depending on its size. 
 
-If you need more precision we suggest to [run a custom clock process]().
+If you need more precision we suggest to [run a custom clock process]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %}).
