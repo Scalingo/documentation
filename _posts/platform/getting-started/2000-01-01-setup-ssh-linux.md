@@ -28,7 +28,7 @@ By default both private and public keys will be located in your `$HOME/.ssh` dir
 
 ### Add the public SSH key to Scalingo
 
-To get the content of the public SSH key, you need to run the following command :
+To get the content of the public SSH key, you need to run the following command:
 
 ```bash
 $ cat ~/.ssh/id_rsa.pub
@@ -46,7 +46,7 @@ Still in a git-bash terminal run the following command:
 ```bash
 $ ssh -T git@ssh.osc-fr1.scalingo.com
 ```
-or 
+or
 ```bash
 $ ssh -T git@ssh.osc-secnum-fr1.scalingo.com
 ```
