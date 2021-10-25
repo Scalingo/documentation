@@ -1,6 +1,6 @@
 ---
 title: Setup SSH on Linux
-modified_at: 2015-04-03 00:00:00
+modified_at: 2021-10-25 00:00:00
 tags: follow-the-light ssh linux git
 index: 3
 ---
@@ -41,12 +41,14 @@ create a new key with the content of the public key.
 
 ### Check everything is working
 
-Still in a git-bash terminal run the following command:
+In a terminal, run the following command (depending on [the region](https://doc.scalingo.com/platform/internals/regions) you need to access):
 
 ```bash
 $ ssh -T git@ssh.osc-fr1.scalingo.com
 ```
+
 or
+
 ```bash
 $ ssh -T git@ssh.osc-secnum-fr1.scalingo.com
 ```
@@ -57,5 +59,5 @@ It should display the following output:
 You've successfully authenticated on Scalingo, but there is no shell access
 ```
 
-If it doesn't, something has been done wrong please recheck the different step
+If it doesn't, something has been done wrong. Please recheck the different step
 of this guide.
