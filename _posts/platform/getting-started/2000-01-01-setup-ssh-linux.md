@@ -1,6 +1,6 @@
 ---
 title: Setup SSH on Linux
-modified_at: 2015-04-03 00:00:00
+modified_at: 2021-10-25 00:00:00
 tags: follow-the-light ssh linux git
 index: 3
 ---
@@ -25,3 +25,39 @@ you private key with a password. This step is optional but for further security 
 want to set one.
 
 By default both private and public keys will be located in your `$HOME/.ssh` directory.
+
+### Add the public SSH key to Scalingo
+
+To get the content of the public SSH key, you need to run the following command:
+
+```bash
+$ cat ~/.ssh/id_rsa.pub
+```
+
+The file content should start with `ssh-rsa`
+
+Once you have the public key, go to Scalingo Dashboard [SSH key section](https://dashboard.scalingo.com/account/keys) and
+create a new key with the content of the public key.
+
+### Check everything is working
+
+In a terminal, run the following command (depending on [the region](https://doc.scalingo.com/platform/internals/regions) you need to access):
+
+```bash
+$ ssh -T git@ssh.osc-fr1.scalingo.com
+```
+
+or
+
+```bash
+$ ssh -T git@ssh.osc-secnum-fr1.scalingo.com
+```
+
+It should display the following output:
+
+```
+You've successfully authenticated on Scalingo, but there is no shell access
+```
+
+If it doesn't, something has been done wrong. Please recheck the different step
+of this guide.
