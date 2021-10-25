@@ -36,7 +36,7 @@ $ cat ~/.ssh/id_rsa.pub
 
 The file content should start with `ssh-rsa`
 
-Once you have the public key, go to Scalingo Dashboard [SSH key section](https://my.scalingo.com/keys) and
+Once you have the public key, go to Scalingo Dashboard [SSH key section](https://dashboard.scalingo.com/account/keys) and
 create a new key with the content of the public key.
 
 ### Check everything is working
