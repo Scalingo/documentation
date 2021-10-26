@@ -1,6 +1,6 @@
 ---
 title: Introduction
-modified_at: 2021-04-02 00:00:00
+modified_at: 2021-10-26 00:00:00
 tags: cli interface app
 index: 2
 ---
@@ -14,6 +14,30 @@ the CLI requires you to take one of these actions:
 * Add a SSH key to your account on the [dedicated](https://my.scalingo.com/keys) page.
 * Add a token to your account on the [profile](https://my.scalingo.com/profile) page. Then use it to
   login with `scalingo login --api-token <token>`
+
+### List of Ports Needed To Be Opened
+
+To access all the features of our CLI, some ports must be accessible from the
+machine where you want to use the CLI.
+
+If you have a firewall, you need to open these ports for these addresses
+so that some features of the CLI can work properly.
+
+To use `git push`, `git pull` and `db-tunnel` features, open this port:
+
+| Region Name     | Address                               | Port | Protocol | 
+| --------------- | ------------------------------------- | ---- | -------- |
+| osc-fr1         | ssh.osc-fr1.scalingo.com              | 22   | TCP      |
+| osc-secnum-fr1  | ssh.osc-secnum-fr1.scalingo.com       | 22   | TCP      |
+{: .table }
+
+To use databases command such as `pgsql-console`, open this port:
+
+| Region Name     | Address                               | Port | Protocol | 
+| --------------- | ------------------------------------- | ---- | -------- |
+| osc-fr1         | one-off.osc-fr1.scalingo.com          | 5000 | TCP      |
+| osc-secnum-fr1  | one-off.osc-secnum-fr1.scalingo.com   | 5000 | TCP      |
+{: .table }
 
 ## Tips
 
