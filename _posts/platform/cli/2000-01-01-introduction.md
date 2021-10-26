@@ -15,12 +15,12 @@ the CLI requires you to take one of these actions:
 * Add a token to your account on the [profile](https://my.scalingo.com/profile) page. Then use it to
   login with `scalingo login --api-token <token>`
 
-### List of ports needed to be opened
+### List of Ports Needed To Be Opened
 
 To access all the features of our CLI, some ports must be accessible from the
 machine where you want to use the CLI.
 
-If you have a firewall, you will need to open these ports for these addresses
+If you have a firewall, you need to open these ports for these addresses
 so that some features of the CLI can work properly.
 
 To use `git push`, `git pull` and `db-tunnel` features, open this port:
