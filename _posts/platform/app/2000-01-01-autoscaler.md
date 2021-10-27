@@ -1,7 +1,7 @@
 ---
 title: Scale automatically your application
 nav: Autoscaling
-modified_at: 2021-06-28 00:00:00
+modified_at: 2021-10-27 00:00:00
 tags: app scaling metrics autoscaler
 ---
 
@@ -18,6 +18,14 @@ of your app:
 
 {% assign img_url = 'https://cdn.scalingo.com/documentation/screenshot_dashboard_autoscalers.png' %}
 {% include mdl_img.html %}
+
+The *Minimum Containers* value cannot be under 2. The reason is that the
+autoscaler should not impact the availability of the application, and scaling
+an application to less than 1 container might impact the availability. Indeed,
+our terms of service state that when an application is scaled to 1 container,
+the SLA Scalingo provides is 98%. It is 99.9% if the application is scaled to 2
+containers. We don't want the autoscaler to have an impact on the contractual
+availability.
 
 The **Target** is used by the autoscaler to adapt the number of containers of
 your application. We also provide you with a recommended value you can use as
