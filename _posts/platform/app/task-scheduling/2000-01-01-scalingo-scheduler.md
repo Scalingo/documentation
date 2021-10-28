@@ -1,7 +1,7 @@
 ---
 title: Private Beta - Scalingo Scheduler - Run Scheduled Tasks
 nav: Scalingo Scheduler
-modified_at: 2021-10-19 10:00:00
+modified_at: 2021-10-28 10:00:00
 tags: task-scheduling
 index: 1
 ---
@@ -117,3 +117,11 @@ platform/app/2000-01-01-review-apps %})) we suggest to modify the tasks related 
 Execution time can be delayed by a few minutes. Indeed in order to execute tasks on an application we need to pull the application image which could take a few minutes depending on its size. 
 
 If you need more precision we suggest to [run a custom clock process]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %}).
+
+### Does Scalingo Scheduler work with Review Apps?
+
+Of course, it works in the same way as the parent app.
+
+### Where can we see logs of the tasks executed?
+
+Tasks logs are included in the [application logs]({% post_url platform/app/2000-01-01-logs %}) next to other containers logs.
