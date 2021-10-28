@@ -151,11 +151,9 @@ set to `Alenala` and a field `message` set to `Hi!`.
 
 ### Custom Configuration for Logstash
 
-In the logstash configuration repository, clone from
-[Scalingo/logstash-boilerplate](https://github.com/Scalingo/logstash-boilerplate),
-a config directory is present. All the files in this folder will be copied in the
-logstash configuration directory at runtime, allowing you to customize exactly
-how your want logstash to run.
+The cloned boilerplate used to deploy your application contains a `config` directory. 
+All the files in this folder will be copied in the Logstash configuration directory at runtime, 
+allowing you to customize exactly how your want Logstash to run.
 
 For instance, if you want to edit the logging behavior of Logstash, edit `config/log4j2.yml`
 
