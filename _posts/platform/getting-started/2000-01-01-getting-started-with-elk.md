@@ -194,9 +194,9 @@ should appear in the Discover tab of Kibana dashboard.
 
 ### With TLS connection on Elasticsearch
 
-If you have enabled the TLS option on your Elasticsearch addon, you must
+If your Elasticsearch addon has the Force TLS option enabled, you must
 set the environment variable `ELASTICSEARCH_TLS_CA_URL` on your Kibana
-application with the URL of our CA certificate available on the database
+application with the URL of our CA certificate. The CA certificate URL is available on the database
 dashboard.
 
 ## Send your application logs to your own ELK stack
