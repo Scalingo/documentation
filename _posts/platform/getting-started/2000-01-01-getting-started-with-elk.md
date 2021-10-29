@@ -1,6 +1,6 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2021-04-21 00:00:00
+modified_at: 2021-10-29 00:00:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
@@ -191,6 +191,13 @@ should appear in the Discover tab of Kibana dashboard.
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/elk/success.png" %}
 {% include mdl_img.html %}
+
+### With TLS connection on Elasticsearch
+
+If your Elasticsearch addon has the Force TLS option enabled, you must
+set the environment variable `ELASTICSEARCH_TLS_CA_URL` on your Kibana
+application with the URL of our CA certificate. The CA certificate URL is available on the database
+dashboard.
 
 ## Send your application logs to your own ELK stack
 
