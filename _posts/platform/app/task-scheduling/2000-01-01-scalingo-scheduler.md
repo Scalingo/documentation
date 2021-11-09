@@ -75,7 +75,7 @@ A one-off container started by Scalingo Scheduler will not run longer than its s
 If your tasks may last more than the in-between interval of two tasks we suggest to use [custom clock processes]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %})
 
 {% warning %}
-Note that two containers running the same job may overlap for a brief time if the task if not finished when a new one is started.
+Note that two containers running the same job may overlap for a brief time if the task is not finished when a new one is started.
 {% endwarning %}
 
 ## Get The List Of Current Scheduled Tasks
