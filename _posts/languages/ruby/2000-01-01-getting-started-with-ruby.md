@@ -15,7 +15,7 @@ Note: This tutorial does not cover the Ruby on Rails installation, If you're loo
 
 To be able to follow this tutorial, we assume that you have:
 
-* A [Scalingo account](https://scalingo.com/users/signup)
+* A [Scalingo account](https://auth.scalingo.com/users/sign_up)
 * Ruby version 2.3.5+ -- see the GoRails setup guide
   [window](https://gorails.com/setup/windows/10),
   [mac](https://gorails.com/setup/osx/10.13-high-sierra),
