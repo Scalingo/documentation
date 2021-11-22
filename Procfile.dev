@@ -1,0 +1,2 @@
+web: PORT=4300 bundle exec jekyll serve --watch --host 0.0.0.0 --trace --incremental --livereload --livereload-port 4302
+assets: PORT=4302 bin/webpack-dev-server --config config/webpack/development.js
