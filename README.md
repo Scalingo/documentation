@@ -1,6 +1,6 @@
 # How to contribute
 
-[*Scalingo Documentation Center*](http://doc.scalingo.com) relies on Jekyll and GitHub Pages to host, build and serve. You are welcome to contribute to this documentation by forking and sending pull requests.
+[*Scalingo Documentation Center*](http://doc.scalingo.com) relies on Jekyll. You are welcome to contribute to this documentation by forking and sending pull requests.
 
 ## Adding a new article
 
@@ -12,15 +12,14 @@ The minimal *front matter* that you need to add is:
 ```
 ---
 title: What is Epoch
-modified_at: 1970-01-01 00:00:00
-categories: unix
-tags: time
+modified_at: 2021-11-23 00:00:00
 ---
 ```
 
-Be aware that the `categories` will be used in the final URL. In the case of the previous *front matter*, the generated URL will be: `/unix/what-is-epoch.html`.
+Optional tag :
 
-If you add a `permalink` that doesn't ends with `.html` in the *front matter* you have to append a trailing slash. Otherwise, the generated URL will not match the real accessible URL, which is troublesome for crawlers.
+- `nav: [string]` set another url than the one generated from the title
+- `index: [integer]` change the position of the page in his folder in the side menu
 
 ## Modifying an article
 
@@ -32,10 +31,9 @@ Please do not use the `date` metadata as it will conflict with the date extracte
 
 Please do not use first-level HTML/Markdown headers (*i.e. `<h1></h1>`*) as it will be pulled from the `title ` metadata.
 
-__Blockquotes__ should be **only used for quotes**. If you'd like to incorporate a useful
-note please use
+__Blockquotes__ should be **only used for quotes**.
 
-Do not put `categories`, `category` or `permalink` in the Front Matter, everything is handled by the jekyll-dirname-generator plugin.
+Do not put `categories`, `category` or `permalink` in the *front matter*, everything is handled by the jekyll-dirname-generator plugin.
 
 ## Do's
 
