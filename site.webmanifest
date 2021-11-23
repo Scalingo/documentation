@@ -1,6 +1,6 @@
 {
-    "name": "Scalingo Doc",
-    "short_name": "Scalingo Doc",
+    "name": "Scalingo",
+    "short_name": "Scalingo",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +13,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#45b0e5",
-    "background_color": "#45b0e5",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "start_url": "https://www.scalingo.com",
     "display": "standalone"
 }
