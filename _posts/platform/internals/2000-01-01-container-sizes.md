@@ -57,6 +57,7 @@ index: 2
 </table>
 
 Bigger container sizes are available upon request on the support.
+As a note, each new process will require a PID and inside each process, each thread will neeed one too.
 
 ## Availability of the Sizes
 
