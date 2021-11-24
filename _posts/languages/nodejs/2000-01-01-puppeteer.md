@@ -13,10 +13,10 @@ Puppeteer is a library to headless Chrome API. In short, most things that you ca
 
 ## Install Puppeteer on a Scalingo Application
 
-To install Puppeteer on a Scalingo application, you need to make use of [this buildpack](https://github.com/yrambler2001/puppeteer-scalingo-buildpack) developed by the community. Such a buildpack should be used as part of a [multi-buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}).
+To install Puppeteer on a Scalingo application, you need to make use of [this buildpack](https://github.com/Scalingo/puppeteer-buildpack) developed by the community. Such a buildpack should be used as part of a [multi-buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}).
 
 ```bash
-$ echo 'https://github.com/levups/puppeteer-scalingo-buildpack' >> .buildpacks
+$ echo 'https://github.com/Scalingo/puppeteer-buildpack' >> .buildpacks
 $ echo 'https://github.com/Scalingo/nodejs-buildpack' >> .buildpacks
 $ git add .buildpacks
 $ git commit -m 'Add multi-buildpack'
