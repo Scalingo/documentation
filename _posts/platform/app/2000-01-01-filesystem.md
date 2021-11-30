@@ -1,6 +1,6 @@
 ---
 title: File System and File Storage
-modified_at: 2017-01-03 00:00:00
+modified_at: 2021-11-30 00:00:00
 tags: app runtime file system disk storage
 index: 1
 ---
@@ -32,7 +32,7 @@ will be lost when the app is restarted.
 If you need to store files in a persistent manner, the good practice is to use
 an external storage service solution like:
 
-* [Outscale OSU](https://wiki.outscale.net/display/EN/About+OSU) (S3 compatible API)
+* [Outscale OOS](https://docs.outscale.com/en/userguide/About-Object-Storage.html) (S3 compatible API)
 * Amazon S3
 * Google Cloud Storage
 * Azure Blob Storage
