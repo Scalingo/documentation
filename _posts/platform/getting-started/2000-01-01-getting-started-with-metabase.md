@@ -41,3 +41,13 @@ Last, deploy your application with:
 ```bash
 $ git push scalingo master
 ```
+
+## Update the Application
+
+To update your Metabase application to the latest version, you need to redeploy the last version of the code source.
+
+Via this command for example:
+
+```
+scalingo -a  my-app deploy https://github.com/Scalingo/metabase-scalingo/archive/refs/heads/master.tar.gz
+```

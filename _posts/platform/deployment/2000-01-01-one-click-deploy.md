@@ -65,3 +65,17 @@ Example:
 ```
 
 You can find everything about the `scalingo.json` file on our [API dedicated page](http://developers.scalingo.com/scalingo-json-schema/).
+
+## Update the Application
+
+To update your application to the latest version of your code, you can use an archive. GitHub is giving you access to an archive with this URL:
+
+```
+https://github.com/<Your account>/<Your project>/archive/refs/heads/master.tar.gz
+```
+
+To deploy it, you simply have to run this command
+
+```
+scalingo -a  my-app deploy https://github.com/<Your account>/<Your project>/archive/refs/heads/master.tar.gz
+```
