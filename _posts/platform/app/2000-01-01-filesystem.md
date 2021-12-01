@@ -32,7 +32,6 @@ will be lost when the app is restarted.
 If you need to store files in a persistent manner, the good practice is to use
 an external storage service solution like:
 
-* [Outscale OOS](https://docs.outscale.com/en/userguide/About-Object-Storage.html) (S3 compatible API)
 * Amazon S3
 * Google Cloud Storage
 * Azure Blob Storage
