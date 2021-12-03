@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2020-05-19 00:00:00
+modified_at: 2021-12-03 00:00:00
 index: 7
 tags: deployment, java, jar, war
 ---
@@ -21,10 +21,9 @@ archive.
 
 {% include info_command_line_tool.md %}
 
-## Usage of the `deploy` command
+## Deploy a WAR Archive
 
-The following example applies for **WAR** archives but **also for autonomous JAR**
-archives:
+You can deploy your **WAR** archive with the following command:
 
 ```sh
 $ scalingo --app my-app deploy ./application.war
@@ -40,6 +39,43 @@ $ scalingo --app my-app deploy ./application.war
 [LOG]  Build complete, shipping your container...
 [LOG]  Waiting for your application to boot...
 [LOG] <-- https://my-app.osc-fr1.scalingo.io -->
+```
+
+## Deploy a JAR Archive
+
+Deploying a JAR archive is slightly more complicated. You need to build a `.tar.gz` archive with some specific files.
+
+Create a directory which contains the JAR file, and a [Procfile]({% post_url platform/app/2000-01-01-procfile %}) which explains how to start the application:
+
+```yaml
+web: java -jar ./my-app.jar
+```
+
+The `.tar.gz` archive content tree should be like:
+
+```
+scalingo/my-app.jar
+scalingo/Procfile
+```
+
+Indicate to Scalingo deployment system the type of technology used by your application by defining the following environment variable:
+
+```bash
+scalingo --app my-app env-set BUILDPACK_URL="https://github.com/Scalingo/buildpack-jvm-common"
+```
+
+Last, deploy your archive with:
+
+```sh
+$ scalingo --app my-app deploy ./archive.tar.gz
+ <-- Start deployment of my-app -->
+       Fetching source code
+       Fetching deployment cache
+-----> Cloning custom buildpack: https://github.com/Scalingo/buildpack-jvm-common#master
+-----> Installing JDK 1.8... done
+ Build complete, shipping your container...
+ Waiting for your application to boot...
+ <-- https://my-app.osc-fr1.scalingo.io -->
 ```
 
 ## Configuration
