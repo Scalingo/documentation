@@ -71,11 +71,20 @@ The advantage of this method is the network.
 From your workstation you don't always have a good bandwidth. From our infrastructure,
 data transfers will be way faster.
 
+You need to install the MySQL CLI tools in the one-off before executing `mysqldump` or `mysql`:
+
+```bash
+$ scalingo --app my-app run bash
+
+[00:00] Scalingo ~ $ dbclient-fetcher mysql
+```
+
 ### Dump & Restore
 
 ```bash
 $ scalingo --app my-app run bash
 
+[00:00] Scalingo ~ $ dbclient-fetcher mysql
 [00:00] Scalingo ~ $ mysqldump -u user --password=pass -h my-db.mysql.dbs.scalingo.com -P 30000 my-db > /tmp/dumped_db.sql
 ...
 
