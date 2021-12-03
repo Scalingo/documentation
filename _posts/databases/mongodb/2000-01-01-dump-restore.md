@@ -85,11 +85,20 @@ The advantage of this method is the network.
 From your workstation you don't always have a good bandwidth. From our infrastructure,
 data transfers will be way faster.
 
+You need to install the MongoDB CLI tools in the one-off before executing `mongodump` or `mongorestore`:
+
+```bash
+$ scalingo --app my-app run bash
+
+[00:00] Scalingo ~ $ dbclient-fetcher mongo
+```
+
 ### Dump
 
 ```bash
 $ scalingo --app my-app run bash
 
+[00:00] Scalingo ~ $ dbclient-fetcher mongo
 [00:00] Scalingo ~ $ mongodump --username user --password pass --host my-db.mongo.dbs.scalingo.com:30000 --db my-db
 
 # Do something with the dump, i.e send it with FTP or to an external server
@@ -99,6 +108,8 @@ $ scalingo --app my-app run bash
 
 ```bash
 $ scalingo --app my-app run bash
+
+[00:00] Scalingo ~ $ dbclient-fetcher mongo
 
 # Get a dump from a remote place, with 'curl' or 'ftp'
 
