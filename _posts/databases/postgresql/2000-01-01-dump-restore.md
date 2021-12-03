@@ -78,6 +78,14 @@ The advantage of this method is the network.
 From your workstation you don't always have a good bandwidth. From our infrastructure,
 data transfers will be way faster.
 
+You need to install the PostgreSQL CLI tools in the one-off before executing `pg_dump` or `pg_restore`:
+
+```bash
+$ scalingo --app my-app run bash
+
+[00:00] Scalingo ~ $ dbclient-fetcher psql
+```
+
 ### Dump & Restore
 
 ```bash
