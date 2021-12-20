@@ -32,52 +32,69 @@ Edit the file `nginx-basic-auth.conf` in this directory with the following conte
 
 1. For the complete website:
 
-```nginx
-auth_basic           "Protected Site";
-auth_basic_user_file "/app/config/htpasswd";
-```
+    ```nginx
+    auth_basic           "Protected Site";
+    auth_basic_user_file "/app/config/htpasswd";
+    ```
 
 2. Part of a website, here everything under `/wp-admin`:
 
-```nginx
-location ~ /wp-admin {
-  auth_basic           "Protected Site";
-  auth_basic_user_file "/app/config/htpasswd";
-}
-```
+    ```nginx
+    location ~ /wp-admin {
+      auth_basic           "Protected Site";
+      auth_basic_user_file "/app/config/htpasswd";
+    }
+    ```
 
 3. Depending on the hostname. Useful if you host a staging and a production
    application on Scalingo and just want to protect the staging application with
    basic auth:
 
-```nginx
-if ($host ~ "app-staging.osc-fr1.scalingo.io" ) {
-    set $auth_basic "Protected Site";
-}
-if ($host ~ "app.osc-fr1.scalingo.io" ) {
-    set $auth_basic off;
-}
-auth_basic $auth_basic;
-auth_basic_user_file /app/config/htpasswd;
-```
+    ```nginx
+    if ($host ~ "app-staging.osc-fr1.scalingo.io" ) {
+        set $auth_basic "Protected Site";
+    }
+    if ($host ~ "app.osc-fr1.scalingo.io" ) {
+        set $auth_basic off;
+    }
+    auth_basic $auth_basic;
+    auth_basic_user_file /app/config/htpasswd;
+    ```
 
-Create the `config/htpasswd` file with the couples user/encrypted password
-using the following command:
+4. Create the couples user/encrypted password and set it on your Scalingo app:
 
-```bash
-htpasswd -c config/htpasswd username
+    ```bash
+    scalingo env-set --app my-app HTPASSWD_CONTENT=`htpasswd -n username`
+    # Then a prompt will ask for the password
+    ```
 
-# Then a prompt will ask for the password
-```
-
-That's it with those two files, Nginx will be able to ask for basic auth! Last
-thing you need to do is to instruct Scalingo's deployment process to use your
-configuration file.
+That’s it with the Nginx configuration. Last thing you need to do is to instruct Scalingo’s deployment process to use your configuration file.
 
 ### Deployment Process Configuration
 
-{% assign nginx-include = "config/nginx-basic-auth.conf" %}
-{% include nginx_includes.md %}
+This process requires you to edit the `composer.json` file of your project.
+Edit the file the following way:
+
+```json
+{
+  ...
+  "extra": {
+    "paas": {
+      "compile": ["echo $HTPASSWD_CONTENT > config/htpasswd"],
+      "nginx-includes": ["config/nginx-basic-auth.conf"]
+    }
+  }
+}
+```
+
+If you are not using composer, create a `composer.json` file with the previous
+content, and also create a file `composer.lock` containing an empty JSON
+dictionary `{}`.
+
+{% note %}
+Tip: You can find more information about extra configuration in [the PHP
+support page]({% post_url languages/php/2000-01-01-start %}).
+{% endnote %}
 
 ## Redeploy Your App
 
