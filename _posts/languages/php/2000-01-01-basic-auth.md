@@ -64,7 +64,7 @@ Edit the file `nginx-basic-auth.conf` in this directory with the following conte
 4. Create the couples user/encrypted password and set it on your Scalingo app:
 
     ```bash
-    scalingo env-set --app my-app HTPASSWD_CONTENT=`htpasswd -n username`
+    scalingo env-set --app my-app HTPASSWD_CONTENT=$(htpasswd -n username)
     # Then a prompt will ask for the password
     ```
 
