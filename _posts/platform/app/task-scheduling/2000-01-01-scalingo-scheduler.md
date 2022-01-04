@@ -32,7 +32,7 @@ Each job is configured as a JSON object with two keys:
 
 - `command`: contains both the cron expression and the command to execute:
   - The cron expression follows the [crontab standard](https://en.wikipedia.org/wiki/Cron#CRON_expression). You may
-  find the website [crontab.guru](https://crontab.guru/#*/10_*_*_*_*) useful to write your own cron expression.
+  find the website [crontab.guru](https://crontab.guru/#*/10_*_*_*_*) useful to write your own cron expression. All dates are expressed in UTC. For instance, if you are located in Athens (EET timezone, UTC+2) and you want a cron job to be executed at 10:00 in your local time, your cron expression should mention 08:00.
   - The command is any command you can execute in a one-off container
   (i.e. with the command `scalingo --app my-app run <command>`).
 - `size`: specify the [container size]({% post_url platform/internals/2000-01-01-container-sizes %}) of the one-off
