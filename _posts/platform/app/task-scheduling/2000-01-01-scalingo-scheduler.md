@@ -1,7 +1,7 @@
 ---
 title: Private Beta - Scalingo Scheduler - Run Scheduled Tasks
 nav: Scalingo Scheduler
-modified_at: 2021-10-28 10:00:00
+modified_at: 2022-01-04 10:00:00
 tags: task-scheduling
 index: 1
 ---
@@ -91,7 +91,7 @@ $ scalingo --app my-app cron-tasks
 +---------------------------------+------+
 ```
 
-## Mofify or Delete Scheduled Tasks
+## Modify or Delete Scheduled Tasks
 
 In order to modify or delete a cron task, you must modify or delete the associated entry in the `cron.json` and push your code to trigger a new deployment.
 
@@ -107,14 +107,14 @@ Scalingo Scheduler will be enabled automatically as soon as a `cron.json` file i
 
 ### How To Disable Scalingo Scheduler?
 
-Once you commited a `cron.json` it's not possible to disable tasks. 
+Once you committed a `cron.json` it's not possible to disable tasks.
 
 If you wish to control the execution of tasks differently between environment (think about staging apps or [review apps]({% post_url
 platform/app/2000-01-01-review-apps %})) we suggest to modify the tasks related code to detect the environment where they are executed.
 
 ### How Precise Is Scalingo Scheduler?
 
-Execution time can be delayed by a few minutes. Indeed in order to execute tasks on an application we need to pull the application image which could take a few minutes depending on its size. 
+Execution time can be delayed by a few minutes. Indeed in order to execute tasks on an application we need to pull the application image which could take a few minutes depending on its size.
 
 If you need more precision we suggest to [run a custom clock process]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %}).
 
