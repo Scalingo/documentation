@@ -7,7 +7,7 @@ index: 1
 ---
 
 {% warning %}
-This feature is currently available only in Public Beta. It means the product is available to everyone and that the software is considered stable. Only interfaces may change until the official release.
+This feature is currently available in Public Beta. It means the product is available to everyone and that the software is considered stable. Only interfaces may change until the official release.
 {% endwarning %}
 
 Scalingo Scheduler is here to help you run scheduled tasks at regular intervals.
