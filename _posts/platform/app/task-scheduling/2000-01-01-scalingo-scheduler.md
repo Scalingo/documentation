@@ -1,5 +1,5 @@
 ---
-title: Private Beta - Scalingo Scheduler - Run Scheduled Tasks
+title: Public Beta - Scalingo Scheduler - Run Scheduled Tasks
 nav: Scalingo Scheduler
 modified_at: 2022-01-04 10:00:00
 tags: task-scheduling
@@ -7,7 +7,7 @@ index: 1
 ---
 
 {% warning %}
-This feature is currently available only in private beta. Ask the support to get early access.
+This feature is currently available only in Public Beta. It means the product is available to everyone and that the software is considered stable. Only interfaces may change until the official release.
 {% endwarning %}
 
 Scalingo Scheduler is here to help you run scheduled tasks at regular intervals.
