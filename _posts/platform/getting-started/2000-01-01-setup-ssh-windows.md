@@ -38,7 +38,7 @@ To get the content of the public SSH key, you need to run the following command
 in git-bash:
 
 ```bash
-$ cat $HOME/.ssh/id_rsa.pub
+$ cat $HOME/.ssh/id_ed25519.pub
 ```
 
 The file content should start with `ssh-rsa`
@@ -53,7 +53,7 @@ Still in a git-bash terminal run the following command:
 ```bash
 $ ssh.exe -T git@ssh.osc-fr1.scalingo.com
 ```
-or 
+or
 ```bash
 $ ssh.exe -T git@ssh.osc-secnum-fr1.scalingo.com
 ```

@@ -39,7 +39,7 @@ scalingo keys-add [name of the key] [path to the key]
 
 # Example:
 
-scalingo keys-add Laptop ~/.ssh/id_rsa.pub
+scalingo keys-add Laptop ~/.ssh/id_ed25519.pub
 ```
 
 ## Some Tutorials to Start With
