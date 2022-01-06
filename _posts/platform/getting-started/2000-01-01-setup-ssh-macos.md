@@ -11,13 +11,13 @@ index: 4
 ls $HOME/.ssh
 ```
 
-If the files `id_rsa` and `id_rsa.pub` are in the `~/.ssh` folder, you don't
+If the files `id_ed25519` and `id_ed25519.pub` are in the `~/.ssh` folder, you don't
 need to follow this guide, you already have your SSH key.
 
 ## Create a new SSH key pair
 
 ```bash
-ssh-keygen
+ssh-keygen -t ed25519
 ```
 
 Follow the instructions to generate a new SSH key pair. You will be asked to encrypt
