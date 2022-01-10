@@ -11,3 +11,4 @@ yarn-error.log
 .jekyll-cache
 
 .vscode
+.DS_Store
