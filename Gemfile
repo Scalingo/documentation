@@ -33,7 +33,7 @@ group :development, :test do
 
   ## Linting
   gem "rubocop"
-  gem "standard", "~> 1.3.0"
+  gem "standard"
 end
 
 gem "webpacker", "< 5"
