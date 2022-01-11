@@ -1,0 +1,46 @@
+inherit_from: []
+
+inherit_gem:
+  standard: config/base.yml
+
+require:
+  - standard
+
+AllCops:
+  Exclude:
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'bin/{webpack,webpack-dev-server}'
+    - '_plugins/**/*'
+
+# Opting out of this one. Standard's desired behaviour (one indent when multi line)
+# can be weird in some contexts, cf token_authentication.rb`
+Layout/ArrayAlignment:
+  Enabled: false
+
+# Allowing returns
+Style/RedundantReturn:
+  Enabled: false
+
+# Leave trailing commas.
+# The case where they're not appropriate are too few to justify switching
+# (at least, for now).
+# https://github.com/penelopezone/rubyfmt/issues/154
+Style/TrailingCommaInArguments:
+  Enabled: true
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
