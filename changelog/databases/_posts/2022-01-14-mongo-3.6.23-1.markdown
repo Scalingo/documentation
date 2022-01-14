@@ -1,0 +1,14 @@
+---
+modified_at: 2022-01-14 10:30:00
+title: 'MongoDB - New version: 3.6.23-1'
+---
+
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/mongo):
+
+* `scalingo/mongo:3.6.23-1`
+
+MongoDB changelog:
+* [MongoDB 3.6.20](https://docs.mongodb.com/manual/release-notes/3.6/#3.6.20---sep-14--2020)
+* [MongoDB 3.6.21](https://docs.mongodb.com/manual/release-notes/3.6/#3.6.21---nov-16--2020)
+* [MongoDB 3.6.22](https://docs.mongodb.com/manual/release-notes/3.6/#3.6.22---feb-8--2021)
+* [MongoDB 3.6.23](https://docs.mongodb.com/manual/release-notes/3.6/#3.6.23---mar-19--2021)
