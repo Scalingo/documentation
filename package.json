@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": "~16"
+    "node": "~14"
   },
   "scripts": {
     "build:css": "postcss ./app/styles/index.postcss.css -o ./assets/style.css -u tailwindcss -u autoprefixer "
@@ -26,7 +26,7 @@
     "webpack-dev-server": "^2.11.1"
   },
   "volta": {
-    "node": "16.13.2",
+    "node": "14.18.3",
     "yarn": "1.22.17"
   }
 }
