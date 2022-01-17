@@ -7,12 +7,11 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-require('scalingo-styles')
-require('js/header-active-link.js')
-require('js/site-nav.js')
-require('js/search.js')
-require('js/page-nav.js')
-require('js/breadcrumb.js')
+// require('js/header-active-link.js')
+// require('js/site-nav.js')
+// require('js/search.js')
+// require('js/page-nav.js')
+// require('js/breadcrumb.js')
 
 function importAll(r) {
   return r.keys().map(r);
