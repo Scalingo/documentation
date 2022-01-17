@@ -12,3 +12,4 @@ yarn-error.log
 
 .vscode
 .DS_Store
+assets/style.css
