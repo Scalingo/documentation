@@ -3,7 +3,7 @@
     "node": "~14"
   },
   "scripts": {
-    "build:css": "postcss ./app/styles/index.postcss.css -o ./assets/style.css -u tailwindcss -u autoprefixer "
+    "build:css": "postcss ./app/styles/index.postcss.css -o ./assets/style.css -u tailwindcss -u autoprefixer"
   },
   "dependencies": {
     "@rails/webpacker": "^3.2.2",

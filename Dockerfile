@@ -14,7 +14,7 @@ RUN apt-get update
 RUN apt-get install -y yarn
 RUN apt-get install -y locales
 
-ENV NODE_VERSION 8.9.4
+ENV NODE_VERSION 16.13.2
 
 RUN cd /opt && \
     curl -L "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" | tar -xJf - && \

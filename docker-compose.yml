@@ -35,6 +35,8 @@ services:
     volumes:
       - ./:/usr/src/app
     command: yarn build:css --watch --verbose
+    stdin_open: true
+    tty: true
     environment:
       NODE_ENV: "development"
       RAILS_ENV: "development"
