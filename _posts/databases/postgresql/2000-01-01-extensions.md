@@ -116,7 +116,7 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 		</tr>
 		<tr>
 			<td>pg_stat_statements</td>
-			<td>1.7</td>
+			<td>1.8</td>
 			<td>track execution statistics of all SQL statements executed</td>
 		</tr>
 		<tr>
