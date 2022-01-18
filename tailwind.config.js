@@ -1,11 +1,6 @@
 module.exports = {
   content: [
-    "./_includes/**/*.{html,erb,md,mdown}",
-    "./_layouts/**/*.{html,erb,md,mdown}",
-    "./_posts/**/*.{html,erb,md,mdown}",
-    "./app/**/*.{html,erb,md,mdown,css}",
-    "./changelog/**/*.{html,erb,md,mdown}",
-    "./*.{html,erb,md,mdown}"
+    "./src/**/*.{html,erb,md,mdown,css}",
   ],
   theme: {
     fontFamily: {
