@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang='en'>
-  {% include head.html %}
-  <body class="mdc-typography">
+  <head>
+    <link rel="stylesheet" href="https://use.typekit.net/ajl3atf.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" href="data:,">
+  </head>
+  <body class="bg-sc-blue-3 font-sc-text-1">
     {% conditionaltrackers %}
     {% include google_tag_manager_body.html %}
     {% endconditionaltrackers %}
-    {% include drawer.html %}
-    <div class="mdc-drawer-app-content">
-      {% include header.html %}
-      <main id="main-content" class="main-content"{% if page.subnav_index %} data-subnav-index="{{ page.subnav_index }}"{% else %}data-subnav-index="0"{% endif %}>
-        <div class="mdc-top-app-bar--prominent-fixed-adjust"></div>
-        <section id="top-of-page">
-          {{ content | extlinks }}
-        </section>
-      </main>
-    </div>
-    {% include footer.html %}
-    <script src="{{ "bundle.js" | asset_pack_path }}"></script>
+
+    {{ content | extlinks }}
   </body>
+  <script src="{{ "bundle.js" | asset_pack_path }}"></script>
 </html>

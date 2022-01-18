@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='en'>
+  {% include head.html %}
+  <body class="mdc-typography">
+    {% conditionaltrackers %}
+    {% include google_tag_manager_body.html %}
+    {% endconditionaltrackers %}
+    {% include drawer.html %}
+    <div class="mdc-drawer-app-content">
+      {% include header.html %}
+      <main id="main-content" class="main-content"{% if page.subnav_index %} data-subnav-index="{{ page.subnav_index }}"{% else %}data-subnav-index="0"{% endif %}>
+        <div class="mdc-top-app-bar--prominent-fixed-adjust"></div>
+        <section id="top-of-page">
+          {{ content | extlinks }}
+        </section>
+      </main>
+    </div>
+    {% include footer.html %}
+    <script src="{{ "bundle.js" | asset_pack_path }}"></script>
+  </body>
+</html>

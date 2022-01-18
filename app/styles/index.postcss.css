@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+    @apply text-sc-gray-1 text-sc-title-1 font-bold;
+}
+
+h2 {
+    @apply text-sc-gray-1 text-sc-title-2 font-bold;
+}
+
+h3 {
+    @apply text-sc-gray-1 text-sc-title-3 font-bold;
+}
+
+h4 {
+    @apply text-sc-gray-1 text-sc-title-4 font-bold;
+}
+
+h5 {
+    @apply text-sc-gray-1 text-sc-title-5 font-bold;
+}
+
+p {
+    @apply text-sc-gray-2;
+}
+
+hr {
+    @apply border-sc-gray-3;
+}
+
+ul {
+  list-style: none;
+}
+ul > li {
+    position: relative;
+    padding-left: 1.75em;
+}
+ul > li:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 0.375em;
+    height: 0.375em;
+    top: 0.6em;
+    left: 0.25em;
+    @apply bg-sc-blue-1;
+}
+
+ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+}
+ol li {
+  counter-increment: my-awesome-counter;
+}
+ol li::before {
+  content: counter(my-awesome-counter) " - ";
+  color: #183BEE;
+  font-weight: bold;
+}
