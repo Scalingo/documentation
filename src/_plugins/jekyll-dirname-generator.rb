@@ -97,11 +97,11 @@ module Dirname
     end
 
     def generate(site)
-      site.posts.docs.each{|doc|
+      site.posts.docs.each do |doc|
         path = doc.path
         # only build custom variables for the top level _posts dir
         # aka the "regular doc"
-        if path.gsub(Dir.pwd, "") =~ /^\/_posts/
+        if path.gsub(Dir.pwd, "") =~ /^\/src\/_posts/
           dirname = if path.end_with?(FORWARD_SLASH)
             path
           else
@@ -109,16 +109,16 @@ module Dirname
             path_dir.end_with?(FORWARD_SLASH) ? path_dir : "#{path_dir}/"
           end
           doc.data['dirname'] = dirname
-          categories = dirname.gsub(Dir.pwd + "/_posts/", "").split("/").delete_if{|x| x.blank?}
+          categories = dirname.gsub(Dir.pwd + "/src/_posts/", "").split("/").delete_if{|x| x.blank?}
           doc.data['category'] = nil
           doc.data['categories'] = categories
           doc.data['permalink'] = nil
         end
-      }
+      end
 
       @site = site
       @all_posts = site.posts.docs
-      tree = directory_hash('_posts/')
+      tree = directory_hash('src/_posts/')
       site.data['tree'] = tree['children']
     end
   end
