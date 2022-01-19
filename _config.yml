@@ -69,46 +69,26 @@ highlighted:
     - /platform/getting-started/first-steps
     - /platform/getting-started/troubleshooting-ssh
     - /platform/databases/intro
-    - /platform/app/lifecycle-management
-    - /platform/cli/start
-    - /platform/app/domain
-    - /platform/app/ssl
-    - /platform/account/manage
-    - /platform/app/filesystem
-    - /platform/getting-started/heroku-compatibility
   technologies:
     - name: Ruby on Rails
       url: /languages/ruby/rails/start
+      icon: ruby-on-rails
     - name: MeteorJS
       url: "/languages/meteorjs/start"
+      icon: meteorjs
     - name: NodeJS
       url: "/languages/nodejs/start"
-    - name: PHP
-      url: "/languages/php/start"
-    - name: Python
-      url: "/languages/python/start"
-    - name: Java
-      url: "/languages/java/start"
+      icon: nodejs
   databases:
     - name: PostgreSQL
       url: "/databases/postgresql/start"
+      icon: postgresql
     - name: MySQL
       url: "/databases/mysql/start"
+      icon: mysql
     - name: MongoDB
       url: "/databases/mongodb/start"
-    - name: Redis
-      url: "/databases/redis/start"
-    - name: Elasticsearch
-      url: "/databases/elasticsearch/start"
-    - name: InfluxDB
-      url: "/databases/influxdb/start"
-  addons:
-    - name: OpenVPN
-      url: "/addons/scalingo-openvpn/start"
-    - name: VPN IPSec
-      url: "/addons/scalingo-vpn-ipsec/start"
-    - name: Docker Image
-      url: "/addons/scalingo-docker-image/start"
+      icon: mongodb
 
 samples:
   - url: ruby-rails
@@ -200,4 +180,10 @@ samples:
     logo: erlang
 
 extlinks:
-  followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]
+  followed_domains:
+    - "scalingo.com"
+    - "my.scalingo.com"
+    - "dashboard.scalingo.com"
+    - "cli.scalingo.com"
+    - "blog.scalingo.com"
+    - "developers.scalingo.com"
