@@ -1,7 +1,14 @@
 ---
 layout: default
+toc: true
 ---
 
-<div class="container mx-auto">
-  {{ content }}
+<div class="flex flex-row">
+  <aside class="w-64 bg-sc-gray-5">
+    <nav>
+    </nav>
+  </aside>
+  <main class="flex-grow flex justify-center">
+    {{ content | extlinks }}
+  </main>
 </div>

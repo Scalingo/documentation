@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="mx-64">
+<div>
 # Titles
 
 <h1>Title H1</h1>

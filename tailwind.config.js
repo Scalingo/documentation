@@ -23,6 +23,13 @@ module.exports = {
       "sc-yellow-2": "#FFD600",
       "sc-yellow-3": "#FFFBE5",
     },
+    maxWidth: {
+      "sc-container": "1440px",
+      "sc-content": "1280px",
+      "sc-content-620": "620px",
+      "sc-content-720": "720px",
+      "sc-content-1532": "1532px",
+    },
     fontSize: {
       "sc-text-1": [
         "18px",
@@ -63,6 +70,12 @@ module.exports = {
         {
           lineHeight: "28px",
           letterSpacing: "-0.04em",
+        },
+      ],
+      "sc-title-6": [
+        "16px",
+        {
+          lineHeight: "28px",
         },
       ],
     }
