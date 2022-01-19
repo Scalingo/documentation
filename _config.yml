@@ -69,6 +69,13 @@ highlighted:
     - /platform/getting-started/first-steps
     - /platform/getting-started/troubleshooting-ssh
     - /platform/databases/intro
+  popular:
+    - /platform/getting-started/first-steps
+    - /platform/getting-started/troubleshooting-ssh
+    - /platform/databases/intro
+    - /platform/getting-started/first-steps
+    - /platform/getting-started/troubleshooting-ssh
+    - /platform/databases/intro
   technologies:
     - name: Ruby on Rails
       url: /languages/ruby/rails/start
