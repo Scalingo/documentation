@@ -6,6 +6,7 @@ module.exports = {
     fontFamily: {
       sans: ["aktiv-grotesk"],
       serif: ["freight-text-pro"],
+      mono: ["fira-mono"],
     },
     colors: {
       "sc-gray-1": "#1F2933",
@@ -20,8 +21,20 @@ module.exports = {
       "sc-turquoise-2": "#A7EDF8",
       "sc-turquoise-3": "#E9FAFD",
       "sc-yellow-1": "#FFD600",
-      "sc-yellow-2": "#FFD600",
+      "sc-yellow-2": "#FFEF99",
       "sc-yellow-3": "#FFFBE5",
+      "sc-red-1": "#E54732",
+      "sc-red-2": "#FFB3A9",
+      "sc-red-3": "#FFE7E4",
+      "sc-orange-1": "#FF8648",
+      "sc-orange-2": "#FFB792",
+      "sc-orange-3": "#FFEADF",
+      "sc-purple-1": "#8055FF",
+      "sc-purple-2": "#CFBFFF",
+      "sc-purple-3": "#F0EBFF",
+      "sc-green-1": "#00D1AF",
+      "sc-green-2": "#94F3E4",
+      "sc-green-3": "#DEFBF6",
     },
     maxWidth: {
       "sc-container": "1440px",
@@ -35,6 +48,18 @@ module.exports = {
         "18px",
         {
           lineHeight: "38px"
+        },
+      ],
+      "sc-text-2": [
+        "16px",
+        {
+          lineHeight: "42px"
+        },
+      ],
+      "sc-text-3": [
+        "18px",
+        {
+          lineHeight: "44px"
         },
       ],
       "sc-title-1": [
