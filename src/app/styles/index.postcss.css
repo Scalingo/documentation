@@ -34,7 +34,6 @@ article p {
   @apply text-sc-gray-2;
 }
 
-/* Tmp: normally should apply to p not followed by another p as mb-12 */
 pre {
   @apply mb-4;
 }
