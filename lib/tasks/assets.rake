@@ -28,8 +28,8 @@ namespace :assets do
   desc "assets precompilation"
   task :precompile do
     Rake::Task["webpacker:compile"].execute
-    exec("yarn build:css")
-    exec("jekyll build")
+    system("yarn build:css", exception: true)
+    system("jekyll build", exception: true)
   end
 end
 
