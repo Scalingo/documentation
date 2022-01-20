@@ -7,9 +7,9 @@ module Jekyll
 
       @name = "#{name}.html"
 
-      self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), 'dir.html')
-      self.data['title'] = title
+      process(@name)
+      read_yaml(File.join(base, "_layouts"), "dir.html")
+      data["title"] = title
     end
   end
 end
@@ -18,53 +18,51 @@ module Dirname
   class Generator < Jekyll::Generator
     FORWARD_SLASH = "/".freeze
 
-    def directory_hash(path, name=nil)
+    def directory_hash(path, name = nil)
       url_path = path.gsub("_posts", "")
-      page_for_dir = @all_posts.detect{|x|
+      page_for_dir = @all_posts.detect { |x|
         x.url == url_path
       }
       data = {
-        'title' => page_for_dir && (page_for_dir.data['nav'] || page_for_dir.data['title']) ? (page_for_dir.data['nav'] || page_for_dir.data['title']) : path.split('/').compact.last.split("-").map(&:capitalize).join(" "),
-        'type'  => 'dir',
-        'url'   => page_for_dir ? page_for_dir.url : path.gsub('_posts', ''),
-        'index' => page_for_dir && page_for_dir.data['index'] ? page_for_dir.data['index'] : nil
+        "title" => page_for_dir && (page_for_dir.data["nav"] || page_for_dir.data["title"]) ? (page_for_dir.data["nav"] || page_for_dir.data["title"]) : path.split("/").compact.last.split("-").map(&:capitalize).join(" "),
+        "type" => "dir",
+        "url" => page_for_dir ? page_for_dir.url : path.gsub("_posts", ""),
+        "index" => page_for_dir && page_for_dir.data["index"] ? page_for_dir.data["index"] : nil,
       }
-      data['children'] = children = []
+      data["children"] = children = []
       Dir.foreach(path) do |entry|
-        next if (entry == '..' || entry == '.')
+        next if entry == ".." || entry == "."
         full_path = File.join(path, entry)
         if File.directory?(full_path)
           children << directory_hash(full_path, entry)
         else
-          matched_page = @all_posts.detect{|x|
+          matched_page = @all_posts.detect { |x|
             x.path.ends_with?(full_path)
           }
           children << {
-            'title' => matched_page ? (matched_page.data['nav'] || matched_page.data['title']) : nil,
-            'type'  => "file",
-            'url'   => matched_page ? matched_page.url : "UNMATCHED PAGE",
-            'index' => matched_page && matched_page.data['index'] ? matched_page.data['index'] : nil
+            "title" => matched_page ? (matched_page.data["nav"] || matched_page.data["title"]) : nil,
+            "type" => "file",
+            "url" => matched_page ? matched_page.url : "UNMATCHED PAGE",
+            "index" => matched_page && matched_page.data["index"] ? matched_page.data["index"] : nil,
           }
         end
       end
-      children = data['children']
+      children = data["children"]
 
       if url_path != "/"
         if page_for_dir
-          page_for_dir.data['layout'] = 'dir'
-          page_for_dir.data['slug'] = url_path
-          page_for_dir.data['links'] = data['children'].inject([]){|memo,obj|
-            memo << {"url" => obj['url'], "title" => obj['title']}
-            memo
+          page_for_dir.data["layout"] = "dir"
+          page_for_dir.data["slug"] = url_path
+          page_for_dir.data["links"] = data["children"].each_with_object([]) { |obj, memo|
+            memo << {"url" => obj["url"], "title" => obj["title"]}
           }
         else
           relative_dir = File.dirname path.gsub("_posts/", "")
           name = File.basename(path)
-          title = data['title']
+          title = data["title"]
           new_page = Jekyll::CategoryPage.new(@site, @site.source, relative_dir, name, title)
-          new_page.data['links'] = data['children'].inject([]){|memo,obj|
-            memo << {"url" => obj['url'], "title" => obj['title']}
-            memo
+          new_page.data["links"] = data["children"].each_with_object([]) { |obj, memo|
+            memo << {"url" => obj["url"], "title" => obj["title"]}
           }
           @site.pages << new_page
         end
@@ -73,26 +71,25 @@ module Dirname
       # In case of multiple entries with the same title, keep the one which is
       # a dir. Assuming the other ones is a "fake" file whose only purpose is to
       # customize index or title attributes of the dir entry
-      children = children.group_by{|x| x['title']}.inject([]){|memo, x|
+      children = children.group_by { |x| x["title"] }.each_with_object([]) { |x, memo|
         ary = x.last
         if ary.length == 1
           memo << ary.first
         else
-          memo << ary.detect{|x| x['type'] == "dir"} || ary.first
+          memo << ary.detect { |x| x["type"] == "dir" } || ary.first
         end
-        memo
       }
       # Create index if not existing
       max_index = children.length + 1
-      children = children.map{|x|
+      children = children.map { |x|
         x["index"] ||= max_index
         x
       }
       # Sort by index
-      children = children.sort_by{|x|
-        x['index']
+      children = children.sort_by { |x|
+        x["index"]
       }
-      data['children'] = children
+      data["children"] = children
       return data
     end
 
@@ -101,25 +98,25 @@ module Dirname
         path = doc.path
         # only build custom variables for the top level _posts dir
         # aka the "regular doc"
-        if path.gsub(Dir.pwd, "") =~ /^\/src\/_posts/
+        if /^\/src\/_posts/.match?(path.gsub(Dir.pwd, ""))
           dirname = if path.end_with?(FORWARD_SLASH)
             path
           else
             path_dir = File.dirname(path)
             path_dir.end_with?(FORWARD_SLASH) ? path_dir : "#{path_dir}/"
           end
-          doc.data['dirname'] = dirname
-          categories = dirname.gsub(Dir.pwd + "/src/_posts/", "").split("/").delete_if{|x| x.blank?}
-          doc.data['category'] = nil
-          doc.data['categories'] = categories
-          doc.data['permalink'] = nil
+          doc.data["dirname"] = dirname
+          categories = dirname.gsub(Dir.pwd + "/src/_posts/", "").split("/").delete_if { |x| x.blank? }
+          doc.data["category"] = nil
+          doc.data["categories"] = categories
+          doc.data["permalink"] = nil
         end
       end
 
       @site = site
       @all_posts = site.posts.docs
-      tree = directory_hash('src/_posts/')
-      site.data['tree'] = tree['children']
+      tree = directory_hash("src/_posts/")
+      site.data["tree"] = tree["children"]
     end
   end
 end

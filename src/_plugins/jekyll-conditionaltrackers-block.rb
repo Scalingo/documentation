@@ -1,6 +1,5 @@
 module Jekyll
   class ConditionaltrackersBlock < Liquid::Block
-
     def initialize(tag_name, text, tokens)
       super
       @text = text
@@ -8,7 +7,7 @@ module Jekyll
 
     def render(context)
       source = super
-      if ENV['JEKYLL_ENV'] != 'development' && ENV['DISABLE_TRACKERS'].blank?
+      if ENV["JEKYLL_ENV"] != "development" && ENV["DISABLE_TRACKERS"].blank?
         source
       else
         ""
@@ -17,4 +16,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('conditionaltrackers', Jekyll::ConditionaltrackersBlock)
+Liquid::Template.register_tag("conditionaltrackers", Jekyll::ConditionaltrackersBlock)

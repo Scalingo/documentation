@@ -12,7 +12,6 @@ AllCops:
     - 'vendor/**/*'
     - 'node_modules/**/*'
     - 'bin/{webpack,webpack-dev-server}'
-    - '_plugins/**/*'
 
 # Opting out of this one. Standard's desired behaviour (one indent when multi line)
 # can be weird in some contexts, cf token_authentication.rb`

@@ -24,4 +24,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('icon', Jekyll::IconTag)
+Liquid::Template.register_tag("icon", Jekyll::IconTag)
