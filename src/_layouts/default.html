@@ -11,6 +11,8 @@
     {% endconditionaltrackers %}
 
     {{ content | extlinks }}
+
+    {% include organisms/footer.html %}
   </body>
   <script src="{{ "bundle.js" | asset_pack_path }}"></script>
 </html>
