@@ -40,9 +40,7 @@ Complete changelog is available [here](/changelog).
   {% for os in page.oses %}
     <li class='list-inline-item mr-3 my-3'>
       <div class="mdc-typography--title">
-        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <use xlink:href="#{{ os | downcase }}"></use>
-        </svg>
+        {% icon {{ os | downcase }} %}
         {{ os }}
       </div>
     </li>

@@ -11,9 +11,7 @@ layout: default_with_main_navigation
       {% for link in page.links %}
         <li>
           <a href="{{ link.url }}">
-            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <use xlink:href="#link-variant"></use>
-            </svg>
+            {% icon link-variant %}
             {{ link.title }}</a>
         </li>
       {% endfor %}

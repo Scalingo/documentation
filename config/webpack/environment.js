@@ -44,20 +44,4 @@ environment.loaders.append('svg-no-sprite', {
   ]
 })
 
-environment.loaders.append('svg-sprite', {
-  test: /(icons|logos|brands|technologies)\/(.*)\.svg$/,
-  use: [
-    { loader: 'svg-sprite-loader' },
-    {
-      loader: 'svgo-loader', options: {
-        plugins: [
-          {cleanupIDs: false},
-          {removeViewBox: false},
-          {removeDimensions: true}
-        ]
-      }
-    }
-  ]
-})
-
 module.exports = environment

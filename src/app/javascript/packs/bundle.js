@@ -12,9 +12,3 @@
 // require('js/search.js')
 // require('js/page-nav.js')
 // require('js/breadcrumb.js')
-
-function importAll(r) {
-  return r.keys().map(r);
-}
-
-importAll(require.context('svg/', true, /\.svg$/))
