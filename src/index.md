@@ -56,8 +56,8 @@ description: "From the deployment of your app to complex scaling operations you'
       {% for post_url in site.highlighted.popular %}
         {% assign post = site.posts | where:'url', post_url | first %}
         <a href="{{ post_url }}">
-          <div class="bg-sc-gray-5 w-full p-6 flex items-center group rounded">
-            <div class="flex-grow">{{ post.title }}</div>
+          <div class="bg-sc-gray-5 w-full p-6 flex items-center group rounded transition hover:shadow-lg">
+            <div class="flex-grow group-hover:text-sc-blue-1">{{ post.title }}</div>
             <div class="group-hover:translate-x-1 duration-200 ease-out">{% icon arrow_right %}</div>
           </div>
         </a>
@@ -77,8 +77,8 @@ description: "From the deployment of your app to complex scaling operations you'
         {% else %}
           <a href="{{ post.url }}">
         {% endif %}
-          <div class="bg-sc-gray-5 w-full p-6 flex items-center group rounded">
-            <div class="flex-grow">{{ post.title }}</div>
+          <div class="bg-sc-gray-5 w-full p-6 flex items-center group roundedtransition hover:shadow-lg">
+            <div class="flex-grow group-hover:text-sc-blue-1">{{ post.title }}</div>
             <div class="text-sc-gray-2 mr-6">{{ post.modified_at | date_to_string }}</div>
             <div class="group-hover:translate-x-1 duration-200 ease-out">{% icon arrow_right %}</div>
           </div>
