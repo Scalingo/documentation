@@ -6,7 +6,7 @@
           {% icon {{ include.icon }} %}
         {% endif %}
       </div>
-      <span class="font-bold group-hover:text-sc-blue-1 ">{{ include.title }}</span>
+      <span class="group-hover:text-sc-blue-1 ">{{ include.title }}</span>
     </div>
   </div>
 </a>
