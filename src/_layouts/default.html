@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <link rel="stylesheet" href="https://use.typekit.net/ajl3atf.css">
-    <link rel="stylesheet" href="/assets/style.css">
-    <link rel="icon" href="data:,">
-  </head>
+  {% include organisms/head.html %}
   <body class="bg-sc-blue-3 text-sc-gray-2 text-sc-text-1">
     {% conditionaltrackers %}
-    {% include google_tag_manager_body.html %}
+    {% include organisms/google_tag_manager_body.html %}
     {% endconditionaltrackers %}
     {% include organisms/header.html %}
     <div class="fit_screen">

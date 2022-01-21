@@ -6,11 +6,10 @@
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
   {% conditionaltrackers %}
-  {% include google_tag_manager_head.html %}
+  {% include organisms/google_tag_manager_head.html %}
   {% endconditionaltrackers %}
-  {% include favicons.html %}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:400,500|Material+Icons">
-  <link rel="stylesheet" href="{{ "style.css" | asset_pack_path }}">
+  {% include organisms/favicons.html %}
+  <link rel="stylesheet" href="https://use.typekit.net/ajl3atf.css">
   <link rel="stylesheet" href="/assets/style.css">
   <meta property="og:site_name" content="{{ site.title }}"/>
   {% if page.og_image %}<meta property="og:image" content="{{ page.og_image }}"/>{% endif %}
