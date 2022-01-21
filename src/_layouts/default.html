@@ -9,10 +9,10 @@
     {% conditionaltrackers %}
     {% include google_tag_manager_body.html %}
     {% endconditionaltrackers %}
+    {% include organisms/header.html %}
     <div class="fit_screen">
       {{ content | extlinks }}
     </div>
-
     {% include organisms/footer.html %}
   </body>
   <script src="{{ "bundle.js" | asset_pack_path }}"></script>

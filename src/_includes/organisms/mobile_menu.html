@@ -1,0 +1,14 @@
+<div class="mt-2 py-3 overflow-y-scroll">
+  <div class="flex-grow flex gap-2 mx-5">
+    {% assign active_classes = "text-sc-blue-1" %}
+    <a href="/" class="py-2 px-3 hover:text-sc-blue-1 {% if page.url == "/" %} {{ active_classes }} {% endif
+      %}">Guides</a>
+    <a href="/samples" class="py-2 px-3 hover:text-sc-blue-1 {% if page.url == "/samples" %} {{ active_classes }} {%
+      endif %}">Samples</a>
+    <a href="/cli" class="py-2 px-3 hover:text-sc-blue-1 {% if page.url == "/cli" %} {{ active_classes }} {% endif
+      %}">CLI</a>
+    <a href="/changelog" class="py-2 px-3 hover:text-sc-blue-1 {% if page.url == "/changelog" %} {{ active_classes }}
+      {% endif %}">Changelog</a>
+    <a href="https://developers.scalingo.com" target="_blank" class="py-2 px-3 hover:text-sc-blue-1">API&nbsp;Reference</a>
+  </div>
+</div>

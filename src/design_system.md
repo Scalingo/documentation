@@ -25,8 +25,8 @@ layout: default
   <li>Element 2</li>
 </ol>
 
-<hr/> 
+<hr/>
 
-{% include button.html text="My text" link="scalingo.com" title="Link to homepage" %}
+{% include atoms/button.html text="My text" link="scalingo.com" title="Link to homepage" %}
 
 </div>

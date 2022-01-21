@@ -62,8 +62,6 @@ exclude:
   - Rakefile
   - lib/tasks
 
-array: [] # hack for creating array
-
 highlighted:
   first_steps:
     - /platform/getting-started/first-steps
