@@ -9,8 +9,9 @@
     {% conditionaltrackers %}
     {% include google_tag_manager_body.html %}
     {% endconditionaltrackers %}
-
-    {{ content | extlinks }}
+    <div class="min-h-screen">
+      {{ content | extlinks }}
+    </div>
 
     {% include organisms/footer.html %}
   </body>

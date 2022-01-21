@@ -41,6 +41,7 @@ module.exports = {
       "sc-content": "1280px",
       "sc-content-620": "620px",
       "sc-content-720": "720px",
+      "sc-content-880": "880px",
       "sc-content-1532": "1532px",
     },
     fontSize: {

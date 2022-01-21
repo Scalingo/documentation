@@ -1,5 +1,5 @@
 ---
-layout: default_with_only_main
+layout: default_with_only_main_880
 title: Command Line Tool
 subnav_index: 2
 description: Interact with Scalingo's Platform as a Service from your command line.
@@ -36,11 +36,11 @@ Complete changelog is available [here](/changelog).
 
 ## Supported operating systems
 
-<ul class='list-inline mb-0'>
+<ul class='flex flex-row list-unstyled space-x-8'>
   {% for os in page.oses %}
-    <li class='list-inline-item mr-3 my-3'>
-      <div class="mdc-typography--title">
-        {% icon {{ os | downcase }} %}
+    <li class='flex flex-row'>
+      <div class="flex flex-row items-center">
+        <span class="h-5 w-5 mr-2">{% icon {{ os | downcase }} %}</span>
         {{ os }}
       </div>
     </li>
