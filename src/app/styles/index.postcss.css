@@ -124,6 +124,22 @@ article aside.warning a {
   @apply text-sc-red-1 font-bold
 }
 
+article table {
+  @apply border border-sc-gray-3 table-auto w-full mb-4 text-sc-text-4 text-sc-gray-1
+}
+
+article table th {
+  @apply pt-5 pb-3 bg-sc-gray-5 text-left px-5 font-bold uppercase text-sc-title-7
+}
+
+article table td {
+  @apply py-5 px-5
+}
+
+article tr:nth-child(odd) {
+  @apply bg-sc-gray-4
+}
+
 svg {
   max-width: 100%;
   max-height: 100%;
