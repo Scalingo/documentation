@@ -124,6 +124,8 @@ additional variable `$PORT` is defined.
 * `CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL` etc.
 * `CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
 * `APP`: Name of the application deployed
+* `STACK`: Name of the stack the application deployed is running
+* `REGION_NAME`: Name of the region the application is deployed
 
 ## One-Off Environment Variables
 
