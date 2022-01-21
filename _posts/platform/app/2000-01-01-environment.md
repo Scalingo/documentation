@@ -1,6 +1,6 @@
 ---
 title: Environment Variables
-modified_at: 2021-01-21 00:00:00
+modified_at: 2022-01-21 00:00:00
 tags: app configuration environment
 index: 3
 ---
