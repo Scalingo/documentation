@@ -5,40 +5,14 @@ modified_at: 2015-11-17 00:00:00
 permalink: /404.html
 ---
 
-<div class="not-found">
-  <div class="container">
-    <div class="text-center">
-      <h1 class="title my-5 my-md-0">404 Not found</h1>
+<div class="container mx-auto">
+    <h1 style="font-size: 180px;line-height: 211px;" class="text-sc-blue-2 font-bold pt-32 text-center">404</h1>
+    <div style="font-size: 48px;line-height: 48px;" class="text-sc-gray-1 font-bold mt-8 text-center">No found</div>
+    <div class="text-sc-title-2-2 text-sc-gray-1 my-8 text-center">You may be interested in:</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12 text-sc-gray-1">
+        {% for post_url in site.highlighted.first_steps %}
+        {% assign post = site.posts | where:'url', post_url | first %}
+        {% include atoms/line_card.md title=post.title url=post_url %}
+        {% endfor %}
     </div>
-
-    <h2>You may be interested in:</h2>
-    <div class="row">
-    {% assign posts = site.tags.getting-started-tutorial | sort: 'modified_at', 'first' %}
-    {% for post in posts %}
-      <div class="col-12 col-md-3 col-lg-4">
-        <div class="mdc-card mb-5">
-          <div class="card-body">
-            <div class="d-flex">
-              <h3 class="mdc-typography--title mb-0">
-                {{ post.title}}
-              </h3>
-              <div class="logo ml-auto">
-                <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <use xlink:href="#{{ item.logo }}"></use>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="mdc-card__actions">
-            <div class="mdc-card__action-buttons">
-              <a href="{{ post.url }}" class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--text-primary-on-background">
-                View Article
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-    </div>
-  </div>
 </div>

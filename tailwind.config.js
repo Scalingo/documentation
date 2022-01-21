@@ -77,6 +77,12 @@ module.exports = {
           letterSpacing: "-0.04em",
         },
       ],
+      "sc-title-2-2": [
+        "24px",
+        {
+          lineHeight: "40px",
+        },
+      ],
       "sc-title-3": [
         "22px",
         {
@@ -89,6 +95,12 @@ module.exports = {
         {
           lineHeight: "28px",
           letterSpacing: "-0.04em",
+        },
+      ],
+      "sc-title-4-2": [
+        "20px",
+        {
+          lineHeight: "24px",
         },
       ],
       "sc-title-5": [

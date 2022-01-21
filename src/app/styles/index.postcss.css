@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.fit_screen {
+  /* 100% screen size, minus footer */
+  min-height: calc(100vh - 64px);
+}
+
 article h1 {
   @apply text-sc-gray-1 text-sc-title-1 font-bold mb-12;
 }
