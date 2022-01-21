@@ -68,6 +68,12 @@ os.getenv("PORT")
 $_ENV["PORT"]
 ```
 
+#### Java
+
+```java
+System.getenv("PORT");
+```
+
 #### Other Languages
 
 The process should not be really different. Refer to the documentation of the standard library of your language.
