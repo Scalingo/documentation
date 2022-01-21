@@ -7,53 +7,53 @@ modified_at: 2015-09-09 00:00:00
 ---
 
 <div class="changelog">
-  <h1 class="d-flex">
-    Changelog
-    <a href="/changelog/feed.xml" class="ml-auto">
-      <i class="material-icons rss">rss_feed</i>
+  <h1 class="text-sc-title-1-1 text-sc-gray-1 font-bold flex flex-row items-center">
+    <span>Changelog</span>
+    <a class="ml-5" href="/changelog/feed.xml">
+      {% icon rss %}
     </a>
   </h1>
 
   {% assign postsByYear = site.categories.changelog | group_by_exp:"post", "post.modified_at | date: '%Y'" %}
   {% for year in postsByYear %}
-    <div class="mdc-typography--title mt-5 mb-3 changelog--year">{{ year.name }}</div>
-    <div class="mdc-card changelog-card">
-      <nav>
-        <ul>
-          {% for post in year.items %}
-            {% assign body = post.content | xml_escape | strip_html | strip_newlines | remove:' ' %}
-            <li id="{{post.id | slugify}}" class="heading" data-type="heading" data-state="{% if body != "" %}closed{% else %}empty{% endif %}">
-              <div class="nav-title d-flex flex-column flex-md-row">
-                <div class="col-12 col-md-2">
-                  {{ post.modified_at | date: "%b %-d, %Y" }}
-                </div>
-                <div class="col-12 col-md-2 changelog-entry--category">
-                  {{ post.categories | last | split: "_" | join: " " }}
-                </div>
-                <div class="col-12 col-md-8 changelog-entry--title">
-                  {{ post.title }}
-                </div>
-              </div>
-              {% if body != "" %}
-              <ul>
-                {% if post.github %}
-                <li>
-                  <p>
-                    <a target="_blank" href="{{ post.github }}">
-                      {{ post.github }}
-                    </a>
-                  </p>
-                </li>
-                {% endif %}
-                <li>
-                  {{ post.content }}
-                </li>
-              </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
+  <div class="text-sc-title-7 text-sc-gray-1 font-bold mt-10 mb-2">{{ year.name }}</div>
+  <div class="changelog text-sc-title-6-2 text-sc-gray-1 rounded-lg border border-sc-gray-3">
+    {% for post in year.items %}
+    {% assign body = post.content | xml_escape | strip_html | strip_newlines | remove:' ' %}
+    <div id="{{post.id | slugify}}" class="heading" data-type="heading" data-state="{% if body != "
+    " %}closed{% else %}empty{% endif %}">
+    <input type="checkbox" id="{{post.id | url_decode  }}" class="hidden">
+    <label class="drop flex flex-row w-full p-6 {% cycle 'bg-sc-gray-4', 'even' %}" for="{{post.id | url_decode}}">
+      <div class="w-1/6">
+        {{ post.modified_at | date: "%b %-d, %Y" }}
+      </div>
+      <div class="w-1/6">
+        {{ post.categories | last | split: "_" | join: " " }}
+      </div>
+      <div class="w-4/6 flex flex-row justify-between items-center">
+        <span>{{ post.title }}</span>
+        <svg class="transition-all duration-500 cursor-pointer" width="16" height="9" viewBox="0 0 16 9" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M15.8397 0.927835C15.9466 1.03093 16 1.14948 16 1.28351C16 1.41753 15.9466 1.53608 15.8397 1.63918L8.36874 8.84536C8.26186 8.94845 8.13895 9 8 9C7.86105 9 7.73814 8.94845 7.63126 8.84536L0.160321 1.63918C0.0534397 1.53608 0 1.41753 0 1.28351C0 1.14948 0.0534397 1.03093 0.160321 0.927835L0.961924 0.154639C1.0688 0.0515459 1.19172 0 1.33066 0C1.46961 0 1.59252 0.0515459 1.6994 0.154639L8 6.23196L14.3006 0.154639C14.4075 0.0515459 14.5304 0 14.6693 0C14.8083 0 14.9312 0.0515459 15.0381 0.154639L15.8397 0.927835Z"
+                fill="#183BEE"/>
+        </svg>
+      </div>
+    </label>
+    {% if body != "" %}
+    <div class="px-6 py-6 text-sc-gray-2 border-b border-t border-sc-gray-3">
+      {% if post.github %}
+      <a class="text-sc-gray-1 hover:underline py-2" target="_blank" href="{{ post.github }}">
+        {{ post.github }}
+      </a>
+      {% endif %}
+      <div class="py-2">
+        {{ post.content }}
+      </div>
     </div>
+    {% endif %}
+  </div>
   {% endfor %}
+</div>
+{% endfor %}
 </div>

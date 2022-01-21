@@ -42,6 +42,7 @@ module.exports = {
       "sc-content-620": "620px",
       "sc-content-720": "720px",
       "sc-content-880": "880px",
+      "sc-content-1190": "1190px",
       "sc-content-1532": "1532px",
     },
     fontSize: {
@@ -73,6 +74,13 @@ module.exports = {
         "32px",
         {
           lineHeight: "28px",
+          letterSpacing: "-0.04em",
+        },
+      ],
+      "sc-title-1-1": [
+        "32px",
+        {
+          lineHeight: "48px",
           letterSpacing: "-0.04em",
         },
       ],
@@ -120,6 +128,12 @@ module.exports = {
         "16px",
         {
           lineHeight: "28px",
+        },
+      ],
+      "sc-title-6-2": [
+        "16px",
+        {
+          lineHeight: "20px",
         },
       ],
       "sc-title-7": [

@@ -140,6 +140,23 @@ article tr:nth-child(odd) {
   @apply bg-sc-gray-4
 }
 
+.changelog .drop {
+  cursor: pointer;
+}
+
+.changelog input +.drop +  div
+{
+  display:none;
+}
+
+.changelog input:checked ~ label svg {
+  transform: rotate(180deg);
+}
+
+.changelog input:checked + .drop + div{
+  display:block;
+}
+
 svg {
   max-width: 100%;
   max-height: 100%;
