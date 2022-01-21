@@ -1,6 +1,6 @@
 ---
 title: Environment Variables
-modified_at: 2020-09-25 00:00:00
+modified_at: 2021-01-21 00:00:00
 tags: app configuration environment
 index: 3
 ---
@@ -31,6 +31,12 @@ You should avoid writing any credentials in the files managed by Git.
 ## Accessing the Environment from your App
 
 The following example is to get the value of the `PORT` variable.
+
+#### Shell
+
+```shell
+$PORT
+```
 
 #### Ruby
 
@@ -96,8 +102,8 @@ When your application is deployed, the build container is containing the environ
 variables defined in the application configuration and the platform is also injecting
 the following variable:
 
-* `$SOURCE_VERSION`: SHA of the currently deployed Git commit.
-* `$APP`: Name of the application the build has been triggered for.
+* `SOURCE_VERSION`: SHA of the currently deployed Git commit.
+* `APP`: Name of the application the build has been triggered for.
 
 ## Runtime Environment Variables
 
@@ -106,12 +112,12 @@ variables defined in the application configuration but is also injecting a set o
 environment variables in its environment. In the case of `web` containers, an
 additional variable `$PORT` is defined.
 
-* `$PORT`: Port number your server has to bind on.
-* `$CONTAINER`: Type and index of the container, `web-1` or `worker-1` for instance
-* `$CONTAINER_VERSION`: Version of the container started, usually the Git commit SHA.
-* `$CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL` etc.
-* `$CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
-* `$APP`: Name of the application deployed
+* `PORT`: Port number your server has to bind on.
+* `CONTAINER`: Type and index of the container, `web-1` or `worker-1` for instance
+* `CONTAINER_VERSION`: Version of the container started, usually the Git commit SHA.
+* `CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL` etc.
+* `CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
+* `APP`: Name of the application deployed
 
 ## One-Off Environment Variables
 
@@ -119,4 +125,4 @@ When starting a [one-off container]({% post_url platform/app/2000-01-01-tasks
 %}) for an application, the platform injects the runtime environment variables
 plus the following:
 
-* `$SCALINGO_USER_ID`: Scalingo user ID of the user executing the one-off.
+* `SCALINGO_USER_ID`: Scalingo user ID of the user executing the one-off.
