@@ -54,7 +54,7 @@ article a {
 article pre.highlight {
   font-size: 14px;
   line-height: 18px;
-  @apply p-8 rounded-lg text-sc-gray-3 font-mono
+  @apply p-8 rounded-lg text-sc-gray-3 font-mono shadow-lg
 }
 
 article pre {
