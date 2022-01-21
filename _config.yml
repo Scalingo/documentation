@@ -37,6 +37,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-toc
+  - jekyll-include-cache
 
 toc:
   min_level: 2

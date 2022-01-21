@@ -12,7 +12,7 @@ ruby "3.0.3"
 # Happy Jekylling!
 gem "jekyll"
 gem "webrick"
-
+gem "liquid-c"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem 'minima', '~> 2.0'
 
@@ -25,6 +25,7 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"
   gem "jekyll-toc"
+  gem 'jekyll-include-cache'
 end
 
 group :development, :test do
