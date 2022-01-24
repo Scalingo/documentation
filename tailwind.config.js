@@ -70,6 +70,18 @@ module.exports = {
           lineHeight: "20px"
         },
       ],
+      "sc-text-5": [
+        "16px",
+        {
+          lineHeight: "16px"
+        },
+      ],
+      "sc-text-6": [
+        "18px",
+        {
+          lineHeight: "20px"
+        },
+      ],
       "sc-title-1": [
         "32px",
         {

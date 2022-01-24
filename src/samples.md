@@ -1,43 +1,38 @@
 ---
-layout: default_with_only_main
+layout: default
 title: Samples
 subnav_index: 1
 description: Here is a list of samples built with various technologies than you can deploy by yourself and take inspiration of.
 modified_at: 2015-09-09 00:00:00
 ---
 
-<h1>{{ page.title }}</h1>
-<p class="mb-5">{{ page.description }}</p>
+<div class="max-w-sc-content-1532 container mx-auto">
 
-<div class="row">
+
+<div class="bg-sc-gray-5 rounded-lg mt-6 p-10">
+  <h1 class="text-sc-title-1-1 text-sc-gray-1 font-bold">{{ page.title }}</h1>
+  <p class="mt-4">{{ page.description }}</p>
+</div>
+
+<div class="grid grid-cols-5 gap-6 mt-6 mb-24">
   {% for item in site.samples %}
-    <div class="col-12 col-md-3 col-lg-4">
-      <div class="mdc-card mb-5">
-        <div class="card-body">
-          <div class="d-flex">
-            <h3 class="mdc-typography--title mb-0">
-              {{ item.name }}
-            </h3>
-            <div class="logo ml-auto">
-              <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <use xlink:href="#{{ item.logo }}"></use>
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="mdc-card__actions">
-          <div class="mdc-card__action-buttons">
-            <a href="https://{{ item.url }}.is-easy-on-scalingo.com" class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--text-primary-on-background">
-              View app
+    <div class="bg-sc-gray-5 rounded-lg hover:shadow-lg">
+        <div class="mb-9 mt-6 flex flex-col items-center">
+          <svg height="48" width="48" class="border" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <use xlink:href="#{{ item.logo }}"></use>
+          </svg>
+          <span class="mt-4 font-medium text-sc-gray-1 text-sc-text-6">{{ item.name }}</span>
+        </div>      
+        <div class="flex flex-row divide-x divide-sc-gray-3 text-sc-text-5 font-medium border-t border-sc-gray-3">
+          <a href="https://github.com/Scalingo/sample-{{ item.url }}" class="w-1/2 py-6 text-center text-sc-gray-1 hover:text-sc-blue-1">
+              Source
             </a>
-          </div>
-          <div class="mdc-card__action-buttons">
-            <a href="https://github.com/Scalingo/sample-{{ item.url }}" class="mdc-button mdc-card__action mdc-card__action--button mdc-theme--text-primary-on-background">
-              View source
+            <a href="https://{{ item.url }}.is-easy-on-scalingo.com" class="w-1/2 py-6 text-center text-sc-gray-1 hover:text-sc-blue-1">
+              App
             </a>
-          </div>
         </div>
-      </div>
     </div>
   {% endfor %}
+</div>
+
 </div>
