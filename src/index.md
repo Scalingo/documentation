@@ -26,7 +26,7 @@ description: "From the deployment of your app to complex scaling operations you'
   <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-12">
     <div>
       <div class="md:flex mb-4">
-        <h2 class="flex-grow">Learn about building, deploying and scaling with</h2>
+        <h2 class="flex-grow font-bold">Learn about building, deploying and scaling with</h2>
         {% include atoms/arrow_link.md title="See all" url="/languages" %}
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -37,7 +37,7 @@ description: "From the deployment of your app to complex scaling operations you'
     </div>
     <div>
       <div class="md:flex mb-4">
-        <h2 class="flex-grow">Learn about using built-in databases</h2>
+        <h2 class="flex-grow font-bold">Learn about using built-in databases</h2>
         {% include atoms/arrow_link.md title="See all" url="/databases" %}
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -50,7 +50,7 @@ description: "From the deployment of your app to complex scaling operations you'
   <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
     <div>
       <div class="flex mb-4">
-        <h2>Popular articles</h2>
+        <h2 class="font-bold">Popular articles</h2>
       </div>
       <div class="flex flex-col gap-2">
         {% for post_url in site.highlighted.popular %}
@@ -66,7 +66,7 @@ description: "From the deployment of your app to complex scaling operations you'
     </div>
     <div>
       <div class="flex mb-4 items-center">
-        <h2>Last modified articles</h2>
+        <h2 class="font-bold">Last modified articles</h2>
         <a class="ml-4" href="/feed.xml">{% icon rss %}</a>
       </div>
       <div class="flex flex-col gap-2">
