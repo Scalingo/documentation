@@ -5,9 +5,7 @@ toc: true
 
 <div class="flex flex-row">
   <aside class="hidden xl:block w-80 bg-sc-gray-5">
-    <nav>
-      {% include_cached navigation.html subtree=site.data.tree level=0 %}
-    </nav>
+    {% include organisms/navigation/main.html %}
   </aside>
   <main class="flex flex-grow justify-center pt-6 px-6 pb-12">
     {{ content | extlinks }}

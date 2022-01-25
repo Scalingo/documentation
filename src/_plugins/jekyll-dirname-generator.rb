@@ -16,10 +16,8 @@ end
 
 module Dirname
   class Generator < Jekyll::Generator
-    FORWARD_SLASH = "/".freeze
-
-    def directory_hash(path, name = nil)
-      url_path = path.gsub("_posts", "")
+    def directory_hash(path)
+      url_path = path.gsub("src/_posts", "")
       page_for_dir = @all_posts.detect { |x|
         x.url == url_path
       }
@@ -34,7 +32,7 @@ module Dirname
         next if entry == ".." || entry == "."
         full_path = File.join(path, entry)
         if File.directory?(full_path)
-          children << directory_hash(full_path, entry)
+          children << directory_hash(full_path)
         else
           matched_page = @all_posts.detect { |x|
             x.path.ends_with?(full_path)
@@ -98,17 +96,14 @@ module Dirname
         path = doc.path
         # only build custom variables for the top level _posts dir
         # aka the "regular doc"
-        if /^\/src\/_posts/.match?(path.gsub(Dir.pwd, ""))
-          dirname = if path.end_with?(FORWARD_SLASH)
-            path
-          else
-            path_dir = File.dirname(path)
-            path_dir.end_with?(FORWARD_SLASH) ? path_dir : "#{path_dir}/"
-          end
+        if doc.relative_path.start_with?("_posts")
+          path_dir = File.dirname(path)
+          dirname = path_dir.end_with?("/") ? path_dir : "#{path_dir}/"
           doc.data["dirname"] = dirname
+
           categories = dirname.gsub(Dir.pwd + "/src/_posts/", "").split("/").delete_if { |x| x.blank? }
-          doc.data["category"] = nil
           doc.data["categories"] = categories
+          doc.data["category"] = nil
           doc.data["permalink"] = nil
         end
       end

@@ -227,3 +227,99 @@ svg {
 .highlight .gu { color: #75715e; } /* Generic.Subheading & Diff Unified/Comment? */
 .highlight .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
 .highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-nav {
+  flex: 0 0 220px;
+  max-width: 220px;
+  padding-right: 0;
+}
+.site-nav nav {
+  overflow-y: auto;
+  width: 220px;
+}
+.site-nav a {
+  padding-left: 12px;
+}
+.site-nav li[data-type='dir'] > ul, .site-nav li[data-type='heading'] > ul {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+  height: 0;
+}
+.site-nav li[data-state='open'] > ul {
+  height: auto;
+}
+.site-nav li.heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top: 1px solid blue;
+  padding: 16px;
+}
+.site-nav li.heading > .nav-title {
+  font-size: 120%;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 18px;
+  position: relative;
+}
+.site-nav li.heading > .nav-title:after {
+  color: #bdbdbd;
+  font: normal normal normal 22px/1 'Material Icons';
+  width: 18px;
+  float: right;
+  font-feature-settings: 'liga';
+  text-rendering: optimizeLegibility;
+  word-wrap: normal;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.site-nav li.heading[data-type='heading'] > .nav-title:after {
+  content: '>';
+}
+.site-nav li.heading[data-state='open'] > .nav-title:after {
+  transform: rotate(-180deg);
+  transform-origin: 11px 50%;
+}
+.site-nav li.heading .share_twitter {
+  float: right;
+}
+.site-nav li[data-type='dir'] > .nav-title {
+  padding-left: 0;
+}
+.site-nav li[data-type='dir'] > .nav-title:before {
+  color: #bdbdbd;
+  content: '>';
+  font: normal normal normal 18px/1 'Material Icons';
+  margin-left: -6px;
+  width: 18px;
+  float: left;
+  font-feature-settings: 'liga';
+  text-rendering: optimizeLegibility;
+  word-wrap: normal;
+}
+.site-nav li[data-type='dir'][data-state='closed'] > .nav-title:before {
+  transform: rotate(-90deg);
+}
+.site-nav > nav > ul > li.heading {
+  background-color: red;
+}
+.site-nav > nav > ul > li.heading:first-child {
+  border-top: 0;
+}
