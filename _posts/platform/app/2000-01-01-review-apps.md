@@ -1,6 +1,6 @@
 ---
 title: Review Apps
-modified_at: 2019-08-26 00:00:00
+modified_at: 2022-01-25 00:00:00
 tags: app review apps
 index: 31
 ---
@@ -33,6 +33,14 @@ among open PRs of your app to manually deploy a review app.
 
 {% assign img_url = "https://cdn.scalingo.com/blog/20161020-github-integration/review_apps.png" %}
 {% include mdl_img.html %}
+
+It is also possible to manually create a review app using the [Scalingo CLI]({% post_url platform/cli/2000-01-01-features %}):
+
+```sh
+scalingo --app my-app integration-link-manual-review-app 42
+```
+
+In this example, `42` is the pull request or merge request ID.
 
 {% note %}
 If one manually deletes a review app, it will not be automatically created again after a deployment. You need to manually deploy a new one.
@@ -86,7 +94,7 @@ mandatory before reaching the review app. A solution is to update the
 ```
 
 Then you can test the presence of this environment variable in your application
-and setup basic auth in case this environment is defined in the environment of
+and setup Basic Auth in case this environment is defined in the environment of
 the application.
 
 You can also generate a different password for each review app by using the
