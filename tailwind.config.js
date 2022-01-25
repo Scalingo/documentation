@@ -49,13 +49,13 @@ module.exports = {
       "sc-text-1": [
         "18px",
         {
-          lineHeight: "38px"
+          lineHeight: "28px"
         },
       ],
       "sc-text-2": [
         "16px",
         {
-          lineHeight: "42px"
+          lineHeight: "24px"
         },
       ],
       "sc-text-3": [
