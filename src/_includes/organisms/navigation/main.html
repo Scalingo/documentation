@@ -1,190 +1,25 @@
-<ul class="site-nav">
-  {% for item in site.data.tree %}
-    <li data-index="{{ item.index }}" data-type="heading" data-state="{% if page.url contains item.url %}open{% else %}closed{% endif %}" class="heading">
-      <span class="nav-title" data-url="{{ item.url }}">
-        {{item.title}}
-      </span>
-      {% include organisms/navigation/children.html children=item.children %}
-    </li>
-  {% endfor %}
-</ul>
-
-<script type="text/javascript">
-  function collapseSection(element) {
-    // get the height of the element's inner content, regardless of its actual size
-    var sectionHeight = element.scrollHeight;
-
-    // temporarily disable all css transitions
-    var elementTransition = element.style.transition;
-    element.style.transition = '';
-
-    // on the next frame (as soon as the previous style change has taken effect),
-    // explicitly set the element's height to its current pixel height, so we
-    // aren't transitioning out of 'auto'
-    requestAnimationFrame(function() {
-      element.style.height = sectionHeight + 'px';
-      element.style.transition = elementTransition;
-
-      // on the next frame (as soon as the previous style change has taken effect),
-      // have the element transition to height: 0
-      requestAnimationFrame(function() {
-        element.style.height = 0 + 'px';
-      });
-    });
-
-    // mark the section as "currently collapsed"
-    // element.setAttribute('data-collapsed', 'true');
-  }
-
-  function expandSection(element) {
-    // get the height of the element's inner content, regardless of its actual size
-    var sectionHeight = element.scrollHeight;
-
-    // have the element transition to the height of its inner content
-    element.style.height = sectionHeight + 'px';
-
-    // when the next css transition finishes (which should be the one we just triggered)
-    element.addEventListener('transitionend', function(e) {
-      // remove this event listener so it only gets triggered once
-      // element.removeEventListener('transitionend', arguments.callee);
-
-      // remove "height" from the element's inline styles, so it can return to its initial value
-      element.style.height = null;
-    });
-
-    // mark the section as "currently not collapsed"
-    // element.setAttribute('data-collapsed', 'false');
-  }
-
-  let navTitles = document.querySelectorAll('.site-nav .nav-title')
-  navTitles.forEach((element) => {
-    element.addEventListener('click', (e) => {
-      e.preventDefault()
-      let node = e.currentTarget
-      let parent = node.parentElement
-      let currentState = parent.getAttribute('data-state')
-      let isCollapsed = currentState == 'closed'
-      let section = parent.querySelector('ul')
-      if(isCollapsed) {
-        expandSection(section)
-        parent.setAttribute('data-state', 'open')
-      } else {
-        collapseSection(section)
-        parent.setAttribute('data-state', 'closed')
-      }
-    })
-  })
-
-  var scroll = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60) }
-
-  var headerNode = document.querySelector('header.scalingo-toolbar--custom')
-  var headerNode2 = document.querySelector('header.scalingo-toolbar--custom + .scalingo-toolbar--custom')
-  var siteNavNode = document.querySelector('.site-nav > nav')
-  var pageNavNode = document.querySelector('.page-nav > nav')
-  var mainNode = document.querySelector('main')
-
-  var siteNavBottomMargin = 20
-  var mainMargin = 40
-
-  var windowInnerHeight, siteNavMaxHeight, lastPosition = -1, lastHeaderHeight = -1
-  var articleRect, articleTop, articleBottom, articleBottomWithMargin, articleHeight
-  var headerHeightPlusMargin = headerNode2.getBoundingClientRect().bottom + 40
-
-  function recomputeSizes() {
-    lastPosition = -1
-    lastHeaderHeight = -1
-    computeSizes()
-  }
-
-  function computeSizes() {
-    windowInnerHeight = window.innerHeight
-
-    headerHeightPlusMargin = headerNode2.getBoundingClientRect().bottom + 40
-    articleRect = mainNode.getBoundingClientRect()
-    articleTop = articleRect.top + window.pageYOffset - headerHeightPlusMargin
-    articleBottom = articleTop + mainNode.offsetHeight
-    articleBottomWithMargin = articleBottom + mainMargin - windowInnerHeight + headerHeightPlusMargin
-    articleHeight = mainNode.offsetHeight
-    siteNavMaxHeight = windowInnerHeight - headerHeightPlusMargin - siteNavBottomMargin
-  }
-
-  function loop(){
-    // Avoid calculations if not needed
-    let condition = lastPosition == window.pageYOffset && lastHeaderHeight == headerNode2.getBoundingClientRect().bottom
-    if (condition) {
-      scroll(loop)
-      return false
-    } else {
-      lastPosition = window.pageYOffset
-      lastHeaderHeight = headerNode2.getBoundingClientRect().bottom
-      computeSizes()
-    }
-
-    headerHeightPlusMargin = lastHeaderHeight + 40
-
-    if (articleHeight >= siteNavMaxHeight) {
-      if (lastPosition <= articleTop) {
-        // top of page above article top
-        siteNavNode.style.position = "sticky"
-        siteNavNode.style.top = headerHeightPlusMargin + "px"
-        if (pageNavNode !== null) {
-          pageNavNode.style.top = headerHeightPlusMargin + "px"
-        }
-        siteNavNode.style.maxHeight = windowInnerHeight - (articleTop - lastPosition + headerHeightPlusMargin) - siteNavBottomMargin + "px"
-      } else {
-        if (lastPosition <= articleBottomWithMargin) {
-          // Between article top and article bottom
-          if (siteNavNode.style.maxHeight != siteNavMaxHeight) {
-            // We've already set the infos
-            siteNavNode.style.position = "sticky"
-            siteNavNode.style.top = headerHeightPlusMargin + "px"
-            if (pageNavNode !== null) {
-              pageNavNode.style.top = headerHeightPlusMargin + "px"
-            }
-            siteNavNode.style.maxHeight = siteNavMaxHeight + "px"
-          }
-        } else {
-          // Towards bottom of page
-          siteNavNode.style.position = "fixed"
-          siteNavNode.style.top = headerHeightPlusMargin + "px"
-          siteNavNode.style.maxHeight = windowInnerHeight - (lastPosition + windowInnerHeight - articleBottom + mainMargin) + "px"
-          if (pageNavNode !== null) {
-            pageNavNode.style.top = headerHeightPlusMargin + "px"
-          }
-        }
-      }
-    } else {
-      // Article is too small, get back to normal
-      siteNavNode.style.position = "sticky"
-      siteNavNode.style.top = headerHeightPlusMargin + "px"
-      siteNavNode.style.maxHeight = articleHeight + siteNavBottomMargin + "px"
-    }
-
-    scroll(loop)
-  }
-
-  if (siteNavNode !== null) {
-    window.onresize = recomputeSizes
-
-    recomputeSizes()
-    loop()
-  }
-
-  function scrollIfNeeded(element, container) {
-    if (element.offsetTop < container.scrollTop) {
-      container.scrollTop = element.offsetTop
-    } else {
-      const offsetBottom = element.offsetTop + element.offsetHeight
-      const scrollBottom = container.scrollTop + container.offsetHeight
-      if (offsetBottom > scrollBottom) {
-        container.scrollTop = offsetBottom - container.offsetHeight
-      }
-    }
-  }
-
-  let activeLink = document.querySelector('.site-nav a.active')
-  if (activeLink !== null && siteNavNode !== null) {
-    scrollIfNeeded(activeLink, siteNavNode)
-  }
-
-</script>
+<nav>
+  <ul>
+    {% for item in site.data.tree %}
+      <li>
+        <input
+          type="checkbox" id="{{item.url | url_encode  }}" class="hidden"
+          {% if page.url contains item.url %}checked="true"{% endif %}
+        >
+        <label for="{{item.url | url_encode}}" class="cursor-pointer flex items-center px-6">
+          <span class="
+            text-sc-gray-2 text-sc-title-7 uppercase py-3 flex-grow
+            {% if page.url contains item.url %}text-sc-blue-1{% endif %}
+          ">
+            {{item.title}}
+          </span>
+          <div>{% icon chevron_right %}</div>
+        </label>
+        <hr class="border-sc-gray-2 opacity-5"/>
+        <div class="hidden ml-3">
+          {% include organisms/navigation/children.html children=item.children %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

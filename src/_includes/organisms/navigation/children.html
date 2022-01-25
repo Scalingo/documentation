@@ -1,14 +1,34 @@
-<ul>
+<ul class="ml-6">
   {% for item in include.children %}
-    <li data-index="{{ item.index }}" data-type="{{item.type}}" data-state="{% if page.url contains item.url %}open{% else %}closed{% endif %}">
+    <li class="text-sc-text-2 cursor-pointer">
       {% if item.type == "dir" %}
-        <span class="nav-title" data-url="{{ item.url }}">
-          {{item.title}}
-        </span>
-        {% include organisms/navigation/children.html children=item.children %}
-
+        <input
+          type="checkbox" id="{{item.url | url_encode  }}" class="hidden"
+          {% if page.url contains item.url %}checked="true"{% endif %}
+        >
+        <label for="{{item.url | url_encode}}" class="
+          cursor-pointer flex items-center pr-6
+          {% if page.url contains item.url %}text-sc-blue-1{% endif %}
+        ">
+          <div class="hidden">{{ page.url }}</div>
+          <div class="hidden">{{ item.url }}</div>
+          <span class="flex-grow">
+            {{item.title}}
+          </span>
+          <div>{% icon chevron_right %}</div>
+        </label>
+        <hr class="border-sc-gray-2 opacity-5"/>
+        <div class="hidden">
+          {% include organisms/navigation/children.html children=item.children %}
+        </div>
       {% else %}
-        <a href="{{ item.url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
+        <a href="{{ item.url }}" class="
+          block h-full w-full pr-6
+          {% if page.url == item.url %}text-sc-blue-1{% endif %}
+        ">
+          {{ item.title }}
+        </a>
+        <hr class="border-sc-gray-2 opacity-5"/>
       {% endif %}
     </li>
   {% endfor %}

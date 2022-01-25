@@ -24,7 +24,7 @@ modified_at: 2015-09-09 00:00:00
       <div id="{{post.id | slugify}}" class="heading" data-type="heading"
         data-state="{% if body != " " %}closed{% else %}empty{% endif %}">
         <input type="checkbox" id="{{post.id | url_decode  }}" class="hidden">
-        <label class="drop flex flex-row w-full p-6 {% cycle 'bg-sc-gray-4', 'even' %}" for="{{post.id | url_decode}}">
+        <label class="flex flex-row w-full p-6 {% cycle 'bg-sc-gray-4', 'even' %} cursor-pointer" for="{{post.id | url_decode}}">
           <div class="w-1/6">
             {{ post.modified_at | date: "%b %-d, %Y" }}
           </div>
@@ -33,7 +33,7 @@ modified_at: 2015-09-09 00:00:00
           </div>
           <div class="w-4/6 flex flex-row justify-between items-center">
             <span>{{ post.title }}</span>
-            <svg class="transition-all duration-500 cursor-pointer" width="16" height="9" viewBox="0 0 16 9" fill="none"
+            <svg class="transition-all duration-500" width="16" height="9" viewBox="0 0 16 9" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M15.8397 0.927835C15.9466 1.03093 16 1.14948 16 1.28351C16 1.41753 15.9466 1.53608 15.8397 1.63918L8.36874 8.84536C8.26186 8.94845 8.13895 9 8 9C7.86105 9 7.73814 8.94845 7.63126 8.84536L0.160321 1.63918C0.0534397 1.53608 0 1.41753 0 1.28351C0 1.14948 0.0534397 1.03093 0.160321 0.927835L0.961924 0.154639C1.0688 0.0515459 1.19172 0 1.33066 0C1.46961 0 1.59252 0.0515459 1.6994 0.154639L8 6.23196L14.3006 0.154639C14.4075 0.0515459 14.5304 0 14.6693 0C14.8083 0 14.9312 0.0515459 15.0381 0.154639L15.8397 0.927835Z"
@@ -42,16 +42,16 @@ modified_at: 2015-09-09 00:00:00
           </div>
         </label>
         {% if body != "" %}
-        <div class="px-6 py-6 text-sc-gray-2 border-b border-t border-sc-gray-3">
-          {% if post.github %}
-          <a class="text-sc-gray-1 hover:underline py-2" target="_blank" href="{{ post.github }}">
-            {{ post.github }}
-          </a>
-          {% endif %}
-          <div class="py-2">
-            {{ post.content }}
+          <div class="hidden px-6 py-6 text-sc-gray-2 border-b border-t border-sc-gray-3">
+            {% if post.github %}
+            <a class="text-sc-gray-1 hover:underline py-2" target="_blank" href="{{ post.github }}">
+              {{ post.github }}
+            </a>
+            {% endif %}
+            <div class="py-2">
+              {{ post.content }}
+            </div>
           </div>
-        </div>
         {% endif %}
       </div>
     </article>

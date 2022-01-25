@@ -24,8 +24,8 @@ module Dirname
       data = {
         "title" => page_for_dir && (page_for_dir.data["nav"] || page_for_dir.data["title"]) ? (page_for_dir.data["nav"] || page_for_dir.data["title"]) : path.split("/").compact.last.split("-").map(&:capitalize).join(" "),
         "type" => "dir",
-        "url" => page_for_dir ? page_for_dir.url : path.gsub("_posts", ""),
-        "index" => page_for_dir && page_for_dir.data["index"] ? page_for_dir.data["index"] : nil,
+        "url" => page_for_dir&.url || url_path,
+        "index" => page_for_dir&.data&.dig("index"),
       }
       data["children"] = children = []
       Dir.foreach(path) do |entry|
