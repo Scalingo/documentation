@@ -34,6 +34,14 @@ At the end of each step, the Scalingo CLI tells you which command you need to ru
 The following documentation on this page assumes you migrate an application named `my-app` hosted
 on the region `osc-fr1` to the region `osc-secnum-fr1`.
 
+{% note %}
+There are currently a bunch of addons that are not migrated during a migration. Please contact the support if you need to migrate an application having such addons:
+
+- InfluxDB database
+- VPN addons
+- TCP addon
+{% endnote %}
+
 ### migration-create
 
 This step executes a few pre-migration checks to make sure you can migrate the
