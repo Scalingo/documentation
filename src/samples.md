@@ -10,7 +10,7 @@ modified_at: 2015-09-09 00:00:00
 
 
 <div class="bg-sc-gray-5 rounded-lg mt-6 p-10">
-  <h1 class="text-sc-title-1-1 text-sc-gray-1 font-bold">{{ page.title }}</h1>
+  <h1 class="text-sc-title-1-1 text-sc-gray-1 font-bold">{{ page.title }} 2</h1>
   <p class="mt-4">{{ page.description }}</p>
 </div>
 
@@ -18,9 +18,7 @@ modified_at: 2015-09-09 00:00:00
   {% for item in site.samples %}
     <div class="bg-sc-gray-5 rounded-lg hover:shadow-lg">
         <div class="mb-9 mt-6 flex flex-col items-center">
-          <svg height="48" width="48" class="border" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <use xlink:href="#{{ item.logo }}"></use>
-          </svg>
+          <span class="w-12 h-12">{% icon {{ item.logo }} %}</span>
           <span class="mt-4 font-medium text-sc-gray-1 text-sc-text-6">{{ item.name }}</span>
         </div>      
         <div class="flex flex-row divide-x divide-sc-gray-3 text-sc-text-5 font-medium border-t border-sc-gray-3">
