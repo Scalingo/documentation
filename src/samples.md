@@ -10,7 +10,7 @@ modified_at: 2015-09-09 00:00:00
 
 
 <div class="bg-sc-gray-5 rounded-lg mt-6 p-10">
-  <h1 class="text-sc-title-1-1 text-sc-gray-1 font-bold">{{ page.title }} 2</h1>
+  <h1 class="text-sc-title-1-1 text-sc-gray-1 font-bold">{{ page.title }}</h1>
   <p class="mt-4">{{ page.description }}</p>
 </div>
 
