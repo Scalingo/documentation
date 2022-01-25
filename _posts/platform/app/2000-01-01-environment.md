@@ -1,6 +1,6 @@
 ---
 title: Environment Variables
-modified_at: 2022-01-21 00:00:00
+modified_at: 2022-01-25 00:00:00
 tags: app configuration environment
 index: 3
 ---
@@ -31,12 +31,6 @@ You should avoid writing any credentials in the files managed by Git.
 ## Accessing the Environment from your App
 
 The following example is to get the value of the `PORT` variable.
-
-#### Shell
-
-```shell
-$PORT
-```
 
 #### Ruby
 
@@ -97,7 +91,7 @@ scalingo -a my-app env-set "MY_VAR=$(cat fichier | base64 -w 0)"
 You can now read the content of this environment variable in your application by decoding the content of the variable. For instance, in PHP:
 
 ```php
-base64_decode($_ENV('MY_VAR'))
+base64_decode($_ENV["MY_VAR"])
 ```
 
 Most programming languages offer a way to decode a Base64 content.
@@ -124,8 +118,8 @@ additional variable `$PORT` is defined.
 * `CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL` etc.
 * `CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
 * `APP`: Name of the application deployed
-* `STACK`: Name of the stack the application deployed is running
-* `REGION_NAME`: Name of the region the application is deployed
+* `STACK`: Name of the stack the application deployed is using
+* `REGION_NAME`: Name of the region where the application is deployed
 
 ## One-Off Environment Variables
 
