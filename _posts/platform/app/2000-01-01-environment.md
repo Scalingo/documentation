@@ -1,6 +1,6 @@
 ---
 title: Environment Variables
-modified_at: 2020-09-25 00:00:00
+modified_at: 2022-01-25 00:00:00
 tags: app configuration environment
 index: 3
 ---
@@ -62,6 +62,12 @@ os.getenv("PORT")
 $_ENV["PORT"]
 ```
 
+#### Java
+
+```java
+System.getenv("PORT");
+```
+
 #### Other Languages
 
 The process should not be really different. Refer to the documentation of the standard library of your language.
@@ -85,7 +91,7 @@ scalingo -a my-app env-set "MY_VAR=$(cat fichier | base64 -w 0)"
 You can now read the content of this environment variable in your application by decoding the content of the variable. For instance, in PHP:
 
 ```php
-base64_decode($_ENV('MY_VAR'))
+base64_decode($_ENV["MY_VAR"])
 ```
 
 Most programming languages offer a way to decode a Base64 content.
@@ -96,8 +102,8 @@ When your application is deployed, the build container is containing the environ
 variables defined in the application configuration and the platform is also injecting
 the following variable:
 
-* `$SOURCE_VERSION`: SHA of the currently deployed Git commit.
-* `$APP`: Name of the application the build has been triggered for.
+* `SOURCE_VERSION`: SHA of the currently deployed Git commit.
+* `APP`: Name of the application the build has been triggered for.
 
 ## Runtime Environment Variables
 
@@ -106,12 +112,14 @@ variables defined in the application configuration but is also injecting a set o
 environment variables in its environment. In the case of `web` containers, an
 additional variable `$PORT` is defined.
 
-* `$PORT`: Port number your server has to bind on.
-* `$CONTAINER`: Type and index of the container, `web-1` or `worker-1` for instance
-* `$CONTAINER_VERSION`: Version of the container started, usually the Git commit SHA.
-* `$CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL` etc.
-* `$CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
-* `$APP`: Name of the application deployed
+* `PORT`: Port number your server has to bind on.
+* `CONTAINER`: Type and index of the container, `web-1` or `worker-1` for instance
+* `CONTAINER_VERSION`: Version of the container started, usually the Git commit SHA.
+* `CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL` etc.
+* `CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
+* `APP`: Name of the application deployed
+* `STACK`: Name of the stack the application deployed is using
+* `REGION_NAME`: Name of the region where the application is deployed
 
 ## One-Off Environment Variables
 
@@ -119,4 +127,4 @@ When starting a [one-off container]({% post_url platform/app/2000-01-01-tasks
 %}) for an application, the platform injects the runtime environment variables
 plus the following:
 
-* `$SCALINGO_USER_ID`: Scalingo user ID of the user executing the one-off.
+* `SCALINGO_USER_ID`: Scalingo user ID of the user executing the one-off.
