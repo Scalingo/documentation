@@ -63,8 +63,6 @@ GEM
       terminal-table (~> 2.0)
     jekyll-feed (0.16.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-include-cache (0.2.1)
-      jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (2.1.0)
       sassc (> 2.0.1, < 3.0)
     jekyll-sitemap (1.4.0)
@@ -183,7 +181,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll
   jekyll-feed
-  jekyll-include-cache
   jekyll-sitemap
   jekyll-toc
   liquid-c
