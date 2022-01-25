@@ -95,6 +95,67 @@ highlighted:
       url: "/databases/mongodb/start"
       icon: mongodb
 
+languages:
+  - url: go
+    name: "Go"
+    logo: go
+  - url: meteorjs
+    name: "MeteorJS"
+    logo: meteorjs
+  - url: nodejs
+    name: "Node.js"
+    logo: nodejs
+  - url: php
+    name: "PHP"
+    logo: php
+  - url: groovy
+    name: "Groovy"
+    logo: groovy
+  - url: java
+    name: "Java"
+    logo: java
+  - url: clojure
+    name: "Clojure"
+    logo: clojure
+  - url: crystal
+    name: "Crystal"
+    logo: crystal
+  - url: elixir
+    name: "Elixir"
+    logo: elixir
+  - url: erlang
+    name: "Erlang"
+    logo: erlang
+  - url: python
+    name: "Python"
+    logo: python
+  - url: ruby
+    name: "Ruby"
+    logo: ruby
+  - url: scala
+    name: "Scala"
+    logo: scala
+
+databases:
+  - url: postgresql
+    name: "PostgresSQL"
+    logo: postgresql
+  - url: mysql
+    name: "MySQL"
+    logo: mysql
+  - url: mongodb
+    name: "MongoDB"
+    logo: mongodb
+  - url: redis
+    name: "Redis"
+    logo: redis
+  - url: elasticsearch
+    name: "Elasticsearch"
+    logo: elasticsearch
+  - url: influxdb
+    name: "InfluxDB"
+    logo: influxdb
+
 samples:
   - url: ruby-rails
     name: Ruby/Rails
