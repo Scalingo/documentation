@@ -25,14 +25,14 @@ The four steps matches the four commands to be run using the CLI, which are the 
 - **migration-run --data**, where we copy the addons data. This step is **optionnal**.
 - **migration-run --finalize**, where we start the new app and redirect the traffic from the old app.
 
-The data migration step is optionnal in case you need to fully control this step, eg. if you have large volumes to migrate or if you want to change an addon version.
+The data migration step is optionnal in case you need to fully control this step, e.g. if you have large volumes to migrate or if you want to change an addon version.
 
 The source application will be stopped before `migration-run --data` is performed, or if you skipped this step, during `migration-run --finalize`.
 
 At the end of each step, the Scalingo CLI tells you which command you need to run next.
 
 The following documentation on this page assumes you migrate an application named `my-app` hosted
-on the region `agora-fr1` to the region `osc-fr1`.
+on the region `osc-fr1` to the region `osc-secnum-fr1`.
 
 ### migration-create
 
@@ -47,10 +47,10 @@ The command will output a migration ID that will be required to run any of the n
 Example output:
 
 ```
-$ scalingo --region agora-fr1 --app my-app migration-create --to osc-fr1
+$ scalingo --region osc-fr1 --app my-app migration-create --to osc-secnum-fr1
 Migration ID: 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
 Migrating app: my-app
-Destination: osc-fr1
+Destination: osc-secnum-fr1
 New app ID: N/A
 Status: preflight-success
 ✔ Check addon versions Done!
@@ -58,7 +58,7 @@ Status: preflight-success
 ✔ Check addons compatibility Done!
 ✔ Preflight checks Done!
 
-Your app can be migrated to the osc-fr1 zone.
+Your app can be migrated to the osc-secnum-fr1 zone.
 To start the migration launch:
 
 scalingo --app my-app migration-run --prepare 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
@@ -89,12 +89,12 @@ the source region; this is done to ensure that there will be no difference betwe
 The output will contain one line per sub-step and contains it status (ongoing or finished). This step is usually quite quick to perform.
 
 ```
-$ scalingo --region agora-fr1 --app my-app migration-run --prepare 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
+$ scalingo --region osc-fr1 --app my-app migration-run --prepare 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
 
 [...]
 
-Application on region 'osc-fr1' has been prepared, you can now:
-- Let us migrate your data to 'osc-fr1' newly created databases with:
+Application on region 'osc-secnum-fr1' has been prepared, you can now:
+- Let us migrate your data to 'osc-secnum-fr1' newly created databases with:
 scalingo --app my-app migration-run --data 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
 - Handle data migration manually, then finalizing the migration with:
 scalingo --app my-app migration-run --finalize 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
@@ -122,15 +122,15 @@ Once this is done, the application is not yet started; this happens in the next 
 The output will contain the result of each step for each addon.
 
 ```
-$ scalingo --region agora-fr1 --app my-app migration-run --data 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
+$ scalingo --region osc-fr1 --app my-app migration-run --data 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
 The following operations will be achieved:
  - Stop your old app
- - Create addons on the 'osc-fr1' region
+ - Create addons on the 'osc-secnum-fr1' region
  - Import addons data
 
 [...]
 
-Data has been migrated to the 'osc-fr1' region
+Data has been migrated to the 'osc-secnum-fr1' region
 You can finalize the migration with:
 scalingo --app my-app migration-run --finalize 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
 ```
@@ -150,19 +150,19 @@ time to update the DNS record. But don't forget to update it or your application
 will become **unavailable after these 30 days**.
 
 ```
-$ scalingo --region agora-fr1 --app my-app migration-run --finalize 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
+$ scalingo --region osc-fr1 --app my-app migration-run --finalize 8e624121-2ce3-4b01-9bf4-d5e2b32df7e9
 The following operations will be achieved:
  - Start the new app
- - Redirect the traffic coming to 'my-app' on the old region to 'my-app' on 'osc-fr1'
+ - Redirect the traffic coming to 'my-app' on the old region to 'my-app' on 'osc-secnum-fr1'
 
 [...]
 
 
-Your application is now available at: https://my-app.osc-fr1.scalingo.io
+Your application is now available at: https://my-app.osc-secnum-fr1.scalingo.io
 
 -----> You need to make the following changes to your DNS records:
 
-       - CNAME record of my-app.example.com should be changed to my-app.osc-fr1.scalingo.io
+       - CNAME record of my-app.example.com should be changed to my-app.osc-secnum-fr1.scalingo.io
 ```
 
 ### migration-abort
@@ -176,14 +176,14 @@ This:
 - un-freeze the source application and is restarted if it was stopped.
 
 ```
-$ scalingo --region agora-fr1 --app my-app-abort migration-abort bbe1e4be-c978-472f-898f-e79e8db6c394
+$ scalingo --region osc-fr1 --app my-app-abort migration-abort bbe1e4be-c978-472f-898f-e79e8db6c394
 Migration ID: bbe1e4be-c978-472f-898f-e79e8db6c394
 Migrating app: my-app-abort
-Destination: osc-fr1
+Destination: osc-secnum-fr1
 
 [...]
 
 The migration 'bbe1e4be-c978-472f-898f-e79e8db6c394' has been aborted
 You can retry it with:
-scalingo --app my-app-abort migration-create --to osc-fr1
+scalingo --app my-app-abort migration-create --to osc-secnum-fr1
 ```
