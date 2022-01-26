@@ -7,6 +7,7 @@
     "build:css": "postcss ./src/app/styles/index.postcss.css -o ./src/assets/style.css -u tailwindcss -u autoprefixer"
   },
   "dependencies": {
+    "@docsearch/js": "^3.0.0-alpha.42",
     "@rails/webpacker": "^3.2.2",
     "autoprefixer": "^10.4.2",
     "docsearch.js": "^2.6.3",

@@ -16,7 +16,6 @@
   input.addEventListener('change', updateValue);
 
   function updateValue(e) {
-    console.log('heelo');
     const collection = document.getElementsByClassName("filterable-card");
     let filter = e.target.value.toLowerCase();
     for (var k in collection) {
@@ -32,7 +31,6 @@
       if (filter == '') {
         item.classList.remove('hidden');
       }
-      console.log(filter, cardValue);
     }
   }
 </script>

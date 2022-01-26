@@ -13,7 +13,7 @@ description: "From the deployment of your app to complex scaling operations you'
         <br/>
         And voilà, 2 minutes later, your website is online.
       </p>
-      <div>Searchbar</div>
+      <div class="mt-6" id="docsearch-index"></div>
     </div>
     <div>{% icon hi-five %}</div>
   </div>

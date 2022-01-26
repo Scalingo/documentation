@@ -7,8 +7,18 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-// require('js/header-active-link.js')
-// require('js/site-nav.js')
-// require('js/search.js')
-// require('js/page-nav.js')
-// require('js/breadcrumb.js')
+import docsearch from '@docsearch/js';
+
+docsearch({
+  container: '#docsearch-nav',
+  apiKey: '6967a402f012b8a7c4122180616aace0',
+  indexName: 'scalingo-doc',
+  placeholder: 'Search',
+});
+
+docsearch({
+  container: '#docsearch-index',
+  apiKey: '6967a402f012b8a7c4122180616aace0',
+  indexName: 'scalingo-doc',
+  placeholder: 'Search',
+});
