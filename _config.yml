@@ -65,15 +65,18 @@ exclude:
 highlighted:
   first_steps:
     - /platform/getting-started/first-steps
-    - /platform/getting-started/troubleshooting-ssh
-    - /platform/databases/intro
+    - /platform/deployment/deployment-process
+    - /platform/getting-started/free-trial
+    - /platform/getting-started/how-to-migrate-from-heroku
   popular:
-    - /platform/getting-started/first-steps
     - /platform/getting-started/troubleshooting-ssh
-    - /platform/databases/intro
-    - /platform/getting-started/first-steps
-    - /platform/getting-started/troubleshooting-ssh
-    - /platform/databases/intro
+    - /platform/databases/access
+    - /platform/cli/start
+    - /languages/nodejs/start
+    - /platform/deployment/deployment-process
+    - /platform/getting-started/common-deployment-errors
+    - /languages/php/symfony
+    - /databases/postgresql/start
   technologies:
     - name: Ruby on Rails
       url: /languages/ruby/rails/start
