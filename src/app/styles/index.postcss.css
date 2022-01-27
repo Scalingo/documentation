@@ -47,6 +47,10 @@ article a {
   @apply underline text-sc-gray-1 hover:text-sc-blue-1
 }
 
+article div.highlighter-rouge {
+  @apply max-w-xs lg:max-w-none
+}
+
 article pre.highlight {
   font-size: 14px;
   line-height: 18px;

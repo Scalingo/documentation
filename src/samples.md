@@ -16,7 +16,7 @@ modified_at: 2015-09-09 00:00:00
     <div class="hidden lg:block lg:mx-10">{% icon lightbulb %}</div>
   </div>
 
-  <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-6 mt-6 mb-24">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-6 mt-6 mb-24">
     {% for item in site.samples %}
       <div data-card="{{ item.name }}" class="bg-sc-gray-5 rounded-lg hover:shadow-lg filterable-card">
           <div class="mb-9 mt-6 flex flex-col items-center">
