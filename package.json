@@ -9,6 +9,7 @@
   "dependencies": {
     "@docsearch/js": "^3.0.0-alpha.42",
     "@rails/webpacker": "^3.2.2",
+    "@tailwindcss/line-clamp": "^0.3.1",
     "autoprefixer": "^10.4.2",
     "docsearch.js": "^2.6.3",
     "image-webpack-loader": "^3.6.0",

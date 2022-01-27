@@ -19,7 +19,7 @@ function replaceUrl(url) {
   return new_url;
 }
 
-["#docsearch-nav", "#docsearch-index"].forEach((container) => {
+["#docsearch-index", "#docsearch-nav"].forEach((container) => {
   docsearch({
     container: container,
     apiKey: '6967a402f012b8a7c4122180616aace0',
