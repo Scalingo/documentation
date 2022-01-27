@@ -180,7 +180,7 @@ svg {
   @apply text-sc-gray-2 pl-4 font-normal;
 }
 
-.highlight { overflow-x: scroll; }
+.highlight { overflow-x: auto; }
 .highlight pre { background-color: #060C20; }
 .highlight .hll { background-color: #060C20; }
 .highlight .c { color: #75715e } /* Comment */

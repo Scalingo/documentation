@@ -1,5 +1,5 @@
-<div class="sticky top-0 z-20 w-full text-sc-gray-1 font-medium">
-  <div class="bg-sc-gray-5 flex py-3 items-center">
+<div class="top-0 z-20 w-full text-sc-gray-1 font-medium">
+  <div class="bg-sc-gray-5 flex py-3 items-center fixed z-10 border-b-4 xl:border-b-0 border-sc-blue-3 w-full">
     <div class="w-80">
       <div class="ml-3 flex"><a class="py-2 px-3" href="/">{% icon logo_full %}</a></div>
     </div>
@@ -38,6 +38,7 @@
       </button>
     </div>
   </div>
+  <div style="height: 68px;"></div>
   <div class="bg-sc-gray-5 text-sc-black-1 hidden" id="mobile-menu-panels">
     {% include organisms/mobile_menu.html %}
   </div>
@@ -51,6 +52,7 @@
 
     let button = document.querySelector("#mobile-menu");
     let panels = document.querySelector("#mobile-menu-panels");
+    let nav = document.querySelector("#mobile-menu-nav");
     let iconCross = document.querySelector("#mobile-menu-icon-cross");
     let iconHamburger = document.querySelector("#mobile-menu-icon-hamburger");
 
@@ -61,11 +63,13 @@
       iconHamburger.classList.remove("hidden");
       iconCross.classList.add("hidden");
       panels.classList.add("hidden");
+      nav.classList.add("hidden");
     } else {
       button.classList.add(...buttonClasses)
       iconHamburger.classList.add("hidden");
       iconCross.classList.remove("hidden");
       panels.classList.remove("hidden");
+      nav.classList.remove("hidden");
     }
   }
 </script>
