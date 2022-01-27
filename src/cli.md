@@ -36,7 +36,7 @@ Complete changelog is available [here](/changelog).
 
 ## Supported operating systems
 
-<ul class='flex flex-row list-unstyled space-x-8'>
+<ul class='flex flex-row flex-wrap list-unstyled gap-x-8'>
   {% for os in page.oses %}
     <li class='flex flex-row'>
       <div class="flex flex-row items-center">
