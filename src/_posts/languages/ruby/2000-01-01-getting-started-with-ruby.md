@@ -9,9 +9,9 @@ index: 3
 
 This tutorial is depicting how to deploy a Ruby application on Scalingo
 
-<aside class="note" markdown="1">
-Note: This tutorial does not cover the Ruby on Rails installation, If you're looking to deploy a Ruby on Rails project, follow the [Get Started with Ruby on Rails tutorial]({% post_url languages/ruby/rails/2000-01-01-start %})
-</aside>
+{% note %}
+  Note: This tutorial does not cover the Ruby on Rails installation, If you're looking to deploy a Ruby on Rails project, follow the [Get Started with Ruby on Rails tutorial]({% post_url languages/ruby/rails/2000-01-01-start %})
+{% endnote %}
 
 To be able to follow this tutorial, we assume that you have:
 
@@ -44,10 +44,10 @@ your Ruby application.
 
 ## Create your Ruby application
 
-<aside class="note" markdown="1">
-For this example we will use the Sinatra HTTP framework, but any Ruby HTTP framework works on
-Scalingo.
-</aside>
+{% note %}
+  For this example we will use the Sinatra HTTP framework, but any Ruby HTTP framework works on
+  Scalingo.
+{% endnote %}
 
 Let's start by adding the `sinatra` gem to our `Gemfile` by adding the following line at the end of the file:
 ```Gemfile

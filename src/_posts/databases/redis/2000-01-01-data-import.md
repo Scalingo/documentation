@@ -37,10 +37,10 @@ $ scalingo -a my-app redis-console
 
 ## Copy data from the remote Redis instance
 
-<aside class="warning" markdown="1">
-These actions will erase all the existing content of the Scalingo Redis
-instance, don't do it if you've precious data stored.
-</aside>
+{% warning %}
+  These actions will erase all the existing content of the Scalingo Redis
+  instance, don't do it if you've precious data stored.
+{% endwarning %}
 
 You need to own the source Redis connection information in order to copy its
 content. Let's consider the following example:
@@ -78,11 +78,11 @@ master_last_io_seconds_ago:1
 master_sync_in_progress:0
 ```
 
-<aside class="warning" markdown="1">
+{% warning %}
 First check the `master_link_status`, it should be `up`, otherwise, it means
 the replication process did not start, probably because of an error in the
 connection information, check you can connect to the remote server with `redis-cli`
-</aside>
+{% endwarning %}
 
 Once the `master_sync_in_progress` value becomes `0`, it means the data
 synchronization is over.
