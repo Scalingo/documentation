@@ -3,7 +3,7 @@ layout: default_with_main_navigation
 ---
 
 <div class="flex bg-sc-gray-5 w-full rounded-lg justify-center">
-    <div class="flex flex-row flex-grow mx-6 py-10 max-w-sc-content-1532">
+    <div class="flex xl:flex-row flex-col-reverse flex-grow m-10 justify-center">
         <article class="max-w-sc-content-720 text-sc-text-1">
             <header>
                 <h1>{{ page.title }}</h1>
@@ -30,8 +30,7 @@ layout: default_with_main_navigation
                 {% endif %}
             </section>
         </article>
-        <div class="flex flex-grow"></div>
-        <nav class="w-sc-content-620 px-10">
+        <nav class="xl:w-sc-content-620 px-10">
             {% include organisms/content_table.html html=content h_min=2 h_max=3 %}
         </nav>
     </div>
