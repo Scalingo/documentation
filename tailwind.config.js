@@ -6,7 +6,20 @@ module.exports = {
     extend: {
       screens: {
         "3xl": "1922px"
-      }
+      },
+      width: {
+        "sc-content-260": "260px",
+        "sc-content-720": "720px",
+      },
+      maxWidth: {
+        "sc-container": "1440px",
+        "sc-content": "1280px",
+        "sc-content-620": "620px",
+        "sc-content-720": "720px",
+        "sc-content-880": "880px",
+        "sc-content-1190": "1190px",
+        "sc-content-1532": "1532px",
+      },
     },
     fontFamily: {
       sans: ["aktiv-grotesk"],
@@ -40,15 +53,6 @@ module.exports = {
       "sc-green-1": "#00D1AF",
       "sc-green-2": "#94F3E4",
       "sc-green-3": "#DEFBF6",
-    },
-    maxWidth: {
-      "sc-container": "1440px",
-      "sc-content": "1280px",
-      "sc-content-620": "620px",
-      "sc-content-720": "720px",
-      "sc-content-880": "880px",
-      "sc-content-1190": "1190px",
-      "sc-content-1532": "1532px",
     },
     fontSize: {
       "sc-text-1": [

@@ -5,7 +5,7 @@ index: 2
 ---
 
 <div class="container mx-auto">
-  <div class="bg-sc-gray-5 rounded-lg mt-6 flex flex-row justify-between">
+  <div class="bg-sc-gray-5 rounded-lg flex flex-row justify-between items-center">
     <div class="p-10">
       <h1 class="text-sc-title-1-1 text-sc-gray-1 font-bold">{{ page.title }}</h1>
       {% include atoms/filter.html %}

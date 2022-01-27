@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .fit_screen {
-  /* 100% screen size, minus footer & header */
-  min-height: calc(100vh - 64px - 68px);
+  /* 100% screen size, minus header */
+  min-height: calc(100vh - 68px);
 }
 
 /* Hack to scroll to the right element on target */
@@ -13,10 +13,6 @@
   display: block;
   height: 75px;
   margin-top: -75px;
-}
-
-article h1 {
-  @apply text-sc-gray-1 text-sc-title-1 font-bold mb-12;
 }
 
 article h2 {
@@ -48,7 +44,7 @@ article ul {
 }
 
 article a {
-  @apply hover:underline text-sc-gray-1
+  @apply underline text-sc-gray-1 hover:text-sc-blue-1
 }
 
 article pre.highlight {

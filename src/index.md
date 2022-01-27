@@ -4,7 +4,7 @@ title: Documentation Center
 description: "From the deployment of your app to complex scaling operations you'll find all the resources you need to understand and benefit from Scalingo's powerful Platform as a Service. All major languages are supported: Ruby, NodeJS, MeteorJS, Python, PHP, Java and more."
 ---
 <div class="w-full max-w-sc-content-1532 text-sc-gray-1">
-  <div class="bg-sc-gray-5 flex flex-col md:flex-row mb-12">
+  <div class="bg-sc-gray-5 flex flex-col md:flex-row mb-12 rounded-lg">
     <div class="flex-grow p-10 pb-0">
       <h1 class="mb-4 text-sc-title-1 font-bold">Getting Started on Scalingo</h1>
 
@@ -56,7 +56,7 @@ description: "From the deployment of your app to complex scaling operations you'
         {% for post_url in site.highlighted.popular %}
           {% assign post = site.posts | where:'url', post_url | first %}
           <a href="{{ post_url }}">
-            <div class="bg-sc-gray-5 w-full p-6 flex items-center group rounded transition hover:shadow-md gap-5 leading-5">
+            <div class="bg-sc-gray-5 w-full p-6 flex items-center group rounded-lg transition hover:shadow-md gap-5 leading-5">
               <div class="flex-grow group-hover:text-sc-blue-1 truncate">{{ post.title}}</div>
               <div class="group-hover:translate-x-1 duration-200 ease-out flex-none w-6">{% icon arrow_right %}</div>
             </div>
@@ -77,7 +77,7 @@ description: "From the deployment of your app to complex scaling operations you'
           {% else %}
             <a href="{{ post.url }}">
           {% endif %}
-            <div class="bg-sc-gray-5 w-full p-6 flex items-center group rounded transition hover:shadow-md gap-5 leading-5">
+            <div class="bg-sc-gray-5 w-full p-6 flex items-center group rounded-lg transition hover:shadow-md gap-5 leading-5">
               <div class="flex-grow group-hover:text-sc-blue-1 truncate">{{ post.title}}</div>
               <div class="text-sc-gray-2 mr-6 whitespace-nowrap hidden md:block">{{ post.modified_at | date_to_string }}</div>
               <div class="group-hover:translate-x-1 duration-200 ease-out flex-none w-6">{% icon arrow_right %}</div>

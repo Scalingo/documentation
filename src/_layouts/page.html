@@ -3,11 +3,9 @@ layout: default_with_main_navigation
 ---
 
 <div class="flex bg-sc-gray-5 w-full rounded-lg justify-center">
-  <div class="flex xl:flex-row items-start flex-col-reverse flex-grow m-10 justify-center relative">
-    <article class="max-w-sc-content-720 text-sc-text-1">
-      <header>
-        <h1>{{ page.title }}</h1>
-      </header>
+  <div class="flex xl:flex-row items-start flex-col-reverse xl:flex-grow m-10 justify-center relative">
+    <article class="w-sc-content-720 text-sc-text-1">
+      <h1 class="text-sc-gray-1 text-sc-title-1 font-bold mb-12 hidden xl:block">{{ page.title }}</h1>
       <section class="py-0">
         {{ content | inject_anchors }}
         <hr class="mt-12" />
@@ -17,7 +15,7 @@ layout: default_with_main_navigation
             Last update: {{ page.modified_at | date_to_string }}
           </span>
           <a href="https://github.com/{{ site.github_username }}/documentation/edit/master/{{ page.path }}"
-            class="flex items-center text-sc-blue-1">
+            class="flex items-center">
             <svg style="width: 14px;height: 14px;" aria-hidden="true" focusable="false" data-prefix="fas"
               data-icon="pen" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
               <path fill="currentColor"
@@ -30,8 +28,9 @@ layout: default_with_main_navigation
         {% endif %}
       </section>
     </article>
-    <nav class="xl:w-sc-content-620 px-10 sticky top-36">
+    <nav class="xl:w-sc-content-260 xl:pl-5 xl:ml-5 2xl:pl-10 2xl:ml-10 xl:py-10 xl:sticky xl:top-36 xl:border-l xl:border-sc-gray-3">
       {% include organisms/content_table.html html=content h_min=2 h_max=3 %}
     </nav>
+    <h1 class="text-sc-gray-1 text-sc-title-1 font-bold mb-12 xl:hidden">{{ page.title }}</h1>
   </div>
 </div>

@@ -11,8 +11,10 @@
         <aside class="hidden w-full h-full xl:block overflow-y-scroll  xl:fixed xl:w-72 2xl:w-80 xl:flex-none bg-sc-gray-5 mb-24 xl:mb-0" id="mobile-menu-nav">
 
         </aside>
-        <div class="hidden xl:block xl:w-72 2xl:w-80 xl:flex-none bg-sc-red-1"></div>
-        {{ content | extlinks }}
+        <div class="hidden xl:block xl:w-72 2xl:w-80 xl:flex-none "></div>
+        <main class="flex flex-grow justify-center pt-6 px-6 pb-12">
+          {{ content | extlinks }}
+        </main>
       </div>
     </div>
     {% include organisms/footer.html %}

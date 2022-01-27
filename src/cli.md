@@ -12,7 +12,7 @@ oses:
   - OpenBSD
 ---
 
-# {{ page.title }}
+<h1 class="text-sc-gray-1 text-sc-title-1 font-bold mb-12">{{ page.title }}</h1>
 
 {{ page.description }}
 
