@@ -1,5 +1,5 @@
 ---
-layout: default_with_main_navigation
+layout: default
 title: Databases
 index: 2
 ---
