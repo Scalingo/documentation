@@ -1,5 +1,5 @@
 ---
-layout: default_with_only_main_880
+layout: default_with_main_article
 title: Command Line Tool
 subnav_index: 2
 description: Interact with Scalingo's Platform as a Service from your command line.

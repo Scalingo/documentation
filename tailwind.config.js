@@ -3,6 +3,11 @@ module.exports = {
     "./src/**/*.{html,erb,md,mdown,css}",
   ],
   theme: {
+    extend: {
+      screens: {
+        "3xl": "1922px"
+      }
+    },
     fontFamily: {
       sans: ["aktiv-grotesk"],
       serif: ["freight-text-pro"],
