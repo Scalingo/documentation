@@ -112,6 +112,10 @@ article aside.note {
   @apply border bg-sc-turquoise-3 text-sc-turquoise-1 p-6 border-sc-turquoise-1 my-8 flex gap-4
 }
 
+article aside svg {
+  @apply flex-none
+}
+
 article aside.note a {
   @apply text-sc-turquoise-1 font-bold
 }
