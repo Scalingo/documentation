@@ -20,16 +20,18 @@ function replaceUrl(url) {
 }
 
 ["#docsearch-index", "#docsearch-nav"].forEach((container) => {
-  docsearch({
-    container: container,
-    apiKey: '6967a402f012b8a7c4122180616aace0',
-    indexName: 'scalingo-doc',
-    placeholder: 'Search',
-    transformItems(items) {
-      return items.map((item) => {
-        item.url = replaceUrl(item.url);
-        return item;
-      });
-    },
-  });
+  if(document.querySelectorAll(container).length > 0) {
+    docsearch({
+      container: container,
+      apiKey: '6967a402f012b8a7c4122180616aace0',
+      indexName: 'scalingo-doc',
+      placeholder: 'Search',
+      transformItems(items) {
+        return items.map((item) => {
+          item.url = replaceUrl(item.url);
+          return item;
+        });
+      },
+    });
+  }
 })
