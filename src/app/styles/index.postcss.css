@@ -109,7 +109,7 @@ article ol li::before {
 }
 
 article aside.note {
-  @apply border bg-sc-turquoise-3 text-sc-turquoise-1 p-6 border-sc-turquoise-1 my-8
+  @apply border bg-sc-turquoise-3 text-sc-turquoise-1 p-6 border-sc-turquoise-1 my-8 flex gap-4
 }
 
 article aside.note a {
@@ -117,7 +117,7 @@ article aside.note a {
 }
 
 article aside.warning {
-  @apply border bg-sc-red-3 text-sc-red-1 p-6 border-sc-red-1 my-8
+  @apply border bg-sc-red-3 text-sc-red-1 p-6 border-sc-red-1 my-8 flex gap-4
 }
 
 article aside.warning a {
