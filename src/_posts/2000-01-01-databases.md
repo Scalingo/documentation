@@ -16,7 +16,7 @@ index: 2
   <h2 class="font-bold text-sc-gray-1 text-sc-title-4-2 mt-12">Table of contents</h2>
   <div class="grid  grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-24">
     {% for item in site.databases %}
-    <a data-card="{{ item.name }}" href="/databases/{{ item.url }}/start.html"
+    <a data-card="{{ item.name }}" href="{{ item.url }}"
       class="filterable-card bg-sc-gray-5 rounded-lg hover:shadow-lg cursor-pointer">
       <div class="mb-9 mt-6 flex flex-col items-center">
         <span class="w-12 h-12">{% icon {{ item.logo }} %}</span>

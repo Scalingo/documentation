@@ -43,24 +43,9 @@ toc:
   max_level: 3
 
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - config.ru
-  - vendor
-  - Procfile
-  - config
-  - node_modules
-  - package.json
-  - yarn.lock
   - tmp
   - app/javascript
-  - Dockerfile
-  - docker-compose.yml
   - _plugins
-  - ld_library_path
-  - redirections.yml
-  - Rakefile
-  - lib/tasks
 
 highlighted:
   first_steps:
@@ -80,23 +65,22 @@ highlighted:
   technologies:
     - name: Ruby on Rails
       url: /languages/ruby/rails/start
-      icon: ruby-on-rails
-    - name: MeteorJS
-      url: "/languages/meteorjs/start"
-      icon: meteorjs
+      logo: ruby-on-rails
     - name: NodeJS
       url: "/languages/nodejs/start"
-      icon: nodejs
-  databases:
-    - name: PostgreSQL
-      url: "/databases/postgresql/start"
-      icon: postgresql
-    - name: MySQL
-      url: "/databases/mysql/start"
-      icon: mysql
-    - name: MongoDB
-      url: "/databases/mongodb/start"
-      icon: mongodb
+      logo: nodejs
+    - name: PHP
+      url: "/languages/php/start"
+      logo: php
+    - name: Python
+      url: "/languages/python/start"
+      logo: python
+    - name: Java
+      url: "/languages/java/start"
+      logo: java
+    - name: MeteorJS
+      url: "/languages/meteorjs/start"
+      logo: meteorjs
 
 languages:
   - url: go
@@ -140,24 +124,24 @@ languages:
     logo: scala
 
 databases:
-  - url: postgresql
+  - url: "/databases/postgresql/start"
     name: "PostgresSQL"
     logo: postgresql
-  - url: mysql
+  - url: "/databases/mysql/start"
     name: "MySQL"
     logo: mysql
-  - url: mongodb
+  - url: "/databases/mongodb/start"
     name: "MongoDB"
     logo: mongodb
-  - url: redis
+  - url: "/databases/redis/start"
     name: "Redis"
     logo: redis
-  - url: elasticsearch
-    name: "Elasticsearch"
-    logo: elasticsearch
-  - url: influxdb
+  - url: "/databases/influxdb/start"
     name: "InfluxDB"
     logo: influxdb
+  - url: "/databases/elasticsearch/start"
+    name: "Elasticsearch"
+    logo: elasticsearch
 
 samples:
   - url: ruby-rails
