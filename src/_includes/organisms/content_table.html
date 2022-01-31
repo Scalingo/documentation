@@ -179,4 +179,4 @@
             {% capture jekyll_toc %}<{{ listModifier }}{{ rootAttributes }}>{{ nodes | shift | join: '>' }}>{% endcapture %}
         {% endif %}
     {% endif %}
-{% endcapture %}{% assign tocWorkspace = '' %}{{ deprecation_warnings }}<a href="#top-of-page" class="font-bold text-sc-gray-1 text-sc-title-6 mb-2">In this article</a><div class="toc flex flex-cols space-y-4">{{ jekyll_toc -}}</div>
+{% endcapture %}{% assign tocWorkspace = '' %}{{ deprecation_warnings }}{{ jekyll_toc -}}

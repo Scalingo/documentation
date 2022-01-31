@@ -29,7 +29,10 @@ layout: default
       </section>
     </article>
     <nav class="xl:w-sc-content-260 xl:pl-5 xl:ml-5 2xl:pl-10 2xl:ml-10 xl:py-10 xl:sticky xl:top-36 xl:border-l xl:border-sc-gray-3">
-      {% include organisms/content_table.html html=content h_min=2 h_max=3 %}
+      <div class="font-bold text-sc-gray-1 text-sc-title-6 mb-2">In this article</div>
+      <div class="toc flex flex-cols space-y-4">
+        {% include organisms/content_table.html html=content h_min=2 h_max=3 %}
+      </div>
     </nav>
     <h1 class="text-sc-gray-1 text-sc-title-1 font-bold mb-12 xl:hidden">{{ page.title }}</h1>
   </div>
