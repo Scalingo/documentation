@@ -1,12 +1,9 @@
 ---
-title: TimescaleDB Data Retention
-nav: Extensions
+title: Data Retention
+nav: Data Retention
 modified_at: 2022-01-21 00:00:00
 tags: timescale databases postgresql extensions data retention
-index: 3
 ---
-
-# Data Retention
 
 A data retention policy aims at removing data older than a certain duration from the database.
 

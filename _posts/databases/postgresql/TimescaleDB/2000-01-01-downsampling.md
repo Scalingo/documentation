@@ -1,16 +1,13 @@
 ---
-title: TimescaleDB Downsampling
-nav: Extensions
+title: Downsampling
+nav: Downsampling
 modified_at: 2022-01-21 00:00:00
 tags: timescale databases postgresql extensions downsampling
-index: 2
 ---
-
-# Downsample
 
 Downsampling data allows to reduce the amount of data by simplifying the old values.
 
-# Example
+## Example
 
 Bellow an example of a logic of downsampling. It is based on TimescaleDB documentation.
 
@@ -23,7 +20,7 @@ So we can use a downsampling logic which will reduce the datas older than one we
 and only store the average by hour.
 
 
-## Datas
+### Datas
 
 For the following table:
 
@@ -37,7 +34,7 @@ $ select * from conditions;
  2022-01-20 09:50:05.06032+00  | office   |                 79 |                 54
 ```
 
-## Downsample Procedure
+### Downsample Procedure
 
 The procedure bellow contains the logic to downsample the table `conditions`
 
@@ -93,7 +90,7 @@ END
 $$;
 ```
 
-## Execute Procedure
+### Execute Procedure
 
 You can schedule the execution of the previous procedure by using
 [Scalingo scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}).
