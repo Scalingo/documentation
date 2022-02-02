@@ -65,3 +65,42 @@ var server = app.listen(process.env.PORT || 3000, function () {
 ```
 
 If you face a boot timeout error and use the Next.js framework, please refer to [this specific page](https://doc.scalingo.com/languages/nodejs/start#nextjs).
+
+
+## Host key verification failed
+
+```
+Installing node modules
+npm ERR! Error while executing:
+npm ERR! /usr/bin/git ls-remote -h -t ssh://git@github.com/scalingo/scalingo.js.git
+npm ERR!
+npm ERR! Host key verification failed.
+npm ERR! fatal: Could not read from remote repository.
+npm ERR!
+npm ERR! Please make sure you have the correct access rights
+npm ERR! and the repository exists.
+npm ERR!
+npm ERR! exited with error code: 128
+-----> Build failed
+```
+
+This issue happens when in your package.json you're using a git repository instead of an NPM package. If you're doing that, you can only use the `https` format and not the `ssh` one.
+
+These requirements will correctly resolve to HTTPS urls:
+
+```json
+"scalingo": "https://git@github.com/scalingo/scalingo.js.git"
+"scalingo": "git+https://git@github.com/scalingo/scalingo.js.git"
+```
+
+{% warning %}
+Do no forget the `git@` part in front of the hostname.
+{% endwarning %}
+
+These requirements will incorrectly resolve to SSH urls:
+```json
+"scalingo": "github:scalingo/scalingo.js"
+"scalingo": "https://github.com/scalingo/scalingo.js.git"
+"scalingo": "git+https://github.com/scalingo/scalingo.js.git"
+"scalingo": "git@github.com:Scalingo/scalingo.js.git"
+```
