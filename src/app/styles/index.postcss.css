@@ -96,14 +96,14 @@ article ul:not(.list-unstyled) > li:before {
 }
 
 article ol {
-  list-style: none;
-  counter-reset: my-awesome-counter;
+  list-style: list-outside;
 }
+
 article ol li {
-  counter-increment: my-awesome-counter;
+  @apply ml-8 pl-2.5
 }
-article ol li::before {
-  content: counter(my-awesome-counter) " - ";
+
+article ol > li::marker {
   color: #183BEE;
   font-weight: bold;
 }
