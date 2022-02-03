@@ -84,9 +84,9 @@ npm ERR! exited with error code: 128
 -----> Build failed
 ```
 
-This issue happens when in your package.json you're using a git repository instead of an NPM package. If you're doing that, you can only use the `https` format and not the `ssh` one.
+This issue happens when in your package.json you're using a git repository instead of a npm package. If you are doing that, you can only use the `https` format and not the `ssh` one.
 
-These requirements will correctly resolve to HTTPS urls:
+These requirements correctly resolve to HTTPS URLs:
 
 ```json
 "scalingo": "https://git@github.com/scalingo/scalingo.js.git"
@@ -97,7 +97,7 @@ These requirements will correctly resolve to HTTPS urls:
 Do no forget the `git@` part in front of the hostname.
 {% endwarning %}
 
-These requirements will incorrectly resolve to SSH urls:
+These requirements incorrectly resolve to SSH URLs:
 ```json
 "scalingo": "github:scalingo/scalingo.js"
 "scalingo": "https://github.com/scalingo/scalingo.js.git"
