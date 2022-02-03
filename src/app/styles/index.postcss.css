@@ -62,7 +62,7 @@ article pre {
 }
 
 article code.language-plaintext {
-  @apply bg-sc-gray-3 text-sc-gray-2 font-mono p-2 rounded;
+  @apply bg-sc-gray-3 text-sc-gray-2 font-mono px-2 py-1 rounded;
 }
 
 div.toc ul ul {
