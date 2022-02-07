@@ -1,4 +1,4 @@
-<div class="top-0 z-20 w-full text-sc-gray-1 font-medium">
+<div class="top-0 z-20 w-full text-sc-gray-1 font-medium hidden xl:block">
   <div class="bg-sc-gray-5 flex py-3 items-center fixed z-10 border-b-4 xl:border-b-0 border-sc-blue-3 w-full">
     <div class="w-80">
       <div class="ml-3 flex"><a class="py-2 px-3" href="/">{% icon logo_full %}</a></div>
@@ -21,27 +21,8 @@
         {% include atoms/button.html href="https://auth.scalingo.com/users/sign_up" text="Sign up" %}
       </div>
     </div>
-    <div class="flex-grow xl:hidden"></div>
-    <div class="xl:hidden">
-      <button type="button" id="mobile-menu"
-        class="inline-flex w-10 h-10 items-center justify-center p-2 mr-6 rounded-md focus:outline-none focus:ring-0"
-        aria-controls="mobile-menu" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg id="mobile-menu-icon-hamburger" fill="currentColor" width="24" height="20" viewBox="0 0 24 20"
-          xmlns="http://www.w3.org/2000/svg">
-          <path clip-rule="evenodd"
-            d="M23.3333 3.33333H0.666667C0.298477 3.33333 0 3.03486 0 2.66667V1.33333C0 0.965145 0.298477 0.666668 0.666667 0.666668H23.3333C23.7015 0.666668 24 0.965145 24 1.33333V2.66667C24 3.03486 23.7015 3.33333 23.3333 3.33333ZM24 10.6667V9.33333C24 8.96515 23.7015 8.66667 23.3333 8.66667H0.666667C0.298477 8.66667 0 8.96515 0 9.33333V10.6667C0 11.0349 0.298477 11.3333 0.666667 11.3333H23.3333C23.7015 11.3333 24 11.0349 24 10.6667ZM24 17.3333V18.6667C24 19.0349 23.7015 19.3333 23.3333 19.3333H0.666667C0.298477 19.3333 0 19.0349 0 18.6667V17.3333C0 16.9651 0.298477 16.6667 0.666667 16.6667H23.3333C23.7015 16.6667 24 16.9651 24 17.3333Z" />
-        </svg>
-        <svg id="mobile-menu-icon-cross" class="hidden" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15.8001 13.9172C15.9263 14.0424 15.9973 14.2128 15.9973 14.3905C15.9973 14.5683 15.9263 14.7387 15.8001 14.8639L14.8668 15.7972C14.7416 15.9234 14.5712 15.9944 14.3935 15.9944C14.2157 15.9944 14.0453 15.9234 13.9201 15.7972L8.00013 9.8772L2.08013 15.7972C1.95495 15.9234 1.78455 15.9944 1.6068 15.9944C1.42904 15.9944 1.25864 15.9234 1.13346 15.7972L0.200129 14.8639C0.0739201 14.7387 0.00292969 14.5683 0.00292969 14.3905C0.00292969 14.2128 0.0739201 14.0424 0.200129 13.9172L6.12013 7.9972L0.200129 2.0772C0.0739201 1.95202 0.00292969 1.78162 0.00292969 1.60387C0.00292969 1.42611 0.0739201 1.25571 0.200129 1.13053L1.13346 0.197199C1.25864 0.0709905 1.42904 0 1.6068 0C1.78455 0 1.95495 0.0709905 2.08013 0.197199L8.00013 6.1172L13.9201 0.197199C14.0453 0.0709905 14.2157 0 14.3935 0C14.5712 0 14.7416 0.0709905 14.8668 0.197199L15.8001 1.13053C15.9263 1.25571 15.9973 1.42611 15.9973 1.60387C15.9973 1.78162 15.9263 1.95202 15.8001 2.0772L9.88013 7.9972L15.8001 13.9172Z" fill="#1F2933"/>
-        </svg>
-      </button>
-    </div>
   </div>
   <div style="height: 68px;"></div>
-  <div class="bg-sc-gray-5 text-sc-black-1 hidden" id="mobile-menu-panels">
-    {% include organisms/mobile_menu.html %}
-  </div>
 </div>
 
 <script type="text/javascript">
@@ -55,18 +36,21 @@
     let nav = document.querySelector("#mobile-menu-nav");
     let iconCross = document.querySelector("#mobile-menu-icon-cross");
     let iconHamburger = document.querySelector("#mobile-menu-icon-hamburger");
+    let content = document.querySelector("#content");
 
     let buttonClasses = ['active']
 
     if (button.classList.contains('active')) {
       button.classList.remove(...buttonClasses)
       iconHamburger.classList.remove("hidden");
+      content.classList.remove("hidden");
       iconCross.classList.add("hidden");
       panels.classList.add("hidden");
       nav.classList.add("hidden");
     } else {
       button.classList.add(...buttonClasses)
       iconHamburger.classList.add("hidden");
+      content.classList.add("hidden");
       iconCross.classList.remove("hidden");
       panels.classList.remove("hidden");
       nav.classList.remove("hidden");
