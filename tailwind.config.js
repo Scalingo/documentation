@@ -4,13 +4,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: {
-        "3xl": "1922px"
-      },
-      width: {
-        "sc-content-260": "260px",
-        "sc-content-720": "720px",
-      },
       maxWidth: {
         "sc-container": "1440px",
         "sc-content": "1280px",
