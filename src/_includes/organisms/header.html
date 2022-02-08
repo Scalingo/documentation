@@ -41,6 +41,7 @@
     let buttonClasses = ['active']
 
     if (button.classList.contains('active')) {
+      document.getElementById('full-nav-container').appendChild(document.getElementById('menu-nav'));
       button.classList.remove(...buttonClasses)
       iconHamburger.classList.remove("hidden");
       content.classList.remove("hidden");
@@ -48,6 +49,8 @@
       panels.classList.add("hidden");
       nav.classList.add("hidden");
     } else {
+      console.log('menu open');
+      document.getElementById('mobile-nav-container').appendChild(document.getElementById('menu-nav'));
       button.classList.add(...buttonClasses)
       iconHamburger.classList.add("hidden");
       content.classList.add("hidden");
