@@ -27,6 +27,7 @@ module Dirname
         "url" => page_for_dir&.url || url_path,
         "index" => page_for_dir&.data&.dig("index"),
       }
+      @breadcrumb_hash[data["url"]] = data["title"]
       data["children"] = children = []
       Dir.foreach(path) do |entry|
         next if entry == ".." || entry == "."
@@ -37,12 +38,14 @@ module Dirname
           matched_page = @all_posts.detect { |x|
             x.path.ends_with?(full_path)
           }
-          children << {
+          child = {
             "title" => matched_page ? (matched_page.data["nav"] || matched_page.data["title"]) : nil,
             "type" => "file",
             "url" => matched_page ? matched_page.url : "UNMATCHED PAGE",
             "index" => matched_page && matched_page.data["index"] ? matched_page.data["index"] : nil,
           }
+          children << child
+          @breadcrumb_hash[child["url"]] = child["title"]
         end
       end
       children = data["children"]
@@ -51,17 +54,19 @@ module Dirname
         if page_for_dir
           page_for_dir.data["layout"] = "dir"
           page_for_dir.data["slug"] = url_path
-          page_for_dir.data["links"] = data["children"].each_with_object([]) { |obj, memo|
+          page_for_dir.data["links"] = data["children"].each_with_object([]) do |obj, memo|
             memo << {"url" => obj["url"], "title" => obj["title"]}
-          }
+            @breadcrumb_hash[obj["url"]] = obj["title"]
+          end
         else
           relative_dir = File.dirname path.gsub("_posts/", "")
           name = File.basename(path)
           title = data["title"]
           new_page = Jekyll::CategoryPage.new(@site, @site.source, relative_dir, name, title)
-          new_page.data["links"] = data["children"].each_with_object([]) { |obj, memo|
+          new_page.data["links"] = data["children"].each_with_object([]) do |obj, memo|
             memo << {"url" => obj["url"], "title" => obj["title"]}
-          }
+            @breadcrumb_hash[obj["url"]] = obj["title"]
+          end
           @site.pages << new_page
         end
       end
@@ -110,8 +115,10 @@ module Dirname
 
       @site = site
       @all_posts = site.posts.docs
+      @breadcrumb_hash = {}
       tree = directory_hash("src/_posts/")
       site.data["tree"] = tree["children"]
+      site.data["breadcrumb_hash"] = @breadcrumb_hash
     end
   end
 end

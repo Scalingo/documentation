@@ -186,10 +186,18 @@ svg {
   border: 1px solid #D2D9F9;
 }
 .DocSearch .DocSearch-Search-Icon {
-  @apply text-sc-blue-1 flex-none
+  @apply text-sc-blue-1 flex-none;
 }
 .DocSearch .DocSearch-Button-Placeholder {
   @apply text-sc-gray-2 pl-4 font-normal;
+}
+
+#breadcrumb a {
+  @apply text-sc-gray-2 no-underline;
+}
+
+#breadcrumb a:hover {
+  @apply text-sc-gray-1;
 }
 
 .highlight { overflow-x: auto; }
