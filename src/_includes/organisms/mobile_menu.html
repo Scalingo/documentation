@@ -14,7 +14,7 @@
         {% endif %}">Changelog</a>
         <a href="https://developers.scalingo.com" target="_blank" class="py-2 px-3 hover:text-sc-blue-1">API&nbsp;Reference</a>
       </div>
-      <div class="hidden md:flex items-center space-x-3">
+      <div class="hidden xl:flex items-center space-x-3">
         <a href="https://auth.scalingo.com/users/sign_in" class="hover:text-sc-blue-1">Sign In</a>
         <div>
           {% include atoms/button.html href="https://auth.scalingo.com/users/sign_up" text="Sign up" %}
@@ -22,8 +22,8 @@
       </div>
     </div>
   </div>
-  <div id="mobile-nav-container"></div>
-  <div class="md:hidden flex justify-center items-center h-24 border-sc-gray-3 border-t w-full mx-auto gap-10 bg-sc-gray-5 z-10">
+  <div id="mobile-nav-container" class="mb-20"></div>
+  <div class="xl:hidden fixed bottom-0 flex justify-center items-center h-20 border-sc-gray-3 border-t w-full mx-auto gap-10 bg-sc-gray-5 z-10">
     <a href="https://auth.scalingo.com/users/sign_in" class="hover:text-sc-blue-1">Sign In</a>
     <div>
       {% include atoms/button.html href="https://auth.scalingo.com/users/sign_up" text="Sign up" %}

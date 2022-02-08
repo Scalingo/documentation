@@ -11,11 +11,11 @@
       <div class="fit_screen">
         {% include organisms/header.html %}
         <div class="flex flex-col xl:flex-row">
-          <aside class="hidden w-full h-full xl:block overflow-y-scroll  xl:fixed xl:w-72 2xl:w-80 xl:flex-none bg-sc-gray-5 mb-24 xl:mb-0" id="full-nav-container">
+          <aside class="hidden w-full h-full xl:block overflow-y-scroll xl:fixed xl:w-72 2xl:w-80 xl:flex-none bg-sc-gray-5 mb-24 xl:mb-0" id="full-nav-container">
             {% include organisms/navigation/main.html %}
           </aside>
           <div class="hidden xl:block xl:w-72 2xl:w-80 xl:flex-none "></div>
-          <main class="flex flex-grow justify-center mx-2 pt-20 xl:pt-6 md:px-6 md:pb-12">
+          <main class="flex flex-grow justify-center pt-20 xl:pt-6 md:px-6 md:pb-12">
             {{ content | extlinks }}
           </main>
         </div>
