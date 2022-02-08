@@ -109,7 +109,7 @@ article ol > li::marker {
 }
 
 article aside.note {
-  @apply border bg-sc-turquoise-3 text-sc-turquoise-1 p-6 border-sc-turquoise-1 my-8 flex gap-4
+  @apply border bg-sc-purple-3 text-sc-purple-1 p-6 border-sc-purple-1 my-8 flex gap-4
 }
 
 article aside svg {
@@ -117,7 +117,11 @@ article aside svg {
 }
 
 article aside.note a {
-  @apply text-sc-turquoise-1 font-bold
+  @apply text-sc-purple-1 font-bold
+}
+
+article aside.note code.language-plaintext {
+  @apply bg-sc-purple-2 text-sc-purple-1;
 }
 
 article aside.warning {
@@ -126,6 +130,10 @@ article aside.warning {
 
 article aside.warning a {
   @apply text-sc-red-1 font-bold
+}
+
+article aside.warning code.language-plaintext {
+  @apply bg-sc-red-2 text-sc-red-1;
 }
 
 article table {
