@@ -13,6 +13,9 @@ module.exports = {
         "sc-content-1190": "1190px",
         "sc-content-1532": "1532px",
       },
+      screens: {
+        'xl': '1380px',
+      },
     },
     fontFamily: {
       sans: ["aktiv-grotesk"],

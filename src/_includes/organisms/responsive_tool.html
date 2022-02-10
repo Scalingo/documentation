@@ -1,0 +1,24 @@
+<!-- Show Tailwind screen & current window inner size -->
+<div class="fixed top-10 left-1/2 rounded bg-sc-gray-1 border-4 border-sc-blue-1 px-5 py-2 z-50 flex flex-col items-center">
+  <div>
+    <div class="hidden sm:block md:hidden">sm</div>
+    <div class="hidden md:block lg:hidden">md</div>
+    <div class="hidden lg:block xl:hidden">lg</div>
+    <div class="hidden xl:block 2xl:hidden">xl</div>
+    <div class="hidden 2xl:block">2xl</div>
+  </div>
+  <div>
+    <span id="screen-width"></span>x<span id="screen-height"></span>
+  </div>
+  <script type="application/javascript">
+    const heightOutput = document.querySelector('#screen-height');
+    const widthOutput = document.querySelector('#screen-width');
+
+    function reportWindowSize() {
+      heightOutput.textContent = window.innerHeight;
+      widthOutput.textContent = window.innerWidth;
+    }
+    reportWindowSize();
+    window.onresize = reportWindowSize;
+  </script>
+</div>
