@@ -22,7 +22,7 @@ Please be aware that this software is known to have different rendering dependin
 
 We describe in this section the different step to reproduce in order to use this buildpack depending on the technology you use.
 
-You will need to setup your application to use a multi-buildpack environment. Then, your application will need both the `wkhtmltopdf` buildpack and the one for the technology you use in your application. Here is an example using the Ruby buildpack:
+You need to setup your application to use a multi-buildpack environment. Then, your application need both the `wkhtmltopdf` buildpack and the one for the technology you use in your application. Here is an example using the Ruby buildpack:
 
 ```bash
 $ echo 'https://github.com/Scalingo/wkhtmltopdf-buildpack' >> .buildpacks
@@ -31,4 +31,4 @@ $ git add .buildpacks
 $ git commit -m 'Add multi-buildpack'
 ```
 
-You will find a comprehensive list of our buildpacks on [this page]({% post_url platform/deployment/buildpacks/2000-01-01-intro %}#buildpacks-included-on-scalingo).
+You find a comprehensive list of our buildpacks on [this page]({% post_url platform/deployment/buildpacks/2000-01-01-intro %}#buildpacks-included-on-scalingo).
