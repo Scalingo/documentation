@@ -1,11 +1,11 @@
 <div class="top-0 z-20 w-full text-sc-gray-1 font-medium hidden xl:block">
   <div class="bg-sc-gray-5 flex py-3 items-center fixed z-10 border-b-4 xl:border-b-0 border-sc-blue-3 w-full">
     <div class="w-80">
-      <div class="ml-3 flex"><a class="py-2 px-3" href="/">{% icon logo_full %}</a></div>
+      <div class="ml-3 flex"><a class="py-2 px-3" href="/" title="Homepage">{% icon logo_full %}</a></div>
     </div>
     <div class="flex-grow hidden xl:flex gap-5 mx-5">
       {% assign active_classes = "text-sc-blue-1" %}
-      <a href="/" title="Homepage" class="
+      <a href="/" class="
         py-2 px-5 hover:text-sc-blue-1
         {% if page.url != "/samples" and page.url != "/cli" and page.url != "/changelog" %} {{ active_classes }} {% endif %}
       ">Guides</a>
