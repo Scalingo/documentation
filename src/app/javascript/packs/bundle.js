@@ -23,7 +23,8 @@ function replaceUrl(url) {
   if(document.querySelectorAll(container).length > 0) {
     docsearch({
       container: container,
-      apiKey: '6967a402f012b8a7c4122180616aace0',
+      appId: 'RWJM2H1BD2',
+      apiKey: '9dfb74cc002ece507fac441e93da6345',
       indexName: 'scalingo-doc',
       placeholder: 'Search',
       transformItems(items) {
