@@ -52,20 +52,20 @@ description: "From the deployment of your app to complex scaling operations you'
       <div class="flex flex-col gap-2">
         {% for post_url in site.highlighted.popular %}
         {% assign post = site.posts | where:'url', post_url | first %}
-        <a href="{{ post_url }}">
-          <div
-            class="bg-sc-gray-5 w-full p-6 flex items-center group rounded-lg transition hover:shadow-md gap-5 leading-5">
-            <div class="flex-grow group-hover:text-sc-blue-1 truncate">{{ post.title}}</div>
-            <div class="group-hover:translate-x-1 duration-200 ease-out flex-none w-6">{% icon arrow_right %}</div>
-          </div>
-        </a>
+          <a href="{{ post_url }}">
+            <div
+              class="bg-sc-gray-5 w-full p-6 flex items-center group rounded-lg transition hover:shadow-md gap-5 leading-5">
+              <div class="flex-grow group-hover:text-sc-blue-1 truncate">{{ post.title}}</div>
+              <div class="group-hover:translate-x-1 duration-200 ease-out flex-none w-6">{% icon arrow_right %}</div>
+            </div>
+          </a>
         {% endfor %}
       </div>
     </div>
     <div>
       <div class="flex mb-4 items-center">
         <h2 class="font-bold">Last modified articles</h2>
-        <a class="ml-4" href="/feed.xml">{% icon rss %}</a>
+        <a class="ml-4" href="/feed.xml" title="RSS Feed">{% icon rss %}</a>
       </div>
       <div class="flex flex-col gap-2">
         {% assign recent_posts = site.posts | sort: 'modified_at' | reverse %}
