@@ -182,26 +182,18 @@ svg {
   @apply text-sc-gray-1;
 }
 
-article div.highlighter-rouge {
-  @apply max-w-xs mx-auto sm:mx-0 sm:max-w-none;
-}
-
-article pre.highlight {
+article pre {
   font-size: 14px;
   line-height: 18px;
-  @apply p-8 rounded-lg text-sc-gray-3 font-mono shadow-lg
-}
-
-article pre {
-  @apply my-4;
+  background-color: #060C20;
+  overflow-x: auto;
+  @apply p-8 rounded-lg text-sc-gray-3 font-mono shadow-lg max-w-xs mx-auto sm:mx-0 sm:max-w-none my-4;
 }
 
 article code.language-plaintext {
   @apply bg-sc-gray-3 text-sc-gray-2 font-mono px-2 py-1 rounded;
 }
 
-.highlight { overflow-x: auto; }
-.highlight pre { background-color: #060C20; }
 .highlight .hll { background-color: #060C20; }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
