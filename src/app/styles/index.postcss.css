@@ -36,33 +36,15 @@ article p {
 }
 
 article li {
-  @apply text-sc-text-3
+  @apply text-sc-text-3;
 }
 
 article ul {
-  @apply my-2
+  @apply my-2;
 }
 
 article a {
-  @apply underline text-sc-gray-1 hover:text-sc-blue-1
-}
-
-article div.highlighter-rouge {
-  @apply max-w-xs lg:max-w-none
-}
-
-article pre.highlight {
-  font-size: 14px;
-  line-height: 18px;
-  @apply p-8 rounded-lg text-sc-gray-3 font-mono shadow-lg
-}
-
-article pre {
-  @apply my-4;
-}
-
-article code.language-plaintext {
-  @apply bg-sc-gray-3 text-sc-gray-2 font-mono px-2 py-1 rounded;
+  @apply underline text-sc-gray-1 hover:text-sc-blue-1;
 }
 
 div.toc ul ul {
@@ -109,11 +91,11 @@ article ol > li::marker {
 }
 
 article aside.note {
-  @apply border bg-sc-purple-3 text-sc-purple-1 p-6 border-sc-purple-1 my-8 flex gap-4
+  @apply border bg-sc-purple-3 text-sc-purple-1 p-6 border-sc-purple-1 my-8 flex gap-4;
 }
 
 article aside svg {
-  @apply flex-none
+  @apply flex-none;
 }
 
 article aside.note a {
@@ -125,11 +107,11 @@ article aside.note code.language-plaintext {
 }
 
 article aside.warning {
-  @apply border bg-sc-red-3 text-sc-red-1 p-6 border-sc-red-1 my-8 flex gap-4
+  @apply border bg-sc-red-3 text-sc-red-1 p-6 border-sc-red-1 my-8 flex gap-4;
 }
 
 article aside.warning a {
-  @apply text-sc-red-1 font-bold
+  @apply text-sc-red-1 font-bold;
 }
 
 article aside.warning code.language-plaintext {
@@ -137,19 +119,19 @@ article aside.warning code.language-plaintext {
 }
 
 article table {
-  @apply border border-sc-gray-3 table-auto w-full mb-4 text-sc-text-4 text-sc-gray-1
+  @apply border border-sc-gray-3 table-auto w-full mb-4 text-sc-text-4 text-sc-gray-1;
 }
 
 article table th {
-  @apply pt-5 pb-3 bg-sc-gray-5 text-left px-5 font-bold uppercase text-sc-title-7
+  @apply pt-5 pb-3 bg-sc-gray-5 text-left px-5 font-bold uppercase text-sc-title-7;
 }
 
 article table td {
-  @apply py-5 px-5
+  @apply py-5 px-5;
 }
 
 article tr:nth-child(odd) {
-  @apply bg-sc-gray-4
+  @apply bg-sc-gray-4;
 }
 
 .changelog input:checked ~ label svg {
@@ -198,6 +180,24 @@ svg {
 
 #breadcrumb a:hover {
   @apply text-sc-gray-1;
+}
+
+article div.highlighter-rouge {
+  @apply max-w-xs mx-auto sm:mx-0 sm:max-w-none;
+}
+
+article pre.highlight {
+  font-size: 14px;
+  line-height: 18px;
+  @apply p-8 rounded-lg text-sc-gray-3 font-mono shadow-lg
+}
+
+article pre {
+  @apply my-4;
+}
+
+article code.language-plaintext {
+  @apply bg-sc-gray-3 text-sc-gray-2 font-mono px-2 py-1 rounded;
 }
 
 .highlight { overflow-x: auto; }
