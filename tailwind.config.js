@@ -63,12 +63,6 @@ module.exports = {
           lineHeight: "24px"
         },
       ],
-      "sc-text-3": [
-        "18px",
-        {
-          lineHeight: "44px"
-        },
-      ],
       "sc-text-4": [
         "16px",
         {

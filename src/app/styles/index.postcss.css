@@ -36,7 +36,7 @@ article p {
 }
 
 article li {
-  @apply text-sc-text-3;
+  @apply mb-3;
 }
 
 article ul {
@@ -72,7 +72,7 @@ article ul:not(.list-unstyled) > li:before {
   border-radius: 50%;
   width: 0.4em;
   height: 0.4em;
-  top: 1em;
+  top: 10px;
   left: 0.25em;
   @apply bg-sc-blue-1;
 }
