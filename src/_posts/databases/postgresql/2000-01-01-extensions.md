@@ -111,7 +111,7 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 		</tr>
 		<tr>
 			<td>pg_repack</td>
-			<td>1.4.6</td>
+			<td>1.4.7</td>
 			<td>lets you remove bloat from tables and indexes, and optionally restore the physical order of clustered indexes. Unlike CLUSTER and VACUUM FULL it works online</td>
 		</tr>
 		<tr>
