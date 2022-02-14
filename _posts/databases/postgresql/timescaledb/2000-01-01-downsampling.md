@@ -19,7 +19,7 @@ So we can use a downsampling logic which reduces the data older than one week,
 and only stores the average by hour.
 
 
-### Datas
+### Data
 
 For the following table:
 
