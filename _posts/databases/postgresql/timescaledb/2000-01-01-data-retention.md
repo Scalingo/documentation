@@ -1,6 +1,5 @@
 ---
 title: Data Retention
-nav: Data Retention
 modified_at: 2022-01-21 00:00:00
 tags: timescale databases postgresql extensions data retention
 ---
@@ -9,9 +8,9 @@ A data retention policy aims at removing data older than a certain duration from
 
 # Example
 
-Below an example of a retention policy which apply on __all__ hypertables.
-It could possible to specify tables by changing the `format` or add filter using
-`WHERE` clause in the `PERFORM` query.
+Below an example of a retention policy which applies on __all__ hypertables.
+It is possible to customize how it works by changing the `format` function according to your
+data or add filter using `WHERE` clause in the `PERFORM` query.
 
 ```sql
 CREATE OR REPLACE PROCEDURE generic_retention (config jsonb)
@@ -36,7 +35,7 @@ $$;
 
 ## Execute Procedure
 
-You can schedule the execution of the previous procedure by using
+You can schedule the execution of the previous procedure by using the
 [Scalingo scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}).
 To do so, add a `cron.json` file at the root of your application’s source code,
 containing the code below:
@@ -53,7 +52,7 @@ containing the code below:
 ```
 
 The scheduled task will be executed every day at midnight. And execute a `psql`
-command that invoke a SQL script called `data_retention_procedure.sql`.
+command that invokes a SQL script called `data_retention_procedure.sql`.
 
 Create this SQL script file at the root of your application's source code containing
 the code below:

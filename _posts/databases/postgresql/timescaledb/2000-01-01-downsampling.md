@@ -1,23 +1,22 @@
 ---
 title: Downsampling
-nav: Downsampling
 modified_at: 2022-01-21 00:00:00
 tags: timescale databases postgresql extensions downsampling
 ---
 
-Downsampling data allows to reduce the amount of data by simplifying the old values.
+The downsampling reduces the amount of data by compressing the old values.
 
 ## Example
 
-Bellow an example of a logic of downsampling. It is based on TimescaleDB documentation.
+Below an example of a logic of downsampling. It is based on [TimescaleDB documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/user-defined-actions/example-downsample-and-compress/#downsample-and-compress).
 
 The data is stored in a table `conditions`, composed by `temperature` and `humidity`
-value. This is a use case where a table is composed of raw datas.
+value. This is a use case where a table is composed of raw data.
 
-Now we want to decrease the database size. We don't need to have data by the
+We want to decrease the database size. We don't need to have data by the
 minute for data older than one week, the average of values by hour is enough.
-So we can use a downsampling logic which will reduce the datas older than one week,
-and only store the average by hour.
+So we can use a downsampling logic which reduces the data older than one week,
+and only stores the average by hour.
 
 
 ### Datas
@@ -36,7 +35,7 @@ $ select * from conditions;
 
 ### Downsample Procedure
 
-The procedure bellow contains the logic to downsample the table `conditions`
+The procedure below contains the logic to downsample the table `conditions`
 
 ```sql
 CREATE OR REPLACE PROCEDURE downsample_conditions (config jsonb)
@@ -71,7 +70,7 @@ BEGIN
 
     -- copy downsampled chunk data into temp table
     EXECUTE format($sql$ CREATE UNLOGGED TABLE %I AS
-      -- you can configure here the time range to aggregate datas and how you do it. Here we used `avg` function on 1 hour
+      -- you can configure here the time range to aggregate data and how you do it. Here we used `avg` function on 1 hour
       SELECT time_bucket('1h', time), location, avg(temperature) as avg_temperature, avg(humidity) as avg_humidity FROM %s GROUP BY 1, 2;
     $sql$, tmp_name, chunk);
 
@@ -92,9 +91,9 @@ $$;
 
 ### Execute Procedure
 
-You can schedule the execution of the previous procedure by using
+You can schedule the execution of the previous procedure by using the
 [Scalingo scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}).
-To do so, add a `cron.json` file at the root of your application’s source code,
+Add a `cron.json` file at the root of your application’s source code,
 containing the code below:
 
 ```json
