@@ -10,5 +10,7 @@ node_modules
 yarn-error.log
 .jekyll-cache
 
+.idea
 .vscode
 .DS_Store
+src/assets/style.css

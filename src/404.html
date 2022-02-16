@@ -1,0 +1,18 @@
+---
+layout: default
+title: 404 Not found
+modified_at: 2015-11-17 00:00:00
+permalink: /404.html
+---
+
+<div class="container mx-auto">
+  <h1 style="font-size: 180px; line-height: 211px;" class="text-sc-blue-2 font-bold pt-32 text-center">404</h1>
+  <div style="font-size: 48px; line-height: 48px;" class="text-sc-gray-1 font-bold mt-8 text-center">No found</div>
+  <div class="text-sc-title-2-2 text-sc-gray-1 my-8 text-center">You may be interested in:</div>
+  <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-6 mb-12 text-sc-gray-1">
+    {% for post_url in site.highlighted.first_steps %}
+    {% assign post = site.posts | where:'url', post_url | first %}
+    {% include atoms/line_card.md title=post.title url=post_url %}
+    {% endfor %}
+  </div>
+</div>

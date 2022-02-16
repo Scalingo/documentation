@@ -12,7 +12,7 @@ ruby "3.0.3"
 # Happy Jekylling!
 gem "jekyll"
 gem "webrick"
-
+gem "liquid-c"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem 'minima', '~> 2.0'
 

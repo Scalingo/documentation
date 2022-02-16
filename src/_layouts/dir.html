@@ -1,0 +1,13 @@
+---
+layout: default_with_main_article
+---
+
+<div id="breadcrumb" class="text-sc-text-2 mb-4">{% breadcrumb %}</div>
+<h1 class="text-sc-gray-1 text-sc-title-1 font-bold mb-12">{{ page.title }}</h1>
+<ul>
+  {% for link in page.links %}
+    <li>
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

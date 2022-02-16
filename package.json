@@ -1,17 +1,25 @@
 {
+  "private": true,
   "engines": {
-    "node": "~8"
+    "node": "~14"
+  },
+  "scripts": {
+    "build:css": "postcss ./src/app/styles/index.postcss.css -o ./src/assets/style.css -u tailwindcss -u autoprefixer"
   },
   "dependencies": {
+    "@docsearch/js": "^3.0.0-alpha.42",
     "@rails/webpacker": "^3.2.2",
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "autoprefixer": "^10.4.2",
     "docsearch.js": "^2.6.3",
     "image-webpack-loader": "^3.6.0",
     "mdn-polyfills": "^5.20.0",
-    "scalingo-styles": "https://github.com/Scalingo/scalingo-styles",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
     "smooth-scroll": "^12.1.5",
-    "svg-sprite-loader": "^6.0.6",
     "svgo": "^1.0.4",
-    "svgo-loader": "^2.1.0"
+    "svgo-loader": "^2.1.0",
+    "tailwindcss": "^3.0.15"
   },
   "resolutions": {
     "image-webpack-loader/imagemin-pngquant": "5.0.1"
@@ -20,7 +28,7 @@
     "webpack-dev-server": "^2.11.1"
   },
   "volta": {
-    "node": "8.17.0",
+    "node": "14.18.3",
     "yarn": "1.22.17"
   }
 }

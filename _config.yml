@@ -15,6 +15,8 @@ highlighter: rouge
 
 permalink: /:categories/:slug
 
+source: src
+
 keep_files:
   - packs
 
@@ -41,72 +43,105 @@ toc:
   max_level: 3
 
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - config.ru
-  - vendor
-  - Procfile
-  - config
-  - node_modules
-  - package.json
-  - yarn.lock
   - tmp
   - app/javascript
-  - Dockerfile
-  - docker-compose.yml
   - _plugins
-  - ld_library_path
-  - redirections.yml
-  - Rakefile
-  - lib/tasks
-
-array: [] # hack for creating array
 
 highlighted:
   first_steps:
     - /platform/getting-started/first-steps
+    - /platform/deployment/deployment-process
+    - /platform/getting-started/free-trial
+    - /platform/getting-started/how-to-migrate-from-heroku
+  popular:
     - /platform/getting-started/troubleshooting-ssh
-    - /platform/databases/intro
-    - /platform/app/lifecycle-management
+    - /platform/databases/access
     - /platform/cli/start
-    - /platform/app/domain
-    - /platform/app/ssl
-    - /platform/account/manage
-    - /platform/app/filesystem
-    - /platform/getting-started/heroku-compatibility
+    - /languages/nodejs/start
+    - /platform/deployment/deployment-process
+    - /platform/getting-started/common-deployment-errors
+    - /languages/php/symfony
+    - /databases/postgresql/start
   technologies:
     - name: Ruby on Rails
       url: /languages/ruby/rails/start
-    - name: MeteorJS
-      url: "/languages/meteorjs/start"
+      logo: ruby-on-rails
     - name: NodeJS
       url: "/languages/nodejs/start"
+      logo: nodejs
     - name: PHP
       url: "/languages/php/start"
+      logo: php
     - name: Python
       url: "/languages/python/start"
+      logo: python
     - name: Java
       url: "/languages/java/start"
-  databases:
-    - name: PostgreSQL
-      url: "/databases/postgresql/start"
-    - name: MySQL
-      url: "/databases/mysql/start"
-    - name: MongoDB
-      url: "/databases/mongodb/start"
-    - name: Redis
-      url: "/databases/redis/start"
-    - name: Elasticsearch
-      url: "/databases/elasticsearch/start"
-    - name: InfluxDB
-      url: "/databases/influxdb/start"
-  addons:
-    - name: OpenVPN
-      url: "/addons/scalingo-openvpn/start"
-    - name: VPN IPSec
-      url: "/addons/scalingo-vpn-ipsec/start"
-    - name: Docker Image
-      url: "/addons/scalingo-docker-image/start"
+      logo: java
+    - name: MeteorJS
+      url: "/languages/meteorjs/start"
+      logo: meteorjs
+
+languages:
+  - url: go
+    name: "Go"
+    logo: go
+  - url: meteorjs
+    name: "MeteorJS"
+    logo: meteorjs
+  - url: nodejs
+    name: "Node.js"
+    logo: nodejs
+  - url: php
+    name: "PHP"
+    logo: php
+  - url: groovy
+    name: "Groovy"
+    logo: groovy
+  - url: java
+    name: "Java"
+    logo: java
+  - url: clojure
+    name: "Clojure"
+    logo: clojure
+  - url: crystal
+    name: "Crystal"
+    logo: crystal
+  - url: elixir
+    name: "Elixir"
+    logo: elixir
+  - url: erlang
+    name: "Erlang"
+    logo: erlang
+  - url: python
+    name: "Python"
+    logo: python
+  - url: ruby
+    name: "Ruby"
+    logo: ruby
+  - url: scala
+    name: "Scala"
+    logo: scala
+
+databases:
+  - url: "/databases/postgresql/start"
+    name: "PostgresSQL"
+    logo: postgresql
+  - url: "/databases/mysql/start"
+    name: "MySQL"
+    logo: mysql
+  - url: "/databases/mongodb/start"
+    name: "MongoDB"
+    logo: mongodb
+  - url: "/databases/redis/start"
+    name: "Redis"
+    logo: redis
+  - url: "/databases/influxdb/start"
+    name: "InfluxDB"
+    logo: influxdb
+  - url: "/databases/elasticsearch/start"
+    name: "Elasticsearch"
+    logo: elasticsearch
 
 samples:
   - url: ruby-rails
@@ -198,4 +233,10 @@ samples:
     logo: erlang
 
 extlinks:
-  followed_domains: ["scalingo.com", "my.scalingo.com", "cli.scalingo.com", "blog.scalingo.com", "developers.scalingo.com"]
+  followed_domains:
+    - "scalingo.com"
+    - "my.scalingo.com"
+    - "dashboard.scalingo.com"
+    - "cli.scalingo.com"
+    - "blog.scalingo.com"
+    - "developers.scalingo.com"

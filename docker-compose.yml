@@ -30,3 +30,15 @@ services:
       RAILS_ENV: "development"
       BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/3.0.0/bin"
       BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/3.0.0"
+  tailwind:
+    build: .
+    volumes:
+      - ./:/usr/src/app
+    command: yarn build:css --watch --verbose
+    stdin_open: true
+    tty: true
+    environment:
+      NODE_ENV: "development"
+      RAILS_ENV: "development"
+      BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/3.0.0/bin"
+      BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/3.0.0"

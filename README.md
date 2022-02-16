@@ -102,8 +102,14 @@ the pages when adding a new changelog entry. This is done with:
 docker-compose exec web bundle exec jekyll build
 ```
 
+### Dev tool
+
+To help debug responsive layout issues add this tool in the default layout, it will show the current Tailwind screen & size in every pages.
+
+```
+  {% include organisms/responsive_tool.html %}
+```
+
 ## Links
 
 * [Scalingo Documentation Center](http://doc.scalingo.com)
-* [Using Jekyll with Pages](https://help.github.com/articles/using-jekyll-with-pages/)
-* [Jekyll](https://jekyllrb.com/)
