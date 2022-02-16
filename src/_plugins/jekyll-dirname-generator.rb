@@ -59,7 +59,7 @@ module Dirname
             @breadcrumb_hash[obj["url"]] = obj["title"]
           end
         else
-          relative_dir = File.dirname path.gsub("_posts/", "")
+          relative_dir = File.dirname path.gsub("src/_posts/", "")
           name = File.basename(path)
           title = data["title"]
           new_page = Jekyll::CategoryPage.new(@site, @site.source, relative_dir, name, title)
