@@ -8,13 +8,16 @@ index: 2
 
 {% warning %}
   The backup restoration process may put the database in an undesirable state.
-  Pay attention to the restoration process.
 {% endwarning %}
 
 ## Dump
 
-The only dump available of a PostgreSQL using the TimescaleDB extension are the
-[on demand backups]({% post_url databases/postgresql/2000-01-01-start %}#on-demand-backups).
+You can use the command `pg_dump` as explained
+[on our documentation]({% post_url databases/postgresql/2000-01-01-dump-restore %}).
+But you cannot restore it on a PostgreSQL using TimescaleDB hosted on Scalingo.
+
+The only dump available to make restorable backups on Scalingo hosted TimescaleDB
+are the [on demand backups]({% post_url databases/postgresql/2000-01-01-start %}#on-demand-backups).
 The reason is that the restoration process must be done by the Scalingo support using
 these specific backups, see below.
 
@@ -23,16 +26,26 @@ backups are still working normally.
 
 ## Restore
 
-The backup restoration on TimescaleDB requires a preparation of the PostgreSQL database
-which needs admin rights. That's why you have to ask our support to handle the process.
-Please, specify in your support request the timestamp of the backup.
+The backup restoration on TimescaleDB requires a specific process to be done on
+the PostgreSQL database as it is explained on
+[TimescaleDB official documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/#restoring-an-entire-database-from-backup).
+A temporary database should be used for the backup restore and the following
+command should be executed using admin rights:
+```sql
+SELECT timescaledb_pre_restore();
+\! pg_restore -Fc -d exampledb exampledb.psql
+SELECT timescaledb_post_restore();
+```
+On Scalingo, default user does not have admin rights on database, this means that this
+process must be done by an operator of the support.
 
 ## Warnings
 
 Several points are important to take into account.
 
-It may happen some trouble due to a PostgreSQL and TimescaleDB version mismatch
-between the time the backup was made and the database you are trying to restore to.
+Make sure you keep track of which versions of PostgreSQL and TimescaleDB you are
+running during backup process. For more information, see "Troubleshooting version mismatches" of
+[official documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/#tshoot-version-mismatch).
 
 You cannot backup an individual hypertable, `pg_dump` creates dumps that do not
 contain the information needed to properly restore the hypertable from a backup.
