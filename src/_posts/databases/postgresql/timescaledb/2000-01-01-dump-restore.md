@@ -13,8 +13,8 @@ index: 2
 
 ## Dump
 
-The dump of a PostgreSQL using the TimescaleDB extension should only be done from
-the database dashboard under the `backups` tab by using the button `make manual backup`.
+The only dump available of a PostgreSQL using the TimescaleDB extension are the
+[on demand backups]({% post_url databases/postgresql/2000-01-01-start %}#on-demand-backups).
 The reason is that the restoration process must be done by the Scalingo support using
 these specific backups, see below.
 
