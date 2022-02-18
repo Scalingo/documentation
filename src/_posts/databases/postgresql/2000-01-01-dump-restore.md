@@ -58,6 +58,13 @@ $ pg_dump --clean --if-exists --format c --dbname $DATABASE_URL --no-owner --no-
 
 ### Restore
 
+{% warning %}
+  If you use TimescaleDB extension, do not try to restore. You mush ask the support
+  to handle it. It can put the base in an undesirable state.
+  Go to [TimescaleDB dump and restore page]({% post_url databases/postgresql/timescaledb/2000-01-01-dump-restore %})
+  for more details.
+{% endwarning %}
+
 The command definition is:
 
 ```bash
@@ -87,6 +94,13 @@ $ scalingo --app my-app run bash
 ```
 
 ### Dump & Restore
+
+{% warning %}
+  If you use TimescaleDB extension, do not try to restore. You mush ask the support
+  to handle it. It can put the base in an undesirable state.
+  Go to [TimescaleDB dump and restore page]({% post_url databases/postgresql/timescaledb/2000-01-01-dump-restore %})
+  for more details.
+{% endwarning %}
 
 ```bash
 $ scalingo --app my-app run bash
