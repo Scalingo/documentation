@@ -18,6 +18,9 @@ The only dump available of a PostgreSQL using the TimescaleDB extension are the
 The reason is that the restoration process must be done by the Scalingo support using
 these specific backups, see below.
 
+Note that [PiTR]({% post_url databases/postgresql/2000-01-01-start %}#point-in-time-recovery)
+backups are still working normally.
+
 ## Restore
 
 The backup restoration on TimescaleDB is requiring a preparation of the PostgreSQL database
