@@ -165,6 +165,11 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 			<td>functions that manipulate whole tables, including crosstab</td>
 		</tr>
 		<tr>
+			<td>timescaledb</td>
+			<td>2.5.2</td>
+			<td>turns PostgreSQL into a time series database</td>
+		</tr>
+		<tr>
 			<td>unaccent</td>
 			<td>1.1</td>
 			<td>text search dictionary that removes accents</td>
