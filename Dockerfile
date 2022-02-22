@@ -11,10 +11,11 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update
+RUN apt-get install -y python
 RUN apt-get install -y yarn
 RUN apt-get install -y locales
 
-ENV NODE_VERSION 16.13.2
+ENV NODE_VERSION 14.18.3
 
 RUN cd /opt && \
     curl -L "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" | tar -xJf - && \
