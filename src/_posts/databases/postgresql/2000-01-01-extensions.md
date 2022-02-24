@@ -1,7 +1,7 @@
 ---
 title: Managing PostgreSQL Extensions
 nav: Extensions
-modified_at: 2021-06-30 00:00:00
+modified_at: 2022-02-24 00:00:00
 tags: databases postgresql extensions
 index: 3
 ---
@@ -163,6 +163,11 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 			<td>tablefunc</td>
 			<td>1.0</td>
 			<td>functions that manipulate whole tables, including crosstab</td>
+		</tr>
+		<tr>
+			<td>timescaledb</td>
+			<td>2.6.0</td>
+			<td>turns PostgreSQL into a time series database</td>
 		</tr>
 		<tr>
 			<td>unaccent</td>

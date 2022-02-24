@@ -93,10 +93,10 @@ docker-compose -f docker-compose-prod.yml up
 
 This will run puma in parallel and serve the site at http://localhost:4302
 
-### Changelog and Samples
+### Changelog, Samples and New Section
 
-For a reason I ignore and I don't want to spend time understanding, we need to manually re-build
-the pages when adding a new changelog entry. This is done with:
+For a reason I ignore and I don't want to spend time understanding, we need to manually re-build the pages when adding a new changelog entry or a new section.
+This is done with:
 
 ```
 docker-compose exec web bundle exec jekyll build
