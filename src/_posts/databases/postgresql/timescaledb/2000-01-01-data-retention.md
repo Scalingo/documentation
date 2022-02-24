@@ -1,6 +1,6 @@
 ---
 title: Data Retention
-modified_at: 2022-01-21 00:00:00
+modified_at: 2022-02-24 00:00:00
 tags: timescale databases postgresql extensions data retention
 ---
 
