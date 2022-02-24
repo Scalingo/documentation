@@ -1,7 +1,7 @@
 ---
 title: TimescaleDB
 nav: Dump and restore
-modified_at: 2022-02-18 00:00:00
+modified_at: 2022-02-24 00:00:00
 tags: timescale databases postgresql extensions dump restore
 index: 2
 ---
