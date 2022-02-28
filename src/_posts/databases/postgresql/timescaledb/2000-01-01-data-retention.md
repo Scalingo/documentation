@@ -18,6 +18,8 @@ LANGUAGE PLPGSQL
 AS $$
 DECLARE
   drop_after interval;
+	schema varchar;
+	name varchar;
 BEGIN
   SELECT jsonb_object_field_text (config, 'drop_after')::interval INTO STRICT drop_after;
 
@@ -26,8 +28,12 @@ BEGIN
   END IF;
 
   -- You can modify the following query to add a more precise retention policy.
-  PERFORM drop_chunks(format('%I.%I', table_schema, table_name), older_than => drop_after)
-    FROM timescaledb_information.hypertables;
+	FOR schema, name IN SELECT hypertable_schema, hypertable_name FROM timescaledb_information.hypertables
+	LOOP
+		RAISE NOTICE '%', format('%I.%I', schema, name);
+		PERFORM drop_chunks(format('%I.%I', schema, name), older_than => drop_after);
+		COMMIT;
+	END LOOP;
 END
 $$;
 ```
