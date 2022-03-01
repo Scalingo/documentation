@@ -1,9 +1,13 @@
 ---
 title: Scalingo-20 Stack
 nav: Scalingo-20
-modified_at: 2021-09-20 00:00:00
+modified_at: 2022-03-01 00:00:00
 index: 2
 ---
+
+{% note %}
+scalingo-20 is the current default stack.
+{% endnote %}
 
 This article describes the scalingo-20 stack, based on Ubuntu 20.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
 
