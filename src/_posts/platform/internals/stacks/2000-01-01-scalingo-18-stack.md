@@ -1,13 +1,9 @@
 ---
 title: Scalingo-18 Stack
 nav: Scalingo-18
-modified_at: 2019-12-15 00:00:00
+modified_at: 2022-03-01 00:00:00
 index: 3
 ---
-
-{% note %}
-  Scalingo-18 is the current default stack.
-{% endnote %}
 
 This article describes the scalingo-18 stack, based on Ubuntu 18.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
 
