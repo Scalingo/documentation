@@ -140,7 +140,7 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.2.0)
     rexml (3.2.5)
-    rouge (3.27.0)
+    rouge (3.28.0)
     rubocop (1.20.0)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
