@@ -5,7 +5,8 @@ updates:
     allow:
       - dependency-type: "all"
     versioning-strategy: lockfile-only
+    open-pull-requests-limit: 10
     schedule:
       interval: "monthly"
     reviewers:
-      - "ksol"
+      - "btrd"
