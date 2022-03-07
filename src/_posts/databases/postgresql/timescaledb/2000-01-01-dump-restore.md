@@ -1,6 +1,5 @@
 ---
-title: Dump and restore
-nav: Dump and restore
+title: Dump and Restore
 modified_at: 2022-02-24 00:00:00
 tags: timescale databases postgresql extensions dump restore
 index: 2
