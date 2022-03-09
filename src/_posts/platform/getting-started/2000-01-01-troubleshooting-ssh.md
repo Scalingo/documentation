@@ -245,7 +245,7 @@ $ ssh-add -l -E md5
 > 2048 MD5:a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /home/USERNAME/.ssh/id_rsa (RSA)
 ```
 
-Go to the [Dashboard > User settings > SSH Keys]({% post_url platform/account/manage#ssh-keys%})
+Go to the [Dashboard > User settings > SSH Keys]({% post_url platform/account/2000-01-01-manage %}#ssh-keys)
 page and check if the fingerprint is the same as the output of the previous command.
 
 
@@ -254,15 +254,17 @@ page and check if the fingerprint is the same as the output of the previous comm
 If you see this error: `no mutual signature algorithm` from the debug
 log of a `git push` you're using OpenSSH 8.2 or newer.
 
-The `RSA SHA-1` hash algorithm is being quickly deprecated from SSH clients like OpenSSH because of various security vulnerabilities, with many of these technologies now outright denying the use of this algorithm.
-
+The `RSA SHA-1` hash algorithm is being quickly deprecated from SSH clients
+like OpenSSH because of various security vulnerabilities, with many of these
+technologies now outright denying the use of this algorithm.
 
 #### Workaround
 
-In order to re-enable `ssh-rsa` support, you need to add the following line
+In order to re-enable `ssh-rsa` support, you need to add the following lines
 into the SSH configuration file `~/.ssh/config`:
 ```plaintext
-PubkeyAcceptedKeyTypes +ssh-rsa
+Host ssh.osc-fr1.scalingo.com
+  PubkeyAcceptedKeyTypes +ssh-rsa
 ```
 
 #### Resolution
@@ -271,6 +273,6 @@ To fully resolve this issue, Scalingo recommends you to generate a new SSH key
 using a supported and more secure algorithm such as `ECDSA` and `ED25519`.
 
 See our `Create a new SSH key pair` documentation pages here:
-- For [Linux]({% post_url platform/getting-started/setup-ssh-linux#create-a-new-ssh-key-pair%})
-- For [Mac OS]({% post_url platform/getting-started/setup-ssh-macos#create-a-new-ssh-key-pair%})
-- For [Windows]({% post_url platform/getting-started/setup-ssh-windows#2-create-a-new-ssh-key-pair%})
+- For [Linux]({% post_url platform/getting-started/2000-01-01-setup-ssh-linux %}#create-a-new-ssh-key-pair)
+- For [Mac OS]({% post_url platform/getting-started/2000-01-01-setup-ssh-macos %}#create-a-new-ssh-key-pair)
+- For [Windows]({% post_url platform/getting-started/2000-01-01-setup-ssh-windows %}#2-create-a-new-ssh-key-pair)
