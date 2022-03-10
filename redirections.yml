@@ -566,6 +566,9 @@
   -
     old: "/languages/php/wordpress"
     new: "/platform/getting-started/getting-started-with-wordpress"
+  -
+    old: "/platform/deployment/buildpacks/ffmpeg"
+    new: "/platform/app/ffmpeg"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
