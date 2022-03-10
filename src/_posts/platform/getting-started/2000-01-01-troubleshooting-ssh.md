@@ -61,9 +61,10 @@ If the branch named `master` does not exist (default branch may be named `main`)
 $ git checkout -B master
 ```
 
-{% note %}
-  Scalingo doesn't support the `main` default branch currently. You need to use the `master` branch.
-{% endnote %}
+If you use the `main` branch on your repository you can push to `master` branch on Scalingo with:
+```bash
+git push scalingo main:master
+```
 
 ## Invalid SSH key error when adding it to account
 
