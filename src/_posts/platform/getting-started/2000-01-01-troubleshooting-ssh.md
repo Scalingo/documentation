@@ -20,10 +20,10 @@ When pushing to the platform, if you get the following error:
 
 ```bash
 $ git push scalingo master
-> fatal: Could not read from remote repository.
->
-> Please make sure you have the correct access rights
-> and the repository exists.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
 ```
 
 It means you are **not authenticated** or you do not have the right to push on this
@@ -38,8 +38,8 @@ correctly.
 
 ```bash
 $ git push scalingo master
-> error: src refspec master does not match any.
-> error: failed to push some refs to 'git@ssh.osc-fr1.scalingo.com:APP_NAME.git'
+error: src refspec master does not match any.
+error: failed to push some refs to 'git@ssh.osc-fr1.scalingo.com:APP_NAME.git'
 ```
 
 When we tell you to run `git push scalingo master`, we consider you are already
@@ -163,11 +163,11 @@ You can also check that the key is being used by trying to connect to Scalingo S
 Example with `osc-fr1` region:
 ```bash
 $ ssh -vT git@ssh.osc-fr1.scalingo.com
-> OpenSSH_8.2p1 Ubuntu-4ubuntu0.4, OpenSSL 1.1.1f  31 Mar 2020
-> debug1: Reading configuration data /home/USERNAME/.ssh/config
-> debug1: Reading configuration data /etc/ssh/ssh_config
-> debug1: Connecting to ssh.osc-fr1.scalingo.com [171.33.103.138] port 22.
-> debug1: Connection established.
+OpenSSH_8.2p1 Ubuntu-4ubuntu0.4, OpenSSL 1.1.1f  31 Mar 2020
+debug1: Reading configuration data /home/USERNAME/.ssh/config
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: Connecting to ssh.osc-fr1.scalingo.com [171.33.103.138] port 22.
+debug1: Connection established.
 ```
 
 ### Check that you are connecting with a key
@@ -177,15 +177,15 @@ You can also check that the key is being used by trying to connect to Scalingo s
 In that example, we did not have any keys for SSH to use:
 ```bash
 $ ssh -vT git@ssh.osc-fr1.scalingo.com
-> ...
-> debug1: identity file /home/USERNAME/.ssh/id_rsa type -1
-> debug1: identity file /home/USERNAME/.ssh/id_rsa-cert type -1
-> ...
-> debug1: Authentications that can continue: publickey
-> debug1: Next authentication method: publickey
-> debug1: Trying private key: /home/USERNAME/.ssh/id_rsa
-> debug1: No more authentication methods to try.
-> Permission denied (publickey).
+...
+debug1: identity file /home/USERNAME/.ssh/id_rsa type -1
+debug1: identity file /home/USERNAME/.ssh/id_rsa-cert type -1
+...
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Trying private key: /home/USERNAME/.ssh/id_rsa
+debug1: No more authentication methods to try.
+Permission denied (publickey).
 ```
 
 The "-1" at the end of the `identity file` lines means SSH couldn't find a file to use.
@@ -195,12 +195,12 @@ Later on, the `Trying private key` lines also indicate that no file was found.
 If a file existed, those lines would be "1" and `Offering public key`, respectively:
 ```bash
 $ ssh -vT git@ssh.osc-fr1.scalingo.com
-> ...
-> debug1: identity file /home/USERNAME/.ssh/id_rsa type 1
-> ...
-> debug1: Authentications that can continue: publickey
-> debug1: Next authentication method: publickey
-> debug1: Offering RSA public key: /home/USERNAME/.ssh/id_rsa
+...
+debug1: identity file /home/USERNAME/.ssh/id_rsa type 1
+...
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Offering RSA public key: /home/USERNAME/.ssh/id_rsa
 ```
 
 ### Always use the `git` user
@@ -210,7 +210,7 @@ All connections, including those for remote URLs, must be made as the `git` user
 If you try to connect with your Scalingo username, it will fail:
 ```bash
 $ ssh -T SCALINGO_USERNAME@ssh.osc-fr1.scalingo.com
-> SCALINGO_USERNAME@ssh.osc-fr1.scalingo.com: Permission denied (publickey).
+SCALINGO_USERNAME@ssh.osc-fr1.scalingo.com: Permission denied (publickey).
 ```
 
 ### Make sure you have a key that is being used
@@ -218,7 +218,7 @@ $ ssh -T SCALINGO_USERNAME@ssh.osc-fr1.scalingo.com
 Verify that you have a private key generated and loaded into the SSH agent:
 ```bash
 $ ssh-add -l -E sha256
-> 2048 SHA256:274ffWxgaxq/tSINAykStUL7XWyRNcRTlcST1Ei7gBQ /home/USERNAME/.ssh/id_rsa (RSA)
+2048 SHA256:274ffWxgaxq/tSINAykStUL7XWyRNcRTlcST1Ei7gBQ /home/USERNAME/.ssh/id_rsa (RSA)
 ```
 
 The `ssh-add` command should print out a long string of numbers and letters.
@@ -236,14 +236,14 @@ Get the fingerprint of your SSH key.
 
 ```bash
 $ ssh-add -l
-> 2048 a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /home/USERNAME/.ssh/id_rsa (RSA)
+2048 a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /home/USERNAME/.ssh/id_rsa (RSA)
 ```
 
 - If you're using OpenSSH 6.8 or newer:
 
 ```bash
 $ ssh-add -l -E md5
-> 2048 MD5:a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /home/USERNAME/.ssh/id_rsa (RSA)
+2048 MD5:a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /home/USERNAME/.ssh/id_rsa (RSA)
 ```
 
 Go to the [Dashboard > User settings > SSH Keys]({% post_url platform/account/2000-01-01-manage %}#ssh-keys)
