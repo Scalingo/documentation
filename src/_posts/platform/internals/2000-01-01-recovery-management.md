@@ -60,4 +60,4 @@ The RPO determines the maximum acceptable amount of data loss measured in time.
 It depends of the type of database you are using:
 
 * MySQL, MongoDB, Elasticsearch, Redis, InfluxDB: last daily backup: at worst 24h of data loss
-* PostgreSQL: continuous backuping, at worst: 15 minutes of data loss
+* PostgreSQL: continuous backuping, at worst: 30 minutes of data loss
