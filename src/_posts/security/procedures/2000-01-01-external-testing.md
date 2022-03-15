@@ -26,16 +26,30 @@ closed.
 
 A pentest (or intrusion test) is a professional service that you hire to find vulnerabilities in your application.
 
-We are used to communicate with those people and speak the same language :)
+Such service offer is governed by an agreement which engages all three parties involved: the customer, the pentesting company and Scalingo.
+This document defines specifically the scope of the pentesting, its duration, and give several restrictions.
 
-Intrustion tests are authorized under the following conditions :
+{% note %}
+If your service provider does not have three-way agreement, we can provide one.
+{% endnote %}
 
-- You should communicate us an authorization document that will be signed by:
-  - the application owner
-  - the pentesting company
-  - Scalingo
-- Send the document to the Security team at the address security [at] scalingo.com
+For example:
 
+- Restriction to the application and databases of the user
+- Should not disrupt the normal working of the platform
+- No use of social engineering, physical intrusion...
+
+#### Procedure to follow
+
+1. Send the authorization document (signed by the customer and the pentesting
+   service provider) to the Security Team at the address security [at]
+   scalingo.com
+2. We will reply within 7 business days to give you the authorization or suggest
+   you another time period if there are already too many pentests scheduled at
+   this date
+3. Let your service provider do the job
+4. If there are any items in the report that would be of interest to Scalingo,
+   please send us the information so that we can act accordingly
 
 {% note %}
 If you do not follow this procedure, the intrusion testing will
