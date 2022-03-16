@@ -1,6 +1,6 @@
 ---
 modified_at: 2022-03-16 10:00:00
-title: 'PHP - Support of extention: apfd
+title: 'PHP - Support of extention: apfd'
 github: 'https://github.com/Scalingo/php-buildpack'
 ---
 
