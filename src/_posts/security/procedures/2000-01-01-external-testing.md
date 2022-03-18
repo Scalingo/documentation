@@ -9,18 +9,14 @@ tags: security pentest load-test procedures
 
 ### Can I run a load test on my application that is running on Scalingo?
 
-You can run a load test / smoke test / endurance test on your application under the following conditions :
+You can run a load test / smoke test / endurance test on your application under the following conditions:
 
 - Ask the support using support [at] scalingo.com or use the support chat
 - You should communicate the metrics of your test to the support (number of connections...)
 - The test should only be run during business hours
 - The test should have specific start and end hours
 
-{% note %}
-If you do not follow this procedure you are at risk of getting your client IP
-address banned, your application put under surveillance and/or your account
-closed.
-{% endnote %}
+{% include security_testing_warning.md %}
 
 ### I want to have a pentest on my application that is running on Scalingo, what do I do?
 
@@ -30,7 +26,7 @@ Such service offer is governed by an agreement which engages all three parties i
 This document defines specifically the scope of the pentesting, its duration, and give several restrictions.
 
 {% note %}
-If your service provider does not have three-way agreement, we can provide one.
+If your service provider does not have three-way agreement, we can provide you with one.
 {% endnote %}
 
 For example:
@@ -51,8 +47,4 @@ For example:
 4. If there are any items in the report that would be of interest to Scalingo,
    please send us the information so that we can act accordingly
 
-{% note %}
-If you do not follow this procedure, the intrusion testing will
-trigger our alerting system and you may get the client network IP address
-banned, your application put under surveillance and/or your account closed.
-{% endnote %}
+{% include security_testing_warning.md %}
