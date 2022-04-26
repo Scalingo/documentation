@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my MongoDB database on Scalingo
 nav: Dump and Restore
-modified_at: 2022-03-11 00:00:00
+modified_at: 2022-04-28 00:00:00
 tags: databases mongodb mongo tunnel dump restore
 index: 2
 ---
@@ -44,7 +44,7 @@ There are two ways to access your database from your local workstation:
 ```bash
 $ scalingo --app my-app db-tunnel SCALINGO_MONGO_URL
 
-Building tunnel to my-db.mongo.dbs.scalingo.com:30000
+Building tunnel to my-db.mongo.a.osc-fr1.scalingo-dbs.com:30000
 You can access your database on:
 127.0.0.1:10000
 ```
@@ -146,7 +146,7 @@ $ scalingo --app my-app run bash
 $ scalingo --app my-app run bash
 
 [00:00] Scalingo ~ $ dbclient-fetcher mongo
-[00:00] Scalingo ~ $ mongodump --username user --password pass --host my-db.mongo.dbs.scalingo.com --port 30000 --db my-db
+[00:00] Scalingo ~ $ mongodump --username user --password pass --host my-db.mongo.a.osc-fr1.scalingo-dbs.com --port 30000 --db my-db
 
 # Do something with the dump, i.e send it with FTP or to an external server
 ```
