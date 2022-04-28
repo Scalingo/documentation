@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my MySQL database on Scalingo
 nav: Dump and Restore
-modified_at: 2020-11-13 00:00:00
+modified_at: 2022-04-28 00:00:00
 tags: databases mysql tunnel
 index: 2
 ---
@@ -85,12 +85,12 @@ $ scalingo --app my-app run bash
 $ scalingo --app my-app run bash
 
 [00:00] Scalingo ~ $ dbclient-fetcher mysql
-[00:00] Scalingo ~ $ mysqldump -u user --password=pass -h my-db.mysql.dbs.scalingo.com -P 30000 my-db > /tmp/dumped_db.sql
+[00:00] Scalingo ~ $ mysqldump -u user --password=pass -h my-db.mysql.a.osc-fr1.scalingo-dbs.com -P 30000 my-db > /tmp/dumped_db.sql
 ...
 
 # Do something with the dump, i.e.e send through FTP or to an external server
 
-[00:00] Scalingo ~ $ mysql -u my-db --password=pass -h my-db.mysql.dbs.scalingo.com -P 30000 my-db < /tmp/dumped_db.sql
+[00:00] Scalingo ~ $ mysql -u my-db --password=pass -h my-db.mysql.a.osc-fr1.scalingo-dbs.com -P 30000 my-db < /tmp/dumped_db.sql
 ...
 [00:00] Scalingo ~ $ exit
 exit

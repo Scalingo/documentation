@@ -1,7 +1,7 @@
 ---
 title: Deploy to Scalingo from Bitbucket
 nav: Deploy from Bitbucket
-modified_at: 2020-04-29 00:00:00
+modified_at: 2022-04-26 00:00:00
 tags: ci deployment build bitbucket
 index: 25
 ---
@@ -46,7 +46,7 @@ scalingo --app my-app git-show
 
 To deploy to Scalingo from Bitbucket, you'll have to add the public key
 generated for Bitbucket Pipelines to the [SSH Keys
-page](https://my.scalingo.com/keys) on Scalingo dashboard.
+page](https://dashboard.scalingo.com/account/keys) on the Scalingo Dashboard.
 
 {% note %}
 You can create a dedicated user only for deployment from Bitbucket. You would

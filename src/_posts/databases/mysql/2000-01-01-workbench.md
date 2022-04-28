@@ -1,7 +1,7 @@
 ---
 title: Access your MySQL database with Workbench
 nav: MySQL Workbench
-modified_at: 2019-08-01 00:00:00
+modified_at: 2022-04-28 00:00:00
 tags: databases mysql workbench tunnel
 index: 3
 ---
@@ -25,12 +25,12 @@ variable of your application.
 
 ```
 $ scalingo env | grep SCALINGO_MYSQL_URL
-SCALINGO_MYSQL_URL=mysql://my_app_3030:CaUrq1MdUkAzCSEq-1Fg@my-app-3030.mysql.dbs.scalingo.com:30999/my_app_3030
+SCALINGO_MYSQL_URL=mysql://my_app_3030:CaUrq1MdUkAzCSEq-1Fg@my-app-3030.mysql.a.osc-fr1.scalingo-dbs.com:30999/my_app_3030
 ```
 
 In this case:
 
-* Hostname: my-app-3030.mysql.dbs.scalingo.com
+* Hostname: my-app-3030.mysql.a.osc-fr1.scalingo-dbs.com
 * Port: 30999
 * User: my_app_3030
 * Password: CaUrq1MdUkAzCSEq-1Fg
@@ -52,4 +52,4 @@ The "SSH Username" is always `git`.
 The "SSH Hostname" and "SSH Port" depends on the region your database is
 deployed on:
 
-{% include ssh_urls.md %}
+{% include ssh_endpoints.md %}
