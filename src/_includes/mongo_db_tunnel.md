@@ -1,5 +1,5 @@
 {% warning %}
-If your MongoDB database use a Business plan, you have a replica set.
+If your MongoDB database uses a Business plan, you have a replica set.
 It is not possible to access a replica set using the DB tunnel or the
 encrypted tunnel of MongoDB Compass.
 You should
