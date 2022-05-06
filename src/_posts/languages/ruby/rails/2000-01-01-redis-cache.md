@@ -18,7 +18,9 @@ platform/app/2000-01-01-environment %}).
 With Ruby on Rails, configuring such cache is done using this single line:
 
 ```ruby
-config.cache_store = :redis_cache_store, { url: "#{ ENV['REDIS_URL'] }/0:#{ ENV['SOURCE_VERSION'] || ENV['CONTAINER_VERSION'] }" }
+config.cache_store = :redis_cache_store, {
+    url: "#{ ENV['REDIS_URL'] }/0:#{ ENV['SOURCE_VERSION'] || ENV['CONTAINER_VERSION'] }"
+}
 ```
 
 By default, Redis databases on Scalingo have a [timeout]({% post_url databases/redis/2000-01-01-start %}#idle-connections-timeout).
@@ -26,13 +28,20 @@ By default, Redis databases on Scalingo have a [timeout]({% post_url databases/r
 If you don't want to depend on the timeout of the server, you may want to
 change the client connection timeout. You can do it like this:
 ```ruby
-config.cache_store = :redis_cache_store, { url: "#{ ENV['REDIS_URL'] }/0:#{ ENV['SOURCE_VERSION'] || ENV['CONTAINER_VERSION'] }", timeout: 30 }
+config.cache_store = :redis_cache_store, {
+    url: "#{ ENV['REDIS_URL'] }/0:#{ ENV['SOURCE_VERSION'] || ENV['CONTAINER_VERSION'] }",
+    timeout: 30
+}
 ```
 
 If you want an automatic reconnection after the connection timed out,
 you should set the `reconnect_attempts` option:
 ```ruby
-config.cache_store = :redis_cache_store, { url: "#{ ENV['REDIS_URL'] }/0:#{ ENV['SOURCE_VERSION'] || ENV['CONTAINER_VERSION'] }", timeout: 30, reconnect_attempts: 1 }
+config.cache_store = :redis_cache_store, {
+    url: "#{ ENV['REDIS_URL'] }/0:#{ ENV['SOURCE_VERSION'] || ENV['CONTAINER_VERSION'] }",
+    timeout: 30,
+    reconnect_attempts: 1
+}
 ```
 
 This simple trick will automatically invalidate the cache after each successful deployment. You'd certainly also want to enable Redis *cache mode* on its Dashboard on Scalingo to avoid filling your Redis database completely and tell Redis to drop old and unused keys.
