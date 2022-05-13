@@ -5,43 +5,78 @@ tags: heroku tutorial
 index: 11
 ---
 
-Scalingo is a Platform as a Service [highly compatible with Heroku]({% post_url platform/getting-started/2000-01-01-heroku-compatibility %}). It's very easy to understand and you shouldn't have any problem migrating your app from Heroku to Scalingo.
+Scalingo is a Platform as a Service [highly compatible with Heroku]({% post_url platform/getting-started/2000-01-01-heroku-compatibility %}). This page is here to help your migrate from Heroku to Scalingo as easily as possible.
 
-It is so easy that you can use [heroku2scalingo](https://github.com/Scalingo/heroku2scalingo/releases/latest), a tool to migrate a Heroku app to Scalingo.
+## Requirements
 
-## heroku2scalingo
+To be able to follow this tutorial, we assume that you have:
 
-### Usage
+- A Scalingo account
+- The Scalingo [CLI]({% post_url platform/cli/2000-01-01-start %}) installed
+- A local copy of the repository containing your app’s code
+
+Please ensure you are running all commands above from the root of the repository containing your app’s code. 
 
 ```bash
-./heroku2scalingo <herokuAppName>
+$ cd <app directory>
 ```
 
-It works by performing the following operations in the same order as below:
+Note: All operations described below can also be done through our web dashboard (instead of the command line tool). 
 
-* Authentication to Scalingo
-* Authentication to Heroku API
-* Creation of Scalingo app
-* Get/Set environment variables
-* `git clone` your Heroku app repository
-* `git push scalingo master` -> Auto-deployment using the `Procfile`
+## Migration Steps
 
-### Notes
+### Creating your Scalingo app
 
-Other advanced operations are planned, for more informations take a look at [the GitHub project](https://github.com/Scalingo/heroku2scalingo/#todo).
+- Start by logging in to the Scalingo platform using our `cli` :
 
-### Release
+```bash
+$ scalingo login
+```
 
-You can download the latest version by following this link : [https://github.com/Scalingo/heroku2scalingo/releases/latest](https://github.com/Scalingo/heroku2scalingo/releases/latest).
+- You can now create your app:
 
-## Advanced apps migration
+```bash
+# Replace my-app by your actual app name
+$ scalingo create my-app
+```
 
-* The [Procfile]({% post_url platform/app/2000-01-01-procfile %}) can remain the same
-* You need to set the same environment variables as the ones defined on your Heroku app
-* You have to set your Scalingo addons according to the addons you had on your Heroku app.
-  If you require an addon that is not present in [this list](https://scalingo.com/addons),
-  feel free to [send us an email](mailto:support@scalingo.com).
-* You will need to migrate any database manually, dumping it from Heroku and restoring it to Scalingo:
+### Configure Environment Variables
+
+- First retrieve the environment variables from your current Heroku app context:
+
+```bash
+$ heroku config
+```
+
+- Those environment variables need to be declared in your Scalingo app context. For instance, this command will set the `NODE_ENV` environment variable:  
+
+```bash
+$ scalingo --app my-app env-set NODE_ENV=production
+```
+
+More information about environnement variables can be found in the [dedicated documentation page]({% post_url platform/app/2000-01-01-environment %}).
+
+### Deploying Your App
+
+- You are now ready to deploy your app on Scalingo:
+
+```bash
+$ git push scalingo master
+```
+
+### Database Migration
+
+- Once you have set your Scalingo addons according to those you had on Heroku, you need to migrate your database by dumping it from Heroku and restoring it to Scalingo. 
   * [Dump and restore a MongoDB database]({% post_url databases/mongodb/2000-01-01-dump-restore %})
   * [Dump and restore a PostgreSQL database]({% post_url databases/postgresql/2000-01-01-dump-restore %})
   * [Dump and restore a MySQL database]({% post_url databases/mysql/2000-01-01-dump-restore %})
+
+### Where to Go Next?
+
+- If your app is using a custom domain, follow the [instructions]({% post_url platform/app/2000-01-01-domain %}) to update your DNS configuration.
+- Managing your [SSL certificate]({% post_url platform/app/2000-01-01-ssl %}).  
+
+### Need Some Help? 
+
+Have questions or need to report an issue? Feel free to reach our support team for further assistance through our live chat or by sending an email to [support@scalingo.com](mailto:support@scalingo.com).
+
