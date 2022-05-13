@@ -78,5 +78,5 @@ $ git push scalingo master
 
 ### Need Some Help? 
 
-Have questions or need to report an issue? Feel free to reach our support team for further assistance through our live chat or by sending an email to [support@scalingo.com](mailto:support@scalingo.com)
+Have questions or need to report an issue? Feel free to reach our support team for further assistance through our live chat or by sending an email to [support@scalingo.com](mailto:support@scalingo.com).
 
