@@ -1,6 +1,6 @@
 ---
 title: How to migrate from Heroku
-modified_at: 2015-10-14 17:21:00
+modified_at: 2022-05-13 17:21:00
 tags: heroku tutorial
 index: 11
 ---
