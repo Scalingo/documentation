@@ -56,4 +56,4 @@ Based on a Git hook. Just git push your code!
 ## Open API and Command Line Client
 
 * [Open API](https://developers.scalingo.com)
-* [Command Line Interface client](https://doc.scalingo.com/cli)
+* [Command Line Interface client](https://cli.scalingo.com)
