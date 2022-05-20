@@ -50,8 +50,20 @@ If one manually deletes a review app, it will not be automatically created again
 
 If you've enabled review apps, a new application will be created every time a
 new PR is opened in your linked SCM-hosted repository. This new
-application is a child application. This child app will have a copy of addons,
+application is a child application.
+
+By default child applications will get a copy
 collaborators and environment variables from the parent application.
+
+Child applications also inherit the addons formation of the parent application: same addons and same addon plans.
+
+This default behavior can be customized, see below.
+
+{% note %}
+Datatabases content and other addons content won't be copied from the parent application to its child applications.
+{% endnote %}
+
+
 
 ## Configuration of Review Apps
 
