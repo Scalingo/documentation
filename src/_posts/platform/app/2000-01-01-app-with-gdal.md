@@ -36,6 +36,7 @@ Last, set the following environment variables on your application:
 ```sh
 PYTHONPATH=/app/.apt/usr/lib/python3/dist-packages/
 LD_LIBRARY_PATH=/app/.apt/usr/lib/x86_64-linux-gnu/blas/:/app/.apt/usr/lib/x86_64-linux-gnu/lapack/
+PROJ_LIB=/app/.apt/usr/share/proj
 ```
 
 Deploy your application, it is ready to use the GDAL library!
