@@ -569,6 +569,12 @@
   -
     old: "/platform/deployment/buildpacks/ffmpeg"
     new: "/platform/app/ffmpeg"
+  -
+    old: "/cli"
+    new: "/platform/cli/start"
+  -
+    old: "/cli/"
+    new: "/platform/cli/start"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
