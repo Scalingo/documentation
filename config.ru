@@ -26,7 +26,7 @@ use Rack::Rewrite do
   }
   r301 "/changelog/", "/changelog"
 
-  r301 %r{.*}, "https://#{ENV["CANONICAL_HOST"]}/platform/cli/start$&", if: proc { |rack_env|
+  r301 %r{.*}, "https://#{ENV["CANONICAL_HOST"]}/platform/cli/start", if: proc { |rack_env|
     ["cli.scalingo.com"].include?(rack_env["SERVER_NAME"])
   }
 
