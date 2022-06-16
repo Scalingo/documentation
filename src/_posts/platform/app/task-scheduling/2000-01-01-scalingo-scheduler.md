@@ -83,6 +83,7 @@ For example if your task run during 5 minutes, you will be billed 5 minutes of a
 ## Long-running Tasks
 
 Scheduled tasks are meant to execute short running tasks.
+Tasks are automatically killed after 15 minutes.
 
 A one-off container started by Scalingo Scheduler will not run longer than its scheduling interval. For example, for a job that runs every 10 minutes, one-offs will be terminated after running for 10 minutes.
 
