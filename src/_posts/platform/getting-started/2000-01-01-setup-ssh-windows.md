@@ -11,7 +11,7 @@ everything correctly, you need to install the terminal `git-bash`
 ### 1. Download and Install git-bash
 
 You can download git-bash
-[here](https://github.com/git-for-windows/git/releases/tag/v2.6.2.windows.1)
+[here](https://github.com/git-for-windows/git/releases)
 and install it by selecting `git-bash` during the installation process.
 
 ### 2. Create a new SSH key pair
