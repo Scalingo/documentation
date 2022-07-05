@@ -194,6 +194,10 @@ article code.language-plaintext {
   @apply bg-sc-gray-3 text-sc-gray-2 font-mono px-2 py-1 rounded;
 }
 
+article {
+  @apply break-all sm:break-normal;
+}
+
 .highlight .hll { background-color: #060C20; }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
