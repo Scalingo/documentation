@@ -73,8 +73,8 @@ object(s)`. Then, insert it with:
 To install dependencies locally:
 
 ```
-docker-compose run web --rm bundle install
-docker-compose run web --rm yarn install --ignore-engines
+docker-compose run --rm web bundle install
+docker-compose run --rm web yarn install --ignore-engines
 ```
 
 To build the static site and spin-up a file server:
