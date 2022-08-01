@@ -359,7 +359,7 @@ The second environment variable is `LOGS_RETENTION_DAYS`. It configures
 the retention time of your logs (in days). Setting this variable to `10`,
 Curator will delete an index if it is 10+ days old.
 
-### Scheduling the task
+### Scheduling the Curator Task
 
 Curator is not a daemon, it is designed as a one-off process. To be able
 to run it on Scalingo you can leverage our [Scheduler](https://doc.scalingo.com/platform/app/task-scheduling/scalingo-scheduler).
