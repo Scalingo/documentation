@@ -1,6 +1,6 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2021-10-29 00:00:00
+modified_at: 2022-08-01 16:00:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
@@ -289,37 +289,11 @@ application:
 elasticsearch-curator==5.8.2
 ```
 
-
-Curator is not a daemon, it is designed as a one-off process. To be able
-to run it on Scalingo you need to write a Bash script that executes
-Curator regularly.
-Create a script named `curator.sh` with the following content:
-
-```bash
-#!/bin/bash
-set -ex
-
-while true; do
-  echo "Running Curator"
-  curator --config curator.yml log-clean.yml
-  # Run Curator every 12h
-  sleep 43200
-done
-```
-
-Finally you need to instruct Scalingo to start Curator.
-This can be achieved by adding the following line to your `Procfile`:
-
-```yaml
-curator: ./curator.sh
-```
-
-### Configuration
-
-All the hard stuff is now done.
+### Configuring Curator
 
 Next step is to configure Curator. First you need to configure how Curator
-connects to your database. Create a file `curator.yml` with the following content:
+connects to your database. Create a file `curator.yml` with the following
+content:
 
 ```
 ---
@@ -344,7 +318,7 @@ ELASTICSEARCH_HOST=host:port
 ELASTICSEARCH_AUTH=user:password
 ```
 
-The last step is to configure your indices life cycle. This is based on your
+Now you have to configure your indices life cycle. This is based on your
 indices names.
 Create a file named `log-clean.yml`. This configuration parses the indices
 names stored in Elasticsearch and removes the ones that are too old.
@@ -384,6 +358,28 @@ in the same database.
 The second environment variable is `LOGS_RETENTION_DAYS`. It configures
 the retention time of your logs (in days). Setting this variable to `10`,
 Curator will delete an index if it is 10+ days old.
+
+### Scheduling the task
+
+Curator is not a daemon, it is designed as a one-off process. To be able
+to run it on Scalingo you can leverage our [Scheduler](https://doc.scalingo.com/platform/app/task-scheduling/scalingo-scheduler).
+
+At the root of your Logstash directory, create a file named `cron.json` to
+setup your recurring task. The following example starts curator everyday at
+03:00 (3 AM) and 15:00 (3 PM):
+
+```json
+{
+  "jobs": [
+    {
+      "command": "0 3,15 * * * curator --config curator.yml log-clean.yml"
+    }
+  ]
+}
+```
+
+The last step is to trigger a new deployment of your Logstash instance by
+pushing your changes to your Scalingo remote.
 
 That's all folks!
 
