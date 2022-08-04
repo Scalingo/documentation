@@ -10,3 +10,11 @@ updates:
       interval: "monthly"
     reviewers:
       - "btrd"
+  - package-ecosystem: "npm"
+    directory: "/"
+    allow:
+      - dependency-type: "all"
+    schedule:
+      interval: "monthly"
+    reviewers:
+      - "btrd"
