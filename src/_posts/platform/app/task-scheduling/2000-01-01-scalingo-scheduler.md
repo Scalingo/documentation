@@ -129,7 +129,13 @@ platform/app/2000-01-01-review-apps %})) we suggest to modify the tasks related 
 
 ### How Precise Is Scalingo Scheduler?
 
-Execution time can be delayed by a maximum of 10% of the interval between 2 tasks (up to 30 minutes). This is to prevent load spikes on the infrastructure and to give time for an application pull its image.
+Execution time can be delayed by a maximum of 10% of the interval between 2 tasks (up to 20 minutes).
+
+* `*/10 * * * *` (every 10 minutes): task will be executed every 10 to 11 minutes
+* `0 */1 * * *` (every hour): task will be executed between minute 0 and minute 6 of each hour
+* `0 0 * * *`: (everyday at midnight): task will be executed between 00:00 and 00:20 UTC
+
+This is to prevent load spikes on the infrastructure and to give time for our infrastructure to pull your application images.
 
 If you need more precision we suggest to [run a custom clock process]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %}).
 
