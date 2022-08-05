@@ -32,7 +32,7 @@ Each job is configured as a JSON object with two keys:
 
 - `command`: contains both the cron expression and the command to execute:
   - The cron expression follows the [crontab standard](https://en.wikipedia.org/wiki/Cron#CRON_expression). You may
-  find the website [crontab.guru](https://crontab.guru/#*/10_*_*_*_*) useful to write your own cron expression. 
+  find the website [crontab.guru](https://crontab.guru/#*/10_*_*_*_*) useful to write your own cron expression.
   - The command is any command you can execute in a one-off container
   (i.e. with the command `scalingo --app my-app run <command>`).
 - `size`: specify the [container size]({% post_url platform/internals/2000-01-01-container-sizes %}) of the one-off
@@ -129,7 +129,13 @@ platform/app/2000-01-01-review-apps %})) we suggest to modify the tasks related 
 
 ### How Precise Is Scalingo Scheduler?
 
-Execution time can be delayed by a few minutes. Indeed in order to execute tasks on an application we need to pull the application image which could take a few minutes depending on its size.
+Execution time can be delayed by a maximum of 10% of the interval between 2 tasks (up to 20 minutes).
+
+* `*/10 * * * *` (every 10 minutes): task will be executed every 10 to 11 minutes
+* `0 */1 * * *` (every hour): task will be executed between minute 0 and minute 6 of each hour
+* `0 0 * * *`: (everyday at midnight): task will be executed between 00:00 and 00:20 UTC
+
+This is to prevent load spikes on the infrastructure and to give time for our infrastructure to pull your application images.
 
 If you need more precision we suggest to [run a custom clock process]({% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %}).
 
