@@ -1,0 +1,11 @@
+---
+modified_at: 2022-08-11 11:00:00
+title: 'PostgreSQL - New Scalingo release: 12.11.0-3'
+---
+
+Changelog:
+- Fix a bug where the Postgis extension could not be enabled.
+
+Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
+
+* `scalingo/postgresql:12.11.0-3`
