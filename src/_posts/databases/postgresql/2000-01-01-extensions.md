@@ -141,17 +141,17 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 		</tr>
 		<tr>
 			<td>postgis</td>
-			<td>2.5.5</td>
+			<td>3.1.3</td>
 			<td>PostGIS geometry, geography, and raster spatial types and functions</td>
 		</tr>
 		<tr>
 			<td>postgis_tiger_geocoder</td>
-			<td>2.5.5</td>
+			<td>3.1.3</td>
 			<td>PostGIS tiger geocoder and reverse geocoder</td>
 		</tr>
 		<tr>
 			<td>postgis_topology</td>
-			<td>2.5.5</td>
+			<td>3.1.3</td>
 			<td>PostGIS topology spatial types and functions</td>
 		</tr>
 		<tr>
