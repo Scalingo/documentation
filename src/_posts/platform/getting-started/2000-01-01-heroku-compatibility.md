@@ -39,7 +39,7 @@ The file on Scalingo is named `scalingo.json` and its format is fully
 compatible with the format used by Heroku.
 
 The Scalingo manifest file has a few specifics.
-You can find out more about in
+You can find out more about it in
 [the dedicated documentation page: Scalingo JSON Manifest]({% post_url platform/app/2000-01-01-app-manifest %}).
 
 ## Environment Variables

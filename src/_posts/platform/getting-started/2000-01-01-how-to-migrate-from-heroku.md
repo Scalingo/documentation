@@ -27,7 +27,7 @@ All operations described below can also be executed through [our dashboard](http
 
 ### Creating your Scalingo app
 
-- Start by logging in to the Scalingo platform using our CLI :
+- Start by logging in to the Scalingo platform using our CLI:
 
 ```bash
 $ scalingo login
