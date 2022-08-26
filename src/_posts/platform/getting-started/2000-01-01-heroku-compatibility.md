@@ -13,7 +13,7 @@ We have added several compatibility layers for that matter.
 
 If a **Procfile** is available in the source code of your app, it will be used.
 See the [dedicated Procfile page]({% post_url platform/app/2000-01-01-procfile %})
-for more informations.
+for more information.
 
 The Procfile `release` entry does not exist on Scalingo thus it won't be executed.
 
@@ -26,7 +26,7 @@ modification (creating a release).
 ## Buildpacks
 
 Most buildpacks and their functionalities work exactly the same as on Heroku.
-Some buildpacks are written and maintained by our own.
+Some buildpacks are written and maintained on our own.
 
 It's open source. Check our
 [GitHub account](https://github.com/Scalingo/?q=buildpack) to see the
@@ -39,21 +39,21 @@ The file on Scalingo is named `scalingo.json` and its format is fully
 compatible with the format used by Heroku.
 
 The Scalingo manifest file has a few specifics.
-You can find out more about it
-[here]({% post_url platform/app/2000-01-01-app-manifest %}).
+You can find out more about in
+[the dedicated documentation page: Scalingo JSON Manifest]({% post_url platform/app/2000-01-01-app-manifest %}).
 
 ## Environment Variables
 
 Because we'd like to conform as much as possible to the
 [12-factor](https://12factor.net) principle, you can configure your app through
 [environment variables]({% post_url platform/app/2000-01-01-environment %})
-which are injected into the context of your application.
+that are injected into the context of your application.
 
 ## Realtime Deployment
 
 Based on a Git hook. Just git push your code!
 
-## Open API and Command Line Client
+## Where to Go Next?
 
-* [Open API](https://developers.scalingo.com)
+* [Developers Documentation](https://developers.scalingo.com)
 * [Command Line Interface client](https://cli.scalingo.com)
