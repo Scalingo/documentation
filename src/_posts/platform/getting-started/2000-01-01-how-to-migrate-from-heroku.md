@@ -5,13 +5,13 @@ tags: heroku tutorial
 index: 11
 ---
 
-Scalingo is a Platform as a Service [highly compatible with Heroku]({% post_url platform/getting-started/2000-01-01-heroku-compatibility %}). This page is here to help your migrate from Heroku to Scalingo as easily as possible.
+Scalingo is a Platform as a Service [highly compatible with Heroku]({% post_url platform/getting-started/2000-01-01-heroku-compatibility %}). This page is here to help you migrate from Heroku to Scalingo as easily as possible.
 
 ## Requirements
 
 To be able to follow this tutorial, we assume that you have:
 
-- A Scalingo account
+- [A Scalingo account](https://auth.scalingo.com/users/sign_up)
 - The Scalingo [CLI]({% post_url platform/cli/2000-01-01-start %}) installed
 - A local copy of the repository containing your app’s code
 
@@ -21,13 +21,13 @@ Please ensure you are running all commands above from the root of the repository
 $ cd <app directory>
 ```
 
-Note: All operations described below can also be done through our web dashboard (instead of the command line tool). 
+All operations described below can also be executed through [our dashboard](https://dashboard.scalingo.com).
 
 ## Migration Steps
 
 ### Creating your Scalingo app
 
-- Start by logging in to the Scalingo platform using our `cli` :
+- Start by logging in to the Scalingo platform using our CLI :
 
 ```bash
 $ scalingo login
@@ -36,13 +36,13 @@ $ scalingo login
 - You can now create your app:
 
 ```bash
-# Replace my-app by your actual app name
+# Replace my-app with your actual app name
 $ scalingo create my-app
 ```
 
 ### Configure Environment Variables
 
-- First retrieve the environment variables from your current Heroku app context:
+- First, retrieve the environment variables from your current Heroku app context:
 
 ```bash
 $ heroku config
@@ -54,7 +54,7 @@ $ heroku config
 $ scalingo --app my-app env-set NODE_ENV=production
 ```
 
-More information about environnement variables can be found in the [dedicated documentation page]({% post_url platform/app/2000-01-01-environment %}).
+More information about environment variables can be found in the [dedicated documentation page]({% post_url platform/app/2000-01-01-environment %}).
 
 ### Deploying Your App
 
