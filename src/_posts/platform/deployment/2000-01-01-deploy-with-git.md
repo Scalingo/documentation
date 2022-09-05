@@ -1,6 +1,6 @@
 ---
 title: Deploy with Git
-modified_at: 2019-07-08 00:00:00
+modified_at: 2022-09-02 00:00:00
 tags: git deployment
 index: 4
 ---
@@ -28,15 +28,24 @@ Deploy your application:
 
 ```bash
 git push scalingo master
+# OR
+git push scalingo main
 ```
 
-### Deploy with Another Branch than Master
+{% note %}
+  Note that we only accept the master and main branch on Scalingo Git servers.
+  If you want to push on another branch, see below the command to push your branch.
+{% endnote %}
 
-If you want to deploy another branch than master:
+### Deploy with Another Branch than Master and Main
+
+If you want to deploy another branch than master and main:
 
 ```bash
 # Here we want do deploy 'mybranch' which is a local branch
 git push scalingo mybranch:master
+# OR
+git push scalingo mybranch:main
 ```
 
 ### Deploy a Previous Version of an App

@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Git push and SSH common issues
 nav: Troubleshoot Git and SSH
-modified_at: 2022-03-09 00:00:00
+modified_at: 2022-09-02 00:00:00
 tags: follow-the-light ssh linux git troubleshoot problem connect git push
 index: 2
 ---
@@ -48,22 +48,29 @@ no *commit* (Git name for 'version') has been done on the `master` branch.
 
 ### Solving the problem
 
-You need to make a first commit on the `master` branch of your project:
+You need to make a first commit on the `master` or `main` branch of your project:
 
 ```bash
-$ git add .
-$ git commit -m "initial commit"
-$ git push scalingo master
+git add .
+git commit -m "initial commit"
+git push scalingo master
+# OR
+git push scalingo main
 ```
 
-If the branch named `master` does not exist (default branch may be named `main`) you need to create one:
+If the branch named `master` or `main` does not exist you need to create one:
 ```bash
-$ git checkout -B master
+git checkout -B master
+# OR
+git checkout -B main
 ```
 
-If you use the `main` branch on your repository you can push to `master` branch on Scalingo with:
+If you are using another branch name than `master` or `main` branches you can
+use one of the following commands to push your branch:
 ```bash
-git push scalingo main:master
+git push scalingo mybranch:master
+# OR
+git push scalingo mybranch:main
 ```
 
 ## Invalid SSH key error when adding it to account
