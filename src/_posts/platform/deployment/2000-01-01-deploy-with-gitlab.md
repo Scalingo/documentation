@@ -31,7 +31,7 @@ $ scalingo integrations-add gitlab
 * For GitLab self-hosted:
 
 ```
-$ scalingo integrations-add gitlab-self-hosted --url https://gitlab.example.org --token <token>
+$ scalingo integrations-add --url https://gitlab.example.org --token <token> gitlab-self-hosted
 ```
 
 The token you need is a personal access token. Here is the [GitLab
@@ -43,7 +43,7 @@ Then, add and configure a link between your Scalingo application and the
 GitLab-hosted repository with:
 
 ```
-$ scalingo --app my-app integration-link-create https://gitlab.example.org/my-company/my-app --auto-deploy --branch master
+$ scalingo --app my-app integration-link-create --auto-deploy --branch master https://gitlab.example.org/my-company/my-app
 ```
 
 A comprehensive list of available configuration flags is available with:
