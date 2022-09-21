@@ -1,6 +1,6 @@
 ---
 title: Getting Started with WordPress on Scalingo
-modified_at: 2020-09-25 00:00:00
+modified_at: 2022-09-21 00:00:00
 tags: php, http, framework, wordpress, deployment
 index: 14
 ---
@@ -144,7 +144,7 @@ Follow these instructions to get started:
 ## Deploying Pure WordPress on Scalingo
 
 Even though it is not advised to deploy an out-of-the-box WordPress on Scalingo, there are some
-situations where you do not have the choice. Here are a few things you must now before going down
+situations where you do not have the choice. Here are a few things you must know before going down
 that road.
 
 ### Configuration
@@ -189,7 +189,7 @@ The only thing left is to define the `SECURE_KEY` from the dashboard or by
 using our CLI:
 
 ```bash
-scalingo -a myapp env-set SECURE_KEY=A_RANDOM_TOKEN_HERE
+scalingo --app myapp env-set SECURE_KEY=A_RANDOM_TOKEN_HERE
 ```
 
 {% note %}
