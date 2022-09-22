@@ -286,7 +286,7 @@ dependencies, create a file named `requirements.txt` at the root of your
 application:
 
 ```
-elasticsearch-curator==5.8.2
+elasticsearch-curator==5.8.4
 ```
 
 ### Configuring Curator
