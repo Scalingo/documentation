@@ -8,4 +8,4 @@ Changelogs:
 
 * [Composer 2.2.15](https://github.com/composer/composer/releases/tag/2.2.15)
 * [Composer 2.3.10](https://github.com/composer/composer/releases/tag/2.3.10)
-* [Composer 2.4.2](https://github.com/composer/composer/releases/tag/2.4.2
+* [Composer 2.4.2](https://github.com/composer/composer/releases/tag/2.4.2)
