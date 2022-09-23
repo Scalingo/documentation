@@ -6,6 +6,6 @@ github: 'https://github.com/Scalingo/php-buildpack'
 
 Changelog:
 
-* [Redis 5.3.5 release notes](https://github.com/phpredis/phpredis/releases/tag/5.3.5)
-* [Redis 5.3.6 release notes](https://github.com/phpredis/phpredis/releases/tag/5.3.6)
-* [Redis 5.3.7 release notes](https://github.com/phpredis/phpredis/releases/tag/5.3.7)
+* [phpredis 5.3.5 release notes](https://github.com/phpredis/phpredis/releases/tag/5.3.5)
+* [phpredis 5.3.6 release notes](https://github.com/phpredis/phpredis/releases/tag/5.3.6)
+* [phpredis 5.3.7 release notes](https://github.com/phpredis/phpredis/releases/tag/5.3.7)
