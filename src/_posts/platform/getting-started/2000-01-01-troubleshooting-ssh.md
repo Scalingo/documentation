@@ -8,10 +8,10 @@ index: 2
 
 ## Prerequisite
 
-At this point we consider you have correctly setup your environment as detailed here:
+At this point, we consider you have correctly setup your environment as detailed here:
 
 * [Linux]({% post_url platform/getting-started/2000-01-01-setup-ssh-linux %})
-* [Mac OS]({% post_url platform/getting-started/2000-01-01-setup-ssh-macos %})
+* [macOS]({% post_url platform/getting-started/2000-01-01-setup-ssh-macos %})
 * [Windows]({% post_url platform/getting-started/2000-01-01-setup-ssh-windows %})
 
 ## Git authentication error: `Please make sure you have the correct access rights`
@@ -58,14 +58,14 @@ git push scalingo master
 git push scalingo main
 ```
 
-If the branch named `master` or `main` does not exist you need to create one:
+If the branch named `master` or `main` does not exist, you need to create one:
 ```bash
 git checkout -B master
 # OR
 git checkout -B main
 ```
 
-If you are using another branch name than `master` or `main` branches you can
+If you are using another branch name than `master` or `main` branches, you can
 use one of the following commands to push your branch:
 ```bash
 git push scalingo mybranch:master
@@ -76,7 +76,7 @@ git push scalingo mybranch:main
 ## Invalid SSH key error when adding it to account
 
 The platform is expecting SSH keys to be in the OpenSSH format. This is the default
-format when a SSH key pair is generated on *Linux* or *MacOS*. However on Windows, if
+format when an SSH key pair is generated on *Linux* or *macOS*. However on Windows, if
 `PuTTY` generated your key, there are chances the format is wrong.
 
 ### Solving the problem
@@ -129,7 +129,7 @@ In this case, the **simplest way is the account owning the key is either owner
 or collaborator** with all the applications you want to deploy.
 
 An alternative method is to create a second key for the second account, modify
-how Git is using ssh to connect to the remote server (Linux/MacOS only):
+how Git is using ssh to connect to the remote server (Linux/macOS only):
 
 Define a wrapper script, in `$HOME/.ssh/scalingo-personal.sh` with the following content:
 
@@ -145,7 +145,7 @@ Then, to push with this second key:
 GIT_SSH=$HOME/.ssh/scalingo-personal.sh git push scalingo master
 ```
 
-Then Git will correctly used authenticate using the second alternative key
+Then Git will correctly use authenticate using the second alternative key,
 authenticating the second account.
 
 * It is your only account
@@ -259,7 +259,7 @@ page and check if the fingerprint is the same as the output of the previous comm
 
 ### RSA SHA-1 algorithm deprecated on recent version of OpenSSH
 
-If you see this error: `no mutual signature algorithm` from the debug
+If you encounter this error: `no mutual signature algorithm` from the debug
 log of a `git push` you're using OpenSSH 8.2 or newer.
 
 The `RSA SHA-1` hash algorithm is being quickly deprecated from SSH clients
@@ -268,7 +268,7 @@ technologies now outright denying the use of this algorithm.
 
 #### Workaround
 
-In order to re-enable `ssh-rsa` support, you need to add the following lines
+To re-enable `ssh-rsa` support, you need to add the following lines
 into the SSH configuration file `~/.ssh/config`:
 ```plaintext
 Host ssh.osc-fr1.scalingo.com
@@ -282,5 +282,5 @@ using a supported and more secure algorithm such as `ECDSA` and `ED25519`.
 
 See our `Create a new SSH key pair` documentation pages here:
 - For [Linux]({% post_url platform/getting-started/2000-01-01-setup-ssh-linux %}#create-a-new-ssh-key-pair)
-- For [Mac OS]({% post_url platform/getting-started/2000-01-01-setup-ssh-macos %}#create-a-new-ssh-key-pair)
+- For [macOS]({% post_url platform/getting-started/2000-01-01-setup-ssh-macos %}#create-a-new-ssh-key-pair)
 - For [Windows]({% post_url platform/getting-started/2000-01-01-setup-ssh-windows %}#2-create-a-new-ssh-key-pair)

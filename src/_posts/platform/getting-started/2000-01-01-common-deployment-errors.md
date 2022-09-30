@@ -63,20 +63,20 @@ deployment phase.
 
 ### Technology Detection
 
-In order to detect the technology used by your application, we iterate over the
+To detect the technology used by your application, we iterate over the
 technologies alphabetically. It means that if your project contains multiple
 technologies, we will pick the first one detected.
 
 If you want to skip the detection phase and force the use of a specific
 buildpack, add the environment variable `BUILDPACK_NAME` to your project.
 
-If you need to use multiple technologies you can use the [multi-buildpacks]({%
+If you need to use multiple technologies, you can use the [multi-buildpacks]({%
 post_url platform/deployment/buildpacks/2000-01-01-multi %}).
 
 You can also develop your own buildpack and add the environment variable
 `BUILDPACK_URL` to have complete control on the detection and build phases.
 
-More information are available on [buildpacks]({% post_url
+More information is available on [buildpacks]({% post_url
 platform/deployment/buildpacks/2000-01-01-intro %}) or [multi-buildpacks]({%
 post_url platform/deployment/buildpacks/2000-01-01-multi %}).
 
@@ -146,7 +146,7 @@ into an _application image_
 
 ### Invalid Return Code From Buildpack
 
-You application image is built using a buildpack ([List of buildpacks]({% post_url platform/deployment/buildpacks/2000-01-01-intro %})).
+Your application image is built using a buildpack ([List of buildpacks]({% post_url platform/deployment/buildpacks/2000-01-01-intro %})).
 If the buildpack exits with an error, it is probably linked to your project. You should
 be able to see the content of the error in your console. Then adapt your code according to it.
 
@@ -176,7 +176,7 @@ If you absolutely need all these data, please contact us at
 
 
 After creating the container image of your application, it is deployed
-in our infrastructure. The following errors may happened if your application
+in our infrastructure. The following errors may happen if your application
 is not configured correctly.
 
 If something wrong happens, you should first look at the logs of your app. In

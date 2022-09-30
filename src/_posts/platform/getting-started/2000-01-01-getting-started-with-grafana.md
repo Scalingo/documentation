@@ -37,7 +37,7 @@ We now need to slightly configure the Scalingo application. This
 application needs to use the [multi-buildpacks]({% post_url
 platform/deployment/buildpacks/2000-01-01-multi %}).
 
-You also need to add a PostgreSQL addon to your application. Last, configure a
+You also must add a PostgreSQL addon to your application. Last, configure a
 few Grafana specific environment variables by heading to your application web
 dashboard:
 

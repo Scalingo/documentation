@@ -1,5 +1,5 @@
 ---
-title: Setup SSH on Mac OS
+title: Setup SSH on macOS
 modified_at: 2022-01-06 00:00:00
 tags: follow-the-light ssh macos git
 index: 4
@@ -21,7 +21,7 @@ ssh-keygen -t ed25519
 ```
 
 Follow the instructions to generate a new SSH key pair. You will be asked to encrypt
-you private key with a password. This step is optional but for further security you may
+your private key with a password. This step is optional but for further security you may
 want to set one.
 
-By default both private and public keys will be located in your `$HOME/.ssh` directory.
+By default, both private and public keys will be located in your `$HOME/.ssh` directory.

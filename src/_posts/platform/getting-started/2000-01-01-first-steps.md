@@ -13,7 +13,7 @@ index: 1
 Deploying an application on Scalingo requires you to have Git installed.
 
 * Linux: Use your package manager to install it. (example: `apt-get install git`)
-* Mac OS: If you've installed XCode, Git has been automatically installed. Otherwise
+* macOS: If you've installed XCode, Git has been automatically installed. Otherwise,
   install it from [Git official website](http://git-scm.com/download/mac)
 * Windows: Install if from [Git official website](http://git-scm.com/download/windows)
 

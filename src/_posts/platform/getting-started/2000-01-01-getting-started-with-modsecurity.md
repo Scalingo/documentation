@@ -92,7 +92,7 @@ Now that we have a working WAF with a nice default set of rules, you may want
 to add your own custom rules. Let's see how to do this!
 
 First, create a file at the root of your Nginx application. In this example, we
-call it `my_rules.conf`, but you can chose whatever suits you.
+call it `my_rules.conf`, but you can choose whatever suits you.
 
 Write your rules in this file, using SecLang and the `SecRule` directive:
 
@@ -120,7 +120,7 @@ SecRule ARGS:param1 "@contains test" \
 [https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#variables](https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#variables)
 {% endnote %}
 
-Once done, tell Nginx to load the brand new rules. Edit the file you are using
+Once done, tell Nginx to load the brand-new rules. Edit the file you are using
 for your Nginx configuration (i.g. `nginx.conf`, `nginx.conf.erb`, ...) and add
 two directives:
 
@@ -200,7 +200,7 @@ $ git push scalingo master
 ```
 
 {% note %}
-Scalingo **does not** provide any guarantee in term of packaging and
+Scalingo **does not** provide any guarantee in terms of packaging and
 availability after each ModSecurity release. You can still get in touch with our
 support team, should you need a specific version.
 {% endnote %}
@@ -217,4 +217,3 @@ Scalingo provides a few environment variables for you to tweak ModSecurity:
   transactions that returned with a status code of 4xx or 5xx) or `Off` (do not
   log transactions).
   Defaults to `Off`.
-

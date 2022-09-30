@@ -59,7 +59,7 @@ Beside `provider` and `api_key` you can customize these optional parameters:
 - **app**: App is the name of your app on Scalingo, it is extracted from the
     remote option.
 - **on**: Specify the branch to deploy from, default is `master`. Change this if
-    your code is not on master. You can also trigger the deploy from any branch:
+    your code is not on master. You can also trigger the deployment from any branch:
 ```yaml
 deploy:
   on:
