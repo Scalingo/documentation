@@ -33,7 +33,7 @@ happen in the following order:
 3. We wait until they started successfully (see common [deployment start
    errors]({% post_url
    platform/getting-started/2000-01-01-common-deployment-errors
-   %}#start-errors))
+   %}#start-errors)) They are not reachable yet, see [limits](#limits) below
 4. An extra container is started to run the `postdeploy` command
 5. If the `postdeploy` command has succeeded, we update the routing
    configuration, the new containers start to get requests and the deployment is
@@ -61,6 +61,9 @@ contains the environment variables from your app, with the one we inject in any
   recommended **not** to use a `postdeploy` hook but a
   [one-off container]({% post_url platform/app/2000-01-01-tasks%}) once the
   deployment has been done.
+* During the postdeploy execution, the new version of the application is not
+  yet reachable. If you make a query to it, the old version will respond, or,
+  if it is the first deployment, your query will return a "404 not found" error.
 * Memory available: a postdeploy hook is executed in a M container (512 MB RAM available). This size is modifiable upon request on the support.
 
 ## Examples
