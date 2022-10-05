@@ -33,7 +33,7 @@ happen in the following order:
 3. We wait until they started successfully (see common [deployment start
    errors]({% post_url
    platform/getting-started/2000-01-01-common-deployment-errors
-   %}#start-errors)) They are not reachable yet, see [limits](#limits) below
+   %}#start-errors)). They are not reachable yet, see [limits](#limits) below.
 4. An extra container is started to run the `postdeploy` command
 5. If the `postdeploy` command has succeeded, we update the routing
    configuration, the new containers start to get requests and the deployment is
