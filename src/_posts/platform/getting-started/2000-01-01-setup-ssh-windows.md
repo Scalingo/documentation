@@ -1,6 +1,6 @@
 ---
 title: Setup SSH on Windows
-modified_at: 2016-09-10 10:17:00
+modified_at: 2022-10-06 00:00:00
 tags: follow-the-light ssh windows git
 index: 5
 ---
@@ -25,7 +25,7 @@ section.
 $ cd $HOME
 $ mkdir .ssh
 $ cd .ssh
-$ ssh-keygen.exe
+$ ssh-keygen.exe -t ed25519
 ```
 
 Follow the instructions to generate a new SSH key pair. You will be asked to
@@ -41,7 +41,7 @@ in git-bash:
 $ cat $HOME/.ssh/id_ed25519.pub
 ```
 
-The file content should start with `ssh-rsa`
+The file content should start with `ssh-ed25519`
 
 Once you have the public key, go to Scalingo Dashboard [SSH key section](https://my.scalingo.com/keys) and
 create a new key with the content of the public key.

@@ -1,6 +1,6 @@
 ---
 title: Setup SSH on Linux
-modified_at: 2021-10-25 00:00:00
+modified_at: 2022-01-06 00:00:00
 tags: follow-the-light ssh linux git
 index: 3
 ---
