@@ -70,13 +70,9 @@ instance, if you want the application to always be in sync with the `production`
 branch of your repository.
 
 You may have Continuous Integration (CI) tools associated with your repository
-like [CodeShip](https://codeship.com/) or [Travis CI](https://travis-ci.com/)
+like [CodeShip](https://codeship.com/), [Travis CI](https://travis-ci.com/) or [Github Actions](https://github.com/features/actions)
 which run tasks, tests or whatever. We will always wait that all these tools
 **succeed** before deploying your app.
-
-{% warning %}
-If GitHub Actions is configured on your repository, our GitHub integration will **not** wait for it to succeed before deploying your application. We are working on a solution to circumvent this problem.
-{% endwarning %}
 
 You can also manually trigger a deployment of your application from any branch.
 
