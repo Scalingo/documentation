@@ -21,10 +21,10 @@ ssh-keygen -t ed25519
 ```
 
 Follow the instructions to generate a new SSH key pair. You will be asked to encrypt
-you private key with a password. This step is optional but for further security you may
+your private key with a password. This step is optional but for further security you may
 want to set one.
 
-By default both private and public keys will be located in your `$HOME/.ssh` directory.
+By default, both private and public keys will be located in your `$HOME/.ssh` directory.
 
 ### Add the public SSH key to Scalingo
 

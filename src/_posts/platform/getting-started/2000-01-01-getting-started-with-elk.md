@@ -153,7 +153,7 @@ set to `Alenala` and a field `message` set to `Hi!`.
 
 The cloned boilerplate used to deploy your application contains a `config` directory. 
 All the files in this folder will be copied in the Logstash configuration directory at runtime, 
-allowing you to customize exactly how your want Logstash to run.
+allowing you to customize exactly how you want Logstash to run.
 
 For instance, if you want to edit the logging behavior of Logstash, edit `config/log4j2.yml`
 
@@ -281,7 +281,7 @@ https://github.com/Scalingo/python-buildpack
 https://github.com/Scalingo/logstash-buildpack
 ```
 
-In order to instruct the Python buildpack to install Curator and its
+To instruct the Python buildpack to install Curator and its
 dependencies, create a file named `requirements.txt` at the root of your
 application:
 
@@ -291,7 +291,7 @@ elasticsearch-curator==5.8.4
 
 ### Configuring Curator
 
-Next step is to configure Curator. First you need to configure how Curator
+Next step is to configure Curator. First, you need to configure how Curator
 connects to your database. Create a file `curator.yml` with the following
 content:
 
@@ -310,7 +310,7 @@ logging:
 Curator cannot use the `ELASTICSEARCH_URL` environment variable. You
 need to define two other environment variables on your app, duplicating
 `ELASTICSEARCH_URL` content.
-Hence if your `ELASTICSEARCH_URL` variable is set to
+Hence, if your `ELASTICSEARCH_URL` variable is set to
 `http://user:password@host:port`, you need to define 2 environment variables:
 
 ```

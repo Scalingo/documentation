@@ -22,7 +22,7 @@ available to achieve this step:
   platform/deployment/2000-01-01-deploy-with-github %})
 * [Let the platform fetch the code from GitLab]({% post_url
   platform/deployment/2000-01-01-deploy-with-gitlab %})
-* [Sending the code in a tar achive]({% post_url
+* [Sending the code in a tar archive]({% post_url
   platform/deployment/2000-01-01-deploy-from-archive %})
 
 {% note %}
@@ -56,11 +56,11 @@ platform/deployment/buildpacks/2000-01-01-intro %}#buildpacks-included-on-scalin
 are automatically used to detect which one can be used to build the
 application, they usually cover most use cases.
 
-However it may happen your application technology is not detected, or your
+However, it may happen your application technology is not detected, or your
 application is using multiple stacks (i.e. Python + Node.js), both these cases
 are also covered.
 
-As mentioned before buildpacks are open-source and other hosting providers are
+As mentioned before, buildpacks are open-source and other hosting providers are
 also using them to deploy applications, thus the developer community has
 developed a wide range of buildpacks for almost any kind of technology. The
 platform has been designed to be extended by community buildpacks, [learn how

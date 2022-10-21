@@ -5,7 +5,7 @@ tags: follow-the-light ssh windows git
 index: 5
 ---
 
-Setup SSH is required to be able to push you code using `git`, to configure
+Setup SSH is required to be able to push your code using `git`, to configure
 everything correctly, you need to install the terminal `git-bash`
 
 ### 1. Download and Install git-bash
@@ -29,7 +29,7 @@ $ ssh-keygen.exe -t ed25519
 ```
 
 Follow the instructions to generate a new SSH key pair. You will be asked to
-encrypt you private key with a password. This step is optional but for further
+encrypt your private key with a password. This step is optional but for further
 security you may want to set one.
 
 ### 3. Add the public SSH key to Scalingo
@@ -64,5 +64,5 @@ It should display the following output:
 You've successfully authenticated on Scalingo, but there is no shell access
 ```
 
-If it doesn't, something has been done wrong please recheck the different step
+If it doesn't, something has been done wrong, please recheck the different step
 of this guide.

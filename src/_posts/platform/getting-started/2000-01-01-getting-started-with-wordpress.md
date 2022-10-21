@@ -43,7 +43,7 @@ to work perfectly on a modern platform like Scalingo.
 
 ### Customize the Scalingo Distribution
 
-You may need to customize a bit the above-mentioned distribution in order to add a plugin or a theme for instance.
+You may need to customize a bit the above-mentioned distribution to add a plugin or a theme for instance.
 Follow these instructions to get started:
 
 1. Clone the distribution:
@@ -149,7 +149,7 @@ that road.
 
 ### Configuration
 
-By default WordPress uses a configuration file to configure a deployed
+By default, WordPress uses a configuration file to configure a deployed
 application. In order to add environment variables support, you must edit the
 `config/application.php` file to read the `DATABASE_URL` environment variable.
 
@@ -199,7 +199,7 @@ scalingo --app my-app env-set SECURE_KEY=A_RANDOM_TOKEN_HERE
 ### HTTPS
 
 By default, WordPress tries to detect if the website is reached with HTTPS.
-However in an environment like Scalingo, applications are behind a routing
+However, in an environment like Scalingo, applications are behind a routing
 layer which acts as proxy, which prevent WordPress to correctly detect the use
 of HTTPS.
 
@@ -224,7 +224,7 @@ Since the container file system is volatile, plugins and addon should be
 installed and updated within your Git repository and never via the web
 interface. You must de-activate auto-update of all your WordPress components.
 
-To do that add the following line to your `config/application.php`:
+To do that, add the following line to your `config/application.php`:
 
 ```php
 Config::define('AUTOMATIC_UPDATER_DISABLED', true);

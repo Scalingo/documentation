@@ -15,7 +15,7 @@ If a **Procfile** is available in the source code of your app, it will be used.
 See the [dedicated Procfile page]({% post_url platform/app/2000-01-01-procfile %})
 for more information.
 
-The Procfile `release` entry does not exist on Scalingo thus it won't be executed.
+The Procfile `release` entry does not exist on Scalingo, and thus it won't be executed.
 
 The [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %})
 exists with similar functionality.

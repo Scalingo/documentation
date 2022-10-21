@@ -19,18 +19,18 @@ To setup Git you will use the command `git config`. More informations can be fou
 
 ### Configure your Identity
 
-Your identity (user name and email) must be configured:
+Your identity (username and email) must be configured:
 
 ```bash
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
 
-The `--global` option will configure your Git durably. If for one project you want to configure another user name or email you have to run the same command without `--global`.
+The `--global` option will configure your Git durably. If for one project you want to configure another username or email, you have to run the same command without `--global`.
 
 ### Configure your Editor
 
-For example if you want to change your default text editor to Nodepad++, the command is:
+For example, if you want to change your default text editor to Nodepad++, the command is:
 
 On a x86 system
 
@@ -46,7 +46,7 @@ git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe
 
 ### Check the Settings
 
-To check your settings the command is `git config --list`.
+To check your settings, the command is `git config --list`.
 
 
 ```bash
