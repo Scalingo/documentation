@@ -18,6 +18,8 @@ have to give us your billing details nor payment methods.
 You can have a **maximum of 1 application** using a **maximum of 5 containers**
 (S or M size).
 
+Review apps are considered as applications, so you can't create one while in free trial.
+
 You can add as many addons you want if they have free plans available.
 
 ### How to break out of the free trial?
