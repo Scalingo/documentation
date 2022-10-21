@@ -12,8 +12,12 @@ the CLI requires you to take one of these actions:
 
 * Add a password to your account on the [profile](https://my.scalingo.com/profile) page.
 * Add a SSH key to your account on the [dedicated](https://my.scalingo.com/keys) page.
-* Add a token to your account on the [profile](https://my.scalingo.com/profile) page. Then use it to
-  login with `scalingo login --api-token <token>`
+
+And then use `scalingo login`.
+
+You can also add a token to your account on the [profile](https://my.scalingo.com/profile) page. 
+Then use it to login with `scalingo login --api-token <token>`
+
 
 ### List of Ports Needed To Be Opened
 
