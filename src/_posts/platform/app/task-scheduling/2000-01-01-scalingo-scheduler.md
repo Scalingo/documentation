@@ -1,14 +1,10 @@
 ---
-title: Public Beta - Scalingo Scheduler - Run Scheduled Tasks
+title: Scalingo Scheduler - Run Scheduled Tasks
 nav: Scalingo Scheduler
-modified_at: 2022-01-04 10:00:00
+modified_at: 2022-10-24 10:00:00
 tags: task-scheduling
 index: 1
 ---
-
-{% warning %}
-This feature is currently available in Public Beta. It means the product is available to everyone and that the software is considered stable. Only interfaces may change until the official release.
-{% endwarning %}
 
 Scalingo Scheduler is here to help you run scheduled tasks at regular intervals.
 
