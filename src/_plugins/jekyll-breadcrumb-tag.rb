@@ -1,9 +1,5 @@
 module Jekyll
   class BreadcrumbTag < Liquid::Tag
-    def initialize(tag_name, text, tokens)
-      super
-    end
-
     def render(context)
       breadcrumb_hash = Jekyll.sites.first.data["breadcrumb_hash"]
       current_url = context["page"]["url"]

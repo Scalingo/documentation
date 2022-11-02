@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-ruby "3.0.3"
+ruby "3.1.2"
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -39,11 +39,13 @@ end
 gem "webpacker", "< 5"
 
 gem "puma"
+gem "rack", "< 3"
 gem "rack-canonical-host"
 gem "rack-jekyll", github: "adaoraul/rack-jekyll"
 gem "rack-rewrite"
 gem "rack-ssl-enforcer"
 gem "rack-cors"
+gem "psych", "< 4"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
