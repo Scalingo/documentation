@@ -159,7 +159,7 @@ And our template `templates/index.html`:
 Create a `Procfile` at the root of your project:
 
 ```yaml
-worker: celery worker --app=task.app
+worker: celery --app=task.app worker 
 web: python app.py
 ```
 
