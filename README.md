@@ -73,14 +73,14 @@ object(s)`. Then, insert it with:
 To install dependencies locally:
 
 ```
-docker-compose run --rm web bundle install
-docker-compose run --rm web yarn install --ignore-engines
+docker compose run --rm web bundle install
+docker compose run --rm web yarn install --ignore-engines
 ```
 
 To build the static site and spin-up a file server:
 
 ```
-docker-compose up
+docker compose up
 ```
 
 And visit http://localhost:4300
@@ -88,7 +88,7 @@ And visit http://localhost:4300
 If you want to serve the doc like in production (through the rack stack), generate the site first (see above) and then:
 
 ```
-docker-compose -f docker-compose-prod.yml up
+docker compose -f docker compose-prod.yml up
 ```
 
 This will run puma in parallel and serve the site at http://localhost:4302
@@ -99,7 +99,7 @@ For a reason I ignore and I don't want to spend time understanding, we need to m
 This is done with:
 
 ```
-docker-compose exec web bundle exec jekyll build
+docker compose exec web bundle exec jekyll build
 ```
 
 ### Dev tool
