@@ -13,7 +13,7 @@ You can run a load test / smoke test / endurance test on your application under 
 
 - Ask the support using support [at] scalingo.com or use the support chat
 - You should communicate the metrics of your test to the support (number of connections...)
-- The test should only be run during business hours
+- The test should only be run during business hours (9AM to 12AM - 2PM to 6PM)
 - The test should have specific start and end hours
 
 {% include security_testing_warning.md %}
