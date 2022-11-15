@@ -1,4 +1,4 @@
-FROM ruby:3.0.3
+FROM ruby:3.1.2
 
 RUN apt-get update
 RUN apt-get install apt-transport-https
@@ -23,14 +23,14 @@ RUN cd /opt && \
     apt-get update && apt-get install sudo && apt-get clean &&\
     sed -i s+secure_path=.*+secure_path="$PATH"+ /etc/sudoers
 
-ENV PATH "/opt/node/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/node_modules/.bin:/usr/src/app/node_modules/.bin:/usr/src/app/vendor/.bundle/ruby/3.0.0/bin"
+ENV PATH "/opt/node/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/node_modules/.bin:/usr/src/app/node_modules/.bin:/usr/src/app/vendor/.bundle/ruby/3.1.0/bin"
 
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
   echo 'LANG="en_US.UTF-8"'>/etc/default/locale && \
   dpkg-reconfigure --frontend=noninteractive locales && \
   update-locale LANG=en_US.UTF-8
 
-RUN gem install bundler -v '2.2.19'
+RUN gem install bundler -v '2.3.24'
 
 ENV LANG en_US.UTF-8
 
