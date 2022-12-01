@@ -29,19 +29,23 @@ so that some features of the CLI can work properly.
 
 To use `git push`, `git pull` and `db-tunnel` features, open this port:
 
+<div class="overflow-horizontal-content" markdown="1">
 | Region Name     | Address                               | Port | Protocol | 
 | --------------- | ------------------------------------- | ---- | -------- |
 | osc-fr1         | ssh.osc-fr1.scalingo.com              | 22   | TCP      |
 | osc-secnum-fr1  | ssh.osc-secnum-fr1.scalingo.com       | 22   | TCP      |
 {: .table }
+</div>
 
 To use databases command such as `pgsql-console`, open this port:
 
+<div class="overflow-horizontal-content" markdown="1">
 | Region Name     | Address                               | Port | Protocol | 
 | --------------- | ------------------------------------- | ---- | -------- |
 | osc-fr1         | one-off.osc-fr1.scalingo.com          | 5000 | TCP      |
 | osc-secnum-fr1  | one-off.osc-secnum-fr1.scalingo.com   | 5000 | TCP      |
 {: .table }
+</div>
 
 ## Tips
 

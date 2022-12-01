@@ -122,6 +122,10 @@ article table {
   @apply border border-sc-gray-3 table-auto w-full mb-4 text-sc-text-4 text-sc-gray-1;
 }
 
+article .overflow-horizontal-content {
+  @apply overflow-x-auto w-[95vw] sm:w-auto;
+}
+
 article table th {
   @apply pt-5 pb-3 bg-sc-gray-5 text-left px-5 font-bold uppercase text-sc-title-7;
 }
@@ -194,7 +198,7 @@ article code.language-plaintext {
   @apply bg-sc-gray-3 text-sc-gray-2 font-mono px-2 py-1 rounded;
 }
 
-article {
+article code {
   @apply break-all sm:break-normal;
 }
 

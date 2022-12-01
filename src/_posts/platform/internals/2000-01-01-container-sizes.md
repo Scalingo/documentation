@@ -7,54 +7,56 @@ index: 2
 
 ## Comparative Table
 
-<table class="table">
-	<thead>
-	<tr>
-		<th>Name</th>
-		<th>Memory</th>
-		<th>CPU Priority</th>
-    <th>PID Limit</th>
-		<th>Price</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-		<td>S - Small</td>
-		<td>256MB</td>
-		<td>Low</td>
-    <td>128</td>
-		<td>0.01€/h</td>
-	</tr>
-	<tr>
-		<td>M - Medium (Default)</td>
-		<td>512MB</td>
-		<td>Standard</td>
-    <td>256</td>
-		<td>0.02€/h</td>
-	</tr>
-	<tr>
-		<td>L - Large</td>
-		<td>1GB</td>
-		<td>Standard</td>
-    <td>512</td>
-		<td>0.04€/h</td>
-	</tr>
-	<tr>
-		<td>XL - eXtra Large</td>
-		<td>2GB</td>
-		<td>High</td>
-    <td>1024</td>
-		<td>0.08€/h</td>
-	</tr>
-	<tr>
-		<td>2XL - eXtra eXtra Large</td>
-		<td>4GB</td>
-		<td>High</td>
-    <td>2048</td>
-		<td>0.16€/h</td>
-	</tr>
-	</tbody>
-</table>
+<div class="overflow-horizontal-content">
+	<table class="table">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Memory</th>
+			<th>CPU Priority</th>
+			<th>PID Limit</th>
+			<th>Price</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>S - Small</td>
+			<td>256MB</td>
+			<td>Low</td>
+			<td>128</td>
+			<td>0.01€/h</td>
+		</tr>
+		<tr>
+			<td>M - Medium (Default)</td>
+			<td>512MB</td>
+			<td>Standard</td>
+			<td>256</td>
+			<td>0.02€/h</td>
+		</tr>
+		<tr>
+			<td>L - Large</td>
+			<td>1GB</td>
+			<td>Standard</td>
+			<td>512</td>
+			<td>0.04€/h</td>
+		</tr>
+		<tr>
+			<td>XL - eXtra Large</td>
+			<td>2GB</td>
+			<td>High</td>
+			<td>1024</td>
+			<td>0.08€/h</td>
+		</tr>
+		<tr>
+			<td>2XL - eXtra eXtra Large</td>
+			<td>4GB</td>
+			<td>High</td>
+			<td>2048</td>
+			<td>0.16€/h</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
 
 Bigger container sizes are available upon request on the support.
 As a note, each new process requires a PID. And inside each process, each thread needs one too.
