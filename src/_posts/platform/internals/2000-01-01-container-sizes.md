@@ -7,7 +7,7 @@ index: 2
 
 ## Comparative Table
 
-<div class="table-wrapper">
+<div class="overflow-horizontal-content">
 	<table class="table">
 		<thead>
 		<tr>

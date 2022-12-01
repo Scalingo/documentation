@@ -34,7 +34,9 @@ The following table lists available packages and versions for the stack scalingo
 
 In general, apps do not typically interact directly with this level of operating system services. Some app dependencies may, as well as apps that directly rely on the underlying operating system. The list below is provided to document the available operating system packages.
 
+<div class="overflow-horizontal-content" markdown="1">
 {: .table }
 | Name | Version |
 | ---- | ------- |
 {% include scalingo_20_stack_packages.md %}
+</div>

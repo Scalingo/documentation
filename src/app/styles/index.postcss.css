@@ -122,7 +122,7 @@ article table {
   @apply border border-sc-gray-3 table-auto w-full mb-4 text-sc-text-4 text-sc-gray-1;
 }
 
-article .table-wrapper {
+article .overflow-horizontal-content {
   @apply overflow-x-auto w-[95vw] sm:w-auto;
 }
 
@@ -199,7 +199,7 @@ article code.language-plaintext {
 }
 
 article code {
-  @apply break-all;
+  @apply break-all sm:break-normal;
 }
 
 .highlight .hll { background-color: #060C20; }
