@@ -19,9 +19,9 @@ environment variables depending on which error page you want to customize:
 - `SCALINGO_NO_FRONT_ERROR_URL`: if the application has no web container running
     but other types of containers are.
 - `SCALINGO_STOPPED_PAGE_URL`: if the application has no running container.
-- `SCALINGO_APP_ERROR_URL`: if the application crashed or cut the connection
+- `SCALINGO_APP_ERROR_URL`: if the application return a 502 HTTP response, crashed or cut the connection
     unexpectedly.
-- `SCALINGO_TIMEOUT_ERROR_URL`: if the application [timed out]({% post_url
+- `SCALINGO_TIMEOUT_ERROR_URL`: if the application return a 504 HTTP response or [timed out]({% post_url
     platform/internals/2000-01-01-routing %}#timeouts).
 
 The usage is the following:
