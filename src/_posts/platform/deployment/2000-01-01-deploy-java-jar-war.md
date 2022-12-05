@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2022-11-28 00:00:00
+modified_at: 2022-12-05 00:00:00
 index: 7
 tags: deployment, java, jar, war
 ---
@@ -95,14 +95,18 @@ $ scalingo --app my-app env-set JAVA_VERSION=1.9
 
 By default, Tomcat 8.5 is installed with the last version of the webapp-runner,
 if you want to use another version, you can defined the environment variable
-`JAVA_WEBAPP_RUNNER_VERSION`. You can find all the available versions
-[here](https://github.com/heroku/webapp-runner/tags).
+`JAVA_WEBAPP_RUNNER_VERSION`. The available versions are:
 
-The 8.0.x versions are installing Tomcat 8, and the 8.5.x releases are
-installing Tomcat 8.5:
+- 8.5.11.3
+- 8.5.51.0
+- 9.0.52.1
+- 9.0.68.1
+
+The 8.5.x versions are installing Tomcat 8, and the 9.0.x releases are
+installing Tomcat 9.0:
 
 ```sh
 # Install Tomcat 8
 
-$ scalingo env-set JAVA_WEBAPP_RUNNER_VERSION=8.0.39.0
+$ scalingo env-set JAVA_WEBAPP_RUNNER_VERSION=8.5.11.3
 ```
