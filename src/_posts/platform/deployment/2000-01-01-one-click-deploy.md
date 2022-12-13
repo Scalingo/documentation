@@ -14,30 +14,32 @@ At the moment, **only public projects hosted on GitHub are supported**.
 
 ## Display a one-click deploy button
 
-To do so, you will need to add a link to `https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>`.
+To do so, you will need to add a link to `https://dashboard.scalingo.com/create/app?source=https://github.com/<Your account>/<Your project>`.
 
 By default it will deploy the branch `master` of your project, but you can optionally specify the branch you want to deploy by adding a '#' followed by the branch itself, like shown below:
 
-`https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>#custom_branch`
+```
+https://dashboard.scalingo.com/create/app?source=https://github.com/<Your account>/<Your project>#custom_branch
+```
 
 * Markdown implementation (README.md)
 
 ```text
-[![Deploy on Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>#custom_branch)
+[![Deploy on Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://dashboard.scalingo.com/create/app?source=https://github.com/<Your account>/<Your project>#custom_branch)
 ```
 
-Example: [![Deploy on Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/sample-go-martini)
+Example: [![Deploy on Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/sample-go-martini)
 
 * HTML implementation
 
 ```html
-<a href="https://my.scalingo.com/deploy?source=https://github.com/<Your account>/<Your project>#custom_branch">
+<a href="https://dashboard.scalingo.com/create/app?source=https://github.com/<Your account>/<Your project>#custom_branch">
    <img src="https://cdn.scalingo.com/deploy/button.svg" alt="Deploy on Scalingo" data-canonical-src="https://cdn.scalingo.com/deploy/button.svg" style="max-width:100%;">
 </a>
 ```
 
 Example:
-<a href="https://my.scalingo.com/deploy?source=https://github.com/Scalingo/sample-go-martini/">
+<a href="https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/sample-go-martini/">
    <img src="https://cdn.scalingo.com/deploy/button.svg" alt="Deploy on Scalingo" data-canonical-src="https://cdn.scalingo.com/deploy/button.svg" style="max-width:100%;">
 </a>
 
