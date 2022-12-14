@@ -1,7 +1,7 @@
 ---
 title: First Steps On Scalingo
 nav: First Steps
-modified_at: 2015-12-02 00:00:00
+modified_at: 2022-12-14 00:00:00
 tags: follow-the-light ssh
 index: 1
 ---
