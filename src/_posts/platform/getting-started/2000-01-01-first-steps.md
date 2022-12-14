@@ -30,7 +30,7 @@ For any operating system, you need to copy the content of the public key to your
 
 With our dashboard:
 
-[https://my.scalingo.com/keys](https://my.scalingo.com/keys)
+[https://dashboard.scalingo.com/account/keys](https://dashboard.scalingo.com/account/keys)
 
 With our command line client:
 
