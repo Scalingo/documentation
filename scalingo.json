@@ -3,6 +3,9 @@
     "BASIC_AUTH_ENABLED": {
       "value": "true"
     },
+    "BASIC_AUTH": {
+      "value": "pipo:molo"
+    },
     "CANONICAL_HOST": {
       "value": "false"
     },
