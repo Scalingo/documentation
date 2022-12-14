@@ -125,7 +125,7 @@ languages:
 
 databases:
   - url: "/databases/postgresql/start"
-    name: "PostgresSQL"
+    name: "PostgreSQL"
     logo: postgresql
   - url: "/databases/mysql/start"
     name: "MySQL"
