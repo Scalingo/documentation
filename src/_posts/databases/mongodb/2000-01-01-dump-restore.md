@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my MongoDB database on Scalingo
 nav: Dump and Restore
-modified_at: 2022-04-28 00:00:00
+modified_at: 2022-12-22 00:00:00
 tags: databases mongodb mongo tunnel dump restore
 index: 2
 ---
@@ -119,6 +119,20 @@ $ mongorestore --uri $SCALINGO_MONGO_URL --db <db> <dump directory OR bson file>
 In addition you may use the [--drop
 option](https://docs.mongodb.com/v3.4/reference/program/mongorestore/#cmdoption-mongorestore-drop)
 to delete the existing data in the database.
+
+### Dump and Restore With Force TLS
+
+When the Force TLS option is active, you should add these flags : `--ssl` and `--sslCAFile`
+
+Example for a dump :
+```bash
+$ mongodump --ssl --sslCAFile <CAFile.pem> --username <username> --password <password> --host <host> --port <port> --db <db>
+```
+
+Example for a restore :
+```bash
+$ mongorestore --ssl  --sslCAFile <CAFile.pem> --username <username> --password <password> --host <host> --port <port> --db <db> <dump directory OR bson file>
+```
 
 ## Dump and Restore From Scalingo One-off Container
 
