@@ -178,6 +178,8 @@ scalingo --app my-awesome-logstash env | grep SCALINGO_ELASTICSEARCH_URL
 
 Then, a username and a password should be defined to configure Kibana authentication.
 
+**Note**: a new Elasticsearch database will be provisionned. You can safely delete it if you use the one from Logstash as described above.
+
 Once deployed, index patterns need to be configured. This is required to inform
 Kibana about the indices of Elasticsearch it need to look at.
 
