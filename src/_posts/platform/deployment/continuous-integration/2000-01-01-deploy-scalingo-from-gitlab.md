@@ -1,7 +1,7 @@
 ---
 title: Deploy to Scalingo from GitLab CI/CD
 nav: Deploy from GitLab CI
-modified_at: 2022-04-25 00:00:00
+modified_at: 2022-12-29 00:00:00
 tags: ci deployment build gitlab
 index: 22
 ---
@@ -33,7 +33,7 @@ deploy:development:
     SCALINGO_APP_NAME: <app name>
     SCALINGO_REGION: osc-fr1
     GIT_DEPTH: 0
-  image: ruby:latest
+  image: ruby:3.1.3
   only:
     - develop
   script:
