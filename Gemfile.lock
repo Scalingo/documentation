@@ -39,7 +39,7 @@ GEM
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
-    erubi (1.11.0)
+    erubi (1.12.0)
     eventmachine (1.2.7)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
