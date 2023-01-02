@@ -165,6 +165,8 @@ GEM
     sass-embedded (1.57.1)
       google-protobuf (~> 3.21)
       rake (>= 10.0.0)
+    sass-embedded (1.57.1-x86_64-linux-gnu)
+      google-protobuf (~> 3.21)
     standard (1.16.1)
       rubocop (= 1.35.1)
       rubocop-performance (= 1.14.3)
@@ -183,6 +185,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   jekyll
@@ -207,7 +210,7 @@ DEPENDENCIES
   webrick
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.2.0p0
 
 BUNDLED WITH
-   2.3.24
+   2.4.2
