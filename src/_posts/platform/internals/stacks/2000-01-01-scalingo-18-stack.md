@@ -1,7 +1,7 @@
 ---
 title: Scalingo-18 Stack
 nav: Scalingo-18
-modified_at: 2022-03-01 00:00:00
+modified_at: 2023-01-04 00:00:00
 index: 3
 ---
 
@@ -10,6 +10,8 @@ This article describes the scalingo-18 stack, based on Ubuntu 18.04. [What is a 
 ## Support Period
 
 scalingo-18 is based on Ubuntu 18.04. It will be supported through April 2023.
+
+It is deprecated since January 2023, you cannot set it anymore on any application.
 
 ## Testing and Upgrading Your App
 
