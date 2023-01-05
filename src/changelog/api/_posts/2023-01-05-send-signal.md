@@ -1,6 +1,6 @@
 ---
-modified_at: 2021-09-08 10:00:00
-title: "Add an endpoint to get cron tasks of an app"
+modified_at: 2023-01-05 15:00:00
+title: "Add an endpoint to send signal to a container"
 ---
 
 A new endpoint has been added to the API:
