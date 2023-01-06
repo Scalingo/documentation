@@ -150,6 +150,9 @@ samples:
   - url: ruby-sinatra
     name: Ruby/Sinatra
     logo: sinatra
+  - url: go-gin
+    name: Go/Gin
+    logo: go
   - url: go-martini
     name: Go/Martini
     logo: go
