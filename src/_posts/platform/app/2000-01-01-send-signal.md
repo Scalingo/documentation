@@ -33,7 +33,7 @@ To send a signal to an application, multiple possibilities are available:
 
 - The CLI provides a `send-signal` command.
 
-```bash
+```sh
 $ scalingo -a my-app ps
 +-------+---------+-------------+------+---------------------+
 | NAME  | STATUS  |   COMMAND   | SIZE |     CREATED AT      |
@@ -46,7 +46,7 @@ $ scalingo -a my-app send-signal --signal SIGUSR1 web-1
 -----> Sent signal 'SIGUSR1' to 'web-1' container.
 ```
 
-- The CLI is a shortcut to send a signal via the API endpoint. More information about the API endpoint [here](https://developers.scalingo.com/apps#send-signal-to-a-container).
+- An API endpoint is available to send a signal. More information about the endpoint [here](https://developers.scalingo.com/apps#send-signal-to-a-container).
 
 ## Who catch the signal ?
 {% warning %}
@@ -56,4 +56,4 @@ $ scalingo -a my-app send-signal --signal SIGUSR1 web-1
 
 For example, on a Node.js application, the default command run by Scalingo is `npm start` that runs a predefined command specified in the "start" property of a package's "scripts" object.  
 If we send a signal to our application, the first process that will catch the signal is `npm start` that will not forward the signal to the desired process.  
-You can find a Nods.js sample using this new feature [here](https://github.com/Scalingo/sample-node-express).
+You can find a Nods.js sample using this new feature and solving this common issue via the `Procfile` [here](https://github.com/Scalingo/sample-node-express).
