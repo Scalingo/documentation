@@ -58,4 +58,4 @@ $ scalingo -a my-app send-signal --signal SIGUSR1 web-1
 
 For example, on a Node.js application, the default command run by Scalingo is `npm start` that runs a predefined command specified in the "start" property of a package's "scripts" object.  
 If we send a signal to our application, the first process that will catch the signal is `npm start` that will not forward the signal to the desired process.  
-You can find a Nods.js sample [here](https://github.com/Scalingo/sample-node-express) that can be deployed in one click.
+You can find a Nods.js sample using this new feature [here](https://github.com/Scalingo/sample-node-express).
