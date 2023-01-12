@@ -2,7 +2,7 @@
 title: Send a signal to a container
 nav: Send Signal
 modified_at: 2023-01-12 00:00:00
-tags: app jobs signal
+tags: app signal
 ---
 
 ## Introduction
@@ -50,9 +50,9 @@ $ scalingo -a my-app send-signal --signal SIGUSR1 web-1
 
 - The CLI is a shortcut to send a signal via the API endpoint. More information about the API endpoint [here](https://developers.scalingo.com/apps#send-signal-to-a-container).
 
-## Common issue
+## Who catch the signal ?
 {% warning %}
-  When transmitted to the container, the signal will be transmitted to the first process that started your application, also called the entry point.  
+  When transmitted to the container, the signal is transmitted to the first process that started your application, also called the entry point.  
   Commonly, this entry point can be defined in the [Procfile](https://doc.scalingo.com/platform/getting-started/heroku-compatibility#procfile), so be careful on which process will catch the signal first.
 {% endwarning %}
 
