@@ -17,7 +17,7 @@ On the Scalingo platform, sending signals is a useful way to trigger events whil
 
 ## General purpose of the feature
 
-As said before, implementing a signal handler can be a easy and powerful way to debug applications.
+As said before, implementing a signal handler can be an easy and powerful way to debug applications.
 
 At Scalingo we often use signals handler to:
 
@@ -48,12 +48,12 @@ $ scalingo -a my-app send-signal --signal SIGUSR1 web-1
 
 - An API endpoint is available to send a signal. More information about the endpoint [here](https://developers.scalingo.com/apps#send-signal-to-a-container).
 
-## Who catch the signal ?
+## Who catches the signal ?
 {% warning %}
   When transmitted to the container, the signal is transmitted to the first process that started your application, also called the entry point.  
   Commonly, this entry point can be defined in the [Procfile](https://doc.scalingo.com/platform/getting-started/heroku-compatibility#procfile), so be careful on which process will catch the signal first.
 {% endwarning %}
 
-For example, on a Node.js application, the default command run by Scalingo is `npm start` that runs a predefined command specified in the "start" property of a package's "scripts" object.  
-If we send a signal to our application, the first process that will catch the signal is `npm start` that will not forward the signal to the desired process.  
-You can find a Nods.js sample using this new feature and solving this common issue via the `Procfile` [here](https://github.com/Scalingo/sample-node-express).
+For example, on a Node.js application, the default command run by Scalingo is `npm start`, it runs a predefined command specified in the "start" property of a package's "scripts" object (usually named package.json).  
+If we send a signal to our application, the first process that will catch the signal is `npm start` which does not forward the signal to the desired process.  
+You can find a Node.js sample using this new feature and solving this common issue via the `Procfile` [here](https://github.com/Scalingo/sample-node-express).
