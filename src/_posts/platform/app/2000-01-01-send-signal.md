@@ -48,10 +48,10 @@ $ scalingo --app my-app send-signal --signal SIGUSR1 web-1
 
 ## Which process catches the signal ?
 
-When transmitted to the container, the signal is transmitted to the first process that started your application, also called the entry point.  
-Commonly, this entry point can be defined in the [Procfile](https://doc.scalingo.com/platform/getting-started/heroku-compatibility#procfile), so be careful on which process will catch the signal first.
+When transmitted to the container, the signal is forwarded to the first process that started your application, also called the entry point. This entry point can be defined in the [Procfile](https://doc.scalingo.com/platform/getting-started/heroku-compatibility#procfile).  
 
+### Example of a Node.js Express application
 
-For example, on a Node.js application, the default command run by Scalingo is `npm start`, it runs a predefined command specified in the "start" property of a package's "scripts" object (usually named package.json).  
+For example, the default command run by Scalingo for a Node.js application is `npm start`. It runs a command specified in the `.scripts.start` field of the `package.json`.  
 If we send a signal to our application, the first process that will catch the signal is `npm start` which does not forward the signal to the desired process.  
 You can find a Node.js sample using this new feature and solving this common issue via the `Procfile` [here](https://github.com/Scalingo/sample-node-express).
