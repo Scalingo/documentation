@@ -1,5 +1,5 @@
 ---
-title: Send a signal to a container
+title: Send a Signal to a Container
 nav: Send Signal
 modified_at: 2023-01-12 00:00:00
 tags: app signal
