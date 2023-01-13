@@ -23,7 +23,7 @@ At Scalingo we often use signals handler to:
 - Dump all stack traces
 - Print the number of Goroutines
 - Print the memory consumption
-- etc…
+- …
 
 ## How to send a signal to an application ?
 
