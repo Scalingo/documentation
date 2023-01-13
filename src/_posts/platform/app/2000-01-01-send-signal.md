@@ -17,7 +17,6 @@ On the Scalingo platform, sending signals is a useful way to trigger events whil
 
 ## General purpose of the feature
 
-As said before, implementing a signal handler can be an easy and powerful way to debug applications.
 
 At Scalingo we often use signals handler to:
 
