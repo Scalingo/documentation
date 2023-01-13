@@ -12,7 +12,7 @@ Signals are standardized messages sent to a running program to trigger specific 
 On the Scalingo platform, sending signals is a useful way to trigger events while being the owner or collaborator of an application. This can be particularly useful for debugging purposes.
 
 {% note %}
-  The platform handles only `SIGUSR1` and `SIGUSR2`.
+  The platform only handles `SIGUSR1` and `SIGUSR2`.
 {% endnote %}
 
 ## General purpose of the feature
