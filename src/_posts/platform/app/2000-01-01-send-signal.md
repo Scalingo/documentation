@@ -17,7 +17,6 @@ On the Scalingo platform, sending signals is a useful way to trigger events whil
 
 ## General purpose of the feature
 
-
 At Scalingo we often use signals handler to:
 
 - Dump heap allocations
