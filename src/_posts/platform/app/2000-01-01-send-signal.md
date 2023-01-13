@@ -32,7 +32,7 @@ To send a signal to an application, multiple possibilities are available:
 - The CLI provides a `send-signal` command.
 
 ```sh
-$ scalingo -a my-app ps
+$ scalingo --app my-app ps
 +-------+---------+-------------+------+---------------------+
 | NAME  | STATUS  |   COMMAND   | SIZE |     CREATED AT      |
 +-------+---------+-------------+------+---------------------+
@@ -40,13 +40,13 @@ $ scalingo -a my-app ps
 | web-2 | running | sample-test | M    | 2023/01/05 09:24:33 |
 +-------+---------+-------------+------+---------------------+
 
-$ scalingo -a my-app send-signal --signal SIGUSR1 web-1
+$ scalingo --app my-app send-signal --signal SIGUSR1 web-1
 -----> Sent signal 'SIGUSR1' to 'web-1' container.
 ```
 
 - An API endpoint is available to send a signal. More information about the endpoint [here](https://developers.scalingo.com/apps#send-signal-to-a-container).
 
-## Who catches the signal ?
+## Which process catches the signal ?
 {% warning %}
   When transmitted to the container, the signal is transmitted to the first process that started your application, also called the entry point.  
   Commonly, this entry point can be defined in the [Procfile](https://doc.scalingo.com/platform/getting-started/heroku-compatibility#procfile), so be careful on which process will catch the signal first.
