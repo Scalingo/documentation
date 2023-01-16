@@ -52,5 +52,5 @@ When transmitted to the container, the signal is forwarded to the first process 
 ### Example of a Node.js Express application
 
 The default command run by Scalingo for a Node.js application is `npm start`. It runs a command specified in the `.scripts.start` field of the `package.json`.  
-When a signal is sent to the application, `npm start` is the first process to catch it. It does not forward the signal to the child process started with the `.scripts.start` field.  
+When a signal is sent to the application, `npm` is the first process to catch it. `npm` does not forward the signal to the child process started with the `.scripts.start` field.  
 A Node.js sample resolving this issue via the `Procfile` can be found [here](https://github.com/Scalingo/sample-node-express).
