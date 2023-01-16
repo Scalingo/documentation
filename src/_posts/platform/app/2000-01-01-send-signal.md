@@ -25,7 +25,7 @@ At Scalingo we often use signals handler to:
 - Print the memory consumption
 - …
 
-## How to send a signal to an application ?
+## How to send a signal to an application?
 
 To send a signal to an application, multiple possibilities are available:
 
@@ -42,13 +42,15 @@ $ scalingo --app my-app ps
 
 $ scalingo --app my-app send-signal --signal SIGUSR1 web-1
 -----> Sent signal 'SIGUSR1' to 'web-1' container.
+```
+An API endpoint is available to send a signal. More information about the endpoint [here](https://developers.scalingo.com/apps#send-signal-to-a-container).
 
-## Which process catches the signal ?
+## Which process catches the signal?
 
 When transmitted to the container, the signal is forwarded to the first process that started your application, also called the entry point. This entry point can be defined in the [Procfile](https://doc.scalingo.com/platform/getting-started/heroku-compatibility#procfile).  
 
 ### Example of a Node.js Express application
 
 The default command run by Scalingo for a Node.js application is `npm start`. It runs a command specified in the `.scripts.start` field of the `package.json`.  
-If we send a signal to our application, the first process which catches the signal is `npm start`. It does not forward the signal to the desired process.  
+When a signal is sent to the application, `npm start` is the first process to catch it. It does not forward the signal to the process started with the `.scripts.start` field.
 You can find a Node.js sample using this new feature and solving this common issue via the `Procfile` [here](https://github.com/Scalingo/sample-node-express).
