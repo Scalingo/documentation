@@ -29,7 +29,7 @@ At Scalingo we often use signals handler to:
 
 To send a signal to an application, multiple possibilities are available:
 
-- The CLI provides a `send-signal` command.
+The CLI provides a `send-signal` command.
 
 ```sh
 $ scalingo --app my-app ps
@@ -42,9 +42,6 @@ $ scalingo --app my-app ps
 
 $ scalingo --app my-app send-signal --signal SIGUSR1 web-1
 -----> Sent signal 'SIGUSR1' to 'web-1' container.
-```
-
-- An API endpoint is available to send a signal. More information about the endpoint [here](https://developers.scalingo.com/apps#send-signal-to-a-container).
 
 ## Which process catches the signal ?
 
