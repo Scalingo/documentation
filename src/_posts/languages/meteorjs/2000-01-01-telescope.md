@@ -37,7 +37,7 @@ The Meteor framework uses extensively MongoDB as a database. Hence you need to
 provision a new instance of this database to your application.
 
 ```bash
-$ scalingo -a my-app addons-add mongodb mongo-sandbox
+$ scalingo --app my-app addons-add mongodb mongo-sandbox
 -----> Addon mongodb has been provisionned
        ID: my-app-1234
        Modified variables: [MONGO_URL SCALINGO_MONGO_URL]

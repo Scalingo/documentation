@@ -79,13 +79,13 @@ The current web dashboard does not handle well the configuration of an environme
 A first solution is to define this environment variable using our [CLI]({% post_url platform/cli/2000-01-01-start %}). For instance, if the content of the environment variable is the content of a file:
 
 ```bash
-scalingo -a my-app env-set "MY_VAR=$(cat fichier.key)"
+scalingo --app my-app env-set "MY_VAR=$(cat fichier.key)"
 ```
 
 The con of this solution is that the web dashboard becomes unusable to edit environment variables because of this multi-lines variable. If you want to still be able to use the web dashboard to manage your environment variable, the solution is to encode your multi-lines environment variable in Base64, then decode it in your application. First, set the environment variable in Base64:
 
 ```bash
-scalingo -a my-app env-set "MY_VAR=$(cat fichier | base64 -w 0)"
+scalingo --app my-app env-set "MY_VAR=$(cat fichier | base64 -w 0)"
 ```
 
 You can now read the content of this environment variable in your application by decoding the content of the variable. For instance, in PHP:

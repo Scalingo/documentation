@@ -79,5 +79,5 @@ https://github.com/<Your account>/<Your project>/archive/refs/heads/master.tar.g
 To deploy it, you simply have to run this command
 
 ```
-scalingo -a  my-app deploy https://github.com/<Your account>/<Your project>/archive/refs/heads/master.tar.gz
+scalingo --app my-app deploy https://github.com/<Your account>/<Your project>/archive/refs/heads/master.tar.gz
 ```
