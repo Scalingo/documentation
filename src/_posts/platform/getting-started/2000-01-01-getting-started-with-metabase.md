@@ -49,5 +49,5 @@ To update your Metabase application to the latest version, you need to redeploy 
 Via this command for example:
 
 ```
-scalingo --app  my-app deploy https://github.com/Scalingo/metabase-scalingo/archive/refs/heads/master.tar.gz
+scalingo --app my-app deploy https://github.com/Scalingo/metabase-scalingo/archive/refs/heads/master.tar.gz
 ```
