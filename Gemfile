@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-ruby "3.1.2"
+ruby "3.1.3"
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -13,6 +13,8 @@ ruby "3.1.2"
 gem "jekyll"
 gem "webrick"
 gem "liquid-c"
+gem "liquid", "4.0.3"
+gem "jekyll-sass-converter", "< 3.0"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem 'minima', '~> 2.0'
 
