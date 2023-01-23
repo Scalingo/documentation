@@ -1,4 +1,4 @@
-FROM ruby:3.1.2
+FROM ruby:3.1.3
 
 RUN apt-get update
 RUN apt-get install apt-transport-https
@@ -30,7 +30,7 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
   dpkg-reconfigure --frontend=noninteractive locales && \
   update-locale LANG=en_US.UTF-8
 
-RUN gem install bundler -v '2.3.24'
+RUN gem install bundler -v '2.4.5'
 
 ENV LANG en_US.UTF-8
 
