@@ -142,3 +142,8 @@ Of course, it works in the same way as the parent app.
 ### Where can we see logs of the tasks executed?
 
 Tasks logs are included in the [application logs]({% post_url platform/app/2000-01-01-logs %}) next to other containers logs.
+
+### How many Scheduled tasks can I create ?
+
+For an application, you can create up to 5 scheduled tasks. For an increased limit, contact the support 
+on the embedded chat or at [support@scalingo.com](mailto:support@scalingo.com).
