@@ -1,7 +1,7 @@
 ---
 title: Scalingo Scheduler - Run Scheduled Tasks
 nav: Scalingo Scheduler
-modified_at: 2022-10-24 10:00:00
+modified_at: 2023-01-27 14:19:00
 tags: task-scheduling
 index: 1
 ---
@@ -145,5 +145,5 @@ Tasks logs are included in the [application logs]({% post_url platform/app/2000-
 
 ### How many Scheduled tasks can I create ?
 
-For an application, you can create up to 5 scheduled tasks. For an increased limit, contact the support 
-on the embedded chat or at [support@scalingo.com](mailto:support@scalingo.com).
+For an application, you can create up to 5 scheduled tasks. If you need more scheduled tasks, contact the support on 
+the embedded chat or at [support@scalingo.com](mailto:support@scalingo.com) to increase this limit.
