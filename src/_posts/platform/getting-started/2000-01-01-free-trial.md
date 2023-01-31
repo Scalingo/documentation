@@ -47,7 +47,7 @@ application. Consequently, you won't be able to:
 - run scheduled tasks (cron jobs).
 
 These restrictions don't apply on applications for which you are a collaborator
-(as long as these applications are owned by a paying customer).
+as long as these applications are owned by a paying customer.
 
 As soon as you enter payment details, the restrictions will be lifted, you
 will be able to scale your application back up and resume its addons. These
