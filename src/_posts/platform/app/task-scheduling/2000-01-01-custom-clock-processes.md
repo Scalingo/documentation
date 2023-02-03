@@ -1,55 +1,114 @@
 ---
 title: Scheduled Jobs with Custom Clock Processes
 nav: Custom Clock Processes
-modified_at: 2021-10-19 10:00:00
+modified_at: 2023-02-01 17:00:00
 tags: task-scheduling
 index: 2
 ---
 
-With custom clock processes, you have the ability to specify custom schedule. You will also have other benefits like
-environment parity between development and production, or time precision in your task scheduling.
+Scalingo provides a feature called *Custom Clock Processes* to help you run
+tasks on a regular basis. Unlike jobs setup through the [Scalingo Scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler.md %}),
+custom clock processes do not suffer from many limitations.
 
-## Definition of the Custom Clock Process
+## About Custom Clock Processes
 
-The implementation of the custom clock will vary depending on the used language. However, defining the clock process is standard and is done in the `Procfile`.
+Custom clock processes allow to define tasks so that they run periodically.
+They give you full control over the schedule, periodicity and conditions on
+which the jobs are launched, making them a powerful alternative to the Scalingo
+Scheduler.
 
-### Example
+A custom clock process is basically a background process running indefinitely
+in a container and waking up at specified interval(s) to launch some job(s).
+This background process is responsible for controlling what job(s) must be
+launched and when. It really acts as a job scheduler.
 
-Here is an example of the process definition using the Ruby library `clockwork`:
+It's usually written in the language of your choice. This means that your
+custom clock process can either share the same code base as your application's
+or a dedicated one.
+
+Custom clock processes also work with [Review Apps]({% post_url platform/app/2000-01-01-review-apps.md %}),
+just like the parent application does.
+
+### Limitations
+
+Custom clock processes have very few limitations:
+- For deployments: [deployment limits]({% post_url platform/deployment/2000-01-01-limits.md %})
+- For containers: [containers limits]({% post_url platform/internals/2001-01-01-container-sized.md#container-limits %})
+
+They **do not** have the limitations imposed by the Scalingo Scheduler.
+Consequently, they allow to:
+
+- Run (very) long process. The jobs you run in your custom clock process
+  container(s) don't have a limited lifespan.
+
+- Run as many scheduled jobs as you want.
+
+- Have full control over the schedule: if you want a task to repeat every
+  minute, you can.
+
+- Have a very precise schedule, if need be.
+
+### Costs
+
+The feature itself it completely free, but the containers in which the jobs are
+run are billed like any other containers.
+
+Consequently, billing of a custom clock process mainly depends on both the
+container size chosen to run your tasks and on the container(s) lifespan.
+
+For example, if you setup your custom clock process to run in a 2XL container,
+and you let it run for 3 days before scaling it down to zero, you will be
+billed 3 days of a 2XL container.
+
+## Working With Custom Clock Processes
+
+### Defining Custom Clock Processes
+
+Defining a custom clock process is done by adding a new **process type** in
+the [`Procfile`]({% post_url platform/app/2000-01-01-procfile.md %}) of your
+application.
+
+In the following examples, the name `clock` is used to designate our custom
+clock process type. But, except from `web` and `tcp`, which are reserved by the
+platform, you can chose whatever you want. `scheduler`, `cron`, `planner`,
+`timer`, `butler`, ... These are all valid names for your custom clock process
+type.
+
+The syntax is pretty straightforward:
 
 ```yaml
-web: bundle exec puma -C config/puma.rb
+clock: <command_to_start_your_job_scheduler>
+```
+
+### Implementing Custom Clock Processes
+
+The implementation of the custom clock process mainly depends on the language
+or framework you want to use. A lot of languages and frameworks provide this
+feature through dedicated libraries. Here are a few examples:
+
+#### Using Ruby
+
+The following gems may help you:
+- [clockwork](http://rubygems.org/gems/clockwork)
+- [resque-scheduler](https://rubygems.org/gems/resque-scheduler)
+- [sidekiq-scheduler](https://rubygems.org/gems/sidekiq-scheduler) (Sidekiq
+Enterprise has cron-like feature built-in)
+
+##### Example Using the `clockwork` Gem
+
+The following example leverages the `clockwork` gem to:
+- run `frequent.job`every 10 seconds,
+- run `less.frequent.job` every 3 minutes,
+- run `hourly.job` every hours,
+- run `midnight.job` every day at midnight.
+
+`Procfile`:
+
+```yaml
 clock: bundle exec clockwork clock.rb
 ```
 
-## Start the Task Scheduler
-
-Once your application has been deployed, scale your 'clock' to 1 to start the task
-scheduler:
-
-```bash
-$ scalingo --app my-app scale clock:1
-```
-
-## Implementation Examples
-
-### Ruby
-
-In Ruby you can use [clockwork](http://rubygems.org/gems/clockwork),
-[resque-scheduler](https://rubygems.org/gems/resque-scheduler) or
-[sidekiq-scheduler](https://rubygems.org/gems/sidekiq-scheduler) (Sidekiq
-Enterprise has cron-like feature built-in) for example.
-
-#### Example With the Clockwork Gem
-
-Initialization is done in the file `clock.rb` and a new kind of container must be defined in the
-`Procfile` of the project, the container type `clock`:
-
-```yaml
-clock: bundle exec clockwork clock.rb
-```
-
-The file which implements the cron-like process is defined in `clock.rb`:
+`clock.rb`:
 
 ```ruby
 require 'clockwork'
@@ -73,31 +132,32 @@ module Clockwork
 end
 ```
 
-For more information about using `clockwork`, please refer to the [official clockwork page](https://github.com/Rykian/clockwork).
+#### Using PHP
 
-### PHP
+The following packages may help you:
+- [cron/cron](https://github.com/cron/cron) (generic)
+- [the Laravel scheduler]({% post_url languages/php/2000-01-01-laravel %}#laravel-tasks-scheduler)
+  (Laravel)
+- [liebig/cron](https://packagist.org/packages/liebig/cron) (Laravel)
+- [heartsentwined/zf2-cron](https://packagist.org/packages/heartsentwined/zf2-cron)
+  (Zend Framework 2)
+- [daycry/cronjob](https://github.com/daycry/cronjob) (CodeIgniter)
 
-With PHP, you can use the package [cron/cron](https://github.com/Cron/Cron),
-otherwise each framework has its own task scheduler. You may want to use:
+##### Example Using the `cron/cron` Package
 
-* [Laravel scheduler]({% post_url languages/php/2000-01-01-laravel %}#laravel-tasks-scheduler)
-* [cron/cron](https://packagist.org/packages/cron/cron)
-* [liebig/cron](https://packagist.org/packages/liebig/cron)
-* [heartsentwined/zf2-cron](https://packagist.org/packages/heartsentwined/zf2-cron)
+The code is available in our [sample-php-cron](https://github.com/Scalingo/sample-php-cron)
+repository.
 
-#### Example
+This example leverages the `cron/cron` package to launch a job defined in the
+`inc.php` file every 2 minutes.
 
-A complete example project can be found [here](https://github.com/Scalingo/sample-php-cron).
-
-It uses the package `cron/cron` to implement the tasks scheduler.
-Its initialization is done in the file `cron.php` and a new kind of container is defined in the
-`Procfile` of the project, the container type `clock`:
+`Procfile`:
 
 ```yaml
 clock: php cron.php
 ```
 
-The file which implements the cron-like process is defined in `cron.php`:
+`cron.php`:
 
 ```php
 <?php
@@ -117,6 +177,7 @@ The file which implements the cron-like process is defined in `cron.php`:
     $cron = new \Cron\Cron();
     $cron->setExecutor(new \Cron\Executor\Executor());
     $cron->setResolver($resolver);
+
     return $cron;
   }
 
@@ -127,37 +188,46 @@ The file which implements the cron-like process is defined in `cron.php`:
   while(true) {
     echo "[CRON] Running tasks\n";
     $report = $cron->run();
+
     while ($cron->isRunning()) { }
 
     echo "[CRON] " . count($report->getReports()) . " tasks have been executed\n";
+
     foreach($report->getReports() as $job_report) {
       $output = $job_report->getOutput();
       foreach($output as $line) {
         echo "[CRON] " . $line;
-      }
     }
+
     sleep(60);
   }
 ?>
 ```
 
-### Node.js
+#### Using Node.js
 
-In Node.js you can use different package such as [node-cron](https://www.npmjs.com/package/cron)
-or [node-schedule](https://www.npmjs.com/package/node-schedule).
+The following packages may help you:
+- [node-cron](https://www.npmjs.com/package/cron)
+- [node-schedule](https://www.npmjs.com/package/node-schedule)
 
-#### Example
+##### Example Using `node-cron` Package
 
-The following example uses the `node-cron` package.
+The code is available in our [sample-node-express](https://github.com/Scalingo/sample-node-express)
+repository.
 
-Its initialization is done in the file `cron.js` and a new kind of container must be defined in the
-`Procfile` of the project, the container type `clock`:
+This example leverages the `node-cron` package to:
+- run `job1` every 2 minutes
+- run `job2` every minute
+
+Both jobs just log a message.
+
+`Procfile`:
 
 ```yaml
 clock: node cron.js
 ```
 
-The file which implements the cron-like process is defined in `cron.js`:
+`cron.js`:
 
 ```js
 var cron = require('cron');
@@ -185,7 +255,30 @@ var job2 = new cron.CronJob({
 console.log('Started 2 cron jobs')
 ```
 
-With this example, the `job1` ticks every 2 minutes and the `job2` ticks every minute. Each job
-displays a message in the log of the application.
+### Enabling Custom Clock Processes
 
-The code is available in [sample-node-express](https://github.com/Scalingo/sample-node-express).
+Once your application has been successfully deployed, scale your custom clock
+process type to 1 to start your scheduler in its own dedicated container:
+
+```bash
+scalingo --app my-app scale clock:1
+```
+
+Moreover, since Scalingo expects a `web` process type to be defined (either by
+you in the `Procfile`, or automatically by a buildpack), there is most
+probably a `web` process type that would start with your application. **If you
+don't need it**, you can disable it by scaling the `web` process type to zero
+before or after your deployment:
+
+```bash
+scalingo --app my-app scale web:0
+```
+
+### Disabling Custom Clock Processes
+
+A custom clock process can be disabled anytime by scaling the corresponding
+process type to zero:
+
+```bash
+scalingo --app my-app scale clock:0
+```
