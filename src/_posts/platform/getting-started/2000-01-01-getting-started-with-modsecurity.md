@@ -29,7 +29,7 @@ As a note, ModSecurity is only deployable on `scalingo-20` and above.
 ## Deploying Nginx
 
 The very first steps consist of deploying an Nginx application on Scalingo. To
-do this, please [follow the dedicated tutorial]({% post_url platform/deployment/buildpacks/2000-01-01-nginx %}). 
+do this, please [follow the dedicated tutorial]({% post_url platform/deployment/buildpacks/2000-01-01-nginx %}).
 
 ## Enabling ModSecurity
 
