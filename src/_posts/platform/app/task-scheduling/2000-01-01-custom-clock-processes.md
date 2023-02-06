@@ -50,11 +50,15 @@ Consequently, they allow to:
 
 ### Costs
 
-The feature itself it completely free, but the containers in which the jobs are
-run are billed like any other containers.
+The feature itself it completely free, but the container in which the
+scheduler and the jobs are run is billed like any other container.
 
 Consequently, billing of a custom clock process mainly depends on both the
-container size chosen to run your tasks and on the container(s) lifespan.
+container size chosen to run your tasks and on the container lifespan.
+
+Your custom clock process is most probably to run 24/7, as opposed to the
+Scalingo Scheduler's one-off containers that are short-lived. A custom clock
+process can therefore be a bit more costly.
 
 For example, if you setup your custom clock process to run in a 2XL container,
 and you let it run for 3 days before scaling it down to zero, you will be
@@ -219,7 +223,7 @@ This example leverages the `node-cron` package to:
 - run `job1` every 2 minutes
 - run `job2` every minute
 
-Both jobs just log a message.
+Both jobs log a message.
 
 `Procfile`:
 
@@ -273,6 +277,9 @@ before or after your deployment:
 ```bash
 scalingo --app my-app scale web:0
 ```
+
+For more details about web-less applications, please refer to [our
+documentation]({% post_url platform/app/2000-01-01-web-less-app.md %}).
 
 ### Disabling Custom Clock Processes
 
