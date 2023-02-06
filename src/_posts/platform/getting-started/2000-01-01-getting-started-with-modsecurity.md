@@ -24,6 +24,8 @@ pattern and actions).
 For this first tutorial, we use Nginx and the CRS provided by OWASP to deploy a
 WAF on Scalingo within minutes.
 
+As a note, ModSecurity is only deployable on `scalingo-20` and above.
+
 ## Deploying Nginx
 
 The very first steps consist of deploying an Nginx application on Scalingo. To
