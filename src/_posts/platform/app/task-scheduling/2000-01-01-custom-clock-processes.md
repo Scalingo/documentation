@@ -73,10 +73,10 @@ the [`Procfile`]({% post_url platform/app/2000-01-01-procfile.md %}) of your
 application.
 
 In the following examples, the name `clock` is used to designate our custom
-clock process type. But, except from `web` and `tcp`, which are reserved by the
-platform, you can chose whatever you want. `scheduler`, `cron`, `planner`,
-`timer`, `butler`, ... These are all valid names for your custom clock process
-type.
+clock process type. But, except from `web`, `tcp` and `postdeploy`, which are
+reserved by the platform, you can chose whatever you want. `scheduler`, `cron`,
+`planner`, `timer`, `butler`, ... These are all valid names for your custom
+clock process type.
 
 The syntax is pretty straightforward:
 
