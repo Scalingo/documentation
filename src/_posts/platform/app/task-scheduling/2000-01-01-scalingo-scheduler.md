@@ -11,17 +11,19 @@ on a regular basis.
 
 ## About the Scalingo Scheduler
 
-As the name suggests, the Scalingo Scheduler allows to define tasks so that
-they run periodically at fixed times, dates, or intervals. It can be leveraged
-to do a variety of tasks such as sending a newsletter every morning, exporting
-data every hour, checking for new orders every 15 minutes, ...
+The Scalingo Scheduler allows to define tasks so that they run periodically at
+fixed times, dates, or intervals. It can be leveraged to do a variety of tasks
+such as sending a newsletter every morning, exporting data every hour, checking
+for new orders every 15 minutes, ...
 
-The Scalingo Scheduler launches tasks in [one-off containers]({% post_url platform/app/2000-01-01-tasks %})
-running in detached mode. Therefore, [the related one-off documentation]({% post_url platform/app/2000-01-01-tasks %})
+The Scalingo Scheduler launches tasks in one-off containers running in detached
+mode. Therefore, [the related one-off documentation]({% post_url platform/app/2000-01-01-tasks %})
 fully applies.
 
+
 The Scalingo Scheduler also works with [Review Apps]({% post_url platform/app/2000-01-01-review-apps %}),
-just like the parent application does.
+meaning that review apps have the same scheduled tasks as their parent
+application.
 
 ### Limitations
 
@@ -83,13 +85,13 @@ an M container.
 
 ### Enabling the Scalingo Scheduler
 
-The Scalingo Scheduler is enabled automatically as soon as a `cron.json` file
-is present at the root of your application.
+The Scalingo Scheduler is enabled automatically as soon as a valid `cron.json`
+file is present at the root of your application.
 
 ### Disabling the Scalingo Scheduler
 
-For now, it's not possible to disable scheduled tasks once a `cron.json` has
-been committed.
+For now, it's not possible to disable scheduled tasks without modifying or
+removing the `cron.json` file and triggering a new deployment thereafter.
 
 If you wish to control the execution of tasks differently between environment
 (for example, if you want to disable scheduled tasks for your staging apps or
@@ -109,9 +111,10 @@ below.
 Each job is configured as a JSON object with two keys:
 
 - `command`: contains both the cron expression and the command to execute:
-  - The cron expression follows the [crontab standard](https://en.wikipedia.org/wiki/Cron#CRON_expression).
+  - The cron expression follows the **[crontab standard](https://en.wikipedia.org/wiki/Cron#CRON_expression)**.
     You may find the website [crontab.guru](https://crontab.guru/#*/10_*_*_*_*)
-    useful to write your own cron expression.
+    useful to write your own cron expression. Note that we do not support the
+    non standard `@-ly` syntax.
   - The command is any command you can execute in a one-off container
     (i.e. with the command `scalingo --app my-app run <command>`).
 - `size`: specify the [size]({% post_url platform/internals/2000-01-01-container-sizes %})
