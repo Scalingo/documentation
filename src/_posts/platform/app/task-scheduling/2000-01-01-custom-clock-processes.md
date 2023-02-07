@@ -33,7 +33,7 @@ just like the parent application does.
 
 Custom clock processes have very few limitations:
 - For deployments: [deployment limits]({% post_url platform/deployment/2000-01-01-limits %})
-- For containers: [containers limits]({% post_url platform/internals/2001-01-01-container-sizes#container-limits %})
+- For containers: [containers limits]({% post_url platform/internals/2001-01-01-container-sizes %}#container-limits)
 
 They **do not** have the limitations imposed by the Scalingo Scheduler.
 Consequently, they allow to:
