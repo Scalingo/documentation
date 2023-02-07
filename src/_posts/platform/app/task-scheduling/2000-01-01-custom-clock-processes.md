@@ -6,13 +6,13 @@ tags: task-scheduling
 index: 2
 ---
 
-Scalingo provides a feature called *Custom Clock Processes* to help you run
-tasks on a regular basis. Unlike jobs setup through the [Scalingo Scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}),
-custom clock processes do not suffer from many limitations.
+Scalingo allows to define *Custom Clock Processes* to help you run tasks on a
+regular basis. Unlike jobs setup through the [Scalingo Scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}),
+custom clock processes do not suffer from the same limitations.
 
 ## About Custom Clock Processes
 
-Custom clock processes allow to define tasks so that they run periodically.
+Custom clock processes allow to setup tasks so that they run periodically.
 They give you full control over the schedule, periodicity and conditions on
 which the jobs are launched, making them a powerful alternative to the Scalingo
 Scheduler.
@@ -26,14 +26,11 @@ It's usually written in the language of your choice. This means that your
 custom clock process can either share the same code base as your application's
 or a dedicated one.
 
-Custom clock processes also work with [Review Apps]({% post_url platform/app/2000-01-01-review-apps %}),
-just like the parent application does.
-
 ### Limitations
 
 Custom clock processes have very few limitations:
 - For deployments: [deployment limits]({% post_url platform/deployment/2000-01-01-limits %})
-- For containers: [containers limits]({% post_url platform/internals/2001-01-01-container-sizes %}#container-limits)
+- For containers: [containers limits]({% post_url platform/internals/2000-01-01-container-sizes %}#container-limits)
 
 They **do not** have the limitations imposed by the Scalingo Scheduler.
 Consequently, they allow to:
@@ -50,11 +47,10 @@ Consequently, they allow to:
 
 ### Costs
 
-The feature itself it completely free, but the container in which the
-scheduler and the jobs are run is billed like any other container.
-
-Consequently, billing of a custom clock process mainly depends on both the
-container size chosen to run your tasks and on the container lifespan.
+The container in which the scheduler and the jobs are run is billed like any
+other container. Consequently, billing of a custom clock process mainly depends
+on both the container size chosen to run your tasks and on the container
+lifespan.
 
 Your custom clock process is most probably to run 24/7, as opposed to the
 Scalingo Scheduler's one-off containers that are short-lived. A custom clock
