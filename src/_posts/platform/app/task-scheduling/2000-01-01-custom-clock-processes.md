@@ -7,7 +7,7 @@ index: 2
 ---
 
 Scalingo provides a feature called *Custom Clock Processes* to help you run
-tasks on a regular basis. Unlike jobs setup through the [Scalingo Scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler.md %}),
+tasks on a regular basis. Unlike jobs setup through the [Scalingo Scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}),
 custom clock processes do not suffer from many limitations.
 
 ## About Custom Clock Processes
@@ -26,14 +26,14 @@ It's usually written in the language of your choice. This means that your
 custom clock process can either share the same code base as your application's
 or a dedicated one.
 
-Custom clock processes also work with [Review Apps]({% post_url platform/app/2000-01-01-review-apps.md %}),
+Custom clock processes also work with [Review Apps]({% post_url platform/app/2000-01-01-review-apps %}),
 just like the parent application does.
 
 ### Limitations
 
 Custom clock processes have very few limitations:
-- For deployments: [deployment limits]({% post_url platform/deployment/2000-01-01-limits.md %})
-- For containers: [containers limits]({% post_url platform/internals/2001-01-01-container-sized.md#container-limits %})
+- For deployments: [deployment limits]({% post_url platform/deployment/2000-01-01-limits %})
+- For containers: [containers limits]({% post_url platform/internals/2001-01-01-container-sizes#container-limits %})
 
 They **do not** have the limitations imposed by the Scalingo Scheduler.
 Consequently, they allow to:
@@ -69,7 +69,7 @@ billed 3 days of a 2XL container.
 ### Defining Custom Clock Processes
 
 Defining a custom clock process is done by adding a new **process type** in
-the [`Procfile`]({% post_url platform/app/2000-01-01-procfile.md %}) of your
+the [`Procfile`]({% post_url platform/app/2000-01-01-procfile %}) of your
 application.
 
 In the following examples, the name `clock` is used to designate our custom
@@ -279,7 +279,7 @@ scalingo --app my-app scale web:0
 ```
 
 For more details about web-less applications, please refer to [our
-documentation]({% post_url platform/app/2000-01-01-web-less-app.md %}).
+documentation]({% post_url platform/app/2000-01-01-web-less-app %}).
 
 ### Disabling Custom Clock Processes
 
