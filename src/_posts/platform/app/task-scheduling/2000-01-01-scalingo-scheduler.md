@@ -20,7 +20,6 @@ The Scalingo Scheduler launches tasks in one-off containers running in detached
 mode. Therefore, [the related one-off documentation]({% post_url platform/app/2000-01-01-tasks %})
 fully applies.
 
-
 The Scalingo Scheduler also works with [Review Apps]({% post_url platform/app/2000-01-01-review-apps %}),
 meaning that review apps have the same scheduled tasks as their parent
 application.
@@ -96,7 +95,7 @@ removing the `cron.json` file and triggering a new deployment thereafter.
 If you wish to control the execution of tasks differently between environment
 (for example, if you want to disable scheduled tasks for your staging apps or
 for your [review apps]({% post_url platform/app/2000-01-01-review-apps %})) we
-suggest to modify the task's code to [detect the environment]({% post_url platform/app/2000-01-01-environment.md#runtime-environment-variables %})
+suggest to modify the task's code to [detect the environment]({% post_url platform/app/2000-01-01-environment %}#runtime-environment-variables)
 where they are executed.
 
 ### Defining Tasks
