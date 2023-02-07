@@ -95,7 +95,7 @@ removing the `cron.json` file and triggering a new deployment thereafter.
 If you wish to control the execution of tasks differently between environment
 (for example, if you want to disable scheduled tasks for your staging apps or
 for your [review apps]({% post_url platform/app/2000-01-01-review-apps %})) we
-suggest to modify the task's code to [detect the environment]({% post_url platform/app/2000-01-01-environment#runtime-environment-variables %})
+suggest to modify the task's code to [detect the environment]({% post_url platform/app/2000-01-01-environment %}#runtime-environment-variables)
 where they are executed.
 
 ### Defining Tasks
