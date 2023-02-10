@@ -12,7 +12,7 @@ Aka *“Project Storky”*.
 
 ## Introduction
 
-Migrating an application from one region to another consists in 4 steps. The CLI will guide you through each of them, so it  important to carefully read the output of each executed commands as it provides useful information.
+Migrating an application from one region to another consists in 4 steps. The CLI will guide you through each of them, so it's important to carefully read the output of each executed commands as it provides useful information.
 
 **Each step is reversible, so if the migration process is not going smoothly, you can cancel it at any time.**
 
