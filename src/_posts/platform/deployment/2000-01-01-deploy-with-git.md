@@ -1,6 +1,6 @@
 ---
 title: Deploy with Git
-modified_at: 2022-09-02 00:00:00
+modified_at: 2023-02-13 00:00:00
 tags: git deployment
 index: 4
 ---
@@ -10,7 +10,7 @@ To deploy with Git you'll have to create a new application on Scalingo. A Git re
 ### How to Create an App
 
 ```bash
-# Create app with the CLI (or create one from the dashboard)
+# Create app with the CLI (or create one from the Dashboard):
 scalingo create my-app
 
 # Setup the Git remote:
@@ -82,7 +82,7 @@ platform/app/2000-01-01-procfile %}).
 
 Once a deployment has succeeded, you can recover the code you pushed to Scalingo using:
 
-```
+```bash
 git clone --origin scalingo git@ssh.osc-fr1.scalingo.com:my-app.git
 ```
 
@@ -90,10 +90,29 @@ This will create a copy of the Git history hosted in Scalingo repositories.
 It will also add the `scalingo` remote to simplify future pushes.
 
 {% note %}
-  Only Git operations will be available via `git clone`. If you deployed your app
-  in any other way (GitLab / GitHub integration, archive, ...) the changes made
-  to your code won't be available.
+  Only Git operations will be available via `git clone`.
+  If you deployed your app in any other way (GitLab / GitHub integration, archive, ...)
+  the changes made to your code won't be available.
 {% endnote %}
+
+#### Known Issue with Master Branch
+
+If you have the following message when doing a `git clone`:
+```
+warning: remote HEAD refers to nonexistent ref, unable to checkout.
+```
+
+It means that you're using the `master` branch. Since the default branch is now
+`main`, `git` doesn't know that you're using `master` branch instead of `main`.
+
+You need to manually checkout to the right branch inside the Git repository with:
+`git checkout master` to retrive the content of the repository.
+
+Or if you want to avoid this error when doing the `git clone` command you can
+add `--branch master` argument, like this:
+```bash
+git clone --branch master git@ssh.osc-fr1.scalingo.com:my-app.git
+```
 
 ### Shallow Error
 
@@ -125,7 +144,7 @@ git push scalingo master
 Some CI offers you the possibility to disable shallow repository by disabling
 the parameter `depth` from configuration file.
 
-- with travis:
+- with Travis:
 
   ```yml
   # .travis.yml
