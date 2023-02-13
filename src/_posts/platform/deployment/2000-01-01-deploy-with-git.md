@@ -106,7 +106,7 @@ It means that you're using the `master` branch. Since the default branch is now
 `main`, `git` doesn't know that you're using `master` branch instead of `main`.
 
 You need to manually checkout to the right branch inside the Git repository with:
-`git checkout master` to retrive the content of the repository.
+`git checkout master` to retrieve the content of the repository.
 
 Or if you want to avoid this error when doing the `git clone` command you can
 add `--branch master` argument, like this:
