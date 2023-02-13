@@ -165,3 +165,7 @@ If the problem persists, you must surely run the following Git command once:
 ```bash
 git fetch origin master --unshallow
 ```
+
+### SSH Endpoints
+
+{% include ssh_endpoints.md %}
