@@ -1,6 +1,6 @@
 ---
 title: Deploy your Spring Boot application
-modified_at: 2015-08-26 00:00:00
+modified_at: 2023-02-14 00:00:00
 tags: war java spring spring-boot
 ---
 
@@ -8,7 +8,7 @@ tags: war java spring spring-boot
   Takes an opinionated view of building production-ready Spring applications.
   Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.
   <br/>
-  [Sprint Boot official website](http://projects.spring.io/spring-boot/)
+  [Sprint Boot official website](https://spring.io/projects/spring-boot)
 {% endnote %}
 
 Scalingo supports Spring Boot as well as any other Java framework deployable
@@ -22,7 +22,7 @@ page describes how to achieve both.
 
 Your Spring Boot application can be packaged as a `jar` or as a `war` ([see the
 Spring documentation
-here](http://docs.spring.io/spring-boot/docs/current/reference/html/howto-traditional-deployment.html)).
+here](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.traditional-deployment)).
 
 The way you choose to package your application changes the way you deploy on
 Scalingo.
@@ -38,7 +38,7 @@ web: java $JAVA_OPTS -jar target/*.jar --spring.profiles.active=YOUR_PROD_PROFIL
 ```
 
 _Don't forget to specify the production profile (if you use [Spring
-profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html))
+profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.profiles))
 as a parameter._
 
 That's it, commit your `Procfile` and your app will deploy in the blink of
@@ -117,7 +117,7 @@ public class ApplicationWebXml extends SpringBootServletInitializer {
 
 Specify the good port to listen to in your Spring Boot application
 [configuration
-file](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html).
+file](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config).
 
 ```text
 server:
@@ -135,7 +135,7 @@ web: java $JAVA_OPTS -Dspring.profiles.active=YOUR_PROD_PROFILE -jar target/depe
 ```
 
 _Don't forget to specify the production profile (if you use [Spring
-profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html))
+profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.profiles))
 as a parameter._
 
 That's it, commit your `pom.xml` and your `Procfile` and your app will
