@@ -53,17 +53,19 @@ environment, and a Node JS environment to serve the files, as seen before.
 
 As Scalingo provides [Multi Buildpack](https://doc.scalingo.com/platform/deployment/buildpacks/multi) support, you can 
 combine the two environments needed to build your website. To achieve this, you can add a `.buildpacks` file at the root
-of your project, containing our Ruby Buildpack, and our NodeJS Buildpack:
+of your project, containing the Ruby Buildpack, and the NodeJS Buildpack:
 
 ```
 https://github.com/Scalingo/ruby-buildpack
 https://github.com/Scalingo/nodejs-buildpack
 ```
 
-> The NodeJS Buildpack being used for running our website, it must come last ! 
+{% note %}
+  The NodeJS Buildpack being used for running our website, it must come last !
+{% endnote %}
  
 The procedure is very similar to what we did before. But we will add a build task to our `package.json` file, 
-which will build our Jekyll website, like this:
+which will build your Jekyll website, like this:
 
 ```json
 {
@@ -95,4 +97,3 @@ app.listen(port, function () {
 ```
 
 And your app is now ready to go!
-
