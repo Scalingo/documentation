@@ -27,11 +27,28 @@ here](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#
 The way you choose to package your application changes the way you deploy on
 Scalingo.
 
+### Listen on ${PORT}
+
+For both WAR and JAR deployments, you need to specify the good port to listen to in your Spring Boot application
+[configuration
+file](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config).
+
+```text
+server:
+    port: ${PORT}
+```
+
 ## As a JAR
 
-This way doesn't need extra stuff to work with Scalingo. You have to
-create a `Procfile` file at the root of your project: [more documentation about
-Procfile]({% post_url platform/app/2000-01-01-procfile %})
+Deploying a JAR file does not require any extra stuff to work with Scalingo.
+
+### Define your Procfile
+
+One still need to describe in a `Procfile` how the application should be started. Add a [`Procfile`]({% post_url platform/app/2000-01-01-procfile %}) file at the root of your project:
+
+To define how to start your application, you need to create a `Procfile` file
+at the root of your project. [More documentation about Procfile]({% post_url
+platform/app/2000-01-01-procfile %}).
 
 ```yaml
 web: java $JAVA_OPTS -jar target/*.jar --spring.profiles.active=YOUR_PROD_PROFILE
@@ -41,8 +58,7 @@ _Don't forget to specify the production profile (if you use [Spring
 profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.profiles))
 as a parameter._
 
-That's it, commit your `Procfile` and your app will deploy in the blink of
-an eye.
+Commit your `Procfile` and push your modifications to deploy your application.
 
 ## As a WAR
 
@@ -113,22 +129,11 @@ public class ApplicationWebXml extends SpringBootServletInitializer {
 </build>
 ```
 
-### Listen on ${PORT}
-
-Specify the good port to listen to in your Spring Boot application
-[configuration
-file](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config).
-
-```text
-server:
-    port: ${PORT}
-```
-
 ### Define your Procfile
 
 To define how to start your application, you need to create a `Procfile` file
-at the root of your project: [more documentation about Procfile]({% post_url
-platform/app/2000-01-01-procfile %})
+at the root of your project. [More documentation about Procfile]({% post_url
+platform/app/2000-01-01-procfile %}).
 
 ```yaml
 web: java $JAVA_OPTS -Dspring.profiles.active=YOUR_PROD_PROFILE -jar target/dependency/webapp-runner.jar --port $PORT --expand-war target/*.war
@@ -138,5 +143,4 @@ _Don't forget to specify the production profile (if you use [Spring
 profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.profiles))
 as a parameter._
 
-That's it, commit your `pom.xml` and your `Procfile` and your app will
-deploy in the blink of an eye.
+Commit your `pom.xml` and your `Procfile`, and push the modifications to deploy your application.
