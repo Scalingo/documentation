@@ -1,6 +1,6 @@
 ---
 title: Deploy your Spring Boot application
-modified_at: 2015-08-26 00:00:00
+modified_at: 2023-02-14 00:00:00
 tags: war java spring spring-boot
 ---
 
@@ -8,7 +8,7 @@ tags: war java spring spring-boot
   Takes an opinionated view of building production-ready Spring applications.
   Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.
   <br/>
-  [Sprint Boot official website](http://projects.spring.io/spring-boot/)
+  [Sprint Boot official website](https://spring.io/projects/spring-boot)
 {% endnote %}
 
 Scalingo supports Spring Boot as well as any other Java framework deployable
@@ -22,27 +22,43 @@ page describes how to achieve both.
 
 Your Spring Boot application can be packaged as a `jar` or as a `war` ([see the
 Spring documentation
-here](http://docs.spring.io/spring-boot/docs/current/reference/html/howto-traditional-deployment.html)).
+here](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.traditional-deployment)).
 
 The way you choose to package your application changes the way you deploy on
 Scalingo.
 
+### Listen on ${PORT}
+
+For both WAR and JAR deployments, you need to specify the good port to listen to in your Spring Boot application
+[configuration
+file](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config).
+
+```text
+server:
+    port: ${PORT}
+```
+
 ## As a JAR
 
-This way doesn't need extra stuff to work with Scalingo. You have to
-create a `Procfile` file at the root of your project: [more documentation about
-Procfile]({% post_url platform/app/2000-01-01-procfile %})
+Deploying a JAR file does not require any extra stuff to work with Scalingo.
+
+### Define your Procfile
+
+One still need to describe in a `Procfile` how the application should be started. Add a [`Procfile`]({% post_url platform/app/2000-01-01-procfile %}) file at the root of your project:
+
+To define how to start your application, you need to create a `Procfile` file
+at the root of your project. [More documentation about Procfile]({% post_url
+platform/app/2000-01-01-procfile %}).
 
 ```yaml
 web: java $JAVA_OPTS -jar target/*.jar --spring.profiles.active=YOUR_PROD_PROFILE
 ```
 
 _Don't forget to specify the production profile (if you use [Spring
-profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html))
+profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.profiles))
 as a parameter._
 
-That's it, commit your `Procfile` and your app will deploy in the blink of
-an eye.
+Commit your `Procfile` and push your modifications to deploy your application.
 
 ## As a WAR
 
@@ -113,30 +129,18 @@ public class ApplicationWebXml extends SpringBootServletInitializer {
 </build>
 ```
 
-### Listen on ${PORT}
-
-Specify the good port to listen to in your Spring Boot application
-[configuration
-file](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html).
-
-```text
-server:
-    port: ${PORT}
-```
-
 ### Define your Procfile
 
 To define how to start your application, you need to create a `Procfile` file
-at the root of your project: [more documentation about Procfile]({% post_url
-platform/app/2000-01-01-procfile %})
+at the root of your project. [More documentation about Procfile]({% post_url
+platform/app/2000-01-01-procfile %}).
 
 ```yaml
 web: java $JAVA_OPTS -Dspring.profiles.active=YOUR_PROD_PROFILE -jar target/dependency/webapp-runner.jar --port $PORT --expand-war target/*.war
 ```
 
 _Don't forget to specify the production profile (if you use [Spring
-profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html))
+profiles](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.profiles))
 as a parameter._
 
-That's it, commit your `pom.xml` and your `Procfile` and your app will
-deploy in the blink of an eye.
+Commit your `pom.xml` and your `Procfile`, and push the modifications to deploy your application.
