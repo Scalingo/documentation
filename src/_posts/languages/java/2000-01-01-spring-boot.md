@@ -20,18 +20,14 @@ page describes how to achieve both.
 
 ## WAR or JAR
 
-Your Spring Boot application can be packaged as a `jar` or as a `war` ([see the
-Spring documentation
-here](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.traditional-deployment)).
+Your Spring Boot application can be packaged as a `jar` or as a `war` ([see the Spring documentation here](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.traditional-deployment)).
 
 The way you choose to package your application changes the way you deploy on
 Scalingo.
 
 ### Listen on ${PORT}
 
-For both WAR and JAR deployments, you need to specify the good port to listen to in your Spring Boot application
-[configuration
-file](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config).
+For both WAR and JAR deployments, you need to specify the good port to listen to in your Spring Boot application [configuration file](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config).
 
 ```text
 server:
