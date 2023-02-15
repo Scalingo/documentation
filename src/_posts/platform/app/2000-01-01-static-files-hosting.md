@@ -48,12 +48,12 @@ running, ready to serve your static files.
 
 ## Using Jekyll
 
-Jekyll is a static site generator written with Ruby. In order to generate your static files, you will need a Ruby
-environment, and a Node JS environment to serve the files, as seen before.
+Jekyll is a static site generator written with Ruby. In order to generate your static files, you need a Ruby
+environment, and a Node.js environment to serve the files, as seen before.
 
-As Scalingo provides [Multi Buildpack](https://doc.scalingo.com/platform/deployment/buildpacks/multi) support, you can 
+As Scalingo provides [Multi Buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}) support, you can 
 combine the two environments needed to build your website. To achieve this, you can add a `.buildpacks` file at the root
-of your project, containing the Ruby Buildpack, and the NodeJS Buildpack:
+of your project, containing the Ruby Buildpack, and the Node.js Buildpack:
 
 ```
 https://github.com/Scalingo/ruby-buildpack
@@ -61,11 +61,11 @@ https://github.com/Scalingo/nodejs-buildpack
 ```
 
 {% note %}
-  The NodeJS Buildpack being used for running our website, it must come last !
+  The Node.js Buildpack being used for running our website, it must come last!
 {% endnote %}
  
 The procedure is very similar to what we did before. But we will add a build task to our `package.json` file, 
-which will build your Jekyll website, like this:
+which builds your Jekyll website, like this:
 
 ```json
 {
