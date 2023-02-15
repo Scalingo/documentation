@@ -64,7 +64,7 @@ https://github.com/Scalingo/nodejs-buildpack
   The Node.js Buildpack being used for running our website, it must come last!
 {% endnote %}
  
-The procedure is very similar to what we did before. But we will add a build task to our `package.json` file, 
+The procedure is very similar to what we did before. But here we add a build task to our `package.json` file, 
 which builds your Jekyll website, like this:
 
 ```json
