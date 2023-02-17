@@ -14,86 +14,28 @@ Redis Addon]({% post_url databases/redis/2000-01-01-start %}).
 
 ## Requirements
 
-The remote Redis instance should be accessible on the Internet, and you could connect with:
+The remote Redis instance should be accessible on the Internet.
 
-```console
-$ redis-cli --app <password> -h <host> -p <port>
-```
+These instructions require Redis Input/Output Tools (RIOT) to be installed. This is a set of tools developed by the Redis team. The installation instructions are available on [this page](https://developer.redis.com/riot/riot-redis).
 
-## Create a redis-console on Scalingo
+## Install RIOT in a One-Off Container
 
-Thanks to the `redis-console` utility of the `scalingo` command, create a
-console to your Redis addon:
+You first need to install RIOT in a one-off container of your application. RIOT needs a Java Runtime Environment (JRE) to work. When JRE and RIOT are installed, we can replicate the Redis running on an external server:
 
 ```sh
-$ scalingo --app my-app redis-console
------> Connecting to container [one-off-5541]...
------> Process 'redis-console' is starting...
-
----> Download and extract the database CLI
----> Database CLI installed: redis-cli 4.0.8
-[host:port] >
+$ scalingo --app my-app run bash
+[00:00] Scalingo ~ $ wget https://github.com/redis-developer/riot/releases/latest/download/riot-redis-$(wget -q --output-document=- https://github.com/redis-developer/riot/releases/latest/download/VERSION).zip
+[00:00] Scalingo ~ $ unzip riot-redis*.zip
+[00:00] Scalingo ~ $ git clone https://github.com/Scalingo/buildpack-jvm-common.git
+[00:00] Scalingo ~ $ echo "java.runtime.version=15" > system.properties
+[00:00] Scalingo ~ $ ./buildpack-jvm-common/bin/compile /app
+[00:00] Scalingo ~ $ export PATH=$PATH:/app/.jdk/bin/
+[00:00] Scalingo ~ $ ./riot-redis-*/bin/riot-redis --uri $SCALINGO_REDIS_URL replicate --uri $REDIS_SOURCE_URL
 ```
 
-## Copy Data From the Remote Redis Instance
+The `REDIS_SOURCE_URL` variable must contain the connection string to the external Redis instance. For Redis URI syntax see [here](https://github.com/lettuce-io/lettuce-core/wiki/Redis-URI-and-connection-details#uri-syntax).
 
-{% warning %}
-  These actions will erase all the existing content of the Scalingo Redis
-  instance, don't do it if you've precious data stored.
-{% endwarning %}
+At that point, the replication process has started. Its duration is relative to
+the amount of data contained on the remote database. It's usually a matter of seconds.
 
-You need to own the source Redis connection information in order to copy its
-content. Let's consider the following example:
-
-* Host: `ec2-34-242-7-204.eu-west-1.compute.amazonaws.com`
-* Port: `10189`
-* Password: `pfe8060d30f6059b98a7ce7d`
-
-The following method configures temporarily the Redis instance hosted on
-Scalingo to be become a slave of the remote your want to copy the content from.
-Once the operation will be over, the replication link will be disabled, all the
-keys and values will have been transfered.
-
-Back in the `redis-console`:
-
-```console
-[host:port] > CONFIG SET masterauth pfe8060d30f6059b98a7ce7d
-OK
-[host:port] > SLAVEOF ec2-34-242-7-204.eu-west-1.compute.amazonaws.com 10189
-OK
-```
-
-At that point, the replication process has started, its duration is relative to
-the amount of data contained by the remote database, it's usually a matter of seconds.
-To check if the process is over, look at the `INFO` command:
-
-```console
-[host:port] > INFO replication
-# Replication
-role:slave
-master_host:ec2-34-242-7-204.eu-west-1.compute.amazonaws.com
-master_port:10189
-master_link_status:up
-master_last_io_seconds_ago:1
-master_sync_in_progress:0
-```
-
-{% warning %}
-First check the `master_link_status`, it should be `up`, otherwise, it means
-the replication process did not start, probably because of an error in the
-connection information, check you can connect to the remote server with `redis-cli`
-{% endwarning %}
-
-Once the `master_sync_in_progress` value becomes `0`, it means the data
-synchronization is over.
-
-## Restore Configuration
-
-Once the synchronization is over, you need to disable the replication configuration:
-
-```console
-[host:port] > SLAVEOF NO ONE
-```
-
-That's it, your Redis instance, owns all the data of your remote Redis, and is
-ready to accept queries from your application.
+Note that the `riot-redis` tool is powerful and includes various arguments. All the information is on the [documentation page](https://developer.redis.com/riot/riot-redis/). You may want to have a look at the `--mode live` option for continuous replication. It could be useful for a 0-downtime migration.
