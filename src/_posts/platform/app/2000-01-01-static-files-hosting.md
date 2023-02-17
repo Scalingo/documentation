@@ -64,7 +64,7 @@ location / {
 
 This configuration assumes that your static files are located in the `dist` folder of your application.
 
-You also need to add a Procfile to instruct Scalingo how to boot Nginx. The Procfile content should be:
+You also need to add a `Procfile` to instruct Scalingo how to boot Nginx. The `Procfile` content should be:
 
 ```yaml
 web: bin/run

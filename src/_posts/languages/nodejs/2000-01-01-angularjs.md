@@ -6,7 +6,7 @@ tags: nodejs angularjs
 index: 4
 ---
 
-AngularJS applications can be hosted on Scalingo. It requires some specific instructions as usually the application generate static files during the deployment. And these files requires a web server to be served to your clients.
+AngularJS applications can be hosted on Scalingo. It requires some specific instructions as usually the application generates static files during the deployment. And these files require a web server to be served to your clients.
 
 Deploying an AngularJS application requires to use the [Multi Buildpacks]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}). It will be used to generate the static files using Node.js during the deployment, and run a Nginx to serve the generated files.
 
