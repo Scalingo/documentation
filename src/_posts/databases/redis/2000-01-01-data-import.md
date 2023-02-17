@@ -1,9 +1,9 @@
 ---
-title: Importing data from an external Redis database
-nav: Importing data
-modified_at: 2018-02-23 00:00:00
+title: Importing Data From an External Redis Database
+nav: Importing Data
+modified_at: 2023-02-17 00:00:00
 tags: databases redis dump restore migration
-index: 2
+index: 3
 ---
 
 This tutorial aims at transferring all the data from a remote Redis database
@@ -25,7 +25,7 @@ $ redis-cli --app <password> -h <host> -p <port>
 Thanks to the `redis-console` utility of the `scalingo` command, create a
 console to your Redis addon:
 
-```console
+```sh
 $ scalingo --app my-app redis-console
 -----> Connecting to container [one-off-5541]...
 -----> Process 'redis-console' is starting...
@@ -35,7 +35,7 @@ $ scalingo --app my-app redis-console
 [host:port] >
 ```
 
-## Copy data from the remote Redis instance
+## Copy Data From the Remote Redis Instance
 
 {% warning %}
   These actions will erase all the existing content of the Scalingo Redis
@@ -87,7 +87,7 @@ connection information, check you can connect to the remote server with `redis-c
 Once the `master_sync_in_progress` value becomes `0`, it means the data
 synchronization is over.
 
-## Restore configuration
+## Restore Configuration
 
 Once the synchronization is over, you need to disable the replication configuration:
 
