@@ -78,6 +78,6 @@ command: |
   git push git@ssh.[region].scalingo.com:my-app.git $CIRCLE_SHA1:master
   curl -LO https://github.com/Scalingo/cli/releases/download/1.6.0/scalingo_1.6.0_linux_amd64.tar.gz
   tar xvf scalingo_1.6.0_linux_amd64.tar.gz
-  scalingo_1.6.0_linux_amd64/scalingo -a my-app login --ssh
-  scalingo_1.6.0_linux_amd64/scalingo -a my-app run rake db:migrate
+  scalingo_1.6.0_linux_amd64/scalingo --app my-app login --ssh
+  scalingo_1.6.0_linux_amd64/scalingo --app my-app run rake db:migrate
 ```

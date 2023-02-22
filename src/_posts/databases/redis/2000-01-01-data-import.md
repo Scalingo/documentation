@@ -17,7 +17,7 @@ Redis Addon]({% post_url databases/redis/2000-01-01-start %}).
 The remote Redis instance should be accessible on the Internet, and you could connect with:
 
 ```console
-$ redis-cli -a <password> -h <host> -p <port>
+$ redis-cli --app <password> -h <host> -p <port>
 ```
 
 ## Create a redis-console on Scalingo
@@ -26,7 +26,7 @@ Thanks to the `redis-console` utility of the `scalingo` command, create a
 console to your Redis addon:
 
 ```console
-$ scalingo -a my-app redis-console
+$ scalingo --app my-app redis-console
 -----> Connecting to container [one-off-5541]...
 -----> Process 'redis-console' is starting...
 
