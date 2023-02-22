@@ -74,14 +74,9 @@ module Dirname
       # In case of multiple entries with the same title, keep the one which is
       # a dir. Assuming the other ones is a "fake" file whose only purpose is to
       # customize index or title attributes of the dir entry
-      children = children.group_by { |x| x["title"] }.each_with_object([]) { |x, memo|
-        ary = x.last
-        if ary.length == 1
-          memo << ary.first
-        else
-          memo << ary.detect { |x| x["type"] == "dir" } || ary.first
-        end
-      }
+      children = children.group_by { |x| x["title"] }.map do |_title, children|
+        children.find { |child| child["type"] == "dir" } || children.first
+      end
       # Create index if not existing
       max_index = children.length + 1
       children = children.map { |x|
