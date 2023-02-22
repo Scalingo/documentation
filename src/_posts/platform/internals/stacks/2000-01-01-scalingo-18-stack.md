@@ -1,8 +1,8 @@
 ---
 title: Scalingo-18 Stack
 nav: Scalingo-18
-modified_at: 2023-01-04 00:00:00
-index: 3
+modified_at: 2023-01-11 00:00:00
+index: 4
 ---
 
 This article describes the scalingo-18 stack, based on Ubuntu 18.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})

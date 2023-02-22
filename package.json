@@ -25,7 +25,7 @@
     "image-webpack-loader/imagemin-pngquant": "5.0.1"
   },
   "devDependencies": {
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^4.11.1"
   },
   "volta": {
     "node": "14.18.3",

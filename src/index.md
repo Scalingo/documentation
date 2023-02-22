@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Documentation Center
-description: "From the deployment of your app to complex scaling operations you'll find all the resources you need to understand and benefit from Scalingo's powerful Platform as a Service. All major languages are supported: Ruby, NodeJS, MeteorJS, Python, PHP, Java and more."
+description: "From the deployment of your app to complex scaling operations you'll find all the resources you need to understand and benefit from Scalingo's powerful Platform as a Service. All major languages are supported: Ruby, Node.js, Meteor.js, Python, PHP, Java and more."
 ---
 <div class="w-full max-w-sc-content-1532 text-sc-gray-1">
   <div class="bg-sc-gray-5 flex flex-col md:flex-row mb-12 rounded-lg">

@@ -1,6 +1,6 @@
 ---
 title: Getting Started With ModSecurity on Scalingo
-modified_at: 2022-07-25 00:00:00
+modified_at: 2023-02-06 00:00:00
 tags: tutorial security firewall modsecurity apache nginx waf
 index: 11
 ---
@@ -23,6 +23,8 @@ pattern and actions).
 
 For this first tutorial, we use Nginx and the CRS provided by OWASP to deploy a
 WAF on Scalingo within minutes.
+
+As a note, ModSecurity is only deployable on `scalingo-20` and above.
 
 ## Deploying Nginx
 
@@ -157,14 +159,14 @@ $ git push scalingo master
 If you want to disable a rule for some reason, you first need to identify the
 rule, thanks to its `id` number.
 
-You can then add a `SecRuleRemoveId` directive at the end of
+You can then add a `SecRuleRemoveById` directive at the end of
 [your custom rules file](#adding-a-custom-rule), like this:
 
 ```
 # This file is written in the ModSecurity config language
 
 # Rule 911100 filters unknown HTTP methods, but we actually do want to allow exotic HTTP methods
-SecRuleRemoveId 911100
+SecRuleRemoveById 911100
 ```
 
 ## Updating the Core Rule Set

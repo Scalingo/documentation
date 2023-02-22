@@ -24,18 +24,18 @@ tags: security procedures secnumcloud
    - Reason of requesting the access
 3. An answer will be provided under 7 business days
 
-## Can my user get access the `osc-secnum-fr1` region?
+## Can my user get access to the `osc-secnum-fr1` region?
 
-A standard user cannot access `osc-secnum-fr1`, your user has to be whitelisted first.
+A standard user cannot access `osc-secnum-fr1`, your user has to be allow-listed first.
 
 ### Pre-conditions
 
 - The user must have a legitimate reason to access the `osc-secnum-fr1` region:
   create or collaborate an application hosted in this region
-- The user must act as an employee of a company, user his/her company email
+- The user must act as an employee of a company, using his/her company email
 
 ### Procedure
 
 1. The owner of the application must invite you as a collaborator
-2. You must contact support using the standard means (email or chat)
-3. An answer will be provided under 2 business days
+2. You must contact the support using standard means (email or chat)
+3. An answer will be provided within 2 business days
