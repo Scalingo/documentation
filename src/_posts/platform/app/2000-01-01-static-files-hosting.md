@@ -1,12 +1,14 @@
 ---
-title: Static files only application
-modified_at: 2023-02-14 00:00:00
-tags: nodejs express static
+title: Static Files Only Application
+modified_at: 2023-02-17 00:00:00
+tags: nginx nodejs express static
 ---
 
-On some occasions, you might need to deploy an application containing only static files. To handle
-this use case, the recommended method is to deploy a **Node.js** server using Express, a
-minimalist web framework. Only one file is required (name it `server.js`):
+On some occasions, you might need to deploy an application containing only static files. This use case requires a web server to serve the static files. This page propose two solutions to set this up: using Node.js or Nginx.
+
+## Using Node.js as Web Server
+
+A possibility is to deploy a Node.js server using Express, a minimalist web framework. Only one file is required (name it `server.js`):
 
 ```js
 var express = require('express');
@@ -46,54 +48,26 @@ Don't forget to add a `package.json` file in order to add the `express` dependen
 That's it! Push your code to Scalingo and your application will be up and
 running, ready to serve your static files.
 
-## Using Jekyll
+## Using Nginx as Web Server
 
-Jekyll is a static site generator written with Ruby. In order to generate your static files, you need a Ruby
-environment, and a Node.js environment to serve the files, as seen before.
+The other possibility is to use Nginx to serve the static files. In this case, you may need to leverage the [multi-buildpacks]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}) to add the Nginx buildpack as the last buildpack.
 
-As Scalingo provides [Multi Buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}) support, you can 
-combine the two environments needed to build your website. To achieve this, you can add a `.buildpacks` file at the root
-of your project, containing the Ruby Buildpack, and the Node.js Buildpack:
+Configure Nginx with the following configuration file (name it `nginx.conf`):
 
-```
-https://github.com/Scalingo/ruby-buildpack
-https://github.com/Scalingo/nodejs-buildpack
-```
+```nginx
+root /app/dist;
 
-{% note %}
-  The Node.js Buildpack being used for running our website, it must come last!
-{% endnote %}
- 
-The procedure is very similar to what we did before. But here we add a build task to our `package.json` file, 
-which builds your Jekyll website, like this:
-
-```json
-{
-  "name" : "my-application",
-  "version" : "1.0.0",
-  "dependencies" : {
-    "express" : "4.x"
-  },
-  "scripts" : {
-    "build": "bundle exec jekyll build",
-    "start": "node server.js"
-  }
+location / {
+  try_files $uri $uri/ /index.html =404;
 }
 ```
 
-And you need to adapt your `server.js` file just a bit, in order to make the `.html` extension in your URL optional:
+This configuration assumes that your static files are located in the `dist` folder of your application.
 
-```js
-var express = require('express');
+You also need to add a `Procfile` to instruct Scalingo how to boot Nginx. The `Procfile` content should be:
 
-var app = express();
-var directory = '/' + (process.env.STATIC_DIR || 'dist')
-app.use(express.static(__dirname + directory), { extensions: 'html'});
-
-var port = process.env.PORT || 3000;
-app.listen(port, function () {
-  console.log('Listening on', port);
-});
+```yaml
+web: bin/run
 ```
 
-And your app is now ready to go!
+Push your code to Scalingo, and the application is up and running, ready to serve your static files.
