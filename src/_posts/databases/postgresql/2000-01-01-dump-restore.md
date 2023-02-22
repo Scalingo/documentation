@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my PostgreSQL database on Scalingo
 nav: Dump and Restore
-modified_at: 2022-02-24 00:00:00
+modified_at: 2023-02-17 00:00:00
 tags: databases postgresql tunnel
 index: 2
 ---
@@ -32,7 +32,6 @@ There are two ways to access your database from your local workstation: setting 
 
 ```bash
 $ scalingo --app my-app db-tunnel SCALINGO_POSTGRESQL_URL
-scalingo --app my-app db-tunnel SCALINGO_POSTGRESQL_URL
 Building tunnel to my-db.postgresql.dbs.scalingo.eu:30000
 You can access your database on '127.0.0.1:10000'
 ```
@@ -117,4 +116,4 @@ $ scalingo --app my-app run bash
 exit
 ```
 
-After exiting the one-off container, the dump will be lost, you've to do something with it in the container.
+After exiting the one-off container, the dump will be lost. You have to do something with it in the container.
