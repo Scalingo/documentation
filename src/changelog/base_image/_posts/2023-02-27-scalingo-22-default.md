@@ -1,5 +1,5 @@
 ---
-modified_at: 2023-02-03 10:00:00
+modified_at: 2023-02-27 10:00:00
 title: 'Stack scalingo-22 is the Default Stack'
 ---
 
