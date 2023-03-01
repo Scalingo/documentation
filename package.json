@@ -15,7 +15,7 @@
     "image-webpack-loader": "^3.6.0",
     "mdn-polyfills": "^5.20.0",
     "postcss": "^8.4.5",
-    "postcss-cli": "^9.1.0",
+    "postcss-cli": "^10.1.0",
     "smooth-scroll": "^12.1.5",
     "svgo": "^1.0.4",
     "svgo-loader": "^2.1.0",
