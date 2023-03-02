@@ -58,7 +58,7 @@ Do NOT store this token in the `.gitlab-ci.yml` file. Please refer to this
 
 ### Git Remote Already Exists Error
 
-GitLab CI can persist build environment between CI jobs so if you have the following error:
+GitLab CI can persist build environment between CI jobs so if you encounter the following error:
 ```
 key 'dpl_tmp_key' has been added.
 $ ./scalingo --app focale-stg1-be git-setup --remote scalingo-dpl
