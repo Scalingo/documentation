@@ -69,7 +69,7 @@ Key 'dpl_tmp_key' has been deleted.
 Failed to add the git remote.
 ```
 
-You need to execute this command before executing the `dpl` command in your CI job:
+You will need to execute this command before executing the `dpl` command in your CI job:
 ```bash
 git remote -v | grep scalingo-dpl && git remote rm scalingo-dpl
 ```
