@@ -74,7 +74,7 @@ You will need to execute this command before executing the `dpl` command in your
 git remote -v | grep scalingo-dpl && git remote rm scalingo-dpl
 ```
 {% note %}
-This is currently a bug in the `dpl` tool that we can't fix for now.
+This is currently a bug in the `dpl` tool that we cannot fix for now.
 {% endnote %}
 
 ### Shallow Error
