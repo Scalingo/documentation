@@ -1,7 +1,7 @@
 ---
 title: Deploy to Scalingo from GitLab CI/CD
 nav: Deploy from GitLab CI
-modified_at: 2022-12-29 00:00:00
+modified_at: 2023-03-02 00:00:00
 tags: ci deployment build gitlab
 index: 22
 ---
@@ -55,6 +55,27 @@ The variable `SCALINGO_API_TOKEN` must be a valid API token created from the
 
 Do NOT store this token in the `.gitlab-ci.yml` file. Please refer to this
 [GitLab documentation](https://docs.gitlab.com/ee/ci/examples/deployment/index.html#storing-api-keys).
+
+### Git Remote Already Exists Error
+
+GitLab CI can persist build environment between CI jobs so if you have the following error:
+```
+key 'dpl_tmp_key' has been added.
+$ ./scalingo --app focale-stg1-be git-setup --remote scalingo-dpl
+ Fail to configure git repository, 'scalingo-dpl' remote already exists (use --force option to override): fail to create the Git remote: remote already exists
+ ! An error occurred:
+$ timeout 60 ./scalingo keys-remove dpl_tmp_key
+Key 'dpl_tmp_key' has been deleted.
+Failed to add the git remote.
+```
+
+You need to execute this command before executing the `dpl` command in your CI job:
+```bash
+git remote -v | grep scalingo-dpl && git remote rm scalingo-dpl
+```
+{% note %}
+This is currently a bug in the `dpl` tool that we can't fix for now.
+{% endnote %}
 
 ### Shallow Error
 
