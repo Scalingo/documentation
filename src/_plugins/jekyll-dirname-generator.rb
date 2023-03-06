@@ -89,7 +89,6 @@ module Dirname
         x["index"]
       }
       data["children"] = children
-
       return data
     end
 
