@@ -90,11 +90,6 @@ module Dirname
       }
       data["children"] = children
 
-      # if url_path == "/security"
-      #   puts data.to_json
-      #   puts "HELLA " + url_path
-      # end
-
       return data
     end
 
