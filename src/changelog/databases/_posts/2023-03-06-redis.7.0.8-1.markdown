@@ -1,0 +1,14 @@
+---
+modified_at: 2023-03-06 13:00:00
+title: 'Redis - New version: 7.0.8-1'
+---
+
+New default version: **7.0.8-1**
+
+Redis changelog:
+
+* [7.0.8-1](https://raw.githubusercontent.com/antirez/redis/7.0/00-RELEASENOTES)
+
+Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/redis):
+
+* `scalingo/redis:7.0.8-1`
