@@ -48,6 +48,7 @@ module Dirname
           @breadcrumb_hash[child["url"]] = child["title"]
         end
       end
+      data["children"] = data["children"].uniq{|link| link["url"] }
       children = data["children"]
 
       if url_path != "/"
@@ -88,6 +89,12 @@ module Dirname
         x["index"]
       }
       data["children"] = children
+
+      # if url_path == "/security"
+      #   puts data.to_json
+      #   puts "HELLA " + url_path
+      # end
+
       return data
     end
 
