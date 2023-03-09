@@ -6,6 +6,9 @@ title:	'SSH - Adding new crypto algorithms, Sunset obsolete ones'
 The list of allowed algorithms of `ssh.osc-fr1.scalingo.com` and
 `ssh.osc-secnum-fr1.scalingo.com` have been updated.
 
+These servers are using to receive SSH connections related to GIT
+operations as well as database encrypted tunnel access with SSH.
+
 Before:
 
 ```
