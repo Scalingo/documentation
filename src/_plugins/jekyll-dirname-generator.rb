@@ -48,14 +48,19 @@ module Dirname
           @breadcrumb_hash[child["url"]] = child["title"]
         end
       end
-      data["children"] = data["children"].uniq{|link| link["url"] }
-      children = data["children"]
+      # In case of multiple entries with the same title, keep the one which is
+      # a dir. Assuming the other ones is a "fake" file whose only purpose is to
+      # customize index or title attributes of the dir entry
+      children = children.group_by { |x| x["title"] }.map do |_title, children|
+        children.find { |child| child["type"] == "dir" } || children.first
+      end
+      children = children.uniq{|link| link["url"] }
 
       if url_path != "/"
         if page_for_dir
           page_for_dir.data["layout"] = "dir"
           page_for_dir.data["slug"] = url_path
-          page_for_dir.data["links"] = data["children"].each_with_object([]) do |obj, memo|
+          page_for_dir.data["links"] = children.each_with_object([]) do |obj, memo|
             memo << {"url" => obj["url"], "title" => obj["title"]}
             @breadcrumb_hash[obj["url"]] = obj["title"]
           end
@@ -64,7 +69,7 @@ module Dirname
           name = File.basename(path)
           title = data["title"]
           new_page = Jekyll::CategoryPage.new(@site, @site.source, relative_dir, name, title)
-          new_page.data["links"] = data["children"].each_with_object([]) do |obj, memo|
+          new_page.data["links"] = children.each_with_object([]) do |obj, memo|
             memo << {"url" => obj["url"], "title" => obj["title"]}
             @breadcrumb_hash[obj["url"]] = obj["title"]
           end
@@ -72,12 +77,6 @@ module Dirname
         end
       end
 
-      # In case of multiple entries with the same title, keep the one which is
-      # a dir. Assuming the other ones is a "fake" file whose only purpose is to
-      # customize index or title attributes of the dir entry
-      children = children.group_by { |x| x["title"] }.map do |_title, children|
-        children.find { |child| child["type"] == "dir" } || children.first
-      end
       # Create index if not existing
       max_index = children.length + 1
       children = children.map { |x|
