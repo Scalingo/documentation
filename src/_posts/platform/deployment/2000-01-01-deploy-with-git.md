@@ -1,6 +1,6 @@
 ---
 title: Deploy with Git
-modified_at: 2023-02-13 00:00:00
+modified_at: 2023-03-13 00:00:00
 tags: git deployment
 index: 4
 ---
@@ -157,6 +157,7 @@ the parameter `depth` from configuration file.
   ```yml
   # .gitlab-ci.yml
   variables:
+    GIT_FETCH_EXTRA_FLAGS: --unshallow
     GIT_DEPTH: 0
   ```
 
