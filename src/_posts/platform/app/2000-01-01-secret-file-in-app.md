@@ -45,3 +45,5 @@ $HOME/bin/run
 
 Commit both files and deploy your application. Your application has now access
 to your secret file in `/app/private.pem`!
+
+As a note, the Procfile being executed at runtime, in this case the `web` runtime, the /app/private.pem` file would not be visible in a one-off. As a one-off being a copy of the deployable environnement, but without what a web runtime execution would add.
