@@ -102,7 +102,15 @@ This is done with:
 docker compose exec web bundle exec jekyll build
 ```
 
-### Dev tool
+### How to debug
+
+#### Ruby
+
+Using [debug.rb](https://github.com/ruby/debug) it's possible to add break points in Ruby code.
+1. Prepend command `jekyll serve` by `rdbg -c -- `
+2. Add a `binding.break` where you want to stop the execution
+
+#### HTML/CSS
 
 To help debug responsive layout issues add this tool in the default layout, it will show the current Tailwind screen & size in every pages.
 
