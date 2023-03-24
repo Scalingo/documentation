@@ -1,2 +1,4 @@
 --ignore-dir=_site/
 --ignore-dir=.jekyll-cache/
+--ignore-dir=vendor/
+--ignore-dir=tmp/cache/

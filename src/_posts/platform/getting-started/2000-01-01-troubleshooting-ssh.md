@@ -255,32 +255,3 @@ $ ssh-add -l -E md5
 
 Go to the [Dashboard > User settings > SSH Keys]({% post_url platform/account/2000-01-01-manage %}#ssh-keys)
 page and check if the fingerprint is the same as the output of the previous command.
-
-
-### RSA SHA-1 algorithm deprecated on recent version of OpenSSH
-
-If you encounter this error: `no mutual signature algorithm` from the debug
-log of a `git push` you're using OpenSSH 8.2 or newer.
-
-The `RSA SHA-1` hash algorithm is being quickly deprecated from SSH clients
-like OpenSSH because of various security vulnerabilities, with many of these
-technologies now outright denying the use of this algorithm.
-
-#### Workaround
-
-To re-enable `ssh-rsa` support, you need to add the following lines
-into the SSH configuration file `~/.ssh/config`:
-```plaintext
-Host ssh.osc-fr1.scalingo.com
-  PubkeyAcceptedKeyTypes +ssh-rsa
-```
-
-#### Resolution
-
-To fully resolve this issue, Scalingo recommends you to generate a new SSH key
-using a supported and more secure algorithm such as `ECDSA` and `ED25519`.
-
-See our `Create a new SSH key pair` documentation pages here:
-- For [Linux]({% post_url platform/getting-started/2000-01-01-setup-ssh-linux %}#create-a-new-ssh-key-pair)
-- For [macOS]({% post_url platform/getting-started/2000-01-01-setup-ssh-macos %}#create-a-new-ssh-key-pair)
-- For [Windows]({% post_url platform/getting-started/2000-01-01-setup-ssh-windows %}#2-create-a-new-ssh-key-pair)
