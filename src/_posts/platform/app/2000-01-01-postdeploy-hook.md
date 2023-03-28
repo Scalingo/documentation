@@ -1,6 +1,6 @@
 ---
 title: Post-deployment hook
-modified_at: 2020-10-28 00:00:00
+modified_at: 2023-03-28 00:00:00
 tags: app deployment hook postdeploy
 index: 13
 ---
@@ -117,6 +117,28 @@ postdeploy command:
 
 ```yaml
 postdeploy: curl -X POST -d "{\"revision\":\"$CONTAINER_VERSION\",\"user\":\"scalingo\"}" "https://push.appsignal.com/1/markers?api_key=$APPSIGNAL_PUSH_API_KEY&name=$APPSIGNAL_APP_NAME&environment=$APPSIGNAL_APP_ENV"
+```
+
+#### Sentry
+
+Create an executable script named `postdeploy.sh` with the following content:
+
+```sh
+#!/bin/bash
+
+set -e
+set -o pipefail
+
+bundle exec rake db:migrate
+curl $SENTRY_DEPLOY_HOOK -X POST -H "Content-Type: application/json" -d "{\"version\": \"$CONTAINER_VERSION\"}"
+```
+
+The `SENTRY_DEPLOY_HOOK` environment variable must be added to the application environment. Its content is the value in Sentry settings: Settings > Projects > Project Name > Releases.
+
+Then modify the `Procfile` to include:
+
+```yaml
+postdeploy: /app/postdeploy.sh
 ```
 
 ### Applying Migrations and Notifying External Service
