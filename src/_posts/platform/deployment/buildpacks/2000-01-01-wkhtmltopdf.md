@@ -1,8 +1,12 @@
 ---
 title: Wkhtmltopdf Buildpack
-modified_at: 2016-10-27 00:00:00
+modified_at: 2023-03-28 00:00:00
 tags: buildpacks build wkhtmltopdf
 ---
+
+{% warning %}
+Wkhtmltopdf repository is deprecated since January 2023. You should rather use [Puppeteer]({% post_url languages/nodejs/2000-01-01-puppeteer %}) and the [`pdf`](https://pptr.dev/api/puppeteer.page.pdf/) method.
+{% endwarning %}
 
 ## Purpose of This Buildpack
 
