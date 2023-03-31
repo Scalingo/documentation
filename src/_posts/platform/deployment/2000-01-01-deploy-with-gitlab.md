@@ -61,6 +61,13 @@ With "Auto deploy" enabled, your application will be deployed every time you
 push to a selected branch of your repository. You can enable the "Auto deploy"
 on your application when creating the link or later, with the following command:
 
+{% note %}
+GitLab CI jobs have the option `allow_failure` that allows jobs to fail.
+We take it into consideration when deploying your application or your review apps.<br>
+If one or more of your GitLab jobs failed but have this option enabled, the deployment will be triggered.<br>
+But if one job without the option failed, the deployment is aborted.
+{% endnote %}
+
 ```
 $ scalingo --app my-app integration-link-update --auto-deploy --branch master
 ```
