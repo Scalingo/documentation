@@ -77,6 +77,7 @@ You can get all information about your GitLab integration configuration with:
 ```
 $ scalingo --app my-app integration-link
 ```
+
 {% note %}
 It is possible on GitLab CI to enable an option on jobs (named `allow_failure`) that allows failed jobs to still execute others jobs.
 We take it into consideration when deploying your application or your review apps.<br>
