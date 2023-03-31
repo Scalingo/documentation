@@ -1,6 +1,6 @@
 ---
 title: Deploy with GitLab
-modified_at: 2021-09-28 00:00:00
+modified_at: 2023-03-31 00:00:00
 tags: scm gitlab deployment
 index: 6
 ---
