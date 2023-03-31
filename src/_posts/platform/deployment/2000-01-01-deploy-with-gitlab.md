@@ -65,7 +65,7 @@ on your application when creating the link or later, with the following command:
 GitLab CI jobs have the option `allow_failure` that allows jobs to fail.
 We take it into consideration when deploying your application or your review apps.<br>
 If one or more of your GitLab jobs failed but have this option enabled, the deployment will be triggered.<br>
-But if one job without the option failed, the deployment is aborted.
+But if one job without the option failed, the deployment will be aborted.
 {% endnote %}
 
 ```
