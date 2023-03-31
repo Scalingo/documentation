@@ -62,7 +62,7 @@ push to a selected branch of your repository. You can enable the "Auto deploy"
 on your application when creating the link or later, with the following command:
 
 {% note %}
-GitLab CI jobs have the option `allow_failure` that allows jobs to fail.
+It is possible on GitLab CI to enable an option on jobs (named `allow_failure`) that allows failed jobs to still execute others jobs.
 We take it into consideration when deploying your application or your review apps.<br>
 If one or more of your GitLab jobs failed but have this option enabled, the deployment will be triggered.<br>
 But if one job without the option failed, the deployment will be aborted.
