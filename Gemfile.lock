@@ -161,7 +161,7 @@ GEM
     rubocop-performance (1.15.2)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
-    ruby-progressbar (1.11.0)
+    ruby-progressbar (1.13.0)
     safe_yaml (1.0.5)
     sass-embedded (1.58.3)
       google-protobuf (~> 3.21)
