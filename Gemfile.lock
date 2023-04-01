@@ -163,7 +163,7 @@ GEM
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.13.0)
     safe_yaml (1.0.5)
-    sass-embedded (1.58.3)
+    sass-embedded (1.60.0)
       google-protobuf (~> 3.21)
       rake (>= 10.0.0)
     standard (1.24.3)
