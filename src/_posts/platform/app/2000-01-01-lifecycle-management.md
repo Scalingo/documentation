@@ -1,24 +1,24 @@
 ---
 title: Application Lifecycle Management
 nav: Lifecycle Management
-modified_at: 2018-02-09 00:00:00
+modified_at: 2023-04-04 00:00:00
 index: 10
 tags: management
 ---
 
 Three methods are co-existing to manage your applications on the Scalingo:
 
-* [Web Dashboard](https://my.scalingo.com): The simplest way to manage your applications,
-use any browser create/scale/transfer/delete applications.
+* [Web Dashboard](https://dashboard.scalingo.com): The simplest way to manage
+  your applications, use any browser create/scale/transfer/delete applications.
 
 * [CLI]({% post_url platform/cli/2000-01-01-start %}): More comfortable with
-terminals or you want to build scripts to control applications, the command
-line interface, available for all major operating system, is able to achieve
-any operation the web dashboard can do.
+  terminals or you want to build scripts to control applications, the command
+  line interface, available for all major operating system, is able to achieve
+  any operation the web dashboard can do.
 
 * [HTTP API](https://developers.scalingo.com): The web dashboard and the CLI
-are both consuming this API, if you need to automate behaviors by managing
-applications in a programmatic way, you can directly target our API.
+  are both consuming this API, if you need to automate behaviors by managing
+  applications in a programmatic way, you can directly target our API.
 
 ## Create an Application
 
@@ -67,8 +67,7 @@ transfer them the application.
 This operation will not affect the application, nothing regarding the configuration
 or the runtime of the app will be modified.
 
-This operation is only achievable from the [Scalingo
-dashboard](https://my.scalingo.com).
+This operation is only achievable from the [Scalingo dashboard](https://dashboard.scalingo.com).
 
 {% note %}
   The billing is done the last day of the month to the owner of the application at that date. Hence,
