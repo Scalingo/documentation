@@ -45,6 +45,10 @@ In order to make your database reachable from anywhere on the internet, head to 
 
 In this situation, the connection string to use is exactly the same as the one from your application environment.
 
+{% warning %}
+For security reasons, it is not recommended to activate Internet Accessibility. This exposes your database to the internet.
+{% endwarning %}
+
 ### Dump
 
 The command definition is:
