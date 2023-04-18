@@ -30,7 +30,9 @@ change the client connection timeout. You can do it like this:
 ```ruby
 config.cache_store = :redis_cache_store, {
     url: "#{ ENV['REDIS_URL'] }/0:#{ ENV['SOURCE_VERSION'] || ENV['CONTAINER_VERSION'] }",
-    timeout: 30
+    connect_timeout: 1,
+    read_timeout: 1,
+    write_timeout: 1
 }
 ```
 
@@ -39,7 +41,9 @@ you should set the `reconnect_attempts` option:
 ```ruby
 config.cache_store = :redis_cache_store, {
     url: "#{ ENV['REDIS_URL'] }/0:#{ ENV['SOURCE_VERSION'] || ENV['CONTAINER_VERSION'] }",
-    timeout: 30,
+    connect_timeout: 1,
+    read_timeout: 1,
+    write_timeout: 1,
     reconnect_attempts: 1
 }
 ```
