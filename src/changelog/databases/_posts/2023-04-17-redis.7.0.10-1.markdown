@@ -1,0 +1,18 @@
+---
+modified_at: 2023-04-17 17:00:00
+title: 'Redis - New versions: 6.2.11-1 and 7.0.10-1'
+---
+
+New default version: **7.0.10-1**.
+
+These versions contain fixes to security issues.
+
+Changelogs:
+
+* [6.2.11](https://github.com/redis/redis/releases/tag/6.2.11)
+* [7.0.10](https://github.com/redis/redis/releases/tag/7.0.10)
+
+Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/redis):
+
+* `scalingo/redis:6.2.11-1`
+* `scalingo/redis:7.0.10-1`
