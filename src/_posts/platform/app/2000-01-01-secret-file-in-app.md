@@ -45,3 +45,5 @@ $HOME/bin/run
 
 Commit both files and deploy your application. Your application has now access
 to your secret file in `/app/private.pem`!
+
+Note that the file `/app/private.pem` is not available in a one-off container. This solution makes it available when booting the `web` container. Hence the file is only available in `web` containers and not one-off containers.
