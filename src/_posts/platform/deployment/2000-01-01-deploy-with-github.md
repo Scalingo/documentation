@@ -1,7 +1,7 @@
 ---
 title: Deploy with GitHub and GitHub Enterprise
 nav: Deploy with GitHub
-modified_at: 2021-09-28 00:00:00
+modified_at: 2023-05-10 00:00:00
 tags: scm github github-enterprise deployment
 index: 5
 ---
@@ -85,7 +85,7 @@ These actions are also available via the CLI with:
 
 ```
 $ scalingo --app my-app integration-link-update --auto-deploy --branch master
-$ scalingo --app my-app integration-link-manual-deploy --branch master
+$ scalingo --app my-app integration-link-manual-deploy master
 ```
 
 ## Review Apps
