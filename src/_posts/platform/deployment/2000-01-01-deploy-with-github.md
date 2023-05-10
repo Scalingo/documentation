@@ -85,7 +85,7 @@ These actions are also available via the CLI with:
 
 ```
 $ scalingo --app my-app integration-link-update --auto-deploy --branch master
-$ scalingo --app my-app integration-link-manual-deploy --branch master
+$ scalingo --app my-app integration-link-manual-deploy master
 ```
 
 ## Review Apps
