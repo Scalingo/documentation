@@ -1,7 +1,7 @@
 ---
 title: Deploy with GitHub and GitHub Enterprise
 nav: Deploy with GitHub
-modified_at: 2021-09-28 00:00:00
+modified_at: 2023-05-10 00:00:00
 tags: scm github github-enterprise deployment
 index: 5
 ---
