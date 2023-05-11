@@ -1,7 +1,7 @@
 ---
 title: Scalingo Scheduler - Run Scheduled Tasks
 nav: Scalingo Scheduler
-modified_at: 2023-03-21 16:00:00
+modified_at: 2023-05-11 16:00:00
 tags: task-scheduling
 index: 1
 ---
@@ -92,11 +92,9 @@ file is present at the root of your application.
 For now, it's not possible to disable scheduled tasks without modifying or
 removing the `cron.json` file and triggering a new deployment thereafter.
 
-If you wish to control the execution of tasks differently between environment
-(for example, if you want to disable scheduled tasks for your staging apps or
-for your [review apps]({% post_url platform/app/2000-01-01-review-apps %})) we
-suggest to modify the task's code to [detect the environment]({% post_url platform/app/2000-01-01-environment %}#runtime-environment-variables)
-where they are executed.
+To disable scheduled tasks on a specific environment (for example, if you want
+to disable your scheduled tasks on your staging app), please see
+[Dealing with Multiple Environments](#dealing-with-multiple-environments).
 
 ### Defining Tasks
 
@@ -166,6 +164,14 @@ $ scalingo --app my-app cron-tasks
 | */10 * * * * rails orders:check | 2XL  | No previous executions | 2023/01/31 14:10:00 |
 +---------------------------------+------+------------------------+---------------------+
 ```
+
+### Dealing with Multiple Environments
+
+If you wish to control the execution of tasks differently between environments
+(for example, if you want to run your scheduled tasks differently on your
+staging apps or on your [review apps]({% post_url platform/app/2000-01-01-review-apps %}))
+we suggest to modify the task's code to [detect the environment]({% post_url platform/app/2000-01-01-environment %}#runtime-environment-variables)
+where they are executed.
 
 ### Updating or Removing Scheduled Tasks
 
