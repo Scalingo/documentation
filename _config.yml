@@ -153,9 +153,6 @@ samples:
   - url: go-gin
     name: Go/Gin
     logo: go
-  - url: go-martini
-    name: Go/Martini
-    logo: go
   - url: meteor
     name: MeteorJS
     logo: meteorjs
