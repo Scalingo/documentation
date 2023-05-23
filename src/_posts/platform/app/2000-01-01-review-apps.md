@@ -1,6 +1,6 @@
 ---
 title: Review Apps
-modified_at: 2022-01-25 00:00:00
+modified_at: 2023-05-22 00:00:00
 tags: app review apps
 index: 31
 ---
@@ -55,20 +55,21 @@ If you've enabled review apps, a new application will be created every time a
 new PR is opened in your linked SCM-hosted repository. This new
 application is a child application.
 
-By default child applications will get a copy
-collaborators and environment variables from the parent application.
+Child applications clone some information from the parent app:
+* the [container formation]({% post_url platform/app/2000-01-01-scaling %})
+* the [stack]({% post_url platform/internals/stacks/2000-01-01-stacks %})
+* the [environment variables]({% post_url platform/app/2000-01-01-environment %}) (can be overridden in `scalingo.json`)
+* the databases and addons: including version and plans (can be overridden in `scalingo.json`), but _excluding_ the content of the databases.
+* the collaborators
+* the routing settings: [Force HTTPS]({% post_url platform/app/2000-01-01-force-https %}) and [Sticky Sessions]({% post_url platform/app/2000-01-01-sticky-sessions %})
 
-Child applications also inherit the addons formation of the parent application: same addons and same addon plans but also environment variables. As a note, environment variables are often sensitive data, containing API keys, database credentials, or other secrets.
-
-This default behavior can be customized, see below.
+This default behavior can be customized using a `scalingo.json` file, see below as explained in the following section.
 
 It is however important to understand that the customization can allow to connect directly the Review App to the parent application database and addons, so Review Apps must be enabled only when trusted sources are allowed to create merge requests in the source code repositories. As a consequence, Scalingo prevents Review Apps from being created from forks of the original repository.
 
 {% note %}
-Datatabases content and other addons content won't be copied from the parent application to its child applications.
+Databases content and other addons content won't be copied from the parent application to its child applications.
 {% endnote %}
-
-
 
 ## Configuration of Review Apps
 
@@ -77,7 +78,7 @@ might not want to copy production credentials, or it is sometimes required to
 start a custom task after the initialization of the app. That's where the [Scalingo
 JSON manifest]({% post_url platform/app/2000-01-01-app-manifest %}) becomes useful.
 
-If there are valid reasons and cases where configuring the `scalingo.json` is the adequate solution, it is important to understand that it is sometimes not the apporiate one. As Review Apps can connect to their parent database, and addons, this means personal, or health-related information can be exposed. As a consequence, Scalingo recommends not to enable Review Apps for production applications; the preferred approach is to create a second application linking to the same repository. This second, separate application can then have Review Apps, while protecting production data.
+If there are valid reasons and cases where configuring the `scalingo.json` is the adequate solution, it is important to understand that it is sometimes not the appropriate one. As Review Apps can connect to their parent database, and addons, this means personal, or health-related information can be exposed. As a consequence, Scalingo recommends not to enable Review Apps for production applications. The preferred approach is to create a second application linking to the same repository. This second, separate application can then have Review Apps, while protecting production data.
 
 As a quick example, here is a sample `scalingo.json` that customize the
 environment variable `CANONICAL_HOST_URL` for a child app:
