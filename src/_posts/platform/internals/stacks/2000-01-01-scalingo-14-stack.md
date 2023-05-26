@@ -1,12 +1,12 @@
 ---
 title: Scalingo-14 Stack
 nav: Scalingo-14
-modified_at: 2023-01-11 00:00:00
+modified_at: 2023-05-26 00:00:00
 index: 5
 ---
 
 {% warning %}
-  Scalingo-14 support ended on December 2019. If you're still using this stack, you [must upgrade]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack).
+scalingo-14 support ended on December 2019. If you're still using this stack, you [must upgrade]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack).
 {% endwarning %}
 
 This article describes the scalingo-14 stack, based on Ubuntu 14.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
@@ -17,7 +17,7 @@ Scalingo-14 is based on Ubuntu 14.04. Official support ended on December 2019.
 
 ## Testing and Upgrading Your App
 
-Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-18.
+Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-14.
 
 ##  Docker Image
 
