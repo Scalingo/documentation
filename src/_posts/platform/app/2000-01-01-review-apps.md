@@ -72,12 +72,12 @@ It is however important to understand that the customization can allow to connec
 Databases content and other addons content won't be copied from the parent application to its child applications.
 {% endnote %}
 
-## Accepts Review Apps deployments from forks
+## Accepting Review Apps deployments from forks
 In case your project also accepts pull requests from forked repositories, and you want to take advantage of the automatic deployment of the corresponding reviews apps, you can activate the automatic deployment of review apps from forks.
 
-In the Dashboard, go to Review Apps configuration and then edit the setting for automatic deployment. Check "I want to allow review apps coming from forks" and then click on Update. As soon as the next pull request opended from a fork is received, a complete clone of your application will be automatically created!
+In the Dashboard, go to Review Apps configuration, and edit the setting for automatic deployment. Check "I want to allow review apps coming from forks", then click on Update. As soon as the next pull request opened from a fork is received, a complete clone of your application will be automatically created!
 
-By using the CLI, add the `--allow-review-apps-from-forks` flag to your integration-link configuration and accept the warning message.
+When using the CLI, add the `--allow-review-apps-from-forks` flag to your integration-link configuration and accept the warning message.
 ```bash
 scalingo --app my-app integration-link-update --deploy-review-apps --allow-review-apps-from-forks
   /!\  Only allow automatic review apps deployments from forks if you trust the owners of those forks, as this could lead to security issues. More info here: https://doc.scalingo.com/platform/app/review-apps#addons-collaborators-and-environment-variables
