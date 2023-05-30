@@ -73,7 +73,7 @@ Databases content and other addons content won't be copied from the parent appli
 {% endnote %}
 
 ## Accepts Review Apps deployments from forks
-In case your project also accepts pull requests from forks, and you want to take advantage of the automatic deployment of the corresponding reviews apps, you can activate the automatic deployment of review apps from forks.
+In case your project also accepts pull requests from forked repositories, and you want to take advantage of the automatic deployment of the corresponding reviews apps, you can activate the automatic deployment of review apps from forks.
 
 In the Dashboard, go to Review Apps configuration and then edit the setting for automatic deployment. Check "I want to allow review apps coming from forks" and then click on Update. As soon as the next pull request opended from a fork is received, a complete clone of your application will be automatically created!
 
