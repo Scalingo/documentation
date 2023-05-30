@@ -31,16 +31,17 @@ after your dev team has closed the PR.
 If you don't want to create a new review app for each PR you can also choose
 among open PRs of your app to manually deploy a review app.
 
-{% assign img_url = "https://doc.scalingo.com/assets/images/review-apps/review_apps_modal.png" %}
+{% assign img_url = "https://doc.scalingo.com/assets/images/review-apps/review_app_list.png" %}
 {% include mdl_img.html %}
 
-{% assign img_url = "https://doc.scalingo.com/assets/images/review-apps/review_apps.png" %}
+{% assign img_url = "https://doc.scalingo.com/assets/images/review-apps/review_app_modal.png" %}
 {% include mdl_img.html %}
 
 It is also possible to manually create a review app using the [Scalingo CLI]({% post_url platform/cli/2000-01-01-features %}):
 
-```sh
+```bash
 scalingo --app my-app integration-link-manual-review-app 42
+-----> Manual review app created for app 'my-app' with pull/merge request id '42'.
 ```
 
 In this example, `42` is the pull request or merge request ID.
@@ -65,11 +66,25 @@ Child applications clone some information from the parent app:
 
 This default behavior can be customized using a `scalingo.json` file, see below as explained in the following section.
 
-It is however important to understand that the customization can allow to connect directly the Review App to the parent application database and addons, so Review Apps must be enabled only when trusted sources are allowed to create merge requests in the source code repositories. As a consequence, Scalingo prevents Review Apps from being created from forks of the original repository.
+It is however important to understand that the customization can allow to connect directly the Review App to the parent application database and addons, so Review Apps must be enabled only when trusted sources are allowed to create merge requests in the source code repositories. As a consequence, Scalingo prevents, by default, Review Apps from being created from forks of the original repository.
 
 {% note %}
 Databases content and other addons content won't be copied from the parent application to its child applications.
 {% endnote %}
+
+## Accepts Review Apps deployments from forks
+In case your project also accepts pull requests from forks, and you want to take advantage of the automatic deployment of the corresponding reviews apps, you can activate the automatic deployment of review apps from forks.
+
+In the Dashboard, go to Review Apps configuration and then edit the setting for automatic deployment. Check "I want to allow review apps coming from forks" and then click on Update. As soon as the next pull request opended from a fork is received, a complete clone of your application will be automatically created!
+
+By using the CLI, add the `--allow-review-apps-from-forks` flag to your integration-link configuration and accept the warning message.
+```bash
+scalingo --app my-app integration-link-update --deploy-review-apps --allow-review-apps-from-forks
+  /!\  Only allow automatic review apps deployments from forks if you trust the owners of those forks, as this could lead to security issues. More info here: https://doc.scalingo.com/platform/app/review-apps#addons-collaborators-and-environment-variables
+
+? Allow automatic creation of review apps from forks? Yes
+-----> Your app 'my-app' integration link has been updated.
+```
 
 ## Configuration of Review Apps
 
