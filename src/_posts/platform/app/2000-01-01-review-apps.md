@@ -79,7 +79,7 @@ In the Dashboard, go to Review Apps configuration, and edit the setting for auto
 
 When using the CLI, add the `--allow-review-apps-from-forks` flag to your integration-link configuration and accept the warning message.
 ```bash
-scalingo --app my-app integration-link-update --deploy-review-apps --allow-review-apps-from-forks
+$ scalingo --app my-app integration-link-update --deploy-review-apps --allow-review-apps-from-forks
   /!\  Only allow automatic review apps deployments from forks if you trust the owners of those forks, as this could lead to security issues. More info here: https://doc.scalingo.com/platform/app/review-apps#addons-collaborators-and-environment-variables
 
 ? Allow automatic creation of review apps from forks? Yes
