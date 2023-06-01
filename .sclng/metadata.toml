@@ -3,6 +3,6 @@ description = "Documentation website for Scalingo platform"
 destination_server = ["scalingo-platform"]
 flags = ["scalingo-app"]
 languages = ["dockerfile", "javascript", "markdown", "ruby"]
-owner = "jean@scalingo.com"
+owner = "cyrille@scalingo.com"
 team = "UFS"
 version = "1.0.2"
