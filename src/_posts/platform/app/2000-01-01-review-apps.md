@@ -31,10 +31,10 @@ after your dev team has closed the PR.
 If you don't want to create a new review app for each PR you can also choose
 among open PRs of your app to manually deploy a review app.
 
-{% assign img_url = "https://doc.scalingo.com/assets/images/review-apps/review_app_list.png" %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_review_apps_manual_deploy.png" %}
 {% include mdl_img.html %}
 
-{% assign img_url = "https://doc.scalingo.com/assets/images/review-apps/review_app_modal.png" %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_review_apps_configuration.png" %}
 {% include mdl_img.html %}
 
 It is also possible to manually create a review app using the [Scalingo CLI]({% post_url platform/cli/2000-01-01-features %}):
