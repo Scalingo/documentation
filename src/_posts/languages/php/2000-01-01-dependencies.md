@@ -1,7 +1,7 @@
 ---
 title: Managing Dependencies
 nav: Managing Dependencies
-modified_at: 2023-05-26 16:00:00
+modified_at: 2023-06-02 16:00:00
 tags: php
 index: 1
 ---
