@@ -2,7 +2,7 @@
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
 modified_at: 2022-12-05 00:00:00
-index: 7
+index: 8
 tags: deployment, java, jar, war
 ---
 
