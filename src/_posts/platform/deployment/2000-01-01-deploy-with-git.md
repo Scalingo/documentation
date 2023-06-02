@@ -1,13 +1,13 @@
 ---
 title: Deploy with Git
-modified_at: 2023-02-13 00:00:00
-tags: git deployment
+modified_at: 2023-06-05 00:00:00
+tags: git deployment push pull clone
 index: 4
 ---
 
 To deploy with Git you'll have to create a new application on Scalingo. A Git repository will be automatically created. Every push on the master branch of this repository will trigger a new deployment.
 
-### How to Create an App
+## How to Create an App
 
 ```bash
 # Create app with the CLI (or create one from the Dashboard):
@@ -37,7 +37,7 @@ git push scalingo main
   If you want to push on another branch, see below the command to push your branch.
 {% endnote %}
 
-### Deploy with Another Branch than Master and Main
+## Deploy with Another Branch than Master and Main
 
 If you want to deploy another branch than master and main:
 
@@ -48,7 +48,7 @@ git push scalingo mybranch:master
 git push scalingo mybranch:main
 ```
 
-### Deploy a Previous Version of an App
+## Deploy a Previous Version of an App
 
 If you want to deploy a version of your code that is not the current head of
 master, you first need to get the commit ID with `git log`. Then:
@@ -58,19 +58,19 @@ git push --force scalingo <commit ID>:refs/heads/master
 ```
 
 
-### Git Authentication and SSH
+## Git Authentication and SSH
 
 The Git server created by Scalingo uses SSH authentication. If you have any
 problem setting up SSH please read [Troubleshooting `git push` and SSH common
 issues]({% post_url platform/getting-started/2000-01-01-troubleshooting-ssh %}).
 
-### And After?
+## And After?
 
 See [Deployment Environment]({% post_url platform/app/2000-01-01-environment
 %}#build-environment) to configure your application and [Procfile]({% post_url
 platform/app/2000-01-01-procfile %}).
 
-### Clone Your Code
+## Clone Your Code
 
 {% warning %}
   A Scalingo Git repository is intended for deployment purposes only. Cloning
@@ -95,7 +95,7 @@ It will also add the `scalingo` remote to simplify future pushes.
   the changes made to your code won't be available.
 {% endnote %}
 
-#### Known Issue with Master Branch
+### Known Issue with Master Branch
 
 If you have the following message when doing a `git clone`:
 ```
@@ -114,7 +114,7 @@ add `--branch master` argument, like this:
 git clone --branch master git@ssh.osc-fr1.scalingo.com:my-app.git
 ```
 
-### Shallow Error
+## Shallow Error
 
 Currently, Scalingo does not support update of shallowed repository (i.e. from a `git push`).
 The shallow error means that the pushed repository on Scalingo does not contains all its history.
@@ -125,7 +125,7 @@ It is often the result of a clone with the Git parameter `--depth`.
 To be able to push the modifications, you need to first unshallow the repository.
 For that purpose, please follow the instructions below.
 
-#### From Your Environment:
+### From Your Environment
 
 You need to get all the repository history with the command:
 
@@ -139,7 +139,7 @@ Then retry to push your code with:
 git push scalingo master
 ```
 
-#### From the Continuous Integration
+### From the Continuous Integration
 
 Some CI offers you the possibility to disable shallow repository by disabling
 the parameter `depth` from configuration file.
@@ -166,6 +166,14 @@ If the problem persists, you must surely run the following Git command once:
 git fetch origin master --unshallow
 ```
 
-### SSH Endpoints
+## Sending Tags
+
+Currently, Scalingo does not support sending tags to Scalingo Git server (i.e. from a `git push`).
+The error can happen whether you are pushing tags from your workstation or from an online worker.
+
+You can also have an error when pushing tags with the `push.followTags` Git option enabled.
+If you want to push on Scalingo, you need to disable this Git option.
+
+## SSH Endpoints
 
 {% include ssh_endpoints.md %}
