@@ -3,6 +3,7 @@ title: PHP Session with Redis
 nav: Session with Redis
 modified_at: 2019-03-22 00:00:00
 tags: php redis
+index: 10
 ---
 
 When deploying a PHP application on Scalingo, you should favor best practices which let you

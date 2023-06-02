@@ -3,7 +3,7 @@ title: Managing Dependencies
 nav: Managing Dependencies
 modified_at: 2023-06-02 16:00:00
 tags: php
-index: 1
+index: 4
 ---
 
 [Composer](https://getcomposer.org) is the official dependency manager for PHP.
@@ -11,7 +11,7 @@ It allows to manage (download, install, upgrade, configure, and remove) the
 libraries a project depends on.
 
 If you want the platform to use Composer to manage your dependencies, make sure
-to include both the `composer.json` and the `composer.lock` file in your
+to include both the `composer.json` and the `composer.lock` files in your
 codebase.
 
 ## Declaring Dependencies
