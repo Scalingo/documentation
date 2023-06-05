@@ -1,6 +1,6 @@
 ---
 title: Custom Error and Maintenance Pages
-modified_at: 2022-12-01 00:00:00
+modified_at: 2023-05-25 00:00:00
 tags: app custom error page
 ---
 
@@ -29,6 +29,8 @@ The usage is the following:
 
 In order to prevent the page to be fetched at each request, the content is
 cached in the router's memory. Hence we limit the size of this page to 10MB.
+
+It is mandatory to restart the application for the configuration of these pages to be taken into account.
 
 {% note %}
 We advise you to develop the simplest page, with everything inlined (CSS, image,
