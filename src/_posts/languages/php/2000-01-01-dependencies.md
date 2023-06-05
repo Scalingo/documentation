@@ -3,7 +3,7 @@ title: Managing Dependencies
 nav: Managing Dependencies
 modified_at: 2023-06-05 16:00:00
 tags: php
-index: 4
+index: 3
 ---
 
 [Composer](https://getcomposer.org) is the official dependency manager for PHP.
@@ -16,7 +16,7 @@ codebase.
 
 ## Declaring Dependencies
 
-The dependencies required by your application must be declared in a file called
+The dependencies required by your application must be declared in a file named
 `composer.json`, stored at the root of your codebase. The format is described
 in the [Composer documentation](https://getcomposer.org/doc/01-basic-usage.md).
 
@@ -24,7 +24,7 @@ Once your dependencies have been defined and declared, their versions must be
 frozen to ensure a precise version of the application will always be deployed
 with the same compatible set of Composer packages. This allows for better
 reproducibility and consistency across environments. These versions are written
-in a file called `composer.lock`, also stored at the root of your project.
+in a file named `composer.lock`, also stored at the root of your project.
 
 Use Composer itself on your local computer (or in your CI/CD pipeline) to
 generate the `composer.lock` file:
@@ -48,7 +48,7 @@ After each command, the `composer.lock` file is automatically updated. Don't
 forget to commit the modifications!
 
 {% note %}
-    Both the `scalingo.json` and `scalingo.lock` files are **required** for the
+    Both the `composer.json` and `composer.lock` files are **required** for the
     platform to handle your dependencies.
 {% endnote %}
 
@@ -57,8 +57,9 @@ forget to commit the modifications!
 If you want to install a private dependency, you need to define the
 `COMPOSER_AUTH` environment variable, as specified in
 [the Composer documentation](https://getcomposer.org/doc/03-cli.md#composer-auth).
-For instance, for a private dependency hosted on GitHub, the `COMPOSER_AUTH`
-environment variable should contain:
+
+For a private dependency hosted on GitHub, the `COMPOSER_AUTH` environment
+variable should contain:
 
 ```json
 {
@@ -68,7 +69,12 @@ environment variable should contain:
 }
 ```
 
-`MY-TOKEN` must be replaced with a valid token of your GitHub account.
+`MY-TOKEN` must be replaced with a valid access token (OAuth token) for your
+GitHub account.
+
+Such a token can be generated [from your GitHub account](https://github.com/settings/tokens).
+For more details about GitHub access tokens, please refer to [their
+comprehensive documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
 ## Specifying the Composer Version
 
@@ -97,9 +103,9 @@ Scalingo currently supports the following versions of Composer:
 ## Working with Composer Environments
 
 By default, Scalingo considers that your application runs in *production* mode.
-This means that `composer install` automatically runs with the `--no-dev` flag,
-and, as a result, won't install the development dependencies of your
-application, if any.
+This means that `composer install` automatically runs with the `--no-dev` flag.
+As a result, won't install the development dependencies of your application, if
+any.
 
 If, for some reason, you would like to run your application with these
 development dependencies installed (e.g. to debug your app), please set the

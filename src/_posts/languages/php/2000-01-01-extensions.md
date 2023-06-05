@@ -1,9 +1,9 @@
 ---
 title: Managing PHP Extensions
 nav: Managing PHP Extensions
-modified_at: 2023-06-02 16:00:00
+modified_at: 2023-06-05 16:00:00
 tags: php
-index: 3
+index: 4
 ---
 
 Applications might require native PHP extensions which are usually written in
@@ -56,9 +56,6 @@ To enable a native PHP extension, add it in the `require` block of your
 }
 ```
 
-Once done, don't forget to generate the `composer.lock` file and to commit it
-to your codebase.
-
 {% note %}
 - Some PECL extensions are very old, probably even unmaintained and will only
   work with an old version of PHP (e.g. `mongo`, `sodium`, `ds` or `lua`). We
@@ -96,12 +93,12 @@ environment variable.
 
 ### Full Example
 
-In this example, we are going to install the PECL extension called `yaml`. This
+In this example, we are going to install the PECL extension named `yaml`. This
 is a good example as it requires the`libyaml` and `libyaml-dev` packages to be
 installed, and it also needs some specific compilation flags.
 
 First, let's tell the platform we need this extension. To do so, we will have
-to create a file called `composer.json` at the root of our project, like this:
+to create a file named `composer.json` at the root of our project, like this:
 
 ```json
 {
@@ -119,11 +116,11 @@ composer install
 
 As recommended, we will use the multi-buildpack to tell the platform to:
 
-1. first, call the apt-buildpack to install the required packages;
-2. and then, use the php-buildpack to install PHP, Composer and the required
+1. first, call the APT buildpack to install the required packages;
+2. and then, use the PHP buildpack to install PHP, Composer and the required
    extensions.
 
-Let's create a file called `.buildpacks` at the root of the project with the
+Let's create a file named `.buildpacks` at the root of the project with the
 following content:
 
 ```
@@ -133,13 +130,13 @@ https://github.com/Scalingo/php-buildpack
 
 `libyaml` is already available in our containers so we don't have to worry
 about it. But we still have to install `libyaml-dev`. To do so, create another
-file, called `Aptfile`, at the root of the project:
+file, named `Aptfile`, at the root of the project:
 
 ```
 libyaml-dev
 ```
 
-We then need to create a dedicated environment variable, called
+We then need to create a dedicated environment variable, named
 `PHP_PECL_EXTENSION_CONFIGURE_ARGS_yaml` and set its value to
 `--with-yaml=$BUILD_DIR/.apt/usr`. This instructs the platform to compile the
 extension with this flag, which tells the compile script where to find the
