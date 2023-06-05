@@ -107,9 +107,8 @@ This means that `composer install` automatically runs with the `--no-dev` flag.
 As a result, won't install the development dependencies of your application, if
 any.
 
-If, for some reason, you would like to run your application with these
-development dependencies installed (e.g. to debug your app), please set the
-`COMPOSER_DEV` environment variable to `true`.
+Set the `COMPOSER_DEV` environment variable to `true` if you would like to run your application with these
+development dependencies installed (e.g. to debug your app).
 
 In addition to the `--[no-]dev` flag, the platform always runs
 `composer install` with the `--prefer-dist` and `--optimize-autoloader` flags.
