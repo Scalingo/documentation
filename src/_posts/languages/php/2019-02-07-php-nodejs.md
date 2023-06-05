@@ -3,6 +3,7 @@ title: PHP application with Node.js
 nav: PHP along with Node.js
 modified_at: 2020-01-16 00:00:00
 tags: php nodejs assets webpack
+index: 9
 ---
 
 There are some cases where a PHP application also needs Node.js. It is for
