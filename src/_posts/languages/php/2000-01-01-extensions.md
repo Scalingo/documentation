@@ -108,11 +108,6 @@ to create a file named `composer.json` at the root of our project, like this:
 }
 ```
 
-Don't forget to generate the `composer.lock` file, using Composer:
-
-```bash
-composer install
-```
 
 As recommended, we will use the multi-buildpack to tell the platform to:
 
