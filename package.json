@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@docsearch/js": "^3.3.3",
-    "@rails/webpacker": "^3.2.2",
+    "@rails/webpacker": "^5.4.4",
     "@tailwindcss/line-clamp": "^0.3.1",
     "autoprefixer": "^10.4.2",
     "image-webpack-loader": "^3.6.0",
