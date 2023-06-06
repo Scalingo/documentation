@@ -9,7 +9,7 @@ updates:
     schedule:
       interval: "monthly"
     reviewers:
-      - "btrd"
+      - "cyrille-sg"
   - package-ecosystem: "npm"
     directory: "/"
     allow:
@@ -17,4 +17,4 @@ updates:
     schedule:
       interval: "monthly"
     reviewers:
-      - "btrd"
+      - "cyrille-sg"
