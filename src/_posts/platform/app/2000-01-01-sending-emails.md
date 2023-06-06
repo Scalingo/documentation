@@ -1,13 +1,13 @@
 ---
 title: Sending emails from your application
 nav: Sending emails
-modified_at: 2016-07-22 00:00:00
+modified_at: 2023-06-05 00:00:00
 tags: app email smtp
 ---
 
 For various reasons (transactional, marketing, etc.) you might want to send
 emails from your application. Scalingo does not provide an embedded email
-server, we are not an email provider.  If you try to use the `sendmail`
+server, we are not an email provider. If you try to use the `sendmail`
 executable, you will not find it.
 
 However it is is totally possible to send emails, thanks to an external SMTP
@@ -19,8 +19,10 @@ As email sending is an entirely other job, we encourage you to use services
 specialized into that. Here is a list containing a few actors on the market of
 email as a service:
 
+* [Brevo](https://www.brevo.com/) (formerly Sendinblue)
+* [Sarbacane Campaigns](https://www.sarbacane.com/logiciel-marketing/campaigns)
 * [Mailjet](https://mailjet.com/)
-* [Mandrill](https://www.mandrill.com/)
+* [Mailchimp](https://mailchimp.com/)
 * [Sendgrid](https://sendgrid.com/)
 * [Amazon SES](https://aws.amazon.com/ses/)
 
