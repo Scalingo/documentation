@@ -17,6 +17,12 @@ You can deploy your Scalingo application with a code hosted on GitLab: either
 the SaaS version at [https://gitlab.com/](https://gitlab.com/) or a self-hosted
 version. You will have to link it to a GitLab repository and branch.
 
+{% note %}
+To avoid remote error, you may want to configure your GitLab CI jobs with the [`GIT_STRATEGY`](https://docs.gitlab.com/ee/ci/runners/configure_runners.html#git-strategy) set to `clone`.
+
+The deployment will be a bit slower but the option allow us to clone the repository from scratch for every job and ensure that the local working copy is always pristine.
+{% endnote %}
+
 ## Link Your App to the SCM Tool
 
 You first need to link your Scalingo account with your GitLab account. This is
