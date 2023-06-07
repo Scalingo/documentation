@@ -3,7 +3,7 @@ title: Deploy Directly from an Archive
 nav: Deploy from Archive
 modified_at: 2020-02-18 00:00:00
 tags: source deploy archive
-index: 6
+index: 7
 ---
 
 One way to deploy your application is to directly create a deployment from a
