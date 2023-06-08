@@ -1,6 +1,6 @@
 ---
 title: Deploy with GitLab
-modified_at: 2023-03-31 00:00:00
+modified_at: 2023-06-07 00:00:00
 tags: scm gitlab deployment
 index: 6
 ---
@@ -16,6 +16,11 @@ platform/deployment/continuous-integration/2000-01-01-deploy-scalingo-from-gitla
 You can deploy your Scalingo application with a code hosted on GitLab: either
 the SaaS version at [https://gitlab.com/](https://gitlab.com/) or a self-hosted
 version. You will have to link it to a GitLab repository and branch.
+
+{% note %}
+To avoid remote error, you may want to configure your GitLab CI jobs with the [`GIT_STRATEGY`](https://docs.gitlab.com/ee/ci/runners/configure_runners.html#git-strategy) set to `clone`.
+The deployment will be a bit slower but the option allows Scalingo to clone the repository from scratch for every job and ensure that the local working copy is always pristine.
+{% endnote %}
 
 ## Link Your App to the SCM Tool
 
