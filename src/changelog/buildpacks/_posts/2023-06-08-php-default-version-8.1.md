@@ -5,4 +5,4 @@ github: 'https://github.com/Scalingo/php-buildpack'
 ---
 
 For a complete view of all available PHP versions, depending on the stack,
-please see [the dedicated page in our documentation](https://doc.scalingo.com/languages/php/start#php-versions).
+please see [the dedicated page in our documentation]({% post_url languages/php/2000-01-01-start %}#php-versions).
