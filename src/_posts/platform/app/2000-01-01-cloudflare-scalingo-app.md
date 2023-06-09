@@ -2,7 +2,7 @@
 layout: page
 title: Configure Cloudflare to access Scalingo applications
 nav: Configure Cloudflare
-modified_at: 2019-11-07 10:00:00
+modified_at: 2023-06-09 10:00:00
 tags: integration cloudflare
 index: 98
 ---
@@ -37,6 +37,8 @@ used:
   attacked.  Cloudflare positions itself as a shield against a wide variety of
   distributed DDoS attacks, legitimate keeps being transferred to your
   application while unwanted ones are dropped.
+
+{% include frontend_servers_open_ports_cloudflare.md %}
 
 ## Setup of Your Cloudflare Account
 
