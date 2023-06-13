@@ -6,4 +6,4 @@ github: 'https://github.com/Scalingo/php-buildpack'
 
 Changelog:
 
-* [Composer 2.5.7](https://github.com/composer/composer/releases/tag/2.5.8)
+* [Composer 2.5.8](https://github.com/composer/composer/releases/tag/2.5.8)
