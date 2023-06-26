@@ -58,6 +58,11 @@ $ scalingo create my-app --buildpack https://github.com/Scalingo/multi-buildpack
 
 **Actions**: Fill confirmation form, choose a new name and click on `RENAME`
 
+{% note %}
+The [SCM link]{{% post_url platform/app/2000-01-01-scm-integration.md %}} is not updated when renaming an application.
+You should recreate it by yourself
+{% endnote %}
+
 ## Transfer Ownership of an Application
 
 You may want to transfer an application to someone else. In this case you have to
