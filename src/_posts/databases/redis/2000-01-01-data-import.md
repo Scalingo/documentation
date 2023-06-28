@@ -30,7 +30,7 @@ $ scalingo --app my-app run bash
 [00:00] Scalingo ~ $ echo "java.runtime.version=15" > system.properties
 [00:00] Scalingo ~ $ ./buildpack-jvm-common/bin/compile /app
 [00:00] Scalingo ~ $ export PATH=$PATH:/app/.jdk/bin/
-[00:00] Scalingo ~ $ ./riot-redis-*/bin/riot-redis --uri $SCALINGO_REDIS_URL replicate --uri $REDIS_SOURCE_URL
+[00:00] Scalingo ~ $ ./riot-redis-*/bin/riot-redis --uri $REDIS_SOURCE_URL replicate --uri $SCALINGO_REDIS_URL
 ```
 
 The `REDIS_SOURCE_URL` variable must contain the connection string to the external Redis instance. For Redis URI syntax see [here](https://github.com/lettuce-io/lettuce-core/wiki/Redis-URI-and-connection-details#uri-syntax).
