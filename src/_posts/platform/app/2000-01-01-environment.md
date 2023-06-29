@@ -1,6 +1,6 @@
 ---
 title: Environment Variables
-modified_at: 2022-01-25 00:00:00
+modified_at: 2023-06-29 00:00:00
 tags: app configuration environment
 index: 3
 ---
@@ -24,9 +24,9 @@ In this case the `DATABASE_URL` becomes an alias of `SCALINGO_MONGO_URL` value.
 ## Good Practices
 
 Using the environment to configure your application is one of twelve good practices
-defined in [the 12-factor](http://12factor.net/).
+defined in [the 12-factor](https://12factor.net/).
 
-You should avoid writing any credentials in the files managed by Git.
+You should avoid writing any credentials in the files managed by Git (example: `.env` files).
 
 ## Accessing the Environment from your App
 
