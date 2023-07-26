@@ -1,7 +1,7 @@
 ---
 title: Deploy with GitHub and GitHub Enterprise
 nav: Deploy with GitHub
-modified_at: 2023-05-10 00:00:00
+modified_at: 2023-07-26 00:00:00
 tags: scm github github-enterprise deployment
 index: 5
 ---
@@ -13,16 +13,16 @@ Enterprise. You will have to link it to a GitHub repository and branch.
 
 ### Using the Web Dashboard
 
-In the "Code" section in your dashboard, you'll find a category *Deploy with
-GitHub*. Please click on `Link this app to GitHub` and check you are in the
-right account. Choose your GitHub user, and find your GitHub repository in the
-list or with the search bar.
+In [your account integrations settings](https://dashboard.scalingo.com/account/integrations), you find a category *GitHub*. Please click on it then `Connect` and check you are in the right account.
+
+Then, from the dashboard of your application, in the "Deploy → Configuration" section, choose your *GitHub user* or your *organization* and find your GitHub repository in the list or with the search bar.
 
 {% note %}
-If your organization is not listed in the list of users when linking your app to
-GitHub, you might need to give Scalingo access to this organization
-repositories. Head to [this GitHub
-page](https://github.com/settings/connections/applications/dce5163f63352f1a4d45){:target="_blank"}.
+If your organization is not listed in the list of users/organizations when linking your app to
+GitHub:
+<br>
+You might need to give Scalingo access to this organization. Head to [this GitHub
+page](https://github.com/settings/connections/applications/dce5163f63352f1a4d45){:target="_blank"} and grant access to your organization.
 {% endnote %}
 
 In order to link your Scalingo app to a GitHub repository, GitHub will prompt
