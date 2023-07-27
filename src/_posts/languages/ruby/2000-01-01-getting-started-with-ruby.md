@@ -1,6 +1,6 @@
 ---
 title: Get Started with Ruby on Scalingo
-modified_at: 2018-02-23 00:00:00
+modified_at: 2023-07-27 00:00:00
 tags: ruby sinatra tutorial getting-started-tutorial
 index: 3
 ---
@@ -154,6 +154,23 @@ $ git push scalingo master
  Waiting for your application to boot...
  <-- https://my-ruby-app.osc-fr1.scalingo.io -->
 ```
+
+## Database migrations
+
+To run a migration, you need to use a [post-deployment hook]({% post_url platform/app/2000-01-01-postdeploy-hook %}).
+
+The Ruby application starts up before the schema has changed, but does not receive a query.
+
+As a result, if operations are started before the migration has been executed, the application may load the schema `pre-migration`, and so a restart may be necessary after the migration, however short it may be.
+
+The best practice is to perform non-destructive migrations, where a column rename is performed in several steps, rather than an `ALTER TABLE` renaming a column.
+
+A good example in `strong_migrations` gem [documentation](https://github.com/ankane/strong_migrations#renaming-a-column).
+
+{% note %}
+  Running a migration on an application that then crashes on startup can be risky, so the application must start without the database migration.
+  As we make sure the application starts before running the hook, if it fails, `postdeploy` won't be run and database migration won't be executed either.
+{% endnote %}
 
 ## Where to go next
 
