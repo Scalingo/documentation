@@ -1,6 +1,6 @@
 ---
 title: Post-deployment hook
-modified_at: 2023-03-28 00:00:00
+modified_at: 2023-07-27 00:00:00
 tags: app deployment hook postdeploy
 index: 13
 ---
@@ -59,7 +59,7 @@ contains the environment variables from your app, with the one we inject in any
   otherwise the process will be stopped and the status `-128` will be
   returned. If you have long task to achieve after a deployment, it is
   recommended **not** to use a `postdeploy` hook but a
-  [one-off container]({% post_url platform/app/2000-01-01-tasks%}) once the
+  [one-off container]({% post_url platform/app/2000-01-01-tasks %}) once the
   deployment has been done.
 * During the postdeploy execution, the new version of the application is not
   yet reachable. If you make a query to it, the old version will respond, or,
@@ -70,7 +70,7 @@ contains the environment variables from your app, with the one we inject in any
 
 ### Database Migrations
 
-A common example to this feature is to apply database migrations, for instance with a Rails application:
+A common example to this feature is to apply database migrations, for instance with a [Rails application]({% post_url languages/ruby/rails/2000-01-01-start %}#database-migration):
 
 ```yaml
 postdeploy: bundle exec rake db:migrate
