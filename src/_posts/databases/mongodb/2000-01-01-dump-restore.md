@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my MongoDB database on Scalingo
 nav: Dump and Restore
-modified_at: 2022-12-22 00:00:00
+modified_at: 2023-07-26 00:00:00
 tags: databases mongodb mongo tunnel dump restore
 index: 2
 ---
@@ -53,6 +53,8 @@ In this situation you need to use a different connection string than the one
 from your application environment.
 The `<host>` part is replaced by `127.0.0.1` and the `<port>` is replaced by
 `10000`.
+
+{% include db_tunnel_requires_ssh.md %}
 
 {% warning %}
 If your database uses Business plan, you have a replica set.
