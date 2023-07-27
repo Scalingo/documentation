@@ -68,5 +68,5 @@ As a result, no file operation alongside your app, you delegate everything to th
 provider.
 
 {% warning %}
-  Currently we do not limit disk size of the `/tmp` folder inside an application container. You can use a few gigabytes, beyond that, there's a risk that your container will be killed.
+  Currently Scalingo does not limit disk size of the `/tmp` folder inside an application container. Your container may be killed if you use more than a few gigabytes.
 {% endwarning %}
