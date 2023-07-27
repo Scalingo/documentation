@@ -1,6 +1,6 @@
 ---
 title: File System and File Storage
-modified_at: 2021-11-30 00:00:00
+modified_at: 2023-07-27 00:00:00
 tags: app runtime file system disk storage
 index: 1
 ---
@@ -66,3 +66,7 @@ The workflow becomes:
 
 As a result, no file operation alongside your app, you delegate everything to the storage
 provider.
+
+{% warning %}
+  Currently Scalingo does not limit disk size of the `/tmp` folder inside an application container. Your container may be killed if you use more than a few gigabytes.
+{% endwarning %}
