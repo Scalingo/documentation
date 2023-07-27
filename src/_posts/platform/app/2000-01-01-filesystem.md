@@ -1,6 +1,6 @@
 ---
 title: File System and File Storage
-modified_at: 2021-11-30 00:00:00
+modified_at: 2023-07-27 00:00:00
 tags: app runtime file system disk storage
 index: 1
 ---
@@ -66,3 +66,7 @@ The workflow becomes:
 
 As a result, no file operation alongside your app, you delegate everything to the storage
 provider.
+
+{% warning %}
+  Currently we do not limit disk size of the `/tmp` folder inside an application container. You can use a few gigabytes, beyond that, there's a risk that your container will be killed.
+{% endwarning %}
