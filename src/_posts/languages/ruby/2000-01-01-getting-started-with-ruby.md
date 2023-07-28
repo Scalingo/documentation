@@ -161,16 +161,13 @@ To run a migration, you need to use a [post-deployment hook]({% post_url platfor
 
 The Ruby application starts up before the schema has changed, but does not receive a query.
 
-As a result, if operations are started before the migration has been executed, the application may load the schema `pre-migration`, and so a restart may be necessary after the migration, however short it may be.
+As a result, if operations are started before the migration has been executed, the application may load the schema `pre-migration`. A restart could be necessary after the migration.
 
 The best practice is to perform non-destructive migrations, where a column rename is performed in several steps, rather than an `ALTER TABLE` renaming a column.
 
 A good example in `strong_migrations` gem [documentation](https://github.com/ankane/strong_migrations#renaming-a-column).
 
-{% note %}
-  Running a migration on an application that then crashes on startup can be risky, so the application must start without the database migration.
-  As we make sure the application starts before running the hook, if it fails, `postdeploy` won't be run and database migration won't be executed either.
-{% endnote %}
+{% include app_start_without_migration.md %}
 
 ## Where to go next
 
