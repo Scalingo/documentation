@@ -1,0 +1,18 @@
+---
+modified_at: 2023-07-28 10:00:00
+title: 'PostgreSQL - New Scalingo release: 14.8.0-1, 13.11.0-1, 12.15.0-1, and 11.20.0-1, Timescale DB 2.11.1'
+---
+
+New default version: **14.8.0-1**.
+
+Changelog:
+
+- Bump versions of PostgreSQL to last minors
+- Upgrading TimescaleDB to the last minor version 2.11.1 on Postgres 13 and 14
+
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
+
+* `scalingo/postgresql:14.8.0-1`
+* `scalingo/postgresql:13.11.0-1`
+* `scalingo/postgresql:12.15.0-1`
+* `scalingo/postgresql:11.20.0-1`
