@@ -13,7 +13,7 @@
     "autoprefixer": "^10.4.2",
     "image-webpack-loader": "^3.6.0",
     "mdn-polyfills": "^5.20.0",
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.27",
     "postcss-cli": "^10.1.0",
     "svgo": "^1.0.4",
     "svgo-loader": "^4.0.0",
