@@ -1,0 +1,14 @@
+---
+modified_at: 2023-07-31 00:00:00
+title: 'New Load Balancers IPs'
+---
+
+Two new IPs have been added to our reverse proxies on both the osc-fr1 and osc-secnum-fr1 region.
+
+New IPs on `osc-fr1`:
+* `109.232.233.130`
+* `148.253.75.120`
+
+New IPs on `osc-secnum-fr1`:
+* `80.247.12.255`
+* `80.247.13.145`
