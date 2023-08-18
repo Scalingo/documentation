@@ -5,8 +5,8 @@ title: 'Release of v2.2.0 for Scalingo Terraform Provider'
 
 Scalingo Terraform Provider v2.2.0 has been released:
 
-- support for router logs and sticky sessions has been added
-- the `auth_integration_uuid cannot be updated` issue has been fixed
+- support for router logs and sticky sessions has been added ([#167](https://github.com/Scalingo/terraform-provider-scalingo/issues/167)
+- the `auth_integration_uuid cannot be updated` issue has been fixed [#161](https://github.com/Scalingo/terraform-provider-scalingo/issues/161)
 - bump `github.com/go-test/deep` from `v1.0.5` to `v1.1.0`
 - bump `github.com/golang/protobuf` from `1.5.2` to `v1.5.3`
 - bump `github.com/zclconf/go-cty` from `1.13.0` to `v1.13.1`
