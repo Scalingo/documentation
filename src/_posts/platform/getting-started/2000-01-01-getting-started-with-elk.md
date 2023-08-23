@@ -1,6 +1,6 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2022-08-01 16:00:00
+modified_at: 2023-08-23 16:00:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
@@ -263,6 +263,12 @@ output {
 
 ## Curator
 
+{% warning %}
+Curator version MUST be aligned with the ElasticSearch version. At Scalingo, we
+deploy ElasticSearch 7.x per default, which means you would have to use Curator
+7.x to ensure compatibility.
+{% endwarning %}
+
 ### Installing Curator
 
 Since logs are only relevant for a short period of time, it is current
@@ -270,12 +276,12 @@ practice to remove logs that are too old to be relevant. This is done to
 reduce the load on the database and limit the disk usage.
 
 This is where
-[Curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/5.8/index.html)
+[Curator](https://www.elastic.co/guide/en/elasticsearch/client/curator/7.0/index.html)
 is needed. This project is designed to let you manage your indices life cycle.
 
-Curator can be installed on the existing Logstash application `my-awesome-logstash`. As Curator is written in Python, you
-can modify the `.buildpacks` file to add the Python buildpack. The
-`.buildpacks` file should have the following content:
+Curator can be installed on the existing Logstash application
+`my-awesome-logstash`. As Curator is written in Python, you have to modify your
+`.buildpacks` file to add the Python buildpack, so that it ends up like this:
 
 ```
 https://github.com/Scalingo/buildpack-jvm-common
@@ -283,12 +289,11 @@ https://github.com/Scalingo/python-buildpack
 https://github.com/Scalingo/logstash-buildpack
 ```
 
-To instruct the Python buildpack to install Curator and its
-dependencies, create a file named `requirements.txt` at the root of your
-application:
+To instruct the Python buildpack to install Curator and its dependencies,
+create a file named `requirements.txt` at the root of your application:
 
 ```
-elasticsearch-curator==5.8.4
+elasticsearch-curator==7.0.1
 ```
 
 ### Configuring Curator
@@ -302,7 +307,9 @@ content:
 client:
   hosts:
     - ${ELASTICSEARCH_HOST}
-  http_auth: ${ELASTICSEARCH_AUTH}
+  username: ${ELASTICSEARCH_AUTH_USERNAME}
+  password: ${ELASTICSEARCH_AUTH_PASSWORD}
+
 logging:
   loglevel: INFO
   logfile:
@@ -310,14 +317,15 @@ logging:
 ```
 
 Curator cannot use the `ELASTICSEARCH_URL` environment variable. You
-need to define two other environment variables on your app, duplicating
+need to define three other environment variables on your app, duplicating
 `ELASTICSEARCH_URL` content.
 Hence, if your `ELASTICSEARCH_URL` variable is set to
-`http://user:password@host:port`, you need to define 2 environment variables:
+`http://user:password@host:port`, you need to define:
 
 ```
 ELASTICSEARCH_HOST=host:port
-ELASTICSEARCH_AUTH=user:password
+ELASTICSEARCH_AUTH_USERNAME=user
+ELASTICSEARCH_AUTH_PASSWORD=password
 ```
 
 Now you have to configure your indices life cycle. This is based on your
