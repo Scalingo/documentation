@@ -3,6 +3,8 @@ automatically make periodic backups of your database on a daily basis, at around
 1:00 AM Central European Time (CET or UTC+0100). The time of your daily backup
 is configurable via the web dashboard of your database or using the CLI. The scheduled date is not strongly enforce: it might get delayed depending on the load on our infrastructure.
 
+### Retention Policy for Daily Backups
+
 We keep a limited amount of backups depending on your database plan. A daily
 backup is retained for the last 7 days. That means that 7 backups will exist,
 one for each of the last 7 days. A weekly backup means that only one backup is
@@ -17,6 +19,8 @@ over the course of a month.
 | Business     | 8 weeks                 | 12 months               |
  {: .table }
 </div>
+
+### Retention Policy for Manual Backups
 
 You can also manually trigger a backup for your database at any time you want.
 The number of manual backups that you can retain is limited by your plan:
