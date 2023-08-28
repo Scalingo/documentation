@@ -60,7 +60,7 @@ $ scalingo create my-app --buildpack https://github.com/Scalingo/multi-buildpack
 
 {% note %}
 The [SCM link]{{% post_url platform/app/2000-01-01-scm-integration.md %}} is not updated when renaming an application.
-You should recreate it by yourself
+You should recreate it by yourself.
 {% endnote %}
 
 ## Transfer Ownership of an Application
