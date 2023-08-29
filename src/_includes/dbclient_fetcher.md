@@ -1,6 +1,6 @@
 You can use our utility tool `dbclient-fetcher` to download and install the
-tools for the database of your choice. To do so, call `dbclient-fetcher` with
-the `db_kind` of your choice (see table above).
+tools for your database. To do so, call `dbclient-fetcher` with the *keyword*
+corresponding to your database (see table above).
 
 For example, to download the tools to interact with your MySQL addon:
 
