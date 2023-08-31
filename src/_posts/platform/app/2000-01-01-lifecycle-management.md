@@ -99,6 +99,8 @@ The account is now collaborator of the application.
 2. In the '*Transfer the application*' part, choose the collaborator which should receive the app
 3. Validate the transfer
 
+After this step, the previous owner becomes a simple collaborator of the application.
+
 {% note %}
   *Note*: if you're handling both accounts, don't forget to log out between each step, otherwise the
   collaboration invitation won't be considered valid.
