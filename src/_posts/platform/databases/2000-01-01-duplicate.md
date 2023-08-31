@@ -1,6 +1,6 @@
 ---
 title: Copying your Database
-modified_at: 2023-08-28 16:00:00
+modified_at: 2023-08-31 16:00:00
 tags: databases backups
 ---
 
@@ -43,7 +43,7 @@ We usually suggest the following strategy:
 ## Scripting the Solution
 
 Almost all the steps described above can be automated, thanks to the Scalingo
-CLI tool (and some Bash glue). Here is a simple example of what can be done:
+CLI tool (and some Bash glue). Here is a basic example of what can be done:
 
 ```bash
 #!/usr/bin/env bash
@@ -56,37 +56,52 @@ install-scalingo-cli
 # Install additional tools to interact with the database:
 dbclient-fetcher "${DUPLICATE_ADDON_KIND}"
 
-# Login to Scalingo, using the token stored in `SCALINGO_CLI_TOKEN`:
-scalingo login --api-token "${SCALINGO_CLI_TOKEN}"
+# Login to Scalingo, using the token stored in `DUPLICATE_API_TOKEN`:
+scalingo login --api-token "${DUPLICATE_API_TOKEN}"
 
 # Retrieve the addon id:
 addon_id="$( scalingo --app "${DUPLICATE_SOURCE_APP}" addons \
-             | grep "${addon_kind}" \
-             | cut -d '|' -f 3 \
-             | tr -d ' '" )"
+             | grep "${DUPLICATE_ADDON_KIND}" \
+             | cut -d "|" -f 3 \
+             | tr -d " " )"
 
 # Download the latest backup available for the specified addon:
 scalingo --app "${DUPLICATE_SOURCE_APP}" --addon "${addon_id}" \
     backups-download --output "${archive_name}"
 
+# Get the name of the backup file:
+backup_file_name="$( tar --list --file="${archive_name}" \
+                     | tail -n 1 \
+                     | cut -d "/" -f 1 )"
+
 # Extract the archive containing the downloaded backup:
-tar --extract --verbose --strip-components=1 --file="${archive_name}" \
-    --directory="/app/restore"
+tar --extract --verbose --file="${archive_name}" --directory="/app/"
 
 # Restore the data:
 #  Example with PostgreSQL:
-#    pg_restore --clean --if-exists --no-owner --no-privileges --no-comments --dbname $DATABASE_URL /app/restore
-#  Example with MySQL:
-#    mysql 
+#    pg_restore --clean --if-exists --no-owner --no-privileges --no-comments \
+#        --dbname "${DATABASE_URL}" "/app/${backup_file_name}"
 ```
 
 As you can see, this script would require 3 environment variables to be set:
 
-- `SCALINGO_CLI_TOKEN`: an API token granting access to your account.
-- `DUPLICATE_SOURCE_APP`: the name of the source application.
-- `DUPLICATE_ADDON_KIND`: the database kind (see the [`dbclient-fetcher` documentation]({% post_url platform/databases/2000-01-01-access %}#manually-install-the-databases-cli-in-one-off)
+- `DUPLICATE_API_TOKEN`: an API token granting access to your account. It can
+  be generated from [your dashboard](https://dashboard.scalingo.com/account/tokens).
+- `DUPLICATE_SOURCE_APP`: the name of the source application, from where the
+  backup will be retrieved.
+- `DUPLICATE_ADDON_KIND`: the database kind (see the [`dbclient-fetcher`
+  documentation]({% post_url platform/databases/2000-01-01-access %}#manually-install-the-databases-cli-in-one-off)
   for further help).
 
 The last step of the script depends on the database you're using. Please refer
 to [our documentation]({% post_url platform/databases/2000-01-01-restore-backup %})
 for precise instructions and examples.
+
+You will most probably need an empty file called `index.php` to trick the
+platform and make it believe you are deploying a PHP app. Without it, the
+platform won't deploy your app.
+
+In the end, you should have at least 3 files in your project directory:
+- An empty `index.php`.
+- A `.sh` file, containing your duplication script.
+- A `cron.json` file to schedule your duplication task.
