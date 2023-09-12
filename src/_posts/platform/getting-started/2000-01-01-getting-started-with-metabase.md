@@ -21,9 +21,11 @@ under 5 minutes.
   for this purpose.
 
 - Depending on several factors such as the amount of data stored in your
-  production database, its load and the complexity of the Metabase queries you
+  production database, its load, and the complexity of the Metabase queries you
   want to run, you may consider duplicating your production data to an
-  additional database, dedicated for Metabase use. [Our documentation]({% post_url platform/databases/2000-01-01-duplicate %})
+  additional database dedicated for Metabase use. Doing so would prevent
+  Metabase to have a negative impact on your application's performances.
+  [Our documentation]({% post_url platform/databases/2000-01-01-duplicate %})
   should help you with this additional task.
 
 ### Using our One-Click Deploy Button
@@ -69,7 +71,7 @@ follow to deploy Metabase on Scalingo:
 3. Create the database:
 
    ```bash
-   scalingo --app my-app addons-add postgresql postgresql-starte-512
+   scalingo --app my-app addons-add postgresql postgresql-starter-512
    ```
 
 4. Everything's ready, deploy to Scalingo:
