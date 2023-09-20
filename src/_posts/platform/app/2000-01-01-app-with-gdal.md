@@ -2,7 +2,7 @@
 layout: page
 title: Deploy an Application Including the GDAL Library
 nav: App Including GDAL
-modified_at: 2022-01-25 00:00:00
+modified_at: 2022-09-19 00:00:00
 tags: app gdal geo
 index: 120
 ---
@@ -40,3 +40,23 @@ PROJ_LIB=/app/.apt/usr/share/proj
 ```
 
 Deploy your application, it is ready to use the GDAL library!
+
+## GDAL with Django
+
+The GDAL library won't be accessible during the build so the django collectstatic step will fail. 
+A solution is to disable the collectstatic feature during the build with the following environment variable:
+
+```
+DISABLE_COLLECTSTATIC=1  
+```
+
+Then you will be able to trigger the collectstatic after the build by creating a [post_compile script]({% post_url languages/python/2000-01-01-start %}#specific-python-buildpack-hooks) like this:
+```
+#!/bin/sh
+
+export PYTHONPATH=/build/${REQUEST_ID}/.apt/usr/lib/python3/dist-packages/:{PYTHONPATH}
+export LD_LIBRARY_PATH=/build/${REQUEST_ID}/.apt/usr/lib/x86_64-linux-gnu/blas/:/build/${REQUEST_ID}/.apt/usr/lib/x86_64-linux-gnu/lapack/:${LD_LIBRARY_PATH}
+export PROJ_LIB=/build/${REQUEST_ID}/.apt/usr/share/proj
+
+python manage.py collectstatic --noinput
+``` 
