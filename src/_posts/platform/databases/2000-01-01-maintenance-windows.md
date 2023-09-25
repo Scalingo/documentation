@@ -1,7 +1,7 @@
 ---
 title: Database Maintenance Windows
 nav: Maintenance Windows
-modified_at: 2023-09-21 00:00:00
+modified_at: 2023-09-25 00:00:00
 tags: databases maintenance
 index: 0
 ---
@@ -34,7 +34,7 @@ scalingo --app my-app addons-info addon-uuid
 To use the following commands in order to list planned and past maintenance on your database, specify the related application, and your database addon UUID:
 
 ```bash
-scalingo --app my-app --addon addon-uuid database_maintenance_list
+scalingo --app my-app --addon addon-uuid database-maintenance-list
 ```
 
 This command displays the list of the planned maintenance windows for your database.
@@ -42,5 +42,5 @@ This command displays the list of the planned maintenance windows for your datab
 You can, as well, get more details about a specific maintenance :
 
 ```bash
-scalingo --app my-app --addon addon-uuid database_maintenance_info maintenance_uuid
+scalingo --app my-app --addon addon-uuid database-maintenance-info maintenance_uuid
 ```
