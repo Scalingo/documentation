@@ -1,7 +1,7 @@
 ---
 title: Application Lifecycle Management
 nav: Lifecycle Management
-modified_at: 2023-04-04 00:00:00
+modified_at: 2023-09-27 00:00:00
 index: 10
 tags: management
 ---
@@ -59,8 +59,8 @@ $ scalingo create my-app --buildpack https://github.com/Scalingo/multi-buildpack
 **Actions**: Fill confirmation form, choose a new name and click on `RENAME`
 
 {% note %}
-The [SCM link]{{% post_url platform/app/2000-01-01-scm-integration.md %}} is not updated when renaming an application.
-You should recreate it by yourself.
+The [SCM link]({% post_url platform/app/2000-01-01-scm-integration %}) is not
+updated when renaming an application. You should recreate it by yourself.
 {% endnote %}
 
 ## Transfer Ownership of an Application
