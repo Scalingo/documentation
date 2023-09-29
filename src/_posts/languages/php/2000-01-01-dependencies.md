@@ -95,11 +95,11 @@ You can select the Composer version to install by specifying it in your
 
 Scalingo currently supports the following versions of Composer:
 
-- `2.2.18`
+- `2.2.22`
 - `2.3.10`
 - `2.4.4`
 - `2.5.8`
-- `2.6.3`
+- `2.6.4`
 
 ## Working with Composer Environments
 
