@@ -123,7 +123,7 @@ GEM
       rack (>= 1, < 4)
     rack-cors (2.0.1)
       rack (>= 2.0.0)
-    rack-proxy (0.7.6)
+    rack-proxy (0.7.7)
       rack
     rack-rewrite (1.5.1)
     rack-ssl-enforcer (0.2.9)
