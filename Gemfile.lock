@@ -94,7 +94,7 @@ GEM
     mercenary (0.4.0)
     method_source (1.0.0)
     mini_portile2 (2.8.4)
-    minitest (5.19.0)
+    minitest (5.20.0)
     nio4r (2.5.9)
     nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
