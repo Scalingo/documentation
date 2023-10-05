@@ -5017,8 +5017,9 @@ is-gzip@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-gzip/-/is-gzip-1.0.0.tgz#6ca8b07b99c77998025900e555ced8ed80879a83"
 
 is-jpg@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/is-jpg/-/is-jpg-1.0.0.tgz#2959c17e73430db38264da75b90dd54f2d86da1c"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/is-jpg/-/is-jpg-1.0.1.tgz#296d57fdd99ce010434a7283e346ab9a1035e975"
+  integrity sha512-X5PVpLMBH/OaeTN8quzbcLTlwXCb/6n3tcfYTtEDzp0ZwAlgAOtIAIBHN4mS5OcscMgO8etZ5Ol1mNrXSqwBVQ==
 
 is-natural-number@^2.0.0:
   version "2.1.1"
