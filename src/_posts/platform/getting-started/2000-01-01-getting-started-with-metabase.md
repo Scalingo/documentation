@@ -1,11 +1,11 @@
 ---
 title: Getting Started With Metabase on Scalingo
-modified_at: 2023-09-11 16:00:00
+modified_at: 2023-11-13 16:00:00
 tags: tutorial metabase
 index: 13
 ---
 
-Metabase is an open source business intelligence tool that allows you to build
+Metabase is an open source Business Intelligence tool that allows you to build
 dashboards and data visualization from your company data, without writing SQL
 queries.
 
@@ -37,10 +37,9 @@ your Scalingo account:
 
 ### Using the Command Line
 
-We published a repository
-[metabase-scalingo](https://github.com/Scalingo/metabase-scalingo) on GitHub to
-help you deploy Metabase on Scalingo. Here are the few steps you will need to
-follow to deploy Metabase on Scalingo:
+We maintain a repository called [metabase-scalingo](https://github.com/Scalingo/metabase-scalingo)
+on GitHub to help you deploy Metabase on Scalingo. Here are the few steps you
+will need to follow:
 
 1. Clone our repository:
 
@@ -80,13 +79,51 @@ follow to deploy Metabase on Scalingo:
    git push scalingo master
    ```
 
+
 ## Updating Metabase
 
-To update your Metabase application to the latest version, you need to redeploy
-the latest version of the code source.
+By default, Scalingo tries to install the latest version of Metabase.
 
-This can be done via our CLI tool, for example:
+Consequently, updating Metabase only consists in triggering a new deployment of
+your instance. To do so, create an empty commit and push it to Scalingo:
 
 ```bash
-scalingo --app my-app deploy https://github.com/Scalingo/metabase-scalingo/archive/refs/heads/master.tar.gz
+git commit --allow-empty -m "Update Metabase"
+git push scalingo master
 ```
+
+{% note %}
+Scalingo tries to retrieve the latest version number by querying the GitHub
+API, which is subject to API rate-limits. If the deployment fails, a simple
+workaround consists in specifying the Metabase version you want ot deploy
+([see below](#deploying-a-specific-version)).
+{% endnote %}
+
+
+## Customizing your Deployment
+
+### Deploying a Specific Version
+
+You can install the version of your choice by adding the environment variable
+`METABASE_VERSION` to your application. For example, using the command line:
+
+```bash
+scalingo --app my-app env-set METABASE_VERSION="v0.46.6.1"
+```
+
+
+### Environment
+
+[Metabase supports many environment variables](https://www.metabase.com/docs/latest/operations-guide/environment-variables.html).
+
+Moreover, the buildpack makes use of the following environment variable(s).
+They can be leveraged to customize your deployment:
+
+| Name                 | Description                     | Default Value |
+| -------------------- | ------------------------------- | ------------- |
+| `METABASE_VERSION`   | Metabase version to deploy[^1]. | `*`           |
+
+
+
+[^1]: Make sure to prefix the number with the letter **v**.
+
