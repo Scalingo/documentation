@@ -84,7 +84,6 @@ will need to follow:
    ```
 
 3. Attach a MySQL® by Scalingo addon to the application:
-
    ```bash
    scalingo --app my-wordpress addons-add mysql mysql-starter-512
    ```

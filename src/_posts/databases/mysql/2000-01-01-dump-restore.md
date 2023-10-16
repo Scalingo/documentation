@@ -1,5 +1,5 @@
 ---
-title: How to dump and restore my MySQL database on Scalingo
+title: How to dump and restore my Scalingo for MySQL® database
 nav: Dump and Restore
 modified_at: 2023-07-26 00:00:00
 tags: databases mysql tunnel
@@ -77,7 +77,7 @@ The advantage of this method is the network.
 From your workstation you don't always have a good bandwidth. From our infrastructure,
 data transfers will be way faster.
 
-You need to install the MySQL CLI tools in the one-off before executing `mysqldump` or `mysql`:
+You need to install the MySQL® CLI tools in the one-off before executing `mysqldump` or `mysql`:
 
 ```bash
 $ scalingo --app my-app run bash

@@ -59,5 +59,5 @@ This redundancy ensure there will always be sufficient data to recover a catastr
 The RPO determines the maximum acceptable amount of data loss measured in time.
 It depends of the type of database you are using:
 
-* MySQL, MongoDB, Elasticsearch, Scalingo for Redis®, InfluxDB: last daily backup: at worst 24h of data loss
-* PostgreSQL: continuous backuping, at worst: 30 minutes of data loss
+* Scalingo for MySQL®, Scalingo for MongoDB®, Scalingo for Elasticsearch®, Scalingo for Redis®, Scalingo for InfluxDB®: last daily backup: at worst 24h of data loss
+* Scalingo for PostgreSQL®: continuous backuping, at worst: 30 minutes of data loss

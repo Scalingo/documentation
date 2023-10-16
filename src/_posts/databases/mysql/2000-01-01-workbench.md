@@ -1,5 +1,5 @@
 ---
-title: Access your MySQL database with Workbench
+title: Access your MySQL® database with Workbench
 nav: MySQL Workbench
 modified_at: 2022-04-28 00:00:00
 tags: databases mysql workbench tunnel
@@ -8,15 +8,15 @@ index: 3
 
 ## Requirements
 
-Databases hosted on Scalingo are not by default directly available on the
+Scalingo for MySQL® databases are not by default directly available on the
 Internet. To access it, a solution is to setup an [encrypted tunnel]({% post_url
 platform/databases/2000-01-01-access %}).
 
-MySQL Workbench lets you configure this tunnel. We will guide through the steps
-to configure the connection to a Scalingo hosted MySQL through an encrypted
+MySQL® Workbench lets you configure this tunnel. We will guide through the steps
+to configure the connection to a Scalingo for MySQL® addon through an encrypted
 tunnel.
 
-## Configuration of MySQL
+## Database Configuration
 
 ### Authentication
 
