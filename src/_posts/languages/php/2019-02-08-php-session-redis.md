@@ -1,5 +1,5 @@
 ---
-title: PHP Session with Redis
+title: PHP Session with Redis®
 nav: Session with Redis
 modified_at: 2019-03-22 00:00:00
 tags: php redis
@@ -20,7 +20,7 @@ deployment, the sessions would be lost as new containers start with a fresh file
 ## Solutions
 
 One of the solution could be to store the session in a cookie (with encryption to prevent the user
-from modifying it). An other one is to store the session in a database. [Redis]({% post_url
+from modifying it). An other one is to store the session in a database. [Scalingo for Redis®]({% post_url
 databases/redis/2000-01-01-start %}) is especially suitable in such case.
 
 {% note %}
@@ -30,7 +30,7 @@ with the Laravel framework: [Laravel
 documentation](https://laravel.com/docs/5.8/session).
 {% endnote %}
 
-On Scalingo, the PHP Redis extension is available. Activate it by modifying the `composer.json`
+On Scalingo, the PHP Redis® extension is available. Activate it by modifying the `composer.json`
 with:
 
 ```json
@@ -42,7 +42,7 @@ with:
 }
 ```
 
-Then, configure PHP to use the Redis session handler. Once again, modify the `composer.json` with:
+Then, configure PHP to use the Redi® session handler. Once again, modify the `composer.json` with:
 
 ```json
 {
@@ -62,4 +62,4 @@ Customize the `session.save_path` value with the content of the `SCALINGO_REDIS_
 variable of your application. More information is available on the [official
 repository](https://github.com/phpredis/phpredis/#php-session-handler).
 
-Finally, redeploy your application. It is now handling PHP session through the Redis database!
+Finally, redeploy your application. It is now handling PHP session through the Redis® database!

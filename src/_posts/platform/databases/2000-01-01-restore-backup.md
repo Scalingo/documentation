@@ -30,6 +30,6 @@ This downloads the last successful backup. In order to restore the downloaded ba
 - [PostgreSQL]({% post_url databases/postgresql/2000-01-01-start %}#backups)
 - [MySQL]({% post_url databases/mysql/2000-01-01-start %}#backups)
 - [MongoDB]({% post_url databases/mongodb/2000-01-01-start %}#backups)
-- [Redis]({% post_url databases/redis/2000-01-01-start %}#backups)
+- [Scalingo for Redis®]({% post_url databases/redis/2000-01-01-start %}#backups)
 - [Elasticsearch]({% post_url databases/elasticsearch/2000-01-01-start %}#backups)
 - [InfluxDB]({% post_url databases/influxdb/2000-01-01-start %}#backups)
