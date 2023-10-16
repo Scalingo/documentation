@@ -1,5 +1,5 @@
 ---
-title: How to dump and restore my Redis database on Scalingo
+title: How to dump and restore my Scalingo for Redis® database
 nav: Dump and Restore
 modified_at: 2023-07-26 00:00:00
 tags: databases redis tunnel
@@ -10,7 +10,7 @@ index: 2
 
 There are different ways to dump a Scalingo hosted database. The first one involves dumping the data on your local workstation and the second one involves doing the same operation from within a Scalingo one-off container (see [application tasks]({% post_url platform/app/2000-01-01-tasks %})).
 
-Redis backups cannot be restored on Scalingo. To restore a Redis backup, one need to get access to the database file system which is not possible on Scalingo. However it is possible to [import data from an external Redis database]({% post_url databases/redis/2000-01-01-data-import %}).
+Redis® backups cannot be restored on Scalingo for Redis® databases. To restore a Redis® backup, one need to get access to the database file system which is not possible on Scalingo. However it is possible to [import data from an external Redis® database]({% post_url databases/redis/2000-01-01-data-import %}).
 
 ## Dump From Your Local Workstation
 
@@ -65,7 +65,7 @@ $ redis-cli -h localhost -p 10000 -a <password> --rdb ./dump.rdb
 
 You can dump your database remotely using [the command-line-tool]({% post_url platform/cli/2000-01-01-start %}) and a one-off container (see [application tasks]({% post_url platform/app/2000-01-01-tasks %})). The advantage of this method is the network. From your workstation you don't always have a good bandwidth. From our infrastructure, data transfers will be way faster.
 
-You need to install the Redis CLI tools in the one-off before executing `redis-cli`:
+You need to install the Redis® CLI tools in the one-off before executing `redis-cli`:
 
 ```sh
 $ scalingo --app my-app run bash
