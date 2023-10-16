@@ -27,9 +27,9 @@ $ scalingo --app my-app run bash
 
 This downloads the last successful backup. In order to restore the downloaded backup, instructions are available in each database type page:
 
-- [PostgreSQL]({% post_url databases/postgresql/2000-01-01-start %}#backups)
-- [MySQL]({% post_url databases/mysql/2000-01-01-start %}#backups)
-- [MongoDB]({% post_url databases/mongodb/2000-01-01-start %}#backups)
+- [Scalingo for PostgreSQL®]({% post_url databases/postgresql/2000-01-01-start %}#backups)
+- [Scalingo for MySQ®L]({% post_url databases/mysql/2000-01-01-start %}#backups)
+- [Scalingo for MongoDB®]({% post_url databases/mongodb/2000-01-01-start %}#backups)
 - [Scalingo for Redis®]({% post_url databases/redis/2000-01-01-start %}#backups)
-- [Elasticsearch]({% post_url databases/elasticsearch/2000-01-01-start %}#backups)
-- [InfluxDB]({% post_url databases/influxdb/2000-01-01-start %}#backups)
+- [Scalingo for Elasticsearch®]({% post_url databases/elasticsearch/2000-01-01-start %}#backups)
+- [Scalingo for InfluxDB®]({% post_url databases/influxdb/2000-01-01-start %}#backups)

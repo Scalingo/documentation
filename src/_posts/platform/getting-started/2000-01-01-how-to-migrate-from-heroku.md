@@ -67,9 +67,9 @@ $ git push scalingo master
 ### Database Migration
 
 - Once you have set your Scalingo addons according to those you had on Heroku, you need to migrate your database by dumping it from Heroku and restoring it to Scalingo. 
-  * [Dump and restore a MongoDB database]({% post_url databases/mongodb/2000-01-01-dump-restore %})
-  * [Dump and restore a PostgreSQL database]({% post_url databases/postgresql/2000-01-01-dump-restore %})
-  * [Dump and restore a MySQL database]({% post_url databases/mysql/2000-01-01-dump-restore %})
+  * [Dump and restore a Scalingo for MongoDB® database]({% post_url databases/mongodb/2000-01-01-dump-restore %})
+  * [Dump and restore a Scalingo for PostgreSQL® database]({% post_url databases/postgresql/2000-01-01-dump-restore %})
+  * [Dump and restore a Scalingo for MySQL® database]({% post_url databases/mysql/2000-01-01-dump-restore %})
 
 ### Where to Go Next?
 
