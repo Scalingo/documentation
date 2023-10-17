@@ -88,34 +88,29 @@ password.
 
 ## Updating SonarQube
 
-By default, Scalingo tries to install the latest LTS version of the Community
-Edition, which we try to keep up-to-date [in the buildpack](https://github.com/Scalingo/sonarqube-buildpack/blob/master/bin/compile#L16).
+By default, Scalingo tries to install the latest **LTS version of the Community
+Edition**.
 
 Consequently, updating SonarQube only consists of triggering a new deployment
 of your instance. To do so, create an empty commit and push it to Scalingo:
 
 ```bash
-$ git commit --allow-empty -m "Update SonarQube"
-$ git push scalingo master
+git commit --allow-empty -m "Update SonarQube"
+git push scalingo master
 ```
 
 {% note %}
-Scalingo does not provide any guarantee in terms of packaging and availability
-after each SonarQube release. You can still get in touch with our support team,
-should you need a specific version.
+- Scalingo **does not** provide any guarantee in terms of packaging and
+  availability after each SonarQube release. We do our best to keep it
+  up-to-date, but can't guarantee it.
+- You can use the dedicated environment variable ([see below](#environment)) to
+  deploy a specific version.
+- You can still get in touch with our support team, should you need a specific
+  version.
 {% endnote %}
 
 
 ## Customizing your Deployment
-
-### Deploying a Specific Version
-
-You can install the version of your choice by adding the environment variable
-`SONARQUBE_VERSION` to your application. For example, using the command line:
-
-```bash
-scalingo --app my-app env-set SONARQUBE_VERSION="10.2.1.78527"
-```
 
 ### Installing a SonarQube Plugin
 
@@ -126,7 +121,6 @@ To install a SonarQube plugin:
 
 Your SonarQube instance will have the plugin installed.
 
-
 ### Environment
 
 [SonarQube supports many environment variables](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/configure-and-operate-a-server/environment-variables/)
@@ -134,8 +128,6 @@ Your SonarQube instance will have the plugin installed.
 Moreover, the buildpack makes use of the following environment variable(s).
 They can be leveraged to customize your deployment:
 
-| Name                | Description                  | Default Value    |
-| ------------------- | ---------------------------- | ---------------- |
-| `SONARQUBE_VERSION` | SonarQube version to deploy. | Set in buildpack |
-
-
+- **`SONARQUBE_VERSION`**\
+  Allows to specify the SonarQube version to deploy.\
+  Defaults to the version set in the buildpack.

@@ -21,74 +21,135 @@ ModSecurity implements its own Domain Specific Language, called *SecLang*,
 making it easy for users to write and share their own rules (combination of
 pattern and actions).
 
-For this first tutorial, we use Nginx and the CRS provided by OWASP to deploy a
-WAF on Scalingo within minutes.
+## Deploying ModSecurity
 
-As a note, ModSecurity is only deployable on `scalingo-20` and above.
+### Planning your Deployment
 
-## Deploying Nginx
+- Due to technical requirements, ModSecurity is only deployable on
+  `scalingo-20` and above.
+
+- ModSecurity requires a set of rules to filter or block requests. In this
+  tutorial, we will use the OWASP ModSecurity Core Rule Set.
+
+- In this tutorial, we have chosen to deploy ModSecurity connected to Nginx.
+  Note that ModSecurity can also be connected to other webservers such as IIS
+  or Apache.
+
+### Using the Command Line
+
+#### Deploying Nginx
 
 The very first steps consist of deploying an Nginx application on Scalingo. To
 do this, please [follow the dedicated tutorial]({% post_url platform/deployment/buildpacks/2000-01-01-nginx %}).
 
-## Enabling ModSecurity
+#### Enabling ModSecurity
 
-Once your Nginx application is successfully deployed, set the environment
-variable `ENABLE_MODSECURITY` to `true`, either by adding it via
-[your dashboard](https://dashboard.scalingo.com/) or by using the command line:
+1. Once your Nginx application is successfully deployed, set the environment
+   variable `ENABLE_MODSECURITY` to `true`, either by adding it via
+   [your dashboard](https://dashboard.scalingo.com/) or by using the command
+   line:
+
+   ```bash
+   scalingo --app my-app env-set ENABLE_MODSECURITY=true
+   ```
+
+2. Trigger a new deployment of your application by creating an empty commit and
+   pushing it to your Scalingo remote:
+
+   ```bash
+   git commit --allow-empty -m "Enable ModSecurity"
+   git push scalingo master
+   ```
+
+   The empty commit is detected by Scalingo and picked up to re-deploy the
+   application. Several additional actions are done during this new deployment:
+
+   - ModSecurity and its dependencies are installed.
+   - Default configuration for ModSecurity is enabled. It downloads and enables
+     the Core Rule Set (CRS) provided by OWASP.
+
+3. Wait a few seconds for the deployment to finish and test that the CRS is
+   actually active by issuing the following command:
+
+   ```bash
+   curl -v -X INVALID_HTTP_METHOD https://my-app.osc-fr1.scalingo.io
+   ```
+
+   The application should respond with a **403 forbidden** such as the following:
+
+   ```bash
+   > INVALID_HTTP_METHOD / HTTP/2
+   > Host: my-app.osc-fr1.scalingo.io
+   > User-Agent: curl/7.64.1
+   > Accept: */*
+   >
+   * Connection state changed (MAX_CONCURRENT_STREAMS == 128)!
+   < HTTP/2 403
+   < date: Tue, 31 May 2022 13:58:46 GMT
+   < content-type: text/html; charset=utf-8
+   < content-length: 146
+   < x-request-id: 343e6a24-640e-499a-9dfe-f5dbb636ef45
+   < strict-transport-security: max-age=31536000
+   <
+   <html>
+   <head><title>403 Forbidden</title></head>
+   <body>
+   <center><h1>403 Forbidden</h1></center>
+   <hr><center>nginx</center>
+   </body>
+   </html>
+   ```
+
+## Updating ModSecurity
+
+### Updating ModSecurity
+
+By default, Scalingo tries to install the latest version of ModSecurity.
+
+Consequently, updating ModSecurity only consists of triggering a new deployment
+of your instance. To do so, create an empty commit and push it to Scalingo:
 
 ```bash
-$ scalingo --app my-app env-set ENABLE_MODSECURITY=true
+git commit --allow-empty -m "Update ModSecurity"
+git push scalingo master
 ```
 
-Trigger a new deployment of your application by creating an empty commit and
-pushing it to your Scalingo remote:
+{% note %}
+- Scalingo **does not** provide any guarantee in terms of packaging and
+  availability after each ModSecurity release. We do our best to keep it
+  up-to-date, but can't guarantee it.
+- You can use the dedicated environment variable ([see below](#environment)) to
+  deploy a specific version.
+- You can still get in touch with our support team, should you need a specific
+  version.
+{% endnote %}
+
+### Updating the Core Rule Set
+
+By default, Scalingo tries to install the latest version of the OWASP CRS.
+
+Consequently, updating the CRS only consists of triggering a new deployment of
+your instance. To do so, create an empty commit and push it to Scalingo:
 
 ```bash
-$ git commit --allow-empty -m "Enable ModSecurity"
-$ git push scalingo master
+git commit --allow-empty -m "Update Core Rule Set"
+git push scalingo master
 ```
 
-The empty commit is detected by Scalingo and picked up to re-deploy the
-application. Several additional actions are done during this new deployment:
+{% note %}
+- Scalingo **does not** provide any guarantee in terms of packaging and
+  availability after each Core Rule Set release. We do our best to keep it
+  up-to-date, but can't guarantee it.
+- You can use the dedicated environment variable ([see below](#environment)) to
+  deploy a specific version.
+- You can still get in touch with our support team, should you need a specific
+  version.
+{% endnote %}
 
-- ModSecurity and its dependencies are installed.
-- Default configuration for ModSecurity is enabled. It downloads and enables
-  the Core Rule Set (CRS) provided by OWASP.
 
-Wait a few seconds for the deployment to finish and test that the CRS is
-actually active by issuing the following command:
+## Customizing your Deployment
 
-```bash
-$ curl -v -X INVALID_HTTP_METHOD https://my-app.osc-fr1.scalingo.io
-```
-
-The application should respond with a **403 forbidden** such as the following:
-
-```bash
-> INVALID_HTTP_METHOD / HTTP/2
-> Host: my-app.osc-fr1.scalingo.io
-> User-Agent: curl/7.64.1
-> Accept: */*
->
-* Connection state changed (MAX_CONCURRENT_STREAMS == 128)!
-< HTTP/2 403
-< date: Tue, 31 May 2022 13:58:46 GMT
-< content-type: text/html; charset=utf-8
-< content-length: 146
-< x-request-id: 343e6a24-640e-499a-9dfe-f5dbb636ef45
-< strict-transport-security: max-age=31536000
-<
-<html>
-<head><title>403 Forbidden</title></head>
-<body>
-<center><h1>403 Forbidden</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>
-```
-
-## Adding a Custom Rule
+### Adding a Custom Rule
 
 Now that we have a working WAF with a nice default set of rules, you may want
 to add your own custom rules. Let's see how to do this!
@@ -169,53 +230,30 @@ You can then add a `SecRuleRemoveById` directive at the end of
 SecRuleRemoveById 911100
 ```
 
-## Updating the Core Rule Set
-
-Unless told otherwise (see below), Scalingo automatically downloads and uses
-the latest stable version of the CRS when deploying your WAF. Consequently,
-updating the CRS is just a `git commit` and `git push` effort:
-
-```bash
-$ git commit --allow-empty -m "Update Core Rule Set"
-$ git push scalingo master
-```
-
-As always, pushing to your Scalingo remote triggers a new deployment of your
-application, and the new rules are downloaded.
-
-{% note %}
-If you want to use a specific version of the CRS, you can manually set the
-`MODSECURITY_CORE_RULE_SET_VERSION` environment variable to this specific
-version and trigger a new deployment.
-{% endnote %}
-
-## Updating ModSecurity
-
-Scalingo automatically deploys the latest version of ModSecurity **we have
-packaged and tested**. Consequently, updating ModSecurity only consists of
-triggering a new deployment of your WAF. To do so, you can create an empty
-commit and push it to Scalingo:
-
-```bash
-$ git commit --allow-empty -m "Update ModSecurity"
-$ git push scalingo master
-```
-
-{% note %}
-Scalingo **does not** provide any guarantee in terms of packaging and
-availability after each ModSecurity release. You can still get in touch with our
-support team, should you need a specific version.
-{% endnote %}
 
 ## Customizing ModSecurity
 
-Scalingo provides a few environment variables for you to tweak ModSecurity:
+### Environment
 
-- `MODSECURITY_DEBUG_LOG_LEVEL` allows to specify the log level. It expects a
-  value from `0` (no logging) to `9` (super verbose).
+The buildpack makes use of the following environment variable(s).
+They can be leveraged to customize your deployment:
+
+- **`MODSECURITY_VERSION`**\
+  Allows to specify the version of ModSecurity to deploy.\
+  Defaults to the version set in the buildpack.
+
+- **`MODSECURITY_CORE_RULE_SET_VERSION`**\
+  Allows to specify the version of the OWASP Core Rule Set to deploy.\
+  Defaults to the version set in the buildpack.
+
+- **`MODSECURITY_DEBUG_LOG_LEVEL`**\
+  Allows to specify the log level.\
+  Expects a value from `0` (no logging) to `9` (super verbose).\
   Defaults to `0`.
-- `MODSECURITY_AUDIT_LOG_LEVEL` allows to configure the audit logging engine. It
-  can be set to either `On` (log all transactions), `RelevantOnly` (only log
+
+- **`MODSECURITY_AUDIT_LOG_LEVEL`**\
+  Allows to configure the audit logging engine.\
+  Can be set to either `On` (log all transactions), `RelevantOnly` (only log
   transactions that returned with a status code of 4xx or 5xx) or `Off` (do not
-  log transactions).
+  log transactions).\
   Defaults to `Off`.

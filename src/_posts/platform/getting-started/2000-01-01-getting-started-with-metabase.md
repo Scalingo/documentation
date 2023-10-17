@@ -102,16 +102,6 @@ workaround consists in specifying the Metabase version you want ot deploy
 
 ## Customizing your Deployment
 
-### Deploying a Specific Version
-
-You can install the version of your choice by adding the environment variable
-`METABASE_VERSION` to your application. For example, using the command line:
-
-```bash
-scalingo --app my-app env-set METABASE_VERSION="v0.46.6.1"
-```
-
-
 ### Environment
 
 [Metabase supports many environment variables](https://www.metabase.com/docs/latest/operations-guide/environment-variables.html).
@@ -119,11 +109,7 @@ scalingo --app my-app env-set METABASE_VERSION="v0.46.6.1"
 Moreover, the buildpack makes use of the following environment variable(s).
 They can be leveraged to customize your deployment:
 
-| Name                 | Description                     | Default Value |
-| -------------------- | ------------------------------- | ------------- |
-| `METABASE_VERSION`   | Metabase version to deploy[^1]. | `*`           |
-
-
-
-[^1]: Make sure to prefix the number with the letter **v**.
-
+- **`METABASE_VERSION`**\
+  Allows to specify the version of Metabase to deploy.\
+  Make sure to prefix the number with the letter **v**.\
+  Defaults to `*`.
