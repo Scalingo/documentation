@@ -43,8 +43,7 @@ pattern and actions).
 The very first steps consist of deploying an Nginx application on Scalingo. To
 do this, please [follow the dedicated tutorial]({% post_url platform/deployment/buildpacks/2000-01-01-nginx %}).
 
-
-## Enabling ModSecurity
+#### Enabling ModSecurity
 
 1. Once your Nginx application is successfully deployed, set the environment
    variable `ENABLE_MODSECURITY` to `true`, either by adding it via
