@@ -13,7 +13,7 @@ index: 2
 
 You can use the command `pg_dump` as explained
 [on our documentation]({% post_url databases/postgresql/2000-01-01-dump-restore %}).
-But you cannot restore it on a PostgreSQL using TimescaleDB hosted on Scalingo.
+But you cannot restore it on a PostgreSQL® instance using TimescaleDB hosted on Scalingo.
 
 The only dump available to make restorable backups on Scalingo hosted TimescaleDB
 are the [on demand backups]({% post_url databases/postgresql/2000-01-01-start %}#on-demand-backups).
@@ -26,7 +26,7 @@ backups are still working normally.
 ## Restore
 
 The backup restoration on TimescaleDB requires a specific process to be done on
-the PostgreSQL database as it is explained on
+the PostgreSQL® database as it is explained on
 [TimescaleDB official documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/#restoring-an-entire-database-from-backup).
 A temporary database should be used for the backup restore and the following
 command should be executed using admin rights:
@@ -42,7 +42,7 @@ process must be done by an operator of the support.
 
 Several points are important to take into account.
 
-Make sure you keep track of which versions of PostgreSQL and TimescaleDB you are
+Make sure you keep track of which versions of PostgreSQL® and TimescaleDB you are
 running during backup process. For more information, see "Troubleshooting version mismatches" of
 [official documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/#tshoot-version-mismatch).
 

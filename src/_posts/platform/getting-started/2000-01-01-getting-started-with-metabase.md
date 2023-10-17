@@ -17,7 +17,7 @@ under 5 minutes.
 ### Planning your Deployment
 
 - Metabase requires its own database to store its configuration and some metadata.
-  We usually advise to use a [PostgreSQL Starter/Business 512 addon](https://scalingo.com/databases/postgresql)
+  We usually advise to use a [Scalingo for PostgreSQL® Starter/Business 512 addon](https://scalingo.com/databases/postgresql)
   for this purpose.
 
 - Depending on several factors such as the amount of data stored in your

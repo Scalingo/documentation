@@ -1,5 +1,5 @@
 ---
-title: How to dump and restore my PostgreSQL database on Scalingo
+title: How to dump and restore my Scalingo for PostgreSQL®
 nav: Dump and Restore
 modified_at: 2023-07-26 00:00:00
 tags: databases postgresql tunnel
@@ -90,7 +90,7 @@ The advantage of this method is the network.
 From your workstation you don't always have a good bandwidth. From our infrastructure,
 data transfers will be way faster.
 
-You need to install the PostgreSQL CLI tools in the one-off before executing `pg_dump` or `pg_restore`:
+You need to install the PostgreSQL® CLI tools in the one-off before executing `pg_dump` or `pg_restore`:
 
 ```bash
 $ scalingo --app my-app run bash

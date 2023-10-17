@@ -1,5 +1,5 @@
 ---
-title: Managing PostgreSQL Extensions
+title: Managing PostgreSQL® Extensions
 nav: Extensions
 modified_at: 2022-02-24 00:00:00
 tags: databases postgresql extensions
@@ -8,9 +8,9 @@ index: 3
 
 {% include info_command_line_tool.md %}
 
-PostgreSQL is a database engine which is extensible thanks to
+PostgreSQL® is a database engine which is extensible thanks to
 a large set of extensions. A lot of them are installed alongside
-your PostgreSQL but you need to enable those manually according
+your Scalingo for PostgreSQL® instance, but you need to enable those manually according
 to your need.
 
 ## Enable a Specific Extension
@@ -73,7 +73,7 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 			<tr>
 				<td>dblink</td>
 				<td>1.2</td>
-				<td>connect to other PostgreSQL databases from within a database</td>
+				<td>connect to other PostgreSQL® databases from within a database</td>
 			</tr>
 			<tr>
 				<td>dict_int</td>
@@ -168,7 +168,7 @@ PostGIS extension requires at least a "Starter 512M" plan to work.
 			<tr>
 				<td>timescaledb</td>
 				<td>2.6.0</td>
-				<td>turns PostgreSQL into a time series database</td>
+				<td>turns PostgreSQL® into a time series database</td>
 			</tr>
 			<tr>
 				<td>unaccent</td>
