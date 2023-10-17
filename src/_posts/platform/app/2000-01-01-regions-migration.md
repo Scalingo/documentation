@@ -37,7 +37,7 @@ on the region `osc-fr1` to the region `osc-secnum-fr1`.
 {% note %}
 There are currently a bunch of addons that are not migrated during a migration. Please contact the support if you need to migrate an application having such addons:
 
-- InfluxDB database
+- Scalingo for InfluxDB® database
 - VPN addons
 - TCP addon
 {% endnote %}

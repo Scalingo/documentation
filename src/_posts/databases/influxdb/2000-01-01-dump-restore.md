@@ -1,5 +1,5 @@
 ---
-title: How to dump and restore my InfluxDB database on Scalingo
+title: How to dump and restore my Scalingo for InfluxDB® database on Scalingo
 nav: Dump and Restore
 modified_at: 2017-02-06 18:04:00
 index: 2
@@ -11,7 +11,7 @@ Scalingo handles daily backup for any paying plan. Unfortunately it is not
 possible for you to dump your data remotely from your local workstation. Refer
 to the
 <a href="#why-you-cannot-manage-the-backups-for-influxdb-on-scalingo">Why you
-cannot manage the backups for InfluxDB on Scalingo</a> section for more details
+cannot manage the backups on Scalingo for InfluxDB®</a> section for more details
 about the technical reasons.
 
 ## Restore on your local workstation
@@ -20,7 +20,7 @@ Daily backups done by Scalingo are listed in the database specific dashboard:
 
 1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
 2. Click on **Addons** tab
-3. Click **Link to dashboard** which will take you to the **InfluxDB dashboard**
+3. Click **Link to dashboard** which will take you to the **Scalingo for InfluxDB® dashboard**
 4. Click on **Backups** tab
 5. Download the backup you want
 
@@ -31,9 +31,9 @@ Daily backups done by Scalingo are listed in the database specific dashboard:
 
 You can restore your data on your local environment if needed. Download a backup on your database
 dashboard. It is a **.tar.gz** containing a dump of your database which has been
-done following the instructions from the [InfluxDB
+done following the instructions from the [InfluxDB®
 documentation](https://docs.influxdata.com/influxdb/v1.2/administration/backup_and_restore/).
-Before starting the restore process, you need to stop the InfluxDB daemon. Then type
+Before starting the restore process, you need to stop the InfluxDB® daemon. Then type
 the following commands:
 
 ```bash
@@ -48,12 +48,12 @@ depending on your configuration.
 If you need to restore a backup on your Scalingo server, please contact our
 support at [support@scalingo.com](mailto:support@scalingo.com).
 
-## Why you cannot manage the backups for InfluxDB on Scalingo
+## Why you cannot manage the backups on Scalingo for InfluxDB®
 
-Unfortunately, backing up and restoring your data from InfluxDB on Scalingo is not possible
+Unfortunately, backing up and restoring your data on Scalingo for InfluxDB® is not possible
 remotely. The problem is that the port used to make backup is different than the port used for the
-InfluxDB console. The remote backup port is not authenticated with a username and a password. Hence
+InfluxDB® console. The remote backup port is not authenticated with a username and a password. Hence
 we do not want it to be exposed over the Internet.
 
-Moreover, to restore your data on InfluxDB, the InfluxDB daemon must be stopped. This action is not
+Moreover, to restore your data on Scalingo for InfluxDB®, the InfluxDB® daemon must be stopped. This action is not
 possible on Scalingo.
