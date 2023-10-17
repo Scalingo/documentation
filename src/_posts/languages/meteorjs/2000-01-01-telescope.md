@@ -31,9 +31,9 @@ Git repository detected: remote scalingo added
 → 'git push scalingo master' to deploy your app
 ```
 
-## Allocate a MongoDB database
+## Allocate a Scalingo for MongoDB® database
 
-The Meteor framework uses extensively MongoDB as a database. Hence you need to
+The Meteor framework uses extensively MongoDB® as a database. Hence you need to
 provision a new instance of this database to your application.
 
 ```bash
