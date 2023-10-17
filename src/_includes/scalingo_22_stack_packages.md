@@ -25,7 +25,7 @@
 |                           cpp |              4:11.2.0-1ubuntu1 |
 |                        cpp-11 |          11.4.0-1ubuntu1~22.04 |
 |                          cron |              3.0pl1-137ubuntu3 |
-|                          curl |             7.81.0-1ubuntu1.13 |
+|                          curl |             7.81.0-1ubuntu1.14 |
 |                          dash | 0.5.11+git20210903+057cd650a4ed-3build1 |
 |                          dbus |             1.12.20-2ubuntu4.1 |
 |                       debconf |                  1.5.79ubuntu1 |
@@ -55,7 +55,7 @@
 |                        gcc-11 |          11.4.0-1ubuntu1~22.04 |
 |             gcc-11-base:amd64 |          11.4.0-1ubuntu1~22.04 |
 |             gcc-12-base:amd64 |          12.3.0-1ubuntu1~22.04 |
-|                   ghostscript |        9.55.0~dfsg1-0ubuntu5.4 |
+|                   ghostscript |        9.55.0~dfsg1-0ubuntu5.5 |
 |      gir1.2-freedesktop:amd64 |                       1.72.0-1 |
 |    gir1.2-gdkpixbuf-2.0:amd64 |         2.42.8+dfsg-1ubuntu0.2 |
 |         gir1.2-glib-2.0:amd64 |                       1.72.0-1 |
@@ -140,9 +140,9 @@
 |           libctf-nobfd0:amd64 |                2.38-4ubuntu2.3 |
 |                 libctf0:amd64 |                2.38-4ubuntu2.3 |
 |                libcups2:amd64 |            2.4.1op1-1ubuntu4.7 |
-|         libcurl3-gnutls:amd64 |             7.81.0-1ubuntu1.13 |
-|                libcurl4:amd64 |             7.81.0-1ubuntu1.13 |
-|    libcurl4-openssl-dev:amd64 |             7.81.0-1ubuntu1.13 |
+|         libcurl3-gnutls:amd64 |             7.81.0-1ubuntu1.14 |
+|                libcurl4:amd64 |             7.81.0-1ubuntu1.14 |
+|    libcurl4-openssl-dev:amd64 |             7.81.0-1ubuntu1.14 |
 |              libdatrie1:amd64 |                       0.2.13-2 |
 |               libdav1d5:amd64 |                        0.9.2-1 |
 |                libdb5.3:amd64 |        5.3.28+dfsg1-0.8ubuntu3 |
@@ -210,8 +210,8 @@
 |              libgpgme11:amd64 |            1.16.0-1.2ubuntu4.1 |
 |                 libgpm2:amd64 |                1.20.7-10build1 |
 |          libgraphite2-3:amd64 |                 1.3.14-1build2 |
-|                  libgs9:amd64 |        9.55.0~dfsg1-0ubuntu5.4 |
-|                 libgs9-common |        9.55.0~dfsg1-0ubuntu5.4 |
+|                  libgs9:amd64 |        9.55.0~dfsg1-0ubuntu5.5 |
+|                 libgs9-common |        9.55.0~dfsg1-0ubuntu5.5 |
 |        libgssapi-krb5-2:amd64 |              1.19.2-2ubuntu0.2 |
 |           libharfbuzz0b:amd64 |               2.7.4-1ubuntu3.1 |
 |                libheif1:amd64 |                 1.12.0-2build1 |
@@ -389,9 +389,9 @@
 |              libtasn1-6:amd64 |                 4.18.0-4build1 |
 |                  libthai-data |                 0.1.29-1build1 |
 |                libthai0:amd64 |                 0.1.29-1build1 |
-|             libtiff-dev:amd64 |               4.3.0-6ubuntu0.5 |
-|                libtiff5:amd64 |               4.3.0-6ubuntu0.5 |
-|              libtiffxx5:amd64 |               4.3.0-6ubuntu0.5 |
+|             libtiff-dev:amd64 |               4.3.0-6ubuntu0.6 |
+|                libtiff5:amd64 |               4.3.0-6ubuntu0.6 |
+|              libtiffxx5:amd64 |               4.3.0-6ubuntu0.6 |
 |               libtinfo5:amd64 |                 6.3-2ubuntu0.1 |
 |               libtinfo6:amd64 |                 6.3-2ubuntu0.1 |
 |               libtirpc-common |               1.3.2-2ubuntu0.1 |
@@ -442,6 +442,7 @@
 |                  libxt6:amd64 |                      1:1.2.1-1 |
 |              libxxhash0:amd64 |                        0.8.1-1 |
 |             libyaml-0-2:amd64 |                  0.2.2-1build2 |
+|             libyaml-dev:amd64 |                  0.2.2-1build2 |
 |                 libz3-4:amd64 |                       4.8.12-1 |
 |               libz3-dev:amd64 |                       4.8.12-1 |
 |              libzip-dev:amd64 |                 1.7.3-1ubuntu2 |
@@ -606,9 +607,9 @@
 |                      usrmerge |                      25ubuntu2 |
 |                    util-linux |                2.37.2-4ubuntu3 |
 |                uuid-dev:amd64 |                2.37.2-4ubuntu3 |
-|                           vim |         2:8.2.3995-1ubuntu2.11 |
-|                    vim-common |         2:8.2.3995-1ubuntu2.11 |
-|                   vim-runtime |         2:8.2.3995-1ubuntu2.11 |
+|                           vim |         2:8.2.3995-1ubuntu2.12 |
+|                    vim-common |         2:8.2.3995-1ubuntu2.12 |
+|                   vim-runtime |         2:8.2.3995-1ubuntu2.12 |
 |                          wget |                1.21.2-2ubuntu1 |
 |                    x11-common |                1:7.7+23ubuntu2 |
 |                  x11proto-dev |                       2021.5-1 |
@@ -617,7 +618,7 @@
 |                      xml-core |                      0.18+nmu1 |
 |            xorg-sgml-doctools |                     1:1.11-1.1 |
 |                    xtrans-dev |                        1.4.0-1 |
-|                           xxd |         2:8.2.3995-1ubuntu2.11 |
+|                           xxd |         2:8.2.3995-1ubuntu2.12 |
 |                      xz-utils |                 5.2.5-2ubuntu1 |
 |                           zip |                   3.0-12build2 |
 |                  zlib1g:amd64 |       1:1.2.11.dfsg-2ubuntu9.2 |
