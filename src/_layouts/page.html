@@ -7,6 +7,27 @@ layout: default
     <article class="max-w-sc-content-720 text-sc-text-1">
       <div id="breadcrumb" class="text-sc-text-2 mb-4 hidden xl:block">{% breadcrumb %}</div>
       <h1 class="text-sc-gray-1 text-sc-title-1 font-bold mb-12 hidden xl:block">{{ page.title }}</h1>
+      {% if page.cvss %}
+      <table>
+        <thead>
+          <th colspan="2">CVSS score v{{ page.cvss.version }}</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Base</td>
+            <td>{{ page.cvss.base }}</td>
+          </tr>
+          <tr>
+            <td>Temporal</td>
+            <td>{{ page.cvss.temporal }}</td>
+          </tr>
+          <tr>
+            <td>Environmental</td>
+            <td>{{ page.cvss.environmental }}</td>
+          </tr>
+        </tbody>
+      </table>
+      {%endif%}
       <section class="py-0">
         {{ content | inject_anchors }}
         <hr class="mt-12" />
