@@ -10,7 +10,7 @@ index: 2
 
 There are different ways to dump a Scalingo hosted database. The first one involves dumping the data on your local workstation and the second one involves doing the same operation from within a Scalingo one-off container (see [application tasks]({% post_url platform/app/2000-01-01-tasks %})).
 
-Redis® backups cannot be restored on Scalingo for Redis® databases. To restore a Redis® backup, one need to get access to the database file system which is not possible on Scalingo. However it is possible to [import data from an external Redis® database]({% post_url databases/redis/2000-01-01-data-import %}).
+Redis®* backups cannot be restored on Scalingo for Redis® databases. To restore a Redis® backup, one need to get access to the database file system which is not possible on Scalingo. However it is possible to [import data from an external Redis® database]({% post_url databases/redis/2000-01-01-data-import %}).
 
 ## Dump From Your Local Workstation
 
