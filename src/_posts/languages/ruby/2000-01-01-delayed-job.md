@@ -19,16 +19,16 @@ for your project and you should have a look at
 To get started using delayed_job you need to configure your application.
 
 ```ruby
-# With MySQL or PostgreSQL
+# With MySQL® or PostgreSQL®
 gem 'delayed_job_active_record'
 
-# OR if you're using MongoDB
+# OR if you're using MongoDB®
 gem 'delayed_job_mongoid'
 ```
 
 Then, run `bundle install` to install the gem.
 
-If you are using MySQL or PostgreSQL, you also need to apply migrations to your
+If you are using MySQL® or PostgreSQL®, you also need to apply migrations to your
 database:
 
 ```bash

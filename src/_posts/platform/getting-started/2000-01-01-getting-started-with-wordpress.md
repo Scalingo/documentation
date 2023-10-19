@@ -55,7 +55,7 @@ Follow these instructions to get started:
 
 2. Create the application on Scalingo
 
-   Create the application through the dashboard with a MySQL addon or with the [Scalingo CLI](http://cli.scalingo.com):
+   Create the application through the dashboard with a Scalingo for MySQL® addon or with the [Scalingo CLI](http://cli.scalingo.com):
 
    ```bash
    scalingo create my-app
@@ -103,7 +103,7 @@ Follow these instructions to get started:
    Then, update your application environment through the dashboard or with the
    [Scalingo CLI](http://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`:
 
-   * `DATABASE_URL`: Connection string to the MySQL database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL addon
+   * `DATABASE_URL`: Connection string to the MySQL® database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL® addon
    * `WP_ENV`: Set to environment (`development`, `staging`, `production`)
    * `WP_HOME`: Full URL to WordPress home (https://my-app.osc-fr1.scalingo.io)
    * `WP_SITEURL`: Full URL to WordPress including subdirectory (https://my-app.osc-fr1.scalingo.io/wp)
@@ -230,9 +230,9 @@ To do that, add the following line to your `config/application.php`:
 Config::define('AUTOMATIC_UPDATER_DISABLED', true);
 ```
 
-### TLS Connection to MySQL
+### TLS Connection to Scalingo for MySQL®
 
-If you configured your MySQL with [Force TLS]({% post_url
+If you configured your Scalingo for MySQL® with [Force TLS]({% post_url
 databases/mysql/2000-01-01-start %}#force-tls-connections), it is mandatory
 that your application connects to the database using TLS. With WordPress, you
 need to add the following line in your `config/application.php`:

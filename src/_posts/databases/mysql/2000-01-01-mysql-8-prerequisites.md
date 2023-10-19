@@ -1,13 +1,13 @@
 ---
-title: Prerequisites Before Upgrading to MySQL 8
+title: Prerequisites Before Upgrading to MySQL® 8
 nav: Upgrading to MySQL 8
 modified_at: 2020-09-04 00:00:00
 tags: databases mysql addon
 index: 4
 ---
 
-Starting with MySQL 8, Scalingo enables group replication on all MySQL
-databases. This MySQL feature has a couple of strong prerequisites ([MySQL
+Starting with MySQL® 8, Scalingo enables group replication on all MySQL®
+databases. This MySQL® feature has a couple of strong prerequisites ([MySQL®
 documentation](https://dev.mysql.com/doc/refman/8.0/en/group-replication-requirements.html)).
 Please make sure your database is compatible before proceeding with the upgrade:
 

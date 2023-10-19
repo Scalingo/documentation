@@ -16,17 +16,17 @@ minutes.
 
 The ELK stack is based on three major components:
 
-* Elasticsearch
+* Elasticsearch®
 * Logstash
 * Kibana
 
-**Elasticsearch** is a distributed full-text search engine, able to store JSON
+**Elasticsearch®** is a distributed full-text search engine, able to store JSON
 document and index them efficiently, it is responsible for the storage of all
 the incoming data.
 
 **Logstash** is a data processing pipeline, any source sends data as input. It
 is able to format and modify data on the fly before forwarding it to
-the chosen destination (usually an Elasticsearch database).
+the chosen destination (usually an Elasticsearch® database).
 
 **Kibana** is a powerful web-based data visualization tool providing
 everything you need to explore your data and build useful and efficient
@@ -35,7 +35,7 @@ dashboards.
 ## Logstash
 
 Let's start by bootstrapping the Logstash container. This instance will take
-data from an authenticated input and send them to an Elasticsearch
+data from an authenticated input and send them to an Elasticsearch®
 database. This is the *EL* part in *ELK*.
 
 To get started, you can use [our boilerplate](https://github.com/Scalingo/logstash-boilerplate):
@@ -51,13 +51,13 @@ Next, create an application on Scalingo that will run our Logstash app:
 $ scalingo create my-awesome-logstash
 ```
 
-Add the Elasticsearch addon to this application:
+Add the Scalingo for Elasticsearch® addon to this application:
 
 ```bash
 $ scalingo --app my-awesome-logstash addons-add elasticsearch elasticsearch-starter-1024
 ```
 
-All the Elasticsearch plans are described [here](https://scalingo.com/addons/scalingo-elasticsearch).
+All the Scalingo for Elasticsearch® plans are described [here](https://scalingo.com/addons/scalingo-elasticsearch).
 
 Of course, not everyone should be able to send data to your Logstash instance, it should be
 protected via HTTP basic auth. It is already handled in the boilerplate but the
@@ -73,7 +73,7 @@ Logstash is greedy in memory, it requires at least a container of size L, config
 $ scalingo --app my-awesome-logstash scale web:1:L
 ```
 
-Edit the `logstash.conf` file to change the index name of the Elasticsearch
+Edit the `logstash.conf` file to change the index name of the Elasticsearch®
 output. The goal is to make it fit semantically to the data which will be
 stored:
 
@@ -106,7 +106,7 @@ $ curl --request POST 'https://my-awesome-logstash-user:iloveunicorns@my-awesome
 ok
 ```
 
-It's time to verify all the indices that are stored in the Elasticsearch
+It's time to verify all the indices that are stored in the Elasticsearch®
 database:
 
 ```bash
@@ -178,10 +178,10 @@ scalingo --app my-awesome-logstash env | grep SCALINGO_ELASTICSEARCH_URL
 
 Then, a username and a password should be defined to configure Kibana authentication.
 
-**Note**: a new Elasticsearch database will be provisionned. You can safely delete it if you use the one from Logstash as described above.
+**Note**: a new Scallingo for Elasticsearch® database will be provisionned. You can safely delete it if you use the one from Logstash as described above.
 
 Once deployed, index patterns need to be configured. This is required to inform
-Kibana about the indices of Elasticsearch it need to look at.
+Kibana about the indices of Elasticsearch® it need to look at.
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/elk/index-creation.png"%}
 {% include mdl_img.html %}
@@ -194,9 +194,9 @@ should appear in the Discover tab of Kibana dashboard.
 {% assign img_url = "https://cdn.scalingo.com/documentation/elk/success.png" %}
 {% include mdl_img.html %}
 
-### With TLS connection on Elasticsearch
+### With TLS connection on Elasticsearch®
 
-If your Elasticsearch addon has the Force TLS option enabled, you must
+If your Scalingo for Elasticsearch® addon has the Force TLS option enabled, you must
 set the environment variable `ELASTICSEARCH_TLS_CA_URL` on your Kibana
 application with the URL of our CA certificate. The CA certificate URL is available on the database
 dashboard.
@@ -331,7 +331,7 @@ ELASTICSEARCH_AUTH_PASSWORD=password
 Now you have to configure your indices life cycle. This is based on your
 indices names.
 Create a file named `log-clean.yml`. This configuration parses the indices
-names stored in Elasticsearch and removes the ones that are too old.
+names stored in Elasticsearch® and removes the ones that are too old.
 
 ```yaml
 actions:

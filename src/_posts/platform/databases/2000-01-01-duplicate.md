@@ -22,7 +22,7 @@ ensures all the connection slots are actually used for production purposes.
 
 {% warning %}
 For technical reasons, the following strategy will only work with our
-PostgreSQL, MySQL, Redis and MongoDB addons. For other addons, please get in
+Scalingo for PostgreSQL®, Scalingo for MySQL®, Scalingo for Redis® and Scalingo for MongoDB® addons. For other addons, please get in
 touch with our support.
 {% endwarning %}
 

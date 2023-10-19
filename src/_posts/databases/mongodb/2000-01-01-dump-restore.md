@@ -1,5 +1,5 @@
 ---
-title: How to dump and restore my MongoDB database on Scalingo
+title: How to dump and restore my Scalingo for MongoDB®
 nav: Dump and Restore
 modified_at: 2023-07-26 00:00:00
 tags: databases mongodb mongo tunnel dump restore
@@ -62,7 +62,7 @@ It is not possible to access a replica set using the DB tunnel.
 You should enable [Internet Accessibility]({% post_url platform/databases/2000-01-01-access %}#direct-access)
 to your database. The reason is that the DB tunnel is designed to connect to
 only one node.
-On the other hand, MongoDB clients require to reach all the instances
+On the other hand, MongoDB® clients require to reach all the instances
 of the replica set to work.
 {% endwarning %}
 
@@ -151,7 +151,7 @@ The advantage of this method is the network.
 From your workstation you don't always have a good bandwidth.
 From our infrastructure, data transfers will be way faster.
 
-You need to install the MongoDB CLI tools in the one-off before executing
+You need to install the MongoDB® CLI tools in the one-off before executing
 `mongodump` or `mongorestore`:
 
 ```bash

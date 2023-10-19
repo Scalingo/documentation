@@ -36,7 +36,7 @@ $config['log_threshold'] = 1;
 ```
 
 You probably also need to configure a SQL database. You first need to provision a new database such
-as [MySQL]({% post_url databases/mysql/2000-01-01-start %}). Then configure CodeIgniter in
+as [Scalingo for MySQL®]({% post_url databases/mysql/2000-01-01-start %}). Then configure CodeIgniter in
 `application/config/database.php`:
 
 ```php
