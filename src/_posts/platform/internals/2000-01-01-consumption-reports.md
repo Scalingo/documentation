@@ -12,11 +12,13 @@ Scalingo lets you follow your consumption directly in your dashboard. Go to [htt
 The amounts shown are frozen at the end of each billing period. An application transferred during the month is billed to its new owner, even if you can see its consumption for the period prior to its transfer.
 {% endnote %}
 
-## Past or present periods
+## Current or past periods
 
 This report shows the consumption of all your applications for the current billing period and is updated daily at midnight UTC.
 
-When a billing period is over and the invoice is issued, you can explore your consumption to identify the main cost drivers. Please note that the consumption report document **is not an invoice**, but a breakdown of your consumption **excluding VAT**. It does not take into account the free trial period or any vouchers or credits.
+When a billing period is over and the invoice is issued, you can explore your consumption to identify the main cost drivers.
+
+Please note that the consumption report document **is not an invoice**, but a breakdown of your consumption **excluding VAT**. It does not take into account the free trial period or any vouchers or credits.
 
 ## Group consumption by app or ressource
 
