@@ -74,7 +74,7 @@ Follow these instructions to get started:
           "Action": [
             "s3:PutObject",
             "s3:PutObjectAcl",
-            "s3:PutObjectAclVersion",
+            "s3:PutObjectVersionAcl",
             "s3:AbortMultipartUpload",
             "s3:ListBucket",
             "s3:GetObject"
@@ -86,7 +86,7 @@ Follow these instructions to get started:
           "Action": [
             "s3:PutObject",
             "s3:PutObjectAcl",
-            "s3:PutObjectAclVersion",
+            "s3:PutObjectVersionAcl",
             "s3:AbortMultipartUpload",
             "s3:ListBucket",
             "s3:GetObject"
