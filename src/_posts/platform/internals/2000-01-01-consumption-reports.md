@@ -29,3 +29,5 @@ If you wish, we can also group them by Resource.
 ## Export as CSV or JSON
 
 We know how important it is for you to extract and integrate your data into your own information system. That's why you can quickly and easily export them as CSV or JSON files.
+
+Please note that the amounts in the CSV and JSON exports are in Euro cents, excluding VAT.
