@@ -1,6 +1,6 @@
 ---
 title: Free Trial
-modified_at: 2023-01-31 00:00:00
+modified_at: 2023-10-23 00:00:00
 tags: billing free trial
 index: 20
 ---
@@ -52,3 +52,7 @@ as long as these applications are owned by a paying customer.
 As soon as you enter payment details, the restrictions will be lifted, you
 will be able to scale your application back up and resume its addons. These
 operations must be done **manually**.
+
+{% warning %}
+After a period of thirty (30) days, if no order is made by the client owning the apps, the resources will be deleted from the platform.
+{% endwarning %}
