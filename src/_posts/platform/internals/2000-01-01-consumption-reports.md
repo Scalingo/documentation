@@ -8,6 +8,9 @@ tags: billing consumption report
 
 Scalingo lets you follow your consumption directly in your dashboard. Go to [https://dashboard.scalingo.com/consumption](https://dashboard.scalingo.com/consumption) and you'll see your consumption report for the current month.
 
+{% assign img_url = "https://cdn.scalingo.com/documentation/scalingo-dashboard-consumption-reports.png" %}
+{% include mdl_img.html %}
+
 {% note %}
 The amounts shown are frozen at the end of each billing period. An application transferred during the month is billed to its new owner, even if you can see its consumption for the period prior to its transfer.
 {% endnote %}
