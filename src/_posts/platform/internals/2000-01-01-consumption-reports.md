@@ -22,12 +22,12 @@ Please note that the consumption report document **is not an invoice**, but a br
 
 ## Group consumption by app or ressource
 
-Consumption are grouped by App by default. This makes it easy to identify the applications that consume the most resources and represent the largest cost centre.
+Consumption are grouped by **App** by default. This makes it easy to identify the applications that consume the most resources and represent the largest cost centre.
 
-If you wish, we can also group them by Resource.
+You can also group your consumption by **Resource** to identify which represents the largest share of your invoice.
 
 ## Export as CSV or JSON
 
-We know how important it is for you to extract and integrate your data into your own information system. That's why you can quickly and easily export them as CSV or JSON files.
+We know how important it is for you to extract and integrate your data into your own information system. These consumption reports can be quickly and easily exported in CSV or JSON format.
 
 Please note that the amounts in the CSV and JSON exports are in Euro cents, excluding VAT.
