@@ -62,7 +62,7 @@ Follow these instructions to get started:
    scalingo addons-add mysql mysql-sandbox
    ```
 
-3. Create a S3 Bucket on AWS and configure IAM user correctly
+3. Create a public S3 Bucket with ACL disabled on AWS and configure IAM user correctly
 
    IAM user security policy example, with required actions:
 
@@ -77,28 +77,40 @@ Follow these instructions to get started:
             "s3:PutObjectVersionAcl",
             "s3:AbortMultipartUpload",
             "s3:ListBucket",
+            "s3:DeleteObject",
             "s3:GetObject"
           ],
           "Effect": "Allow",
-          "Resource": "arn:aws:s3:::BUCKETNAME-HERE"
-        },
-        {
-          "Action": [
-            "s3:PutObject",
-            "s3:PutObjectAcl",
-            "s3:PutObjectVersionAcl",
-            "s3:AbortMultipartUpload",
-            "s3:ListBucket",
-            "s3:GetObject"
-          ],
-          "Effect": "Allow",
-          "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
+          "Resource": [
+              "arn:aws:s3:::BUCKETNAME-HERE",
+              "arn:aws:s3:::BUCKETNAME-HERE/*"
+          ]
         }
       ]
     }
    ```
 
-4. Update application environment variables
+4. Create a stategy policy for the newly created bucket
+
+    Go on the newly created bucket's details page, on `Permissions` tab. Scroll down to `Bucket policy` and enter your policy.
+    
+    Example policy with read access for everyone:
+
+    ```bash
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": "*",
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
+        }
+      ]
+    }
+    ```
+
+5. Update application environment variables
 
    Then, update your application environment through the dashboard or with the
    [Scalingo CLI](http://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`:
@@ -115,7 +127,7 @@ Follow these instructions to get started:
 
    You can get some random salts on the [Roots WordPress Salt Generator](https://roots.io/salts.html).
 
-5. Add themes in `web/app/themes` as you would for a normal WordPress site.
+6. Add themes in `web/app/themes` as you would for a normal WordPress site.
 
    ```bash
    # Optionally add theme to your git repository
@@ -123,7 +135,7 @@ Follow these instructions to get started:
    git commit -m "Add themes"
    ```
 
-6. Add plugins using [Composer](https://getcomposer.org/) and [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=)
+7. Add plugins using [Composer](https://getcomposer.org/) and [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=)
 
    Example to add the `Akismet` plugin:
 
@@ -131,15 +143,15 @@ Follow these instructions to get started:
    composer require --ignore-platform-reqs wpackagist-plugin/akismet
    ```
 
-7. Deploy the application on Scalingo
+8. Deploy the application on Scalingo
 
    ```bash
    git push scalingo master
    ```
 
-8. Access WP Admin at `https://my-app.osc-fr1.scalingo.io/wp/wp-admin`
+9. Access WP Admin at `https://my-app.osc-fr1.scalingo.io/wp/wp-admin`
 
-9. Activate the `S3 Uploads` plugin on WP Admin plugins page and that's it.
+10. Activate the `S3 Uploads` plugin on WP Admin plugins page and that's it.
 
 ## Deploying Pure WordPress on Scalingo
 
