@@ -21,7 +21,7 @@ This report shows the consumption of all your applications for the current billi
 
 When a billing period is over and the invoice is issued, you can explore your consumption to identify the main cost drivers.
 
-Please note that the consumption report document **is not an invoice**, but a breakdown of your consumption **excluding VAT**. It does not take into account the free trial period or any vouchers or credits.
+Please note that the consumption report document **is not an invoice**, but a breakdown of your consumption **excluding VAT**. It takes neither the free trial period nor any vouchers or credits into account .
 
 ## Group consumption by app or ressource
 
