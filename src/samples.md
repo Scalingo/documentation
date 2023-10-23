@@ -2,7 +2,7 @@
 layout: default
 title: Samples
 subnav_index: 1
-description: Here is a list of samples built with various technologies than you can deploy by yourself and take inspiration of.
+description: Here is a list of samples built with various technologies that you can deploy by yourself and take inspiration of.
 modified_at: 2015-09-09 00:00:00
 ---
 
