@@ -25,3 +25,16 @@ your private key with a password. This step is optional but for further security
 want to set one.
 
 By default, both private and public keys will be located in your `$HOME/.ssh` directory.
+
+### Add the public SSH key to Scalingo
+
+To get the content of the public SSH key, you need to run the following command:
+
+```bash
+$ cat ~/.ssh/id_ed25519.pub
+```
+
+The file content should start with `ssh-ed25519`
+
+Once you have the public key, go to Scalingo Dashboard [SSH key section](https://dashboard.scalingo.com/account/keys) and
+create a new key with the content of the public key.
