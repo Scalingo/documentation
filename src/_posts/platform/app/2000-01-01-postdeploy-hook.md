@@ -135,7 +135,13 @@ curl $SENTRY_DEPLOY_HOOK -X POST -H "Content-Type: application/json" -d "{\"vers
 
 The `SENTRY_DEPLOY_HOOK` environment variable must be added to the application environment. Its content is the value in Sentry settings: Settings > Projects > Project Name > Releases.
 
-Then modify the `Procfile` to include:
+Make it executable by using the following command:
+
+```sh
+chmod +x postdeploy.sh
+```
+
+Finally, modify the `Procfile` to include:
 
 ```yaml
 postdeploy: /app/postdeploy.sh
