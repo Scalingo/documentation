@@ -1,5 +1,5 @@
 ---
-title: Getting started with Grafana on Scalingo
+title: Getting Started with Grafana on Scalingo
 modified_at: 2019-12-20 10:00:00
 tags: tutorial grafana metrics
 index: 12
@@ -11,55 +11,164 @@ the ability to produce dashboards about your application metrics.
 This tutorial will show you how to deploy a Grafana instance on Scalingo in
 under 5 minutes.
 
-## Grafana Deployment
+## Deploying Grafana
 
-We published a repository
-[grafana-scalingo](https://github.com/Scalingo/grafana-scalingo/) on GitHub to
-help you deploy Grafana on Scalingo. Deploying a Grafana instance is now at a
-click range:
+### Planning your Deployment
 
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/grafana-scalingo)
+- web 1L
 
-## Deployment by Cloning the Repository
+- PostgreSQL 512
 
-You first need to create an application on Scalingo. Let's say its name is
-`my-app`.
+- Multibuildpack
 
-Then, clone our repository and add the Scalingo git remote:
 
-```bash
-$ git clone https://github.com/Scalingo/grafana-scalingo
-$ cd grafana-scalingo
-$ git remote add scalingo git@ssh.osc-fr1.scalingo.com:my-app.git
-```
+### Using our One-Click Deploy Button
 
-We now need to slightly configure the Scalingo application. This
-application needs to use the [multi-buildpacks]({% post_url
-platform/deployment/buildpacks/2000-01-01-multi %}).
+Click the One-Click Deplkoy button below to automatically deploy Grafana with
+your Scalingo account:
 
-You also must add a PostgreSQL addon to your application. Last, configure a
-few Grafana specific environment variables by heading to your application web
-dashboard:
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/grafana-scalingo)
 
-```bash
-GF_DATABASE_URL=$SCALINGO_POSTGRESQL_URL
-GF_PATHS_PLUGINS=/app/plugins
-GF_SECURITY_ADMIN_PASSWORD=<Fill this field>
-GF_SECURITY_ADMIN_USER=<Fill this field>
-GF_SERVER_HTTP_PORT=$PORT
-GF_SERVER_ROOT_URL=https://my-app.osc-fr1.scalingo.io
-NPM_CONFIG_PRODUCTION=false
-PLATFORM_ENV=production
-```
+### Using the Command Line
 
-You need to customize the variables `GF_SECURITY_ADMIN_USER`,
-`GF_SECURITY_ADMIN_PASSWORD` and `GF_SERVER_ROOT_URL` with correct values.
+We maintain a repository called [grafana-scalingo]()
+on GitHub to help you deploy Grafana on Scalingo. Here are the few steps you
+will need to follow:
 
-You can now deploy your application with:
+1. Clone our repository:
 
-```bash
-$ git push scalingo master
-```
+   ```bash
+   git clone https://github.com/Scalingo/grafana-scalingo
+   cd grafana-scalingo
+   ```
+
+2. Create the application on Scalingo (to keep things simple in this tutorial,
+   we will call it `my-app`):
+
+   ```bash
+   scalingo create my-app
+   ```
+
+   Notice that our Command Line automatically detects the git repository, and
+   adds a git remote to Scalingo:
+
+   ```bash
+   git remote -v
+
+   origin   https://github.com/Scalingo/grafana-scalingo (fetch)
+   origin   https://github.com/Scalingo/grafana-scalingo (push)
+   scalingo git@ssh.osc-fr1.scalingo.com:my-app.git (fetch)
+   scalingo git@ssh.osc-fr1.scalingo.com:my-app.git (push)
+   ```
+
+3. Scale the web container:
+
+   ```bash
+   scalingo --app my-app scale web:1:L
+   ```
+
+4. Create the database:
+
+   ```bash
+   scalingo --app my-app addons-add postgresql postgresql-starter-512
+   ```
+
+5. Set a few environment variables (mandatory!), from the command line, for
+   example:
+
+   ```bash
+   scalingo --app my-app env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack
+   scalingo --app my-app env-set NPM_CONFIG_PRODUCTION=false
+   scalingo --app my-app env-set PLATFORM_ENV=production
+   scalingo --app my-app env-set GF_DATABASE_URL=$SCALINGO_POSTGRESQL_URL
+   scalingo --app my-app env-set GF_SERVER_HTTP_PORT=$PORT
+   scalingo --app my-app env-set GF_PATH_PLUGINS=/app/plugins
+   ```
+
+   These must be set to the appropriate values:
+
+   ```bash
+   scalingo --app my-app env-set GF_SERVER_ROOT_URL=https://my-app.osc-fr1.scalingo.io
+   scalingo --app my-app env-set GF_SECURITY_ADMIN_USER=<set this to whatever suits you>
+   scalingo --app my-app env-set GF_SECURITY_ADMIN_PASSWORD=<set this to whatever suits you>
+   ```
+
+6. Everything's ready, deploy to Scalingo:
+
+   ```bash
+   git push scalingo master
+   ```
+
+
+## Updating Grafana
+
+### Sticking With Scalingo Grafana Distribution
+
+By default, Scalingo tries to install the latest version of Grafana **that we
+have successfully tested and integrated**. We tag these versions with a
+`-scalingo<n>` suffix (e.g. `v9.3.2-scalingo1`).
+
+Consequently, to update Grafana, issue the following commands in your project
+directory:
+
+1. Make sure you are in the appropriate branch:
+
+   ```bash
+   git checkout <my_branch>
+   ```
+
+2. Fetch the available tags:
+
+   ```bash
+   git fetch --tags origin
+   ```
+
+3. Merge the tag in your branch:
+
+   ```bash
+   git merge tags/<tag_name>
+   ```
+
+4. Finally, deploy this new version:
+
+   ```bash
+   git push scalingo <my_branch>:master
+   ```
+
+### 
+
+If you want to use a version that we haven't packaged yet, the procedure is
+mostly:
+
+1. In your repository, create an `upstream` repository, and retrieve the tags:
+
+   ```bash
+   git remote add upstream https://github.com/grafana/grafana
+   git fetch --tags upstream
+   ```
+
+2. Switch to a new branch:
+
+   ```bash
+   git checkout -b <my_branch>
+   ```
+
+3. Merge the tag you are interested in with your branch:
+
+   ```bash
+   git merge tags/<tag_name>
+   ```
+
+4. Fix the merge conflicts...
+
+5. Finally, deploy your new version:
+
+   ```bash
+   git push scalingo <my_branch>:master
+   ```
+
+
+## Customizing your Deployment
 
 ### Display Images on External Services
 
@@ -74,3 +183,7 @@ GF_EXTERNAL_IMAGE_STORAGE_S3_BUCKET=<Fill this field>
 GF_EXTERNAL_IMAGE_STORAGE_S3_REGION=<Fill this field>
 GF_EXTERNAL_IMAGE_STORAGE_S3_SECRET_KEY=<Fill this field>
 ```
+
+### Environment
+
+
