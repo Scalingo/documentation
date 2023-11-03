@@ -27,16 +27,18 @@ jobs:
     steps:
       # Add steps to build your app
   deploy:
-    machine:
-      enabled: true
+    resource_class: small # Or another size, depending on your plan possibilities
+    docker:
+      - image: cimg/base:2023.10 # CircleCI base images include git by default
     steps:
+      - checkout # Checkout your app's git repo
       - run:
           name: Add Scalingo to known_hosts
-          command: ssh-keyscan -H ssh.[region].scalingo.com >> ~/.ssh/known_hosts
+          command: mkdir -p ~/.ssh && ssh-keyscan -H ssh.[region].scalingo.com >> ~/.ssh/known_hosts
       - run:
           name: Deploy on Scalingo
           command: |
-            git push git@ssh.[region].scalingo.com:my-app.git $CIRCLE_SHA1:master
+            git push git@ssh.[region].scalingo.com:my-app.git master
 workflows:
   version: 2
   build-and-deploy:
