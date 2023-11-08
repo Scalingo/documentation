@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my MySQL database on Scalingo
 nav: Dump and Restore
-modified_at: 2023-07-26 00:00:00
+modified_at: 2023-11-08 00:00:00
 tags: databases mysql tunnel
 index: 2
 ---
@@ -56,7 +56,7 @@ For security reasons, it is not recommended to activate Internet Accessibility. 
 The command definition is:
 
 ```bash
-$ mysqldump -u <username> --password=<password> -h <host> -P <port> <db> > dump.sql
+$ mysqldump -u <username> --password=<password> -h <host> -P <port> --column-statistics=0 <db> > dump.sql
 ```
 
 ### Restore
