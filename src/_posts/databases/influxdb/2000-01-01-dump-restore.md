@@ -37,7 +37,7 @@ dashboard. It is a **.tar.gz** containing a dump of your database which has been
 done following the instructions from the [InfluxDB®
 documentation](https://docs.influxdata.com/influxdb/v1.2/administration/backup_and_restore/).
 
-#### With InfluxDB 1.6 and lower
+#### With InfluxDB® 1.6 and lower
 
 Before starting the restore process, you need to stop the InfluxDB® daemon. Then type
 the following commands:
@@ -51,7 +51,7 @@ $ influxd restore -database my-db -datadir /var/lib/influxdb/data/ ./
 Note that `/var/lib/influxdb` is the default folder for a Linux installation. You need to modify it
 depending on your configuration.
 
-#### With InfluxDB 1.7 and later
+#### With InfluxDB® 1.7 and later
 
 Note InfluxDB® daemon needs to be up and running
 
