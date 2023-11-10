@@ -29,10 +29,16 @@ Daily backups done by Scalingo are listed in the database specific dashboard:
 
 ### Restore
 
+Note: if you need to restore a backup on your Scalingo for InfluxDB®, please contact our
+support at [support@scalingo.com](mailto:support@scalingo.com).
+
 You can restore your data on your local environment if needed. Download a backup on your database
 dashboard. It is a **.tar.gz** containing a dump of your database which has been
 done following the instructions from the [InfluxDB®
 documentation](https://docs.influxdata.com/influxdb/v1.2/administration/backup_and_restore/).
+
+#### With InfluxDB 1.6 and lower
+
 Before starting the restore process, you need to stop the InfluxDB® daemon. Then type
 the following commands:
 
@@ -45,8 +51,16 @@ $ influxd restore -database my-db -datadir /var/lib/influxdb/data/ ./
 Note that `/var/lib/influxdb` is the default folder for a Linux installation. You need to modify it
 depending on your configuration.
 
-If you need to restore a backup on your Scalingo server, please contact our
-support at [support@scalingo.com](mailto:support@scalingo.com).
+#### With InfluxDB 1.7 and later
+
+Note InfluxDB® daemon needs to be up and running
+
+```bash
+$ tar xfz /path/to/backup.tar.gz
+$ cd ./<extraction-folder>
+$ influxd restore -portable -db my-db-name -new-db new-db-name ./
+```
+
 
 ## Why you cannot manage the backups on Scalingo for InfluxDB®
 
