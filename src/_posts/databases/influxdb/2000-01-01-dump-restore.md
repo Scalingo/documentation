@@ -29,7 +29,7 @@ Daily backups done by Scalingo are listed in the database specific dashboard:
 
 ### Restore
 
-Note: if you need to restore a backup on your Scalingo server, please contact our
+Note: if you need to restore a backup on your Scalingo for InfluxDB®, please contact our
 support at [support@scalingo.com](mailto:support@scalingo.com).
 
 You can restore your data on your local environment if needed. Download a backup on your database
