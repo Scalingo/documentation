@@ -56,8 +56,7 @@ depending on your configuration.
 Note InfluxDB® daemon needs to be up and running
 
 ```bash
-$ tar xfz /path/to/backup.tar.gz
-$ cd ./<extraction-folder>
+$ tar xfz /path/to/backup.tar.gz --strip-components 1
 $ influxd restore -portable -db my-db-name -new-db new-db-name ./
 ```
 
