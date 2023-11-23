@@ -1,0 +1,356 @@
+---
+title: Scalingo for PostgreSQL®
+nav: Introduction
+modified_at: 2023-06-22 00:00:00
+tags: databases postgresql addon
+index: 1
+---
+
+{% include info_command_line_tool.md %}
+
+Scalingo for PostgreSQL® is the official PostgreSQL® addon provided by Scalingo, details on the available plans can be found [here](https://scalingo.com/databases/postgresql). This addon gives your app instant access to a PostgreSQL® database running in its own Docker container.
+
+## Adding Scalingo for PostgreSQL® to Your App
+
+You can add the Scalingo for PostgreSQL® addon through the **dashboard** or through the **command line interface**. The capacity of your database is elastic, you will be able to upgrade it later.
+
+### Through the Dashboard
+
+1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
+2. Click on **Addons** tab
+3. Select the addon you want to add
+4. In the dialog select the database plan you need
+5. Validate your choice
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_addons_postgresql.png" %}
+{% include mdl_img.html %}
+
+### Through the Command-Line Interface
+
+```bash
+$ scalingo --app my-app addons-add postgresql postgresql-business-1024
+
+-----> Addon postgresql has been provisionned
+       ID: my-app-3030
+       Modified variables: [DATABASE_URL SCALINGO_POSTGRESQL_URL]
+       Message from addon provider: Database successfully created
+```
+
+This command will provision the application `my-app` with a
+`postgresql-business-1024` PostgreSQL database plan.
+
+To find out what other plans are available:
+
+```bash
+$ scalingo addons-plans postgresql
+```
+
+## Scalingo for PostgreSQL® Cluster Setup
+
+If using a Business plan for your Scalingo for PostgreSQL® addon, we setup a PostgreSQL®
+cluster. This cluster has the following configuration:
+
+- multiple PostgreSQL® nodes in a private network: the amount of memory per node
+  depends on the plan,
+- a couple of HAProxy as entrypoint to your cluster private network: one is the
+  leader and the other is just here as a backup in case of failing leader.
+
+The communication between the PostgreSQL® nodes is encrypted.
+
+## Getting your Connection URI
+
+Once the addon is provisioned, 2 environment variables are added to your app:
+`SCALINGO_POSTGRESQL_URL` and `DATABASE_URL`. `DATABASE_URL` is an alias to
+`SCALINGO_POSTGRESQL_URL`. To find out how to use it in your code please refer
+to [Application environment]({% post_url platform/app/2000-01-01-environment
+%}).
+
+In most cases, you can pass the variable directly to the client library you are
+using in your code. But sometimes the library requires a specific URI format,
+you'll need to add a little bit of code to suit the library.
+
+You can get environment variables from the dashboard or the command line interface.
+
+### From the Dashboard
+
+1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
+2. Click on **Environment** tab
+3. `SCALINGO_POSTGRESQL_URL` is displayed
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_environment_postgresql.png" %}
+{% include mdl_img.html %}
+
+### From the Command-Line Interface
+
+```bash
+$ scalingo --app my-app env | grep POSTGRESQL
+
+DATABASE_URL=$SCALINGO_POSTGRESQL_URL
+SCALINGO_POSTGRESQL_URL=postgres://example_app_3030:ptojfrxzRi-lDfDYyahe@my-app-3030.postgresql.a.osc-fr1.scalingo-dbs.com:31000/example_app_3030
+```
+
+## Remote Access Your Database
+
+If you need to access your database from other places than your app please
+follow the [Access your database]({% post_url
+platform/databases/2000-01-01-access %}) guide.
+
+### Force TLS Connections
+
+PostgreSQL® [support
+TLS](https://www.postgresql.org/docs/current/static/ssl-tcp.html) to
+encrypt all of its network traffic between the client and the
+server.
+
+By default, all new Scalingo for PostgreSQL® databases have TLS activated. If you want to
+connect to it, you have nothing to do. `psql` will automatically first try to
+connect using TLS, and if it fails will try without TLS. `psql` will display an
+informative message if you succeed to connect using TLS:
+
+```shell
+> psql "<connection string>"
+psql (12.1, server 11.5 (Debian 11.5-1.pgdg90+1))
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+dbname_6246=#
+```
+
+Some existing databases may not have yet TLS support. To activate TLS, you need
+to restart the database.  Any action leading to the restart will activate TLS
+(e.g. plan update, upgrade of the database).
+
+TLS is an option, you can still access your database without it if needed.
+
+If you want to force connections to your database to use TLS, head to the
+database dashboard and click on the toggle button:
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
+{% include mdl_img.html %}
+
+Note that you must have configured your application to use TLS when connecting
+to the database.
+
+## Changing Plans
+
+You can upgrade or downgrade your database plan whenever you need it. This
+operation happens instantly, no manual input is required.
+When you change the plan, the instances of your database will be stopped then
+restarted with the characteristics of the chosen plan. According to the type of plan
+you are using the impact on your application will differ:
+
+* **Starter Plans:** Since these plans are not highly available, the database will be unavailable during the whole operation: ~2 minutes of interruption.
+* **Business Plans:** Thanks to high availability, only a failover will occur during the operation. Current connections are stopped and the application has to reconnect. It can be transparent or lead to a ~2-5 seconds of interruption according to the driver used by your application and its configuration.
+
+In both cases, after the operation the application will be restarted to ensure
+it creates new healthy connections to the database.
+
+### From the Dashboard
+
+1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
+2. Click on **Addons** tab
+3. Select the addon you want to change
+4. In the dialog select the plan you want to upgrade/downgrade to
+5. Validate your choice
+
+### From the Command-Line Interface
+
+To upgrade or downgrade your addon the sub-command is the same: `addons-upgrade`.
+
+```bash
+$ scalingo --app my-app addons-upgrade my-app-3030 postgresql-business-2048
+```
+
+In this example, `my-app-3030` is the ID of the addon, and
+`postgresql-business-2048` is the plan we want to upgrade to.
+
+To find out the addon ID:
+
+```bash
+$ scalingo --app my-app addons
+
++------------+-------------+--------------------------+
+|   ADDON    |      ID     |           PLAN           |
++------------+-------------+--------------------------+
+| PostgreSQL | my-app-3030 | postgresql-business-1024 |
++------------+-------------+--------------------------+
+```
+
+## Database Dashboard
+
+The Scalingo for PostgreSQL® dashboard is the central place for administrative tasks such as:
+
+- Monitor database and system stats
+- Upgrade the database engine version
+- Activate database specific features
+- Manage database users
+- Manage backups
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_postgresql_overview.png" %}
+{% include mdl_img.html %}
+
+### Database Upgrade
+
+When the database vendor releases a new version of your database engine, we will
+try to provide it as soon as possible. You will have the choice to upgrade your
+database with one click through your database dashboard.
+
+{% note %}
+Your database needs to be upgraded to the latest minor version before having access to the next major version.
+For instance, your version is 2.3.X and you want to upgrade to 3.1.X. If there is a 2.5.X version, you need to upgrade it to the 2.5.X first.
+{% endnote %}
+
+If your database uses a business plan, we are able to achieve zero-downtime
+upgrade of minor version. In the case of major version upgrade, we need to
+completely stop the nodes, hence we can't achieve zero-downtime. On single node
+database, we need to stop the node in order to upgrade it, whatever the version
+to upgrade.
+
+When this operation finishes, your application is restarted.
+
+{% warning %}
+Beware that no downgrade is possible once your database has been upgraded.
+{% endwarning %}
+
+### Container Stats
+
+<div class="overflow-horizontal-content">
+  <table class="mdl-data-table ">
+    <tbody>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">CPU usage</td>
+        <td class="mdl-data-table__cell--non-numeric">Current CPU usage.</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Memory usage</td>
+        <td class="mdl-data-table__cell--non-numeric">Display the current, hightest and free memory. Highest is the maximum memory recorded since database restarted.</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Swap usage</td>
+        <td class="mdl-data-table__cell--non-numeric">Display the current, hightest and free swap. Highest is the maximum swap recorded since database restarted.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### Database Stats
+
+<div class="overflow-horizontal-content">
+  <table class="mdl-data-table ">
+    <tbody>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Database connections</td>
+        <td class="mdl-data-table__cell--non-numeric">Number of currently open and maximum connections.</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Data size</td>
+        <td class="mdl-data-table__cell--non-numeric">Logical space reported by the database.</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Database on disk size</td>
+        <td class="mdl-data-table__cell--non-numeric">Effective physical space used.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+### Database Users
+
+By default, Scalingo creates a read and write user on your database with the
+following rights:
+
+```sql
+GRANT CREATE ON SCHEMA public TO <username>
+GRANT ALL PRIVILEGES ON DATABASE <database> TO <username>
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO <username>
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO <username>
+ALTER DEFAULT PRIVILEGES FOR USER <database> IN SCHEMA public GRANT ALL ON TABLES TO <username>
+ALTER DEFAULT PRIVILEGES FOR USER <database> IN SCHEMA public GRANT ALL ON SEQUENCES TO <username>
+```
+
+If you create a new user using the web dashboard, it will get the same rights.
+
+You can also create a read only user with the following rights:
+
+```sql
+GRANT USAGE ON SCHEMA public TO <username>
+GRANT CONNECT ON DATABASE <database> TO <username>
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO <username>
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO <username>
+ALTER DEFAULT PRIVILEGES FOR USER <database> IN SCHEMA public GRANT SELECT ON TABLES TO <username>
+ALTER DEFAULT PRIVILEGES FOR USER <database> IN SCHEMA public GRANT SELECT ON SEQUENCES TO <username>
+```
+
+### Running Queries
+
+The "Running Queries" tab displays the queries being executed on your database. It may be useful to understand the usage of your PostgreSQL® database.
+
+Some of these queries are considered "idled" by PostgreSQL®. In order to display these queries you need to enable them with the toggle on the "Running Queries" tab. These idle queries should not be considered a _bad thing_. As stated on the PostgreSQ®L [mailing list](https://postgrespro.com/list/id/CAC6ry0LFHv+eMjpde_3jqfSnG9hg2O6s=9VTwLh2jiYydXSqGg@mail.gmail.com):
+
+> "idle" means the client is not currently executing a query nor in a transaction. If [the start date] is 2 days old, that just means the last query to be executed on that connection was two days ago. [...] It's generally desirable for a connection pool to have a few idle connections so queries don't suffer the latency of establishing a new connection.
+
+## Backups
+
+Scalingo for PostgreSQL® databases offer two way of backing up the data.
+
+### Point-in-Time Recovery
+
+Point-in-time recovery (PITR) allows you to ask for the restoration of your data
+at a specific date. We achieve this by making a full PITR backup of the database
+weekly. Between two PITR backups, we keep track of the write-ahead logs (WAL).
+The WAL contains all the modification instructions. By replaying the WAL from a
+PITR backup to a specific date, we are able to rebuild the state of the database
+at that date.
+
+You have nothing to do to be able to use the PITR mechanism (on a paying plan). Be aware that you
+can only use the PITR on the period between now and now minus seven days.
+
+{% warning %}
+Restoring a database by using the Point-in-time recovery feature requires the database to be completely stopped.
+{% endwarning %}
+
+### On-Demand Backups
+
+{% include database_backups.md %}
+
+{% note %}
+If your database has multiple nodes, the dump is done on the secondary node.
+{% endnote %}
+
+#### Download Automated Backups
+
+Automated backups are listed in the database specific dashboard.
+
+1. Go to your app on [Scalingo Dashboard](https://my.scalingo.com/apps)
+2. Click on **Addons** tab
+3. Click **Link to dashboard** which will take you to the **Scalingo for PostgreSQL® dashboard**
+4. Click on **Backups** tab
+5. Download the backup you want
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_postgresql_backups.png" %}
+{% include mdl_img.html %}
+
+{% include encryption_at_rest.md %}
+
+## Memory Usage
+
+You can see the memory usage of your database on the "Metrics" tab of your web dashboard:
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_postgresql_metrics.png" %}
+{% include mdl_img.html %}
+
+PostgreSQL® tends to use all the available memory if there is enough indices to fill the memory. If there is too many indices to fit into the memory, some of them are stored on the disk. In this situation, queries needing these indices will be slowed down. PostgreSQL® first needs to load the indices from the disk into the RAM which takes some time. The memory usage on the "Metrics" tab of your web dashboard would always be at 100% in such situation.
+
+## Client Customization
+
+You can customize the PostgreSQL® client by adding a `.psqlrc` in your app directory.
+
+For example:
+```
+\set ON_ERROR_ROLLBACK interactive
+\set COMP_KEYWORD_CASE upper
+\set HISTFILE ~/.psql/history- :DBNAME
+
+\pset pager off
+\pset null '(null)'
+```
