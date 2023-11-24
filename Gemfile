@@ -36,9 +36,11 @@ group :development, :test do
   gem "standard"
 end
 
-gem "webpacker", "< 5"
+gem "activesupport"
 
 gem "puma"
+gem "rake"
+
 gem "rack", "< 3"
 gem "rack-canonical-host"
 gem "rack-jekyll", github: "adaoraul/rack-jekyll"

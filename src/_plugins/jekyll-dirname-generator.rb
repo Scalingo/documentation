@@ -1,3 +1,5 @@
+require "active_support/all"
+
 module Jekyll
   class CategoryPage < Page
     def initialize(site, base, dir, name, title)
