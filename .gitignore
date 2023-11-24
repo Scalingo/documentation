@@ -13,4 +13,5 @@ yarn-error.log
 .idea
 .vscode
 .DS_Store
-src/assets/style.css
+src/assets/**
+assets/manifest.json
