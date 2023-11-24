@@ -24,6 +24,14 @@ const opts = {
         plugins: [tailwindcss, autoprefixer, postcssImport]
       },
     }),
+    {
+      name: 'generate-manifest',
+      setup(build) {
+        build.onEnd(result => {
+          fs.writeFileSync('assets/manifest.json', JSON.stringify(result.metafile, null, 2))
+        })
+      },
+    }
   ],
   metafile: true,
   logLevel: "info"
@@ -39,7 +47,5 @@ if(lastOpt === "--watch") {
 
   await ctx.watch();
 } else {
-  let result = await esbuild.build(opts);
-
-  fs.writeFileSync('assets/manifest.json', JSON.stringify(result.metafile, null, 2))
+  await esbuild.build(opts);
 }
