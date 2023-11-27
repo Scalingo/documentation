@@ -186,6 +186,10 @@ svg {
   @apply text-sc-gray-2 pl-4 font-normal;
 }
 
+.DocSearch-Input {
+  outline: none;
+}
+
 #breadcrumb a {
   @apply text-sc-gray-2 no-underline;
 }
