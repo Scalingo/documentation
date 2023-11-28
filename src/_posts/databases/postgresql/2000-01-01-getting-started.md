@@ -73,3 +73,26 @@ our [CLI tool](#using-the-command-line) or via our
 2. Run `terraform plan` and check if the result looks good
 3. If so, run `terraform apply`
 4. After a few seconds, your database is ready to use. Enjoy!
+
+
+## Accessing the Scalingo for PostgreSQL® Dashboard
+
+Every Scalingo for PostgreSQL® addon comes with its dedicated dashboard,
+generally referred to as **database dashboard**, which is the central place for
+administrative tasks such as:
+
+- [Monitoring the database]({% post_url databases/postgresql/2000-01-01-monitoring %})
+  through logs, metrics and statistics
+- [Upgrading the database]({% post_url databases/postgresql/2000-01-01-managing %})
+  engine version
+- [Enabling specific features]({% post_url databases/postgresql/2000-01-01-managing %})
+- [Managing database users]({% post_url databases/postgresql/2000-01-01-managing %})
+- [Managing backups]({% post_url databases/postgresql/2000-01-01-backing-up %})
+
+You can access the database dashboard via the application dashboard:
+
+1. From your web browser, open your [dashboard](https://dashboard.scalingo.com/apps)
+2. Click on the application for which you want to manage your database
+3. Click on the **Overview** tab
+4. Locate the **Addons** block and click on the **Dashboard** button next to
+   the database you want to manage.
