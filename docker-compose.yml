@@ -8,12 +8,7 @@ services:
     volumes:
       - ./:/usr/src/app
     environment:
-      AUTH_API_BASE_URI: "https://api.scalingo.com/"
-      API_BASE_URI: "https://api.scalingo.com/"
-      BLOG_ROOT_URL: "https://blog.scalingo.io"
-      REDIS_URL: "redis://:pipo@redis:6379"
-      BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/3.0.0/bin"
-      BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/3.0.0"
+      BUNDLE_PATH: "/usr/src/app/vendor/.bundle"
       JEKYLL_ENV: "development"
     command: bundle exec jekyll serve --watch --host 0.0.0.0 --port 4300 --trace --incremental --livereload --livereload-port 4302
   assets:

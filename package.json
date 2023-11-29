@@ -9,13 +9,12 @@
   "dependencies": {
     "@docsearch/js": "^3.5.2",
     "autoprefixer": "^10.4.15",
-    "esbuild": "^0.19.2",
+    "esbuild": "^0.19.8",
     "esbuild-style-plugin": "^1.6.3",
     "mdn-polyfills": "^5.20.0",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
-    "svgo": "^1.0.4",
     "tailwindcss": "^3.3.5"
   }
 }
