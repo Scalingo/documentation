@@ -10,7 +10,7 @@
   {% endconditionaltrackers %}
   {% include organisms/favicons.html %}
   <script defer src="{{ 'assets/application.js' | esbuild_asset_path }}"></script>
-  <script defer data-domain="scalingo.com" event-app="documentation" src="https://plausible.io/js/script.pageview-props.js"></script>
+  <script defer data-domain="scalingo.com" event-app="documentation" data-api="https://scalingo.com/sc-analytics/event" src="{{ 'assets/analytics.js' | esbuild_asset_path }}"></script>
   <link rel="stylesheet" href="https://use.typekit.net/ajl3atf.css">
   <link rel="stylesheet" href="{{ 'assets/style.css' | esbuild_asset_path }}">
 
