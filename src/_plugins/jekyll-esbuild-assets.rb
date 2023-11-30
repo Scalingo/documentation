@@ -3,7 +3,11 @@ module Jekyll
     def esbuild_asset_path(input)
       if !@mapping
         root = File.expand_path(File.join(__dir__, "../.."))
-        manifest_path = File.join(root, "assets", "manifest.json")
+        manifest_path = File.join(root, "src", "assets", "manifest.json")
+
+        # If the manifest doesn't exist yet, return an empty string and do not memoize anything
+        return "" unless File.exist?(manifest_path)
+
         manifest_content = File.read(manifest_path)
         manifest = JSON.parse(manifest_content)
 
