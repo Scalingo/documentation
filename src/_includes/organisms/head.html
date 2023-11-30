@@ -9,10 +9,11 @@
   {% include organisms/google_tag_manager_head.html %}
   {% endconditionaltrackers %}
   {% include organisms/favicons.html %}
+  <script defer src="{{ 'assets/application.js' | esbuild_asset_path }}"></script>
   <script defer data-domain="scalingo.com" event-app="documentation" src="https://plausible.io/js/script.pageview-props.js"></script>
   <link rel="stylesheet" href="https://use.typekit.net/ajl3atf.css">
-  <link rel="stylesheet" href="/assets/style.css">
-  <link rel="stylesheet" href="{{ "style.css" | asset_pack_path }}">
+  <link rel="stylesheet" href="{{ 'assets/style.css' | esbuild_asset_path }}">
+
   <meta property="og:site_name" content="{{ site.title }}"/>
   {% if page.og_image %}<meta property="og:image" content="{{ page.og_image }}"/>{% endif %}
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}"/>

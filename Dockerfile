@@ -1,37 +1,26 @@
-FROM ruby:3.2.1
+# Inspiration: https://github.com/timbru31/docker-ruby-node/blob/master/3.2/18/Dockerfile
+FROM ruby:3.2.2
+LABEL maintainer "kevin@scalingo.com"
 
-RUN apt-get update
-RUN apt-get install apt-transport-https
+ARG REFRESHED_AT
+ENV REFRESHED_AT $REFRESHED_AT
+ARG NODE_MAJOR=18
 
-RUN wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb \
-  && dpkg -i /tmp/libpng12.deb \
-  && rm /tmp/libpng12.deb
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN printf 'Package: nodejs\nPin: origin deb.nodesource.com\nPin-Priority: 1001' > /etc/apt/preferences.d/nodesource \
+  && mkdir -p /etc/apt/keyrings \
+  && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+  && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \
+  && apt-get update -qq && apt-get install -qq --no-install-recommends \
+  nodejs \
+  && apt-get upgrade -qq \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*\
+  && npm install -g yarn@1
 
-RUN apt-get update
-RUN apt-get install -y python
-RUN apt-get install -y yarn
-RUN apt-get install -y locales
+COPY Gemfile Gemfile.lock /usr/src/app/
 
-ENV NODE_VERSION 14.18.3
-
-RUN cd /opt && \
-    curl -L "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" | tar -xJf - && \
-    mv -v node-v$NODE_VERSION-linux-x64 node && \
-    apt-get update && apt-get install sudo && apt-get clean &&\
-    sed -i s+secure_path=.*+secure_path="$PATH"+ /etc/sudoers
-
-ENV PATH "/opt/node/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/node_modules/.bin:/usr/src/app/node_modules/.bin:/usr/src/app/vendor/.bundle/ruby/3.1.0/bin"
-
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
-  echo 'LANG="en_US.UTF-8"'>/etc/default/locale && \
-  dpkg-reconfigure --frontend=noninteractive locales && \
-  update-locale LANG=en_US.UTF-8
-
-RUN gem install bundler -v '2.4.5'
-
-ENV LANG en_US.UTF-8
+RUN gem install bundler:2.4.22
 
 WORKDIR /usr/src/app
