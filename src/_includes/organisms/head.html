@@ -9,6 +9,7 @@
   {% include organisms/google_tag_manager_head.html %}
   {% endconditionaltrackers %}
   {% include organisms/favicons.html %}
+  <script defer src="{{ 'assets/application.js' | esbuild_asset_path }}"></script>
   <script defer data-domain="scalingo.com" event-app="documentation" src="https://plausible.io/js/script.pageview-props.js"></script>
   <link rel="stylesheet" href="https://use.typekit.net/ajl3atf.css">
   <link rel="stylesheet" href="{{ 'assets/style.css' | esbuild_asset_path }}">

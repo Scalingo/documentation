@@ -28,7 +28,10 @@ const opts = {
       name: 'generate-manifest',
       setup(build) {
         build.onEnd(result => {
-          fs.writeFileSync('assets/manifest.json', JSON.stringify(result.metafile, null, 2))
+          // Outputs a file describing the assets produced
+          fs.writeFileSync('src/assets/manifest.json', JSON.stringify(result.metafile, null, 2))
+          // Touch the `<head>` to ensure jekyll will rebuild
+          fs.utimesSync('src/_includes/organisms/head.html', new Date(), new Date());
         })
       },
     }
