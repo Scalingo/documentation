@@ -129,41 +129,17 @@ to be activated manually.
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo Command Line tool]({% post_url platform/cli/2000-01-01-start %})
-2. From the command line, open a console for your Scalingo for PostgreSQL® 
-   addon:
-   ```bash
-   scalingo --app my-app pgsql-console
-   ```
-   The output should look like this:
-   ```bash
-   -----> Starting container one-off-7872  Done in 0.479 seconds
-   -----> Connecting to container [one-off-7872]...  
-   -----> Process 'pgsql-console my_app_4553' is starting...  
-
-   Hello from bashrc.
-   ---> Download and extract the database CLI
-   ---> Database CLI installed:
-   psql (PostgreSQL) 14.6
-   psql (14.6, server 14.8 (Debian 14.8-1.pgdg110+1))
-   SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
-   Type "help" for help.
-
-   my_app_4553=>
-   ```
-3. From the PostgreSQL console, run the following command:
-   ```bash
-   my_app_4553=> CREATE extension pg_stat_statements;
+1. Access your database using the [Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#using-the-interactive-remote-console)
+2. From the PostgreSQL® console, run the following command:
+   ```sql
+   CREATE extension pg_stat_statements;
    ```
    The output should look like this:
    ```bash
    CREATE EXTENSION
    my_app_4553=>
    ```
-4. Exit the console:
-   ```bash
-   my_app_4553=> \q
-   ```
+3. [Exit the Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#exiting)
 
 ### Using the Database Dashboard
 
