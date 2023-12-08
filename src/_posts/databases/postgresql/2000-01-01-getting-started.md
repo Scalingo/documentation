@@ -1,5 +1,5 @@
 ---
-title: Scalingo for PostgreSQL®
+title: Getting Started With Scalingo for PostgreSQL®
 nav: Getting Started
 modified_at: 2023-11-22 00:00:00
 tags: databases postgresql addon
@@ -16,7 +16,7 @@ our [CLI tool](#using-the-command-line) or via our
 ### Using the Dashboard
 
 1. From your web browser, open your [dashboard](https://dashboard.scalingo.com/apps)
-2. Click on the application for which you want to add a PostgreSQL database
+2. Click on the application for which you want to add a PostgreSQL® database
 3. Click on the **Resources** tab
 4. Locate the **Addons** block and click on the **Add an addon** button
 5. Select **PostgreSQL**® in the databases block and click the **Go to plan
