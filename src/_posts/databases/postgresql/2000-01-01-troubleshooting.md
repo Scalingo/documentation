@@ -3,14 +3,11 @@ title: Troubleshooting Scalingo for PostgreSQL
 nav: Troubleshooting
 modified_at: 2023-12-01 00:00:00
 tags: databases postgresql addon
-index: 8
+index: 9
 ---
 
 ## Identifying Performances Issues
 
-FIXME:
-see https://kaleman.netlify.app/getting-query-performance-stats-with-pg for
-some examples.
 
 ## Understanding Idle Queries
 
