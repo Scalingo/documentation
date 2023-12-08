@@ -6,7 +6,7 @@ tags: databases postgresql addon
 index: 3
 ---
 
-When a PostgreSQL addon is provisioned, the platform also adds 2 [environment
+When a PostgreSQL® addon is provisioned, the platform also adds 2 [environment
 variables]({% post_url platform/app/2000-01-01-environment %}) to your app:
 
 - `SCALINGO_POSTGRESQL_URL`: a string containing all information needed to
@@ -58,7 +58,7 @@ variable still remains applicable.
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard]()
+1. From your web browser, open your [dashboard](https://dashboard.scalingo.com)
 2. Click on the application for which you want to get the connection URI
 3. Click on the **Environment** tab
 4. Locate the `SCALINGO_POSTGRESQL_URL` line and place your mouse over it to

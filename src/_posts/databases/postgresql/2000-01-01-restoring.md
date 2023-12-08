@@ -1,5 +1,5 @@
 ---
-title: Restoring Your Scalingo for PostgreSQL Addon
+title: Restoring Your Scalingo for PostgreSQL® Addon
 nav: Restoring
 modified_at: 2023-12-08 00:00:00
 tags: databases postgresql addon
@@ -40,7 +40,7 @@ completely stopped, hence causing an inevitable downtime.
 
 #### From a One-Off Container
 
-1. Follow the procedure to [access your PostgreSQL database from a One-Off
+1. Follow the procedure to [access your PostgreSQL® database from a One-Off
    container]({% post_url databases/postgresql/2000-01-01-accessing %}#using-a-one-off)
 2. From the One-Off command line, download and install the Scalingo Command
    Line Tool to complete the One-Off setup:

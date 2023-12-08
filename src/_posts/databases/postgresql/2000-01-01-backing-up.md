@@ -258,7 +258,7 @@ This method has 2 main advantages:
 - It doesn't require to make your database reachable over Internet
 - You won't have to tweak your connection URI
 
-1. Follow the procedure to [access your PostgreSQL database from a One-Off
+1. Follow the procedure to [access your PostgreSQL® database from a One-Off
    container]({% post_url databases/postgresql/2000-01-01-accessing %}#using-a-one-off)
 2. From the One-Off command line, download the Scalingo Command Line Tool
    using our `install-scalingo-cli` helper tool:
