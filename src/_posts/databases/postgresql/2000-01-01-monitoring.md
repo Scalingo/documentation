@@ -139,7 +139,6 @@ to be activated manually.
    CREATE EXTENSION
    my_app_4553=>
    ```
-3. [Exit the Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#exiting)
 
 ### Using the Database Dashboard
 
