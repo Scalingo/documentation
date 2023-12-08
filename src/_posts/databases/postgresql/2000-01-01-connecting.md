@@ -100,11 +100,16 @@ my_app_wxyz=>
 ```
 
 If you want to enforce TLS connections to your database (so that TLS is
-not only available, but **mandatory**), head to your database dashboard and
-toggle the corresponding option:
+not only available, but **mandatory**):
+
+1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+2. Select the **Overview** tab
+3. Locate the **TLS/Internet Access** block
+4. Toggle the corresponding option:
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
 {% include mdl_img.html %}
+
 
 Once this option is activated, the database denies any non-TLS connection.
 Consequently, your application must be configured to use TLS when connecting to
@@ -117,3 +122,17 @@ TLS.
 
 Please note that while we strongly advise to use TLS, it remains an option,
 meaning that you can still access your database without it if needed.
+
+
+## Connecting Multiple Applications to the Same Scalingo for PostgreSQL® Addon
+
+If you need to connect your Scalingo for PostgreSQL® addon from multiple
+applications, you can do it by adding an environment variable in every
+application wanting to communicate with the database:
+
+1. Copy [the connection URI](#getting-the-connection-uri) of your addon
+2. [Create a new environment variable]({% post_url platform/app/2000-01-01-environment %})
+   for the application that needs to access the addon
+3. Set the value of this new environment variable to connection URI you just
+   copied
+4. Restart the application to make the new environment variable available
