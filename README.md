@@ -73,6 +73,7 @@ object(s)`. Then, insert it with:
 To install dependencies locally:
 
 ```
+docker compose build
 docker compose run --rm web bundle install
 docker compose run --rm web yarn install --ignore-engines
 ```
