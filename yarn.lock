@@ -579,9 +579,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.535:
-  version "1.4.596"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.596.tgz#6752d1aa795d942d49dfc5d3764d6ea283fab1d7"
-  integrity sha512-zW3zbZ40Icb2BCWjm47nxwcFGYlIgdXkAx85XDO7cyky9J4QQfq8t0W19/TLZqq3JPQXtlv8BPIGmfa9Jb4scg==
+  version "1.4.599"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.599.tgz#754d368c7d6086c92099236de10dbbc93dfb7688"
+  integrity sha512-FdLI0/h+PvShEqmBMnZCdbgabAuQiiM9Ph8hVGmPOR5GU1XXZgwLRCMogE63OrUxcDEOBlEMVYAgtkJjWFnhRA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
