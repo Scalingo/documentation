@@ -75,11 +75,11 @@ our [CLI tool](#using-the-command-line) or via our
 4. After a few seconds, your database is ready to use. Enjoy!
 
 
-## Accessing the Scalingo for PostgreSQL® Dashboard
+## Accessing the PostgreSQL® Dashboard
 
-Every Scalingo for PostgreSQL® addon comes with its dedicated dashboard,
-generally referred to as **database dashboard**, which is the central place for
-administrative tasks such as:
+Every PostgreSQL® addon comes with its dedicated dashboard, generally referred
+to as **database dashboard**, which is the central place for administrative
+tasks such as:
 
 - [Monitoring the database]({% post_url databases/postgresql/2000-01-01-monitoring %})
   through logs, metrics and statistics

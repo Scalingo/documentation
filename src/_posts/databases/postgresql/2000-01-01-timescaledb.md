@@ -27,8 +27,7 @@ started.
   hence TimescaleDB®'s functions labeled "*community*" on their documentation
   are not available on the platform.
 
-- TimescaleDB® requires a Scalingo for PostgreSQL® database version 13.6.0-1 or
-  above.
+- TimescaleDB® requires a PostgreSQL® database version 13.6.0-1 or above.
 
 - Working with a time series database usually involves the need to [compress
   data](#downsampling) in runtime and [remove the oldest data](#configuring-data-retention).
@@ -43,7 +42,7 @@ started.
 ## Enabling TimescaleDB®
 
 To enable TimescaleDB®:
-1. [Provision a new Scalingo for PostgreSQL® database]({% post_url databases/postgresql/2000-01-01-getting-started %})
+1. [Provision a new PostgreSQL® database]({% post_url databases/postgresql/2000-01-01-getting-started %})
 2. [Enable the `timescaledb` extension]({% post_url databases/postgresql/2000-01-01-managing %}#enabling-an-extension)
 
 

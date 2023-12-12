@@ -17,8 +17,7 @@ depends on your needs and preferences.
 ## Using the Interactive Remote Console
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. From the command line, open a console for your Scalingo for PostgreSQL®
-   addon:
+2. From the command line, open a console for your PostgreSQL® addon:
    ```bash
    scalingo --app my-app pgsql-console
    ```
@@ -92,8 +91,8 @@ The `dbclient-fetcher` helper installs the following tools:
 
 ## Using Third Party Tools
 
-By default, and for security reasons, your Scalingo for PostgreSQL® database is
-not directly accessible from the Internet.
+By default, and for security reasons, your PostgreSQL® database is not directly
+accessible from the Internet.
 
 To access your database remotely you first need to [make it reachable over the
 Internet](#making-the-database-reachable-over-internet):
@@ -110,8 +109,7 @@ suggest you to [take a look at pgAdmin](#using-pgadmin).
 #### Using Our Command Line Tool
 
 Our command line tool provides a `db-tunnel` command that creates an SSH
-encrypted tunnel, allowing remote access to your Scalingo for PostgreSQL®
-addon.
+encrypted tunnel, allowing remote access to your PostgreSQL® addon.
 
 This tunnel does not provide any additional security layer. We only verify that
 your public key is registered on our platform. It acts as an encrypted bridge

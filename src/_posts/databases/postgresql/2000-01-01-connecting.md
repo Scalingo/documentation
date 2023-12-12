@@ -6,9 +6,9 @@ tags: databases postgresql addon
 index: 3
 ---
 
-When a PostgreSQL® addon is provisioned, the platform also adds two
-[environment variables]({% post_url platform/app/2000-01-01-environment %}) to
-your app:
+When a Scalingo for PostgreSQL® addon is provisioned, the platform also adds
+two [environment variables]({% post_url platform/app/2000-01-01-environment %})
+to your app:
 
 - `SCALINGO_POSTGRESQL_URL`: a string containing all information needed to
   establish a connection between your application and your database. This
@@ -82,12 +82,12 @@ variable still remains applicable.
 
 ## Enforcing TLS Connection
 
-All Scalingo for PostgreSQL® addons [support TLS](https://www.postgresql.org/docs/current/static/ssl-tcp.html)
+All PostgreSQL® addons [support TLS](https://www.postgresql.org/docs/current/static/ssl-tcp.html)
 to encrypt all the network traffic between the client and the server.
 
-By default, all new Scalingo for PostgreSQL® databases have TLS **activated**
-(available), which means that you don't have to do anything to connect via TLS
-with a tool or library that uses TLS by default.
+By default, all new PostgreSQL® databases have TLS **activated** (available),
+which means that you don't have to do anything to connect via TLS with a tool
+or library that uses TLS by default.
 
 Let's see an example with `psql`:
 
@@ -125,11 +125,11 @@ Please note that while we strongly advise to use TLS, it remains an option,
 meaning that you can still access your database without it if needed.
 
 
-## Connecting Multiple Applications to the Same Scalingo for PostgreSQL® Addon
+## Connecting Multiple Applications to the Same PostgreSQL® Addon
 
-If you need to connect your Scalingo for PostgreSQL® addon from multiple
-applications, you can do it by adding an environment variable in every
-application wanting to communicate with the database:
+If you need to connect your PostgreSQL® addon from multiple applications, you
+can do it by adding an environment variable in every application wanting to
+communicate with the database:
 
 1. Copy [the connection URI](#getting-the-connection-uri) of your addon
 2. [Create a new environment variable]({% post_url platform/app/2000-01-01-environment %})
