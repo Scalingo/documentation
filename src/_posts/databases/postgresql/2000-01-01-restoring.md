@@ -10,7 +10,7 @@ index: 8
 ## Restoring a Point-in-Time Recovery Backup
 
 {% warning %}
-Restoring a database using the Point-in-time recovery feature requires the
+Restoring a database using the Point-in-Time Recovery feature requires the
 database to be completely stopped, hence causing an inevitable downtime.
 {% endwarning %}
 
@@ -23,7 +23,7 @@ database to be completely stopped, hence causing an inevitable downtime.
 5. Click the **Restore Database** button
 
 {% note %}
-For now, restoring a PITR backup is only available from the database dashboard.
+Restoring a PiTR backup is only available from the database dashboard.
 {% endnote %}
 
 
@@ -42,8 +42,8 @@ completely stopped, hence causing an inevitable downtime.
 
 1. Follow the procedure to [access your PostgreSQL® database from a One-Off
    container]({% post_url databases/postgresql/2000-01-01-accessing %}#using-a-one-off)
-2. From the One-Off command line, download and install the Scalingo Command
-   Line Tool to complete the One-Off setup:
+2. From the One-Off command line, download and install the Scalingo command
+   line tool to complete the One-Off setup:
    ```bash
    install-scalingo-cli
    ```
