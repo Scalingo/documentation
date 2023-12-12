@@ -87,7 +87,7 @@ completely stopped, hence causing an inevitable downtime.
    ```
 
 {% note %}
-For now, restoring an On-Demand backup is only available from the command line.
+Restoring an On-Demand backup is only available from the command line.
 {% endnote %}
 
 

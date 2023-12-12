@@ -246,8 +246,8 @@ section, as the process is exactly the same.
 
 ## Dumping the Database
 
-There are different ways to dump (and restore) a Scalingo for PostgreSQL®
-database. We generally advise to either:
+There are different ways to dump (and restore) a PostgreSQL® database. We
+generally advise to either:
 - Process from a [One-Off container](#from-a-one-off-container)
 - Or conduct the operations [from your workstation](#from-your-workstation), by
   accessing the database in a secured manner

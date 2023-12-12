@@ -81,7 +81,7 @@ The provided metrics include:
 2. Click the **Metrics** tab
 
 {% note %}
-Metrics related to your Scalingo for PostgreSQL® addon are only available from
+Metrics related to your PostgreSQL® addon are only available from
 the database dashboard.
 {% endnote %}
 
