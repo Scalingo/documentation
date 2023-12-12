@@ -84,7 +84,7 @@ the workload of our infrastructure.
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo Command Line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
 2. From the command line, list the addons attached to your application:
    ```bash
    scalingo --app my-app addons
@@ -214,7 +214,7 @@ untouched: backups are **not** instantly deleted.
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo Command Line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
 2. From the command line, list the addons attached to your application:
    ```bash
    scalingo --app my-app addons
