@@ -28,7 +28,6 @@ depends on your needs and preferences.
    -----> Connecting to container [one-off-7872]...  
    -----> Process 'pgsql-console my_app_4553' is starting...  
 
-   Hello from bashrc.
    ---> Download and extract the database CLI
    ---> Database CLI installed:
    psql (PostgreSQL) 14.6
