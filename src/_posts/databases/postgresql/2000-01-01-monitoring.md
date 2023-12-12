@@ -40,13 +40,13 @@ cold logs. These have to be manually unarchived to be processed.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo Command Line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
 2. From the command line, list the addons attached to your application:
    ```bash
    scalingo --app my-app addons
    ```
    The output should look like this:
-   ```bash
+   ```text
    +------------+-----------------------------------------+------------------------+---------+
    |   ADDON    |                   ID                    |          PLAN          | STATUS  |
    +------------+-----------------------------------------+------------------------+---------+
@@ -81,8 +81,8 @@ The provided metrics include:
 2. Click the **Metrics** tab
 
 {% note %}
-For now, metrics related to your Scalingo for PostgreSQL® addon are only
-available from the database dashboard.
+Metrics related to your Scalingo for PostgreSQL® addon are only available from
+the database dashboard.
 {% endnote %}
 
 
@@ -99,7 +99,7 @@ stuck ones.
 2. Click the **Running Queries** tab
 
 {% note %}
-For now, viewing running queries is only available from the database dashboard.
+Viewing running queries is only available from the database dashboard.
 {% endnote %}
 
 
@@ -111,8 +111,8 @@ can help identifying costful queries, thus allowing to optimize code or
 resources.
 
 Query statistics are built by the `pg_stat_statements` extension. Once
-activated, this extension provides a `pg_stat_statements` that can be queried
-as you wish. Detailed information about this view can be found [in the
+activated, this extension provides a `pg_stat_statements` view that can be
+queried as you wish. Detailed information about this view can be found [in the
 extension official documentation](https://www.postgresql.org/docs/current/pgstatstatements.html).
 
 ### Enabling Query Statistics
@@ -148,6 +148,5 @@ to be activated manually.
 2. Click the **Query Statistics** tab
 
 {% note %}
-For now, consulting query statistics is only available from the database
-dashboard.
+Consulting query statistics is only available from the database dashboard.
 {% endnote %}

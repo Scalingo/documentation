@@ -53,7 +53,7 @@ depends on your needs and preferences.
    dbclient-fetcher pgsql
    ```
    The output should look like this:
-   ```bash
+   ```text
    ---> Download and extract the database CLI
    ---> Database CLI installed:
    psql (PostgreSQL) 14.6
@@ -63,7 +63,7 @@ depends on your needs and preferences.
    dbclient-fetcher pgsql 13
    ```
    The output should look like this:
-   ```bash
+   ```text
    ---> Download and extract the database CLI
    ---> Database CLI installed:
    psql (PostgreSQL) 13.11
@@ -125,19 +125,19 @@ between the computer running the command and our infrastructure.
    scalingo --app my-app db-tunnel SCALINGO_POSTGRESQL_URL
    ```
    The output should look like this:
-   ```bash
+   ```text
    Building tunnel to my-app-4553.postgresql.a.osc-fr1.scalingo-dbs.com:33712
    You can access your database on:
    127.0.0.1:10000
    ```
-4. As stated, the database is now reachable from `127.0.0.1` on port `10000`
+4. The database is now reachable from `127.0.0.1` on port `10000`
 5. To specify the port number to bind to (default is `10000`), use the `--port`
    option:
    ```bash
    scalingo --app my-app db-tunnel SCALINGO_POSTGRESQL_URL --port 12345
    ```
 6. To close the tunnel, use the keyboard shortcut `CTRL`+`C`:
-   ```bash
+   ```text
    ^Cinterrupt catched, aborting…
    ```
 
@@ -234,4 +234,3 @@ described [above](#using-openssh).
    {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
    {% include mdl_img.html %}
 7. Click the **Save** button
-

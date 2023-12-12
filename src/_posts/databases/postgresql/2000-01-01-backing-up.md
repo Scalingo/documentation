@@ -7,30 +7,30 @@ index: 7
 ---
 
 
-Starter and Business Plans of Scalingo for PostgreSQL® include automated and
+Starter and Business plans of Scalingo for PostgreSQL® include automated and
 managed backups so you don't have to worry about them.
 
-We use 2 kinds of mechanisms to create these automated backups:
+We use two kinds of mechanisms to create these automated backups:
 [Point-in-Time Recovery](#understanding-point-in-time-recovery) backups and
 [On-Demand](#understanding-on-demand-backups) backups. [Manual backups](#understanding-manual-backups)
-are also available for these Plans.
+are also available for these plans.
 
 
 ## Understanding Point-in-Time Recovery Backups
 
-Point-in-time recovery (PITR) allows you to ask for the restoration of your
-data at a specific date. We achieve this by making a full PITR backup of the
-database weekly. Between two full PITR backups, we keep track of the
+Point-in-time recovery (PiTR) allows you to ask for the restoration of your
+data at a specific date. We achieve this by making a full PiTR backup of the
+database weekly. Between two full PiTR backups, we keep track of the
 write-ahead logs (WAL). The WAL contains all the modification instructions. By
-replaying the WAL from a full PITR backup to a specific date, we are able to
+replaying the WAL from a full PiTR backup to a specific date, we are able to
 rebuild the state of the database at that particular date.
 
-You have nothing to do to be able to use the PITR mechanism. Be aware that you
-can only use the PITR on the period between now and now minus seven days.
+You have nothing to do to be able to use the PiTR mechanism. Be aware that you
+can only use the PiTR on the period between now and now minus seven days.
 
-### Retention Policy for PITR Backups
+### Retention Policy for PiTR Backups
 
-| Plan     | PITR Backup Retained |
+| Plan     | PiTR Backup Retained |
 | -------- + -------------------- |
 | Sandbox  | N/A                  |
 | Starter  | 1                    |
@@ -40,25 +40,25 @@ can only use the PITR on the period between now and now minus seven days.
 ## Understanding On-Demand Backups
 
 On-Demand backups are done on a daily basis. They consist in dumping your
-database in an archive that we keep (secured) during a certain amount of time.
+database in an archive that we keep during a certain amount of time.
 
-For Business Plans, the backup is done on the secondary node to avoid any
+For Business plans, the backup is done on the secondary node to avoid any
 impact on your primary node.
 
 ### Retention Policy for On-Demand Backups
 
-We keep a limited amount of backups depending on your database Plan:
+We keep a limited amount of backups depending on your database plan:
 - A daily backup is retained for the last 7 days, which means that we will keep
   a maximum of 7 daily backups (one for each of the last 7 days).
 - A weekly backup means that only one backup is saved over a 7 days period.
-- A monthly backup means that only 1 backup is saved over the course of a
+- A monthly backup means that only one backup is saved over the course of a
   month.
 
 <div class="overflow-horizontal-content" markdown="1">
 | Plan     | Weekly Backups Retained | Monthly Backups Retained |
 | -------- + ----------------------- + ------------------------ |
 | Sandbox  | N/A                     | N/A                      |
-| Starter  | 4 weeks                 | 0                        |
+| Starter  | 4 weeks                 | 0 week                   |
 | Business | 8 weeks                 | 12 weeks                 |
  {: .table }
  </div>
@@ -70,7 +70,7 @@ By default, On-Demand backups are done around 1:00 AM Central European Time
 
 {% note %}
 The scheduled time is not strongly enforced: it might get delayed depending on
-the workload of our infrastructure.
+the workload on our infrastructure.
 {% endnote %}
 
 #### Using the Database Dashboard
@@ -90,7 +90,7 @@ the workload of our infrastructure.
    scalingo --app my-app addons
    ```
    The output should look like this:
-   ```bash
+   ```text
    +------------+-----------------------------------------+------------------------+---------+
    |   ADDON    |                   ID                    |          PLAN          | STATUS  |
    +------------+-----------------------------------------+------------------------+---------+
@@ -112,7 +112,7 @@ the workload of our infrastructure.
      In this example, we ask the platform to create the backup at ~04:00 UTC.
 
    The output should look like this:
-   ```bash
+   ```text
    -----> Periodic backups will be done daily at 6:00 CET
    ```
 
@@ -133,7 +133,7 @@ the workload of our infrastructure.
    scalingo --app my-app addons
    ```
    The output should look like this:
-   ```bash
+   ```text
    +------------+-----------------------------------------+------------------------+---------+
    |   ADDON    |                   ID                    |          PLAN          | STATUS  |
    +------------+-----------------------------------------+------------------------+---------+
@@ -147,7 +147,7 @@ the workload of our infrastructure.
      scalingo --app my-app --addon <addon_ID> backups-download
      ```
      The output should look like this:
-     ```bash
+     ```text
      -----> Selected the most recent successful backup
      139.37 KiB / 139.37 KiB [----------------------------------] 100.00% ? p/s
      ===> 20231207000608_my_app_4553.tar.gz
@@ -159,7 +159,7 @@ the workload of our infrastructure.
         scalingo --app my-app --addon <addon_ID> backups
         ```
         The output should look like this:
-        ```bash
+        ```text
         +--------------------------+--------------------------------+--------+--------+
         |            ID            |           CREATED AT           |  SIZE  | STATUS |
         +--------------------------+--------------------------------+--------+--------+
@@ -174,7 +174,7 @@ the workload of our infrastructure.
         scalingo --app my-app --addon <addon_ID> backups-download --backup <backup_ID>
         ```
         The output should look like this:
-        ```bash
+        ```text
         79.10 KiB / 79.10 KiB [---------------------------------] 100.00% ? p/s
         ===> 20230305000044_my_app_4553.tar.gz
         ```
@@ -189,7 +189,7 @@ manually, whenever you want.
 
 ### Retention Policy for Manual Backups
 
-We keep a limited amount of Manual backups depending on your database Plan:
+We keep a limited amount of Manual backups depending on your database plan:
 
 <div class="overflow-horizontal-content" markdown="1">
 | Plan         | Backups Retained |
@@ -220,7 +220,7 @@ untouched: backups are **not** instantly deleted.
    scalingo --app my-app addons
    ```
    The output should look like this:
-   ```bash
+   ```text
    +------------+-----------------------------------------+------------------------+---------+
    |   ADDON    |                   ID                    |          PLAN          | STATUS  |
    +------------+-----------------------------------------+------------------------+---------+
@@ -234,7 +234,7 @@ untouched: backups are **not** instantly deleted.
    scalingo --app my-app --addon <addon_ID> backups-create
    ```
    After a while, the output should look like this:
-   ```bash
+   ```text
    -----> Backup successfully finished
    ```
 
@@ -254,7 +254,7 @@ database. We generally advise to either:
 
 ### From a One-Off Container
 
-This method has 2 main advantages:
+This method has two main advantages:
 - It doesn't require to make your database reachable over Internet
 - You won't have to tweak your connection URI
 

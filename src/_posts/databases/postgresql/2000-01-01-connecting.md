@@ -6,8 +6,9 @@ tags: databases postgresql addon
 index: 3
 ---
 
-When a PostgreSQL® addon is provisioned, the platform also adds 2 [environment
-variables]({% post_url platform/app/2000-01-01-environment %}) to your app:
+When a PostgreSQL® addon is provisioned, the platform also adds two
+[environment variables]({% post_url platform/app/2000-01-01-environment %}) to
+your app:
 
 - `SCALINGO_POSTGRESQL_URL`: a string containing all information needed to
   establish a connection between your application and your database. This
@@ -21,7 +22,7 @@ The connection URI is made of several **components** separated one from each
 other by a **delimiter**. For example, the `@` character is used to mark the
 end of the *userinfo* (credentials) component of the URI.
 
-In the case of PostgreSQL, the connection URI provided by Scalingo is always
+In the case of PostgreSQL®, the connection URI provided by Scalingo is always
 formed as follows:
 
 ```bash
@@ -66,7 +67,7 @@ variable still remains applicable.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo Command Line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
 2. From the command line, list the environment variables available in your app
    and filter the output using `grep`:
    ```bash

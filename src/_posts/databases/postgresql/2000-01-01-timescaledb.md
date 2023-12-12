@@ -281,4 +281,3 @@ official documentation](https://docs.timescale.com/timescaledb/latest/how-to-gui
 are still working normally and can be restored [following the procedure for
 PostgreSQL®]({% post_url databases/postgresql/2000-01-01-restoring %}#restoring-a-point-in-time-recovery-backup).
 {% endnote %}
-

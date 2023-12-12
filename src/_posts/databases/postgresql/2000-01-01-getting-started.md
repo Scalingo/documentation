@@ -27,13 +27,13 @@ our [CLI tool](#using-the-command-line) or via our
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo Command Line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
 2. From the command line, list the plans available for `postgresql`:
    ```bash
    scalingo --app my-app addons-plans postgresql
    ```
    The output should look like this:
-   ```bash
+   ```text
    +----------------------------+---------------+
    |             ID             |     NAME      |
    +----------------------------+---------------+
@@ -49,7 +49,7 @@ our [CLI tool](#using-the-command-line) or via our
    scalingo --app my-app addons-add postgresql <plan_ID>
    ```
    The output should look like this:
-   ```bash
+   ```text
    -----> Addon postgresql has been provisionned
           ID: my_app_wxyz
           Message from addon provider: Database is being provisioned
@@ -58,7 +58,7 @@ our [CLI tool](#using-the-command-line) or via our
 
 ### Using the Terraform Provider
 
-1. Place the following Resource block in your Terraform file to create the
+1. Place the following `resource` block in your Terraform file to create the
    addon and attach it to your app:
    ```tf
    resource "scalingo_addon" "my-db" {
