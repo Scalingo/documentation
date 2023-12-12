@@ -1,13 +1,11 @@
 ---
-title: TimescaleDB
-nav: TimescaleDB
+title: TimescaleDB®
+nav: TimescaleDB®
 modified_at: 2023-12-11 12:00:00
 tags: databases postgresql timescaledb timeseries extensions
 index: 11
 ---
 
-
-## TimescaleDB®
 
 TimescaleDB® is an open-source extension to PostgreSQL® designed to make SQL
 scalable for time series data.
