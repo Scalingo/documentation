@@ -69,7 +69,7 @@ depends on your needs and preferences.
    psql (PostgreSQL) 13.11
    ```
 
-The helper installs the following tools:
+The `dbclient-fetcher` helper installs the following tools:
 - `psql`
 - `pg_basebackup`
 - `pg_controldata`
