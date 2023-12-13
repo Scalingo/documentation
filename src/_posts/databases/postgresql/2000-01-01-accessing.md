@@ -91,8 +91,16 @@ The `dbclient-fetcher` helper installs the following tools:
 
 ## Using Third Party Tools
 
+While using `psql` to query and administer a PostgreSQL® database is probably
+the ubiquitous choice for a lot of users, it's not limited to that. The
+PostgreSQL® ecosystem indeed offers a very large panel of tools made and
+provided by third-parties. For example, some might feel more intuitive because
+of their Graphical User Interface. Some are better integrated with others
+tools, when some others are more data-visualization centric.
+
 By default, and for security reasons, your PostgreSQL® database is not directly
-accessible from the Internet.
+accessible from the Internet and therefore not directly usable with your
+third-party tool.
 
 To access your database remotely you first need to [make it reachable over the
 Internet](#making-the-database-reachable-over-internet):
@@ -109,11 +117,8 @@ suggest you to [take a look at pgAdmin](#using-pgadmin).
 #### Using Our Command Line Tool
 
 Our command line tool provides a `db-tunnel` command that creates an SSH
-encrypted tunnel, allowing remote access to your PostgreSQL® addon.
-
-This tunnel does not provide any additional security layer. We only verify that
-your public key is registered on our platform. It acts as an encrypted bridge
-between the computer running the command and our infrastructure.
+encrypted tunnel between the computer running the command and our platform,
+allowing remote secured access to your PostgreSQL® addon.
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
 2. Make sure you have correctly [setup SSH authentication]({% post_url platform/getting-started/2000-01-01-first-steps %})
@@ -231,4 +236,4 @@ described [above](#using-openssh).
    - Password: your SSH key password, if any
    {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
    {% include mdl_img.html %}
-7. Click the **Save** button
+8. Click the **Save** button
