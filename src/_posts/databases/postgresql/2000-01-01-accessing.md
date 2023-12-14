@@ -199,13 +199,13 @@ for PostgreSQL®.
 3. Select the **Dashboard** tab
 4. Click the **Add New Server** shortcut
 5. In the new window, select the **General** tab and give a name to the server:
-   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_postgresql_pgadmin1.png" %}
+   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_01.png" %}
    {% include mdl_img.html %}
 6. Select the **Connection** tab and fill the required information:
    - Host name/address is now `127.0.0.1`
    - Port is most probably `10000`, unless you set it to something else
    - Username and Password must be gathered from the connection URI
-   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_postgresql_pgadmin2.png" %}
+   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_02.png" %}
    {% include mdl_img.html %}
 7. Click the **Save** button
 
@@ -218,11 +218,11 @@ described [above](#using-openssh).
 2. Select the **Dashboard** tab
 3. Click the **Add New Server** shortcut
 4. In the new window, select the **General** tab and give a name to the server:
-   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
+   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_01.png" %}
    {% include mdl_img.html %}
 5. Select the **Connection** tab and fill in the required information from the
    connection URI:
-   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
+   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_03.png" %}
    {% include mdl_img.html %}
 6. Select the **SSH Tunnel** tab and toggle the **Use SSH tunneling** option
 7. Fill in the required information:
@@ -234,6 +234,6 @@ described [above](#using-openssh).
    - Authentication: chose `Identity file` and select the SSH key linked to your
      Scalingo account in the Identity file field
    - Password: your SSH key password, if any
-   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
+   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_04.png" %}
    {% include mdl_img.html %}
 8. Click the **Save** button
