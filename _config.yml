@@ -124,7 +124,7 @@ languages:
     logo: scala
 
 databases:
-  - url: "/databases/postgresql/start"
+  - url: "/databases/postgresql/overview"
     name: "Scalingo for PostgreSQL®"
     logo: postgresql
   - url: "/databases/mysql/start"
