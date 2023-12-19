@@ -1,5 +1,5 @@
 ---
-modified_at: 2023-12-18 12:00:00
+modified_at: 2023-12-19 12:00:00
 title: 'Java - Support for OpenJDK 21 (LTS)'
 github: 'https://github.com/Scalingo/buildpack-jvm-common'
 ---
