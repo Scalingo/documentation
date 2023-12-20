@@ -8,7 +8,7 @@ New default version: **14.10.0-1**.
 Changelog:
 
 - Bump versions of PostgreSQL to last minors
-- Fix a bug where the Postgis extension was not upgraded properly
+- Fix a bug where the PostGIS extension was not upgraded properly
 - Upgrading TimescaleDB to the last minor version 2.13.0 on Postgres 13 and 14
 
 Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/postgresql):
