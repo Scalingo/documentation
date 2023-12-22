@@ -11,7 +11,7 @@ tags: php, configuration, environment
 The Scalingo model of configuration includes using the environment instead of
 writing hard-coded configuration files which are handled in the source code
 repository of a project. You can see and modify them from your
-[dashboard](https://my.scalingo.com) or with our [command line utility]({%
+[dashboard](https://dashboard.scalingo.com) or with our [command line utility]({%
 post_url platform/cli/2000-01-01-start %})
 
 ## Read a variable from the environment

@@ -65,7 +65,7 @@ As a note, each new process requires a PID. And inside each process, each thread
 
 Our 30 days free trial only gives you access to small and medium containers, if you want
 to use another kind of size, please [fill your billing profile and payment
-method](https://my.scalingo.com/billing).
+method](https://dashboard.scalingo.com/billing).
 
 ## Container Limits
 

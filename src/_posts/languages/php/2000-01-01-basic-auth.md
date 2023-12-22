@@ -1,7 +1,7 @@
 ---
 title: Secure Your PHP App with HTTP Basic Auth
 nav: Basic Auth
-modified_at: 2021-10-28 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: php http security basic-auth
 ---
 
@@ -13,7 +13,7 @@ your app, there are two ways to do it.
 
 Either you configure the authentication before your application reaches the PHP
 code or you implement this in your application. Here is an example of the
-latter [with Symfony](http://symfony.com/doc/current/book/security.html).
+latter [with Symfony](https://symfony.com/doc/current/security.html).
 
 We present in this article how to configure the HTTP basic auth, independently
 from your application.

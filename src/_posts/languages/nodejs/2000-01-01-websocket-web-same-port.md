@@ -1,7 +1,7 @@
 ---
 title: Socket.IO and Express server listening on the same port
 nav: Socket.IO and Express on the same port
-modified_at: 2020-12-03 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: nodejs
 index: 100
 ---
@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 http.listen(process.env.PORT || 3000, function() {
   var host = http.address().address
   var port = http.address().port
-  console.log('App listening at http://%s:%s', host, port)
+  console.log('App listening at https://%s:%s', host, port)
 });
 
 io.on('connection', function(socket) {

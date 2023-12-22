@@ -123,11 +123,11 @@ To help debug responsive layout issues add this tool in the default layout, it w
 
 Sometimes, the files regeneration (especially the assets) got lost.
 
-In this case remove the `_site` folder via 
+In this case remove the `_site` folder via
 ```
 dc run web rm -rf _site
 ```
 
 ## Links
 
-* [Scalingo Documentation Center](http://doc.scalingo.com)
+* [Scalingo Documentation Center](https://doc.scalingo.com)

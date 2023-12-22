@@ -1,6 +1,6 @@
 ---
 title: Wkhtmltopdf Buildpack
-modified_at: 2023-03-28 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: buildpacks build wkhtmltopdf
 ---
 
@@ -10,7 +10,7 @@ Wkhtmltopdf repository is deprecated since January 2023. You should rather use [
 
 ## Purpose of This Buildpack
 
-This is a buildpack that installs [wkhtmltopdf](http://wkhtmltopdf.org) into a container image.
+This is a buildpack that installs [wkhtmltopdf](https://wkhtmltopdf.org) into a container image.
 
 {% note %}
   `wkhtmltopdf` is a command line tools to render HTML into PDF using the Qt WebKit rendering engine.
