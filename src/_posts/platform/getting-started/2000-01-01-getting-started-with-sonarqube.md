@@ -13,7 +13,7 @@ This tutorial will show you how to deploy a SonarQube instance on Scalingo in un
 
 We published a repository [scalingo-sonarqube](https://github.com/Scalingo/scalingo-sonarqube) on GitHub to help you deploy SonarQube on Scalingo. Deploying a SonarQube instance is now at a click range:
 
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-sonarqube)
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-sonarqube)
 
 By default, Scalingo installs the version declared in the buildpack [here](https://github.com/Scalingo/sonarqube-buildpack/blob/master/bin/compile#L16). At the time of writing this version is `8.6.1.40680`. You may want to install an older or more recent version.
 

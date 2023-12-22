@@ -99,7 +99,7 @@ Network](https://developer.mozilla.org/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Trans
   at the application level. Libraries exist for most languages and framework to
   create the exact same behavior. Here are a few examples:
   * Ruby, Rack: [rack-ssl-enforcer](https://github.com/tobmatth/rack-ssl-enforcer)
-  * Ruby, Rails 4+: [ssl options configuration](http://api.rubyonrails.org/v5.1/classes/ActionDispatch/SSL.html)
+  * Ruby, Rails 4+: [ssl options configuration](https://api.rubyonrails.org/v7.1/classes/ActionDispatch/SSL.html)
   * Java, Springboot: [HttpSecurity configuration](https://docs.spring.io/spring-security/site/docs/current/reference/html/headers.html)
   * Java/Scala, Play2: [HTTP filters](https://www.playframework.com/documentation/2.6.x/RedirectHttpsFilter)
   * Python: Django: [Security Middleware](https://docs.djangoproject.com/en/2.0/ref/middleware/#http-strict-transport-security)

@@ -39,6 +39,6 @@ script provided by Codeship.
 ### SSH Keys
 
 To deploy to Scalingo from Codeship, you'll have to add the public key generated
-by Codeship to the [SSH Keys page](https://my.scalingo.com/keys) on Scalingo
+by Codeship to the [SSH Keys page](https://dashboard.scalingo.com/account/keys) on Scalingo
 dashboard. You can find this public key in the **General** page of your Codeship
 project.

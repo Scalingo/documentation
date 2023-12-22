@@ -89,7 +89,7 @@ feature through dedicated libraries. Here are a few examples:
 #### Using Ruby
 
 The following gems may help you:
-- [clockwork](http://rubygems.org/gems/clockwork)
+- [clockwork](https://rubygems.org/gems/clockwork)
 - [resque-scheduler](https://rubygems.org/gems/resque-scheduler)
 - [sidekiq-scheduler](https://rubygems.org/gems/sidekiq-scheduler) (Sidekiq
 Enterprise has cron-like feature built-in)
