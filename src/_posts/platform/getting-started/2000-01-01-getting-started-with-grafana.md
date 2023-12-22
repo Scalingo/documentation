@@ -18,7 +18,7 @@ We published a repository
 help you deploy Grafana on Scalingo. Deploying a Grafana instance is now at a
 click range:
 
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/grafana-scalingo)
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/grafana-scalingo)
 
 ## Deployment by Cloning the Repository
 

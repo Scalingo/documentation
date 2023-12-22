@@ -1,6 +1,6 @@
 ---
 title: Get Started with Ruby on Scalingo
-modified_at: 2023-07-27 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: ruby sinatra tutorial getting-started-tutorial
 index: 3
 ---
@@ -20,8 +20,8 @@ To be able to follow this tutorial, we assume that you have:
   [window](https://gorails.com/setup/windows/10),
   [mac](https://gorails.com/setup/osx/10.13-high-sierra),
   [linux](https://gorails.com/setup/ubuntu/17.10)
-* [Bundler](http://bundler.io/) installed locally: `gem install bundler`
-* The [Scalingo cli](http://cli.scalingo.com/)
+* [Bundler](https://bundler.io/) installed locally: `gem install bundler`
+* The [Scalingo cli](https://cli.scalingo.com/)
 
 ## Bootstrap your project
 

@@ -66,7 +66,7 @@ Example:
 }
 ```
 
-You can find everything about the `scalingo.json` file on our [API dedicated page](http://developers.scalingo.com/scalingo-json-schema/).
+You can find everything about the `scalingo.json` file on our [API dedicated page](https://developers.scalingo.com/scalingo-json-schema/).
 
 ## Update the Application
 

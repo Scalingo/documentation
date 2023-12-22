@@ -1,6 +1,6 @@
 ---
 title: Review Apps
-modified_at: 2023-10-23 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: app review apps
 index: 31
 ---
@@ -209,4 +209,4 @@ set it up for your specific case thanks to the Scalingo API:
 
 * Create a [child application]({% post_url platform/app/2000-01-01-child-apps %})
 * Deploy a gzipped tar archive containing your code:
-[http://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive](http://developers.scalingo.com/deployments.html#trigger-manually-a-deployment-from-an-archive)
+[https://developers.scalingo.com/deployments#trigger-manually-a-deployment-from-an-archive](https://developers.scalingo.com/deployments#trigger-manually-a-deployment-from-an-archive)

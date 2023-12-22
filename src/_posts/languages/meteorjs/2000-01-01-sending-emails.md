@@ -1,6 +1,6 @@
 ---
 title: Sending emails with Meteor
-modified_at: 2015-11-09 00:00:00
+modified_at: 2023-12-22 00:00:00
 category: languages
 tags: nodejs meteor tutorial emails
 permalink: /languages/javascript/meteor/sending-emails-with-meteor/
@@ -17,13 +17,13 @@ smtp://user:password@host:port
 ```
 
 To add the environment variable, run the following command or add it through
-[your dashboard](https://my.scalingo.com).
+[your dashboard](https://dashboard.scalingo.com/).
 
 ```bash
 scalingo env-set MAIL_URL=<smtp_url>
 ```
 
-More information in [the official Meteor documentation](http://docs.meteor.com/#/full/email).
+More information in [the official Meteor documentation](https://docs.meteor.com/api/email.html).
 
 ## Snippet to send an email with Meteor
 

@@ -1,6 +1,6 @@
 ---
 title: Setup SSH on Windows
-modified_at: 2022-10-06 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: follow-the-light ssh windows git
 index: 5
 ---
@@ -43,7 +43,7 @@ $ cat $HOME/.ssh/id_ed25519.pub
 
 The file content should start with `ssh-ed25519`
 
-Once you have the public key, go to Scalingo Dashboard [SSH key section](https://my.scalingo.com/keys) and
+Once you have the public key, go to Scalingo Dashboard [SSH key section](https://dashboard.scalingo.com/account/keys) and
 create a new key with the content of the public key.
 
 ### 4. Check everything is working

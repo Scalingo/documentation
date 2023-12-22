@@ -1,6 +1,6 @@
 ---
 title: Introduction
-modified_at: 2021-10-26 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: cli interface app
 index: 2
 ---
@@ -10,12 +10,12 @@ index: 2
 If you created an account on the Scalingo web dashboard by using GitHub authentication, login with
 the CLI requires you to take one of these actions:
 
-* Add a password to your account on the [profile](https://my.scalingo.com/profile) page.
-* Add a SSH key to your account on the [dedicated](https://my.scalingo.com/keys) page.
+* Add a password to your account on the [profile](https://dashboard.scalingo.com/account) page.
+* Add a SSH key to your account on the [dedicated](https://dashboard.scalingo.com/account/keys) page.
 
 And then use `scalingo login`.
 
-You can also add a token to your account on the [profile](https://my.scalingo.com/profile) page. 
+You can also add a token to your account on the [API Tokens](https://dashboard.scalingo.com/account/tokens) page.
 Then use it to login with `scalingo login --api-token <token>`
 
 
@@ -30,7 +30,7 @@ so that some features of the CLI can work properly.
 To use `git push`, `git pull` and `db-tunnel` features, open this port:
 
 <div class="overflow-horizontal-content" markdown="1">
-| Region Name     | Address                               | Port | Protocol | 
+| Region Name     | Address                               | Port | Protocol |
 | --------------- | ------------------------------------- | ---- | -------- |
 | osc-fr1         | ssh.osc-fr1.scalingo.com              | 22   | TCP      |
 | osc-secnum-fr1  | ssh.osc-secnum-fr1.scalingo.com       | 22   | TCP      |
@@ -40,7 +40,7 @@ To use `git push`, `git pull` and `db-tunnel` features, open this port:
 To use databases command such as `pgsql-console`, open this port:
 
 <div class="overflow-horizontal-content" markdown="1">
-| Region Name     | Address                               | Port | Protocol | 
+| Region Name     | Address                               | Port | Protocol |
 | --------------- | ------------------------------------- | ---- | -------- |
 | osc-fr1         | one-off.osc-fr1.scalingo.com          | 5000 | TCP      |
 | osc-secnum-fr1  | one-off.osc-secnum-fr1.scalingo.com   | 5000 | TCP      |

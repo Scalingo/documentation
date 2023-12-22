@@ -1,7 +1,7 @@
 ---
 title: Deploy to Scalingo from CircleCI
 nav: Deploy from CircleCI
-modified_at: 2020-04-29 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: ci deployment build circle-ci
 index: 22
 ---
@@ -61,7 +61,7 @@ the CircleCI documentation.
 To deploy to Scalingo from CircleCI, you'll have to add your private key to the
 CircleCI interface. On CircleCI website, head over to your project's **Project
 Settings**, then the **SSH keys** page to add your key. You will also need to
-add the public key to the [SSH Keys page](https://my.scalingo.com/keys) on
+add the public key to the [SSH Keys page](https://dashboard.scalingo.com/account/keys) on
 Scalingo Dashboard.
 
 We recommend to generate a new key pair for integrating CircleCI with Scalingo.

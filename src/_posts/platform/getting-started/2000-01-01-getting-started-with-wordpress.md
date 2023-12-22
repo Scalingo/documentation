@@ -55,7 +55,7 @@ Follow these instructions to get started:
 
 2. Create the application on Scalingo
 
-   Create the application through the dashboard with a Scalingo for MySQL® addon or with the [Scalingo CLI](http://cli.scalingo.com):
+   Create the application through the dashboard with a Scalingo for MySQL® addon or with the [Scalingo CLI](https://cli.scalingo.com):
 
    ```bash
    scalingo create my-app
@@ -101,7 +101,7 @@ Follow these instructions to get started:
 4. Update application environment variables
 
    Then, update your application environment through the dashboard or with the
-   [Scalingo CLI](http://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`:
+   [Scalingo CLI](https://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`:
 
    * `DATABASE_URL`: Connection string to the MySQL® database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL® addon
    * `WP_ENV`: Set to environment (`development`, `staging`, `production`)
