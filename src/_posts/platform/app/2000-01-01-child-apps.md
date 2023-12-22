@@ -1,6 +1,6 @@
 ---
-title: Child application
-modified_at: 2020-04-09 00:00:00
+title: Child Application
+modified_at: 2023-12-22 00:00:00
 tags: app child
 index: 32
 ---
@@ -8,25 +8,20 @@ index: 32
 You may want to create an application that inherit from an existing
 application. To ease this action, we created an endpoint on our API to [create
 a child
-application](http://developers.scalingo.com/apps.html#create-a-child-application).
+application](https://developers.scalingo.com/apps.html#create-a-child-application).
 
-When creating a child application, the following elements are cloned:
+A child application inherits some properties of the parent app:
 
-* Environment variables
-* Addons
-* Collaborators
-* Notifications settings
+* the stack
+* the owner
 
 This feature can be very interesting to implement your own [Review Apps]({%
 post_url platform/app/2000-01-01-review-apps %}) for codes that are not hosted
 on officially supported SCM tools.
 
-## Deployment of a child app
+## Deployment of a Child App
 
-When you create a child app of an application, it inherits resources from its
-parent app, but you still need to deploy it.
-
-It can be done thanks to a git push:
+Creating a child app does not deploy it. You can deploy it with:
 
 ```sh
 # child app name is 'child-app-1'
