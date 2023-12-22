@@ -1,6 +1,6 @@
 ---
 title: Post-deployment hook
-modified_at: 2023-07-27 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: app deployment hook postdeploy
 index: 13
 ---
@@ -35,9 +35,11 @@ happen in the following order:
    platform/getting-started/2000-01-01-common-deployment-errors
    %}#start-errors)). They are not reachable yet, see [limits](#limits) below.
 4. An extra container is started to run the `postdeploy` command
-5. If the `postdeploy` command has succeeded, we update the routing
-   configuration, the new containers start to get requests and the deployment is
+5. If the `postdeploy` command succeeds, we update the routing
+   configuration. The new containers start to get requests and the deployment is
    considered a **success**
+
+What this workflow implies is that the application boot should not rely on data initialized by the post-deployment hook.
 
 {% note %}
 If the `postdeploy` command fails, the deployment will fail with the status
