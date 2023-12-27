@@ -1,6 +1,6 @@
 ---
 title: Getting Started with WordPress on Scalingo
-modified_at: 2022-09-21 00:00:00
+modified_at: 2023-12-27 00:00:00
 tags: php, http, framework, wordpress, deployment
 index: 14
 ---
@@ -66,7 +66,7 @@ Follow these instructions to get started:
 
    IAM user security policy example, with required actions:
 
-   ```bash
+   ```json
     {
       "Version": "2012-10-17",
       "Statement": [
@@ -93,10 +93,10 @@ Follow these instructions to get started:
 4. Create a stategy policy for the newly created bucket
 
     Go on the newly created bucket's details page, on `Permissions` tab. Scroll down to `Bucket policy` and enter your policy.
-    
+
     Example policy with read access for everyone:
 
-    ```bash
+    ```json
     {
       "Version": "2012-10-17",
       "Statement": [
@@ -117,12 +117,13 @@ Follow these instructions to get started:
 
    * `DATABASE_URL`: Connection string to the MySQL® database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL® addon
    * `WP_ENV`: Set to environment (`development`, `staging`, `production`)
-   * `WP_HOME`: Full URL to WordPress home (https://my-app.osc-fr1.scalingo.io)
-   * `WP_SITEURL`: Full URL to WordPress including subdirectory (https://my-app.osc-fr1.scalingo.io/wp)
+   * `WP_HOME`: Full URL to WordPress home (e.g. https://my-app.osc-fr1.scalingo.io)
+   * `WP_SITEURL`: Full URL to WordPress including subdirectory (e.g. https://my-app.osc-fr1.scalingo.io/wp)
    * `S3_UPLOADS_BUCKET`: Name of the S3 bucket to upload files to
    * `S3_UPLOADS_KEY`: AWS Access Key ID for S3 authentication
    * `S3_UPLOADS_SECRET`: AWS Secret Key for S3 authentication
    * `S3_UPLOADS_REGION`: Region of the S3 bucket
+   * `S3_UPLOADS_OBJECT_ACL`: object permission of files uploaded to S3. Defaults to `public-read`. Must be one of `public-read`, `private` or `authenticated-read`.
    * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
 
    You can get some random salts on the [Roots WordPress Salt Generator](https://roots.io/salts.html).
