@@ -1,8 +1,8 @@
 ---
 title: Prerequisites Before Upgrading to MySQL® 8
 nav: Upgrading to MySQL 8
-modified_at: 2020-09-04 00:00:00
-tags: databases mysql addon
+modified_at: 2023-12-28 00:00:00
+tags: databases mysql addon migration
 index: 4
 ---
 
@@ -50,6 +50,7 @@ SELECT information_schema.tables.table_schema, information_schema.tables.table_n
     c.constraint_name = 'PRIMARY' \
   ) \
   WHERE information_schema.tables.table_schema IN ('my-app-3030') AND \
+  information_schema.tables.table_type != "VIEW" AND \
   c.constraint_name IS NULL;
 ```
 
@@ -68,4 +69,130 @@ In this situation, you need to add a primary key to the `foo` table. You need to
 
 ```sql
 ALTER TABLE 'foo' ADD COLUMN <column description> PRIMARY KEY;
+```
+
+## One Command Script
+
+Below you can find a script that can be run directly on the database to:
+- create missing primary keys for the concerned tables
+- set the engine to InnoDB for the concerned tables
+
+In fact, the script create two procedures, one for each previous actions.
+
+{% warning %}
+  As always, we highly recommend to make a backup before executing the script.
+{% endwarning %}
+
+```sql
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `create_missing_pk`$$
+
+CREATE PROCEDURE `create_missing_pk`()
+BEGIN
+
+DECLARE v_finished INTEGER DEFAULT 0;
+DECLARE v_table VARCHAR(100) DEFAULT "";
+DECLARE stmt VARCHAR(500) DEFAULT "";
+
+-- get the list of tables without PK
+DECLARE table_cursor CURSOR FOR
+SELECT i.table_name \
+  FROM information_schema.tables AS i LEFT JOIN information_schema.key_column_usage AS c ON (\
+    i.table_name = c.table_name AND \
+    c.constraint_schema = i.table_schema AND \
+    c.constraint_name = 'PRIMARY' \
+  ) \
+  WHERE i.table_schema \
+    NOT IN ('information_schema', 'performance_schema', 'sys', 'mysql', 'mysql_innodb_cluster_metadata') AND \
+    i.table_type != "VIEW" AND \
+    c.constraint_name IS NULL;
+
+DECLARE CONTINUE HANDLER
+FOR NOT FOUND SET v_finished = 1;
+
+OPEN table_cursor;
+
+-- loop over all tables without PK
+alter_tables: LOOP
+
+    FETCH table_cursor INTO v_table;
+    IF v_finished = 1 THEN
+    LEAVE alter_tables;
+    END IF;
+
+    -- below the alter table which create PKs
+    SET @prepstmt = CONCAT('ALTER TABLE ',v_table,' ADD COLUMN id INT AUTO_INCREMENT NOT NULL PRIMARY KEY FIRST;');
+
+    PREPARE stmt FROM @prepstmt;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+
+END LOOP alter_tables;
+
+CLOSE table_cursor;
+
+END$$
+
+-- Procedure to set engine to InnoDB
+DROP PROCEDURE IF EXISTS `set_innodb_engine`$$
+
+CREATE PROCEDURE `set_innodb_engine`()
+BEGIN
+
+DECLARE v_finished INTEGER DEFAULT 0;
+DECLARE v_table VARCHAR(100) DEFAULT "";
+DECLARE stmt VARCHAR(500) DEFAULT "";
+
+-- get the list of tables without InnoDB engine
+DECLARE table_cursor CURSOR FOR
+SELECT table_name \
+  FROM information_schema.tables \
+  WHERE table_schema \
+    NOT IN ('information_schema', 'performance_schema', 'sys', 'mysql', 'mysql_innodb_cluster_metadata') AND \
+    table_type != "VIEW" AND \
+    ENGINE != 'InnoDB';
+
+DECLARE CONTINUE HANDLER
+FOR NOT FOUND SET v_finished = 1;
+
+OPEN table_cursor;
+
+-- loop over all tables without InnoDB engine
+alter_tables: LOOP
+
+    FETCH table_cursor INTO v_table;
+    IF v_finished = 1 THEN
+    LEAVE alter_tables;
+    END IF;
+
+    -- below the alter table which set the engine to InnoDB
+    SET @prepstmt = CONCAT('ALTER TABLE ',v_table,' ENGINE = "InnoDB";');
+
+    PREPARE stmt FROM @prepstmt;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+
+END LOOP alter_tables;
+
+CLOSE table_cursor;
+
+END$$
+DELIMITER ;
+
+-- then call the procedures
+call create_missing_pk;
+call set_innodb_engine;
+
+-- clear procedures
+DROP PROCEDURE IF EXISTS `create_missing_pk`;
+DROP PROCEDURE IF EXISTS `set_innodb_engine`;
+
+-- check the current configuration of table
+SELECT i.table_schema, i.table_name, i.engine, c.constraint_name  \
+  FROM information_schema.tables AS i LEFT JOIN information_schema.key_column_usage AS c ON (\
+    i.table_name = c.table_name AND \
+    c.constraint_schema = i.table_schema AND \
+    c.constraint_name = 'PRIMARY' \
+  ) \
+  WHERE i.table_schema not in ('information_schema', 'performance_schema', 'sys', 'mysql', 'mysql_innodb_cluster_metadata');
 ```
