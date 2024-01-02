@@ -97,11 +97,11 @@ By default, Tomcat is installed with the last version of the webapp-runner. If
 you want to use another version, you can defined the environment variable
 `JAVA_WEBAPP_RUNNER_VERSION`. The available versions are:
 
-| Version | `JAVA_WEBAPP_RUNNER_VERSION` |
-| ------: | ---------------------------: |
-| `8.5`   | Up to `8.5.51.0`             |
-| `9.0`   | Up to `9.0.83.1`             |
-| `10.1`  | Up to `10.1.16.0` (default)  |
+| Tomcat Version | `JAVA_WEBAPP_RUNNER_VERSION` |
+| -------------: | ---------------------------- |
+| `8.5`          | Up to `8.5.51.0`             |
+| `9.0`          | Up to `9.0.83.1`             |
+| `10.1`         | Up to `10.1.16.0` (default)  |
 
 The 8.5.x versions are installing Tomcat 8, and the 9.0.x releases are
 installing Tomcat 9.0:
