@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2023-11-27 12:00:00
+modified_at: 2024-01-02 12:00:00
 index: 8
 tags: deployment, java, jar, war
 ---
@@ -97,12 +97,11 @@ By default, Tomcat is installed with the last version of the webapp-runner. If
 you want to use another version, you can defined the environment variable
 `JAVA_WEBAPP_RUNNER_VERSION`. The available versions are:
 
-- `8.5.11.3`
-- `8.5.51.0`
-- `9.0.52.1`
-- `9.0.68.1`
-- `9.0.80.0`
-- `9.0.83.0` (default)
+| Version | `JAVA_WEBAPP_RUNNER_VERSION` |
+| ------: | ---------------------------: |
+| `8.5`   | Up to `8.5.51.0`             |
+| `9.0`   | Up to `9.0.83.1`             |
+| `10.1`  | Up to `10.1.16.0` (default)  |
 
 The 8.5.x versions are installing Tomcat 8, and the 9.0.x releases are
 installing Tomcat 9.0:
