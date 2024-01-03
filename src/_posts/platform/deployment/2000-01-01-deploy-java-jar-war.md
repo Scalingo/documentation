@@ -93,21 +93,17 @@ $ scalingo --app my-app env-set JAVA_VERSION=1.9
 
 ### Webapp Runner / Tomcat version selection
 
-By default, Tomcat is installed with the last version of the webapp-runner. If
-you want to use another version, you can defined the environment variable
-`JAVA_WEBAPP_RUNNER_VERSION`. The available versions are:
-
-| Tomcat Version | `JAVA_WEBAPP_RUNNER_VERSION` |
-| -------------: | ---------------------------- |
-| `8.5`          | Up to `8.5.51.0`             |
-| `9.0`          | Up to `9.0.83.1`             |
-| `10.1`         | Up to `10.1.16.0` (default)  |
-
-The 8.5.x versions are installing Tomcat 8, and the 9.0.x releases are
-installing Tomcat 9.0:
+By default, the latest `9.0.x` version of Tomcat is installed. If you want to
+use another version, you can define the environment variable
+`JAVA_WEBAPP_RUNNER_VERSION`, like so:
 
 ```sh
-# Install Tomcat 8
-
-$ scalingo env-set JAVA_WEBAPP_RUNNER_VERSION=8.5.11.3
+scalingo --app my-app env-set JAVA_WEBAPP_RUNNER_VERSION=10.1.16.0
 ```
+
+The available versions currently are:
+
+| Tomcat Version | Latest version | Notes   |
+| -------------: | -------------- | ------- |
+| `9.0`          | `9.0.83.1`     | default |
+| `10.1`         | `10.1.16.0`    |         |
