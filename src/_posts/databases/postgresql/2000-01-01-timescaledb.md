@@ -7,11 +7,11 @@ index: 11
 ---
 
 
-TimescaleDB® is an open-source extension to PostgreSQL® designed to make SQL
+TimescaleDB® is an open-source extension for PostgreSQL®. It is designed to make PostgreSQL
 scalable for time series data.
 
 This extension adds several features and functions. You can find more
-information on the [official documentation](https://docs.timescale.com/api/latest).
+information on the [official documentation](https://docs.timescale.com/getting-started/latest/).
 
 ## TimescaleDB® at Scalingo
 
@@ -21,18 +21,18 @@ started.
 {% endnote %}
 
 - There are two licenses of TimescaleDB®: **Community** edition and
-  **Open-Source** edition. The latter is the only one available on Scalingo,
-  hence TimescaleDB®'s functions labeled "*community*" on their documentation
+  **Open-Source** edition. The latter is the only one available on Scalingo.
+  Hence TimescaleDB®'s functions labeled "*community*" on their documentation
   are not available on the platform.
 
-- TimescaleDB® requires a PostgreSQL® database version 13.6.0-1 or above.
+- On Scalingo, TimescaleDB® requires a PostgreSQL® database version 13.6.0-1 or above.
 
 - Working with a time series database usually involves the need to [compress
   data](#downsampling) in runtime and [remove the oldest data](#configuring-data-retention).
   We provide documentation about these topics below.
 
 - While most documentation about PostgreSQL® remains applicable for
-  TimescaleDB®, there are a few elements that differ, **especially regarding
+  TimescaleDB®, there are a few elements that differ. **Especially regarding
   [dumping](#dumping-and-restoring) and [restoring](#dumping-and-restoring) a
   TimescaleDB® database**.
 

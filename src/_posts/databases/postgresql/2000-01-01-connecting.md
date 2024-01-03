@@ -49,7 +49,7 @@ which would most probably contribute to a greater downtime.
 
 In most cases, you can pass the environment variable directly to the client
 library you are using. But sometimes, the library requires a specific URI
-format, invididual keypairs or another format. In such cases, you will probably
+format, invididual keypairs or another format. In such cases, you
 need to parse the connection URI to retrieve the required values and build
 what's required by the library you are using. Our advice to use the environment
 variable still remains applicable.
@@ -71,7 +71,7 @@ variable still remains applicable.
 2. From the command line, list the environment variables available in your app
    and filter the output using `grep`:
    ```bash
-   scalingo --app my-app env | grep POSTGRESQL
+   scalingo --app my-app env-get SCALINGO_POSTGRESQL_URL
    ```
    The output should look like this:
    ```bash
@@ -85,7 +85,7 @@ variable still remains applicable.
 All PostgreSQL® addons [support TLS](https://www.postgresql.org/docs/current/static/ssl-tcp.html)
 to encrypt all the network traffic between the client and the server.
 
-By default, all new PostgreSQL® databases have TLS **activated** (available),
+By default, all new PostgreSQL® databases have TLS **available**,
 which means that you don't have to do anything to connect via TLS with a tool
 or library that uses TLS by default.
 

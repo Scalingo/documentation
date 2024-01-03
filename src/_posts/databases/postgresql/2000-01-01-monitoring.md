@@ -7,7 +7,7 @@ index: 4
 ---
 
 
-Each Scalingo for PostgreSQL® addon comes with several tools allowing for basic
+Each Scalingo for PostgreSQL® addon comes with several tools allowing for
 monitoring and auditing of your database. These tools give access to the
 [database logs](#inspecting-database-logs), to some [metrics](#analyzing-database-metrics)
 and to [running queries figures](#watching-running-queries). [Query Statistics](#exploring-query-statistics)
