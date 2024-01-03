@@ -11,11 +11,7 @@ index: 9
 
 ## Understanding Idle Queries
 
-PostgreSQL® tends to use all the available memory if there is enough indices to
-fill the memory. If there is too many indices to fit into the memory, some of
-them are stored on the disk. In this situation, queries needing these indices
-will be slowed down. PostgreSQL® first needs to load the indices from the disk
-into the RAM which takes some time. The memory usage on the "Metrics" tab of
+PostgreSQL optimizes database performance by effectively using all available memory. It stores frequently accessed data in memory to reduce the need for disk reads and writes, speeding up query processing. This approach not only enhances the system's efficiency but also requires careful memory management to prevent the system from using swap memory. Excessive usage of swap memory can significantly slow down database operations, so PostgreSQL is designed to maximize its memory usage without resorting to swap, ensuring both high performance and system stability.
 your web dashboard would always be at 100% in such situation.
 
 
