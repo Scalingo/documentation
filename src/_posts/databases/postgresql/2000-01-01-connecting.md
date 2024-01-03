@@ -1,7 +1,7 @@
 ---
 title: Connecting to Your Scalingo for PostgreSQL® Addon
 nav: Connecting
-modified_at: 2023-11-23 00:00:00
+modified_at: 2024-01-03 12:00:00
 tags: databases postgresql addon
 index: 3
 ---
@@ -68,15 +68,13 @@ variable still remains applicable.
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. From the command line, list the environment variables available in your app
-   and filter the output using `grep`:
+2. From the command line, get the environment variable value:
    ```bash
    scalingo --app my-app env-get SCALINGO_POSTGRESQL_URL
    ```
-   The output should look like this:
+   The output is:
    ```bash
-   DATABASE_URL=$SCALINGO_POSTGRESQL_URL
-   SCALINGO_POSTGRESQL_URL=postgresql://my_app_wxyz:ptojfrxzRi-lDfDYyahe@my-app-wxyz.postgresql.a.osc-fr1.scalingo-dbs.com:31000/my_app_wxyz?sslmode=prefer
+   postgresql://my_app_wxyz:ptojfrxzRi-lDfDYyahe@my-app-wxyz.postgresql.a.osc-fr1.scalingo-dbs.com:31000/my_app_wxyz?sslmode=prefer
    ```
 
 
