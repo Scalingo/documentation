@@ -15,20 +15,19 @@ information on the [official documentation](https://docs.timescale.com/getting-s
 
 ## TimescaleDB® at Scalingo
 
-{% note %}
-TimescaleDB® has some specificities which you should be aware of before getting
-started.
-{% endnote %}
+TimescaleDB® has some particularities which you should be aware of before
+getting started.
 
 - There are two licenses of TimescaleDB®: **Community** edition and
   **Open-Source** edition. The latter is the only one available on Scalingo.
   Hence TimescaleDB®'s functions labeled "*community*" on their documentation
   are not available on the platform.
 
-- On Scalingo, TimescaleDB® requires a PostgreSQL® database version 13.6.0-1 or above.
+- On Scalingo, TimescaleDB® requires a PostgreSQL® database version 13.6.0-1 or
+  above.
 
-- Working with a time series database usually involves the need to [compress
-  data](#downsampling) in runtime and [remove the oldest data](#configuring-data-retention).
+- Working with a time series database usually involves the need to [downsample
+  the dataset](#downsampling) in runtime and [remove the oldest data](#configuring-data-retention).
   We provide documentation about these topics below.
 
 - While most documentation about PostgreSQL® remains applicable for
@@ -48,8 +47,10 @@ To enable TimescaleDB®:
 
 ### Understanding Downsampling
 
-Downsampling consists in reducing the amount of data by compressing the old
-values.
+Downsampling consists in decreasing the size of a dataset by selecting a subset
+of the data at a reduced granularity compared to the original. The resulting
+dataset has a much lower size, but still keeps its accuracy. This process
+allows for easier analysis, storage, or computation.
 
 To better understang the concept and benefits, we provide an example below.
 This example is based on [TimescaleDB® official documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/user-defined-actions/example-downsample-and-compress/#downsample-and-compress).

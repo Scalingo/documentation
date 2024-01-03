@@ -1,7 +1,7 @@
 ---
 title: Restoring Your Scalingo for PostgreSQL® Addon
 nav: Restoring
-modified_at: 2023-12-08 00:00:00
+modified_at: 2024-01-03 12:00:00
 tags: databases postgresql addon
 index: 8
 ---
@@ -35,8 +35,6 @@ completely stopped, hence causing an inevitable downtime.
 {% endwarning %}
 
 ### Using the Command Line
-
-
 
 #### From a One-Off Container
 
