@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2023-11-27 12:00:00
+modified_at: 2024-01-03 12:00:00
 index: 8
 tags: deployment, java, jar, war
 ---
@@ -93,22 +93,24 @@ $ scalingo --app my-app env-set JAVA_VERSION=1.9
 
 ### Webapp Runner / Tomcat version selection
 
-By default, Tomcat is installed with the last version of the webapp-runner. If
-you want to use another version, you can defined the environment variable
-`JAVA_WEBAPP_RUNNER_VERSION`. The available versions are:
-
-- `8.5.11.3`
-- `8.5.51.0`
-- `9.0.52.1`
-- `9.0.68.1`
-- `9.0.80.0`
-- `9.0.83.0` (default)
-
-The 8.5.x versions are installing Tomcat 8, and the 9.0.x releases are
-installing Tomcat 9.0:
+By default, the latest `9.0.x` version of Tomcat is installed. If you want to
+use another version, you can define the environment variable
+`JAVA_WEBAPP_RUNNER_VERSION`, like so:
 
 ```sh
-# Install Tomcat 8
-
-$ scalingo env-set JAVA_WEBAPP_RUNNER_VERSION=8.5.11.3
+scalingo --app my-app env-set JAVA_WEBAPP_RUNNER_VERSION=10.1.16.0
 ```
+
+The latest available versions currently are:
+
+| Tomcat Version | Latest version    | Note    |
+| -------------: | ----------------: | ------- |
+| `8.5`          | up to `8.5.68.1`  |         |
+| **`9.0`**      | up to `9.0.83.1`  | default |
+| **`10.1`**     | up to `10.1.16.0` |         |
+
+{% note %}
+Even though we still support this version, we strongly advise against using the
+`8.5` version, which has been released a while ago. If you are still using it,
+please consider migrating to a more recent version.
+{% endnote %}
