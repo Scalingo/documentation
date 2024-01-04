@@ -575,6 +575,27 @@
   -
     old: "/cli/"
     new: "/platform/cli/start"
+  -
+    old: "/databases/postgresql/start"
+    new: "/databases/postgresql/overview"
+  -
+    old: "/databases/postgresql/dump-restore"
+    new: "/databases/postgresql/backing-up"
+  -
+    old: "/databases/postgresql/extensions"
+    new: "/databases/postgresql/managing"
+  -
+    old: "/databases/postgresql/timescaledb/intro"
+    new: "/databases/postgresql/timescaledb"
+  -
+    old: "/databases/postgresql/timescaledb/dump-restore"
+    new: "/databases/postgresql/timescaledb"
+  -
+    old: "/databases/postgresql/timescaledb/data-retention"
+    new: "/databases/postgresql/timescaledb"
+  -
+    old: "/databases/postgresql/timescaledb/downsampling"
+    new: "/databases/postgresql/timescaledb"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
