@@ -206,8 +206,9 @@ for PostgreSQL®.
    - Host name/address is now `127.0.0.1`
    - Port is most probably `10000`, unless you set it to something else
    - Username and Password must be gathered from the connection URI
-   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_02.png" %}
-   {% include mdl_img.html %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_02.png" %}
+{% include mdl_img.html %}
+{:start="7"}
 7. Click the **Save** button
 
 #### Accessing Through SSH
@@ -219,8 +220,9 @@ described [above](#using-openssh).
 2. Select the **Dashboard** tab
 3. Click the **Add New Server** shortcut
 4. In the new window, select the **General** tab and give a name to the server:
-   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_01.png" %}
-   {% include mdl_img.html %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_01.png" %}
+{% include mdl_img.html %}
+{:start="5"}
 5. Select the **Connection** tab and fill in the required information from the
    connection URI:
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_03.png" %}
@@ -236,6 +238,7 @@ described [above](#using-openssh).
    - Authentication: chose `Identity file` and select the SSH key linked to your
      Scalingo account in the Identity file field
    - Password: your SSH key password, if any
-   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_04.png" %}
-   {% include mdl_img.html %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_04.png" %}
+{% include mdl_img.html %}
+{:start="8"}
 8. Click the **Save** button
