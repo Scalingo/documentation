@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for PostgreSQL® Addon
 nav: Accessing
-modified_at: 2023-12-01 00:00:00
+modified_at: 2024-01-04 12:00:00
 tags: databases postgresql addon
 index: 6
 ---
@@ -199,8 +199,9 @@ for PostgreSQL®.
 3. Select the **Dashboard** tab
 4. Click the **Add New Server** shortcut
 5. In the new window, select the **General** tab and give a name to the server:
-   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_01.png" %}
-   {% include mdl_img.html %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_01.png" %}
+{% include mdl_img.html %}
+{:start="6"}
 6. Select the **Connection** tab and fill the required information:
    - Host name/address is now `127.0.0.1`
    - Port is most probably `10000`, unless you set it to something else
@@ -222,8 +223,9 @@ described [above](#using-openssh).
    {% include mdl_img.html %}
 5. Select the **Connection** tab and fill in the required information from the
    connection URI:
-   {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_03.png" %}
-   {% include mdl_img.html %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_pgadmin_03.png" %}
+{% include mdl_img.html %}
+{:start="6"}
 6. Select the **SSH Tunnel** tab and toggle the **Use SSH tunneling** option
 7. Fill in the required information:
    - Tunnel host depends on your region:
