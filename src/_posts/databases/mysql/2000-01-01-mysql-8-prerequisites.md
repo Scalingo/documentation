@@ -77,7 +77,7 @@ Below you can find a script that can be run directly on the database to:
 - create missing primary keys for the concerned tables
 - set the engine to InnoDB for the concerned tables
 
-In fact, the script create two procedures, one for each previous actions.
+The script creates two procedures, one for each previous actions.
 
 {% warning %}
   As always, we highly recommend to make a backup before executing the script.
@@ -121,7 +121,7 @@ alter_tables: LOOP
     END IF;
 
     -- below the alter table which create PKs
-    SET @prepstmt = CONCAT('ALTER TABLE ',v_table,' ADD COLUMN id INT AUTO_INCREMENT NOT NULL PRIMARY KEY FIRST;');
+    SET @prepstmt = CONCAT('ALTER TABLE ',v_table,' ADD COLUMN generated_pk INT AUTO_INCREMENT NOT NULL PRIMARY KEY FIRST;');
 
     PREPARE stmt FROM @prepstmt;
     EXECUTE stmt;
