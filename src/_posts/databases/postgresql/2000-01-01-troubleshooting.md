@@ -153,14 +153,14 @@ free to adjust this depending on your usage.
    LIMIT 10;
    ```
 
-### Solving Performance Issues
+## Solving Performance Issues
 
 Identifying the reasons for a slow query can involve various factors. There is
 no single answer to a performance issue. Here are the most common reasons why
 your PostgreSQL® database might not be performing as well as you would want,
 along with some general steps to address them:
 
-#### Inefficient Query
+### Inefficient Query
 
 - Ensure your SQL queries are properly designed and optimized to retrieve only
   necessary data.
@@ -168,28 +168,28 @@ along with some general steps to address them:
   (or `EXPLAIN ANALYZE`) to see the query execution plan. Analyze it to find
   bottlenecks or missing indexes.
 
-#### Lack of Indexes
+### Lack of Indexes
 
 - Ensure that the columns involved in your statement's `WHERE`, `JOIN`, and
   `ORDER BY` clauses have appropriate indexes.
 - Use the `CREATE INDEX` statement to create appropriate indexes on columns
   that are frequently used in search conditions.
 
-#### Large Result Sets
+### Large Result Sets
 
 - If your query returns a large number of rows, consider fetching only the
   necessary columns and limit the result set using the `LIMIT` clause.
 - Implement pagination by using the `LIMIT` and `OFFSET` clauses to retrieve
   smaller chunks of data.
 
-#### Insufficient Resources
+### Insufficient Resources
 
 - Check the metrics of your database and verify that your database is
   provisioned with enough CPU and memory to handle your workload.
 - Monitor these metrics during query execution to identify potential resource
   bottlenecks.
 
-#### Use Connection Pooling
+### Use Connection Pooling
 
 - Implement connection pooling to reuse database connections, reducing the
   overhead of establishing a new connection for each query.
