@@ -33,7 +33,7 @@ under 5 minutes.
 Click the One-Click Deploy button below to automatically deploy Metabase with
 your Scalingo account:
 
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/metabase-scalingo)
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/metabase-scalingo#master)
 
 ### Using the Command Line
 
