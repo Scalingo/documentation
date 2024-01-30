@@ -70,7 +70,7 @@ invite this person as a collaborator of the application. Then you will be able t
 transfer them the application.
 
 {% note %}
-  The new owner will need a [Billing Profile](https://doc.scalingo.com/platform/internals/billing) and will have left the free trial. If you have a payment method but are still on a free trial, go to Billing and click on Stop free trial button.
+  The new owner will need a [Billing Profile](https://doc.scalingo.com/platform/internals/billing) and will have left the free trial. To leave free trial period with billing profile go to [Billing](https://dashboard.scalingo.com/billing) and click on Stop free trial button.
   If it's an HDS application, the new owner will need to configure a health professional contact, just like the previous owner.
 {% endnote %}
 
