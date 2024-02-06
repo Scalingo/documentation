@@ -120,6 +120,7 @@ additional variable `$PORT` is defined.
 * `APP`: Name of the application deployed
 * `STACK`: Name of the stack the application deployed is using
 * `REGION_NAME`: Name of the region where the application is deployed
+* `HOSTNAME`: Name of the scalingo application
 
 ## One-Off Environment Variables
 
