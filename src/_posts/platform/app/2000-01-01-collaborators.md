@@ -42,6 +42,10 @@ You will the how to manage collaborators from the CLI there: [manage collaborato
 - The collaborator will receive an email to join the collaboration (and subscribe to Scalingo if required).
 - Once done, you will see the collaborator in black.
 
+{% note %}
+To delete a collaborator, in the collaborator table, simply click on the trash can corresponding to the collaborator's mail and validate in the pop-up.
+{% endnote %}
+
 ### From the CLI
 
 There you will learn how to manage collaborators from the CLI: [manage collaborators of the application](https://doc.scalingo.com/platform/cli/features#manage-collaborators-of-the-application)
