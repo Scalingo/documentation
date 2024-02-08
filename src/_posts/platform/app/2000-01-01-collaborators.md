@@ -38,47 +38,47 @@ Collaborators can't:
 
 Using the Dashboard
 
-    - Go to your application that needs a new collaborator
-    - Go to the Settings tab
-    - You will automatically be taken to the Collaborators menu
+- Go to your application that needs a new collaborator
+- Go to the Settings tab
+- You will automatically be taken to the Collaborators menu
 
 Using the Command Line
 
-    ```shell
-    scalingo --app my-app collaborators
-    ```
+```shell
+scalingo --app my-app collaborators
+```
 
 ### Adding a Collaborator
 
 Using the Dashboard
 
-    - Go to your application that needs a new collaborator
-    - Go to the Settings tab
-    - You will automatically be taken to the Collaborators menu
-    - Click on the Add button
-    - Add the required collaborator email
-    - You will now see the collaborator in light grey in the table.
-    - The collaborator will receive an email to join the collaboration (and subscribe to Scalingo if required).
-    - Once done, you will see the collaborator in black.
+- Go to your application that needs a new collaborator
+- Go to the Settings tab
+- You will automatically be taken to the Collaborators menu
+- Click on the Add button
+- Add the required collaborator email
+- You will now see the collaborator in light grey in the table.
+- The collaborator will receive an email to join the collaboration (and subscribe to Scalingo if required).
+- Once done, you will see the collaborator in black.
 
 Using the Command Line
 
-    ```shell
-    scalingo --app my-app collaborators-add user@example.com
-    ```
+```shell
+scalingo --app my-app collaborators-add user@example.com
+```
 
 ### Removing a Collaborator
 
 Using the Dashboard
 
-    - Go to your application that needs a new collaborator
-    - Go to the Settings tab
-    - You will automatically be taken to the Collaborators menu
-    - Click on the trash can corresponding to the collaborator's mail
-    - Validate in the pop-up
+- Go to your application that needs a new collaborator
+- Go to the Settings tab
+- You will automatically be taken to the Collaborators menu
+- Click on the trash can corresponding to the collaborator's mail
+- Validate in the pop-up
 
 Using the Command Line
 
-    ```shell
-    scalingo --app my-app collaborators-remove user@example.com
-    ```
+```shell
+scalingo --app my-app collaborators-remove user@example.com
+```
