@@ -6,7 +6,13 @@ tags: app collaborators
 
 ## Context
 
-Collaborators allow you to add other accounts to help you manage your application. Collaborators basically have all the features of an owner account. It is also useful if you want to [transfer ownership of an application](https://doc.scalingo.com/platform/app/lifecycle-management#transfer-ownership-of-an-application).
+Collaborators is a feature allowing the owner of an app to invite other Scalingo accounts to team up and work jointly on the app. An app can have as many collaborators as needed.
+
+An owner of an app can also [transfer the ownership of the app]({% post_url platform/app/2000-01-01-lifecycle-management %}#transfer-ownership-of-an-app) to a collaborator.
+
+{% note %}
+Delegating rights to collaborators should be taken seriously. Even if collaborators can't delete the application, they have enough rights to disrupt the activities or businesses depending on it.
+{% endnote %}
 
 ## Understanding Collaborators Rights
 
