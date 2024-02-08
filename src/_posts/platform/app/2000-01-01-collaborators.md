@@ -20,7 +20,7 @@ Collaborators can:
 - View metrics
 - View activity
 - Access the DB Dashboard
-- Almost all user actions except those under
+- Manage other collaborators (invite, remove)
 
 ### Collaborator can't do
 
