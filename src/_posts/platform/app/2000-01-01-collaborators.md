@@ -10,7 +10,7 @@ Collaborators allow you to add other accounts to help you manage your applicatio
 
 ## Understanding Collaborators Rights
 
-### Collaborator can do
+Collaborators can:
 
 - Deploy
 - Manage containers and addons
