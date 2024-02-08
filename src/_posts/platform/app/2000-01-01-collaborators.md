@@ -34,7 +34,7 @@ Collaborators can't:
 - Rename the application
 - Transfer the ownership of the application to another user
 
-## How to manage collaborators
+## Managing Collaborators
 
 ### From the dashboard
 
