@@ -16,7 +16,7 @@ Collaborators can:
 - Manage containers (scale up and down, both horizontally and vertically)
 - Manage addons (create, delete, change plan)
 - View logs
-- Access the review applications
+- Access [Review Apps]({% post_url platform/app/2000-01-01-review-apps %})
 - View metrics
 - View activity
 - Access the DB Dashboard(s)
