@@ -24,7 +24,7 @@ Collaborators can:
 
 Collaborators can't:
 
-- Delete application
+- Delete the application
 - Rename application
 - Transfer application
 
