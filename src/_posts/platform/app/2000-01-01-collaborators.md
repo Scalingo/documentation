@@ -44,7 +44,9 @@ Using the Dashboard
 
 Using the Command Line
 
+    ```shell
     scalingo --app my-app collaborators
+    ```
 
 ### Adding a Collaborator
 
@@ -61,7 +63,9 @@ Using the Dashboard
 
 Using the Command Line
 
+    ```shell
     scalingo --app my-app collaborators-add user@example.com
+    ```
 
 ### Removing a Collaborator
 
@@ -75,4 +79,6 @@ Using the Dashboard
 
 Using the Command Line
 
+    ```shell
     scalingo --app my-app collaborators-remove user@example.com
+    ```
