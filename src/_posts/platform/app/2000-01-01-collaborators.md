@@ -19,7 +19,7 @@ Collaborators can:
 - Access the review applications
 - View metrics
 - View activity
-- Access the DB Dashboard
+- Access the DB Dashboard(s)
 - Manage other collaborators (invite, remove)
 
 ### Collaborator can't do
