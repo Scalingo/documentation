@@ -22,7 +22,7 @@ Collaborators can:
 - Access the DB Dashboard(s)
 - Manage other collaborators (invite, remove)
 
-### Collaborator can't do
+Collaborators can't:
 
 - Delete application
 - Rename application
