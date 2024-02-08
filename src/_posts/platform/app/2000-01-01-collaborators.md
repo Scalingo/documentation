@@ -13,7 +13,8 @@ Collaborators allow you to add other accounts to help you manage your applicatio
 Collaborators can:
 
 - Trigger deployments
-- Manage containers and addons
+- Manage containers (scale up and down, both horizontally and vertically)
+- Manage addons (create, delete, change plan)
 - View logs
 - Access the review applications
 - View metrics
