@@ -12,7 +12,7 @@ Collaborators allow you to add other accounts to help you manage your applicatio
 
 Collaborators can:
 
-- Deploy
+- Trigger deployments
 - Manage containers and addons
 - View logs
 - Access the review applications
