@@ -25,7 +25,7 @@ Collaborators can:
 Collaborators can't:
 
 - Delete the application
-- Rename application
+- Rename the application
 - Transfer application
 
 ## How to manage collaborators
