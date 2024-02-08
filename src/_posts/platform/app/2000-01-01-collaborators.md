@@ -75,4 +75,4 @@ Using the Dashboard
 
 Using the Command Line
 
-    scalingo --app my-app collaborators
+    scalingo --app my-app collaborators-remove user@example.com
