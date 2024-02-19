@@ -1,6 +1,6 @@
 ---
 title: Common Deployment Errors
-modified_at: 2023-03-29 00:00:00
+modified_at: 2024-02-12 12:00:00
 index: 7
 ---
 
@@ -122,10 +122,6 @@ The file `project.clj` must be at the root of your project.
 
 You need to have at least one `*.go` file at the root of your project.
 Then, we detect the Go language and install any dependency with your `Godeps` directory (see more about [Godeps](https://github.com/tools/godep)).
-
-[Erlang]({% post_url languages/erlang/2000-01-01-start %})
-
-You need to have either a `rebar.config` file or a `ebin` file at the root of your project.
 
 ## Git Submodule
 

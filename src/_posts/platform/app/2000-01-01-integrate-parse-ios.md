@@ -17,7 +17,7 @@ their server which ease a lot this process. This article will details how to
 Deploying the server is as simple as clicking here:
 
 [![One click
-deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/ParsePlatform/parse-server-example)
+deploy](https://cdn.scalingo.com/deploy/button.svg)](https://dashboard.scalingo.com/deploy?source=https://github.com/ParsePlatform/parse-server-example)
 
 Follow the instructions, fill the `MASTER_KEY` and `APP_ID` variables and the server
 (https://github.com/ParsePlatform/parse-server-example)[https://github.com/ParsePlatform/parse-server-example]
@@ -30,7 +30,7 @@ will be deployed on Scalingo in a minute and you can start working with it direc
 Once your server has been deployed, it is reachable at the URL:
 `https://<appname>.osc-fr1.scalingo.io`. The credentials for your server have been
 defined before the deployment, if you need to recover them, they can be found
-on your [dashboard](https://my.scalingo.com) in the 'Environment' tab, or with
+on your [dashboard](https://dashboard.scalingo.com) in the 'Environment' tab, or with
 our command line tool:
 
 ```bash

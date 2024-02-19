@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-ruby "3.2.1"
+ruby "3.2.2"
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -36,9 +36,11 @@ group :development, :test do
   gem "standard"
 end
 
-gem "webpacker", "< 5"
+gem "activesupport"
 
 gem "puma"
+gem "rake"
+
 gem "rack", "< 3"
 gem "rack-canonical-host"
 gem "rack-jekyll", github: "adaoraul/rack-jekyll"

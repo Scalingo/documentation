@@ -1,6 +1,6 @@
 ---
 title: Getting Started with WordPress on Scalingo
-modified_at: 2022-09-21 00:00:00
+modified_at: 2023-12-27 00:00:00
 tags: php, http, framework, wordpress, deployment
 index: 14
 ---
@@ -55,18 +55,18 @@ Follow these instructions to get started:
 
 2. Create the application on Scalingo
 
-   Create the application through the dashboard with a Scalingo for MySQL® addon or with the [Scalingo CLI](http://cli.scalingo.com):
+   Create the application through the dashboard with a Scalingo for MySQL® addon or with the [Scalingo CLI](https://cli.scalingo.com):
 
    ```bash
    scalingo create my-app
    scalingo addons-add mysql mysql-sandbox
    ```
 
-3. Create a S3 Bucket on AWS and configure IAM user correctly
+3. Create a public S3 Bucket with ACL disabled on AWS and configure IAM user correctly
 
    IAM user security policy example, with required actions:
 
-   ```bash
+   ```json
     {
       "Version": "2012-10-17",
       "Statement": [
@@ -77,45 +77,58 @@ Follow these instructions to get started:
             "s3:PutObjectVersionAcl",
             "s3:AbortMultipartUpload",
             "s3:ListBucket",
+            "s3:DeleteObject",
             "s3:GetObject"
           ],
           "Effect": "Allow",
-          "Resource": "arn:aws:s3:::BUCKETNAME-HERE"
-        },
-        {
-          "Action": [
-            "s3:PutObject",
-            "s3:PutObjectAcl",
-            "s3:PutObjectVersionAcl",
-            "s3:AbortMultipartUpload",
-            "s3:ListBucket",
-            "s3:GetObject"
-          ],
-          "Effect": "Allow",
-          "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
+          "Resource": [
+              "arn:aws:s3:::BUCKETNAME-HERE",
+              "arn:aws:s3:::BUCKETNAME-HERE/*"
+          ]
         }
       ]
     }
    ```
 
-4. Update application environment variables
+4. Create a stategy policy for the newly created bucket
+
+    Go on the newly created bucket's details page, on `Permissions` tab. Scroll down to `Bucket policy` and enter your policy.
+
+    Example policy with read access for everyone:
+
+    ```json
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": "*",
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
+        }
+      ]
+    }
+    ```
+
+5. Update application environment variables
 
    Then, update your application environment through the dashboard or with the
-   [Scalingo CLI](http://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`:
+   [Scalingo CLI](https://cli.scalingo.com) `scalingo env-set VARIABLE_NAME=VALUE`:
 
    * `DATABASE_URL`: Connection string to the MySQL® database - `mysql://localhost:3306/wp-bedrock` - Automatically added with the Scalingo MySQL® addon
    * `WP_ENV`: Set to environment (`development`, `staging`, `production`)
-   * `WP_HOME`: Full URL to WordPress home (https://my-app.osc-fr1.scalingo.io)
-   * `WP_SITEURL`: Full URL to WordPress including subdirectory (https://my-app.osc-fr1.scalingo.io/wp)
+   * `WP_HOME`: Full URL to WordPress home (e.g. https://my-app.osc-fr1.scalingo.io)
+   * `WP_SITEURL`: Full URL to WordPress including subdirectory (e.g. https://my-app.osc-fr1.scalingo.io/wp)
    * `S3_UPLOADS_BUCKET`: Name of the S3 bucket to upload files to
    * `S3_UPLOADS_KEY`: AWS Access Key ID for S3 authentication
    * `S3_UPLOADS_SECRET`: AWS Secret Key for S3 authentication
    * `S3_UPLOADS_REGION`: Region of the S3 bucket
+   * `S3_UPLOADS_OBJECT_ACL`: object permission of files uploaded to S3. Defaults to `public-read`. Must be one of `public-read`, `private` or `authenticated-read`.
    * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
 
    You can get some random salts on the [Roots WordPress Salt Generator](https://roots.io/salts.html).
 
-5. Add themes in `web/app/themes` as you would for a normal WordPress site.
+6. Add themes in `web/app/themes` as you would for a normal WordPress site.
 
    ```bash
    # Optionally add theme to your git repository
@@ -123,7 +136,7 @@ Follow these instructions to get started:
    git commit -m "Add themes"
    ```
 
-6. Add plugins using [Composer](https://getcomposer.org/) and [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=)
+7. Add plugins using [Composer](https://getcomposer.org/) and [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=)
 
    Example to add the `Akismet` plugin:
 
@@ -131,15 +144,15 @@ Follow these instructions to get started:
    composer require --ignore-platform-reqs wpackagist-plugin/akismet
    ```
 
-7. Deploy the application on Scalingo
+8. Deploy the application on Scalingo
 
    ```bash
    git push scalingo master
    ```
 
-8. Access WP Admin at `https://my-app.osc-fr1.scalingo.io/wp/wp-admin`
+9. Access WP Admin at `https://my-app.osc-fr1.scalingo.io/wp/wp-admin`
 
-9. Activate the `S3 Uploads` plugin on WP Admin plugins page and that's it.
+10. Activate the `S3 Uploads` plugin on WP Admin plugins page and that's it.
 
 ## Deploying Pure WordPress on Scalingo
 

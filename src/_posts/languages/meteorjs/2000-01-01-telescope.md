@@ -1,7 +1,7 @@
 ---
 title: Deployment of a Meteor application - Telescope
 nav: Deployment of Telescope
-modified_at: 2015-04-10 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: nodejs meteor tutorial telescope
 ---
 
@@ -9,7 +9,7 @@ This guide will go through the deployment of a un-modified instance of Telescope
 but if you've applied some modifications to it, it should work the same manner.
 
 {% note %}
-  All the operations achieved with the <a href="http://cli.scalingo.com">'scalingo' CLI</a> can also be done on our <a href="https://my.scalingo.com">web dashbaord</a>.
+  All the operations achieved with the <a href="https://cli.scalingo.com">'scalingo' CLI</a> can also be done on our <a href="https://dashboard.scalingo.com">web dashboard</a>.
 {% endnote %}
 
 {% include info_tutorial_requirements.md %}

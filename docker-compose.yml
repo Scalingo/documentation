@@ -1,44 +1,33 @@
 version: '2'
 services:
+  # Replicates the prod setup, in which puma serves the file built by jekyll + the assets
   web:
     build: .
-    # links:
-    #   - webpack
+    ports:
+      - 4304:4304
+    volumes:
+      - ./:/usr/src/app
+    environment:
+      BUNDLE_PATH: "/usr/src/app/vendor/.bundle"
+      JEKYLL_ENV: "development"
+    command: bundle exec puma -C config/puma.rb
+  # Jekyll server+watcher. Can be accessed directly or through the puma process.
+  jekyll:
+    build: .
     ports:
       - 4300:4300
       - 4302:4302
     volumes:
       - ./:/usr/src/app
     environment:
-      AUTH_API_BASE_URI: "https://api.scalingo.com/"
-      API_BASE_URI: "https://api.scalingo.com/"
-      BLOG_ROOT_URL: "https://blog.scalingo.io"
-      REDIS_URL: "redis://:pipo@redis:6379"
-      BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/3.0.0/bin"
-      BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/3.0.0"
+      BUNDLE_PATH: "/usr/src/app/vendor/.bundle"
       JEKYLL_ENV: "development"
     command: bundle exec jekyll serve --watch --host 0.0.0.0 --port 4300 --trace --incremental --livereload --livereload-port 4302
-  webpack:
-    build: .
-    ports:
-      - 4301:4301
-    volumes:
-      - ./:/usr/src/app
-    command: bin/webpack-dev-server --config config/webpack/development.js
-    environment:
-      NODE_ENV: "development"
-      RAILS_ENV: "development"
-      BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/3.0.0/bin"
-      BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/3.0.0"
-  tailwind:
+  # Assets (JS + CSS) building
+  assets:
     build: .
     volumes:
       - ./:/usr/src/app
-    command: yarn build:css --watch --verbose
-    stdin_open: true
-    tty: true
+    command: yarn build --verbose  --watch
     environment:
       NODE_ENV: "development"
-      RAILS_ENV: "development"
-      BUNDLE_BIN: "/usr/src/app/vendor/.bundle/ruby/3.0.0/bin"
-      BUNDLE_PATH: "/usr/src/app/vendor/.bundle/ruby/3.0.0"

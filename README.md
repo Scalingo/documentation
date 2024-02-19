@@ -73,6 +73,7 @@ object(s)`. Then, insert it with:
 To install dependencies locally:
 
 ```
+docker compose build
 docker compose run --rm web bundle install
 docker compose run --rm web yarn install --ignore-engines
 ```
@@ -118,6 +119,15 @@ To help debug responsive layout issues add this tool in the default layout, it w
   {% include organisms/responsive_tool.html %}
 ```
 
+#### Force regeneration
+
+Sometimes, the files regeneration (especially the assets) got lost.
+
+In this case remove the `_site` folder via
+```
+dc run web rm -rf _site
+```
+
 ## Links
 
-* [Scalingo Documentation Center](http://doc.scalingo.com)
+* [Scalingo Documentation Center](https://doc.scalingo.com)

@@ -1,7 +1,7 @@
 ---
 title: First Steps On Scalingo
 nav: First Steps
-modified_at: 2022-12-14 00:00:00
+modified_at: 2023-12-22 00:00:00
 tags: follow-the-light ssh
 index: 1
 ---
@@ -14,8 +14,8 @@ Deploying an application on Scalingo requires you to have Git installed.
 
 * Linux: Use your package manager to install it. (example: `apt-get install git`)
 * macOS: If you've installed XCode, Git has been automatically installed. Otherwise,
-  install it from [Git official website](http://git-scm.com/download/mac)
-* Windows: Install if from [Git official website](http://git-scm.com/download/windows)
+  install it from [Git official website](https://git-scm.com/download/mac)
+* Windows: Install if from [Git official website](https://git-scm.com/download/windows)
 
 ### SSH Key Setup
 

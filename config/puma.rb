@@ -4,5 +4,5 @@ threads threads_count, threads_count
 
 preload_app!
 
-port ENV["PORT"] || 3000
+port ENV["PORT"] || 4304
 environment ENV["RACK_ENV"] || "development"
