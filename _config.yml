@@ -110,9 +110,6 @@ languages:
   - url: elixir
     name: "Elixir"
     logo: elixir
-  - url: erlang
-    name: "Erlang"
-    logo: erlang
   - url: python
     name: "Python"
     logo: python
@@ -228,9 +225,6 @@ samples:
   - url: kotlin
     name: Kotlin
     logo: kotlin
-  - url: erlang
-    name: Erlang
-    logo: erlang
 
 extlinks:
   followed_domains:
