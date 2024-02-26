@@ -19,6 +19,12 @@ from swap is slower than accessing data from RAM). To avoid such situations,
 PostgreSQL® is designed to maximize its memory usage without resorting to swap,
 ensuring both high performance and system stability.
 
+In addition to managing memory to avoid swap usage, PostgreSQL® strategically
+employs temporary files to handle complex queries that require more resources
+than available in memory. This use of temporary disk storage helps manage large
+sorting or hashing operations without overburdening the system's memory,
+thereby maintaining performance without resorting to swap memory usage.
+
 Consequently, it's not necessarily an issue that 100% of the RAM is used. It's
 also perfectly fine to have only a few slower queries when indices are stored
 on disk because they are not used that often.
