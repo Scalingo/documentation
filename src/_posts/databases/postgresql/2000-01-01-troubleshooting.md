@@ -30,7 +30,7 @@ particularly for read operations. Those peaks can often be attributed to a few
 common factors:
 - One primary reason could be insufficient memory. When the database cannot
   hold enough of its working set in memory, it resorts to frequent disk reads
-  and writes (swap), leading to high I/O.
+  and writes, leading to high I/O.
 - Another potential cause is executing queries that retrieve large amounts of
   data, especially if these operations are not optimized or if the resulting
   dataset size exceeds the available memory.
