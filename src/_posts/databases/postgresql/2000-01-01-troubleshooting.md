@@ -112,8 +112,7 @@ queries that could merit attention or further investigations.
 
 ### Identifying Queries With a Low Cache Hit Ratio
 
-[As seen previously](#understanding-memory-consumption), relying on swap usage
-can have a significant impact on your database performances. Consequently,
+[As seen previously](#understanding-memory-consumption), relying on swap usage and excessive disk reads can significantly impact your database performance. Consequently,
 measuring the number of times a query has to read data from the disk instead of
 fetching it from the cache (stored in memory) can help identify non-optimal queries.
 
