@@ -115,7 +115,7 @@ queries that could merit attention or further investigations.
 [As seen previously](#understanding-memory-consumption), relying on swap usage
 can have a significant impact on your database performances. Consequently,
 measuring the number of times a query has to read data from the disk instead of
-fetching it from the cache can help identify non-optimal queries.
+fetching it from the cache (stored in memory) can help identify non-optimal queries.
 
 The following statement computes the *cache hit ratio*: a measurement that
 quantifies the proportion of queries fully satisfied by only hitting the cache.
