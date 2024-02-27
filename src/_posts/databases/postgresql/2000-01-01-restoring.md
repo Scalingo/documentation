@@ -81,7 +81,7 @@ completely stopped, hence causing an inevitable downtime.
 5. Restore the database from the uncompressed file or from the dump, using the
    `pg_restore` command (you may have to install it):
    ```bash
-   pg_restore --clean --if-exists --no-owner --no-privileges --no-comments --dbname "${SCALINGO_POSTGRESQL_URL}" <dump_file>
+   pg_restore --clean --if-exists --no-owner --no-privileges --no-comments --dbname "${SCALINGO_DATABASE_URL}" <dump_file>
    ```
 
 {% note %}
