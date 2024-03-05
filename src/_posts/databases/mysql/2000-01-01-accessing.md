@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for MySQL® Addon
 nav: Accessing
-modified_at: 2024-03-04 12:00:00
+modified_at: 2024-03-05 12:00:00
 tags: databases mysql addon
 index: 6
 ---
@@ -180,7 +180,11 @@ recommend activating Internet Accessibility.
 
 ### Using DBeaver
 
-DBeaver is FIXME
+[DBeaver](https://dbeaver.io/) is a free and open-source database tool allowing
+to manage multiple database kinds, including MySQL®. It includes a carefully
+designed and implemented User Interface, as well as a lot of features such as
+the ability to execute SQL queries with autocompletion and syntax highlighting,
+the ability to browse and edit database structure, data import/export, etc.
 
 #### Accessing Through a DB Tunnel
 
@@ -198,9 +202,9 @@ DBeaver is FIXME
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_dbeaver_01.png" %}
 {% include mdl_img.html %}
 {:start="5"}
-5. Click the **Test connexion...** button at the bottom left to test that
+5. Click the **Test Connection...** button at the bottom left to test that
    everything works as expected
-6. Click the **Finish** button
+6. Click the **Finish** button to save the connection configuration
 
 #### Accessing Through SSH
 
@@ -228,13 +232,61 @@ described [above](#using-openssh).
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_dbeaver_03.png" %}
 {% include mdl_img.html %}
 {:start="6"}
-6. Click the **Test connexion...** button at the bottom left to test that
+6. Click the **Test Connection...** button at the bottom left to test that
    everything works as expected
-7. Click the **Finish** button
-
+7. Click the **Finish** button to save the connection configuration
 
 ### Using MySQL Workbench
 
+[MySQL Workbench](https://www.mysql.com/products/workbench/) is a unified
+visual piece of software for database architects, administrators and
+developers. Apart from the basic features such as browsing and editing the
+database structure, importing and exporting data or executing SQL queries with
+autocompletion and syntax highlighting, MySQL Workbench also comes with
+functionalities that help identify and fix performance issues.
+
 #### Accessing Through a DB Tunnel
 
+1. [Create a DB tunnel](#using-our-command-line-tool) to make the database
+   reachable from the computer running MySQL Workbench
+2. Once the connection established, open MySQL Workbench
+3. From the welcome screen, click the little **+** button to create a new
+   connection
+4. In the new window, give a name to the connection
+5. Fill in the required information:
+   - Connection Method must be set to `Standard (TCP/IP)`
+   - Hostname is `127.0.0.1` or `localhost`
+   - Port is most probably `10000`, unless you set it to something else
+   - Username and Password must be gathered from the connection URI
+   - Default Schema is the name of your database, which must also be gathered
+     from the connection URI
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_workbench_01.png" %}
+{% include mdl_img.html %}
+{:start="6"}
+6. Click the **Test Connection** button at the bottom to test that everything
+   works as expected
+7. Click the **OK** button to save the connection configuration
+
 #### Accessing Through SSH
+
+MySQL Workbench also allows to connect to the database through an SSH tunnel,
+like described [above](#using-openssh).
+
+1. Open MySQL Workbench
+2. From the welcome screen, click the little **+** button to create a new
+   connection
+3. In the new window, give a name to the connection
+4. Fill in the required information:
+   - SSH Hostname depends on your region:
+     - For osc-fr1: `ssh.osc-fr1.scalingo.com:22`
+     - For osc-secnum-fr1: `ssh.osc-secnum-fr1.scalingo.com:22`
+   - SSH Username is always `git`
+   - Chose the SSH Key File linked to your Scalingo account
+   - MySQL Hostname, MySQL Server Port, Username and Password must be gathered
+     from the connection URI
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_workbench_02.png" %}
+{% include mdl_img.html %}
+{:start="5"}
+5. Click the **Test Connection** button at the bottom to test that everything
+   works as expected
+6. Click the **OK** button to save the connection configuration
