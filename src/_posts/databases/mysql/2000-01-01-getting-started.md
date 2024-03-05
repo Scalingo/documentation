@@ -1,7 +1,7 @@
 ---
 title: Getting Started With Scalingo for MySQL®
 nav: Getting Started
-modified_at: 2024-03-04 00:00:00
+modified_at: 2024-03-05 12:00:00
 tags: databases mysql addon
 index: 2
 ---
@@ -35,7 +35,7 @@ our [CLI tool](#using-the-command-line) or via our
    The output should look like this:
    ```text
    +-----------------------+---------------+
-   |             ID        |     NAME      |
+   |          ID           |     NAME      |
    +-----------------------+---------------+
    | mysql-sandbox         | Sandbox       |
    | mysql-starter-512     | Starter 512M  |
