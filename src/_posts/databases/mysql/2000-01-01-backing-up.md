@@ -252,7 +252,7 @@ This method has two main advantages:
    mysqldump --user=<user> --password=<password> --host=<host> --port=<port> --column-statistics=0 <dbname> > dump.sql
    ```
    With `user`, `password`, `host`, `port` and `dbname` from your original
-   [connection URI]({% post_url dtaabases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri).
+   [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri).
 
 {% note %}
 The dump is lost as soon as you exit the One-Off container. Consequently, you

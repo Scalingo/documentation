@@ -41,7 +41,7 @@ completely stopped, hence causing an inevitable downtime.
    mysql --user=<user> --password=<password> --host=<host> --port=<port> <dbname> < <dump_file>
    ```
    With `user`, `password`, `host`, `port` and `dbname` from your original
-   [connection URI]({% post_url dtaabases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri).
+   [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri).
 
 #### From Your Workstation
 
