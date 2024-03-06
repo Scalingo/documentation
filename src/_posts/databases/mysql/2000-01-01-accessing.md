@@ -193,12 +193,12 @@ the ability to browse and edit database structure, data import/export, etc.
 2. Once the connection established, open DBeaver
 3. From the main menu, click the **New Connexion** button and select **MySQL**
    from the dropdown
-4. In the new window, select the **General** tab and fill the required
+4. In the new window, select the **Main** tab and fill the required
    information:
    - Server Host is now `127.0.0.1` or `localhost`
    - Port is most probably `10000`, unless you set it to something else
-   - Database must be gathered from the connection URI
-   - Username and Password must also be gathered from the connection URI
+   - Database must be gathered from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+   - Username and Password must also be gathered from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_dbeaver_01.png" %}
 {% include mdl_img.html %}
 {:start="5"}
@@ -214,8 +214,10 @@ described [above](#using-openssh).
 1. Open DBeaver
 2. From the main menu, click the **New Connexion** button and select **MySQL**
    from the dropdown
-3. In the new window, select the **General** tab and fill the required
-   information from the connection URI:
+3. In the new window, select the **Main** tab and fill the required
+   information:
+     - Server Host, Port, Database, Username and Password must be gathered
+       from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_dbeaver_02.png" %}
 {% include mdl_img.html %}
 {:start="4"}
@@ -226,15 +228,16 @@ described [above](#using-openssh).
      - For osc-secnum-fr1: `ssh.osc-secnum-fr1.scalingo.com`
    - Tunnel port must be set to `22`
    - Username is always `git`
-   - Authentication: chose `Public Key` and select the SSH private key linked
-     to your Scalingo account in the Private Key field
-   - Passphrase: your SSH key passphrase, if any
+   - Authentication Method: chose `Public Key`
+   - Select the SSH private key linked to your Scalingo account
+   - Set your SSH key passphrase, if any
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_dbeaver_03.png" %}
 {% include mdl_img.html %}
 {:start="6"}
-6. Click the **Test Connection...** button at the bottom left to test that
-   everything works as expected
-7. Click the **Finish** button to save the connection configuration
+6. Click the **Test tunnel configuration** button to test the SSH connection
+7. Click the **Test Connection...** button at the bottom left to test that
+   the database is indeed reachable through the SSH tunnel
+8. Click the **Finish** button to save the connection configuration
 
 ### Using MySQL Workbench
 
@@ -257,9 +260,9 @@ functionalities that help identify and fix performance issues.
    - Connection Method must be set to `Standard (TCP/IP)`
    - Hostname is `127.0.0.1` or `localhost`
    - Port is most probably `10000`, unless you set it to something else
-   - Username and Password must be gathered from the connection URI
+   - Username and Password must be gathered from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
    - Default Schema is the name of your database, which must also be gathered
-     from the connection URI
+     from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_workbench_01.png" %}
 {% include mdl_img.html %}
 {:start="6"}
@@ -283,7 +286,7 @@ like described [above](#using-openssh).
    - SSH Username is always `git`
    - Chose the SSH Key File linked to your Scalingo account
    - MySQL Hostname, MySQL Server Port, Username and Password must be gathered
-     from the connection URI
+     from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_workbench_02.png" %}
 {% include mdl_img.html %}
 {:start="5"}
