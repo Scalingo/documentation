@@ -113,7 +113,7 @@ GEM
     rack-canonical-host (1.2.0)
       addressable (> 0, < 3)
       rack (>= 1, < 4)
-    rack-cors (2.0.1)
+    rack-cors (2.0.2)
       rack (>= 2.0.0)
     rack-rewrite (1.5.1)
     rack-ssl-enforcer (0.2.9)
