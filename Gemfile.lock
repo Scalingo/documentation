@@ -145,7 +145,7 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     safe_yaml (1.0.5)
-    sass-embedded (1.70.0)
+    sass-embedded (1.71.1)
       google-protobuf (~> 3.25)
       rake (>= 13.0.0)
     standard (1.33.0)
