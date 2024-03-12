@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Scalingo for MySQL®
 nav: Troubleshooting
-modified_at: 2024-03-07 12:00:00
+modified_at: 2024-03-12 12:00:00
 tags: databases mysql addon
 index: 10
 ---
@@ -15,7 +15,7 @@ auxiliary buffers in memory. This cache helps reduce disk I/O, and, thus, speed
 up query execution.
 
 Scalingo for MySQL® instances typically allocate:
-- ~50% of the memory to the [Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool-resize.html) (`innodb_buffer_pool_size`)
+- ~50% of the memory to the [Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool-resize.html)
 - ~37.5% to [Connection Management](https://dev.mysql.com/doc/refman/8.0/en/connection-management.html)
 - ~12.5% to [Group Replication](https://dev.mysql.com/doc/refman/8.0/en/group-replication.html)
 
@@ -27,9 +27,9 @@ memory pages to disk, leading to performance degradation and increased latency.
 As a consequence, the size of the Buffer Pool should ideally be large enough to
 handle the database workload, thus preventing swap usage. A constantly swapping
 database could indicate that the space dedicated to the Buffer Pool has become
-insufficient. In such a case, switching to a superior plan should quickly
-resolve the swapping issue. Beware though that a Buffer Pool that is too large
-can also cause swapping, due to competition for memory.
+insufficient. In such a case, [switching to a superior plan]({% post_url databases/mysql/2000-01-01-managing %}#scaling-changing-plan)
+should quickly resolve the swapping issue. Beware though that a Buffer Pool
+that is too large can also cause swapping, due to competition for memory.
 
 For further details about how MySQL® manages memory, please refer to [the
 official documentation](https://dev.mysql.com/doc/refman/8.0/en/memory-use.html).
@@ -47,7 +47,7 @@ common factors:
   data, especially if these operations are not optimized or if the resulting
   dataset size exceeds the available memory.
 - Additionally, a lack of proper indexing can lead to inefficient query
-  execution, forcing PostgreSQL® to perform full table scans instead of quick
+  execution, forcing MySQL® to perform full table scans instead of quick
   index lookups, significantly increasing I/O load.
 
 
@@ -79,7 +79,7 @@ Here is an example of a slow query log:
 and excessive disk reads can significantly impact your database performance.
 Consequently, measuring the number of times the database has to read data from
 the disk instead of fetching it from the cache (stored in memory) can help
-identify non-optimal queries or configuration.
+identify non-optimal queries or inappropriate configuration.
 
 The following instructions allow to compute the *cache hit ratio*: a
 measurement that quantifies the proportion of queries fully satisfied by only
@@ -131,8 +131,8 @@ this ratio **can** give some insights, **it must be taken with care**:
 
 Identifying the reasons for a slow query can involve various factors. There is
 no single answer to a performance issue. Here are the most common reasons why
-your PostgreSQL® database might not be performing as well as you would want,
-along with some general steps to address them:
+your MySQL® database might not be performing as well as you would want, along
+with some general steps to address them:
 
 ### Inefficient Query
 
