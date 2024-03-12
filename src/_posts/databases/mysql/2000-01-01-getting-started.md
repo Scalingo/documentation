@@ -1,7 +1,7 @@
 ---
 title: Getting Started With Scalingo for MySQL®
 nav: Getting Started
-modified_at: 2024-03-05 12:00:00
+modified_at: 2024-03-12 12:00:00
 tags: databases mysql addon
 index: 2
 ---
@@ -83,10 +83,10 @@ tasks such as:
 
 - [Monitoring the database]({% post_url databases/mysql/2000-01-01-monitoring %})
   through logs, metrics and statistics
-- [Upgrading the database]({% post_url databases/mysql/2000-01-01-managing %})
+- [Upgrading the database]({% post_url databases/mysql/2000-01-01-managing %}#upgrading)
   engine version
-- [Enabling specific features]({% post_url databases/mysql/2000-01-01-managing %})
-- [Managing database users]({% post_url databases/mysql/2000-01-01-managing %})
+- [Managing database users]({% post_url databases/mysql/2000-01-01-managing %}#managing-users)
+- [Managing databases]({% post_url databases/mysql/2000-01-01-managing %}#using-multiple-databases)
 - [Managing backups]({% post_url databases/mysql/2000-01-01-backing-up %})
 
 You can access the database dashboard via the application dashboard:
