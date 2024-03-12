@@ -3,7 +3,7 @@ title: Restoring Your Scalingo for MySQL® Addon
 nav: Restoring
 modified_at: 2024-03-05 12:00:00
 tags: databases mysql addon
-index: 8
+index: 9
 ---
 
 ## Restoring an On-Demand Backup
