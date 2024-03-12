@@ -106,7 +106,8 @@ the workload on our infrastructure.
 
 #### Using the Command Line
 
-1. From the command line, list the addons attached to your application:
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+2. From the command line, list the addons attached to your application:
    ```bash
    scalingo --app my-app addons
    ```
@@ -118,8 +119,8 @@ the workload on our infrastructure.
    | MySQL | ad-871546ad-943a-4929-9770-ec7c839d65f5 | mysql-starter-512 | running |
    ...
    ```
-2. Locate the `ID` of the database addon you are interested in
-3. Run the following command(s):
+3. Locate the `ID` of the database addon you are interested in
+4. Run the following command(s):
    - To download the latest backup available:
      ```bash
      scalingo --app my-app --addon <addon_ID> backups-download
