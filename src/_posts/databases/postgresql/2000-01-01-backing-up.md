@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Addon
 nav: Backing Up
-modified_at: 2023-12-06 00:00:00
+modified_at: 2024-03-13 12:00:00
 tags: databases postgresql addon
 index: 7
 ---
@@ -58,8 +58,8 @@ We keep a limited amount of backups depending on your database plan:
 | Plan     | Weekly Backups Retained | Monthly Backups Retained |
 | -------- + ----------------------- + ------------------------ |
 | Sandbox  | N/A                     | N/A                      |
-| Starter  | 4 weeks                 | 0 week                   |
-| Business | 8 weeks                 | 12 weeks                 |
+| Starter  | 4 weeks                 | 0 month                  |
+| Business | 8 weeks                 | 12 months                |
  {: .table }
  </div>
 
