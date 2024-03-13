@@ -1,9 +1,9 @@
 ---
 title: Troubleshooting Scalingo for PostgreSQL®
 nav: Troubleshooting
-modified_at: 2024-01-04 12:00:00
+modified_at: 2024-03-13 12:00:00
 tags: databases postgresql addon
-index: 9
+index: 10
 ---
 
 ## Understanding Memory Consumption
@@ -97,7 +97,7 @@ While it's clearly not a silver bullet, this query can still help finding
 queries that could merit attention or further investigations.
 
 1. Make sure the `pg_stat_statements` extension [is enabled]({% post_url databases/postgresql/2000-01-01-monitoring %}#exploring-query-statistics)
-2. [Access your PostgreSQL database]({% post_url database/postgresql/2000-01-01-accessing %})
+2. [Access your PostgreSQL database]({% post_url databases/postgresql/2000-01-01-accessing %})
 3. Run the following query:
    ```sql
    WITH pss AS (
@@ -139,7 +139,7 @@ issue, we added an arbitrary threshold of 200 calls in the `WHERE` clause. Feel
 free to adjust this depending on your usage.
 
 1. Make sure the `pg_stat_statements` extension [is enabled]({% post_url databases/postgresql/2000-01-01-monitoring %}#exploring-query-statistics)
-2. [Access your PostgreSQL database]({% post_url database/postgresql/2000-01-01-accessing %})
+2. [Access your PostgreSQL database]({% post_url databases/postgresql/2000-01-01-accessing %})
 3. Run the following query:
    ```sql
    WITH pss AS (
