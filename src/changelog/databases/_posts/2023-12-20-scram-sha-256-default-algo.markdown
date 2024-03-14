@@ -5,4 +5,4 @@ title: 'PostgreSQL default password hash algorithm is now SCRAM-SHA-256'
 
 From this date, the default password hash algorithm for new PostgreSQL databases is now `SCRAM-SHA-256`.
 
-You can learn more in the [dedicated security bulletin]({% post_url security/bulletins/ssb-2024-02 %}).
+You can learn more in the [dedicated security bulletin]({% post_url security/bulletins/2024-03-13-SSB-2024-002 %}).
