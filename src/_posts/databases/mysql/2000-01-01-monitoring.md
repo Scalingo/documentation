@@ -1,7 +1,7 @@
 ---
 title: Monitoring and Auditing Your Scalingo for MySQL® Addon
 nav: Monitoring and Auditing
-modified_at: 2024-03-05 12:00:00
+modified_at: 2024-03-21 12:00:00
 tags: databases mysql addon
 index: 7
 ---
@@ -39,27 +39,14 @@ cold logs. These have to be manually unarchived to be processed.
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. From the command line, list the addons attached to your application:
-   ```bash
-   scalingo --app my-app addons
-   ```
-   The output should look like this:
-   ```text
-   +-------+-----------------------------------------+-------------------+---------+
-   | ADDON |                   ID                    |       PLAN        | STATUS  |
-   +-------+-----------------------------------------+-------------------+---------+
-   | MySQL | ad-871546ad-943a-4929-9770-ec7c839d65f5 | mysql-starter-512 | running |
-   ...
-   ```
-3. Locate the `ID` corresponding to the addon you are interested in
-4. Run the following command:
+2. Run the following command:
    - To access the hot logs of this addon:
    ```bash
-   scalingo --app my-app logs --addon <addon_ID> --lines <number_of_lines>
+   scalingo --app my-app --addon mysql logs --lines <number_of_lines>
    ```
    - To access the cold logs of this addon:
    ```bash
-   scalingo --app my-app logs-archives --addon <addon_ID>
+   scalingo --app my-app --addon mysql logs-archives
    ```
 
 
