@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for MySQL® Addon
 nav: Backing Up
-modified_at: 2024-03-05 12:00:00
+modified_at: 2024-03-21 12:00:00
 tags: databases mysql addon
 index: 8
 ---
@@ -63,29 +63,15 @@ the workload on our infrastructure.
 #### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. From the command line, list the addons attached to your application:
-   ```bash
-   scalingo --app my-app addons
-   ```
-   The output should look like this:
-   ```text
-   +-------+-----------------------------------------+-------------------+---------+
-   | ADDON |                   ID                    |       PLAN        | STATUS  |
-   +-------+-----------------------------------------+-------------------+---------+
-   | MySQL | ad-871546ad-943a-4929-9770-ec7c839d65f5 | mysql-starter-512 | running |
-   ...
-   ```
-3. Locate the `ID` corresponding to the addon for which you want to configure
-   the backup schedule
-4. Configure the time of backup:
+2. Configure the time of backup:
    - By setting an hour:
      ```bash
-     scalingo --app my-app addon <addon_ID> backups-config --schedule-at 3
+     scalingo --app my-app --addon mysql backups-config --schedule-at 3
      ```
      In this example, we ask the platform to create the backups at ~03:00 CET.
    - By setting an hour and a timezone:
      ```bash
-     scalingo --app my-app addon <addon_ID> backups-config --schedule-at "4:00 UTC"
+     scalingo --app my-app --addon mysql backups-config --schedule-at "4:00 UTC"
      ```
      In this example, we ask the platform to create the backup at ~04:00 UTC.
 
@@ -107,23 +93,10 @@ the workload on our infrastructure.
 #### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. From the command line, list the addons attached to your application:
-   ```bash
-   scalingo --app my-app addons
-   ```
-   The output should look like this:
-   ```text
-   +-------+-----------------------------------------+-------------------+---------+
-   | ADDON |                   ID                    |       PLAN        | STATUS  |
-   +-------+-----------------------------------------+-------------------+---------+
-   | MySQL | ad-871546ad-943a-4929-9770-ec7c839d65f5 | mysql-starter-512 | running |
-   ...
-   ```
-3. Locate the `ID` of the database addon you are interested in
-4. Run the following command(s):
+2. Run the following command(s):
    - To download the latest backup available:
      ```bash
-     scalingo --app my-app --addon <addon_ID> backups-download
+     scalingo --app my-app --addon mysql backups-download
      ```
      The output should look like this:
      ```text
@@ -135,7 +108,7 @@ the workload on our infrastructure.
    - To download a specific backup:
      1. List the backups available for this database addon:
         ```bash
-        scalingo --app my-app --addon <addon_ID> backups
+        scalingo --app my-app --addon mysql backups
         ```
         The output should look like this:
         ```text
@@ -150,7 +123,7 @@ the workload on our infrastructure.
      2. Locate the `ID` of the backup you want to download
      3. Download the backup:
         ```bash
-        scalingo --app my-app --addon <addon_ID> backups-download --backup <backup_ID>
+        scalingo --app my-app --addon mysql backups-download --backup <backup_ID>
         ```
         The output should look like this:
         ```text
@@ -194,23 +167,9 @@ untouched: backups are **not** instantly deleted.
 #### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. From the command line, list the addons attached to your application:
+2. Ask the platform to backup the database:
    ```bash
-   scalingo --app my-app addons
-   ```
-   The output should look like this:
-   ```text
-   +-------+-----------------------------------------+-------------------+---------+
-   | ADDON |                   ID                    |       PLAN        | STATUS  |
-   +-------+-----------------------------------------+-------------------+---------+
-   | MySQL | ad-871546ad-943a-4929-9770-ec7c839d65f5 | mysql-starter-512 | running |
-   ...
-   ```
-3. Locate the `ID` corresponding to the addon for which you want to configure
-   the backup schedule
-4. Ask the platform to backup the database:
-   ```bash
-   scalingo --app my-app --addon <addon_ID> backups-create
+   scalingo --app my-app --addon mysql backups-create
    ```
    After a while, the output should look like this:
    ```text
