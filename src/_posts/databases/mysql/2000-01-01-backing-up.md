@@ -3,7 +3,7 @@ title: Backing Up Your Scalingo for MySQL® Addon
 nav: Backing Up
 modified_at: 2024-03-21 12:00:00
 tags: databases mysql addon
-index: 8
+index: 7
 ---
 
 
