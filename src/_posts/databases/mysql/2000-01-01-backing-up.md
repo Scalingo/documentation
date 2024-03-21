@@ -10,20 +10,20 @@ index: 8
 Starter and Business plans of Scalingo for MySQL® include automated and
 managed backups so you don't have to worry about them.
 
-We use [On-Demand](#understanding-on-demand-backups) backups to create the
+We use [Periodic](#understanding-periodic-backups) backups to create the
 automated ones. [Manual backups](#understanding-manual-backups) are also
 available for these plans.
 
 
-## Understanding On-Demand Backups
+## Understanding Periodic Backups
 
-On-Demand backups are done on a daily basis. They consist in dumping your
+Periodic backups are done on a daily basis. They consist in dumping your
 database in an archive that we keep during a certain amount of time.
 
 For Business plans, the backup is done on the secondary node to avoid any
 impact on your primary node.
 
-### Retention Policy for On-Demand Backups
+### Retention Policy for Periodic Backups
 
 We keep a limited amount of backups depending on your database plan:
 - A daily backup is retained for the last 7 days, which means that we will keep
@@ -41,9 +41,9 @@ We keep a limited amount of backups depending on your database plan:
  {: .table }
  </div>
 
-### Configuring On-Demand Backups
+### Configuring Periodic Backups
 
-By default, On-Demand backups are done around 1:00 AM Central European Time
+By default, Periodic backups are done around 1:00 AM Central European Time
 (CET or UTC+0100). This time can be modified.
 
 {% note %}
@@ -80,14 +80,14 @@ the workload on our infrastructure.
    -----> Periodic backups will be done daily at 6:00 CET
    ```
 
-### Downloading an On-Demand Backup
+### Downloading a Periodic Backup
 
 #### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
 2. Click the **Backups** tab
 3. Locate the **Backups** block
-4. Locate the On-Demand backup you are interested in
+4. Locate the Periodic backup you are interested in
 5. Click the corresponding **Download** button
 
 #### Using the Command Line
@@ -135,7 +135,7 @@ the workload on our infrastructure.
 
 ## Understanding Manual Backups
 
-Manual backups use the exact same mechanism as On-Demand backups, except that
+Manual backups use the exact same mechanism as Periodic backups, except that
 they are not automated. As the name suggests, Manual backups are triggered
 manually, whenever you want.
 
@@ -178,7 +178,7 @@ untouched: backups are **not** instantly deleted.
 
 ### Downloading a Manual Backup
 
-Please refer to [Downloading an On-Demand Backup](#downloading-an-on-demand-backup)
+Please refer to [Downloading a Periodic Backup](#downloading-a-periodic-backup)
 section, as the process is exactly the same.
 
 
@@ -186,30 +186,20 @@ section, as the process is exactly the same.
 
 There are different ways to dump (and restore) a MySQL® database. We
 generally advise to either:
-- Process from a [One-Off container](#from-a-one-off-container)
+- Process from a [one-off container](#from-a-one-off-container)
 - Or conduct the operations [from your workstation](#from-your-workstation), by
   accessing the database in a secured manner
 
 ### From a One-Off Container
 
-This method has two main advantages:
-- It doesn't require to make your database reachable over Internet
-- You won't have to tweak your connection URI
+This method doesn't require to make your database reachable over Internet.
 
-1. Follow the procedure to [access your MySQL® database from a One-Off
+1. Follow the procedure to [access your MySQL® database from a one-off
    container]({% post_url databases/mysql/2000-01-01-accessing %}#using-a-one-off)
-2. From the One-Off command line, download the Scalingo Command Line Tool
-   using our `install-scalingo-cli` helper tool:
+2. Make sure to [understand the connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+3. Dump the database:
    ```bash
-   install-scalingo-cli
-   ```
-3. Login to Scalingo:
-   ```bash
-   scalingo login
-   ```
-4. Dump the database:
-   ```bash
-   mysqldump --user=<user> --password=<password> --host=<host> --port=<port> --column-statistics=0 <dbname> > dump.sql
+   mysqldump --user=<user> --password=<password> --host=<host> --port=<port> --column-statistics=0 --no-tablespaces <dbname> > dump.sql
    ```
    With `user`, `password`, `host`, `port` and `dbname` from your original
    [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri).
@@ -224,9 +214,10 @@ somewhere).
 
 1. [Open a DB tunnel]({% post_url databases/mysql/2000-01-01-accessing %}#using-our-command-line-tool)
    so you can access your database from your workstation
-2. Dump the database using the `mysqldump` command (you may have to install it):
+2. Make sure to [understand the connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+3. Dump the database using the `mysqldump` command (you may have to install it):
    ```bash
-   mysqldump --user=<user> --password=<password> --host=127.0.0.1 --port=<port> --column-statistics=0 <dbname> > dump.sql
+   mysqldump --user=<user> --password=<password> --host=127.0.0.1 --port=<port> --column-statistics=0 --no-tablespaces <dbname> > dump.sql
    ```
    With `user`, `password` and `dbname` from your original [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
    and `port` depending on what you did (default is `10000`)
