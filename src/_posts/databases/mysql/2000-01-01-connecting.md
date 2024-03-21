@@ -45,7 +45,7 @@ While the value of the provided connection URI **should not** change over time,
 reasons. In such a case, using the environment variable guarantees that your
 application can restart successfully without human intervention. Otherwise, you
 would have to update your code with the new value and trigger a new deployment,
-which would most probably contribute to a greater downtime.
+which would most probably contribute to a bigger downtime.
 
 In most cases, you can pass the environment variable directly to the client
 library you are using. But sometimes, the library requires a specific URI
@@ -87,8 +87,8 @@ By default, all new MySQL® databases have TLS **available**,
 which means that you don't have to do anything to connect via TLS with a tool
 or library that uses TLS by default.
 
-If you want to enforce TLS connections to your database (so that TLS is
-not only available, but **mandatory**):
+If you want to enforce TLS connections to your database so that TLS is
+not only available, but **mandatory**:
 
 1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
 2. Select the **Overview** tab

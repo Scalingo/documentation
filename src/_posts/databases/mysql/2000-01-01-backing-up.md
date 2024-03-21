@@ -256,8 +256,8 @@ This method has two main advantages:
    [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri).
 
 {% note %}
-The dump is lost as soon as you exit the One-Off container. Consequently, you
-have to do something with it in the One-Off (for example, you could upload it
+The dump is lost as soon as you exit the one-off container. Consequently, you
+have to do something with it in the one-off (for example, you could upload it
 somewhere).
 {% endnote %}
 
