@@ -119,12 +119,12 @@ neighbor `100%`.
 The resulting value represents the percentage of requests that were satisfied
 from the InnoDB buffer pool cache without requiring a physical disk read. While
 this ratio **can** give some insights, **it must be taken with care**:
-- The numbers are given for all queries that ran during the considered period
-  (by default, since the service did start). There is no way to identify which
-  specific query(ies) are responsible for these numbers.
+- The numbers are given for all queries that have been executed since the
+  latest start. There is no way to identify which specific queries are
+  responsible for these numbers.
 - A query that run only once in a while and fetches data from disk (hence being
   slow) is perfectly fine and should not be considered an issue. These numbers
-  (and this ratio) completely obfuscate such queries.
+  and this ratio completely obfuscate such queries.
 
 
 ## Solving Performance Issues
