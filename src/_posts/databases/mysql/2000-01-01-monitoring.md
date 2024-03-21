@@ -3,7 +3,7 @@ title: Monitoring and Auditing Your Scalingo for MySQL® Addon
 nav: Monitoring and Auditing
 modified_at: 2024-03-21 12:00:00
 tags: databases mysql addon
-index: 7
+index: 6
 ---
 
 
