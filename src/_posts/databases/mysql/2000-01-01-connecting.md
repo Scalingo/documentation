@@ -1,7 +1,7 @@
 ---
 title: Connecting to Your Scalingo for MySQL® Addon
 nav: Connecting
-modified_at: 2024-03-04 12:00:00
+modified_at: 2024-03-21 12:00:00
 tags: databases mysql addon
 index: 3
 ---
@@ -49,10 +49,10 @@ which would most probably contribute to a bigger downtime.
 
 In most cases, you can pass the environment variable directly to the client
 library you are using. But sometimes, the library requires a specific URI
-format, invididual keypairs or another format. In such cases, you
-need to parse the connection URI to retrieve the required values and build
-what's required by the library you are using. Our advice to use the environment
-variable still remains applicable.
+format, invididual keypairs or another format. In such cases, your code
+needs to parse the connection URI to retrieve the different values and build
+what's required by the library. Our advice to use the environment variable
+still remains applicable.
 
 
 ## Getting the Connection URI
@@ -114,17 +114,18 @@ meaning that you can still access your database without it if needed.
 
 ## Connecting Multiple Applications to the Same MySQL® Addon
 
-If you need to connect your MySQL® addon from multiple applications, you
-can do it by adding an environment variable in every application wanting to
-communicate with the database:
+It's possible to make multiple applications use the same MySQL® addon. To do
+so, add an environment variable in every application that needs to connect to
+the database, like so:
 
 1. Copy [the connection URI](#getting-the-connection-uri) of your addon
 2. [Create a new environment variable]({% post_url platform/app/2000-01-01-environment %})
-   for the application that needs to access the addon
+   for the application that needs to connect to the addon
 3. Set the value of this new environment variable to connection URI you just
    copied
 4. Restart the application to make the new environment variable available
-
+5. Remember to update this new environment variable whenever the original
+   connection URI changes
 
 ## Using Ruby on Rails
 
