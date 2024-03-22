@@ -12,7 +12,7 @@ managed backups so you don't have to worry about them.
 
 We use two kinds of mechanisms to create these automated backups:
 [Point-in-Time Recovery](#understanding-point-in-time-recovery) backups and
-[On-Demand](#understanding-on-demand-backups) backups. [Manual backups](#understanding-manual-backups)
+[Periodic](#understanding-periodic-backups) backups. [Manual backups](#understanding-manual-backups)
 are also available for these plans.
 
 
@@ -37,15 +37,15 @@ can only use the PiTR on the period between now and now minus seven days.
 | Business | 1                    |
 
 
-## Understanding On-Demand Backups
+## Understanding Periodic Backups
 
-On-Demand backups are done on a daily basis. They consist in dumping your
+Periodic backups are done on a daily basis. They consist in dumping your
 database in an archive that we keep during a certain amount of time.
 
 For Business plans, the backup is done on the secondary node to avoid any
 impact on your primary node.
 
-### Retention Policy for On-Demand Backups
+### Retention Policy for Periodic Backups
 
 We keep a limited amount of backups depending on your database plan:
 - A daily backup is retained for the last 7 days, which means that we will keep
@@ -63,9 +63,9 @@ We keep a limited amount of backups depending on your database plan:
  {: .table }
  </div>
 
-### Configuring On-Demand Backups
+### Configuring Periodic Backups
 
-By default, On-Demand backups are done around 1:00 AM Central European Time
+By default, Periodic backups are done around 1:00 AM Central European Time
 (CET or UTC+0100). This time can be modified.
 
 {% note %}
@@ -102,14 +102,14 @@ the workload on our infrastructure.
    -----> Periodic backups will be done daily at 6:00 CET
    ```
 
-### Downloading an On-Demand Backup
+### Downloading a Periodic Backup
 
 #### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Click the **Backups** tab
 3. Locate the **Backups** block
-4. Locate the On-Demand backup you are interested in
+4. Locate the Periodic backup you are interested in
 5. Click the corresponding **Download** button
 
 #### Using the Command Line
@@ -156,7 +156,7 @@ the workload on our infrastructure.
 
 ## Understanding Manual Backups
 
-Manual backups use the exact same mechanism as On-Demand backups, except that
+Manual backups use the exact same mechanism as Periodic backups, except that
 they are not automated. As the name suggests, Manual backups are triggered
 manually, whenever you want.
 
@@ -199,7 +199,7 @@ untouched: backups are **not** instantly deleted.
 
 ### Downloading a Manual Backup
 
-Please refer to [Downloading an On-Demand Backup](#downloading-an-on-demand-backup)
+Please refer to [Downloading a Periodic Backup](#downloading-a-periodic-backup)
 section, as the process is exactly the same.
 
 
