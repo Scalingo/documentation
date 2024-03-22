@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Addon
 nav: Backing Up
-modified_at: 2024-03-13 12:00:00
+modified_at: 2024-03-23 12:00:00
 tags: databases postgresql addon
 index: 8
 ---
@@ -85,29 +85,15 @@ the workload on our infrastructure.
 #### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. From the command line, list the addons attached to your application:
-   ```bash
-   scalingo --app my-app addons
-   ```
-   The output should look like this:
-   ```text
-   +------------+-----------------------------------------+------------------------+---------+
-   |   ADDON    |                   ID                    |          PLAN          | STATUS  |
-   +------------+-----------------------------------------+------------------------+---------+
-   | PostgreSQL | ad-871546ad-943a-4929-9770-ec7c839d65f5 | postgresql-starter-512 | running |
-   ...
-   ```
-3. Locate the `ID` corresponding to the addon for which you want to configure
-   the backup schedule
-4. Configure the time of backup:
+2. From the command line, configure the time of backup:
    - By setting an hour:
      ```bash
-     scalingo --app my-app addon <addon_ID> backups-config --schedule-at 3
+     scalingo --app my-app --addon postgresql backups-config --schedule-at 3
      ```
      In this example, we ask the platform to create the backups at ~03:00 CET.
    - By setting an hour and a timezone:
      ```bash
-     scalingo --app my-app addon <addon_ID> backups-config --schedule-at "4:00 UTC"
+     scalingo --app my-app --addon postgresql backups-config --schedule-at "4:00 UTC"
      ```
      In this example, we ask the platform to create the backup at ~04:00 UTC.
 
@@ -128,23 +114,10 @@ the workload on our infrastructure.
 
 #### Using the Command Line
 
-1. From the command line, list the addons attached to your application:
-   ```bash
-   scalingo --app my-app addons
-   ```
-   The output should look like this:
-   ```text
-   +------------+-----------------------------------------+------------------------+---------+
-   |   ADDON    |                   ID                    |          PLAN          | STATUS  |
-   +------------+-----------------------------------------+------------------------+---------+
-   | PostgreSQL | ad-871546ad-943a-4929-9770-ec7c839d65f5 | postgresql-starter-512 | running |
-   ...
-   ```
-2. Locate the `ID` of the database addon you are interested in
-3. Run the following command(s):
+1. From the command line, run the following command(s):
    - To download the latest backup available:
      ```bash
-     scalingo --app my-app --addon <addon_ID> backups-download
+     scalingo --app my-app --addon postgresql backups-download
      ```
      The output should look like this:
      ```text
@@ -156,7 +129,7 @@ the workload on our infrastructure.
    - To download a specific backup:
      1. List the backups available for this database addon:
         ```bash
-        scalingo --app my-app --addon <addon_ID> backups
+        scalingo --app my-app --addon postgresql backups
         ```
         The output should look like this:
         ```text
@@ -171,7 +144,7 @@ the workload on our infrastructure.
      2. Locate the `ID` of the backup you want to download
      3. Download the backup:
         ```bash
-        scalingo --app my-app --addon <addon_ID> backups-download --backup <backup_ID>
+        scalingo --app my-app --addon postgresql backups-download --backup <backup_ID>
         ```
         The output should look like this:
         ```text
@@ -215,23 +188,9 @@ untouched: backups are **not** instantly deleted.
 #### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. From the command line, list the addons attached to your application:
+2. Ask the platform to backup the database:
    ```bash
-   scalingo --app my-app addons
-   ```
-   The output should look like this:
-   ```text
-   +------------+-----------------------------------------+------------------------+---------+
-   |   ADDON    |                   ID                    |          PLAN          | STATUS  |
-   +------------+-----------------------------------------+------------------------+---------+
-   | PostgreSQL | ad-871546ad-943a-4929-9770-ec7c839d65f5 | postgresql-starter-512 | running |
-   ...
-   ```
-3. Locate the `ID` corresponding to the addon for which you want to configure
-   the backup schedule
-4. Ask the platform to backup the database:
-   ```bash
-   scalingo --app my-app --addon <addon_ID> backups-create
+   scalingo --app my-app --addon postgresql backups-create
    ```
    After a while, the output should look like this:
    ```text
@@ -248,7 +207,7 @@ section, as the process is exactly the same.
 
 There are different ways to dump (and restore) a PostgreSQL® database. We
 generally advise to either:
-- Process from a [One-Off container](#from-a-one-off-container)
+- Process from a [one-off container](#from-a-one-off-container)
 - Or conduct the operations [from your workstation](#from-your-workstation), by
   accessing the database in a secured manner
 
@@ -258,25 +217,17 @@ This method has two main advantages:
 - It doesn't require to make your database reachable over Internet
 - You won't have to tweak your connection URI
 
-1. Follow the procedure to [access your PostgreSQL® database from a One-Off
+1. Follow the procedure to [access your PostgreSQL® database from a one-off
    container]({% post_url databases/postgresql/2000-01-01-accessing %}#using-a-one-off)
-2. From the One-Off command line, download the Scalingo Command Line Tool
-   using our `install-scalingo-cli` helper tool:
-   ```bash
-   install-scalingo-cli
-   ```
-3. Login to Scalingo:
-   ```bash
-   scalingo login
-   ```
-4. Dump the database:
+2. Make sure to [understand the connection URI]({% post_url databases/postgresql/2000-01-01-connecting %}#understanding-the-connection-uri)
+3. Dump the database:
    ```bash
    pg_dump --clean --if-exists --format c --dbname "${SCALINGO_POSTGRESQL_URL}" --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
    ```
 
 {% note %}
-The dump is lost as soon as you exit the One-Off container. Consequently, you
-have to do something with it in the One-Off (for example, you could upload it
+The dump is lost as soon as you exit the one-off container. Consequently, you
+have to do something with it in the one-off (for example, you could upload it
 somewhere).
 {% endnote %}
 
