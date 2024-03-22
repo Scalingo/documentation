@@ -1,7 +1,7 @@
 ---
 title: TimescaleDB®
 nav: TimescaleDB®
-modified_at: 2024-03-13 12:00:00
+modified_at: 2024-03-22 12:00:00
 tags: databases postgresql timescaledb timeseries extensions
 index: 11
 ---
@@ -263,7 +263,7 @@ SELECT timescaledb_post_restore();
 ```
 
 On Scalingo, default users do not have admin rights on their database.
-Consequently, **only [On-Demand backups]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-on-demand-backups)
+Consequently, **only [Periodic backups]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-periodic-backups)
 are restorable** and **the restoration process must be done by the Scalingo
 support team**.
 
