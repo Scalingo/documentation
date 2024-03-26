@@ -1,7 +1,7 @@
 ---
 title: TimescaleDB®
 nav: TimescaleDB®
-modified_at: 2024-03-22 12:00:00
+modified_at: 2024-03-26 12:00:00
 tags: databases postgresql timescaledb timeseries extensions
 index: 11
 ---
