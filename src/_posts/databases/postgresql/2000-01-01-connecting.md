@@ -1,7 +1,7 @@
 ---
 title: Connecting to Your Scalingo for PostgreSQL® Addon
 nav: Connecting
-modified_at: 2024-01-03 12:00:00
+modified_at: 2024-03-26 12:00:00
 tags: databases postgresql addon
 index: 3
 ---
@@ -49,10 +49,10 @@ which would most probably contribute to a greater downtime.
 
 In most cases, you can pass the environment variable directly to the client
 library you are using. But sometimes, the library requires a specific URI
-format, invididual keypairs or another format. In such cases, you
-need to parse the connection URI to retrieve the required values and build
-what's required by the library you are using. Our advice to use the environment
-variable still remains applicable.
+format, invididual keypairs or another format. In such cases, your code
+needs to parse the connection URI to retrieve the different values and build
+what's required by the library. Our advice to use the environment variable
+still remains applicable.
 
 
 ## Getting the Connection URI
@@ -98,8 +98,8 @@ Type "help" for help.
 my_app_wxyz=>
 ```
 
-If you want to enforce TLS connections to your database (so that TLS is
-not only available, but **mandatory**):
+If you want to enforce TLS connections to your database so that TLS is not only
+available but **mandatory**:
 
 1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Select the **Overview** tab
