@@ -1,6 +1,6 @@
 ---
 title: Getting Started with WordPress on Scalingo
-modified_at: 2023-12-27 00:00:00
+modified_at: 2024-03-12 12:00:00
 tags: php, http, framework, wordpress, deployment
 index: 14
 ---
@@ -246,7 +246,7 @@ Config::define('AUTOMATIC_UPDATER_DISABLED', true);
 ### TLS Connection to Scalingo for MySQL®
 
 If you configured your Scalingo for MySQL® with [Force TLS]({% post_url
-databases/mysql/2000-01-01-start %}#force-tls-connections), it is mandatory
+databases/mysql/2000-01-01-connecting %}#enforcing-tls-connection), it is mandatory
 that your application connects to the database using TLS. With WordPress, you
 need to add the following line in your `config/application.php`:
 

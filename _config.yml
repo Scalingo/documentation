@@ -124,7 +124,7 @@ databases:
   - url: "/databases/postgresql/overview"
     name: "Scalingo for PostgreSQL®"
     logo: postgresql
-  - url: "/databases/mysql/start"
+  - url: "/databases/mysql/overview"
     name: "Scalingo for MySQL®"
     logo: mysql
   - url: "/databases/mongodb/start"

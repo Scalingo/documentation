@@ -1,6 +1,6 @@
 ---
 title: How to migrate from Heroku
-modified_at: 2023-12-11 12:00:00
+modified_at: 2024-03-12 12:00:00
 tags: heroku tutorial
 index: 11
 ---
@@ -71,7 +71,9 @@ $ git push scalingo master
   * [Dump]({% post_url databases/postgresql/2000-01-01-backing-up %}#dumping-the-database)
     and [restore]({% post_url databases/postgresql/2000-01-01-restoring %}#restoring-a-dump)
     a Scalingo for PostgreSQL® database
-  * [Dump and restore a Scalingo for MySQL® database]({% post_url databases/mysql/2000-01-01-dump-restore %})
+  * [Dump]({% post_url databases/mysql/2000-01-01-backing-up %}#dumping-the-database)
+    and [restore]({% post_url databases/mysql/2000-01-01-restoring %}#restoring-a-dump)
+    a Scalingo for MySQL® database.
 
 ### Where to Go Next?
 

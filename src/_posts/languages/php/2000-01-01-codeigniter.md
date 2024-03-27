@@ -1,7 +1,7 @@
 ---
 title: Deploying CodeIgniter on Scalingo
 nav: CodeIgniter
-modified_at: 2018-07-30 00:25:00
+modified_at: 2024-03-12 12:00:00
 tags: php, http, framework, CodeIgniter, deployment
 index: 8
 ---
@@ -35,9 +35,9 @@ $config['uri_protocol']	= 'AUTO';
 $config['log_threshold'] = 1;
 ```
 
-You probably also need to configure a SQL database. You first need to provision a new database such
-as [Scalingo for MySQL®]({% post_url databases/mysql/2000-01-01-start %}). Then configure CodeIgniter in
-`application/config/database.php`:
+You probably also need to configure a SQL database. You first need to provision
+a new database such as [Scalingo for MySQL®]({% post_url databases/mysql/2000-01-01-overview %}).
+Then configure CodeIgniter in `application/config/database.php`:
 
 ```php
 $url = parse_url(getenv('SCALINGO_MYSQL_URL'));
