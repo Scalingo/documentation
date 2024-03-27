@@ -2,6 +2,7 @@
 title: Restore your Database Backup
 modified_at: 2023-12-11 12:00:00
 tags: databases backups
+index: 2
 ---
 
 If your database is in a paid plan (i.e. it's not "free plan"), Scalingo makes automated backups of

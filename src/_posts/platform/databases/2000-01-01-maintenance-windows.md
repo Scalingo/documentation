@@ -3,7 +3,7 @@ title: Database Maintenance Windows
 nav: Maintenance Windows
 modified_at: 2024-03-27 06:00:00
 tags: databases maintenance
-index: 0
+index: 4
 ---
 
 Database Maintenance Windows is the Scalingo system for scheduling the maintenance needed on your databases. This system automates maintenance operations according to your preferred schedule, minimizing the impact on your application, while facilitating continuous improvement on our side.
@@ -22,7 +22,25 @@ In concrete terms, it's now possible to schedule a maintenance when your app is 
 Planned Maintenance Windows are excluded from the SLA calculation.
 {% endnote %}
 
-### Customize the Maintenance Window for a Database?
+## Maintenance Operation Definition
+
+A maintenance operation is a change of any size that is applied to a database. The application of this change may, but does not necessarily, have an impact on the availability of your database.
+
+Here are the different stages of a maintenance operation:
+
+1. **Definition**: A Scalingo operator defines a new maintenance. This object allows us to attach all the elements that are important for its smooth execution (procedure, rollback, integrity test, etc.).
+2. **Selection**: depending on the specific criteria for each maintenance, the eligible databases are assigned to this maintenance.
+3. **Scheduling**: every hour, our system schedules operations to be carried out 24 hours later. If this corresponds to the maintenance window for an eligible resource, you will receive a notification confirming that this operation has been scheduled. From then on, it will not be possible to change or cancel the schedule without contacting our support team.
+4. **Execution**: When the operation starts, you will receive another notification. It will then be important to limit any manipulation of your database.
+5. **Operation completed**: You will receive another notification that the operation has been completed. The nominal service has been restored and your database is fully available again.
+
+It is also possible that based on the remaining time in the selected window, we may determine that the operation cannot proceed. In that case, we will also notify you by email. The operation will be rescheduled for a later time.
+
+{% note %}
+Please note that once a maintenance notice has been issued, it cannot be changed or cancelled. If you are concerned that this operation will disrupt your business, you can contact our support team by chat or email.
+{% endnote %}
+
+## Customize the Maintenance Window for a Database
 
 With the Scalingo CLI, the desired beginning period of your 8 hours time window can be configured with the `addons-config` command:
 
@@ -52,7 +70,7 @@ $ scalingo --app my-app addons-info postgresql
 +------------------------+------------------------------+
 ```
 
-### Check Past and Future Maintenance Operations
+## Check Past and Future Maintenance Operations
 
 To use the following commands in order to list planned and past maintenance on your database, specify the related application, and your database addon UUID:
 
@@ -90,3 +108,14 @@ $ scalingo --app my-app --addon postgresql database-maintenance-info 656ddbd3930
 | Status     | scheduled                                    |
 +------------+----------------------------------------------+
 ```
+
+## Share the information with your team
+
+By default owner and collaborators will receive email notifications one day before a scheduled maintenance execution. This notification system operates via the [App notifications](https://doc.scalingo.com/platform/app/notification) feature and the “default notifier” which is configured for each app. Please check if it is still active or configure another notifier for this purpose.
+It can easily be configured to suit your preferences. For instance, if you prefere webhook notifications over email, you can easily configure this setting (or create a new dedicated notifier). Additionally, you have the option to filter the list of recipients or provide a service address for individuals who need to be notified but do not have a Scalingo account.
+
+Three new events have been added:
+
+- `database_maintenance_planned` : A database maintenance has been planned.
+- `database_maintenance_started`: A database maintenance has started.
+- `database_maintenance_completed`: A database maintenance has completed.
