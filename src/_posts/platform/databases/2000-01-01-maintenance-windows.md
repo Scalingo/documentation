@@ -14,7 +14,7 @@ Maintenance operations encompass various automated tasks, ranging from minor dat
 Currently, Scalingo does not automatically perform version upgrades for your database. While you still need to manage this manually, the introduction of Database Maintenance Windows will enable this kind of operation in the future.
 {% endnote %}
 
-Each database has been assigned with a 8 hours default Maintenance Window on a weekday, from 21:00 to 05:00 UTC. However, if this timeframe doesn't align with your business requirements, you have the flexibility to adjust it as needed
+Each database has been assigned with a 8 hours default Maintenance Window on a weekday, from 21:00 to 05:00 UTC. However, if this timeframe doesn't align with your business requirements, you have the flexibility to adjust it as needed.
 
 In concrete terms, it's now possible to schedule a maintenance when your app is less prone to high traffic (e.g. the night between Sunday and Monday). With those features, we have in mind the prevention of any undesired downtime of your app.
 
