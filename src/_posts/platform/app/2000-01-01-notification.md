@@ -1,7 +1,7 @@
 ---
 title: App Notifications
 nav: Notifications
-modified_at: 2017-09-25 00:00:00
+modified_at: 2023-08-04 00:00:00
 tags: app notification
 ---
 
@@ -48,6 +48,9 @@ Note that Mattermost notifications require using the Slack notifier.
 * collaborator_accepted: Collaborator accepted, A collaborator invitation was accepted
 * collaborator_invited: Collaborator invited, A collaborator was invited
 * collaborator_removed: Collaborator removed, A collaborator was removed
+* database_maintenance_planned: Database maintenance planned, A database maintenance has been planned
+* database_maintenance_started: Database maintenance started, A database maintenance has started
+* database_maintenance_completed: Database maintenance completed, A database maintenance has completed
 * domain_added: Domain added, A domain was added
 * domain_edited: Domain edited, A domain was edited
 * domain_removed: Domain removed, A domain was removed
@@ -57,6 +60,6 @@ Note that Mattermost notifications require using the Slack notifier.
 * notifier_edited: Notifier edited, A notifier was edited
 * notifier_removed: Notifier removed, A notifier was removed
 * variable_added: Variable added, A variable was added
-* variable_bulk_edited: Variables bulk edited,	Some variables were bulk edited
+* variable_bulk_edited: Variables bulk edited, Some variables were bulk edited
 * variable_edited: Variable edited, A variable was edited
 * variable_removed: Variable removed, A variable was removed

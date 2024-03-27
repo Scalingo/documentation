@@ -2,6 +2,7 @@
 title: Copying your Database
 modified_at: 2023-08-31 16:00:00
 tags: databases backups
+index: 3
 ---
 
 Sometimes, it can be useful to create a copy of your database. Some use-cases
