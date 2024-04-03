@@ -67,7 +67,7 @@ our [CLI tool](#using-the-command-line) or via our
      app = "${scalingo_app.my-app.id}"
    }
    ```
-   In this example, we create a MySQL Starter 512 addon named `my-db` and
+   In this example, we create a MySQL® Starter 512 addon named `my-db` and
    attach it to an app named `my-app` (which must exist). We could have done
    the same with another plan.
 2. Run `terraform plan` and check if the result looks good
