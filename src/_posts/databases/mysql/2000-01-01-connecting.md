@@ -72,7 +72,7 @@ still remains applicable.
    ```bash
    scalingo --app my-app env-get SCALINGO_MYSQL_URL
    ```
-   The output is:
+   The output should look like:
    ```bash
    mysql://my_app_wxyz:Q7X7CU2vGjFiLZrA43OG@7e10d74b-c766-40b3-8dad-ce9cfa461311.my-app-wxyz.mysql.a.osc-fr1.scalingo-dbs.com:31000/my_app_wxyz?useSSL=true&verifyServerCertificate=false
    ```
