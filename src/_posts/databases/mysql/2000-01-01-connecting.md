@@ -1,7 +1,7 @@
 ---
 title: Connecting to Your Scalingo for MySQL® Addon
 nav: Connecting
-modified_at: 2024-03-21 12:00:00
+modified_at: 2024-04-04 12:00:00
 tags: databases mysql addon
 index: 3
 ---
@@ -102,11 +102,6 @@ not only available, but **mandatory**:
 Once this option is activated, the database denies any non-TLS connection.
 Consequently, your application must be configured to use TLS when connecting to
 the database.
-
-Some existing databases may not have TLS support activated yet. To activate
-TLS, you need to restart the database. Any action leading to a database
-restart (such as a plan update or an upgrade of the database) will activate
-TLS.
 
 Please note that while we strongly advise to use TLS, it remains an option,
 meaning that you can still access your database without it if needed.
