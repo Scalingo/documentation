@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Scalingo for MySQL®
 nav: Troubleshooting
-modified_at: 2024-03-12 12:00:00
+modified_at: 2024-04-03 12:00:00
 tags: databases mysql addon
 index: 9
 ---
@@ -101,19 +101,11 @@ neighbor `100%`.
    ```
 3. Run the following query:
    ```sql
-   SHOW GLOBAL STATUS;
-   ```
-4. Locate the values for `Innodb_buffer_pool_read_requests` and
-   `Innodb_buffer_pool_reads`
-   - `Innodb_buffer_pool_read_requests` indicates the number of logical reads
-     InnoDB has done ;
-   - `Innodb_buffer_pool_reads` indicates the number of logical reads InnoDB
-     could not satisfy from the buffer pool, and had to be done directly from
-     the disk (physical reads).
-5. Compute the percentage of queries that are done from the cache pool:
-   ```text
-   Cache Hit Ratio = (Innodb_buffer_pool_read_requests - Innodb_buffer_pool_reads)
-                     * 100.0 / Innodb_buffer_pool_read_requests
+   SELECT ((g1.VARIABLE_VALUE - g2.VARIABLE_VALUE) * 100.0 / g1.VARIABLE_VALUE) AS ratio
+   FROM performance_schema.global_status g1
+   INNER JOIN performance_schema.global_status g2
+   WHERE g1.VARIABLE_NAME = 'Innodb_buffer_pool_read_requests'
+   and g2.VARIABLE_NAME = 'Innodb_buffer_pool_reads';
    ```
 
 The resulting value represents the percentage of requests that were satisfied
