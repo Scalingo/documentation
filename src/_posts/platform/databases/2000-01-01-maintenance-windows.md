@@ -31,10 +31,10 @@ Here are the different stages of a maintenance operation:
 1. **Definition**: A Scalingo operator defines a new maintenance. This object allows us to attach all the elements that are important for its smooth execution (procedure, rollback, integrity test, etc.).
 2. **Selection**: depending on the specific criteria for each maintenance, the eligible databases are assigned to this maintenance.
 3. **Scheduling**: every hour, our system schedules operations to be carried out 24 hours later. If this corresponds to the maintenance window for an eligible resource, you will receive a notification confirming that this operation has been scheduled. From then on, it will not be possible to change or cancel the schedule without contacting our support team.
-4. **Execution**: When the operation starts, you will receive another notification. It will then be important to limit any manipulation of your database.
+4. **Execution**: When the operation starts, you receive another notification. It will then be important to limit any manipulation of your database.
 5. **Operation completed**: You will receive another notification that the operation has been completed. The nominal service has been restored and your database is fully available again.
 
-It is also possible that based on the remaining time in the selected window, we may determine that the operation cannot proceed. In that case, we will also notify you by email. The operation will be rescheduled for a later time.
+It is also possible that based on the remaining time in the selected window, we may determine that the operation cannot proceed. The operation will be rescheduled for a later time.
 
 {% note %}
 Please note that once a maintenance notice has been issued, it cannot be changed or cancelled. If you are concerned that this operation will disrupt your business, you can contact our support team by chat or email.
@@ -111,8 +111,8 @@ $ scalingo --app my-app --addon postgresql database-maintenance-info 656ddbd3930
 
 ## Share the information with your team
 
-By default owner and collaborators will receive email notifications one day before a scheduled maintenance execution. This notification system operates via the [App notifications](https://doc.scalingo.com/platform/app/notification) feature and the “default notifier” which is configured for each app. Please check if it is still active or configure another notifier for this purpose.
-It can easily be configured to suit your preferences. For instance, if you prefere webhook notifications over email, you can easily configure this setting (or create a new dedicated notifier). Additionally, you have the option to filter the list of recipients or provide a service address for individuals who need to be notified but do not have a Scalingo account.
+By default owner and collaborators receive email notifications one day before a scheduled maintenance execution. This notification system operates via the [App notifications](/platform/app/notification) feature and the “default notifier” which is configured for each app. Please check if it is still active or configure another notifier for this purpose.
+It can easily be configured to suit your preferences. For instance, if you prefer webhook notifications over email, you can easily configure this setting (or create a new dedicated notifier). Additionally, you have the option to filter the list of recipients or provide a service address for individuals who need to be notified but do not have a Scalingo account.
 
 Three new events have been added:
 
