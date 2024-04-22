@@ -1,7 +1,7 @@
 ---
 title: Managing Dependencies
 nav: Managing Dependencies
-modified_at: 2024-03-13 12:00:00
+modified_at: 2024-04-22 12:00:00
 tags: php
 index: 3
 ---
@@ -95,9 +95,9 @@ You can select the Composer version to install by specifying it in your
 
 Scalingo currently supports the following versions of Composer:
 
-- `2.2.23` (LTS)
+- `2.7.3`
 - `2.6.6`
-- `2.7.2`
+- `2.2.23` (LTS)
 
 ## Working with Composer Environments
 
