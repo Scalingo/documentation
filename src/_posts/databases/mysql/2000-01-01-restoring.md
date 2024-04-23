@@ -50,7 +50,7 @@ stopped, hence causing an inevitable downtime.
 3. [Open a DB tunnel]({% post_url databases/mysql/2000-01-01-accessing %}#using-our-command-line-tool)
    so you can access your database from your workstation
 4. Restore the database from the uncompressed file, using the `mysql` command
-   (you may have to install iton your workstation):
+   (you may have to install it on your workstation):
    ```bash
    mysql --user=<user> --password=<password> --host=127.0.0.1 --port=<port> <dbname> < <uncompressed_file>
    ```
