@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Scalingo for MySQL®
 nav: Troubleshooting
-modified_at: 2024-04-03 12:00:00
+modified_at: 2024-04-23 12:00:00
 tags: databases mysql addon
 index: 9
 ---
@@ -28,8 +28,7 @@ As a consequence, the size of the Buffer Pool should ideally be large enough to
 handle the database workload, thus preventing swap usage. A constantly swapping
 database could indicate that the space dedicated to the Buffer Pool has become
 insufficient. In such a case, [switching to a superior plan]({% post_url databases/mysql/2000-01-01-managing %}#scaling-changing-plan)
-should quickly resolve the swapping issue. Beware though that a Buffer Pool
-that is too large can also cause swapping, due to competition for memory.
+should quickly resolve the swapping issue.
 
 For further details about how MySQL® manages memory, please refer to [the
 official documentation](https://dev.mysql.com/doc/refman/8.0/en/memory-use.html).
