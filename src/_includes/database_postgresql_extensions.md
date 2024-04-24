@@ -48,7 +48,7 @@
 | `sslinfo`                      | `1.2`    | information about SSL certificates
 | `tablefunc`                    | `1.0`    | functions that manipulate whole tables, including crosstab
 | `tcn`                          | `1.0`    | Triggered change notifications
-| `timescaledb`                  | `2.11.1` | Enables scalable inserts and complex queries for time-series data (Apache 2 Edition)
+| `timescaledb`                  | `2.14.2` | Enables scalable inserts and complex queries for time-series data (Apache 2 Edition)
 | `tsm_system_rows`              | `1.0`    | TABLESAMPLE method which accepts number of rows as a limit
 | `tsm_system_time`              | `1.0`    | TABLESAMPLE method which accepts time in milliseconds as a limit
 | `unaccent`                     | `1.1`    | text search dictionary that removes accents
