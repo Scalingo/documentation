@@ -596,6 +596,15 @@
   -
     old: "/databases/postgresql/timescaledb/downsampling"
     new: "/databases/postgresql/timescaledb"
+  -
+    old: "/databases/mysql/start"
+    new: "/databases/mysql/overview"
+  -
+    old: "/databases/mysql/dump-restore"
+    new: "/databases/mysql/backing-up"
+  -
+    old: "/databases/mysql/workbench"
+    new: "/databases/mysql/accessing"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

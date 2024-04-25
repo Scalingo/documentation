@@ -1,27 +1,27 @@
 ---
 title: Prerequisites Before Upgrading to MySQL® 8
 nav: Upgrading to MySQL 8
-modified_at: 2023-12-28 00:00:00
+modified_at: 2024-04-25 12:00:00
 tags: databases mysql addon migration
-index: 4
+index: 20
 ---
 
 Starting with MySQL® 8, Scalingo enables group replication on all MySQL®
-databases. This MySQL® feature has a couple of strong prerequisites ([MySQL®
-documentation](https://dev.mysql.com/doc/refman/8.0/en/group-replication-requirements.html)).
-Please make sure your database is compatible before proceeding with the upgrade:
+databases. This MySQL® feature has a couple of [strong prerequisites](https://dev.mysql.com/doc/refman/8.0/en/group-replication-requirements.html).
+Please make sure your database is compatible before proceeding with the
+upgrade:
 
-## Storage Engine
+## Checking the Storage Engine
 
 All tables **must** use the InnoDB storage engine. You can check which tables
-use a different storage engine with the SQL command:
+use a different storage engine with the following SQL statement:
 
 ```sql
 SELECT table_schema, table_name FROM information_schema.tables \
   WHERE table_schema IN ('my-app-3030') AND engine != 'InnoDB';
 ```
 
-Here is the output of this command if the `foo` table use another storage engine than InnoDB:
+Here is the output if the `foo` table uses a storage engine other than InnoDB:
 
 ```text
 +--------------+------------+
@@ -32,15 +32,17 @@ Here is the output of this command if the `foo` table use another storage engine
 1 row in set (0.00 sec)
 ```
 
-In this situation, you need to update `foo`'s storage engine with the following command:
+In such a case, you need to update `foo`'s storage engine with the following
+SQL statement:
 
 ```sql
 ALTER TABLE 'foo' ENGINE = 'InnoDB';
 ```
 
-## Mandatory Primary Keys
+## Checking Mandatory Primary Keys
 
-All tables **must** have a primary key configured. You can check which tables do not have any primary key with the SQL command:
+All tables **must** have a primary key configured. You can check which tables
+do not have any primary key with the following SQL statement:
 
 ```sql
 SELECT information_schema.tables.table_schema, information_schema.tables.table_name \
@@ -54,7 +56,7 @@ SELECT information_schema.tables.table_schema, information_schema.tables.table_n
   c.constraint_name IS NULL;
 ```
 
-Here is the output of this command if the `foo` table does not have a primary key:
+Here is the output if the `foo` table does not have a primary key:
 
 ```text
 +--------------+------------+
@@ -65,7 +67,9 @@ Here is the output of this command if the `foo` table does not have a primary ke
 1 row in set (0.00 sec)
 ```
 
-In this situation, you need to add a primary key to the `foo` table. You need to evaluate the impact of this modification before proceeding. Here is the command to add a new column and set it as primary:
+In such a case, you need to add a primary key to the `foo` table. You need to
+evaluate the impact of this modification before proceeding. Here is an example
+SQL statement to add a new column and set it as primary:
 
 ```sql
 ALTER TABLE 'foo' ADD COLUMN <column description> PRIMARY KEY;
@@ -73,14 +77,14 @@ ALTER TABLE 'foo' ADD COLUMN <column description> PRIMARY KEY;
 
 ## One Command Script
 
-Below you can find a script that can be run directly on the database to:
+Below is a script that can be run directly on the database to:
 - create missing primary keys for the concerned tables
 - set the engine to InnoDB for the concerned tables
 
 The script creates two procedures, one for each previous actions.
 
 {% warning %}
-  As always, we highly recommend to make a backup before executing the script.
+As always, we highly recommend to make a backup before executing the script.
 {% endwarning %}
 
 ```sql
