@@ -605,9 +605,6 @@
   -
     old: "/databases/mysql/workbench"
     new: "/databases/mysql/accessing"
-  -
-    old: "/databases/mysql/mysql-8-prerequisites"
-    new: "/databases/mysql/managing"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
