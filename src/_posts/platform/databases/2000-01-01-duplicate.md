@@ -72,7 +72,7 @@ scalingo --app "${DUPLICATE_SOURCE_APP}" --addon "${addon_id}" \
 # Get the name of the backup file:
 backup_file_name="$( tar --list --file="${archive_name}" \
                      | tail -n 1 \
-                     | cut -d "/" -f 1 )"
+                     | cut -d "/" -f 2 )"
 
 # Extract the archive containing the downloaded backup:
 tar --extract --verbose --file="${archive_name}" --directory="/app/"
