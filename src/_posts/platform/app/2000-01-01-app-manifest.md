@@ -110,6 +110,39 @@ The JSON manifest also lets you declare scripts which will be executed as [postd
 }
 ```
 
+## Container Formation
+
+The `scalingo.json` manifest can be used to setup a container formation. A container formation defines the shape of the containers that will be launched.
+
+### Review Apps
+
+You can specify the shape and the number of containers to be launched when a Review App is created. This is useful for making an exact copy of a production environment in Review Apps without having to perform any manual actions.
+
+### One-Click Deployment
+
+The manifest describes how applications deployed with our one-click button are deployed. This can be useful, for example, if you want to deploy a worker at the same time to handle asynchronous tasks.
+
+### Example
+
+```json
+{
+  "formation": {
+    "web": {
+      "amount": 2,
+      "size": "L"
+    },
+    "worker": {
+      "amount": 1,
+      "size": "XL"
+    }
+  }
+}
+```
+
+{% note %}
+You can find more information about formation in our [dedicated blog post](https://scalingo.com/blog/scalingo-json-formation)
+{% endnote %}
+
 ## Reference Documentation
 
 You can find the comprehensive documentation about the structure of the
