@@ -116,7 +116,7 @@ The `scalingo.json` manifest can be used to setup a container formation. A conta
 
 ### Review Apps
 
-You can specify the number of containers of each type to be launched when a Review App is created. This is useful for making an exact copy of a production environment in Review Apps without having to perform any manual actions.
+You can specify the shape and the number of containers to be launched when a Review App is created. This is useful for making an exact copy of a production environment in Review Apps without having to perform any manual actions.
 
 ### One-Click Deployment
 
