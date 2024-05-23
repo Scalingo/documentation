@@ -112,7 +112,7 @@ The JSON manifest also lets you declare scripts which will be executed as [postd
 
 ## Container Formation
 
-The `scalingo.json` manifest can be used to setup a container formation. A container formation defines any type of container that will be launched on startup.
+The `scalingo.json` manifest can be used to setup a container formation. A container formation defines the shape of the containers that will be launched.
 
 ### Review Apps
 
