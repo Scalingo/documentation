@@ -162,10 +162,10 @@ Consequently, updating Metabase only consists in triggering a new deployment of
 your instance.
 
 {% note %}
-   Scalingo tries to retrieve the latest version number by querying the GitHub
-   API, which is subject to API rate-limits. If the deployment fails, a simple
-   workaround consists in specifying the Metabase version you want to deploy
-   ([see below](#environment)).
+Scalingo tries to retrieve the latest version number by querying the GitHub
+API, which is subject to API rate-limits. If the deployment fails, a simple
+workaround consists in specifying the Metabase version you want to deploy
+([see below](#environment)).
 {% endnote %}
 
 ### Using the Command Line
