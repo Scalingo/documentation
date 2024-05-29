@@ -95,8 +95,8 @@ git push scalingo master
 {% note %}
 Scalingo tries to retrieve the latest version number by querying the GitHub
 API, which is subject to API rate-limits. If the deployment fails, a simple
-workaround consists in specifying the Metabase version you want ot deploy
-([see below](#deploying-a-specific-version)).
+workaround consists in specifying the Metabase version you want to deploy
+([see below](#environment)).
 {% endnote %}
 
 
