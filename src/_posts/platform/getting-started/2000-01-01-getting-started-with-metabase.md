@@ -48,11 +48,10 @@ will need to follow:
    cd metabase-scalingo
    ```
 
-2. Create the application on Scalingo (to keep things simple in this tutorial,
-   we will call it `my-app`):
+2. Create the application on Scalingo:
 
    ```bash
-   scalingo create my-app
+   scalingo create my-metabase
    ```
 
    Notice that our Command Line automatically detects the git repository, and
@@ -63,14 +62,14 @@ will need to follow:
 
    origin   https://github.com/Scalingo/metabase-scalingo (fetch)
    origin   https://github.com/Scalingo/metabase-scalingo (push)
-   scalingo git@ssh.osc-fr1.scalingo.com:my-app.git (fetch)
-   scalingo git@ssh.osc-fr1.scalingo.com:my-app.git (push)
+   scalingo git@ssh.osc-fr1.scalingo.com:my-metabase.git (fetch)
+   scalingo git@ssh.osc-fr1.scalingo.com:my-metabase.git (push)
    ```
 
 3. Create the database:
 
    ```bash
-   scalingo --app my-app addons-add postgresql postgresql-starter-512
+   scalingo --app my-metabase addons-add postgresql postgresql-starter-512
    ```
 
 4. Everything's ready, deploy to Scalingo:

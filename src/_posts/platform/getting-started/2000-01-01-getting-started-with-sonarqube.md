@@ -24,7 +24,7 @@ under 5 minutes.
 - Sonarqube requires quite a lot of RAM to run properly. We recommend to deploy
   at least one 2XL container to host it.
 
-- SonarQube require Java version 17 to run. We can instruct Scalingo to use
+- SonarQube requires Java version 17 to run. We can instruct Scalingo to use
   this version of JAVA by using the `system.properties` file as described in
   [our documentation]({% post_url languages/java/2000-01-01-start %}#choose-a-jdk).
 
@@ -33,26 +33,25 @@ under 5 minutes.
 Click the One-Click Deploy button below to automatically deploy SonarQube with
 your Scalingo account:
 
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/scalingo-sonarqube)
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/sonarqube-scalingo)
 
 ### Using the Command Line
 
-We maintain a repository called [scalingo-sonarqube](https://github.com/Scalingo/scalingo-sonarqube)
+We maintain a repository called [sonarqube-scalingo](https://github.com/Scalingo/sonarqube-scalingo)
 on GitHub to help you deploy SonarQube **Community Edition** on Scalingo. Here
 are the few steps you will need to follow:
 
 1. Clone our repository:
 
    ```bash
-   git clone https://github.com/Scalingo/scalingo-sonarqube
-   cd scalingo-sonarqube
+   git clone https://github.com/Scalingo/sonarqube-scalingo
+   cd sonarqube-scalingo
    ```
 
-2. Create the application on Scalingo (to keep things simple in this tutorial,
-   we will call it `my-app`):
+2. Create the application on Scalingo:
 
    ```bash
-   scalingo create my-app
+   scalingo create my-sonarqube
    ```
 
    Notice that our Command Line automatically detects the git repository, and
@@ -61,16 +60,16 @@ are the few steps you will need to follow:
    ```bash
    git remote -v
 
-   origin   https://github.com/Scalingo/scalingo-sonarqube (fetch)
-   origin   https://github.com/Scalingo/scalingo-sonarqube (push)
-   scalingo git@ssh.osc-fr1.scalingo.com:my-app.git (fetch)
-   scalingo git@ssh.osc-fr1.scalingo.com:my-app.git (push)
+   origin   https://github.com/Scalingo/sonarqube-scalingo (fetch)
+   origin   https://github.com/Scalingo/sonarqube-scalingo (push)
+   scalingo git@ssh.osc-fr1.scalingo.com:my-sonarqube.git (fetch)
+   scalingo git@ssh.osc-fr1.scalingo.com:my-sonarqube.git (push)
    ```
 
 3. Create the database:
 
    ```bash
-   scalingo --app my-app addons-add postgresql postgresql-starter-512
+   scalingo --app my-sonarqube addons-add postgresql postgresql-starter-512
    ```
 
 4. Everything's ready, deploy to Scalingo:
