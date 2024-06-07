@@ -96,14 +96,14 @@ module.exports = {
         },
       ],
       "sc-title-2": [
-        "24px",
+        "26px",
         {
           lineHeight: "28px",
           letterSpacing: "-0.04em",
         },
       ],
       "sc-title-2-2": [
-        "24px",
+        "26px",
         {
           lineHeight: "40px",
         },

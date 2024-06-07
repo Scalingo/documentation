@@ -1,5 +1,5 @@
 ---
-title: "Sticky Sessions - Session Affiniy"
+title: "Sticky Sessions - Session Affinity"
 nav: "Sticky Sessions"
 modified_at: 2018-03-21 00:00:00
 tags: app routing
