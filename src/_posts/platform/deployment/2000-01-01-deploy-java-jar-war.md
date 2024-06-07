@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2024-05-13 12:00:00
+modified_at: 2024-06-07 12:00:00
 index: 8
 tags: deployment, java, jar, war
 ---
@@ -98,7 +98,7 @@ use another version, you can define the environment variable
 `JAVA_WEBAPP_RUNNER_VERSION`, like so:
 
 ```sh
-scalingo --app my-app env-set JAVA_WEBAPP_RUNNER_VERSION=10.1.16.0
+scalingo --app my-app env-set JAVA_WEBAPP_RUNNER_VERSION=10.1.24.0
 ```
 
 The latest available versions currently are:
@@ -106,8 +106,8 @@ The latest available versions currently are:
 | Tomcat Version | Latest version    | Note    |
 | -------------: | ----------------: | ------- |
 | `8.5`          | up to `8.5.68.1`  |         |
-| **`9.0`**      | up to `9.0.88.0`  | default |
-| **`10.1`**     | up to `10.1.23.0` |         |
+| **`9.0`**      | up to `9.0.89.0`  | default |
+| **`10.1`**     | up to `10.1.24.0` |         |
 
 {% note %}
 Even though we still support this version, we strongly advise against using the
