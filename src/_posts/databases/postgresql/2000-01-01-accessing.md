@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for PostgreSQL® Addon
 nav: Accessing
-modified_at: 2025-05-27 12:00:00
+modified_at: 2024-06-14 09:00:00
 tags: databases postgresql addon
 index: 4
 ---
@@ -24,8 +24,8 @@ depends on your needs and preferences.
    The output should look like this:
    ```bash
    -----> Starting container one-off-7872  Done in 0.479 seconds
-   -----> Connecting to container [one-off-7872]...  
-   -----> Process 'pgsql-console my_app_4553' is starting...  
+   -----> Connecting to container [one-off-7872]...
+   -----> Process 'pgsql-console my_app_4553' is starting...
 
    ---> Download and extract the database CLI
    ---> Database CLI installed:
