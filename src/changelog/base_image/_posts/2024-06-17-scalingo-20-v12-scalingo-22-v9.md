@@ -7,7 +7,7 @@ This new versions contain the following changes:
 
 * Full `apt-get upgrade` for all stacks.
 * Security: Change default `umask` to `0077`
-* Configuration: Ability to change local thanks to the [locale buildpack](https://github.com/Scalingo/locale-buildpack])
+* Configuration: Ability to change local thanks to the [locale buildpack](https://github.com/Scalingo/locale-buildpack)
 * Executables: Removal of pre-installed `sass` executable which is unmaintained and could lead to a security risk. Please install `sass` from your app dependency manager.
 
 For a comprehensive list of packages installed in the different stacks, please refer to our documentation:
