@@ -58,7 +58,7 @@
 |             gcc-10-base:amd64 |          10.5.0-1ubuntu1~20.04 |
 |                         gcc-9 |         9.4.0-1ubuntu1~20.04.2 |
 |              gcc-9-base:amd64 |         9.4.0-1ubuntu1~20.04.2 |
-|                   ghostscript |          9.50~dfsg-5ubuntu4.11 |
+|                   ghostscript |          9.50~dfsg-5ubuntu4.12 |
 |      gir1.2-freedesktop:amd64 |         1.64.1-1~ubuntu20.04.1 |
 |    gir1.2-gdkpixbuf-2.0:amd64 |         2.40.0+dfsg-3ubuntu0.5 |
 |         gir1.2-glib-2.0:amd64 |         1.64.1-1~ubuntu20.04.1 |
@@ -210,8 +210,8 @@
 |              libgpgme11:amd64 |              1.13.1-7ubuntu2.2 |
 |                 libgpm2:amd64 |                       1.20.7-5 |
 |          libgraphite2-3:amd64 |                1.3.13-11build1 |
-|                  libgs9:amd64 |          9.50~dfsg-5ubuntu4.11 |
-|                 libgs9-common |          9.50~dfsg-5ubuntu4.11 |
+|                  libgs9:amd64 |          9.50~dfsg-5ubuntu4.12 |
+|                 libgs9-common |          9.50~dfsg-5ubuntu4.12 |
 |        libgssapi-krb5-2:amd64 |                1.17-6ubuntu4.4 |
 |      libgssapi3-heimdal:amd64 |          7.7.0+dfsg-1ubuntu1.4 |
 |           libharfbuzz0b:amd64 |               2.6.4-1ubuntu4.2 |
@@ -360,7 +360,7 @@
 |         librsvg2-common:amd64 |        2.48.9-1ubuntu0.20.04.4 |
 |            librsvg2-dev:amd64 |        2.48.9-1ubuntu0.20.04.4 |
 |                librtmp1:amd64 | 2.4+20151223.gitfa8646d.1-2build1 |
-|              libruby2.7:amd64 |              2.7.0-5ubuntu1.12 |
+|              libruby2.7:amd64 |              2.7.0-5ubuntu1.13 |
 |              libsasl2-2:amd64 |         2.1.27+dfsg-2ubuntu0.1 |
 |                  libsasl2-dev |         2.1.27+dfsg-2ubuntu0.1 |
 |        libsasl2-modules:amd64 |         2.1.27+dfsg-2ubuntu0.1 |
@@ -579,9 +579,9 @@
 |             ruby-power-assert |                        1.1.7-1 |
 |                ruby-test-unit |                        3.3.5-1 |
 |                   ruby-xmlrpc |                        0.3.0-2 |
-|                       ruby2.7 |              2.7.0-5ubuntu1.12 |
-|             ruby2.7-dev:amd64 |              2.7.0-5ubuntu1.12 |
-|                   ruby2.7-doc |              2.7.0-5ubuntu1.12 |
+|                       ruby2.7 |              2.7.0-5ubuntu1.13 |
+|             ruby2.7-dev:amd64 |              2.7.0-5ubuntu1.13 |
+|                   ruby2.7-doc |              2.7.0-5ubuntu1.13 |
 |          rubygems-integration |                           1.16 |
 |                           sed |                          4.7-1 |
 |                sensible-utils |                    0.0.12+nmu1 |
@@ -618,3 +618,4 @@
 |                           zip |                   3.0-11build1 |
 |                  zlib1g:amd64 |       1:1.2.11.dfsg-2ubuntu1.5 |
 |              zlib1g-dev:amd64 |       1:1.2.11.dfsg-2ubuntu1.5 |
+|                          zstd |          1.4.4+dfsg-3ubuntu0.1 |
