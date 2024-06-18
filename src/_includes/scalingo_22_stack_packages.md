@@ -55,7 +55,7 @@
 |                        gcc-11 |          11.4.0-1ubuntu1~22.04 |
 |             gcc-11-base:amd64 |          11.4.0-1ubuntu1~22.04 |
 |             gcc-12-base:amd64 |          12.3.0-1ubuntu1~22.04 |
-|                   ghostscript |        9.55.0~dfsg1-0ubuntu5.6 |
+|                   ghostscript |        9.55.0~dfsg1-0ubuntu5.7 |
 |      gir1.2-freedesktop:amd64 |                       1.72.0-1 |
 |    gir1.2-gdkpixbuf-2.0:amd64 |         2.42.8+dfsg-1ubuntu0.3 |
 |         gir1.2-glib-2.0:amd64 |                       1.72.0-1 |
@@ -210,8 +210,8 @@
 |              libgpgme11:amd64 |            1.16.0-1.2ubuntu4.2 |
 |                 libgpm2:amd64 |                1.20.7-10build1 |
 |          libgraphite2-3:amd64 |                 1.3.14-1build2 |
-|                  libgs9:amd64 |        9.55.0~dfsg1-0ubuntu5.6 |
-|                 libgs9-common |        9.55.0~dfsg1-0ubuntu5.6 |
+|                  libgs9:amd64 |        9.55.0~dfsg1-0ubuntu5.7 |
+|                 libgs9-common |        9.55.0~dfsg1-0ubuntu5.7 |
 |        libgssapi-krb5-2:amd64 |              1.19.2-2ubuntu0.3 |
 |           libharfbuzz0b:amd64 |               2.7.4-1ubuntu3.1 |
 |                libheif1:amd64 |                 1.12.0-2build1 |
@@ -291,8 +291,8 @@
 |                 libmpc3:amd64 |                  1.2.1-2build1 |
 |               libmpdec3:amd64 |                  2.5.1-2build2 |
 |                libmpfr6:amd64 |                  4.1.0-3build3 |
-|            libmysqlclient-dev |        8.0.36-0ubuntu0.22.04.1 |
-|        libmysqlclient21:amd64 |        8.0.36-0ubuntu0.22.04.1 |
+|            libmysqlclient-dev |        8.0.37-0ubuntu0.22.04.3 |
+|        libmysqlclient21:amd64 |        8.0.37-0ubuntu0.22.04.3 |
 |          libncurses-dev:amd64 |                 6.3-2ubuntu0.1 |
 |             libncurses5:amd64 |                 6.3-2ubuntu0.1 |
 |             libncurses6:amd64 |                 6.3-2ubuntu0.1 |
@@ -358,7 +358,7 @@
 |         librsvg2-common:amd64 |         2.52.5+dfsg-3ubuntu0.2 |
 |            librsvg2-dev:amd64 |         2.52.5+dfsg-3ubuntu0.2 |
 |                librtmp1:amd64 | 2.4+20151223.gitfa8646d.1-2build4 |
-|              libruby3.0:amd64 |               3.0.2-7ubuntu2.5 |
+|              libruby3.0:amd64 |               3.0.2-7ubuntu2.6 |
 |              libsasl2-2:amd64 |        2.1.27+dfsg2-3ubuntu1.2 |
 |                  libsasl2-dev |        2.1.27+dfsg2-3ubuntu1.2 |
 |        libsasl2-modules:amd64 |        2.1.27+dfsg2-3ubuntu1.2 |
@@ -389,9 +389,9 @@
 |              libtasn1-6:amd64 |                 4.18.0-4build1 |
 |                  libthai-data |                 0.1.29-1build1 |
 |                libthai0:amd64 |                 0.1.29-1build1 |
-|             libtiff-dev:amd64 |               4.3.0-6ubuntu0.8 |
-|                libtiff5:amd64 |               4.3.0-6ubuntu0.8 |
-|              libtiffxx5:amd64 |               4.3.0-6ubuntu0.8 |
+|             libtiff-dev:amd64 |               4.3.0-6ubuntu0.9 |
+|                libtiff5:amd64 |               4.3.0-6ubuntu0.9 |
+|              libtiffxx5:amd64 |               4.3.0-6ubuntu0.9 |
 |               libtinfo5:amd64 |                 6.3-2ubuntu0.1 |
 |               libtinfo6:amd64 |                 6.3-2ubuntu0.1 |
 |               libtirpc-common |               1.3.2-2ubuntu0.1 |
@@ -405,8 +405,8 @@
 |           libunistring2:amd64 |                          1.0-1 |
 |                libuuid1:amd64 |              2.37.2-4ubuntu3.4 |
 |                  libuv1:amd64 |              1.43.0-1ubuntu0.1 |
-|              libvpx-dev:amd64 |              1.11.0-2ubuntu2.2 |
-|                 libvpx7:amd64 |              1.11.0-2ubuntu2.2 |
+|              libvpx-dev:amd64 |              1.11.0-2ubuntu2.3 |
+|                 libvpx7:amd64 |              1.11.0-2ubuntu2.3 |
 |                libwebp7:amd64 |         1.2.2-2ubuntu0.22.04.2 |
 |           libwebpdemux2:amd64 |         1.2.2-2ubuntu0.22.04.2 |
 |             libwebpmux3:amd64 |         1.2.2-2ubuntu0.22.04.2 |
@@ -586,9 +586,9 @@
 |                 ruby-rubygems |                        3.3.5-2 |
 |                  ruby-webrick |                        1.7.0-3 |
 |                   ruby-xmlrpc |               0.3.2-1ubuntu0.1 |
-|                       ruby3.0 |               3.0.2-7ubuntu2.5 |
-|             ruby3.0-dev:amd64 |               3.0.2-7ubuntu2.5 |
-|                   ruby3.0-doc |               3.0.2-7ubuntu2.5 |
+|                       ruby3.0 |               3.0.2-7ubuntu2.6 |
+|             ruby3.0-dev:amd64 |               3.0.2-7ubuntu2.6 |
+|                   ruby3.0-doc |               3.0.2-7ubuntu2.6 |
 |          rubygems-integration |                           1.18 |
 |                           sed |                   4.8-1ubuntu2 |
 |                sensible-utils |                         0.0.17 |
@@ -623,3 +623,4 @@
 |                           zip |                   3.0-12build2 |
 |                  zlib1g:amd64 |       1:1.2.11.dfsg-2ubuntu9.2 |
 |              zlib1g-dev:amd64 |       1:1.2.11.dfsg-2ubuntu9.2 |
+|                          zstd |             1.4.8+dfsg-3build1 |
