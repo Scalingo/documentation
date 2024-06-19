@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for MySQL® Addon
 nav: Accessing
-modified_at: 2024-03-05 12:00:00
+modified_at: 2024-06-19 12:00:00
 tags: databases mysql addon
 index: 4
 ---
@@ -24,8 +24,8 @@ depends on your needs and preferences.
    The output should look like this:
    ```bash
    -----> Starting container one-off-7872  Done in 0.479 seconds
-   -----> Connecting to container [one-off-7872]...  
-   -----> Process 'mysql-console my_app_4553' is starting...  
+   -----> Connecting to container [one-off-7872]...
+   -----> Process 'mysql-console my_app_4553' is starting...
 
    ---> Download and extract the database CLI
    ---> Database CLI installed:
@@ -34,15 +34,15 @@ depends on your needs and preferences.
    Welcome to the MySQL monitor.  Commands end with ; or \g.
    Your MySQL connection id is 496
    Server version: 8.0.35 MySQL Community Server - GPL
-   
+
    Copyright (c) 2000, 2023, Oracle and/or its affiliates.
-   
+
    Oracle is a registered trademark of Oracle Corporation and/or its
    affiliates. Other names may be trademarks of their respective
    owners.
-   
+
    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-   
+
    mysql>
    ```
 3. To exit, type the following command from the MySQL® console, or use the
@@ -66,7 +66,7 @@ depends on your needs and preferences.
    ---> Database CLI installed:
    mysql  Ver 8.0.33 for Linux on x86_64 (Source distribution)
    ```
-3. If you ever need a specific version, just add it as a second parameter:
+   If you ever need a specific version, just add it as a second parameter:
    ```bash
    dbclient-fetcher mysql 8
    ```
@@ -77,9 +77,13 @@ depends on your needs and preferences.
    mysql  Ver 8.0.35 for Linux on x86_64 (Source distribution)
    ```
 
-The `dbclient-fetcher` helper installs the following tools:
-- `mysql`
-- `mysqldump`
+   The `dbclient-fetcher` helper installs the following tools:
+   - `mysql`
+   - `mysqldump`
+3. Connect to the database with the following command:
+   ```bash
+   mysql --user=$USER --password=$PASSWORD --host=$HOSTNAME --port=$PORT $DATABASE_NAME --ssl-mode=REQUIRED
+   ```
 
 
 ## Using Third Party Tools
