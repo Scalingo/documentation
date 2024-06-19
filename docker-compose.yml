@@ -1,4 +1,3 @@
-version: '2'
 services:
   # Replicates the prod setup, in which puma serves the file built by jekyll + the assets
   web:
