@@ -18,12 +18,7 @@ are also available for these plans.
 
 ## Understanding Point-in-Time Recovery Backups
 
-Point-in-time recovery (PiTR) allows you to ask for the restoration of your
-data at a specific date. We achieve this by making a full PiTR backup of the
-database weekly. Between two full PiTR backups, we keep track of the
-write-ahead logs (WAL). The WAL contains all the modification instructions. By
-replaying the WAL from a full PiTR backup to a specific date, we are able to
-rebuild the state of the database at that particular date.
+{% include point_in_time_recovery.md %}
 
 You have nothing to do to be able to use the PiTR mechanism. Be aware that you
 can only use the PiTR on the period between now and now minus seven days.

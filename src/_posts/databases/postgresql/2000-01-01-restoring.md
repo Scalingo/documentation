@@ -1,17 +1,18 @@
 ---
 title: Restoring Your Scalingo for PostgreSQL® Addon
 nav: Restoring
-modified_at: 2024-03-26 12:00:00
+modified_at: 2024-06-20 00:00:00
 tags: databases postgresql addon
 index: 9
 ---
 
-
 ## Restoring a Point-in-Time Recovery Backup
+
+{% include point_in_time_recovery.md %}
 
 {% warning %}
 Restoring a database using the Point-in-Time Recovery feature requires the
-database to be completely stopped, hence causing an inevitable downtime.
+database to be completely stopped, causing an inevitable downtime.
 {% endwarning %}
 
 ### Using the Database Dashboard
