@@ -1,6 +1,6 @@
 ---
 title: Review Apps
-modified_at: 2023-12-22 00:00:00
+modified_at: 2024-06-20 00:00:00
 tags: app review apps
 index: 31
 ---
@@ -53,6 +53,8 @@ scalingo --app my-app integration-link-manual-review-app 42
 
 In this example, `42` is the pull request or merge request ID.
 
+A manually created review app is instantly deleted after the pull request is closed.
+
 {% note %}
 If one manually deletes a review app, it will not be automatically created again after a deployment. You need to manually deploy a new one.
 {% endnote %}
@@ -100,13 +102,13 @@ might not want to copy production credentials, or it is sometimes required to
 start a custom task after the initialization of the app. That's where the [Scalingo
 JSON manifest]({% post_url platform/app/2000-01-01-app-manifest %}) becomes useful.
 
-If there are valid reasons and cases where configuring the `scalingo.json` is the 
-adequate solution, it is important to understand that it is sometimes not the appropriate 
-one. As Review Apps can connect to their parent database, and addons, this means personal, 
-or health-related information can be exposed. 
+If there are valid reasons and cases where configuring the `scalingo.json` is the
+adequate solution, it is important to understand that it is sometimes not the appropriate
+one. As Review Apps can connect to their parent database, and addons, this means personal,
+or health-related information can be exposed.
 
-As a consequence, Scalingo recommends not to enable Review Apps for production applications. 
-The preferred approach is to create a second application linked to the same repository. 
+As a consequence, Scalingo recommends not to enable Review Apps for production applications.
+The preferred approach is to create a second application linked to the same repository.
 This second, separate application can then have Review Apps, while protecting production data.
 
 As a quick example, here is a sample `scalingo.json` that customize the
