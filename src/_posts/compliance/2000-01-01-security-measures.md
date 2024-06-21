@@ -51,9 +51,19 @@ We use security headers to protect the platform from common security vulnerabili
 
 All data transmitted between the platform and the user is encrypted using HTTPS. This ensures that the data is protected from eavesdropping and tampering. The allowed ciphers are regularly updated to ensure that the platform is protected from the latest security vulnerabilities.
 
-### Security Monitoring
+## Security Monitoring, Journaling and Logging
 
-We use security monitoring tools to detect and respond to security incidents in real-time. These tools monitor the platform for signs of abnormal activity and alert our operations team if any suspicious activity is detected.
+### Monitoring
+
+We use monitoring tools to monitor the platform for production and security incidents. The monitoring tools are configured to alert our operations team in the event of an incident and to provide them with the information they need to respond to the incident.
+
+### Journaling
+
+We use journaling to record all actions taken on the platform. The journaling is used to track changes to the platform and to identify the cause of security incidents.
+
+### Logging
+
+The internal logs of the platform are stored in a secure, append-only, redundant storage system to ensure that the logs are protected from unauthorized access. The logs are regularly reviewed by our operations team to identify security incidents and to prevent similar incidents from occurring in the future.
 
 ### Incident Response
 
@@ -184,6 +194,7 @@ Security communication is done through our [status page](https://scalingostatus.
 ### On-Call Rotation
 
 Our operations team is available 24/7 to respond to security incidents and to ensure the availability of the platform. We have an on-call rotation to ensure that there is always someone available to respond to security incidents and to ensure the availability of the platform.
+Our on-call first response time is 15 minutes.
 
 ### Technical Support
 
@@ -206,3 +217,25 @@ Scalingo is certified ISO 27001 and we have implemented a high level of security
 ### SecNumCloud
 
 Scalingo is hosting its infrastructure in the SecNumCloud certified datacenters  (uniquely for the region `osc-secnum-fr1`). This certification ensures that the datacenters have implemented a high level of security to protect the data hosted on them. We are working on a SecNumCloud certification for a new range of products.
+
+## Business Continuity and Disaster Recovery
+
+### Disaster Recovery
+
+We have a disaster recovery plan in place to ensure the availability of the platform in the event of a disaster. The disaster recovery plan includes procedures for restoring the platform to normal operation and for ensuring the availability of the platform to our customers.
+This plan is tested regularly to ensure that it is effective and that we can restore the platform to normal operation in the event of a disaster.
+
+### Business Continuity
+
+We have a business continuity plan in place to ensure the availability of the platform in the event of a business disruption. The business continuity plan includes procedures for restoring the platform to normal operation and for ensuring the availability of the platform to our customers.
+This plan is tested regularly, in subparts, to ensure that it is effective and that we can restore the platform to normal operation in the event of a business disruption.
+
+The business continuity is ensured on various levels:
+
+- Deployment redundancy
+- Data redundancy
+- Network redundancy
+- Personnel redundancy
+- Service redundancy
+
+After each test, a post-mortem is performed to measure the effectiveness of the plan and to identify areas for improvement.
