@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for PostgreSQL® Addon
 nav: Accessing
-modified_at: 2024-06-14 09:00:00
+modified_at: 2024-06-21 09:00:00
 tags: databases postgresql addon
 index: 4
 ---
@@ -57,10 +57,12 @@ depends on your needs and preferences.
    ---> Database CLI installed:
    psql (PostgreSQL) 14.6
    ```
-3. If you ever need a specific version, just add it as a second parameter:
+
+   If you ever need a specific version, just add it as a second parameter:
    ```bash
    dbclient-fetcher pgsql 13
    ```
+
    The output should look like this:
    ```text
    ---> Download and extract the database CLI
@@ -68,25 +70,31 @@ depends on your needs and preferences.
    psql (PostgreSQL) 13.11
    ```
 
-The `dbclient-fetcher` helper installs the following tools:
-- `psql`
-- `pg_basebackup`
-- `pg_controldata`
-- `pg_dump`
-- `pg_isready`
-- `pg_recvlogical`
-- `pg_restore`
-- `pg_test_fsync`
-- `pg_upgrade`
-- `pg_archivecleanup`
-- `pg_config`
-- `pg_ctl`
-- `pg_dumpall`
-- `pg_receivewal`
-- `pg_resetwal`
-- `pg_rewind`
-- `pg_test_timing`
-- `pg_waldump`
+   The `dbclient-fetcher` helper installs the following tools:
+   - `psql`
+   - `pg_basebackup`
+   - `pg_controldata`
+   - `pg_dump`
+   - `pg_isready`
+   - `pg_recvlogical`
+   - `pg_restore`
+   - `pg_test_fsync`
+   - `pg_upgrade`
+   - `pg_archivecleanup`
+   - `pg_config`
+   - `pg_ctl`
+   - `pg_dumpall`
+   - `pg_receivewal`
+   - `pg_resetwal`
+   - `pg_rewind`
+   - `pg_test_timing`
+   - `pg_waldump`
+
+3. Connect to the database with the following command:
+   ```bash
+   psql "$SCALINGO_POSTGRESQL_URL"
+   ```
+   For the other tools installed by `dbclient-fetcher`, refer to their respective documentations.
 
 
 ## Using Third Party Tools
