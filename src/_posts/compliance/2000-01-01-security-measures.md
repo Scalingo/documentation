@@ -165,3 +165,44 @@ Access to the platform by third-party vendors is restricted to authorized person
 ### Vendor Selection
 
 We carefully select our third-party vendors to ensure that they have implemented security measures to protect the data hosted on the platform. We require all third-party vendors to comply with our security policies and to provide evidence of their security measures.
+
+## Support
+
+### Security Incident Response
+
+In the event of a security incident, our operations team follows a predefined incident response plan to contain the incident and mitigate its impact. The incident response plan includes procedures for identifying the cause of the incident, containing the incident, and restoring the platform to normal operation. After the incident has been resolved, we perform a post-mortem to identify the root cause of the incident and to prevent similar incidents from occurring in the future.
+
+### Security Incident Reporting
+
+If you suspect a security incident, please report it to our security team at [security@scalingo.com](mailto:security@scalingo.com). We take all reports of security incidents seriously and we will investigate the incident promptly.
+
+### Security Incident Communication
+
+In the event of a security incident, we will communicate with our customers to keep them informed of the incident and to provide updates on the status of the incident. We will provide regular updates on the incident and we will inform our customers of any actions they need to take to protect their data.
+Security communication is done through our [status page](https://scalingostatus.com), and by chat support or email if necessary.
+
+### On-Call Rotation
+
+Our operations team is available 24/7 to respond to security incidents and to ensure the availability of the platform. We have an on-call rotation to ensure that there is always someone available to respond to security incidents and to ensure the availability of the platform.
+
+### Technical Support
+
+Our technical support team is available to help you with any technical or security issues you may encounter, 5/7 from 9am to 6pm (CET). You can contact our technical support team by chat or email at [support@scalingo.com](mailto:support@scalingo.com).
+
+## Compliance
+
+### GDPR
+
+Scalingo is compliant with the General Data Protection Regulation (GDPR) and we take all necessary measures to protect the privacy of our users' data. We do not share our users' data with third parties without their consent and we take all necessary measures to protect the data from unauthorized access. See our Data Processing Agreement [here](https://scalingo.com/data-processing-agreement).
+
+### Health Data Hosting (HDS)
+
+Scalingo is certified to host health data (HDS) in France. We have implemented the necessary security measures to protect the health data hosted on the platform and we are committed to protecting the privacy of the health data. See our HDS certification [here](/compliance/hds). You can see our Health Data Hosting Appendix [here](https://scalingo.com/gtc-appendix-health-data-hosting).
+
+### ISO 27001
+
+Scalingo is certified ISO 27001 and we have implemented a high level of security to protect the data hosted on the platform. The ISO 27001 certification ensures that we have implemented a comprehensive information security management system to protect the data hosted on the platform. See our ISO 27001 certification [here](/compliance/iso-27001).
+
+### SecNumCloud
+
+Scalingo is hosting its infrastructure in the SecNumCloud certified datacenters  (uniquely for the region `osc-secnum-fr1`). This certification ensures that the datacenters have implemented a high level of security to protect the data hosted on them. We are working on a SecNumCloud certification for a new range of products.
