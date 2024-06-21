@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for MySQL® Addon
 nav: Accessing
-modified_at: 2024-06-19 12:00:00
+modified_at: 2024-06-21 12:00:00
 tags: databases mysql addon
 index: 4
 ---
