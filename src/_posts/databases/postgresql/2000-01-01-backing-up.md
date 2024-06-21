@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Addon
 nav: Backing Up
-modified_at: 2024-03-26 12:00:00
+modified_at: 2024-06-21 00:00:00
 tags: databases postgresql addon
 index: 8
 ---
@@ -11,7 +11,7 @@ Starter and Business plans of Scalingo for PostgreSQL® include automated and
 managed backups so you don't have to worry about them.
 
 We use two kinds of mechanisms to create these automated backups:
-[Point-in-Time Recovery](#understanding-point-in-time-recovery) backups and
+[Point-in-Time Recovery](#understanding-point-in-time-recovery-backups) backups and
 [Periodic](#understanding-periodic-backups) backups. [Manual backups](#understanding-manual-backups)
 are also available for these plans.
 
