@@ -14,7 +14,7 @@ This document describes the security measures implemented by Scalingo to ensure 
 
 Scalingo uses datacenters that are certified ISO 27001, ISO 27017, ISO 27018, HDS (Region `osc-secnum-fr1`) and SecNumCloud (Region `osc-secnum-fr1`). These certifications ensure that the datacenters have implemented a high level of security to protect the data hosted on them.
 
-### Access Control
+### Physical Access Control
 
 Access to the datacenters is restricted to authorized personnel only. Access is controlled by a badge system and is monitored by video surveillance.
 
@@ -84,3 +84,84 @@ Your applications are built on separate containers (builders), which are isolate
 ### Resilience
 
 The platform is designed to be resilient to hardware failures and other disasters. We use redundant storage systems to protect the data from hardware failures and we have multiple datacenters to protect the platform from disasters such as fires and floods.
+
+## Backup and Recovery
+
+### Backup Policy
+
+We perform regular backups of the data hosted on the platform to protect it from data loss. The backups are stored in a secure redundant storage system to ensure that the data is protected from hardware failures and other disasters.
+
+### Recovery Policy
+
+In the event of a data loss, we follow a predefined recovery plan to restore the data from the backups. The recovery plan includes procedures for identifying the cause of the data loss, restoring the data from the backups, and verifying the integrity of the restored data.
+
+### Backup Testing
+
+We regularly test our backups to ensure that they are working correctly and that we can restore the data in the event of a data loss. The backups are tested by restoring the data to a separate environment and verifying that the data is intact and that the applications are working correctly.
+
+## Connectivity
+
+### Secure Connectivity
+
+All data transmitted between the platform and the user is encrypted using HTTPS. This ensures that the data is protected from eavesdropping and tampering. The allowed ciphers are regularly updated to ensure that the platform is protected from the latest security vulnerabilities.
+
+### Customer VPN
+
+We offer the possibility to set up a VPN connection (OpenVPN, IPSec) between your infrastructure and the Scalingo platform. This allows you to securely connect your infrastructure to the platform and to protect your data from unauthorized access.
+
+## Operational Security
+
+### Logical Access Control
+
+Access to the platform administration is restricted to authorized personnel only. It is secured by two-factor authentication and when possible uses a bastion host and a VPN connection.
+
+### Access Review and Revocation
+
+Access to the platform is reviewed regularly to ensure that only authorized personnel have access to the platform. Access is revoked immediately when an employee leaves the company or when their access is no longer required.
+
+## Employee Security
+
+### Security Training
+
+All employees receive security training to ensure that they are aware of the security measures implemented by the platform and to prevent security incidents caused by human error.
+
+### Security Awareness
+
+All employees are required to follow security best practices to protect the platform from security incidents. This includes using strong passwords, enabling two-factor authentication, and following the security policies implemented by the platform.
+They are trained to detect phishing attempts and to report them to the security team.
+
+## Code Security
+
+### Secure Development
+
+All code changes are reviewed by our development team to ensure that they do not introduce security vulnerabilities. We use automated tools to scan the code for common security vulnerabilities and we perform manual code reviews to catch any vulnerabilities that the automated tools may have missed.
+
+### Dependency Management
+
+We regularly update the dependencies used by the platform to ensure that they are up-to-date and that they do not contain any known security vulnerabilities. We use automated tools to scan the dependencies for security vulnerabilities and we update them as soon as a vulnerability is detected.
+
+### Vulnerability Management
+
+We have a vulnerability management program in place to detect and respond to security vulnerabilities in the platform. We use automated tools to scan the platform for security vulnerabilities and we have procedures in place to patch the vulnerabilities as soon as they are detected.
+
+### Change Management
+
+All changes to the platform are reviewed by our development team to ensure that they do not introduce security vulnerabilities. We use automated tools to scan the changes for security vulnerabilities and we perform manual code reviews to catch any vulnerabilities that the automated tools may have missed. Our change management process includes an analysis of the security impact of the changes prior to the development phase and a security review of the changes prior to the deployment phase.
+
+## Third-Party Security
+
+### Vendor Security
+
+We perform due diligence on all third-party vendors to ensure that they have implemented security measures to protect the data hosted on the platform. We require all third-party vendors to comply with our security policies and to provide evidence of their security measures.
+
+### Third-Party Audits
+
+We perform regular audits of our third-party vendors to ensure that they are complying with our security policies and that they have implemented security measures to protect our data.
+
+### Third-Party Access
+
+Access to the platform by third-party vendors is restricted to authorized personnel only. Access is monitored and logged to ensure that only authorized personnel have access to the platform. The access is restricted to the necessary permissions and is revoked immediately when the access is no longer required.
+
+### Vendor Selection
+
+We carefully select our third-party vendors to ensure that they have implemented security measures to protect the data hosted on the platform. We require all third-party vendors to comply with our security policies and to provide evidence of their security measures.
