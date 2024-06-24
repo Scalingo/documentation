@@ -1,6 +1,6 @@
 ---
 title: Getting Started With Metabase on Scalingo
-modified_at: 2023-11-13 16:00:00
+modified_at: 2024-06-20 12:00:00
 tags: tutorial metabase
 index: 13
 ---
@@ -12,9 +12,8 @@ queries.
 This tutorial will show you how to deploy a Metabase instance on Scalingo in
 under 5 minutes.
 
-## Deploying Metabase
 
-### Planning your Deployment
+## Planning your Deployment
 
 - Metabase requires its own database to store its configuration and some
   metadata. We usually advise to use a [PostgreSQL Starter/Business 512 addon](https://scalingo.com/databases/postgresql)
@@ -27,6 +26,9 @@ under 5 minutes.
   Metabase to have a negative impact on your application's performances.
   [Our documentation]({% post_url platform/databases/2000-01-01-duplicate %})
   should help you with this additional task.
+
+
+## Deploying Metabase
 
 ### Using our One-Click Deploy Button
 
@@ -72,11 +74,84 @@ will need to follow:
    scalingo --app my-metabase addons-add postgresql postgresql-starter-512
    ```
 
-4. Everything's ready, deploy to Scalingo:
+4. (optional) Instruct the platform to run the `web` process type in a single
+   XL container:
+
+   ```bash
+   scalingo --app -my-metabase scale web:2:XL
+   ```
+
+5. Everything's ready, deploy to Scalingo:
 
    ```bash
    git push scalingo master
    ```
+
+### Using the Terraform Provider
+
+{% note%}
+The following code blocks are given as examples.\
+You will have to adjust some values to suit your needs.
+{% endnote %}
+
+1. Start by forking our [Metabase repository](https://github.com/Scalingo/metabase-scalingo)
+
+2. Place the following block in your Terraform file to create the app:
+
+   ```terraform
+   resource "scalingo_app" "my-metabase" {
+     name        = "my-metabase"
+     stack_id    = "scalingo-22"
+     force_https = true
+   }
+   ```
+
+3. Link the app to your forked repository:
+
+   ```terraform
+   data "scalingo_scm_integration" "github" {
+     scm_type = "github"
+   }
+
+   resource "scalingo_scm_repo_link" "default" {
+     auth_integration_uuid = data.scalingo_scm_integration.github.id
+     app                   = scalingo_app.my-metabase.id
+     source                = "https://github.com/<github_username>/metabase-scalingo"
+     branch                = "master"
+   }
+   ```
+
+4. Create a Starter-512 PostgreSQL addon and attach it to your app:
+
+   ```terraform
+   resource "scalingo_addon" "my-metabase-db" {
+     app         = scalingo_app.my-metabase.id
+     provider_id = "postgresql"
+     plan        = "postgresql-starter-512"
+   }
+   ```
+
+5. (optional) Instruct the platform to run the `web` process type in a single
+   XL container:
+
+   ```terraform
+   resource "scalingo_container_type" "web" {
+     app    = scalingo_app.my-metabase.id
+     name   = "web"
+     size   = "XL"
+     amount = 1
+   }
+   ```
+
+6. Run `terraform plan` and check if the result looks good
+7. If so, run `terraform apply`
+8. Once Terraform is done, your Metabase instance is ready to be deployed:
+   1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+   2. Click on your Metabase application
+   3. Click on the **Deploy** tab
+   4. Click on **Manual deployment** in the left menu
+   5. Click the **Trigger deployment** button
+   6. After a few seconds, your Metabase instance is finally up and running!
 
 
 ## Updating Metabase
@@ -84,12 +159,7 @@ will need to follow:
 By default, Scalingo tries to install the latest version of Metabase.
 
 Consequently, updating Metabase only consists in triggering a new deployment of
-your instance. To do so, create an empty commit and push it to Scalingo:
-
-```bash
-git commit --allow-empty -m "Update Metabase"
-git push scalingo master
-```
+your instance.
 
 {% note %}
 Scalingo tries to retrieve the latest version number by querying the GitHub
@@ -97,6 +167,24 @@ API, which is subject to API rate-limits. If the deployment fails, a simple
 workaround consists in specifying the Metabase version you want to deploy
 ([see below](#environment)).
 {% endnote %}
+
+### Using the Command Line
+
+1. In your Metabase repository, create an empty commit and push it to Scalingo:
+
+   ```bash
+   git commit --allow-empty -m "Update Metabase"
+   git push scalingo master
+   ```
+
+### Using the Terraform Provider
+
+1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+2. Click on your Metabase application
+3. Click on the **Deploy** tab
+4. Click on **Manual deployment** in the left menu
+5. Click the **Trigger deployment** button
+6. After a few seconds, your updated Metabase instance is ready!
 
 
 ## Customizing your Deployment
