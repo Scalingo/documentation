@@ -9,7 +9,7 @@
   "dependencies": {
     "@docsearch/js": "^3.6.0",
     "autoprefixer": "^10.4.19",
-    "esbuild": "^0.20.2",
+    "esbuild": "^0.21.5",
     "esbuild-style-plugin": "^1.6.3",
     "mdn-polyfills": "^5.20.0",
     "postcss": "^8.4.38",
