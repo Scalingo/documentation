@@ -24,7 +24,7 @@ module Dirname
         x.url == url_path
       }
       data = {
-        "title" => page_for_dir && (page_for_dir.data["nav"] || page_for_dir.data["title"]) ? (page_for_dir.data["nav"] || page_for_dir.data["title"]) : path.split("/").compact.last.split("-").map(&:capitalize).join(" "),
+        "title" => (page_for_dir && (page_for_dir.data["nav"] || page_for_dir.data["title"])) ? (page_for_dir.data["nav"] || page_for_dir.data["title"]) : path.split("/").compact.last.split("-").map(&:capitalize).join(" "),
         "type" => "dir",
         "url" => page_for_dir&.url || url_path,
         "index" => page_for_dir&.data&.dig("index"),
@@ -58,7 +58,7 @@ module Dirname
       children = children.group_by { |x| x["title"] }.map do |_title, children|
         children.find { |child| child["type"] == "dir" } || children.first
       end
-      children = children.uniq{|link| link["url"] }
+      children = children.uniq { |link| link["url"] }
 
       if url_path != "/"
         if page_for_dir
