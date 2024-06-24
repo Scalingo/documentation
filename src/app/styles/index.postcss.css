@@ -202,6 +202,23 @@ article code {
   @apply break-all sm:break-normal;
 }
 
+.warning table {
+    border: 1px solid rgb(229, 71, 50);
+    margin: 1rem 0;
+
+    th {
+        background-color: rgb(255 231 228 / var(--tw-bg-opacity));
+    }
+
+    tr td {
+        background-color: rgb(255 231 228 / var(--tw-bg-opacity));
+    }
+
+    tr:nth-child(2n+1) td {
+        --tw-bg-opacity: 0.6;
+    }
+}
+
 .highlight .hll { background-color: #060C20; }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
