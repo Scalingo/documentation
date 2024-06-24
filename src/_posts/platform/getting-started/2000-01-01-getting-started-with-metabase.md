@@ -28,7 +28,7 @@ under 5 minutes.
   should help you with this additional task.
 
 
-## Deploying Metabase
+## Deploying
 
 ### Using our One-Click Deploy Button
 
@@ -116,7 +116,7 @@ You will have to adjust some values to suit your needs.
    resource "scalingo_scm_repo_link" "default" {
      auth_integration_uuid = data.scalingo_scm_integration.github.id
      app                   = scalingo_app.my-metabase.id
-     source                = "https://github.com/<github_username>/metabase-scalingo"
+     source                = "https://github.com/<username>/metabase-scalingo"
      branch                = "master"
    }
    ```
@@ -154,7 +154,7 @@ You will have to adjust some values to suit your needs.
    6. After a few seconds, your Metabase instance is finally up and running!
 
 
-## Updating Metabase
+## Updating
 
 By default, Scalingo tries to install the latest version of Metabase.
 
@@ -187,7 +187,7 @@ workaround consists in specifying the Metabase version you want to deploy
 6. After a few seconds, your updated Metabase instance is ready!
 
 
-## Customizing your Deployment
+## Customizing
 
 ### Environment
 
