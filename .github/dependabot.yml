@@ -9,7 +9,8 @@ updates:
     schedule:
       interval: "monthly"
     reviewers:
-      - "cyrille-sg"
+      - "ksol"
+      - "Anouchka-M"
   - package-ecosystem: "npm"
     directory: "/"
     allow:
@@ -17,4 +18,5 @@ updates:
     schedule:
       interval: "monthly"
     reviewers:
-      - "cyrille-sg"
+      - "ksol"
+      - "Anouchka-M"
