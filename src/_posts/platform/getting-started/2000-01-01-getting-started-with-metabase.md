@@ -78,7 +78,7 @@ will need to follow:
    XL container:
 
    ```bash
-   scalingo --app -my-metabase scale web:2:XL
+   scalingo --app -my-metabase scale web:1:XL
    ```
 
 5. Everything's ready, deploy to Scalingo:
