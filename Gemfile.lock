@@ -34,9 +34,9 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    ffi (1.17.0)
+    ffi (1.17.0-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
-    google-protobuf (4.27.1)
+    google-protobuf (4.27.1-x86_64-linux)
       bigdecimal
       rake (>= 13)
     http_parser.rb (0.8.0)
@@ -84,12 +84,10 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
     method_source (1.1.0)
-    mini_portile2 (2.8.7)
     minitest (5.24.0)
     mutex_m (0.2.0)
     nio4r (2.7.3)
-    nokogiri (1.16.6)
-      mini_portile2 (~> 2.8.2)
+    nokogiri (1.16.6-x86_64-linux)
       racc (~> 1.4)
     parallel (1.25.1)
     parser (3.3.3.0)
@@ -123,7 +121,7 @@ GEM
     rb-inotify (0.11.1)
       ffi (~> 1.0)
     regexp_parser (2.9.2)
-    rexml (3.3.0)
+    rexml (3.3.1)
       strscan
     rouge (4.3.0)
     rubocop (1.64.1)
@@ -144,9 +142,8 @@ GEM
       rubocop-ast (>= 1.31.1, < 2.0)
     ruby-progressbar (1.13.0)
     safe_yaml (1.0.5)
-    sass-embedded (1.77.5)
+    sass-embedded (1.77.5-x86_64-linux-gnu)
       google-protobuf (>= 3.25, < 5.0)
-      rake (>= 13)
     standard (1.39.0)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -168,7 +165,7 @@ GEM
     webrick (1.8.1)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   activesupport
