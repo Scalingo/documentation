@@ -26,6 +26,7 @@ module Dirname
         "type" => "dir",
         "url" => page_for_dir&.url || url_path,
         "index" => page_for_dir&.data&.dig("index"),
+        "section_title" => page_for_dir&.data&.dig("section_title") || nil,
       }
       @breadcrumb_hash[data["url"]] = data["title"]
       data["children"] = children = []
@@ -43,6 +44,7 @@ module Dirname
             "type" => "file",
             "url" => matched_page ? matched_page.url : "UNMATCHED PAGE",
             "index" => matched_page && matched_page.data["index"] ? matched_page.data["index"] : nil,
+            "section_title" => matched_page && matched_page.data["section_title"] ? matched_page.data["section_title"] : nil,
           }
           children << child
           @breadcrumb_hash[child["url"]] = child["title"]
