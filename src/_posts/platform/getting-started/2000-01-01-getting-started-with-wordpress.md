@@ -1,31 +1,110 @@
 ---
 title: Getting Started with WordPress on Scalingo
-modified_at: 2022-09-21 00:00:00
+modified_at: 2024-07-04 12:00:00
 tags: php, http, framework, wordpress, deployment
 index: 14
 ---
 
-## Detection
+WordPress is a popular open-source web content management system (CMS) used for
+building and managing websites. Initially released as a blogging platform, it
+has since evolved into a versatile tool supporting a wide range of web
+applications, such as e-commerce, portfolios, forums, and more. It's well-known
+for its ease of use and extensive themes and plugins ecosystem.
 
-When a PHP application is deployed, Scalingo checks the existence of
-the `wp-settings.php` file at the root folder of your app.
 
-During the deployment process, you'll see the following output
-mentioning that the framework has correctly been detected:
+## Planning your Deployment
 
-```text
------> Detected WordPress
------> Setting up WordPress
-...
-```
+{% note %}
+   **WordPress is not well suited to be directly deployed on Scalingo**. This
+   is mainly due to the fact that WordPress developers do not follow modern
+   best practices for cloud deployments, such as **[12 factor](https://12factor.net)**.\
+   \
+   Hopefully, the [Roots](https://roots.io/about/) team has created
+   **[Bedrock](https://roots.io/bedrock/)**, a modern WordPress boilerplate that
+   greatly improves WordPress development by leveraging [Composer to manage
+   dependencies]({% post_url languages/php/2000-01-01-dependencies %}),
+   providing a better folder structure, facilitating environment-specific
+   configurations, improving security and offering better Git integration.\
+   Basically everything we love at Scalingo!
+{% endnote %}
 
-Or for Bedrock WordPress:
+- For all the reasons presented above, we will use Bedrock.
+- WordPress is written in PHP. We will use the PHP buildpack along with an
+  Nginx web server.
+- It requires a MySQL® database to store all the website content as well as
+  parts of its configuration. Chosing the appropriate plan mostly depends on
+  the traffic your WordPress has to handle. We usually advise to start with a
+  [MySQL® for Scalingo Starter/Business 512 addon](https://scalingo.com/databases/mysql)
+  and upscale later if need be.
 
-```text
------> Detected Bedrock WordPress
------> Setting up Bedrock WordPress
-...
-```
+
+## Deploying
+
+### Using our One-Click Deploy Button
+
+Click the One-Click Deploy button below to automatically deploy WordPress with
+you Scalingo account:
+
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/wordpress-scalingo)
+
+### Using the Command Line
+
+We maintain a repository called [wordpress-scalingo](https://github.com/Scalingo/wordpress-scalingo)
+on GitHub to help you deploy WordPress on Scalingo. Here are the few steps you
+will need to follow:
+
+1. Clone our repository:
+
+   ```bash
+   git clone https://github.com/Scalingo/wordpress-scalingo
+   cd wordpress-scalingo
+   ```
+
+2. Create the application on Scalingo:
+
+   ```bash
+   scalingo create my-wordpress
+   ```
+
+   Notice that our Command Line automatically detects the git repository, and
+   adds a git remote to Scalingo:
+
+   ```bash
+   git remote -v
+
+   origin   https://github.com/Scalingo/wordpress-scalingo (fetch)
+   origin   https://github.com/Scalingo/wordpress-scalingo (push)
+   scalingo git@ssh.osc-fr1.scalingo.com:my-wordpress.git (fetch)
+   scalingo git@ssh.osc-fr1.scalingo.com:my-wordpress.git (push)
+   ```
+
+3. Create the database:
+
+   ```bash
+   scalingo --app my-wordpress addons-add mysql mysql-starter-512
+   ```
+
+4. (optional) Instruct the platform to run the `web` process type in a single
+   XL container:
+
+   ```bash
+   scalingo --app -my-wordpress scale web:1:XL
+   ```
+
+5. Everything's ready, deploy to Scalingo:
+
+   ```bash
+   git push scalingo master
+   ```
+
+   During the deployment process, you should see the following output
+   mentioning that the framework has correctly been detected:
+
+   ```text
+   -----> Detected Bedrock WordPress
+   -----> Setting up Bedrock WordPress
+   ...
+   ```
 
 ## Bedrock: a Scalingo Friendly WordPress Boilerplate
 
