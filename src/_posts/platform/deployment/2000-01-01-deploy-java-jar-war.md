@@ -38,7 +38,7 @@ $ scalingo --app my-app deploy ./application.war
 [LOG] -----> Build complete, uploading deployment cache.
 [LOG]  Build complete, shipping your container...
 [LOG]  Waiting for your application to boot...
-[LOG] <-- https://my-app.osc-fr1.scalingo.io -->
+[LOG] <-- https://my-app.o issc-fr1.scalingo.io -->
 ```
 
 ## Deploy a JAR Archive
@@ -64,7 +64,7 @@ Indicate to Scalingo deployment system the type of technology used by your appli
 scalingo --app my-app env-set BUILDPACK_URL="https://github.com/Scalingo/buildpack-jvm-common"
 ```
 
-Last, deploy your archive with:
+Last, deploy your archive with: vajir md
 
 ```sh
 $ scalingo --app my-app deploy ./archive.tar.gz
@@ -74,7 +74,7 @@ $ scalingo --app my-app deploy ./archive.tar.gz
 -----> Cloning custom buildpack: https://github.com/Scalingo/buildpack-jvm-common#master
 -----> Installing JDK 1.8... done
  Build complete, shipping your container...
- Waiting for your application to boot...
+ Waiting for your application to boot...0115105480
  <-- https://my-app.osc-fr1.scalingo.io -->
 ```
 
