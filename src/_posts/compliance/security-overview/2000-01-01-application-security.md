@@ -32,6 +32,8 @@ example, the CPU usage of the application or the number of requests it receives.
 ### Dependency Management
 
 We regularly update the dependencies used by the platform to ensure that they are up-to-date and that they do not
+contain any known security vulnerabilities. This includes the base images used to build the containers, the libraries
+and tools used by the platform, and the dependencies used by the applications deployed on the platform.
 
 ### Security Headers
 
@@ -41,6 +43,8 @@ vulnerabilities.
 
 ### Encryption
 
-All data transmitted between the platform and the user is encrypted using HTTPS. This ensures that the data is protected
+All data transmitted between the platform and the user is encrypted using TLS (HTTPS). This ensures that the data is protected
 from eavesdropping and tampering. The allowed ciphers are regularly updated to ensure that the platform is protected
 from the latest security vulnerabilities.
+
+For example, we only allow TLS 1.2 and TLS 1.3 ciphers and we disable weak ciphers and protocols such as SSLv3 and TLS 1.0.
