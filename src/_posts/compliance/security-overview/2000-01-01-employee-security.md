@@ -17,4 +17,4 @@ All employees are required to follow security best practices to protect the plat
 includes using strong passwords, enabling two-factor authentication, and following the security policies implemented by
 the platform.
 
-They are trained to detect phishing attempts and to report them to the security team.
+They are trained to detect phishing, social engineering, or impersonation attempts and to report them to the security team.
