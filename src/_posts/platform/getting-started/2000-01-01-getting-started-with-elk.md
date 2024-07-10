@@ -147,7 +147,7 @@ Logstash has created the unicorn index which can now be requested:
 ```
 
 The result of the above search contains a document having with a field `name`
-set to `Alenala` and a field `message` set to `Hi!`.
+set to `Alanala` and a field `message` set to `Hi!`.
 
 ### Custom Configuration for Logstash
 
@@ -155,10 +155,10 @@ The cloned boilerplate used to deploy your application contains a `config` direc
 All the files in this folder will be copied in the Logstash configuration directory at runtime, 
 allowing you to customize exactly how you want Logstash to run.
 
-For instance, if you want to edit the logging behavior of Logstash, edit `config/log4j2.yml`
+For instance, if you want to edit the logging behavior of Logstash, edit `config/log4j2.properties`
 
 ```
-git add config/log4j2.yml
+git add config/log4j2.properties
 git commit -m "Update how Logstash is logging"
 git push scalingo master
 ```
