@@ -15,17 +15,17 @@ for its ease of use and extensive themes and plugins ecosystem.
 ## Planning your Deployment
 
 {% note %}
-   **WordPress is not well suited to be directly deployed on Scalingo**. This
-   is mainly due to the fact that WordPress developers do not follow modern
-   best practices for cloud deployments, such as **[12 factor](https://12factor.net)**.\
-   \
-   Hopefully, the [Roots](https://roots.io/about/) team has created
-   **[Bedrock](https://roots.io/bedrock/)**, a modern WordPress boilerplate that
-   greatly improves WordPress development by leveraging [Composer to manage
-   dependencies]({% post_url languages/php/2000-01-01-dependencies %}),
-   providing a better folder structure, facilitating environment-specific
-   configurations, improving security and offering better Git integration.\
-   Basically everything we love at Scalingo!
+**WordPress is not well suited to be directly deployed on Scalingo**. This is
+mainly due to the fact that WordPress developers do not follow modern best
+practices for cloud deployments, such as **[12 factor](https://12factor.net)**.\
+\
+Hopefully, the [Roots](https://roots.io/about/) team has created
+**[Bedrock](https://roots.io/bedrock/)**, a modern WordPress boilerplate that
+greatly improves WordPress development by leveraging [Composer to manage
+dependencies]({% post_url languages/php/2000-01-01-dependencies %}), providing
+a better folder structure, facilitating environment-specific configurations,
+improving security and offering better Git integration.\
+Basically everything we love at Scalingo!
 {% endnote %}
 
 - For all the reasons presented above, we will use Bedrock.
