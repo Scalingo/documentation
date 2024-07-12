@@ -22,12 +22,12 @@ our HDS certification [here](/compliance/hds). You can see our Health Data Hosti
 
 ### ISO 27001
 
-Scalingo is certified ISO 27001 and we have implemented a high level of security to protect the data hosted on the
+Scalingo is ISO 27001:2013 certified and we have implemented a high level of security to protect the data hosted on the
 platform. The ISO 27001 certification ensures that we have implemented a comprehensive information security management
 system to protect the data hosted on the platform. See our ISO 27001 certification [here](/compliance/iso-27001).
 
 ### SecNumCloud
 
-Scalingo is hosting its infrastructure in the SecNumCloud certified datacenters (uniquely for the region
-`osc-secnum-fr1`). This certification ensures that the datacenters have implemented a high level of security to protect
-the data hosted on them. We are working on a SecNumCloud Visa for a new range of products.
+Scalingo is hosting its infrastructure in the SecNumCloud qualified datacenters (uniquely for the region
+`osc-secnum-fr1`). This qualification ensures that the datacenters have implemented a high level of security to protect
+the data hosted on them. We are working on a SecNumCloud certification for a new range of products.
