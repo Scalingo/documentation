@@ -30,4 +30,4 @@ system to protect the data hosted on the platform. See our ISO 27001 certificati
 
 Scalingo is hosting its infrastructure in the SecNumCloud certified datacenters (uniquely for the region
 `osc-secnum-fr1`). This certification ensures that the datacenters have implemented a high level of security to protect
-the data hosted on them. We are working on a SecNumCloud certification for a new range of products.
+the data hosted on them. We are working on a SecNumCloud Visa for a new range of products.
