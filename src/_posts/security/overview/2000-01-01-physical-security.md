@@ -8,9 +8,10 @@ index: 1
 
 ### Datacenters
 
-Scalingo uses datacenters that are certified ISO 27001, ISO 27017, ISO 27018, HDS (Region `osc-fr1`) and
-and can additionally have the qualification SecNumCloud (Region `osc-secnum-fr1`). These certifications ensure that the datacenters have implemented a high level of
-security to protect the data hosted on them.
+Scalingo does not have its own datacenters, but uses IaaS services to provision resources. These services use
+datacenters that are certified ISO 27001, ISO 27017, ISO 27018, HDS (Region `osc-fr1`) and and can additionally have the
+qualification SecNumCloud (Region `osc-secnum-fr1`). These certifications ensure that the datacenters have implemented a
+high level of security to protect the data hosted on them.
 
 ### Physical Access Control
 
