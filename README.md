@@ -72,15 +72,16 @@ object(s)`. Then, insert it with:
 
 To install dependencies locally:
 
-```
-docker compose build
-docker compose run --rm web bundle install
-docker compose run --rm web yarn install --ignore-engines
+```sh
+docker compose build \
+&& docker compose run --rm web bundle install \
+&& docker compose run --rm web yarn install --ignore-engines \
+&& docker compose run --rm web bundle exec jekyll build
 ```
 
 To build the static site and spin-up a file server:
 
-```
+```sh
 docker compose up
 ```
 
