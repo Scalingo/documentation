@@ -19,7 +19,9 @@ function replaceUrl(url) {
   return new_url;
 }
 
-["#docsearch-index", "#docsearch-nav"].forEach((container) => {
+const urlParams = new URLSearchParams(window.location.search);
+const initialQuery = urlParams.get('q');
+["#docsearch-nav", "#docsearch-index"].forEach((container, index) => {
   if(document.querySelectorAll(container).length > 0) {
     docsearch({
       container: container,
@@ -27,6 +29,7 @@ function replaceUrl(url) {
       apiKey: '9dfb74cc002ece507fac441e93da6345',
       indexName: 'scalingo-doc',
       placeholder: 'Search',
+      initialQuery: (index === 0 && initialQuery) ? initialQuery : null,
       transformItems(items) {
         return items.map((item) => {
           item.url = replaceUrl(item.url);
@@ -36,3 +39,10 @@ function replaceUrl(url) {
     });
   }
 })
+
+// Open the search modal if the initial query is present
+if (initialQuery) {
+  const div = document.querySelector('#docsearch-nav');
+  const button = div.querySelector('button');
+  button.click();
+}
