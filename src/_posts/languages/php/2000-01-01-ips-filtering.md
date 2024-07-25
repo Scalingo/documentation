@@ -1,7 +1,7 @@
 ---
 title: Filter IPs allowed to access your app
 nav: IPs Filtering
-modified_at: 2016-06-24 00:00:00
+modified_at: 2024-07-25 00:00:00
 tags: php, http, security, filtering
 index: 11
 ---
@@ -14,7 +14,7 @@ access your application.
 
 ## Configuration
 
-### Nginx configuration
+### Nginx Configuration
 
 Create a directory `config` in your project:
 
@@ -34,16 +34,16 @@ deny all;
 Last thing you need to do is to instruct Scalingo's deployment process to use
 your configuration file.
 
-### Deployment process configuration
+### Deployment Process Configuration
 
 {% assign nginx-include = "config/nginx-ips-filtering.conf" %}
 {% include nginx_includes.md %}
 
-## Redeploy your app
+## Redeploy Your Application
 
 ```bash
 git add composer.json composer.lock config/nginx-ips-filtering.conf
-git commit -m "setup ip filtering"
+git commit --message="setup ip filtering"
 git push scalingo master
 ```
 
