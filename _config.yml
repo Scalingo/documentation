@@ -153,6 +153,9 @@ samples:
   - url: meteor
     name: MeteorJS
     logo: meteorjs
+  - url: nextjs-standalone
+    name: Next.js (standalone)
+    logo: nextjs
   - url: node-express
     name: NodeJS/Express
     logo: nodejs
