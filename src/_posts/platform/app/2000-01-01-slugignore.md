@@ -96,3 +96,9 @@ directory containing all the third party dependency source code in the image:
 ```text
 Godeps
 ```
+
+### Next.js Application
+
+You're deploying a Next.js application but the image size is too big. You can try to run Next.js in standalone mode.
+
+More information here: [Next.js in standalone mode](/languages/nodejs/nextjs-standalone)
