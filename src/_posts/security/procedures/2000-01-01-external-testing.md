@@ -19,7 +19,7 @@ You can run a load test / smoke test / endurance test on your application under 
   - The target public URLs that will be used,
   - Number of requests per minute,
   - Size of the payload of each request,
-  - Time slot the load test is planned. Note that the test should only be run during business hours - 09:00 to 12:00 and 14:00 to 18:00 (CET/CEST, Europe/Paris timezone). The test must have a specific start and end hour.
+  - Time slot in which the load test is planned. Note that the test should only be run during business hours - 09:00 to 12:00 and 14:00 to 18:00 (CET/CEST, Europe/Paris timezone). The test must have a specific start and end time.
   - Please include any information you think may be useful to assess your request.
 3. We will reply within 7 business days to give you the authorization or suggest you another time period
 
