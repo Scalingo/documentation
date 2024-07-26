@@ -47,10 +47,9 @@ Start the server using Node.js.
 Reason: after build node_modules will have been removed, so the original command `next start` will error: `"sh: 1: next: not found"`
 {% endnote %}
 
-##### 4. Finally, copy assets
+#### 4. Finally, copy assets
 
-As indicated in the [Next.js documentation](https://nextjs.org/docs/advanced-features/output-file), it doesn't copy assets, so it's up to us to copy them. This is something that can be done easily in the buildpack.
-
+As indicated in the [Next.js documentation](https://nextjs.org/docs/advanced-features/output-file), it doesn't copy assets, so it's up to us to copy them.
 To accomplish this, we can create a script that runs at build time to copy the assets to the correct location.
 
 Create a file called `copy-assets.sh` in the root of your project with the following content:
