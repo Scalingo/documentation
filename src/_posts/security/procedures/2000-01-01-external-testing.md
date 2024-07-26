@@ -1,7 +1,7 @@
 ---
-title: Application external testing
-nav: External testing
-modified_at: 2022-03-15 00:00:00
+title: Application External Testing
+nav: External Testing
+modified_at: 2024-07-26 00:00:00
 tags: security pentest load-test procedures
 ---
 
@@ -11,10 +11,15 @@ tags: security pentest load-test procedures
 
 You can run a load test / smoke test / endurance test on your application under the following conditions:
 
-- Ask the support using support [at] scalingo.com or use the support chat
-- You should communicate the metrics of your test to the support (number of connections...)
-- The test should only be run during business hours - 09:00 to 12:00 and 14:00 to 18:00 (CET/CEST, Europe/Paris timezone)
-- The test should have specific start and end hours
+1. Ask the support using [support@scalingo.com](mailto:support@scalingo.com) or use the support chat
+2. Your request should include the following information:
+  - The application name on Scalingo,
+  - The Scalingo region where the application is hosted,
+  - Number of requests per minute,
+  - Size of the payload of each request,
+  - Time slot the load test is planned. Note that the test should only be run during business hours - 09:00 to 12:00 and 14:00 to 18:00 (CET/CEST, Europe/Paris timezone). The test must have a specific start and end hour.
+  - Please include any information you think may be useful to assess your request.
+3. We will reply within 7 business days to give you the authorization or suggest you another time period
 
 {% include security_testing_warning.md %}
 
@@ -38,8 +43,7 @@ For example:
 #### Procedure to follow
 
 1. Send the authorization document (signed by the customer and the pentesting
-   service provider) to the Security Team at the address security [at]
-   scalingo.com
+   service provider) to the Security Team at the address [security@scalingo.com](mailto:security@scalingo.com)
 2. We will reply within 7 business days to give you the authorization or suggest
    you another time period if there are already too many pentests scheduled at
    this date
