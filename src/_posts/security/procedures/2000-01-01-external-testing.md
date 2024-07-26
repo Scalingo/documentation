@@ -15,6 +15,8 @@ You can run a load test / smoke test / endurance test on your application under 
 2. Your request should include the following information:
   - The application name on Scalingo,
   - The Scalingo region where the application is hosted,
+  - The source IPs of the requests,
+  - The target public URLs that will be used,
   - Number of requests per minute,
   - Size of the payload of each request,
   - Time slot the load test is planned. Note that the test should only be run during business hours - 09:00 to 12:00 and 14:00 to 18:00 (CET/CEST, Europe/Paris timezone). The test must have a specific start and end hour.
