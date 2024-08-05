@@ -17,6 +17,7 @@ layout: default
             <td>Base</td>
             <td>{{ page.cvss.base }}</td>
           </tr>
+          {% if page.cvss.version < 4 %}
           <tr>
             <td>Temporal</td>
             <td>{{ page.cvss.temporal }}</td>
@@ -25,6 +26,7 @@ layout: default
             <td>Environmental</td>
             <td>{{ page.cvss.environmental }}</td>
           </tr>
+          {%endif%}
         </tbody>
       </table>
       {%endif%}
