@@ -24,7 +24,7 @@ our HDS certification [here](/compliance/hds). You can see our Health Data Hosti
 
 Scalingo is ISO 27001:2013 certified and we have implemented a high level of security to protect the data hosted on the
 platform. The ISO 27001 certification ensures that we have implemented a comprehensive information security management
-system to protect the data hosted on the platform. See our ISO 27001 certification [here](/compliance/iso-27001).
+system to protect the data hosted on the platform. See our ISO 27001 certification [here](/compliance/iso27001).
 
 ### SecNumCloud
 
