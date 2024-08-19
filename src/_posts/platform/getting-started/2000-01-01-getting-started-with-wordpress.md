@@ -88,50 +88,51 @@ will need to follow:
    scalingo --app my-wordpress addons-add mysql mysql-starter-512
    ```
 
-4. Add a few mandatory environment variables, either via the Dashboard or via
-   [the Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment):
+4. Add a few environment variables, either via the Dashboard or via [the
+   Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment):
 
    | Env Variable       | Description |
    | ------------------ | ----------- |
-   | `WP_HOME`          | Full URL to Wordpress home.<br />i.e. `https://my-app.osc-fr1.scalingo.io`                           |
-   | `WP_SITEURL`       | Full URL to Wordpress, including the subdirectory.<br />i.e. `https://my-app.osc-fr1.scalingo.io/wp` |
-   | `WP_ENV`           | Environment. See [`WP_ENV`](#environment) below. |
+   | `WP_HOME`          | Mandatory. Full URL to Wordpress home.<br />i.e. `https://my-app.osc-fr1.scalingo.io`                           |
+   | `WP_SITEURL`       | Mandatory. Full URL to Wordpress, including the subdirectory.<br />i.e. `https://my-app.osc-fr1.scalingo.io/wp` |
+   | `WP_ENV`           | Can be set to either `development`, `staging`, or `production`. Defaults to `production`.                       |
+   | `AUTH_KEY`         | Mandatory. Can be generated via [Roots WordPress Salts Generator](https://roots.io/salts.html)                  |
+   | `SECURE_AUTH_KEY`  | Same as above |
+   | `LOGGED_IN_KEY`    | Same as above |
+   | `NONCE_KEY`        | Same as above |
+   | `AUTH_SALT`        | Same as above |
+   | `SECURE_AUTH_SALT` | Same as above |
+   | `LOGGED_IN_SALT`   | Same as above |
+   | `NONCE_SALT`       | Same as above |
 
-5. Generate and add a few security keys and salts, also as environment
-   variables. These are random strings of characters that are used to enhance
-   the security of WordPress, for example, by encrypting some data.
+5. (optional) Put your theme(s) in the `web/app/themes` directory.
 
-   They can be generated via [Roots WordPress Salts Generator](https://roots.io/salts.html),
-   and must be added as environment variable, either via the Dashboard or via
-   the [Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment):
+   Don't forget to commit your changes:
 
-   - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`
-   - `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
+   ```bash
+   git add web/app/themes
+   git commit -m "Add themes"
+   ```
 
-6. Setup the S3 bucket:
+6. (optional) Add WordPress plugins using [Composer](https://getcomposer.org)
+   or [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=):
 
-   {% note %}
-   The following instructions describe the process for an AWS S3 bucket. Please
-   refer to your provider's documentation to setup your S3 storage.
-   {% endnote %}
+   ```bash
+   composer require --ignore-platform-reqs wpackagist-plugin/akismet
+   ```
 
-   1. Create a **public** S3 bucket with **ACL disabled**, and with the
-      following policy:
+   Don't forget to commit your changes:
 
-      ```json
-      {
-        "Version": "2012-10-17",
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
-          }
-        ]
-      }
-      ```
+   ```bash
+   git add composer.json composer.lock
+   git commit -m "Add plugins"
+   ```
 
+7. (optional) The following steps describe how to setup an AWS S3 bucket for
+   your WordPress instance. While we know this work, any S3 storage solution
+   should also work.
+
+   1. Create a **public** S3 bucket with ACL disabled
    2. Configure the IAM user with the following policy:
 
       ```json
@@ -157,17 +158,41 @@ will need to follow:
         ]
       }
       ```
+   3. Configure the bucket with the following policy:
 
-   If you want to use another provider than AWS (OVH, Scaleway, etc.), you can setup the IAM according your bucket and add the env variable `S3_UPLOADS_ENDPOINT` with the url of the provider. 
+      ```json
+      {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
+          }
+        ]
+      }
+      ```
+   4. Create a few environment variables, either via the dashboard or using
+      [the Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment):
 
-7. (optional) Instruct the platform to run the `web` process type in a single
+      | Env Variable            | Description                              |
+      | ----------------------- | ---------------------------------------- |
+      | `S3_UPLOADS_BUCKET`     | Name of the S3 bucket to upload files to |
+      | `S3_UPLOADS_KEY`        | AWS Access Key ID for S3 authentication  |
+      | `S3_UPLOADS_SECRET`     | AWS Secret Key for S3 authentication     |
+      | `S3_UPLOADS_REGION`     | Region of the S3 bucket                  |
+      | `S3_UPLOADS_OBJECT_ACL` | Object permission of files uploaded to S3. Can be either `public-read`, `private` or `authenticated-read`. Defaults to `public-read` |
+
+
+8. (optional) Instruct the platform to run the `web` process type in a single
    XL container:
 
    ```bash
    scalingo --app my-wordpress scale web:1:XL
    ```
 
-8. Everything's ready, deploy to Scalingo:
+9. Everything's ready, deploy to Scalingo:
 
    ```bash
    git push scalingo master
