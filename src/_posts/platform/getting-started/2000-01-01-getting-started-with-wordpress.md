@@ -36,6 +36,11 @@ Basically everything we love at Scalingo!
   the traffic your WordPress has to handle. We usually advise to start with a
   [MySQL® for Scalingo Starter/Business 512 addon](https://scalingo.com/databases/mysql)
   and upscale later if need be.
+- Since relying on the local filesystem to store data is not allowed on
+  Scalingo, we will use an S3-compatible object storage solution. Our Bedrock
+  distribution fully supports it, thanks to the [`humanmade/s3-uploads`](https://github.com/humanmade/S3-Uploads)
+  embedded. In the following guide, we will use an AWS S3 bucket but any
+  S3-compatible solution should be OK.
 
 
 ## Deploying
@@ -84,51 +89,50 @@ will need to follow:
    scalingo --app my-wordpress addons-add mysql mysql-starter-512
    ```
 
-4. Add a few environment variables, either via the Dashboard or via [the
-   Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment):
+4. Add a few mandatory environment variables, either via the Dashboard or via
+   [the Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment):
 
    | Env Variable       | Description |
    | ------------------ | ----------- |
-   | `WP_HOME`          | Mandatory. Full URL to Wordpress home.<br />i.e. `https://my-app.osc-fr1.scalingo.io`                           |
-   | `WP_SITEURL`       | Mandatory. Full URL to Wordpress, including the subdirectory.<br />i.e. `https://my-app.osc-fr1.scalingo.io/wp` |
-   | `WP_ENV`           | Can be set to either `development`, `staging`, or `production`. Defaults to `production`.                       |
-   | `AUTH_KEY`         | Mandatory. Can be generated via [Roots WordPress Salts Generator](https://roots.io/salts.html)                  |
-   | `SECURE_AUTH_KEY`  | Same as above |
-   | `LOGGED_IN_KEY`    | Same as above |
-   | `NONCE_KEY`        | Same as above |
-   | `AUTH_SALT`        | Same as above |
-   | `SECURE_AUTH_SALT` | Same as above |
-   | `LOGGED_IN_SALT`   | Same as above |
-   | `NONCE_SALT`       | Same as above |
+   | `WP_HOME`          | Full URL to Wordpress home.<br />i.e. `https://my-app.osc-fr1.scalingo.io`                           |
+   | `WP_SITEURL`       | Full URL to Wordpress, including the subdirectory.<br />i.e. `https://my-app.osc-fr1.scalingo.io/wp` |
+   | `WP_ENV`           | Environment. See [`WP_ENV`](#environment) below. |
 
-5. (optional) Put your theme(s) in the `web/app/themes` directory.
+5. Generate and add a few security keys and salts, also as environment
+   variables. These are random strings of characters that are used to enhance
+   the security of WordPress, for example, by encrypting some data.
 
-   Don't forget to commit your changes:
+   They can be generated via [Roots WordPress Salts Generator](https://roots.io/salts.html),
+   and must be added as environment variable, either via the Dashboard or via
+   the [Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment):
 
-   ```bash
-   git add web/app/themes
-   git commit -m "Add themes"
-   ```
+   - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`
+   - `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
 
-6. (optional) Add WordPress plugins using [Composer](https://getcomposer.org)
-   or [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=):
+6. Setup the S3 bucket:
 
-   ```bash
-   composer require --ignore-platform-reqs wpackagist-plugin/akismet
-   ```
+   {% note %}
+   The following instructions describe the process for an AWS S3 bucket. Please
+   refer to your provider's documentation to setup your S3 storage.
+   {% endnote %}
 
-   Don't forget to commit your changes:
+   1. Create a **public** S3 bucket with **ACL disabled**, and with the
+      following policy:
 
-   ```bash
-   git add composer.json composer.lock
-   git commit -m "Add plugins"
-   ```
+      ```json
+      {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
+          }
+        ]
+      }
+      ```
 
-7. (optional) The following steps describe how to setup an AWS S3 bucket for
-   your WordPress instance. While we know this work, any S3 storage solution
-   should also work.
-
-   1. Create a **public** S3 bucket with ACL disabled
    2. Configure the IAM user with the following policy:
 
       ```json
@@ -154,23 +158,10 @@ will need to follow:
         ]
       }
       ```
-   3. Configure the bucket with the following policy:
 
-      ```json
-      {
-        "Version": "2012-10-17",
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
-          }
-        ]
-      }
-      ```
-   4. Create a few environment variables, either via the dashboard or using
-      [the Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment):
+   3. Create a few environment variables, either via the dashboard or using
+      [the Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment).\
+      Note that these are mandatory when `WP_ENV` is set to `production`.
 
       | Env Variable            | Description                              |
       | ----------------------- | ---------------------------------------- |
@@ -181,27 +172,177 @@ will need to follow:
       | `S3_UPLOADS_OBJECT_ACL` | Object permission of files uploaded to S3. Can be either `public-read`, `private` or `authenticated-read`. Defaults to `public-read` |
 
 
-8. (optional) Instruct the platform to run the `web` process type in a single
+7. (optional) Put your theme(s) in the `web/app/themes` directory.
+
+   Don't forget to commit your changes:
+
+   ```bash
+   git add web/app/themes
+   git commit -m "Add themes"
+   ```
+
+8. (optional) Add WordPress plugins using [Composer](https://getcomposer.org)
+   or [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=):
+
+   ```bash
+   composer require --ignore-platform-reqs wpackagist-plugin/akismet
+   ```
+
+   Don't forget to commit your changes:
+
+   ```bash
+   git add composer.json composer.lock
+   git commit -m "Add plugins"
+   ```
+
+9. (optional) Instruct the platform to run the `web` process type in a single
    XL container:
 
    ```bash
    scalingo --app my-wordpress scale web:1:XL
    ```
 
-9. Everything's ready, deploy to Scalingo:
+10. Everything's ready, deploy to Scalingo:
 
-   ```bash
-   git push scalingo master
+    ```bash
+    git push scalingo master
+    ```
+
+    During the deployment process, you should see the following output
+    mentioning that the framework has correctly been detected:
+
+    ```text
+    -----> Detected Bedrock WordPress
+    -----> Setting up Bedrock WordPress
+    ...
+    ```
+
+    Once your WordPress instance is up and running, you can access the admin
+    page at `https://my-wordpress.osc-fr1.scalingo.io/wp/wp-admin`.
+
+### Using the Terraform Provider
+
+{% note%}
+The following code blocks are given as examples.\
+You will have to adjust some values to suit your needs.
+{% endnote %}
+
+1. Start by forking our [WordPress/Bedrock repository](https://github.com/Scalingo/wordpress-scalingo)
+
+2. Place the following block in your Terraform file to create the app. You can
+   use [Roots WordPress Salts Generator](https://roots.io/salts.html) to
+   generate the security keys and salts:
+
+   ```terraform
+   resource "scalingo_app" "my-wordpress" {
+     name        = "my-wordpress"
+     stack_id    = "scalingo-22"
+     force_https = true
+
+     environment = {
+       WP_HOME          = "https://my-wordpress.osc-fr1.scalingo.io",
+       WP_SITEURL       = "https://my-wordpress.osc-fr1.scalingo.io/wp",
+       WP_ENV           = "development",
+       AUTH_KEY         = "",
+       SECURE_AUTH_KEY  = "",
+       LOGGED_IN_KEY    = "",
+       NONCE_KEY        = "",
+       AUTH_SALT        = "",
+       SECURE_AUTH_SALT = "",
+       LOGGED_IN_SALT   = "",
+       NONCE_SALT       = ""
+     }
+   }
    ```
 
-   During the deployment process, you should see the following output
-   mentioning that the framework has correctly been detected:
+3. Link the app to your forked repository:
 
-   ```text
-   -----> Detected Bedrock WordPress
-   -----> Setting up Bedrock WordPress
-   ...
+   ```terraform
+   data "scalingo_scm_integration" "github" {
+     scm_type = "github"
+   }
+
+   resource "scalingo_scm_repo_link" "default" {
+     auth_integration_uuid = data.scalingo_scm_integration.github.id
+     app                   = scalingo_app.my-wordpress.id
+     source                = "https://github.com/<username>/wordpress-scalingo"
+     branch                = "master"
+   }
    ```
 
-   Once your WordPress instance is up and running, you can access the admin
-   page at `https://my-wordpress.osc-fr1.scalingo.io/wp/wp-admin`.
+4. Create a Starter-512 MySQL® addon and attach it to your app:
+
+   ```terraform
+   resource "scalingo_addon" "my-wordpress-db" {
+     app         = scalingo_app.my-wordpress.id
+     provider_id = "mysql"
+     plan        = "mysql-starter-512"
+   }
+   ```
+
+5. [Follow steps 6, 7 and 8 described previously](#using-the-command-line) to
+   respectively setup your S3 object storage, to add your themes and your
+   plugins. If you setup an S3 object storage, don't forget to add the
+   corresponding environment variables to your `scalingo_app` resource:
+
+   ```terraform
+   resource "scalingo_app" "my-wordpress" {
+     [...]
+     environment = {
+       [...]
+       S3_UPLOADS_BUCKET     = "",
+       S3_UPLOADS_KEY        = "",
+       S3_UPLOADS_SECRET     = "",
+       S3_UPLOADS_REGION     = "",
+       S3_UPLOADS_OBJECT_ACL = "public-read"
+     }
+   }
+   ```
+
+6. (optional) Instruct the platform to run the `web` process type in a single
+   XL container:
+
+   ```terraform
+   resource "scalingo_container_type" "web" {
+     app    = scalingo_app.my-wordpress.id
+     name   = "web"
+     size   = "XL"
+     amount = 1
+   }
+   ```
+
+7. Run `terraform plan` and check if the result looks good
+8. If so, run `terraform apply`
+9. Once Terraform is done, your WordPress instance is ready to be deployed:
+   1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+   2. Click on your WordPress application
+   3. Click on the **Deploy** tab
+   4. Click on **Manual deployment** in the left menu
+   5. Click the **Trigger deployment** button
+   6. After a few seconds, your WordPress instance is finally up and running!
+
+
+## Updating
+
+### Using the Command Line
+
+### Using the Terraform Provider
+
+
+## Customizing
+
+### Installing Plugins
+
+### Installing Themes
+
+### Environment
+
+Bedrock supports many environment variables.
+
+- **`WP_ENV`**\
+  Allows to automatically enable or disable some settings (such as the log
+  level, debugging, ...) depending on the value provided.\
+  Out of the box, can be either `development`, `staging` or `production`.\
+  We advise to start setting it to `staging` or `development` and switch to
+  `production` only once the S3 storage is successfully configured.\
+  Defaults to `production`.
