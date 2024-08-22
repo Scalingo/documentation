@@ -120,8 +120,8 @@ git push scalingo master
   up-to-date, but can't guarantee it.
 - You can use the dedicated environment variable ([see below](#environment)) to
   deploy a specific version.
-- You can still get in touch with our support team, should you need a specific
-  version.
+- Please feel free to get in touch with our support team, should you need a
+  specific version.
 {% endnote %}
 
 ### Updating the Core Rule Set
@@ -142,8 +142,8 @@ git push scalingo master
   up-to-date, but can't guarantee it.
 - You can use the dedicated environment variable ([see below](#environment)) to
   deploy a specific version.
-- You can still get in touch with our support team, should you need a specific
-  version.
+- Please feel free to get in touch with our support team, should you need a
+  specific version.
 {% endnote %}
 
 
