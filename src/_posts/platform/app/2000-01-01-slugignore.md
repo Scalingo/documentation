@@ -1,6 +1,6 @@
 ---
 title: .slugignore File
-modified_at: 2021-01-21 12:06:00
+modified_at: 2024-08-22 00:00:00
 tags: internals slugignore image size
 ---
 
@@ -25,9 +25,19 @@ They would only slow down your application's boot time.
 Create a `.slugignore` file at the root of your project containing on each line
 the name of a file or directory you want to exclude from your image.
 
-{% note %}
-This file is interpreted by Bash. You can use some wildcards such as `*.txt`.
-{% endnote %}
+Each line in the `.slugignore` is interpreted as it would be in a Linux shell. Hence you can use the `*` as a wildcard. For instance, `*.log` would ignore all files ending with `.log`.
+
+It is also possible to use character range such as `[a-f]` to remove any file named with a letter between `a` and `f`.
+
+Here is an example of a perfectly valid `.slugignore` file:
+
+```
+[a-f]*.log
+```
+
+This would exclude from the image all files starting by a letter between `a` and `f`, followed by any number of characters, and ending with `.log`.
+
+For a comprehensive list of what is allowed, please refer to the [`filepath.Match`](https://pkg.go.dev/path/filepath#Match) Go function.
 
 ## Examples
 
