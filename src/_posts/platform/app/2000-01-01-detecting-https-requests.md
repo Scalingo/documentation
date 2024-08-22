@@ -37,7 +37,7 @@ import (
 )
 
 func isHTTPS(req *http.Request) bool {
-  return req.Header.Get("X-Forwarded-Proto" == "https") || req.URL.Scheme == "https"
+  return req.Header.Get("X-Forwarded-Proto") == "https" || req.URL.Scheme == "https"
 }
 
 func main() {
