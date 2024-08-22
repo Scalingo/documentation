@@ -160,8 +160,7 @@ will need to follow:
       ```
 
    3. Create a few environment variables, either via the dashboard or using
-      [the Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment).\
-      Note that these are mandatory when `WP_ENV` is set to `production`.
+      [the Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment).
 
       | Env Variable            | Description                              |
       | ----------------------- | ---------------------------------------- |
@@ -171,58 +170,34 @@ will need to follow:
       | `S3_UPLOADS_REGION`     | Region of the S3 bucket                  |
       | `S3_UPLOADS_OBJECT_ACL` | Object permission of files uploaded to S3. Can be either `public-read`, `private` or `authenticated-read`. Defaults to `public-read` |
 
-
-7. (optional) Put your theme(s) in the `web/app/themes` directory.
-
-   Don't forget to commit your changes:
-
-   ```bash
-   git add web/app/themes
-   git commit -m "Add themes"
-   ```
-
-8. (optional) Add WordPress plugins using [Composer](https://getcomposer.org)
-   or [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=):
-
-   ```bash
-   composer require --ignore-platform-reqs wpackagist-plugin/akismet
-   ```
-
-   Don't forget to commit your changes:
-
-   ```bash
-   git add composer.json composer.lock
-   git commit -m "Add plugins"
-   ```
-
-9. (optional) Instruct the platform to run the `web` process type in a single
+7. (optional) Instruct the platform to run the `web` process type in a single
    XL container:
 
    ```bash
    scalingo --app my-wordpress scale web:1:XL
    ```
 
-10. Everything's ready, deploy to Scalingo:
+8. Everything's ready, deploy to Scalingo:
 
-    ```bash
-    git push scalingo master
-    ```
+   ```bash
+   git push scalingo master
+   ```
 
-    During the deployment process, you should see the following output
-    mentioning that the framework has correctly been detected:
+   During the deployment process, you should see the following output
+   mentioning that the framework has correctly been detected:
 
-    ```text
-    -----> Detected Bedrock WordPress
-    -----> Setting up Bedrock WordPress
-    ...
-    ```
+   ```text
+   -----> Detected Bedrock WordPress
+   -----> Setting up Bedrock WordPress
+   ...
+   ```
 
-    Once your WordPress instance is up and running, you can access the admin
-    page at `https://my-wordpress.osc-fr1.scalingo.io/wp/wp-admin`.
+   Once your WordPress instance is up and running, you can access the admin
+   page at `https://my-wordpress.osc-fr1.scalingo.io/wp/wp-admin`.
 
 ### Using the Terraform Provider
 
-{% note%}
+{% note %}
 The following code blocks are given as examples.\
 You will have to adjust some values to suit your needs.
 {% endnote %}
@@ -324,20 +299,143 @@ You will have to adjust some values to suit your needs.
 
 ## Updating
 
+Scalingo automatically deploys the latest version of Bedrock we have tested.
+
+Consequently, updating WordPress only consists of triggering a new deployment
+of your WordPress instance.
+
+{% note %}
+- Scalingo **does not** provide any guarantee in terms of availability after
+  each Bedrock release. We do our best to keep our repository up-to-date, but
+  can't guarantee it.
+- Please feel free to get in touch with our support team, should you need a
+  specific version.
+{% endnote %}
+
 ### Using the Command Line
 
+1. In your WordPress repository, create an empty commit and push it to Scalingo:
+
+   ```bash
+   git commit --allow-empty -m "Update WordPress"
+   git push scalingo master
+   ```
+
 ### Using the Terraform Provider
+
+1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+2. Click on your WordPress application
+3. Click on the **Deploy** tab
+4. Click on **Manual deployment** in the left menu
+5. Click the **Trigger deployment** button
+6. After a few seconds, your updated WordPress instance is ready!
 
 
 ## Customizing
 
 ### Installing Plugins
 
+1. Add plugins using [Composer](https://getcomposer.org) or
+   [WordPress Packagist](https://wpackagist.org/search?q=&type=plugin&search=):
+
+   ```bash
+   composer require --ignore-platform-reqs wpackagist-plugin/akismet
+   ```
+
+2. Don't forget to commit your changes:
+
+   ```bash
+   git add composer.json composer.lock
+   git commit -m "Add plugins"
+   ```
+
+   The last steps depend on the method chosen to deploy your WordPress
+   instance (see below).
+
+#### Using the Command Line
+
+1. Make sure you have followed [the first steps](#installing-plugins)
+
+2. From your WordPress repository, trigger a new deployment:
+
+   ```bash
+   git push scalingo master
+   ```
+
+#### Using the Terraform Provider
+
+1. Make sure you have followed [the first steps](#installing-plugins)
+
+2. Push your changes to the repository linked to your app:
+
+   ```bash
+   git push origin master
+   ```
+
+3. Trigger a new deployment:
+
+   1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+   2. Click on your Metabase application
+   3. Click on the **Deploy** tab
+   4. Click on **Manual deployment** in the left menu
+   5. Click the **Trigger deployment** button
+
 ### Installing Themes
+
+1. Put your theme(s) in the `web/app/themes` directory of your WordPress
+   repository.
+
+2. Don't forget to commit your changes:
+
+   ```bash
+   git add web/app/themes
+   git commit -m "Add themes"
+   ```
+
+   The last steps depend on the method chosen to deploy your WordPress
+   instance (see below).
+
+#### Using the Command Line
+
+1. Make sure you have followed [the first steps](#installing-themes)
+
+2. From your WordPress repository, trigger a new deployment:
+
+   ```bash
+   git push scalingo master
+   ```
+
+#### Using the Terraform Provider
+
+1. Make sure you have followed [the first steps](#installing-themes)
+
+2. Push your changes to the repository linked to your app:
+
+   ```bash
+   git push origin master
+   ```
+
+3. Trigger a new deployment:
+
+   1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+   2. Click on your Metabase application
+   3. Click on the **Deploy** tab
+   4. Click on **Manual deployment** in the left menu
+   5. Click the **Trigger deployment** button
 
 ### Environment
 
-Bedrock supports many environment variables.
+Bedrock supports some environment variables. Here are a few ones that are
+mandatory or worth considering:
+
+- **`WP_HOME`**\
+  MUST be set to the base URL of your WordPress application.\
+  Defaults to being unset.
+
+- **`WP_SITEURL`**\
+  MUST be set to the home URL of your WordPress instance (i.e. including the
+  path to WordPress).\
+  Defaults to being unset.
 
 - **`WP_ENV`**\
   Allows to automatically enable or disable some settings (such as the log
@@ -345,4 +443,24 @@ Bedrock supports many environment variables.
   Out of the box, can be either `development`, `staging` or `production`.\
   We advise to start setting it to `staging` or `development` and switch to
   `production` only once the S3 storage is successfully configured.\
+  You can define your own custom environment and settings by creating a new one
+  in `config/environments/<custom_environment_name>.php`.\
   Defaults to `production`.
+
+- **`DISABLE_WP_CRON`**\
+  Allows to disable WordPress' jobs scheduler.\
+  Can be set to either `true` to disable WordPress cron or `false` to enable
+  it.\
+  Defaults to `false`.
+
+- **`WP_POST_REVISIONS`**\
+  Allows to limit the number of post revisions.\
+  Can be set to either `true` to keep all revisions, `false` to ignore all
+  revisions or to *n* (integer) to keep *n* revisions.\
+  Defaults to `true`.
+
+- **`WP_DEBUG_LOG`**\
+  Instructs WordPress to log errors in a *debug.log* file.\
+  Only available in *development* environment.\
+  Can be set to either `true` to enable the logging or `false` to disable it.\
+  Defaults to `true` in *development* environment, else defaults to `false`.
