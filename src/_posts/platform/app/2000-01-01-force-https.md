@@ -1,6 +1,6 @@
 ---
 title: "Force HTTPS"
-modified_at: 2019-11-18 00:00:00
+modified_at: 2024-08-22 00:00:00
 tags: app routing https security tls
 index: 22
 ---
@@ -23,14 +23,14 @@ Or, once a custom domain has been added:
 
 Activating the **Force HTTPS** feature enforces HTTPS access to all the domains
 attached to the application. It is achieved by activating a permanent
-redirection from HTTP to HTTPS and injecting the HSTS header in HTTPS responses.
+redirection from HTTP to HTTPS and injecting the `Strict-Transport-Security` header (abbreviated HSTS) in HTTPS responses.
 
 ## Force HTTPS a Scalingo Application
 
 Scalingo eases the process for you to enable "Force HTTPS" on your application.
-Head to the Settings tab of your web dashboard and check "Force HTTPS":
+Head to the Settings tab of your web dashboard, in the Routing section, check "Force HTTPS":
 
-{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_settings.png" %}
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_force_https.png" %}
 {% include mdl_img.html %}
 
 Or using the CLI:
@@ -39,7 +39,7 @@ Or using the CLI:
 scalingo --app my-app force-https
 ```
 
-## Technical details
+## Technical Details
 
 ### Permanent Redirect (301) from HTTP to HTTPS
 
@@ -48,29 +48,27 @@ using the status code `301`. It means browsers will remember this redirection
 over time:
 
 ```console
-$ curl http://my-app.osc-fr1.scalingo.io -I
+$ curl --head http://my-app.osc-fr1.scalingo.io
 HTTP/1.1 301 Moved Permanently
-Server: openresty
-Date: Mon, 05 Mar 2018 10:04:39 GMT
-Content-Type: application/octet-stream
+Date: Thu, 22 Aug 2024 09:08:18 GMT
+Content-Type: text/html
 Connection: keep-alive
 X-Request-ID: aa5e0e4e-5e3f-4e36-b4d4-c5f65a47812f
 Location: https://my-app.osc-fr1.scalingo.io/
 ```
 
-### Injection of HSTS header
+### Injection of HSTS Header
 
-The HTTP Strict Transport Security header (also known as HSTS) is a HTTP header
+The HTTP `Strict-Transport-Security` header (also known as HSTS) is a HTTP header
 which aims at instructing clients like browsers, to avoid connecting to a given
 domain without using an encrypted connection.
 
 The header will be automatically added to the request response of HTTPS requests:
 
 ```console
-$ curl https://my-app.osc-fr1.scalingo.io -I
+$ curl --head https://my-app.osc-fr1.scalingo.io
 HTTP/2 200
-server: nginx
-date: Mon, 05 Mar 2018 10:08:15 GMT
+date: Thu, 22 Aug 2024 08:26:33 GMT
 content-type: text/plain; charset=utf-8
 x-request-id: c87a7b84-d43f-44fb-9524-54bf666e6ff1
 strict-transport-security: max-age=31536000
@@ -82,8 +80,10 @@ HTTP to HTTPS redirection, it is now sure that users can only access the
 application once without using an encrypted connection: at their first
 connection which is usually unauthenticated.
 
+You can also update your application code to return the HSTS header. In such case, Scalingo would not override the header value returned by the application.
+
 More documentation about HSTS on [Mozilla Developer
-Network](https://developer.mozilla.org/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Transport_Security)
+Network](https://developer.mozilla.org/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Transport_Security).
 
 ## Disclaimers
 
@@ -107,16 +107,18 @@ Network](https://developer.mozilla.org/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Trans
   * Node.js, Meteor: [force-ssl](https://atmospherejs.com/meteor/force-ssl)
   * PHP, Symfony: [Nelmio Security Bundle](https://github.com/nelmio/NelmioSecurityBundle)
   * PHP, Laravel: [zae/strict-transport-security](https://packagist.org/packages/zae/strict-transport-security)
-* In case of not GET request, tools (browers, Postman, language libraries, ...) may not follow the RFC and will request GET on the redirection.
+* In case of requests different than GET, tools (browsers, language libraries, [Postman](https://www.postman.com/)...) may not follow the RFC and may request GET on the redirection.
 
-  >    If the 301 status code is received in response to a request other
-  >   than GET or HEAD, the user agent MUST NOT automatically redirect the
-  >   request unless it can be confirmed by the user, since this might
-  >   change the conditions under which the request was issued.
-  >
-  >      Note: When automatically redirecting a POST request after
-  >      receiving a 301 status code, some existing HTTP/1.0 user agents
-  >      will erroneously change it into a GET request.
-  (from [ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt) section 10.3.2)
+
+    > If the 301 status code is received in response to a request other
+    > than GET or HEAD, the user agent MUST NOT automatically redirect the
+    > request unless it can be confirmed by the user, since this might
+    > change the conditions under which the request was issued.
+    >
+    > Note: When automatically redirecting a POST request after
+    > receiving a 301 status code, some existing HTTP/1.0 user agents
+    > will erroneously change it into a GET request.
+
+    (from [ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt) section 10.3.2)
 
   For example with Postman, POST on HTTP will display the result of GET on HTTPS.
