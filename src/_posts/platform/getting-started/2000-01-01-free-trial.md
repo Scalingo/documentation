@@ -26,7 +26,11 @@ available.
 
 ### How to break out of the free trial?
 
-Enter a payment method on the [web dashboard](https://dashboard.scalingo.com/billing).
+You may want to leave the free trial period earlier to start using the platform to
+its full potential. To do so, you need to enter a payment method on the
+[web dashboard](https://dashboard.scalingo.com/billing). Once done, you can forcefully
+leave the trial period by clicking the `Stop free trial` button. Your billing now
+starts and limits are gone.
 
 ### What happens at the end of the free trial?
 
