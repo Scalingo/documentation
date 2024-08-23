@@ -1,6 +1,6 @@
 ---
 title: Detecting HTTPS requests
-modified_at: 2015-03-23 00:00:00
+modified_at: 2024-08-23 00:00:00
 tags: internals routing request https
 index: 22
 ---
@@ -37,7 +37,7 @@ import (
 )
 
 func isHTTPS(req *http.Request) bool {
-  return req.Header.Get("X-Forwarded-Proto" == "https") || req.URL.Scheme == "https"
+  return req.Header.Get("X-Forwarded-Proto") == "https" || req.URL.Scheme == "https"
 }
 
 func main() {
