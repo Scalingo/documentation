@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for PostgreSQL® Addon
 nav: Accessing
-modified_at: 2024-06-21 09:00:00
+modified_at: 2024-08-23 09:00:00
 tags: databases postgresql addon
 index: 4
 ---
@@ -29,8 +29,8 @@ depends on your needs and preferences.
 
    ---> Download and extract the database CLI
    ---> Database CLI installed:
-   psql (PostgreSQL) 15.7
-   psql (15.7, server 15.7 (Debian 15.7-1.pgdg120+1))
+   psql (PostgreSQL) 15.8
+   psql (15.8, server 15.8 (Debian 15.8-1.pgdg120+1))
    SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
    Type "help" for help.
 
@@ -55,7 +55,7 @@ depends on your needs and preferences.
    ```text
    ---> Download and extract the database CLI
    ---> Database CLI installed:
-   psql (PostgreSQL) 14.6
+   psql (PostgreSQL) 15.8
    ```
 
    If you ever need a specific version, just add it as a second parameter:
