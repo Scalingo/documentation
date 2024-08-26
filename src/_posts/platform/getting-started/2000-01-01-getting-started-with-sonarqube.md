@@ -200,14 +200,48 @@ of your instance.
 
 ## Customizing
 
-### Installing a SonarQube Plugin
+### Installing Plugins
 
-To install a SonarQube plugin:
-- Copy the plugin JAR archive into the `plugins` folder of your repository ;
-- Commit the content of this repository ;
-- Push it to Scalingo.
+1. Copy the plugin(s) JAR archive(s) into the `plugins` folder of your
+   repository
 
-Your SonarQube instance will have the plugin installed.
+2. Don't forget to commit your changes:
+
+   ```bash
+   git add plugins/
+   git commit -m "Add plugins"
+   ```
+
+   The last steps depend on the method chosent to deploy your SonarQube
+   instance (see below).
+
+#### Using the Command Line
+
+1. Make sure you have followed [the first steps](#installing-plugins)
+
+2. From your SonarQube repository, trigger a new deployment:
+
+   ```bash
+   git push scalingo master
+   ```
+
+#### Using the Terraform Provider
+
+1. Make sure you have followed [the first steps](#installing-plugins)
+
+2. Push your changes to the repository linked to your app:
+
+   ```bash
+   git push origin master
+   ```
+
+3. Trigger a new deployment:
+
+   1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+   2. Click on your SonarQube application
+   3. Click on the **Deploy** tab
+   4. Click on **Manual deployment** in the left menu
+   5. Click the **Trigger deployment** button
 
 ### Environment
 
