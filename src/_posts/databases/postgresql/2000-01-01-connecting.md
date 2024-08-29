@@ -74,7 +74,7 @@ still remains applicable.
    ```
    The output is:
    ```bash
-   postgresql://my_app_wxyz:ptojfrxzRi-lDfDYyahe@my-app-wxyz.postgresql.a.osc-fr1.scalingo-dbs.com:31000/my_app_wxyz?sslmode=prefer
+   postgresql://my_app_wxyz:YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8@my-app-wxyz.postgresql.a.osc-fr1.scalingo-dbs.com:31000/my_app_wxyz?sslmode=prefer
    ```
 
 
