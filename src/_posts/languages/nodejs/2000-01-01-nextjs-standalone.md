@@ -52,7 +52,7 @@ Reason: after build node_modules will have been removed, so the original command
 As indicated in the [Next.js documentation](https://nextjs.org/docs/advanced-features/output-file), it doesn't copy assets, so it's up to us to copy them.
 To accomplish this, we can create a script that runs at build time to copy the assets to the correct location.
 
-Create a file called `copy-assets.sh` in the root of your project with the following content:
+Create a file called `copy-assets.js` in the root of your project with the following content:
 ```js
 const fs = require('fs').promises;
 const path = require('path');
