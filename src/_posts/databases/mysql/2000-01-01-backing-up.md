@@ -68,7 +68,9 @@ the workload on our infrastructure.
      ```bash
      scalingo --app my-app --addon mysql backups-config --schedule-at 3
      ```
-     In this example, we ask the platform to create the backups at ~03:00 CET.
+     In this example, we ask the platform to create the backups at ~03:00.
+
+     _Note: The timezone used is the local timezone of the machine running the command._
    - By setting an hour and a timezone:
      ```bash
      scalingo --app my-app --addon mysql backups-config --schedule-at "4:00 UTC"
