@@ -143,3 +143,10 @@ to be activated manually.
 {% note %}
 Consulting query statistics is only available from the database dashboard.
 {% endnote %}
+
+## Maintenance operations
+
+Scheduled VACUUMs are run automatically and can affect database performance.
+While executing, they will appear in [pg_stat_activity](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW) view, not appear in [pg_stat_progress_vacuum](https://www.postgresql.org/docs/current/progress-reporting.html#VACUUM-PROGRESS-REPORTING) view.
+
+You can log them using [log_autovacuum_min_duration](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-AUTOVACUUM-MIN-DURATION) parameter, and check the last time a table has been VACUUMed in [pg_stat_user_tables.last_autovacuum](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ALL-TABLES-VIEW) view. 
