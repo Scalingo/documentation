@@ -9,7 +9,6 @@ updates:
     schedule:
       interval: "monthly"
     reviewers:
-      - "ksol"
       - "Anouchka-M"
   - package-ecosystem: "npm"
     directory: "/"
@@ -18,5 +17,4 @@ updates:
     schedule:
       interval: "monthly"
     reviewers:
-      - "ksol"
       - "Anouchka-M"
