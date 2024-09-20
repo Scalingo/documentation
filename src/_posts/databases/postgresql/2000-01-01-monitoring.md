@@ -1,7 +1,7 @@
 ---
 title: Monitoring and Auditing Your Scalingo for PostgreSQL® Addon
 nav: Monitoring and Auditing
-modified_at: 2024-03-26 12:00:00
+modified_at: 2024-09-20 10:35:00
 tags: databases postgresql addon
 index: 7
 ---
