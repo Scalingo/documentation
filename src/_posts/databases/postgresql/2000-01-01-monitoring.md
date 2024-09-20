@@ -89,6 +89,12 @@ stuck ones.
 Viewing running queries is only available from the database dashboard.
 {% endnote %}
 
+### Using an sql client
+
+Running queries will appear in [pg_stat_activity](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW) view, filtering on `state = 'active'.
+
+You can monitor `CREATE INDEX` and `REBUILD INDEX` progress in [pg_stat_progress_create_index] (https://www.postgresql.org/docs/current/progress-reporting.html#CREATE-INDEX-PROGRESS-REPORTING).
+
 
 ## Exploring Query Statistics
 
