@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Scalingo for PostgreSQL®
 nav: Troubleshooting
-modified_at: 2024-03-13 12:00:00
+modified_at: 2024-09-20 10:47:00
 tags: databases postgresql addon
 index: 10
 ---
@@ -157,6 +157,10 @@ free to adjust this depending on your usage.
    ORDER BY cache_hit_ratio DESC
    LIMIT 10;
    ```
+   
+### Logging database statistics
+
+Database default's log drain will not contain query statistics, which are ephemeral. Plus, you have a limited time to troubleshoot runnings queries, which may not be convenient. To log them and other statistics, such as query statistics, slow queries, database I/O and CPU, you can use our [API](https://developers.scalingo.com/databases/metrics) and log them by yourself using [a scheduler](https://doc.scalingo.com/platform/app/task-scheduling/scalingo-scheduler). An open-source example is [available here](https://github.com/1024pix/pix-db-stats), although not provided by Scalingo itself.
 
 ## Solving Performance Issues
 
