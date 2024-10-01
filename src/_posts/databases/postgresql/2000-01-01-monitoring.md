@@ -1,7 +1,7 @@
 ---
 title: Monitoring and Auditing Your Scalingo for PostgreSQL® Addon
 nav: Monitoring and Auditing
-modified_at: 2024-03-26 12:00:00
+modified_at: 2024-09-20 10:35:00
 tags: databases postgresql addon
 index: 7
 ---
@@ -89,6 +89,12 @@ stuck ones.
 Viewing running queries is only available from the database dashboard.
 {% endnote %}
 
+### Using an sql client
+
+Running queries will appear in [pg_stat_activity](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW) view, filtering on `state = 'active'.
+
+You can monitor `CREATE INDEX` and `REBUILD INDEX` progress in [pg_stat_progress_create_index] (https://www.postgresql.org/docs/current/progress-reporting.html#CREATE-INDEX-PROGRESS-REPORTING).
+
 
 ## Exploring Query Statistics
 
@@ -137,3 +143,10 @@ to be activated manually.
 {% note %}
 Consulting query statistics is only available from the database dashboard.
 {% endnote %}
+
+## Maintenance operations
+
+Scheduled VACUUMs are run automatically and can affect database performance.
+While executing, they will appear in [pg_stat_activity](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW) view, not appear in [pg_stat_progress_vacuum](https://www.postgresql.org/docs/current/progress-reporting.html#VACUUM-PROGRESS-REPORTING) view.
+
+You can log them using [log_autovacuum_min_duration](https://www.postgresql.org/docs/current/runtime-config-logging.html#GUC-LOG-AUTOVACUUM-MIN-DURATION) parameter, and check the last time a table has been VACUUMed in [pg_stat_user_tables.last_autovacuum](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ALL-TABLES-VIEW) view. 
