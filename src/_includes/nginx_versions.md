@@ -2,7 +2,7 @@ Scalingo supports the following versions of Nginx:
 
 | Nginx version | `scalingo-20`   | `scalingo-22`  |
 | ------------- | --------------: | -------------: |
-| `1.27`        | Up to `1.27.1`  | Up to `1.27.1` |
+| `1.27`        | Up to `1.27.2`  | Up to `1.27.2` |
 | `1.26`        | Up to `1.26.2`  | Up to `1.26.2` |
 | `1.24`        | Up to `1.24.0`  | Up to `1.24.0` |
 | `1.22`        | Up to `1.22.1`  | Up to `1.22.1` |
