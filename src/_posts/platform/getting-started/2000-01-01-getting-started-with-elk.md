@@ -1,6 +1,6 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2023-08-23 16:00:00
+modified_at: 2024-10-08 00:00:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
@@ -151,8 +151,8 @@ set to `Alanala` and a field `message` set to `Hi!`.
 
 ### Custom Configuration for Logstash
 
-The cloned boilerplate used to deploy your application contains a `config` directory. 
-All the files in this folder will be copied in the Logstash configuration directory at runtime, 
+The cloned boilerplate used to deploy your application contains a `config` directory.
+All the files in this folder will be copied in the Logstash configuration directory at runtime,
 allowing you to customize exactly how you want Logstash to run.
 
 For instance, if you want to edit the logging behavior of Logstash, edit `config/log4j2.properties`
@@ -176,9 +176,11 @@ Logstash application should be used in the deployment process:
 scalingo --app my-awesome-logstash env | grep SCALINGO_ELASTICSEARCH_URL
 ```
 
-Then, a username and a password should be defined to configure Kibana authentication.
+Then, a username and a password should be defined to configure Kibana authentication. The authentication will be handled using Basic Auth via the environment variables `KIBANA_USER` and `KIBANA_PASSWORD`.
 
-**Note**: a new Scallingo for Elasticsearch® database will be provisionned. You can safely delete it if you use the one from Logstash as described above.
+{% note %}
+A new Scallingo for Elasticsearch® database will be provisionned. You can safely delete it if you use the one from Logstash as described above.
+{% endnote %}
 
 Once deployed, index patterns need to be configured. This is required to inform
 Kibana about the indices of Elasticsearch® it need to look at.
