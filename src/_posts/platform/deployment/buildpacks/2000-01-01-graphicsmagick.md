@@ -1,6 +1,6 @@
 ---
 title: GraphicsMagick Buildpack
-modified_at: 2016-05-24 00:00:00
+modified_at: 2024-10-08 00:00:00
 tags: buildpacks build image graphicsmagick
 ---
 
@@ -26,7 +26,7 @@ Add this file to your git repository:
 
 ```bash
 git add .buildpacks
-git commit -m "Setup .buildpacks to install GraphicsMagick alongside the application on Scalingo"
+git commit --message="Setup .buildpacks to install GraphicsMagick alongside the application on Scalingo"
 ```
 
 ## Deploy your application
@@ -90,3 +90,10 @@ You should see GraphicsMagick output.
 {% note %}
   Source: [https://github.com/Scalingo/graphicsmagick-buildpack](https://github.com/Scalingo/graphicsmagick-buildpack)
 {% endnote %}
+
+## Limiting ImageMagick Resources
+
+ImageMagick supports configuration [via the environment](https://www.imagemagick.org/script/resources.php#environment). You may want to limit the resources used by ImageMagick with the following environment variables:
+* `MAGICK_MEMORY_LIMIT`: Set maximum amount of memory in bytes to allocate for the pixel cache from the heap. When this limit is exceeded, the image pixels are cached to memory-mapped disk.
+* `MAGICK_MAP_LIMIT`: Set maximum amount of memory map in bytes to allocate for the pixel cache. When this limit is exceeded, the image pixels are cached to disk.
+* `MAGICK_TIME_LIMIT`: Set maximum time in seconds. When this limit is exceeded, an exception is thrown and processing stops.
