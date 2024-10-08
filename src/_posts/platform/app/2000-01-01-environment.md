@@ -129,3 +129,11 @@ When starting a [one-off container]({% post_url platform/app/2000-01-01-tasks
 plus the following:
 
 * `SCALINGO_USER_ID`: Scalingo user ID of the user executing the one-off.
+
+## Multi-values Environment Variables
+
+If you need to define a list of values for an environment variable, there is no built-in mechanism to handle this automatically, but you can follow the steps below to get a workaround.
+
+Write the value of the environment variable using CSV style notation: `MY_VAR="value1;value2;value3"`.
+
+Then you'll need to get the value of the environment variable in your application code and parse it manually.
