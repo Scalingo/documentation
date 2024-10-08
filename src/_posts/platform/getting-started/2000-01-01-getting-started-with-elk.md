@@ -176,7 +176,7 @@ Logstash application should be used in the deployment process:
 scalingo --app my-awesome-logstash env | grep SCALINGO_ELASTICSEARCH_URL
 ```
 
-Then, a username and a password should be defined to configure Kibana authentication.
+Then, a username and a password should be defined to configure Kibana authentication. The authentication will be handled using Basic Auth via the environment variables `KIBANA_USER` and `KIBANA_PASSWORD`.
 
 {% note %}
 A new Scallingo for Elasticsearch® database will be provisionned. You can safely delete it if you use the one from Logstash as described above.
