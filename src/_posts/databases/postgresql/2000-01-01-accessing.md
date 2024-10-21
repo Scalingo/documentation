@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for PostgreSQL® Addon
 nav: Accessing
-modified_at: 2024-08-23 09:00:00
+modified_at: 2024-10-21 00:00:00
 tags: databases postgresql addon
 index: 4
 ---
@@ -187,8 +187,8 @@ recommend activating Internet Accessibility.
 
 1. Make sure [you have TLS enforced]({% post_url databases/postgresql/2000-01-01-connecting %}#enforcing-tls-connection)
 2. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
-3. Select the **Overview** tab
-4. Locate the **TLS/Internet Access** block
+3. Select the **Settings** tab
+4. In the **Settings** menu, select **Internet Access** (settings/networking)
 5. Enable the **Internet Accessibility** option
 6. The database is now available using the corresponding [connection URI]({% post_url databases/postgresql/2000-01-01-connecting %})
 
