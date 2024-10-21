@@ -1,7 +1,7 @@
 ---
 title: Connecting to Your Scalingo for MySQL® Addon
 nav: Connecting
-modified_at: 2024-04-04 12:00:00
+modified_at: 2024-10-21 12:00:00
 tags: databases mysql addon
 index: 3
 ---
