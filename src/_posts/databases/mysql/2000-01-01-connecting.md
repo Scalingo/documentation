@@ -91,13 +91,9 @@ If you want to enforce TLS connections to your database so that TLS is
 not only available, but **mandatory**:
 
 1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
-2. Select the **Overview** tab
-3. Locate the **TLS/Internet Access** block
-4. Toggle the corresponding option:
-
-{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
-{% include mdl_img.html %}
-
+2. Select the **Settings** tab
+3. In the **Settings** menu, select **Internet Access** (settings/networking)
+4. Enable the **Force TLS connections** option
 
 Once this option is activated, the database denies any non-TLS connection.
 Consequently, your application must be configured to use TLS when connecting to
