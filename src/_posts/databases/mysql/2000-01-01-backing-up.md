@@ -56,9 +56,10 @@ the workload on our infrastructure.
 1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
 2. Click the **Backups** tab
 3. Locate the **Backup schedule** block
-4. Click on the **Schedule** button and make sure to check **I want to enable scheduled backups**
-5. Chose the time in UTC
-6. Click the **Update** button to validate
+4. Click the **Schedule** button
+5. Make sure to check the **I want to enable scheduled backups** checkbox
+6. Pick an hour (**timezone is UTC**)
+7. Validate by clicking the **Update** button
 
 #### Using the Command Line
 

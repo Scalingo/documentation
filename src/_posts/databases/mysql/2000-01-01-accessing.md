@@ -178,9 +178,10 @@ recommend activating Internet Accessibility.
 1. Make sure [you have TLS enforced]({% post_url databases/mysql/2000-01-01-connecting %}#enforcing-tls-connection)
 2. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
 3. Select the **Settings** tab
-4. In the **Settings** submenu, select **Internet Access** (settings/networking)
-5. Enable the **Internet Accessibility** option
-6. The database is now available using the corresponding [connection URI]({% post_url databases/mysql/2000-01-01-connecting %})
+4. In the Settings submenu, select **Internet Access**
+5. Locate the **Internet Accessibility** block
+6. Click the **Enable** button
+7. The database is now available using the corresponding [connection URI]({% post_url databases/mysql/2000-01-01-connecting %})
 
 ### Using DBeaver
 
