@@ -92,7 +92,7 @@ not only available, but **mandatory**:
 
 1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
 2. Select the **Settings** tab
-3. In the **Settings** menu, select **Internet Access** (settings/networking)
+3. In the **Settings** submenu, select **Internet Access** (settings/networking)
 4. Enable the **Force TLS connections** option
 
 Once this option is activated, the database denies any non-TLS connection.
