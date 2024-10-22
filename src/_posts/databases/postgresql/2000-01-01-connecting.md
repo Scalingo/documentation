@@ -105,10 +105,7 @@ available but **mandatory**:
 2. Select the **Settings** tab
 3. In the Settings submenu, select **Internet Access**
 4. Locate the **Force TLS connections** block
-5. Toggle the corresponding option:
-
-{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
-{% include mdl_img.html %}
+5. Click the **Enable** button
 
 
 Once this option is activated, the database denies any non-TLS connection.
