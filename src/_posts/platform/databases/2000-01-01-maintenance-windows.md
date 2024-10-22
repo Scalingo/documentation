@@ -42,6 +42,18 @@ Please note that once a maintenance notice has been issued, it cannot be changed
 
 ## Customize the Maintenance Window for a Database
 
+#### Using the Database Dashboard
+
+1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+2. Click on the **Settings** tab.
+3. In the **Settings** menu, select **Maintenance**
+4. Locate the **Maintenance Window** block
+5. Click on  **Update schedule** button
+6.  Pick a date and time (in UTC)
+5. Click on  **Update schedule** button
+
+#### Using the Command Line
+
 With the Scalingo CLI, the desired beginning period of your 8 hours time window can be configured with the `addons-config` command:
 
 ```bash
@@ -71,6 +83,16 @@ $ scalingo --app my-app addons-info postgresql
 ```
 
 ## Check Past and Future Maintenance Operations
+
+#### Using the Database Dashboard
+
+1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+2. Click on the **Settings** tab.
+3. In the **Settings** menu, select **Maintenance**
+4. Locate the **Maintenance operations list** block
+5. You will see the list of maintenance operations scheduled or carried out in the last 12 months.
+
+#### Using the Command Line
 
 To use the following commands in order to list planned and past maintenance on your database, specify the related application, and your database addon UUID:
 
