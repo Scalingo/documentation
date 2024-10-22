@@ -20,9 +20,10 @@ database to be completely stopped, causing an inevitable downtime.
 1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Click the **Backups** tab
 3. Locate the **Point-in-Time Recovery** block
-3. Click on **Start a PITR** button
-4. Pick a date and time (in UTC) and check **I understand that this action will permanently delete existing data and cannot be cancelled or undone once started.**
-5. Click the **Confirm** button
+3. Click the **Start a PiTR** button
+4. Pick a date and time (**timezone is UTC**)
+5. Make sure to check the **I understand that this action will permanently delete existing data and cannot be cancelled or undone once started.** checkbox
+6. Validate by clicking the **Confirm** button
 
 {% note %}
 Restoring a PiTR backup is only available from the database dashboard.
