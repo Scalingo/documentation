@@ -103,12 +103,9 @@ available but **mandatory**:
 
 1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Select the **Settings** tab
-3. Click on the **Internet Access** menu on the left
+3. In the Settings submenu, select **Internet Access**
 4. Locate the **Force TLS connections** block
-5. Toggle the corresponding option:
-
-{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_database_mongo_force_tls.png" %}
-{% include mdl_img.html %}
+5. Click the **Enable** button
 
 
 Once this option is activated, the database denies any non-TLS connection.
