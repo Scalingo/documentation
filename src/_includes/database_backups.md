@@ -16,13 +16,13 @@ If your database is in a paid plan (i.e. it's not "free plan"), we'll automatica
 2. Configure the time of backup:
    - By setting an hour:
      ```bash
-     scalingo --app my-app --addon [YOUR ADDON NAME] backups-config --schedule-at 3
+     scalingo --app my-app --addon [YOUR ADDON KIND] backups-config --schedule-at 3
      ```
      In this example, we ask the platform to create the backups at ~03:00.
      _Note: The timezone used is the local timezone of the machine running the command._
    - By setting an hour and a timezone:
      ```bash
-     scalingo --app my-app --addon [YOUR ADDON NAME] backups-config --schedule-at "4:00 UTC"
+     scalingo --app my-app --addon [YOUR ADDON KIND] backups-config --schedule-at "4:00 UTC"
      ```
      In this example, we ask the platform to create the backup at ~04:00 UTC.
      The output should look like this:
@@ -75,7 +75,7 @@ In case a database is removed from an application, the retention policy remains 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
 2. Ask the platform to backup the database:
    ```bash
-   scalingo --app my-app --addon [YOUR ADDON NAME] backups-create
+   scalingo --app my-app --addon [YOUR ADDON KIND] backups-create
    ```
    After a while, the output should look like this:
    ```text

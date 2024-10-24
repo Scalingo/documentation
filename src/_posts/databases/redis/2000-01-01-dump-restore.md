@@ -97,4 +97,4 @@ exit
 
 After exiting the one-off container, the dump is lost. You have to do something with it in the container.
 
-*Redis is a registered trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd. Any use by Scalingo is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis and Scalingo.
+*Redis® is a registered trademark of Redis® Ltd. Any rights therein are reserved to Redis® Ltd. Any use by Scalingo is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis® and Scalingo.
