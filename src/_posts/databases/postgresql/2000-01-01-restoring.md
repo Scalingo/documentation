@@ -1,7 +1,7 @@
 ---
 title: Restoring Your Scalingo for PostgreSQL® Addon
 nav: Restoring
-modified_at: 2024-06-20 00:00:00
+modified_at: 2024-10-21 00:00:00
 tags: databases postgresql addon
 index: 9
 ---
@@ -20,8 +20,10 @@ database to be completely stopped, causing an inevitable downtime.
 1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Click the **Backups** tab
 3. Locate the **Point-in-Time Recovery** block
-4. Pick a date and time
-5. Click the **Restore Database** button
+3. Click the **Start a PiTR** button
+4. Pick a date and time (**timezone is UTC**)
+5. Make sure to check the **I understand that this action will permanently delete existing data and cannot be cancelled or undone once started.** checkbox
+6. Validate by clicking the **Confirm** button
 
 {% note %}
 Restoring a PiTR backup is only available from the database dashboard.

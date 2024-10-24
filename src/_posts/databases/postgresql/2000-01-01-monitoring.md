@@ -1,7 +1,7 @@
 ---
 title: Monitoring and Auditing Your Scalingo for PostgreSQL® Addon
 nav: Monitoring and Auditing
-modified_at: 2024-03-26 12:00:00
+modified_at: 2024-10-21 00:00:00
 tags: databases postgresql addon
 index: 7
 ---
@@ -35,7 +35,7 @@ work (see below).
 2. Click the **Logs** tab
 
 The default view allows to consult the latest hot logs in real-time. The
-**Archives** link at the upper-right corner of the page allows to download the
+**View archives** link at the upper-right corner of the page allows to download the
 cold logs. These have to be manually unarchived to be processed.
 
 ### Using the Command Line
@@ -112,7 +112,7 @@ to be activated manually.
 
 1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Click the **Query Statistics** tab
-3. Click the **Enable Query Statistics** button
+3. Click the **Enable** button
 
 #### Using the Command Line
 
