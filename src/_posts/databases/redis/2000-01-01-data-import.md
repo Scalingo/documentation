@@ -40,4 +40,4 @@ the amount of data contained on the remote database. It's usually a matter of se
 
 Note that the `riot-redis` tool is powerful and includes various arguments. All the information is on the [documentation page](https://developer.redis.com/riot/riot-redis/). You may want to have a look at the `--mode live` option for continuous replication. It could be useful for a 0-downtime migration.
 
-*Redis is a registered trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd. Any use by Scalingo is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis and Scalingo.
+*Redis® is a registered trademark of Redis® Ltd. Any rights therein are reserved to Redis® Ltd. Any use by Scalingo is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis® and Scalingo.
