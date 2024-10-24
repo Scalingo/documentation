@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my Scalingo for Redis® database
 nav: Dump and Restore
-modified_at: 2023-07-26 00:00:00
+modified_at: 2024-10-24 00:00:00
 tags: databases redis tunnel
 index: 2
 ---
