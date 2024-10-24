@@ -1,4 +1,4 @@
-If your database is in a paid plan (i.e. it's not "free plan"), we'll automatically make periodic backups of your database on a daily basis, at around 1:00 AM Central European Time (CET or UTC+0100). The time of your daily backup is configurable via the web dashboard of your database or using the CLI. The scheduled date is not strongly enforce: it might get delayed depending on the load on our infrastructure.
+If your database is in a paid plan (i.e. it's not "free plan"), we'll automatically make periodic backups of your database on a daily basis, at around 1:00 AM Central European Time (CET or UTC+0100). The time of your daily backup is configurable via the web dashboard of your database or using the CLI. The scheduled date is not strongly enforced: it might get delayed depending on the load on our infrastructure.
 
 #### Using the Database Dashboard
 
@@ -25,10 +25,10 @@ If your database is in a paid plan (i.e. it's not "free plan"), we'll automatica
      scalingo --app my-app --addon [YOUR ADDON NAME] backups-config --schedule-at "4:00 UTC"
      ```
      In this example, we ask the platform to create the backup at ~04:00 UTC.
-   The output should look like this:
-   ```text
-   -----> Periodic backups will be done daily at 6:00 CET
-   ```
+     The output should look like this:
+     ```text
+     -----> Periodic backups will be done daily at 6:00 CET
+     ```
 
 ### Retention Policy for Daily Backups
 
