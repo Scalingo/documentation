@@ -44,13 +44,21 @@ In this situation you need to use a different connection string than the one fro
 
 ### Internet Accessibility
 
-In order to make your database reachable from anywhere on the internet, head to your database dashboard. You first need to force TLS connections to your database. Then toggle "Internet Accessibility" to make it reachable from the Internet.
-
-In this situation, the connection string to use is exactly the same as the one from your application environment.
-
 {% warning %}
-For security reasons, it is not recommended to activate Internet Accessibility. This exposes your database to the internet.
+For various security reasons, we strongly discourage exposing databases on the Internet. This is often considered a bad practice. Consequently, we do not recommend activating Internet Accessibility.
 {% endwarning %}
+
+1. Make sure [you have TLS enforced]({% post_url databases/redis/2000-01-01-start %})
+2. From your web browser, [open your database dashboard]({% post_url databases/redis/2000-01-01-start %})
+3. Select the **Settings** tab
+4. In the **Settings** submenu, select **Internet Access**
+5. Locate the **Internet Accessibility** block
+6. Click the **Enable** button
+7. The database is now available using the corresponding [connection URI]({% post_url databases/redis/2000-01-01-start %})
+
+{% note %}
+The connection string to use is exactly the same as the one from your application environment.
+{% endnote %}
 
 ### Dump
 
