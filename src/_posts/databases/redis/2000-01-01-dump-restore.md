@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my Scalingo for Redis® database
 nav: Dump and Restore
-modified_at: 2023-07-26 00:00:00
+modified_at: 2024-10-24 00:00:00
 tags: databases redis tunnel
 index: 2
 ---
@@ -44,13 +44,21 @@ In this situation you need to use a different connection string than the one fro
 
 ### Internet Accessibility
 
-In order to make your database reachable from anywhere on the internet, head to your database dashboard. You first need to force TLS connections to your database. Then toggle "Internet Accessibility" to make it reachable from the Internet.
-
-In this situation, the connection string to use is exactly the same as the one from your application environment.
-
 {% warning %}
-For security reasons, it is not recommended to activate Internet Accessibility. This exposes your database to the internet.
+For various security reasons, we strongly discourage exposing databases on the Internet. This is often considered a bad practice. Consequently, we do not recommend activating Internet Accessibility.
 {% endwarning %}
+
+1. Make sure [you have TLS enforced]({% post_url databases/redis/2000-01-01-start %})
+2. From your web browser, [open your database dashboard]({% post_url databases/redis/2000-01-01-start %})
+3. Select the **Settings** tab
+4. In the **Settings** submenu, select **Internet Access**
+5. Locate the **Internet Accessibility** block
+6. Click the **Enable** button
+7. The database is now available using the corresponding [connection URI]({% post_url databases/redis/2000-01-01-start %})
+
+{% note %}
+The connection string to use is exactly the same as the one from your application environment.
+{% endnote %}
 
 ### Dump
 
@@ -89,4 +97,4 @@ exit
 
 After exiting the one-off container, the dump is lost. You have to do something with it in the container.
 
-*Redis is a registered trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd. Any use by Scalingo is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis and Scalingo.
+*Redis® is a registered trademark of Redis® Ltd. Any rights therein are reserved to Redis® Ltd. Any use by Scalingo is for referential purposes only and does not indicate any sponsorship, endorsement or affiliation between Redis® and Scalingo.
