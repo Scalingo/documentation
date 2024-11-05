@@ -14,7 +14,7 @@ We use [Periodic](#understanding-periodic-backups) backups to create the
 automated ones. [Manual backups](#understanding-manual-backups) are also
 available for these plans.
 
-Please carefully read our [backups policies]({% post_url databases/2000-01-01-backups-policies %})
+Please carefully read our [backup policies]({% post_url databases/2000-01-01-backup-policies %})
 for details about backups retention and important considerations regarding
 backups.
 
