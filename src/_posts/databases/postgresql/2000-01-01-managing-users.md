@@ -7,9 +7,9 @@ index: 7
 ---
 
 Each Scalingo for PostgreSQL® addon comes with a [default database user](#understanding-protected-user).
-You can [create](#creating-a-new-user) as many additional users as required,
+You can [create](#creating-a-new-user) as many additional users as needed,
 grant them with the appropriate permissions, and you can [delete](#deleting-a-user)
-them depending on your needs.
+them once they are not required anymore.
 
 
 ## Listing Existing Users
@@ -143,7 +143,7 @@ Updating a User Password is only available from the command line.
    ```
 
 
-## Delete a User
+## Deleting a User
 
 ### Using the Database Dashboard
 
