@@ -10,6 +10,11 @@ PostgreSQL® is a database engine which is extensible thanks to a large set of
 extensions. A lot of them are installed alongside your PostgreSQL® instance,
 but you need to enable those manually according to your needs.
 
+Please note that we have dedicated pages for some of the most popular
+extensions:
+- [TimescaleDB®]({% post_url databases/postgresql/2000-01-01-timescaledb %})
+- [PostGIS]({% post_url databases/postgresql/2000-01-01-postgis %})
+- [pgvector]({% post_url databases/postgresql/2000-01-01-pgvector %})
 
 ## Available Extensions
 
