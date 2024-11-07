@@ -1,9 +1,9 @@
 ---
-title: Extending Your Scalingo for PostgreSQL® Addon
-nav: Extending
+title: Managing Extensions of Your Scalingo for PostgreSQL® Addon
+nav: Managing Extensions
 modified_at: 2024-11-05 12:00:00
 tags: databases postgresql addon
-index: 7
+index: 5
 ---
 
 PostgreSQL® is a database engine which is extensible thanks to a large set of
