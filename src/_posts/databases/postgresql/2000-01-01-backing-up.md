@@ -3,7 +3,7 @@ title: Backing Up Your Scalingo for PostgreSQL® Addon
 nav: Backing Up
 modified_at: 2024-11-05 12:00:00
 tags: databases postgresql addon
-index: 8
+index: 10
 ---
 
 
