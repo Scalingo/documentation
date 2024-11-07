@@ -3,7 +3,7 @@ title: Restoring Your Scalingo for PostgreSQL® Addon
 nav: Restoring
 modified_at: 2024-10-21 00:00:00
 tags: databases postgresql addon
-index: 9
+index: 11
 ---
 
 ## Restoring a Point-in-Time Recovery Backup

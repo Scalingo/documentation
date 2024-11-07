@@ -3,7 +3,7 @@ title: Managing Users of Your Scalingo for PostgreSQL® Addon
 nav: Managing Users
 modified_at: 2024-11-05 12:00:00
 tags: databases postgresql addon
-index: 7
+index: 6
 ---
 
 Each Scalingo for PostgreSQL® addon comes with a [default database user](#understanding-protected-user).
