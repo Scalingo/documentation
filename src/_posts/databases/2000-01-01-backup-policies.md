@@ -1,7 +1,7 @@
 ---
 title: Databases Backup Policies
 nav: Backup Policies
-modified_at: 2024-11-05 12:00:00
+modified_at: 2024-11-14 12:00:00
 tags: databases backup policy policies
 index: 2
 ---
@@ -91,9 +91,10 @@ on your data.
 
 #### Retention Policy for Manual Backups
 
-The number of manual backups you can store is limited by your plan, and if
-creating a new backup exceeds this limit, the oldest backup will be
-automatically deleted.
+The number of manual backups you can store is limited by your plan (see below).
+Manual backups are kept for an unlimited amount of time, as long as the number
+of backups doesn't exceed the plan's limit. If creating a new backup exceeds
+this limit, the oldest backup is automatically deleted.
 
 | Plan     | Backups Retained        |
 | -------- | ----------------------- |
@@ -101,11 +102,18 @@ automatically deleted.
 | Starter  | Last 10 rolling backups |
 | Business | Last 50 rolling backups |
 
-When a database is deleted, the standard retention policy of the plan is
-retroactively applied to its manual backups. This means that manual backups are
-retained only for the duration specified by the plan, starting from their
-creation date (1 month for Starter and 1 year for Business). If they exceed
-this retention period, they may be deleted immediately.
+When a database is deleted, a retention policy is retroactively applied to
+all existing manual backups, based on their creation date. The retention
+duration depends on the plan:
+
+| Plan     | Retention Duration |
+| -------- | ------------------ |
+| Sandbox  | None               |
+| Starter  | 1 month            |
+| Business | 1 year             |
+
+If manual backups have already exceeded their retention period, they are
+deleted immediately.
 
 
 ## Point-in-Time-Recovery
