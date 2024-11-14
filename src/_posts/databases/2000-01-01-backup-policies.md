@@ -101,9 +101,11 @@ automatically deleted.
 | Starter  | Last 10 rolling backups |
 | Business | Last 50 rolling backups |
 
-Deleting a database doesn't immediately remove its manual backups. Depending on
-the plan, they will be deleted 1 month after the database for Starter plan, and
-1 year after the database for Business plan.
+When a database is deleted, the standard retention policy of the plan is
+retroactively applied to its manual backups. This means that manual backups are
+retained only for the duration specified by the plan, starting from their
+creation date (1 month for Starter and 1 year for Business). If they exceed
+this retention period, they may be deleted immediately.
 
 
 ## Point-in-Time-Recovery
