@@ -37,9 +37,10 @@ consequences such as a possible downtime.
 Database Maintenance Windows are excluded from the SLA calculation.
 {% endnote %}
 
-### Viewing Database Maintenance Windows
 
-#### Using the Database Dashboard
+## Viewing Database Maintenance Windows
+
+### Using the Database Dashboard
 
 1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Select the **Settings** tab.
@@ -47,7 +48,7 @@ Database Maintenance Windows are excluded from the SLA calculation.
 4. The current Maintenance Window is displayed in the **Maintenance Window**
    block
 
-#### Using the Command Line
+### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
 2. From the command line, run the following command to view the maintenance
@@ -72,7 +73,8 @@ Database Maintenance Windows are excluded from the SLA calculation.
    +------------------------+------------------------------+
    ```
 
-### Configuring a Database Maintenance Window
+
+## Configuring Database Maintenance Windows
 
 Maintenance windows can be configured separately for each database addon. To
 configure it, you'll have to pick a weekday and a start time.
@@ -84,7 +86,7 @@ operation (e.g. business disruption), please get in touch with our support
 team.
 {% endnote %}
 
-#### Using the Database Dashboard
+### Using the Database Dashboard
 
 1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Select the **Settings** tab.
@@ -94,7 +96,7 @@ team.
 6. Pick a day and a start time (**timezone is UTC**)
 7. Validate by clicking the **Update schedule** button
 
-#### Using the Command Line
+### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
 2. From the command line, run the following command to configure the
@@ -162,9 +164,10 @@ timeframe. In such a case, the operation is cancelled and rescheduled for a
 later time.
 {% endnote %}
 
-### Listing Past and Future Maintenance Operations
 
-#### Using the Database Dashboard
+## Listing Past and Future Maintenance Operations
+
+### Using the Database Dashboard
 
 1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Click on the **Settings** tab.
@@ -172,7 +175,7 @@ later time.
 4. The list of maintenance operations scheduled or carried out in the last 12
    months is displayed in the **Maintenance operations list** block
 
-#### Using the Command Line
+### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
 2. From the command line, run the following command to list maintenance
@@ -213,7 +216,7 @@ later time.
    +------------+----------------------------------------------+
    ```
 
-### Sharing the Information With Your Team
+## Sharing the Information With Your Team
 
 By default, owner and collaborators receive email notifications one day before
 a scheduled maintenance execution. This notification system operates via the
