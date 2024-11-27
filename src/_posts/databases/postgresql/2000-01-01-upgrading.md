@@ -46,6 +46,12 @@ There are no prerequisites for minor-upgrades.
 1. The instance is stopped. The database is unreachable.
 2. We restart the instance with the version targeted.
 3. Once the instance restarted, the database is reachable again.
+4. The application is restarted to ensure proper connexions. This shouldn't
+   cause any additional downtime.
+
+Since we have to completely stop the node to upgrade it, a downtime is
+inevitable. We usually roughly estimate to a few seconds (2-10 seconds),
+depending on the platform load.
 
 #### For Business Plans
 
@@ -57,20 +63,12 @@ There are no prerequisites for minor-upgrades.
    connection can be lost during a few milliseconds. The database is still
    reachable.
 4. The new standby instance is restarted with the targeted version.
-5. Once restaretd, the cluster is fully upgraded and fully operational again.
+5. Once restarted, the cluster is fully upgraded and fully operational again.
+6. The application is restarted to ensure proper connexions. This shouldn't
+   cause any additional downtime.
 
-### Downtime
-
-- When using a Starter plan, we have to completely stop the node to upgrade it,
-  causing an inevitable downtime. In such a case, we usually roughly estimate
-  the overall downtime of the operation by assuming 1 minute of unavailibility
-  per 10GiB of data. This remains a rather conservative estimation and our
-  experience tends to show that it often takes less time.
-- When using a Business plan, minor-upgrades are achieved without any downtime.
-
-In all cases, the application is restarted once the operation is finished. This
-shouldn't cause any additional downtime.
-
+When using a Business plan, minor-upgrades are achieved without any downtime,
+thanks to failover mechanism included.
 
 ## Understanding the Major-Upgrade Process
 
@@ -89,31 +87,42 @@ Finally, upgrade to the latest version of the 15.x branch.
 
 #### For Starter Plans
 
-1. The node is stopped. The database is unreachable.
-2. A new primary node is booted with the targeted version.
-3. `pg_upgrade` is executed on this new node.
-4. The node is restarted. The database is reachable again and the application
-   can use it normally.
-5. The `ANALYZE` SQL command is executed against the database to build up
-   PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
-   the most efficient execution plans for queries.
-6. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-point-in-time-recovery-backups)
-   available again.
-
-#### For Business Plans
-
-1. The entire cluster is stopped. The database is unreachable.
-2. A new primary node is booted with the targeted version.
-3. `pg_upgrade` is executed on this new node.
-4. The primary node is restarted. The database is reachable again and the
+1. The instance is stopped. The database is unreachable.
+2. A new primary instance is booted with the targeted version.
+3. `pg_upgrade` is executed on this new instance.
+4. The instance is restarted. The database is reachable again and the
    application can use it normally.
 5. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-6. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-point-in-time-recovery-backups)
+6. The application is restarted to ensure proper connexions. This shouldn't
+   cause any additional downtime.
+7. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-point-in-time-recovery-backups)
    available again.
-7. The standby node is rebuilt from scratch, based on the primary node data.
-   This means the database lives in a degraded state until the end of the
+
+Since we have to completely stop the instance to upgrade it, **a downtime is
+inevitable**.
+
+We usually roughly estimate the overall downtime of the operation by assuming
+1 minute of unavailibility per 10GiB of data. This remains a raw estimation and
+our experience tends to show that it often takes less time.
+
+#### For Business Plans
+
+1. The entire cluster is stopped. The database is unreachable.
+2. A new primary instance is booted with the targeted version.
+3. `pg_upgrade` is executed on this new primary instance.
+4. The new primary instance is restarted. The database is reachable again and
+   the application can use it normally.
+5. The `ANALYZE` SQL command is executed against the database to build up
+   PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
+   the most efficient execution plans for queries.
+6. The application is restarted to ensure proper connexions. This shouldn't
+   cause any additional downtime.
+7. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-point-in-time-recovery-backups)
+   available again.
+8. The standby instance is rebuilt from scratch, based on the primary instance
+   data. This means the database lives in a degraded state until the end of the
    replication process.
 
 {% warning %}
@@ -123,17 +132,12 @@ duration depends of the quantity of data stored in your Scalingo for
 PostgreSQL® addon.
 {% endwarning %}
 
-### Downtime
-
-With both Starter and Business plans, we have to completely stop the node(s) to
-upgrade them, causing an inevitable downtime.
+Since we have to completely stop the instances to upgrade them, **a downtime is
+inevitable**.
 
 We usually roughly estimate the overall downtime of the operation by assuming
 1 minute of unavailibility per 10GiB of data. This remains a raw estimation and
 our experience tends to show that it often takes less time.
-
-In all cases, the application is restarted once the operation is finished. This
-shouldn't cause any additional downtime.
 
 ### Best Practices When Managing Major-Upgrades
 
