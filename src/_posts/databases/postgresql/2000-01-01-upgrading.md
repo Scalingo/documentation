@@ -49,9 +49,10 @@ There are no prerequisites for minor-upgrades.
 4. The application is restarted to ensure proper connexions. This shouldn't
    cause any additional downtime.
 
-Since we have to completely stop the node to upgrade it, a downtime is
-inevitable. We usually roughly estimate to a few seconds (2-10 seconds),
-depending on the platform load.
+Since we have to completely stop the instance, **a downtime is inevitable**.
+
+We usually roughly estimate the downtime caused by the operation to a few
+seconds (2 to 10 seconds), depending on the platform load.
 
 #### For Business Plans
 
@@ -67,8 +68,9 @@ depending on the platform load.
 6. The application is restarted to ensure proper connexions. This shouldn't
    cause any additional downtime.
 
-When using a Business plan, minor-upgrades are achieved without any downtime,
-thanks to failover mechanism included.
+Minor-upgrades of Business plans are **usually achieved without any downtime**.
+Note that a few milliseconds downtime can still occur during the failover.
+
 
 ## Understanding the Major-Upgrade Process
 
