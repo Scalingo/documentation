@@ -9,11 +9,11 @@ index: 8
 At Scalingo, all databases addons plans are identified using a name made of two
 or three parts separated by a dash (-). This name is made of:
 
-1. A database *kind* : `postgresql`
-2. A *class* : either `sandbox`, `starter` or `business` (learn more about
+1. a database ***type*** : `postgresql`
+2. a ***class*** : either `sandbox`, `starter` or `business` (learn more about
    [classes]({% post_url databases/2000-01-01-overview %}#database-plans))
-3. A *size* : specifying the amount of RAM available with the plan, in MB (only
-   for starter and business classes).
+3. a ***size*** : specifying the amount of RAM available with the plan, in MB
+   (only for starter and business classes).
 
 You can change your PostgreSQL® for Scalingo addon plan whenever you want. The
 operation is launched instantly, no manual input is required.

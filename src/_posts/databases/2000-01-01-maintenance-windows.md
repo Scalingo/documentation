@@ -1,7 +1,7 @@
 ---
 title: Database Maintenance Windows
 nav: Maintenance Windows
-modified_at: 2024-11-05 12:00:00
+modified_at: 2024-11-28 12:00:00
 tags: databases maintenance
 index: 5
 ---
@@ -9,18 +9,18 @@ index: 5
 
 ## Understanding Database Maintenance Windows
 
-**Database Maintenance Windows** is the Scalingo system for scheduling
+**Database Maintenance Windows** is Scalingo's system for scheduling
 *[maintenance operations](#understanding-maintenance-operations)* on your
-databases. On the customer side, it mainly consists in an 8 hours timespan
-during which database maintenance operations can be scheduled according to your
-preferences. The goal of maintenance windows is to minimize the impact of
-maintenance operations on your application, while facilitating continuous
-improvement on our side.
+databases. On the customer's side, it mainly consists in an 8 hours timespan
+during which database maintenance operations can be scheduled. The goal of
+maintenance windows is to minimize the impact of maintenance operations on your
+application, while facilitating continuous improvement on our side.
 
 {% note %}
-Currently, Scalingo does not automatically perform upgrades of your database.
-The introduction of database maintenance windows could potentially allow us to
-offer such a feature in the future.
+Currently, Scalingo only leverages maintenance windows to force
+[major-upgrades]({% post_url databases/postgresql/2000-01-01-upgrading %})
+of databases when very specific conditions are met, such as an EOL version
+still running, or critical security issues.
 {% endnote %}
 
 A default 8 hours maintenance window is automatically assigned to all newly
@@ -54,10 +54,10 @@ Database Maintenance Windows are excluded from the SLA calculation.
 2. From the command line, run the following command to view the maintenance
    window settings:
    ```bash
-   scalingo --app my-app addons-info <addon_kind>
+   scalingo --app my-app addons-info <database_type>
    ```
    With:
-   - `addon_kind`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
+   - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
      `elasticsearch` or `influxdb`, depending on the database addon
 
    The output should look like this:
@@ -102,14 +102,14 @@ team.
 2. From the command line, run the following command to configure the
    maintenance window:
    ```bash
-   scalingo --app my-app addons-config --maintenance-window-day <day> --maintenance-window-hour <hour> <addon_kind>
+   scalingo --app my-app addons-config --maintenance-window-day <day> --maintenance-window-hour <hour> <database_type>
    ```
    With:
    - `day`: must be either `monday`, `tuesday`, `wednesday`, `thursday`,
      `friday`, `saturday` or `sunday`
    - `hour`: start time of the database maintenance window (**timezone is the
      local one**). Must be an integer between `0` and `23`
-   - `addon_kind`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
+   - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
      `elasticsearch` or `influxdb`, depending on the database addon you are
      configuring
 
@@ -181,10 +181,10 @@ later time.
 2. From the command line, run the following command to list maintenance
    operations:
    ```bash
-   scalingo --app my-app --addon <addon_kind> database-maintenance-list
+   scalingo --app my-app --addon <database_type> database-maintenance-list
    ```
    With:
-   - `addon_kind`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
+   - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
      `elasticsearch` or `influxdb`, depending on the database addon
 
    The output should look like this:
@@ -198,10 +198,10 @@ later time.
 3. From the command line, run the following command to get more details about a
    specific maintenance operation:
    ```bash
-   scalingo --app my-app --addon <addon_kind> database-maintenance-info <maintenance_uuid>
+   scalingo --app my-app --addon <database_type> database-maintenance-info <maintenance_uuid>
    ```
    With:
-   - `addon_kind`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
+   - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
      `elasticsearch` or `influxdb`, depending on the database addon
    - `maintenance_uuid`: id of the maintenance operation
 
