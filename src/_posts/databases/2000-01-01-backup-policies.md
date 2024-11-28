@@ -1,19 +1,17 @@
 ---
 title: Databases Backup Policies
 nav: Backup Policies
-modified_at: 2024-11-14 12:00:00
+modified_at: 2024-11-28 12:00:00
 tags: databases backup policy policies
 index: 2
 ---
 
 
-## Overview
-
 Scalingo offers several options for backing up and restoring your data,
 depending on the service used. All backups are encrypted and securely stored in
 our infrastructure, within the same region as the source database.
 
-Note that this feature is not available with the Sandbox plan.
+Note that these features are not available with the Sandbox plan.
 
 
 ## Full Backups
@@ -27,8 +25,8 @@ which runs every 24 hours.
 
 The time required to complete a backup depends on the amount of data being
 backed up. This operation may impact the performance of the database and, by
-extension, the application. On Business Plans, backups are performed on the
-secondary node to limit the impact on the primary node.
+extension, the application. On Business plans, backups are performed on the
+secondary instance to limit the impact on the primary instance.
 
 However, several factors can delay, cancel, or impact the backup process. These
 include the database load, the volume of data stored, and the nature of the
@@ -40,7 +38,8 @@ of their applications.
 
 #### Execution Conditions
 
-Certain conditions may delay, cancel, or affect the consistency of the backup:
+Some specific conditions may delay, cancel, or affect the consistency of the
+backup:
 
 - Backups are only performed if the feature is enabled, which is the default
   setting. However, users can manually disable it if needed.
@@ -134,8 +133,8 @@ constraints of traditional backup methods.
 
 - PiTR requires a first base backup to be completed before Write-Ahead Logs
   (WAL) can be captured and utilized for recovery. This initial base backup may
-  take up to 24 hours, after which PiTR will begin monitoring changes for
-  recovery purposes.
+  take up to 24 hours, after which PiTR begins monitoring changes for recovery
+  purposes.
 - Performing a Point-in-Time Recovery resets the continuous backup timeline.
   This means the retention window starts over, and you won’t be able to restore
   from an earlier point in time. Currently, Scalingo only supports a single
