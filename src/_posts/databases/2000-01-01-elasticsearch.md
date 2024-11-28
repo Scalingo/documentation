@@ -1,4 +1,4 @@
 ---
 title: Scalingo for Elasticsearch®
-index: 5
+index: 60
 ---

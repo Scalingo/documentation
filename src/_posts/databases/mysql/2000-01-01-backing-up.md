@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for MySQL® Addon
 nav: Backing Up
-modified_at: 2024-10-21 12:00:00
+modified_at: 2024-11-05 12:00:00
 tags: databases mysql addon
 index: 7
 ---
@@ -14,6 +14,10 @@ We use [Periodic](#understanding-periodic-backups) backups to create the
 automated ones. [Manual backups](#understanding-manual-backups) are also
 available for these plans.
 
+Please carefully read our [backup policies]({% post_url databases/2000-01-01-backup-policies %})
+for details about backups retention and important considerations regarding
+backups.
+
 
 ## Understanding Periodic Backups
 
@@ -22,24 +26,6 @@ database in an archive that we keep during a certain amount of time.
 
 For Business plans, the backup is done on the secondary node to avoid any
 impact on your primary node.
-
-### Retention Policy for Periodic Backups
-
-We keep a limited amount of backups depending on your database plan:
-- A daily backup is retained for the last 7 days, which means that we will keep
-  a maximum of 7 daily backups (one for each of the last 7 days).
-- A weekly backup means that only one backup is saved over a 7 days period.
-- A monthly backup means that only one backup is saved over the course of a
-  month.
-
-<div class="overflow-horizontal-content" markdown="1">
-| Plan     | Weekly Backups Retained | Monthly Backups Retained |
-| -------- + ----------------------- + ------------------------ |
-| Sandbox  | N/A                     | N/A                      |
-| Starter  | 4 weeks                 | 0 month                  |
-| Business | 8 weeks                 | 12 months                |
- {: .table }
- </div>
 
 ### Configuring Periodic Backups
 
@@ -141,22 +127,6 @@ the workload on our infrastructure.
 Manual backups use the exact same mechanism as Periodic backups, except that
 they are not automated. As the name suggests, Manual backups are triggered
 manually, whenever you want.
-
-### Retention Policy for Manual Backups
-
-We keep a limited amount of Manual backups depending on your database plan:
-
-<div class="overflow-horizontal-content" markdown="1">
-| Plan         | Backups Retained |
-| ------------ + ---------------- |
-| Sandbox      | N/A              |
-| Starter      | 10               |
-| Business     | 50               |
-{: .table }
-</div>
-
-When a database is removed from an application, the retention policy remains
-untouched: backups are **not** instantly deleted.
 
 ### Creating a Manual Backup
 

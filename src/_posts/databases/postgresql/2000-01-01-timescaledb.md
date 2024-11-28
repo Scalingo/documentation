@@ -3,7 +3,7 @@ title: TimescaleDB®
 nav: TimescaleDB®
 modified_at: 2024-03-26 12:00:00
 tags: databases postgresql timescaledb timeseries extensions
-index: 11
+index: 13
 ---
 
 
@@ -40,7 +40,7 @@ getting started.
 
 To enable TimescaleDB®:
 1. [Provision a new PostgreSQL® database]({% post_url databases/postgresql/2000-01-01-getting-started %})
-2. [Enable the `timescaledb` extension]({% post_url databases/postgresql/2000-01-01-managing %}#enabling-an-extension)
+2. [Enable the `timescaledb` extension]({% post_url databases/postgresql/2000-01-01-managing-extensions %}#enabling-an-extension)
 
 
 ## Downsampling

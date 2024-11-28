@@ -583,7 +583,7 @@
     new: "/databases/postgresql/backing-up"
   -
     old: "/databases/postgresql/extensions"
-    new: "/databases/postgresql/managing"
+    new: "/databases/postgresql/managing-extensions"
   -
     old: "/databases/postgresql/timescaledb/intro"
     new: "/databases/postgresql/timescaledb"
@@ -606,8 +606,17 @@
     old: "/databases/mysql/workbench"
     new: "/databases/mysql/accessing"
   -
-    old: "/databases/postgresql/managing#upgrading"
-    new: "/databases/postgresql/upgrading"
+    old: "/databases/postgresql/managing"
+    new: "/databases/postgresql/overview"
+  -
+    old: "/platform/databases/intro"
+    new: "/databases/overview"
+  -
+    old: "/platform/databases/maintenance-windows"
+    new: "/databases/maintenance-windows"
+  -
+    old: "/platform/databases/sqlite"
+    new: "/databases/sqlite"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

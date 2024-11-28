@@ -1,4 +1,4 @@
 ---
 title: Scalingo for PostgreSQL®
-index: 1
+index: 20
 ---

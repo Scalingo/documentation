@@ -3,10 +3,10 @@ title: Upgrading Your Scalingo for PostgreSQL® Addon
 nav: Upgrading
 modified_at: 2024-11-27 12:00:00
 tags: databases postgresql addon
-index: 6
+index: 9
 ---
 
-In Scalingo terminology, ***upgrading*** a Scalingo for PostgreSQL® addon
+In Scalingo's terminology, ***upgrading*** a Scalingo for PostgreSQL® addon
 designates the operation consisting in changing the database version for a
 newer one.
 
@@ -32,6 +32,7 @@ automatically.
 {% warning %}
 Beware that no downgrade is possible once your database has been upgraded.
 {% endwarning %}
+
 
 ## Understanding the Minor-Upgrade Process
 
