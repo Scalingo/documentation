@@ -43,15 +43,16 @@ There are no prerequisites for minor-upgrades.
 #### For Starter Plans
 
 1. The instance is stopped. The database is unreachable.
-2. We restart the instance with the version targeted.
+2. We restart the instance with the targeted version. This operation can take
+   quite some time, depending on the database size and enabled extension(s).
 3. Once the instance restarted, the database is reachable again.
 4. The application is restarted to ensure proper connections. This shouldn't
    cause any additional downtime.
 
 Since we have to completely stop the instance, **a downtime is inevitable**.
 
-We usually roughly estimate the downtime caused by the operation to a few
-seconds (2 to 10 seconds), depending on the platform load.
+We usually roughly estimate the downtime caused by the operation between a few
+seconds to a few minutes. In any cases, it shouldn't exceed 10 minutes.
 
 #### For Business Plans
 
@@ -60,15 +61,14 @@ seconds (2 to 10 seconds), depending on the platform load.
 2. We restart the standby instance with the targeted version.
 3. When the standby instance is ready, a failover is done to make it primary.
    The old primary becomes the standby instance. During this operation, the
-   connection can be lost during a few milliseconds. The database is still
-   reachable.
+   connection can be lost during a few milliseconds.
 4. The new standby instance is restarted with the targeted version.
 5. Once restarted, the cluster is fully upgraded and fully operational again.
 6. The application is restarted to ensure proper connections. This shouldn't
    cause any additional downtime.
 
-Minor-upgrades of Business plans are **usually achieved without any downtime**.
-Note that a few milliseconds downtime can still occur during the failover.
+Minor-upgrades of Business plans are **usually achieved without any impactful
+downtime**.
 
 
 ## Understanding the Major-Upgrade Process
