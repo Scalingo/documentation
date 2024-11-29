@@ -605,9 +605,6 @@
   -
     old: "/databases/mysql/workbench"
     new: "/databases/mysql/accessing"
-  -
-    old: "/databases/postgresql/managing#upgrading"
-    new: "/databases/postgresql/upgrading"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
