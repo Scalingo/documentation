@@ -90,10 +90,9 @@ Finally, upgrade to the latest version of the 15.x branch.
 #### For Starter Plans
 
 1. The instance is stopped. The database is unreachable.
-2. A new primary instance is booted with the targeted version.
-3. `pg_upgrade` is executed on this new instance.
-4. The instance is restarted. The database is reachable again and the
-   application can use it normally.
+2. `pg_upgrade` is executed on the data.
+4. The instance is restarted with the targeted version. The database is
+   reachable again and the application can use it normally.
 5. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
@@ -112,18 +111,17 @@ our experience tends to show that it often takes less time.
 #### For Business Plans
 
 1. The entire cluster is stopped. The database is unreachable.
-2. A new primary instance is booted with the targeted version.
-3. `pg_upgrade` is executed on this new primary instance.
-4. The new primary instance is restarted. The database is reachable again and
-   the application can use it normally.
-5. The `ANALYZE` SQL command is executed against the database to build up
+2. `pg_upgrade` is executed on the data.
+3. The primary instance is restarted with the targeted version. The database is
+   reachable again and the application can use it normally.
+4. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-6. The application is restarted to ensure proper connections. This shouldn't
+5. The application is restarted to ensure proper connections. This shouldn't
    cause any additional downtime.
-7. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-point-in-time-recovery-backups)
+6. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-point-in-time-recovery-backups)
    available again.
-8. The standby instance is rebuilt from scratch, based on the primary instance
+7. The standby instance is rebuilt from scratch, based on the primary instance
    data. This means the database lives in a degraded state until the end of the
    replication process.
 
