@@ -1,7 +1,7 @@
 ---
 title: Upgrading Your Scalingo for PostgreSQL® Addon
 nav: Upgrading
-modified_at: 2024-11-27 12:00:00
+modified_at: 2024-11-29 12:00:00
 tags: databases postgresql addon
 index: 6
 ---
@@ -26,8 +26,7 @@ about this below](#best-practices-when-managing-major-upgrades)).
 
 When the database vendor releases a new version of your database engine, we
 take some time to study it and test it thoroughly before making it available.
-Upgrading to this new version is still your choice. We never do it
-automatically.
+Upgrading to this new version is still your choice.
 
 {% warning %}
 Beware that no downgrade is possible once your database has been upgraded.
@@ -44,15 +43,16 @@ There are no prerequisites for minor-upgrades.
 #### For Starter Plans
 
 1. The instance is stopped. The database is unreachable.
-2. We restart the instance with the version targeted.
+2. We restart the instance with the targeted version. This operation can take
+   quite some time, depending on the database size and enabled extension(s).
 3. Once the instance restarted, the database is reachable again.
-4. The application is restarted to ensure proper connexions. This shouldn't
+4. The application is restarted to ensure proper connections. This shouldn't
    cause any additional downtime.
 
 Since we have to completely stop the instance, **a downtime is inevitable**.
 
-We usually roughly estimate the downtime caused by the operation to a few
-seconds (2 to 10 seconds), depending on the platform load.
+We usually roughly estimate the downtime caused by the operation between a few
+seconds to a few minutes. In any cases, it shouldn't exceed 10 minutes.
 
 #### For Business Plans
 
@@ -61,15 +61,14 @@ seconds (2 to 10 seconds), depending on the platform load.
 2. We restart the standby instance with the targeted version.
 3. When the standby instance is ready, a failover is done to make it primary.
    The old primary becomes the standby instance. During this operation, the
-   connection can be lost during a few milliseconds. The database is still
-   reachable.
+   connection can be lost during a few milliseconds.
 4. The new standby instance is restarted with the targeted version.
 5. Once restarted, the cluster is fully upgraded and fully operational again.
-6. The application is restarted to ensure proper connexions. This shouldn't
+6. The application is restarted to ensure proper connections. This shouldn't
    cause any additional downtime.
 
-Minor-upgrades of Business plans are **usually achieved without any downtime**.
-Note that a few milliseconds downtime can still occur during the failover.
+Minor-upgrades of Business plans are **usually achieved without any impactful
+downtime**.
 
 
 ## Understanding the Major-Upgrade Process
@@ -90,14 +89,13 @@ Finally, upgrade to the latest version of the 15.x branch.
 #### For Starter Plans
 
 1. The instance is stopped. The database is unreachable.
-2. A new primary instance is booted with the targeted version.
-3. `pg_upgrade` is executed on this new instance.
-4. The instance is restarted. The database is reachable again and the
-   application can use it normally.
+2. `pg_upgrade` is executed on the data.
+4. The instance is restarted with the targeted version. The database is
+   reachable again and the application can use it normally.
 5. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-6. The application is restarted to ensure proper connexions. This shouldn't
+6. The application is restarted to ensure proper connections. This shouldn't
    cause any additional downtime.
 7. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-point-in-time-recovery-backups)
    available again.
@@ -112,18 +110,17 @@ our experience tends to show that it often takes less time.
 #### For Business Plans
 
 1. The entire cluster is stopped. The database is unreachable.
-2. A new primary instance is booted with the targeted version.
-3. `pg_upgrade` is executed on this new primary instance.
-4. The new primary instance is restarted. The database is reachable again and
-   the application can use it normally.
-5. The `ANALYZE` SQL command is executed against the database to build up
+2. `pg_upgrade` is executed on the data.
+3. The primary instance is restarted with the targeted version. The database is
+   reachable again and the application can use it normally.
+4. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-6. The application is restarted to ensure proper connexions. This shouldn't
+5. The application is restarted to ensure proper connections. This shouldn't
    cause any additional downtime.
-7. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-point-in-time-recovery-backups)
+6. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/postgresql/2000-01-01-backing-up %}#understanding-point-in-time-recovery-backups)
    available again.
-8. The standby instance is rebuilt from scratch, based on the primary instance
+7. The standby instance is rebuilt from scratch, based on the primary instance
    data. This means the database lives in a degraded state until the end of the
    replication process.
 
@@ -205,7 +202,7 @@ advise to take extra care when dealing with them:
      time to fill your database with your test dataset.
   7. Once filled with testing data, upgrade your database until it reaches the
      targeted version.
-  8. Execute your tests scenarii on the Review App. This should help you
+  8. Execute your tests scenarios on the Review App. This should help you
      validate the changes, or identify the required fixes before sending them
      to production.
   9. Once done, close the Pull Request to automatically destroy the linked
