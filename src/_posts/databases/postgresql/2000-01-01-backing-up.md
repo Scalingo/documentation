@@ -11,8 +11,8 @@ Starter and Business plans of Scalingo for PostgreSQL® include automated and
 managed backups so you don't have to worry about them.
 
 We use two kinds of mechanisms to create these automated backups:
-[Point-in-Time Recovery](#understanding-point-in-time-recovery-backups) backups and
-[Periodic](#understanding-periodic-backups) backups. [Manual backups](#understanding-manual-backups)
+[Point-in-Time Recovery](#understanding-point-in-time-recovery-backups) backups
+and [Scheduled](#understanding-scheduled-backups) backups. [Manual backups](#understanding-manual-backups)
 are also available for these plans.
 
 Please carefully read our [backup policies]({% post_url databases/2000-01-01-backup-policies %})
@@ -27,17 +27,17 @@ backups.
 You have nothing to do to be able to use the PiTR mechanism.
 
 
-## Understanding Periodic Backups
+## Understanding Scheduled Backups
 
-Periodic backups are done on a daily basis. They consist in dumping your
+Scheduled backups are done on a daily basis. They consist in dumping your
 database in an archive that we keep during a certain amount of time.
 
 For Business plans, the backup is done on the secondary node to avoid any
 impact on your primary node.
 
-### Configuring Periodic Backups
+### Configuring Scheduled Backups
 
-By default, Periodic backups are done around 1:00 AM Central European Time
+By default, Scheduled backups are done around 1:00 AM Central European Time
 (CET or UTC+0100). This time can be modified.
 
 {% note %}
@@ -77,14 +77,14 @@ the workload on our infrastructure.
    -----> Periodic backups will be done daily at 6:00 CET
    ```
 
-### Downloading a Periodic Backup
+### Downloading a Scheduled Backup
 
 #### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Click the **Backups** tab
 3. Locate the **Backups** block
-4. Locate the Periodic backup you are interested in
+4. Locate the Scheduled backup you are interested in
 5. Click the corresponding **Download** button
 
 #### Using the Command Line
@@ -131,7 +131,7 @@ the workload on our infrastructure.
 
 ## Understanding Manual Backups
 
-Manual backups use the exact same mechanism as Periodic backups, except that
+Manual backups use the exact same mechanism as Scheduled backups, except that
 they are not automated. As the name suggests, Manual backups are triggered
 manually, whenever you want.
 
@@ -158,7 +158,7 @@ manually, whenever you want.
 
 ### Downloading a Manual Backup
 
-Please refer to [Downloading a Periodic Backup](#downloading-a-periodic-backup)
+Please refer to [Downloading a Scheduled Backup](#downloading-a-scheduled-backup)
 section, as the process is exactly the same.
 
 
