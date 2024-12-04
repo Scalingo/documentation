@@ -34,7 +34,7 @@ handle all your data and fits your application workload.
 ### From Starter to Starter
 
 When changing the size of a Starter plan, the platform reboots the existing
-instance with the new size. This can lead to a small service interruption
+instance with the new size. This leads to a small service interruption
 during which the database is not available. This shouldn't exceed a few seconds
 though.
 

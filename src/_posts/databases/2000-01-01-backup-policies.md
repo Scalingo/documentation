@@ -78,7 +78,7 @@ We retain a limited number of backups based on your database plan:
 | Starter  | 7 rolling days | 4 rolling weeks | None              |
 | Business | 7 rolling days | 8 rolling weeks | 12 rolling months |
 
-Deleting a database doesn’t immediately remove its scheduled backups. They
+Deleting a database doesn't immediately remove its scheduled backups. They
 expire gradually according to their retention policy.
 
 ### Manual Backups
