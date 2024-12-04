@@ -1,7 +1,7 @@
 ---
 title: Database Maintenance Windows
 nav: Maintenance Windows
-modified_at: 2024-11-28 12:00:00
+modified_at: 2024-12-04 12:00:00
 tags: databases maintenance
 index: 5
 ---
@@ -15,13 +15,6 @@ databases. On the customer's side, it mainly consists in an 8 hours timespan
 during which database maintenance operations can be scheduled. The goal of
 maintenance windows is to minimize the impact of maintenance operations on your
 application, while facilitating continuous improvement on our side.
-
-{% note %}
-Currently, Scalingo only leverages maintenance windows to force
-[major-upgrades]({% post_url databases/postgresql/2000-01-01-upgrading %})
-of databases when very specific conditions are met, such as an EOL version
-still running, or critical security issues.
-{% endnote %}
 
 A default 8 hours maintenance window is automatically assigned to all newly
 provisioned database. This maintenance window is set to a random weekday,
@@ -42,7 +35,7 @@ Database Maintenance Windows are excluded from the SLA calculation.
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your database dashboard
 2. Select the **Settings** tab.
 3. In the **Settings** submenu, select **Maintenance**
 4. The current Maintenance Window is displayed in the **Maintenance Window**
@@ -88,7 +81,7 @@ team.
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your database dashboard
 2. Select the **Settings** tab.
 3. In the **Settings** submenu, select **Maintenance**
 4. Locate the **Maintenance Window** block
@@ -169,7 +162,7 @@ later time.
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your database dashboard
 2. Click on the **Settings** tab.
 3. In the **Settings** menu, select **Maintenance**
 4. The list of maintenance operations scheduled or carried out in the last 12
