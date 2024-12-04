@@ -77,7 +77,7 @@ Database Maintenance Windows are excluded from the SLA calculation.
 ## Configuring Database Maintenance Windows
 
 Maintenance windows can be configured separately for each database addon. To
-configure it, you'll have to pick a weekday and a start time.
+configure it, you will have to pick a weekday and a start time.
 
 {% note %}
 Please note that once a maintenance notice has been issued, it can't be
@@ -229,7 +229,7 @@ prefer webhook notifications over email, you can easily configure this setting
 filter the list of recipients or provide a service address for individuals who
 need to be notified but do not have a Scalingo account.
 
-Three new events have been added:
+There are three events about database maintenance:
 
 - `database_maintenance_planned` : A database maintenance has been planned.
 - `database_maintenance_started`: A database maintenance has started.
