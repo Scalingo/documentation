@@ -78,7 +78,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">pg_repack</code></td>
-    <td align="left"><code>1.5.0</code></td>
+    <td align="left"><code>1.5.1</code></td>
     <td align="left">Reorganize tables in PostgreSQL databases with minimal locks</td>
   </tr>
   <tr valign="top">
@@ -103,27 +103,27 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis</code></td>
-    <td align="left"><code>3.4.2</code></td>
+    <td align="left"><code>3.5.0</code></td>
     <td align="left">PostGIS geometry and geography spatial types and functions</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_raster</code></td>
-    <td align="left"><code>3.4.2</code></td>
+    <td align="left"><code>3.5.0</code></td>
     <td align="left">PostGIS raster types and functions</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_sfcgal</code></td>
-    <td align="left"><code>3.4.2</code></td>
+    <td align="left"><code>3.5.0</code></td>
     <td align="left">PostGIS SFCGAL functions</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_tiger_geocoder</code></td>
-    <td align="left"><code>3.4.2</code></td>
+    <td align="left"><code>3.5.0</code></td>
     <td align="left">PostGIS tiger geocoder and reverse geocoder</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_topology</code></td>
-    <td align="left"><code>3.4.2</code></td>
+    <td align="left"><code>3.5.0</code></td>
     <td align="left">PostGIS topology spatial types and functions</td>
   </tr>
   <tr valign="top">
@@ -138,8 +138,8 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">timescaledb</code></td>
-    <td align="left"><code>2.14.2</code></td>
-    <td align="left">Enables scalable inserts and complex queries for time-series data (Apache 2 Edition)</td>
+    <td align="left"><code>2.17.2</code></td>
+    <td align="left">Enables scalable inserts and complex queries for time-series data</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">unaccent</code></td>
@@ -153,7 +153,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">vector</code></td>
-    <td align="left"><code>0.7.4</code></td>
+    <td align="left"><code>0.8.0</code></td>
     <td align="left">vector data type and ivfflat and hnsw access methods</td>
   </tr>
 </table>
