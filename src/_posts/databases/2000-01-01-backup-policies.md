@@ -1,15 +1,16 @@
 ---
 title: Databases Backup Policies
 nav: Backup Policies
-modified_at: 2024-11-28 12:00:00
+modified_at: 2024-12-04 12:00:00
 tags: databases backup policy policies
 index: 2
 ---
 
 
 Scalingo offers several options for backing up and restoring your data,
-depending on the service used. All backups are encrypted and securely stored in
-our infrastructure, within the same region as the source database.
+depending on the database type and on the plan used. All backups are encrypted
+and securely stored in our infrastructure, within the same region as the source
+database, in three availability zones.
 
 Note that these features are not available with the Sandbox plan.
 
@@ -117,17 +118,16 @@ deleted immediately.
 
 ## Point-in-Time-Recovery
 
-Point-in-Time Recovery (PiTR) allows the restoration of your PostgreSQL®
-database to any specific point in time within the last 7 days. This feature is
-available for Starter and Business plans and provides an additional layer of
-data protection by keeping continuous backups of your database's state.
+Point-in-Time Recovery (PiTR) is a feature **exclusive to PostgreSQL®**
+allowing the restoration of your PostgreSQL® database to any specific point in
+time within the last 7 days. This feature is available for Starter and Business
+plans and provides an additional layer of data protection by keeping continuous
+backups of your database's state.
 
-{% note %}
 Point-in-Time Recovery (PITR) technology operates independently of the
-database's state, load, or size, making it a reliable solution for handling
-large datasets. This feature offers a 7-day retention period without the usual
+database's load or size, making it a reliable solution for handling large
+datasets. This feature offers a 7-day retention period without the usual
 constraints of traditional backup methods.
-{% endnote %}
 
 ### Important Considerations
 
