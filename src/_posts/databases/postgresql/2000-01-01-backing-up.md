@@ -1,8 +1,8 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Addon
 nav: Backing Up
-modified_at: 2024-11-05 12:00:00
-tags: databases postgresql addon
+modified_at: 2024-12-10 12:00:00
+tags: databases postgresql addon how-to
 index: 10
 ---
 
@@ -10,30 +10,39 @@ index: 10
 Starter and Business plans of Scalingo for PostgreSQL® include automated and
 managed backups so you don't have to worry about them.
 
-We use two kinds of mechanisms to create these automated backups:
-[Point-in-Time Recovery](#understanding-point-in-time-recovery-backups) backups
-and [Scheduled](#understanding-scheduled-backups) backups. [Manual backups](#understanding-manual-backups)
+With PostgreSQL® for Scalingo, we use two main mechanisms to create these
+automated backups:
+- [Point-in-Time Recovery]({% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
+  backups, and
+- [Scheduled]({% post_url databases/2000-01-01-backup-policies %}#scheduled-backups)
+  backups.
+
+[Manual backups]({% post_url databases/2000-01-01-backup-policies %}#manual-backups)
 are also available for these plans.
 
-Please carefully read our [backup policies]({% post_url databases/2000-01-01-backup-policies %})
+{% note %}
+**Please carefully read our [backup policies]({% post_url databases/2000-01-01-backup-policies %})
 for details about backups retention and important considerations regarding
-backups.
+backups.**
+{% endnote %}
 
 
-## Understanding Point-in-Time Recovery Backups
+## Point-in-Time Recovery Backups
 
-{% include point_in_time_recovery.md %}
+### Creating a Point-in-Time Recovery Backup
 
-You have nothing to do to be able to use the PiTR mechanism.
+Point-in-Time Recovery backups are automatically created by the platform.
+
+### Configuring Point-in-Time Recovery Backups
+
+You have nothing to do to be able to use the Point-in-Time Recovery mechanism.
 
 
-## Understanding Scheduled Backups
+## Scheduled Backups
 
-Scheduled backups are done on a daily basis. They consist in dumping your
-database in an archive that we keep during a certain amount of time.
+### Creating a Scheduled Backup
 
-For Business plans, the backup is done on the secondary node to avoid any
-impact on your primary node.
+Scheduled backups are automatically created by the platform.
 
 ### Configuring Scheduled Backups
 
@@ -129,11 +138,7 @@ the workload on our infrastructure.
         The backup is downloaded in your current working directory.
 
 
-## Understanding Manual Backups
-
-Manual backups use the exact same mechanism as Scheduled backups, except that
-they are not automated. As the name suggests, Manual backups are triggered
-manually, whenever you want.
+## Manual Backups
 
 ### Creating a Manual Backup
 

@@ -1,18 +1,18 @@
 ---
 title: Restoring Your Scalingo for PostgreSQL® Addon
 nav: Restoring
-modified_at: 2024-10-21 00:00:00
+modified_at: 2024-12-10 00:00:00
 tags: databases postgresql addon
 index: 11
 ---
 
 ## Restoring a Point-in-Time Recovery Backup
 
-{% include point_in_time_recovery.md %}
-
 {% warning %}
-Restoring a database using the Point-in-Time Recovery feature requires the
-database to be completely stopped, causing an inevitable downtime.
+- Restoring a database using the Point-in-Time Recovery feature requires the
+  database to be completely stopped, causing an inevitable downtime.
+- Restoring a Point-in-Time Recovery backup resets the continuous backup
+  timeline, meaning you won't be able to restore from an earlier point in time.
 {% endwarning %}
 
 ### Using the Database Dashboard
@@ -30,10 +30,10 @@ Restoring a PiTR backup is only available from the database dashboard.
 {% endnote %}
 
 
-## Restoring a Periodic Backup
+## Restoring a Scheduled Backup
 
 {% warning %}
-Restoring a database using a Periodic backup requires the database to be
+Restoring a database using a Scheduled backup requires the database to be
 completely stopped, hence causing an inevitable downtime.
 {% endwarning %}
 
@@ -52,7 +52,7 @@ completely stopped, hence causing an inevitable downtime.
    ```bash
    scalingo login
    ```
-4. Either [download a backup]({% post_url databases/postgresql/2000-01-01-backing-up %}#downloading-a-periodic-backup),
+4. Either [download a backup]({% post_url databases/postgresql/2000-01-01-backing-up %}#downloading-a-scheduled-backup),
    or [use a dump]({% post_url databases/postgresql/2000-01-01-backing-up %}#from-a-one-off-container)
    made previously
 5. Uncompress the backup (this step is not necessary with a dump):
@@ -67,7 +67,7 @@ completely stopped, hence causing an inevitable downtime.
 
 #### From Your Workstation
 
-1. Either [download a backup]({% post_url databases/postgresql/2000-01-01-backing-up %}#downloading-a-periodic-backup),
+1. Either [download a backup]({% post_url databases/postgresql/2000-01-01-backing-up %}#downloading-a-scheduled-backup),
    or [create a dump]({% post_url databases/postgresql/2000-01-01-backing-up %}#from-a-one-off-container)
 2. Uncompress the backup (this step is not necessary with a dump):
    ```bash
@@ -88,17 +88,17 @@ completely stopped, hence causing an inevitable downtime.
    ```
 
 {% note %}
-Restoring a Periodic backup is only available from the command line.
+Restoring a Scheduled backup is only available from the command line.
 {% endnote %}
 
 
 ## Restoring a Manual Backup
 
-Manual backups are considered like any Periodic backup. Consequently, please
-refer to the [documentation explaining how to restore a Periodic backup](#restoring-a-periodic-backup).
+Manual backups are considered like any Scheduled backup. Consequently, please
+refer to the [documentation explaining how to restore a Scheduled backup](#restoring-a-scheduled-backup).
 
 
 ## Restoring a Dump
 
-Dumps are considered like any Periodic backup. Consequently, please refer to
-the [documentation explaining how to restore a Periodic backup](#restoring-a-periodic-backup).
+Dumps are considered like any Scheduled backup. Consequently, please refer to
+the [documentation explaining how to restore a Scheduled backup](#restoring-a-scheduled-backup).
