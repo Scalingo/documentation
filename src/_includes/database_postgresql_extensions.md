@@ -17,6 +17,11 @@ vim Syntax:
     <th align="center">Description</th>
   </tr>
   <tr valign="top">
+    <td align="left"><code class="language-plaintext highlighter-rouge">anon</code></td>
+    <td align="left"><code>1.3.2</code></td>
+    <td align="left">Data anonymization tools</td>
+  </tr>
+  <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">btree_gin</code></td>
     <td align="left"><code>1.3</code></td>
     <td align="left">support for indexing common datatypes in GIN</td>
@@ -53,7 +58,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">fuzzystrmatch</code></td>
-    <td align="left"><code>1.1</code></td>
+    <td align="left"><code>1.2</code></td>
     <td align="left">determine similarities and distance between strings</td>
   </tr>
   <tr valign="top">
