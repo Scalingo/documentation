@@ -168,6 +168,23 @@ If you absolutely need all these data, please contact us at
   instantness aspect is lost.
 {% endnote %}
 
+### Archive Too Large
+
+When deploying an application from an archive of source code, the maximum archive size is limited to **300 MB**. 
+
+If your archive exceeds this limit you will get a `"The archive is too heavy"` error.
+
+{% note %}
+The limit applies to the **uncompressed** archive.
+
+For example: given a **200 MB .tar.gz** archive, when the underlying **.tar** archive is larger than **300 MB**, 
+then you will encounter this limit.
+
+{% endnote %}
+
+If you need to deploy a larger archive, please contact us at
+[support@scalingo.com](mailto:support@scalingo.com).
+
 ## Start Errors
 
 
