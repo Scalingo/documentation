@@ -170,9 +170,13 @@ If you absolutely need all these data, please contact us at
 
 ### Archive Too Large
 
-When deploying an application from an archive of source code, the maximum archive size is limited to **300 MB**. 
+When deploying an application, the Scalingo build system downloads the source code as an archive.
+The maximum archive size is limited to **300 MB**. 
 
-If your archive exceeds this limit you will get a `"The archive is too heavy"` error.
+If your archive exceeds this limit you will get the following error:
+```
+Fail to fetch source code: fail to handle tgz: The archive is too heavy (more than 314572800 bytes)
+```
 
 {% note %}
 The limit applies to the **uncompressed** archive.
