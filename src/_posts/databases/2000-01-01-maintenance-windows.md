@@ -1,7 +1,7 @@
 ---
 title: Database Maintenance Windows
 nav: Maintenance Windows
-modified_at: 2024-12-04 12:00:00
+modified_at: 2024-12-13 12:00:00
 tags: databases maintenance
 index: 5
 ---
@@ -23,8 +23,7 @@ from 9PM to 5AM UTC.
 If the given timeframe doesn't align with your business requirements, please
 [adjust it as needed](#configuring-a-database-maintenance-window). We strongly
 advise to schedule the maintenance window when your app is less prone to high
-traffic (e.g. the night between Sunday and Monday) to minimize undesired
-consequences such as a possible downtime.
+traffic to minimize undesired consequences such as a possible downtime.
 
 {% note %}
 Database Maintenance Windows are excluded from the SLA calculation.
