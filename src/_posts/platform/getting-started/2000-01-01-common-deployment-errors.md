@@ -168,6 +168,27 @@ If you absolutely need all these data, please contact us at
   instantness aspect is lost.
 {% endnote %}
 
+### Archive Too Large
+
+When deploying an application, the Scalingo build system downloads the source code as an archive.
+The maximum archive size is limited to **300 MB**. 
+
+If your archive exceeds this limit you will get the following error:
+```
+Fail to fetch source code: fail to handle tgz: The archive is too heavy (more than 314572800 bytes)
+```
+
+{% note %}
+The limit applies to the **uncompressed** archive.
+
+For example: given a **200 MB .tar.gz** archive, when the underlying **.tar** archive is larger than **300 MB**, 
+then you will encounter this limit.
+
+{% endnote %}
+
+If you need to deploy a larger archive, please contact us at
+[support@scalingo.com](mailto:support@scalingo.com).
+
 ## Start Errors
 
 
