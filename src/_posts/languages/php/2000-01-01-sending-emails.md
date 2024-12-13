@@ -27,8 +27,8 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp-relay.brevo.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'YOUR_BREVO_USERNAME';
-    $mail->Password   = 'YOUR_BREVO_PASSWORD';
+    $mail->Username   = getenv('BREVO_USERNAME');
+    $mail->Password   = getenv('BREVO_PASSWORD');
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
