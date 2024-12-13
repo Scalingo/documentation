@@ -1,7 +1,7 @@
 ---
 title: Monitoring and Auditing Your Scalingo for PostgreSQL® Addon
 nav: Monitoring and Auditing
-modified_at: 2024-10-21 00:00:00
+modified_at: 2024-12-13 00:00:00
 tags: databases postgresql addon
 index: 7
 ---
@@ -85,9 +85,27 @@ stuck ones.
 1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Click the **Running Queries** tab
 
-{% note %}
-Viewing running queries is only available from the database dashboard.
-{% endnote %}
+### Using the Command Line
+
+PostgreSQL® for Scalingo gives direct access to PostgreSQL®'s [*cumulative
+statistics system*](https://www.postgresql.org/docs/current/monitoring-stats.html),
+which collects data about the database activity. Concretely, it exposes several
+views that can be queried from an [Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#using-the-interactive-remote-console).
+
+Amongst the views available, these might be of particular interest when
+monitoring the current state of the database:
+- `pg_stat_activity` shows information related to the current activity of each
+  process running. It can be queried to view running queries and their current
+  state.
+- `pg_stat_progress_analyze` shows information related to each running
+  `ANALYZE` process, including current progress.
+- `pg_stat_progress_create_index` shows information related to each running
+  `CREATE INDEX` or `REINDEX` process, including current progress.
+- `pg_stat_progress_vacuum` shows information related to each running `VACUUM`
+  process, including current progress.
+- `pg_stat_user_tables` shows statistics about accesses to each table.
+
+For more information, please refer to [the officiel documentation](https://www.postgresql.org/docs/current/monitoring-stats.html).
 
 
 ## Exploring Query Statistics
@@ -127,13 +145,18 @@ to be activated manually.
    my_app_4553=>
    ```
 
-### Using the Database Dashboard
+### Viewing Query Statistics
 
 [Once enabled](#enabling-query-statistics), query statistics can be consulted:
+
+#### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Click the **Query Statistics** tab
 
-{% note %}
-Consulting query statistics is only available from the database dashboard.
-{% endnote %}
+#### Using the Command Line
+
+1. Access your database using the [Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#using-the-interactive-remote-console)
+2. From the PostgreSQL® console, query the `pg_stat_statements` as you wish.\
+   Our [Troubleshooting]({% post_url databases/postgresql/2000-01-01-troubleshooting %}#identifying-performances-issues)
+   page gives some examples.
