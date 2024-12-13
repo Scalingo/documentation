@@ -1,6 +1,6 @@
 ---
 title: Scalingo JSON Manifest
-modified_at: 2020-11-18 00:00:00
+modified_at: 2024-12-13 00:00:00
 tags: app review apps one-click manifest
 ---
 
@@ -49,7 +49,7 @@ can still customize them before triggering the deployment.
 
 ## Configuration of Addons
 
-Addons can also be declared in the JSON manifest and they'll be provisioned before deploying 
+Addons can also be declared in the JSON manifest and they'll be provisioned before deploying
 a review app or starting a one-click deploy.
 
 ### Review Apps
@@ -84,7 +84,7 @@ The `options` attribute is optional, currently only the `version` parameter is a
 {% note %}
 You can use the CLI
 `scalingo addons-list`
-`scalingo addons-plans {addon-name}`
+`scalingo addons-plans {addon-id}`
 to get addon names and their plans.
 {% endnote %}
 
