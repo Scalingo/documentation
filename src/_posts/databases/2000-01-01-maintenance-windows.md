@@ -1,7 +1,7 @@
 ---
 title: Database Maintenance Windows
 nav: Maintenance Windows
-modified_at: 2024-12-13 12:00:00
+modified_at: 2024-12-16 12:00:00
 tags: databases maintenance
 index: 5
 ---
@@ -212,9 +212,9 @@ later time.
 
 By default, owner and collaborators receive email notifications one day before
 a scheduled maintenance execution. This notification system operates via the
-[App notifications](/platform/app/notification) feature and the "default
-notifier" which is configured for each app. Please check if it is still active
-or configure another notifier for this purpose.
+[App notifications]({% post_url /platform/app/2000-01-01-notification %})
+feature and the "default notifier" which is configured for each app. Please
+check if it is still active or configure another notifier for this purpose.
 It can easily be configured to suit your preferences. For instance, if you
 prefer webhook notifications over email, you can easily configure this setting
 (or create a new dedicated notifier). Additionally, you have the option to
