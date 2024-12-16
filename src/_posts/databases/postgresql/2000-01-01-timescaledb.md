@@ -275,7 +275,7 @@ For more details about dumping and restoring TimescaleDB®, please refer to [the
 official documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/).
 
 {% note %}
-[Point-in-Time Recovery backups]({% post_url databases/postgresql/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
+[Point-in-Time Recovery backups]({% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
 are still working normally and can be restored [following the procedure for
 PostgreSQL®]({% post_url databases/postgresql/2000-01-01-restoring %}#restoring-a-point-in-time-recovery-backup).
 {% endnote %}
