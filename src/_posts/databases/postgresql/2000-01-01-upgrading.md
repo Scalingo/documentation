@@ -1,7 +1,7 @@
 ---
 title: Upgrading Your Scalingo for PostgreSQL® Addon
 nav: Upgrading
-modified_at: 2024-12-10 12:00:00
+modified_at: 2024-12-16 12:00:00
 tags: databases postgresql addon
 index: 9
 ---
@@ -47,8 +47,8 @@ There are no prerequisites for minor-upgrades.
 2. We restart the instance with the targeted version. This operation can take
    quite some time, depending on the database size and enabled extension(s).
 3. Once the instance restarted, the database is reachable again.
-4. The application is restarted to ensure proper connections. This shouldn't
-   cause any additional downtime.
+4. The application is restarted to ensure proper connections. [This does not
+   cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
 
 Since we have to completely stop the instance, **a downtime is inevitable**.
 
@@ -65,8 +65,8 @@ seconds to a few minutes. In any cases, it shouldn't exceed 10 minutes.
    connection can be lost during a few milliseconds.
 4. The new standby instance is restarted with the targeted version.
 5. Once restarted, the cluster is fully upgraded and fully operational again.
-6. The application is restarted to ensure proper connections. This shouldn't
-   cause any additional downtime.
+6. The application is restarted to ensure proper connections. [This does not
+   cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
 
 Minor-upgrades of Business plans are **usually achieved without any impactful
 downtime**.
@@ -96,8 +96,8 @@ Finally, upgrade to the latest version of the 15.x branch.
 5. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-6. The application is restarted to ensure proper connections. This shouldn't
-   cause any additional downtime.
+6. The application is restarted to ensure proper connections. [This does not
+   cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
 7. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
    available again.
 
@@ -117,8 +117,8 @@ our experience tends to show that it often takes less time.
 4. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-5. The application is restarted to ensure proper connections. This shouldn't
-   cause any additional downtime.
+5. The application is restarted to ensure proper connections. [This does not
+   cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
 6. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
    available again.
 7. The standby instance is rebuilt from scratch, based on the primary instance
