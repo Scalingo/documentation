@@ -10,6 +10,7 @@ updates:
       interval: "monthly"
     reviewers:
       - "Anouchka-M"
+      - "aurelien-reeves-scalingo"
   - package-ecosystem: "npm"
     directory: "/"
     allow:
@@ -18,3 +19,4 @@ updates:
       interval: "monthly"
     reviewers:
       - "Anouchka-M"
+      - "aurelien-reeves-scalingo"
