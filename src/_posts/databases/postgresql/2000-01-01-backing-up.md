@@ -1,66 +1,52 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Addon
 nav: Backing Up
-modified_at: 2024-10-21 00:00:00
-tags: databases postgresql addon
-index: 8
+modified_at: 2024-12-10 12:00:00
+tags: databases postgresql addon how-to
+index: 10
 ---
 
 
 Starter and Business plans of Scalingo for PostgreSQL® include automated and
 managed backups so you don't have to worry about them.
 
-We use two kinds of mechanisms to create these automated backups:
-[Point-in-Time Recovery](#understanding-point-in-time-recovery-backups) backups and
-[Periodic](#understanding-periodic-backups) backups. [Manual backups](#understanding-manual-backups)
+With PostgreSQL® for Scalingo, we use two main mechanisms to create these
+automated backups:
+- [Point-in-Time Recovery]({% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
+  backups, and
+- [Scheduled]({% post_url databases/2000-01-01-backup-policies %}#scheduled-backups)
+  backups.
+
+[Manual backups]({% post_url databases/2000-01-01-backup-policies %}#manual-backups)
 are also available for these plans.
 
-
-## Understanding Point-in-Time Recovery Backups
-
-{% include point_in_time_recovery.md %}
-
-You have nothing to do to be able to use the PiTR mechanism. Be aware that you
-can only use the PiTR on the period between now and now minus seven days.
-
-### Retention Policy for PiTR Backups
-
-| Plan     | PiTR Backup Retained |
-| -------- + -------------------- |
-| Sandbox  | N/A                  |
-| Starter  | 1                    |
-| Business | 1                    |
+{% note %}
+**Please carefully read our [backup policies]({% post_url databases/2000-01-01-backup-policies %})
+for details about backups retention and important considerations regarding
+backups.**
+{% endnote %}
 
 
-## Understanding Periodic Backups
+## Point-in-Time Recovery Backups
 
-Periodic backups are done on a daily basis. They consist in dumping your
-database in an archive that we keep during a certain amount of time.
+### Creating a Point-in-Time Recovery Backup
 
-For Business plans, the backup is done on the secondary node to avoid any
-impact on your primary node.
+Point-in-Time Recovery backups are automatically created by the platform.
 
-### Retention Policy for Periodic Backups
+### Configuring Point-in-Time Recovery Backups
 
-We keep a limited amount of backups depending on your database plan:
-- A daily backup is retained for the last 7 days, which means that we will keep
-  a maximum of 7 daily backups (one for each of the last 7 days).
-- A weekly backup means that only one backup is saved over a 7 days period.
-- A monthly backup means that only one backup is saved over the course of a
-  month.
+You have nothing to do to be able to use the Point-in-Time Recovery mechanism.
 
-<div class="overflow-horizontal-content" markdown="1">
-| Plan     | Weekly Backups Retained | Monthly Backups Retained |
-| -------- + ----------------------- + ------------------------ |
-| Sandbox  | N/A                     | N/A                      |
-| Starter  | 4 weeks                 | 0 month                  |
-| Business | 8 weeks                 | 12 months                |
- {: .table }
- </div>
 
-### Configuring Periodic Backups
+## Scheduled Backups
 
-By default, Periodic backups are done around 1:00 AM Central European Time
+### Creating a Scheduled Backup
+
+Scheduled backups are automatically created by the platform.
+
+### Configuring Scheduled Backups
+
+By default, Scheduled backups are done around 1:00 AM Central European Time
 (CET or UTC+0100). This time can be modified.
 
 {% note %}
@@ -100,14 +86,14 @@ the workload on our infrastructure.
    -----> Periodic backups will be done daily at 6:00 CET
    ```
 
-### Downloading a Periodic Backup
+### Downloading a Scheduled Backup
 
 #### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
 2. Click the **Backups** tab
 3. Locate the **Backups** block
-4. Locate the Periodic backup you are interested in
+4. Locate the Scheduled backup you are interested in
 5. Click the corresponding **Download** button
 
 #### Using the Command Line
@@ -152,27 +138,7 @@ the workload on our infrastructure.
         The backup is downloaded in your current working directory.
 
 
-## Understanding Manual Backups
-
-Manual backups use the exact same mechanism as Periodic backups, except that
-they are not automated. As the name suggests, Manual backups are triggered
-manually, whenever you want.
-
-### Retention Policy for Manual Backups
-
-We keep a limited amount of Manual backups depending on your database plan:
-
-<div class="overflow-horizontal-content" markdown="1">
-| Plan         | Backups Retained |
-| ------------ + ---------------- |
-| Sandbox      | N/A              |
-| Starter      | 10               |
-| Business     | 50               |
-{: .table }
-</div>
-
-When a database is removed from an application, the retention policy remains
-untouched: backups are **not** instantly deleted.
+## Manual Backups
 
 ### Creating a Manual Backup
 
@@ -197,7 +163,7 @@ untouched: backups are **not** instantly deleted.
 
 ### Downloading a Manual Backup
 
-Please refer to [Downloading a Periodic Backup](#downloading-a-periodic-backup)
+Please refer to [Downloading a Scheduled Backup](#downloading-a-scheduled-backup)
 section, as the process is exactly the same.
 
 
