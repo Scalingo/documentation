@@ -34,15 +34,20 @@ Collaborators can't:
 
 ## Managing Collaborators
 
-### Listing Collaborators
+### Listing all Collaborators
 
-Using the Dashboard
-
+Using the Dashboard:
 - Go to the **Collaborators** tab
-- If you already have collaborators, you'll see a consolidated list of all users collaborating on your apps.
+- If you already have collaborators, you'll see a consolidated list of all the users who are collaborating on your apps
+
+### Listing Collaborators of an app
+
+Using the dashboard:
+- Go to your application dashboard
+- Go to **Settings** tab
+- You will automatically be taken to the collaborators menu
 
 Using the Command Line
-
 ```shell
 scalingo --app my-app collaborators
 ```
@@ -50,7 +55,7 @@ scalingo --app my-app collaborators
 ### Adding a Collaborator
 
 {% note %}
-While the main Collaborators page provides a consolidated list, collaborators are maanged individually for each application.
+While the main Collaborators page provides a consolidated list, collaborators are managed individually for each application.
 {% endnote %}
 
 Using the Dashboard
