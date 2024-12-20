@@ -1,6 +1,6 @@
 ---
 title: Collaborators
-modified_at: 2024-02-07 00:00:00
+modified_at: 2024-12-20 00:00:00
 tags: app collaborators
 ---
 
@@ -9,7 +9,7 @@ Collaborators is a feature allowing the owner of an app to invite other Scalingo
 An owner of an app can also [transfer the ownership of the app]({% post_url platform/app/2000-01-01-lifecycle-management %}#transfer-ownership-of-an-app) to a collaborator.
 
 {% note %}
-Delegating rights to collaborators should be taken seriously. Even if collaborators can't delete the application, they have enough rights to disrupt the activities or businesses depending on it.
+Delegating rights to collaborators should be done with caution. While collaborators can't delete the application, they still have sufficient rights to potentially disrupt the activities or businesses that depend on it.
 {% endnote %}
 
 ## Understanding Collaborators Rights
@@ -34,21 +34,29 @@ Collaborators can't:
 
 ## Managing Collaborators
 
-### Listing Collaborators
+### Listing all Collaborators
 
-Using the Dashboard
+Using the Dashboard:
+- Go to the **Collaborators** tab
+- If you already have collaborators, you'll see a consolidated list of all the users who are collaborating on your apps
 
-- Go to your application that needs a new collaborator
-- Go to the Settings tab
-- You will automatically be taken to the Collaborators menu
+### Listing Collaborators of an app
+
+Using the dashboard:
+- Go to your application dashboard
+- Go to **Settings** tab
+- You will automatically be taken to the collaborators menu
 
 Using the Command Line
-
 ```shell
 scalingo --app my-app collaborators
 ```
 
 ### Adding a Collaborator
+
+{% note %}
+While the main Collaborators page provides a consolidated list, collaborators are managed individually for each application.
+{% endnote %}
 
 Using the Dashboard
 
