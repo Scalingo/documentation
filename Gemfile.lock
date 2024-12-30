@@ -123,7 +123,7 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.9.2)
     rexml (3.4.0)
-    rouge (4.4.0)
+    rouge (4.5.1)
     rubocop (1.65.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
