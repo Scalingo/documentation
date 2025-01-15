@@ -1,7 +1,7 @@
 ---
 title: Managing PHP Extensions
 nav: Managing PHP Extensions
-modified_at: 2025-01-14 12:00:00
+modified_at: 2025-01-15 12:00:00
 tags: php
 index: 4
 ---
@@ -19,70 +19,76 @@ of PHP. Others are dynamically installed if specified in the project's
 
 ### Available PHP Built-in Extensions
 
-The following extensions are included in PHP and are **available**.
+The following table lists the PHP built-in extensions we bundle with PHP and
+that are **available** on Scalingo.
 
-The ones marked as *Enabled by default* are always **enabled** and can't be
-disabled. You don't have to add them to your `composer.json` file (but you
-can).
+- Some are **enabled** by default and can't be disabled. You don't have to add
+  them to your `composer.json` file to enable them (but you can).\
+  They are marked as ***Enabled*** in the following table.
+- Some others are disabled by default and [can be enabled](#enabling-a-php-built-in-extension).\
+  They are marked as ***Optional*** in the following table.
+- Unavailable extensions are marked with a blank cell.
 
-| Extensions     | Enabled by default |
-| -------------- | ------------------ |
-| `bcmath`       | Yes                |
-| `bz2`          | Yes                |
-| `calendar`     | No                 |
-| `ctype`        | Yes                |
-| `cURL`         | Yes                |
-| `date`         | Yes                |
-| `dom`          | Yes                |
-| `exif`         | Yes                |
-| `fileinfo`     | Yes                |
-| `filter`       | Yes                |
-| `ftp`          | No                 |
-| `gd`           | Yes                |
-| `gettext`      | No                 |
-| `gmp`          | No                 |
-| `hash`         | Yes                |
-| `iconv`        | Yes                |
-| `intl`         | Yes                |
-| `json`         | Yes                |
-| `libxml`       | Yes                |
-| `mbstring`     | Yes                |
-| `mysqli`       | Yes                |
-| `mysqlnd`      | Yes                |
-| `openssl`      | Yes                |
-| `pcntl`        | Yes                |
-| `pcre`         | Yes                |
-| `pdo_mysql`    | Yes                |
-| `pdo_pgsql`    | Yes                |
-| `pdo_sqlite`   | Yes                |
-| `pgsql`        | Yes                |
-| `Phar`         | Yes                |
-| `posix`        | Yes                |
-| `random`       | Yes (req. PHP >= `8.3`) |
-| `readline`     | Yes                |
-| `Reflection`   | Yes                |
-| `session`      | Yes                |
-| `shmop`        | Yes                |
-| `SimpleXML`    | Yes                |
-| `soap`         | Yes                |
-| `sockets`      | Yes                |
-| `sodium`       | No                 |
-| `SPL`          | Yes                |
-| `sqlite3`      | Yes                |
-| `tidy`         | No                 |
-| `tokenizer`    | Yes                |
-| `xml`          | Yes                |
-| `xmlreader`    | Yes                |
-| `xmlwriter`    | Yes                |
-| `xsl`          | Yes                |
-| `Zend OPcache` | Yes                |
-| `zip`          | Yes                |
-| `zlib`         | Yes                |
+| Extension          | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  |
+| ------------------ | -------- | -------- | -------- | -------- |
+| `ext-bcmath`       | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-bz2`          | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-calendar`     | Optional | Optional | Optional | Optional |
+| `ext-ctype`        | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-curl`         | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-date`         | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-dom`          | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-exif`         | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-fileinfo`     | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-filter`       | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-ftp`          | Optional | Optional | Optional | Optional |
+| `ext-gd`           | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-gettext`      | Optional | Optional | Optional | Optional |
+| `ext-gmp`          | Optional | Optional | Optional | Optional |
+| `ext-hash`         | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-iconv`        | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-imap`         | Optional | Optional | Optional |          |
+| `ext-intl`         | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-json`         | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-libxml`       | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-mbstring`     | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-mysqli`       | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-mysqlnd`      | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-openssl`      | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pcntl`        | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pcre`         | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pdo`          | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pdo_mysql`    | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pdo_pgsql`    | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pdo_sqlite`   | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pgsql`        | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-phar`         | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-posix`        | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-random`       |          | Enabled  | Enabled  | Enabled  |
+| `ext-readline`     | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-reflection`   | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-session`      | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-shmop`        | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-simplexml`    | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-soap`         | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-sockets`      | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-sodium`       | Optional | Optional | Optional | Optional |
+| `ext-spl`          | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-sqlite3`      | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-tidy`         | Optional | Optional | Optional | Optional |
+| `ext-tokenizer`    | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-xml`          | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-xmlreader`    | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-xmlwriter`    | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-xsl`          | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-zend-opcache` | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-zip`          | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-zlib`         | Enabled  | Enabled  | Enabled  | Enabled  |
 
 ### Enabling a PHP Built-in Extension
 
-To enable an available PHP built-in extension, add its name to the `require`
-block of your `composer.json` file, like so (**notice the `ext-` prefix!**):
+To enable an optional PHP built-in extension, add its name to the `require`
+block of your `composer.json` file, like so:
 
 ```json
 {
@@ -102,26 +108,58 @@ with our support team.
 
 ## Working With PECL Extensions
 
+{% note %}
+Some PECL extensions are very old, probably even unmaintained and will only
+work with an old version of PHP (e.g. `mongo`, `sodium`, `ds` or `lua`). We
+strongly advise you to pick your extension(s) carefully.
+{% endnote %}
+
 ### Available PECL Extensions
 
-The following PECL extensions are also **available**.
+The following table lists the PECL extensions that we pre-compile and make
+**available** on Scalingo.
 
-The ones marked as *Enabled by default* are always **enabled** and can't be
-disabled. You don't have to add them to your `composer.json` file (but you
-can).
+- Some are **enabled** by default and can't be disabled. You don't have to add
+  them to your `composer.json` file to enable them (but you can).\
+  They are marked as ***Enabled*** in the following table.
+- Some others are disabled by default and [can be enabled](#enabling-a-pecl-extension).\
+  They are marked as ***Optional*** in the following table.
+- Unavailable extensions are marked with a blank cell.
 
-| Extension   | Version  | Enabled by default | |
-| ----------- | -------- | :----------------- | |
-| `amqp`      | `2.1.2`  | No  | |
-| `apcu`      | `5.1.24` | Yes | |
-| `apfd`      | `1.0.3`  | No  | |
-| `event`     | `3.0.8`  | No  | |
-| `igbinary`  | `3.2.16` | No  | |
-| `imagick`   | `3.7.0`  | No  | |
-| `memcached` | `3.3.0`  | No  | |
-| `mongodb`   | `1.20.1` | Yes | |
-| `oci8`      | `3.4.0`  | No  | |
-| `redis`     | `6.1.0`  | Yes | |
+{% note %}
+To use a PECL extension that is not listed in the table of available PECL
+extensions, please read [Adding a PECL Extension](#adding-a-pecl-extension).
+{% endnote %}
+
+| Extension       | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  |
+| --------------- | -------- | -------- | -------- | -------- |
+| `ext-amqp`      | Optional | Optional | Optional | Optional |
+| `ext-apcu`      | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-apfd`      | Optional | Optional | Optional | Optional |
+| `ext-event`     | Optional | Optional | Optional | Optional |
+| `ext-igbinary`  | Optional | Optional | Optional | Optional |
+| `ext-imagick`   | Optional | Optional | Optional | Optional |
+| `ext-memcached` | Optional | Optional | Optional | Optional |
+| `ext-mongodb`   | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-oci8`      |          | Optional | Optional | Optional |
+| `ext-redis`     | Enabled  | Enabled  | Enabled  | Enabled  |
+
+#### Available Versions
+
+The following table lists the supported versions of available PECL extensions:
+
+| Extension   | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  |
+| ----------- | -------: | -------: | -------: | -------: |
+| `amqp`      | `2.1.2`  | `2.1.2`  | `2.1.2`  | `2.1.2`  |
+| `apcu`      | `5.1.24` | `5.1.24` | `5.1.24` | `5.1.24` |
+| `apfd`      | `1.0.3`  | `1.0.3`  | `1.0.3`  | `1.0.3`  |
+| `event`     | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  |
+| `igbinary`  | `3.2.16` | `3.2.16` | `3.2.16` | `3.2.16` |
+| `imagick`   | `3.7.0`  | `3.7.0`  | `3.7.0`  | `3.7.0`  |
+| `memcached` | `3.3.0`  | `3.3.0`  | `3.3.0`  | `3.3.0`  |
+| `mongodb`   | `1.20.1` | `1.20.1` | `1.20.1` | `1.20.1` |
+| `oci8`      |          | `3.4.0`  | `3.4.0`  | `3.4.0`  |
+| `redis`     | `6.1.0`  | `6.1.0`  | `6.1.0`  | `6.1.0`  |
 
 ### Enabling an Available PECL Extension
 
@@ -140,8 +178,8 @@ your `composer.json` file, like so (**notice the `ext-` prefix!**):
 
 ### Adding a PECL Extension
 
-If the PECL extension you need is not in the above list of available PECL
-extensions, you may want to instruct the platform to compile and install it
+If the PECL extension you need is not listed in the table of available PECL
+extensions, you may want to instruct the platform to compile it and install it
 during the *build* phase of your deployment.
 
 To do so, add its name in the `require` block of your `composer.json`, like so
@@ -150,16 +188,16 @@ To do so, add its name in the `require` block of your `composer.json`, like so
 ```json
 {
   "require": {
-    "ext-libsodium": "*",
+    "ext-my_pecl_extension": "*",
     ...
   }
 }
 ```
 
 {% note %}
-- Some PECL extensions are very old, probably even unmaintained and will only
-  work with an old version of PHP (e.g. `mongo`, `sodium`, `ds` or `lua`). We
-  strongly advise you to pick your extension(s) carefully.
+- While our experience shows it works well in a lot of cases, we can't
+  guarantee it will. Please get in touch with our support team if you need
+  help.
 - If the compilation of the extension succeeds, the compiled extension (the
   `.so` file) is kept in cache for future deployments.
 {% endnote %}
@@ -239,27 +277,27 @@ extension with this flag, which tells the compile script where to find the
 The last step consists in committing your work and pushing it to Scalingo.
 
 
-## Working With Proprietary Extensions
+## Working With Third-Party Extensions
 
-### Available Proprietary Extensions
+### Available Third-Party Extensions
 
-The following proprietary extensions are also **available**.
+The following table lists the third-party extensions that are **available** on
+Scalingo, along with the versions available.
 
 They are all disabled by default.
 
-| Extension       | Version     | Enabled by default |
-| --------------- | ----------- | ------------ |
-| `blackfire`     | `1.86.3`    | No           |
-| `datadog`       |             | No. [See instructions]({% post_url languages/php/2000-01-01-start %}#extrapaasdatadog)   |
-| `newrelic`      | `11.5.0.18` | No. [See instructions]({% post_url languages/php/2000-01-01-start %}#extrapaasnew-relic) |
-| `scoutapm`      | `1.10.0`    | No. [See instructions]({% post_url languages/php/2000-01-01-start %}#extrapaasscout)     |
+| Extension | PHP 8.1     | PHP 8.2     | PHP 8.3     | PHP 8.4     | Enabling |
+| --------- | ----------: | ----------: | ----------: | ----------: | -------- |
+| Datadog   | `1.6.2`     | `1.6.2`     | `1.6.2`     | `1.6.2`     | [See instructions]({% post_url languages/php/2000-01-01-start %}#extrapaasdatadog)   |
+| New Relic | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | [See instructions]({% post_url languages/php/2000-01-01-start %}#extrapaasnew-relic) |
+| Scout APM | `1.10.0`    | `1.10.0`    | `1.10.0`    | `1.10.0`    | [See instructions]({% post_url languages/php/2000-01-01-start %}#extrapaasscout)     |
 
-### Enabling an Available Proprietary Extension
+### Enabling an Available Third-Party Extension
 
-To enable an available proprietary extension, please refer to the corresponding
+To enable an available third-party extension, please refer to the corresponding
 instructions given in the table above.
 
-### Adding a Proprietary Extension
+### Adding a Third-Party Extension
 
-To add an extension that is not available, please get in touch with our support
-team.
+To add a third-party extension that is not available, please get in touch with
+our support team.
