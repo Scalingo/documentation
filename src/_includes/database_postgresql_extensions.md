@@ -78,7 +78,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">pg_repack</code></td>
-    <td align="left"><code>1.5.1</code></td>
+    <td align="left"><code>1.5.2</code></td>
     <td align="left">Reorganize tables in PostgreSQL databases with minimal locks</td>
   </tr>
   <tr valign="top">
@@ -103,7 +103,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis</code></td>
-    <td align="left"><code>3.5.0</code></td>
+    <td align="left"><code>3.5.1</code></td>
     <td align="left">PostGIS geometry and geography spatial types and functions</td>
   </tr>
   <tr valign="top">
@@ -155,5 +155,10 @@ vim Syntax:
     <td align="left"><code class="language-plaintext highlighter-rouge">vector</code></td>
     <td align="left"><code>0.8.0</code></td>
     <td align="left">vector data type and ivfflat and hnsw access methods</td>
+  </tr>
+  <tr valign="top">
+    <td align="left"><code class="language-plaintext highlighter-rouge">anon (PostgreSQL Anonymizer)</code></td>
+    <td align="left"><code>2.0.0</code></td>
+    <td align="left">designed to anonymize by default, enabling the masking or replacement of personally identifiable information (PII) and commercially sensitive data</td>
   </tr>
 </table>
