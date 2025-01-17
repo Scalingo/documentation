@@ -110,8 +110,8 @@ with our support team.
 
 {% note %}
 Some PECL extensions are very old, probably even unmaintained and will only
-work with an old version of PHP (e.g. `mongo`, `sodium`, `ds` or `lua`). We
-strongly advise you to pick your extension(s) carefully.
+work with an old version of PHP (e.g. `mongo`, `sodium`, `ds`, `lua` or
+`imap`). We strongly advise you to pick your extension(s) carefully.
 {% endnote %}
 
 ### Available PECL Extensions
@@ -286,16 +286,20 @@ Scalingo, along with the versions available.
 
 They are all disabled by default.
 
-| Extension | PHP 8.1     | PHP 8.2     | PHP 8.3     | PHP 8.4     | Enabling |
-| --------- | ----------: | ----------: | ----------: | ----------: | -------- |
-| Datadog   | `1.6.2`     | `1.6.2`     | `1.6.2`     | `1.6.2`     | [See instructions]({% post_url languages/php/2000-01-01-start %}#extrapaasdatadog)   |
-| New Relic | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | [See instructions]({% post_url languages/php/2000-01-01-start %}#extrapaasnew-relic) |
-| Scout APM | `1.10.0`    | `1.10.0`    | `1.10.0`    | `1.10.0`    | [See instructions]({% post_url languages/php/2000-01-01-start %}#extrapaasscout)     |
+| Extension | PHP 8.1     | PHP 8.2     | PHP 8.3     | PHP 8.4     |
+| --------- | ----------: | ----------: | ----------: | ----------: |
+| Datadog   | `1.6.2`     | `1.6.2`     | `1.6.2`     | `1.6.2`     |
+| New Relic | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` |
+| Scout APM | `1.10.0`    | `1.10.0`    | `1.10.0`    | `1.10.0`    |
 
 ### Enabling an Available Third-Party Extension
 
 To enable an available third-party extension, please refer to the corresponding
-instructions given in the table above.
+instructions:
+
+- For [Datadog]({% post_url languages/php/2000-01-01-start %}#extrapaasdatadog)
+- For [New Relic]({% post_url languages/php/2000-01-01-start %}#extrapaasnew-relic)
+- For [Scout APM]({% post_url languages/php/2000-01-01-start %}#extrapaasscout)
 
 ### Adding a Third-Party Extension
 
