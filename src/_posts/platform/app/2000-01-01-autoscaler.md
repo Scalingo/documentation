@@ -1,7 +1,7 @@
 ---
 title: Scalingo Autoscaler
 nav: Scalingo Autoscaler
-modified_at: 2024-12-30 12:00:00
+modified_at: 2025-01-20 12:00:00
 tags: app scaling autoscaling metrics autoscaler
 ---
 
@@ -14,6 +14,7 @@ The ***Scalingo Autoscaler*** is a feature that, once configured and enabled,
 allows the platform to automatically and dynamically adjust the number of
 containers of your application (horizontal scaling) depending on a performance
 metric while remaining within strict boundaries to prevent unforeseen costs.
+
 
 ## Understanding the Autoscaler
 
@@ -63,11 +64,6 @@ An Autoscaler can depend on 6 different metrics:
 | [CPU consumption](#cpu-consumption)                                      | `technical` | `cpu`               |
 | [RAM consumption](#ram-consumption)                                      | `technical` | `memory`            |
 | [Swap consumption](#swap-consumption)                                    | `technical` | `swap`              |
-
-We provide a recommended value for each metric that you can use as the target.
-For router metrics, these values are computed based on the median of your
-application's usage over the last 24 hours. This means they are solely based on
-historical data and do not include any future predictions.
 
 ### RPM per container (recommended)
 
@@ -193,6 +189,26 @@ application uses RAM efficiently without relying heavily on slower disk-based
 swap.
 
 
+## Defining a Relevant Target
+
+We provide a recommended value for each metric that you can use as the target.
+For router metrics, these values are computed based on the median of your
+application's usage over the last 24 hours. This means they are solely based on
+historical data and do not include any future predictions.
+
+Finding the best scaling target for your application is not an easy task. You
+should run benchmarks on your application to identify which metric is the
+bottleneck. A good approach is to scale the application down to 1 container and
+use a load testing tool (e.g. Vegeta) to stress test it.
+
+We also usually advise to keep a small margin when defining a target. For
+example, if you notice your application stops responding after 100 RPM, setting
+the target to 80 RPM per container would be a reasonable choice. This ensures
+the platform can automatically scale out your application as needed, in time.
+For the most accurate results, these load tests should focus on the most
+resource-intensive endpoints of your application.
+
+
 ## Limitations
 
 - The minimum number of containers **must** be 2 to guarantee a minimal
@@ -265,8 +281,7 @@ options and values before validating.\
      Please refer to the *Keyword* column of the [metrics table](#available-metrics)
      for available values.
    - `target`\
-     The value for metric that serves as boundary to trigger a scale-out or
-     scale-in operation
+     The value for metric that serves as boundary to trigger a scale operation
    - `min`\
      Minimum number of containers to run
    - `max`\
@@ -312,7 +327,13 @@ When enabling an Autoscaler:
 
 ### Using the Dashboard
 
-FIXME
+1. From your web browser, open your application dashboard
+2. Click on the **Resources** tab
+3. Locate the **Containers** block
+4. In this block, locate the **Scale** button next to the process type for
+   which you want to enable the Autoscaler
+5. Click the down arrow next to the **Scale** button
+6. From the dropdown menu, select **Re-enable autoscaler**
 
 ### Using the Command Line
 
@@ -354,7 +375,13 @@ When disabling an Autoscaler:
 
 ### Using the Dashboard
 
-FIXME
+1. From your web browser, open your application dashboard
+2. Click on the **Resources** tab
+3. Locate the **Containers** block
+4. In this block, locate the **Scale** button next to the process type for
+   which you want to disable the Autoscaler
+5. Click the down arrow next to the **Scale** button
+6. From the dropdown menu, select **Disable autoscaler**
 
 ### Using the Command Line
 
@@ -384,7 +411,6 @@ FIXME
 2. Run `terraform plan` and check if the result looks good
 3. If so, run `terraform apply`
 4. After a few seconds, the Autoscaler is disabled
-
 
 
 ## Monitoring the Autoscaler
