@@ -18,12 +18,13 @@ metric while remaining within strict boundaries to prevent unforeseen costs.
 ## Understanding the Autoscaler
 
 An Autoscaler is linked to a [process type]({% post_url platform/app/2000-01-01-procfile %}),
-which means you can have multiple Autoscalers setup differently for the same
-application (one per process type).
+which means you can have multiple Autoscalers for the same application, as long
+as each one is setup for a different process type. Each Autoscaler can be setup
+differently.
 
 When the configured metric deviates from the defined *target*, the Autoscaler
-automatically adjusts the number of containers of the application, either up or
-down, to maintain the specified target.
+automatically adjusts the number of containers of the process type, either up
+or down, to maintain the specified target.
 
 The Autoscaler considers the following parameters to decide what to do and when
 to take action:
@@ -54,14 +55,14 @@ application to an appropriate container formation.
 
 An Autoscaler can depend on 6 different metrics:
 
-| Metric                                                                   | Kind        |
-| ------------------------------------------------------------------------ | ----------- |
-| [Requests Per Minute (RPM) per container](rpm-per-container-recommended) | `router`    |
-| [Response Time](#response-time)                                          | `router`    |
-| [Number of 5xx errors](#5xx-errors)                                      | `router`    |
-| [CPU consumption](#cpu-consumption)                                      | `technical` |
-| [RAM consumption](#ram-consumption)                                      | `technical` |
-| [Swap consumption](#swap-consumption)                                    | `technical` |
+| Metric                                                                   | Kind        | Keyword             |
+| ------------------------------------------------------------------------ | ----------- | ------------------- |
+| [Requests Per Minute (RPM) per container](rpm-per-container-recommended) | `router`    | `rpm_per_container` |
+| [Response Time](#response-time)                                          | `router`    | `p95_response_time` |
+| [Number of 5xx errors](#5xx-errors)                                      | `router`    | `5XX`               |
+| [CPU consumption](#cpu-consumption)                                      | `technical` | `cpu`               |
+| [RAM consumption](#ram-consumption)                                      | `technical` | `memory`            |
+| [Swap consumption](#swap-consumption)                                    | `technical` | `swap`              |
 
 We provide a recommended value for each metric that you can use as the target.
 For router metrics, these values are computed based on the median of your
@@ -199,8 +200,10 @@ swap.
   break the application high availability and create a risk of disruption in
   case of a failure. This would moreover go against our 99.96% Service Level
   Agreement.
-- Router metrics are only available for `web` containers, while technical
-  metrics are available for all types of containers.
+- Router metrics are only available for containers running the `web` [process
+  type]({% post_url platform/app/2000-01-01-procfile %}). However, technical
+  metrics are available for all types of process types.
+
 
 ## Costs
 
@@ -214,72 +217,7 @@ containers set in the Autoscaler configuration and on your application
 workload.
 
 
-## Enabling the Autoscaler
-
-When enabling an Autoscaler:
-- Depending on the current state, the platform may decide to scale-out (i.e.
-  boot up additional containers) until it reaches the minimum number of
-  containers setup in the Autoscaler.
-
-### Using the Dashboard
-
-FIXME
-
-### Using the Command Line
-
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
-3. From the command line, enable the Autoscaler:
-   ```bash
-   scalingo --app my-app autoscalers-enable <process_type>
-   ```
-   Where `process_type` is the name of the process type for which you want to
-   enable an Autoscaler (in most cases, `web`).
-
-   The output should look like this:
-   ```bash
-   -----> Autoscaler updated on my-app for web containers
-   ```
-
-### Using the Terraform Provider
-
-FIXME
-
-
-## Disabling an Autoscaler
-
-When disabling an Autoscaler:
-- The platform does not scale-in. The number of running containers remains the
-  same. You can still scale manually if needed.
-- The current Autoscaler configuration is kept, so you can [re-enable it](#enabling-an-autoscaler)
-  whenever needed.
-
-### Using the Dashboard
-
-FIXME
-
-### Using the Command Line
-
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
-3. From the command line, disable the Autoscaler:
-   ```bash
-   scalingo --app my-app autoscalers-disable <process_type>
-   ```
-   Where `process_type` is the name of the process type for which you want to
-   disable the Autoscaler (in most cases, `web`).
-
-   The output should look like this:
-   ```bash
-   -----> Autoscaler updated on my-app for web containers
-   ```
-
-### Using the Terraform Provider
-
-FIXME
-
-
-## Configuring an Autoscaler
+## Creating an Autoscaler
 
 {% warning %}
 Adding an Autoscaler also immediately enables it!\
@@ -321,12 +259,11 @@ options and values before validating.\
    ```
    With:
    - `process_type`\
-     Name of the process type to scale (e.g. `web`,
-     `clock`, `scheduler`, ...)
+     Name of the process type to scale (e.g. `web`, `clock`, `scheduler`, ...)
    - `metric`\
      Name of the metric to watch.\
-     Either `rpm_per_container`, `p95_response_time`, `5XX`, `cpu`,
-     `memory` or `swap`.
+     Please refer to the *Keyword* column of the [metrics table](#available-metrics)
+     for available values.
    - `target`\
      The value for metric that serves as boundary to trigger a scale-out or
      scale-in operation
@@ -343,7 +280,111 @@ options and values before validating.\
 
 ### Using the Terraform Provider
 
+1. Create the following `resource` blocks in your Terraform file to create the
+   Autoscaler and attach it to your app:
+   ```tf
+   resource "scalingo_autoscaler" "web_autoscaler" {
+     app = scalingo_app.my-app.id
+     container_type = "web"
+     min_containers = 2
+     max_containers = 10
+     metric = "rpm_per_container"
+     target = 1000
+   }
+   ```
+   In this example, we create an Autoscaler that will start to scale-out the
+   `web` process type when the total number of requests received by the
+   application divided by the number of running `web` containers exceeds 1000.
+   It will start a maximum of 10 containers.\
+   Please refer to the *Keyword* column of the [metrics table](#available-metrics)
+   for available values.
+2. Run `terraform plan` and check if the result looks good
+3. If so, run `terraform apply`
+4. After a few seconds, your Autoscaler is setup and enabled
+
+
+## Enabling the Autoscaler
+
+When enabling an Autoscaler:
+- Depending on the current state, the platform may decide to either scale-out
+  (i.e. boot up additional containers) or scale-in (destroy excess containers)
+  to fulfill its configuration.
+
+### Using the Dashboard
+
 FIXME
+
+### Using the Command Line
+
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
+3. From the command line, enable the Autoscaler:
+   ```bash
+   scalingo --app my-app autoscalers-enable <process_type>
+   ```
+   Where `process_type` is the name of the process type for which you want to
+   enable an Autoscaler (in most cases, `web`).
+
+   The output should look like this:
+   ```bash
+   -----> Autoscaler updated on my-app for web containers
+   ```
+
+### Using the Terraform Provider
+
+1. Update the Autoscaler `resource` in your Terraform file like so:
+   ```tf
+   resource "scalingo_autoscaler" "web_autoscaler" {
+     [...]
+     disabled = false
+   }
+   ```
+2. Run `terraform plan` and check if the result looks good
+3. If so, run `terraform apply`
+4. After a few seconds, the Autoscaler is enabled and running again
+
+
+## Disabling an Autoscaler
+
+When disabling an Autoscaler:
+- The platform does not scale-in. The number of running containers remains the
+  same. You can still scale manually if needed.
+- The current Autoscaler configuration is kept, so you can [re-enable it](#enabling-an-autoscaler)
+  whenever needed.
+
+### Using the Dashboard
+
+FIXME
+
+### Using the Command Line
+
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
+3. From the command line, disable the Autoscaler:
+   ```bash
+   scalingo --app my-app autoscalers-disable <process_type>
+   ```
+   Where `process_type` is the name of the process type for which you want to
+   disable the Autoscaler (in most cases, `web`).
+
+   The output should look like this:
+   ```bash
+   -----> Autoscaler updated on my-app for web containers
+   ```
+
+### Using the Terraform Provider
+
+1. Update the Autoscaler `resource` in your Terraform file like so:
+   ```tf
+   resource "scalingo_autoscaler" "web_autoscaler" {
+     [...]
+     disabled = true
+   }
+   ```
+2. Run `terraform plan` and check if the result looks good
+3. If so, run `terraform apply`
+4. After a few seconds, the Autoscaler is disabled
+
 
 
 ## Monitoring the Autoscaler
