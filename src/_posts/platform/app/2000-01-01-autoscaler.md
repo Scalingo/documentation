@@ -52,7 +52,7 @@ and considering they are predictable, we usually adivse to manually scale the
 application to an appropriate container formation.
 
 
-## Available Metrics
+## Chosing a Metric
 
 An Autoscaler can depend on 6 different metrics:
 
