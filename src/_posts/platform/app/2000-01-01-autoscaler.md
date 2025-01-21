@@ -109,7 +109,7 @@ access to external online resources, or application-level bottlenecks.
 
 ### 5xx Errors
 
-This metric monitors server-side errors,, such as 500 Internal Server Errors,
+This metric monitors server-side errors, such as 500 Internal Server Errors,
 which indicate issues with your application or backend. The Autoscaler
 evaluates the frequency of 5xx errors per minute to determine whether scaling
 adjustments are needed.
