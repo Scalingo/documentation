@@ -10,17 +10,9 @@ index: 16
 
 This extension is particularly useful for organizations handling sensitive data and is designed with **anonymization by design** principles to ensure compliance with privacy regulations such as GDPR, HIPAA, and CCPA.
 
-The extension supports the following features:
+This extension adds several features and functions. You can find more information on the [official documentation](https://postgresql-anonymizer.readthedocs.io/en/stable/).
 
-- Static anonymization: Irreversibly anonymize data for development or testing environments.
-- Dynamic masking: Apply real-time masking to hide sensitive information for specific users or roles.
-- Customizable anonymization rules: Use pre-defined or user-defined strategies for anonymization.
-- Multiple anonymization techniques: Including randomization, hashing, and data redaction.
-- Role-based access control: Restrict visibility of sensitive data based on user roles.
-- Compatibility with standard PostgreSQL queries and tools.
-
-## Usage Examples for PostgreSQL Anonymizer
-### Anonymizing Entire Rows with a Query
+## Anonymizing Entire Rows with a Query
 
 Suppose you have a table named users containing the columns `first_name`, `last_name`, `email`, and `phone`. If you want to retrieve as many rows as your query can fetch with anonymized data, you can use the following query:
 
@@ -45,7 +37,7 @@ anonymized_last_name | anonymized_first_name | anonymized_phone |      anonymize
  Hudson               | Preston               | +33477420668     | andreaortiz@example.com
 ```
 
-### Dynamic Masking for Read-Only Users
+## Dynamic Masking for Read-Only Users
 
 Suppose you have a table named users containing the columns `first_name`, `last_name`, `email`, and `phone`. If you want to hide sensitive data dynamically for specific users, such as a "read-only" user as "MASKED", you can declare `SECURITY LABEL` for its. Other roles will still access the original data.
 
@@ -79,11 +71,11 @@ SELECT * FROM people;
    2 |  Shaffer  | Cristian  | +33225352636 | mariahpatrick@example.org
 ```
 
-## Enabling PostgreSQL Anonymizer
+## Enabling PostgreSQL® Anonymizer
 
-To enable PostgreSQL Anonymizer:
+To enable PostgreSQL® Anonymizer:
 
-1. Create a "read_only" user through your database dashboard.
-2. Contact our support team and provide the name of your "read_only" user to request activation of the extension.
-3. Our team will activate the extension and set up masking for your "read_only" user.
-4. Once completed, you can use the extension to define and manage masking rules for your "read_only" user independently.
+1. [Create a new user with read only abilities]({% post_url databases/postgresql/2000-01-01-managing-users %})
+2. Contact our support team and provide the name of the user you just created to request activation of the extension
+3. Our team activates the extension and sets up masking for the given user
+4. Once done, you can define and manage masking rules for your user autonomously
