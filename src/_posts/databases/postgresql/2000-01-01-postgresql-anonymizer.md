@@ -12,39 +12,25 @@ This extension is particularly useful for organizations handling sensitive data 
 
 This extension adds several features and functions. You can find more information on the [official documentation](https://postgresql-anonymizer.readthedocs.io/en/stable/).
 
-## Anonymizing Entire Rows with a Query
+## Enabling PostgreSQL® Anonymizer
 
-Suppose you have a table named users containing the columns `first_name`, `last_name`, `email`, and `phone`. If you want to retrieve as many rows as your query can fetch with anonymized data, you can use the following query:
+1. [Create a new user with read only abilities]({% post_url databases/postgresql/2000-01-01-managing-users %})
+2. Contact our support team and provide the name of the user you just created to request activation of the extension
+3. Our team activates the extension and sets up masking for the given user
+4. Once done, you can define and manage masking rules for your user autonomously as described below.
 
-```sql
-SELECT anon.fake_last_name() AS anonymized_last_name, 
-       anon.fake_first_name() AS anonymized_first_name, 
-       anon.random_phone('+33') AS anonymized_phone, 
-       anon.fake_email() AS anonymized_email
-FROM users;
+## Example: Dynamic Masking for Read-Only Users
 
-anonymized_last_name | anonymized_first_name | anonymized_phone |      anonymized_email       
-----------------------+-----------------------+------------------+-----------------------------
- Garza                | Reginald              | +33959147281     | richardsmall@example.org
- Schwartz             | Amber                 | +33180356490     | brittanystewart@example.net
- Shelton              | Kerry                 | +33711805689     | boyerkrystal@example.com
- Mcneil               | Darryl                | +33982131333     | leethomas@example.net
- Mcintosh             | Evan                  | +33158299618     | mariahpatrick@example.org
- Shaffer              | Cristian              | +33225352636     | ashley66@example.org
- Mack                 | Kaitlyn               | +33739247085     | rayamanda@example.net
- Warren               | Vanessa               | +33531162736     | allen06@example.com
- Baldwin              | Sarah                 | +33113538315     | tpeterson@example.net
- Hudson               | Preston               | +33477420668     | andreaortiz@example.com
-```
+Suppose you have a table named users containing the columns `first_name`, `last_name`, `email`, and `phone` and you want to hide sensitive data dynamically for specific users.
 
-## Dynamic Masking for Read-Only Users
+These users must be `read-only` and should have been masked as described above. You can then declare `SECURITY LABEL` with your regular user:
 
-Suppose you have a table named users containing the columns `first_name`, `last_name`, `email`, and `phone`. If you want to hide sensitive data dynamically for specific users, such as a "read-only" user as "MASKED", you can declare `SECURITY LABEL` for its. Other roles will still access the original data.
+* Regular roles will still access the original data
+* Masked user will see altered data according to the rules you have set
 
-Example: Hiding Data for a "Masked" User
+Connect as the regular user to the database:
 
 ```sql
--- View data as a regular user
 SELECT * FROM people;
 
 Result:
@@ -59,23 +45,41 @@ IS 'MASKED WITH FUNCTION anon.dummy_last_name();';
 
 SECURITY LABEL FOR anon ON COLUMN people.phone
 IS 'MASKED WITH FUNCTION anon.partial(phone, 2, $$******$$, 2)';
+```
 
--- Connect as the masked user and view data
-\c - my_read_only_user
+Connect as the "read-only" user to the database and view data:
+
+```sql
 SELECT * FROM people;
 
  Result:
-  id | firstname | lastname  |    phone     |           email            
+  id | firstname | lastname  |    phone     |           email
  ----+-----------+-----------+--------------+----------------------------
-   1 |  Reginald | Preston   | +33477420668 | rayamanda@example.net
-   2 |  Shaffer  | Cristian  | +33225352636 | mariahpatrick@example.org
+   1 |  Sarah    | Preston   | 06********06 | rayamanda@example.net
+   2 |  John     | Cristian  | 07********07 | mariahpatrick@example.org
 ```
 
-## Enabling PostgreSQL® Anonymizer
+## Example: Anonymizing Entire Rows with a Query
 
-To enable PostgreSQL® Anonymizer:
+Suppose you have a table named users containing the columns `first_name`, `last_name`, `email`, and `phone`. If you want to retrieve as many rows as your query can fetch with anonymized data, you can use the following query:
 
-1. [Create a new user with read only abilities]({% post_url databases/postgresql/2000-01-01-managing-users %})
-2. Contact our support team and provide the name of the user you just created to request activation of the extension
-3. Our team activates the extension and sets up masking for the given user
-4. Once done, you can define and manage masking rules for your user autonomously
+```sql
+SELECT anon.fake_last_name() AS anonymized_last_name,
+       anon.fake_first_name() AS anonymized_first_name,
+       anon.random_phone('+33') AS anonymized_phone,
+       anon.fake_email() AS anonymized_email
+FROM users;
+
+anonymized_last_name | anonymized_first_name | anonymized_phone |      anonymized_email
+----------------------+-----------------------+------------------+-----------------------------
+ Garza                | Reginald              | +33959147281     | richardsmall@example.org
+ Schwartz             | Amber                 | +33180356490     | brittanystewart@example.net
+ Shelton              | Kerry                 | +33711805689     | boyerkrystal@example.com
+ Mcneil               | Darryl                | +33982131333     | leethomas@example.net
+ Mcintosh             | Evan                  | +33158299618     | mariahpatrick@example.org
+ Shaffer              | Cristian              | +33225352636     | ashley66@example.org
+ Mack                 | Kaitlyn               | +33739247085     | rayamanda@example.net
+ Warren               | Vanessa               | +33531162736     | allen06@example.com
+ Baldwin              | Sarah                 | +33113538315     | tpeterson@example.net
+ Hudson               | Preston               | +33477420668     | andreaortiz@example.com
+```
