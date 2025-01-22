@@ -199,7 +199,13 @@ historical data and do not include any future predictions.
 Finding the best scaling target for your application is not an easy task. You
 should run benchmarks on your application to identify which metric is the
 bottleneck. A good approach is to scale the application down to 1 container and
-use a load testing tool (e.g. Vegeta) to stress test it.
+use a load testing tool (e.g. [Vegeta](https://github.com/tsenart/vegeta)) to
+stress test it.
+
+{% note %}
+Please get acquainted with [our testing procedures]({% post_url security/procedures/2000-01-01-external-testing %})
+before initiating your load tests.
+{% endnote %}
 
 We also usually advise to keep a small margin when defining a target. For
 example, if you notice your application stops responding after 100 RPM, setting
@@ -313,9 +319,6 @@ options and values before validating.\
    It will start a maximum of 10 containers.\
    Please refer to the *Keyword* column of the [metrics table](#available-metrics)
    for available values.
-2. Run `terraform plan` and check if the result looks good
-3. If so, run `terraform apply`
-4. After a few seconds, your Autoscaler is setup and enabled
 
 
 ## Enabling the Autoscaler
@@ -360,13 +363,11 @@ When enabling an Autoscaler:
      disabled = false
    }
    ```
-2. Run `terraform plan` and check if the result looks good
-3. If so, run `terraform apply`
-4. After a few seconds, the Autoscaler is enabled and running again
 
 
 ## Disabling an Autoscaler
 
+Disabling an Autoscaler allows to 
 When disabling an Autoscaler:
 - The platform does not scale-in. The number of running containers remains the
   same. You can still scale manually if needed.
