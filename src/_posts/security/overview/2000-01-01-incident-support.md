@@ -20,7 +20,7 @@ In the event of a security incident, we will communicate with our customers to k
 
 ### On-Call Rotation
 
-Our operations team is available 24/7 to respond to security incidents and to ensure the availability of the platform. We have an on-call rotation to ensure that there is always someone available to respond to security incidents and to ensure the availability of the platform. Our on-call first response time is 15 minutes.
+Our operations team is available 24/7 to respond to security incidents and to ensure the availability of the platform. We have an on-call rotation to ensure that there is always someone available to respond to security incidents and to ensure the availability of the platform.
 
 ### Technical Support
 
