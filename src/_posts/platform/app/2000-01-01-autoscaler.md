@@ -65,6 +65,9 @@ An Autoscaler can depend on 6 different metrics:
 | [RAM consumption](#ram-consumption)                                      | `technical` | `memory`            |
 | [Swap consumption](#swap-consumption)                                    | `technical` | `swap`              |
 
+
+
+
 ### RPM per container (recommended)
 
 Requests Per Minute (RPM) per container is calculated as the total number of
@@ -321,58 +324,20 @@ options and values before validating.\
    for available values.
 
 
-## Enabling the Autoscaler
-
-When enabling an Autoscaler:
-- Depending on the current state, the platform may decide to either scale-out
-  (i.e. boot up additional containers) or scale-in (destroy excess containers)
-  to fulfill its configuration.
-
-### Using the Dashboard
-
-1. From your web browser, open your application dashboard
-2. Click on the **Resources** tab
-3. Locate the **Containers** block
-4. In this block, locate the **Scale** button next to the process type for
-   which you want to enable the Autoscaler
-5. Click the down arrow next to the **Scale** button
-6. From the dropdown menu, select **Re-enable autoscaler**
-
-### Using the Command Line
-
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
-3. From the command line, enable the Autoscaler:
-   ```bash
-   scalingo --app my-app autoscalers-enable <process_type>
-   ```
-   Where `process_type` is the name of the process type for which you want to
-   enable an Autoscaler (in most cases, `web`).
-
-   The output should look like this:
-   ```bash
-   -----> Autoscaler updated on my-app for web containers
-   ```
-
-### Using the Terraform Provider
-
-1. Update the Autoscaler `resource` in your Terraform file like so:
-   ```tf
-   resource "scalingo_autoscaler" "web_autoscaler" {
-     [...]
-     disabled = false
-   }
-   ```
-
-
 ## Disabling an Autoscaler
 
-Disabling an Autoscaler allows to 
-When disabling an Autoscaler:
-- The platform does not scale-in. The number of running containers remains the
-  same. You can still scale manually if needed.
-- The current Autoscaler configuration is kept, so you can [re-enable it](#enabling-an-autoscaler)
-  whenever needed.
+Disabling an Autoscaler allows to put it out of action, while saving its
+configuration for later use. It can be [re-enabled](#enabling-an-autoscaler)
+anytime.
+
+Sometimes it can be useful to temporarily disable an Autoscaler to only rely on
+manual scaling, be it for testing purposes, to handle a planned peak such as
+the Christmas period for an e-commerce website, and so on... This feature
+allows to put an Autoscaler aside for an undetermined amount of time, after
+which it can be re-enabled with the same configuration.
+
+When disabling an Autoscaler, the platform does not scale-in. The number of
+running containers remains the same.
 
 ### Using the Dashboard
 
@@ -409,9 +374,52 @@ When disabling an Autoscaler:
      disabled = true
    }
    ```
-2. Run `terraform plan` and check if the result looks good
-3. If so, run `terraform apply`
-4. After a few seconds, the Autoscaler is disabled
+
+
+## Re-enabling the Autoscaler
+
+Re-enabling) an Autoscaler allows to put a previously [disabled](#disabling-an-autoscaler)
+Autoscaler back in action, using its saved configuration.
+
+When enabling an Autoscaler, and depending on the current state, the platform
+may decide to either scale-out (i.e. boot up additional containers) or scale-in
+(destroy excess containers) to fulfill its configuration.
+
+### Using the Dashboard
+
+1. From your web browser, open your application dashboard
+2. Click on the **Resources** tab
+3. Locate the **Containers** block
+4. In this block, locate the **Scale** button next to the process type for
+   which you want to enable the Autoscaler
+5. Click the down arrow next to the **Scale** button
+6. From the dropdown menu, select **Re-enable autoscaler**
+
+### Using the Command Line
+
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
+3. From the command line, enable the Autoscaler:
+   ```bash
+   scalingo --app my-app autoscalers-enable <process_type>
+   ```
+   Where `process_type` is the name of the process type for which you want to
+   enable an Autoscaler (in most cases, `web`).
+
+   The output should look like this:
+   ```bash
+   -----> Autoscaler updated on my-app for web containers
+   ```
+
+### Using the Terraform Provider
+
+1. Update the Autoscaler `resource` in your Terraform file like so:
+   ```tf
+   resource "scalingo_autoscaler" "web_autoscaler" {
+     [...]
+     disabled = false
+   }
+   ```
 
 
 ## Monitoring the Autoscaler
