@@ -617,6 +617,9 @@
   -
     old: "/platform/databases/sqlite"
     new: "/databases/sqlite"
+  -
+    old: "/databases/mongodb/robo3t"
+    new: "/databases/mongodb/studio3t"
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
