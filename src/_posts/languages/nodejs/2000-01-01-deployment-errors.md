@@ -1,7 +1,7 @@
 ---
 title: Node.js Common Deployment Errors
 nav: Deployment Errors
-modified_at: 2023-12-22 00:00:00
+modified_at: 2025-01-27 00:00:00
 tags: nodejs
 index: 3
 ---
@@ -64,7 +64,7 @@ var server = app.listen(process.env.PORT || 3000, function () {
 })
 ```
 
-If you face a boot timeout error and use the Next.js framework, please refer to [this specific page](https://doc.scalingo.com/languages/nodejs/start#nextjs).
+If you face a boot timeout error and use the Next.js framework, please refer to [this specific page]({% post_url languages/nodejs/2000-01-01-start %}#nextjs).
 
 
 ## Host key verification failed

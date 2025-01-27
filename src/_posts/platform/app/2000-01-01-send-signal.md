@@ -1,7 +1,7 @@
 ---
 title: Send a Signal to a Container
 nav: Send Signal
-modified_at: 2023-01-12 00:00:00
+modified_at: 2025-01-27 00:00:00
 tags: app signal
 ---
 
@@ -47,10 +47,10 @@ An API endpoint is available to send a signal. More information about the endpoi
 
 ## Which process catches the signal?
 
-When transmitted to the container, the signal is forwarded to the first process that started your application, also called the entry point. This entry point can be defined in the [Procfile](https://doc.scalingo.com/platform/getting-started/heroku-compatibility#procfile).  
+When transmitted to the container, the signal is forwarded to the first process that started your application, also called the entry point. This entry point can be defined in the [Procfile]({% post_url platform/app/2000-01-01-procfile %}).
 
 ### Example of a Node.js Express application
 
-The default command run by Scalingo for a Node.js application is `npm start`. It runs a command specified in the `.scripts.start` field of the `package.json`.  
-When a signal is sent to the application, `npm` is the first process to catch it. `npm` does not forward the signal to the child process started with the `.scripts.start` field.  
+The default command run by Scalingo for a Node.js application is `npm start`. It runs a command specified in the `.scripts.start` field of the `package.json`.
+When a signal is sent to the application, `npm` is the first process to catch it. `npm` does not forward the signal to the child process started with the `.scripts.start` field.
 A Node.js sample resolving this issue via the `Procfile` can be found [here](https://github.com/Scalingo/sample-node-express).

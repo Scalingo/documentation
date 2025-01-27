@@ -1,7 +1,7 @@
 ---
 title: Application Lifecycle Management
 nav: Lifecycle Management
-modified_at: 2024-01-03 00:00:00
+modified_at: 2025-01-27 00:00:00
 index: 10
 tags: management
 ---
@@ -70,8 +70,8 @@ invite this person as a collaborator of the application. Then you will be able t
 transfer them the application.
 
 {% note %}
-  The new owner will need a [Billing Profile](https://doc.scalingo.com/platform/internals/billing) and will have left the free trial. To leave free trial period with billing profile go to [Billing](https://dashboard.scalingo.com/billing) and click on Stop free trial button.
-  If it's an HDS application, the new owner will need to configure a health professional contact, just like the previous owner.
+The new owner will need a [Billing Profile]({% post_url platform/internals/2000-01-01-billing %}) and will have left the free trial. To leave free trial period with billing profile go to [Billing](https://dashboard.scalingo.com/billing) and click on Stop free trial button.
+If it's an HDS application, the new owner will need to configure a health professional contact, just like the previous owner.
 {% endnote %}
 
 This operation will not affect the application, nothing regarding the configuration
