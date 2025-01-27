@@ -23,10 +23,10 @@ This extension adds several features and functions. You can find more informatio
 
 Suppose you have a table named users containing the columns `first_name`, `last_name`, `email`, and `phone` and you want to hide sensitive data dynamically for specific users.
 
-These users must be `read-only` and should have been masked as described above. You can then declare `SECURITY LABEL` with your regular user:
+These users must be restricted to read-only abilities and must have been masked as described above. You can then declare `SECURITY LABEL` with your regular user.
 
-* Regular roles will still access the original data
-* Masked user will see altered data according to the rules you have set
+* Regular roles still have access to the original data
+* Masked users see altered data according to the masking rules
 
 Connect as the regular user to the database:
 
@@ -47,7 +47,7 @@ SECURITY LABEL FOR anon ON COLUMN people.phone
 IS 'MASKED WITH FUNCTION anon.partial(phone, 2, $$******$$, 2)';
 ```
 
-Connect as the "read-only" user to the database and view data:
+Connect as the read-only user to the database and view data:
 
 ```sql
 SELECT * FROM people;
@@ -55,8 +55,8 @@ SELECT * FROM people;
  Result:
   id | firstname | lastname  |    phone     |           email
  ----+-----------+-----------+--------------+----------------------------
-   1 |  Sarah    | Preston   | 06********06 | rayamanda@example.net
-   2 |  John     | Cristian  | 07********07 | mariahpatrick@example.org
+   1 |  Sarah    | Preston   | 06********06 | sarah.conor@example.com
+   2 |  John     | Cristian  | 07********07 | john.doe@example.com
 ```
 
 ## Example: Anonymizing Entire Rows with a Query
