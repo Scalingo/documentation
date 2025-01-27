@@ -1,6 +1,6 @@
 ---
 title: Setup SSH on Linux
-modified_at: 2022-01-06 00:00:00
+modified_at: 2025-01-27 00:00:00
 tags: follow-the-light ssh linux git
 index: 3
 ---
@@ -41,7 +41,7 @@ create a new key with the content of the public key.
 
 ### Check everything is working
 
-In a terminal, run the following command (depending on [the region](https://doc.scalingo.com/platform/internals/regions) you need to access):
+In a terminal, run the following command (depending on [the region]({% post_url platform/internals/2000-01-01-regions %}) you need to access):
 
 ```bash
 $ ssh -T git@ssh.osc-fr1.scalingo.com

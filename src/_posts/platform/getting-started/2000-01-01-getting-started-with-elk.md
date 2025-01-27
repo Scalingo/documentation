@@ -1,6 +1,6 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2024-10-08 00:00:00
+modified_at: 2025-01-27 00:00:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
@@ -374,7 +374,7 @@ Curator will delete an index if it is 10+ days old.
 ### Scheduling the Curator Task
 
 Curator is not a daemon, it is designed as a one-off process. To be able
-to run it on Scalingo you can leverage our [Scheduler](https://doc.scalingo.com/platform/app/task-scheduling/scalingo-scheduler).
+to run it on Scalingo you can leverage our [Scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}).
 
 At the root of your Logstash directory, create a file named `cron.json` to
 setup your recurring task. The following example starts curator everyday at
