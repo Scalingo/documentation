@@ -2,7 +2,7 @@
 layout: page
 title: Source Code Management Integration, Auto Deploy and Review Apps
 nav: SCM Integration
-modified_at: 2022-10-21 00:00:00
+modified_at: 2025-01-27 00:00:00
 tags: integration scm github github-enterprise gitlab
 index: 30
 ---
@@ -92,7 +92,7 @@ You can either automatically create a new Review App for each Pull/Merge
 Request opened on your repository or manually deploy a Review App.
 
 You can find more information about Review Apps on our [documentation
-page](https://doc.scalingo.com/platform/app/review-apps).
+page]({% post_url platform/app/2000-01-01-review-apps %}).
 
 This feature is related to pull/merge requests and has a [dedicated
 documentation page]({% post_url platform/app/2000-01-01-review-apps %}).
