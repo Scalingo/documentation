@@ -17,6 +17,11 @@ vim Syntax:
     <th align="center">Description</th>
   </tr>
   <tr valign="top">
+    <td align="left"><code class="language-plaintext highlighter-rouge">anon</code></td>
+    <td align="left"><code>2.0.0</code></td>
+    <td align="left">Anonymization &amp; Data Masking for PostgreSQL</td>
+  </tr>
+  <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">btree_gin</code></td>
     <td align="left"><code>1.3</code></td>
     <td align="left">support for indexing common datatypes in GIN</td>
@@ -53,7 +58,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">fuzzystrmatch</code></td>
-    <td align="left"><code>1.1</code></td>
+    <td align="left"><code>1.2</code></td>
     <td align="left">determine similarities and distance between strings</td>
   </tr>
   <tr valign="top">
@@ -78,7 +83,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">pg_repack</code></td>
-    <td align="left"><code>1.5.1</code></td>
+    <td align="left"><code>1.5.2</code></td>
     <td align="left">Reorganize tables in PostgreSQL databases with minimal locks</td>
   </tr>
   <tr valign="top">
@@ -103,27 +108,27 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis</code></td>
-    <td align="left"><code>3.5.0</code></td>
+    <td align="left"><code>3.5.1</code></td>
     <td align="left">PostGIS geometry and geography spatial types and functions</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_raster</code></td>
-    <td align="left"><code>3.5.0</code></td>
+    <td align="left"><code>3.5.1</code></td>
     <td align="left">PostGIS raster types and functions</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_sfcgal</code></td>
-    <td align="left"><code>3.5.0</code></td>
+    <td align="left"><code>3.5.1</code></td>
     <td align="left">PostGIS SFCGAL functions</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_tiger_geocoder</code></td>
-    <td align="left"><code>3.5.0</code></td>
+    <td align="left"><code>3.5.1</code></td>
     <td align="left">PostGIS tiger geocoder and reverse geocoder</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_topology</code></td>
-    <td align="left"><code>3.5.0</code></td>
+    <td align="left"><code>3.5.1</code></td>
     <td align="left">PostGIS topology spatial types and functions</td>
   </tr>
   <tr valign="top">
