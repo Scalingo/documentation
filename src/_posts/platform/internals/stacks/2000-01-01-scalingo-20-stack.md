@@ -22,7 +22,7 @@ scalingo-20 is based on Ubuntu 20.04. It will be supported through April 2025.
 
 All owners and collaborators of applications using scalingo-20 are informed of the end of support for this stack.
 
-### May 2025: Usage exemption for legacy apps
+### May 2025: Usage Exemption For Legacy Apps
 
 Ubuntu 20.04 LTS and scalingo-20 officially reach end-of-life and no longer receive updates.
 From this date, it is no longer possible to select this stack to create new applications.
