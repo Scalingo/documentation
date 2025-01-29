@@ -18,7 +18,7 @@ scalingo-20 is based on Ubuntu 20.04. It will be supported through April 2025.
 
 ## Deprecation Plan
 
-### January 2025: End-of-support notification
+### January 2025: End-Of-Support Notification
 
 All owners and collaborators of applications using scalingo-20 are informed of the end of support for this stack.
 
