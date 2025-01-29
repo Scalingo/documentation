@@ -7,7 +7,7 @@ index: 3
 
 {% warning %}
 The scalingo-20 stack, based on the Ubuntu 20.04 LTS operating system, will be deprecated on April 30th, 2025.
-Migrate to a [newer stack]({% post_url platform/internals/stacks/2000-01-01-stacks %}) as soon as possible. See the [Deprecation Plan]({% post_url platform/internals/stacks/scalingo-20-stack#deprecation-plan %}) for details.
+Migrate to a [newer stack]({% post_url platform/internals/stacks/2000-01-01-stacks %}) as soon as possible. See the [Deprecation Plan]({% post_url platform/internals/stacks/scalingo-20-stack %}#deprecation-plan) for details.
 {% endwarning %}
 
 This article describes the scalingo-20 stack, based on Ubuntu 20.04 LTS. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
@@ -32,9 +32,9 @@ Existing applications using the scalingo-20 stack will continue to function norm
 From this date, no new deployments are allowed on the scalingo-20 stack. Deployments made before this date continue to function, but using a supported stack becomes mandatory for any new deployment.
 
 
-## Testing and Upgrading Your App
+## Testing and Migrating Your App
 
-Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-20.
+Learn how to test and [migrate your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-20.
 
 ## Docker Image
 
