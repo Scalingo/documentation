@@ -15,9 +15,9 @@ This article describes the scalingo-22 stack, based on Ubuntu 22.04. [What is a 
 
 scalingo-22 is based on Ubuntu 22.04. It will be supported through April 2027.
 
-## Testing and Upgrading Your App
+## Testing and Migrating Your App
 
-Learn how to test and [upgrade your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-22.
+Learn how to test and [migrate your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-22.
 
 ## Docker Image
 
