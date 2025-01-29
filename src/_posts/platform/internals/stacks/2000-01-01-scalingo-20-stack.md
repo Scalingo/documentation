@@ -28,7 +28,7 @@ Ubuntu 20.04 LTS and scalingo-20 officially reach end-of-life and no longer rece
 From this date, it is no longer possible to select this stack to create new applications.
 Existing applications using the scalingo-20 stack will continue to function normally, with the ability to create new deployments or Review Apps on this version.
 
-### January 2026: End of usage exemption
+### January 2026: End of Usage Exemption
 From this date, no new deployments are allowed on the scalingo-20 stack. Deployments made before this date continue to function, but using a supported stack becomes mandatory for any new deployment.
 
 
