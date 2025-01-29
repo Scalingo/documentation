@@ -7,7 +7,7 @@ index: 3
 
 {% warning %}
 The scalingo-20 stack, based on the Ubuntu 20.04 LTS operating system, will be deprecated on April 30th, 2025.
-Migrate to a [newer stack]({% post_url platform/internals/stacks/2000-01-01-stacks %}) as soon as possible. See the [Deprecation Plan]({% post_url platform/internals/stacks/scalingo-20-stack %}#deprecation-plan) for details.
+Migrate to a [newer stack]({% post_url platform/internals/stacks/2000-01-01-stacks %}) as soon as possible. See the [Deprecation Plan]({% post_url platform/internals/stacks/2000-01-01-scalingo-20-stack %}#deprecation-plan) for details.
 {% endwarning %}
 
 This article describes the scalingo-20 stack, based on Ubuntu 20.04 LTS. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
