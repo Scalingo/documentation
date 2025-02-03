@@ -1,12 +1,12 @@
 ---
-title: PostgreSQL Anonymizer
-nav: PostgreSQL Anonymizer
-modified_at: 2025-01-24 09:00:00
+title: PostgreSQL® Anonymizer
+nav: PostgreSQL® Anonymizer
+modified_at: 2025-02-03 12:00:00
 tags: databases postgresql anonymization extensions
 index: 16
 ---
 
-**PostgreSQL Anonymizer** is an open-source extension for PostgreSQL® that facilitates the masking or replacement of personally identifiable information (PII) and commercially sensitive data directly within a database.
+**PostgreSQL® Anonymizer** is an open-source extension for PostgreSQL® that facilitates the masking or replacement of personally identifiable information (PII) and commercially sensitive data directly within a database.
 
 This extension is particularly useful for organizations handling sensitive data and is designed with **anonymization by design** principles to ensure compliance with privacy regulations such as GDPR, HIPAA, and CCPA.
 
