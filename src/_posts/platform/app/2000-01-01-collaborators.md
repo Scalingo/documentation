@@ -38,7 +38,7 @@ Collaborators can't:
 
 Using the Dashboard:
 - Go to the **Collaborators** tab
-- If you already have collaborators, you'll see a consolidated list of all the users who are collaborating on your apps
+- If you already have collaborators, you’ll see a consolidated list of all users collaborating on your apps, along with their 2FA status
 - You can click on the **Group by Apps** toggle to display a tree view of your apps and their associated collaborators. For now, only applications with collaborators are displayed there
 
 ### Listing Collaborators of an app
