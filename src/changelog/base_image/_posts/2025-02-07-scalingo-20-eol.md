@@ -25,4 +25,4 @@ To ensure the security, performance, and reliability of your applications, we en
 Resources to guide you:
 - [Scalingo Stacks](https://doc.scalingo.com/platform/internals/stacks/stacks)
 - [Details on scalingo-22](https://doc.scalingo.com/platform/internals/stacks/scalingo-22-stack)
-- [Overview of scalingo-22](https://scalingo.com/blog/scalingo-22-nouvelle-stack)
+- [Overview of scalingo-22](https://scalingo.com/blog/scalingo-22-new-stack)
