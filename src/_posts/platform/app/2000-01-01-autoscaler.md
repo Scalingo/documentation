@@ -1,7 +1,7 @@
 ---
 title: Scalingo Autoscaler
 nav: Scalingo Autoscaler
-modified_at: 2025-01-20 12:00:00
+modified_at: 2025-02-07 12:00:00
 tags: app scaling autoscaling metrics autoscaler
 ---
 
@@ -41,7 +41,7 @@ to take action:
   minutes
 - **Step**: by default, the Autoscaler adds only one container per decision
   round, ensuring a progressive and controlled adjustment. When the metric is
-  RPM per minute, the Autoscaler is able to add more than one container per
+  RPM per container, the Autoscaler is able to add more than one container per
   decision round when required, allowing to scale much faster. The maximum
   number of containers limit is still honoured in such a case.
 
@@ -64,6 +64,9 @@ An Autoscaler can depend on 6 different metrics:
 | [CPU consumption](#cpu-consumption)                                      | `technical` | `cpu`               |
 | [RAM consumption](#ram-consumption)                                      | `technical` | `memory`            |
 | [Swap consumption](#swap-consumption)                                    | `technical` | `swap`              |
+
+
+
 
 ### RPM per container (recommended)
 
@@ -217,7 +220,6 @@ resource-intensive endpoints of your application.
 
 ## Limitations
 
-- Scalingo Autoscaler does **only horizontal scaling**.
 - The minimum number of containers **must** be 2 to guarantee a minimal
   tolerance to fault. Allowing to scale-in to fewer than 2 containers would
   break the application high availability and create a risk of disruption in
@@ -285,7 +287,7 @@ options and values before validating.\
      Name of the process type to scale (e.g. `web`, `clock`, `scheduler`, ...)
    - `metric`\
      Name of the metric to watch.\
-     Please refer to the *Keyword* column of the [metrics table](#chosing-a-metric)
+     Please refer to the *Keyword* column of the [metrics table](#available-metrics)
      for available values.
    - `target`\
      The value for metric that serves as boundary to trigger a scale operation
@@ -318,14 +320,60 @@ options and values before validating.\
    `web` process type when the total number of requests received by the
    application divided by the number of running `web` containers exceeds 1000.
    It will start a maximum of 10 containers.\
-   Please refer to the *Keyword* column of the [metrics table](#chosing-a-metric)
+   Please refer to the *Keyword* column of the [metrics table](#available-metrics)
    for available values.
+
+
+## Enabling the Autoscaler
+
+Enabling (or re-enabling) an Autoscaler allows to put a previously [disabled](#disabling-an-autoscaler)
+Autoscaler back in action, using the saved configuration.
+
+When enabling an Autoscaler, and depending on the current state, the platform
+may decide to either scale-out (i.e. boot up additional containers) or scale-in
+(destroy excess containers) to fulfill its configuration.
+
+### Using the Dashboard
+
+1. From your web browser, open your application dashboard
+2. Click on the **Resources** tab
+3. Locate the **Containers** block
+4. In this block, locate the **Scale** button next to the process type for
+   which you want to enable the Autoscaler
+5. Click the down arrow next to the **Scale** button
+6. From the dropdown menu, select **Re-enable autoscaler**
+
+### Using the Command Line
+
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
+3. From the command line, enable the Autoscaler:
+   ```bash
+   scalingo --app my-app autoscalers-enable <process_type>
+   ```
+   Where `process_type` is the name of the process type for which you want to
+   enable an Autoscaler (in most cases, `web`).
+
+   The output should look like this:
+   ```bash
+   -----> Autoscaler updated on my-app for web containers
+   ```
+
+### Using the Terraform Provider
+
+1. Update the Autoscaler `resource` in your Terraform file like so:
+   ```tf
+   resource "scalingo_autoscaler" "web_autoscaler" {
+     [...]
+     disabled = false
+   }
+   ```
 
 
 ## Disabling an Autoscaler
 
 Disabling an Autoscaler allows to put it out of action, while saving its
-configuration for later use. It can be [re-enabled](#re-enabling-an-autoscaler)
+configuration for later use. It can be [re-enabled](#enabling-an-autoscaler)
 anytime.
 
 Sometimes it can be useful to temporarily disable an Autoscaler to only rely on
@@ -373,51 +421,6 @@ running containers remains the same.
    }
    ```
 
-
-## Re-enabling an Autoscaler
-
-Re-enabling an Autoscaler allows to put a previously [disabled](#disabling-an-autoscaler)
-Autoscaler back in action, using the saved configuration.
-
-When enabling an Autoscaler, and depending on the current state, the platform
-may decide to either scale-out (i.e. boot up additional containers) or scale-in
-(destroy excess containers) to fulfill its configuration.
-
-### Using the Dashboard
-
-1. From your web browser, open your application dashboard
-2. Click on the **Resources** tab
-3. Locate the **Containers** block
-4. In this block, locate the **Scale** button next to the process type for
-   which you want to enable the Autoscaler
-5. Click the down arrow next to the **Scale** button
-6. From the dropdown menu, select **Re-enable autoscaler**
-
-### Using the Command Line
-
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
-3. From the command line, enable the Autoscaler:
-   ```bash
-   scalingo --app my-app autoscalers-enable <process_type>
-   ```
-   Where `process_type` is the name of the process type for which you want to
-   enable an Autoscaler (in most cases, `web`).
-
-   The output should look like this:
-   ```bash
-   -----> Autoscaler updated on my-app for web containers
-   ```
-
-### Using the Terraform Provider
-
-1. Update the Autoscaler `resource` in your Terraform file like so:
-   ```tf
-   resource "scalingo_autoscaler" "web_autoscaler" {
-     [...]
-     disabled = false
-   }
-   ```
 
 ## Monitoring the Autoscaler
 
