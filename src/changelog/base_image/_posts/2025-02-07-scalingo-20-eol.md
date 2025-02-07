@@ -3,11 +3,11 @@ modified_at: 2025-02-07 14:00:00
 title: 'Deprecation Plan for scalingo-20'
 ---
 
-The [scalingo-20]({% post_url platform/internals/stacks/2000-01-01-scalingo-20-stack %} stack, based on the Ubuntu 20.04 LTS operating system, will be deprecated in April 2025.
+The [scalingo-20]({% post_url platform/internals/stacks/2000-01-01-scalingo-20-stack %}) stack, based on the Ubuntu 20.04 LTS operating system, will be deprecated in April 2025.
 
 Applications using scalingo-20 will continue to function after this date. However, to ensure the security, performance, and reliability of both your applications and our platform, we strongly encourage you to plan their migration to scalingo-22, based on Ubuntu 22.04 LTS, as soon as possible.
 
-The [scalingo-22]({% post_url platform/internals/stacks/2000-01-01-scalingo-22-stack %} stack, based on Ubuntu 22.04 LTS, will be supported until April 2027. This makes it a secure and sustainable choice for ensuring the continued functionality of your applications.
+The [scalingo-22]({% post_url platform/internals/stacks/2000-01-01-scalingo-22-stack %}) stack, based on Ubuntu 22.04 LTS, will be supported until April 2027. This makes it a secure and sustainable choice for ensuring the continued functionality of your applications.
 
 **Deprecation Plan**
 
@@ -25,4 +25,4 @@ To ensure the security, performance, and reliability of your applications, we en
 Resources to guide you:
 - [Scalingo Stacks](https://doc.scalingo.com/platform/internals/stacks/stacks)
 - [Details on scalingo-22](https://doc.scalingo.com/platform/internals/stacks/scalingo-22-stack)
-- [Overview of scalingo-22](https://scalingo.com/fr/blog/scalingo-22-nouvelle-stack)
+- [Overview of scalingo-22](https://scalingo.com/blog/scalingo-22-nouvelle-stack)
