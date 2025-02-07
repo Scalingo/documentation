@@ -1,5 +1,5 @@
 ---
-modified_at: 2025-02-04 09:00:00
+modified_at: 2025-02-07 14:00:00
 title: 'Deprecation Plan for scalingo-20'
 ---
 
@@ -11,7 +11,7 @@ The [scalingo-22]({% post_url platform/internals/stacks/2000-01-01-scalingo-22-s
 
 **Deprecation Plan**
 
-- **February 4, 2025: End-of-support notification**. All owners and collaborators of applications using scalingo-20 are informed of the end of support for this stack.
+- **February, 2025: End-of-support notification**. All owners and collaborators of applications using scalingo-20 are informed of the end of support for this stack.
 - **May 1, 2025: Usage exemption for legacy apps**. Ubuntu 20.04 LTS and scalingo-20 officially reach end-of-life and no longer receive updates.
 From this date, it is no longer possible to select this stack to create new applications.
 Existing applications using the scalingo-20 stack will continue to function normally, with the ability to create new deployments or Review Apps on this version.
