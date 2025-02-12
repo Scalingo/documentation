@@ -1,5 +1,5 @@
 ---
-modified_at: 2025-02-07 06:00:00
+modified_at: 2025-02-13 06:00:00
 title: 'Autoscaling Improvements - Enhanced responsiveness to traffic variations'
 ---
 
