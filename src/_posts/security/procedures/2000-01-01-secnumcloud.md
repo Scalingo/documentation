@@ -1,7 +1,7 @@
 ---
 title: Getting access to SecNumCloud Region
 nav: SecNumCloud
-modified_at: 2024-12-02 00:00:00
+modified_at: 2025-02-12 00:00:00
 tags: security procedures secnumcloud
 ---
 
@@ -22,9 +22,9 @@ tags: security procedures secnumcloud
    - Name of application
    - Street address of the company / entity
    - Reason of requesting the access
-3. An first answer will be provided under 7 business days
+3. A first answer will be provided under 7 business days
 4. _First-time domain or project registration only:_ an identity verification will be conducted.
-You may need to prepare the ID card or passport (or use official tools like [France Identité](https://france-identite.gouv.fr/justificatif/)) of the new app owner.
+Have the Identity Document of the new app owner ready or use official tools like [France Identité](https://france-identite.gouv.fr/justificatif/)).
 If the requester is not the owner, the owner will have to also contact directly the support.
 
 Note: this identity verification will take place each time a new domain is added to the SecNumCloud region.
@@ -37,7 +37,7 @@ A standard user cannot access `osc-secnum-fr1`, your user has to be allow-listed
 
 - The user must have a legitimate reason to access the `osc-secnum-fr1` region:
   create or collaborate an application hosted in this region
-- The user must act as an employee of a company, using his/her company email (domain verification)
+- The user must act as an employee of a company, using his/her company email (domain verification  ensures that the organization controls the specified domain, allowing us to authenticate email communications sent on behalf of the company)
 
 ### Procedure
 
