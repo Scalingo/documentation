@@ -14,6 +14,9 @@ ls ~/.ssh
 If the files `id_ed25519` and `id_ed25519.pub` are in the `~/.ssh` folder, you don't
 need to follow this guide, you already have your SSH key.
 
+However, if you have an SSH key but encounter authentication issues, you may need to add it to your SSH agent.
+See the section [Add an existing key to your SSH agent](https://doc.scalingo.com/platform/getting-started/setup-ssh-linux#add-an-existing-key-to-your-ssh-agent) below.
+
 ## Create a new SSH key pair
 
 ```bash
@@ -58,6 +61,28 @@ It should display the following output:
 ```
 You've successfully authenticated on Scalingo, but there is no shell access
 ```
+If it doesn't, something has been done wrong. 
+Try running the below command to verify your key is loaded in the SSH agent. 
+```bash
+ssh-add -l 
+```
+If no key appears, follow the next section to add it.
+Otherwise, please recheck the different step of this guide.
 
-If it doesn't, something has been done wrong. Please recheck the different step
-of this guide.
+## Add an existing key to your SSH agent
+
+Ensure the SSH agent is running :
+```bash
+eval "$(ssh-agent -s)"
+```
+
+Command to add the key:
+```bash
+ssh-add ~/.ssh/id_rsa
+```
+
+Verification step:
+```bash
+ssh-add -l
+```
+
