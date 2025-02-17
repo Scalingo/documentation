@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Addon
 nav: Backing Up
-modified_at: 2024-12-10 12:00:00
+modified_at: 2025-02-17 12:00:00
 tags: databases postgresql addon how-to
 index: 10
 ---
@@ -199,13 +199,13 @@ somewhere).
 
 1. [Open a DB tunnel]({% post_url databases/postgresql/2000-01-01-accessing %}#using-our-command-line-tool)
    so you can access your database from your workstation
-2. Adjust the [connection URI]({% post_url databases/postgresql/2000-01-01-connecting %}#understanding-the-connection-uri):
+2. Create a local variable to store the [connection URI]({% post_url databases/postgresql/2000-01-01-connecting %}#understanding-the-connection-uri):
    ```bash
-   export SCALINGO_DATABASE_URL="postgresql://<user>:<password>@127.0.0.1:<port>/<dbname>"
+   export SCALINGO_DB_URL="postgresql://<user>:<password>@127.0.0.1:<port>/<dbname>"
    ```
    With `user`, `password` and `dbname` from your original connection URI and
    `port` depending on what you did (default is `10000`)
 3. Dump the database using the `pg_dump` command (you may have to install it):
    ```bash
-   pg_dump --clean --if-exists --format c --dbname "${SCALINGO_POSTGRESQL_URL}" --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
+   pg_dump --clean --if-exists --format c --dbname "${SCALINGO_DB_URL}" --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
    ```
