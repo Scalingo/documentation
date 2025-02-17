@@ -1,7 +1,7 @@
 ---
 title: Upgrading Your Scalingo for PostgreSQL® Addon
 nav: Upgrading
-modified_at: 2024-12-16 12:00:00
+modified_at: 2025-02-17 12:00:00
 tags: databases postgresql addon
 index: 9
 ---
@@ -212,6 +212,10 @@ advise to take extra care when dealing with them:
 - [Create a manual backup]({% post_url databases/postgresql/2000-01-01-backing-up %}#creating-a-manual-backup)
   of your current production database just before making the move in your
   production environment.
+
+- [Put the app in maintenance mode]({% post_url platform/app/2000-01-01-custom-error-page %}#custom-maintenance-page)
+  during the upgrade operations, especially if a significant downtime is
+  expected.
 
 
 ## Upgrading
