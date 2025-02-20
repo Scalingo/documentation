@@ -1,7 +1,7 @@
 ---
 title: Managing PHP Extensions
 nav: Managing PHP Extensions
-modified_at: 2025-01-15 12:00:00
+modified_at: 2025-02-20 12:00:00
 tags: php
 index: 4
 ---
@@ -22,11 +22,11 @@ of PHP. Others are dynamically installed if specified in the project's
 The following table lists the PHP built-in extensions we bundle with PHP and
 that are **available** on Scalingo.
 
-- Some are **enabled** by default and can't be disabled. You don't have to add
-  them to your `composer.json` file to enable them (but you can).\
-  They are marked as ***Enabled*** in the following table.
+- Some are enabled by default and can't be disabled. You don't have to add them
+  to your `composer.json` file to enable them (but you can).\
+  They are marked as **Enabled** in the following table.
 - Some others are disabled by default and [can be enabled](#enabling-a-php-built-in-extension).\
-  They are marked as ***Optional*** in the following table.
+  They are marked as **Optional** in the following table.
 - Unavailable extensions are marked with a blank cell.
 
 | Extension          | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  |
@@ -119,11 +119,11 @@ work with an old version of PHP (e.g. `mongo`, `sodium`, `ds`, `lua` or
 The following table lists the PECL extensions that we pre-compile and make
 **available** on Scalingo.
 
-- Some are **enabled** by default and can't be disabled. You don't have to add
-  them to your `composer.json` file to enable them (but you can).\
-  They are marked as ***Enabled*** in the following table.
+- Some are enabled by default and can't be disabled. You don't have to add them
+  to your `composer.json` file to enable them (but you can).\
+  They are marked as **Enabled** in the following table.
 - Some others are disabled by default and [can be enabled](#enabling-a-pecl-extension).\
-  They are marked as ***Optional*** in the following table.
+  They are marked as **Optional** in the following table.
 - Unavailable extensions are marked with a blank cell.
 
 {% note %}
@@ -148,18 +148,18 @@ extensions, please read [Adding a PECL Extension](#adding-a-pecl-extension).
 
 The following table lists the supported versions of available PECL extensions:
 
-| Extension   | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  |
-| ----------- | -------: | -------: | -------: | -------: |
-| `amqp`      | `2.1.2`  | `2.1.2`  | `2.1.2`  | `2.1.2`  |
-| `apcu`      | `5.1.24` | `5.1.24` | `5.1.24` | `5.1.24` |
-| `apfd`      | `1.0.3`  | `1.0.3`  | `1.0.3`  | `1.0.3`  |
-| `event`     | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  |
-| `igbinary`  | `3.2.16` | `3.2.16` | `3.2.16` | `3.2.16` |
-| `imagick`   | `3.7.0`  | `3.7.0`  | `3.7.0`  | `3.7.0`  |
-| `memcached` | `3.3.0`  | `3.3.0`  | `3.3.0`  | `3.3.0`  |
-| `mongodb`   | `1.20.1` | `1.20.1` | `1.20.1` | `1.20.1` |
-| `oci8`      |          | `3.4.0`  | `3.4.0`  | `3.4.0`  |
-| `redis`     | `6.1.0`  | `6.1.0`  | `6.1.0`  | `6.1.0`  |
+| Extension       | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  |
+| --------------- | -------: | -------: | -------: | -------: |
+| `ext-amqp`      | `2.1.2`  | `2.1.2`  | `2.1.2`  | `2.1.2`  |
+| `ext-apcu`      | `5.1.24` | `5.1.24` | `5.1.24` | `5.1.24` |
+| `ext-apfd`      | `1.0.3`  | `1.0.3`  | `1.0.3`  | `1.0.3`  |
+| `ext-event`     | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  |
+| `ext-igbinary`  | `3.2.16` | `3.2.16` | `3.2.16` | `3.2.16` |
+| `ext-imagick`   | `3.7.0`  | `3.7.0`  | `3.7.0`  | `3.7.0`  |
+| `ext-memcached` | `3.3.0`  | `3.3.0`  | `3.3.0`  | `3.3.0`  |
+| `ext-mongodb`   | `1.20.1` | `1.20.1` | `1.20.1` | `1.20.1` |
+| `ext-oci8`      |          | `3.4.0`  | `3.4.0`  | `3.4.0`  |
+| `ext-redis`     | `6.1.0`  | `6.1.0`  | `6.1.0`  | `6.1.0`  |
 
 ### Enabling an Available PECL Extension
 
@@ -284,7 +284,7 @@ The last step consists in committing your work and pushing it to Scalingo.
 The following table lists the third-party extensions that are **available** on
 Scalingo, along with the versions available.
 
-They are all disabled by default.
+- They are all disabled by default and [can be enabled](#enabling-an-available-third-party-extension).
 
 | Extension | PHP 8.1     | PHP 8.2     | PHP 8.3     | PHP 8.4     |
 | --------- | ----------: | ----------: | ----------: | ----------: |
