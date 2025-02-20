@@ -7,9 +7,9 @@
     "build": "node scripts/build.mjs"
   },
   "dependencies": {
-    "@docsearch/js": "^3.6.1",
+    "@docsearch/js": "^3.8.2",
     "autoprefixer": "^10.4.20",
-    "esbuild": "^0.23.1",
+    "esbuild": "^0.25.0",
     "esbuild-style-plugin": "^1.6.3",
     "mdn-polyfills": "^5.20.0",
     "postcss": "^8.4.39",
