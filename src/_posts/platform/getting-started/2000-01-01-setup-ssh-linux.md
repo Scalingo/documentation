@@ -1,6 +1,6 @@
 ---
 title: Setup SSH on Linux
-modified_at: 2025-01-27 00:00:00
+modified_at: 2025-02-14 00:00:00
 tags: follow-the-light ssh linux git
 index: 3
 ---
@@ -13,6 +13,9 @@ ls ~/.ssh
 
 If the files `id_ed25519` and `id_ed25519.pub` are in the `~/.ssh` folder, you don't
 need to follow this guide, you already have your SSH key.
+
+However, if you have an SSH key but encounter authentication issues, you may need to add it to your SSH agent.
+See the section [Add an existing key to your SSH agent](#add-an-existing-key-to-your-ssh-agent) below.
 
 ## Create a new SSH key pair
 
@@ -58,6 +61,29 @@ It should display the following output:
 ```
 You've successfully authenticated on Scalingo, but there is no shell access
 ```
+If it doesn't, something has been done wrong. 
+Ensure your key is loaded in the SSH agent by running:
+```bash
+ssh-add -l 
+```
+If the key is not here, follow the next section to add it to your agent.
+Otherwise, please recheck the different step of this guide.
 
-If it doesn't, something has been done wrong. Please recheck the different step
-of this guide.
+## Add an existing key to your SSH agent
+If you already have an SSH key but cannot authenticate, you may need to add it to your SSH agent.
+
+Ensure the SSH agent is running :
+```bash
+eval "$(ssh-agent -s)"
+```
+
+Add your key to the agent:
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
+Verify that the key is loaded : 
+```bash
+ssh-add -l
+```
+If your key is correctly listed, you're ready to authenticate.
