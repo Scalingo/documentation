@@ -3,7 +3,7 @@ modified_at: 2025-02-13 06:00:00
 title: 'Autoscaling Improvements - Enhanced responsiveness to traffic variations'
 ---
 
-We have improved the [Autoscaler]({% post_url platform/app/2000-01-01-autoscaler %}) feature to enhance responsiveness and resource efficiency.  
+We have improved the [Autoscaler]({% post_url platform/app/scaling/2000-01-01-scalingo-autoscaler %}) feature to enhance responsiveness and resource efficiency.  
 
 
 What’s new?
@@ -15,4 +15,4 @@ What’s new?
 When using the **RPM per container** metric, the Autoscaler can now **add multiple containers per decision round**, significantly improving scaling speed. The maximum container limit is still enforced.  
 
 
-[Read the updated documentation]({% post_url platform/app/2000-01-01-autoscaler %})
+[Read the updated documentation]({% post_url platform/app/scaling/2000-01-01-scalingo-autoscaler %})
