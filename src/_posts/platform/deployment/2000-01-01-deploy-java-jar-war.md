@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2025-01-06 12:00:00
+modified_at: 2025-03-04 12:00:00
 index: 8
 tags: deployment, java, jar, war
 ---
@@ -105,8 +105,8 @@ The latest available versions currently are:
 
 | Tomcat Version | Latest version    | Note    |
 | -------------: | ----------------: | ------- |
-| **`10.1`**     | up to `10.1.34.0` |         |
-| **`9.0`**      | up to `9.0.98.0`  | default |
+| **`10.1`**     | up to `10.1.36.0` |         |
+| **`9.0`**      | up to `9.0.100.0` | default |
 | `8.5`          | up to `8.5.68.1`  |         |
 
 {% note %}
