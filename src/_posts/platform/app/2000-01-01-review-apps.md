@@ -66,7 +66,7 @@ new PR is opened in your linked SCM-hosted repository. This new
 application is a child application.
 
 Child applications clone some information from the parent app:
-* the [container formation]({% post_url platform/app/2000-01-01-scaling %})
+* the [container formation]({% post_url platform/app/scaling/2000-01-01-scaling %})
 * the [stack]({% post_url platform/internals/stacks/2000-01-01-stacks %})
 * the [environment variables]({% post_url platform/app/2000-01-01-environment %})
 * the databases and addons: including version and plans (can be overridden in `scalingo.json`), but _excluding_ the content of the databases.
