@@ -3,10 +3,11 @@ title: Scalingo Autoscaler
 nav: Scalingo Autoscaler
 modified_at: 2025-02-07 12:00:00
 tags: app scaling autoscaling metrics autoscaler
+index: 20
 ---
 
 {% note %}
-You might consider reading about [scaling an application]({% post_url platform/app/2000-01-01-scaling %})
+You might consider reading about [scaling an application]({% post_url platform/app/scaling/2000-01-01-scaling %})
 first.
 {% endnote %}
 
