@@ -1,7 +1,7 @@
 ---
 title: Managing PHP Extensions
 nav: Managing PHP Extensions
-modified_at: 2025-02-20 12:00:00
+modified_at: 2025-03-25 12:00:00
 tags: php
 index: 4
 ---
@@ -159,7 +159,7 @@ The following table lists the supported versions of available PECL extensions:
 | `ext-memcached` | `3.3.0`  | `3.3.0`  | `3.3.0`  | `3.3.0`  |
 | `ext-mongodb`   | `1.20.1` | `1.20.1` | `1.20.1` | `1.20.1` |
 | `ext-oci8`      |          | `3.4.0`  | `3.4.0`  | `3.4.0`  |
-| `ext-redis`     | `6.1.0`  | `6.1.0`  | `6.1.0`  | `6.1.0`  |
+| `ext-redis`     | `6.2.0`  | `6.2.0`  | `6.2.0`  | `6.2.0`  |
 
 ### Enabling an Available PECL Extension
 
