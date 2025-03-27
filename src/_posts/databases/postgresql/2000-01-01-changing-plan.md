@@ -92,6 +92,17 @@ operation, thanks to the failover mechanism included in the Business plan.
 8. Validate by clicking the **Confirm plan change** button
 
 
+## Using the Database Dashboard
+
+1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-postgresql-dashboard)
+2. Click the **Settings** tab
+3. In **General**, locate the **Database Plan** block
+4. In this block, click the **Change plan** button
+5. Select the new plan
+6. Click the **Finish** button
+7. Validate by clicking the **Confirm plan change** button
+
+
 ## Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
@@ -134,6 +145,4 @@ operation, thanks to the failover mechanism included in the Business plan.
    }
    ```
    In this example, we switch the `my-db` resource attached to the `my-app`
-   application to a PostgreSQL Business 1024 addon.
-2. Run `terraform plan` and check if the result looks good
-3. If so, run `terraform apply`
+   application to a PostgreSQL® Business 1024 addon.
