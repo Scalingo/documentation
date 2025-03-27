@@ -228,8 +228,8 @@ database dashboard.
 ### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
-2. Click the **Overview** tab
-3. Locate the **Database Upgrade** block
-4. If an upgrade is available, the text in the block explains what will be
-   done.
-5. To launch the upgrade, click the **Upgrade to …** button
+2. Select the **Settings** tab
+3. In the **Settings** submenu, select the **General** tab
+4. Locate the **Database Version** block
+5. If an upgrade is available, a button allows you to trigger the upgrade
+6. Click the button to launch the upgrade process

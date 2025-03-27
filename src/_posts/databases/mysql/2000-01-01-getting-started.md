@@ -83,10 +83,10 @@ tasks such as:
 
 - [Monitoring the database]({% post_url databases/mysql/2000-01-01-monitoring %})
   through logs, metrics and statistics
-- [Upgrading the database]({% post_url databases/mysql/2000-01-01-managing %}#upgrading)
+- [Upgrading the database]({% post_url databases/mysql/2000-01-01-upgrading %})
   engine version
-- [Managing database users]({% post_url databases/mysql/2000-01-01-managing %}#managing-users)
-- [Managing databases]({% post_url databases/mysql/2000-01-01-managing %}#using-multiple-databases)
+- [Managing database users]({% post_url databases/mysql/2000-01-01-managing-users %})
+- [Managing databases]({% post_url databases/mysql/2000-01-01-using-multiple-databases %})
 - [Managing backups]({% post_url databases/mysql/2000-01-01-backing-up %})
 
 You can access the database dashboard via the application dashboard:
