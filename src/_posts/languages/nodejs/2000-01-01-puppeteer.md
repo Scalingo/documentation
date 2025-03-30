@@ -22,10 +22,44 @@ git add .buildpacks
 git commit --message="Add multi-buildpack"
 ```
 
-You need to instruct the APT buildpack to install the dependencies Puppeteer requires. Create a `Aptfile` at the root of your project with the following content:
+You need to instruct the APT buildpack to install the [dependencies Puppeteer requires](https://pptr.dev/guides/system-requirements/). Create a `Aptfile` at the root of your project with the following content:
 
 ```
-gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget libcairo-gobject2 libxinerama1 libgtk2.0-0 libpangoft2-1.0-0 libthai0 libpixman-1-0 libxcb-render0 libharfbuzz0b libdatrie1 libgraphite2-3 libgbm-dev
+libasound2
+libatk-bridge2.0-0
+libatk1.0-0
+libatspi2.0-0
+libc6
+libcairo2
+libcups2
+libdbus-1-3
+libdrm2
+libexpat1
+libgbm1
+libglib2.0-0
+libnspr4
+libnss3
+libpango-1.0-0
+libpangocairo-1.0-0
+libstdc++6
+libudev1
+libuuid1
+libx11-6
+libx11-xcb1
+libxcb-dri3-0
+libxcb1
+libxcomposite1
+libxcursor1
+libxdamage1
+libxext6
+libxfixes3
+libxi6
+libxkbcommon0
+libxrandr2
+libxrender1
+libxshmfence1
+libxss1
+libxtst6
 ```
 
 Puppeteer must be run with the option `--no-sandbox` on Scalingo. This option must be added with care. You should only add this option against some code you own.
