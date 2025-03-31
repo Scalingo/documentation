@@ -1,7 +1,7 @@
 ---
 title: Working with SQL Modes
 nav: Working with SQL Modes
-modified_at: 2025-03-27 12:00:00
+modified_at: 2025-03-31 12:00:00
 tags: databases mysql addon modes
 index: 13
 ---
@@ -18,7 +18,6 @@ by your addon are indeed available. The exhaustive list may vary depending on
 your MySQL® version. Descriptions of the modes can be found in the official
 MySQL® documentation:
 
-- [for MySQL® `5.7` `EOL`](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html)
 - [for MySQL® `8.0`](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html)
 
 Currently, the default SQL mode includes:
@@ -32,6 +31,12 @@ Currently, the default SQL mode includes:
 
 ## Setting SQL Modes
 
+{% note %}
+Setting SQL modes is only available through the database dashboard. MySQL®
+users provided by the platform do not have the necessary permissions to perform
+these actions via the MySQL® console.
+{% endnote %}
+
 ### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
@@ -42,9 +47,3 @@ Currently, the default SQL mode includes:
 6. Validate by clicking the **Update configuration** button
 7. The changes are done at runtime, which means they immediately apply to new
    queries
-
-{% note %}
-Setting SQL modes is only available through the database dashboard. MySQL®
-users provided by the platform do not have the necessary permissions to perform
-these actions via the MySQL® console.
-{% endnote %}

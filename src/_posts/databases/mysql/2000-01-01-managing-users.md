@@ -1,12 +1,12 @@
 ---
 title: Managing Users of Your Scalingo for MySQL® Addon
 nav: Managing Users
-modified_at: 2025-03-13 12:00:00
+modified_at: 2025-03-31 12:00:00
 tags: databases mysql addon
 index: 5
 ---
 
-Each Scalingo for MySQL addon comes with a [default database user](#understanding-protected-users).
+Each Scalingo for MySQL® addon comes with a [default database user](#understanding-protected-users).
 You can [create](#creating-a-new-user) as many additional users as needed,
 grant them with the appropriate permissions, and you can [delete](#deleting-a-user)
 them once they are not required anymore.
@@ -16,7 +16,7 @@ them once they are not required anymore.
 
 ### Understanding Protected User
 
-When provisioning a new Scalingo for MySQL addon, the platform creates a
+When provisioning a new Scalingo for MySQL® addon, the platform creates a
 default user with a random name and password. It also grants this default user
 read and write permissions on the database, using the following queries:
 
@@ -62,16 +62,18 @@ This default user is ***protected*** and thus:
 
 ## Creating a New User
 
+{% note %}
 The following restrictions apply when creating a new user, regardless of the
 method you use:
 
-- Username:
-  - Must start with a letter
-  - Must be between 6 and 32 characters long
-  - Can only contain alphanumerical characters and underscores (`_`)
-- Password:
-  - Must be between 24 and 64 characters long.
-  - Must not contain the character `"` or `'`
+- Username **must**:
+  - Start with a letter
+  - Be between 6 and 32 characters long
+  - Contain only alphanumerical characters and underscores (`_`)
+- Password **must**:
+  - Be between 24 and 64 characters long.
+  - Not contain the character `"` or `'`
+{% endnote %}
 
 ### Using the Database Dashboard
 

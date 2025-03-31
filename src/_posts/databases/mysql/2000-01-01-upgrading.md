@@ -22,8 +22,6 @@ While we usually advise to stick to the latest patch-upgrade available to
 benefit from bug and security fixes, we also strongly advise to take extra-care
 when upgrading your Scalingo for MySQL® addon ([more about this below](#best-practices-before-upgrading)).
 
-Upgrading to a newer version is still your choice.
-
 {% warning %}
 Beware that no downgrade is possible once your database has been upgraded.
 {% endwarning %}
@@ -40,9 +38,9 @@ There are no prerequisites for patch-upgrades.
 #### For Starter Plans
 
 1. The instance is stopped. The database is unreachable.
-2. We restart the instance with the targeted version. This operation can take
-   quite some time, depending on the database size.
-3. Once the instance restarted, the database is reachable again.
+2. The instance is restarted with the targeted version. This operation can take
+   quite some time depending on the database size.
+3. Once the instance is restarted, the database is reachable again.
 4. The application is restarted to ensure proper connections. [This does not
    cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
 
@@ -50,11 +48,11 @@ Since we have to completely stop the instance, **a downtime is inevitable**.
 
 #### For Business Plans
 
-1. The MySQL® for Scalingo cluster Routers are restarted one by one with the
-   targeted version. This shouldn't cause any downtime.
-2. We restart the different cluster nodes one by one. This shouldn't cause any
-   downtime, thanks to the MySQL Router® routing the connexions to available
-   nodes.
+1. The Scalingo for MySQL® Routers of the cluster are restarted one by one with
+   the targeted version. This shouldn't cause any downtime.
+2. The different instances forming the cluster are restarted one by one. This
+   shouldn't cause any downtime, thanks to the MySQL® Routers routing the
+   connexions to the available instances.
 3. Once all the nodes are restarted, the cluster is fully upgraded and fully
    operational again.
 4. The application is restarted to ensure proper connections. [This does not
@@ -102,7 +100,7 @@ advise to take extra care when dealing with them:
        using a [`first-deploy` script]({% post_url platform/app/2000-01-01-app-manifest %}#deployment-hooks).
 
      Here is an example of a manifest file asking the platform to provision a
-     MySQL `8.0.38` addon and to run the `db-seed.sh` script after the
+     MySQL® `8.0.38` addon and to run the `db-seed.sh` script after the
      first deployment (the script must be included in your codebase):
      ```json
      {
