@@ -1,7 +1,7 @@
 ---
 title: Using Multiple Databases
 nav: Using Multiple Databases
-modified_at: 2025-03-27 12:00:00
+modified_at: 2025-03-31 12:00:00
 tags: databases mysql addon
 index: 12
 ---
@@ -16,8 +16,8 @@ case:
   created) are shared between databases, even for existing ones
 - All databases are [backed up]({% post_url databases/mysql/2000-01-01-backing-up %})
   in the same backup file
-- The platform doesn't provide any environment variable for this new database.
-  You should, however, be able to generate one from the original
+- The platform doesn't provide any environment variable for these additional
+  databases. You should, however, be able to generate one from the original
   `SCALINGO_MYSQL_URL`.
 
 
@@ -29,12 +29,34 @@ case:
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Databases**
 
-{% note %}
-Listing existing databases is only available from the Database Dashboard.
-{% endnote %}
+### Using the Command Line Tool
+
+1. Access your database using the [Interactive Remote Console]({% post_url databases/mysql/2000-01-01-accessing %}#using-the-interactive-remote-console)
+2. From the MySQL® console, run the following command: 
+   ```sql
+   SHOW DATABASES;
+   ```
+   The ouput should look like this:
+   ```
+   mysql> SHOW DATABASES;
+   +--------------------+
+   | Database           |
+   +--------------------+
+   | my_app_5432        |
+   | my_database01      |
+   | my_database02      |
+   | information_schema |
+   | performance_schema |
+   +--------------------+
+   5 rows in set (0.01 sec)
+   ```
 
 
 ## Creating a New Database
+
+{% note %}
+Creating a new database is only available from the Database Dashboard.
+{% endnote %}
 
 ### Using the Database Dashboard
 
@@ -45,15 +67,12 @@ Listing existing databases is only available from the Database Dashboard.
    database
 5. Validate the form by clicking the **Create this database** button
 
-{% note %}
-Creating a new database is only available from the Database Dashboard.
-{% endnote %}
-
 
 ## Deleting a Database
 
 {% note %}
-The default database can not be deleted. It can only be emptied.
+- The default database can not be deleted. It can only be emptied.
+- Deleting a database is only available from the Database Dashboard.
 {% endnote %}
 
 {% warning %}
@@ -71,7 +90,3 @@ prior to deleting a database.
 6. From the popup menu, select **Drop**
 7. In the popup window, confirm the deletion by typing the name of the database
 8. Validate by clicking the **Confirm** button
-
-{% note %}
-Deleting a database is only available from the Database Dashboard.
-{% endnote %}

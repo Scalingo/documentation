@@ -1,7 +1,7 @@
 ---
 title: Changing Plan
 nav: Changing Plan
-modified_at: 2025-03-13 12:00:00
+modified_at: 2025-03-31 12:00:00
 tags: databases mysql addon
 index: 7
 ---
@@ -33,8 +33,8 @@ handle all your data and fits your application workload.
 
 {% note %}
 Business Plans are only available starting with MySQL® 8.\
-Consider [upgrading to MySQL® 8](#upgrading-to-mysql-8) if you want to benefit
-from high availability with MySQL®.
+Consider [upgrading to MySQL® 8]({% post_url databases/mysql/2000-01-01-mysql-8-prerequisites %})
+if you want to benefit from high availability with MySQL®.
 {% endnote %}
 
 ### From Starter to Starter
@@ -50,7 +50,7 @@ though.
 
 ### From Starter to Business
 
-When changing for a Business plan, the platform starts additional nodes
+When changing for a Business plan, the platform starts additional instances
 with the targeted size. If necessary, it then reboots the previously existing
 instance with the targeted size. There should be no downtime at all, thanks to
 the failover mechanism included with the Business plan.
@@ -61,10 +61,10 @@ the failover mechanism included with the Business plan.
 
 ### From Business to Starter
 
-When changing for a lower class, the platform first powers the surplus nodes
-off. When necessary, the remaining node is rebooted with the targeted new size.
-This can lead to a small service interruption during which the database is not
-available. This shouldn't exceed a few seconds though.
+When changing for a lower class, the platform first powers the surplus
+instances off. When necessary, the remaining instance is rebooted with the
+targeted new size. This can lead to a small service interruption during which
+the database is not available. This shouldn't exceed a few seconds though.
 
 | From (class) | To (class) | To (size) | Downtime | Duration     |
 | ------------ | ---------- | --------- | -------- | ------------ |
@@ -74,9 +74,10 @@ available. This shouldn't exceed a few seconds though.
 
 ### From Business to Business
 
-When changing the size of a Business plan, the platform reboots the nodes with
-the targeted new size one by one. There's no downtime during this operation,
-thanks to the high availability mechanism included in the Business plan.
+When changing the size of a Business plan, the platform reboots the instances
+with the targeted new size one by one. There's no downtime during this
+operation, thanks to the high availability mechanism included in the Business
+plan.
 
 | From (class) | To (class) | To (size) | Downtime | Duration     |
 | ------------ | ---------- | --------- | -------- | ------------ |
