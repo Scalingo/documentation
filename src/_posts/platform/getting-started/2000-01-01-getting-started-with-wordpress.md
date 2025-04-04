@@ -1,6 +1,6 @@
 ---
 title: Getting Started with WordPress on Scalingo
-modified_at: 2024-03-12 12:00:00
+modified_at: 2025-04-01 17:00:00
 tags: php, http, framework, wordpress, deployment
 index: 14
 ---
@@ -90,6 +90,8 @@ Follow these instructions to get started:
     }
    ```
 
+   If you want to use another provider than AWS (OVH, Scaleway, etc.), you can setup the IAM according your bucket and add the env variable `S3_UPLOADS_ENDPOINT` with the url of the provider. 
+
 4. Create a stategy policy for the newly created bucket
 
     Go on the newly created bucket's details page, on `Permissions` tab. Scroll down to `Bucket policy` and enter your policy.
@@ -124,6 +126,7 @@ Follow these instructions to get started:
    * `S3_UPLOADS_SECRET`: AWS Secret Key for S3 authentication
    * `S3_UPLOADS_REGION`: Region of the S3 bucket
    * `S3_UPLOADS_OBJECT_ACL`: object permission of files uploaded to S3. Defaults to `public-read`. Must be one of `public-read`, `private` or `authenticated-read`.
+   * `S3_UPLOADS_ENDPOINT`: Optional. If you use an endpoint different than AWS. Ex : s3.fr-par.scw.cloud
    * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
 
    You can get some random salts on the [Roots WordPress Salt Generator](https://roots.io/salts.html).
