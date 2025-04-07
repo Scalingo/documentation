@@ -1,6 +1,6 @@
 ---
 title: Getting Started with WordPress on Scalingo
-modified_at: 2024-08-19 12:00:00
+modified_at: 2025-04-01 17:00:00
 tags: php, http, framework, wordpress, deployment
 index: 14
 ---
@@ -158,16 +158,7 @@ will need to follow:
       }
       ```
 
-   3. Create a few environment variables, either via the dashboard or using
-      [the Scalingo command line tool]({% post_url platform/cli/2000-01-01-features %}#configure-their-environment).
-
-      | Env Variable            | Description                              |
-      | ----------------------- | ---------------------------------------- |
-      | `S3_UPLOADS_BUCKET`     | Name of the S3 bucket to upload files to |
-      | `S3_UPLOADS_KEY`        | AWS Access Key ID for S3 authentication  |
-      | `S3_UPLOADS_SECRET`     | AWS Secret Key for S3 authentication     |
-      | `S3_UPLOADS_REGION`     | Region of the S3 bucket                  |
-      | `S3_UPLOADS_OBJECT_ACL` | Object permission of files uploaded to S3. Can be either `public-read`, `private` or `authenticated-read`. Defaults to `public-read` |
+   If you want to use another provider than AWS (OVH, Scaleway, etc.), you can setup the IAM according your bucket and add the env variable `S3_UPLOADS_ENDPOINT` with the url of the provider. 
 
 7. (optional) Instruct the platform to run the `web` process type in a single
    XL container:
