@@ -1,21 +1,21 @@
 ---
 title: Changing Plan
 nav: Changing Plan
-modified_at: 2024-10-22 00:00:00
-tags: databases postgresql addon
-index: 8
+modified_at: 2025-03-31 12:00:00
+tags: databases mysql addon
+index: 7
 ---
 
 At Scalingo, all databases addons plans are identified using a name made of two
 or three parts separated by a dash (-). This name is made of:
 
-1. a database ***type*** : `postgresql`
+1. a database ***type*** : `mysql`
 2. a ***class*** : either `sandbox`, `starter` or `business` (learn more about
    [classes]({% post_url databases/2000-01-01-overview %}#database-plans))
 3. a ***size*** : specifying the amount of RAM available with the plan, in MB
    (only for starter and business classes).
 
-You can change your PostgreSQL® for Scalingo addon plan whenever you want. The
+You can change your Scalingo for MySQL® addon plan whenever you want. The
 operation is launched instantly, no manual input is required.
 
 The impact on your application and the downtime vary depending on several
@@ -44,8 +44,8 @@ though.
 
 ### From Starter to Business
 
-When changing for a Business plan, the platform first starts a follower
-instance with the targeted size. If necessary, it then reboots the primary
+When changing for a Business plan, the platform starts additional instances
+with the targeted size. If necessary, it then reboots the previously existing
 instance with the targeted size. There should be no downtime at all, thanks to
 the failover mechanism included with the Business plan.
 
@@ -55,11 +55,10 @@ the failover mechanism included with the Business plan.
 
 ### From Business to Starter
 
-When changing for a lower class, the platform first powers the follower
-instance off. When necessary, the remaining primary instance is rebooted with
-the targeted new size. This can lead to a small service interruption during
-which the database is not available. This shouldn't exceed a few seconds
-though.
+When changing for a lower class, the platform first powers the surplus
+instances off. When necessary, the remaining instance is rebooted with the
+targeted new size. This can lead to a small service interruption during which
+the database is not available. This shouldn't exceed a few seconds though.
 
 | From (class) | To (class) | To (size) | Downtime | Duration     |
 | ------------ | ---------- | --------- | -------- | ------------ |
@@ -69,10 +68,10 @@ though.
 
 ### From Business to Business
 
-When changing the size of a Business plan, the platform first reboots the
-primary instance with the targeted new size. It then reboots the follower
-instance with the targeted new size. There's no downtime during this
-operation, thanks to the failover mechanism included in the Business plan.
+When changing the size of a Business plan, the platform reboots the instances
+with the targeted new size one by one. There's no downtime during this
+operation, thanks to the high availability mechanism included in the Business
+plan.
 
 | From (class) | To (class) | To (size) | Downtime | Duration     |
 | ------------ | ---------- | --------- | -------- | ------------ |
@@ -83,9 +82,9 @@ operation, thanks to the failover mechanism included in the Business plan.
 
 1. From your web browser, open your [dashboard](https://dashboard.scalingo.com/apps)
 2. Click on the application for which you want to scale the Scalingo for
-   PostgreSQL® addon
+   MySQL® addon
 3. Click on the **Resources** tab
-4. Locate the **Addons** block and click on the **…** button
+4. Locate the **Addons** block and click on the **"&#8230;"** button
 5. From the dropdown menu, select **Change plan**
 6. Select the new plan
 7. Click the **Finish** button
@@ -94,7 +93,7 @@ operation, thanks to the failover mechanism included in the Business plan.
 
 ## Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-postgresql-dashboard)
+1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
 2. Click the **Settings** tab
 3. In **General**, locate the **Database Plan** block
 4. In this block, click the **Change plan** button
@@ -106,25 +105,25 @@ operation, thanks to the failover mechanism included in the Business plan.
 ## Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
-2. From the command line, list the plans available for `postgresql`:
+2. From the command line, list the plans available for `mysql`:
    ```bash
-   scalingo addons-plans postgresql
+   scalingo addons-plans mysql
    ```
    The output should look like this:
    ```text
-   +----------------------------+---------------+
-   |             ID             |     NAME      |
-   +----------------------------+---------------+
-   | postgresql-sandbox         | Sandbox       |
-   | postgresql-starter-512     | Starter 512M  |
-   | postgresql-starter-1024    | Starter 1G    |
+   +-----------------------+---------------+
+   |          ID           |     NAME      |
+   +-----------------------+---------------+
+   | mysql-sandbox         | Sandbox       |
+   | mysql-starter-512     | Starter 512M  |
+   | mysql-starter-1024    | Starter 1G    |
    ...
    ```
 3. Locate the `ID` corresponding to the plan you want to scale to (for example
-   `postgresql-business-1024`)
+   `mysql-business-1024`)
 4. Change plan using the `addons-upgrade` sub-command:
    ```bash
-   scalingo --app my-app addons-upgrade postgresql <plan_ID>
+   scalingo --app my-app addons-upgrade mysql <plan_ID>
    ```
    The output should look like this:
    ```text
@@ -139,10 +138,10 @@ operation, thanks to the failover mechanism included in the Business plan.
    Terraform file to scale the addon:
    ```tf
    resource "scalingo_addon" "my-db" {
-     provider_id = "postgresql"
-     plan = "postgresql-business-1024"
+     provider_id = "mysql"
+     plan = "mysql-business-1024"
      app = "${scalingo_app.my-app.id}"
    }
    ```
    In this example, we switch the `my-db` resource attached to the `my-app`
-   application to a PostgreSQL® Business 1024 addon.
+   application to a MySQL® Business 1024 addon.

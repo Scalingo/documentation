@@ -606,6 +606,9 @@
     old: "/databases/mysql/workbench"
     new: "/databases/mysql/accessing"
   -
+    old: "/databases/mysql/managing"
+    new: "/databases/mysql/overview"
+  -
     old: "/databases/postgresql/managing"
     new: "/databases/postgresql/overview"
   -

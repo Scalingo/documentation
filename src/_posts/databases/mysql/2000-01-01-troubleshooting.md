@@ -27,7 +27,7 @@ memory pages to disk, leading to performance degradation and increased latency.
 As a consequence, the size of the Buffer Pool should ideally be large enough to
 handle the database workload, thus preventing swap usage. A constantly swapping
 database could indicate that the space dedicated to the Buffer Pool has become
-insufficient. In such a case, [switching to a superior plan]({% post_url databases/mysql/2000-01-01-managing %}#scaling-changing-plan)
+insufficient. In such a case, [switching to a superior plan]({% post_url databases/mysql/2000-01-01-changing-plan %})
 should quickly resolve the swapping issue.
 
 For further details about how MySQL® manages memory, please refer to [the
