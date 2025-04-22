@@ -6,7 +6,7 @@ tags: databases mysql addon
 index: 5
 ---
 
-Each Scalingo for MySQL® addon comes with a [default database user](#understanding-protected-users).
+Each Scalingo for MySQL® addon comes with a [default database user](#understanding-protected-user).
 You can [create](#creating-a-new-user) as many additional users as needed,
 grant them with the appropriate permissions, and you can [delete](#deleting-a-user)
 them once they are not required anymore.
@@ -32,7 +32,7 @@ This default user is ***protected*** and thus:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Users**
 4. The list of available users is displayed under the **User Management**
@@ -68,7 +68,7 @@ method you use:
 
 - Username **must**:
   - Start with a letter
-  - Be between 6 and 32 characters long
+  - Be between 6 and 16 characters long
   - Contain only alphanumerical characters and underscores (`_`)
 - Password **must**:
   - Be between 24 and 64 characters long.
@@ -126,7 +126,7 @@ method you use:
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Users**
 4. Locate the user you want the password to be updated
@@ -163,7 +163,7 @@ method you use:
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Users**
 4. Locate the user you want to remove

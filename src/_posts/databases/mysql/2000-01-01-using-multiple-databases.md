@@ -25,7 +25,7 @@ case:
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Databases**
 
@@ -60,7 +60,7 @@ Creating a new database is only available from the Database Dashboard.
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Databases**
 4. Fill the **Add a database** form by specifying a **name** for the new
@@ -82,7 +82,7 @@ prior to deleting a database.
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Databases**
 4. Locate the database you want to remove
