@@ -63,13 +63,6 @@ downtime**.
 
 ### Best Practices Before Upgrading
 
-{% note %}
-There are a couple more prerequisites when upgrading from MySQL® 5.7 to 8.0.
-Please make sure to check [these mandatory prerequisites]({% post_url databases/mysql/2000-01-01-mysql-8-prerequisites %}).\
-Upgrading to MySQL® 8.0 is mandatory to benefit from MySQL® high availability
-via Business Plans.
-{% endnote %}
-
 Although patch-upgrades should only bring bug and security fixes, we still
 advise to take extra care when dealing with them:
 
