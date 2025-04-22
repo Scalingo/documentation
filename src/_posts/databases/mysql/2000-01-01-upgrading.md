@@ -41,7 +41,7 @@ There are no prerequisites for patch-upgrades.
 2. The instance is restarted with the targeted version. This operation can take
    quite some time depending on the database size.
 3. Once the instance is restarted, the database is reachable again.
-4. The application is restarted to ensure proper connections. [This does not
+4. The application to which the database is attached is restarted to ensure proper connections. [This does not
    cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
 
 Since we have to completely stop the instance, **a downtime is inevitable**.
@@ -156,7 +156,7 @@ through the database dashboard.
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
 2. Select the **Settings** tab
 3. In the **Settings** submenu, select the **General** tab
 4. Locate the **Database Version** block
