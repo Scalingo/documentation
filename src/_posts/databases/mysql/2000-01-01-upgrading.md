@@ -1,7 +1,7 @@
 ---
 title: Upgrading Your Scalingo for MySQL® Addon
 nav: Upgrading
-modified_at: 2025-03-27 12:00:00
+modified_at: 2025-04-22 12:00:00
 tags: databases mysql addon
 index: 8
 ---
@@ -41,8 +41,8 @@ There are no prerequisites for patch-upgrades.
 2. The instance is restarted with the targeted version. This operation can take
    quite some time depending on the database size.
 3. Once the instance is restarted, the database is reachable again.
-4. The application to which the database is attached is restarted to ensure proper connections. [This does not
-   cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
+4. The application to which the database is attached is restarted to ensure
+   proper connections. [This does not cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
 
 Since we have to completely stop the instance, **a downtime is inevitable**.
 
@@ -55,16 +55,13 @@ Since we have to completely stop the instance, **a downtime is inevitable**.
    connexions to the available instances.
 3. Once all the nodes are restarted, the cluster is fully upgraded and fully
    operational again.
-4. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
+4. The application to which the database is attached is restarted to ensure
+   proper connections. [This does not cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
 
 Patch-upgrades of Business plans are **usually achieved without any impactful
 downtime**.
 
 ### Best Practices Before Upgrading
-
-Although patch-upgrades should only bring bug and security fixes, we still
-advise to take extra care when dealing with them:
 
 - First, carefully read the changelogs provided by MySQL® (we usually link them
   in our respective changelog entries). Identifying noticeable changes,
