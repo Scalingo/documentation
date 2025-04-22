@@ -624,6 +624,12 @@
     old: "/databases/mongodb/robo3t"
     new: "/databases/mongodb/studio3t"
 
+  - old: "/platform/app/scaling"
+    new: "/platform/app/scaling/scaling"
+
+  - old: "/platform/app/autoscaler"
+    new: "/platform/app/scaling/scalingo-autoscaler"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
