@@ -31,12 +31,6 @@ handle all your data and fits your application workload.
 
 ## Understanding the Plan Change Process
 
-{% note %}
-Business Plans are only available starting with MySQL® 8.\
-Consider [upgrading to MySQL® 8]({% post_url databases/mysql/2000-01-01-mysql-8-prerequisites %})
-if you want to benefit from high availability with MySQL®.
-{% endnote %}
-
 ### From Starter to Starter
 
 When changing the size of a Starter plan, the platform reboots the existing
