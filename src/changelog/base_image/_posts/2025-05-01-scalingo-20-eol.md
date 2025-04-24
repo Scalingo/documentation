@@ -14,7 +14,7 @@ The [scalingo-22]({% post_url platform/internals/stacks/2000-01-01-scalingo-22-s
 - **May 1, 2025: Usage exemption for legacy apps**. Ubuntu 20.04 LTS and scalingo-20 officially reach end-of-life and will no longer receive updates.
 From this date, it is no longer possible to select this stack to create new applications.
 Existing applications using the scalingo-20 stack will continue to function normally, with the ability to create new deployments or Review Apps on this version.
-- **January 1, 2026: End of usage exemption**. From this date, no new deployments are allowed on the scalingo-20 stack. Deployments made before this date continue to function, but using a supported stack becomes mandatory for any new deployment.
+- **January 1, 2026: End of usage exemption**. From this date, no new deployments are allowed on the scalingo-20 stack. Deployments made before this date continue to work, but all new deployments will be done using a supported stack.
 
 
 **Plan today**
