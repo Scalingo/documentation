@@ -73,26 +73,6 @@ our [CLI tool](#using-the-command-line) or via our
    done the same with another plan.
 
 
-## Accessing the OpenSearch® Dashboard
-
-Every OpenSearch® addon comes with its dedicated dashboard, generally referred
-to as **database dashboard**, which is the central place for administrative
-tasks such as:
-
-- [Monitoring the database][monitoring] through logs, metrics and statistics
-- [Upgrading the database][upgrading] engine version
-- [Enabling specific features]({% post_url databases/opensearch/guides/2000-01-01-managing-plugins %})
-- [Managing database users][managing-users]
-- [Managing backups][backing-up]
-
-You can access the database dashboard via the application dashboard:
-
-1. From your web browser, open your [dashboard][dashboard]
-2. Click on the application for which you want to manage your database
-3. Click on the **Overview** tab
-4. Locate the **Addons** block and click on the **Dashboard** button next to
-   the database you want to manage.
-
 [dashboard]: https://dashboard.scalingo.com/apps
 [cli]: {% post_url platform/cli/2000-01-01-start %}
 [monitoring]: {% post_url databases/opensearch/guides/2000-01-01-monitoring %}
