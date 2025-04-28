@@ -1,11 +1,10 @@
 ---
 title: Connecting to Your Scalingo for OpenSearch® Addon
 nav: Connecting
-modified_at: 2025-04-23 12:00:00
+modified_at: 2025-04-28 12:00:00
 tags: databases opensearch addon
 index: 2
 ---
-
 
 When a Scalingo for OpenSearch® addon is provisioned, the platform also adds
 two [environment variables][env] to your app:
@@ -79,15 +78,14 @@ still remains applicable.
    ```
    The output is:
    ```bash
-   http://my_app_wxyz:YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8@my-app-wxyz.opensearch.a.osc-fr1.scalingo-dbs.com:31000
+   http://my_app_wxyz:YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8@my-app-wxyz.opensearch.b.osc-fr1.scalingo-dbs.com:35110
    ```
 
 
 ## Enforcing TLS Connection
 
 By default, all new OpenSearch® databases have TLS **disabled**, which means
-that the traffic between your database addon and your application is **not**
-encrypted.
+that the traffic between the database and the application is **not** encrypted.
 
 If you want to enforce TLS connections to your database:
 
@@ -96,7 +94,6 @@ If you want to enforce TLS connections to your database:
 3. In the **Settings** submenu, select **Internet Access**
 4. Locate the **Force TLS connections** block
 5. Click the **Enable** button
-
 
 Once this option is activated, the database denies any non-TLS connection.
 Consequently, your application must be configured to use TLS when connecting to
@@ -109,24 +106,27 @@ meaning that you can still access your database without it if needed.
 ## Connecting Multiple Applications to the Same OpenSearch® Addon
 
 To connect multiple applications to the same OpenSearch® addon, we usually
-advise to duplicate the `SCALINGO_OPENSEARCH_URL` environment variable value
-from the application owning the addon to the others:
+advise to duplicate the value of the `SCALINGO_OPENSEARCH_URL` environment
+variable from the application owning the addon to the others:
 
 1. Copy [the connection URI](#getting-the-connection-uri) of your addon
 2. For each application that connects to the database, [create a new
-   environment variable][env] (`OPENSEARCH_URL` is usually a good name) and set
-   its value to the connection URI you just copied
-3. Restart the application to make the new environment variable available
+   environment variable][env] (naming it `OPENSEARCH_URL` is generally a good
+   idea)
+3. Set the value of this new environment variable to connection URI you just
+   copied
+4. Restart the application to make the new environment variable available
 
 {% note %}
-Please keep in mind that any change applied to the original environment
-variable will have to be duplicated on the others apps as well.
+When doing so, please keep in mind that any change applied to the original
+`SCALINGO_OPENSEARCH_URL` environment variable will also have to be applied on
+the others applications.
 {% endnote %}
 
 
 [rfc3986]: https://datatracker.ietf.org/doc/html/rfc3986
-[dashboard]: https://dashboard.scalingo.com/apps
-[db-dashboard]: {% post_url databases/opensearch/getting-started/2000-01-01-overview %}#accessing-the-opensearch-dashboard
+[dashboard]: https://dashboard.scalingo.com
 
 [cli]: {% post_url platform/cli/2000-01-01-start %}
+[db-dashboard]: {% post_url databases/opensearch/guides/2000-01-01-monitoring %}#accessing-the-opensearch-dashboard
 [env]: {% post_url platform/app/2000-01-01-environment %}
