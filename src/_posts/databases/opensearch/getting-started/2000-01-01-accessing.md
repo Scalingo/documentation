@@ -19,9 +19,10 @@ depends on your needs and preferences.
 HTTP. Consequently, OpenSearch® does not require a specific driver or SDK to
 work with.\
 Instead, any tool speaking HTTP can be used to interact with the database:
-- [`curl`][curl] is usually a very good candidate to work with from the command
-  line,
-- [Postman][postman] can be useful for debugging or building API calls,
+- [`curl`](https://curl.se/) is usually a very good candidate to work with from
+  the command line,
+- [Postman](https://www.postman.com/) can be useful for debugging or building
+  API calls,
 - any programming language that can make HTTP requests (Go, Java, Javascript,
   PHP, Python, Ruby, etc.) are able to connect to an OpenSearch® database. Most
   of them provide libraries to ease things.
