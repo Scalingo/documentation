@@ -1,12 +1,12 @@
 ---
 title: Scalingo-20 Stack
 nav: Scalingo-20
-modified_at: 2025-01-29 00:00:00
+modified_at: 2025-05-01 00:00:00
 index: 3
 ---
 
 {% warning %}
-The scalingo-20 stack, based on the Ubuntu 20.04 LTS operating system, will be deprecated on April 30th, 2025.
+The scalingo-20 stack, based on the Ubuntu 20.04 LTS operating system, is now deprecated.
 Migrate to a [newer stack]({% post_url platform/internals/stacks/2000-01-01-stacks %}) as soon as possible. See the [Deprecation Plan]({% post_url platform/internals/stacks/2000-01-01-scalingo-20-stack %}#deprecation-plan) for details.
 {% endwarning %}
 
@@ -18,18 +18,14 @@ scalingo-20 is based on Ubuntu 20.04. It will be supported through April 2025.
 
 ## Deprecation Plan
 
-### February 2025: End-Of-Support Notification
-
-All owners and collaborators of applications using scalingo-20 are informed of the end of support for this stack.
-
 ### May 2025: Usage Exemption For Legacy Apps
 
-Ubuntu 20.04 LTS and scalingo-20 officially reach end-of-life and no longer receive updates.
+Ubuntu 20.04 LTS and scalingo-20 officially reach end-of-life and will no longer receive updates.
 From this date, it is no longer possible to select this stack to create new applications.
-Existing applications using the scalingo-20 stack will continue to function normally, with the ability to create new deployments or Review Apps on this version.
+Existing applications using the scalingo-20 stack will continue to work normally, with the ability to create new deployments or Review Apps on this version.
 
 ### January 2026: End of Usage Exemption
-From this date, no new deployments are allowed on the scalingo-20 stack. Deployments made before this date continue to function, but using a supported stack becomes mandatory for any new deployment.
+From this date, no new deployments are allowed on the scalingo-20 stack. Deployments made before this date continue to work, but all new deployments will be done using a supported stack.
 
 
 ## Testing and Migrating Your App
