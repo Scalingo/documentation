@@ -1,9 +1,10 @@
 ---
 title: Getting Started With ModSecurity on Scalingo
-modified_at: 2023-02-06 00:00:00
+modified_at: 2025-05-02 12:00:00
 tags: tutorial security firewall modsecurity apache nginx waf
 index: 11
 ---
+
 
 ModSecurity is an open-source Web Application Firewall (WAF) that allows users
 to monitor, log and filter HTTP requests. A very common use case is to rely on
@@ -42,7 +43,8 @@ pattern and actions).
 The very first steps consist of deploying an Nginx application on Scalingo. To
 do this, please [follow the dedicated tutorial]({% post_url platform/deployment/buildpacks/2000-01-01-nginx %}).
 
-#### Enabling ModSecurity
+
+## Enabling ModSecurity
 
 1. Once your Nginx application is successfully deployed, set the environment
    variable `ENABLE_MODSECURITY` to `true`, either by adding it via
