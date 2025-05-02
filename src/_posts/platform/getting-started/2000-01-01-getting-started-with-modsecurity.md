@@ -1,9 +1,10 @@
 ---
 title: Getting Started With ModSecurity on Scalingo
-modified_at: 2023-02-06 00:00:00
+modified_at: 2025-05-02 12:00:00
 tags: tutorial security firewall modsecurity apache nginx waf
 index: 11
 ---
+
 
 ModSecurity is an open-source Web Application Firewall (WAF) that allows users
 to monitor, log and filter HTTP requests. A very common use case is to rely on
@@ -24,12 +25,12 @@ pattern and actions).
 For this first tutorial, we use Nginx and the CRS provided by OWASP to deploy a
 WAF on Scalingo within minutes.
 
-As a note, ModSecurity is only deployable on [scalingo-22]({% post_url platform/internals/stacks/2000-01-01-scalingo-22-stack %}) and above.
 
 ## Deploying Nginx
 
 The very first steps consist of deploying an Nginx application on Scalingo. To
 do this, please [follow the dedicated tutorial]({% post_url platform/deployment/buildpacks/2000-01-01-nginx %}).
+
 
 ## Enabling ModSecurity
 
@@ -87,6 +88,7 @@ The application should respond with a **403 forbidden** such as the following:
 </body>
 </html>
 ```
+
 
 ## Adding a Custom Rule
 
@@ -154,6 +156,7 @@ $ git commit -m "Add modsecurity custom rules"
 $ git push scalingo master
 ```
 
+
 ## Disabling a Rule
 
 If you want to disable a rule for some reason, you first need to identify the
@@ -168,6 +171,7 @@ You can then add a `SecRuleRemoveById` directive at the end of
 # Rule 911100 filters unknown HTTP methods, but we actually do want to allow exotic HTTP methods
 SecRuleRemoveById 911100
 ```
+
 
 ## Updating the Core Rule Set
 
@@ -189,6 +193,7 @@ If you want to use a specific version of the CRS, you can manually set the
 version and trigger a new deployment.
 {% endnote %}
 
+
 ## Updating ModSecurity
 
 Scalingo automatically deploys the latest version of ModSecurity **we have
@@ -206,6 +211,7 @@ Scalingo **does not** provide any guarantee in terms of packaging and
 availability after each ModSecurity release. You can still get in touch with our
 support team, should you need a specific version.
 {% endnote %}
+
 
 ## Customizing ModSecurity
 
