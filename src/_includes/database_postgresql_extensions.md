@@ -18,7 +18,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">anon</code></td>
-    <td align="left"><code>2.0.0</code></td>
+    <td align="left"><code>2.1.0</code></td>
     <td align="left">Anonymization &amp; Data Masking for PostgreSQL</td>
   </tr>
   <tr valign="top">
