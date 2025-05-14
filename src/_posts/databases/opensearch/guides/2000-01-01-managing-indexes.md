@@ -316,15 +316,74 @@ PUT log-001
 
 ## Optimizing Mappings and Data Types
 
-- Avoids dynamic mappings (unless necessary)
-- Use appropriate types (such as `text` or `date`. Full list available here: FIXME)
-- Flatten deeply nested structures when possible
+**Mappings** and **data types** are essential components of OpenSearch® that
+define how documents and their properties are structured and indexed.
+
+A mapping is a schema definition that tells OpenSearch® how to store and index
+documents. It mostly sets data types to properties of the documents, which
+helps OpenSearch® understand how to efficiently store, index and search them.
+
+Using static mappings with the appropriate data types allows to optimize
+storage, improves query performance and thus makes your indexes more powerful.
+It also helps maintain data consistency by preventing invalid data to be added
+to the belonging index.
+
+Without explicit mappings, OpenSearch falls back on dynamic mappings, which are
+often more costly and less efficient. Avoiding them and specifying your
+documents structure is generally a better practice to optimize your indexes.
+
+The following table presents the main available data types:
+
+| Type                            | Description             | Usecase                                |
+| ------------------------------- | ----------------------- | -------------------------------------- |
+| `text`                          | Analyzed and tokenized  | Full-text search                       |
+| `keyword`                       | Not analyzed            | Filtering, exact matching, and sorting |
+| `long`, `integer`, `float`, etc | Numeric types           | Range queries and aggregations         |
+| `date`                          | Datetime values         | Time-based queries                     |
+| `boolean`                       | True / False            |                                        |
+| `object`                        | For nested JSON objects |                                        |
+| `nested`                        | For nested JSON objects | Allows querying inner objects independently |
+
+Here is an example query creating an index named `movies`, with some mappings:
+
+```json
+PUT movies
+{
+  "mappings": {
+    "properties": {
+      "title":    { "type": "text" },
+      "release":  { "type": "date", "format": "strict_year_month" },
+      "synopsis": { "type": "text" },
+      "duration": { "type": "short" },
+      //...
+    }
+  }
+}
+```
 
 
 ## Reindexing Data When Needed
 
-- When settings or mappings are updated
-- Reindex into a new index with updated templates and structure
+In OpenSearch, reindexing data consists in copying data from one index to
+another. Reindexing can really help improve performance by creating a new,
+compact, optimized and consistent index. It's necessary in several situations
+such as:
+
+- When changing mappings, analyzers, settings, data types, etc. after an index
+  is created.
+- When trying to fix corrupted or malformes data, for instance, if data has
+  been ingested incorrectly (wrong field types, inconsistent format, etc.).
+- When in the need to modify the sharding strategy.
+
+Please keep in mind that reindexing can be resource-intensive. As a
+consequence, we usually advise to run this process during off-peak hours to
+limit the impact on your application and users.
+
+If data is still being written to the old index during reindexing, please also
+consider steps to capture or reprocess the new data afterward.
+
+Finally, keep in mind that [aliases](#using-aliases) can help seamlessly switch
+from an old to a new index without requiring a client update.
 
 
 [opensearch-rollover-api]: https://docs.opensearch.org/docs/latest/api-reference/index-apis/rollover/
