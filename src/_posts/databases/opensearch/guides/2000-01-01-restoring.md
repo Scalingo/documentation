@@ -16,22 +16,22 @@ backups and restorations.
 
 ## Understanding the Restoration Process
 
-When dealing with restorations, please keep in mind that OpenSearch®'s
-[Snapshot APIs][opensearch-api-snapshot] are not available.
+Even if the platform uses OpenSearch's [Snapshot APIs][opensearch-api-snapshot]
+internally to create backups and restore them, please remember that these APIs
+are not exposed to users.
 
-FIXME:\
-Moreover, here are a few facts that might be worth having in mind when
-restoring a Scheduled or a Manual backup:
+Here are a few facts that might be worth having in mind when restoring a
+Scheduled or a Manual backup:
 - OpenSearch® recreates the indexes as they existed at the time of the backup,
   which means restored indexes overwrite their current state (content,
-  mappings) with the state recorded in the backup
+  mappings) with the state recorded in the backup.
 - If an index already exists and is open, and if its internal UUID does not
-  match the backup's index UUID, the restore process fails with an error
+  match the backup's index UUID, the restore process fails with an error.
 - In the specific case where the existing index matches the backup (same UUID),
-  the data and mappings are replaced without errors
+  the data and mappings are replaced without errors.
 
-These corresponds to OpenSearch® normal behaviour and are not specifics of
-Scalingo for OpenSearch®.
+These behaviors are expected and correspond to OpenSearch® nominal operations.
+They are not specifics of Scalingo for OpenSearch®.
 
 
 ## Restoring a Scheduled Backup
@@ -70,9 +70,12 @@ Restoring a dump can only be done from your workstation.
 
 1. Make sure you have successfully installed
    [elasticsearch-dump][elasticsearch-dump] on your workstation
+
 2. [Create a dump][backup-dump] or make sure you have one at your disposal
+
 3. [Open a DB tunnel][accessing-db-tunnel] so you can access your database from
    your workstation
+
 4. Create a local variable to store the local [connection
    URI][connecting-understand-uri]:
    ```bash
@@ -80,6 +83,7 @@ Restoring a dump can only be done from your workstation.
    ```
    With `user` and `password` from your original connection URI and
    `port` depending on what you did (default is `10000`)
+
 5. Restore the database from the dump, using the `elasticdump` command:
    ```bash
    # Restoring analyzers:
@@ -119,6 +123,7 @@ Restoring a dump can only be done from your workstation.
    ```
    With `index` being the name of the index to restore and `source_db_uri`
    being the connection URI of the other accessible OpenSearch® database.
+
 6. The elasticsearch-dump project also provides a convenient tool called
    `multielasticdump` to restore multiple indexes at once:
    ```bash
