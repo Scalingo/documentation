@@ -364,7 +364,7 @@ PUT movies
 
 ## Reindexing Data When Needed
 
-In OpenSearch, reindexing data consists in copying data from one index to
+In OpenSearch®, reindexing data consists in copying data from one index to
 another. Reindexing can really help improve performance by creating a new,
 compact, optimized and consistent index. It's necessary in several situations
 such as:
@@ -384,6 +384,17 @@ consider steps to capture or reprocess the new data afterward.
 
 Finally, keep in mind that [aliases](#using-aliases) can help seamlessly switch
 from an old to a new index without requiring a client update.
+
+Here is an example query asking OpenSearch® to reindex an index called
+`old_index` into a new one called `new_index`:
+
+```json
+POST _reindex
+{
+    "source": { "index": "old_index" },
+    "dest": { "index": "new_index" }
+}
+```
 
 
 [opensearch-rollover-api]: https://docs.opensearch.org/docs/latest/api-reference/index-apis/rollover/
