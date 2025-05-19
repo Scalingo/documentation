@@ -3,7 +3,7 @@ title: Databases Backup Policies
 nav: Backup Policies
 modified_at: 2024-12-04 12:00:00
 tags: databases backup policy policies explanation
-index: 2
+index: 30
 ---
 
 
