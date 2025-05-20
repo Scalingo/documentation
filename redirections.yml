@@ -630,6 +630,9 @@
   - old: "/platform/app/autoscaler"
     new: "/platform/app/scaling/scalingo-autoscaler"
 
+  - old: "/databases/overview"
+    new: "/databases/about/overview"
+
   - old: "/databases/backup-policies"
     new: "/databases/about/backup-policies"
 
