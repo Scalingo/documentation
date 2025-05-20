@@ -1,7 +1,7 @@
 ---
 title: Changing Plan
 nav: Changing Plan
-modified_at: 2025-04-25 12:00:00
+modified_at: 2025-05-20 12:00:00
 tags: databases opensearch addon
 index: 3
 ---
@@ -10,13 +10,13 @@ At Scalingo, all databases addons plans are identified using a name made of two
 or three parts separated by a dash (-). This name is made of:
 
 1. a database ***type*** : `opensearch`
-2. a ***class*** : either `sandbox`, `starter` or `business` (learn more about
-   [classes][db-plans])
+2. a ***class*** : either `starter` or `business` (learn more about
+   [classes][db-plans]).
 3. a ***size*** : specifying the amount of RAM available with the plan, in MB
    (only for starter and business classes).
 
 {% note %}
-There is no Sandbox class for the Scalingo for OpenSearch® addon.
+There is no `sandbox` class for the Scalingo for OpenSearch® addon.
 {% endnote %}
 
 You can change your Scalingo for OpenSearch® addon plan whenever you want. The
