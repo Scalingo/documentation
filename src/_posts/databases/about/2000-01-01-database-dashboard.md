@@ -37,4 +37,4 @@ You can access the database dashboard via the application dashboard:
 
 
 [dashboard]: https://dashboard.scalingo.com/apps
-[maintenance-windows]: {% post_url databases/2000-01-01-maintenance-windows %}
+[maintenance-windows]: {% post_url databases/about/2000-01-01-maintenance-windows %}

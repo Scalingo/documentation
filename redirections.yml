@@ -633,6 +633,9 @@
   - old: "/databases/backup-policies"
     new: "/databases/about/backup-policies"
 
+  - old: "/databases/maintenance-windows"
+    new: "/databases/about/maintenance-windows"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
