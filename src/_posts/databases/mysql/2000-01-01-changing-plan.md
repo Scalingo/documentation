@@ -11,7 +11,7 @@ or three parts separated by a dash (-). This name is made of:
 
 1. a database ***type*** : `mysql`
 2. a ***class*** : either `sandbox`, `starter` or `business` (learn more about
-   [classes]({% post_url databases/2000-01-01-overview %}#database-plans))
+   [classes]({% post_url databases/about/2000-01-01-overview %}#database-plans))
 3. a ***size*** : specifying the amount of RAM available with the plan, in MB
    (only for starter and business classes).
 
