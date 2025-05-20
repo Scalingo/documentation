@@ -25,6 +25,7 @@ Scheduled or a Manual backup:
 - OpenSearch® recreates the indexes as they existed at the time of the backup,
   which means restored indexes overwrite their current state (content,
   mappings) with the state recorded in the backup.
+- Indexes created after the backup are kept untouched by the restore process.
 - If an index already exists and is open, and if its internal UUID does not
   match the backup's index UUID, the restore process fails with an error.
 - In the specific case where the existing index matches the backup (same UUID),
