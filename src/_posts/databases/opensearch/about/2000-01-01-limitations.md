@@ -1,7 +1,7 @@
 ---
 title: Limitations
 nav: Limitations
-modified_at: 2025-05-05 12:00:00
+modified_at: 2025-05-20 12:00:00
 tags: database opensearch addon
 index: 4
 ---
@@ -44,8 +44,7 @@ all users.
   - [Snapshot APIs][opensearch-api-snapshot]
 
 
-
-[opensearch-api-security]: https://docs.opensearch.org/docs/latest/api-reference/security-apis/
-[opensearch-api-snapshot]: https://docs.opensearch.org/docs/latest/api-reference/snapshots/index/
+[opensearch-api-security]: https://docs.opensearch.org/docs/2.19/api-reference/security-apis/
+[opensearch-api-snapshot]: https://docs.opensearch.org/docs/2.19/api-reference/snapshots/index/
 
 [db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
