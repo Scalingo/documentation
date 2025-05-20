@@ -31,6 +31,8 @@ all users.
 
 ## Affecting Features
 
+- OpenSearch® plugins can't be added, modified, nor removed.
+
 - Because the `opensearch-security` plugin is not exposed, some features and
   plugins may behave differently than expected. Please refer to the official
   documentation for further help.
