@@ -8,7 +8,7 @@ index: 5
 
 
 {% note %}
-Please carefully read our [backup policies]({% post_url databases/2000-01-01-backup-policies %})
+Please carefully read our [backup policies]({% post_url databases/about/2000-01-01-backup-policies %})
 for details about backups retention and important considerations regarding
 backups and restorations.
 {% endnote %}
@@ -208,7 +208,7 @@ documentation][elasticsearch-dump].
 
 [cli]: {% post_url platform/cli/2000-01-01-start %}
 [db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
-[db-backup-policies]: {% post_url databases/2000-01-01-backup-policies %}
+[db-backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
 [accessing-one-off]: {% post_url databases/opensearch/getting-started/2000-01-01-accessing %}#using-a-one-off
 [accessing-db-tunnel]: {% post_url databases/opensearch/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
 [connecting-understand-uri]: {% post_url databases/opensearch/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri

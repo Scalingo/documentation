@@ -98,7 +98,7 @@ Finally, upgrade to the latest version of the 15.x branch.
    the most efficient execution plans for queries.
 6. The application is restarted to ensure proper connections. [This does not
    cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
-7. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
+7. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
    available again.
 
 Since we have to completely stop the instance to upgrade it, **a downtime is
@@ -119,7 +119,7 @@ our experience tends to show that it often takes less time.
    the most efficient execution plans for queries.
 5. The application is restarted to ensure proper connections. [This does not
    cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
-6. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
+6. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
    available again.
 7. The standby instance is rebuilt from scratch, based on the primary instance
    data. This means the database lives in a degraded state until the end of the
