@@ -8,7 +8,7 @@ index: 6
 
 
 {% note %}
-Please carefully read our [backup policies]({% post_url databases/2000-01-01-backup-policies %})
+Please carefully read our [backup policies]({% post_url databases/about/2000-01-01-backup-policies %})
 for details about backups retention and important considerations regarding
 backups and restorations.
 {% endnote %}
