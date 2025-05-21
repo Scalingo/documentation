@@ -63,11 +63,9 @@ the failover mechanism included with the Business plan.
 
 FIXME: not OK\
 When changing for a lower class, the platform first powers the follower
-instance off. When necessary, the remaining primary instance is rebooted with
-the targeted new size. This can lead to a small service interruption during
-which the database is not available. This shouldn't exceed a few seconds
-though.
-
+instances off. The remaining primary instance is then rebooted.
+This leads to a small service interruption during which the database is
+not available. This shouldn't exceed a few minutes though.
 | From (class) | To (class) | To (size) | Downtime | Duration     |
 | ------------ | ---------- | --------- | -------- | ------------ |
 | Business     | Starter    | Same      | **Yes**   | 2-4 minutes  |
