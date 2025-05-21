@@ -45,7 +45,7 @@ though.
 
 | From (class) | To (class) | To (size) | Downtime | Duration     |
 | ------------ | ---------- | --------- | -------- | ------------ |
-| Starter      | Starter    | Any       | **Yes**  | 2-10 seconds |
+| Starter      | Starter    | Any       | **Yes**  | 2-4 minutes |
 
 ### From Starter to Business
 
