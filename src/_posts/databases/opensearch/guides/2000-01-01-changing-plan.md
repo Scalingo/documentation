@@ -50,8 +50,8 @@ though.
 ### From Starter to Business
 
 FIXME: not OK\
-When changing for a Business plan, the platform first starts a follower
-instance with the targeted size. If necessary, it then reboots the primary
+When changing for a Business plan, the platform first starts two
+instances with the targeted size. If necessary, it then reboots the primary
 instance with the targeted size. There should be no downtime at all, thanks to
 the failover mechanism included with the Business plan.
 
