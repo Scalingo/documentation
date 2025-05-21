@@ -1,7 +1,7 @@
 ---
 title: Managing Indexes
 nav: Managing Indexes
-modified_at: 2025-05-05 12:00:00
+modified_at: 2025-05-21 12:00:00
 tags: database addon opensearch
 index: 20
 ---
@@ -77,10 +77,12 @@ approximate number of primary shards = (source data + room to grow) × 1.1 / des
 Make sure that the result doesn't create unnecessarily small shards. That would
 be counter-productive!
 
+{% note %}
 The default configuration deployed with each Scalingo for OpenSearch® addon
 asks the database to divide each index into three primary shards and to create
 one replica of each shards, resulting in a theoric total of six shards being
 used.
+{% endnote %}
 
 ### Choosing the Number of Replicas
 
