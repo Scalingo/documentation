@@ -70,10 +70,9 @@ though.
 
 | From (class) | To (class) | To (size) | Downtime | Duration     |
 | ------------ | ---------- | --------- | -------- | ------------ |
-| Business     | Starter    | Same      | **No**   | Zero         |
-| Business     | Starter    | Larger    | **Yes**  | 2-10 seconds |
-| Business     | Starter    | Smaller   | **Yes**  | 2-10 seconds |
-
+| Business     | Starter    | Same      | **Yes**   | 2-4 minutes  |
+| Business     | Starter    | Larger    | **Yes**  | 2-4 minutes  |
+| Business     | Starter    | Smaller   | **Yes**  | 2-4 minutes  |
 ### From Business to Business
 
 FIXME: not OK\
