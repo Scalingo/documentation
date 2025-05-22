@@ -140,7 +140,7 @@ Restoring a dump can only be done from your workstation.
    restored and `types` being a comma-separated list of types to restore.
 
 
-[opensearch-api-snapshot]: https://docs.opensearch.org/docs/latest/api-reference/snapshots/index/
+[opensearch-api-snapshot]: https://docs.opensearch.org/docs/2.19/api-reference/snapshots/index/
 [elasticsearch-dump]: https://github.com/elasticsearch-dump/elasticsearch-dump
 
 [db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}

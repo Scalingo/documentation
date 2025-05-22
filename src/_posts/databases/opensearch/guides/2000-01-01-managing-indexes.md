@@ -399,4 +399,4 @@ POST _reindex
 ```
 
 
-[opensearch-rollover-api]: https://docs.opensearch.org/docs/latest/api-reference/index-apis/rollover/
+[opensearch-rollover-api]: https://docs.opensearch.org/docs/2.19/api-reference/index-apis/rollover/
