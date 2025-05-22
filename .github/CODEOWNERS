@@ -1,0 +1,11 @@
+# CODEOWNERS - Automatic assignment for files modified by Dependabot
+
+# Ruby (bundler)
+Gemfile.lock @Anouchka-M @annabelle-scalingo
+
+# JS (npm / yarn)
+package-lock.json @Anouchka-M @annabelle-scalingo
+yarn.lock @Anouchka-M @annabelle-scalingo
+
+# Github Actions
+.github/workflows/* @Anouchka-M @annabelle-scalingo
