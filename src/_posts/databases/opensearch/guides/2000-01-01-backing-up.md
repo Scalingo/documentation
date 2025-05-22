@@ -203,7 +203,7 @@ documentation][elasticsearch-dump].
    dump.
 
 
-[opensearch-api-snapshot]: https://docs.opensearch.org/docs/latest/api-reference/snapshots/index/
+[opensearch-api-snapshot]: https://docs.opensearch.org/docs/2.19/api-reference/snapshots/index/
 [elasticsearch-dump]: https://github.com/elasticsearch-dump/elasticsearch-dump
 
 [cli]: {% post_url platform/cli/2000-01-01-start %}
