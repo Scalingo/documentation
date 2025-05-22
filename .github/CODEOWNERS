@@ -3,7 +3,7 @@
 # Ruby (bundler)
 Gemfile.lock @Anouchka-M @annabelle-scalingo
 
-# JS (npm/yarn)
+# JS (npm / yarn)
 package-lock.json @Anouchka-M @annabelle-scalingo
 yarn.lock @Anouchka-M @annabelle-scalingo
 
