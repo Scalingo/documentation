@@ -10,9 +10,6 @@ updates:
       interval: "monthly"
       time: "06:00"
       timezone: "Europe/Paris"
-    reviewers:
-      - "Anouchka-M"
-      - "annabelle-scalingo"
   - package-ecosystem: "npm"
     directory: "/"
     allow:
@@ -22,6 +19,3 @@ updates:
       interval: "monthly"
       time: "06:00"
       timezone: "Europe/Paris"
-    reviewers:
-      - "Anouchka-M"
-      - "annabelle-scalingo"
