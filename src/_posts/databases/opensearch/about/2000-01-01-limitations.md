@@ -1,7 +1,7 @@
 ---
 title: Limitations
 nav: Limitations
-modified_at: 2025-05-20 12:00:00
+modified_at: 2025-05-22 12:00:00
 tags: database opensearch addon
 index: 4
 ---
@@ -44,6 +44,20 @@ all users.
   OpenSearch® APIs. These APIs are **forbidden**:
   - [Security APIs][opensearch-api-security]
   - [Snapshot APIs][opensearch-api-snapshot]
+
+
+## Timeouts
+
+Scalingo for OpenSearch addons have, depending on the plan, one or two HAProxy
+instances as entry point. These HAProxy instances have a few timeouts
+configured which may impact your application, especially when reusing
+connections.
+
+| Context                                                  | Timeout   |
+| -------------------------------------------------------- | --------- |
+| Client is inactive                                       | 1 minute  |
+| Server is inactive                                       | 2 minutes |
+| Maximum allowed time to wait for a complete HTTP request | 5 seconds |
 
 
 [opensearch-api-security]: https://docs.opensearch.org/docs/2.19/api-reference/security-apis/
