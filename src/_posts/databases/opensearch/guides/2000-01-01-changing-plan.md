@@ -1,13 +1,13 @@
 ---
 title: Changing Plan
 nav: Changing Plan
-modified_at: 2025-05-20 12:00:00
+modified_at: 2025-05-26 12:00:00
 tags: databases opensearch addon
 index: 3
 ---
 
-At Scalingo, all databases addons plans are identified using a name made of two
-or three parts separated by a dash (-). This name is made of:
+At Scalingo, all databases addons plans are identified by a name made of two
+or three parts, each separated by a dash (-). This name is made of:
 
 1. a database ***type*** : `opensearch`
 2. a ***class*** : either `starter` or `business` (learn more about
@@ -37,51 +37,52 @@ handle all your data and fits your application workload.
 
 ### From Starter to Starter
 
-FIXME: check\
 When changing the size of a Starter plan, the platform reboots the existing
-instance with the new size. This leads to a small service interruption during
-which the database is not available. This shouldn't exceed a few seconds
-though.
+instance with the new size. This leads to a service interruption during which
+the database is not available. This shouldn't exceed a few minutes though.
 
-| From (class) | To (class) | To (size) | Downtime | Duration     |
-| ------------ | ---------- | --------- | -------- | ------------ |
+| From (class) | To (class) | To (size) | Downtime | Duration    |
+| ------------ | ---------- | --------- | -------- | ----------- |
 | Starter      | Starter    | Any       | **Yes**  | 2-4 minutes |
 
 ### From Starter to Business
 
-FIXME: not OK\
-When changing for a Business plan, the platform first starts two
-instances with the targeted size. If necessary, it then reboots the primary
-instance with the targeted size. There should be no downtime at all, thanks to
-the failover mechanism included with the Business plan.
+When changing for a Business plan, the platform first starts two new
+instances with the targeted size. If necessary, it then reboots the existing
+instance with the targeted size. OpenSearch® then does the necessary to
+distribute the data, in accordance with the indexes setup. There should be no
+downtime at all, thanks to the failover mechanism included with the Business
+plan.
 
-| From (class) | To (class) | To (size) | Downtime | Duration     |
-| ------------ | ---------- | --------- | -------- | ------------ |
-| Starter      | Business   | Any       | **No**   | Zero         |
+| From (class) | To (class) | To (size) | Downtime | Duration |
+| ------------ | ---------- | --------- | -------- | -------- |
+| Starter      | Business   | Any       | **No**   | Zero     |
 
 ### From Business to Starter
 
-FIXME: not OK\
-When changing for a lower class, the platform first powers the follower
-instances off. The remaining primary instance is then rebooted.
-This leads to a small service interruption during which the database is
+When changing for a lower class, the platform uses OpenSearch®'s API to exclude
+the non cluster-manager nodes from the cluster. OpenSearch® does the necessary
+to bring the data back to the only remaining node of the cluster. It the powers
+the follower the instances off. The remaining instance is then rebooted, which
+leads to a small service interruption during which the database is
 not available. This shouldn't exceed a few minutes though.
-| From (class) | To (class) | To (size) | Downtime | Duration     |
-| ------------ | ---------- | --------- | -------- | ------------ |
-| Business     | Starter    | Same      | **Yes**   | 2-4 minutes  |
-| Business     | Starter    | Larger    | **Yes**  | 2-4 minutes  |
-| Business     | Starter    | Smaller   | **Yes**  | 2-4 minutes  |
+
+| From (class) | To (class) | To (size) | Downtime | Duration    |
+| ------------ | ---------- | --------- | -------- | ----------- |
+| Business     | Starter    | Same      | **Yes**  | 2-4 minutes |
+| Business     | Starter    | Larger    | **Yes**  | 2-4 minutes |
+| Business     | Starter    | Smaller   | **Yes**  | 2-4 minutes |
+
 ### From Business to Business
 
-FIXME: not OK\
 When changing the size of a Business plan, the platform first reboots the
-primary instance with the targeted new size. It then reboots the follower
-instance with the targeted new size. There's no downtime during this
+cluster-manager node with the targeted new size. It then reboots the other
+nodes with the targeted new size. There's no downtime during this
 operation, thanks to the failover mechanism included in the Business plan.
 
-| From (class) | To (class) | To (size) | Downtime | Duration     |
-| ------------ | ---------- | --------- | -------- | ------------ |
-| Business     | Business   | Any       | **No**   | Zero         |
+| From (class) | To (class) | To (size) | Downtime | Duration |
+| ------------ | ---------- | --------- | -------- | -------- |
+| Business     | Business   | Any       | **No**   | Zero     |
 
 
 ## Using the Dashboard
@@ -151,8 +152,9 @@ operation, thanks to the failover mechanism included in the Business plan.
    In this example, we switch the `my-db` resource attached to the `my-app`
    application to a OpenSearch® Business 2048 addon.
 
+
 [dashboard]: https://dashboard.scalingo.com/apps
+
 [cli]: {% post_url platform/cli/2000-01-01-start %}
 [db-plans]: {% post_url databases/about/2000-01-01-overview %}#database-plans
 [db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
-
