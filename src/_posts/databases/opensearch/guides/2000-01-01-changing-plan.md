@@ -62,10 +62,10 @@ plan.
 
 When changing for a lower class, the platform uses OpenSearch®'s API to exclude
 the non cluster-manager nodes from the cluster. OpenSearch® does the necessary
-to bring the data back to the only remaining node of the cluster. It the powers
-the follower the instances off. The remaining instance is then rebooted, which
-leads to a small service interruption during which the database is
-not available. This shouldn't exceed a few minutes though.
+to bring the data back to the cluster-manager node. It then powers off the
+excluded nodes. The remaining node is then rebooted, which leads to a small
+service interruption during which the database is not available. This shouldn't
+exceed a few minutes though.
 
 | From (class) | To (class) | To (size) | Downtime | Duration    |
 | ------------ | ---------- | --------- | -------- | ----------- |
