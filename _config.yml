@@ -127,6 +127,9 @@ databases:
   - url: "/databases/mysql/overview"
     name: "Scalingo for MySQL®"
     logo: mysql
+  - url: "/databases/opensearch/about/overview"
+    name: "Scalingo for OpenSearch®"
+    logo: opensearch
   - url: "/databases/mongodb/start"
     name: "Scalingo for MongoDB®"
     logo: mongodb
@@ -136,9 +139,6 @@ databases:
   - url: "/databases/influxdb/start"
     name: "Scalingo for InfluxDB®"
     logo: influxdb
-  - url: "/databases/elasticsearch/start"
-    name: "Scalingo for Elasticsearch®"
-    logo: elasticsearch
 
 samples:
   - url: ruby-rails

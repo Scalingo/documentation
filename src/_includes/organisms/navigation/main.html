@@ -12,13 +12,14 @@
           {% if page.url contains item.url %}text-sc-blue-1{% endif %}
         ">
           <span class="text-sc-title-7 uppercase py-3 flex-grow">
-            {{item.title}}
+            {{ item.title }}
           </span>
           <div>{% icon chevron_right %}</div>
         </label>
         <hr class="border-sc-gray-2 opacity-5"/>
         <div class="hidden ml-3">
-          {% include organisms/navigation/children.html children=item.children %}
+          {% assign lvl=1 %}
+          {% include organisms/navigation/children.html children=item.children level=lvl %}
         </div>
       </li>
     {% endfor %}

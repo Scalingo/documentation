@@ -12,16 +12,16 @@ managed backups so you don't have to worry about them.
 
 With PostgreSQL® for Scalingo, we use two main mechanisms to create these
 automated backups:
-- [Point-in-Time Recovery]({% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
+- [Point-in-Time Recovery]({% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
   backups, and
-- [Scheduled]({% post_url databases/2000-01-01-backup-policies %}#scheduled-backups)
+- [Scheduled]({% post_url databases/about/2000-01-01-backup-policies %}#scheduled-backups)
   backups.
 
-[Manual backups]({% post_url databases/2000-01-01-backup-policies %}#manual-backups)
+[Manual backups]({% post_url databases/about/2000-01-01-backup-policies %}#manual-backups)
 are also available for these plans.
 
 {% note %}
-**Please carefully read our [backup policies]({% post_url databases/2000-01-01-backup-policies %})
+**Please carefully read our [backup policies]({% post_url databases/about/2000-01-01-backup-policies %})
 for details about backups retention and important considerations regarding
 backups.**
 {% endnote %}
