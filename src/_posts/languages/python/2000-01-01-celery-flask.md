@@ -20,7 +20,7 @@ $ . venv/bin/activate
 
 ## Application infrastructure
 
-Our goal is to create two applications communicating via Scalingo for Cachine, our Redis® OSS service, using the Celery platform:
+Our goal is to create two applications communicating via Scalingo for Caching, our Redis® OSS service, using the Celery platform:
 
 * The Celery app will provide a custom hello task.
 * The Flask app will provide a web server that will send a task to the Celery
