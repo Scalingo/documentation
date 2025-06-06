@@ -1,5 +1,5 @@
 ---
-modified_at: 2025-06-06 00:00:00
+modified_at: 2025-06-09 00:00:00
 title: 'Scalingo for Redis® is now Scalingo for Caching'
 ---
 
