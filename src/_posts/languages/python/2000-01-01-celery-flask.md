@@ -20,14 +20,13 @@ $ . venv/bin/activate
 
 ## Application infrastructure
 
-Our goal is to create two applications communicating via Redis® using the Celery
-platform:
+Our goal is to create two applications communicating via Scalingo for Caching, our Redis® OSS service, using the Celery platform:
 
 * The Celery app will provide a custom hello task.
 * The Flask app will provide a web server that will send a task to the Celery
 app and display the answer in a web page.
 
-The Redis® connection URL will be send using the `REDIS_URL` environment variable.
+The Redis® OSS connection URL will be send using the `REDIS_URL` environment variable.
 
 ## Create a Celery server
 
@@ -185,7 +184,7 @@ $ git commit -m "Base Celery and flask application"
 $ scalingo create my-app
 ```
 
-## Add a Scalingo for Redis® addon to your app
+## Add a Scalingo for Caching addon to your app
 
 ```bash
 $ scalingo --app my-app addons-add redis redis-sandbox

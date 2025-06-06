@@ -19,9 +19,7 @@ deployment, the sessions would be lost as new containers start with a fresh file
 
 ## Solutions
 
-One of the solution could be to store the session in a cookie (with encryption to prevent the user
-from modifying it). An other one is to store the session in a database. [Scalingo for Redis®]({% post_url
-databases/redis/2000-01-01-start %}) is especially suitable in such case.
+One of the solution could be to store the session in a cookie (with encryption to prevent the user from modifying it). An other one is to store the session in a database. [Scalingo for Caching]({% post_url databases/redis/2000-01-01-start %}) is especially suitable in such case.
 
 {% note %}
 Some PHP framework ease the process of using session in a database. It might be
@@ -62,4 +60,4 @@ Customize the `session.save_path` value with the content of the `SCALINGO_REDIS_
 variable of your application. More information is available on the [official
 repository](https://github.com/phpredis/phpredis/#php-session-handler).
 
-Finally, redeploy your application. It is now handling PHP session through the Redis® database!
+Finally, redeploy your application. It is now handling PHP session through the Redis® OSS database!

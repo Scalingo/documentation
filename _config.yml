@@ -134,8 +134,8 @@ databases:
     name: "Scalingo for MongoDB®"
     logo: mongodb
   - url: "/databases/redis/start"
-    name: "Scalingo for Redis®"
-    logo: redis
+    name: "Scalingo for Caching"
+    logo: scalingo-for-caching
   - url: "/databases/influxdb/start"
     name: "Scalingo for InfluxDB®"
     logo: influxdb
