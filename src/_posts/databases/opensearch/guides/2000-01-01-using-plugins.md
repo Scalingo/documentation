@@ -1,7 +1,7 @@
 ---
 title: Using OpenSearch® Plugins
 nav: Using Plugins
-modified_at: 2025-06-06 12:00:00
+modified_at: 2025-06-09 12:00:00
 tags: database opensearch addon plugins
 index: 30
 ---
@@ -51,7 +51,7 @@ box.
 | [`opensearch-skills`][skills]                           | Provides tools for ml-common's agent framework                                       |
 | [`opensearch-sql`][sql]                                 | Allows users to write queries using SQL rather than the OpenSearch DSL               |
 | [`opensearch-system-templates`][system-templates]       | System templates for cluster configuration                                           |
-| [`query-insights`][queryinsights]                       | Provides comprehensive insights into search query execution                          |
+| [`query-insights`][query-insights]                      | Provides comprehensive insights into search query execution                          |
 
 ### Additional Plugins
 
