@@ -5,11 +5,7 @@ modified_at: 2021-09-24 00:00:00
 tags: ruby rails databases redis cache
 ---
 
-The Redis® database is often use for cache purpose with Rails deployments. Hence you might want to clear 
-its content after
-each deployment. One solution could be to empty it in a [postdeploy hook]({% post_url
-platform/app/2000-01-01-postdeploy-hook %}). Another solution can be to prefix the cache key with
-the build deployment ID provided by Scalingo.
+Redis® OSS database is often use for cache purpose with Rails deployments. Hence you might want to clear its content after each deployment. One solution could be to empty it in a [postdeploy hook]({% post_url platform/app/2000-01-01-postdeploy-hook %}). Another solution can be to prefix the cache key with the build deployment ID provided by Scalingo.
 
 The deployment ID is available in the `SOURCE_VERSION` during the build phase and
 `CONTAINER_VERSION` at runtime. More information about these [variables]({% post_url
@@ -23,7 +19,7 @@ config.cache_store = :redis_cache_store, {
 }
 ```
 
-By default, Scalingo for Redis® databases have a [timeout]({% post_url databases/redis/2000-01-01-start %}#idle-connections-timeout).
+By default, Scalingo for Caching databases have a [timeout]({% post_url databases/redis/2000-01-01-start %}#idle-connections-timeout).
 
 If you don't want to depend on the timeout of the server, you may want to
 change the client connection timeout. You can do it like this:
@@ -48,4 +44,4 @@ config.cache_store = :redis_cache_store, {
 }
 ```
 
-This simple trick will automatically invalidate the cache after each successful deployment. You'd certainly also want to enable Redis® *cache mode* on its Dashboard on Scalingo to avoid filling your Redis® database completely and tell Redis® to drop old and unused keys.
+This simple trick will automatically invalidate the cache after each successful deployment. You'd certainly also want to enable Redis® OSS *cache mode* on its Dashboard on Scalingo to avoid filling your Redis® OSS database completely and tell Redis® OSS to drop old and unused keys.
