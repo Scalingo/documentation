@@ -76,6 +76,5 @@ our [CLI tool](#using-the-command-line) or via our
 [dashboard]: https://dashboard.scalingo.com/apps
 [cli]: {% post_url platform/cli/2000-01-01-start %}
 [monitoring]: {% post_url databases/opensearch/guides/2000-01-01-monitoring %}
-[upgrading]: {% post_url databases/opensearch/guides/2000-01-01-upgrading %}
 [managing-users]: {% post_url databases/opensearch/guides/2000-01-01-managing-users %}
 [backing-up]: {% post_url databases/opensearch/guides/2000-01-01-backing-up %}
