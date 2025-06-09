@@ -30,28 +30,28 @@ box.
 
 ### Native Plugins
 
-| Plugin Name                                               | Description                                                                          |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [`opensearch-alerting`][alerting]                         | Triggers near real-time alerts based on thresholds, conditions or anomalies          |
-| [`opensearch-anomaly-detection`][anomaly-detection]       | Detects unusual patterns across logs or metrics using RCF machine learning algorithm |
-| [`opensearch-asynchronous-search`][asynchrononous-search] | Runs search requests in background                                                   |
-| [`opensearch-custom-codecs`][custom-codecs]               | Determines how the index's stored fields are compressed and stored on disk           |
-| [`opensearch-flow-framework`][flow-framework]             | Aims at streamlining the OpenSearch app development experience through a drag-and-drop designer |
-| [`opensearch-geospatial`][geospatial]                     | Searches fields that contain points and shapes on a map or coordinate plane          |
-| [`opensearch-index-management`][index-management]         | Automates log index lifecycle operations                                             |
-| [`opensearch-job-scheduler`][job-scheduler]               | Builds schedules for common tasks performed on your addon                            |
-| [`opensearch-knn`][knn]                                   | Creates vector indexes                                                               |
-| [`opensearch-ltr`][ltr]                                   | Uses machine learning and behavioral data to fine-tune the relevance of documents    |
-| [`opensearch-ml`][ml]                                     | Support for machine learning                                                         |
-| [`opensearch-neural-search`][neural-search]               | Transforms text into vectors and facilitates vector search                           |
-| [`opensearch-notifications`][notifications]               | Provides a central location for all of your notifications from OpenSearch plugins    |
-| [`opensearch-notifications-core`][notifications]          | Core plugin powering the notifications system                                        |
-| [`opensearch-observability`][observability]               | Core plugin powering all observability-related plugins                               |
-| [`opensearch-reports-scheduler`][reports-scheduler]       | Allows OpenSearch Dashboards to create PNG, PDF, and CSV reports                     |
-| [`opensearch-skills`][skills]                             | Provides tools for ml-common's agent framework                                       |
-| [`opensearch-sql`][sql]                                   | Allows users to write queries using SQL rather than the OpenSearch DSL               |
-| [`opensearch-system-templates`][system-templates]         | System templates for cluster configuration                                           |
-| [`query-insights`][insights]                              | Provides comprehensive insights into search query execution                          |
+| Plugin Name                                             | Description                                                                          |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [`opensearch-alerting`][alerting]                       | Triggers near real-time alerts based on thresholds, conditions or anomalies          |
+| [`opensearch-anomaly-detection`][anomaly-detection]     | Detects unusual patterns across logs or metrics using RCF machine learning algorithm |
+| [`opensearch-asynchronous-search`][asynchronous-search] | Runs search requests in background                                                   |
+| [`opensearch-custom-codecs`][custom-codecs]             | Determines how the index's stored fields are compressed and stored on disk           |
+| [`opensearch-flow-framework`][flow-framework]           | Aims at streamlining the OpenSearch app development experience through a drag-and-drop designer |
+| [`opensearch-geospatial`][geospatial]                   | Searches fields that contain points and shapes on a map or coordinate plane          |
+| [`opensearch-index-management`][index-management]       | Automates log index lifecycle operations                                             |
+| [`opensearch-job-scheduler`][job-scheduler]             | Builds schedules for common tasks performed on your addon                            |
+| [`opensearch-knn`][knn]                                 | Creates vector indexes                                                               |
+| [`opensearch-ltr`][ltr]                                 | Uses machine learning and behavioral data to fine-tune the relevance of documents    |
+| [`opensearch-ml`][ml]                                   | Support for machine learning                                                         |
+| [`opensearch-neural-search`][neural-search]             | Transforms text into vectors and facilitates vector search                           |
+| [`opensearch-notifications`][notifications]             | Provides a central location for all of your notifications from OpenSearch plugins    |
+| [`opensearch-notifications-core`][notifications]        | Core plugin powering the notifications system                                        |
+| [`opensearch-observability`][observability]             | Core plugin powering all observability-related plugins                               |
+| [`opensearch-reports-scheduler`][reports-scheduler]     | Allows OpenSearch Dashboards to create PNG, PDF, and CSV reports                     |
+| [`opensearch-skills`][skills]                           | Provides tools for ml-common's agent framework                                       |
+| [`opensearch-sql`][sql]                                 | Allows users to write queries using SQL rather than the OpenSearch DSL               |
+| [`opensearch-system-templates`][system-templates]       | System templates for cluster configuration                                           |
+| [`query-insights`][queryinsights]                       | Provides comprehensive insights into search query execution                          |
 
 ### Additional Plugins
 
