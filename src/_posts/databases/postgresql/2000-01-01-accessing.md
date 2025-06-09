@@ -145,7 +145,7 @@ allowing remote secured access to your PostgreSQL® addon.
 5. To specify the port number to bind to (default is `10000`), use the `--port`
    option:
    ```bash
-   scalingo --app my-app db-tunnel SCALINGO_POSTGRESQL_URL --port 12345
+   scalingo --app my-app db-tunnel --port 12345 SCALINGO_POSTGRESQL_URL
    ```
 6. To close the tunnel, use the keyboard shortcut `CTRL`+`C`:
    ```text
