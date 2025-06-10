@@ -639,6 +639,51 @@
   - old: "/databases/maintenance-windows"
     new: "/databases/about/maintenance-windows"
 
+  - old: "/databases/postgresql/overview"
+    new: "/databases/postgresql/about/overview"
+
+  - old: "/databases/postgresql/getting-started"
+    new: "/databases/postgresql/getting-started/provisioning"
+
+  - old: "/databases/postgresql/accessing"
+    new: "/databases/postgresql/guides/accessing"
+
+  - old: "/databases/postgresql/connecting"
+    new: "/databases/postgresql/guides/connecting"
+
+  - old: "/databases/postgresql/monitoring"
+    new: "/databases/postgresql/guides/monitoring"
+
+  - old: "/databases/postgresql/changing-plan"
+    new: "/databases/postgresql/guides/changing-plan"
+
+  - old: "/databases/postgresql/upgrading"
+    new: "/databases/postgresql/guides/upgrading"
+
+  - old: "/databases/postgresql/backing-up"
+    new: "/databases/postgresql/guides/backing-up"
+
+  - old: "/databases/postgresql/restoring"
+    new: "/databases/postgresql/guides/restoring"
+
+  - old: "/databases/postgresql/managing-users"
+    new: "/databases/postgresql/guides/managing-users"
+
+  - old: "/databases/postgresql/managing-extensions"
+    new: "/databases/postgresql/guides/managing-extensions"
+
+  - old: "/databases/postgresql/postgis"
+    new: "/databases/postgresql/guides/postgis"
+
+  - old: "/databases/postgresql/timescaledb"
+    new: "/databases/postgresql/guides/timescaledb"
+
+  - old: "/databases/postgresql/pgvector"
+    new: "/databases/postgresql/guides/pgvector"
+
+  - old: "/databases/postgresql/postgresql-anonymizer"
+    new: "/databases/postgresql/guides/postgresql-anonymizer"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
