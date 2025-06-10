@@ -3,7 +3,7 @@ title: Monitoring and Auditing Your Scalingo for PostgreSQL® Addon
 nav: Monitoring and Auditing
 modified_at: 2024-12-13 00:00:00
 tags: databases postgresql addon
-index: 7
+index: 2
 ---
 
 
@@ -13,7 +13,7 @@ monitoring and auditing of your database. These tools give access to the
 and to [running queries figures](#watching-running-queries). [Query Statistics](#exploring-query-statistics)
 can also be enabled if needed.
 
-All these tools are available from the [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard).
+All these tools are available from the [database dashboard][database-dashboard].
 
 
 ## Inspecting Database Logs
@@ -31,7 +31,7 @@ work (see below).
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Logs** tab
 
 The default view allows to consult the latest hot logs in real-time. The
@@ -40,7 +40,7 @@ cold logs. These have to be manually unarchived to be processed.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Run the following command:
    - To access the hot logs of this addon:
    ```bash
@@ -64,7 +64,7 @@ The provided metrics include:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Metrics** tab
 
 {% note %}
@@ -82,15 +82,15 @@ stuck ones.
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Running Queries** tab
 
 ### Using the Command Line
 
 PostgreSQL® for Scalingo gives direct access to PostgreSQL®'s [*cumulative
-statistics system*](https://www.postgresql.org/docs/current/monitoring-stats.html),
+statistics system*][pg-stats-monitoring],
 which collects data about the database activity. Concretely, it exposes several
-views that can be queried from an [Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#using-the-interactive-remote-console).
+views that can be queried from an [Interactive Remote Console][irc].
 
 Amongst the views available, these might be of particular interest when
 monitoring the current state of the database:
@@ -105,7 +105,7 @@ monitoring the current state of the database:
   process, including current progress.
 - `pg_stat_user_tables` shows statistics about accesses to each table.
 
-For more information, please refer to [the officiel documentation](https://www.postgresql.org/docs/current/monitoring-stats.html).
+For more information, please refer to [the officiel documentation][pg-stats-monitoring].
 
 
 ## Exploring Query Statistics
@@ -118,7 +118,7 @@ resources.
 Query statistics are built by the `pg_stat_statements` extension. Once
 activated, this extension provides a `pg_stat_statements` view that can be
 queried as you wish. Detailed information about this view can be found [in the
-extension official documentation](https://www.postgresql.org/docs/current/pgstatstatements.html).
+extension official documentation][pg-stats-statements].
 
 ### Enabling Query Statistics
 
@@ -128,13 +128,13 @@ to be activated manually.
 
 #### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Query Statistics** tab
 3. Click the **Enable** button
 
 #### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#using-the-interactive-remote-console)
+1. Access your database using the [Interactive Remote Console][irc]
 2. From the PostgreSQL® console, run the following command:
    ```sql
    CREATE extension pg_stat_statements;
@@ -151,12 +151,22 @@ to be activated manually.
 
 #### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Query Statistics** tab
 
 #### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#using-the-interactive-remote-console)
+1. Access your database using the [Interactive Remote Console][irc]
 2. From the PostgreSQL® console, query the `pg_stat_statements` as you wish.\
-   Our [Troubleshooting]({% post_url databases/postgresql/2000-01-01-troubleshooting %}#identifying-performances-issues)
+   Our [Troubleshooting][troubleshooting]
    page gives some examples.
+
+
+[pg-stats-monitoring]: https://www.postgresql.org/docs/current/monitoring-stats.html
+[pg-stats-statements]: https://www.postgresql.org/docs/current/pgstatements.html
+
+[cli]: {% post_url platform/cli/2000-01-01-start %}
+
+[irc]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
+[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[troubleshooting]: {% post_url databases/postgresql/2000-01-01-troubleshooting %}#identifying-performances-issues

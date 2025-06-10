@@ -3,7 +3,7 @@ title: Backing Up Your Scalingo for PostgreSQL® Addon
 nav: Backing Up
 modified_at: 2025-02-17 12:00:00
 tags: databases postgresql addon how-to
-index: 10
+index: 5
 ---
 
 
@@ -12,18 +12,14 @@ managed backups so you don't have to worry about them.
 
 With PostgreSQL® for Scalingo, we use two main mechanisms to create these
 automated backups:
-- [Point-in-Time Recovery]({% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
-  backups, and
-- [Scheduled]({% post_url databases/about/2000-01-01-backup-policies %}#scheduled-backups)
-  backups.
+- [Point-in-Time Recovery][backup-policies-pitr] backups, and
+- [Scheduled][backup-policies-scheduled][backup-policies-scheduled] backups.
 
-[Manual backups]({% post_url databases/about/2000-01-01-backup-policies %}#manual-backups)
-are also available for these plans.
+[Manual backups][backup-policies-manual] are also available for these plans.
 
 {% note %}
-**Please carefully read our [backup policies]({% post_url databases/about/2000-01-01-backup-policies %})
-for details about backups retention and important considerations regarding
-backups.**
+**Please carefully read our [backup policies][backup-policies] for details
+about backups retention and important considerations regarding backups.**
 {% endnote %}
 
 
@@ -56,7 +52,7 @@ the workload on our infrastructure.
 
 #### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Backups** tab
 3. Locate the **Backup schedule** block
 4. Click the **Schedule** button
@@ -66,7 +62,7 @@ the workload on our infrastructure.
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, configure the time of backup:
    - By setting an hour:
      ```bash
@@ -90,7 +86,7 @@ the workload on our infrastructure.
 
 #### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Backups** tab
 3. Locate the **Backups** block
 4. Locate the Scheduled backup you are interested in
@@ -144,14 +140,14 @@ the workload on our infrastructure.
 
 #### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Backups** tab
 3. Locate the **Backups** block
 4. Click the **Trigger manual backup** button
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Ask the platform to backup the database:
    ```bash
    scalingo --app my-app --addon postgresql backups-create
@@ -182,8 +178,8 @@ This method has two main advantages:
 - You won't have to tweak your connection URI
 
 1. Follow the procedure to [access your PostgreSQL® database from a one-off
-   container]({% post_url databases/postgresql/2000-01-01-accessing %}#using-a-one-off)
-2. Make sure to [understand the connection URI]({% post_url databases/postgresql/2000-01-01-connecting %}#understanding-the-connection-uri)
+   container][accessing-one-off]
+2. Make sure to [understand the connection URI][connecting-uri]
 3. Dump the database:
    ```bash
    pg_dump --clean --if-exists --format c --dbname "${SCALINGO_POSTGRESQL_URL}" --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
@@ -197,9 +193,9 @@ somewhere).
 
 ### From Your Workstation
 
-1. [Open a DB tunnel]({% post_url databases/postgresql/2000-01-01-accessing %}#using-our-command-line-tool)
+1. [Open a DB tunnel][accessing-cli]
    so you can access your database from your workstation
-2. Create a local variable to store the [connection URI]({% post_url databases/postgresql/2000-01-01-connecting %}#understanding-the-connection-uri):
+2. Create a local variable to store the [connection URI][connecting-uri]:
    ```bash
    export SCALINGO_DB_URL="postgresql://<user>:<password>@127.0.0.1:<port>/<dbname>"
    ```
@@ -209,3 +205,16 @@ somewhere).
    ```bash
    pg_dump --clean --if-exists --format c --dbname "${SCALINGO_DB_URL}" --no-owner --no-privileges --no-comments --exclude-schema 'information_schema' --exclude-schema '^pg_*' --file dump.pgsql
    ```
+
+
+[cli]: {% post_url platform/cli/2000-01-01-start %}
+
+[backup-policies]: {% post_url databases/2000-01-01-backup-policies %}
+[backup-policies-manual]: {% post_url databases/2000-01-01-backup-policies %}#manual-backups
+[backup-policies-pitr]: {% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups
+[backup-policies-scheduled]: {% post_url databases/2000-01-01-backup-policies %}#scheduled-backups
+
+[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[accessing-one-off]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-a-one-off
+[accessing-cli]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
+[connecting-uri]: {% post_url databases/postgresql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri

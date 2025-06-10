@@ -3,7 +3,7 @@ title: TimescaleDB®
 nav: TimescaleDB®
 modified_at: 2024-03-26 12:00:00
 tags: databases postgresql timescaledb timeseries extensions
-index: 13
+index: 30
 ---
 
 
@@ -11,7 +11,8 @@ TimescaleDB® is an open-source extension for PostgreSQL®. It is designed to ma
 scalable for time series data.
 
 This extension adds several features and functions. You can find more
-information on the [official documentation](https://docs.timescale.com/getting-started/latest/).
+information on the [official documentation][official_doc].
+
 
 ## TimescaleDB® at Scalingo
 
@@ -39,8 +40,8 @@ getting started.
 ## Enabling TimescaleDB®
 
 To enable TimescaleDB®:
-1. [Provision a new PostgreSQL® database]({% post_url databases/postgresql/2000-01-01-getting-started %})
-2. [Enable the `timescaledb` extension]({% post_url databases/postgresql/2000-01-01-managing-extensions %}#enabling-an-extension)
+1. [Provision a new PostgreSQL® database][provisioning]
+2. [Enable the `timescaledb` extension][enabling-extension]
 
 
 ## Downsampling
@@ -53,7 +54,7 @@ dataset has a much lower size, but still keeps its accuracy. This process
 allows for easier analysis, storage, or computation.
 
 To better understang the concept and benefits, we provide an example below.
-This example is based on [TimescaleDB® official documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/user-defined-actions/example-downsample-and-compress/#downsample-and-compress).
+This example is based on [TimescaleDB® official documentation][official_doc-downsampling].
 
 The data is stored in a table called `conditions` that stores raw data of
 `temperature` and `humidity` values.
@@ -77,8 +78,8 @@ $ select * from conditions;
 
 ### Creating the Downsampling Procedure
 
-1. From the command line, [open an Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#using-the-interactive-remote-console)
-   to access your database
+1. From the command line, open an [Interactive Remote Console][irc] to access
+   your database
 2. From the database command line, run the following commands to create a
    procedure which aims at downsampling the `conditions` table:
    ```sql
@@ -143,9 +144,8 @@ $ select * from conditions;
    This script invokes [the procedure `downsample_conditions`](#creating-the-downsampling-procedure)
    and applies it for data older than three weeks and on a period of one hour.
 2. Schedule the execution of the SQL script by using the [Scalingo
-   scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}).
-   Your `cron.json` file at the root of your application’s source code should
-   look like this:
+   scheduler][scalingo-scheduler]. Your `cron.json` file at the root of your
+   application’s source code should look like this:
    ```json
    {
      "jobs": [
@@ -175,8 +175,8 @@ query.
 
 ### Creating the Data Retention Policy
 
-1. From the command line, [open an Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#using-the-interactive-remote-console)
-   to access your database
+1. From the command line, open an [Interactive Remote Console][irc] to access
+   your database
 2. From the database command line, run the following commands to create a
    procedure which aims at removing data older than `drop_after`:
    ```sql
@@ -215,9 +215,8 @@ query.
    This script invokes [the procedure `generic_retention`](#creating-the-data-retention-policy)
    to remove data older than 12 months.
 2. Schedule the execution of the SQL script by using the [Scalingo
-   scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}).
-   Your `cron.json` file at the root of your application’s source code should
-   look like this:
+   scheduler][scalingo-scheduler]. Your `cron.json` file at the root of your
+   application’s source code should look like this:
    ```json
    {
      "jobs": [
@@ -239,9 +238,9 @@ The backup restoration process may put the database in an undesirable state.
 
 ### Dumping Your TimescaleDB®
 
-[The procedure to dump data for PostgreSQL®]({% post_url databases/postgresql/2000-01-01-backing-up %}#dumping-the-database)
-is applicable. Yet, **you won't be able to restore** this dump on a
-TimescaleDB® instance hosted on Scalingo.
+[The procedure to dump data for PostgreSQL®][dumping] is applicable. Yet,
+**you won't be able to restore** this dump on a TimescaleDB® instance hosted on
+Scalingo.
 
 For more details, please see [Restoring a TimescaleDB® Dump](#restoring-a-timescale-dump).
 
@@ -251,7 +250,7 @@ hypertables.
 
 ### Restoring a TimescaleDB® Dump
 
-As explained in [TimescaleDB® official documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/#restoring-an-entire-database-from-backup),
+As explained in [TimescaleDB® official documentation][official_doc-restoring],
 a specific process must be followed to restore from a backup. This process
 includes the use of a temporary database and the execution of several commands
 using admin rights, such as:
@@ -263,19 +262,36 @@ SELECT timescaledb_post_restore();
 ```
 
 On Scalingo, default users do not have admin rights on their database.
-Consequently, **only [Scheduled backups]({% post_url databases/about/2000-01-01-backup-policies %}#scheduled-backups)
+Consequently, **only [Scheduled backups]({% post_url databases/2000-01-01-backup-policies %}#scheduled-backups)
 are restorable** and **the restoration process must be done by the Scalingo
 support team**.
 
 Make sure you keep track of which versions of PostgreSQL® and TimescaleDB® you
 are running during the backup process. For more information, see
-["Troubleshooting version mismatches" in the official documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/#tshoot-version-mismatch).
+["Troubleshooting version mismatches" in the official documentation][official_doc-version-mismatch].
 
 For more details about dumping and restoring TimescaleDB®, please refer to [the
-official documentation](https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/).
+official documentation][official_doc-backup-restore].
 
 {% note %}
-[Point-in-Time Recovery backups]({% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
+[Point-in-Time Recovery backups][backup_policies-pitr]
 are still working normally and can be restored [following the procedure for
-PostgreSQL®]({% post_url databases/postgresql/2000-01-01-restoring %}#restoring-a-point-in-time-recovery-backup).
+PostgreSQL®][restoring-pitr].
 {% endnote %}
+
+
+[official_doc]: https://docs.timescale.com/getting-started/latest/
+[official_doc-downsampling]: https://docs.timescale.com/timescaledb/latest/how-to-guides/user-defined-actions/example-downsample-and-compress/#downsample-and-compress
+[official_doc-backup-restore]: https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/
+[official_doc-restoring]: https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/#restoring-an-entire-database-from-backup
+[official_doc-version-mismatch]: https://docs.timescale.com/timescaledb/latest/how-to-guides/backup-and-restore/pg-dump-and-restore/#tshoot-version-mismatch
+
+[scalingo-scheduler]: {% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}
+
+[backup_policies-pitr]: {% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups
+
+[irc]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
+[provisioning]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}
+[enabling-extension]: {% post_url databases/postgresql/guides/2000-01-01-managing-extensions %}#enabling-an-extension
+[dumping]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}#dumping-the-database
+[restoring-pitr]: {% post_url databases/postgresql/guides/2000-01-01-restoring %}#restoring-a-point-in-time-recovery-backup

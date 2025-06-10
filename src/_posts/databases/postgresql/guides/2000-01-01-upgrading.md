@@ -3,7 +3,7 @@ title: Upgrading Your Scalingo for PostgreSQL® Addon
 nav: Upgrading
 modified_at: 2025-02-17 12:00:00
 tags: databases postgresql addon
-index: 9
+index: 4
 ---
 
 In Scalingo's terminology, ***upgrading*** a Scalingo for PostgreSQL® addon
@@ -48,7 +48,7 @@ There are no prerequisites for minor-upgrades.
    quite some time, depending on the database size and enabled extension(s).
 3. Once the instance restarted, the database is reachable again.
 4. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
+   cause any additional downtime][zero-downtime].
 
 Since we have to completely stop the instance, **a downtime is inevitable**.
 
@@ -66,7 +66,7 @@ seconds to a few minutes. In any cases, it shouldn't exceed 10 minutes.
 4. The new standby instance is restarted with the targeted version.
 5. Once restarted, the cluster is fully upgraded and fully operational again.
 6. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
+   cause any additional downtime][zero-downtime].
 
 Minor-upgrades of Business plans are **usually achieved without any impactful
 downtime**.
@@ -97,8 +97,8 @@ Finally, upgrade to the latest version of the 15.x branch.
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
 6. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
-7. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
+   cause any additional downtime][zero-downtime].
+7. A base backup is asynchronously done to make [point-in-time recovery][pitr]
    available again.
 
 Since we have to completely stop the instance to upgrade it, **a downtime is
@@ -118,8 +118,8 @@ our experience tends to show that it often takes less time.
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
 5. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime]({% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations).
-6. A base backup is asynchronously done to make [point-in-time recovery]({% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups)
+   cause any additional downtime][zero-downtime].
+6. A base backup is asynchronously done to make [point-in-time recovery][pitr]
    available again.
 7. The standby instance is rebuilt from scratch, based on the primary instance
    data. This means the database lives in a degraded state until the end of the
@@ -149,26 +149,25 @@ advise to take extra care when dealing with them:
   especially ones that may have a negative impact on your database or app, will
   allow you to update your application accordingly.
 
-- We also generally advise to test the changes in a [Review App]({% post_url platform/app/2000-01-01-review-apps %}).
+- We also generally advise to test the changes in a [Review App][review_apps].
 
   The use of Review Apps can be deactivated on your production application, [as
-  we recommend]({% post_url platform/app/2000-01-01-review-apps %}#configuration-of-review-apps)
-  in our documentation. In general, it is recommended that you carry out this
-  process on a staging application using the same code repository, but linked
-  to a database with no production or customer data. Once you have activated
-  the Review Apps feature, you can create a pull request in which you can
-  modify the `scalingo.json` manifest file to force the deployment of a
-  specific version of PostgreSQL®. The full process is as follow:
+  we recommend][review_apps-config] in our documentation. In general, it is
+  recommended that you carry out this process on a staging application using
+  the same code repository, but linked to a database with no production or
+  customer data. Once you have activated the Review Apps feature, you can
+  create a pull request in which you can modify the `scalingo.json` manifest
+  file to force the deployment of a specific version of PostgreSQL®. The full
+  process is as follow:
 
   1. Create a new app dedicated to this major-upgrade.
   2. Link this app to your application's code repository.
   3. Make sure to enable Review Apps for this application.
-  4. Leverage the [`scalingo.json` manifest file]({% post_url platform/app/2000-01-01-app-manifest %})
-     to:
+  4. Leverage the [`scalingo.json` manifest file][app-manifest] to:
      - Specify the version of the database addon you require. This version
        should match the one you are using in your production environment.
      - Ideally ask the platform to fill your database with **testing data**,
-       using a [`first-deploy` script]({% post_url platform/app/2000-01-01-app-manifest %}#deployment-hooks).
+       using a [`first-deploy` script][deployment-hooks].
 
      Here is an example of a manifest file asking the platform to provision a
      PostgreSQL `14.6.0` addon and to run the `db-seed.sh` script after the
@@ -209,13 +208,12 @@ advise to take extra care when dealing with them:
   9. Once done, close the Pull Request to automatically destroy the linked
      Review App. You can now plan the production upgrade.
 
-- [Create a manual backup]({% post_url databases/postgresql/2000-01-01-backing-up %}#creating-a-manual-backup)
-  of your current production database just before making the move in your
-  production environment.
+- [Create a manual backup][backing-up-creating-manual] of your current
+  production database just before making the move in your production
+  environment.
 
-- [Put the app in maintenance mode]({% post_url platform/app/2000-01-01-custom-error-page %}#custom-maintenance-page)
-  during the upgrade operations, especially if a significant downtime is
-  expected.
+- [Put the app in maintenance mode][maintenance-mode] during the upgrade
+  operations, especially if a significant downtime is expected.
 
 
 ## Upgrading
@@ -227,9 +225,23 @@ database dashboard.
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
-2. Select the **Settings** tab
-3. In the **Settings** submenu, select the **General** tab
-4. Locate the **Database Version** block
-5. If an upgrade is available, a button allows you to trigger the upgrade
-6. Click the button to launch the upgrade process
+1. From your web browser, open your [database dashboard][database-dashboard]
+2. Click the **Overview** tab
+3. Locate the **Database Upgrade** block
+4. If an upgrade is available, the text in the block explains what will be
+   done.
+5. To launch the upgrade, click the **Upgrade to …** button
+
+
+[zero-downtime]: {% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations
+
+[review_apps]: {% post_url platform/app/2000-01-01-review-apps %}
+[review_apps-config]: {% post_url platform/app/2000-01-01-review-apps %}#configuration-of-review-apps
+[app-manifest]: {% post_url platform/app/2000-01-01-app-manifest %}
+[deployment-hooks]: {% post_url platform/app/2000-01-01-app-manifest %}#deployment-hooks
+[maintenance-mode]: {% post_url platform/app/2000-01-01-custom-error-page %}#custom-maintenance-page
+
+[pitr]: {% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups
+
+[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[backing-up-creating-manual]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}#creating-a-manual-backup

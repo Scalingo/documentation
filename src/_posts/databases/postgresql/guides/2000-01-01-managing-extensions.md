@@ -3,7 +3,7 @@ title: Managing Extensions of Your Scalingo for PostgreSQL® Addon
 nav: Managing Extensions
 modified_at: 2024-11-05 12:00:00
 tags: databases postgresql addon
-index: 5
+index: 10
 ---
 
 PostgreSQL® is a database engine which is extensible thanks to a large set of
@@ -12,9 +12,9 @@ but you need to enable those manually according to your needs.
 
 Please note that we have dedicated pages for some of the most popular
 extensions:
-- [TimescaleDB®]({% post_url databases/postgresql/2000-01-01-timescaledb %})
-- [PostGIS]({% post_url databases/postgresql/2000-01-01-postgis %})
-- [pgvector]({% post_url databases/postgresql/2000-01-01-pgvector %})
+- [TimescaleDB®][timescaledb]
+- [PostGIS][postgis]
+- [pgvector][pgvector]
 
 ## Available Extensions
 
@@ -30,7 +30,7 @@ line.
 
 ### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#using-the-interactive-remote-console)
+1. Access your database using the [Interactive Remote Console][irc]
 2. From the PostgreSQL® console, run the following command:
    ```sql
    CREATE EXTENSION IF NOT EXISTS <extension_name>;
@@ -51,7 +51,7 @@ line.
 
 ### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console]({% post_url databases/postgresql/2000-01-01-accessing %}#using-the-interactive-remote-console)
+1. Access your database using the [Interactive Remote Console][irc]
 2. From the PostgreSQL® console, run the following command:
    ```sql
    DROP EXTENSION IF EXISTS <extension_name>;
@@ -61,3 +61,9 @@ line.
    DROP EXTENSION
    my_app_4553=>
    ```
+
+
+[irc]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
+[postgis]: {% post_url databases/postgresql/guides/2000-01-01-postgis %}
+[timescaledb]: {% post_url databases/postgresql/guides/2000-01-01-timescaledb %}
+[pgvector]: {% post_url databases/postgresql/guides/2000-01-01-pgvector %}

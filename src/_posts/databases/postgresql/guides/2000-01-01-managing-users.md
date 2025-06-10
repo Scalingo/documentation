@@ -3,7 +3,7 @@ title: Managing Users of Your Scalingo for PostgreSQL® Addon
 nav: Managing Users
 modified_at: 2024-11-05 12:00:00
 tags: databases postgresql addon
-index: 6
+index: 1
 ---
 
 Each Scalingo for PostgreSQL® addon comes with a [default database user](#understanding-protected-user).
@@ -37,15 +37,14 @@ This default user is ***protected*** and thus:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-postgresql-dashboard)
-2. Click the **Settings** tab
-3. In the **Settings** submenu, select **Users**
-4. The list of available users is displayed under the **User Management**
+1. From your web browser, open your [database dashboard][database-dashboard]
+2. Click the **Users** tab
+3. The list of available users is displayed under the **User Management**
    section
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, run the following command to list the users:
    ```bash
    scalingo --app my-app --addon postgresql database-users-list
@@ -81,21 +80,18 @@ method used:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
-2. Click the **Settings** tab
-3. In the **Settings** submenu, select **Users**
-4. Click the **Add a user** button
-5. Fill the **Add a new user** form:
+1. From your web browser, open your [database dashboard][database-dashboard]
+2. Click the **Users** tab
+3. Fill the **Add a new user** form:
    - Fill a username
-   - To grant write abilities to this user, make sure to check the **Write
-     (optional** checkbox
-6. Validate by clicking the **Add this user** button
-7. A secure password is generated automatically and shown in a popup window
-   after the user creation. **You will be able to view and copy it only once**.
+   - Fill the corresponding password twice
+4. (optional) If you want to restrict this user to read only abilities, make
+   sure to check the **Read only** checkbox
+5. Validate by clicking the **Add User** button
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, run the following command to create a new user:
    ```bash
    scalingo --app my-app --addon postgresql database-users-create <username>
@@ -123,29 +119,12 @@ method used:
 ## Updating a User Password
 
 {% note %}
-- Setting a user password to a **specific value** can only be done via the
-  command line.
-- Please get in touch with our Support Team to update a
-  [protected user](#understanding-protected-user) password.
+Updating a User Password is only available from the command line.
 {% endnote %}
-
-### Using the Database Dashboard
-
-1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-postgresql-dashboard)
-2. Click the **Settings** tab
-3. In the **Settings** submenu, select **Users**
-4. Locate the user you want the password to be updated
-5. Click the **"&#8230;"** button next to the user
-6. From the popup menu, select **Reset password**
-7. In the popup window, confirm the reset by typing the name of the user
-8. Validate by clicking the **Confirm** button
-9. A secure password is generated automatically and shown in a popup window
-   after the password reset. **You will be able to view and copy it only
-   once**.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Update the user password with the following command:
    ```bash
    scalingo --app my-app --addon postgresql database-users-update-password <username>
@@ -168,19 +147,20 @@ method used:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
-2. Click the **Settings** tab
-3. In the **Settings** submenu, select **Users**
-4. Locate the user you want to remove
-5. Click the **"&#8230;"** button next to the user
-6. From the popup menu, select **Delete user**
-7. In the popup window, confirm the deletion by typing the name of the user
-8. Validate by clicking the **Confirm** button
+1. From your web browser, open your [database dashboard][database-dashboard]
+2. Click the **Users** tab
+3. Locate the user you want to remove
+4. Click the **Delete** button next to the user
+5. Confirm the removal
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Remove the user with the following command:
    ```bash
    scalingo --app my-app --addon postgresql database-users-delete <username>
    ```
+
+
+[cli]: {% post_url platform/cli/2000-01-01-start %}
+[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-postgresql-dashboard
