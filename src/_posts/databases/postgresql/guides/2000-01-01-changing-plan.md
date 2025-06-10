@@ -3,7 +3,7 @@ title: Changing Plan
 nav: Changing Plan
 modified_at: 2024-10-22 00:00:00
 tags: databases postgresql addon
-index: 8
+index: 3
 ---
 
 At Scalingo, all databases addons plans are identified using a name made of two
@@ -11,11 +11,11 @@ or three parts separated by a dash (-). This name is made of:
 
 1. a database ***type*** : `postgresql`
 2. a ***class*** : either `sandbox`, `starter` or `business` (learn more about
-   [classes]({% post_url databases/about/2000-01-01-overview %}#database-plans))
+   [classes][databases-plans])
 3. a ***size*** : specifying the amount of RAM available with the plan, in MB
    (only for starter and business classes).
 
-You can change your PostgreSQL® for Scalingo addon plan whenever you want. The
+You can change your Scalingo for PostgreSQL® addon plan whenever you want. The
 operation is launched instantly, no manual input is required.
 
 The impact on your application and the downtime vary depending on several
@@ -81,7 +81,7 @@ operation, thanks to the failover mechanism included in the Business plan.
 
 ## Using the Dashboard
 
-1. From your web browser, open your [dashboard](https://dashboard.scalingo.com/apps)
+1. From your web browser, open your [dashboard][app-dashbaord]
 2. Click on the application for which you want to scale the Scalingo for
    PostgreSQL® addon
 3. Click on the **Resources** tab
@@ -92,20 +92,9 @@ operation, thanks to the failover mechanism included in the Business plan.
 8. Validate by clicking the **Confirm plan change** button
 
 
-## Using the Database Dashboard
-
-1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-postgresql-dashboard)
-2. Click the **Settings** tab
-3. In **General**, locate the **Database Plan** block
-4. In this block, click the **Change plan** button
-5. Select the new plan
-6. Click the **Finish** button
-7. Validate by clicking the **Confirm plan change** button
-
-
 ## Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the plans available for `postgresql`:
    ```bash
    scalingo addons-plans postgresql
@@ -145,4 +134,11 @@ operation, thanks to the failover mechanism included in the Business plan.
    }
    ```
    In this example, we switch the `my-db` resource attached to the `my-app`
-   application to a PostgreSQL® Business 1024 addon.
+   application to a PostgreSQL Business 1024 addon.
+2. Run `terraform plan` and check if the result looks good
+3. If so, run `terraform apply`
+
+
+[app-dashboard]: https://dashboard.scalingo.com/apps
+[cli]: {% post_url platform/cli/2000-01-01-start %}
+[databases-plans]: {% post_url databases/2000-01-01-overview %}#database-plans

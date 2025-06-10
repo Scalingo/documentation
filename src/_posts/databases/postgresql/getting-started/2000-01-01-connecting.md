@@ -7,8 +7,7 @@ index: 3
 ---
 
 When a Scalingo for PostgreSQL® addon is provisioned, the platform also adds
-two [environment variables]({% post_url platform/app/2000-01-01-environment %})
-to your app:
+two [environment variables][environment] to your app:
 
 - `SCALINGO_POSTGRESQL_URL`: a string containing all information needed to
   establish a connection between your application and your database. This
@@ -30,8 +29,7 @@ postgresql://[user]:[password]@[url]:[port]/[dbname]?sslmode=prefer
 ```
 
 For more information about the connection URI syntax, please see
-[RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) which defines the URI
-Generic Syntax.
+[RFC 3986][rfc3986] which defines the URI Generic Syntax.
 
 
 ## Using the Connection URI
@@ -59,7 +57,7 @@ still remains applicable.
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard](https://dashboard.scalingo.com)
+1. From your web browser, open your [dashboard][dashboard]
 2. Click on the application for which you want to get the connection URI
 3. Click on the **Environment** tab
 4. Locate the `SCALINGO_POSTGRESQL_URL` line and place your mouse over it to
@@ -67,7 +65,7 @@ still remains applicable.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, get the environment variable value:
    ```bash
    scalingo --app my-app env-get SCALINGO_POSTGRESQL_URL
@@ -80,8 +78,8 @@ still remains applicable.
 
 ## Enforcing TLS Connection
 
-All PostgreSQL® addons [support TLS](https://www.postgresql.org/docs/current/static/ssl-tcp.html)
-to encrypt all the network traffic between the client and the server.
+All PostgreSQL® addons [support TLS][pg-tls] to encrypt all the network traffic
+between the client and the server.
 
 By default, all new PostgreSQL® databases have TLS **available**,
 which means that you don't have to do anything to connect via TLS with a tool
@@ -101,7 +99,7 @@ my_app_wxyz=>
 If you want to enforce TLS connections to your database so that TLS is not only
 available but **mandatory**:
 
-1. From your web browser, [open your database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, [open your database dashboard][database-dashboard]
 2. Select the **Settings** tab
 3. In the **Settings** submenu, select **Internet Access**
 4. Locate the **Force TLS connections** block
@@ -128,8 +126,18 @@ can do it by adding an environment variable in every application wanting to
 communicate with the database:
 
 1. Copy [the connection URI](#getting-the-connection-uri) of your addon
-2. [Create a new environment variable]({% post_url platform/app/2000-01-01-environment %})
-   for the application that needs to access the addon
+2. [Create a new environment variable][environment] for the application that
+   needs to access the addon
 3. Set the value of this new environment variable to connection URI you just
    copied
 4. Restart the application to make the new environment variable available
+
+
+[rfc3986]: https://datatracker.ietf.org/doc/html/rfc3986
+[pg-tls]: https://www.postgresql.org/docs/current/static/ssl-tcp.html
+[dashboard]: https://dashboard.scalingo.com
+
+[cli]: ({% post_url platform/cli/2000-01-01-start %})
+[environmnent]: {% post_url platform/app/2000-01-01-environment %}
+
+[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard

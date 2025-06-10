@@ -3,30 +3,43 @@ title: PostgreSQL® Anonymizer
 nav: PostgreSQL® Anonymizer
 modified_at: 2025-02-03 12:00:00
 tags: databases postgresql anonymization extensions
-index: 16
+index: 50
 ---
 
-**PostgreSQL® Anonymizer** is an open-source extension for PostgreSQL® that facilitates the masking or replacement of personally identifiable information (PII) and commercially sensitive data directly within a database.
+**PostgreSQL® Anonymizer** is an open-source extension for PostgreSQL® that
+facilitates the masking or replacement of personally identifiable information
+(PII) and commercially sensitive data directly within a database.
 
-This extension is particularly useful for organizations handling sensitive data and is designed with **anonymization by design** principles to ensure compliance with privacy regulations such as GDPR, HIPAA, and CCPA.
+This extension is particularly useful for organizations handling sensitive data
+and is designed with **anonymization by design** principles to ensure
+compliance with privacy regulations such as GDPR, HIPAA, and CCPA.
 
-This extension adds several features and functions. You can find more information on the [official documentation](https://postgresql-anonymizer.readthedocs.io/en/stable/).
+This extension adds several features and functions. You can find more
+information on the [official documentation][official_doc].
+
 
 ## Enabling PostgreSQL® Anonymizer
 
-1. [Create a new user with read only abilities]({% post_url databases/postgresql/2000-01-01-managing-users %})
-2. Contact our support team and provide the name of the user you just created to request activation of the extension
+1. [Create a new user with read only abilities][creating-user]
+2. Contact our support team and provide the name of the user you just created
+   to request activation of the extension
 3. Our team activates the extension and sets up masking for the given user
-4. Once done, you can define and manage masking rules for your user autonomously as described below.
+4. Once done, you can define and manage masking rules for your user
+   autonomously as described below.
+
 
 ## Example: Dynamic Masking for Read-Only Users
 
-Suppose you have a table named users containing the columns `first_name`, `last_name`, `email`, and `phone` and you want to hide sensitive data dynamically for specific users.
+Suppose you have a table named users containing the columns `first_name`,
+`last_name`, `email`, and `phone` and you want to hide sensitive data
+dynamically for specific users.
 
-These users must be restricted to read-only abilities and must have been masked as described above. You can then declare `SECURITY LABEL` with your regular user.
+These users must be restricted to read-only abilities and must have been masked
+as described above. You can then declare `SECURITY LABEL` with your regular
+user.
 
-* Regular roles still have access to the original data
-* Masked users see altered data according to the masking rules
+- Regular roles still have access to the original data
+- Masked users see altered data according to the masking rules
 
 Connect as the regular user to the database:
 
@@ -59,9 +72,12 @@ SELECT * FROM people;
    2 |  John     | Cristian  | 07********07 | john.doe@example.com
 ```
 
+
 ## Example: Anonymizing Entire Rows with a Query
 
-Suppose you have a table named users containing the columns `first_name`, `last_name`, `email`, and `phone`. If you want to retrieve as many rows as your query can fetch with anonymized data, you can use the following query:
+Suppose you have a table named users containing the columns `first_name`,
+`last_name`, `email`, and `phone`. If you want to retrieve as many rows as your
+query can fetch with anonymized data, you can use the following query:
 
 ```sql
 SELECT anon.fake_last_name() AS anonymized_last_name,
@@ -83,3 +99,8 @@ anonymized_last_name | anonymized_first_name | anonymized_phone |      anonymize
  Baldwin              | Sarah                 | +33113538315     | tpeterson@example.net
  Hudson               | Preston               | +33477420668     | andreaortiz@example.com
 ```
+
+
+[official_doc]: https://postgresql-anonymizer.readthedocs.io/en/stable/
+
+[creating-user]: {% post_url databases/postgresql/guides/2000-01-01-managing-users %}#creating-a-new-user
