@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for MySQL® Addon
 nav: Accessing
-modified_at: 2024-10-21 12:00:00
+modified_at: 2025-06-10 12:00:00
 tags: databases mysql addon
 index: 4
 ---
@@ -135,7 +135,7 @@ allowing remote secured access to your MySQL® addon.
 5. To specify the port number to bind to (default is `10000`), use the `--port`
    option:
    ```bash
-   scalingo --app my-app db-tunnel SCALINGO_MYSQL_URL --port 12345
+   scalingo --app my-app db-tunnel --port 12345 SCALINGO_MYSQL_URL
    ```
 6. To close the tunnel, use the keyboard shortcut `CTRL`+`C`:
    ```text
