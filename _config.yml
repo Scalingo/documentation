@@ -60,8 +60,8 @@ highlighted:
     - /languages/nodejs/start
     - /platform/deployment/deployment-process
     - /platform/getting-started/common-deployment-errors
-    - /languages/php/symfony
-    - /databases/postgresql/start
+    - /languages/nodejs/start
+    - /databases/postgresql/about/overview
   technologies:
     - name: Ruby on Rails
       url: /languages/ruby/rails/start
