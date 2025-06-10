@@ -55,12 +55,12 @@ highlighted:
     - /platform/getting-started/how-to-migrate-from-heroku
   popular:
     - /platform/getting-started/troubleshooting-ssh
-    - /platform/databases/access
     - /platform/cli/start
-    - /languages/nodejs/start
+    - /platform/platform/app/log-drain
     - /platform/deployment/deployment-process
     - /platform/getting-started/common-deployment-errors
     - /languages/nodejs/start
+    - /languages/php/start
     - /databases/postgresql/about/overview
   technologies:
     - name: Ruby on Rails
