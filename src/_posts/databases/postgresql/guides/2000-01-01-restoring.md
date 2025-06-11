@@ -3,7 +3,7 @@ title: Restoring Your Scalingo for PostgreSQL® Addon
 nav: Restoring
 modified_at: 2024-12-10 00:00:00
 tags: databases postgresql addon
-index: 11
+index: 6
 ---
 
 ## Restoring a Point-in-Time Recovery Backup
@@ -17,12 +17,14 @@ index: 11
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/postgresql/2000-01-01-getting-started %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Backups** tab
 3. Locate the **Point-in-Time Recovery** block
 3. Click the **Start a PiTR** button
 4. Pick a date and time (**timezone is UTC**)
-5. Make sure to check the **I understand that this action will permanently delete existing data and cannot be cancelled or undone once started.** checkbox
+5. Make sure to check the **I understand that this action will permanently
+   delete existing data and cannot be cancelled or undone once started.**
+   checkbox
 6. Validate by clicking the **Confirm** button
 
 {% note %}
@@ -42,7 +44,7 @@ completely stopped, hence causing an inevitable downtime.
 #### From a One-Off Container
 
 1. Follow the procedure to [access your PostgreSQL® database from a one-off
-   container]({% post_url databases/postgresql/2000-01-01-accessing %}#using-a-one-off)
+   container][accessing-one-off]
 2. From the one-off command line, download and install the Scalingo command
    line tool to complete the one-off setup:
    ```bash
@@ -52,9 +54,8 @@ completely stopped, hence causing an inevitable downtime.
    ```bash
    scalingo login
    ```
-4. Either [download a backup]({% post_url databases/postgresql/2000-01-01-backing-up %}#downloading-a-scheduled-backup),
-   or [use a dump]({% post_url databases/postgresql/2000-01-01-backing-up %}#from-a-one-off-container)
-   made previously
+4. Either [download a backup][backing-up-downloading], or
+   [use a dump][backing-up-one-off] made previously
 5. Uncompress the backup (this step is not necessary with a dump):
    ```bash
    tar -xvzf <archive>
@@ -67,15 +68,15 @@ completely stopped, hence causing an inevitable downtime.
 
 #### From Your Workstation
 
-1. Either [download a backup]({% post_url databases/postgresql/2000-01-01-backing-up %}#downloading-a-scheduled-backup),
-   or [create a dump]({% post_url databases/postgresql/2000-01-01-backing-up %}#from-a-one-off-container)
+1. Either [download a backup][backing-up-downloading], or
+   [create a dump][backing-up-one-off]
 2. Uncompress the backup (this step is not necessary with a dump):
    ```bash
    tar -xvzf <archive>
    ```
-3. [Open a DB tunnel]({% post_url databases/postgresql/2000-01-01-accessing %}#using-our-command-line-tool)
+3. [Open a DB tunnel][accessing-cli]
    so you can access your database from your workstation
-4. Adjust the [connection URI]({% post_url databases/postgresql/2000-01-01-connecting %}#understanding-the-connection-uri):
+4. Adjust the [connection URI][connecting-uri]:
    ```bash
    export SCALINGO_DATABASE_URL="postgresql://<user>:<password>@127.0.0.1:<port>/<dbname>"
    ```
@@ -102,3 +103,11 @@ refer to the [documentation explaining how to restore a Scheduled backup](#resto
 
 Dumps are considered like any Scheduled backup. Consequently, please refer to
 the [documentation explaining how to restore a Scheduled backup](#restoring-a-scheduled-backup).
+
+
+[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[accessing-one-off]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-a-one-off
+[accessing-cli]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
+[connecting-uri]: {% post_url databases/postgresql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
+[backing-up-downloading]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}#downloading-a-scheduled-backup
+[backing-up-one-off]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}#from-a-one-off-container
