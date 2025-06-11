@@ -56,7 +56,7 @@ highlighted:
   popular:
     - /platform/getting-started/troubleshooting-ssh
     - /platform/cli/start
-    - /platform/platform/app/log-drain
+    - /platform/app/log-drain
     - /platform/deployment/deployment-process
     - /platform/getting-started/common-deployment-errors
     - /languages/nodejs/start
