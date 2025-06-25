@@ -2,6 +2,7 @@
 title: Collaborators
 modified_at: 2025-02-07 00:00:00
 tags: app collaborators
+order: 1
 ---
 
 Collaborators is a feature allowing the owner of an app to invite other Scalingo accounts to team up and work jointly on the app. An app can have as many collaborators as needed.
