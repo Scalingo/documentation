@@ -253,5 +253,5 @@ $ ssh-add -l -E md5
 2048 MD5:a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /home/USERNAME/.ssh/id_rsa (RSA)
 ```
 
-Go to the [Dashboard > User settings > SSH Keys]({% post_url platform/user-management/2000-01-01-manage %}#ssh-keys)
+Go to the [Dashboard > User settings > SSH Keys]({% post_url platform/user-management/2000-01-01-manage-collaborators %}#ssh-keys)
 page and check if the fingerprint is the same as the output of the previous command.
