@@ -11,7 +11,7 @@ Inviting collaborators enables you to share access to specific applications whil
 Granting collaborator access should be done with care. While collaborators cannot delete an application, they still hold sufficient privileges to modify configurations, deploy new code, or scale resources. These actions can impact the stability or availability of your services.
 {% endnote %}
 
-When inviting a new collaborator, it is essential to assign them the appropriate role based on their responsibilities. [Roles]({% post_url platform/user-management/2000-01-01-roles %} define the level of access and actions a user can perform on your applications and databases.
+When inviting a new collaborator, it is essential to assign them the appropriate role based on their responsibilities. [Roles]({% post_url platform/user-management/2000-01-01-roles %}) define the level of access and actions a user can perform on your applications and databases.
 
 @import https://doc.scalingo.com/platform/app/collaborators#managing-collaborators
 

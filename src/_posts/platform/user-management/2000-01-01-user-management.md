@@ -10,7 +10,7 @@ Scalingo allows you to easily collaborate with others while maintaining full con
 Each user account is sovereign and independent. It can be used to create and manage applications, provision databases, define a payment method, download invoices, and access detailed consumption reports.
 
 This section will help you understand how to:
-- Manage your personal user account]({% post_url platform/user-management/2000-01-01-manage-your-account %}
-- Manage your collaborators]({% post_url platform/user-management/2000-01-01-manage-collaborators %}
-- [Understand the different user roles and their permissions]({% post_url platform/user-management/2000-01-01-roles %}
-- [Leverage collaborators efficiently based on your organization’s structure]({% post_url platform/user-management/2000-01-01-guides %}
+* [Manage your personal user account]({% post_url platform/user-management/2000-01-01-manage-your-account %})
+* [Manage your collaborators]({% post_url platform/user-management/2000-01-01-manage-collaborators %})
+* [Understand the different user roles and their permissions]({% post_url platform/user-management/2000-01-01-roles %})
+* [Leverage collaborators efficiently based on your organization’s structure]({% post_url platform/user-management/2000-01-01-guides %})

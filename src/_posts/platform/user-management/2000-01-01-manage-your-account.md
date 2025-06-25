@@ -55,7 +55,7 @@ This page lists the API tokens linked to your account. They allow you to authent
 
 {% note %}  
 API tokens inherit the exact permissions of your account for each application or database. Currently, it is not possible to restrict the scope or permissions of an individual token.  
-For improved security, especially in larger organizations, we recommend reviewing our [security best practices guide]({% post_url platform/user-management/2000-01-01-guides %}.  
+For improved security, especially in larger organizations, we recommend reviewing our [security best practices guide]({% post_url platform/user-management/2000-01-01-guides %}).  
 {% endnote %}
 
 Have a look at our [API documentation](https://developers.scalingo.com) to learn how to use them.
