@@ -7,11 +7,11 @@ order: 2
 
 Your personal Scalingo account enables you to create applications and databases, which are billed based on your resource usage on the associated payment method.
 
-All account configuration is performed via the \[Scalingo Dashboard\](https://dashboard.scalingo.com). Access account settings from the top-right menu. The main sections include:
+All account configuration is performed via the [Scalingo Dashboard](https://dashboard.scalingo.com). Access account settings from the top-right menu. The main sections include:
 
 ## Profile
 
-\[Dashboard Profile page\](https://dashboard.scalingo.com/account)
+[Dashboard Profile page](https://dashboard.scalingo.com/account)
 
 Manage your personal details including username, full name, location, company information, and newsletter preferences.
 
@@ -23,7 +23,7 @@ This section displays all legal agreements applicable to your account, whether c
 
 ## HDS
 
-\[HDS Profile page\](https://dashboard.scalingo.com/account/hds)
+[HDS Profile page](https://dashboard.scalingo.com/account/hds)
 
 If you host health data under the French HDS regulations and have signed the HDS annex, this page allows you to view the applicable HDS annexes and manage the designated healthcare data point of contact for your applications.
 
@@ -33,36 +33,36 @@ Reminder: the point of contact information should be reviewed at least every 12 
 
 ## Authentication
 
-\[Dashboard Authentication page\](https://dashboard.scalingo.com/account/authentication)
+[Dashboard Authentication page](https://dashboard.scalingo.com/account/authentication)
 
 This page lets you update the email address associated with your account along with the password and 2FA.
 
-If your account was created using “Sign up with GitHub”, you cannot set a password via this form as no current password exists. Instead, log out and use the \[Forgot your password?\](https://auth.scalingo.com/users/password/new) feature with your GitHub associated email.
+If your account was created using “Sign up with GitHub”, you cannot set a password via this form as no current password exists. Instead, log out and use the [Forgot your password?](https://auth.scalingo.com/users/password/new) feature with your GitHub associated email.
 
 ## SSH Keys
 
-\[Dashboard SSH keys management page\](https://dashboard.scalingo.com/account/keys)
+[Dashboard SSH keys management page](https://dashboard.scalingo.com/account/keys)
 
-SSH keys serve as a means of identifying yourself to Scalingo's git server. Each time a deployment is triggered using the \`git push\` command, your account needs to be authenticated with one of your SSH Keys.
+SSH keys serve as a means of identifying yourself to Scalingo's git server. Each time a deployment is triggered using the `git push` command, your account needs to be authenticated with one of your SSH Keys.
 
-\[Learn how to configure your SSH key for your operating system\]({% post\_url platform/getting-started/2000-01-01-troubleshooting-ssh %})
+[Learn how to configure your SSH key for your operating system]({% post_url platform/getting-started/2000-01-01-troubleshooting-ssh %})
 
 ## API Tokens
 
-\[Dashboard API Tokens\](https://dashboard.scalingo.com/account/tokens)
+[Dashboard API Tokens](https://dashboard.scalingo.com/account/tokens)
 
 This page lists the API tokens linked to your account. They allow you to authenticate with our API to build custom tools and interact with the platform in a programmable way.
 
 {% note %}  
 API tokens inherit the exact permissions of your account for each application or database. Currently, it is not possible to restrict the scope or permissions of an individual token.  
-For improved security, especially in larger organizations, we recommend reviewing our \[security best practices guide\].  
+For improved security, especially in larger organizations, we recommend reviewing our [security best practices guide]({% post_url platform/user-management/2000-01-01-guides %}.  
 {% endnote %}
 
-Have a look at our \[API documentation\](https://developers.scalingo.com) to learn how to use them.
+Have a look at our [API documentation](https://developers.scalingo.com) to learn how to use them.
 
 ## Billing
 
-\[Dashboard Billing page\](https://dashboard.scalingo.com/billing)
+[Dashboard Billing page](https://dashboard.scalingo.com/billing)
 
 Configure your payment methods in this section. The platform supports 3 methods:
 
@@ -87,7 +87,7 @@ To resolve the issue, you can either add prepaid credit or update your payment m
 
 To delete your account, you must first delete or transfer ownership of all your applications, and ensure all outstanding bills are settled.
 
-Then go to the Delete your Scalingo account section on the \[authentication\](https://dashboard.scalingo.com/account/authentication) page and click Delete. A final confirmation will be requested by email.
+Then go to the Delete your Scalingo account section on the [authentication](https://dashboard.scalingo.com/account/authentication) page and click Delete. A final confirmation will be requested by email.
 
 Your account will be deactivated and marked for deletion.
 
