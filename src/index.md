@@ -13,7 +13,7 @@ description: "From the deployment of your app to complex scaling operations you'
         <br />
         And voilà, 2 minutes later, your website is online.
         <br />
-        With a proper github integration, you can even deploy your code automatically on every push.
+        With a proper github/gitlab integration, you can even deploy your code automatically on every push.
       </p>
       <div class="mt-6 lg:mt-12" id="docsearch-index"></div>
     </div>
