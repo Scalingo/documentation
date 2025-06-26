@@ -13,5 +13,5 @@ This section will help you understand how to:
 * [Leverage collaborators efficiently based on your organization’s structure]({% post_url platform/user-management/2000-01-01-guides %})
 
 {% note %}  
-Need to update your personal settings ? Head over to [Manage your personal user account]({% post_url platform/account/2000-01-01-manage-your-account %}).
+Need to update your personal settings ? Head over to [Manage your personal user account]({% post_url platform/account/2000-01-01-account %}).
 {% endnote %}
