@@ -1,8 +1,8 @@
 ---
 title: User and Access Management
 modified_at: 2025-06-25 00:00:00
-tags: account
-order: 1
+tags: account user access
+index: 1
 ---
 
 Scalingo allows you to easily collaborate with others while maintaining full control over your applications, databases and environments.

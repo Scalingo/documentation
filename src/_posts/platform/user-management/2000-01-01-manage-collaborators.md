@@ -1,8 +1,8 @@
 ---
 title: Manage Collaborators
 modified_at: 2025-06-25 00:00:00
-tags: app collaborators
-order: 3
+tags: app collaborator
+index: 3
 ---
 
 Inviting collaborators enables you to share access to specific applications while preserving full control and accountability. This feature is designed to support seamless teamwork from development to production.

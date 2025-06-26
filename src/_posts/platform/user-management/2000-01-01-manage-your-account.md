@@ -1,8 +1,8 @@
 ---
 title: Manage your Account
 modified_at: 2025-06-25 00:00:00
-tags: account
-order: 2
+tags: account profile tokens delete
+index: 2
 ---
 
 Your personal Scalingo account enables you to create applications and databases, which are billed based on your resource usage on the associated payment method.
