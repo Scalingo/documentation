@@ -12,6 +12,8 @@ description: "From the deployment of your app to complex scaling operations you'
         No server to manage, nor operating system, just git push your code, we take care of everything from there.
         <br />
         And voilà, 2 minutes later, your website is online.
+        <br />
+        With a proper github integration, you can even deploy your code automatically on every push.
       </p>
       <div class="mt-6 lg:mt-12" id="docsearch-index"></div>
     </div>
