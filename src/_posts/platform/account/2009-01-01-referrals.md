@@ -2,6 +2,7 @@
 title: Referral Program
 modified_at: 2025-06-26 00:00:00
 tags: referral
+index: 99
 ---
 
 Scalingo offers a referral program that allows users to earn credits by inviting others to the platform.
