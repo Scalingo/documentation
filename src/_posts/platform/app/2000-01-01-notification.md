@@ -48,6 +48,7 @@ Note that Mattermost notifications require using the Slack notifier.
 * collaborator_accepted: Collaborator accepted, A collaborator invitation was accepted
 * collaborator_invited: Collaborator invited, A collaborator was invited
 * collaborator_removed: Collaborator removed, A collaborator was removed
+* collaborator_role_changed: Collaborator role changed, A collaborator role has been changed
 * database_maintenance_planned: Database maintenance planned, A database maintenance has been planned
 * database_maintenance_started: Database maintenance started, A database maintenance has started
 * database_maintenance_completed: Database maintenance completed, A database maintenance has completed
