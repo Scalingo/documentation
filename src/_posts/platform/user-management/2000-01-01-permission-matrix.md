@@ -15,7 +15,7 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 | Restart App | ✅ Yes | ❌ No |
 | Stop App | ✅ Yes | ❌ No |
 | Change container size | ✅ Yes | ❌ No |
-| Change scale | ✅ Yes | ❌ No |
+| Scale containers | ✅ Yes | ❌ No |
 | Autoscaler | ✅ Yes | ❌ No |
 | Operator data access | ✅ Yes | ✅ Yes |
 | Log drain management | ✅ Yes | ❌ No |
@@ -28,7 +28,8 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 |---|---|---|
 | View Activity | ✅ Yes | ✅ Yes |
 | View Activity details | ✅ Yes | ⚠️ Yes (env-vars values are hidden) |
-| View logs | ✅ Yes | ✅ Yes, but not archive |
+| View logs | ✅ Yes | ✅ Yes |
+| Download log achives | ✅ Yes | ❌ No |
 | View metrics | ✅ Yes | ✅ Yes |
 
 
@@ -37,7 +38,8 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 | Permission | Collaborator | Limited Collaborator |
 |---|---|---|
 | Manage Apps | ✅ Yes | ❌ No |
-| Invite/Remove Collab on an App | ✅ Yes | ❌ No |
+| Invite collaborator on an app | ✅ Yes | ❌ No |
+| Revoke collaborator on an app | ✅ Yes | ❌ No |
 | Change role of another collab | ✅ Yes | ❌ No |
 
 
