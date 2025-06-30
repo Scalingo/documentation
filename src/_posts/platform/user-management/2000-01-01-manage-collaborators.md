@@ -73,7 +73,9 @@ Using the Command Line
 scalingo --app my-app collaborators-remove user@example.com
 ```
 
+{% warning %}
 When you remove permissions from a user, environment variables and other credentials are not changed. Users can still directly access services if they know the service credentials. To fully revoke access, make sure to rotate all relevant secrets, such as database passwords and API tokens.
+{% endwarning %}
 
 {% note %}
 At the moment, updating the password of the default database user requires assistance from the Scalingo support team. Once the password is changed, you must manually update the associated environment variable and restart the parent application for the new credentials to be used.
