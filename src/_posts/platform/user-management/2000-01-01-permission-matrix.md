@@ -79,7 +79,7 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 |---|---|---|
 | Configure Review Apps | ✅ Yes | ❌ No |
 | List Review Apps | ✅ Yes | ✅ Yes |
-| Create Review Apps | ✅ Yes | ✅ Yes (only via GitHub if allowed) |
+| Create Review Apps | ✅ Yes | ✅ Yes (only via SCM Tool if allowed) |
 | Close Review Apps | ✅ Yes | ✅ Yes |
 | Redeploy a Review App | ✅ Yes | ✅ Yes |
 
