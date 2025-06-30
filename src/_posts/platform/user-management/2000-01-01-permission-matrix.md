@@ -88,7 +88,7 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 
 | Permission | Collaborator | Limited Collaborator |
 |---|---|---|
-| Add add-on | ✅ Yes | ❌ No |
+| Provision add-on | ✅ Yes | ❌ No |
 | View add-on | ✅ Yes | ❌ No |
 | Change add-on plan | ✅ Yes | ❌ No |
 | Remove add-on | ✅ Yes | ❌ No |
