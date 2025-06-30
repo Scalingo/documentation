@@ -18,7 +18,7 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 | Change scale | ✅ Yes | ❌ No |
 | Autoscaler | ✅ Yes | ❌ No |
 | Operator data access | ✅ Yes | ✅ Yes |
-| Log drain namagement | ✅ Yes | ❌ No |
+| Log drain management | ✅ Yes | ❌ No |
 | Create a Child App | ✅ Yes | ❌ No |
 
 
