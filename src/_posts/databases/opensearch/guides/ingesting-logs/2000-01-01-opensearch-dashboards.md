@@ -59,7 +59,8 @@ follow:
 
 6. Everything's ready, deploy to Scalingo:
    ```bash
-   git push scalingo master
+   git commit --allow-empty -m "Trigger"
+   git push scalingo main
    ```
 
 ### Using the Terraform Provider
