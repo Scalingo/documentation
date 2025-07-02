@@ -9,7 +9,7 @@ Scalingo allows you to easily collaborate with others while maintaining full con
 
 This section will help you to:
 * [Manage your collaborators]({% post_url platform/user-management/2000-01-01-manage-collaborators %})
-* [Understand the different user roles and their permissions]({% post_url platform/user-management/2000-01-01-roles %})
+* [Get high level understanding of the different user roles and their permissions]({% post_url platform/user-management/2000-01-01-roles %})
 * [View the full collaborator permissions matrix]({% post_url platform/user-management/2000-01-01-permission-matrix %})
 * [Leverage collaborators efficiently based on your organization’s structure]({% post_url platform/user-management/2000-01-01-guides %})
 
