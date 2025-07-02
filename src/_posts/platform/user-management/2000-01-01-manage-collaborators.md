@@ -64,7 +64,8 @@ Using the Dashboard
 - Go to your application that needs a new collaborator
 - Go to the Settings tab
 - The first menu that you access is the Collaborators menu
-- Click on the trash can corresponding to the collaborator's mail
+- Click on the "..." on the right of the collaborator's mail you want to remove
+- Click on "Revoke access"
 - Validate in the pop-up
 
 Using the Command Line
