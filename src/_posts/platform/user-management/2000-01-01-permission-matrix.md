@@ -48,7 +48,7 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 | Permission | Collaborator | Limited Collaborator |
 |---|---|---|
 | Configure the SCM | ✅ Yes | ❌ No |
-| Automatic deployments management | ✅ Yes | ❌ No |
+| Manage automatic deployments | ✅ Yes | ❌ No |
 | Redeploy any branch | ✅ Yes | ❌ No |
 | Redeploy main bran | ✅ Yes | ✅ Yes |
 | See deployments history | ✅ Yes | ✅ Yes |
