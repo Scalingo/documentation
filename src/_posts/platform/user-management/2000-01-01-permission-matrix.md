@@ -40,7 +40,7 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 | Manage Apps | ✅ Yes | ❌ No |
 | Invite a collaborator on an app | ✅ Yes | ❌ No |
 | Revoke a collaborator on an app | ✅ Yes | ❌ No |
-| Change role of another collab | ✅ Yes | ❌ No |
+| Change the role of a collaborator | ✅ Yes | ❌ No |
 
 
 ## Deployment
@@ -100,12 +100,12 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 
 | Permission | Collaborator | Limited Collaborator |
 |---|---|---|
-| Access database | ✅ Yes | ❌ No |
+| Access databases | ✅ Yes | ❌ No |
 | Create a manual backup | ✅ Yes | ❌ No |
 | Manage scheduled backups | ✅ Yes | ❌ No |
 | Restore / Download backups | ✅ Yes | ❌ No |
 | Restore a PITR | ✅ Yes | ❌ No |
-| View connexion details | ✅ Yes | ❌ No |
+| View connection details | ✅ Yes | ❌ No |
 | View database logs | ✅ Yes | ❌ No |
 | View database metrics | ✅ Yes | ❌ No |
 | Manage Internet accessibility | ✅ Yes | ❌ No |
