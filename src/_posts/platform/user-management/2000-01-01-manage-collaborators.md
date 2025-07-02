@@ -20,14 +20,14 @@ When inviting a new collaborator, it is essential to assign them the appropriate
 Using the Dashboard:
 - Go to the **Collaborators** tab
 - If you already have collaborators, you'll see a consolidated list of all users collaborating on your apps, along with their 2FA status
-- You can click on the **Group by Apps** toggle to display a tree view of your apps and their associated collaborators. For now, only applications with collaborators are displayed there
+- You can click on the **Group by Apps** toggle to display a tree view of your apps and their associated collaborators. Only applications with collaborators are displayed there
 
 ### Listing Collaborators of an app
 
 Using the dashboard:
 - Go to your application dashboard
 - Go to **Settings** tab
-- You will automatically be taken to the collaborators menu
+- The first menu that is open is the Collaborators menu, listing your collaborators
 
 Using the Command Line
 ```shell
@@ -37,18 +37,18 @@ scalingo --app my-app collaborators
 ### Adding a Collaborator
 
 {% note %}
-While the main Collaborators page provides a consolidated list, collaborators are managed individually for each application.
+Collaborators are managed individually for each application. There isn't bulk edition feature
 {% endnote %}
 
 Using the Dashboard
 
 - Go to your application that needs a new collaborator
 - Go to the Settings tab
-- You will automatically be taken to the Collaborators menu
+- The first menu that you access is the Collaborators menu
 - Click on the Add button
-- Add the required collaborator email
+- Add the collaborator email
 - You will now see the collaborator in light grey in the table.
-- The collaborator will receive an email to join the collaboration (and subscribe to Scalingo if required).
+- The collaborator will receive an email to accept the collaboration (and subscribe to Scalingo if required).
 - Once done, you will see the collaborator in black.
 
 Using the Command Line
@@ -63,7 +63,7 @@ Using the Dashboard
 
 - Go to your application that needs a new collaborator
 - Go to the Settings tab
-- You will automatically be taken to the Collaborators menu
+- The first menu that you access is the Collaborators menu
 - Click on the trash can corresponding to the collaborator's mail
 - Validate in the pop-up
 
@@ -74,9 +74,9 @@ scalingo --app my-app collaborators-remove user@example.com
 ```
 
 {% warning %}
-When you remove permissions from a user, environment variables and other credentials are not changed. Users can still directly access services if they know the service credentials. To fully revoke access, make sure to rotate all relevant secrets, such as database passwords and API tokens.
+When you remove permissions from a user, environment variables and other credentials are not changed. Users can still directly access services if they know the service credentials. To actually revoke access, make sure to rotate all relevant secrets, such as database passwords and API tokens.
 {% endwarning %}
 
 {% note %}
-At the moment, updating the password of the default database user requires assistance from the Scalingo support team. Once the password is changed, you must manually update the associated environment variable and restart the parent application for the new credentials to be used.
+Updating the password of the default database user requires assistance from the Scalingo support team. Once the password is changed, you must manually update the associated environment variable and restart the parent application for the new credentials to be used.
 {% endnote %}
