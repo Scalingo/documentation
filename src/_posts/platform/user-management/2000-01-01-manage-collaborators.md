@@ -47,6 +47,7 @@ Using the Dashboard
 - The first menu that you access is the Collaborators menu
 - Click on the Add button
 - Add the collaborator email
+- Choose the role you want to assign on the collaborator 
 - You will now see the collaborator in light grey in the table.
 - The collaborator will receive an email to accept the collaboration (and subscribe to Scalingo if required).
 - Once done, you will see the collaborator in black.
@@ -56,6 +57,20 @@ Using the Command Line
 ```shell
 scalingo --app my-app collaborators-add user@example.com
 ```
+
+### Updating the role of a Collaborator
+
+Using the Dashboard
+
+- Go to your application that needs a new collaborator
+- Go to the Settings tab
+- The first menu that you access is the Collaborators menu
+- Click on the "..." on the right of the collaborator's mail you want to update
+- Click on "Change role"
+- In the popup select the role you want
+- Click “Change role”
+
+
 
 ### Removing a Collaborator
 
