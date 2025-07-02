@@ -16,9 +16,9 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 | Stop App | ✅ Yes | ❌ No |
 | Change container size | ✅ Yes | ❌ No |
 | Scale containers | ✅ Yes | ❌ No |
-| Autoscaler | ✅ Yes | ❌ No |
-| Operator data access | ✅ Yes | ✅ Yes |
-| Log drain management | ✅ Yes | ❌ No |
+| Access the Autoscaler | ✅ Yes | ❌ No |
+| Update Operator data access | ✅ Yes | ✅ Yes |
+| Manage Log drain settings | ✅ Yes | ❌ No |
 | Create a Child App | ✅ Yes | ❌ No |
 
 
@@ -38,8 +38,8 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 | Permission | Collaborator | Limited Collaborator |
 |---|---|---|
 | Manage Apps | ✅ Yes | ❌ No |
-| Invite collaborator on an app | ✅ Yes | ❌ No |
-| Revoke collaborator on an app | ✅ Yes | ❌ No |
+| Invite a collaborator on an app | ✅ Yes | ❌ No |
+| Revoke a collaborator on an app | ✅ Yes | ❌ No |
 | Change role of another collab | ✅ Yes | ❌ No |
 
 
@@ -47,13 +47,13 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 
 | Permission | Collaborator | Limited Collaborator |
 |---|---|---|
-| SCM Configuration | ✅ Yes | ❌ No |
+| Configure the SCM | ✅ Yes | ❌ No |
 | Automatic deployments management | ✅ Yes | ❌ No |
 | Redeploy any branch | ✅ Yes | ❌ No |
 | Redeploy main bran | ✅ Yes | ✅ Yes |
 | See deployments history | ✅ Yes | ✅ Yes |
-| See deployments logs | ✅ Yes | ⚠️ Yes, but not from old deployments (7 days) |
-| Empty cache | ✅ Yes | ✅ Yes |
+| See deployments logs | ✅ Yes | ⚠️ Yes, but not for deployments older than 7 days |
+| Empty the deployment cache | ✅ Yes | ✅ Yes |
 
 
 ## One-off Containers & Scheduled Jobs
@@ -62,8 +62,8 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 |---|---|---|
 | List one-offs | ✅ Yes | ✅ Yes |
 | Create One-off | ✅ Yes | ❌ No |
-| Access one-off | ✅ Yes | ❌ No |
-| List CRONs | ✅ Yes | ✅ Yes |
+| Access One-off | ✅ Yes | ❌ No |
+| List CRON tasks | ✅ Yes | ✅ Yes |
 
 
 ## Environment Variables
@@ -71,8 +71,8 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 | Permission | Collaborator | Limited Collaborator |
 |---|---|---|
 | Manage environment variables | ✅ Yes | ❌ No |
-| View environment variables name | ✅ Yes | ✅ Yes |
-| View environment variables secrete | ✅ Yes | ❌ No |
+| View environment variable names | ✅ Yes | ✅ Yes |
+| View environment variable secrets | ✅ Yes | ❌ No |
 
 
 ## Review Apps
@@ -90,10 +90,10 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 
 | Permission | Collaborator | Limited Collaborator |
 |---|---|---|
-| Provision add-on | ✅ Yes | ❌ No |
-| View add-on | ✅ Yes | ❌ No |
-| Change add-on plan | ✅ Yes | ❌ No |
-| Remove add-on | ✅ Yes | ❌ No |
+| Provision an add-on | ✅ Yes | ❌ No |
+| View an add-on | ✅ Yes | ❌ No |
+| Change an add-on plan | ✅ Yes | ❌ No |
+| Remove an add-on | ✅ Yes | ❌ No |
 
 
 ## Databases
