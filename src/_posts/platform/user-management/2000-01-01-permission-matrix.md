@@ -109,7 +109,7 @@ The Owner role is not listed, as it holds full and unrestricted access to all ap
 | View database logs | ✅ Yes | ❌ No |
 | View database metrics | ✅ Yes | ❌ No |
 | Manage Internet accessibility | ✅ Yes | ❌ No |
-| Manage database configuration | ✅ Yes | ❌ No |
+| Manage database configurations | ✅ Yes | ❌ No |
 | Manage database users | ✅ Yes | ❌ No |
 | Manage maintenance windows | ✅ Yes | ❌ No |
 | Perform major upgrades | ✅ Yes | ❌ No |
