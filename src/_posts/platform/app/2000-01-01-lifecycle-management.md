@@ -1,24 +1,23 @@
 ---
 title: Application Lifecycle Management
 nav: Lifecycle Management
-modified_at: 2025-01-27 00:00:00
+modified_at: 2025-07-02 12:00:00
 index: 10
 tags: management
 ---
 
 Three methods are co-existing to manage your applications on the Scalingo:
 
-* [Web Dashboard](https://dashboard.scalingo.com): The simplest way to manage
-  your applications, use any browser create/scale/transfer/delete applications.
+- [Web Dashboard][dashboard]: The simplest way to manage your applications, use
+  any browser create/scale/transfer/delete applications.
 
-* [CLI]({% post_url platform/cli/2000-01-01-start %}): More comfortable with
-  terminals or you want to build scripts to control applications, the command
-  line interface, available for all major operating system, is able to achieve
-  any operation the web dashboard can do.
+- [CLI][cli]: More comfortable with terminals or you want to build scripts to
+  control applications, the command line interface, available for all major
+  operating system, is able to achieve any operation the web dashboard can do.
 
-* [HTTP API](https://developers.scalingo.com): The web dashboard and the CLI
-  are both consuming this API, if you need to automate behaviors by managing
-  applications in a programmatic way, you can directly target our API.
+- [HTTP API][api]: The web dashboard and the CLI are both consuming this API,
+  if you need to automate behaviors by managing applications in a programmatic
+  way, you can directly target our API.
 
 ## Create an Application
 
@@ -59,8 +58,8 @@ $ scalingo create my-app --buildpack https://github.com/Scalingo/multi-buildpack
 **Actions**: Fill confirmation form, choose a new name and click on `RENAME`
 
 {% note %}
-The [SCM link]({% post_url platform/app/2000-01-01-scm-integration %}) is not
-updated when renaming an application. You should recreate it by yourself.
+The [SCM link][scm] is not updated when renaming an application. You should
+recreate it by yourself.
 {% endnote %}
 
 ## Transfer Ownership of an Application
@@ -70,14 +69,14 @@ invite this person as a collaborator of the application. Then you will be able t
 transfer them the application.
 
 {% note %}
-The new owner will need a [Billing Profile]({% post_url platform/internals/2000-01-01-billing %}) and will have left the free trial. To leave free trial period with billing profile go to [Billing](https://dashboard.scalingo.com/billing) and click on Stop free trial button.
+The new owner will need a [Billing Profile][billing] and will have left the free trial. To leave free trial period with billing profile go to [Billing][dashboard-billing] and click on Stop free trial button.
 If it's an HDS application, the new owner will need to configure a health professional contact, just like the previous owner.
 {% endnote %}
 
 This operation will not affect the application, nothing regarding the configuration
 or the runtime of the app will be modified.
 
-This operation is only achievable from the [Scalingo dashboard](https://dashboard.scalingo.com).
+This operation is only achievable from the [Scalingo dashboard][dashboard].
 
 {% note %}
   The billing is done the last day of the month to the owner of the application at that date. Hence,
@@ -134,3 +133,12 @@ $ scalingo destroy my-app
 To confirm type the name of the application: my-app
 -----> App my-app has been deleted
 ```
+
+
+[dashboard]: https://dashboard.scalingo.com
+[dashboard-billing]: https://dashboard.scalingo.com/billing
+[api]: https://developers.scalingo.com
+
+[cli]: {% post_url platform/cli/2000-01-01-start %}
+[scm]: {% post_url platform/app/2000-01-01-scm-integration %}
+[billing]: {% post_url platform/billing/2000-01-01-overview %}
