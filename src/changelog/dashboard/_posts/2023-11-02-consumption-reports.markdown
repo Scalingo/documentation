@@ -7,4 +7,4 @@ title:	'Consumption Reports are available in the dashboard!'
 * Browse consumption reports for the current and previous billing periods
 * The current month's report is updated daily at midnight.
 
-[See related documentation](https://doc.scalingo.com/platform/internals/consumption-reports)
+[See related documentation](https://doc.scalingo.com/platform/account/consumption-reports)

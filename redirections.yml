@@ -684,6 +684,21 @@
   - old: "/databases/postgresql/postgresql-anonymizer"
     new: "/databases/postgresql/guides/postgresql-anonymizer"
 
+  - old: "/platform/internals/billing"
+    new: "/platform/account/billing"
+
+  - old: "/platform/internals/consumption-reports"
+    new: "/platform/account/consumption-reports"
+
+  - old: "/platform/account/manage#referrals"
+    new: "/platform/account/referrals"
+
+  - old: "/platform/account/manage/"
+    new: "/platform/account/manage-your-account"
+
+  - old: "/platform/account/manage#billing"
+    new: "/platform/account/manage-your-account#billing"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
