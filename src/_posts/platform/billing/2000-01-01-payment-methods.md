@@ -30,12 +30,9 @@ Scalingo currently supports three payments methods:
 ## Adding a Payment Method
 
 Scalingo supports adding multiple payment methods. If you have multiple payment
-methods setup, Scalingo charges the different means in this order of
-precedence:
-
-1. Prepaid Credits
-2. Debit/Credit Card
-3. SEPA
+methods setup, Scalingo only tries to charge the one you set as the preferred
+one. The platform **does not** fallback on other payment methods in case of
+failure.
 
 ### Adding a Debit/Credit Card
 
