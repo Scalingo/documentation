@@ -54,3 +54,8 @@ failure.
 6. Validate by clicking the **Add** button
 7. The platform redirects you to Paypal, where you can sign in and validate the
    payment
+
+
+[dashboard-billing]: https://dashboard.scalingo.com/billing
+
+[billing-profile]: {% post_url platform/billing/2000-01-01-profile %}
