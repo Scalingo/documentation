@@ -15,7 +15,6 @@ initials on the top right corner of our [dashboard][dashboard-account], and
 click it. Then select **User settings** from the dropdown menu.
 
 
-[dashboard-account]: https://dashboard.scalingo.com/account
 ## Basic Information
 
 The [**Basic information**][dashboard-account] tab allows to:
