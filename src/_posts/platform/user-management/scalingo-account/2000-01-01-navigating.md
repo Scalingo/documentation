@@ -58,7 +58,7 @@ Reminder: API tokens inherit the exact permissions of your account for each
 application or database. Currently, it is not possible to restrict the scope or
 permissions of an individual token. For improved security, especially in larger
 organizations, we recommend reviewing our [security best
-practices]({% post_url platform/user-management/teamworking/2000-01-01-best-practices %})
+practices][best-practices]
 {% endnote %}
 
 🛈 Have a look at our [API documentation][api] to learn more about API tokens.
