@@ -146,7 +146,7 @@ article aside.warning ol {
 }
 
 article aside.warning li::before {
-  background-color: rgb(128, 85, 255);
+  background-color: rgb(229 71 50);
 }
 
 article aside.warning a {
@@ -155,6 +155,13 @@ article aside.warning a {
 
 article aside.warning code.language-plaintext {
   @apply bg-sc-red-2 text-sc-red-1;
+}
+
+article aside.note ul,
+article aside.note ol,
+article aside.warning ul,
+article aside.warning ol {
+  @apply m-0;
 }
 
 article table {
