@@ -1,8 +1,8 @@
-@import '@docsearch/css';
+@import '@docsearch/css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../tailwind.config.js';
 
 .fit_screen {
   /* 100% screen size, minus header */
@@ -218,7 +218,7 @@ article pre {
 }
 
 article code.language-plaintext {
-  @apply bg-sc-gray-3 text-sc-gray-2 font-mono px-2 py-1 rounded;
+  @apply bg-sc-gray-3 text-sc-gray-2 font-mono px-2 py-1 rounded-sm;
 }
 
 article code {
