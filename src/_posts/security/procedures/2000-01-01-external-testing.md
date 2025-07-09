@@ -1,7 +1,7 @@
 ---
 title: Application External Testing
 nav: External Testing
-modified_at: 2024-07-26 00:00:00
+modified_at: 2025-07-09 00:00:00
 tags: security pentest load-test procedures
 ---
 
@@ -33,7 +33,9 @@ Such service offer is governed by an agreement which engages all three parties i
 This document defines specifically the scope of the pentesting, its duration, and give several restrictions.
 
 {% note %}
-If your service provider does not have three-way agreement, we can provide you with one.
+By default, and to speed up requests, **Scalingo will offer you its audit agreement template**. The document will be systematically transferred to you for review and approval before signature.
+
+In the event that you or your service provider needs to use its own agreement template, it is possible to transfer it to us. It will then be evaluated internally by our competent departments. Additional time may be required to process the request fully.
 {% endnote %}
 
 For example:
@@ -42,13 +44,13 @@ For example:
 - Should not disrupt the normal working of the platform
 - No use of social engineering, physical intrusion...
 
-#### Procedure to follow
+#### You need to use your own agreement: procedure to follow
 
 1. Send the authorization document (signed by the customer and the pentesting
    service provider) to the Security Team at the address [security@scalingo.com](mailto:security@scalingo.com)
 2. We will reply within 7 business days to give you the authorization or suggest
    you another time period if there are already too many pentests scheduled at
-   this date
+   this date or if the agreement document is requesting mandatory updates
 3. Let your service provider do the job
 4. If there are any items in the report that would be of interest to Scalingo,
    please send us the information so that we can act accordingly
