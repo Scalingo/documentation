@@ -80,7 +80,7 @@ Structure example: Several project teams and multiple environments.
   critical permissions to a personal account.
 - Apply the same role split as in [mid-sized teams](#mid-sized-teams):
   **Collaborator** for leads, **Limited Collaborator** for developers.
-- Use a specific and dedicated service account to [scope API tokens](#)
+- Use a specific and dedicated service account to [scope API tokens](#scoping-api-tokens)
   to a given application and ensure better isolation between apps.
 
 

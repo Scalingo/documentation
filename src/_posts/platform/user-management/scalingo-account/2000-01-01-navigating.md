@@ -28,7 +28,7 @@ The [**Basic information**][dashboard-account] tab allows to:
 
 ## Authentication
 
-The [**Authentication**][account-authorization] tab allows to:
+The [**Authentication**][account-authentication] tab allows to:
 
 - Change your e-mail address
 - Update your account password
@@ -99,7 +99,7 @@ The [**Referrals**][account-referrals] tab allows to:
 
 [api]: https://developers.scalingo.com
 [dashboard-account]: https://dashboard.scalingo.com/account
-[account-authorization]: https://dashboard.scalingo.com/account/authorization
+[account-authentication]: https://dashboard.scalingo.com/account/authentication
 [account-keys]: https://dashboard.scalingo.com/account/keys
 [account-tokens]: https://dashboard.scalingo.com/account/tokens
 [account-integrations]: https://dashboard.scalingo.com/account/integrations
