@@ -11,6 +11,12 @@ Several options are listed on our [dedicated section]({% post_url platform/app/2
 
 You can use a mailing library such as [PHPMailer](https://github.com/PHPMailer/PHPMailer) (or equivalent) to send emails from your PHP application via an external SMTP server.
 
+Install `PHPMailer` using `composer`:
+
+```shell
+composer require phpmailer/phpmailer
+```
+
 ### Example Using PHPMailer
  
 ```php
