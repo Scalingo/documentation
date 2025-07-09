@@ -42,7 +42,7 @@ The [**SSH Keys**][account-keys] tab allows to:
 
 - Add or remove the SSH keys associated to your Scalingo account
 
-🛈 Learn more about [configuring your SSH key][ssh-keys] for your workstation.
+Learn more about [configuring your SSH key][ssh-keys] for your workstation.
 
 
 ## API Tokens
@@ -61,7 +61,7 @@ organizations, we recommend reviewing our [security best
 practices][best-practices]
 {% endnote %}
 
-🛈 Have a look at our [API documentation][api] to learn more about API tokens.
+Have a look at our [API documentation][api] to learn more about API tokens.
 
 
 ## SCM Integrations
@@ -70,7 +70,7 @@ The [**SCM Integrations**][account-integrations] tab allows to:
 
 - Connect or disconnect your account to SCM tools such as GitHub or GitLab
 
-🛈 Learn more about [Source Code Management integrations][scm].
+Learn more about [Source Code Management integrations][scm].
 
 
 ## Health Data (HDS)
@@ -86,7 +86,7 @@ Reminder: the point of contact must be reviewed at least every 12 months and
 updated if necessary.
 {% endnote %}
 
-🛈 Learn more about the [HDS certification][hds]
+Learn more about the [HDS certification][hds]
 
 
 ## Referrals
