@@ -25,12 +25,12 @@ $mail = new PHPMailer(true);
 try {
     // Server settings
     $mail->isSMTP();
-    $mail->Host       = 'smtp-relay.brevo.com';
+    $mail->Host       = getenv('SMTP_SERVER');
     $mail->SMTPAuth   = true;
-    $mail->Username   = getenv('BREVO_USERNAME');
-    $mail->Password   = getenv('BREVO_PASSWORD');
+    $mail->Username   = getenv('SMTP_USERNAME');
+    $mail->Password   = getenv('SMTP_PASSWORD');
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = 587;
+    $mail->Port       = getenv('SMTP_PORT');
 
     // Recipients
     $mail->setFrom('from@example.com', 'Sender Name');
