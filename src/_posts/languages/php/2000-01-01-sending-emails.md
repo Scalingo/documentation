@@ -9,7 +9,7 @@ index: 100
 For sending emails from your PHP application you will need to use an external SMTP server. 
 Several options are listed on our [dedicated section]({% post_url platform/app/2000-01-01-sending-emails %}).
 
-You can use a mailing library such as [PHPMailer](https://github.com/PHPMailer/PHPMailer) (or equivalent) to send from your PHP application, via an external SMTP server.
+You can use a mailing library such as [PHPMailer](https://github.com/PHPMailer/PHPMailer) (or equivalent) to send emails from your PHP application via an external SMTP server.
 
 ### Example Using PHPMailer
  
