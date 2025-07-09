@@ -39,9 +39,9 @@ try {
 
     // Content
     $mail->isHTML(true);
-    $mail->Subject = 'Test Email from PHPMailer using Brevo';
-    $mail->Body    = '<p>This is a test email sent using PHPMailer with Brevo SMTP.</p>';
-    $mail->AltBody = 'This is a test email sent using PHPMailer with Brevo SMTP.';
+    $mail->Subject = 'Test Email from PHPMailer';
+    $mail->Body    = '<p>This is a test email sent using PHPMailer from my app hosted on Scalingo.</p>';
+    $mail->AltBody = 'This is a test email sent using PHPMailer from my app hosted on Scalingo.';
 
     $mail->send();
     echo 'Message has been sent';
