@@ -64,7 +64,7 @@
     new: "/platform/account/manage"
   -
     old: "/platform/account/what-should-i-do-with-unpaid-invoice"
-    new: "/platform/account/manage#billing"
+    new: "/platform/billing/process#payment-failure"
   -
     old: "/deployment/project-dir"
     new: "/platform/deployment/project-dir"
@@ -693,11 +693,14 @@
   - old: "/platform/account/manage#referrals"
     new: "/platform/user-management/scalingo-account/navigating#referrals"
 
-  - old: "/platform/account/manage/"
+  - old: "/platform/account/manage"
     new: "/platform/user-management/scalingo-account/navigating"
 
   - old: "/platform/account/manage#billing"
     new: "/platform/billing/profile"
+
+  - old: "/platform/getting-started/billing"
+    new: "/platform/billing/process"
 
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
