@@ -685,19 +685,19 @@
     new: "/databases/postgresql/guides/postgresql-anonymizer"
 
   - old: "/platform/internals/billing"
-    new: "/platform/account/billing"
+    new: "/platform/billing/process"
 
   - old: "/platform/internals/consumption-reports"
-    new: "/platform/account/consumption-reports"
+    new: "/platform/billing/consumption-reports"
 
   - old: "/platform/account/manage#referrals"
-    new: "/platform/account/referrals"
+    new: "/platform/user-management/scalingo-account/navigating#referrals"
 
   - old: "/platform/account/manage/"
-    new: "/platform/account/manage-your-account"
+    new: "/platform/user-management/scalingo-account/navigating"
 
   - old: "/platform/account/manage#billing"
-    new: "/platform/account/manage-your-account#billing"
+    new: "/platform/billing/profile"
 
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
