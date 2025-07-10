@@ -50,7 +50,7 @@ For example:
    service provider) to the Security Team at the address [security@scalingo.com](mailto:security@scalingo.com)
 2. We will reply within 7 business days to either grant authorization or propose 
    an alternative timeframe if the requested date conflicts with other scheduled
-   this date or if the agreement document is requesting mandatory updates
+   this date or if the submitted agreement requires mandatory revisions
 3. Let your service provider do the job
 4. If there are any items in the report that would be of interest to Scalingo,
    please send us the information so that we can act accordingly
