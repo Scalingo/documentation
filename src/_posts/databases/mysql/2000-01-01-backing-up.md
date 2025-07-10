@@ -49,7 +49,7 @@ the workload on our infrastructure.
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. Configure the time of backup:
    - By setting an hour:
      ```bash
@@ -81,7 +81,7 @@ the workload on our infrastructure.
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. Run the following command(s):
    - To download the latest backup available:
      ```bash
@@ -139,7 +139,7 @@ manually, whenever you want.
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. Ask the platform to backup the database:
    ```bash
    scalingo --app my-app --addon mysql backups-create

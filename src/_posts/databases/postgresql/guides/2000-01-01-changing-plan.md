@@ -140,5 +140,5 @@ operation, thanks to the failover mechanism included in the Business plan.
 
 
 [app-dashboard]: https://dashboard.scalingo.com/apps
-[cli]: {% post_url platform/cli/2000-01-01-start %}
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 [databases-plans]: {% post_url databases/about/2000-01-01-overview %}#database-plans

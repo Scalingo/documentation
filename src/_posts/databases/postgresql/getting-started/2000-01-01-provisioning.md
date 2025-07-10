@@ -100,7 +100,7 @@ You can access the database dashboard via the application dashboard:
 
 [dashboard]: https://dashboard.scalingo.com/apps
 
-[cli]: {% post_url platform/cli/2000-01-01-start %}
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 
 [monitoring]: {% post_url databases/postgresql/guides/2000-01-01-monitoring %}
 [upgrading]: {% post_url databases/postgresql/guides/2000-01-01-upgrading %}

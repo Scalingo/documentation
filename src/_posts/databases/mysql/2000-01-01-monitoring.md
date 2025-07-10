@@ -38,7 +38,7 @@ cold logs. These have to be manually unarchived to be processed.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. Run the following command:
    - To access the hot logs of this addon:
    ```bash
