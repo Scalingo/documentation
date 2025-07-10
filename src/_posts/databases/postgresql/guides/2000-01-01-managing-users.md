@@ -162,5 +162,5 @@ Updating a User Password is only available from the command line.
    ```
 
 
-[cli]: {% post_url platform/cli/2000-01-01-start %}
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 [database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-postgresql-dashboard

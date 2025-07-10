@@ -150,7 +150,7 @@ recommend activating Internet Accessibility.
 [postman]: https://www.postman.com/
 [curl]: https://curl.se/
 
-[cli]: {% post_url platform/cli/2000-01-01-start %}
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 [ssh]: {% post_url platform/getting-started/2000-01-01-first-steps %}
 [one-off]: {% post_url platform/app/2000-01-01-tasks %}
 [db-dashboard]: {% post_url databases/opensearch/getting-started/2000-01-01-connecting %}#accessing-the-opensearch-dashboard

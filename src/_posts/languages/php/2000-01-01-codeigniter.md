@@ -60,4 +60,4 @@ $db['production'] = array(
 
 By default all logs written on stdout are aggregated by Scalingo. For CodeIgniter all files named `application/logs/log-$(date).php` (default CodeIgniter log files) are also aggregated.
 
-Aggregated logs can be seen in the _Logs_ section of the web dashboard or through the _logs_ subcommand of our <a href="{% post_url platform/cli/2000-01-01-start %}">Command-Line Tool</a>.
+Aggregated logs can be seen in the _Logs_ section of the web dashboard or through the _logs_ subcommand of our <a href="{% post_url tools/cli/2000-01-01-start %}">Command-Line Tool</a>.

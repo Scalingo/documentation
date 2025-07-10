@@ -137,7 +137,7 @@ communicate with the database:
 [pg-tls]: https://www.postgresql.org/docs/current/static/ssl-tcp.html
 [dashboard]: https://dashboard.scalingo.com
 
-[cli]: ({% post_url platform/cli/2000-01-01-start %})
+[cli]: ({% post_url tools/cli/2000-01-01-start %})
 [environmnent]: {% post_url platform/app/2000-01-01-environment %}
 
 [database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
