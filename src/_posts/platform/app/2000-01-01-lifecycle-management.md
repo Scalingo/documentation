@@ -1,7 +1,7 @@
 ---
 title: Application Lifecycle Management
 nav: Lifecycle Management
-modified_at: 2025-07-02 12:00:00
+modified_at: 2025-07-10 12:00:00
 index: 10
 tags: management
 ---
@@ -17,7 +17,7 @@ Three methods are co-existing to manage your applications on the Scalingo:
 
 - [HTTP API][api]: The web dashboard and the CLI are both consuming this API,
   if you need to automate behaviors by managing applications in a programmatic
-  way, you can directly target our API.
+  way, you can directly target [our API][api] via [our SDK][sdk].
 
 ## Create an Application
 
@@ -139,6 +139,7 @@ To confirm type the name of the application: my-app
 [dashboard-billing]: https://dashboard.scalingo.com/billing
 [api]: https://developers.scalingo.com
 
+[sdk]: {% post_url tools/2000-01-01-software-development-kit %}
 [cli]: {% post_url platform/cli/2000-01-01-start %}
 [scm]: {% post_url platform/app/2000-01-01-scm-integration %}
 [billing]: {% post_url platform/billing/2000-01-01-overview %}
