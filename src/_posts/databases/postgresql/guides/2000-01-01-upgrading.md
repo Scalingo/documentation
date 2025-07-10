@@ -241,7 +241,7 @@ database dashboard.
 [deployment-hooks]: {% post_url platform/app/2000-01-01-app-manifest %}#deployment-hooks
 [maintenance-mode]: {% post_url platform/app/2000-01-01-custom-error-page %}#custom-maintenance-page
 
-[pitr]: {% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups
+[pitr]: {% post_url databases/guies/2000-01-01-backup-policies %}#point-in-time-recovery-backups
 
 [database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [backing-up-creating-manual]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}#creating-a-manual-backup
