@@ -223,13 +223,13 @@
     new: "/addons/scalingo-vpn-ipsec/start"
   -
     old: "/app/command-line-tool"
-    new: "/platform/cli/start"
+    new: "/tools/cli/start"
   -
     old: "/app/command-line-tool/"
-    new: "/platform/cli/start"
+    new: "/tools/cli/start"
   -
     old: "/app/command-line-tool.html"
-    new: "/platform/cli/start"
+    new: "/tools/cli/start"
   -
     old: "/app/crash"
     new: "/platform/app/crash"
@@ -571,10 +571,10 @@
     new: "/platform/app/ffmpeg"
   -
     old: "/cli"
-    new: "/platform/cli/start"
+    new: "/tools/cli/start"
   -
     old: "/cli/"
-    new: "/platform/cli/start"
+    new: "/tools/cli/start"
   -
     old: "/databases/postgresql/start"
     new: "/databases/postgresql/overview"
@@ -704,6 +704,9 @@
 
   - old: "/platform/app/collaborators"
     new: "/platform/user-management/teamwork/overview"
+
+  - old: "/platform/cli/start"
+    new: "/tools/cli/start"
 
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
