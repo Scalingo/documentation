@@ -12,7 +12,7 @@ Scalingo is a Platform as a Service [highly compatible with Heroku]({% post_url 
 To be able to follow this tutorial, we assume that you have:
 
 - [A Scalingo account](https://auth.scalingo.com/users/sign_up)
-- The Scalingo [CLI]({% post_url platform/cli/2000-01-01-start %}) installed
+- The Scalingo [CLI]({% post_url tools/cli/2000-01-01-start %}) installed
 - A local copy of the repository containing your app’s code ([How can I download my code from Heroku?](https://help.heroku.com/FZDDCBLB/how-can-i-download-my-code-from-heroku))
 
 Please ensure you are running all commands above from the root of the repository containing your app’s code. 

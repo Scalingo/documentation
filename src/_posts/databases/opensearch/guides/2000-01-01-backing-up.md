@@ -206,7 +206,7 @@ documentation][elasticsearch-dump].
 [opensearch-api-snapshot]: https://docs.opensearch.org/docs/2.19/api-reference/snapshots/index/
 [elasticsearch-dump]: https://github.com/elasticsearch-dump/elasticsearch-dump
 
-[cli]: {% post_url platform/cli/2000-01-01-start %}
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 [db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
 [db-backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
 [accessing-one-off]: {% post_url databases/opensearch/getting-started/2000-01-01-accessing %}#using-a-one-off
