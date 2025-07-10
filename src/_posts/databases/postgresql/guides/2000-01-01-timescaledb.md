@@ -262,13 +262,14 @@ SELECT timescaledb_post_restore();
 ```
 
 On Scalingo, default users do not have admin rights on their database.
-Consequently, **only [Scheduled backups]({% post_url databases/2000-01-01-backup-policies %}#scheduled-backups)
-are restorable** and **the restoration process must be done by the Scalingo
-support team**.
+Consequently, **only [Scheduled backups][backup_policies-scheduled] are
+restorable** and **the restoration process must be done by the Scalingo support
+team**.
 
 Make sure you keep track of which versions of PostgreSQL® and TimescaleDB® you
 are running during the backup process. For more information, see
-["Troubleshooting version mismatches" in the official documentation][official_doc-version-mismatch].
+["Troubleshooting version mismatches" in the official
+documentation][official_doc-version-mismatch].
 
 For more details about dumping and restoring TimescaleDB®, please refer to [the
 official documentation][official_doc-backup-restore].
@@ -288,7 +289,8 @@ PostgreSQL®][restoring-pitr].
 
 [scalingo-scheduler]: {% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}
 
-[backup_policies-pitr]: {% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups
+[backup_policies-pitr]: {% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups
+[backup_policies-scheduled]: {% post_url databases/about/2000-01-01-backup-policies %}#scheduled-backups
 
 [irc]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
 [provisioning]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}
