@@ -702,6 +702,9 @@
   - old: "/platform/getting-started/billing"
     new: "/platform/billing/process"
 
+  - old: "/platform/app/collaborators"
+    new: "/platform/user-management/teamworking/overview"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
