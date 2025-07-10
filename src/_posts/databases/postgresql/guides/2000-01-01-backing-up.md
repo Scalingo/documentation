@@ -209,10 +209,10 @@ somewhere).
 
 [cli]: {% post_url platform/cli/2000-01-01-start %}
 
-[backup-policies]: {% post_url databases/2000-01-01-backup-policies %}
-[backup-policies-manual]: {% post_url databases/2000-01-01-backup-policies %}#manual-backups
-[backup-policies-pitr]: {% post_url databases/2000-01-01-backup-policies %}#point-in-time-recovery-backups
-[backup-policies-scheduled]: {% post_url databases/2000-01-01-backup-policies %}#scheduled-backups
+[backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
+[backup-policies-manual]: {% post_url databases/about/2000-01-01-backup-policies %}#manual-backups
+[backup-policies-pitr]: {% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups
+[backup-policies-scheduled]: {% post_url databases/about/2000-01-01-backup-policies %}#scheduled-backups
 
 [database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [accessing-one-off]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-a-one-off
