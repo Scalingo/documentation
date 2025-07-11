@@ -11,6 +11,7 @@ excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
+markdown_ext: "md,markdown,mkdown,mkdn,mkd"
 highlighter: rouge
 
 permalink: /:categories/:slug
