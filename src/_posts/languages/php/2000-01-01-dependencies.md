@@ -95,12 +95,12 @@ You can select the Composer version to install by specifying it in your
 
 Scalingo currently supports the following versions of Composer:
 
-| Composer    | `scalingo-20` (deprecated) | `scalingo-22`  |
-| ----------: | -------------------------: | -------------: |
-| `2.8`       | up to `2.8.8`              | up to `2.8.10` |
-| `2.7`       | up to `2.7.9`              | up to `2.7.9`  |
-| `2.6`       | up to `2.6.6`              | up to `2.6.6`  |
-| `2.2` (LTS) | up to `2.2.25`             | up to `2.2.25` |
+| Composer    | `scalingo-20` (EOL) | `scalingo-22`  |
+| ----------: | ------------------: | -------------: |
+| `2.8`       | up to `2.8.8`       | up to `2.8.10` |
+| `2.7`       | up to `2.7.9`       | up to `2.7.9`  |
+| `2.6`       | up to `2.6.6`       | up to `2.6.6`  |
+| `2.2` (LTS) | up to `2.2.25`      | up to `2.2.25` |
 
 
 ## Working with Composer Environments

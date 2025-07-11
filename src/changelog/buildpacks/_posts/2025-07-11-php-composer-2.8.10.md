@@ -7,5 +7,4 @@ github: 'https://github.com/Scalingo/php-buildpack'
 - Composer `2.8.10` is now available
 
 Changelog:
-
-* [Composer 2.8.10](https://github.com/composer/composer/releases/tag/2.8.10)
+- [Composer 2.8.10](https://github.com/composer/composer/releases/tag/2.8.10)
