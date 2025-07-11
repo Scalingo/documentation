@@ -35,7 +35,7 @@ workflows. As such, it is the responsibility of each owner to:
 While roles can prevent a user from deploying an unvalidated branch directly
 from the dashboard they do not prevent a developer with access to your
 repository from introducing harmful logic into your codebase.\
-**To ensure proper security, it's essential to combine the access controls of your SCM with roles on Scalingo.**.
+**To ensure proper security, it's essential to combine the access controls of your SCM with roles on Scalingo**.
 
 
 ## Setting the Appropriate Roles
