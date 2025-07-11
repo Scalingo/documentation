@@ -108,5 +108,5 @@ The [**Referrals**][account-referrals] tab allows to:
 
 [ssh-keys]: {% post_url platform/getting-started/2000-01-01-first-steps %}#ssh-key-setup
 [scm]: {% post_url platform/app/2000-01-01-scm-integration %}
-[best-practices]: {% post_url platform/user-management/teamworking/2000-01-01-best-practices %}
+[best-practices]: {% post_url platform/user-management/teamwork/2000-01-01-best-practices %}
 [hds]: {% post_url compliance/2000-01-01-hds %}

@@ -125,4 +125,4 @@ into your internal security alerts or audit processes.
 [dashboard-collab]: https://dashboard.scalingo.com/collaborators
 [api]: https://developers.scalingo.com
 
-[roles]: {% post_url platform/user-management/teamworking/2000-01-01-roles %}
+[roles]: {% post_url platform/user-management/teamwork/2000-01-01-roles %}
