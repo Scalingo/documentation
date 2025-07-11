@@ -142,4 +142,4 @@ To confirm type the name of the application: my-app
 [sdk]: {% post_url tools/2000-01-01-software-development-kit %}
 [cli]: {% post_url platform/cli/2000-01-01-start %}
 [scm]: {% post_url platform/app/2000-01-01-scm-integration %}
-[billing]: {% post_url platform/billing/2000-01-01-overview %}
+[billing]: {% post_url platform/billing/2000-01-01-profile %}
