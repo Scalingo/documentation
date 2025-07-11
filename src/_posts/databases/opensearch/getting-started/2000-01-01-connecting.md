@@ -127,6 +127,6 @@ the others applications.
 [rfc3986]: https://datatracker.ietf.org/doc/html/rfc3986
 [dashboard]: https://dashboard.scalingo.com
 
-[cli]: {% post_url platform/cli/2000-01-01-start %}
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 [db-dashboard]: {% post_url databases/opensearch/guides/2000-01-01-monitoring %}#accessing-the-opensearch-dashboard
 [env]: {% post_url platform/app/2000-01-01-environment %}

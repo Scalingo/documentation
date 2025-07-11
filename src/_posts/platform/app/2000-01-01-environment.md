@@ -76,7 +76,7 @@ The process should not be really different. Refer to the documentation of the st
 
 The current web dashboard does not handle well the configuration of an environment variable which spans on multiple lines. There is a couple of workaround you could use to circumvent this limitation.
 
-A first solution is to define this environment variable using our [CLI]({% post_url platform/cli/2000-01-01-start %}). For instance, if the content of the environment variable is the content of a file:
+A first solution is to define this environment variable using our [CLI]({% post_url tools/cli/2000-01-01-start %}). For instance, if the content of the environment variable is the content of a file:
 
 ```bash
 scalingo --app my-app env-set "MY_VAR=$(cat fichier.key)"

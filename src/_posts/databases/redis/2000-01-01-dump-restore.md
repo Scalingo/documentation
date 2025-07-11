@@ -71,7 +71,7 @@ $ redis-cli -h localhost -p 10000 -a <password> --rdb ./dump.rdb
 
 ## Dump From Scalingo One-off Container
 
-You can dump your database remotely using [the command-line-tool]({% post_url platform/cli/2000-01-01-start %}) and a one-off container (see [application tasks]({% post_url platform/app/2000-01-01-tasks %})). The advantage of this method is the network. From your workstation you don't always have a good bandwidth. From our infrastructure, data transfers will be way faster.
+You can dump your database remotely using [the command-line-tool]({% post_url tools/cli/2000-01-01-start %}) and a one-off container (see [application tasks]({% post_url platform/app/2000-01-01-tasks %})). The advantage of this method is the network. From your workstation you don't always have a good bandwidth. From our infrastructure, data transfers will be way faster.
 
 You need to install the Redis® CLI tools in the one-off before executing `redis-cli`:
 

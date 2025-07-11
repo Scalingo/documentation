@@ -684,6 +684,9 @@
   - old: "/databases/postgresql/postgresql-anonymizer"
     new: "/databases/postgresql/guides/postgresql-anonymizer"
 
+  - old: "platform/cli/start"
+    new: "tools/cli/start"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

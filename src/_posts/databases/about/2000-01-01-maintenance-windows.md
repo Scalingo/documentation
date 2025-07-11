@@ -42,7 +42,7 @@ Database Maintenance Windows are excluded from the SLA calculation.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. From the command line, run the following command to view the maintenance
    window settings:
    ```bash
@@ -90,7 +90,7 @@ team.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. From the command line, run the following command to configure the
    maintenance window:
    ```bash
@@ -169,7 +169,7 @@ later time.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. From the command line, run the following command to list maintenance
    operations:
    ```bash

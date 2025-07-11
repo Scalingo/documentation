@@ -40,7 +40,7 @@ This default user is ***protected*** and thus:
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. From the command line, run the following command to list the users:
    ```bash
    scalingo --app my-app --addon mysql database-users-list
@@ -91,7 +91,7 @@ method you use:
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. From the command line, run the following command to create a new user:
    ```bash
    scalingo --app my-app --addon mysql database-users-create <username>
@@ -140,7 +140,7 @@ method you use:
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. Update the user password with the following command:
    ```bash
    scalingo --app my-app --addon mysql database-users-update-password <username>
@@ -174,7 +174,7 @@ method you use:
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. Remove the user with the following command:
    ```bash
    scalingo --app my-app --addon mysql database-users-delete <username>

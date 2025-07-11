@@ -93,7 +93,7 @@ more disk I/O operations.
 **For queries that run very oftently**, the cache hit ratio should ideally
 neighbor `100%`.
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. From the command line, open a console for your MySQL® addon: 
    ```bash
    scalingo --app my-app mysql-console
