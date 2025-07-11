@@ -9,7 +9,7 @@ index: 30
 
 {% warning %}
 The backup features described in this page are only available for Starter and
-Business plans.\
+Business plans.\\
 They are **not** available for Sandbox plans.
 {% endwarning %}
 
