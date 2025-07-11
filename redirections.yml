@@ -64,7 +64,7 @@
     new: "/platform/account/manage"
   -
     old: "/platform/account/what-should-i-do-with-unpaid-invoice"
-    new: "/platform/account/manage#billing"
+    new: "/platform/billing/process#payment-failure"
   -
     old: "/deployment/project-dir"
     new: "/platform/deployment/project-dir"
@@ -683,6 +683,27 @@
 
   - old: "/databases/postgresql/postgresql-anonymizer"
     new: "/databases/postgresql/guides/postgresql-anonymizer"
+
+  - old: "/platform/internals/billing"
+    new: "/platform/billing/process"
+
+  - old: "/platform/internals/consumption-reports"
+    new: "/platform/billing/consumption-reports"
+
+  - old: "/platform/account/manage#referrals"
+    new: "/platform/user-management/scalingo-account/navigating#referrals"
+
+  - old: "/platform/account/manage"
+    new: "/platform/user-management/scalingo-account/navigating"
+
+  - old: "/platform/account/manage#billing"
+    new: "/platform/billing/profile"
+
+  - old: "/platform/getting-started/billing"
+    new: "/platform/billing/process"
+
+  - old: "/platform/app/collaborators"
+    new: "/platform/user-management/teamwork/overview"
 
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
