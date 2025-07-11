@@ -703,7 +703,7 @@
     new: "/platform/billing/process"
 
   - old: "/platform/app/collaborators"
-    new: "/platform/user-management/teamworking/overview"
+    new: "/platform/user-management/teamwork/overview"
 
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
