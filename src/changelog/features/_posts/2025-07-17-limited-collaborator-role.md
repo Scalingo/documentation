@@ -1,6 +1,6 @@
 ---
 modified_at: 2025-07-17 06:00:00
-title: 'New: Limited Collaborator Role'
+title: 'Introducing the Limited Collaborator Role'
 ---
 
 We are introducing a new **[Limited Collaborator]({% post_url platform/user-management/teamwork/2000-01-01-roles %}#limited-collaborator)** role to give you more control over access management in your applications.
@@ -14,5 +14,6 @@ It’s particularly well suited if:
 - You manage junior team members or support staff
 - You’re preparing your project for stricter security or compliance requirements
 
-[Learn more in our documentation]({% post_url platform/user-management/teamwork/2000-01-01-overview %})
+We have also **revamped our documentation** on account and collaborators management, including a brand-new [Best Practices guide]({% post_url platform/user-management/teamwork/2000-01-01-best-practices %}) to help you assign the right roles for your teams.  
 
+👉 [Explore how you can leverage this new feature]({% post_url platform/user-management/teamwork/2000-01-01-overview %})
