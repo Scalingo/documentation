@@ -9,7 +9,7 @@ A notifier is a way for an application to notify about different events occurrin
 application lifetime. Notifier are defined per application. You can find the settings into the
 "Notifications" tab of your app.
 
-A notifier have:
+A notifier has:
 * a name: help you identify a notifier,
 * a communication channel: Slack, webhook, Rocket.Chat, email,
 * a list of events to react to. You can find a list of events below.
@@ -48,7 +48,7 @@ Note that Mattermost notifications require using the Slack notifier.
 * collaborator_accepted: Collaborator accepted, A collaborator invitation was accepted
 * collaborator_invited: Collaborator invited, A collaborator was invited
 * collaborator_removed: Collaborator removed, A collaborator was removed
-* collaborator_role_changed: Collaborator role changed, A collaborator role has been changed
+* collaborator_role_changed: Collaborator's role changed, The role of a collaborator was changed
 * database_maintenance_planned: Database maintenance planned, A database maintenance has been planned
 * database_maintenance_started: Database maintenance started, A database maintenance has started
 * database_maintenance_completed: Database maintenance completed, A database maintenance has completed
