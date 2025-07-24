@@ -6,7 +6,7 @@ description: Here is a list of samples built with various technologies that you 
 modified_at: 2015-09-09 00:00:00
 ---
 
-<div class="max-w-sc-content-1532 container mx-auto">
+<div class="max-w-(--sc-content-1532) container mx-auto">
   <div class="bg-sc-gray-5 rounded-lg flex flex-row justify-between items-center">
     <div class="p-10">
       <h1 class="text-sc-title-1-1 text-sc-gray-1 font-bold">{{ page.title }}</h1>
