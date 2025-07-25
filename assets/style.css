@@ -85,6 +85,91 @@
   --tracking-sc-title-7: 0.14em;
 }
 
+.text-sc-title-1 {
+  font-size: var(--text-sc-title-1);
+  line-height: var(--leading-sc-title-1);
+  letter-spacing: var(--tracking-sc-title-1);
+  font-weight: var(--font-weight-bold, 700);
+}
+
+.text-sc-title-1-1 {
+  font-size: var(--text-sc-title-1-1);
+  line-height: var(--leading-sc-title-1-1);
+  letter-spacing: var(--tracking-sc-title-1-1);
+  font-weight: var(--font-weight-bold, 700);
+}
+
+.text-sc-title-2 {
+  font-size: var(--text-sc-title-2);
+  line-height: var(--leading-sc-title-2);
+  letter-spacing: var(--tracking-sc-title-2);
+  font-weight: var(--font-weight-bold, 700);
+}
+.text-sc-title-2-2 {
+  font-size: var(--text-sc-title-2-2);
+  line-height: var(--leading-sc-title-2-2);
+}
+.text-sc-title-3 {
+  font-size: var(--text-sc-title-3);
+  line-height: var(--leading-sc-title-3);
+  letter-spacing: var(--tracking-sc-title-3);
+  font-weight: var(--font-weight-bold, 700);
+}
+.text-sc-title-4 {
+  font-size: var(--text-sc-title-4);
+  line-height: var(--leading-sc-title-4);
+  letter-spacing: var(--tracking-sc-title-4);
+  font-weight: var(--font-weight-bold, 700);
+}
+.text-sc-title-4-2 {
+  font-size: var(--text-sc-title-4-2);
+  line-height: var(--leading-sc-title-4-2);
+}
+.text-sc-title-5 {
+  font-size: var(--text-sc-title-5);
+  line-height: var(--leading-sc-title-5);
+  letter-spacing: var(--tracking-sc-title-5);
+  font-weight: var(--font-weight-bold, 700);
+}
+.text-sc-title-6 {
+  font-size: var(--text-sc-title-6);
+  line-height: var(--leading-sc-title-6);
+}
+.text-sc-title-6-2 {
+  font-size: var(--text-sc-title-6-2);
+  line-height: var(--leading-sc-title-6-2);
+}
+.text-sc-title-7 {
+  font-size: var(--text-sc-title-7);
+  line-height: var(--leading-sc-title-7);
+  letter-spacing: var(--tracking-sc-title-7);
+}
+
+.text-sc-text-1 {
+  font-size: var(--text-sc-text-1);
+  line-height: var(--leading-sc-text-1);
+}
+
+.text-sc-text-2 {
+  font-size: var(--text-sc-text-2);
+  line-height: var(--leading-sc-text-2);
+}
+
+.text-sc-text-4 {
+  font-size: var(--text-sc-text-4);
+  line-height: var(--leading-sc-text-4);
+}
+
+.text-sc-text-5 {
+  font-size: var(--text-sc-text-5);
+  line-height: var(--leading-sc-text-5);
+}
+
+.text-sc-text-6 {
+  font-size: var(--text-sc-text-6);
+  line-height: var(--leading-sc-text-6);
+}
+
 .fit_screen {
   /* 100% screen size, minus header */
   min-height: calc(100vh - 68px);
