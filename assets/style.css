@@ -196,9 +196,9 @@
 
 article h2 {
   color: var(--color-sc-gray-1);
-  font-size: var(--text-sc-title-1);
-  line-height: var(--leading-sc-title-1);
-  letter-spacing: var(--tracking-sc-title-1);
+  font-size: var(--text-sc-title-2);
+  line-height: var(--leading-sc-title-2);
+  letter-spacing: var(--tracking-sc-title-2);
   font-weight: var(--font-weight-bold, 700);
   margin-bottom: 1rem;
   margin-top: 1.5rem;
