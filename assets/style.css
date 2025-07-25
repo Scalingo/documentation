@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import '@docsearch/css';
 @theme {
   /* colors */
   --color-sc-gray-1: #1F2933;
