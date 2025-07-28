@@ -8,13 +8,11 @@ module Jekyll
     def render(context)
       source = super
 
-      output = <<~MARKDOWN
-      <aside class="warning" markdown="block">
-      #{source}
-      </aside>
+      <<~MARKDOWN
+        <aside class="warning" markdown="block">
+        #{source}
+        </aside>
       MARKDOWN
-
-      output
     end
   end
 end
