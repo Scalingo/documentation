@@ -1,6 +1,6 @@
 import * as esbuild from "esbuild";
 import postCssPlugin from 'esbuild-style-plugin'
-import tailwindcss from 'tailwindcss';
+import tailwindcss from '@tailwindcss/postcss';
 import autoprefixer from 'autoprefixer';
 import postcssImport from 'postcss-import';
 import fs from 'fs';
@@ -21,10 +21,10 @@ const opts = {
   outdir: "src/assets",
   plugins: [
     postCssPlugin({
-      postcss: {
-        plugins: [tailwindcss, autoprefixer, postcssImport]
-      },
-    }),
+  postcss: {
+    plugins: [postcssImport, tailwindcss, autoprefixer]
+  },
+}),
     {
       name: 'generate-manifest',
       setup(build) {

@@ -9,13 +9,11 @@ module Jekyll
       source = super.strip
 
       # Allows to have all sort of Markdown in the note:
-      output = <<~MARKDOWN
-      <aside class="note" markdown="block">
-        #{source}
-      </aside>
+      <<~MARKDOWN
+        <aside class="note" markdown="block">
+          #{source}
+        </aside>
       MARKDOWN
-
-      output
     end
   end
 end
