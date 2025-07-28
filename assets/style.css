@@ -392,6 +392,7 @@ article table {
   table-layout: auto;
   width: 100%;
   font-size: var(--text-sc-text-4);
+  line-height: var(--leading-sc-text-4);
   color: var(--color-sc-gray-1);
   margin-bottom: 1.5rem;
 }
