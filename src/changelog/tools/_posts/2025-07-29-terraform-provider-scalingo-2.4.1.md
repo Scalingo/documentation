@@ -1,5 +1,5 @@
 ---
-modified_at: 2025-07-29 12:00:00
+modified_at: 2025-07-29 13:00:00
 title: 'Release of v2.4.1 for Scalingo Terraform Provider'
 ---
 
