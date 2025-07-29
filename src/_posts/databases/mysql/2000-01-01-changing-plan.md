@@ -104,7 +104,7 @@ plan.
 
 ## Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. From the command line, list the plans available for `mysql`:
    ```bash
    scalingo addons-plans mysql

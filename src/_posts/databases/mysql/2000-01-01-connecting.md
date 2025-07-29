@@ -67,7 +67,7 @@ still remains applicable.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. From the command line, get the environment variable value:
    ```bash
    scalingo --app my-app env-get SCALINGO_MYSQL_URL

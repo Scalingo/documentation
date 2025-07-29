@@ -71,7 +71,7 @@ dashboard.
 {% endnote %}
 
 
-[cli]: {% post_url platform/cli/2000-01-01-start %}
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 [db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
 [monitoring]: {% post_url databases/opensearch/guides/2000-01-01-monitoring %}
 [managing-users]: {% post_url databases/opensearch/guides/2000-01-01-managing-users %}

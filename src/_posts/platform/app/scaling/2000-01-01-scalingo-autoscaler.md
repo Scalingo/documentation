@@ -276,7 +276,7 @@ options and values before validating.\
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. From the command line, run the following command to setup the Autoscaler:
    ```bash
    scalingo --app my-app autoscalers-add --container-type <process_type> \
@@ -346,7 +346,7 @@ may decide to either scale-out (i.e. boot up additional containers) or scale-in
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
 3. From the command line, enable the Autoscaler:
    ```bash
@@ -398,7 +398,7 @@ running containers remains the same.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
 3. From the command line, disable the Autoscaler:
    ```bash

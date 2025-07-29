@@ -34,7 +34,7 @@ We usually suggest the following strategy:
    running and to feed it on a regular basis, so **don't forget to make it
    [web-less]({% post_url platform/app/2000-01-01-web-less-app %})**.
 2. From this new app, download the latest production database backup available.
-   This can be done using the [Scalingo CLI tool]({% post_url platform/cli/2000-01-01-start %}),
+   This can be done using the [Scalingo CLI tool]({% post_url tools/cli/2000-01-01-start %}),
    an API token and a bit of Bash (see hereafter).
 3. Once downloaded, [restore the backup]({% post_url platform/databases/2000-01-01-restore-backup %})
    to the new app's database.
