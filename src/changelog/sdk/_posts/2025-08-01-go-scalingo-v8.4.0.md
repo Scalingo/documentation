@@ -6,5 +6,7 @@ github: 'https://github.com/Scalingo/go-scalingo'
 
 ### Changelog
 
+Some features listed in this changelog, like project management, are currently only available to selected users.
+
 * feat(projects): add types and methods to handle projects
 * task: handle 409 return calls (Conflict)
