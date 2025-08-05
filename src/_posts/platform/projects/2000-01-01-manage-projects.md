@@ -22,7 +22,7 @@ By doing this, you prepare the arrival of some of the future features, that in t
 
 Within the App creation wizard, the section **Project** enables you to set a project different from **⭐ default**.
 
-If the project you'd like to set against the new App, doesn't exist, proceed as follow:
+If the project you'd like to set against the new App, doesn't exist, proceed as follows:
 
 1. Click **+ New project**
 2. Enter the project name of your choice (only characters a-Z 0-9 - _ are allowed)
