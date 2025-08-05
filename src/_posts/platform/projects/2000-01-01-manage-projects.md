@@ -32,6 +32,13 @@ If the project is in the list
 1. Select the project you want
 2. Proceed with the next steps of your app creation
 
+### Using the Command Line
+
+This feature is not yet available in the CLI.
+
+### Using the Terraform Provider
+
+This feature is not yet available in the Terraform Provider.
 
 ## Updating the project of an existing App
 
@@ -57,7 +64,15 @@ If the project is in the list
 1. Select the project you want
 2. Click **Move app to project**
 
+### Using the Command Line
 
+This feature is not yet available in the CLI.
+
+### Using the Terraform Provider
+
+This feature is not yet available in the Terraform Provider.
 
 
 [dashboard]: https://dashboard.scalingo.com/
+
+[cli]: {% post_url platform/cli/2000-01-01-start %}
