@@ -95,8 +95,8 @@ Right now it is only possible to list the projects when creating a new applicati
    ┌──────────────┬─────────┬──────────────────────────────────────────┐
    │     NAME     │ DEFAULT │                    ID                    │
    ├──────────────┼─────────┼──────────────────────────────────────────┤
-   │ test-project │ false   │ prj-6631a609-02b6-4614-b28d-5abe436543d3 │
-   │ default      │ true    │ prj-29f1b7e4-cf4d-46e9-aff1-e47ae149c486 │
+   │ test-project │ false   │ prj-6731a609-02b6-4614-b28d-5abe43654333 │
+   │ default      │ true    │ prj-20f1b7e4-cf4d-46e9-aff1-e47ae149c444 │
    └──────────────┴─────────┴──────────────────────────────────────────┘
    ```
 
@@ -131,6 +131,38 @@ Right now it is only possible to create a new project when creating a new applic
      default = true
    }
    ```
+
+## Updating a project
+
+Two attributes can be updated: `name` and `default`.
+
+{% note %}
+   `default` cannot be changed from true to false. To change the default project, update an existing project to be the new default one, or create a new default project.
+{% endnote %}
+
+### Using the Dashboard
+
+This feature is not yet available in the dashboard.
+
+### Using the Command Line
+
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+2. From the command line, update a project:
+   ```shell
+   scalingo projects-update --name=updated-test-project prj-6731a609-02b6-4614-b28d-5abe43654333
+   ```
+   The output should look like this:
+   ```shell
+   -----> test-project has been updated
+   ```
+   You can also update a project to become the new default:
+   ```shell
+   scalingo projects-update --default prj-6731a609-02b6-4614-b28d-5abe43654333
+   ```
+
+### Using the Terraform Provider
+
+1. The only thing to do is update the project `resource` with a new `name` or `default` attribute.
 
 [dashboard]: https://dashboard.scalingo.com/
 
