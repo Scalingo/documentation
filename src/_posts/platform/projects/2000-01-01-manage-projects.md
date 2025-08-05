@@ -72,6 +72,37 @@ This feature is not yet available in the CLI.
 
 This feature is not yet available in the Terraform Provider.
 
+## Creating a new project
+
+### Using the Dashboard
+
+Right now it is only possible to create a new project when creating a new application.
+
+### Using the Command Line
+
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+2. From the command line, create a project:
+   ```shell
+   scalingo projects-add test-project
+   ```
+   The output should look like this:
+   ```text
+   -----> test-project has been created
+   ```
+   You can also create a new project that will be default directly:
+   ```shell
+   scalingo projects-add --default test-project
+   ```
+
+### Using the Terraform Provider
+
+1. Place the following `resource` block in your Terraform file:
+   ```tf
+   resource "scalingo_project" "test-project" {
+     name = "test-project"
+     default = true
+   }
+   ```
 
 [dashboard]: https://dashboard.scalingo.com/
 
