@@ -52,7 +52,7 @@ This feature is not yet available in the Terraform Provider.
 6. In the section **Parent project**, click **Move app to another project**
 
 
-If the project isn't already existing, proceed as follow:
+If the project isn't already existing, proceed as follows:
 
 1. Click **+ New project** 
 2. Enter the project name of your choice (only characters a-Z 0-9 - _ are allowed)
@@ -169,6 +169,31 @@ update the project with the desired attributes. For example:
      name = "updated-test-project"
    }
    ```
+
+## Removing a project
+
+A project can be removed only if this is not the default one, and no application is linked to it.
+
+### Using the Dashboard
+
+This feature is not yet available in the dashboard.
+
+### Using the Command Line
+
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+2. From the command line, update a project:
+   ```shell
+   scalingo projects-remove prj-6731a609-02b6-4614-b28d-5abe43654333
+   ```
+   The output should look like this:
+   ```shell
+   -----> prj-6731a609-02b6-4614-b28d-5abe43654333 has been removed
+   ```
+
+### Using the Terraform Provider
+
+There is only one step required to remove a project using Terraform. You just need to
+remove the associated resource from the Terraform file.
 
 [dashboard]: https://dashboard.scalingo.com/
 
