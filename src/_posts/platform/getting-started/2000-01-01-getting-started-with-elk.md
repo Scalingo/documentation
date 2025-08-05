@@ -1,6 +1,6 @@
 ---
 title: Getting started with the ELK Stack on Scalingo
-modified_at: 2025-01-27 00:00:00
+modified_at: 2025-08-05 00:00:00
 tags: elk tutorial logstash elasticsearch kibana log
 index: 11
 ---
@@ -42,6 +42,7 @@ To get started, you can use [our boilerplate](https://github.com/Scalingo/logsta
 
 ```bash
 $ git clone https://github.com/Scalingo/logstash-boilerplate
+$ git checkout es7-compat
 $ cd logstash-boilerplate
 ```
 
