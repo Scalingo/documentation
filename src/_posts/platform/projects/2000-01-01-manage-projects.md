@@ -162,7 +162,13 @@ This feature is not yet available in the dashboard.
 
 ### Using the Terraform Provider
 
-1. The only thing to do is update the project `resource` with a new `name` or `default` attribute.
+There is only one step required to update a project using Terraform. You need to
+update the project with the desired attributes. For example:
+   ```tf
+   resource "scalingo_project" "test-project" {
+     name = "updated-test-project"
+   }
+   ```
 
 [dashboard]: https://dashboard.scalingo.com/
 
