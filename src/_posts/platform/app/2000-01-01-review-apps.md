@@ -44,7 +44,7 @@ among open PRs of your app to manually deploy a review app.
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_review_apps_configuration.png" %}
 {% include mdl_img.html %}
 
-It is also possible to manually create a review app using the [Scalingo CLI]({% post_url platform/cli/2000-01-01-features %}):
+It is also possible to manually create a review app using the [Scalingo CLI]({% post_url tools/cli/2000-01-01-features %}):
 
 ```bash
 scalingo --app my-app integration-link-manual-review-app 42

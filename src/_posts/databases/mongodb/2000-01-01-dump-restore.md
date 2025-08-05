@@ -143,7 +143,7 @@ $ mongorestore --ssl  --sslCAFile <CAFile.pem> --username <username> --password 
 ## Dump and Restore From Scalingo One-off Container
 
 You can dump and restore your database remotely using
-[the command-line-tool]({% post_url platform/cli/2000-01-01-start %})
+[the command-line-tool]({% post_url tools/cli/2000-01-01-start %})
 and a one-off container
 (see [application tasks]({% post_url platform/app/2000-01-01-tasks %})).
 

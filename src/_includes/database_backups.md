@@ -12,7 +12,7 @@ If your database is in a paid plan (i.e. it's not "free plan"), we'll automatica
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. Configure the time of backup:
    - By setting an hour:
      ```bash
@@ -72,7 +72,7 @@ In case a database is removed from an application, the retention policy remains 
 
 ##### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url platform/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
 2. Ask the platform to backup the database:
    ```bash
    scalingo --app my-app --addon [YOUR ADDON KIND] backups-create

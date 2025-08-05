@@ -207,7 +207,7 @@ somewhere).
    ```
 
 
-[cli]: {% post_url platform/cli/2000-01-01-start %}
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 
 [backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
 [backup-policies-manual]: {% post_url databases/about/2000-01-01-backup-policies %}#manual-backups

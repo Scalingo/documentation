@@ -9,7 +9,7 @@ tags: management
 Three methods are co-existing to manage your applications on the Scalingo:
 
 - [Web Dashboard][dashboard]: The simplest way to manage your applications, use
-  any browser create/scale/transfer/delete applications.
+  any browser to create, scale, transfer, or delete applications.
 
 - [CLI][cli]: More comfortable with terminals or you want to build scripts to
   control applications, the command line interface, available for all major
@@ -140,6 +140,6 @@ To confirm type the name of the application: my-app
 [api]: https://developers.scalingo.com
 
 [sdk]: {% post_url tools/2000-01-01-software-development-kit %}
-[cli]: {% post_url platform/cli/2000-01-01-start %}
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 [scm]: {% post_url platform/app/2000-01-01-scm-integration %}
 [billing]: {% post_url platform/billing/2000-01-01-profile %}

@@ -13,7 +13,7 @@ Each Scalingo for OpenSearch® addon comes with a [default database user](#under
 **We currently don't support managing roles and users of OpenSearch® addons**.
 Consequently, creating additional users and roles or deleting users and roles
 is currently not possible. This feature will be integrated in a future
-release.\
+release.\\
 Thanks for your understanding <3
 {% endnote %}
 
