@@ -72,6 +72,34 @@ This feature is not yet available in the CLI.
 
 This feature is not yet available in the Terraform Provider.
 
+## Listing the projects
+
+{% warning %}
+For the moment, listing the projects will return only projects where you are the owner.
+{% endwarning %}
+
+### Using the Dashboard
+
+Right now it is only possible to list the projects when creating a new application.
+
+### Using the Command Line
+
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+2. From the command line, list the projects:
+   ```shell
+   scalingo projects
+   ```
+   The output should look like this:
+   ```shell
+     /!\  This command only displays projects where you are the owner
+   ┌──────────────┬─────────┬──────────────────────────────────────────┐
+   │     NAME     │ DEFAULT │                    ID                    │
+   ├──────────────┼─────────┼──────────────────────────────────────────┤
+   │ test-project │ false   │ prj-6631a609-02b6-4614-b28d-5abe436543d3 │
+   │ default      │ true    │ prj-29f1b7e4-cf4d-46e9-aff1-e47ae149c486 │
+   └──────────────┴─────────┴──────────────────────────────────────────┘
+   ```
+
 ## Creating a new project
 
 ### Using the Dashboard
@@ -86,7 +114,7 @@ Right now it is only possible to create a new project when creating a new applic
    scalingo projects-add test-project
    ```
    The output should look like this:
-   ```text
+   ```shell
    -----> test-project has been created
    ```
    You can also create a new project that will be default directly:
