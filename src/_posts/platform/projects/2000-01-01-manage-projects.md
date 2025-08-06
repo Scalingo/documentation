@@ -34,7 +34,17 @@ If the project is in the list
 
 ### Using the Command Line
 
-This feature is not yet available in the CLI.
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+2. From the command line, list the projects:
+   ```shell
+   scalingo create --project-id=prj-6731a609-02b6-4614-b28d-5abe43654333 test-app
+   ```
+   The output should look like this:
+   ```shell
+   App 'test-app' has been created
+   To deploy your application, run these commands in your GIT repository:
+   ...
+   ```
 
 ### Using the Terraform Provider
 
