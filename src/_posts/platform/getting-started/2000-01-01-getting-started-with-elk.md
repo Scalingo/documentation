@@ -41,9 +41,9 @@ database. This is the *EL* part in *ELK*.
 To get started, you can use [our boilerplate](https://github.com/Scalingo/logstash-boilerplate):
 
 ```bash
-git clone https://github.com/Scalingo/logstash-boilerplate
-cd logstash-boilerplate
-git checkout es7-compat
+$ git clone https://github.com/Scalingo/logstash-boilerplate
+$ cd logstash-boilerplate
+$ git checkout es7-compat
 ```
 
 Next, create an application on Scalingo that will run our Logstash app:
