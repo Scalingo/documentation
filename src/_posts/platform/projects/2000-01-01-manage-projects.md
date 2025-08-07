@@ -48,7 +48,13 @@ If the project is in the list
 
 ### Using the Terraform Provider
 
-This feature is not yet available in the Terraform Provider.
+1. Place the following `project_id` in the app `resource` block in your Terraform file:
+   ```tf
+   resource "scalingo_app" "test_app" {
+     name = "terraform-testapp"
+     project_id = "prj-6731a609-02b6-4614-b28d-5abe43654333"
+   }
+   ```
 
 ## Updating the project of an existing App
 
