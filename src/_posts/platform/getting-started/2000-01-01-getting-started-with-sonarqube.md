@@ -1,6 +1,6 @@
 ---
 title: Getting Started With SonarQube on Scalingo
-modified_at: 2024-07-04 12:00:00
+modified_at: 2025-08-07 12:00:00
 tags: tutorial sonarqube
 index: 15
 ---
@@ -17,15 +17,14 @@ under 5 minutes.
 ## Planning your Deployment
 
 - SonarQube requires its own database. We usually advise to use a [PostgreSQL
-  Starter or Business 512 addon](https://scalingo.com/databases/postgresql) for
-  this purpose.
+  Starter or Business 512 addon][db-postgresql] for this purpose.
 
 - SonarQube requires quite a lot of RAM to run properly. We recommend to deploy
   at least one 2XL container to host it.
 
 - SonarQube requires Java version 17 to run. We can instruct Scalingo to use
   this version of JAVA by using the `system.properties` file as described in
-  [our documentation]({% post_url languages/java/2000-01-01-start %}#choose-a-jdk).
+  [our documentation][install-jdk].
 
 
 ## Deploying
@@ -35,30 +34,27 @@ under 5 minutes.
 Click the One-Click Deploy button below to automatically deploy SonarQube with
 your Scalingo account:
 
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/Scalingo/sonarqube-scalingo)
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
 
 ### Using the Command Line
 
-We maintain a repository called [sonarqube-scalingo](https://github.com/Scalingo/sonarqube-scalingo)
-on GitHub to help you deploy SonarQube **Community Edition** on Scalingo. Here
-are the few steps you will need to follow:
+We maintain a repository called [sonarqube-scalingo] on GitHub to help you
+deploy SonarQube **Community Edition** on Scalingo. Here are the few steps you
+will need to follow:
 
 1. Clone our repository:
-
    ```bash
    git clone https://github.com/Scalingo/sonarqube-scalingo
    cd sonarqube-scalingo
    ```
 
 2. Create the application on Scalingo:
-
    ```bash
    scalingo create my-sonarqube
    ```
 
    Notice that our Command Line automatically detects the git repository, and
    adds a git remote to Scalingo:
-
    ```bash
    git remote -v
 
@@ -69,20 +65,17 @@ are the few steps you will need to follow:
    ```
 
 3. Create the database:
-
    ```bash
    scalingo --app my-sonarqube addons-add postgresql postgresql-starter-512
    ```
 
 4. (optional) Instruct the platform to run the `web` process type in a single
    2XL container:
-
    ```bash
    scalingo --app my-sonarqube scale web:1:2XL
    ```
 
 5. Everything's ready, deploy to Scalingo:
-
    ```bash
    git push scalingo master
    ```
@@ -96,14 +89,12 @@ password.
 ### Using the Terraform Provider
 
 {% note%}
-The following code blocks are given as examples.\
+The following code blocks are given as examples.\\
 You will have to adjust some values to suit your needs.
 {% endnote %}
 
-1. Start by forking our [SonarQube repository](https://github.com/Scalingo/sonarqube-scalingo)
-
+1. Start by forking our [SonarQube repository][sonarqube-scalingo]
 2. Place the following block in your Terraform file to create the app:
-
    ```terraform
    resource "scalingo_app" "my-sonarqube" {
      name        = "my-sonarqube"
@@ -113,7 +104,6 @@ You will have to adjust some values to suit your needs.
    ```
 
 3. Link the app to your forked repository:
-
    ```terraform
    data "scalingo_scm_integration" "github" {
      scm_type = "github"
@@ -128,7 +118,6 @@ You will have to adjust some values to suit your needs.
    ```
 
 4. Create a Starter-512 PostgreSQL addon and attach it to your app:
-
    ```terraform
    resource "scalingo_addon" "my-sonarqube-db" {
      app         = scalingo_app.my-sonarqube.id
@@ -139,7 +128,6 @@ You will have to adjust some values to suit your needs.
 
 5. (optional) Instruct the platform to run the `web` process type in a single
    2XL container:
-
    ```terraform
    resource "scalingo_container_type" "web" {
      app    = scalingo_app.my-sonarqube.id
@@ -151,8 +139,8 @@ You will have to adjust some values to suit your needs.
 
 6. Run `terraform plan` and check if the result looks good
 7. If so, run `terraform apply`
-8. Once Terraform is done, your Metabase instance is ready to be deployed:
-   1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+8. Once Terraform is done, your SonarQube instance is ready to be deployed:
+   1. Head to your [dashboard]
    2. Click on your SonarQube application
    3. Click on the **Deploy** tab
    4. Click on **Manual deployment** in the left menu
@@ -169,20 +157,19 @@ Consequently, updating SonarQube only consists of triggering a new deployment
 of your instance.
 
 {% note %}
-   - Scalingo **does not** provide any guarantee in terms of packaging and
-     availability after each SonarQube release. We do our best to keep it
-     up-to-date, but can't guarantee it.
-   - You can use the dedicated environment variable ([see below](#environment))
-     to deploy a specific version.
-   - You can still get in touch with our support team, should you need a specific
-     version.
+- Scalingo **does not** provide any guarantee in terms of packaging and
+  availability after each SonarQube release. We do our best to keep it
+  up-to-date, but can't guarantee it.
+- You can use the dedicated environment variable ([see below](#environment)) to
+  deploy a specific version.
+- You can still get in touch with our support team, should you need a specific
+  version.
 {% endnote %}
 
 ### Using the Command Line
 
 1. In your SonarQube repository, create an empty commit and push it to
    Scalingo:
-
    ```bash
    git commit --allow-empty -m "Update SonarQube"
    git push scalingo master
@@ -190,7 +177,7 @@ of your instance.
 
 ### Using the Terraform Provider
 
-1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+1. Head to your [dashboard]
 2. Click on your SonarQube application
 3. Click on the **Deploy** tab
 4. Click on **Manual deployment** in the left menu
@@ -204,9 +191,7 @@ of your instance.
 
 1. Copy the plugin(s) JAR archive(s) into the `plugins` folder of your
    repository
-
 2. Don't forget to commit your changes:
-
    ```bash
    git add plugins/
    git commit -m "Add plugins"
@@ -218,9 +203,7 @@ of your instance.
 #### Using the Command Line
 
 1. Make sure you have followed [the first steps](#installing-plugins)
-
 2. From your SonarQube repository, trigger a new deployment:
-
    ```bash
    git push scalingo master
    ```
@@ -228,16 +211,13 @@ of your instance.
 #### Using the Terraform Provider
 
 1. Make sure you have followed [the first steps](#installing-plugins)
-
 2. Push your changes to the repository linked to your app:
-
    ```bash
    git push origin master
    ```
 
 3. Trigger a new deployment:
-
-   1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+   1. Head to your [dashboard]
    2. Click on your SonarQube application
    3. Click on the **Deploy** tab
    4. Click on **Manual deployment** in the left menu
@@ -245,11 +225,21 @@ of your instance.
 
 ### Environment
 
-[SonarQube supports many environment variables](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/configure-and-operate-a-server/environment-variables/)
+[SonarQube supports many environment variables][sonarqube-env].
 
 Moreover, the buildpack makes use of the following environment variable(s).
 They can be leveraged to customize your deployment:
 
-- **`SONARQUBE_VERSION`**\
-  Allows to specify the SonarQube version to deploy.\
+- **`SONARQUBE_VERSION`**\\
+  Allows to specify the SonarQube version to deploy.\\
   Defaults to the version set in the buildpack.
+
+
+[sonarqube-env]: https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/configure-and-operate-a-server/environment-variables/
+[sonarqube-scalingo]: https://github.com/Scalingo/sonarqube-scalingo
+
+[db-postgresql]: https://www.scalingo.com/databases/postgresql
+[dashboard]: https://dashboard.scalingo.com/apps/
+[one-click]: https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/sonarqube-scalingo
+
+[install-jdk]: {% post_url languages/java/2000-01-01-start %}#choose-a-jdk

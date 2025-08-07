@@ -1,6 +1,6 @@
 ---
 title: Getting Started With Metabase on Scalingo
-modified_at: 2024-06-20 12:00:00
+modified_at: 2025-08-07 12:00:00
 tags: tutorial metabase
 index: 13
 ---
@@ -16,16 +16,15 @@ under 5 minutes.
 ## Planning your Deployment
 
 - Metabase requires its own database to store its configuration and some
-  metadata. We usually advise to use a [PostgreSQL Starter/Business 512 addon](https://scalingo.com/databases/postgresql)
-  for this purpose.
+  metadata. We usually advise to use a [PostgreSQL Starter or Business 512
+  addon][db-postgresql] for this purpose.
 
 - Depending on several factors such as the amount of data stored in your
   production database, its load, and the complexity of the Metabase queries you
   want to run, you may consider duplicating your production data to an
   additional database dedicated for Metabase use. Doing so would prevent
   Metabase to have a negative impact on your application's performances.
-  [Our documentation]({% post_url platform/databases/2000-01-01-duplicate %})
-  should help you with this additional task.
+  [Our documentation][db-duplicate] should help you with this additional task.
 
 
 ## Deploying
@@ -35,30 +34,27 @@ under 5 minutes.
 Click the One-Click Deploy button below to automatically deploy Metabase with
 your Scalingo account:
 
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/metabase-scalingo)
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
 
 ### Using the Command Line
 
-We maintain a repository called [metabase-scalingo](https://github.com/Scalingo/metabase-scalingo)
+We maintain a repository called [metabase-scalingo]
 on GitHub to help you deploy Metabase on Scalingo. Here are the few steps you
 will need to follow:
 
 1. Clone our repository:
-
    ```bash
    git clone https://github.com/Scalingo/metabase-scalingo
    cd metabase-scalingo
    ```
 
 2. Create the application on Scalingo:
-
    ```bash
    scalingo create my-metabase
    ```
 
    Notice that our Command Line automatically detects the git repository, and
    adds a git remote to Scalingo:
-
    ```bash
    git remote -v
 
@@ -69,20 +65,17 @@ will need to follow:
    ```
 
 3. Create the database:
-
    ```bash
    scalingo --app my-metabase addons-add postgresql postgresql-starter-512
    ```
 
 4. (optional) Instruct the platform to run the `web` process type in a single
    XL container:
-
    ```bash
    scalingo --app -my-metabase scale web:1:XL
    ```
 
 5. Everything's ready, deploy to Scalingo:
-
    ```bash
    git push scalingo master
    ```
@@ -90,14 +83,12 @@ will need to follow:
 ### Using the Terraform Provider
 
 {% note%}
-The following code blocks are given as examples.\
+The following code blocks are given as examples.\\
 You will have to adjust some values to suit your needs.
 {% endnote %}
 
-1. Start by forking our [Metabase repository](https://github.com/Scalingo/metabase-scalingo)
-
+1. Start by forking our [Metabase repository][metabase-scalingo]
 2. Place the following block in your Terraform file to create the app:
-
    ```terraform
    resource "scalingo_app" "my-metabase" {
      name        = "my-metabase"
@@ -107,7 +98,6 @@ You will have to adjust some values to suit your needs.
    ```
 
 3. Link the app to your forked repository:
-
    ```terraform
    data "scalingo_scm_integration" "github" {
      scm_type = "github"
@@ -122,7 +112,6 @@ You will have to adjust some values to suit your needs.
    ```
 
 4. Create a Starter-512 PostgreSQL addon and attach it to your app:
-
    ```terraform
    resource "scalingo_addon" "my-metabase-db" {
      app         = scalingo_app.my-metabase.id
@@ -133,7 +122,6 @@ You will have to adjust some values to suit your needs.
 
 5. (optional) Instruct the platform to run the `web` process type in a single
    XL container:
-
    ```terraform
    resource "scalingo_container_type" "web" {
      app    = scalingo_app.my-metabase.id
@@ -146,7 +134,7 @@ You will have to adjust some values to suit your needs.
 6. Run `terraform plan` and check if the result looks good
 7. If so, run `terraform apply`
 8. Once Terraform is done, your Metabase instance is ready to be deployed:
-   1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+   1. Head to your [dashboard]
    2. Click on your Metabase application
    3. Click on the **Deploy** tab
    4. Click on **Manual deployment** in the left menu
@@ -171,7 +159,6 @@ workaround consists in specifying the Metabase version you want to deploy
 ### Using the Command Line
 
 1. In your Metabase repository, create an empty commit and push it to Scalingo:
-
    ```bash
    git commit --allow-empty -m "Update Metabase"
    git push scalingo master
@@ -179,7 +166,7 @@ workaround consists in specifying the Metabase version you want to deploy
 
 ### Using the Terraform Provider
 
-1. Head to [your dashboard](https://dashboard.scalingo.com/apps/)
+1. Head to your [dashboard]
 2. Click on your Metabase application
 3. Click on the **Deploy** tab
 4. Click on **Manual deployment** in the left menu
@@ -191,12 +178,22 @@ workaround consists in specifying the Metabase version you want to deploy
 
 ### Environment
 
-[Metabase supports many environment variables](https://www.metabase.com/docs/latest/operations-guide/environment-variables.html).
+[Metabase supports many environment variables][metabase-env].
 
 Moreover, the buildpack makes use of the following environment variable(s).
 They can be leveraged to customize your deployment:
 
-- **`METABASE_VERSION`**\
-  Allows to specify the version of Metabase to deploy.\
-  Make sure to prefix the number with the letter **v**.\
+- **`METABASE_VERSION`**\\
+  Allows to specify the version of Metabase to deploy.\\
+  Make sure to prefix the number with the letter **v**.\\
   Defaults to `*`.
+
+
+[metabase-env]: https://www.metabase.com/docs/latest/operations-guide/environment-variables.html
+[metabase-scalingo]: https://github.com/Scalingo/metabase-scalingo
+
+[db-postgresql]: https://www.scalingo.com/databases/postgresql
+[dashboard]: https://dashboard.scalingo.com/apps/
+[one-click]: https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/metabase-scalingo
+
+[db-duplicate]: {% post_url platform/databases/2000-01-01-duplicate %}
