@@ -45,6 +45,9 @@ $ scalingo create my-app --remote staging
 
 # Create a new app with a custom buildpack
 $ scalingo create my-app --buildpack https://github.com/Scalingo/multi-buildpack
+
+# Create a new app in the chosen project
+$ scalingo create --project-id=prj-6731a609-02b6-4614-b28d-5abe43654333 my-app
 ```
 
 ## Rename an Application
