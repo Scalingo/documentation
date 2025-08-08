@@ -1,5 +1,5 @@
 ---
-modified_at: 2026-08-06 12:00:00
+modified_at: 2025-08-06 12:00:00
 title: 'PHP - Support of extension APCu version 5.1.26'
 github: 'https://github.com/Scalingo/php-buildpack'
 ---
