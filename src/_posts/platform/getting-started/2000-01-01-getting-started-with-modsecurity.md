@@ -22,9 +22,8 @@ ModSecurity implements its own Domain Specific Language, called *SecLang*,
 making it easy for users to write and share their own rules (combination of
 pattern and actions).
 
-## Deploying ModSecurity
 
-### Planning your Deployment
+## Planning your Deployment
 
 - Due to technical requirements, ModSecurity is only deployable on
   `scalingo-20` and above.
@@ -35,6 +34,9 @@ pattern and actions).
 - In this tutorial, we have chosen to deploy ModSecurity connected to Nginx.
   Note that ModSecurity can also be connected to other webservers such as IIS
   or Apache, but these cases are out of the scope of this guide.
+
+
+## Deploying
 
 ### Using the Command Line
 
@@ -101,7 +103,7 @@ do this, please [follow the dedicated tutorial]({% post_url platform/deployment/
    </html>
    ```
 
-## Updating ModSecurity
+## Updating
 
 ### Updating ModSecurity
 
@@ -148,7 +150,7 @@ git push scalingo master
 {% endnote %}
 
 
-## Customizing your Deployment
+## Customizing
 
 ### Adding a Custom Rule
 

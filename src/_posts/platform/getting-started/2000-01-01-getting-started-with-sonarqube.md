@@ -10,17 +10,14 @@ code smells in your project. It can integrate with your existing workflow to
 enable continuous code inspection across your project branches and pull
 requests.
 
-This tutorial will show you how to deploy a SonarQube instance on Scalingo in
-under 5 minutes.
-
 
 ## Planning your Deployment
 
 - SonarQube requires its own database. We usually advise to use a [PostgreSQL
   Starter or Business 512 addon][db-postgresql] for this purpose.
 
-- SonarQube requires quite a lot of RAM to run properly. We recommend to deploy
-  at least one 2XL container to host it.
+- SonarQube requires quite a lot of RAM to run properly. You most probably
+  won't be able to deploy on a container smaller than 2XL.
 
 - SonarQube requires Java version 17 to run. We can instruct Scalingo to use
   this version of JAVA by using the `system.properties` file as described in

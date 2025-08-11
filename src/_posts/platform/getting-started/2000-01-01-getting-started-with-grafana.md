@@ -1,59 +1,54 @@
 ---
 title: Getting Started with Grafana on Scalingo
-modified_at: 2019-12-20 10:00:00
+modified_at: 2025-08-11 12:00:00
 tags: tutorial grafana metrics
 index: 12
 ---
 
-Grafana is an open source monitoring and visualization solution. It gives you
-the ability to produce dashboards about your application metrics.
+Grafana is an open-source platform for visualizing and monitoring data from
+various sources. It lets you create interactive dashboards with charts, graphs,
+and alerts. It's commonly used for infrastructure, application and business
+metrics monitoring.
 
-This tutorial will show you how to deploy a Grafana instance on Scalingo in
-under 5 minutes.
 
-## Deploying Grafana
-
-### Planning your Deployment
-
-- web 1L
+## Planning your Deployment
 
 - Grafana requires its own database to store its configuration. We usually
-  advise to opt for a [PostgreSQL Starter/Business 512 addon](https://scalingo.com/databases/postgresql)
-  for this purpose.
+  advise to opt at least for a [PostgreSQL Starter or Business 512
+  addon][db-postgresql] for this purpose.
 
-- Grafana doesn't is divided into a front end written in TypeScript and a back end
-  written in Go. Consequently, you will need to use a [multi-buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-multi %})
-  to build it on Scalingo.
+- While Grafana's officially recommends to have a minimum of 512MB of RAM, we
+  usually advise to have a bit more, and go with at least one L container (with
+  1GB of RAM) to host your Grafana instance.
+
+
+## Deploying
 
 ### Using our One-Click Deploy Button
 
 Click the One-Click Deploy button below to automatically deploy Grafana with
 your Scalingo account:
 
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)](https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/grafana-scalingo)
+[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
 
 ### Using the Command Line
 
-We maintain a repository called [grafana-scalingo](https://github.com/Scalingo/grafana-scalingo)
-on GitHub to help you deploy Grafana on Scalingo. Here are the few steps you
-will need to follow:
+We maintain a repository called [grafana-scalingo] on GitHub to help you deploy
+Grafana on Scalingo. Here are the few steps you will need to follow:
 
 1. Clone our repository:
-
    ```bash
    git clone https://github.com/Scalingo/grafana-scalingo
    cd grafana-scalingo
    ```
 
 2. Create the application on Scalingo:
-
    ```bash
    scalingo create my-grafana
    ```
 
    Notice that our Command Line automatically detects the git repository, and
    adds a git remote to Scalingo:
-
    ```bash
    git remote -v
 
@@ -64,31 +59,23 @@ will need to follow:
    ```
 
 3. Scale the web container:
-
    ```bash
    scalingo --app my-grafana scale web:1:L
    ```
 
 4. Create the database:
-
    ```bash
    scalingo --app my-grafana addons-add postgresql postgresql-starter-512
    ```
 
-5. Set a few **mandatory** environment variables, from the command line, for
-   example:
-
+5. Set a few **mandatory** environment variables:\\
+   These must be set with the given values:
    ```bash
-   scalingo --app my-grafana env-set BUILDPACK_URL=https://github.com/Scalingo/multi-buildpack
-   scalingo --app my-grafana env-set NPM_CONFIG_PRODUCTION=false
-   scalingo --app my-grafana env-set PLATFORM_ENV=production
-   scalingo --app my-grafana env-set GF_DATABASE_URL=$SCALINGO_POSTGRESQL_URL
    scalingo --app my-grafana env-set GF_SERVER_HTTP_PORT=$PORT
-   scalingo --app my-grafana env-set GF_PATH_PLUGINS=/app/plugins
+   scalingo --app my-grafana env-set GF_PATHS_PLUGINS=/app/plugins
    ```
 
    The following ones must be set to the appropriate values:
-
    ```bash
    scalingo --app my-grafana env-set GF_SERVER_ROOT_URL=https://my-grafana.osc-fr1.scalingo.io
    scalingo --app my-grafana env-set GF_SECURITY_ADMIN_USER=<set this to whatever suits you>
@@ -96,81 +83,61 @@ will need to follow:
    ```
 
 6. Everything's ready, deploy to Scalingo:
-
    ```bash
    git push scalingo master
    ```
 
 
-## Updating Grafana
+## Updating
 
-### Sticking With Scalingo Grafana Distribution
+By default, Scalingo tries to install the latest version of Grafana.
 
-By default, Scalingo tries to install the latest version of Grafana **that we
-have successfully tested and integrated**. We tag these versions with a
-`-scalingo<n>` suffix (e.g. `v9.3.2-scalingo1`).
+Consequently, updating Grafana only consists in triggering a new deployment of
+your instance.
 
-Consequently, to update Grafana, issue the following commands in your project
-directory:
+### Using the Command Line
 
-1. Make sure you are in the appropriate branch:
-
+1. In your Grafana repository, create an empty commit and push it to Scalingo:
    ```bash
-   git checkout <my_branch>
+   git commit --allow-empty -m "Update Grafana"
+   git push scalingo master
    ```
 
-2. Fetch the available tags:
+### Using the Terraform Provider
 
-   ```bash
-   git fetch --tags origin
+1. Head to your [dashboard]
+2. Click on your Grafana application
+3. Click on the Deploy tab
+4. Click on Manual deployment in the left menu
+5. Click the Trigger deployment button
+6. After a few seconds, your updated Grafana instance is ready!
+
+
+## Customizing
+
+### Adding Plugins
+
+Grafana plugins extend its functionality by adding new data sources,
+visualization panels, or app integrations. They let you connect to more
+systems, display custom charts, or bundle dashboards with specific tools.
+
+#### Adding Publicly Available Plugins
+
+1. From the [Grafana plugins][grafana-plugins] website, identify the name of
+   the plugins you are interested in. It's generally available from the
+   **installation** tab of the plugin.
+2. Put these names in the `GRAFANA_PLUGINS` environment variable of your
+   Grafana app.\\
+   For multiple plugins, use a comma (`,`) as separator. For example:
+   ```
+   GRAFANA_PLUGINS="grafana-clock-panel,esnet-arcdiagram-panel"
    ```
 
-3. Merge the tag in your branch:
+#### Adding Private Plugins
 
-   ```bash
-   git merge tags/<tag_name>
-   ```
-
-4. Finally, deploy this new version:
-
-   ```bash
-   git push scalingo <my_branch>:master
-   ```
-
-### 
-
-If you want to use a version that we haven't packaged yet, the procedure is
-mostly:
-
-1. In your repository, create an `upstream` repository, and retrieve the tags:
-
-   ```w
-   git remote add upstream https://github.com/grafana/grafana
-   git fetch --tags upstream
-   ```
-
-2. Switch to a new branch:
-
-   ```bash
-   git checkout -b <my_branch>
-   ```
-
-3. Merge the tag you are interested in with your branch:
-
-   ```bash
-   git merge tags/<tag_name>
-   ```
-
-4. Fix the merge conflicts...
-
-5. Finally, deploy your new version:
-
-   ```bash
-   git push scalingo <my_branch>:master
-   ```
-
-
-## Customizing your Deployment
+1. Put your unzipped plugins in a directory named `plugins`, at the root of
+   your Grafana project. The buildpack automatically picks them during
+   deployment.
 
 ### Storing Images on External Services
 
@@ -190,4 +157,28 @@ GF_EXTERNAL_IMAGE_STORAGE_S3_SECRET_KEY=<Fill this field>
 
 ### Environment
 
-[Grafana is fully configurable via environment variables](https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#override-configuration-with-environment-variables).
+[Grafana is fully configurable via environment variables][grafana-env].
+
+Moreover, the buildpack makes use of the following environment variable(s).
+They can be leveraged to customize your deployment:
+
+- **`GRAFANA_VERSION`**\\
+  Allows to specify the Grafana version to deploy.\\
+  Defaults to the version set in the buildpack.
+
+- **`GRAFANA_PLUGINS`**\\
+  A list of plugin names to install.\\
+  Separate names with a comma.\\
+  Defaults to being empty.
+
+
+[grafana-env]: https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#override-configuration-with-environment-variables
+[grafana-plugins]: https://grafana.com/grafana/plugins/
+[grafana-scalingo]: https://github.com/Scalingo/grafana-scalingo
+
+[db-postgresql]: https://www.scalingo.com/databases/postgresql
+
+[dashboard]: https://dashboard.scalingo.com
+[one-click]: https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/grafana-scalingo
+
+[multi-buildpack]: {% post_url platform/deployment/buildpacks/2000-01-01-multi %}
