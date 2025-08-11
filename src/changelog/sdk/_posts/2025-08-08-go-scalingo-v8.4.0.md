@@ -1,5 +1,5 @@
 ---
-modified_at:	2025-08-01 12:00:00
+modified_at:	2025-08-08 12:00:00
 title:	'go-scalingo - New version: 8.4.0'
 github: 'https://github.com/Scalingo/go-scalingo'
 ---
