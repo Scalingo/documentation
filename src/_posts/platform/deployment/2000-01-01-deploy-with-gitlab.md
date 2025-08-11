@@ -41,7 +41,7 @@ $ scalingo integrations-add --url https://gitlab.example.org --token <token> git
 
 The `token` can be:
 
-* [A `Personal access token`](https://docs.gitlab.com/user/profile/personal_access_tokens/) with the `api` and `read_user` scopes. Your account must also have [a sufficient role, maintainer or owner](https://docs.gitlab.com/ee/user/permissions.html#project-members-permissions)
+* [A `Personal access token`](https://docs.gitlab.com/user/profile/personal_access_tokens/) with the `api` and `read_user` scopes. Your account must also have [a sufficient role, maintainer or owner](https://docs.gitlab.com/ee/user/permissions.html#project-members-permissions).
 
 * [A `Group access token`](https://docs.gitlab.com/user/group/settings/group_access_tokens/) with the `api` scope and at least the [maintainer role](https://docs.gitlab.com/ee/user/permissions.html#project-members-permissions).
 
