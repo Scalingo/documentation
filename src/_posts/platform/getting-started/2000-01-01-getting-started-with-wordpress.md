@@ -59,7 +59,8 @@ you Scalingo account:
 ### Using the Command Line
 
 We maintain a repository called [wordpress-scalingo] on GitHub to help you
-deploy WordPress on Scalingo. Here are the few steps you will need to follow:
+deploy WordPress on Scalingo. Here are the few additional steps you will need
+to follow:
 
 1. Clone our repository:
    ```bash
@@ -150,8 +151,7 @@ deploy WordPress on Scalingo. Here are the few steps you will need to follow:
         ]
       }
       ```
-   3. Create a few environment variables, either via the dashboard or using
-      [the Scalingo command line tool][cli]
+   3. Create a few additional environment variables:
 
       | Env Variable            | Description                              |
       | ----------------------- | ---------------------------------------- |
@@ -188,7 +188,7 @@ deploy WordPress on Scalingo. Here are the few steps you will need to follow:
 
 {% note %}
 The following code blocks are given as examples.\\
-You will have to adjust some values to suit your needs.
+Please adjust the values to suit your needs.
 {% endnote %}
 
 1. Start by forking our [WordPress/Bedrock repository][wordpress-scalingo]
@@ -242,10 +242,9 @@ You will have to adjust some values to suit your needs.
    }
    ```
 
-5. [Follow steps 6, 7 and 8 described previously](#using-the-command-line) to
-   respectively setup your S3 object storage, to add your themes and your
-   plugins. If you setup an S3 object storage, don't forget to add the
-   corresponding environment variables to your `scalingo_app` resource:
+5. [Follow step 6 described previously](#using-the-command-line) to setup your
+   S3 object storage. Don't forget to add the corresponding environment
+   variables to your `scalingo_app` resource:
    ```terraform
    resource "scalingo_app" "my-wordpress" {
      [...]

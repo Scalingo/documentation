@@ -34,7 +34,7 @@ your Scalingo account:
 ### Using the Command Line
 
 We maintain a repository called [grafana-scalingo] on GitHub to help you deploy
-Grafana on Scalingo. Here are the few steps you will need to follow:
+Grafana on Scalingo. Here are the few additional steps you will need to follow:
 
 1. Clone our repository:
    ```bash
@@ -72,7 +72,7 @@ Grafana on Scalingo. Here are the few steps you will need to follow:
 5. Set a few **mandatory** environment variables:\\
    These must be set with the given values:
    ```bash
-   scalingo --app my-grafana env-set GF_SERVER_HTTP_PORT=$PORT
+   scalingo --app my-grafana env-set GF_SERVER_HTTP_PORT=\$PORT
    scalingo --app my-grafana env-set GF_PATHS_PLUGINS=/app/plugins
    ```
 
@@ -96,6 +96,7 @@ Please adjust the values to suit your needs.
 {% endnote %}
 
 1. Start by forking our [Grafana repository][grafana-scalingo]
+
 2. Place the following block in your Terraform file to create the app:
    ```terraform
    resource "scalingo_app" "my-grafana" {
@@ -197,6 +198,7 @@ systems, display custom charts, or bundle dashboards with specific tools.
 1. From the [Grafana plugins][grafana-plugins] website, identify the name of
    the plugins you are interested in. It's generally available from the
    **installation** tab of the plugin.
+
 2. Put these names in the `GRAFANA_PLUGINS` environment variable of your
    Grafana app.\\
    For multiple plugins, use a comma (`,`) as separator. For example:

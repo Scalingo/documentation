@@ -1,17 +1,16 @@
 ---
 title: Getting Started With ModSecurity on Scalingo
-modified_at: 2025-05-02 12:00:00
+modified_at: 2025-08-12 12:00:00
 tags: tutorial security firewall modsecurity apache nginx waf
 index: 11
 ---
 
-
 ModSecurity is an open-source Web Application Firewall (WAF) that allows users
 to monitor, log and filter HTTP requests. A very common use case is to rely on
-a set of open-source rules provided by [OWASP](https://owasp.org/) (called
-[OWASP ModSecurity Core Rule Set (CRS)](https://owasp.org/www-project-modsecurity-core-rule-set/))
-to protect a web application against generic classes of vulnerabilities and
-Layer 7 attacks such as SQL injections, Cross Site Scripting, ...
+a set of open-source rules provided by [OWASP] (called
+[OWASP ModSecurity Core Rule Set \(CRS\)][CRS]) to protect a web application
+against generic classes of vulnerabilities and threats such as SQL injections,
+Cross Site Scripting, etc.
 
 When enabled, ModSecurity analyzes every incoming HTTP request and compares
 the content of the request with a set of patterns. If there is a match, then it
@@ -26,12 +25,12 @@ pattern and actions).
 ## Planning your Deployment
 
 - Due to technical requirements, ModSecurity is only deployable on
-  `scalingo-20` and above.
+  `scalingo-20` (EOL) and above.
 
 - ModSecurity requires a set of rules to filter or block requests. In this
-  tutorial, we will use the OWASP ModSecurity Core Rule Set.
+  tutorial, we will use the [OWASP ModSecurity Core Rule Set][CRS].
 
-- In this tutorial, we have chosen to deploy ModSecurity connected to Nginx.
+- In this tutorial, we have chosen to deploy ModSecurity connected to nginx.
   Note that ModSecurity can also be connected to other webservers such as IIS
   or Apache, but these cases are out of the scope of this guide.
 
@@ -40,25 +39,22 @@ pattern and actions).
 
 ### Using the Command Line
 
-#### Deploying Nginx
+#### Deploying nginx
 
-The very first steps consist of deploying an Nginx application on Scalingo. To
-do this, please [follow the dedicated tutorial]({% post_url platform/deployment/buildpacks/2000-01-01-nginx %}).
+The very first steps consist of deploying an nginx application on Scalingo. To
+do this, please [follow the dedicated tutorial][deploy-nginx].
 
 #### Enabling ModSecurity
 
-1. Once your Nginx application is successfully deployed, set the environment
+1. Once your nginx application is successfully deployed, set the environment
    variable `ENABLE_MODSECURITY` to `true`, either by adding it via
-   [your dashboard](https://dashboard.scalingo.com/) or by using the command
-   line:
-
+   your [dashboard] or by using the command line:
    ```bash
    scalingo --app my-app env-set ENABLE_MODSECURITY=true
    ```
 
 2. Trigger a new deployment of your application by creating an empty commit and
    pushing it to your Scalingo remote:
-
    ```bash
    git commit --allow-empty -m "Enable ModSecurity"
    git push scalingo master
@@ -73,13 +69,11 @@ do this, please [follow the dedicated tutorial]({% post_url platform/deployment/
 
 3. Wait a few seconds for the deployment to finish and test that the CRS is
    actually active by issuing the following command:
-
    ```bash
    curl -v -X INVALID_HTTP_METHOD https://my-app.osc-fr1.scalingo.io
    ```
 
    The application should respond with a **403 forbidden** such as the following:
-
    ```bash
    > INVALID_HTTP_METHOD / HTTP/2
    > Host: my-app.osc-fr1.scalingo.io
@@ -102,6 +96,7 @@ do this, please [follow the dedicated tutorial]({% post_url platform/deployment/
    </body>
    </html>
    ```
+
 
 ## Updating
 
@@ -157,11 +152,10 @@ git push scalingo master
 Now that we have a working WAF with a nice default set of rules, you may want
 to add your own custom rules.
 
-First, create a file at the root of your Nginx application. In this example, we
+First, create a file at the root of your nginx application. In this example, we
 call it `my_rules.conf`, but you can choose anything that suits you.
 
 Write your rules in this file, using SecLang and the `SecRule` directive:
-
 ```
 # This file is written in ModSecurity configuration language
 
@@ -181,13 +175,14 @@ SecRule ARGS:param1 "@contains test" \
 
 {% note %}
 - The `id:1234` is an arbitrary number, you can use any number < 100000 (see:
-  [https://coreruleset.org/docs/rules/ruleid/](https://coreruleset.org/docs/rules/ruleid/) for further details about `ruleid`).
+  [https://coreruleset.org/docs/rules/ruleid/] for further details about
+  `ruleid`).
 - A list of all variables usable with `logdata` is available here:
-  [https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#variables](https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#variables)
+  [https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#variables].
 {% endnote %}
 
-Once done, tell Nginx to load the brand-new rules. Edit the file you are using
-for your Nginx configuration (i.g. `nginx.conf`, `nginx.conf.erb`, ...) and add
+Once done, tell nginx to load the brand-new rules. Edit the file you are using
+for your nginx configuration (i.g. `nginx.conf`, `nginx.conf.erb`, ...) and add
 two directives:
 
 - `modsecurity`, which must be set to `on`, and that enables ModSecurity.
@@ -196,21 +191,19 @@ two directives:
   `/app/`.
 
 Your file should end up like this:
-
 ```
-# This file is written in Nginx configuration language
+# This file is written in nginx configuration language
 
 location / {
     modsecurity on;   # Enable ModSecurity on /
     modsecurity_rules_file /app/my_rules.conf;   # load custom rules file
     # (...)
-    # The rest of your Nginx config file
+    # The rest of your nginx config file
 }
 ```
 
 You can now commit your changes and push them to your Scalingo remote, which
 triggers a new deployment of your WAF:
-
 ```bash
 $ git add my_rules.conf
 $ git add nginx.conf
@@ -225,7 +218,6 @@ rule, thanks to its `id` number.
 
 You can then add a `SecRuleRemoveById` directive at the end of
 [your custom rules file](#adding-a-custom-rule), like this:
-
 ```
 # This file is written in the ModSecurity config language
 
@@ -257,3 +249,11 @@ They can be leveraged to customize your deployment:
   transactions that returned with a status code of 4xx or 5xx) or `Off` (do not
   log transactions).\
   Defaults to `Off`.
+
+
+[OWASP]: https://owasp.org
+[CRS]: https://owasp.org/www-project-modsecurity-core-rule-set/
+
+[dashboard]: https://dashboard.scalingo.com/apps/
+
+[deploy-nginx]: {% post_url platform/deployment/buildpacks/2000-01-01-nginx %}

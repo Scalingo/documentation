@@ -1,16 +1,13 @@
 ---
 title: Getting Started With Metabase on Scalingo
-modified_at: 2025-08-07 12:00:00
+modified_at: 2025-08-12 12:00:00
 tags: tutorial metabase
 index: 13
 ---
 
-Metabase is an open source Business Intelligence tool that allows you to build
+Metabase is an open-source Business Intelligence tool that allows you to build
 dashboards and data visualization from your company data, without writing SQL
 queries.
-
-This tutorial will show you how to deploy a Metabase instance on Scalingo in
-under 5 minutes.
 
 
 ## Planning your Deployment
@@ -39,8 +36,8 @@ your Scalingo account:
 ### Using the Command Line
 
 We maintain a repository called [metabase-scalingo]
-on GitHub to help you deploy Metabase on Scalingo. Here are the few steps you
-will need to follow:
+on GitHub to help you deploy Metabase on Scalingo. Here are the few additional
+steps you will need to follow:
 
 1. Clone our repository:
    ```bash
@@ -88,6 +85,7 @@ Please adjust the values to suit your needs.
 {% endnote %}
 
 1. Start by forking our [Metabase repository][metabase-scalingo]
+
 2. Place the following block in your Terraform file to create the app:
    ```terraform
    resource "scalingo_app" "my-metabase" {
@@ -133,7 +131,9 @@ Please adjust the values to suit your needs.
    ```
 
 6. Run `terraform plan` and check if the result looks good
+
 7. If so, run `terraform apply`
+
 8. Once Terraform is done, your Metabase instance is ready to be deployed:
    1. Head to your [dashboard]
    2. Click on your Metabase application

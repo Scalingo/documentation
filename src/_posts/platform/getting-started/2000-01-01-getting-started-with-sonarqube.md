@@ -36,8 +36,8 @@ your Scalingo account:
 ### Using the Command Line
 
 We maintain a repository called [sonarqube-scalingo] on GitHub to help you
-deploy SonarQube **Community Edition** on Scalingo. Here are the few steps you
-will need to follow:
+deploy SonarQube **Community Edition** on Scalingo. Here are the few additional
+steps you will need to follow:
 
 1. Clone our repository:
    ```bash
@@ -87,10 +87,11 @@ password.
 
 {% note%}
 The following code blocks are given as examples.\\
-You will have to adjust some values to suit your needs.
+Please adjust the values to suit your needs.
 {% endnote %}
 
 1. Start by forking our [SonarQube repository][sonarqube-scalingo]
+
 2. Place the following block in your Terraform file to create the app:
    ```terraform
    resource "scalingo_app" "my-sonarqube" {
@@ -136,7 +137,9 @@ You will have to adjust some values to suit your needs.
    ```
 
 6. Run `terraform plan` and check if the result looks good
+
 7. If so, run `terraform apply`
+
 8. Once Terraform is done, your SonarQube instance is ready to be deployed:
    1. Head to your [dashboard]
    2. Click on your SonarQube application
@@ -189,6 +192,7 @@ of your instance.
 
 1. Copy the plugin(s) JAR archive(s) into the `plugins` folder of your
    repository
+
 2. Don't forget to commit your changes:
    ```bash
    git add plugins/
@@ -201,6 +205,7 @@ of your instance.
 #### Using the Command Line
 
 1. Make sure you have followed [the first steps](#installing-plugins)
+
 2. From your SonarQube repository, trigger a new deployment:
    ```bash
    git push scalingo master
@@ -209,6 +214,7 @@ of your instance.
 #### Using the Terraform Provider
 
 1. Make sure you have followed [the first steps](#installing-plugins)
+
 2. Push your changes to the repository linked to your app:
    ```bash
    git push origin master
