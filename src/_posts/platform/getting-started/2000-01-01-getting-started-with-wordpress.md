@@ -28,18 +28,23 @@ Basically everything we love at Scalingo!
 {% endnote %}
 
 - For all the reasons presented above, we will use Bedrock.
+
 - WordPress is written in PHP. We will use the PHP buildpack along with an
   Nginx web server.
+
 - It requires a MySQL® database to store all the website content as well as
   parts of its configuration. Chosing the appropriate plan mostly depends on
   the traffic your WordPress has to handle. We usually advise to start with a
   [MySQL® for Scalingo Starter or Business 512 addon][db-mysql] and upscale
   later if need be.
+
 - Since relying on the local filesystem to store data is not allowed on
   Scalingo, we will use an S3-compatible object storage solution. Our Bedrock
   distribution fully supports it, thanks to the
-  [`humanmade/s3-uploads`][s3-uploads] embedded. In the following guide, we
-  will use an AWS S3 bucket but any S3-compatible solution should be OK.
+  [`humanmade/s3-uploads`][s3-uploads] embedded.
+
+- In the following guide, we will use an AWS S3 bucket but any S3-compatible
+  solution should be OK.
 
 
 ## Deploying
@@ -78,13 +83,12 @@ deploy WordPress on Scalingo. Here are the few steps you will need to follow:
    scalingo git@ssh.osc-fr1.scalingo.com:my-wordpress.git (push)
    ```
 
-3. Attach a MySQL® by Scalingo addon to the application:
+3. Provision a Scalingo for MySQL® Starter 512 addon:
    ```bash
    scalingo --app my-wordpress addons-add mysql mysql-starter-512
    ```
 
-4. Add a few mandatory environment variables, either via the Dashboard or via
-   [the Scalingo command line tool][cli]
+4. Set a few **mandatory** environment variables:
 
    | Env Variable       | Description |
    | ------------------ | ----------- |
@@ -92,19 +96,36 @@ deploy WordPress on Scalingo. Here are the few steps you will need to follow:
    | `WP_SITEURL`       | Mandatory. Full URL to Wordpress, including the subdirectory.<br />i.e. `https://my-app.osc-fr1.scalingo.io/wp` |
    | `WP_ENV`           | Can be set to either `development`, `staging`, or `production`. Defaults to `production`.                       |
    | `AUTH_KEY`         | Mandatory. Can be generated via [Roots WordPress Salts Generator](https://roots.io/salts.html)                  |
-   | `SECURE_AUTH_KEY`  | Same as above |
-   | `LOGGED_IN_KEY`    | Same as above |
-   | `NONCE_KEY`        | Same as above |
-   | `AUTH_SALT`        | Same as above |
-   | `SECURE_AUTH_SALT` | Same as above |
-   | `LOGGED_IN_SALT`   | Same as above |
-   | `NONCE_SALT`       | Same as above |
 
-5. (optional) The following steps describe how to setup an AWS S3 bucket for
-   your WordPress instance. While we know this work, any S3 storage solution
-   should also work.
+5. Generate and add a few security keys and salts, also as environment
+   variables. These are random strings of characters that are used to enhance
+   the security of WordPress, for example, by encrypting some data.
 
-   1. Create a **public** S3 bucket with ACL disabled
+   They can be generated via [Roots WordPress Salts Generator][salts-gen],
+   and must be added as environment variable, either via the Dashboard or via
+   the [Scalingo command line tool][cli]
+
+   - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`
+   - `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
+
+6. Setup the S3 bucket:
+
+   1. Create a **public** S3 bucket with **ACL disabled**, and with the
+      following policy:
+      ```json
+      {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
+          }
+        ]
+      }
+      ```
+
    2. Configure the IAM user with the following policy:
       ```json
       {
@@ -129,22 +150,7 @@ deploy WordPress on Scalingo. Here are the few steps you will need to follow:
         ]
       }
       ```
-   3. Configure the bucket with the following policy:
-
-      ```json
-      {
-        "Version": "2012-10-17",
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::BUCKETNAME-HERE/*"
-          }
-        ]
-      }
-      ```
-   4. Create a few environment variables, either via the dashboard or using
+   3. Create a few environment variables, either via the dashboard or using
       [the Scalingo command line tool][cli]
 
       | Env Variable            | Description                              |
@@ -156,13 +162,13 @@ deploy WordPress on Scalingo. Here are the few steps you will need to follow:
       | `S3_UPLOADS_OBJECT_ACL` | Object permission of files uploaded to S3. Can be either `public-read`, `private` or `authenticated-read`. Defaults to `public-read` |
 
 
-6. (optional) Instruct the platform to run the `web` process type in a single
+7. (optional) Instruct the platform to run the `web` process type in a single
    XL container:
    ```bash
    scalingo --app my-wordpress scale web:1:XL
    ```
 
-7. Everything's ready, deploy to Scalingo:
+8. Everything's ready, deploy to Scalingo:
    ```bash
    git push scalingo master
    ```
@@ -186,6 +192,7 @@ You will have to adjust some values to suit your needs.
 {% endnote %}
 
 1. Start by forking our [WordPress/Bedrock repository][wordpress-scalingo]
+
 2. Place the following block in your Terraform file to create the app. You can
    use [Roots WordPress Salts Generator][salts-gen] to generate the security
    keys and salts:
@@ -226,7 +233,7 @@ You will have to adjust some values to suit your needs.
    }
    ```
 
-4. Create a Starter-512 MySQL® addon and attach it to your app:
+4. Provision a Scalingo for MySQL® Starter 512 addon and attach it to your app:
    ```terraform
    resource "scalingo_addon" "my-wordpress-db" {
      app         = scalingo_app.my-wordpress.id
@@ -265,7 +272,9 @@ You will have to adjust some values to suit your needs.
    ```
 
 7. Run `terraform plan` and check if the result looks good
+
 8. If so, run `terraform apply`
+
 9. Once Terraform is done, your WordPress instance is ready to be deployed:
    1. Head to your [dashboard]
    2. Click on your WordPress application
@@ -292,8 +301,8 @@ of your WordPress instance.
 
 ### Using the Command Line
 
-1. In your WordPress repository, create an empty commit and push it to Scalingo:
-
+1. In your WordPress repository, create an empty commit and push it to
+   Scalingo:
    ```bash
    git commit --allow-empty -m "Update WordPress"
    git push scalingo master
@@ -330,6 +339,7 @@ of your WordPress instance.
 #### Using the Command Line
 
 1. Make sure you have followed [the first steps](#installing-plugins)
+
 2. From your WordPress repository, trigger a new deployment:
    ```bash
    git push scalingo master
@@ -338,6 +348,7 @@ of your WordPress instance.
 #### Using the Terraform Provider
 
 1. Make sure you have followed [the first steps](#installing-plugins)
+
 2. Push your changes to the repository linked to your app:
    ```bash
    git push origin master
@@ -367,6 +378,7 @@ of your WordPress instance.
 #### Using the Command Line
 
 1. Make sure you have followed [the first steps](#installing-themes)
+
 2. From your WordPress repository, trigger a new deployment:
    ```bash
    git push scalingo master
@@ -375,6 +387,7 @@ of your WordPress instance.
 #### Using the Terraform Provider
 
 1. Make sure you have followed [the first steps](#installing-themes)
+
 2. Push your changes to the repository linked to your app:
    ```bash
    git push origin master

@@ -16,8 +16,8 @@ under 5 minutes.
 ## Planning your Deployment
 
 - Metabase requires its own database to store its configuration and some
-  metadata. We usually advise to use a [PostgreSQL Starter or Business 512
-  addon][db-postgresql] for this purpose.
+  metadata. We usually advise to use a [Scalingo for PostgreSQL® Starter or
+  Business 512 addon][db-postgresql] for this purpose.
 
 - Depending on several factors such as the amount of data stored in your
   production database, its load, and the complexity of the Metabase queries you
@@ -64,7 +64,7 @@ will need to follow:
    scalingo git@ssh.osc-fr1.scalingo.com:my-metabase.git (push)
    ```
 
-3. Create the database:
+3. Provision a Scalingo for PostgreSQL® Starter 512 addon:
    ```bash
    scalingo --app my-metabase addons-add postgresql postgresql-starter-512
    ```
@@ -84,7 +84,7 @@ will need to follow:
 
 {% note%}
 The following code blocks are given as examples.\\
-You will have to adjust some values to suit your needs.
+Please adjust the values to suit your needs.
 {% endnote %}
 
 1. Start by forking our [Metabase repository][metabase-scalingo]
@@ -111,7 +111,8 @@ You will have to adjust some values to suit your needs.
    }
    ```
 
-4. Create a Starter-512 PostgreSQL addon and attach it to your app:
+4. Provision a Scalingo for PostgreSQL® Starter 512 addon and attach it to your
+   app:
    ```terraform
    resource "scalingo_addon" "my-metabase-db" {
      app         = scalingo_app.my-metabase.id

@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Grafana on Scalingo
-modified_at: 2025-08-11 12:00:00
+modified_at: 2025-08-12 12:00:00
 tags: tutorial grafana metrics
 index: 12
 ---
@@ -14,7 +14,7 @@ metrics monitoring.
 ## Planning your Deployment
 
 - Grafana requires its own database to store its configuration. We usually
-  advise to opt at least for a [PostgreSQL Starter or Business 512
+  advise to opt at least for a [PostgreSQL® Starter or Business 512
   addon][db-postgresql] for this purpose.
 
 - While Grafana's officially recommends to have a minimum of 512MB of RAM, we
@@ -58,14 +58,15 @@ Grafana on Scalingo. Here are the few steps you will need to follow:
    scalingo git@ssh.osc-fr1.scalingo.com:my-grafana.git (push)
    ```
 
-3. Scale the web container:
-   ```bash
-   scalingo --app my-grafana scale web:1:L
-   ```
-
-4. Create the database:
+3. Provision a Scalingo for PostgreSQL® Starter 512 addon:
    ```bash
    scalingo --app my-grafana addons-add postgresql postgresql-starter-512
+   ```
+
+4. (optional) Instruct the platform to run the `web` process type in a single L
+   container:
+   ```bash
+   scalingo --app my-grafana scale web:1:L
    ```
 
 5. Set a few **mandatory** environment variables:\\
@@ -86,6 +87,76 @@ Grafana on Scalingo. Here are the few steps you will need to follow:
    ```bash
    git push scalingo master
    ```
+
+### Using the Terraform Provider
+
+{% note%}
+The following code blocks are given as examples.\\
+Please adjust the values to suit your needs.
+{% endnote %}
+
+1. Start by forking our [Grafana repository][grafana-scalingo]
+2. Place the following block in your Terraform file to create the app:
+   ```terraform
+   resource "scalingo_app" "my-grafana" {
+     name        = "my-grafana"
+     stack_id    = "scalingo-22"
+     force_https = true
+
+     environment = {
+       GF_SERVER_HTTP_PORT        = "$PORT",
+       GF_PATHS_PLUGINS           = "/app/plugins",
+       GF_SERVER_ROOT             = <URL OF YOUR APP>,
+       GF_SECURITY_ADMIN_USER     = <ADMIN USER>,
+       GF_SECURITY_ADMIN_PASSWORD = <PASSWORD FOR ADMIN USER>
+     }
+   }
+   ```
+
+3. Link the app to your forked repository:
+   ```terraform
+   data "scalingo_scm_integration" "github" {
+     scm_type = "github"
+   }
+
+   resource "scalingo_scm_repo_link" "default" {
+     auth_integration_uuid = data.scalingo_scm_integration.github.id
+     app                   = scalingo_app.my-grafana.id
+     source                = "https://github.com/<username>/grafana-scalingo"
+     branch                = "master"
+   }
+   ```
+
+4. Provision a Scalingo for PostgreSQL® Starter 512 addon and attach it to your
+   app:
+   ```terraform
+   resource "scalingo_addon" "my-grafana-postgresql" {
+     app         = scalingo_app.my-grafana.id
+     provider_id = "postgresql"
+     plan        = "postgresql-starter-512"
+   }
+   ```
+
+5. (optional) Instruct the platform to run the `web` process type in a single L
+   container:
+   ```terraform
+   resource "scalingo_container_type" "web" {
+     app    = scalingo_app.my-grafana.id
+     name   = "web"
+     size   = "L"
+     amount = 1
+   }
+   ```
+
+6. Run `terraform plan` and check if the result looks good
+7. If so, run `terraform apply`
+8. Once Terraform is done, your Grafana instance is ready to be deployed:
+   1. Head to your [dashboard]
+   2. Click on your Grafana application
+   3. Click on the **Deploy** tab
+   4. Click on **Manual deployment** in the left menu
+   5. Click the **Trigger deployment** button
+   6. After a few seconds, your Grafana instance is finally up and running!
 
 
 ## Updating

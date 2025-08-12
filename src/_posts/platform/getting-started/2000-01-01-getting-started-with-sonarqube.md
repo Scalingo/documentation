@@ -13,7 +13,7 @@ requests.
 
 ## Planning your Deployment
 
-- SonarQube requires its own database. We usually advise to use a [PostgreSQL
+- SonarQube requires its own database. We usually advise to use a [PostgreSQL®
   Starter or Business 512 addon][db-postgresql] for this purpose.
 
 - SonarQube requires quite a lot of RAM to run properly. You most probably
@@ -61,7 +61,7 @@ will need to follow:
    scalingo git@ssh.osc-fr1.scalingo.com:my-sonarqube.git (push)
    ```
 
-3. Create the database:
+3. Provision a Scalingo for PostgreSQL® Starter 512 addon:
    ```bash
    scalingo --app my-sonarqube addons-add postgresql postgresql-starter-512
    ```
@@ -114,7 +114,8 @@ You will have to adjust some values to suit your needs.
    }
    ```
 
-4. Create a Starter-512 PostgreSQL addon and attach it to your app:
+4. Provision a Scalingo for PostgreSQL® Starter 512 addon and attach it to your
+   app:
    ```terraform
    resource "scalingo_addon" "my-sonarqube-db" {
      app         = scalingo_app.my-sonarqube.id
