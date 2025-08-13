@@ -80,4 +80,4 @@ Containers have various limits depending on their size. Here is a comprehensive 
   100% of CPU, the first container would receive 50% of the total CPU time and
   the two others would receive 25%.
 - PID limits: from 128 (S) to 2048 (2XL).
-- Ulimit nofile: 10000. Maximum number of files an application can open.
+- Ulimit nofile: 1048576. Maximum number of files an application can open.
