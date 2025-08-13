@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for MySQL® Addon
 nav: Accessing
-modified_at: 2025-06-10 12:00:00
+modified_at: 2025-08-13 14:50:00
 tags: databases mysql addon
 index: 4
 ---
@@ -298,3 +298,13 @@ like described [above](#using-openssh).
 5. Click the **Test Connection** button at the bottom to test that everything
    works as expected
 6. Click the **OK** button to save the connection configuration
+
+## Connection error
+
+Receiving the error `Too many connection errors from 1.2.3.4:12345` means 
+that the MySQL router blocked the connection after too many attempts were 
+tried using an invalid configuration. 
+
+To solve this issue, the MySQL router has to be restarted, which induces a 
+small downtime of less than 30 seconds. To do so, please contact our Support 
+team at <support@scalingo.com> or via the integrated chat in your dashboard.
