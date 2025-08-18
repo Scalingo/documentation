@@ -708,6 +708,9 @@
   - old: "/platform/cli/start"
     new: "/tools/cli/start"
 
+  - old: "/languages/nodejs/2000-01-01-angularjs"
+    new: "/languages/nodejs/2000-01-01-angular"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
