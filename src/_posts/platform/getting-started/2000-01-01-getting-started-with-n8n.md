@@ -66,18 +66,21 @@ We maintain a repository called [n8n-scalingo] on GitHub to help you deploy n8n
 on Scalingo. Here are the few additional steps you will need to follow:
 
 1. Clone our repository:
+
    ```bash
    git clone https://github.com/Scalingo/n8n-scalingo
    cd n8n-scalingo
    ```
 
 2. Create the application on Scalingo:
+
    ```bash
    scalingo create my-n8n
    ```
 
    Notice that our Command Line automatically detects the git repository, and
    adds a git remote to Scalingo:
+
    ```bash
    git remote -v
 
@@ -88,30 +91,35 @@ on Scalingo. Here are the few additional steps you will need to follow:
    ```
 
 3. Provision a Scalingo for PostgreSQL® Starter 512 addon:
+
    ```bash
    scalingo --app my-n8n addons-add postgresql postgresql-starter-512
    ```
 
 4. (optional) Instruct the platform to run the `web` process type in a single
    XL container:
+
    ```bash
    scalingo --app my-n8n scale web:1:XL
    ```
 
 5. Set a few **mandatory** environment variables:\\
    These must be set with the given values:
+
    ```bash
    scalingo --app my-n8n env-set N8N_PORT=\$PORT
    scalingo --app my-n8n env-set N8N_PROTOCOL=https
    scalingo --app my-n8n env-set DB_TYPE=postgresdb
    ```
 
-   **When running in queue mode**, the following one must be set:\\
+   **When running in queue mode**, the following one must be set:
+
    ```bash
    scalingo --app my-n8n env-set N8N_ENCRYPTION_KEY=<SOME RANDOM STRING>
    ```
 
 6. Everything's ready, deploy to Scalingo:
+
    ```bash
    git push scalingo master
    ```
@@ -124,7 +132,9 @@ Please adjust the values to suit your needs.
 {% endnote %}
 
 1. Start by forking our [n8n repository][n8n-scalingo]
+
 2. Place the following block in your Terraform file to create the app:
+
    ```terraform
    resource "scalingo_app" "my-n8n" {
      name        = "my-n8n"
@@ -141,6 +151,7 @@ Please adjust the values to suit your needs.
    ```
 
 3. Link the app to your forked repository:
+
    ```terraform
    data "scalingo_scm_integration" "github" {
      scm_type = "github"
@@ -156,6 +167,7 @@ Please adjust the values to suit your needs.
 
 4. Provision a Scalingo for PostgreSQL® Starter 512 addon and attach it to your
    app:
+
    ```terraform
    resource "scalingo_addon" "my-n8n-postgresql" {
      app         = scalingo_app.my-n8n.id
@@ -166,6 +178,7 @@ Please adjust the values to suit your needs.
 
 5. (optional) Instruct the platform to run the `web` process type in a single
    XL container:
+
    ```terraform
    resource "scalingo_container_type" "web" {
      app    = scalingo_app.my-n8n.id
@@ -176,7 +189,9 @@ Please adjust the values to suit your needs.
    ```
 
 6. Run `terraform plan` and check if the result looks good
+
 7. If so, run `terraform apply`
+
 8. Once Terraform is done, your n8n instance is ready to be deployed:
    1. Head to your [dashboard]
    2. Click on your n8n application
@@ -194,21 +209,25 @@ the `package.json` file of your n8n repository.
 
 1. In your n8n repository, ask `npm` to bump the n8n package version:\\
    To update to the `latest` version:
+
    ```bash
    npm install n8n --package-lock-only
    ```
 
    To update to the `next` version:
+
    ```bash
    npm install n8n@next --package-lock-only
    ```
 
    To update to a specific version:
+
    ```bash
    npm install n8n@<version> --package-lock-only
    ```
 
 2. Commit the update:
+
    ```bash
    git add package.json
    git add package-lock.json
@@ -227,9 +246,11 @@ the `package.json` file of your n8n repository.
 
 1. Make sure you've successfully followed [the first steps](#updating)
 2. Push the changes to your repository:
+
    ```bash
    git push origin master
    ```
+
 3. Head to your [dashboard]
 4. Click on your n8n application
 5. Click on the **Deploy** tab
@@ -246,8 +267,11 @@ the `package.json` file of your n8n repository.
 
 
 [n8n-editions]: https://docs.n8n.io/hosting/community-edition-features/
+[n8n-env]: https://docs.n8n.io/hosting/configuration/environment-variables/
 [queue mode]: https://docs.n8n.io/hosting/scaling/queue-mode/
 [multi-main]: https://docs.n8n.io/hosting/scaling/queue-mode/#multi-main-setup
+
+[n8n-scalingo]: https://github.com/Scalingo/n8n-scalingo
 
 [db-postgresql]: https://www.scalingo.com/databases/postgresql
 [dashboard]: https://dashboard.scalingo.com/apps/
