@@ -1,5 +1,5 @@
 ---
-title: Getting Started With ModSecurity on Scalingo
+title: Getting Started with ModSecurity on Scalingo
 modified_at: 2025-08-12 12:00:00
 tags: tutorial security firewall modsecurity apache nginx waf
 index: 11

@@ -5,7 +5,7 @@ index: 16
 ---
 
 n8n is an open-source workflow automation tool that lets you connect apps,
-APIs, and databases withou heavy coding. It works like a visual editor where
+APIs, and databases without heavy coding. It works like a visual editor where
 you drag, drop, and link *nodes* to create automated workflows. It supports
 both scheduled and event-driven automations.\\
 n8n can interact with more than 200 services, and allows to run custom scripts

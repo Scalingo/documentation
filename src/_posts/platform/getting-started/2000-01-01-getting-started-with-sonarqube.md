@@ -1,5 +1,5 @@
 ---
-title: Getting Started With SonarQube on Scalingo
+title: Getting Started with SonarQube on Scalingo
 modified_at: 2025-08-07 12:00:00
 tags: tutorial sonarqube
 index: 15

@@ -1,5 +1,5 @@
 ---
-title: Getting Started With Metabase on Scalingo
+title: Getting Started with Metabase on Scalingo
 modified_at: 2025-08-12 12:00:00
 tags: tutorial metabase
 index: 13
