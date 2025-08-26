@@ -29,7 +29,7 @@ delay to fit your needs. This latter setting means that you can still review PR
 after your dev team has closed the PR.
 
 The owner of the parent application is the only account which can manually delete the review app, via
-the Settings menu of *the review app*, submenu App management, in the dashboard, or via our [CLI](https://developers.scalingo.com/apps#delete-an-application).
+the Settings menu of *the review app*, submenu General, in the dashboard, or via our [CLI](https://developers.scalingo.com/apps#delete-an-application).
 
 {% warning %}
 The procedure to delete a standard application is similar. Ensure you're deleting the review app before proceeding.
