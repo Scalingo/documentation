@@ -46,7 +46,7 @@ Using the Dashboard:
 Using the dashboard:
 - Go to your application dashboard
 - Go to **Settings** tab
-- You will automatically be taken to the collaborators menu
+- Go to the **Collaborators** menu
 
 Using the Command Line
 ```shell
@@ -62,8 +62,7 @@ While the main Collaborators page provides a consolidated list, collaborators ar
 Using the Dashboard
 
 - Go to your application that needs a new collaborator
-- Go to the Settings tab
-- You will automatically be taken to the Collaborators menu
+- Go to the Settings tab, and click on the Collaborators menu
 - Click on the Add button
 - Add the required collaborator email
 - You will now see the collaborator in light grey in the table.
@@ -81,8 +80,7 @@ scalingo --app my-app collaborators-add user@example.com
 Using the Dashboard
 
 - Go to your application that needs a new collaborator
-- Go to the Settings tab
-- You will automatically be taken to the Collaborators menu
+- Go to the Settings tab, and click on the Collaborators menu
 - Click on the trash can corresponding to the collaborator's mail
 - Validate in the pop-up
 
