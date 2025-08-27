@@ -37,7 +37,24 @@ If the project is in the list
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the projects:
    ```shell
-   scalingo create --project-id=prj-6731a609-02b6-4614-b28d-5abe43654333 test-app
+   scalingo projects
+   ```
+   The output should look like this:
+    ```shell
+    /!\  This command only displays projects where you are the owner
+   ┌─────────────────────────────┬──────────┬─────────────────────────────────┐
+   │            NAME             │ DEFAULT  │               ID                │
+   ├─────────────────────────────┼──────────┼─────────────────────────────────┤
+   │ project_boo                 │ false    │ prj-0c1ab18c-6ac8-4f85-b55e-b14 │
+   │ projectBar                  │ false    │ prj-0c1ab74c-6ac8-7k125-b5e-b7  │
+   | default                     │ true     │ prj-0c1adc1c-1ad8-4f85-b55e-z9  │
+   └─────────────────────────────┴──────────┴─────────────────────────────────┘
+   ```
+
+3. From the command line, set the project at the app creation step:
+
+   ```shell
+   scalingo create --project-id=prj-6731a609-02b6-4614-b28d test-app
    ```
    The output should look like this:
    ```shell
@@ -45,6 +62,7 @@ If the project is in the list
    To deploy your application, run these commands in your GIT repository:
    ...
    ```
+Here you've created the App named `test-app` and set the project, which id is `prj-6731a609-02b6-4614-b28d`, on it
 
 ### Using the Terraform Provider
 
@@ -120,7 +138,7 @@ Right now it is only possible to list the projects when creating a new applicati
 
 ### Using the Dashboard
 
-Right now it is only possible to create a new project when creating a new application.
+Right now it is only possible to create a new project when creating a new application or when moving an existing application to another project.
 
 ### Using the Command Line
 
@@ -163,7 +181,7 @@ This feature is not yet available in the dashboard.
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, update a project:
+2. From the command line, update a project name:
    ```shell
    scalingo projects-update --name=updated-test-project prj-6731a609-02b6-4614-b28d-5abe43654333
    ```
