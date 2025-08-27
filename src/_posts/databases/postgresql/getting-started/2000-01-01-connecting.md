@@ -1,7 +1,7 @@
 ---
 title: Connecting to Your Scalingo for PostgreSQL® Addon
 nav: Connecting
-modified_at: 2024-10-21 00:00:00
+modified_at: 2025-08-26 12:00:00
 tags: databases postgresql addon
 index: 3
 ---
@@ -138,6 +138,6 @@ communicate with the database:
 [dashboard]: https://dashboard.scalingo.com
 
 [cli]: ({% post_url tools/cli/2000-01-01-start %})
-[environmnent]: {% post_url platform/app/2000-01-01-environment %}
+[environment]: {% post_url platform/app/2000-01-01-environment %}
 
 [database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
