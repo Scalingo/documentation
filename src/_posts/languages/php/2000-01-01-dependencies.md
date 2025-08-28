@@ -98,8 +98,6 @@ Scalingo currently supports the following versions of Composer:
 | Composer    | `scalingo-20` (EOL) | `scalingo-22`  |
 | ----------: | ------------------: | -------------: |
 | `2.8`       | up to `2.8.8`       | up to `2.8.11` |
-| `2.7`       | up to `2.7.9`       | up to `2.7.9`  |
-| `2.6`       | up to `2.6.6`       | up to `2.6.6`  |
 | `2.2` (LTS) | up to `2.2.25`      | up to `2.2.25` |
 
 
