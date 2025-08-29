@@ -7,13 +7,13 @@ index: 2
 
 ## Introduction
 
-Projects help to structure your resources by gathering them. They're the first milestone of features that will come later like network isolation for instance.
+Projects offer a new way to organize your applications. By grouping them into projects now, you are preparing for upcoming features focused on the network isolation of your applications and environments.
 
 The project named **⭐ default** is present by default and is set as a default project on existing Apps.
 
 {% note %}
-You're encouraged to assign your apps to projects now.
-By doing this, you prepare the arrival of some of the future features, that in the end will make the gathering of resources per projects necessary.
+We encourage you to group your applications into projects now.
+This will prepare you for upcoming features (such as private networks) and ensure smooth transition, as moving applications between projects will eventually require downtime.
 {% endnote %}
 
 ## Setting the project at App creation
@@ -109,7 +109,7 @@ This feature is not yet available in the Terraform Provider.
 ## Listing the projects
 
 {% warning %}
-For the moment, listing the projects will return only projects where you are the owner.
+For the moment, listing projects will only return those where you are the owner.
 {% endwarning %}
 
 ### Using the Dashboard
