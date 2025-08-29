@@ -1,5 +1,5 @@
 ---
-title: Manage your projects
+title: Manage your Projects
 modified_at: 2025-08-29 07:00:00
 tags: project management
 index: 2
@@ -7,20 +7,21 @@ index: 2
 
 ## Introduction
 
-Projects offer a new way to organize your applications. By grouping them into projects now, you are preparing for upcoming features focused on the network isolation of your applications and environments.
+Projects offer a new way to organize your applications.
 
-The project named **⭐ default** is present by default and is set as a default project on existing Apps.
+All existing resources have been assigned to a project named **default**. You can rename this project or move resources to another project at any time.
 
 {% note %}
-We encourage you to group your applications into projects now.
-This will prepare you for upcoming features (such as private networks) and ensure smooth transition, as moving applications between projects will eventually require downtime.
+Grouping your applications into projects now will ease the transition to upcoming features and avoid downtime when moving applications later.
 {% endnote %}
+
+[Learn more about Projects][[projects-overview].
 
 ## Setting the project at App creation
 
 ### Using the Dashboard
 
-Within the App creation wizard, the section **Project** enables you to set a project different from **⭐ default**.
+Within the App creation wizard, the section **Project** enables you to set a project different from **default**.
 
 If the project you'd like to set against the new App, doesn't exist, proceed as follows:
 
@@ -232,3 +233,4 @@ remove the associated resource from the Terraform file.
 [dashboard]: https://dashboard.scalingo.com/
 
 [cli]: {% post_url platform/cli/2000-01-01-start %}
+[projects-overview]: {% post_url platform/projects/2000-01-01-overview %}
