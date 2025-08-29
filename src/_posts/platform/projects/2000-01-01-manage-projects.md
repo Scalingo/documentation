@@ -1,8 +1,8 @@
 ---
 title: Manage your projects
-modified_at: 2025-07-31 07:00:00
+modified_at: 2025-08-29 07:00:00
 tags: project management
-index: 1
+index: 2
 ---
 
 ## Introduction
