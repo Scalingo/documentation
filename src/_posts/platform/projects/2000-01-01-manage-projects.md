@@ -15,7 +15,7 @@ All existing resources have been assigned to a project named **default**. You ca
 Grouping your applications into projects now will ease the transition to upcoming features and avoid downtime when moving applications later.
 {% endnote %}
 
-[Learn more about Projects][[projects-overview].
+[Learn more about Projects][projects-overview].
 
 ## Setting the project at App creation
 
