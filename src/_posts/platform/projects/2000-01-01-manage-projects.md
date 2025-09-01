@@ -26,7 +26,7 @@ Within the App creation wizard, the section **Project** enables you to set a pro
 If the project you'd like to set against the new App, doesn't exist, proceed as follows:
 
 1. Click **+ New project**
-2. Enter the project name of your choice (only characters a-Z 0-9 - _ are allowed)
+2. Enter the project name of your choice (1–64 characters, using only a–Z, 0–9, -, or _)
 3. Click **Add**
 
 If the project is in the list
@@ -43,19 +43,18 @@ If the project is in the list
    The output should look like this:
     ```shell
     /!\  This command only displays projects where you are the owner
-   ┌─────────────────────────────┬──────────┬─────────────────────────────────┐
-   │            NAME             │ DEFAULT  │               ID                │
-   ├─────────────────────────────┼──────────┼─────────────────────────────────┤
-   │ project_boo                 │ false    │ prj-0c1ab18c-6ac8-4f85-b55e-b14 │
-   │ projectBar                  │ false    │ prj-0c1ab74c-6ac8-7k125-b5e-b7  │
-   | default                     │ true     │ prj-0c1adc1c-1ad8-4f85-b55e-z9  │
-   └─────────────────────────────┴──────────┴─────────────────────────────────┘
+   ┌──────────────┬─────────┬──────────────────────────────────────────┐
+   │     NAME     │ DEFAULT │                    ID                    │
+   ├──────────────┼─────────┼──────────────────────────────────────────┤
+   │ test-project │ false   │ prj-6731a609-02b6-4614-b28d-5abe43654333 │
+   │ default      │ true    │ prj-20f1b7e4-cf4d-46e9-aff1-e47ae149c444 │
+   └──────────────┴─────────┴──────────────────────────────────────────┘
    ```
 
 3. From the command line, set the project at the app creation step:
 
    ```shell
-   scalingo create --project-id=prj-6731a609-02b6-4614-b28d test-app
+   scalingo create --project-id=prj-6731a609-02b6-4614-b28d-5abe43654333 test-app
    ```
    The output should look like this:
    ```shell
@@ -63,7 +62,7 @@ If the project is in the list
    To deploy your application, run these commands in your GIT repository:
    ...
    ```
-Here you've created the App named `test-app` and set the project, which id is `prj-6731a609-02b6-4614-b28d`, on it
+Here you've created the App named `test-app` and set the project, which id is `prj-6731a609-02b6-4614-b28d-5abe43654333`, on it
 
 ### Using the Terraform Provider
 
@@ -90,7 +89,7 @@ Here you've created the App named `test-app` and set the project, which id is `p
 If the project isn't already existing, proceed as follows:
 
 1. Click **+ New project** 
-2. Enter the project name of your choice (only characters a-Z 0-9 - _ are allowed)
+2. Enter the project name of your choice (1-64 characters, using only a–Z, 0–9, -, or _)
 3. Click **Add**
 
 
