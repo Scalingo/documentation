@@ -26,7 +26,7 @@ Within the App creation wizard, the section **Project** enables you to set a pro
 If the project you'd like to set against the new App, doesn't exist, proceed as follows:
 
 1. Click **+ New project**
-2. Enter the project name of your choice (1–64 characters, using only a–Z, 0–9, -, or _)
+2. Enter the project name of your choice (1–64 characters, using only a-z, 0-9, -, or _)
 3. Click **Add**
 
 If the project is in the list
@@ -89,7 +89,7 @@ Here you've created the App named `test-app` and set the project, which id is `p
 If the project isn't already existing, proceed as follows:
 
 1. Click **+ New project** 
-2. Enter the project name of your choice (1-64 characters, using only a–Z, 0–9, -, or _)
+2. Enter the project name of your choice (1-64 characters, using only a-z, 0-9, -, or _)
 3. Click **Add**
 
 
