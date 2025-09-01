@@ -12,7 +12,7 @@ Projects are the way to organize your applications and resources on Scalingo.
 All existing resources have automatically been assigned to a project named **default**. You can rename this project, move resources into another project, or set a different project as the new default at any time.
 
 {% warning %}
-We strongly recommend grouping your applications into projects before **March 1, 2026**. After this date, applications can no longer be regrouped between projects except by recreating them in the target project.  
+We strongly recommend grouping your applications into projects before **March 1, 2026**. After this date, applications can no longer be regrouped between projects except by recreating them in the target project.
 {% endwarning %}
 
 [Learn more about Projects][projects-overview].
