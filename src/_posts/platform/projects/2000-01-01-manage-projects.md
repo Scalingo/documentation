@@ -62,7 +62,7 @@ If the project is in the list
    To deploy your application, run these commands in your GIT repository:
    ...
    ```
-Here you've created the App named `test-app` and set the project, which id is `prj-6731a609-02b6-4614-b28d-5abe43654333`, on it
+Here you've created the app named `test-app` and set the project ID to `prj-6731a609-02b6-4614-b28d-5abe43654333`.
 
 ### Using the Terraform Provider
 
