@@ -128,3 +128,9 @@ the `database.yml` configuration file accordingly and automatically.
 If you're using the <em>mysql2</em> gem, you will need to copy the value of
 `SCALINGO_MYSQL_URL` into `DATABASE_URL` and change the scheme part from
 `mysql://` to `mysql2://`.
+
+Can be automated in your `config/database.yml`:
+
+```erb
+url: <%= ENV["DATABASE_URL"]&.gsub(/mysql:/, 'mysql2:') %>
+```
