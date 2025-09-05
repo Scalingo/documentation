@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for OpenSearch® Addon
 nav: Accessing
-modified_at: 2025-06-10 12:00:00
+modified_at: 2025-09-05 12:00:00
 tags: databases opensearch addon
 index: 3
 ---
@@ -45,12 +45,12 @@ Instead, any tool speaking HTTP can be used to interact with the database:
      "cluster_uuid" : "F22ZsuhSTp6boW-HlMWuqB",
      "version" : {
        "distribution" : "opensearch",
-       "number" : "2.19.1",
+       "number" : "2.19.3",
        "build_type" : "tar",
-       "build_hash" : "2e4741fb45d1b150aaeeadf66d41445b23ff5982",
-       "build_date" : "2025-02-27T01:16:47.726162386Z",
+       "build_hash" : "a90f864b8524bc75570a8461ccb569d2a4bfed42",
+       "build_date" : "2025-07-21T22:34:18.003652598Z",
        "build_snapshot" : false,
-       "lucene_version" : "9.12.1",
+       "lucene_version" : "9.12.2",
        "minimum_wire_compatibility_version" : "7.10.0",
        "minimum_index_compatibility_version" : "7.0.0"
      },
