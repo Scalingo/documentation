@@ -78,7 +78,7 @@ Here you've created the app named `test-app` and set the project ID to `prj-6731
 2. Click the **Apps** tab
 3. Click on the application for which you want to manage the project
 4. Click the **Settings** tab
-5. In the **Settings** submenu, make sure to select **App management**
+5. In the **Settings** submenu, make sure to select **General**
 6. In the section **Parent project**, click **Move app to another project**
 
 
@@ -172,7 +172,13 @@ Two attributes can be updated: `name` and `default`.
 
 ### Using the Dashboard
 
-This feature is not yet available in the dashboard.
+1. From your web browser, open your [dashboard][dashboard]
+2. Click the **Apps** tab
+3. Click on the application for which you want to edit the project
+4. Click the **Settings** tab, make sure to select **General**
+5. Click **`your-project` settings** (where `your-project` is the current name of the project you want to edit)
+6. Edit either the `name` of the project or tick the checkbox to make it the `default` project or update both
+7. Click **Edit**
 
 ### Using the Command Line
 
