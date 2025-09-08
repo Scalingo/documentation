@@ -195,6 +195,6 @@ They can be leveraged to customize your deployment:
 
 [db-postgresql]: https://www.scalingo.com/databases/postgresql
 [dashboard]: https://dashboard.scalingo.com/apps/
-[one-click]: https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/metabase-scalingo
+[one-click]: https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/metabase-scalingo
 
 [db-duplicate]: {% post_url platform/databases/2000-01-01-duplicate %}

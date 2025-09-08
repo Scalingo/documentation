@@ -275,7 +275,7 @@ the `package.json` file of your n8n repository.
 
 [db-postgresql]: https://www.scalingo.com/databases/postgresql
 [dashboard]: https://dashboard.scalingo.com/apps/
-[one-click]: https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/n8n-scalingo
+[one-click]: https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/n8n-scalingo
 
 [sqlite]: {% post_url databases/2000-01-01-sqlite %}
 [scale-out]: {% post_url platform/app/scaling/2000-01-01-scaling %}

@@ -453,7 +453,7 @@ mandatory or worth considering:
 
 [db-mysql]: https://www.scalingo.com/databases/mysql
 [dashboard]: https://dashboard.scalingo.com/apps/
-[one-click]: https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/wordpress-scalingo
+[one-click]: https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/wordpress-scalingo
 
 [cli]: {% post_url tools/cli/2000-01-01-features %}#configure-their-environment
 [composer-dependencies]: {% post_url languages/php/2000-01-01-dependencies %}

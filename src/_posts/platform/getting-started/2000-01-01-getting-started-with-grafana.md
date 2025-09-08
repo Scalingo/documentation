@@ -252,6 +252,6 @@ They can be leveraged to customize your deployment:
 [db-postgresql]: https://www.scalingo.com/databases/postgresql
 
 [dashboard]: https://dashboard.scalingo.com
-[one-click]: https://dashboard.scalingo.com/deploy?source=https://github.com/Scalingo/grafana-scalingo
+[one-click]: https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/grafana-scalingo
 
 [multi-buildpack]: {% post_url platform/deployment/buildpacks/2000-01-01-multi %}
