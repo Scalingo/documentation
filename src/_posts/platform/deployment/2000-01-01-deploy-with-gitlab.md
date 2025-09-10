@@ -39,10 +39,13 @@ $ scalingo integrations-add gitlab
 $ scalingo integrations-add --url https://gitlab.example.org --token <token> gitlab-self-hosted
 ```
 
-The token you need is a personal access token. Here is the [GitLab
-documentation](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
-on how to create one. The scopes you need on Scalingo are `api`, `read_user`.
-Your user account must also have [a sufficient role, maintainer or owner](https://docs.gitlab.com/ee/user/permissions.html#project-members-permissions)
+The `token` can be:
+
+* [A `Personal access token`](https://docs.gitlab.com/user/profile/personal_access_tokens/) with the `api` and `read_user` scopes. Your account must also have [a sufficient role, maintainer or owner](https://docs.gitlab.com/ee/user/permissions.html#project-members-permissions).
+
+* [A `Group access token`](https://docs.gitlab.com/user/group/settings/group_access_tokens/) with the `api` scope and at least the [maintainer role](https://docs.gitlab.com/ee/user/permissions.html#project-members-permissions).
+
+As of now, [`Project access token`](https://docs.gitlab.com/user/project/settings/project_access_tokens/) are not supported.
 
 Then, add and configure a link between your Scalingo application and the
 GitLab-hosted repository with:
