@@ -13,7 +13,7 @@ most common error messages.
 ## devDependencies Also Contain some Dependencies required at startup or runtime {#dep}
 
 The `devDependencies` section of the package.json file contains dependencies required
-durint startup of the app, or during runtime. By default Scalingo deployments prune the
+during startup of the app, or during runtime. By default, Scalingo deployments prune the
 dependencies from the `devDependencies` section of the package.json file. It may
 lead to error messages such as `ng: not found` or `nest: not found`. In such
 situation, you have a couple of solutions:
