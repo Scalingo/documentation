@@ -10,7 +10,7 @@ You may experience an error in your Node.js application that many customers
 faced when first deploying such application on Scalingo. Here is a list of the
 most common error messages.
 
-## devDependencies Also Contain some Dependencies required at startup or runtime {#dep}
+## devDependencies Also Contain Some Dependencies Required at Startup or Runtime {#dep}
 
 The `devDependencies` section of the package.json file contains dependencies required
 during startup of the app, or during runtime. By default, Scalingo deployments prune the
