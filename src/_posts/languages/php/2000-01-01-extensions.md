@@ -1,7 +1,7 @@
 ---
 title: Managing PHP Extensions
 nav: Managing PHP Extensions
-modified_at: 2025-08-06 12:00:00
+modified_at: 2025-09-11 12:00:00
 tags: php
 index: 4
 ---
@@ -151,7 +151,7 @@ The following table lists the supported versions of available PECL extensions:
 | Extension       | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  |
 | --------------- | -------: | -------: | -------: | -------: |
 | `ext-amqp`      | `2.1.2`  | `2.1.2`  | `2.1.2`  | `2.1.2`  |
-| `ext-apcu`      | `5.1.26` | `5.1.26` | `5.1.26` | `5.1.26` |
+| `ext-apcu`      | `5.1.27` | `5.1.27` | `5.1.27` | `5.1.27` |
 | `ext-apfd`      | `1.0.3`  | `1.0.3`  | `1.0.3`  | `1.0.3`  |
 | `ext-event`     | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  |
 | `ext-igbinary`  | `3.2.16` | `3.2.16` | `3.2.16` | `3.2.16` |
