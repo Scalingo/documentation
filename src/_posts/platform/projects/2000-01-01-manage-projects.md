@@ -84,7 +84,7 @@ Here you've created the app named `test-app` and set the project ID to `prj-6731
 
 If the project isn't already existing, proceed as follows:
 
-1. Click **+ New project** 
+1. Click **+ New project**
 2. Enter the project name of your choice (1-64 characters, using only a-z, 0-9, -, or _)
 3. Click **Add**
 
@@ -233,5 +233,5 @@ remove the associated resource from the Terraform file.
 
 [dashboard]: https://dashboard.scalingo.com/
 
-[cli]: {% post_url platform/cli/2000-01-01-start %}
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 [projects-overview]: {% post_url platform/projects/2000-01-01-overview %}
