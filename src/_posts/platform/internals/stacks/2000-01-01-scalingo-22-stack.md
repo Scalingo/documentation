@@ -2,7 +2,7 @@
 title: Scalingo-22 Stack
 nav: Scalingo-22
 modified_at: 2025-07-03 00:00:00
-index: 2
+index: 3
 ---
 
 {% note %}
