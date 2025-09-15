@@ -105,8 +105,8 @@ The latest available versions currently are:
 
 | Tomcat Version | `scalingo-20` (EOL) | `scalingo-22`       | `scalingo-24`       |
 | -------------: | ------------------: | ------------------: | ------------------: |
-| **`10.1`**     | up to `10.1.43.0`   | up to `10.1.43.0`   | up to `10.1.43.0`   |
-| **`9.0`**      | up to `9.0.107.0`   | up to `9.0.107.0`   | up to `9.0.107.0`   |
+| **`10.1`**     | up to `10.1.44.0`   | up to `10.1.44.0`   | up to `10.1.44.0`   |
+| **`9.0`**      | up to `9.0.108.0`   | up to `9.0.108.0`   | up to `9.0.108.0`   |
 | `8.5`          | up to `8.5.68.1`    | up to `8.5.68.1`    | up to `8.5.68.1`    |
 
 The default Tomcat version on all stacks is the latest `9.0` version.
