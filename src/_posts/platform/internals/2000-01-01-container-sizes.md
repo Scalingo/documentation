@@ -7,16 +7,6 @@ index: 2
 
 ## Comparative Table
 
-|               | S       | M        | L        | XL      | 2XL     |
-| ------------- | ------: | -------: | -------: | ------: | ------: |
-| Memory (MB)   | 256     | 512      | 1024     | 2048    | 4096    |
-| Swap (MB)     | 512     | 1024     | 2048     | 4096    | 8192    |
-| CPUs (shared) | 8       | 8        | 8        | 8       | 8       |
-| CPU Priority  | Low     | Standard | Standard | High    | High    |
-| PID Limit     | 128     | 256      | 512      | 1024    | 2048    |
-| Ulimit        | 1048576 | 1048576  | 1048576  | 1048576 | 1048576 |
-| Price         | 0.01€/H | 0.02€/H  | 0.04€/H  | 0.08€/H | 0.16€/H |
-
 <div class="overflow-horizontal-content">
 	<table class="table">
 		<thead>
