@@ -159,7 +159,9 @@ with some general steps to address them:
 - Implement connection pooling to reuse database connections, reducing the
   overhead of establishing a new connection for each query.
 
-## Connection error
+## Solving Connection Issues
+
+### Too Many Connection Errors From
 
 Receiving the error `Too many connection errors from 1.2.3.4:12345` means 
 that the MySQL router blocked the connection after multiple failed 
