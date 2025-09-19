@@ -708,6 +708,9 @@
   - old: "/platform/cli/start"
     new: "/tools/cli/start"
 
+  - old: "/platform/getting-started/getting-started-with-elk"
+    new: "/platform/getting-started/getting-started-with-elk/overview"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
