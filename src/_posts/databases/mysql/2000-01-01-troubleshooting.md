@@ -3,7 +3,7 @@ title: Troubleshooting Scalingo for MySQL®
 nav: Troubleshooting
 modified_at: 2024-04-23 12:00:00
 tags: databases mysql addon
-index: 9
+index: 12
 ---
 
 ## Understanding Memory Consumption
