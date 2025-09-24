@@ -1,9 +1,9 @@
 ---
 title: Accessing Your Scalingo for MySQL® Addon
 nav: Accessing
-modified_at: 2025-06-10 12:00:00
+modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon
-index: 4
+index: 3
 ---
 
 
@@ -16,7 +16,7 @@ depends on your needs and preferences.
 
 ## Using the Interactive Remote Console
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, open a console for your MySQL® addon:
    ```bash
    scalingo --app my-app mysql-console
@@ -54,7 +54,7 @@ depends on your needs and preferences.
 
 ## Using a One-Off
 
-1. [Start a one-off container]({% post_url platform/app/2000-01-01-tasks %})
+1. [Start a one-off container][one-off]
 2. From the command line, use our `dbclient-fetcher` helper to download and
    install a bunch of MySQL® tools:
    ```bash
@@ -102,7 +102,7 @@ third-party tool.
 To access your database remotely you first need to [make it reachable over the
 Internet](#making-the-database-reachable-over-internet):
 - either locally, on your computer, via an [encrypted tunnel](#setting-up-an-encrypted-tunnel)
-- or from any location, by [enforcing TLS connection]({% post_url databases/mysql/2000-01-01-connecting %}#enforcing-tls-connection)
+- or from any location, by [enforcing TLS connection][connecting-tls]
   and [enabling direct Internet access](#enabling-direct-access-over-internet).
 
 Once a secured connection has been established, you should be able to connect
@@ -118,8 +118,8 @@ Our command line tool provides a `db-tunnel` command that creates an SSH
 encrypted tunnel between the computer running the command and our platform,
 allowing remote secured access to your MySQL® addon.
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
-2. Make sure you have correctly [setup SSH authentication]({% post_url platform/getting-started/2000-01-01-first-steps %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+2. Make sure you have correctly [setup SSH authentication][ssh]
    on your Scalingo account
 3. From the command line, open the tunnel using this command:
    ```bash
@@ -148,9 +148,8 @@ Our command line tool [handles it in a single command](#using-our-command-line-t
 but you might want to use the tunnel without it. With the standard OpenSSH
 client, the way to build the tunnel is:
 
-1. Identify the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#getting-the-connection-uri)
-   for your database
-2. Make sure to [understand how the connection URI is built]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+1. Identify the [connection URI][connecting-uri] for your database
+2. Make sure to [understand how the connection URI is built][connecting-uri-understand]
 3. From the command line, run the following command to create the tunnel:
    ```bash
    ssh -L <local_port>:<db_url>:<db_port> git@<ssh_hostname> -p 22 -N
@@ -175,21 +174,21 @@ Internet. This is often considered a bad practice. Consequently, we do not
 recommend activating Internet Accessibility.
 {% endwarning %}
 
-1. Make sure [you have TLS enforced]({% post_url databases/mysql/2000-01-01-connecting %}#enforcing-tls-connection)
-2. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. Make sure [you have TLS enforced][connecting-tls]
+2. From your web browser, [open your database dashboard][database-dashboard]
 3. Select the **Settings** tab
 4. In the **Settings** submenu, select **Internet Access**
 5. Locate the **Internet Accessibility** block
 6. Click the **Enable** button
-7. The database is now available using the corresponding [connection URI]({% post_url databases/mysql/2000-01-01-connecting %})
+7. The database is now available using the corresponding [connection URI][connecting]
 
 ### Using DBeaver
 
-[DBeaver](https://dbeaver.io/) is a free and open-source database tool allowing
-to manage multiple database kinds, including MySQL®. It includes a carefully
-designed and implemented User Interface, as well as a lot of features such as
-the ability to execute SQL queries with autocompletion and syntax highlighting,
-the ability to browse and edit database structure, data import/export, etc.
+[DBeaver] is a free and open-source database tool allowing to manage multiple
+database kinds, including MySQL®. It includes a carefully designed and
+implemented User Interface, as well as a lot of features such as the ability to
+execute SQL queries with autocompletion and syntax highlighting, the ability to
+browse and edit database structure, data import/export, etc.
 
 #### Accessing Through a DB Tunnel
 
@@ -202,8 +201,10 @@ the ability to browse and edit database structure, data import/export, etc.
    information:
    - Server Host is now `127.0.0.1` or `localhost`
    - Port is most probably `10000`, unless you set it to something else
-   - Database must be gathered from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
-   - Username and Password must also be gathered from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+   - Database must be gathered from the [connection
+     URI][connecting-uri-understand]
+   - Username and Password must also be gathered from the [connection
+     URI][connecting-uri-understand]
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_dbeaver_01.png" %}
 {% include mdl_img.html %}
 {:start="5"}
@@ -222,7 +223,7 @@ described [above](#using-openssh).
 3. In the new window, select the **Main** tab and fill the required
    information:
      - Server Host, Port, Database, Username and Password must be gathered
-       from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+       from the [connection URI][connecting-uri-understand]
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_dbeaver_02.png" %}
 {% include mdl_img.html %}
 {:start="4"}
@@ -246,12 +247,12 @@ described [above](#using-openssh).
 
 ### Using MySQL Workbench
 
-[MySQL Workbench](https://www.mysql.com/products/workbench/) is a unified
-visual piece of software for database architects, administrators and
-developers. Apart from the basic features such as browsing and editing the
-database structure, importing and exporting data or executing SQL queries with
-autocompletion and syntax highlighting, MySQL Workbench also comes with
-functionalities that help identify and fix performance issues.
+[MySQL Workbench] is a unified visual piece of software for database
+architects, administrators and developers. Apart from the basic features such
+as browsing and editing the database structure, importing and exporting data or
+executing SQL queries with autocompletion and syntax highlighting, MySQL
+Workbench also comes with functionalities that help identify and fix
+performance issues.
 
 #### Accessing Through a DB Tunnel
 
@@ -267,7 +268,7 @@ functionalities that help identify and fix performance issues.
    - Port is most probably `10000`, unless you set it to something else
    - Username and Password must be gathered from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
    - Default Schema is the name of your database, which must also be gathered
-     from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+     from the [connection URI][connecting-uri-understand]
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_workbench_01.png" %}
 {% include mdl_img.html %}
 {:start="6"}
@@ -291,10 +292,23 @@ like described [above](#using-openssh).
    - SSH Username is always `git`
    - Chose the SSH Key File linked to your Scalingo account
    - MySQL Hostname, MySQL Server Port, Username and Password must be gathered
-     from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+     from the [connection URI][connecting-uri-understand]
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_workbench_02.png" %}
 {% include mdl_img.html %}
 {:start="5"}
 5. Click the **Test Connection** button at the bottom to test that everything
    works as expected
 6. Click the **OK** button to save the connection configuration
+
+
+[DBeaver]: https://dbeaver.io/
+[MySQL Workbench]: https://www.mysql.com/products/workbench/
+
+[cli]: {% post_url tools/cli/2000-01-01-start %}
+[ssh]: {% post_url platform/getting-started/2000-01-01-first-steps %}
+[one-off]: {% post_url platform/app/2000-01-01-tasks %}
+
+[connecting]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}
+[connecting-uri-get]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}#getting-the-connection-uri
+[connecting-uri-understand]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
+[connecting-tls]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}#enforcing-tls-connection

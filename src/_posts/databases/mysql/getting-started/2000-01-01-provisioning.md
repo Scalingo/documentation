@@ -1,21 +1,19 @@
 ---
-title: Getting Started With Scalingo for MySQL®
-nav: Getting Started
-modified_at: 2024-03-12 12:00:00
+title: Provisioning a Scalingo for MySQL® Addon
+nav: Provisioning
+modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon
-index: 2
+index: 1
 ---
 
-## Adding Scalingo for MySQL® to Your App
-
 Once you have chosen the right plan for your needs, you are ready to provision
-the addon. This can be done via our [dashboard](#using-the-dahboard),
+the addon. This can be done via our [dashboard](#using-the-dashboard),
 our [CLI tool](#using-the-command-line) or via our
 [Terraform Provider](#using-the-terraform-provider).
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard](https://dashboard.scalingo.com/apps)
+1. From your web browser, open your [dashboard]
 2. Click on the application for which you want to add a MySQL® database
 3. Click on the **Resources** tab
 4. Locate the **Addons** block and click on the **Add an addon** button
@@ -27,7 +25,7 @@ our [CLI tool](#using-the-command-line) or via our
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the plans available for `mysql`:
    ```bash
    scalingo addons-plans mysql
@@ -81,18 +79,29 @@ Every MySQL® addon comes with its dedicated dashboard, generally referred
 to as **database dashboard**, which is the central place for administrative
 tasks such as:
 
-- [Monitoring the database]({% post_url databases/mysql/2000-01-01-monitoring %})
-  through logs, metrics and statistics
-- [Upgrading the database]({% post_url databases/mysql/2000-01-01-upgrading %})
-  engine version
-- [Managing database users]({% post_url databases/mysql/2000-01-01-managing-users %})
-- [Managing databases]({% post_url databases/mysql/2000-01-01-using-multiple-databases %})
-- [Managing backups]({% post_url databases/mysql/2000-01-01-backing-up %})
+- [Monitoring the database][monitoring] through logs, metrics and statistics
+- [Upgrading the database][upgrading] engine version
+- [Managing database users][managing-users]
+- [Using multiple databases][multiple-db]
+- [Managing backups][backing-up]
 
 You can access the database dashboard via the application dashboard:
 
-1. From your web browser, open your [dashboard](https://dashboard.scalingo.com/apps)
+1. From your web browser, open your [dashboard]
 2. Click on the application for which you want to manage your database
 3. Click on the **Overview** tab
 4. Locate the **Addons** block and click on the **Dashboard** button next to
    the database you want to manage.
+
+
+[dashboard]: https://dashboard.scalingo.com/apps
+
+[cli]: {% post_url tools/cli/2000-01-01-start %}
+
+[monitoring]: {% post_url databases/mysql/guides/2000-01-01-monitoring %}
+[upgrading]: {% post_url databases/mysql/guides/2000-01-01-upgrading %}
+[managing-users]: {% post_url databases/mysql/guides/2000-01-01-managing-users %}
+[multiple-db]: {% post_url databases/mysql/guides/2000-01-01-using-multiple-databases %}
+[backing-up]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}
+
+
