@@ -27,7 +27,7 @@ Note that HDS applications do NOT have access to the feature.
 
 ## Domain Names
 
-In order to reference the containers in private networks, domain names are created to ease the interaction between them. A domain name may be composed of the <span class="domain-name-ct">container type</span>, the <span class="domain-name-ap">application UUID</span>, the <span  class="domain-name-pn">private network UUID</span> and a common <span class="domain-name-nid">internal network identifier</span> (<code class="domain-name-nid">private-network.internal</code>).
+In order to reference the containers in private networks, domain names are created to ease the interaction between them. A domain name may be composed of the <span class="domain-name-ct">container type</span>, the <span class="domain-name-ap">application ID</span>, the <span  class="domain-name-pn">private network ID</span> and a common <span class="domain-name-nid">internal network identifier</span> (<code class="domain-name-nid">private-network.internal</code>).
 
 Here are some examples with an
 application <code class="domain-name-ap">ap-a71da13f-7c70-4c00-a644-eee8558d8053</code> and a
