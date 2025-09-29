@@ -52,3 +52,9 @@ private network <code class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a
 * <code>1.<span class="domain-name-ct">worker</span>.<span class="domain-name-ap">ap-a71da13f-7c70-4c00-a644-eee8558d8053</span>.<span class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c</span>.<span class="domain-name-nid">private-network.internal.</span></code>:
 
   DNS A record to the first `worker` container.
+
+These domain names can be infered by knowing the application ID, the private network ID and the application formation or you can list them using [Scalingo CLI]({% post_url tools/cli/2000-01-01-start %}):
+
+```
+scalingo --app my-app private-networks-domain-names
+```
