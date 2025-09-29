@@ -166,4 +166,4 @@ through the database dashboard.
 
 
 [database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard
-[backing-up-creating-manual]: {% post_url databases/mysql/2000-01-01-backing-up %}#creating-a-manual-backup
+[backing-up-creating-manual]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}#creating-a-manual-backup

@@ -136,4 +136,4 @@ If you're using the <em>mysql2</em> gem, you will need to copy the value of
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [env]: {% post_url platform/app/2000-01-01-environment %}
-[database-dashboard]: {% post_url databases/mysql/getting-staretd/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
+[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard

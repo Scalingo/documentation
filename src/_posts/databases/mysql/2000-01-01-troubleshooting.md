@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Scalingo for MySQL®
 nav: Troubleshooting
-modified_at: 2024-04-23 12:00:00
+modified_at: 2025-09-29 12:00:00
 tags: databases mysql addon
 index: 12
 ---
@@ -15,9 +15,9 @@ auxiliary buffers in memory. This cache helps reduce disk I/O, and, thus, speed
 up query execution.
 
 Scalingo for MySQL® instances typically allocate:
-- ~50% of the memory to the [Buffer Pool](https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool-resize.html)
-- ~37.5% to [Connection Management](https://dev.mysql.com/doc/refman/8.0/en/connection-management.html)
-- ~12.5% to [Group Replication](https://dev.mysql.com/doc/refman/8.0/en/group-replication.html)
+- ~50% of the memory to the [Buffer Pool][mysql-buffer-pool]
+- ~37.5% to [Connection Management][mysql-connection-management]
+- ~12.5% to [Group Replication][mysql-group-replication]
 
 MySQL® generally tries to avoid swapping to disk because disk I/O is
 significantly slower than memory access. However, if the system is under
@@ -27,11 +27,11 @@ memory pages to disk, leading to performance degradation and increased latency.
 As a consequence, the size of the Buffer Pool should ideally be large enough to
 handle the database workload, thus preventing swap usage. A constantly swapping
 database could indicate that the space dedicated to the Buffer Pool has become
-insufficient. In such a case, [switching to a superior plan]({% post_url databases/mysql/2000-01-01-changing-plan %})
+insufficient. In such a case, [switching to a superior plan][changing-plan]
 should quickly resolve the swapping issue.
 
 For further details about how MySQL® manages memory, please refer to [the
-official documentation](https://dev.mysql.com/doc/refman/8.0/en/memory-use.html).
+official documentation][mysql-memory-use].
 
 
 ## Understanding I/O Peaks
@@ -60,7 +60,7 @@ consists in identifying the queries that are the most time-consuming.
 The default MySQL® configuration provided by Scalingo logs slow queries. A
 query is considered slow if it takes more than 2 seconds to execute. So, the
 very first action to take when chasing expensive queries would be to find
-problematic query statements by [viewing your database logs]({% post_url databases/mysql/2000-01-01-monitoring %}#inspecting-database-logs).
+problematic query statements by [viewing your database logs][inspecting-logs].
 
 Here is an example of a slow query log:
 
@@ -93,7 +93,7 @@ more disk I/O operations.
 **For queries that run very oftently**, the cache hit ratio should ideally
 neighbor `100%`.
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, open a console for your MySQL® addon: 
    ```bash
    scalingo --app my-app mysql-console
@@ -129,7 +129,7 @@ with some general steps to address them:
 
 - Ensure your SQL queries are properly designed and optimized to retrieve only
   necessary data.
-- Use the [`EXPLAIN` keyword](https://dev.mysql.com/doc/refman/8.0/en/using-explain.html)
+- Use the [`EXPLAIN` keyword][mysql-explain]
   to see the query execution plan. Analyze it to find bottlenecks or missing
   indexes.
 
@@ -158,3 +158,15 @@ with some general steps to address them:
 
 - Implement connection pooling to reuse database connections, reducing the
   overhead of establishing a new connection for each query.
+
+
+[mysql-memory-use]: https://dev.mysql.com/doc/refman/8.0/en/memory-use.html
+[mysql-buffer-pool]: https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool-resize.html
+[mysql-connection-management]: https://dev.mysql.com/doc/refman/8.0/en/connection-management.html
+[mysql-group-replication]: https://dev.mysql.com/doc/refman/8.0/en/group-replication.html
+[mysql-explain]: https://dev.mysql.com/doc/refman/8.0/en/using-explain.html
+
+[cli]: {% post_url tools/cli/2000-01-01-start %}
+
+[changing-plan]: {% post_url databases/mysql/guides/2000-01-01-changing-plan %}
+[inspecting-logs]: {% post_url databases/mysql/guides/2000-01-01-monitoring %}#inspecting-database-logs

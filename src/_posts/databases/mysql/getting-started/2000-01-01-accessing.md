@@ -266,7 +266,7 @@ performance issues.
    - Connection Method must be set to `Standard (TCP/IP)`
    - Hostname is `127.0.0.1` or `localhost`
    - Port is most probably `10000`, unless you set it to something else
-   - Username and Password must be gathered from the [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+   - Username and Password must be gathered from the [connection URI][connection-uri-understand]
    - Default Schema is the name of your database, which must also be gathered
      from the [connection URI][connecting-uri-understand]
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_documentation_workbench_01.png" %}
