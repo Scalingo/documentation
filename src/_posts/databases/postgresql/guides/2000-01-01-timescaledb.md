@@ -1,7 +1,7 @@
 ---
 title: TimescaleDB®
 nav: TimescaleDB®
-modified_at: 2024-03-26 12:00:00
+modified_at: 2025-09-18 12:00:00
 tags: databases postgresql timescaledb timeseries extensions
 index: 30
 ---
@@ -40,9 +40,25 @@ getting started.
 ## Enabling TimescaleDB®
 
 To enable TimescaleDB®:
-1. [Provision a new PostgreSQL® database][provisioning]
-2. [Enable the `timescaledb` extension][enabling-extension]
 
+1. [Provision a new PostgreSQL® database][provisioning]
+2. Access your database using the [Interactive Remote Console][irc]
+3. [Enable the `timescaledb` extension][enabling-extension] using the following commands:
+
+    From the PostgreSQL® console, run the following command:
+
+    ```sql
+    CREATE EXTENSION IF NOT EXISTS timescaledb;
+    ```
+
+    The output should look like this:
+
+    ```bash
+    CREATE EXTENSION
+    my_app_4553=>
+    ```
+
+4. TimescaleDB® is now enabled and ready to be used!
 
 ## Downsampling
 
