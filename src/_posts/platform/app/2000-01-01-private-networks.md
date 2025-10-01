@@ -58,3 +58,9 @@ These domain names can be infered by knowing the application ID, the private net
 ```
 scalingo --app my-app private-networks-domain-names
 ```
+
+## Typical Use Cases
+
+### Nginx with ModSecurity to hide the web containers
+
+### Deploy Keycloack
