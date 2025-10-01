@@ -1,7 +1,7 @@
 ---
 title: Limitations
 nav: Limitations
-modified_at: 2025-09-25 12:00:00
+modified_at: 2025-09-29 12:00:00
 tags: addon database mysql
 index: 4
 ---
@@ -23,7 +23,7 @@ all users.
 
 - When using a Business plan, the secondary nodes of the cluster are not
   accessible. These instances are only present to ensure high-availability.
-  There are not meant to plug analysis tools, even in read-only mode.
+  They are not meant to plug analysis tools, even in read-only mode.
 
 
 ## Requirements
@@ -40,15 +40,14 @@ all users.
 ## Timeouts
 
 Scalingo for MySQL® addons have, depending on the plan, one or two MySQL®
-Router instances as entry point. These instances have a few **default**
-timeouts configured which may impact your application.
+Router instances as entry point. These instances have a few timeouts which may
+impact your application. We don't customize these timeouts, so that **default**
+values are kept.
 
 For further details about these timeouts, please check the official
 documentation for MySQL® Router, depending on your MySQL® version:
 
-| MySQL® Version | Link                                   |
-| -------------- | -------------------------------------- |
-| `8.0`          | [Documentation][mysql-router-conf-8.0] |
+- For [MySQL® `8.0`][mysql-router-conf-8.0]
 
 
 [mysql-router-conf-8.0]: https://dev.mysql.com/doc/mysql-router/8.0/en/mysql-router-conf-options.html
