@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import '@docsearch/css';
+
 @theme {
   /* colors */
   --color-sc-gray-1: #1F2933;
@@ -105,40 +106,48 @@
   letter-spacing: var(--tracking-sc-title-2);
   font-weight: var(--font-weight-bold, 700);
 }
+
 .text-sc-title-2-2 {
   font-size: var(--text-sc-title-2-2);
   line-height: var(--leading-sc-title-2-2);
 }
+
 .text-sc-title-3 {
   font-size: var(--text-sc-title-3);
   line-height: var(--leading-sc-title-3);
   letter-spacing: var(--tracking-sc-title-3);
   font-weight: var(--font-weight-bold, 700);
 }
+
 .text-sc-title-4 {
   font-size: var(--text-sc-title-4);
   line-height: var(--leading-sc-title-4);
   letter-spacing: var(--tracking-sc-title-4);
   font-weight: var(--font-weight-bold, 700);
 }
+
 .text-sc-title-4-2 {
   font-size: var(--text-sc-title-4-2);
   line-height: var(--leading-sc-title-4-2);
 }
+
 .text-sc-title-5 {
   font-size: var(--text-sc-title-5);
   line-height: var(--leading-sc-title-5);
   letter-spacing: var(--tracking-sc-title-5);
   font-weight: var(--font-weight-bold, 700);
 }
+
 .text-sc-title-6 {
   font-size: var(--text-sc-title-6);
   line-height: var(--leading-sc-title-6);
 }
+
 .text-sc-title-6-2 {
   font-size: var(--text-sc-title-6-2);
   line-height: var(--leading-sc-title-6-2);
 }
+
 .text-sc-title-7 {
   font-size: var(--text-sc-title-7);
   line-height: var(--leading-sc-title-7);
@@ -236,16 +245,16 @@ article h5 {
 
 article p {
   color: var(--color-sc-gray-2);
-  margin-bottom: 0.5rem; 
+  margin-bottom: 0.5rem;
 }
 
 article li {
-  margin-bottom: 0.75rem; 
+  margin-bottom: 0.75rem;
 }
 
 article ul {
-  margin-bottom: 0.5rem; 
-  margin-top: 0.5rem; 
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 article a {
@@ -253,6 +262,7 @@ article a {
   color: var(--color-sc-gray-1);
   transition: color 0.2s;
 }
+
 article a:hover {
   color: var(--color-sc-blue-1);
 }
@@ -314,10 +324,10 @@ article aside.note {
   background-image: url('data:image/svg+xml, <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M3.67205 17.4954C3.60005 17.4954 3.52805 17.4594 3.45605 17.4234C3.34805 17.3514 3.27605 17.1714 3.31205 17.0274L4.89605 11.1234L0.144045 7.27138C4.50257e-05 7.19938 -0.035955 7.01938 4.50201e-05 6.87538C0.036045 6.73138 0.180045 6.62337 0.324045 6.62337L6.44405 6.29938L8.64005 0.575375C8.71205 0.467375 8.85605 0.359375 9.00005 0.359375C9.14405 0.359375 9.28805 0.467375 9.32405 0.575375L11.52 6.29938L17.64 6.62337C17.784 6.62337 17.928 6.73138 17.964 6.87538C18 7.01938 17.964 7.16338 17.856 7.27138L13.104 11.1234L14.688 17.0274C14.724 17.1714 14.688 17.3154 14.544 17.4234C14.436 17.4954 14.256 17.5314 14.148 17.4234L9.00005 14.1114L3.85205 17.4234C3.78005 17.4954 3.74405 17.4954 3.67205 17.4954Z" fill="%238055FF" /></g><defs><clipPath id="clip0_4076_10748"><rect width="18" height="18" fill="white" /></clipPath></defs></svg>');
   background-position: left 1.5rem top 1.75rem;
   padding: 1.5rem;
-padding-left: 4rem;
-margin-top: 2rem;
-margin-bottom: 2rem;
-gap: 1rem;
+  padding-left: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 1rem;
 
 }
 
@@ -415,11 +425,11 @@ article table th {
   font-size: var(--text-sc-title-7);
   line-height: var(--leading-sc-title-7);
   letter-spacing: var(--tracking-sc-title-7);
-    font-weight: var(--font-weight-bold, 700);
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    padding-top: 1.25rem;
-    padding-bottom: 0.75rem;
+  font-weight: var(--font-weight-bold, 700);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1.25rem;
+  padding-bottom: 0.75rem;
 
 }
 
@@ -498,7 +508,7 @@ svg {
 }
 
 article pre {
-  box-shadow: 0 10px 15px -3px rgba(31,41,55,0.1), 0 4px 6px -4px rgba(31,41,55,0.1);
+  box-shadow: 0 10px 15px -3px rgba(31, 41, 55, 0.1), 0 4px 6px -4px rgba(31, 41, 55, 0.1);
   font-size: 14px;
   line-height: 18px;
   background-color: #060C20;
@@ -541,6 +551,22 @@ article code {
   article code {
     word-break: normal;
   }
+}
+
+article .domain-name-ct {
+  color: #D28847;
+}
+
+article .domain-name-ap {
+  color: #D8B984;
+}
+
+article .domain-name-pn {
+  color: #6AA484;
+}
+
+article .domain-name-nid {
+  color: #76A3D0;
 }
 
 .highlight .hll {
