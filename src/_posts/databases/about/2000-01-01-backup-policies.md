@@ -1,7 +1,7 @@
 ---
 title: Databases Backup Policies
 nav: Backup Policies
-modified_at: 2024-12-04 12:00:00
+modified_at: 2025-03-09 18:00:00
 tags: databases backup policy policies explanation
 index: 30
 ---
@@ -16,7 +16,7 @@ They are **not** available for Sandbox plans.
 Scalingo provides at least two different backup mechanisms for every database
 addons in Starter or Business plans:
 - [Scheduled backups](#scheduled-backups) rely on our automated backup service
-  to create a full backup of your database every 24 hours.
+  to create a daily full backup of your database.
 - [Manual backups](#manual-backups), as the name implies, can be leveraged at
   any time to manually trigger the creation of a new full backup.
 
@@ -64,8 +64,7 @@ addons in Starter or Business plans:
 ## Scheduled Backups
 
 Scalingo provides a scheduled backup service for all our databases addons in
-Starter and Business plans. Scheduled backups are done on a daily basis, every
-24 hours. They consist in dumping the database to an archive that is kept
+Starter and Business plans. Scheduled backups are done on a daily basis. They consist in dumping the database to an archive that is kept
 during a [certain amount of time](#retention-policy-for-scheduled-backups).
 
 The start time can be customized using the dashboard or our Command Line tool,
