@@ -1,9 +1,9 @@
 ---
 title: Using Multiple Databases
 nav: Using Multiple Databases
-modified_at: 2025-03-31 12:00:00
+modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon
-index: 12
+index: 30
 ---
 
 
@@ -14,8 +14,7 @@ case:
   databases
 - By default, the database users (the default one and the ones you could have
   created) are shared between databases, even for existing ones
-- All databases are [backed up]({% post_url databases/mysql/2000-01-01-backing-up %})
-  in the same backup file
+- All databases are [backed up][backing-up] in the same backup file
 - The platform doesn't provide any environment variable for these additional
   databases. You should, however, be able to generate one from the original
   `SCALINGO_MYSQL_URL`.
@@ -25,13 +24,13 @@ case:
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
+1. From your web browser, [open your database dashboard][database-dashboard]
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Databases**
 
 ### Using the Command Line Tool
 
-1. Access your database using the [Interactive Remote Console]({% post_url databases/mysql/2000-01-01-accessing %}#using-the-interactive-remote-console)
+1. Access your database using the [Interactive Remote Console][irc]
 2. From the MySQL® console, run the following command: 
    ```sql
    SHOW DATABASES;
@@ -60,7 +59,7 @@ Creating a new database is only available from the Database Dashboard.
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
+1. From your web browser, [open your database dashboard][database-dashboard]
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Databases**
 4. Fill the **Add a database** form by specifying a **name** for the new
@@ -76,13 +75,12 @@ Creating a new database is only available from the Database Dashboard.
 {% endnote %}
 
 {% warning %}
-Consider [creating a backup]({% post_url databases/mysql/2000-01-01-backing-up %}#creating-a-manual-backup)
-prior to deleting a database.
+Consider [creating a backup][backing-up-create] prior to deleting a database.
 {% endwarning%}
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
+1. From your web browser, [open your database dashboard][database-dashboard]
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Databases**
 4. Locate the database you want to remove
@@ -90,3 +88,10 @@ prior to deleting a database.
 6. From the popup menu, select **Drop**
 7. In the popup window, confirm the deletion by typing the name of the database
 8. Validate by clicking the **Confirm** button
+
+
+[irc]: {% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
+[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard
+
+[backing-up]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}
+[backing-up-create]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}#creating-a-manual-backup

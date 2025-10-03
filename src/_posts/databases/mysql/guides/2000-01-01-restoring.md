@@ -1,9 +1,9 @@
 ---
-title: Restoring Your Scalingo for MySQL® Addon From a Backup or From a Dump
+title: Restoring Your Scalingo for MySQL® Addon
 nav: Restoring
-modified_at: 2024-04-16 12:00:00
+modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon
-index: 8
+index: 6
 ---
 
 ## Restoring From a Periodic Backup
@@ -18,7 +18,7 @@ stopped, hence causing an inevitable downtime.
 #### From a One-Off Container
 
 1. Follow the procedure to [access your MySQL® database from a one-off
-   container]({% post_url databases/mysql/2000-01-01-accessing %}#using-a-one-off)
+   container][accessing-one-off]
 2. From the one-off command line, download and install the Scalingo command
    line tool to complete the one-off setup:
    ```bash
@@ -28,7 +28,7 @@ stopped, hence causing an inevitable downtime.
    ```bash
    scalingo login
    ```
-4. Still from the one-off, [download a backup]({% post_url databases/mysql/2000-01-01-backing-up %}#downloading-a-periodic-backup)
+4. Still from the one-off, [download a backup][backing-up-downloading]
 5. Uncompress the backup file:
    ```bash
    tar -xvzf <backup_file>
@@ -38,17 +38,17 @@ stopped, hence causing an inevitable downtime.
    mysql --user=<user> --password=<password> --host=<host> --port=<port> <dbname> < <uncompressed_file>
    ```
    With `user`, `password`, `host`, `port` and `dbname` from your original
-   [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri).
+   [connection URI][connecting-uri].
 
 #### From Your Workstation
 
-1. [Download a backup]({% post_url databases/mysql/2000-01-01-backing-up %}#downloading-a-periodic-backup)
+1. [Download a backup][backing-up-downloading]
 2. Uncompress the backup file:
    ```bash
    tar -xvzf <backup_file>
    ```
-3. [Open a DB tunnel]({% post_url databases/mysql/2000-01-01-accessing %}#using-our-command-line-tool)
-   so you can access your database from your workstation
+3. [Open a DB tunnel][accessing-cli] so you can access your database from your
+   workstation
 4. Restore the database from the uncompressed file, using the `mysql` command
    (you may have to install it on your workstation):
    ```bash
@@ -65,7 +65,8 @@ Restoring a backup is only available from the command line.
 ## Restoring From a Manual Backup
 
 Manual backups are considered like any Periodic backup. Consequently, please
-refer to the [documentation explaining how to restore from a Periodic backup](#restoring-from-a-periodic-backup).
+refer to the [documentation explaining how to restore from a Periodic
+backup](#restoring-from-a-periodic-backup).
 
 
 ## Restoring From a Dump
@@ -80,7 +81,7 @@ stopped, hence causing an inevitable downtime.
 #### From a One-Off Container
 
 1. Follow the procedure to [access your MySQL® database from a one-off
-   container]({% post_url databases/mysql/2000-01-01-accessing %}#using-a-one-off)
+   container][accessing-one-off]
 2. From the one-off command line, download and install the Scalingo command
    line tool to complete the one-off setup:
    ```bash
@@ -96,13 +97,13 @@ stopped, hence causing an inevitable downtime.
    mysql --user=<user> --password=<password> --host=<host> --port=<port> <dbname> < <dump_file>
    ```
    With `user`, `password`, `host`, `port` and `dbname` from your original
-   [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri).
+   [connection URI][connecting-uri].
 
 #### From Your Workstation
 
 1. Make sure you have the dump you want to restore at hand
-2. [Open a DB tunnel]({% post_url databases/mysql/2000-01-01-accessing %}#using-our-command-line-tool)
-   so you can access your database from your workstation
+2. [Open a DB tunnel][accesing-cli] so you can access your database from your
+   workstation
 3. Restore the database from the dump file, using the `mysql` command (you may
    have to install it on your workstation):
    ```bash
@@ -114,3 +115,9 @@ stopped, hence causing an inevitable downtime.
 {% note %}
 Restoring from a dump is only available from the command line.
 {% endnote %}
+
+
+[accessing-one-off]: {% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-a-one-off
+[accessing-cli]: {% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
+[connecting-uri]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
+[backing-up-downloading]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}#downloading-a-periodic-backup

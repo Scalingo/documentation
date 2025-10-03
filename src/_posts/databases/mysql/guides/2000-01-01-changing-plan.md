@@ -1,9 +1,9 @@
 ---
 title: Changing Plan
 nav: Changing Plan
-modified_at: 2025-03-31 12:00:00
+modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon
-index: 7
+index: 3
 ---
 
 At Scalingo, all databases addons plans are identified using a name made of two
@@ -11,7 +11,7 @@ or three parts separated by a dash (-). This name is made of:
 
 1. a database ***type*** : `mysql`
 2. a ***class*** : either `sandbox`, `starter` or `business` (learn more about
-   [classes]({% post_url databases/about/2000-01-01-overview %}#database-plans))
+   [classes][databases-plans])
 3. a ***size*** : specifying the amount of RAM available with the plan, in MB
    (only for starter and business classes).
 
@@ -80,31 +80,20 @@ plan.
 
 ## Using the Dashboard
 
-1. From your web browser, open your [dashboard](https://dashboard.scalingo.com/apps)
+1. From your web browser, open your [dashboard]
 2. Click on the application for which you want to scale the Scalingo for
    MySQL® addon
 3. Click on the **Resources** tab
-4. Locate the **Addons** block and click on the **"&#8230;"** button
+4. Locate the **Addons** block and click on the **…** button
 5. From the dropdown menu, select **Change plan**
 6. Select the new plan
 7. Click the **Finish** button
 8. Validate by clicking the **Confirm plan change** button
 
 
-## Using the Database Dashboard
-
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
-2. Click the **Settings** tab
-3. In **General**, locate the **Database Plan** block
-4. In this block, click the **Change plan** button
-5. Select the new plan
-6. Click the **Finish** button
-7. Validate by clicking the **Confirm plan change** button
-
-
 ## Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the plans available for `mysql`:
    ```bash
    scalingo addons-plans mysql
@@ -145,3 +134,9 @@ plan.
    ```
    In this example, we switch the `my-db` resource attached to the `my-app`
    application to a MySQL® Business 1024 addon.
+
+
+[dashboard]: https://dashboard.scalingo.com/apps
+
+[cli]: {% post_url tools/cli/2000-01-01-start %}
+[databases-plans]: {% post_url databases/about/2000-01-01-overview %}#database-plans

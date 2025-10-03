@@ -684,6 +684,45 @@
   - old: "/databases/postgresql/postgresql-anonymizer"
     new: "/databases/postgresql/guides/postgresql-anonymizer"
 
+  - old: "/databases/mysql/overview"
+    new: "/databases/mysql/about/overview"
+
+  - old: "/databases/mysql/getting-started"
+    new: "/databases/mysql/getting-started/provisioning"
+
+  - old: "/databases/mysql/accessing"
+    new: "/databases/mysql/guides/accessing"
+
+  - old: "/databases/mysql/connecting"
+    new: "/databases/mysql/guides/connecting"
+
+  - old: "/databases/mysql/monitoring"
+    new: "/databases/mysql/guides/monitoring"
+
+  - old: "/databases/mysql/changing-plan"
+    new: "/databases/mysql/guides/changing-plan"
+
+  - old: "/databases/mysql/upgrading"
+    new: "/databases/mysql/guides/upgrading"
+
+  - old: "/databases/mysql/backing-up"
+    new: "/databases/mysql/guides/backing-up"
+
+  - old: "/databases/mysql/restoring"
+    new: "/databases/mysql/guides/restoring"
+
+  - old: "/databases/mysql/managing-users"
+    new: "/databases/mysql/guides/managing-users"
+
+  - old: "/databases/mysql/using-multiple-databases"
+    new: "/databases/mysql/guides/using-multiple-databases"
+
+  - old: "/databases/mysql/working-with-sql-modes"
+    new: "/databases/mysql/guides/working-with-sql-modes"
+
+  - old: "/databases/mysql/upgrading-to-mysql-8"
+    new: "/databases/mysql/guides/upgrading-to-mysql-8"
+
   - old: "/platform/internals/billing"
     new: "/platform/billing/process"
 

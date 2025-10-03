@@ -1,15 +1,15 @@
 ---
 title: Managing Users of Your Scalingo for MySQL® Addon
 nav: Managing Users
-modified_at: 2025-03-31 12:00:00
+modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon
-index: 5
+index: 1
 ---
 
-Each Scalingo for MySQL® addon comes with a [default database user](#understanding-protected-user).
-You can [create](#creating-a-new-user) as many additional users as needed,
-grant them with the appropriate permissions, and you can [delete](#deleting-a-user)
-them once they are not required anymore.
+Each Scalingo for MySQL® addon comes with a [default database
+user](#understanding-protected-user). You can [create](#creating-a-new-user) as
+many additional users as needed, grant them with the appropriate permissions,
+and you can [delete](#deleting-a-user) them once they are not required anymore.
 
 
 ## Listing Existing Users
@@ -32,7 +32,7 @@ This default user is ***protected*** and thus:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Users**
 4. The list of available users is displayed under the **User Management**
@@ -40,7 +40,7 @@ This default user is ***protected*** and thus:
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, run the following command to list the users:
    ```bash
    scalingo --app my-app --addon mysql database-users-list
@@ -77,7 +77,7 @@ method you use:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Users**
 4. Click the **Add a user** button
@@ -91,7 +91,7 @@ method you use:
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, run the following command to create a new user:
    ```bash
    scalingo --app my-app --addon mysql database-users-create <username>
@@ -126,7 +126,7 @@ method you use:
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
+1. From your web browser, [open your database dashboard][database-dashboard]
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Users**
 4. Locate the user you want the password to be updated
@@ -140,7 +140,7 @@ method you use:
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Update the user password with the following command:
    ```bash
    scalingo --app my-app --addon mysql database-users-update-password <username>
@@ -163,7 +163,7 @@ method you use:
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-mysql-dashboard)
+1. From your web browser, [open your database dashboard][database-dashboard]
 2. Click the **Settings** tab
 3. In the **Settings** submenu, select **Users**
 4. Locate the user you want to remove
@@ -174,8 +174,12 @@ method you use:
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Remove the user with the following command:
    ```bash
    scalingo --app my-app --addon mysql database-users-delete <username>
    ```
+
+
+[cli]: {% post_url tools/cli/2000-01-01-start %}
+[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard

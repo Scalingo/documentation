@@ -1,6 +1,6 @@
 ---
 title: Restore your Database Backup
-modified_at: 2024-03-12 12:00:00
+modified_at: 2025-09-29 12:00:00
 tags: databases backups
 index: 2
 ---
@@ -29,7 +29,8 @@ $ scalingo --app my-app run bash
 This downloads the last successful backup. In order to restore the downloaded backup, instructions are available in each database type page:
 
 - [Scalingo for PostgreSQL®]({% post_url databases/postgresql/guides/2000-01-01-restoring %})
-- [Scalingo for MySQL®]({% post_url databases/mysql/2000-01-01-restoring %})
+- [Scalingo for MySQL®]({% post_url databases/mysql/guides/2000-01-01-restoring %})
+- [Scalingo for OpenSearch]({% post_url databases/opensearch/guides/2000-01-01-restoring %})
 - [Scalingo for MongoDB®]({% post_url databases/mongodb/2000-01-01-start %}#backups)
 - [Scalingo for Caching]({% post_url databases/redis/2000-01-01-start %}#backups)
 - [Scalingo for Elasticsearch®]({% post_url databases/elasticsearch/2000-01-01-start %}#backups)
