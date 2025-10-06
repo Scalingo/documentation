@@ -118,19 +118,3 @@ the database, like so:
 4. Restart the application to make the new environment variable available
 5. Remember to update this new environment variable whenever the original
    connection URI changes
-
-## Using Ruby on Rails
-
-When using Ruby on Rails, the buildpack reads the `DATABASE_URL` environment
-variable (which is an alias for `SCALINGO_MYSQL_URL`), parses it and creates
-the `database.yml` configuration file accordingly and automatically.
-
-If you're using the <em>mysql2</em> gem, copy the value of
-`SCALINGO_MYSQL_URL` into `DATABASE_URL` and change the scheme part from
-`mysql://` to `mysql2://`.
-
-This can be automated in your `config/database.yml`:
-
-```erb
-url: <%= ENV["DATABASE_URL"]&.gsub(/mysql:/, 'mysql2:') %>
-```
