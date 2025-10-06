@@ -125,7 +125,7 @@ When using Ruby on Rails, the buildpack reads the `DATABASE_URL` environment
 variable (which is an alias for `SCALINGO_MYSQL_URL`), parses it and creates
 the `database.yml` configuration file accordingly and automatically.
 
-If you're using the <em>mysql2</em> gem, you will need to copy the value of
+If you're using the <em>mysql2</em> gem, copy the value of
 `SCALINGO_MYSQL_URL` into `DATABASE_URL` and change the scheme part from
 `mysql://` to `mysql2://`.
 
