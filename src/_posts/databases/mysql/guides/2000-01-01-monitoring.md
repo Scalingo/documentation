@@ -1,17 +1,19 @@
 ---
 title: Monitoring and Auditing Your Scalingo for MySQL® Addon
 nav: Monitoring and Auditing
-modified_at: 2024-03-21 12:00:00
+modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon
-index: 6
+index: 2
 ---
 
 
 Each Scalingo for MySQL® addon comes with several tools allowing for monitoring
-and auditing of your database. These tools give access to the [database logs](#inspecting-database-logs)
-and to some [metrics](#analyzing-database-metrics).
+and auditing of your database. These tools give access to the [database
+logs](#inspecting-database-logs) and to some
+[metrics](#analyzing-database-metrics).
 
-All these tools are available from the [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard).
+All these tools are available from the [database
+dashboard][database-dashboard].
 
 
 ## Inspecting Database Logs
@@ -29,7 +31,7 @@ work (see below).
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Logs** tab
 
 The default view allows to consult the latest hot logs in real-time. The
@@ -38,7 +40,7 @@ cold logs. These have to be manually unarchived to be processed.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Run the following command:
    - To access the hot logs of this addon:
    ```bash
@@ -62,10 +64,14 @@ The provided metrics include:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Metrics** tab
 
 {% note %}
 Metrics related to your MySQL® addon are only available from the database
 dashboard.
 {% endnote %}
+
+
+[cli]: {% post_url tools/cli/2000-01-01-start %}
+[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
