@@ -61,6 +61,14 @@ scalingo --app my-app private-networks-domain-names
 
 ## Known Limitations
 
+By deploying a web application inside a private network, and reaching it using its internal domain name, some Scalingo features will no longer be available:
+
+- The [router logs]({% post_url platform/app/2000-01-01-logs %}) will no longer display a log line for each request. This is because these requests no longer go through our front routers. Hence we no longer have the ability to track these requests and log them.
+
+- There is no monitoring for requests between the containers inside a private network. Hence the router metrics (e.g. "Requests per Minute" or "Response Time") are not available for containers deployed inside a private network and not publically available. As a consequence, it is not possible to [autoscale]({% post_url platform/app/scaling/2000-01-01-scalingo-autoscaler %}) these containers based on the router metrics.
+
+- The load balancing for requests is based on DNS. For example, to target a `worker` container, one can use the domain name <code><span class="domain-name-ct">worker</span>.<span class="domain-name-ap">ap-a71da13f-7c70-4c00-a644-eee8558d8053</span>.<span class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c</span>.<span class="domain-name-nid">private-network.internal.</span></code>. The DNS request to get this domain name records returns a set of `A` records. The choice of which record to use is left to the DNS client used.
+
 ## Typical Use Cases
 
 ### A Web Application Firewall To Protect the Web Containers
@@ -84,6 +92,6 @@ location / {
 }
 ```
 
-With `my-app-backend.ap-uuid.pn-uuid.private-network.internal` the domain name of your backend containers.
+With <code><span class="domain-name-ct">my-app-backend</span>.<span class="domain-name-ap">ap-uuid</span>.<span class="domain-name-pn">pn-uuid</span>.<span class="domain-name-nid">private-network.internal.</span></code> the domain name of your backend containers.
 
 After deploying the application, one can query the Nginx with the public domain name and access the backend application.
