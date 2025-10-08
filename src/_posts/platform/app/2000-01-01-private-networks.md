@@ -1,6 +1,6 @@
 ---
 title: Private Networks
-modified_at: 2025-09-25 00:00:00
+modified_at: 2025-10-08 00:00:00
 tags: app private networks vxlan encryption wireguard
 index: 100
 ---
@@ -9,20 +9,24 @@ index: 100
 This feature is currently beta preview only available for some customers. If you are interested in taking part to the beta, please contact the Scalingo support.
 {% endwarning %}
 
-With Private Networks, Scalingo offers the ability to group applications inside a private network. It protects these applications so that they are not reachable by a resource from outside the private network. It also adds encryption for the communications between the applications inside the private network.
+With the Private Networks feature, Scalingo offers the ability to group applications and limit the public exposition of some applications. It protects these applications so that they are not reachable by a resource from outside the private network. It also adds encryption for the communications between the applications inside the private network.
 
 Inside a private network, all the containers can communicate with TCP or UDP on any ports.
+
+From a low-level perspective, your containers are grouped inside a [VXLAN](https://en.wikipedia.org/wiki/Virtual_Extensible_LAN) with [WireGuard](https://en.wikipedia.org/wiki/WireGuard) enabled to encrypt all the communications inside the private network.
+
+We explain in this page how to join the Private Networks beta program, some known limitations, and a use case.
 
 ## How Do I Protect My Application With a Private Network?
 
 Here is the process to take part to the private network beta:
 - Contact our support team to show your interest in the beta
 - Read and accept the Beta special terms agreement.
-- Create an [empty project](https://doc.scalingo.com/platform/projects/overview) and notify the support about its name.
+- Create an [empty project]({% post_url platform/projects/2000-01-01-overview %}) and notify the support about its name.
 - 🚀 After the support enabled private network on your project, you can migrate applications into the project or create new ones inside it. All these applications are protected inside a private network.
 
 {% note %}
-Note that HDS applications do NOT have access to the feature.
+Note that HDS applications do NOT have access to the feature during the beta preview.
 {% endnote %}
 
 ## Domain Names
@@ -53,7 +57,7 @@ private network <code class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a
 
   DNS A record to the first `worker` container.
 
-These domain names can be infered by knowing the application ID, the private network ID and the application formation or you can list them using [Scalingo CLI]({% post_url tools/cli/2000-01-01-start %}):
+These domain names can be inferred by knowing the application ID, the private network ID and the application formation or you can list them using [Scalingo CLI]({% post_url tools/cli/2000-01-01-start %}):
 
 ```
 scalingo --app my-app private-networks-domain-names
@@ -65,7 +69,7 @@ By deploying a web application inside a private network, and reaching it using i
 
 - The [router logs]({% post_url platform/app/2000-01-01-logs %}) will no longer display a log line for each request. This is because these requests no longer go through our front routers. Hence we no longer have the ability to track these requests and log them.
 
-- There is no monitoring for requests between the containers inside a private network. Hence the router metrics (e.g. "Requests per Minute" or "Response Time") are not available for containers deployed inside a private network and not publically available. As a consequence, it is not possible to [autoscale]({% post_url platform/app/scaling/2000-01-01-scalingo-autoscaler %}) these containers based on the router metrics.
+- There is no monitoring for requests between the containers inside a private network. Hence the router metrics (e.g. "Requests per Minute" or "Response Time") are not available for containers deployed inside a private network and not publicly available. As a consequence, it is not possible to [autoscale]({% post_url platform/app/scaling/2000-01-01-scalingo-autoscaler %}) these containers based on the router metrics.
 
 - The load balancing for requests is based on DNS. For example, to target a `worker` container, one can use the domain name <code><span class="domain-name-ct">worker</span>.<span class="domain-name-ap">ap-a71da13f-7c70-4c00-a644-eee8558d8053</span>.<span class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c</span>.<span class="domain-name-nid">private-network.internal.</span></code>. The DNS request to get this domain name records returns a set of `A` records. The choice of which record to use is left to the DNS client used.
 
