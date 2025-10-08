@@ -37,7 +37,7 @@ private network <code class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a
 
 * <code><span class="domain-name-ap">ap-a71da13f-7c70-4c00-a644-eee8558d8053</span>.<span class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c</span>.<span class="domain-name-nid">private-network.internal.</span></code>
 
-  DNS A records to the `web` containers. `web` containers are the default ones one contacts when using the application domain name.
+  DNS A records to the `web` containers. `web` containers are the default containers contacted when using the application domain name (optional prefixes excluded).
 
 * <code><span class="domain-name-ct">web</span>.<span class="domain-name-ap">ap-a71da13f-7c70-4c00-a644-eee8558d8053</span>.<span class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c</span>.<span class="domain-name-nid">private-network.internal.</span></code>
 
