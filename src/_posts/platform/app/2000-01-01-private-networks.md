@@ -13,8 +13,6 @@ With the Private Networks feature, Scalingo offers the ability to group applicat
 
 Inside a private network, all the containers can communicate with TCP or UDP on any ports.
 
-From a low-level perspective, your containers are grouped inside a [VXLAN](https://en.wikipedia.org/wiki/Virtual_Extensible_LAN) with [WireGuard](https://en.wikipedia.org/wiki/WireGuard) enabled to encrypt all the communications inside the private network.
-
 We explain in this page how to join the Private Networks beta program, some known limitations, and a use case.
 
 ## How Do I Protect My Application With a Private Network?
