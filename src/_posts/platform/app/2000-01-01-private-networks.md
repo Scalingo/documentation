@@ -96,6 +96,6 @@ location / {
 }
 ```
 
-With <code><span class="domain-name-ct">my-app-backend</span>.<span class="domain-name-ap">ap-uuid</span>.<span class="domain-name-pn">pn-uuid</span>.<span class="domain-name-nid">private-network.internal.</span></code> the domain name of your backend containers.
+Where <code><span class="domain-name-ct">my-app-backend</span>.<span class="domain-name-ap">ap-uuid</span>.<span class="domain-name-pn">pn-uuid</span>.<span class="domain-name-nid">private-network.internal.</span></code> is the domain name of your backend containers.
 
 After deploying the application, one can query the Nginx with the public domain name and access the backend application.
