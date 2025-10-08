@@ -55,7 +55,9 @@ private network <code class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a
 
   DNS A record to the first `worker` container.
 
-These domain names can be inferred by knowing the application ID, the private network ID and the application formation or you can list them using [Scalingo CLI]({% post_url tools/cli/2000-01-01-start %}):
+These domain names can be inferred by knowing the application ID, the private network ID and the application formation. The application and private network IDs are injected in the [application environment at runtime]({% post_url platform/app/2000-01-01-environment %}#runtime-environment).
+
+You can also list them using the [Scalingo CLI]({% post_url tools/cli/2000-01-01-start %}):
 
 ```
 scalingo --app my-app private-networks-domain-names
