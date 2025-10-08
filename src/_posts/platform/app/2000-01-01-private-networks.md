@@ -87,7 +87,7 @@ In this section we explain the different steps to achieve this kind of architect
 
 At this point, you have a backend application that you cannot query with the public domain name provided by Scalingo (e.g. `my-app.osc-fr1.scalingo.io`).
 
-We will now deploy the Web Application Firewall in charge of filtering and forwarding the requests to the backend application. This application is a [Nginx with ModSecurity]({% post_url platform/getting-started/2000-01-01-getting-started-with-modsecurity %}). Your `nginx.conf` configuration file would look like:
+You now need to deploy a Web Application Firewall in charge of filtering and forwarding the requests to the backend application. This application is a [Nginx with ModSecurity]({% post_url platform/getting-started/2000-01-01-getting-started-with-modsecurity %}). Once you have created your Web Application Firewall, you should update the `nginx.conf` configuration file to look like:
 
 ```nginx
 location / {
