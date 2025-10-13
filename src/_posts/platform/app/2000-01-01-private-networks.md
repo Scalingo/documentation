@@ -83,7 +83,7 @@ In this section we explain the different steps to achieve this kind of architect
 
 1. You first need to create the backend application inside the project with private network enabled.
 2. This application will be web-less. You must first scale down the `web` containers by following [these steps]({% post_url platform/app/2000-01-01-web-less-app %}).
-3. Then deploy an application which listens on the TCP port you want (e.g. 3000). The [`Procfile`]({% post_url platform/app/2000-01-01-procfile %}) must name its process with a different name than `web` (e.g. `my-app-backend`).
+3. Then deploy an application which listens on the TCP port you want (e.g. 3000). The [`Procfile`]({% post_url platform/app/2000-01-01-procfile %}) must name its process with a different name than `web` (e.g. `myappbackend`).
 
 At this point, you have a backend application that you cannot query with the public domain name provided by Scalingo (e.g. `my-app.osc-fr1.scalingo.io`).
 
