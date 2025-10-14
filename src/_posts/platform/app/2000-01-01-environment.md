@@ -118,6 +118,7 @@ additional variable `$PORT` is defined.
 * `CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL`, etc
 * `CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
 * `APP`: Name of the application deployed
+* `SCALINGO_APPLICATION_ID`: ID of the application deployed (e.g. `ap-ff53d868-b0e7-4021-9ad1-55c103a7229e`)
 * `HOSTNAME`: The container application hostname based on the application name and the container type (e.g. `my-app-web-1`)
 * `STACK`: Name of the stack the application deployed is using
 * `REGION_NAME`: Name of the region where the application is deployed
