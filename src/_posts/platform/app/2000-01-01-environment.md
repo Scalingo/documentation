@@ -113,9 +113,9 @@ environment variables in its environment. In the case of `web` containers, an
 additional variable `$PORT` is defined.
 
 * `PORT`: Port number your server has to bind on
-* `CONTAINER`: Type and index of the container, `web-1` or `worker-1` for instance
+* `CONTAINER`: Type and index of the container (e.g. `web-1` or `worker-1`)
 * `CONTAINER_VERSION`: Version of the container started, usually the Git commit SHA
-* `CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL`, etc
+* `CONTAINER_SIZE`: Name of the size of the container (e.g. `M` or `XL`)
 * `CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
 * `APP`: Name of the application deployed
 * `SCALINGO_APPLICATION_ID`: ID of the application deployed (e.g. `ap-ff53d868-b0e7-4021-9ad1-55c103a7229e`)
