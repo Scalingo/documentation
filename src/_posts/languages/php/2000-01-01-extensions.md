@@ -1,7 +1,7 @@
 ---
 title: Managing PHP Extensions
 nav: Managing PHP Extensions
-modified_at: 2025-09-11 12:00:00
+modified_at: 2025-10-17 12:00:00
 tags: php
 index: 4
 ---
@@ -156,7 +156,7 @@ The following table lists the supported versions of available PECL extensions:
 | `ext-event`     | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  |
 | `ext-igbinary`  | `3.2.16` | `3.2.16` | `3.2.16` | `3.2.16` |
 | `ext-imagick`   | `3.7.0`  | `3.7.0`  | `3.7.0`  | `3.7.0`  |
-| `ext-memcached` | `3.3.0`  | `3.3.0`  | `3.3.0`  | `3.3.0`  |
+| `ext-memcached` | `3.4.0`  | `3.4.0`  | `3.4.0`  | `3.4.0`  |
 | `ext-mongodb`   | `1.21.0` | `1.21.0` | `1.21.0` | `1.21.0` |
 | `ext-oci8`      |          | `3.4.0`  | `3.4.0`  | `3.4.0`  |
 | `ext-redis`     | `6.2.0`  | `6.2.0`  | `6.2.0`  | `6.2.0`  |
