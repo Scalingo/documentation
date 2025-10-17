@@ -1,6 +1,6 @@
 ---
 title: Private Networks
-modified_at: 2025-10-08 00:00:00
+modified_at: 2025-10-17 00:00:00
 tags: app private networks vxlan encryption wireguard
 index: 100
 ---
@@ -75,9 +75,11 @@ By deploying a web application inside a private network, and reaching it using i
 
 ## Typical Use Cases
 
-### A Web Application Firewall To Protect the Web Containers
+### Nginx with ModSecurity: A Web Application Firewall To Protect the Web Containers
 
 A typical use case would be to deploy a backend application that is protected behind a Web Application Firewall (WAF). You may want to completely hide the backend application so that it's unreachable from outside the private network. That way, the traffic must go through the WAF before reaching your backend application.
+
+In this example we deploy the ModSecurity Web Application Firewall. This is only an example, other technologies are possible.
 
 In this section we explain the different steps to achieve this kind of architecture with private network.
 
