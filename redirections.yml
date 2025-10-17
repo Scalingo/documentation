@@ -747,6 +747,9 @@
   - old: "/platform/cli/start"
     new: "/tools/cli/start"
 
+  - old: "/platform/getting-started/getting-started-with-elk"
+    new: "/platform/getting-started/getting-started-with-elk/overview"
+
   - old: "/languages/nodejs/2000-01-01-angularjs"
     new: "/languages/nodejs/2000-01-01-angular"
 

@@ -117,22 +117,8 @@ the database, like so:
 5. Remember to update this new environment variable whenever the original
    connection URI changes
 
-## Using Ruby on Rails
 
-When using Ruby on Rails, the buildpack reads the `DATABASE_URL` environment
-variable (which is an alias for `SCALINGO_MYSQL_URL`), parses it and creates
-the `database.yml` configuration file accordingly and automatically.
-
-If you're using the <em>mysql2</em> gem, you will need to copy the value of
-`SCALINGO_MYSQL_URL` into `DATABASE_URL` and change the scheme part from
-`mysql://` to `mysql2://`.
-
-
-
-[RFC 3986]: https://datatracker.ietf.org/doc/html/rfc3986
 [mysql-tls]: https://dev.mysql.com/doc/refman/8.0/en/encrypted-connections.html
-
-[dashboard]: https://dashboard.scalingo.com/apps
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [env]: {% post_url platform/app/2000-01-01-environment %}
