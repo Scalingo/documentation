@@ -1,6 +1,6 @@
 ---
 title: Private Networks
-modified_at: 2025-10-17 00:00:00
+modified_at: 2025-10-21 00:00:00
 tags: app private networks vxlan encryption wireguard
 index: 100
 ---
@@ -93,11 +93,11 @@ You now need to deploy a Web Application Firewall in charge of filtering and for
 
 ```nginx
 location / {
-  proxy_pass http://my-app-backend.ap-uuid.pn-uuid.private-network.internal:3000;
+  proxy_pass http://myappbackend.ap-uuid.pn-uuid.private-network.internal:3000;
   proxy_redirect default;
 }
 ```
 
-Where <code><span class="domain-name-ct">my-app-backend</span>.<span class="domain-name-ap">ap-uuid</span>.<span class="domain-name-pn">pn-uuid</span>.<span class="domain-name-nid">private-network.internal.</span></code> is the domain name of your backend containers.
+Where <code><span class="domain-name-ct">myappbackend</span>.<span class="domain-name-ap">ap-uuid</span>.<span class="domain-name-pn">pn-uuid</span>.<span class="domain-name-nid">private-network.internal.</span></code> is the domain name of your backend containers.
 
 After deploying the application, one can query the Nginx with the public domain name and access the backend application.
