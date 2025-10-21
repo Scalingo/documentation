@@ -1,6 +1,6 @@
 ---
 title: Environment Variables
-modified_at: 2023-06-29 00:00:00
+modified_at: 2025-10-21 00:00:00
 tags: app configuration environment
 index: 3
 ---
@@ -121,6 +121,7 @@ additional variable `$PORT` is defined.
 * `HOSTNAME`: The container application hostname based on the application name and the container type (e.g. `my-app-web-1`)
 * `STACK`: Name of the stack the application deployed is using
 * `REGION_NAME`: Name of the region where the application is deployed
+* `SCALINGO_PRIVATE_NETWORK_ID`: ID of the [private network]({% post_url platform/app/2000-01-01-private-networks %}) where the application is located. This variable is not available if the application is not deployed in a private network.
 
 ## One-Off Environment Variables
 
