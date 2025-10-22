@@ -118,11 +118,12 @@ additional variable `$PORT` is defined.
 * `CONTAINER_SIZE`: Name of the size of the container (e.g. `M` or `XL`)
 * `CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
 * `APP`: Name of the application deployed
-* `SCALINGO_APPLICATION_ID`: ID of the application deployed (e.g. `ap-ff53d868-b0e7-4021-9ad1-55c103a7229e`)
+* `SCALINGO_APPLICATION_ID`: ID of the application deployed (e.g. `ap-a71da13f-7c70-4c00-a644-eee8558d8053`)
 * `HOSTNAME`: The container application hostname based on the application name and the container type (e.g. `my-app-web-1`)
 * `STACK`: Name of the stack the application deployed is using
 * `REGION_NAME`: Name of the region where the application is deployed
-* `SCALINGO_PRIVATE_NETWORK_ID`: ID of the [private network]({% post_url platform/app/2000-01-01-private-networks %}) where the application is located. This variable is not available if the application is not deployed in a private network.
+* `SCALINGO_PRIVATE_NETWORK_ID`: ID of the [private network]({% post_url platform/app/2000-01-01-private-networks %}) where the application is located (e.g. `pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c`). This variable is not available if the application is not deployed in a private network.
+* `SCALINGO_PRIVATE_HOSTNAME`: private hostname of the container inside the [private network]({% post_url platform/app/2000-01-01-private-networks %}) where the application is located (e.g. <code>1.<span class="domain-name-ct">web</span>.<span class="domain-name-ap">ap-a71da13f-7c70-4c00-a644-eee8558d8053</span>.<span class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c</span>.<span class="domain-name-nid">private-network.internal.</span></code>). This variable is not available if the application is not deployed in a private network.
 
 ## One-Off Environment Variables
 
