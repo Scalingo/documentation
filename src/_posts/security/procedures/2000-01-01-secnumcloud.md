@@ -48,7 +48,7 @@ A standard user cannot directly access `osc-secnum-fr1`: your user account must 
 
 #### Access without whitelisted domain
 
-- If your company domain has not been declared or whitelisted, the request must still come from the application owner.
+- If your company domain has not been declared or allow-listed, the request must still come from the application owner.
 - The owner of the application must invite the user as a collaborator.
 - The user must contact the support using standard means (email or chat) to request access.
 - The support team will need the owner to confirm the request before granting access.
