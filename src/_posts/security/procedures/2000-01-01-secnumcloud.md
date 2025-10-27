@@ -31,7 +31,7 @@ Note: this identity verification will take place each time a new domain is added
 
 ## Can my user get access to the `osc-secnum-fr1` region?
 
-A standard user cannot directly access `osc-secnum-fr1`: your user account must first be allow-listed (whitelisted).
+A standard user cannot directly access `osc-secnum-fr1`: your user account must first be allow-listed.
 
 ### Pre-conditions
 
