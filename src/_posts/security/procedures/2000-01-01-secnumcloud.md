@@ -55,7 +55,7 @@ A standard user cannot directly access `osc-secnum-fr1`: your user account must 
 
 #### Domain declaration and regularization
 
-- To simplify future user additions or removals, a company may request domain whitelisting (or submit a list of specific users) through the support channel (email or chat).
+- To simplify future user additions or removals, a company may request domain allow-listing (or submit a list of specific users) through the support channel (email or chat).
 - The domain must already be associated with an existing Scalingo account or application; we do not pre-register unregistered domains from Scalingo services.
 
 An answer will be provided within two business days.
