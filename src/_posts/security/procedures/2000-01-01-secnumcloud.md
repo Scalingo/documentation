@@ -46,7 +46,7 @@ A standard user cannot directly access `osc-secnum-fr1`: your user account must 
 - If your company already hosts one or more applications in the `osc-secnum-fr1` region, the application owner can invite you directly as a collaborator.
 - If your company domain is not yet allow-listed, you may ask the support team to register it. Once validated, all users from that domain will be eligible to access the region without further access confirmation needed from the support.
 
-#### Access without whitelisted domain
+#### Access without allow-listed domain
 
 - If your company domain has not been declared or allow-listed, the request must still come from the application owner.
 - The owner of the application must invite the user as a collaborator.
