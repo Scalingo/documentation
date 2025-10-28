@@ -1,5 +1,6 @@
 {% note %}
-If you do not follow this procedure, the intrusion testing will
-trigger our alerting system and you may get the client network IP address
-banned, your application put under surveillance and/or your account closed.
+Please schedule intrusion tests in advance and follow the procedure described here.
+Tests performed outside the approved process will activate our alerting and protective measures, for example:
+banning the test IP, placing the application under increased supervision, or suspending the account.
+To prevent any service disruption, contact us to arrange and authorize your tests beforehand.
 {% endnote %}
