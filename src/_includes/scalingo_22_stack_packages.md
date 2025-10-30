@@ -10,9 +10,9 @@
 |                    bind9-host |     1:9.18.39-0ubuntu0.22.04.2 |
 |              bind9-libs:amd64 |     1:9.18.39-0ubuntu0.22.04.2 |
 |                binfmt-support |                        2.2.1-2 |
-|                      binutils |                2.38-4ubuntu2.8 |
-|         binutils-common:amd64 |                2.38-4ubuntu2.8 |
-|     binutils-x86-64-linux-gnu |                2.38-4ubuntu2.8 |
+|                      binutils |               2.38-4ubuntu2.10 |
+|         binutils-common:amd64 |               2.38-4ubuntu2.10 |
+|     binutils-x86-64-linux-gnu |               2.38-4ubuntu2.10 |
 |                           brz |          3.2.1+bzr7585-1build1 |
 |                      bsdutils |            1:2.37.2-4ubuntu3.4 |
 |               build-essential |                    12.9ubuntu3 |
@@ -108,7 +108,7 @@
 |        libavahi-client3:amd64 |                 0.8-5ubuntu5.2 |
 |    libavahi-common-data:amd64 |                 0.8-5ubuntu5.2 |
 |        libavahi-common3:amd64 |                 0.8-5ubuntu5.2 |
-|             libbinutils:amd64 |                2.38-4ubuntu2.8 |
+|             libbinutils:amd64 |               2.38-4ubuntu2.10 |
 |            libblkid-dev:amd64 |              2.37.2-4ubuntu3.4 |
 |               libblkid1:amd64 |              2.37.2-4ubuntu3.4 |
 |           libbrotli-dev:amd64 |                  1.0.9-2build6 |
@@ -137,8 +137,8 @@
 |    libcommon-sense-perl:amd64 |                   3.75-2build1 |
 |            libcrypt-dev:amd64 |                     1:4.4.27-1 |
 |               libcrypt1:amd64 |                     1:4.4.27-1 |
-|           libctf-nobfd0:amd64 |                2.38-4ubuntu2.8 |
-|                 libctf0:amd64 |                2.38-4ubuntu2.8 |
+|           libctf-nobfd0:amd64 |               2.38-4ubuntu2.10 |
+|                 libctf0:amd64 |               2.38-4ubuntu2.10 |
 |                libcups2:amd64 |           2.4.1op1-1ubuntu4.12 |
 |         libcurl3-gnutls:amd64 |             7.81.0-1ubuntu1.21 |
 |                libcurl4:amd64 |             7.81.0-1ubuntu1.21 |
@@ -380,7 +380,7 @@
 |            libsqlite3-0:amd64 |              3.37.2-2ubuntu0.5 |
 |          libsqlite3-dev:amd64 |              3.37.2-2ubuntu0.5 |
 |                  libss2:amd64 |              1.46.5-2ubuntu1.2 |
-|                libssh-4:amd64 |         0.9.6-2ubuntu0.22.04.4 |
+|                libssh-4:amd64 |         0.9.6-2ubuntu0.22.04.5 |
 |              libssl-dev:amd64 |              3.0.2-0ubuntu1.20 |
 |                 libssl3:amd64 |              3.0.2-0ubuntu1.20 |
 |        libstdc++-11-dev:amd64 |        11.4.0-1ubuntu1~22.04.2 |
@@ -449,7 +449,7 @@
 |                 libzip4:amd64 |                 1.7.3-1ubuntu2 |
 |             libzstd-dev:amd64 |             1.4.8+dfsg-3build1 |
 |                libzstd1:amd64 |             1.4.8+dfsg-3build1 |
-|          linux-libc-dev:amd64 |                 5.15.0-160.170 |
+|          linux-libc-dev:amd64 |                 5.15.0-161.171 |
 |                       llvm-15 |      1:15.0.7-0ubuntu0.22.04.3 |
 |                   llvm-15-dev |      1:15.0.7-0ubuntu0.22.04.3 |
 |          llvm-15-linker-tools |      1:15.0.7-0ubuntu0.22.04.3 |

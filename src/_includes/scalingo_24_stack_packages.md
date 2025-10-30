@@ -10,9 +10,9 @@
 |                    bind9-host |     1:9.18.39-0ubuntu0.24.04.2 |
 |              bind9-libs:amd64 |     1:9.18.39-0ubuntu0.24.04.2 |
 |                binfmt-support |                        2.2.2-7 |
-|                      binutils |                2.42-4ubuntu2.5 |
-|         binutils-common:amd64 |                2.42-4ubuntu2.5 |
-|     binutils-x86-64-linux-gnu |                2.42-4ubuntu2.5 |
+|                      binutils |                2.42-4ubuntu2.6 |
+|         binutils-common:amd64 |                2.42-4ubuntu2.6 |
+|     binutils-x86-64-linux-gnu |                2.42-4ubuntu2.6 |
 |                           brz |                  3.3.5-6build2 |
 |                      bsdutils |            1:2.39.3-9ubuntu6.3 |
 |               build-essential |                   12.10ubuntu1 |
@@ -127,7 +127,7 @@
 |        libavahi-client3:amd64 |                  0.8-13ubuntu6 |
 |    libavahi-common-data:amd64 |                  0.8-13ubuntu6 |
 |        libavahi-common3:amd64 |                  0.8-13ubuntu6 |
-|             libbinutils:amd64 |                2.42-4ubuntu2.5 |
+|             libbinutils:amd64 |                2.42-4ubuntu2.6 |
 |            libblkid-dev:amd64 |              2.39.3-9ubuntu6.3 |
 |               libblkid1:amd64 |              2.39.3-9ubuntu6.3 |
 |           libbrotli-dev:amd64 |                  1.1.0-2build2 |
@@ -158,8 +158,8 @@
 |            libcrypt-dev:amd64 |               1:4.4.36-4build1 |
 |               libcrypt1:amd64 |               1:4.4.36-4build1 |
 |         libcryptsetup12:amd64 |             2:2.7.0-1ubuntu4.2 |
-|           libctf-nobfd0:amd64 |                2.42-4ubuntu2.5 |
-|                 libctf0:amd64 |                2.42-4ubuntu2.5 |
+|           libctf-nobfd0:amd64 |                2.42-4ubuntu2.6 |
+|                 libctf0:amd64 |                2.42-4ubuntu2.6 |
 |             libcups2t64:amd64 |             2.4.7-1.2ubuntu7.4 |
 |      libcurl3t64-gnutls:amd64 |              8.5.0-2ubuntu10.6 |
 |    libcurl4-openssl-dev:amd64 |              8.5.0-2ubuntu10.6 |
@@ -236,7 +236,7 @@
 |           libgpg-error0:amd64 |                 1.47-3build2.1 |
 |           libgpgme11t64:amd64 |              1.18.0-4.1ubuntu4 |
 |                 libgpm2:amd64 |                      1.20.7-11 |
-|             libgprofng0:amd64 |                2.42-4ubuntu2.5 |
+|             libgprofng0:amd64 |                2.42-4ubuntu2.6 |
 |          libgraphite2-3:amd64 |                 1.3.14-2build1 |
 |                  libgs-common |       10.02.1~dfsg1-0ubuntu7.8 |
 |                 libgs10:amd64 |       10.02.1~dfsg1-0ubuntu7.8 |
@@ -407,7 +407,7 @@
 |            libsemanage2:amd64 |                    3.5-1build5 |
 |            libsepol-dev:amd64 |                    3.5-2build1 |
 |               libsepol2:amd64 |                    3.5-2build1 |
-|              libsframe1:amd64 |                2.42-4ubuntu2.5 |
+|              libsframe1:amd64 |                2.42-4ubuntu2.6 |
 |         libsharpyuv-dev:amd64 |                1.3.2-0.4build3 |
 |            libsharpyuv0:amd64 |                1.3.2-0.4build3 |
 |               libsm-dev:amd64 |                2:1.2.3-1build3 |
@@ -417,7 +417,7 @@
 |            libsqlite3-0:amd64 |              3.45.1-1ubuntu2.5 |
 |          libsqlite3-dev:amd64 |              3.45.1-1ubuntu2.5 |
 |                  libss2:amd64 |       1.47.0-2.4~exp1ubuntu4.1 |
-|                libssh-4:amd64 |              0.10.6-2ubuntu0.1 |
+|                libssh-4:amd64 |              0.10.6-2ubuntu0.2 |
 |              libssl-dev:amd64 |              3.0.13-0ubuntu3.6 |
 |              libssl3t64:amd64 |              3.0.13-0ubuntu3.6 |
 |        libstdc++-13-dev:amd64 |          13.3.0-6ubuntu2~24.04 |
@@ -484,7 +484,7 @@
 |              libzip4t64:amd64 |               1.7.3-1.1ubuntu2 |
 |             libzstd-dev:amd64 |          1.5.5+dfsg2-2build1.1 |
 |                libzstd1:amd64 |          1.5.5+dfsg2-2build1.1 |
-|          linux-libc-dev:amd64 |                    6.8.0-86.87 |
+|          linux-libc-dev:amd64 |                    6.8.0-87.88 |
 |                       llvm-19 |      1:19.1.1-1ubuntu1~24.04.2 |
 |                   llvm-19-dev |      1:19.1.1-1ubuntu1~24.04.2 |
 |          llvm-19-linker-tools |      1:19.1.1-1ubuntu1~24.04.2 |
