@@ -223,9 +223,6 @@ samples:
   - url: java-grails3
     name: Java/Grails 3
     logo: groovy-grails
-  - url: node-mosca
-    name: NodeJS/Mosca/MQTT
-    logo: mosca
   - url: kotlin
     name: Kotlin
     logo: kotlin
