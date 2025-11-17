@@ -110,7 +110,7 @@ This feature is not yet available in the Terraform Provider.
 1. From your web browser, open your [dashboard][dashboard]
 2. Click the **Projects** tab
 
-The list contains the projects you've created and those for which you're collaborator at least on one on the contained App
+The list includes, in addition of the projects you have created, those you are collaborating on (meaning you're collaborator on at least one of the applications)
 
 ### Using the Command Line
 
@@ -141,7 +141,7 @@ The list contains the projects you've created and those for which you're collabo
 5. Choose the region on which you want to create the new project
 6. Click `Create new project`
 
-Right after the creation the project, you're redirected on its Dashboard. It is empty and you've got the capability to create its first App by clicking on `Deploy an app` button.
+Right after the creation of the project, you're redirected on its Dashboard. It is empty and you've got the capability to create its first App by clicking on `Deploy an app` button.
 
 
 
@@ -172,6 +172,10 @@ Right after the creation the project, you're redirected on its Dashboard. It is 
    ```
 
 ## Updating a project
+
+{% note %}
+   `default` cannot be changed from true to false. To change the default project, update an existing project to be the new default one, or create a new default project.
+{% endnote %}
 
 ### Using the Dashboard
 
