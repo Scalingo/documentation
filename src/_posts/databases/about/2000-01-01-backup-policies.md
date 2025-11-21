@@ -155,3 +155,12 @@ in its recovery process.
 
 The PiTR retention window is 7 days. This means you can restore your database
 to any point in time within the past week.
+
+## Monitor Backups
+
+The following events are available to monitor the backups:
+
+| Event                       | Description                                       |
+| --------------------------- | ------------------------------------------------- |
+| `database_backup_succeeded` | A database backup has been successfully completed |
+| `database_backup_failed`    | A database backup has failed                      |
