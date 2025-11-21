@@ -1,6 +1,6 @@
 ---
 title: Manage your Projects
-modified_at: 2025-09-09 07:00:00
+modified_at: 2025-11-13 17:00:00
 tags: project management
 index: 2
 ---
@@ -104,13 +104,13 @@ This feature is not yet available in the Terraform Provider.
 
 ## Listing the projects
 
-{% warning %}
-For the moment, listing projects will only return those where you are the owner.
-{% endwarning %}
 
 ### Using the Dashboard
 
-Right now it is only possible to list the projects when creating a new application.
+1. From your web browser, open your [dashboard][dashboard]
+2. Click the **Projects** tab
+
+The list includes, in addition of the projects you have created, those you are collaborating on (meaning you're collaborator on at least one of the applications)
 
 ### Using the Command Line
 
@@ -134,7 +134,16 @@ Right now it is only possible to list the projects when creating a new applicati
 
 ### Using the Dashboard
 
-Right now it is only possible to create a new project when creating a new application or when moving an existing application to another project.
+1. From your web browser, open your [dashboard][dashboard]
+2. Click the **Projects** tab
+3. Click `Create a project` button in the top of the list
+4. Enter the project name of your choice (1–64 characters, using only a-z, 0-9, -, or _)
+5. Choose the region on which you want to create the new project
+6. Click `Create new project`
+
+Right after the creation of the project, you're redirected on its Dashboard. It is empty and you've got the capability to create its first App by clicking on `Deploy an app` button.
+
+
 
 ### Using the Command Line
 
@@ -164,23 +173,46 @@ Right now it is only possible to create a new project when creating a new applic
 
 ## Updating a project
 
-Two attributes can be updated: `name` and `default`.
-
 {% note %}
    `default` cannot be changed from true to false. To change the default project, update an existing project to be the new default one, or create a new default project.
 {% endnote %}
 
 ### Using the Dashboard
 
+
+If you want to update the `name` of your project, the steps are the following:
+
+
 1. From your web browser, open your [dashboard][dashboard]
-2. Click the **Apps** tab
-3. Click on the application for which you want to edit the project
-4. Click the **Settings** tab, make sure to select **General**
-5. Click **`your-project` settings** (where `your-project` is the current name of the project you want to edit)
-6. Edit either the `name` of the project or tick the checkbox to make it the `default` project or update both
-7. Click **Edit**
+2. Click the **Projects** tab
+3. (optional) You can filter the list of projects by clicking on `My projects` or `Other projects` and or type its name or a part of it in the search text box
+4. On the row of the project you want to edit, click the `name` of the project
+5. On the Dashboard of the project you want to edit, click **Settings** tab
+6. In the **Settings** submenu, make sure to select **General**
+7. In the **Project details**, click **Rename** button
+8. Put the name of your choice (1-64 characters, using only a-z, 0-9, -, or _)
+9. Click **Rename**
+
+
+If you want to change the `default` project, the steps are the following:
+
+
+1. From your web browser, open your [dashboard][dashboard]
+2. Click the **Projects** tab
+3. (optional) You can filter the list of projects by clicking on `My projects` or `Other projects` and or type its name or a part of it in the search text box
+4. On the row of the project you want to edit, click the `name` of the project
+5. On the Dashboard of the project you want to edit, click **Settings** tab
+6. In the **Settings** submenu, make sure to select **General**
+7. In the **Project details**, click **Set [project name] as your default project**
+
 
 ### Using the Command Line
+
+Two attributes can be updated: `name` and `default`.
+
+{% note %}
+   `default` cannot be changed from true to false. To change the default project, update an existing project to be the new default one, or create a new default project.
+{% endnote %}
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, update a project name:
@@ -212,7 +244,15 @@ A project can be removed only if this is not the default one, and no application
 
 ### Using the Dashboard
 
-This feature is not yet available in the dashboard.
+1. From your web browser, open your [dashboard][dashboard]
+2. Click the **Projects** tab
+3. (optional) You can filter the list of projects by clicking on `My projects` or `Other projects` and or type its name or a part of it in the search text box
+4. On the row of the project you want to edit, click the `name` of the project
+5. On the Dashboard of the project you want to edit, click **Settings** tab
+6. In the **Settings** submenu, make sure to select **General**
+7. Click **Delete project** button
+8. In the popup, confirm the name of the project you want to delete
+9. Click **Delete project [project name]**
 
 ### Using the Command Line
 
