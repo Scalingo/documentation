@@ -1,7 +1,7 @@
 ---
 title: Managing PHP Extensions
 nav: Managing PHP Extensions
-modified_at: 2025-11-12 12:00:00
+modified_at: 2025-11-24 12:00:00
 tags: php
 index: 4
 ---
@@ -29,61 +29,61 @@ that are **available** on Scalingo.
   They are marked as **Optional** in the following table.
 - Unavailable extensions are marked with a blank cell.
 
-| Extension          | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  |
-| ------------------ | -------- | -------- | -------- | -------- |
-| `ext-bcmath`       | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-bz2`          | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-calendar`     | Optional | Optional | Optional | Optional |
-| `ext-ctype`        | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-curl`         | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-date`         | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-dom`          | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-exif`         | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-fileinfo`     | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-filter`       | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-ftp`          | Optional | Optional | Optional | Optional |
-| `ext-gd`           | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-gettext`      | Optional | Optional | Optional | Optional |
-| `ext-gmp`          | Optional | Optional | Optional | Optional |
-| `ext-hash`         | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-iconv`        | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-imap`         | Optional | Optional | Optional |          |
-| `ext-intl`         | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-json`         | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-libxml`       | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-mbstring`     | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-mysqli`       | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-mysqlnd`      | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-openssl`      | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-pcntl`        | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-pcre`         | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-pdo`          | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-pdo_mysql`    | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-pdo_pgsql`    | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-pdo_sqlite`   | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-pgsql`        | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-phar`         | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-posix`        | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-random`       |          | Enabled  | Enabled  | Enabled  |
-| `ext-readline`     | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-reflection`   | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-session`      | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-shmop`        | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-simplexml`    | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-soap`         | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-sockets`      | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-sodium`       | Optional | Optional | Optional | Optional |
-| `ext-spl`          | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-sqlite3`      | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-tidy`         | Optional | Optional | Optional | Optional |
-| `ext-tokenizer`    | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-xml`          | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-xmlreader`    | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-xmlwriter`    | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-xsl`          | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-zend-opcache` | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-zip`          | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-zlib`         | Enabled  | Enabled  | Enabled  | Enabled  |
+| Extension          | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  | PHP 8.5  |
+| ------------------ | -------- | -------- | -------- | -------- | -------- |
+| `ext-bcmath`       | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-bz2`          | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-calendar`     | Optional | Optional | Optional | Optional | Optional |
+| `ext-ctype`        | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-curl`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-date`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-dom`          | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-exif`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-fileinfo`     | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-filter`       | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-ftp`          | Optional | Optional | Optional | Optional | Optional |
+| `ext-gd`           | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-gettext`      | Optional | Optional | Optional | Optional | Optional |
+| `ext-gmp`          | Optional | Optional | Optional | Optional | Optional |
+| `ext-hash`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-iconv`        | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-imap`         | Optional | Optional | Optional |          |          |
+| `ext-intl`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-json`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-libxml`       | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-mbstring`     | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-mysqli`       | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-mysqlnd`      | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-openssl`      | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pcntl`        | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pcre`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pdo`          | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pdo_mysql`    | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pdo_pgsql`    | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pdo_sqlite`   | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-pgsql`        | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-phar`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-posix`        | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-random`       |          | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-readline`     | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-reflection`   | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-session`      | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-shmop`        | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-simplexml`    | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-soap`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-sockets`      | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-sodium`       | Optional | Optional | Optional | Optional | Optional |
+| `ext-spl`          | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-sqlite3`      | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-tidy`         | Optional | Optional | Optional | Optional | Optional |
+| `ext-tokenizer`    | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-xml`          | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-xmlreader`    | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-xmlwriter`    | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-xsl`          | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-zend-opcache` | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-zip`          | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-zlib`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
 
 ### Enabling a PHP Built-in Extension
 
@@ -131,35 +131,35 @@ To use a PECL extension that is not listed in the table of available PECL
 extensions, please read [Adding a PECL Extension](#adding-a-pecl-extension).
 {% endnote %}
 
-| Extension       | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  |
-| --------------- | -------- | -------- | -------- | -------- |
-| `ext-amqp`      | Optional | Optional | Optional | Optional |
-| `ext-apcu`      | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-apfd`      | Optional | Optional | Optional | Optional |
-| `ext-event`     | Optional | Optional | Optional | Optional |
-| `ext-igbinary`  | Optional | Optional | Optional | Optional |
-| `ext-imagick`   | Optional | Optional | Optional | Optional |
-| `ext-memcached` | Optional | Optional | Optional | Optional |
-| `ext-mongodb`   | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-oci8`      |          | Optional | Optional | Optional |
-| `ext-redis`     | Enabled  | Enabled  | Enabled  | Enabled  |
+| Extension       | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  | PHP 8.5  |
+| --------------- | -------- | -------- | -------- | -------- | -------- |
+| `ext-amqp`      | Optional | Optional | Optional | Optional |          |
+| `ext-apcu`      | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-apfd`      | Optional | Optional | Optional | Optional | Optional |
+| `ext-event`     | Optional | Optional | Optional | Optional | Optional |
+| `ext-igbinary`  | Optional | Optional | Optional | Optional |          |
+| `ext-imagick`   | Optional | Optional | Optional | Optional |          |
+| `ext-memcached` | Optional | Optional | Optional | Optional | Optional |
+| `ext-mongodb`   | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
+| `ext-oci8`      |          | Optional | Optional | Optional | Optional |
+| `ext-redis`     | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
 
 #### Available Versions
 
 The following table lists the supported versions of available PECL extensions:
 
-| Extension       | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  |
-| --------------- | -------: | -------: | -------: | -------: |
-| `ext-amqp`      | `2.1.2`  | `2.1.2`  | `2.1.2`  | `2.1.2`  |
-| `ext-apcu`      | `5.1.27` | `5.1.27` | `5.1.27` | `5.1.27` |
-| `ext-apfd`      | `1.0.3`  | `1.0.3`  | `1.0.3`  | `1.0.3`  |
-| `ext-event`     | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  |
-| `ext-igbinary`  | `3.2.16` | `3.2.16` | `3.2.16` | `3.2.16` |
-| `ext-imagick`   | `3.7.0`  | `3.7.0`  | `3.7.0`  | `3.7.0`  |
-| `ext-memcached` | `3.4.0`  | `3.4.0`  | `3.4.0`  | `3.4.0`  |
-| `ext-mongodb`   | `1.21.0` | `1.21.0` | `1.21.0` | `1.21.0` |
-| `ext-oci8`      |          | `3.4.0`  | `3.4.0`  | `3.4.0`  |
-| `ext-redis`     | `6.3.0`  | `6.3.0`  | `6.3.0`  | `6.3.0`  |
+| Extension       | PHP 8.1  | PHP 8.2  | PHP 8.3  | PHP 8.4  | PHP 8.5  |
+| --------------- | -------: | -------: | -------: | -------: | -------: |
+| `ext-amqp`      | `2.1.2`  | `2.1.2`  | `2.1.2`  | `2.1.2`  |          |
+| `ext-apcu`      | `5.1.27` | `5.1.27` | `5.1.27` | `5.1.27` | `5.1.27` |
+| `ext-apfd`      | `1.0.3`  | `1.0.3`  | `1.0.3`  | `1.0.3`  | `1.0.3`  |
+| `ext-event`     | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  |
+| `ext-igbinary`  | `3.2.16` | `3.2.16` | `3.2.16` | `3.2.16` |          |
+| `ext-imagick`   | `3.7.0`  | `3.7.0`  | `3.7.0`  | `3.7.0`  |          |
+| `ext-memcached` | `3.4.0`  | `3.4.0`  | `3.4.0`  | `3.4.0`  | `3.4.0`  |
+| `ext-mongodb`   | `1.21.0` | `1.21.0` | `1.21.0` | `1.21.0` | `1.21.0` |
+| `ext-oci8`      |          | `3.4.0`  | `3.4.0`  | `3.4.0`  | `3.4.0`  |
+| `ext-redis`     | `6.3.0`  | `6.3.0`  | `6.3.0`  | `6.3.0`  | `6.3.0`  |
 
 ### Enabling an Available PECL Extension
 
@@ -286,11 +286,11 @@ Scalingo, along with the versions available.
 
 - They are all disabled by default and [can be enabled](#enabling-an-available-third-party-extension).
 
-| Extension | PHP 8.1     | PHP 8.2     | PHP 8.3     | PHP 8.4     |
-| --------- | ----------: | ----------: | ----------: | ----------: |
-| Datadog   | `1.6.2`     | `1.6.2`     | `1.6.2`     | `1.6.2`     |
-| New Relic | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` |
-| Scout APM | `1.10.0`    | `1.10.0`    | `1.10.0`    | `1.10.0`    |
+| Extension | PHP 8.1     | PHP 8.2     | PHP 8.3     | PHP 8.4     | PHP 8.5     |
+| --------- | ----------: | ----------: | ----------: | ----------: | ----------: |
+| Datadog   | `1.6.2`     | `1.6.2`     | `1.6.2`     | `1.6.2`     | `1.6.2`     |
+| New Relic | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | `12.2.0.27` |
+| Scout APM | `1.10.0`    | `1.10.0`    | `1.10.0`    | `1.10.0`    | `1.10.0`    |
 
 ### Enabling an Available Third-Party Extension
 
