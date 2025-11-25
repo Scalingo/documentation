@@ -163,7 +163,7 @@ to be activated manually.
 
 
 [pg-stats-monitoring]: https://www.postgresql.org/docs/current/monitoring-stats.html
-[pg-stats-statements]: https://www.postgresql.org/docs/current/pgstatements.html
+[pg-stats-statements]: https://www.postgresql.org/docs/current/pgstatstatements.html
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 

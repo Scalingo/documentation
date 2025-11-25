@@ -1,14 +1,13 @@
 ---
 title: Connecting to Your Scalingo for MySQL® Addon
 nav: Connecting
-modified_at: 2024-10-21 12:00:00
+modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon
-index: 3
+index: 2
 ---
 
 When a Scalingo for MySQL® addon is provisioned, the platform also adds
-two [environment variables]({% post_url platform/app/2000-01-01-environment %})
-to your app:
+two [environment variables][env] to your app:
 
 - `SCALINGO_MYSQL_URL`: a string containing all information needed to
   establish a connection between your application and your database. This
@@ -30,8 +29,7 @@ mysql://[user]:[password]@[url]:[port]/[dbname]?useSSL=true&verifyServerCertific
 ```
 
 For more information about the connection URI syntax, please see
-[RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) which defines the URI
-Generic Syntax.
+[RFC 3986] which defines the URI Generic Syntax.
 
 
 ## Using the Connection URI
@@ -59,7 +57,7 @@ still remains applicable.
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard](https://dashboard.scalingo.com)
+1. From your web browser, open your [dashboard]
 2. Click on the application for which you want to get the connection URI
 3. Click on the **Environment** tab
 4. Locate the `SCALINGO_MYSQL_URL` line and place your mouse over it to unblur
@@ -67,7 +65,7 @@ still remains applicable.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, get the environment variable value:
    ```bash
    scalingo --app my-app env-get SCALINGO_MYSQL_URL
@@ -80,8 +78,8 @@ still remains applicable.
 
 ## Enforcing TLS Connection
 
-All MySQL® addons [support TLS](https://dev.mysql.com/doc/refman/8.0/en/encrypted-connections.html)
-to encrypt all the network traffic between the client and the server.
+All MySQL® addons [support TLS][mysql-tls] to encrypt all the network traffic
+between the client and the server.
 
 By default, all new MySQL® databases have TLS **available**,
 which means that you don't have to do anything to connect via TLS with a tool
@@ -90,7 +88,7 @@ or library that uses TLS by default.
 If you want to enforce TLS connections to your database so that TLS is
 not only available, but **mandatory**:
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, [open your database dashboard][database-dashboard]
 2. Select the **Settings** tab
 3. In the **Settings** submenu, select **Internet Access**
 4. Locate the **Force TLS connections** block
@@ -111,10 +109,17 @@ so, add an environment variable in every application that needs to connect to
 the database, like so:
 
 1. Copy [the connection URI](#getting-the-connection-uri) of your addon
-2. [Create a new environment variable]({% post_url platform/app/2000-01-01-environment %})
+2. [Create a new environment variable][env]
    for the application that needs to connect to the addon
 3. Set the value of this new environment variable to connection URI you just
    copied
 4. Restart the application to make the new environment variable available
 5. Remember to update this new environment variable whenever the original
    connection URI changes
+
+
+[mysql-tls]: https://dev.mysql.com/doc/refman/8.0/en/encrypted-connections.html
+
+[cli]: {% post_url tools/cli/2000-01-01-start %}
+[env]: {% post_url platform/app/2000-01-01-environment %}
+[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard

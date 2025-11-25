@@ -1,6 +1,6 @@
 ---
 title: Environment Variables
-modified_at: 2023-06-29 00:00:00
+modified_at: 2025-10-21 00:00:00
 tags: app configuration environment
 index: 3
 ---
@@ -113,14 +113,17 @@ environment variables in its environment. In the case of `web` containers, an
 additional variable `$PORT` is defined.
 
 * `PORT`: Port number your server has to bind on
-* `CONTAINER`: Type and index of the container, `web-1` or `worker-1` for instance
+* `CONTAINER`: Type and index of the container (e.g. `web-1` or `worker-1`)
 * `CONTAINER_VERSION`: Version of the container started, usually the Git commit SHA
-* `CONTAINER_SIZE`: Name of the size of the container `M`, `L`, `XL`, etc
+* `CONTAINER_SIZE`: Name of the size of the container (e.g. `M` or `XL`)
 * `CONTAINER_MEMORY`: Available RAM memory of the container (in bytes)
 * `APP`: Name of the application deployed
+* `SCALINGO_APPLICATION_ID`: ID of the application deployed (e.g. `ap-a71da13f-7c70-4c00-a644-eee8558d8053`)
 * `HOSTNAME`: The container application hostname based on the application name and the container type (e.g. `my-app-web-1`)
 * `STACK`: Name of the stack the application deployed is using
 * `REGION_NAME`: Name of the region where the application is deployed
+* `SCALINGO_PRIVATE_NETWORK_ID`: ID of the [private network]({% post_url platform/app/2000-01-01-private-networks %}) where the application is located (e.g. `pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c`). This variable is not available if the application is not deployed in a private network.
+* `SCALINGO_PRIVATE_HOSTNAME`: private hostname of the container inside the [private network]({% post_url platform/app/2000-01-01-private-networks %}) where the application is located (e.g. <code>1.<span class="domain-name-ct">web</span>.<span class="domain-name-ap">ap-a71da13f-7c70-4c00-a644-eee8558d8053</span>.<span class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c</span>.<span class="domain-name-nid">private-network.internal.</span></code>). This variable is not available if the application is not deployed in a private network.
 
 ## One-Off Environment Variables
 

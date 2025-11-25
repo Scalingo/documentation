@@ -1,9 +1,9 @@
 ---
 title: Backing Up Your Scalingo for MySQL® Addon
 nav: Backing Up
-modified_at: 2024-11-05 12:00:00
+modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon
-index: 7
+index: 5
 ---
 
 
@@ -14,9 +14,8 @@ We use [Periodic](#understanding-periodic-backups) backups to create the
 automated ones. [Manual backups](#understanding-manual-backups) are also
 available for these plans.
 
-Please carefully read our [backup policies]({% post_url databases/about/2000-01-01-backup-policies %})
-for details about backups retention and important considerations regarding
-backups.
+Please carefully read our [backup policies][backup-policies] for details about
+backups retention and important considerations regarding backups.
 
 
 ## Understanding Periodic Backups
@@ -39,7 +38,7 @@ the workload on our infrastructure.
 
 #### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Backups** tab
 3. Locate the **Backup schedule** block
 4. Click the **Schedule** button
@@ -49,7 +48,7 @@ the workload on our infrastructure.
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Configure the time of backup:
    - By setting an hour:
      ```bash
@@ -57,7 +56,8 @@ the workload on our infrastructure.
      ```
      In this example, we ask the platform to create the backups at ~03:00.
 
-     _Note: The timezone used is the local timezone of the machine running the command._
+     _Note: The timezone used is the local timezone of the machine running the
+     command._
    - By setting an hour and a timezone:
      ```bash
      scalingo --app my-app --addon mysql backups-config --schedule-at "4:00 UTC"
@@ -73,7 +73,7 @@ the workload on our infrastructure.
 
 #### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Backups** tab
 3. Locate the **Backups** block
 4. Locate the Periodic backup you are interested in
@@ -81,7 +81,7 @@ the workload on our infrastructure.
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Run the following command(s):
    - To download the latest backup available:
      ```bash
@@ -132,14 +132,14 @@ manually, whenever you want.
 
 #### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard]({% post_url databases/mysql/2000-01-01-getting-started %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Backups** tab
 3. Locate the **Backups** block
 4. Click the **Trigger manual backup** button
 
 #### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Ask the platform to backup the database:
    ```bash
    scalingo --app my-app --addon mysql backups-create
@@ -168,14 +168,14 @@ generally advise to either:
 This method doesn't require to make your database reachable over Internet.
 
 1. Follow the procedure to [access your MySQL® database from a one-off
-   container]({% post_url databases/mysql/2000-01-01-accessing %}#using-a-one-off)
-2. Make sure to [understand the connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+   container][accessing-one-off]
+2. Make sure to [understand the connection URI][connecting-uri]
 3. Dump the database:
    ```bash
    mysqldump --user=<user> --password=<password> --host=<host> --port=<port> --column-statistics=0 --no-tablespaces <dbname> > dump.sql
    ```
    With `user`, `password`, `host`, `port` and `dbname` from your original
-   [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri).
+   [connection URI][connecting-uri]
 
 {% note %}
 The dump is lost as soon as you exit the one-off container. Consequently, you
@@ -185,12 +185,23 @@ somewhere).
 
 ### From Your Workstation
 
-1. [Open a DB tunnel]({% post_url databases/mysql/2000-01-01-accessing %}#using-our-command-line-tool)
+1. [Open a DB tunnel][accessing-cli]
    so you can access your database from your workstation
-2. Make sure to [understand the connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
+2. Make sure to [understand the connection URI][connecting-uri]
 3. Dump the database using the `mysqldump` command (you may have to install it):
    ```bash
    mysqldump --user=<user> --password=<password> --host=127.0.0.1 --port=<port> --column-statistics=0 --no-tablespaces <dbname> > dump.sql
    ```
-   With `user`, `password` and `dbname` from your original [connection URI]({% post_url databases/mysql/2000-01-01-connecting %}#understanding-the-connection-uri)
-   and `port` depending on what you did (default is `10000`)
+   With `user`, `password` and `dbname` from your original [connection
+   URI][connecting-uri] and `port` depending on what you did (default is
+   `10000`)
+
+
+[cli]: {% post_url tools/cli/2000-01-01-start %}
+
+[backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
+
+[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
+[accessing-one-off]: {% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-a-one-off
+[accessing-cli]: {% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
+[connecting-uri]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
