@@ -1,6 +1,6 @@
 ---
 title: Free Trial
-modified_at: 2023-10-23 00:00:00
+modified_at: 2025-12-08 00:00:00
 tags: billing free trial
 index: 20
 ---
@@ -21,8 +21,17 @@ You can have a **maximum of 1 application** using a **maximum of 5 containers**
 Review apps are considered as applications, so you can't create one while in
 free trial.
 
-You can add as many addons as you want, as long as they have free plans
-available.
+Your test application can also use managed databases during the free trial.
+For each of the eligible database engines listed below, you can provision **1 database instance on its smallest plan**:
+
+- [Scalingo for PostgreSQL®][postgresql-link]
+- [Scalingo for MySQL®][mysql-link]
+- [Scalingo for Caching (Redis®)][redis-link]
+- [Scalingo for MongoDB®][mongodb-link]
+- [Scalingo for Elasticsearch®][elasticsearch-link]
+- [Scalingo for InfluxDB®][influxdb-link]
+
+In addition, you can add as many other addons as you want, as long as they have free plans available.
 
 ### How to break out of the free trial?
 
@@ -60,3 +69,10 @@ operations must be done **manually**.
 {% warning %}
 After a period of thirty (30) days, if no order is made by the client owning the apps, the resources will be deleted from the platform.
 {% endwarning %}
+
+[postgresql-link]: {% post_url databases/postgresql/about/2000-01-01-overview %}
+[mysql-link]: {% post_url databases/mysql/about/2000-01-01-overview %}
+[redis-link]: {% post_url databases/redis/2000-01-01-start %}
+[mongodb-link]: {% post_url databases/mongodb/2000-01-01-start %}
+[elasticsearch-link]: {% post_url databases/elasticsearch/2000-01-01-start %}
+[influxdb-link]: {% post_url databases/influxdb/2000-01-01-start %}
