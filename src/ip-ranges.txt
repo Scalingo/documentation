@@ -3,7 +3,13 @@
 # Website: https://scalingo.com
 # Abuse Contact: abuse@scalingo.com
 # Last Updated: 2025-12-15
-# Reverse DNS entries for egress IP ranges in Scalingo's osc-fr1 region
+
+# Egress IP ranges (CIDR, one per line)
+171.33.105.206/32
+171.33.92.211/32
+148.253.96.190/32
+148.253.97.14/32
+
+# rDNS suffixes for egress (one per line)
 egress.osc-fr1.scalingo.com
-# Reverse DNS entries for egress IP ranges in Scalingo's osc-secnum-fr1 region
 egress.osc-secnum-fr1.scalingo.com
