@@ -1,7 +1,7 @@
 ---
 title: Get Started with Python, Celery and Flask
 nav: Celery and Flask
-modified_at: 2016-06-09 00:00:00
+modified_at: 2025-12-23 00:00:00
 tags: python celery flask redis tutorial getting-started-tutorial
 index: 2
 ---
@@ -187,7 +187,7 @@ $ scalingo create my-app
 ## Add a Scalingo for Caching addon to your app
 
 ```bash
-$ scalingo --app my-app addons-add redis redis-sandbox
+$ scalingo --app my-app addons-add redis redis-starter-256
 ```
 
 ## Deploy your app

@@ -1,6 +1,6 @@
 ---
 title: Restore your Database Backup
-modified_at: 2025-09-29 12:00:00
+modified_at: 2025-12-23 12:00:00
 tags: databases backups
 index: 2
 ---
@@ -17,11 +17,11 @@ $ scalingo --app my-app run bash
 [10:30][osc-fr1] Scalingo:my-app ~ $ install-scalingo-cli
 [10:30][osc-fr1] Scalingo:my-app ~ $ scalingo login
 [10:30][osc-fr1] Scalingo:my-app ~ $ scalingo --app my-app addons
-+------------+-----------------------------------------+--------------------+---------+
-|   ADDON    |                   ID                    |        PLAN        | STATUS  |
-+------------+-----------------------------------------+--------------------+---------+
-| PostgreSQL | ad-32ef9060-d912-4a53-b2bb-6cf1bf333865 | postgresql-sandbox | running |
-+------------+-----------------------------------------+--------------------+---------+
++------------+-----------------------------------------+------------------------+---------+
+|   ADDON    |                   ID                    |        PLAN            | STATUS  |
++------------+-----------------------------------------+------------------------+---------+
+| PostgreSQL | ad-32ef9060-d912-4a53-b2bb-6cf1bf333865 | postgresql-starter-512 | running |
++------------+-----------------------------------------+------------------------+---------+
 [10:30][osc-fr1] Scalingo:my-app ~ $ ADDON_UUID="ad-32ef9060-d912-4a53-b2bb-6cf1bf333865"
 [10:30][osc-fr1] Scalingo:my-app ~ $ scalingo --app my-app --addon $ADDON_UUID backups-download
 ```
