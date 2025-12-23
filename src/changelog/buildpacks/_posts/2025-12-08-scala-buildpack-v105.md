@@ -17,4 +17,4 @@ github: 'https://github.com/Scalingo/scala-buildpack'
 - Sanitize `SBT_OPTS` by removing the `-J` prefix from arguments.
 - Fail builds early for `sbt` versions older than `0.13.18`.
 
-[Full changelog](https://github.com/Scalingo/scalingo-buildpack-scala/blob/main/CHANGELOG.md)
+[Full changelog](https://github.com/Scalingo/scala-buildpack/blob/master/CHANGELOG.md)
