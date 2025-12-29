@@ -1,7 +1,7 @@
 ---
 title: Scalingo Autoscaler
 nav: Scalingo Autoscaler
-modified_at: 2025-02-07 12:00:00
+modified_at: 2025-12-29 11:04:00
 tags: app scaling autoscaling metrics autoscaler
 index: 20
 ---
@@ -246,9 +246,9 @@ workload.
 ## Creating an Autoscaler
 
 {% warning %}
-Adding an Autoscaler also immediately enables it!\
+Adding an Autoscaler also immediately enables it!
 Since this can lead to additional costs, please make sure to chose appropriate
-options and values before validating.\
+options and values before validating.
 [It can be disabled](#disabling-an-autoscaler) if needed.
 {% endwarning %}
 
@@ -385,6 +385,12 @@ which it can be re-enabled with the same configuration.
 
 When disabling an Autoscaler, the platform does not scale-in. The number of
 running containers remains the same.
+
+{% warning %}
+Changing the [**container size**]({% post_url platform/app/scaling/2000-01-01-scaling %}#vertical-scaling)
+of an application that has the **autoscaler** turned on will **disable** it for
+the corresponding process type.
+{% endwarning %}
 
 ### Using the Dashboard
 
