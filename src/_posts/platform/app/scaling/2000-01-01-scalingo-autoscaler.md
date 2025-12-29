@@ -387,9 +387,7 @@ When disabling an Autoscaler, the platform does not scale-in. The number of
 running containers remains the same.
 
 {% warning %}
-Changing the [**container size**]({% post_url platform/app/scaling/2000-01-01-scaling %}#vertical-scaling)
-of an application that has the **autoscaler** turned on will **disable** it for
-the corresponding process type.
+[Scaling up](#vertical-scaling) or [scaling down](#vertical-scaling) an application **disables** any [Scalingo Autoscaler] enabled for the corresponding process type.
 {% endwarning %}
 
 ### Using the Dashboard
@@ -439,3 +437,5 @@ The following event is available to monitor the Autoscaler executions:
 
 To learn more about events and notifications, please visit the page dedicated
 to [app notifications]({% post_url platform/app/2000-01-01-notification %}).
+
+[Scalingo Autoscaler]: {% post_url platform/app/scaling/2000-01-01-scalingo-autoscaler %}
