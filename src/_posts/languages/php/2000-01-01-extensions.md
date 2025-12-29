@@ -1,7 +1,7 @@
 ---
 title: Managing PHP Extensions
 nav: Managing PHP Extensions
-modified_at: 2025-11-24 12:00:00
+modified_at: 2025-12-29 12:00:00
 tags: php
 index: 4
 ---
@@ -138,7 +138,7 @@ extensions, please read [Adding a PECL Extension](#adding-a-pecl-extension).
 | `ext-apfd`      | Optional | Optional | Optional | Optional | Optional |
 | `ext-event`     | Optional | Optional | Optional | Optional | Optional |
 | `ext-igbinary`  | Optional | Optional | Optional | Optional |          |
-| `ext-imagick`   | Optional | Optional | Optional | Optional |          |
+| `ext-imagick`   | Optional | Optional | Optional | Optional | Optional |
 | `ext-memcached` | Optional | Optional | Optional | Optional | Optional |
 | `ext-mongodb`   | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
 | `ext-oci8`      |          | Optional | Optional | Optional | Optional |
@@ -155,7 +155,7 @@ The following table lists the supported versions of available PECL extensions:
 | `ext-apfd`      | `1.0.3`  | `1.0.3`  | `1.0.3`  | `1.0.3`  | `1.0.3`  |
 | `ext-event`     | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  |
 | `ext-igbinary`  | `3.2.16` | `3.2.16` | `3.2.16` | `3.2.16` |          |
-| `ext-imagick`   | `3.7.0`  | `3.7.0`  | `3.7.0`  | `3.7.0`  |          |
+| `ext-imagick`   | `3.7.0`  | `3.7.0`  | `3.7.0`  | `3.7.0`  | `3.8.1`  |
 | `ext-memcached` | `3.4.0`  | `3.4.0`  | `3.4.0`  | `3.4.0`  | `3.4.0`  |
 | `ext-mongodb`   | `1.21.0` | `1.21.0` | `1.21.0` | `1.21.0` | `1.21.0` |
 | `ext-oci8`      |          | `3.4.0`  | `3.4.0`  | `3.4.0`  | `3.4.0`  |
