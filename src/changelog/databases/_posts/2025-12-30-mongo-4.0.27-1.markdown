@@ -1,0 +1,10 @@
+---
+modified_at: 2025-12-30 15:30:00
+title: 'MongoDB - New version: 4.0.27-1'
+---
+
+Docker images on [Docker Hub](https://hub.docker.com/r/scalingo/mongo):
+
+* `scalingo/mongo:4.0.27-1`
+
+Default version is: `4.0.3-1`
