@@ -53,15 +53,6 @@ detects the JSON manifest under this subdirectory.
 If there is no JSON manifest in the `PROJECT_DIR` folder, Scalingo 
 tries to get the `scalingo.json` in every folder up to the root of your repository.
 
-{% note %}
-The `scalingo.json` manifest is only used for [review apps]({% post_url
-platform/app/2000-01-01-review-apps %}) and [one-click deployments]({%
-post_url platform/deployment/2000-01-01-one-click-deploy %}). 
-
-For existing applications, adding or modifying `PROJECT_DIR` in the manifest will have no effect. You must set it as an 
-environment variable using the dashboard or the CLI.
-{% endnote %}
-
 See our dedicated page on [monorepos]({% post_url platform/app/2000-01-01-monorepo %}) for more information about this type of setup.
 
 ## Configuration of Addons
