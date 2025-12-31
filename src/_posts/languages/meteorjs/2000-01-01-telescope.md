@@ -1,7 +1,7 @@
 ---
 title: Deployment of a Meteor application - Telescope
 nav: Deployment of Telescope
-modified_at: 2023-12-22 00:00:00
+modified_at: 2025-12-23 00:00:00
 tags: nodejs meteor tutorial telescope
 ---
 
@@ -37,11 +37,11 @@ The Meteor framework uses extensively MongoDB® as a database. Hence you need to
 provision a new instance of this database to your application.
 
 ```bash
-$ scalingo --app my-app addons-add mongodb mongo-sandbox
+$ scalingo --app my-app addons-add mongodb mongo-starter-256
 -----> Addon mongodb has been provisionned
        ID: my-app-1234
        Modified variables: [MONGO_URL SCALINGO_MONGO_URL]
-       Message from addon provider: Database successfully created
+       Message from addon provider: Database is being provisioned
 ```
 
 ## Deploy your Telescope
