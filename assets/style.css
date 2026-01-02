@@ -569,6 +569,21 @@ article .domain-name-nid {
   color: #3394f5;
 }
 
+article dt {
+    font-weight: bold;
+}
+
+article dd {
+  margin: 0 0 1rem 2rem;
+}
+
+blockquote {
+  border-left: 2px solid #DDD;
+  font-style: italic;
+  margin: 0.5rem 0 0.5rem 1rem;
+  padding: 0 0 0 1rem;
+}
+
 .highlight .hll {
   background-color: #060C20;
 }

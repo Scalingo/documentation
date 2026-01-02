@@ -1,6 +1,6 @@
 ---
 title: Review Apps
-modified_at: 2024-06-20 00:00:00
+modified_at: 2026-01-02 12:00:00
 tags: app review apps
 index: 31
 ---
@@ -71,7 +71,7 @@ Child applications clone some information from the parent app:
 * the [environment variables]({% post_url platform/app/2000-01-01-environment %})
 * the databases and addons: including version and plans (can be overridden in `scalingo.json`), but _excluding_ the content of the databases.
 * the collaborators
-* the routing settings: [Force HTTPS]({% post_url platform/app/2000-01-01-force-https %}) and [Sticky Sessions]({% post_url platform/app/2000-01-01-sticky-sessions %})
+* the routing settings: [Force HTTPS]({% post_url platform/networking/public/cert/2000-01-01-force-https %}) and [Sticky Sessions]({% post_url platform/app/2000-01-01-sticky-sessions %})
 
 This default behavior can be customized using a `scalingo.json` file, see: [configuration of review apps](#configuration-of-review-apps).
 

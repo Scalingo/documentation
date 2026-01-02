@@ -1,12 +1,12 @@
 ---
 layout: page
 title: Long Running Process
-modified_at: 2020-09-25 00:00:00
+modified_at: 2026-01-02 12:00:00
 ---
 
 ## Problematic
 
-On Scalingo, HTTP requests to your application need to be processed in [less than 30 seconds]({% post_url platform/internals/2000-01-01-routing %}#timeouts). More generally, this is a best practice for a HTTP request to be as short as possible. You may wonder what you need to do in case your application has a long process to execute in reaction to a user interaction. This page aims at explaining how you could achieve this in your application.
+On Scalingo, HTTP requests to your application need to be processed in [less than 30 seconds]({% post_url platform/networking/public/2000-01-01-routing %}#timeouts). More generally, this is a best practice for a HTTP request to be as short as possible. You may wonder what you need to do in case your application has a long process to execute in reaction to a user interaction. This page aims at explaining how you could achieve this in your application.
 
 ## The HTTP Status 202
 

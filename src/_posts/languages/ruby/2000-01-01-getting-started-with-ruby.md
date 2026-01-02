@@ -1,6 +1,6 @@
 ---
 title: Get Started with Ruby on Scalingo
-modified_at: 2023-12-22 00:00:00
+modified_at: 2026-01-02 12:00:00
 tags: ruby sinatra tutorial getting-started-tutorial
 index: 3
 ---
@@ -168,15 +168,3 @@ The best practice is to perform non-destructive migrations, where a column renam
 A good example in `strong_migrations` gem [documentation](https://github.com/ankane/strong_migrations#renaming-a-column).
 
 {% include app_start_without_migration.md %}
-
-## Where to go next
-
-You know how to deploy a Ruby app, now develop your project and build something amazing!
-
-Here are some links that you could find useful:
-
-* Need to store data? Look at our [database
-  addons](https://scalingo.com/databases)
-* Want your own [domain name]({% post_url platform/app/2000-01-01-domain %})?
-* Using a SCM tool such as GitHub? Our [SCM integration]({% post_url
-  platform/app/2000-01-01-scm-integration %}) will make your life easier.
