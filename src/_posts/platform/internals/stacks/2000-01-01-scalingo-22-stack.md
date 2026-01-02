@@ -1,13 +1,9 @@
 ---
 title: Scalingo-22 Stack
 nav: Scalingo-22
-modified_at: 2025-07-03 00:00:00
+modified_at: 2025-12-08 00:00:00
 index: 3
 ---
-
-{% note %}
-scalingo-22 is the current default stack.
-{% endnote %}
 
 This article describes the scalingo-22 stack, based on Ubuntu 22.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
 

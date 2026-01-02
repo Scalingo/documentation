@@ -1,9 +1,13 @@
 ---
 title: Scalingo-24 Stack
 nav: Scalingo-24
-modified_at: 2025-09-17 00:00:00
+modified_at: 2025-12-08 00:00:00
 index: 2
 ---
+
+{% note %}
+scalingo-24 is the current default stack.
+{% endnote %}
 
 This article describes the scalingo-24 stack, based on Ubuntu 24.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
 
