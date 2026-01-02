@@ -77,7 +77,7 @@ $ git push scalingo master
 
 ### Where to Go Next?
 
-- If your app is using a custom domain, follow the [instructions]({% post_url platform/networking/public/domain/2000-01-01-custom %}) to update your DNS configuration.
+- If your app is using a custom domain, follow the [instructions]({% post_url platform/networking/public/domains/2000-01-01-custom %}) to update your DNS configuration.
 - Managing your [SSL certificate]({% post_url platform/networking/public/cert/2000-01-01-overview %}).
 
 ### Need Some Help? 

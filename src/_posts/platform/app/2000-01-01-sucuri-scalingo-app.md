@@ -31,4 +31,4 @@ Validation" in Sucuri dashboard.
 
 [HTTPS termination]: https://docs.sucuri.net/website-firewall/configuration/ssl-mode/
 
-[custom domain]: {% post_url platform/networking/public/domain/2000-01-01-custom %}
+[custom domain]: {% post_url platform/networking/public/domains/2000-01-01-custom %}
