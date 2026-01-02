@@ -1,6 +1,6 @@
 ---
 title: Custom Error and Maintenance Pages
-modified_at: 2023-05-25 00:00:00
+modified_at: 2026-01-02 12:00:00
 tags: app custom error page
 ---
 
@@ -16,13 +16,16 @@ You can customize these pages by providing Scalingo with a custom error page
 URL. Four different error pages can be customized. You need to set one of these
 environment variables depending on which error page you want to customize:
 
-- `SCALINGO_NO_FRONT_ERROR_URL`: if the application has no web container running
-    but other types of containers are.
+- `SCALINGO_NO_FRONT_ERROR_URL`: if the application has no `web` container
+  running but other types of containers are.
 - `SCALINGO_STOPPED_PAGE_URL`: if the application has no running container.
-- `SCALINGO_APP_ERROR_URL`: if the application returns a 502 HTTP response, crashed or cut the connection
-    unexpectedly.
-- `SCALINGO_TIMEOUT_ERROR_URL`: if the application returns a 504 HTTP response or [timed out]({% post_url
-    platform/internals/2000-01-01-routing %}#timeouts).
+- `SCALINGO_APP_ERROR_URL`: if the application returns a 502 HTTP response,
+  crashed or cut the connection unexpectedly.
+- `SCALINGO_TIMEOUT_ERROR_URL`: if the application returns a 504 HTTP response
+  or timed out.
+
+To learn more about HTTP errors returned by our frontends, please see [our
+documentation][routing-errors].
 
 The usage is the following:
 `SCALINGO_STOPPED_PAGE_URL=https://cdn.example.com/stopped_page.html`.
@@ -53,3 +56,6 @@ page when an application is in maintenance. Here are the steps:
 {% note %}
 All these steps can be achieved using either the web dashboard or the CLI.
 {% endnote %}
+
+
+[routing-errors]: {% post_url platform/networking/public/2000-01-01-routing %}#http-errors
