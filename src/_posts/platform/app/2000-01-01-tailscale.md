@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Configure Tailscale
-modified_at: 2025-12-31 00:00:00
+modified_at: 2026-01-05 00:00:00
 tags: tailscale networking vpn buildpack
 ---
 
@@ -31,27 +31,13 @@ The [APT buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-apt %}
 wget
 curl
 tailscale
-:repo:deb [trusted=yes] https://pkgs.tailscale.com/stable/ubuntu jammy main
+:repo:deb [trusted=yes] https://pkgs.tailscale.com/stable/ubuntu [dist] main
 ```
 
-## Step 3: .profile Configuration
-
-The `.profile` script is executed before your application starts. It will be used to start the Tailscale daemon and connect to your network.
-
-Create a file named `.profile` at the root of your repository:
-
-```bash
-#!/bin/bash
-tailscaled --tun=userspace-networking --socks5-server=localhost:1055 --socket /tmp/tailscaled.sock &
-tailscale --socket /tmp/tailscaled.sock up --auth-key=$TAILSCALE_AUTHKEY
-```
-
-Make sure the file is executable:
-
-```bash
-chmod +x .profile
-git add .profile
-```
+Replace `[dist]` with the codename of the [stack]({% post_url platform/internals/stacks/2000-01-01-stacks %}) you are using:
+* `noble` for `scalingo-24` (default)
+* `jammy` for `scalingo-22`
+* `focal` for `scalingo-20`
 
 ## Step 4: Set TAILSCALE_AUTHKEY Environment Variable
 
@@ -62,6 +48,18 @@ You need to provide your Tailscale Auth Key to your application via an [environm
 
 ```bash
 scalingo --app my-app env-set TAILSCALE_AUTHKEY=tskey-auth-ok...
+```
+
+## Step 4: .profile Configuration
+
+The `.profile` script is executed before your application starts ([see dedicated page]({% post_url platform/internals/2000-01-01-container-management %}#the-profile-script)). It will be used to start the Tailscale daemon and connect to your network.
+
+Create a file named `.profile` at the root of your repository:
+
+```bash
+#!/bin/bash
+tailscaled --tun=userspace-networking --socks5-server=localhost:1055 --socket /tmp/tailscaled.sock &
+tailscale --socket /tmp/tailscaled.sock up --auth-key=$TAILSCALE_AUTHKEY
 ```
 
 ## Step 5: Deploy Your Application
