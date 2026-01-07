@@ -1,4 +1,4 @@
-If your database is in a paid plan (i.e. it's not "free plan"), we'll automatically make periodic backups of your database on a daily basis, at around 1:00 AM Central European Time (CET or UTC+0100). The time of your daily backup is configurable via the web dashboard of your database or using the CLI. The scheduled date is not strongly enforced: it might get delayed depending on the load on our infrastructure.
+We'll automatically make periodic backups of your database on a daily basis, at around 1:00 AM Central European Time (CET or UTC+0100). The time of your daily backup is configurable via the web dashboard of your database or using the CLI. The scheduled date is not strongly enforced: it might get delayed depending on the load on our infrastructure.
 
 #### Using the Database Dashboard
 

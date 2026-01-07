@@ -6,12 +6,6 @@ tags: databases backup policy policies explanation
 index: 30
 ---
 
-
-{% warning %}
-The backup features described in this page are only available for Starter and
-Business plans.\\
-{% endwarning %}
-
 Scalingo provides at least two different backup mechanisms for every database
 addons in Starter or Business plans:
 - [Scheduled backups](#scheduled-backups) rely on our automated backup service
