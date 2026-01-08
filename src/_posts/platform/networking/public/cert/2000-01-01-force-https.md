@@ -105,8 +105,6 @@ Network][hsts].
     > receiving a 301 status code, some existing HTTP/1.0 user agents
     > will erroneously change it into a GET request.
 
-  For example, with Postman, `POST` requests sent to HTTP display the result of
-  a `GET` request to HTTPS.
 
 
 *[HSTS]: HTTP Strict Transport Security
