@@ -20,9 +20,8 @@ or database-stored sessions for instance)
 ## Description
 
 By default [requests are routed][requests-routing] using a round-robin
-algorithm, which means that if you have, for instance, 2 web containers, and a
-single user is making 2 requests to your application, each container receives
-one request.
+algorithm. This means that, if you have multiple containers the traffic is distributed evenly.
+For example, if you have 2 `web` containers. When a single user makes two requests to your application, each container receives one request.
 
 Once **Sticky Sessions** are enabled, each end-user is associated to
 a container and consecutive requests from this entity all target the same
