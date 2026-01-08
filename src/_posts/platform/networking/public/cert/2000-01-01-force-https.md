@@ -112,7 +112,7 @@ Network][hsts].
 *[HSTS]: HTTP Strict Transport Security
 
 
-[hsts]: https://developer.mozilla.org/docs/S%C3%A9curit%C3%A9/HTTP_Strict_Transport_Security
+[hsts]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security
 [rfc2626]: https://www.ietf.org/rfc/rfc2616.txt
 
 [dashboard]: https://dashboard.scalingo.com/

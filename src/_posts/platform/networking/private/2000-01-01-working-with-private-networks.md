@@ -105,8 +105,7 @@ application's private domain name and the appropriate port number.
 Implementing this registration approach and maintaining the *common register*
 up-to-date are left to the responsibility of the user.
 
-This strategy has proven to be more effective when costs become an issue, and
-is often (arguably) considered as cleaner than the previous one.
+This strategy has proven to be more effective when costs become an issue.
 
 
 *[CIDR]: Classless Inter-Domain Routing
