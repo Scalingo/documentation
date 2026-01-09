@@ -11,7 +11,7 @@
     "@docsearch/css": "^3.9.0",
     "@tailwindcss/postcss": "^4.1.18",
     "autoprefixer": "^10.4.22",
-    "esbuild": "^0.25.10",
+    "esbuild": "^0.27.2",
     "esbuild-style-plugin": "^1.6.3",
     "mdn-polyfills": "^5.20.0",
     "postcss": "^8.5.6",
