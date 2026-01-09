@@ -143,7 +143,7 @@ Implementing this registration approach and maintaining the *shared registry*
 up-to-date are left to the responsibility of the user.
 
 This strategy has proven to be more effective when costs become an issue. It
-also simplifies conectivity and service coordination across the Private
+also simplifies connectivity and service coordination across the Private
 Network.
 
 
