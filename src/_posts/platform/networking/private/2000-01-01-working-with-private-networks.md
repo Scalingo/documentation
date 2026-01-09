@@ -50,8 +50,8 @@ These two rules can be translated into the following guidelines:
   - For applications using a configuration file, please refer to their
     documentation.
 
-- Use the `SCALINGO_PRIVATE_HOME` environment variable to listen on the Private
-  Network interface.
+- Use the `SCALINGO_PRIVATE_HOSTNAME` environment variable to listen on the
+  Private Network interface.
 
 Once started, the application is available through its [private domain name],
 on the chosen port.
