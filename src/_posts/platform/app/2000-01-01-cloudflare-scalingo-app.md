@@ -2,7 +2,7 @@
 layout: page
 title: Configure Cloudflare to access Scalingo applications
 nav: Configure Cloudflare
-modified_at: 2023-06-09 10:00:00
+modified_at: 2026-01-02 12:00:00
 tags: integration cloudflare
 index: 98
 ---
@@ -115,9 +115,8 @@ complete protection to your clients, your application should use the "Full
 (strict)" mode. With this mode, the traffic to your application is encrypted
 from your customers browser to your Scalingo hosted application going through
 Cloudflare network. Cloudflare "Full (strict)" mode will work out of the box
-along with Scalingo [automatic certificate generation with Let's Encrypt]({%
-post_url platform/app/2000-01-01-ssl
-%}#automatic-https-certificate-with-lets-encrypt).
+along with Scalingo [automatic certificate generation with Let's
+Encrypt]({% post_url platform/networking/public/cert/2000-01-01-default %}).
 
 {% warning %}
 To ensure this configuration is working over time, you should not enable "Always Use HTTPS" in Cloudflare configuration. (SSL/TLS → Edge Certificates).
