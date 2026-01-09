@@ -1,17 +1,10 @@
 ---
 title: Databases Backup Policies
 nav: Backup Policies
-modified_at: 2025-10-03 18:00:00
+modified_at: 2025-12-23 18:00:00
 tags: databases backup policy policies explanation
 index: 30
 ---
-
-
-{% warning %}
-The backup features described in this page are only available for Starter and
-Business plans.\\
-They are **not** available for Sandbox plans.
-{% endwarning %}
 
 Scalingo provides at least two different backup mechanisms for every database
 addons in Starter or Business plans:
@@ -83,7 +76,6 @@ We retain a limited number of backups based on your database plan:
 
 | Plan     | Daily Backups  | Weekly Backups  | Monthly Backups   |
 | -------- | -------------- | --------------- | ----------------- |
-| Sandbox  | None           | None            | None              |
 | Starter  | 7 rolling days | 4 rolling weeks | None              |
 | Business | 7 rolling days | 8 rolling weeks | 12 rolling months |
 
@@ -108,7 +100,6 @@ this limit, the oldest backup is automatically deleted.
 
 | Plan     | Backups Retained        |
 | -------- | ----------------------- |
-| Sandbox  | None                    |
 | Starter  | Last 10 rolling backups |
 | Business | Last 50 rolling backups |
 
@@ -118,7 +109,6 @@ duration depends on the plan:
 
 | Plan     | Retention Duration |
 | -------- | ------------------ |
-| Sandbox  | None               |
 | Starter  | 1 month            |
 | Business | 1 year             |
 
