@@ -39,7 +39,7 @@ Replace `[dist]` with the codename of the [stack]({% post_url platform/internals
 * `jammy` for `scalingo-22`
 * `focal` for `scalingo-20`
 
-## Step 4: Set TAILSCALE_AUTHKEY Environment Variable
+## Step 3: Set TAILSCALE_AUTHKEY Environment Variable
 
 You need to provide your Tailscale Auth Key to your application via an [environment variable]({% post_url platform/app/2000-01-01-environment %}).
 
