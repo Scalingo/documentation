@@ -30,7 +30,6 @@ For each of the eligible database engines listed below, you can provision **1 da
 
 You would like to test another engine or another plan? Contact us on the chat.
 
-In addition, you can add as many other addons as you want, as long as they have free plans available.
 
 ### How to break out of the free trial?
 
