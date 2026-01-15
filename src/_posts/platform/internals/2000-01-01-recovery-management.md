@@ -30,7 +30,7 @@ If a database hosting server is detected as unavailable, our team is instantly a
 * If the database is using a **business** plan, a failover will automatically
   happen in the minute the incident is detected. Keeping your database
   available in such an event
-* For **sandbox** and **starter** plans, a longer downtime can be expected
+* For **starter** plans, a longer downtime can be expected
   since the database instance will be kept unavailable until the completely
   recovery or redeployment of the impacted server.
 

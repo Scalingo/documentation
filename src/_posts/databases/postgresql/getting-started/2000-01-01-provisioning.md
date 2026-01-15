@@ -39,7 +39,6 @@ our [CLI tool](#using-the-command-line) or via our
    +----------------------------+---------------+
    |             ID             |     NAME      |
    +----------------------------+---------------+
-   | postgresql-sandbox         | Sandbox       |
    | postgresql-starter-512     | Starter 512M  |
    | postgresql-starter-1024    | Starter 1G    |
    ...

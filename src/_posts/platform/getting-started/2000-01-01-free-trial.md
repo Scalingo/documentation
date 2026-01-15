@@ -27,11 +27,9 @@ For each of the eligible database engines listed below, you can provision **1 da
 - [Scalingo for PostgreSQL®][postgresql-link]
 - [Scalingo for MySQL®][mysql-link]
 - [Scalingo for Caching (Redis®)][redis-link]
-- [Scalingo for MongoDB®][mongodb-link]
-- [Scalingo for Elasticsearch®][elasticsearch-link]
-- [Scalingo for InfluxDB®][influxdb-link]
 
-In addition, you can add as many other addons as you want, as long as they have free plans available.
+You would like to test another engine or another plan? Contact us on the chat.
+
 
 ### How to break out of the free trial?
 
@@ -73,6 +71,3 @@ After a period of thirty (30) days, if no order is made by the client owning the
 [postgresql-link]: {% post_url databases/postgresql/about/2000-01-01-overview %}
 [mysql-link]: {% post_url databases/mysql/about/2000-01-01-overview %}
 [redis-link]: {% post_url databases/redis/2000-01-01-start %}
-[mongodb-link]: {% post_url databases/mongodb/2000-01-01-start %}
-[elasticsearch-link]: {% post_url databases/elasticsearch/2000-01-01-start %}
-[influxdb-link]: {% post_url databases/influxdb/2000-01-01-start %}

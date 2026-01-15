@@ -1,7 +1,7 @@
 ---
 title: Changing Plan
 nav: Changing Plan
-modified_at: 2025-09-24 12:00:00
+modified_at: 2025-12-23 12:00:00
 tags: databases mysql addon
 index: 3
 ---
@@ -10,7 +10,7 @@ At Scalingo, all databases addons plans are identified using a name made of two
 or three parts separated by a dash (-). This name is made of:
 
 1. a database ***type*** : `mysql`
-2. a ***class*** : either `sandbox`, `starter` or `business` (learn more about
+2. a ***class*** : either `starter` or `business` (learn more about
    [classes][databases-plans])
 3. a ***size*** : specifying the amount of RAM available with the plan, in MB
    (only for starter and business classes).
@@ -103,7 +103,6 @@ plan.
    +-----------------------+---------------+
    |          ID           |     NAME      |
    +-----------------------+---------------+
-   | mysql-sandbox         | Sandbox       |
    | mysql-starter-512     | Starter 512M  |
    | mysql-starter-1024    | Starter 1G    |
    ...
