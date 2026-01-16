@@ -1,6 +1,6 @@
 ---
 title: How to migrate from Heroku
-modified_at: 2025-09-29 12:00:00
+modified_at: 2026-01-02 12:00:00
 tags: heroku tutorial
 index: 11
 ---
@@ -77,8 +77,8 @@ $ git push scalingo master
 
 ### Where to Go Next?
 
-- If your app is using a custom domain, follow the [instructions]({% post_url platform/app/2000-01-01-domain %}) to update your DNS configuration.
-- Managing your [SSL certificate]({% post_url platform/app/2000-01-01-ssl %}).  
+- If your app is using a custom domain, follow the [instructions]({% post_url platform/networking/public/domains/2000-01-01-custom %}) to update your DNS configuration.
+- Managing your [SSL certificate]({% post_url platform/networking/public/cert/2000-01-01-overview %}).
 
 ### Need Some Help? 
 

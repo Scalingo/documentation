@@ -1,7 +1,7 @@
 ---
 title: "Sticky Sessions - Session Affinity"
 nav: "Sticky Sessions"
-modified_at: 2018-03-21 00:00:00
+modified_at: 2026-01-02 12:00:00
 tags: app routing
 index: 23
 ---
@@ -19,14 +19,13 @@ or database-stored sessions for instance)
 
 ## Description
 
-By default the routing of requests is done using the *Round Robin* algorithm, learn more about it in
-our [dedicated page]({% post_url platform/internals/2000-01-01-routing %}). As an example: if you
-have 2 web containers, and a single user is making 2 requests to your application, each container
-will receive one request.
+By default [requests are routed][requests-routing] using a round-robin
+algorithm. This means that, if you have multiple containers the traffic is distributed evenly.
+For example, if you have 2 `web` containers. When a single user makes two requests to your application, each container receives one request.
 
-Once **Sticky Sessions** have been enabled, each end-user will be associated to
-a container and consecutive requests from this entity will all target the same
-`web` containers. *Round Robin* is still used but per end-user and not per
+Once **Sticky Sessions** are enabled, each end-user is associated to
+a container and consecutive requests from this entity all target the same
+`web` container. Round-robin is still used but per end-user and not per
 request.
 
 ## Technical details
@@ -76,3 +75,6 @@ For [Meteor]({% post_url languages/meteorjs/2000-01-01-start %}) applications,
 **Sticky Sessions** are enabled by default because it is
 [required](http://www.meteorpedia.com/read/Scaling_your_Meteor_App) to scale
 properly.
+
+
+[requests-routing]: {% post_url platform/networking/public/2000-01-01-routing %}#requests-distribution
