@@ -108,8 +108,8 @@ following content:
 ```yaml
 default: &defaults
   revision: <%= ENV.fetch("CONTAINER_VERSION") { nil } %>
-  production:
-<<: *defaults
+production:
+  <<: *defaults
 ```
 
 This solution works for the AppSignal Ruby gem version `>= 2.6.1`.
