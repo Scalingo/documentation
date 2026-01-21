@@ -59,7 +59,7 @@ on the chosen port.
 
 ## Making an Application Public
 
-To make an application public, so that traffic can be routed to it, three
+To make an application public, so that traffic from the internet can be routed to it, three
 conditions **must** be met:
 
 1. The process type must be named either `web` or `tcp` (when using our TCP
