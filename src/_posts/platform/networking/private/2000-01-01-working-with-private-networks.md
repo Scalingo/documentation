@@ -2,7 +2,7 @@
 index: 20
 nav: Working With Private Networks
 title: Working With Private Networks
-modified_at: 2026-01-09 12:00:00
+modified_at: 2026-01-21 12:00:00
 ---
 
 
@@ -62,8 +62,8 @@ on the chosen port.
 To make an application public, so that traffic from the internet can be routed to it, three
 conditions **must** be met:
 
-1. The process type must be named either `web` or `tcp` (when using our TCP
-   addon).
+1. The process type must be named either `web` or `tcp` (when using our [TCP
+   addon][tcp-addon]).
 2. The process type must listen on `0.0.0.0`.
 3. The process type must listen on the given port number, available through the
    `$PORT` environment variable.
@@ -157,3 +157,5 @@ Network.
 [private domain name]: {% post_url platform/networking/private/2000-01-01-concepts %}#private-domain-names
 [environment]: {% post_url platform/app/2000-01-01-environment %}
 [scaling-h]: {% post_url platform/app/scaling/2000-01-01-scaling %}#scaling-horizontally
+[tcp-addon]: {% post_url addons/tcp-gateway/2000-01-01-start %}
+
