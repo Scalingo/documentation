@@ -771,8 +771,8 @@
   - old: "/platform/app/force-https"
     new: "/platform/networking/public/cert/force-https"
 
-  - old: "platform/app/private-networks"
-    new: "platform/networking/private/overview"
+  - old: "/platform/app/private-networks"
+    new: "/platform/networking/private/overview"
 
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
