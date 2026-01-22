@@ -12,20 +12,25 @@ most common error messages.
 
 ## devDependencies Also Contain Some Dependencies Required at Startup or Runtime {#dep}
 
-The `devDependencies` section of the package.json file contains dependencies required
-during startup of the app, or during runtime. By default, Scalingo deployments prune the
-dependencies from the `devDependencies` section of the package.json file. It may
-lead to error messages such as `ng: not found` or `nest: not found`. In such
-situation, you have a couple of solutions:
+In case the app fails to start, or crash at runtime, due to some dependencies or
+libraries to be missing, it may be because some of the dependencies required
+during startup or at runtime are declared as `devDependencies`.
 
-- Use yarn v2+ and skip pruning dependencies ([doc]({% post_url
-    languages/nodejs/2000-01-01-start %}#devdependencies-installation)).
+In such case, you may face error messages such as `ng: not found` or `nest: not found`.
+
+By default, Scalingo deployments prune the dependencies from the `devDependencies`
+section of the package.json file. In such situation, you have a couple of solutions:
+
+- Move the `devDependencies` needed for runtime into the `dependencies`
+  section of the package.json file: if the dependencies are required during startup
+  or at runtime, they are actual dependencies, not development dependencies
+
+- Use yarn v2+ and skip pruning dependencies
+  ([doc]({% post_url languages/nodejs/2000-01-01-start %}#devdependencies-installation)).
 
   ```bash
   $ scalingo --app my-app env-set YARN2_SKIP_PRUNING=true
   ```
-- Move the `devDependencies` needed for runtime into the `dependencies`
-    section of the package.json file.
 
 ## Boot Timeout {#timeout}
 
