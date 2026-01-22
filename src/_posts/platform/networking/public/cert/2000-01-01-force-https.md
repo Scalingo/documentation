@@ -33,7 +33,7 @@ The platform uses two distinct mechanism to do so:
 
 2. It injects a `Strict-Transport-Security` header (HSTS) with a value of
    `max-age=31536000` to HTTPS responses. This header instructs the client to
-   interact with the application using only HTTPS connections.
+   interact with the application using only HTTPS connections. The browser must remember this information for 1 year (31536000 seconds).
 
 You can also update your application's code so that it returns the HSTS header.
 In such a case, the platform will not override the header value set by the
