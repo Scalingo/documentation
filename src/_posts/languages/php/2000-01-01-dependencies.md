@@ -1,7 +1,7 @@
 ---
 title: Managing Dependencies
 nav: Managing Dependencies
-modified_at: 2025-12-31 12:00:00
+modified_at: 2026-01-22 12:00:00
 tags: php
 index: 3
 ---
@@ -97,7 +97,7 @@ Scalingo currently supports the following versions of Composer:
 
 | Composer    | `scalingo-20` (EOL) | `scalingo-22`  | `scalingo-24`  |
 | ----------: | ------------------: | -------------: | -------------: |
-| `2.9`       | unsupported         | up to `2.9.3`  | up to `2.9.3`  |
+| `2.9`       | unsupported         | up to `2.9.4`  | up to `2.9.4`  |
 | `2.2` (LTS) | up to `2.2.25`      | up to `2.2.26` | up to `2.2.26` |
 
 
