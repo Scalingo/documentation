@@ -750,8 +750,29 @@
   - old: "/platform/getting-started/getting-started-with-elk"
     new: "/platform/getting-started/getting-started-with-elk/overview"
 
-  - old: "/languages/nodejs/2000-01-01-angularjs"
-    new: "/languages/nodejs/2000-01-01-angular"
+  - old: "/languages/nodejs/angularjs"
+    new: "/languages/nodejs/angular"
+
+  - old: "/platform/internals/routing"
+    new: "/platform/networking/public/routing"
+
+  - old: "/platform/internals/router-error-codes"
+    new: "/platform/networking/public/routing"
+
+  - old: "/platform/internals/network"
+    new: "/platform/networking/public/routing"
+
+  - old: "/platform/app/domain"
+    new: "/platform/networking/public/domains/overview"
+
+  - old: "/platform/app/ssl"
+    new: "/platform/networking/public/cert/overview"
+
+  - old: "/platform/app/force-https"
+    new: "/platform/networking/public/cert/force-https"
+
+  - old: "platform/app/private-networks"
+    new: "platform/networking/private/overview"
 
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"

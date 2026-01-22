@@ -1,6 +1,6 @@
 ---
 title: Environment Variables
-modified_at: 2025-10-21 00:00:00
+modified_at: 2026-01-02 12:00:00
 tags: app configuration environment
 index: 3
 ---
@@ -122,8 +122,8 @@ additional variable `$PORT` is defined.
 * `HOSTNAME`: The container application hostname based on the application name and the container type (e.g. `my-app-web-1`)
 * `STACK`: Name of the stack the application deployed is using
 * `REGION_NAME`: Name of the region where the application is deployed
-* `SCALINGO_PRIVATE_NETWORK_ID`: ID of the [private network]({% post_url platform/app/2000-01-01-private-networks %}) where the application is located (e.g. `pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c`). This variable is not available if the application is not deployed in a private network.
-* `SCALINGO_PRIVATE_HOSTNAME`: private hostname of the container inside the [private network]({% post_url platform/app/2000-01-01-private-networks %}) where the application is located (e.g. <code>1.<span class="domain-name-ct">web</span>.<span class="domain-name-ap">ap-a71da13f-7c70-4c00-a644-eee8558d8053</span>.<span class="domain-name-pn">pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c</span>.<span class="domain-name-nid">private-network.internal.</span></code>). This variable is not available if the application is not deployed in a private network.
+* `SCALINGO_PRIVATE_NETWORK_ID`: ID of the [private network] where the application is located (e.g. `pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c`). This variable is not available if the application is not deployed in a private network.
+* `SCALINGO_PRIVATE_HOSTNAME`: private hostname of the container inside the [private network] where the application is located (e.g. {% pndn 1.web.ap-a71da13f-7c70-4c00-a644-eee8558d8053.pn-ad0fd6a1-d05e-40ea-bf63-c4f8a75a9d8c.private-network.internal. %}). This variable is not available if the application is not deployed in a private network.
 
 ## One-Off Environment Variables
 
@@ -140,3 +140,6 @@ If you need to define a list of values for an environment variable, there is no 
 Write the value of the environment variable using CSV style notation: `MY_VAR="value1;value2;value3"`.
 
 Then you'll need to get the value of the environment variable in your application code and parse it manually.
+
+
+[private network]: {% post_url platform/networking/private/2000-01-01-overview %}
