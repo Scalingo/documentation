@@ -25,8 +25,7 @@ section of the `package.json` file. In such situation, you have a couple of solu
   section of the package.json file: if the dependencies are required during startup
   or at runtime, they are actual dependencies, not development dependencies.
 
-- Use yarn v2+ and skip pruning dependencies
-  ([doc]({% post_url languages/nodejs/2000-01-01-start %}#devdependencies-installation)).
+- Use Yarn 2+ and [skip pruning dependencies]({% post_url languages/nodejs/2000-01-01-start %}#devdependencies-installation)).
 
   ```bash
   $ scalingo --app my-app env-set YARN2_SKIP_PRUNING=true
