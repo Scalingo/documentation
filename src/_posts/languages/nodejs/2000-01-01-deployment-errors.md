@@ -12,8 +12,8 @@ most common error messages.
 
 ## devDependencies Also Contain Some Dependencies Required at Startup or Runtime {#dep}
 
-In case the app fails to start, or crash at runtime, due to some dependencies or
-libraries to be missing, it may be because some of the dependencies required
+In case the app fails to start, or crashes at runtime, due to some missing dependencies or
+libraries, it may be because some of the dependencies required
 during startup or at runtime are declared as `devDependencies`.
 
 In such case, you may face error messages such as `ng: not found` or `nest: not found`.
