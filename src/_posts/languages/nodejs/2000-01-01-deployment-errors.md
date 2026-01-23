@@ -19,7 +19,7 @@ during startup or at runtime are declared as `devDependencies`.
 In such case, you may face error messages such as `ng: not found` or `nest: not found`.
 
 By default, Scalingo deployments prune the dependencies from the `devDependencies`
-section of the package.json file. In such situation, you have a couple of solutions:
+section of the `package.json` file. In such situation, you have a couple of solutions:
 
 - Move the `devDependencies` needed for runtime into the `dependencies`
   section of the package.json file: if the dependencies are required during startup
