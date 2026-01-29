@@ -8,7 +8,7 @@ index: 40
 
 Upgrading a Scalingo for MySQL® database from MySQL® 8.0.x LTS to MySQL® 8.4.x LTS may be refused if your schema uses features that are no longer supported in MySQL® 8.4.
 
-This page lists the only upgrade blockers that are actionable from the client side. Make sure your database is compatible before proceeding with the upgrade.
+This page lists the only upgrade blockers you can address from your side on Scalingo. If you need a broader overview of changes between MySQL 8.0 and 8.4, refer to [Oracle’s upgrade notes](https://docs.oracle.com/en/database/mysql/heatwave-aws/hw-aws-upgrading-mysql-8.0-8.4.html).
 
 ## Checking AUTO_INCREMENT on FLOAT or DOUBLE
 
