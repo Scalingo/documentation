@@ -167,7 +167,7 @@ through the database dashboard.
 [app-manifest]: {% post_url platform/app/2000-01-01-app-manifest %}
 [deployment-hooks]: {% post_url platform/app/2000-01-01-app-manifest %}#deployment-hooks
 [maintenance-mode]: {% post_url platform/app/2000-01-01-custom-error-page %}#custom-maintenance-page
-[mysql84-prerequisites]: {% databases/mysql/guides/2000-01-01-mysql-84-prerequisites %}
+[mysql84-prerequisites]: {% post_url databases/mysql/guides/2000-01-01-mysql-84-prerequisites %}
 
 [database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard
 [backing-up-creating-manual]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}#creating-a-manual-backup
