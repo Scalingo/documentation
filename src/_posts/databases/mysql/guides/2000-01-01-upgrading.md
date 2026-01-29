@@ -10,12 +10,16 @@ In Scalingo's terminology, ***upgrading*** a Scalingo for MySQL® addon
 designates the operation consisting in changing the database version for a
 newer one.
 
-**Currently**, Scalingo only supports the `8.0.x` branch of MySQL® Community
-Edition, meaning the only upgrades available are ***patch-upgrades***.
+*Currently**, Scalingo supports the `8.0` and `8.4` LTS branches of MySQL® Community
+Edition.
 
 As explained in [the official documentation][mysql-lts], and starting with
 MySQL® `8.0.34`, the patch-upgrades only contain bug and security fixes.
-Consequently, it should be rather safe to upgrade to a new `8.0.x` version.
+Consequently, it should be rather safe to upgrade to a new minor version.
+
+{% note %}
+Running MySQL® 8.0.x LTS and upgrading to 8.4.x LTS? [Review our upgrade guide first][mysql84-prerequisites].
+{% endnote %}
 
 While we usually advise to stick to the latest patch-upgrade available to
 benefit from bug and security fixes, we also strongly advise to take extra-care
@@ -91,7 +95,7 @@ downtime**.
        using a [`first-deploy` script][deployment-hooks].
 
      Here is an example of a manifest file asking the platform to provision a
-     MySQL® `8.0.38` addon and to run the `db-seed.sh` script after the
+     MySQL® `8.4.8` addon and to run the `db-seed.sh` script after the
      first deployment (the script must be included in your codebase):
      ```json
      {
@@ -99,7 +103,7 @@ downtime**.
          {
            "plan": "mysql:mysql-starter-512",
            "options": {
-             "version": "8.0.38"
+             "version": "8.4.8"
            }
          }
        ],
@@ -163,7 +167,7 @@ through the database dashboard.
 [app-manifest]: {% post_url platform/app/2000-01-01-app-manifest %}
 [deployment-hooks]: {% post_url platform/app/2000-01-01-app-manifest %}#deployment-hooks
 [maintenance-mode]: {% post_url platform/app/2000-01-01-custom-error-page %}#custom-maintenance-page
-
+[mysql84-prerequisites]: {% databases/mysql/guides/2000-01-01-mysql-84-prerequisites %}
 
 [database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard
 [backing-up-creating-manual]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}#creating-a-manual-backup
