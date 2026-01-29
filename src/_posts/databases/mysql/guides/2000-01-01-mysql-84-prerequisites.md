@@ -60,6 +60,6 @@ SHOW CREATE TABLE `foo`;
 If you find a partitioning key using a prefix length, you need to update the table definition to remove this pattern.
 
 
-If you fixed all the issues listed above, or if none were detected, you can now safely perform the upgrade from the Scalingo dashboard.
+If you fixed all the issues listed above, or if none were detected, you can now safely [perform the upgrade from the Scalingo dashboard][mysql-upgrade].
 
 [mysql-upgrade]: {% post_url databases/mysql/guides/2000-01-01-upgrading %}#upgrading
