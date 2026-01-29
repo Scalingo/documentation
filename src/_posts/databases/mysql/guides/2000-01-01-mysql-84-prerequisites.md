@@ -18,16 +18,17 @@ You can list the impacted columns with the following SQL statement:
 
 ```sql
 SELECT
-  table_schema,
-  table_name,
-  column_name,
-  data_type,
-  column_type,
-  extra
+    table_schema,
+    table_name,
+    column_name,
+    data_type,
+    column_type,
+    extra
 FROM information_schema.columns
-WHERE table_schema IN ('my-app-3030')
-  AND extra LIKE '%auto_increment%'
-  AND data_type IN ('float', 'double');
+WHERE
+    table_schema IN ('my-app-3030')
+    AND extra LIKE '%auto_increment%'
+    AND data_type IN ('float', 'double');
 ```
 
 If the query returns rows, you must remove AUTO_INCREMENT from these columns and use a supported identifier pattern, for example an integer primary key.
@@ -40,12 +41,13 @@ You first need to list partitioned tables:
 
 ```sql
 SELECT DISTINCT
-  table_schema,
-  table_name,
-  partition_method
+    table_schema,
+    table_name,
+    partition_method
 FROM information_schema.partitions
-WHERE table_schema IN ('my-app-3030')
-  AND partition_name IS NOT NULL
+WHERE
+    table_schema IN ('my-app-3030')
+    AND partition_name IS NOT NULL
 ORDER BY table_name;
 ```
 
