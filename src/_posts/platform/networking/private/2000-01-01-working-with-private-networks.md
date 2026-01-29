@@ -42,8 +42,9 @@ These two rules can be translated into the following guidelines:
 - Create the process type by editing your [`Procfile`][procfile]. Specify a
   meaningful process type name and the corresponding command.
 
-- Configure the listening interface and port. This step highly depends on the
-  software or library the application is using:
+- Configure the listening interface and port. Any TCP/UDP port can be used on
+  the Private Network, including ports below `1024`. This step highly depends
+  on the software or library the application is using:
   - For applications using command line flags, specify them in the `Procfile`.
   - For applications using environment variables, add them with the appropriate
     values in your [environment].
@@ -55,6 +56,9 @@ These two rules can be translated into the following guidelines:
 
 Once started, the application is available through its [private domain name],
 on the chosen port.
+The platform does not expose or advertise that port, so clients inside the
+Private Network must know it beforehand (for example via configuration or a
+shared registry).
 
 
 ## Making an Application Public
@@ -158,4 +162,3 @@ Network.
 [environment]: {% post_url platform/app/2000-01-01-environment %}
 [scaling-h]: {% post_url platform/app/scaling/2000-01-01-scaling %}#scaling-horizontally
 [tcp-addon]: {% post_url addons/tcp-gateway/2000-01-01-start %}
-
