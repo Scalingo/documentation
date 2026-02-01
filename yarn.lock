@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-3.9.0.tgz#3bc29c96bf024350d73b0cfb7c2a7b71bf251cd5"
   integrity sha512-cQbnVbq0rrBwNAKegIac/t6a8nWoUAn8frnkLFW6YARaRmAQr5/Eoe6Ln2fqkUCZ40KpdrKbpSAmgrkviOxuWA==
 
-"@docsearch/js@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@docsearch/js/-/js-4.2.0.tgz#66f08161102effaf60c0197be9bb74b81fbfb176"
-  integrity sha512-KBHVPO29QiGUFJYeAqxW0oXtGf/aghNmRrIRPT4/28JAefqoCkNn/ZM/jeQ7fHjl0KNM6C+KlLVYjwyz6lNZnA==
+"@docsearch/js@^4.5.3":
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/@docsearch/js/-/js-4.5.3.tgz#fcb1e6e97c5101e3b6ef88c07f54e8800966078d"
+  integrity sha512-rcBiUMCXbZLqrLIT6F6FDcrG/tyvM2WM0zum6NPbIiQNDQxbSgmNc+/bToS0rxBsXaxiU64esiWoS02WqrWLsg==
 
 "@emnapi/core@^1.7.1":
   version "1.7.1"
