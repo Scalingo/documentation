@@ -111,7 +111,7 @@ GEM
     pry-rails (0.3.11)
       pry (>= 0.13.0)
     psych (3.3.4)
-    public_suffix (7.0.0)
+    public_suffix (7.0.2)
     puma (7.1.0)
       nio4r (~> 2.0)
     racc (1.8.1)
