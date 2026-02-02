@@ -1,7 +1,7 @@
 ---
-title: Prerequisites Before Upgrading to MySQL® 8
-nav: Upgrading to MySQL 8
-modified_at: 2025-09-24 12:00:00
+title: Prerequisites Before Upgrading to MySQL® 8.0 LTS
+nav: Upgrading to MySQL 8.0
+modified_at: 2026-01-29 12:00:00
 tags: databases mysql addon migration
 index: 40
 ---
