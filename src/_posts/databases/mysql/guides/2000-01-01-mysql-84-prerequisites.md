@@ -17,18 +17,10 @@ MySQL® 8.4 no longer supports AUTO_INCREMENT on FLOAT and DOUBLE columns. If yo
 You can list the impacted columns with the following SQL statement:
 
 ```sql
-SELECT
-    table_schema,
-    table_name,
-    column_name,
-    data_type,
-    column_type,
-    extra
-FROM information_schema.columns
-WHERE
-    table_schema IN ('my-app-3030')
-    AND extra LIKE '%auto_increment%'
-    AND data_type IN ('float', 'double');
+SELECT table_schema, table_name, column_name
+		 FROM information_schema.columns
+		 WHERE extra LIKE '%%auto_increment%%'
+		   AND data_type IN ('float', 'double')
 ```
 
 If the query returns rows, you must remove AUTO_INCREMENT from these columns and use a supported identifier pattern, for example an integer primary key.
@@ -41,14 +33,23 @@ You first need to list partitioned tables:
 
 ```sql
 SELECT DISTINCT
-    table_schema,
-    table_name,
-    partition_method
-FROM information_schema.partitions
+    p.TABLE_SCHEMA,
+    p.TABLE_NAME,
+    s.COLUMN_NAME,
+    s.SUB_PART
+FROM information_schema.PARTITIONS p
+JOIN information_schema.STATISTICS s
+    ON s.TABLE_SCHEMA = p.TABLE_SCHEMA
+   AND s.TABLE_NAME = p.TABLE_NAME
 WHERE
-    table_schema IN ('my-app-3030')
-    AND partition_name IS NOT NULL
-ORDER BY table_name;
+    p.PARTITION_NAME IS NOT NULL
+    AND p.PARTITION_METHOD IN ('KEY', 'LINEAR KEY')
+    AND s.NON_UNIQUE = 0
+    AND s.SUB_PART IS NOT NULL
+    AND (
+        INSTR(p.PARTITION_EXPRESSION, CONCAT('`', s.COLUMN_NAME, '`')) > 0
+        OR p.PARTITION_EXPRESSION IS NULL
+    ); 
 ```
 
 If the query returns rows, your database contains partitioned tables. You must review their partitioning definitions and ensure no partitioning key uses a prefix length before you can upgrade to MySQL® 8.4.
