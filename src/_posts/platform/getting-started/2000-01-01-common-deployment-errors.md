@@ -1,6 +1,6 @@
 ---
 title: Common Deployment Errors
-modified_at: 2024-02-12 12:00:00
+modified_at: 2025-12-30 12:00:00
 index: 7
 ---
 
@@ -27,39 +27,15 @@ When pushing your app to Scalingo, you might get the following error:
 
 There are two main solutions to this problem.
 
-### Project in a Subdirectory
+### Project in a Subdirectory (Monorepo)
 
-It may happen that your project is in a subfolder of your Git repository. It's
-completely OK but remind that Scalingo's deployment system looks at the root of
-the Git repository by default.
+Your project might be located in a subdirectory of your Git repository, which is common in monorepo setups. This is 
+supported, but note that Scalingo's deployment system looks at the repository root by default.
 
-You need to setup the `PROJECT_DIR` environment variable for your application,
-and our build system will automatically look at it. The variable has to target
-a valid directory, otherwise the deployment process will fail.
+You need to setup the `PROJECT_DIR` environment variable for your application. See our dedicated page on 
+[environment variables]({% post_url platform/app/2000-01-01-environment %}).
 
-**Example**
-
-If your project has the following architecture:
-
-```text
-/server
-/server/server.go
-/server/public/img/logo.png
-/server/public/css/style.css
-/server/public/js/app.js
-/doc
-/doc/api.md
-```
-
-You want to deploy what is in the `/server` directory, so you have to define
-`PROJECT_DIR=server`. That's it! It will be taken into account at your next
-deployment.
-
-{% warning %}
-Only the `PROJECT_DIR` directory will be present during runtime. The parent
-directory is not added to the application image we are building at the
-deployment phase.
-{% endwarning %}
+You can find more information about monorepo deployment in our [dedicated guide]({% post_url platform/app/2000-01-01-monorepo %}).
 
 ### Technology Detection
 

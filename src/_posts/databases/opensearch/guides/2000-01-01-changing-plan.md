@@ -15,10 +15,6 @@ or three parts, each separated by a dash (-). This name is made of:
 3. a ***size*** : specifying the amount of RAM available with the plan, in MB
    (only for starter and business classes).
 
-{% note %}
-There is no `sandbox` class for the Scalingo for OpenSearch® addon.
-{% endnote %}
-
 You can change your Scalingo for OpenSearch® addon plan whenever you want. The
 operation is launched instantly, no manual input is required.
 

@@ -1,6 +1,6 @@
 ---
 title: Scalingo JSON Manifest
-modified_at: 2024-12-13 00:00:00
+modified_at: 2025-12-30 00:00:00
 tags: app review apps one-click manifest
 ---
 
@@ -9,8 +9,6 @@ root of your repository to configure [review apps]({% post_url
 platform/app/2000-01-01-review-apps %}) and [one-click deploy button]({%
 post_url platform/deployment/2000-01-01-one-click-deploy %}). Its intent is to
 configure how an application should be created.
-
-If your application code is in a subdirectory configured through the [`PROJECT_DIR`]({% post_url platform/getting-started/2000-01-01-common-deployment-errors %}#project-in-a-subdirectory) environment variable, Scalingo detects the JSON manifest under this subdirectory. If there is no JSON manifest in the `PROJECT_DIR` folder, Scalingo tries to get the `scalingo.json` in every folder up to the root of your repository.
 
 ## Configuration of the Environment
 
@@ -47,6 +45,16 @@ can still customize them before triggering the deployment.
 }
 ```
 
+### Monorepos
+
+If your application code is in a subdirectory (configured using the `PROJECT_DIR` environment variable), Scalingo 
+detects the JSON manifest under this subdirectory.
+
+If there is no JSON manifest in the `PROJECT_DIR` folder, Scalingo 
+tries to get the `scalingo.json` in every folder up to the root of your repository.
+
+See our dedicated page on [monorepos]({% post_url platform/app/2000-01-01-monorepo %}) for more information about this type of setup.
+
 ## Configuration of Addons
 
 Addons can also be declared in the JSON manifest and they'll be provisioned before deploying
@@ -75,7 +83,7 @@ The `options` attribute is optional, currently only the `version` parameter is a
         "version": "11"
       }
     }, {
-      "plan": "redis:redis-starter-128",
+      "plan": "redis:redis-starter-128"
     }
   ]
 }

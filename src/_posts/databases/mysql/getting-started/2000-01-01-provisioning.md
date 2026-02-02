@@ -1,7 +1,7 @@
 ---
 title: Provisioning a Scalingo for MySQL® Addon
 nav: Provisioning
-modified_at: 2025-09-24 12:00:00
+modified_at: 2025-12-23 12:00:00
 tags: databases mysql addon
 index: 1
 ---
@@ -35,7 +35,6 @@ our [CLI tool](#using-the-command-line) or via our
    +-----------------------+---------------+
    |          ID           |     NAME      |
    +-----------------------+---------------+
-   | mysql-sandbox         | Sandbox       |
    | mysql-starter-512     | Starter 512M  |
    | mysql-starter-1024    | Starter 1G    |
    ...

@@ -1,4 +1,4 @@
-If your database is in a paid plan (i.e. it's not "free plan"), we'll automatically make periodic backups of your database on a daily basis, at around 1:00 AM Central European Time (CET or UTC+0100). The time of your daily backup is configurable via the web dashboard of your database or using the CLI. The scheduled date is not strongly enforced: it might get delayed depending on the load on our infrastructure.
+We automatically make periodic backups of your database on a daily basis, at around 1:00 AM Central European Time (CET or UTC+0100). The time of your daily backup is configurable via the web dashboard of your database or using the CLI. The scheduled date is not strongly enforced: it might get delayed depending on the load on our infrastructure.
 
 #### Using the Database Dashboard
 
@@ -37,7 +37,6 @@ We keep a limited amount of backups depending on your database plan. A daily bac
 <div class="overflow-horizontal-content" markdown="1">
 | Plan         | Weekly Backups Retained | Monthly Backup Retained |
 | -------------| ----------------------- | ----------------------- |
-| Sandbox/Free | N/A                     | N/A                     |
 | Starter      | 4 weeks                 | 0 months                |
 | Business     | 8 weeks                 | 12 months               |
  {: .table }
@@ -51,7 +50,6 @@ The number of manual backups that you can retain is limited by your plan:
 <div class="overflow-horizontal-content" markdown="1">
 | Plan         | Backups Retained |
 | -------------| ---------------- |
-| Sandbox/Free | N/A              |
 | Starter      | 10               |
 | Business     | 50               |
  {: .table }
