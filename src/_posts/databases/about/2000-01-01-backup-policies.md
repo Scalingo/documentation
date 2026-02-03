@@ -24,9 +24,7 @@ architecture model:
 | Scalingo for Elasticsearch® | Shared Resources    | Managed              | Not available      |
 | Scalingo for InfluxDB®      | Shared Resources    | Managed              | Not available      |
 
-[^1]: On Dedicated Resources, logical backups are possible, but they are 
-customer-managed and rely on an external tool for both execution and retention 
-policy.
+[^1]: On Dedicated Resources, logical backups are possible, but they are customer-managed and rely on an external tool for both execution and retention policy.
 
 ## Logical Backups
 
