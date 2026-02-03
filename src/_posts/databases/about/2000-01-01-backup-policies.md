@@ -37,9 +37,9 @@ Scalingo provides two logical backup mechanisms for supported database engines:
 
 ### Scheduled Backups
 
-Scalingo provides a scheduled backup service for all our databases addons in
-Starter and Business plans. Scheduled backups are done on a daily basis. They consist in dumping the database to an archive that is kept
-during a [certain amount of time](#retention-policy-for-scheduled-backups).
+When scheduled backups are enabled (enabled by default), they run daily. Each 
+backup dumps the database to an archive, which is retained according to their 
+[retention policy](#retention-policy-for-scheduled-backups).
 
 The start time can be customized using the dashboard or our Command Line tool,
 enabling you to align backups with your workload and core business operations.
@@ -55,19 +55,19 @@ We retain a limited number of backups based on your database plan:
 - **Monthly backups**: the daily backup from the first Sunday of the month is
   retained as the monthly backup.
 
-| Plan     | Daily Backups  | Weekly Backups  | Monthly Backups   |
-| -------- | -------------- | --------------- | ----------------- |
-| Starter  | 7 rolling days | 4 rolling weeks | None              |
-| Business | 7 rolling days | 8 rolling weeks | 12 rolling months |
+| Service Class | Architecture Model | Daily Retention | Weekly Retention | Monthly Retention |
+|---------------|--------------------|-----------------|------------------|-------------------|
+| Starter       | Shared Resources   | Last 7 days     | Last 4 weeks     | —                 |
+| Business      | Shared Resources   | Last 7 days     | Last 8 weeks     | Last 12 months    |
 
 Deleting a database doesn't immediately remove its scheduled backups. They
 expire gradually according to their retention policy.
 
 ### Manual Backups
 
-Scalingo provides a manual backup service for databases in the Starter and
-Business plans. Manual backups consist in dumping the database to an archive
-that is kept during a [certain amount of time](#retention-policy-for-manual-backups).
+Scalingo provides a manual backup service for supported database engines.
+Manual backups consist in dumping the database to an archive which is retained 
+according to their [retention policy](#retention-policy-for-manual-backups).
 This feature allows you to create a backup on demand, such as before an upgrade
 or any important operation on your data.
 
@@ -78,19 +78,19 @@ Manual backups are kept for an unlimited amount of time, as long as the number
 of backups doesn't exceed the plan's limit. If creating a new backup exceeds
 this limit, the oldest backup is automatically deleted.
 
-| Plan     | Backups Retained        |
-| -------- | ----------------------- |
-| Starter  | Last 10 rolling backups |
-| Business | Last 50 rolling backups |
+| Service Class | Backups Retained        |
+|---------------|-------------------------|
+| Starter       | Last 10 rolling backups |
+| Business      | Last 50 rolling backups |
 
 When a database is deleted, a retention policy is retroactively applied to
 all existing manual backups, based on their creation date. The retention
 duration depends on the plan:
 
-| Plan     | Retention Duration |
-| -------- | ------------------ |
-| Starter  | 1 month            |
-| Business | 1 year             |
+| Service Class | Retention Period |
+|---------------|------------------|
+| Starter       | 1 month          |
+| Business      | 1 year           |
 
 If manual backups have already exceeded their retention period, they are
 deleted immediately.
@@ -126,7 +126,7 @@ in its recovery process.
 The recovery window ranges from 7 to 30 days, depending on the service class and
 architecture model.
 
-| Architecture model   | Starter | Business | Enterprise |
+| Architecture Model   | Starter | Business | Enterprise |
 |----------------------|---------|----------|------------|
 | Shared Resources     | 7 days  | 7 days   | —          |
 | Dedicated Resources  | 7 days  | 14 days  | 30 days    |
@@ -154,8 +154,8 @@ To learn more about events and notifications, please visit the page dedicated to
   backed up. This operation may impact the performance of the database and, by
   extension, the application.
 
-- On Business plans, backups are performed on the secondary instance to limit
-  the impact on the primary instance.
+- On Business plans, logical backups are performed on the secondary instance to 
+  limit the impact on the primary instance.
 
 - Several factors can delay, cancel, or impact the backup process:
 
@@ -170,8 +170,8 @@ To learn more about events and notifications, please visit the page dedicated to
 - Some specific conditions may delay, cancel, or affect the consistency of the
   backup:
 
-  - Backups are only performed if the feature is enabled, which is the default
-    setting. However, users can manually disable it if needed.
+  - Logical backups are only performed if the feature is enabled, which is the 
+    default setting. However, users can manually disable it if needed.
   - The database must be in a running state at the scheduled time of the
     backup.
   - No maintenance operations, either scheduled or unscheduled, should be
