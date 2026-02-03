@@ -13,6 +13,7 @@ minute based on usage.
 You can switch service classes in a few minutes, moving from a single-node
 instance to a multi-node cluster, and vice versa.
 
+
 ## Service Classes
 
 ### Starter
@@ -31,15 +32,16 @@ for Health data hosting (HDS).
 
 ### Enterprise
 
+The Enterprise class delivers maximum fault tolerance and the highest SLA
+expectations. Thanks to hot replication of your data on multiple standby
+instances, we ensure service continuity along with a 99.99% SLA. It is
+tailored for mission-critical and compliance-intensive environments.
+
 {% note %}
 The Enterprise service class is currently available to selected customers only.
 To request access or learn more, please contact Support or Sales teams.
 {% endnote %}
 
-The Enterprise class delivers maximum fault tolerance and the highest SLA
-expectations. Thanks to hot replication of your data on multiple standby
-instances, we ensure service continuity along with a 99.99% SLA. It is
-tailored for mission-critical and compliance-intensive environments.
 
 ## Service Availability (SLA)
 
