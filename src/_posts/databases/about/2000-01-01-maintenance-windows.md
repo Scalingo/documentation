@@ -55,10 +55,11 @@ Database Maintenance Windows are excluded from the SLA calculation.
    The output should look like this:
    ```text
    +------------------------+------------------------------+
-   | Database Type          | postgresql                   |
-   | Version                | 13.11.0-1                    |
-   | Status                 | running                      |
+   | Addon Provider         | PostgreSQL                   |
    | Plan                   | postgresql-starter-512       |
+   | Status                 | running                      |
+   | Database Type          | postgresql                   |
+   | Version                | 16.11.0-1                    |
    | Force TLS              | disabled                     |
    | Internet Accessibility | disabled                     |
    | Maintenance window     | Tuesdays at 22:00 (08 hours) |
