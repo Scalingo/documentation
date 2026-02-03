@@ -2,11 +2,12 @@
 title: Database Dashboard
 nav: Database Dashboard
 modified_at: 2025-04-28 12:00:00
+tags: databases dashboard
 index: 10
 ---
 
 
-Every database addon provided by Scalingo comes with a dedicated web dashboard,
+Every database engine provided by Scalingo comes with a dedicated web dashboard,
 generally referred to as **database dashboard**.
 
 This database dashboard is the central place for most common administrative

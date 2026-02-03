@@ -1,7 +1,7 @@
 ---
-title: Service Classes and SLA
+title: Service Classes
 nav: Service Classes
-modified_at: 2026-02-03 12:00:00
+modified_at: 2026-02-03 10:00:00
 index: 3
 ---
 
