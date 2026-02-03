@@ -7,12 +7,12 @@ tags: ruby gem async jobs delayed
 
 ## What is `delayed_job`?
 
-Delayed_job lets you run background tasks with your Rails application. It uses
-your database as a queue to process background jobs. If your app has a high
-database load, using delayed_job may not be a good background queuing library
-for your project and you should have a look at
-[Sidekiq](https://github.com/mperham/sidekiq) or
-[Resque](https://github.com/resque/resque).
+Delayed_job lets you run background tasks with your Rails application. It uses your database as a queue to process
+background jobs. Since Rails 8, [Solid Queue]({% post_url languages/ruby/2000-01-01-solid-queue %}) is the default 
+background job processor for Rails applications.
+
+If your app has a high database load, using a database-backed background job library may not be a good choice for your
+project and you should have a look at [Sidekiq]({% post_url languages/ruby/2000-01-01-sidekiq %}) or [Resque](https://github.com/resque/resque).
 
 ## Adding `delayed_job` to your Project
 
