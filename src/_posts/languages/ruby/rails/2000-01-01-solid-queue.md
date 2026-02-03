@@ -35,8 +35,13 @@ production:
 To process background jobs, you need to run the Solid Queue worker process. Add the following line to your [`Procfile`]({% post_url platform/app/2000-01-01-procfile %}):
 
 ```yaml
-worker: bundle exec rake solid_queue:start
+worker: bin/jobs
 ```
+
+{% note %}
+- `bin/jobs` is the recommended method for Solid Queue 1.0+ (created by `rails generate solid_queue:install`)
+- You can also use `bundle exec rake solid_queue:start`
+{% endnote %}
 
 ## Deployment
 
