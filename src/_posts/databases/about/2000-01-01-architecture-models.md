@@ -65,12 +65,14 @@ To request access or learn more, please contact Support or Sales teams.
 
 This section describes how Shared Resources is implemented at the infrastructure level.
 
-XXX
+<-----WIP----->
 
 
 ## Dedicated Resources infrastructure model
 
 This section describes how Dedicated Resources is implemented at the infrastructure level.
+
+<-----WIP----->
 
 - Isolation and compute
   - 1 VM per service node

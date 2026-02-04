@@ -11,8 +11,15 @@ recovery. Depending on the architecture model, the typical recovery point
 objective (RPO) ranges from about 5 minutes with continuous backups to up to
 1 day with logical backups.
 
-Backup technology and retention policy depend on the database engine and 
-architecture model:
+Backup technology and retention policy depend on the database engine and architecture model. We provide two backup mechanisms when supported:
+
+- [**Logical backups**](logical-backups): scheduled or manual dumps of the database, stored as 
+  archives and retained according to the applicable retention policy.
+- [**Continuous backups**](continuous-backups): Point-in-Time Recovery (PiTR), which lets you 
+  restore the database to a specific point in time within the configured 
+  recovery window.
+
+The table below summarises which backup mechanisms are available (and whether they are managed by Scalingo) for each database engine and architecture model:
 
 | Managed Database            | Architecture model  | Logical Backups      | Continious Backups |
 |-----------------------------|---------------------|----------------------|--------------------|
