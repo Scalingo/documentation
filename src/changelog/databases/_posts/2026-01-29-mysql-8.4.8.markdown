@@ -1,5 +1,5 @@
 ---
-modified_at: 2026-01-29 10:00:00
+modified_at: 2026-02-05 10:00:00
 title: 'MySQL - New version: 8.4.8-1'
 ---
 
@@ -7,6 +7,7 @@ New version: **8.4.8-1**
 
 Changelog:
 * [MySQL 8.4](https://dev.mysql.com/doc/relnotes/mysql/8.4/en/)
+
 Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/mysql):
 
 * `scalingo/mysql:8.4.8-1`
