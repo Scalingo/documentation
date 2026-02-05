@@ -29,9 +29,9 @@ all users.
 
 ## Affecting Features
 
-- When using a Business or Enterprise plan, the replica instance of the cluster 
-  is not accessible. This instance is only present to ensure high-availability.
-  It's not meant to plug analysis tools, even in read-only mode.
+- On Business and Enterprise plans, replicas operate as standby nodes dedicated 
+  to high availability. They are not exposed for external connections and cannot 
+  be used for analytics workloads, even in read-only mode.
 
 - Only one named database is provisioned per addon. [PostgreSQL®'s
   schemas][postgresql-schemas] can be leveraged to create different logical
