@@ -50,7 +50,7 @@ Database Maintenance Windows are excluded from the SLA calculation.
    ```
    With:
    - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
-     `elasticsearch` or `influxdb`, depending on the database engine
+     `elasticsearch`, `opensearch` or `influxdb`, depending on the database engine
 
    The output should look like this:
    ```text
@@ -103,7 +103,7 @@ team.
    - `hour`: start time of the database maintenance window (**timezone is the
      local one**). Must be an integer between `0` and `23`
    - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
-     `elasticsearch` or `influxdb`, depending on the database engine you are
+     `elasticsearch`, `opensearch` or `influxdb`, depending on the database engine you are
      configuring
 
    The output should look like this:
@@ -178,7 +178,7 @@ later time.
    ```
    With:
    - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
-     `elasticsearch` or `influxdb`, depending on the database engine
+     `elasticsearch`, `opensearch` or `influxdb`, depending on the database engine
 
    The output should look like this:
    ```text
@@ -195,7 +195,7 @@ later time.
    ```
    With:
    - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
-     `elasticsearch` or `influxdb`, depending on the database enfin
+     `elasticsearch`, `opensearch`or `influxdb`, depending on the database engine
    - `maintenance_uuid`: id of the maintenance operation
 
    The output should look like this:
