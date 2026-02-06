@@ -1,5 +1,5 @@
 ---
-title: Accessing Your Scalingo for OpenSearch® Addon
+title: Accessing Your Scalingo for OpenSearch® database
 nav: Accessing
 modified_at: 2025-09-05 12:00:00
 tags: databases opensearch addon

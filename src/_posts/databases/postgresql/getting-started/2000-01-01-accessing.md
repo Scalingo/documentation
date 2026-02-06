@@ -1,5 +1,5 @@
 ---
-title: Accessing Your Scalingo for PostgreSQL® Addon
+title: Accessing Your Scalingo for PostgreSQL® database
 nav: Accessing
 modified_at: 2025-06-10 00:00:00
 tags: databases postgresql addon
