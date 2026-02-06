@@ -1,6 +1,6 @@
 ---
-title: Internet accessibility
-nav: Internet access
+title: Internet Accessibility
+nav: Internet Access
 modified_at: 2026-02-05 12:00:00
 tags: databases internet access accessibility public networking
 index: 21
