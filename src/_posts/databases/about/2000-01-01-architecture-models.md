@@ -2,7 +2,7 @@
 title: Architecture Models
 nav: Architecture Models
 modified_at: 2026-02-03 10:00:00
-index: 4
+index: 3
 ---
 
 
@@ -18,8 +18,8 @@ defines the level of execution and network isolation, and the SecNumCloud scope.
 | Execution isolation         | Container with shared vCPU               | VM with dedicated vCPU                                 |
 | Network isolation           | Shared                                   | Dedicated VPC                                          |
 | Cluster communications [^1] | Encrypted communications                 | Encrypted communications                               |
-| Availability Zones          | Single AZ                                | Up to 3 AZ                                             |
 | Regions                     | osc-fr1, osc-secnum-fr1                  | osc-fr1, osc-secnum-fr1                                |
+| Availability Zones          | Single AZ                                | Up to 3 AZ                                             |
 | Service classes             | Starter, Business                        | Starter, Business, Enterprise                          |
 | Scaling                     | Scale up and scale down                  | Scale up only                                          |
 | Service class switching     | Scale in and out between service classes | Scale in and out between service classes               |
@@ -30,12 +30,12 @@ defines the level of execution and network isolation, and the SecNumCloud scope.
 | HDS eligibility             | Yes                                      | Yes                                                    |
 | SecNumCloud scope           | Infrastructure qualified                 | Infrastructure qualified; Service targeted in 2026[^3] |
 
-[^1]: For Business and Enterprise (HA) clusters, intra cluster communications are always encrypted, for both architecture models.
+[^1]: For Business and Enterprise (HA) plans, intra cluster communications are always encrypted, for both architecture models.
 [^2]: The "Collaborator" role (excluding "Limited Collaborator") allows users to provision add-ons.
 [^3]: In 2026, Scalingo's objective is to qualify the architecture model that powers Databases on Dedicated Resources. This qualification is not yet completed.
 
 
-## Shared Resources (SR)
+## Shared Resources
 
 Shared Resources is Scalingo's default architecture model and has been powering 
 our managed databases for years. It delivers strong performance and security on 
@@ -56,7 +56,7 @@ For HA clusters, nodes are placed on different hosts to improve resilience
 against host-level failures.
 
 
-## Dedicated Resources (DR)
+## Dedicated Resources
 
 Dedicated Resources builds on the same deployment and management stack, but runs 
 each database instance in a private environment with dedicated compute and 
@@ -64,7 +64,7 @@ network isolation (dedicated VM and dedicated VPC). For multi-node clusters,
 nodes are distributed across multiple Availability Zones within the same region.
 This provides stronger isolation and security.
 
-**Dedicated Resources is designed for SecNumCloud requirements and is the model 
+**Dedicated Resources are designed for SecNumCloud requirements and is the model 
 we plan to certify under SecNumCloud.**
 
 {% note %}

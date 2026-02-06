@@ -2,7 +2,7 @@
 title: Service Classes
 nav: Service Classes
 modified_at: 2026-02-03 10:00:00
-index: 3
+index: 2
 ---
 
 Scalingo offers three ***service classes*** with distinct characteristics,
