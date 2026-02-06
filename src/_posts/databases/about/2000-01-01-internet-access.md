@@ -28,7 +28,22 @@ For *Shared Resources* and *Dedicated Resource* fundamentals, see
 [Architecture Models][architecture-models].
 
 
-## Recommended Connection Patterns
+## Connection methods
+
+The table below summarizes the available connection options by architecture
+model:
+
+| Connection option                           | Shared R. | Dedicared R. | Notes                                         |
+|---------------------------------------------|-----------|--------------|-----------------------------------------------|
+| Database Console (from a one-off container) | Yes       | No           | In-browser SQL console from the dashboard.    |
+| SSH tunnel (`db-tunnel`)                    | Yes       | No           | Remote access via CLI tunnel.                 |
+| Direct connection (connection string)       | Yes       | Yes          | Connect using the provided connection string. |
+
+{% note %}
+`SSH tunnel` and `Database Console` are tightly coupled with Scalingo apps and
+app workflows. They are documented in more detail on
+[Access Your Database][access-your-database].
+{% endnote %}
 
 ### Connect From Inside Scalingo (most secure)
 
@@ -139,3 +154,4 @@ You do not need to manually track egress IP changes for these rules.
 [architecture-models]: {% post_url databases/about/2000-01-01-architecture-models %}
 [database-features]: {% post_url databases/about/2000-01-01-features %}
 [egress]: {% post_url platform/networking/public/2000-01-01-egress %}
+[access-your-database]: {% post_url platform/databases/2000-01-01-access %}
