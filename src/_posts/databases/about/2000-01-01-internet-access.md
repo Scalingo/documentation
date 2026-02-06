@@ -33,11 +33,11 @@ For *Shared Resources* and *Dedicated Resource* fundamentals, see
 The table below summarizes the available connection options by architecture
 model:
 
-| Connection option                           | Shared R. | Dedicared R. | Notes                                         |
-|---------------------------------------------|-----------|--------------|-----------------------------------------------|
-| Database Console (from a one-off container) | Yes       | No           | In-browser SQL console from the dashboard.    |
-| SSH tunnel (`db-tunnel`)                    | Yes       | No           | Remote access via CLI tunnel.                 |
-| Direct connection (connection string)       | Yes       | Yes          | Connect using the provided connection string. |
+| Connection option                           | Shared R. | Dedicared R. | Notes                                        |
+|---------------------------------------------|-----------|--------------|----------------------------------------------|
+| Database Console (from a one-off container) | Yes       | No           | In-browser SQL console from the dashboard    |
+| SSH tunnel (`db-tunnel`)                    | Yes       | No           | Remote access via CLI tunnel                 |
+| Direct connection (connection string)       | Yes       | Yes          | Connect using the provided connection string |
 
 {% note %}
 `SSH tunnel` and `Database Console` are tightly coupled with Scalingo apps and
