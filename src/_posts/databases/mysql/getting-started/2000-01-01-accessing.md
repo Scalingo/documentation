@@ -1,5 +1,5 @@
 ---
-title: Accessing Your Scalingo for MySQL® Addon
+title: Accessing Your Scalingo for MySQL® database
 nav: Accessing
 modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon

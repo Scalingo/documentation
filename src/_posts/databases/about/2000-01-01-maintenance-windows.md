@@ -3,7 +3,7 @@ title: Database Maintenance Windows
 nav: Maintenance Windows
 modified_at: 2024-12-16 12:00:00
 tags: databases maintenance
-index: 20
+index: 30
 ---
 
 
@@ -50,15 +50,16 @@ Database Maintenance Windows are excluded from the SLA calculation.
    ```
    With:
    - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
-     `elasticsearch` or `influxdb`, depending on the database addon
+     `elasticsearch`, `opensearch` or `influxdb`, depending on the database engine
 
    The output should look like this:
    ```text
    +------------------------+------------------------------+
-   | Database Type          | postgresql                   |
-   | Version                | 13.11.0-1                    |
-   | Status                 | running                      |
+   | Addon Provider         | PostgreSQL                   |
    | Plan                   | postgresql-starter-512       |
+   | Status                 | running                      |
+   | Database Type          | postgresql                   |
+   | Version                | 16.11.0-1                    |
    | Force TLS              | disabled                     |
    | Internet Accessibility | disabled                     |
    | Maintenance window     | Tuesdays at 22:00 (08 hours) |
@@ -68,7 +69,7 @@ Database Maintenance Windows are excluded from the SLA calculation.
 
 ## Configuring Database Maintenance Windows
 
-Maintenance windows can be configured separately for each database addon. To
+Maintenance windows can be configured separately for each database instance. To
 configure it, you will have to pick a weekday and a start time.
 
 {% note %}
@@ -102,14 +103,14 @@ team.
    - `hour`: start time of the database maintenance window (**timezone is the
      local one**). Must be an integer between `0` and `23`
    - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
-     `elasticsearch` or `influxdb`, depending on the database addon you are
+     `elasticsearch`, `opensearch` or `influxdb`, depending on the database engine you are
      configuring
 
    The output should look like this:
    ```text
    Addon config updated.
    ```
-   To set to database maintenance window of your PostgreSQL® addon to start on
+   To set to database maintenance window of your PostgreSQL® instance to start on
    Mondays at 1AM (local) while being located at UTC-5:
    ```bash
    scalingo --app my-app addons-config --maintenance-window-day monday --maintenance-window-hour 1 postgresql
@@ -177,7 +178,7 @@ later time.
    ```
    With:
    - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
-     `elasticsearch` or `influxdb`, depending on the database addon
+     `elasticsearch`, `opensearch` or `influxdb`, depending on the database engine
 
    The output should look like this:
    ```text
@@ -194,7 +195,7 @@ later time.
    ```
    With:
    - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
-     `elasticsearch` or `influxdb`, depending on the database addon
+     `elasticsearch`, `opensearch` or `influxdb`, depending on the database engine
    - `maintenance_uuid`: id of the maintenance operation
 
    The output should look like this:
