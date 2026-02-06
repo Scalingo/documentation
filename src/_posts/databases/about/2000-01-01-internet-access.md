@@ -47,21 +47,17 @@ app workflows. They are documented in more detail on
 
 ### Connect From Inside Scalingo (most secure)
 
-For maintenance and investigations, prefer platform-native access (interactive
-database consoles, one-off containers, etc.). This avoids public exposure and
-reduces the risk of leaking credentials.
+For maintenance and investigations, prefer the interactive database console from
+Scalingo app workflows.
+
+See the detailed guide: [Interactive Remote Console][access-your-database-console].
 
 ### Use an SSH Tunnel From Your Workstation
 
-Use an SSH tunnel to make the database reachable **locally** on
-`127.0.0.1:<local_port>` (default port is `10000`) while keeping the database
-private.
+Use an SSH tunnel to keep the database private while exposing it locally on your
+workstation.
 
-- With the Scalingo CLI: `scalingo --app <app> db-tunnel <SCALINGO_DB_URL>`
-- With OpenSSH: `ssh -L <local_port>:<db_host>:<db_port> git@<ssh_host> -p 22 -N`
-
-This is the best option for GUI tools (pgAdmin, DBeaver, Postman, etc.) and for
-short-lived debugging sessions.
+See setup and usage details in: [Encrypted Tunnel][access-your-database-tunnel].
 
 {% note %}
 SSH tunnels are available on Shared Resources. On Dedicated Resources, remote
@@ -155,3 +151,5 @@ You do not need to manually track egress IP changes for these rules.
 [database-features]: {% post_url databases/about/2000-01-01-features %}
 [egress]: {% post_url platform/networking/public/2000-01-01-egress %}
 [access-your-database]: {% post_url platform/databases/2000-01-01-access %}
+[access-your-database-console]: {% post_url platform/databases/2000-01-01-access %}#interactive-remote-console
+[access-your-database-tunnel]: {% post_url platform/databases/2000-01-01-access %}#encrypted-tunnel
