@@ -14,6 +14,12 @@ locally, to dump the database content,...
 We provide several ways to access your database remotely. Chosing one mostly
 depends on your needs and preferences.
 
+{% note %}
+This page mainly applies to **Shared Resources** databases. For
+**Dedicated Resources** networking and firewall rules, see
+[Internet accessibility]({% post_url databases/about/2000-01-01-internet-access %}).
+{% endnote %}
+
 ## Using the Interactive Remote Console
 
 1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
