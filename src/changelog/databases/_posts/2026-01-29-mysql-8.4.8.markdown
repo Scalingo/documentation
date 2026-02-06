@@ -1,5 +1,5 @@
 ---
-modified_at: 2026-02-05 10:00:00
+modified_at: 2026-01-29 10:00:00
 title: 'MySQL - New version: 8.4.8-1'
 ---
 
