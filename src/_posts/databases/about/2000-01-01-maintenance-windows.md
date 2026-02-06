@@ -195,7 +195,7 @@ later time.
    ```
    With:
    - `database_type`: must be either `postgresql`, `mysql`, `redis`, `mongodb`,
-     `elasticsearch`, `opensearch`or `influxdb`, depending on the database engine
+     `elasticsearch`, `opensearch` or `influxdb`, depending on the database engine
    - `maintenance_uuid`: id of the maintenance operation
 
    The output should look like this:
