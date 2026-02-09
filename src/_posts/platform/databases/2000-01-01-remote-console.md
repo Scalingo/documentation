@@ -1,6 +1,6 @@
 ---
 title: Remote Console
-nav: : Interactive Remote Console
+nav: Interactive Remote Console
 modified_at: 2026-02-09 12:00:00
 tags: databases
 index: 2
