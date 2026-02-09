@@ -774,6 +774,9 @@
   - old: "/platform/app/private-networks"
     new: "/platform/networking/private/overview"
 
+  - old: "/platform/databases/restore-backup"
+    new: "/databases/about/backup-policies#restoring-a-backup"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
