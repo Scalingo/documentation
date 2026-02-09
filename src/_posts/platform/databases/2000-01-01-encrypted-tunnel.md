@@ -2,7 +2,7 @@
 title: Encrypted Tunnel
 modified_at: 2026-02-09 12:00:00
 tags: databases
-index: 4
+index: 2
 ---
 
 This page details how to use the Encrypted Tunnel method from

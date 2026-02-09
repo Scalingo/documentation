@@ -2,7 +2,7 @@
 title: Remote Database Console
 modified_at: 2026-02-09 12:00:00
 tags: databases
-index: 2
+index: 3
 ---
 
 This page details how to use the Remote Console method from
