@@ -167,7 +167,10 @@ Then, commit and push your changes to trigger a new deployment.
 
 If you want to store large files or share notebooks across multiple projects, it is **possible** to use an external S3-compatible object storage, such as Outscale Object Storage.
 
-> ⚠️ Note: By default, JupyterLab uses **pgcontents** with PostgreSQL to persist notebooks. Using S3 storage is **entirely optional**. PostgreSQL is sufficient for most use cases on Scalingo.
+{% note %}
+By default, JupyterLab uses **pgcontents** with PostgreSQL® to persist notebooks.\\
+Using S3 storage is **entirely optional**. PostgreSQL® is sufficient for most use cases on Scalingo.
+{% endnote %}
 
 For reference and further details about using S3 storage with JupyterLab, you can check out the [S3ContentsManager documentation](https://github.com/cloudbutton/s3contents).
 
