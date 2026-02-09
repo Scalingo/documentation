@@ -36,7 +36,7 @@ We usually suggest the following strategy:
 2. From this new app, download the latest production database backup available.
    This can be done using the [Scalingo CLI tool]({% post_url tools/cli/2000-01-01-start %}),
    an API token and a bit of Bash (see hereafter).
-3. Once downloaded, [restore the backup]({% post_url platform/databases/2000-01-01-restore-backup %})
+3. Once downloaded, [restore the backup]({% post_url databases/about/2000-01-01-backup-policies %}#restoring-a-backup)
    to the new app's database.
 4. If needed, run these tasks on a regular basis using the
    [Scalingo Scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}).
@@ -95,7 +95,7 @@ As you can see, this script would require 3 environment variables to be set:
   for further help).
 
 The last step of the script depends on the database you're using. Please refer
-to [our documentation]({% post_url platform/databases/2000-01-01-restore-backup %})
+to [our documentation]({% post_url databases/about/2000-01-01-backup-policies %}#restoring-a-backup)
 for precise instructions and examples.
 
 You will most probably need an empty file called `index.php` to trick the

@@ -150,6 +150,19 @@ The following events are available to monitor the backups:
 
 To learn more about events and notifications, please visit the page dedicated to [app notifications]({% post_url platform/app/2000-01-01-notification %}).
 
+## Restoring a backup
+
+Each database engine has its own backup and restore process. Please refer to
+the page dedicated to your database engine for the exact procedure to follow.
+
+- [Scalingo for PostgreSQL®]({% post_url databases/postgresql/guides/2000-01-01-restoring %})
+- [Scalingo for MySQL®]({% post_url databases/mysql/guides/2000-01-01-restoring %})
+- [Scalingo for OpenSearch®]({% post_url databases/opensearch/guides/2000-01-01-restoring %})
+- [Scalingo for MongoDB®]({% post_url databases/mongodb/2000-01-01-start %}#backups)
+- [Scalingo for Caching]({% post_url databases/redis/2000-01-01-start %}#backups)
+- [Scalingo for Elasticsearch®]({% post_url databases/elasticsearch/2000-01-01-start %}#backups)
+- [Scalingo for InfluxDB®]({% post_url databases/influxdb/2000-01-01-start %}#backups)
+
 
 ## Important Considerations
 
