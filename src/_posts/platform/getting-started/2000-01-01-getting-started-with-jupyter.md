@@ -163,7 +163,7 @@ Then, commit and push your changes to trigger a new deployment.
 
 
 
-### Object Storage (Outscale) – Optional
+### Using an Object Storage
 
 If you want to store large files or share notebooks across multiple projects, it is **possible** to use an external S3-compatible object storage, such as Outscale Object Storage.
 
