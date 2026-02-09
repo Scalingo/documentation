@@ -1,8 +1,9 @@
 ---
-title: Remote Database Console
+title: Remote Console
+nav: : Interactive Remote Console
 modified_at: 2026-02-09 12:00:00
 tags: databases
-index: 3
+index: 2
 ---
 
 This page details how to use the Remote Console method from
@@ -65,10 +66,5 @@ you can download various CLI tools for the supported databases listed below:
 | InfluxDB   | `influxdb`, `influx`          | `influx`             |
 
 {% include dbclient_fetcher.md %}
-
-{% warning %}
-The `redis-cli` can NOT be used if Force TLS is enabled on the Scalingo for
-Caching database. It results in an error message `I/O error`.
-{% endwarning %}
 
 [access-your-database]: {% post_url platform/databases/2000-01-01-access %}

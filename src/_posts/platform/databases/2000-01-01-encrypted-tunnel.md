@@ -2,7 +2,7 @@
 title: Encrypted Tunnel
 modified_at: 2026-02-09 12:00:00
 tags: databases
-index: 2
+index: 3
 ---
 
 This page details how to use the Encrypted Tunnel method from
@@ -10,12 +10,10 @@ This page details how to use the Encrypted Tunnel method from
 
 ## Availability
 
-Encrypted Tunnel is available on Shared Resources databases.
+Encrypted Tunnel is only available on **Shared Resources** databases.
 
-{% note %}
 For Dedicated Resources databases, use direct access with firewall allowlists.
 See [Access Your Database][access-your-database].
-{% endnote %}
 
 ## Build the Tunnel
 
