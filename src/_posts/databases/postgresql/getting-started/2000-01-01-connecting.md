@@ -119,11 +119,10 @@ Please note that while we strongly advise to use TLS, it remains an option,
 meaning that you can still access your database without it if needed.
 
 
-## Connecting Multiple Applications to the Same PostgreSQL® Addon
+## Connecting Multiple Applications to the Same PostgreSQL® database
 
-If you need to connect your PostgreSQL® addon from multiple applications, you
-can do it by adding an environment variable in every application wanting to
-communicate with the database:
+To share a database across multiple applications, add the database connection 
+string as an environment variable in each application that needs access.
 
 1. Copy [the connection URI](#getting-the-connection-uri) of your addon
 2. [Create a new environment variable][environment] for the application that

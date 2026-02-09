@@ -16,8 +16,7 @@ depends on your needs and preferences.
 
 {% note %}
 This page mainly applies to **Shared Resources** databases. For
-**Dedicated Resources** networking and firewall rules, see
-[Internet accessibility]({% post_url databases/about/2000-01-01-internet-access %}).
+**Dedicated Resources** networking and firewall rules, see [Database Network Exposure][database-exposure].
 {% endnote %}
 
 ## Using the Interactive Remote Console
@@ -257,3 +256,5 @@ described [above](#using-openssh).
 {% include mdl_img.html %}
 {:start="8"}
 8. Click the **Save** button
+
+[database-exposure]: {% post_url databases/about/2000-01-01-network-exposure %}

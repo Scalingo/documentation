@@ -1,15 +1,20 @@
 ---
-title: Internet Accessibility
-nav: Internet Access
-modified_at: 2026-02-05 12:00:00
+title: Database Network Exposure
+nav: Network Exposure
+modified_at: 2026-02-09 12:00:00
 tags: databases internet access accessibility public networking
 index: 21
 ---
 
 
 This page explains how **Scalingo Managed Databases** can be accessed remotely
-and how to choose a secure connectivity option depending on your needs and your
-**architecture model**.
+at the network level depending on the **architecture model**.
+
+{% note %}
+This page covers only network exposure and traffic filtering rules.
+For maintenance access methods: Remote Console, Encrypted Tunnel and Direct 
+Access), see [Access Your Database][access-your-database].
+{% endnote %}
 
 
 ## At a Glance
@@ -17,66 +22,14 @@ and how to choose a secure connectivity option depending on your needs and your
 Databases are **private by default**. We apply secure connectivity settings out
 of the box, so your database is not exposed unless you explicitly enable it.
 
-| Capability                | Shared Resources                             | Dedicated Resources                                     |
+|                           | Shared Resources                             | Dedicated Resources                                     |
 |---------------------------|----------------------------------------------|---------------------------------------------------------|
 | Default reachability      | Reachable from the Scalingo regional network | Not reachable by default (no internal or public access) |
 | Public Internet access    | Enable/disable, no source filtering          | Denied by default, allowed only via firewall            |
 | TLS by default            | Disabled                                     | Enabled                                                 |
-| Recommended remote access | SSH tunnel (`db-tunnel`)                     | Direct connection with firewall allowlist               |
 
-For *Shared Resources* and *Dedicated Resource* fundamentals, see 
+For *Shared Resources* and *Dedicated Resources* fundamentals, see 
 [Architecture Models][architecture-models].
-
-
-## Connection methods
-
-The table below summarizes the available connection options by architecture
-model:
-
-| Connection option                           | Shared R. | Dedicared R. | Notes                                        |
-|---------------------------------------------|-----------|--------------|----------------------------------------------|
-| Database Console (from a one-off container) | Yes       | No           | In-browser SQL console from the dashboard    |
-| SSH tunnel (`db-tunnel`)                    | Yes       | No           | Remote access via CLI tunnel                 |
-| Direct connection (connection string)       | Yes       | Yes          | Connect using the provided connection string |
-
-{% note %}
-`SSH tunnel` and `Database Console` are tightly coupled with Scalingo apps and
-app workflows. They are documented in more detail on
-[Access Your Database][access-your-database].
-{% endnote %}
-
-### Connect From Inside Scalingo (most secure)
-
-For maintenance and investigations, prefer the interactive database console from
-Scalingo app workflows.
-
-See the detailed guide: [Interactive Remote Console][access-your-database-console].
-
-### Use an SSH Tunnel From Your Workstation
-
-Use an SSH tunnel to keep the database private while exposing it locally on your
-workstation.
-
-See setup and usage details in: [Encrypted Tunnel][access-your-database-tunnel].
-
-{% note %}
-SSH tunnels are available on Shared Resources. On Dedicated Resources, remote
-access is done through a direct connection controlled by the firewall.
-{% endnote %}
-
-### Direct Connection
-
-{% warning %}
-Unrestricted database exposure on the public Internet is considered a bad 
-practice and should be avoided whenever possible.
-{% endwarning %}
-
-If a direct connection is required enable **Force TLS connections** so the 
-database rejects all non-encrypted connections.
-
-On **Dedicated Resources**, this setting is enforced by
-default, and inbound traffic can be filtered with firewall rules: everything is
-denied by default, and you must explicitly allow each source network CIDR.
 
 
 ## TLS and Enforced TLS
@@ -90,6 +43,21 @@ For multi-node clusters, intra-cluster communications are always encrypted and
 do not depend on the **Force TLS connections** setting. See
 [Common Features][database-features].
 
+
+## Shared Resources: Network Exposure
+
+Shared Resources databases are reachable from the Scalingo regional network by
+default. This default setting keeps operations simple for apps in the same
+region while avoiding public exposure.
+
+Public Internet exposure is optional and controlled by the client: if
+**Internet Accessibility** is enabled, the database becomes reachable from the
+public Internet.
+
+{% note %}
+On Shared Resources, exposure is binary (regional network only or public
+Internet) and does not include source IP filtering.
+{% endnote %}
 
 ## Dedicated Resources: Firewalling
 
@@ -151,5 +119,3 @@ You do not need to manually track egress IP changes for these rules.
 [database-features]: {% post_url databases/about/2000-01-01-features %}
 [egress]: {% post_url platform/networking/public/2000-01-01-egress %}
 [access-your-database]: {% post_url platform/databases/2000-01-01-access %}
-[access-your-database-console]: {% post_url platform/databases/2000-01-01-access %}#interactive-remote-console
-[access-your-database-tunnel]: {% post_url platform/databases/2000-01-01-access %}#encrypted-tunnel
