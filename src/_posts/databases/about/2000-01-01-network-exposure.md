@@ -32,6 +32,35 @@ For *Shared Resources* and *Dedicated Resources* fundamentals, see
 [Architecture Models][architecture-models].
 
 
+## Making Your Database Reachable from the Internet
+
+It is possible to expose your database to the public Internet, but requirements
+depend on your architecture model.
+
+### Shared Resources
+
+1. Enable [Force TLS](#tls-and-enforced-tls).
+2. Enable **Internet Accessibility** from the database dashboard.
+3. Use [Direct Access]({% post_url platform/databases/2000-01-01-access %}#direct-access) for client connections.
+
+See also: [Shared Resources: Network Exposure](#shared-resources-network-exposure).
+
+{% warning %}
+Enable Internet Accessibility only for specific use cases, and only if you 
+understand the security implications. It exposes your database to the public 
+Internet.
+{% endwarning %}
+
+### Dedicated Resources
+
+1. Open only required source networks in the firewall allowlist.
+2. If needed, add managed rules for Scalingo regions.
+
+See: [Dedicated Resources: Firewalling](#dedicated-resources-firewalling),
+[How the Firewall Works](#how-the-firewall-works),
+[Allowing Scalingo Apps To Reach a Dedicated Resources Database](#allowing-scalingo-apps-to-reach-a-dedicated-resources-database).
+
+
 ## TLS and Enforced TLS
 
 TLS is available on Scalingo databases, but it is not always enforced by default
@@ -58,6 +87,7 @@ public Internet.
 On Shared Resources, exposure is binary (regional network only or public
 Internet) and does not include source IP filtering.
 {% endnote %}
+
 
 ## Dedicated Resources: Firewalling
 

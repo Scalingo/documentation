@@ -777,6 +777,9 @@
   - old: "/platform/databases/restore-backup"
     new: "/databases/about/backup-policies#restoring-a-backup"
 
+  - old: "/platform/databases/access#internet-accessibility"
+    new: "/databases/about/network-exposure#making-your-database-reachable-from-the-internet"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

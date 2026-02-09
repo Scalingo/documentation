@@ -91,7 +91,7 @@ As you can see, this script would require 3 environment variables to be set:
 - `DUPLICATE_SOURCE_APP`: the name of the source application, from where the
   backup will be retrieved.
 - `DUPLICATE_ADDON_KIND`: the database kind (see the [`dbclient-fetcher`
-  documentation]({% post_url platform/databases/2000-01-01-access %}#manually-install-the-databases-cli-in-one-off)
+  documentation]({% post_url platform/databases/2000-01-01-remote-console %}#manually-install-the-databases-cli-in-a-one-off)
   for further help).
 
 The last step of the script depends on the database you're using. Please refer
