@@ -175,7 +175,6 @@ If you want to store large files or share notebooks across multiple projects, it
 
 For reference and further details about using S3 storage with JupyterLab, you can check out the [S3ContentsManager documentation](https://github.com/cloudbutton/s3contents).
 
-No implementation is required to use PostgreSQL — this section is informational only.
 
 
 
