@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Jupyter Notebook on Scalingo
-modified_at: 2025-11-25 12:00:00
+modified_at: 2026-02-10 12:00:00
 tags: tutorial jupyter notebook 
 index: 14
 ---
