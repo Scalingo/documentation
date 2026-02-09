@@ -6,9 +6,8 @@ index: 14
 ---
 
 
-Jupyter Notebook is an open-source web application that allows you to create
-and share documents containing live code, equations, visualizations, and
-narrative text.
+Jupyter Notebook is an open-source web application that allows to create
+and share documents called *notebooks* that combine live code, equations, visualizations, and narrative text. Users can run code step by step, inspect outputs instantly, and modify their work dynamically. This makes it ideal for learning, data analysis, or scientific computing.
 
 
 
