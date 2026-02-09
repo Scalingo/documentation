@@ -13,7 +13,6 @@ and share documents called *notebooks* that combine live code, equations, visual
 
 ## Planning your Deployment
 
-
 By default, Jupyter Notebook stores notebooks on the local filesystem. Since
 Scalingo's filesystem is ephemeral, you'll have to provision a
 [Scalingo for PostgreSQL®][db-postgresql] addon to persist your notebooks. We
