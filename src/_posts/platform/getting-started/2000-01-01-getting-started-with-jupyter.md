@@ -172,7 +172,7 @@ By default, JupyterLab uses **pgcontents** with PostgreSQL® to persist notebook
 Using S3 storage is **entirely optional**. PostgreSQL® is sufficient for most use cases on Scalingo.
 {% endnote %}
 
-For reference and further details about using S3 storage with JupyterLab, you can check out the [S3ContentsManager documentation](https://github.com/cloudbutton/s3contents).
+For reference and further details about using S3 storage with JupyterLab, you can check out the [S3ContentsManager documentation][jupyter-s3].
 
 
 
