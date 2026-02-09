@@ -26,7 +26,6 @@ Jupyter Notebook can consume a lot of RAM.
 
 ## Deploying
 
-
 ### Using the Command Line
 
 
