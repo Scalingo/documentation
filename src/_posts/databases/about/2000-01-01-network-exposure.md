@@ -26,7 +26,7 @@ of the box, so your database is not exposed unless you explicitly enable it.
 |---------------------------|----------------------------------------------|---------------------------------------------------------|
 | Default reachability      | Reachable from the Scalingo regional network | Not reachable by default (no internal or public access) |
 | Public Internet access    | Enable/disable, no source filtering          | Denied by default, allowed only via firewall            |
-| TLS by default            | Disabled                                     | Enabled                                                 |
+| Force TLS                 | Disabled by default                          | Enabled by default                                      |
 
 For *Shared Resources* and *Dedicated Resources* fundamentals, see 
 [Architecture Models][architecture-models].
@@ -61,19 +61,20 @@ See: [Dedicated Resources: Firewalling](#dedicated-resources-firewalling),
 [Allowing Scalingo Apps To Reach a Dedicated Resources Database](#allowing-scalingo-apps-to-reach-a-dedicated-resources-database).
 
 
-## TLS and Enforced TLS
+## TLS and Force TLS
 
 TLS is available on Scalingo databases, but it is not always enforced by default
-depending on the engine. When **Force TLS connections** is enabled, the
-database denies any non-TLS connection, whether it comes from the Scalingo
-network (for example applications) or from the public Internet.
+to maximize compatibility with application frameworks and database clients. When
+**Force TLS connections** is enabled, the database denies any non-TLS 
+connection, whether it comes from the Scalingo network (for example 
+applications) or from the public Internet.
 
 For multi-node clusters, intra-cluster communications are always encrypted and 
 do not depend on the **Force TLS connections** setting. See
 [Common Features][database-features].
 
 
-## Shared Resources: Network Exposure
+## Shared Resources
 
 Shared Resources databases are reachable from the Scalingo regional network by
 default. This default setting keeps operations simple for apps in the same
@@ -89,7 +90,7 @@ Internet) and does not include source IP filtering.
 {% endnote %}
 
 
-## Dedicated Resources: Firewalling
+## Dedicated Resources
 
 With Dedicated Resources, inbound connectivity is controlled through a 
 **fine-grained firewall** that follows an allowlist model.
