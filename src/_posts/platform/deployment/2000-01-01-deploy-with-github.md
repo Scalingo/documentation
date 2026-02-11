@@ -70,15 +70,12 @@ $ scalingo help integration-link-create
 ## Deployments
 
 When your application is linked to the GitHub repository some deployments
-options are available:
+options are available in Deploy tab and Configuration sub-menu
 
-{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_github.png" %}
-{% include mdl_img.html %}
-
-With "Auto deploy" enabled, your application will be deployed every time you
+With "Automatic deployments" enabled, your application will be deployed every time you
 push to a selected branch of your repository.
 
-You can trigger a manual deployment by going to the "Manual deploy" section and
+You can trigger a manual deployment by going to the "Manual deployment" sub-menu and
 choose the branch to deploy.
 
 These actions are also available via the CLI with:
@@ -95,11 +92,10 @@ be created automatically every time a pull request is opened or they can be
 created manually by selecting the pull request to deploy among the currently
 opened ones (our pull request viewer will help you with this).
 
-By default, review apps are automatically destroyed when the pull request is
-closed. But you can specify a duration after which the review app is destroyed.
+Review apps are available in "Review apps" tab.
 
-{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_dashboard_github_review_apps.png" %}
-{% include mdl_img.html %}
+By default, review apps are automatically destroyed when the pull request is
+closed. But you can specify a duration after which the review app is destroyed by going to the sub-menu "Configuration".
 
 For more information, you can read the more specific documentation pages [SCM
 integration, Auto Deploy and Review Apps]({% post_url
