@@ -214,7 +214,7 @@ somewhere).
 [backup-policies-pitr]: {% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups
 [backup-policies-scheduled]: {% post_url databases/about/2000-01-01-backup-policies %}#scheduled-backups
 
-[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
-[accessing-one-off]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-a-one-off
-[accessing-cli]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
-[connecting-uri]: {% post_url databases/postgresql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
+[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[accessing-one-off]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-a-one-off
+[accessing-cli]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
+[connecting-uri]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri

@@ -167,6 +167,6 @@ to be activated manually.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
-[irc]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
-[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[irc]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
+[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [troubleshooting]: {% post_url databases/postgresql/2000-01-01-troubleshooting %}#identifying-performances-issues

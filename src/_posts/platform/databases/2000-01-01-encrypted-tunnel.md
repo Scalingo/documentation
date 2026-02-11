@@ -39,7 +39,7 @@ using (for example `SCALINGO_POSTGRESQL_URL` or `SCALINGO_MYSQL_URL`).
 Each database engine can have specific tunnel prerequisites or client-side
 details. For engine-specific instructions, see:
 
-- [Scalingo for PostgreSQL®]({% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool)
+- [Scalingo for PostgreSQL®]({% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-our-command-line-tool)
 - [Scalingo for MySQL®]({% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool)
 - [Scalingo for OpenSearch]({% post_url databases/opensearch/getting-started/2000-01-01-accessing %}#using-our-command-line-tool)
 - [Scalingo for MongoDB®]({% post_url databases/mongodb/2000-01-01-dump-restore %}#setup-the-tunnel)

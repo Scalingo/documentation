@@ -103,4 +103,4 @@ anonymized_last_name | anonymized_first_name | anonymized_phone |      anonymize
 
 [official_doc]: https://postgresql-anonymizer.readthedocs.io/en/stable/
 
-[creating-user]: {% post_url databases/postgresql/guides/2000-01-01-managing-users %}#creating-a-new-user
+[creating-user]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-managing-users %}#creating-a-new-user

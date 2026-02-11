@@ -59,6 +59,6 @@ connections.
 | Half-closed connections on the client side | 5 minutes  |
 
 
-[postgresql-protected-user]: {% post_url databases/postgresql/guides/2000-01-01-managing-users %}#understanding-protected-user
+[postgresql-protected-user]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-managing-users %}#understanding-protected-user
 [postgresql-timelines]: https://www.postgresql.org/docs/current/continuous-archiving.html#BACKUP-TIMELINES
 [postgresql-schemas]: https://www.postgresql.org/docs/current/ddl-schemas.html

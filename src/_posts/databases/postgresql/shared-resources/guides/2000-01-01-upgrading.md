@@ -243,5 +243,5 @@ database dashboard.
 
 [pitr]: {% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups
 
-[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
-[backing-up-creating-manual]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}#creating-a-manual-backup
+[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[backing-up-creating-manual]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-backing-up %}#creating-a-manual-backup

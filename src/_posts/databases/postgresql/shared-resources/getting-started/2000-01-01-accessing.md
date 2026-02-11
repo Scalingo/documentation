@@ -3,7 +3,7 @@ title: Accessing Your Scalingo for PostgreSQL® database
 nav: Accessing
 modified_at: 2025-06-10 00:00:00
 tags: databases postgresql addon
-index: 4
+index: 3
 ---
 
 
@@ -118,7 +118,7 @@ third-party tool.
 To access your database remotely you first need to [make it reachable over the
 Internet](#making-the-database-reachable-over-internet):
 - either locally, on your computer, via an [encrypted tunnel](#setting-up-an-encrypted-tunnel)
-- or from any location, by [enforcing TLS connection]({% post_url databases/postgresql/getting-started/2000-01-01-connecting %}#enforcing-tls-connection)
+- or from any location, by [enforcing TLS connection]({% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-connecting %}#enforcing-tls-connection)
   and [enabling direct Internet access](#enabling-direct-access-over-internet).
 
 Once a secured connection has been established, you should be able to connect
@@ -163,9 +163,9 @@ Our command line tool [handles it in a single command](#using-our-command-line-t
 but you might want to use the tunnel without it. With the standard OpenSSH
 client, the way to build the tunnel is:
 
-1. Identify the [connection URI]({% post_url databases/postgresql/getting-started/2000-01-01-connecting %}#getting-the-connection-uri)
+1. Identify the [connection URI]({% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-connecting %}#getting-the-connection-uri)
    for your database
-2. Make sure to [understand how the connection URI is built]({% post_url databases/postgresql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri)
+2. Make sure to [understand how the connection URI is built]({% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri)
 3. From the command line, run the following command to create the tunnel:
    ```bash
    ssh -L <local_port>:<db_url>:<db_port> git@<ssh_hostname> -p 22 -N
@@ -190,13 +190,13 @@ Internet. This is often considered a bad practice. Consequently, we do not
 recommend activating Internet Accessibility.
 {% endwarning %}
 
-1. Make sure [you have TLS enforced]({% post_url databases/postgresql/getting-started/2000-01-01-connecting %}#enforcing-tls-connection)
-2. From your web browser, [open your database dashboard]({% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard)
+1. Make sure [you have TLS enforced]({% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-connecting %}#enforcing-tls-connection)
+2. From your web browser, [open your database dashboard]({% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard)
 3. Select the **Settings** tab
 4. In the **Settings** submenu, select **Internet Access**
 5. Locate the **Internet Accessibility** block
 6. Click the **Enable** button
-7. The database is now available using the corresponding [connection URI]({% post_url databases/postgresql/getting-started/2000-01-01-connecting %})
+7. The database is now available using the corresponding [connection URI]({% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-connecting %})
 
 ### Using pgAdmin
 

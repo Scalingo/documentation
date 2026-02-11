@@ -155,7 +155,7 @@ To learn more about events and notifications, please visit the page dedicated to
 Each database engine has its own backup and restore process. Please refer to
 the page dedicated to your database engine for the exact procedure to follow.
 
-- [Scalingo for PostgreSQL®]({% post_url databases/postgresql/guides/2000-01-01-restoring %})
+- [Scalingo for PostgreSQL® (Shared Resources)]({% post_url databases/postgresql/shared-resources/guides/2000-01-01-restoring %})
 - [Scalingo for MySQL®]({% post_url databases/mysql/guides/2000-01-01-restoring %})
 - [Scalingo for OpenSearch®]({% post_url databases/opensearch/guides/2000-01-01-restoring %})
 - [Scalingo for MongoDB®]({% post_url databases/mongodb/2000-01-01-start %}#backups)
