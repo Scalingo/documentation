@@ -1,12 +1,13 @@
 ---
-title: Managing Users of Your Scalingo for PostgreSQL® Addon
+title: Managing Users of Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Managing Users
 modified_at: 2024-11-05 12:00:00
 tags: databases postgresql addon
 index: 1
 ---
 
-Each Scalingo for PostgreSQL® addon comes with a [default database user](#understanding-protected-user).
+Each Scalingo for PostgreSQL® Shared Resources Database addon comes with a 
+[default database user](#understanding-protected-user).
 You can [create](#creating-a-new-user) as many additional users as needed,
 grant them with the appropriate permissions, and you can [delete](#deleting-a-user)
 them once they are not required anymore.
@@ -16,9 +17,10 @@ them once they are not required anymore.
 
 ### Understanding Protected User
 
-When provisioning a new Scalingo for PostgreSQL® addon, the platform creates a
-default user with a random name and password. It also grants this default user
-read and write permissions on the database, using the following queries:
+When provisioning a new Scalingo for PostgreSQL® Shared Resources Database addon
+, the platform creates a default user with a random name and password. It also 
+grants this default user read and write permissions on the database, using the 
+following queries:
 
 ```sql
 GRANT CREATE ON SCHEMA public TO <username>

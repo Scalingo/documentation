@@ -1,10 +1,11 @@
 ---
-title: Provisioning a Scalingo for PostgreSQL® Addon
+title: Provisioning a Scalingo for PostgreSQL® Shared Resources Database
 nav: Provisioning
 modified_at: 2023-11-22 00:00:00
 tags: databases postgresql addon
 index: 1
 ---
+
 
 {% note %}
 A new database architecture model is now available. Visit
@@ -13,7 +14,6 @@ model best fits your needs. If you are interested, contact our
 [Support](mailto:support@scalingo.com) and
 [Sales](https://scalingo.com/book-a-demo) teams.
 {% endnote %}
-
 
 Once you have chosen the right plan for your needs, you are ready to provision
 the addon. This can be done via our [dashboard](#using-the-dahboard),

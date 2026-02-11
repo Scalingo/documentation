@@ -1,5 +1,5 @@
 ---
-title: Restoring Your Scalingo for PostgreSQL® Addon
+title: Restoring Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Restoring
 modified_at: 2024-12-10 00:00:00
 tags: databases postgresql addon

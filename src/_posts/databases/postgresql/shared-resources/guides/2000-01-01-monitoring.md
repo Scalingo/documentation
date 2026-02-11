@@ -1,5 +1,5 @@
 ---
-title: Monitoring and Auditing Your Scalingo for PostgreSQL® Addon
+title: Monitoring and Auditing Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Monitoring and Auditing
 modified_at: 2024-12-13 00:00:00
 tags: databases postgresql addon
@@ -7,7 +7,7 @@ index: 2
 ---
 
 
-Each Scalingo for PostgreSQL® addon comes with several tools allowing for
+Each Scalingo for PostgreSQL® Shared Resources Database addon comes with several tools allowing for
 monitoring and auditing of your database. These tools give access to the
 [database logs](#inspecting-database-logs), to some [metrics](#analyzing-database-metrics)
 and to [running queries figures](#watching-running-queries). [Query Statistics](#exploring-query-statistics)
@@ -35,8 +35,8 @@ work (see below).
 2. Click the **Logs** tab
 
 The default view allows to consult the latest hot logs in real-time. The
-**View archives** link at the upper-right corner of the page allows to download the
-cold logs. These have to be manually unarchived to be processed.
+**View archives** link at the upper-right corner of the page allows to download 
+the cold logs. These have to be manually unarchived to be processed.
 
 ### Using the Command Line
 
@@ -87,7 +87,7 @@ stuck ones.
 
 ### Using the Command Line
 
-PostgreSQL® for Scalingo gives direct access to PostgreSQL®'s [*cumulative
+Scalingo for PostgreSQL® gives direct access to PostgreSQL®'s [*cumulative
 statistics system*][pg-stats-monitoring],
 which collects data about the database activity. Concretely, it exposes several
 views that can be queried from an [Interactive Remote Console][sr-irc].

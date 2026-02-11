@@ -1,12 +1,12 @@
 ---
-title: Upgrading Your Scalingo for PostgreSQL® Addon
+title: Upgrading Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Upgrading
 modified_at: 2025-02-17 12:00:00
 tags: databases postgresql addon
 index: 4
 ---
 
-In Scalingo's terminology, ***upgrading*** a Scalingo for PostgreSQL® addon
+In Scalingo's terminology, ***upgrading*** a Scalingo for PostgreSQL® Shared Resources Database addon
 designates the operation consisting in changing the database version for a
 newer one.
 
@@ -21,7 +21,7 @@ We disinguish two main cases:
 
 While we usually advise to stick to the latest minor-upgrade available to
 benefit from bug and security fixes, we also **strongly** advise to take
-extra-care when major-upgrading your Scalingo for PostgreSQL® addon ([more
+extra-care when major-upgrading your Scalingo for PostgreSQL® Shared Resources Database addon ([more
 about this below](#best-practices-when-managing-major-upgrades)).
 
 When the database vendor releases a new version of your database engine, we

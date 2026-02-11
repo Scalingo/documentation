@@ -1,13 +1,14 @@
 ---
-title: Connecting to Your Scalingo for PostgreSQL® Addon
+title: Connecting Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Connecting
 modified_at: 2025-08-26 12:00:00
 tags: databases postgresql addon
 index: 2
 ---
 
-When a Scalingo for PostgreSQL® addon is provisioned, the platform also adds
-two [environment variables][environment] to your app:
+
+When a Scalingo for PostgreSQL® Shared Resources Database addon is provisioned, 
+the platform also adds two [environment variables][environment] to your app:
 
 - `SCALINGO_POSTGRESQL_URL`: a string containing all information needed to
   establish a connection between your application and your database. This

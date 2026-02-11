@@ -1,5 +1,5 @@
 ---
-title: Accessing Your Scalingo for PostgreSQL® database
+title: Accessing Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Accessing
 modified_at: 2025-06-10 00:00:00
 tags: databases postgresql addon
@@ -13,11 +13,6 @@ locally, to dump the database content,...
 
 We provide several ways to access your database remotely. Chosing one mostly
 depends on your needs and preferences.
-
-{% note %}
-This page mainly applies to **Shared Resources** databases. For
-**Dedicated Resources** networking and firewall rules, see [Database Network Exposure][database-exposure].
-{% endnote %}
 
 ## Using the Interactive Remote Console
 
