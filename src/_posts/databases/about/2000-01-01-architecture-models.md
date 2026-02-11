@@ -6,8 +6,8 @@ index: 2
 ---
 
 
-Scalingo Managed Databases lets you deploy and operate databases in minutes, 
-with a fully managed service built for production workloads. 
+Scalingo Managed Database Service lets you deploy and operate databases in 
+minutes, with a fully managed service built for production workloads. 
 [Common features][database-features] cover scaling, resilience, security, 
 backups and minute based pricing. Then, the architecture model you choose 
 defines the level of execution and network isolation, and the SecNumCloud scope.

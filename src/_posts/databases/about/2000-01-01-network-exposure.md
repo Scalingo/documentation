@@ -7,8 +7,8 @@ index: 21
 ---
 
 
-This page explains how **Scalingo Managed Databases** can be accessed remotely
-at the network level depending on the **architecture model**.
+This page explains how **Managed Databases** can be accessed remotely at the 
+network level depending on the **architecture model**.
 
 {% note %}
 This page covers only network exposure and traffic filtering rules.
