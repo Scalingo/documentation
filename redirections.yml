@@ -780,6 +780,21 @@
   - old: "/platform/databases/access#internet-accessibility"
     new: "/databases/about/network-exposure#making-your-database-reachable-from-the-internet"
 
+  - old: "/databases/postgresql/guides/managing-extensions"
+    new: "/databases/postgresql/extensions/managing-extensions"
+
+  - old: "/databases/postgresql/guides/postgis"
+    new: "/databases/postgresql/extensions/postgis"
+
+  - old: "/databases/postgresql/guides/timescaledb"
+    new: "/databases/postgresql/extensions/timescaledb"
+
+  - old: "/databases/postgresql/guides/pgvector"
+    new: "/databases/postgresql/extensions/pgvector"
+
+  - old: "/databases/postgresql/guides/postgresql-anonymizer"
+    new: "/databases/postgresql/extensions/postgresql-anonymizer"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

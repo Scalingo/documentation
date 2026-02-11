@@ -64,6 +64,6 @@ line.
 
 
 [irc]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
-[postgis]: {% post_url databases/postgresql/guides/2000-01-01-postgis %}
-[timescaledb]: {% post_url databases/postgresql/guides/2000-01-01-timescaledb %}
-[pgvector]: {% post_url databases/postgresql/guides/2000-01-01-pgvector %}
+[postgis]: {% post_url databases/postgresql/extensions/2000-01-01-postgis %}
+[timescaledb]: {% post_url databases/postgresql/extensions/2000-01-01-timescaledb %}
+[pgvector]: {% post_url databases/postgresql/extensions/2000-01-01-pgvector %}

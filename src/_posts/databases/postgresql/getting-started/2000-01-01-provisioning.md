@@ -112,6 +112,6 @@ You can access the database dashboard via the application dashboard:
 
 [monitoring]: {% post_url databases/postgresql/guides/2000-01-01-monitoring %}
 [upgrading]: {% post_url databases/postgresql/guides/2000-01-01-upgrading %}
-[managing-extensions]: {% post_url databases/postgresql/guides/2000-01-01-managing-extensions %}
+[managing-extensions]: {% post_url databases/postgresql/extensions/2000-01-01-managing-extensions %}
 [managing-users]: {% post_url databases/postgresql/guides/2000-01-01-managing-users %}
 [backing-up]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}

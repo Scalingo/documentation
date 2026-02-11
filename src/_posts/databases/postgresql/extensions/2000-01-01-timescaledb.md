@@ -310,6 +310,6 @@ PostgreSQL®][restoring-pitr].
 
 [irc]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
 [provisioning]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}
-[enabling-extension]: {% post_url databases/postgresql/guides/2000-01-01-managing-extensions %}#enabling-an-extension
+[enabling-extension]: {% post_url databases/postgresql/extensions/2000-01-01-managing-extensions %}#enabling-an-extension
 [dumping]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}#dumping-the-database
 [restoring-pitr]: {% post_url databases/postgresql/guides/2000-01-01-restoring %}#restoring-a-point-in-time-recovery-backup
