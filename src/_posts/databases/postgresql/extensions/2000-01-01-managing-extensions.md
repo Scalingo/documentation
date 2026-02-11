@@ -32,7 +32,7 @@ line. Active extensions are visible in your database dashboard.
 
 ### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console][irc]
+1. Access your database (for Dedicated Resources / for [Shared Resources][sr-irc])
 2. From the PostgreSQL® console, run the following command:
    ```sql
    CREATE EXTENSION IF NOT EXISTS <extension_name>;
@@ -53,7 +53,7 @@ line.
 
 ### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console][irc]
+1. Access your database (for Dedicated Resources / for [Shared Resources][sr-irc])
 2. From the PostgreSQL® console, run the following command:
    ```sql
    DROP EXTENSION IF EXISTS <extension_name>;
@@ -65,7 +65,7 @@ line.
    ```
 
 
-[irc]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
+[sr-irc]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
 [postgis]: {% post_url databases/postgresql/extensions/2000-01-01-postgis %}
 [timescaledb]: {% post_url databases/postgresql/extensions/2000-01-01-timescaledb %}
 [pgvector]: {% post_url databases/postgresql/extensions/2000-01-01-pgvector %}

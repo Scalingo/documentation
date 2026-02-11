@@ -90,7 +90,7 @@ stuck ones.
 PostgreSQL® for Scalingo gives direct access to PostgreSQL®'s [*cumulative
 statistics system*][pg-stats-monitoring],
 which collects data about the database activity. Concretely, it exposes several
-views that can be queried from an [Interactive Remote Console][irc].
+views that can be queried from an [Interactive Remote Console][sr-irc].
 
 Amongst the views available, these might be of particular interest when
 monitoring the current state of the database:
@@ -134,7 +134,7 @@ to be activated manually.
 
 #### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console][irc]
+1. Access your database using the [Interactive Remote Console][sr-irc]
 2. From the PostgreSQL® console, run the following command:
    ```sql
    CREATE extension pg_stat_statements;
@@ -156,7 +156,7 @@ to be activated manually.
 
 #### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console][irc]
+1. Access your database using the [Interactive Remote Console][sr-irc]
 2. From the PostgreSQL® console, query the `pg_stat_statements` as you wish.\
    Our [Troubleshooting][troubleshooting]
    page gives some examples.
@@ -167,6 +167,6 @@ to be activated manually.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
-[irc]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
+[sr-irc]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
 [database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [troubleshooting]: {% post_url databases/postgresql/2000-01-01-troubleshooting %}#identifying-performances-issues

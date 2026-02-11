@@ -42,7 +42,7 @@ getting started.
 To enable TimescaleDB®:
 
 1. [Provision a new PostgreSQL® database][provisioning]
-2. Access your database using the [Interactive Remote Console][irc]
+2. Access your database (for Dedicated Resources / for [Shared Resources][sr-irc])
 3. [Enable the `timescaledb` extension][enabling-extension] using the following commands:
 
     From the PostgreSQL® console, run the following command:
@@ -94,8 +94,7 @@ $ select * from conditions;
 
 ### Creating the Downsampling Procedure
 
-1. From the command line, open an [Interactive Remote Console][irc] to access
-   your database
+1. Access your database (for Dedicated Resources / for [Shared Resources][sr-irc])
 2. From the database command line, run the following commands to create a
    procedure which aims at downsampling the `conditions` table:
    ```sql
@@ -191,8 +190,7 @@ query.
 
 ### Creating the Data Retention Policy
 
-1. From the command line, open an [Interactive Remote Console][irc] to access
-   your database
+1. Access your database (for Dedicated Resources / for [Shared Resources][sr-irc])
 2. From the database command line, run the following commands to create a
    procedure which aims at removing data older than `drop_after`:
    ```sql
@@ -308,7 +306,7 @@ PostgreSQL®][restoring-pitr].
 [backup_policies-pitr]: {% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups
 [backup_policies-scheduled]: {% post_url databases/about/2000-01-01-backup-policies %}#scheduled-backups
 
-[irc]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
+[sr-irc]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
 [provisioning]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}
 [enabling-extension]: {% post_url databases/postgresql/extensions/2000-01-01-managing-extensions %}#enabling-an-extension
 [dumping]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-backing-up %}#dumping-the-database
