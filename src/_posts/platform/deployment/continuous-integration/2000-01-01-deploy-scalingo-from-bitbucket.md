@@ -53,4 +53,4 @@ You can create a dedicated user only for deployment from Bitbucket. You would
 need to create a new user on Scalingo and add the SSH key to this account. One
 of the pro is that if you name the user `scalingo-bitbucket-pipelines`, you
 would see where the deployment event comes from in your Activity tab.
-
+{% endnote %}
