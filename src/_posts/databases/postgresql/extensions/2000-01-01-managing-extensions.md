@@ -1,8 +1,8 @@
 ---
-title: Managing Extensions of Your Scalingo for PostgreSQL® Addon
+title: Managing Extensions of Your Scalingo for PostgreSQL® Instance
 nav: Managing Extensions
 modified_at: 2024-11-05 12:00:00
-tags: databases postgresql addon
+tags: databases postgresql extensions
 index: 10
 ---
 
@@ -12,9 +12,11 @@ but you need to enable those manually according to your needs.
 
 Please note that we have dedicated pages for some of the most popular
 extensions:
-- [TimescaleDB®][timescaledb]
 - [PostGIS][postgis]
+- [TimescaleDB®][timescaledb]
 - [pgvector][pgvector]
+- [PostgreSQL® Anonymizer][postgresql-anonymizer]
+
 
 ## Available Extensions
 
@@ -25,7 +27,7 @@ extensions:
 
 {% note %}
 Enabling an extension for your PostgreSQL® is only available from the command
-line.
+line. Active extensions are visible in your database dashboard.
 {% endnote %}
 
 ### Using the Command Line
@@ -67,3 +69,4 @@ line.
 [postgis]: {% post_url databases/postgresql/extensions/2000-01-01-postgis %}
 [timescaledb]: {% post_url databases/postgresql/extensions/2000-01-01-timescaledb %}
 [pgvector]: {% post_url databases/postgresql/extensions/2000-01-01-pgvector %}
+[postgresql-anonymizer]: {% post_url databases/postgresql/extensions/2000-01-01-postgresql-anonymizer %}
