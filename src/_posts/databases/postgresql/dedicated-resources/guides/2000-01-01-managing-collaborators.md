@@ -24,7 +24,8 @@ This will change in a future release.
 
 1. From your web browser, open your [dashboard][dashboard]
 2. Browse your projects and select the database you want to manage
-3. Once on the database dashboard, click the **Collaborators** tab
+3. Once on the database dashboard, click the **Settings** tab, then select
+   **Collaborators**
 
 ### Using the Command Line
 
@@ -51,7 +52,8 @@ This will change in a future release.
 
 1. From your web browser, open your [dashboard][dashboard]
 2. Browse your projects and select the database you want to manage
-3. Once on the database dashboard, click the **Collaborators** tab
+3. Once on the database dashboard, click the **Settings** tab, then select
+   **Collaborators**
 4. Click the **Add** button
 5. Fill the input field with the e-mail address of the collaborator
 6. Confirm
@@ -84,7 +86,8 @@ prevent access to database data.
 
 1. From your web browser, open your [dashboard][dashboard]
 2. Browse your projects and select the database you want to manage
-3. Once on the database dashboard, click the **Collaborators** tab
+3. Once on the database dashboard, click the **Settings** tab, then select
+   **Collaborators**
 4. Locate the collaborator for whom you want to revoke access
 5. Open the contextual menu by clicking the corresponding **...** button
 6. Select **Revoke access**
@@ -113,7 +116,8 @@ more interest in participating, you can stop collaborating on your own.
 
 1. From your web browser, open your [dashboard][dashboard]
 2. Browse your projects and select the database you want to manage
-3. Once on the database dashboard, click the **Collaborators** tab
+3. Once on the database dashboard, click the **Settings** tab, then select
+   **Collaborators**
 4. Locate yourself in the list of collaborators
 5. Open the contextual menu by clicking the corresponding **...** button
 6. Select **Revoke access**
