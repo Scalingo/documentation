@@ -12,6 +12,13 @@ You can [create](#creating-a-new-user) as many additional users as needed,
 grant them with the appropriate permissions, and you can [delete](#deleting-a-user)
 them once they are not required anymore.
 
+{% note %}
+This guide covers **database users** only.
+If you need to grant access to collaborators on a Shared Resources database,
+add them as app collaborators by following
+[this guide][managing-collaborators].
+{% endnote %}
+
 
 ## Listing Existing Users
 
@@ -166,3 +173,4 @@ Updating a User Password is only available from the command line.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-postgresql-dashboard
+[managing-collaborators]: {% post_url platform/user-management/teamwork/2000-01-01-managing %}
