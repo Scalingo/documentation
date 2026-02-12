@@ -1,7 +1,7 @@
 ---
 title: Connecting Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Connecting
-modified_at: 2025-08-26 12:00:00
+modified_at: 2026-02-12 12:00:00
 tags: databases postgresql dedicated
 index: 2
 ---

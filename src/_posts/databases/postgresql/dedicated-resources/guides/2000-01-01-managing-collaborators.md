@@ -1,7 +1,7 @@
 ---
 title: Managing Collaborators of Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Managing Collaborators
-modified_at: 2026-02-11 12:00:00
+modified_at: 2026-02-12 12:00:00
 tags: databases postgresql dedicated collaborator
 index: 1
 ---
