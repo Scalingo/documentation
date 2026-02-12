@@ -1,4 +1,4 @@
 ---
-nav: Dedicated Resources (new)
+nav: Dedicated Resources
 index: 3
 ---
