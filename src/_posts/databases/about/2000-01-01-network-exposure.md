@@ -92,8 +92,14 @@ Internet) and does not include source IP filtering.
 
 ## Dedicated Resources
 
-With Dedicated Resources, inbound connectivity is controlled through a 
-**fine-grained firewall** that follows an allowlist model.
+With Dedicated Resources, the database endpoint is Internet-routable, but
+inbound traffic is denied by default. Access is controlled through a
+**fine-grained firewall** that follows an allowlist model: every incoming
+connection must match an explicit rule.
+
+This also applies to traffic coming from the Scalingo network: if a Scalingo
+app must connect to the database, you still need to allow it (typically with
+the matching managed rule for the app region).
 
 {% note %}
 The Dedicated Resources architecture model is currently available for Scalingo 
@@ -101,52 +107,7 @@ for PostgreSQL® only, and only to selected customers.
 To request access or learn more, please contact our [Support](mailto:support@scalingo.com) or [Sales](https://scalingo.com/book-a-demo) teams.
 {% endnote %}
 
-### How the Firewall Works
-
-The firewall follows an allowlist model: you define allowed source networks
-with CIDR notation (single IPs or ranges), and only matching sources can reach
-the database endpoint.
-
-You can configure up to **30 firewall rules** per
-database, and rule changes usually propagate in around 2 minutes.
-
-Here are common CIDR formats you can use in firewall rules:
-
-- Single IP: `203.0.113.10/32` (`/32` means one exact IPv4 address)
-- IP range: `203.0.113.0/24` (`/24` means a subnet of 256 IPv4 addresses)
-- Allow all (not recommended): `0.0.0.0/0` (`/0` means all IPv4 addresses; this
-  effectively disables firewall filtering)
-
-### Allowing Scalingo Apps To Reach a Dedicated Resources Database
-
-If a Scalingo app must connect to a Dedicated Resources database, you need to 
-allow inbound connections from the app [region's egress IP addresses][egress].
-
-To keep the service simple and maintenance-free, Scalingo provides a
-**managed rule** type that automatically allowlists egress IPs for a region.
-
-Two managed rules are available:
-
-- `Scalingo osc-fr1 region`
-- `Scalingo osc-secnum-fr1 region`
-
-Workflow:
-
-1. Identify the app region (for example `osc-fr1` or `osc-secnum-fr1`).
-2. Add the matching **managed rule** in the Dedicated Resources firewall.
-3. Add custom CIDR rules only for additional non-Scalingo sources (office IPs,
-   VPN, etc.).
-
-A database in `osc-fr1` can accept traffic from an app in `osc-secnum-fr1` (and
-the other way around) as long as the corresponding managed rule is present.
-
-{% note %}
-With managed rules, Scalingo maintains the underlying egress IP list for you.
-You do not need to manually track egress IP changes for these rules.
-{% endnote %}
-
 
 [architecture-models]: {% post_url databases/about/2000-01-01-architecture-models %}
 [database-features]: {% post_url databases/about/2000-01-01-features %}
-[egress]: {% post_url platform/networking/public/2000-01-01-egress %}
 [access-your-database]: {% post_url platform/databases/2000-01-01-access %}
