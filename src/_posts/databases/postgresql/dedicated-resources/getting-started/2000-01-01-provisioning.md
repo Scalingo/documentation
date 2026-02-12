@@ -31,7 +31,7 @@ the addon. This can be done via our
 7. Click the **Create database** button
 8. Database provisioning typically takes 15–30 minutes
 
-### Using the Command Line (⚠️ TO UPDATE)
+### Using the Command Line (TO UPDATE)
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the plans available for `postgresql`:
@@ -61,7 +61,7 @@ the addon. This can be done via our
    ```
 5. Wait a few seconds for the addon to be provisioned and enjoy!
 
-### Using the Terraform Provider (⚠️ TO UPDATE)
+### Using the Terraform Provider (To Update)
 
 1. Place the following `resource` block in your Terraform file to create the
    addon and attach it to your app:
@@ -79,7 +79,7 @@ the addon. This can be done via our
 3. If so, run `terraform apply`
 4. After a few seconds, your database is ready to use. Enjoy!
 
-### Usint the Kubernetes Operator (⚠️ TO UPDATE)
+### Using the Kubernetes Operator (To Update)
 
 XXX
 
