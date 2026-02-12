@@ -251,5 +251,3 @@ described [above](#using-openssh).
 {% include mdl_img.html %}
 {:start="8"}
 8. Click the **Save** button
-
-[database-exposure]: {% post_url databases/about/2000-01-01-network-exposure %}
