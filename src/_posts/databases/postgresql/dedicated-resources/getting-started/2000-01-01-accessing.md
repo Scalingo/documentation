@@ -28,7 +28,7 @@ third-party tool.
 To access your database remotely you first need to [make it reachable over the
 Internet](#making-the-database-reachable-over-internet):
 - either locally, on your computer, via an [encrypted tunnel](#setting-up-an-encrypted-tunnel)
-- or from any location, by [enforcing TLS connection]({% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-connecting %}#enforcing-tls-connection)
+- or from any location, by [enforcing TLS connection]({% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-connecting %}#enforcing-tls-connection)
   and [enabling direct Internet access](#enabling-direct-access-over-internet).
 
 Once a secured connection has been established, you should be able to connect

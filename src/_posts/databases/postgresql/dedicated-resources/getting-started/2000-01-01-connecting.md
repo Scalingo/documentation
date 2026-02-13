@@ -101,4 +101,4 @@ application that needs access.
 [environment]: {% post_url platform/app/2000-01-01-environment %}
 [dr-firewall-regions]: {% post_url databases/about/2000-01-01-network-exposure %}#allowing-scalingo-apps-to-reach-a-dedicated-resources-database
 
-[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard

@@ -107,8 +107,8 @@ You can access the database dashboard from the main dashboard:
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
-[pg-dr-monitoring]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-monitoring %}
-[pg-dr-upgrading]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-upgrading %}
+[pg-dr-monitoring]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-monitoring %}
+[pg-dr-upgrading]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-upgrading %}
 [pg-dr-managing-extensions]: {% post_url databases/postgresql/extensions/2000-01-01-managing-extensions %}
-[pg-dr-managing-users]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-managing-users %}
-[pg-dr-backing-up]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-backing-up %}
+[pg-dr-managing-users]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-users %}
+[pg-dr-backing-up]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-backing-up %}
