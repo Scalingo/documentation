@@ -449,6 +449,11 @@ article tr:nth-child(odd) {
   display: block;
 }
 
+nav input:checked + label,
+nav ul li a:hover {
+  color: var(--color-sc-blue-1);
+}
+
 nav input:checked~label svg {
   transform: rotate(90deg);
 }
