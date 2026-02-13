@@ -16,6 +16,18 @@ Scalingo maintains a [Kubernetes Operator](https://github.com/Scalingo/scalingo-
 The Scalingo Kubernetes Operator is currently in alpha, and we are actively extending its capabilities.
 {% endnote %}
 
+### Scope
+
+The Scalingo Kubernetes Operator is a deployment and provisioning tool for Dedicated Resources.
+
+It does not target supervision or day-2 operations. Operations outside this scope must be handled through the Scalingo CLI, API, or Dashboard, for example:
+
+- Collaborator management
+- Database user management
+- Maintenance window configuration
+- PITR restoration
+- Database extension management
+
 ### Get started
 
 To start using the Scalingo operator in your Kubernetes cluster:
