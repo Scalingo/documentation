@@ -172,4 +172,4 @@ Updating a User Password is only available from the command line.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-postgresql-dashboard
-[dr-managing-collaborators]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-collaborators.md %}
+[dr-managing-collaborators]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-collaborators %}
