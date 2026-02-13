@@ -898,4 +898,11 @@ blockquote {
   color: #a6e22e;
 }
 
-/* Generic.Inserted & Diff Inserted */
+/*
+Fix PRE tags overflow by adding min-width:0 on key elements
+source: https://weblog.west-wind.com/posts/2016/feb/15/flexbox-containers-pre-tags-and-managing-overflow
+*/
+
+div, span, html, body, ul, article, main, nav {
+  min-width: 0;
+}
