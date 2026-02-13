@@ -1,5 +1,5 @@
 ---
-title: Backing Up Your Scalingo for PostgreSQL® Shared Resources Database
+title: Backing Up Your Scalingo for PostgreSQL® Shared Resources addon
 nav: Backing Up
 modified_at: 2025-10-20 12:00:00
 tags: databases postgresql addon how-to

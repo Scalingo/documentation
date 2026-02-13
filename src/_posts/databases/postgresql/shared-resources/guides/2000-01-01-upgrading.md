@@ -1,5 +1,5 @@
 ---
-title: Upgrading Your Scalingo for PostgreSQL® Shared Resources Database
+title: Upgrading Your Scalingo for PostgreSQL® Shared Resources Database addon
 nav: Upgrading
 modified_at: 2025-02-17 12:00:00
 tags: databases postgresql addon
@@ -91,14 +91,14 @@ Finally, upgrade to the latest version of the 15.x branch.
 
 1. The instance is stopped. The database is unreachable.
 2. `pg_upgrade` is executed on the data.
-4. The instance is restarted with the targeted version. The database is
+3. . The instance is restarted with the targeted version. The database is
    reachable again and the application can use it normally.
-5. The `ANALYZE` SQL command is executed against the database to build up
+4. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-6. The application is restarted to ensure proper connections. [This does not
+5. The application is restarted to ensure proper connections. [This does not
    cause any additional downtime][zero-downtime].
-7. A base backup is asynchronously done to make [point-in-time recovery][pitr]
+6. A base backup is asynchronously done to make [point-in-time recovery][pitr]
    available again.
 
 Since we have to completely stop the instance to upgrade it, **a downtime is

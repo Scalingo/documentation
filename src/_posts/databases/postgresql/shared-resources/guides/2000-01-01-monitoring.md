@@ -1,5 +1,5 @@
 ---
-title: Monitoring and Auditing Your Scalingo for PostgreSQL® Shared Resources Database
+title: Monitoring and Auditing Your Scalingo for PostgreSQL® Shared Resources addon
 nav: Monitoring and Auditing
 modified_at: 2024-12-13 00:00:00
 tags: databases postgresql addon
