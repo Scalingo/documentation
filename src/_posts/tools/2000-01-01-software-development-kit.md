@@ -10,7 +10,7 @@ index: 1
 
 Scalingo maintains software development kits in various programming languages:
 
-- Go: [`github.com/Scalingo/go-scalingo`](https://pkg.go.dev/github.com/Scalingo/go-scalingo/v7)
+- Go: [`github.com/Scalingo/go-scalingo`](https://pkg.go.dev/github.com/Scalingo/go-scalingo/v9)
 - Ruby: [`scalingo`](https://rubygems.org/gems/scalingo)
 - Node.js: [`scalingo.js`](https://www.npmjs.com/package/scalingo)
 
