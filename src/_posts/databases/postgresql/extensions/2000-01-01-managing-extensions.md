@@ -1,8 +1,8 @@
 ---
-title: Managing Extensions of Your Scalingo for PostgreSQL® Addon
+title: Managing Extensions of Your Scalingo for PostgreSQL® Instance
 nav: Managing Extensions
 modified_at: 2024-11-05 12:00:00
-tags: databases postgresql addon
+tags: databases postgresql extensions
 index: 10
 ---
 
@@ -12,9 +12,11 @@ but you need to enable those manually according to your needs.
 
 Please note that we have dedicated pages for some of the most popular
 extensions:
-- [TimescaleDB®][timescaledb]
 - [PostGIS][postgis]
+- [TimescaleDB®][timescaledb]
 - [pgvector][pgvector]
+- [PostgreSQL® Anonymizer][postgresql-anonymizer]
+
 
 ## Available Extensions
 
@@ -25,12 +27,12 @@ extensions:
 
 {% note %}
 Enabling an extension for your PostgreSQL® is only available from the command
-line.
+line. Active extensions are visible in your database dashboard.
 {% endnote %}
 
 ### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console][irc]
+1. Access your database (for Dedicated Resources / for [Shared Resources][sr-irc])
 2. From the PostgreSQL® console, run the following command:
    ```sql
    CREATE EXTENSION IF NOT EXISTS <extension_name>;
@@ -51,7 +53,7 @@ line.
 
 ### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console][irc]
+1. Access your database (for Dedicated Resources / for [Shared Resources][sr-irc])
 2. From the PostgreSQL® console, run the following command:
    ```sql
    DROP EXTENSION IF EXISTS <extension_name>;
@@ -63,7 +65,8 @@ line.
    ```
 
 
-[irc]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
-[postgis]: {% post_url databases/postgresql/guides/2000-01-01-postgis %}
-[timescaledb]: {% post_url databases/postgresql/guides/2000-01-01-timescaledb %}
-[pgvector]: {% post_url databases/postgresql/guides/2000-01-01-pgvector %}
+[sr-irc]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
+[postgis]: {% post_url databases/postgresql/extensions/2000-01-01-postgis %}
+[timescaledb]: {% post_url databases/postgresql/extensions/2000-01-01-timescaledb %}
+[pgvector]: {% post_url databases/postgresql/extensions/2000-01-01-pgvector %}
+[postgresql-anonymizer]: {% post_url databases/postgresql/extensions/2000-01-01-postgresql-anonymizer %}

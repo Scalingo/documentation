@@ -75,6 +75,10 @@ You can dump your database remotely using [the command-line-tool]({% post_url to
 
 You need to install the Redis® CLI tools in the one-off before executing `redis-cli`:
 
+{% warning %}
+`redis-cli` cannot be used when **Force TLS** is enabled. It returns an error message `I/O error`.
+{% endwarning %}
+
 ```sh
 $ scalingo --app my-app run bash
 

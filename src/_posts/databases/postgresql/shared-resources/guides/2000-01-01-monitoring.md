@@ -1,5 +1,5 @@
 ---
-title: Monitoring and Auditing Your Scalingo for PostgreSQL® Addon
+title: Monitoring and Auditing Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Monitoring and Auditing
 modified_at: 2024-12-13 00:00:00
 tags: databases postgresql addon
@@ -7,7 +7,7 @@ index: 2
 ---
 
 
-Each Scalingo for PostgreSQL® addon comes with several tools allowing for
+Each Scalingo for PostgreSQL® Shared Resources Database addon comes with several tools allowing for
 monitoring and auditing of your database. These tools give access to the
 [database logs](#inspecting-database-logs), to some [metrics](#analyzing-database-metrics)
 and to [running queries figures](#watching-running-queries). [Query Statistics](#exploring-query-statistics)
@@ -35,8 +35,8 @@ work (see below).
 2. Click the **Logs** tab
 
 The default view allows to consult the latest hot logs in real-time. The
-**View archives** link at the upper-right corner of the page allows to download the
-cold logs. These have to be manually unarchived to be processed.
+**View archives** link at the upper-right corner of the page allows to download 
+the cold logs. These have to be manually unarchived to be processed.
 
 ### Using the Command Line
 
@@ -87,10 +87,10 @@ stuck ones.
 
 ### Using the Command Line
 
-PostgreSQL® for Scalingo gives direct access to PostgreSQL®'s [*cumulative
+Scalingo for PostgreSQL® gives direct access to PostgreSQL®'s [*cumulative
 statistics system*][pg-stats-monitoring],
 which collects data about the database activity. Concretely, it exposes several
-views that can be queried from an [Interactive Remote Console][irc].
+views that can be queried from an [Interactive Remote Console][sr-irc].
 
 Amongst the views available, these might be of particular interest when
 monitoring the current state of the database:
@@ -134,7 +134,7 @@ to be activated manually.
 
 #### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console][irc]
+1. Access your database using the [Interactive Remote Console][sr-irc]
 2. From the PostgreSQL® console, run the following command:
    ```sql
    CREATE extension pg_stat_statements;
@@ -156,7 +156,7 @@ to be activated manually.
 
 #### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console][irc]
+1. Access your database using the [Interactive Remote Console][sr-irc]
 2. From the PostgreSQL® console, query the `pg_stat_statements` as you wish.\
    Our [Troubleshooting][troubleshooting]
    page gives some examples.
@@ -167,6 +167,6 @@ to be activated manually.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
-[irc]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
-[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[sr-irc]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
+[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [troubleshooting]: {% post_url databases/postgresql/2000-01-01-troubleshooting %}#identifying-performances-issues

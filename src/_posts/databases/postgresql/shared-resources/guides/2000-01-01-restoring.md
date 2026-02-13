@@ -1,5 +1,5 @@
 ---
-title: Restoring Your Scalingo for PostgreSQL® Addon
+title: Restoring Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Restoring
 modified_at: 2024-12-10 00:00:00
 tags: databases postgresql addon
@@ -105,9 +105,9 @@ Dumps are considered like any Scheduled backup. Consequently, please refer to
 the [documentation explaining how to restore a Scheduled backup](#restoring-a-scheduled-backup).
 
 
-[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
-[accessing-one-off]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-a-one-off
-[accessing-cli]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
-[connecting-uri]: {% post_url databases/postgresql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
-[backing-up-downloading]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}#downloading-a-scheduled-backup
-[backing-up-one-off]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}#from-a-one-off-container
+[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[accessing-one-off]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-a-one-off
+[accessing-cli]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
+[connecting-uri]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
+[backing-up-downloading]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-backing-up %}#downloading-a-scheduled-backup
+[backing-up-one-off]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-backing-up %}#from-a-one-off-container

@@ -1,4 +1,4 @@
 ---
 nav: Getting Started
-index: 2
+index: 1
 ---

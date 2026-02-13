@@ -1,13 +1,14 @@
 ---
-title: Connecting to Your Scalingo for PostgreSQL® Addon
+title: Connecting Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Connecting
 modified_at: 2025-08-26 12:00:00
 tags: databases postgresql addon
-index: 3
+index: 2
 ---
 
-When a Scalingo for PostgreSQL® addon is provisioned, the platform also adds
-two [environment variables][environment] to your app:
+
+When a Scalingo for PostgreSQL® Shared Resources Database addon is provisioned, 
+the platform also adds two [environment variables][environment] to your app:
 
 - `SCALINGO_POSTGRESQL_URL`: a string containing all information needed to
   establish a connection between your application and your database. This
@@ -119,11 +120,10 @@ Please note that while we strongly advise to use TLS, it remains an option,
 meaning that you can still access your database without it if needed.
 
 
-## Connecting Multiple Applications to the Same PostgreSQL® Addon
+## Connecting Multiple Applications to the Same PostgreSQL® database
 
-If you need to connect your PostgreSQL® addon from multiple applications, you
-can do it by adding an environment variable in every application wanting to
-communicate with the database:
+To share a database across multiple applications, add the database connection 
+string as an environment variable in each application that needs access.
 
 1. Copy [the connection URI](#getting-the-connection-uri) of your addon
 2. [Create a new environment variable][environment] for the application that
@@ -140,4 +140,4 @@ communicate with the database:
 [cli]: ({% post_url tools/cli/2000-01-01-start %})
 [environment]: {% post_url platform/app/2000-01-01-environment %}
 
-[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
