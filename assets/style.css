@@ -56,7 +56,7 @@
   --text-sc-text-6: 18px;
   --leading-sc-text-6: 20px;
   --text-sc-title-1: 32px;
-  --leading-sc-title-1: 28px;
+  --leading-sc-title-1: 32px;
   --tracking-sc-title-1: -0.04em;
   --text-sc-title-1-1: 32px;
   --leading-sc-title-1-1: 48px;
@@ -449,6 +449,10 @@ article tr:nth-child(odd) {
   display: block;
 }
 
+nav ul li a:hover {
+  color: var(--color-sc-blue-1);
+}
+
 nav input:checked~label svg {
   transform: rotate(90deg);
 }
@@ -481,6 +485,7 @@ svg {
   padding-right: 1.5rem;
   height: 3.5rem;
   border: 1px solid #D2D9F9;
+  box-sizing: border-box;
 }
 
 .DocSearch .DocSearch-Search-Icon {
@@ -897,4 +902,11 @@ blockquote {
   color: #a6e22e;
 }
 
-/* Generic.Inserted & Diff Inserted */
+/*
+Fix PRE tags overflow by adding min-width:0 on key elements
+source: https://weblog.west-wind.com/posts/2016/feb/15/flexbox-containers-pre-tags-and-managing-overflow
+*/
+
+div, span, html, body, ul, article, main, nav {
+  min-width: 0;
+}
