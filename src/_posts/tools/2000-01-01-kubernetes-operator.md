@@ -34,7 +34,7 @@ To start using the Scalingo operator in your Kubernetes cluster:
 
 1. [Deploy the Operator](https://github.com/Scalingo/scalingo-operator/releases) in your Kubernetes cluster using the `install.yaml` file
 2. Create a Scalingo [API tokens]({% post_url platform/user-management/scalingo-account/2000-01-01-navigating %}#api-tokens) from your account settings
-3. [Put the token in Kubernetes secret](https://github.com/Scalingo/scalingo-operator/blob/main/config/samples/databases_v1alpha1_postgresql.yaml)
+3. [Put the token in Kubernetes secret](https://github.com/Scalingo/scalingo-operator/blob/main/README.md#create-secret)
 4. Create your dedicated database custom resource, based on this [example](https://github.com/Scalingo/scalingo-operator/blob/main/config/samples/databases_v1alpha1_postgresql.yaml)
 5. Apply the custom resource to deploy the dedicated database
 
