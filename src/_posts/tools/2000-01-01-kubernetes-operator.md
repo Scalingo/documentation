@@ -18,7 +18,7 @@ The Scalingo Kubernetes Operator is currently in alpha, and we are actively exte
 
 ### Get started
 
-To start using the Scalingo operator:
+To start using the Scalingo operator in your Kubernetes cluster:
 
 1. Create a Scalingo [API tokens]({% post_url platform/user-management/scalingo-account/2000-01-01-navigating %}#api-tokens) from your account settings
 2. Export your credentials as Kubernetes Secrets
