@@ -100,7 +100,6 @@ requirements in the `requirements.txt` file of your Jupyter repository.
    ```
 
 2. Commit the update:
-
    ```bash
    git add requirements.txt
    git commit -m "Upgrade to Jupyter <NEW_VERSION>"
