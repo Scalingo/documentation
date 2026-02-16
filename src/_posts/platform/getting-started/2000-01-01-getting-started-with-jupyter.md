@@ -68,7 +68,6 @@ additional steps you will need to follow:
 
 4. (optional) Instruct the platform to run the `web` process type in a single
    L container:
-
    ```bash
    scalingo --app my-jupyter scale web:1:L
    ```
