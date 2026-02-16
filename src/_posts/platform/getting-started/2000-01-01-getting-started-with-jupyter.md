@@ -13,24 +13,23 @@ learning, data analysis, or scientific computing.
 
 ## Planning your Deployment
 
-By default, Jupyter Notebook stores notebooks on the local filesystem. Since Scalingo's filesystem is ephemeral, you'll have to provision a
-[Scalingo for PostgreSQL®][db-postgresql] addon to persist your notebooks. We usually advise to start with a Scalingo for PostgreSQL® Starter 512 addon, and
-upgrade to a more powerful plan later if need be.
+- By default, Jupyter Notebook stores notebooks on the local filesystem. Since
+  Scalingo's filesystem is ephemeral, we will replace the local filesystem
+  with a [Scalingo for PostgreSQL®][db-postgresql] addon to persist the
+  notebooks. We usually advise to start with a Scalingo for PostgreSQL® Starter
+  512 addon, and upgrade to a more powerful plan later if need be.
 
-{% note %}
-By default, notebooks are stored in a PostgreSQL® database to ensure persistence
-across container restarts and redeployments. This is achieved using
-[pgcontents][pgcontents], a Postgres-backed storage system for Jupyter.
+- To make Jupyter Notebook store notebooks in the PostgreSQL® database, we will
+  use [`pgcontents`][pgcontents], a Postgres-backed storage system for Jupyter.
 
-This means:
-- Notebooks survive application restarts.
-- Notebooks benefit from Scalingo's automated database backups.
-- No data loss due to Scalingo's ephemeral filesystem.
-{% endnote %}
+  This means:
+  - Notebooks survive application restarts.
+  - Notebooks benefit from Scalingo's automated database backups.
+  - No data loss due to Scalingo's ephemeral filesystem.
 
-Depending on several factors such as the size of your datasets, the complexity
-of your computations, and the number of notebooks you run at the same time,
-Jupyter Notebook can consume a lot of RAM.
+- Depending on several factors such as the size of your datasets, the complexity
+  of your computations, and the number of notebooks you run at the same time,
+  Jupyter Notebook can consume a lot of RAM.
 
 ## Deploying
 
