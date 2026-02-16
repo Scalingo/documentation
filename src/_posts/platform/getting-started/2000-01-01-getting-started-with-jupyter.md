@@ -47,7 +47,6 @@ additional steps you will need to follow:
    ```
 
 2. Create the application on Scalingo:
-
    ```bash
    scalingo create my-jupyter
    ```
