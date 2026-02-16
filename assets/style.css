@@ -311,9 +311,21 @@ article ol li {
   padding-left: 0.625rem;
 }
 
+/* Fix margin on mobile */
+@media screen and (max-width: 768px) {
+  article ol li {
+    margin-left: 1.2rem;
+    padding-left: .3rem;
+  }
+}
+
 article ol>li::marker {
   color: #183BEE;
   font-weight: bold;
+}
+
+article ol ul li {
+    margin-left: 0;
 }
 
 article aside.note {
@@ -528,6 +540,12 @@ article pre {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+  /* Remove extra margins for code blocks inside list items */
+  article ol pre,
+  article ul pre{
+    margin-left: 0;
+  }
 
 @media (min-width: 640px) {
   article pre {
