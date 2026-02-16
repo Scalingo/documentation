@@ -53,7 +53,6 @@ additional steps you will need to follow:
 
    Notice that our Command Line automatically detects the git repository, and
    adds a git remote to Scalingo:
-
    ```bash
    git remote -v
 
