@@ -63,7 +63,6 @@ additional steps you will need to follow:
    ```
 
 3. Provision a Scalingo for PostgreSQL® Starter 512 addon:
-
    ```bash
    scalingo --app my-jupyter addons-add postgresql postgresql-starter-512
    ```
