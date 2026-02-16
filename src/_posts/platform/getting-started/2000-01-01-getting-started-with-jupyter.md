@@ -86,6 +86,93 @@ additional steps you will need to follow:
    git push scalingo main
    ```
 
+### Using the Terraform Provider
+
+{% note %}
+The following code blocks are given as examples.  
+Please adjust the values to suit your needs.
+{% endnote %}
+
+1. Start by forking our [jupyter-scalingo][jupyter-scalingo] repository.
+
+2. Create the application:
+
+   ```terraform
+   resource "scalingo_app" "my-jupyter" {
+     name        = "my-jupyter"
+     stack_id    = "scalingo-22"
+     force_https = true
+   }
+   ```
+
+3. Link the app to your forked repository:
+
+   ```terraform
+   data "scalingo_scm_integration" "github" {
+   scm_type = "github"
+   }
+   
+   resource "scalingo_scm_repo_link" "default" {
+      auth_integration_uuid = data.scalingo_scm_integration.github.id
+      app                   = scalingo_app.my-jupyter.id
+      source                = "https://github.com/Scalingo/jupyter-scalingo"
+      branch                = "main"
+   } ```
+
+4. Provision a Scalingo for PostgreSQL® Starter 512 addon: 
+
+
+   ```terraform
+   resource "scalingo_addon" "my-jupyter-db" {
+      app         = scalingo_app.my-jupyter.id
+      provider_id = "postgresql"
+      plan        = "postgresql-starter-512"
+   } 
+   ```
+
+5. (optional) Run the web process type in a single L container: 
+   ```terraform
+   resource "scalingo_container_type" "web" {
+      app    = scalingo_app.my-jupyter.id
+      name   = "web"
+      size   = "L"
+      amount = 1
+   }
+   ```
+  
+
+6. Set the mandatory environment variables:
+```terraform
+resource "scalingo_environment_variable" "jupyter_password" {
+  app   = scalingo_app.my-jupyter.id
+  name  = "JUPYTER_NOTEBOOK_PASSWORD"
+  value = "<YOUR_SECURE_PASSWORD>"
+}
+
+resource "scalingo_environment_variable" "jupyter_token" {
+  app   = scalingo_app.my-jupyter.id
+  name  = "JUPYTER_TOKEN"
+  value = "<YOUR_SECURE_TOKEN>"
+}
+```
+
+7. Run:
+```terraform
+   terraform plan
+```
+Review the changes carefully.
+
+8. If everything looks good, apply the configuration:
+
+```terraform
+   terraform apply
+```
+
+
+9. Once Terraform has finished, your Jupyter Notebook application is ready:
+   A deployement will automatically be triggered via the SCM integration.
+
+
 ## Updating
 
 Jupyter Notebook is a Python application, distributed via its own package
@@ -157,12 +244,12 @@ is **possible** to use an external S3-compatible object storage, such as
 Outscale Object Storage.
 
 {% note %}
-By default, JupyterLab uses **pgcontents** with PostgreSQL® to persist notebooks.
+By default, Jupyter Notebooks uses **pgcontents** with PostgreSQL® to persist notebooks.
 Using S3 storage is **entirely optional**. PostgreSQL® is sufficient for most use
 cases on Scalingo.
 {% endnote %}
 
-For reference and further details about using S3 storage with JupyterLab, you
+For reference and further details about using S3 storage with Jupyter Notebooks, you
 can check out the [S3ContentsManager documentation][jupyter-s3].
 
 [jupyter-scalingo]: https://github.com/Scalingo/jupyter-scalingo
