@@ -202,6 +202,11 @@
     white-space: nowrap !important;
   }
 }
+@media screen and (max-width: 640px) {
+  table {
+    max-width: 91vw !important;
+  }
+}
 
 article h2 {
   color: var(--color-sc-gray-1);
