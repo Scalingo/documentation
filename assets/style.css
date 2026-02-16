@@ -296,6 +296,13 @@ article ul:not(.list-unstyled)>li {
   padding-left: 1.5em;
 }
 
+  /* Fix margin on mobile */
+  @media screen and (max-width: 640px) {
+    article ul:not(.list-unstyled)>li {
+      padding-left: 1em;
+    }
+  }
+
 article ul:not(.list-unstyled)>li:before {
   content: "";
   position: absolute;
