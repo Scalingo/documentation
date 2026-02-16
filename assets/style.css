@@ -326,7 +326,7 @@ article ol li {
 /* Fix margin on mobile */
 @media screen and (max-width: 768px) {
   article ol li {
-    margin-left: 1.2rem;
+    margin-left: 1.5rem;
     padding-left: .3rem;
   }
 }
