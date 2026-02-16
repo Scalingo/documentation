@@ -95,7 +95,6 @@ requirements in the `requirements.txt` file of your Jupyter repository.
 
 1. In your Jupyter repository, update the `requirements.txt` file with the
    desired version:
-
    ```
    jupyter==<NEW_VERSION>
    ```
