@@ -175,5 +175,5 @@ can check out the [S3ContentsManager documentation][jupyter-s3].
 [jupyter-scalingo]: https://github.com/Scalingo/jupyter-scalingo
 [pgcontents]: https://github.com/quantopian/pgcontents
 [jupyter-s3]: https://github.com/cloudbutton/s3contents
-[db-postgresql]: https://doc.scalingo.com/databases/postgresql/getting-started/provisioning
+[db-postgresql]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}
 
