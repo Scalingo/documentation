@@ -547,6 +547,13 @@ article pre {
     margin-left: 0;
   }
 
+  /* Fix margin on mobile */
+  @media screen and (max-width: 768px) {
+    article pre {
+      padding: 1.5rem;
+    }
+  }
+
 @media (min-width: 640px) {
   article pre {
     margin-left: 0;
