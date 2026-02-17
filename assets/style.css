@@ -473,6 +473,11 @@ article tr:nth-child(odd) {
   display: block;
 }
 
+/* Reset the fixed height of the horizontal menu */
+#menu-nav{
+  padding-bottom: 150px;
+}
+
 nav li a:hover,
 nav label:hover{
   color: var(--color-sc-blue-1);
