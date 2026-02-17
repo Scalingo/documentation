@@ -473,7 +473,8 @@ article tr:nth-child(odd) {
   display: block;
 }
 
-nav ul li a:hover {
+nav li a:hover,
+nav label:hover{
   color: var(--color-sc-blue-1);
 }
 
