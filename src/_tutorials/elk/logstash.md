@@ -3,7 +3,7 @@ title: Logstash
 is_series: true
 series: Deploying an Elastic Stack
 series_index: 2
-modified_at: 2025-12-25 12:00:00
+modified_at: 2025-12-25
 ---
 
 **Logstash** is a data processing pipeline, able to take multiple sources of

@@ -3,7 +3,7 @@ title: Deploying n8n
 logo: n8n
 category: automation
 products:
-  - postgresql
+  - Scalingo for PostgreSQL®
 modified_at: 2025-08-12
 ---
 
@@ -55,13 +55,6 @@ Our current setup is as follow:
 
 
 ## Deploying
-
-### Using our One-Click Deploy Button
-
-Click the One-Click Deploy button belowto automatically deploy n8n with your
-Scalingo account:
-
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
 
 ### Using the Command Line
 

@@ -2,6 +2,9 @@
 title: Deploying SonarQube
 logo: sonarqube
 category: security
+products:
+  - Scalingo for PostgreSQL®
+  - Multi-buildpack
 modified_at: 2025-08-07
 ---
 
@@ -25,13 +28,6 @@ requests.
 
 
 ## Deploying
-
-### Using our One-Click Deploy Button
-
-Click the One-Click Deploy button below to automatically deploy SonarQube with
-your Scalingo account:
-
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
 
 ### Using the Command Line
 

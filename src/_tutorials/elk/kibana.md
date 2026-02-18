@@ -3,7 +3,7 @@ title: Kibana
 is_series: true
 series: Deploying an Elastic Stack
 series_index: 3
-modified_at: 2025-08-13 12:00:00
+modified_at: 2025-08-13
 ---
 
 **Kibana** is a powerful web-based data visualization tool providing everything
@@ -11,21 +11,6 @@ needed to explore data and build useful and efficient dashboards.
 
 
 ## Deploying
-
-### Using our One-Click Deploy Button
-
-Click the One-Click Deploy button below to automatically deploy Kibana with
-your Scalingo account:
-
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
-
-{% note %}
-- When using our One-Click Deploy button above, a new Elasticsearch database is
-  provisionned and attached to your Kibana app. You can safely delete it if you
-  use the one attached to your Logstash app.
-- In such a case, the `ELASTICSEARCH_URL` must be retrieved from the previously
-  created Logstash instance.
-{% endnote %}
 
 ### Using the Command Line
 

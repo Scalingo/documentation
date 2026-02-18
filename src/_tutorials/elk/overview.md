@@ -2,7 +2,8 @@
 title: Overview
 category: analytics
 products:
-  - elasticsearch
+  - Scalingo for Elasticsearch®
+  - Multi-buildpack
 logo: elastic-stack
 is_series: true
 series: Deploying an Elastic Stack

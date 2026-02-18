@@ -3,7 +3,7 @@ title: Curator
 is_series: true
 series: Deploying an Elastic Stack
 series_index: 4
-modified_at: 2025-08-13 12:00:00
+modified_at: 2025-08-13
 ---
 
 **Curator** is a tool that helps curating and managing Elasticsearch®'s indices.

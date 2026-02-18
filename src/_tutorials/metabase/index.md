@@ -3,7 +3,8 @@ title: Deploying Metabase
 logo: metabase
 category: analytics
 products:
-  - postgresql
+  - Scalingo for PostgreSQL®
+  - Multi-buildpack
 modified_at: 2025-08-12
 ---
 
@@ -27,13 +28,6 @@ queries.
 
 
 ## Deploying
-
-### Using our One-Click Deploy Button
-
-Click the One-Click Deploy button below to automatically deploy Metabase with
-your Scalingo account:
-
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
 
 ### Using the Command Line
 
