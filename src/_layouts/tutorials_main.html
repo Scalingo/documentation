@@ -1,0 +1,33 @@
+---
+layout: tutorials
+---
+
+<div class="max-w-[1532px] container mx-auto">
+    <div class="max-w-2/3 bg-sc-gray-5 rounded-lg flex flex-row justify-between items-center">
+        <div class="p-10">
+            <h1 class="text-sc-title-1-1 text-sc-gray-1 font-bold">{{ page.title }}</h1>
+            <p class="mt-4 max-w-[720px]">{{ page.description }}</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-3 gap-6 mt-6 mb-24">
+    {% assign tutorials = site.tutorials | sort: "modified_at" | slice: 0, 10 %}
+    {% for tutorial in tutorials %}
+        {% if tutorial.category %}
+        <a href="{{ tutorial.url }}">
+            <div class="flex items-center bg-sc-gray-5 rounded-lg h-24 px-5 border-l-8 border-sc-blue-1 group transform hover:border-l-12 duration-200 ease-out hover:shadow-lg">
+                <div class="flex items-center h-12 min-w-[48px] max-w-[48px] mr-6">{% icon {{ tutorial.logo }} %}</div>
+                <div class="flex items-center mr-6 font-bold h-12 group-hover:text-sc-blue-1 transition text-sc-title-4-2 line-clamp-2">
+                    {% if tutorial.is_series %}
+                        {{ tutorial.series }}
+                    {% else %}
+                        {{ tutorial.title }}
+                    {% endif %}
+                </div>
+                <div class="justify-end transform group-hover:translate-x-1 duration-200 ease-out">{% icon arrow_right %}</div>
+            </div>
+        </a>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>

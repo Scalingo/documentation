@@ -897,4 +897,14 @@ blockquote {
   color: #a6e22e;
 }
 
+.tag {
+    background-color: var(--sc-color-purple-3);
+    border: 1px solid var(--sc-color-purple-2);
+    border-radius: 4px;
+    color: var(--sc-color-purple-1);
+    display: flex;
+    margin: 4px;
+    padding: 2px 4px;
+}
+
 /* Generic.Inserted & Diff Inserted */
