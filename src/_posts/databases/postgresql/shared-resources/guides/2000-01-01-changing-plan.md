@@ -1,5 +1,5 @@
 ---
-title: Changing Plan of a Scalingo for PostgreSQL® Shared Resources Database
+title: Changing Plan of a Scalingo for PostgreSQL® Shared Resources addon
 nav: Changing Plan
 modified_at: 2025-12-23 00:00:00
 tags: databases postgresql addon
@@ -11,7 +11,7 @@ or three parts separated by a dash (-). This name is made of:
 
 1. a database ***type*** : `postgresql`
 2. a ***class*** : either `starter` or `business` (learn more about
-   [classes][databases-plans])
+   [service classes][service-classes])
 3. a ***size*** : specifying the amount of RAM available with the plan, in MB
    (only for starter and business classes).
 
@@ -141,4 +141,4 @@ operation, thanks to the failover mechanism included in the Business plan.
 
 [app-dashboard]: https://dashboard.scalingo.com/apps
 [cli]: {% post_url tools/cli/2000-01-01-start %}
-[databases-plans]: {% post_url databases/about/2000-01-01-overview %}#database-plans
+[service-classes]: {% post_url databases/about/2000-01-01-overview %}#service-classes

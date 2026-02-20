@@ -1,22 +1,21 @@
 ---
-title: Managing Users of Your Scalingo for PostgreSQL® Shared Resources addon
+title: Managing Users of Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Managing Users
-modified_at: 2024-11-05 12:00:00
-tags: databases postgresql addon
+modified_at: 2026-02-13 12:00:00
+tags: databases postgresql dedicated
 index: 1
 ---
 
-Each Scalingo for PostgreSQL® Shared Resources Database addon comes with a 
-[default database user](#understanding-protected-user).
+Each Scalingo for PostgreSQL® Dedicated Resources Database instances comes with 
+a [default database user](#understanding-protected-user).
 You can [create](#creating-a-new-user) as many additional users as needed,
 grant them with the appropriate permissions, and you can [delete](#deleting-a-user)
 them once they are not required anymore.
 
 {% note %}
 This guide covers **database users** only.
-If you need to grant access to collaborators on a Shared Resources database,
-add them as app collaborators by following
-[this guide][managing-collaborators].
+If you need to grant access to collaborators on a Dedicated Resources database,
+add them as collaborators by following [this guide][dr-managing-collaborators].
 {% endnote %}
 
 
@@ -24,7 +23,7 @@ add them as app collaborators by following
 
 ### Understanding Protected User
 
-When provisioning a new Scalingo for PostgreSQL® Shared Resources Database addon
+When provisioning a new Scalingo for PostgreSQL® Dedicated Resources Database addon
 , the platform creates a default user with a random name and password. It also 
 grants this default user read and write permissions on the database, using the 
 following queries:
@@ -56,7 +55,7 @@ This default user is ***protected*** and thus:
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, run the following command to list the users:
    ```bash
-   scalingo --app my-app --addon postgresql database-users-list
+   scalingo --app my-dedicated-database --addon postgresql database-users-list
    ```
    The output should look like this:
    ```text
@@ -103,12 +102,12 @@ method used:
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, run the following command to create a new user:
    ```bash
-   scalingo --app my-app --addon postgresql database-users-create <username>
+   scalingo --app my-dedicated-database --addon postgresql database-users-create <username>
    ```
    Optionally, if you want to restrict this user to read only abilities, use
    the `--read-only` flag:
    ```bash
-   scalingo --app my-app --addon postgresql database-users-create --read-only <username>
+   scalingo --app my-dedicated-database --addon postgresql database-users-create --read-only <username>
    ```
 3. Set the user password:
    - Either chose a password and confirm it
@@ -136,7 +135,7 @@ Updating a User Password is only available from the command line.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Update the user password with the following command:
    ```bash
-   scalingo --app my-app --addon postgresql database-users-update-password <username>
+   scalingo --app my-dedicated-database --addon postgresql database-users-update-password <username>
    ```
 3. An interactive prompt asks you for a password you want to attribute to your user:
    - Either chose a password and confirm it
@@ -167,10 +166,10 @@ Updating a User Password is only available from the command line.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Remove the user with the following command:
    ```bash
-   scalingo --app my-app --addon postgresql database-users-delete <username>
+   scalingo --app my-dedicated-database --addon postgresql database-users-delete <username>
    ```
 
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
-[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-postgresql-dashboard
-[managing-collaborators]: {% post_url platform/user-management/teamwork/2000-01-01-managing %}
+[database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-postgresql-dashboard
+[dr-managing-collaborators]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-collaborators %}

@@ -1,7 +1,7 @@
 ---
-title: Upgrading Your Scalingo for PostgreSQL® Shared Resources Database addon
+title: Upgrading Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Upgrading
-modified_at: 2025-02-17 12:00:00
+modified_at: 2026-02-13 12:00:00
 tags: databases postgresql addon
 index: 4
 ---
@@ -41,21 +41,22 @@ There are no prerequisites for minor-upgrades.
 
 ### Process
 
-#### For Starter Plans
+Upgrades follow the same principles on both topologies, but multi-node
+clusters keep your service available throughout the operation.
+
+#### For Single-node Databases (`Starter`)
 
 1. The instance is stopped. The database is unreachable.
 2. We restart the instance with the targeted version. This operation can take
    quite some time, depending on the database size and enabled extension(s).
 3. Once the instance restarted, the database is reachable again.
-4. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime][zero-downtime].
 
 Since we have to completely stop the instance, **a downtime is inevitable**.
 
 We usually roughly estimate the downtime caused by the operation between a few
 seconds to a few minutes. In any cases, it shouldn't exceed 10 minutes.
 
-#### For Business Plans
+#### For Multi-node Clusters (`Business` and `Enterprise`)
 
 1. The standby instance is stopped. The primary instance is still running, so
    the database is still reachable.
@@ -65,10 +66,8 @@ seconds to a few minutes. In any cases, it shouldn't exceed 10 minutes.
    connection can be lost during a few milliseconds.
 4. The new standby instance is restarted with the targeted version.
 5. Once restarted, the cluster is fully upgraded and fully operational again.
-6. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime][zero-downtime].
 
-Minor-upgrades of Business plans are **usually achieved without any impactful
+Minor-upgrades of multi-node clusters are **usually achieved without any impactful
 downtime**.
 
 
@@ -87,18 +86,19 @@ Finally, upgrade to the latest version of the 15.x branch.
 
 ### Process
 
-#### For Starter Plans
+For major upgrades, the database is temporarily unavailable in both topologies.
+The overall duration mainly depends on the amount of data to process.
+
+#### For Single-node Databases (`Starter`)
 
 1. The instance is stopped. The database is unreachable.
 2. `pg_upgrade` is executed on the data.
-3. . The instance is restarted with the targeted version. The database is
+3. The instance is restarted with the targeted version. The database is
    reachable again and the application can use it normally.
 4. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-5. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime][zero-downtime].
-6. A base backup is asynchronously done to make [point-in-time recovery][pitr]
+5. A base backup is asynchronously done to make [point-in-time recovery][pitr]
    available again.
 
 Since we have to completely stop the instance to upgrade it, **a downtime is
@@ -108,7 +108,7 @@ We usually roughly estimate the overall downtime of the operation by assuming
 1 minute of unavailibility per 10GiB of data. This remains a raw estimation and
 our experience tends to show that it often takes less time.
 
-#### For Business Plans
+#### For Multi-node Clusters (`Business` and `Enterprise`)
 
 1. The entire cluster is stopped. The database is unreachable.
 2. `pg_upgrade` is executed on the data.
@@ -117,11 +117,9 @@ our experience tends to show that it often takes less time.
 4. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-5. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime][zero-downtime].
-6. A base backup is asynchronously done to make [point-in-time recovery][pitr]
+5. A base backup is asynchronously done to make [point-in-time recovery][pitr]
    available again.
-7. The standby instance is rebuilt from scratch, based on the primary instance
+6. The standby instance is rebuilt from scratch, based on the primary instance
    data. This means the database lives in a degraded state until the end of the
    replication process.
 
@@ -208,10 +206,6 @@ advise to take extra care when dealing with them:
   9. Once done, close the Pull Request to automatically destroy the linked
      Review App. You can now plan the production upgrade.
 
-- [Create a manual backup][backing-up-creating-manual] of your current
-  production database just before making the move in your production
-  environment.
-
 - [Put the app in maintenance mode][maintenance-mode] during the upgrade
   operations, especially if a significant downtime is expected.
 
@@ -233,8 +227,6 @@ database dashboard.
 5. To launch the upgrade, click the **Upgrade to …** button
 
 
-[zero-downtime]: {% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations
-
 [review_apps]: {% post_url platform/app/2000-01-01-review-apps %}
 [review_apps-config]: {% post_url platform/app/2000-01-01-review-apps %}#configuration-of-review-apps
 [app-manifest]: {% post_url platform/app/2000-01-01-app-manifest %}
@@ -243,5 +235,4 @@ database dashboard.
 
 [pitr]: {% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups
 
-[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
-[backing-up-creating-manual]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-backing-up %}#creating-a-manual-backup
+[database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
