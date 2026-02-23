@@ -6,7 +6,20 @@ tags: databases postgresql dedicated
 index: 6
 ---
 
+
+Dedicated Resources PostgreSQL® databases are automatically backed up and can be
+restored to a specific point in time within the backup retention period,
+depending on your plan.
+
+You can restore your database either from a managed
+[Point-in-Time Recovery backup](#restoring-a-point-in-time-recovery-backup),
+or from a [dump you previously created](#restoring-a-dump).
+
+
 ## Restoring a Point-in-Time Recovery Backup
+
+Point-in-Time Recovery is a fully managed restore operation available from the
+database dashboard.
 
 {% warning %}
 - Restoring a database using the Point-in-Time Recovery feature requires the
@@ -20,22 +33,23 @@ index: 6
 1. From your web browser, open your [database dashboard][database-dashboard]
 2. Click the **Backups** tab
 3. Locate the **Point-in-Time Recovery** block
-3. Click the **Start a PiTR** button
-4. Pick a date and time (**timezone is UTC**)
-5. Make sure to check the **I understand that this action will permanently
+4. Click the **Start a PiTR** button
+5. Pick a date and time (**timezone is UTC**)
+6. Make sure to check the **I understand that this action will permanently
    delete existing data and cannot be cancelled or undone once started.**
    checkbox
-6. Validate by clicking the **Confirm** button
-
-{% note %}
-Restoring a PiTR backup is only available from the database dashboard.
-{% endnote %}
+7. Validate by clicking the **Confirm** button
 
 ## Restoring a Dump
 
-On Dedicated Resources, dump restore is a client-managed operation.
+On Dedicated Resources, [dump][backing-up-dumping] restore is a client-managed operation.
 You must connect to the database yourself and run standard PostgreSQL® tools
 (`pg_restore`, `psql`).
+
+{% warning %}
+Restoring a database using a dump requires the database to be completely 
+stopped, hence causing an inevitable downtime.
+{% endwarning %}
 
 You can run the restore from your local or development environment.
 In both cases, you must configure the Dedicated Resources firewall to allow
@@ -66,3 +80,4 @@ impact before running `pg_restore --clean`.
 
 [database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [connection-uri]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-connecting %}#getting-the-connection-uri
+[backing-up-dumping]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-backing-up %}#dumping-the-database
