@@ -145,87 +145,33 @@ samples:
   - url: ruby-rails
     name: Ruby/Rails
     logo: ruby-on-rails
-  - url: ruby-sinatra
-    name: Ruby/Sinatra
-    logo: sinatra
   - url: go-gin
     name: Go/Gin
     logo: go
-  - url: meteor
-    name: MeteorJS
-    logo: meteorjs
   - url: nextjs-standalone
     name: Next.js (standalone)
     logo: nextjs
-  - url: node-express
-    name: NodeJS/Express
-    logo: nodejs
   - url: node-nuxt
     name: NodeJS/Nuxt.js
     logo: nodejs
-  - url: node-socketio
-    name: NodeJS/Socket.IO
-    logo: nodejs
-  - url: scala-scalatra
-    name: Scala/Scalatra
-    logo: scala
   - url: php-laravel
     name: PHP/Laravel
-    logo: php-laravel
-  - url: laravel-mix
-    name: PHP/Laravel Mix
     logo: php-laravel
   - url: php-symfony
     name: PHP/Symfony
     logo: php-symfony
-  - url: php-lumen
-    name: PHP/Lumen
-    logo: php-lumen
-  - url: php
-    name: PHP
-    logo: php
-  - url: php-cron
-    name: PHP/Cron
-    logo: php
-  - url: php-nodejs
-    name: PHP/NodeJS
-    logo: php
-  - url: php-yii2
-    name: PHP/Yii 2
-    logo: php-yii
-  - url: php-slim
-    name: PHP/Slim
-    logo: php-slim
-  - url: php-codeigniter
-    name: PHP/CodeIgniter
-    logo: php-codeigniter
-  - url: python-celery
-    name: Python/Celery
-    logo: python
   - url: python-django
     name: Python/Django
     logo: python-django
-  - url: python-flask
-    name: Python/Flask
-    logo: python-flask
+  - url: python-fastapi
+    name: Python/FastAPI
+    logo: python-fastapi
   - url: elixir-plug
     name: Elixir/Plug
     logo: elixir
-  - url: crystal
-    name: Crystal
-    logo: crystal
   - url: java-spark
     name: Java/Spark
     logo: java-spark
-  - url: influxdb
-    name: Go/InfluxDB
-    logo: influxdb
-  - url: java-grails3
-    name: Java/Grails 3
-    logo: groovy-grails
-  - url: kotlin
-    name: Kotlin
-    logo: kotlin
 
 extlinks:
   followed_domains:
