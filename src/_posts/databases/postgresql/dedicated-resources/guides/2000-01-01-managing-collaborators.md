@@ -32,7 +32,7 @@ This will change in a future release.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the collaborators:
    ```shell
-   scalingo --app my-dedicated-db collaborators
+   scalingo --database my-dedicated-db collaborators
    ```
    The output should look like this:
    ```text
@@ -72,7 +72,7 @@ prevent access to database data.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, invite someone:
    ```shell
-   scalingo --app my-dedicated-db collaborators-add user@example.com
+   scalingo --database my-dedicated-db-id collaborators-add user@example.com
    ```
    The output should look like this:
    ```text
@@ -99,7 +99,7 @@ prevent access to database data.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, revoke the access:
    ```shell
-   scalingo --app my-dedicated-db collaborators-remove user@example.com
+   scalingo --database my-dedicated-db-id collaborators-remove user@example.com
    ```
    The output should look like this:
    ```text

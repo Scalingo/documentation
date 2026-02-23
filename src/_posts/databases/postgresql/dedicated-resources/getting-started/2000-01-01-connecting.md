@@ -43,7 +43,7 @@ which would most probably contribute to a greater downtime.
 
 In most cases, you can pass the environment variable directly to the client
 library you are using. But sometimes, the library requires a specific URI
-format, invididual keypairs or another format. In such cases, your code
+format, individual keypairs or another format. In such cases, your code
 needs to parse the connection URI to retrieve the different values and build
 what's required by the library. Our advice to use the environment variable
 still remains applicable.

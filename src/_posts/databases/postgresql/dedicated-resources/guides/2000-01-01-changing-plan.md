@@ -92,15 +92,16 @@ This covers moves from `Business` or `Enterprise` to `Starter`.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the plans available for `postgresql`:
    ```bash
-   scalingo addons-plans postgresql
+   scalingo addons-plans postgresql-ng
    ```
    The output should look like this:
    ```text
-   +----------------------------+---------------+
-   |             ID             |     NAME      |
-   +----------------------------+---------------+
-   | postgresql-starter-512     | Starter 512M  |
-   | postgresql-starter-1024    | Starter 1G    |
+   ┌─────────────────────────────────┬─────────────────┐
+   │               ID                │      NAME       │
+   ├─────────────────────────────────┼─────────────────┤
+   │ postgresql-dr-starter-4096      │ Starter 4G      │
+   │ postgresql-dr-starter-8192      │ Starter 8G      │
+   │ postgresql-dr-starter-16384     │ Starter 16G     │
    ...
    ```
 3. Locate the `ID` corresponding to the plan you want to scale to (for example
@@ -121,14 +122,13 @@ This covers moves from `Business` or `Enterprise` to `Starter`.
 1. Update the `plan` property of the corresponding Resource block in your
    Terraform file to scale the addon:
    ```tf
-   resource "scalingo_addon" "my-db" {
-     provider_id = "postgresql"
-     plan = "postgresql-business-1024"
-     app = "${scalingo_app.my-app.id}"
-   }
+   resource "scalingo_database" "my-dedicated-database" {  
+     name       = "my-dedicated-database"  
+     technology = "postgresql-ng"  
+     plan       = "postgresql-dr-business-4096"  
+   }  
    ```
-   In this example, we switch the `my-db` resource attached to the `my-app`
-   application to a PostgreSQL Business 1024 addon.
+   In this example, we switch the `my-dedicated-database` resource to a dedicated PostgreSQL Business 4096 addon.
 2. Run `terraform plan` and check if the result looks good
 3. If so, run `terraform apply`
 

@@ -105,7 +105,7 @@ monitoring the current state of the database:
   process, including current progress.
 - `pg_stat_user_tables` shows statistics about accesses to each table.
 
-For more information, please refer to [the officiel documentation][pg-stats-monitoring].
+For more information, please refer to [the official documentation][pg-stats-monitoring].
 
 
 ## Exploring Query Statistics

@@ -10,7 +10,7 @@ In Scalingo's terminology, ***upgrading*** a Scalingo for PostgreSQL® Shared Re
 designates the operation consisting in changing the database version for a
 newer one.
 
-We disinguish two main cases:
+We distinguish two main cases:
 - a ***minor-upgrade*** designates an incremental release with a change in the
   tenths digit of the version number (e.g. `13.3.4` to `13.5.0`). It usually
   provides bugs or security fixes as well as minor additional features.
@@ -125,7 +125,7 @@ our experience tends to show that it often takes less time.
 
 {% warning %}
 After a major-upgrade, expect a period of reduced performance during phasis 4,
-5 and 6 as the running primary is sollicitated for these internal tasks. The
+5 and 6 as the running primary is solicited for these internal tasks. The
 duration depends of the quantity of data stored in your Scalingo for
 PostgreSQL® addon.
 {% endwarning %}

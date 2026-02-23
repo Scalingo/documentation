@@ -36,7 +36,7 @@ the database. This can be done via our
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the plans available for `postgresql`:
    ```bash
-   scalingo addons-plans postgresql-ng
+   scalingo database-list-plans postgresql-ng
    ```
    The output should look like this:
    ```text
@@ -65,15 +65,13 @@ the database. This can be done via our
 1. Place the following `resource` block in your Terraform file to create the
    database and attach it to your app:
    ```tf
-   resource "scalingo_addon" "my-dedicated-database" {
-     provider_id = "postgresql-ng"
-     plan = "postgresql-dr-starter-4096"
-     app = "${scalingo_app.my-dedicated-database.id}"
+   resource "scalingo_database" "my-dedicated-database" {
+     name       = "my-dedicated-database"
+     technology = "postgresql-ng"
+     plan       = "postgresql-dr-starter-4096"
    }
    ```
-   In this example, we create a PostgreSQL Starter 4096 database named `my-dedicated-database` and
-   attach it to an app named `my-dedicated-database` (which must exist). We could have done
-   the same with another plan.
+   In this example, we create a dedicated PostgreSQL Starter 4096 database named `my-dedicated-database`. We could have done the same with another plan.
 2. Run `terraform plan` and check if the result looks good
 3. If so, run `terraform apply`
 4. Database provisioning typically takes 15–30 minutes

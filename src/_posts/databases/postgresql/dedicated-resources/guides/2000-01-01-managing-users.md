@@ -55,7 +55,7 @@ This default user is ***protected*** and thus:
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, run the following command to list the users:
    ```bash
-   scalingo --app my-dedicated-database --addon postgresql database-users-list
+   scalingo --database my-dedicated-database-id database-users-list
    ```
    The output should look like this:
    ```text
@@ -135,7 +135,7 @@ Updating a User Password is only available from the command line.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Update the user password with the following command:
    ```bash
-   scalingo --app my-dedicated-database --addon postgresql database-users-update-password <username>
+   scalingo --database my-dedicated-database-id database-users-update-password <username>
    ```
 3. An interactive prompt asks you for a password you want to attribute to your user:
    - Either chose a password and confirm it
@@ -166,7 +166,7 @@ Updating a User Password is only available from the command line.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Remove the user with the following command:
    ```bash
-   scalingo --app my-dedicated-database --addon postgresql database-users-delete <username>
+   scalingo --database my-dedicated-database-id database-users-delete <username>
    ```
 
 
