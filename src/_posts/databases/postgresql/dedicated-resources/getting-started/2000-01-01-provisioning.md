@@ -73,7 +73,7 @@ Optionally you can use `--wait` in order to make the command synchronous.
 scalingo database-create --type postgresql-ng --plan <plan_ID> --wait sfdsfsdf
 ```
 
-### Using the Terraform Provider (To Update)
+### Using the Terraform Provider
 
 1. Place the following `resource` block in your Terraform file to create the
    database and attach it to your app:
