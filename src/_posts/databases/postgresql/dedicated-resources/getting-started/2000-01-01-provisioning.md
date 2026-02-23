@@ -12,7 +12,7 @@ the database. This can be done via our
 [dashboard](#using-the-dahboard), our 
 [CLI tool](#using-the-command-line), our
 [Terraform Provider](#using-the-terraform-provider), or via our 
-[Kubernetes Operator](#usint-the-kubernetes-operator).
+[Kubernetes Operator](#using-the-kubernetes-operator).
 
 
 ## Provisioning
@@ -89,9 +89,45 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait sfdsfsdf
 3. If so, run `terraform apply`
 4. Database provisioning typically takes 15–30 minutes
 
-### Using the Kubernetes Operator (To Update)
+### Using the Kubernetes Operator
 
-XXX
+1. Deploy the [Scalingo Kubernetes Operator][kube-operator] in your cluster
+   using the installation manifest from the
+   [latest release][kube-operator-install].
+2. Create a Scalingo API token and store it in a Kubernetes Secret, as
+   documented in [Create Secret][kube-operator-secret].
+3. Create a custom resource to provision your dedicated PostgreSQL database:
+   ```yaml
+   apiVersion: databases.scalingo.com/v1alpha1
+   kind: PostgreSQL
+   metadata:
+     name: my-dedicated-database
+   spec:
+     name: my-dedicated-database
+     plan: postgresql-dr-starter-4096
+     connInfoSecretTarget:
+       name: my-dedicated-database-secret
+       prefix: PG
+   ```
+   This example provisions a dedicated PostgreSQL database named
+   `my-dedicated-database` on the `postgresql-dr-starter-4096` plan and writes
+   its connection information to the `my-dedicated-database-secret` Kubernetes
+   Secret. You can use another `postgresql-dr-*` plan ID instead.
+4. Apply the resource and wait for provisioning to complete:
+   ```bash
+   kubectl apply -f my-dedicated-database.yaml
+   kubectl get postgresql my-dedicated-database -w
+   ```
+5. Database provisioning typically takes 15–30 minutes
+
+To read the database URL from the generated secret:
+```bash
+kubectl describe secret my-dedicated-database-secret
+kubectl get secret my-dedicated-database-secret -o jsonpath='{.data}' | grep PG
+```
+
+For a complete manifest (including all available fields), use the official
+[PostgreSQL sample resource][kube-operator-pg-sample].
 
 
 ## Accessing the Scalingo for PostgreSQL® Dashboard
@@ -117,6 +153,10 @@ You can access the database dashboard from the main dashboard:
 [architecture-models]: {% post_url databases/about/2000-01-01-architecture-models %}
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
+[kube-operator]: {% post_url tools/2000-01-01-kubernetes-operator %}
+[kube-operator-install]: https://github.com/Scalingo/scalingo-operator/releases
+[kube-operator-secret]: https://github.com/Scalingo/scalingo-operator/blob/main/README.md#create-secret
+[kube-operator-pg-sample]: https://github.com/Scalingo/scalingo-operator/blob/main/config/samples/databases_v1alpha1_postgresql.yaml
 
 [pg-dr-monitoring]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-monitoring %}
 [pg-dr-upgrading]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-upgrading %}
