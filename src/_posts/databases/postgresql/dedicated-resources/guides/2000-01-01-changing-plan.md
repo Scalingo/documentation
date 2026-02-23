@@ -19,8 +19,8 @@ whenever you want. The operation is launched instantly, no manual input is
 required.
 
 Service class changes are supported in both directions (scale-out or scale-in)
-for a given size. However, size/resources changes are supported only in a
-scale-up direction: moving to a smaller size is not supported.
+for a given size. **However, size/resources changes are supported only in a
+scale-up direction: moving to a smaller size is not supported.**
 
 The impact on your application and the downtime vary depending on several
 factors such as the current plan being used and the one you wish to change for
@@ -112,10 +112,10 @@ This covers moves from `Business` or `Enterprise` to `Starter`.
    ```
    The output should look like this:
    ```text
-   -----> Addon ad-d0aa540a-5ed2-41f8-8bbe-91e3aff6623b has been upgraded
+   -----> Your postgresql-ng database 69944ed33bd04c46f7f76a8d ('my-dedicated-database') is being >upgraded…
           Message from addon provider: Database plan is being changed
    ```
-
+   
 
 ## Using the Terraform Provider
 

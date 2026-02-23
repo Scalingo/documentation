@@ -44,11 +44,11 @@ the cold logs. These have to be manually unarchived to be processed.
 2. Run the following command:
    - To access the hot logs of this addon:
    ```bash
-   scalingo --app my-dedicated-database --addon postgresql logs --lines <number_of_lines>
+   scalingo --database my-dedicated-database-id logs --lines <number_of_lines>
    ```
    - To access the cold logs of this addon:
    ```bash
-   scalingo --app my-dedicated-database --addon postgresql logs-archives
+   scalingo --database my-dedicated-database-id logs-archives
    ```
 
 

@@ -102,12 +102,12 @@ method used:
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, run the following command to create a new user:
    ```bash
-   scalingo --app my-dedicated-database --addon postgresql database-users-create <username>
+   scalingo --database my-dedicated-database-id database-users-create <username>
    ```
    Optionally, if you want to restrict this user to read only abilities, use
    the `--read-only` flag:
    ```bash
-   scalingo --app my-dedicated-database --addon postgresql database-users-create --read-only <username>
+   scalingo --database my-dedicated-database-id database-users-create --read-only <username>
    ```
 3. Set the user password:
    - Either chose a password and confirm it

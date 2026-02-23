@@ -31,7 +31,15 @@ the database. This can be done via our
 7. Click the **Create database** button
 8. Database provisioning typically takes 15–30 minutes
 
-### Using the Command Line (TO UPDATE)
+### Using the Command Line (Preview)
+
+Because Dedicated Resources databases are not yet generally available,
+you must first enable preview features to use the related CLI commands:
+
+```sh
+export SCALINGO_PREVIEW_FEATURES=true
+```
+
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the plans available for `postgresql`:
@@ -59,6 +67,11 @@ the database. This can be done via our
    -----> Your postgresql-ng database 698e082f968c27dfb8a27521 ('my-dedicated-database') is being provisioned…
    ```
 5. Database provisioning typically takes 15–30 minutes
+
+Optionally you can use `--wait` in order to make the command synchronous.
+```bash
+scalingo database-create --type postgresql-ng --plan <plan_ID> --wait sfdsfsdf
+```
 
 ### Using the Terraform Provider (To Update)
 

@@ -91,9 +91,9 @@ Finally, upgrade to the latest version of the 15.x branch.
 
 1. The instance is stopped. The database is unreachable.
 2. `pg_upgrade` is executed on the data.
-3. . The instance is restarted with the targeted version. The database is
+3. The instance is restarted with the targeted version. The database is
    reachable again and the application can use it normally.
-4. The `ANALYZE` SQL command is executed against the database to build up
+5. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
 5. The application is restarted to ensure proper connections. [This does not
