@@ -92,7 +92,7 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait sfdsfsdf
 ### Using the Kubernetes Operator
 
 1. Deploy the [Scalingo Kubernetes Operator][kube-operator] in your cluster
-   using the installation manifest from the
+   using the installation manifest `install.yaml` from the
    [latest release][kube-operator-install].
 2. Create a Scalingo API token and store it in a Kubernetes Secret, as
    documented in [Create Secret][kube-operator-secret].
@@ -112,7 +112,7 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait sfdsfsdf
    This example provisions a dedicated PostgreSQL database named
    `my-dedicated-database` on the `postgresql-dr-starter-4096` plan and writes
    its connection information to the `my-dedicated-database-secret` Kubernetes
-   Secret. You can use another `postgresql-dr-*` plan ID instead.
+   Secret. You can use another `postgresql-dr-*` plan instead.
 4. Apply the resource and wait for provisioning to complete:
    ```bash
    kubectl apply -f my-dedicated-database.yaml
