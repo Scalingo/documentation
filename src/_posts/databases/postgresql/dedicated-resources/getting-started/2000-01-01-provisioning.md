@@ -156,7 +156,7 @@ You can access the database dashboard from the main dashboard:
 [kube-operator]: {% post_url tools/2000-01-01-kubernetes-operator %}
 [kube-operator-install]: https://github.com/Scalingo/scalingo-operator/releases
 [kube-operator-secret]: https://github.com/Scalingo/scalingo-operator/blob/main/README.md#create-secret
-[kube-operator-pg-sample]: https://github.com/Scalingo/scalingo-operator/blob/main/config/samples/databases_v1alpha1_postgresql.yaml
+[kube-operator-pg-sample]: https://github.com/Scalingo/scalingo-operator/tree/main/config/samples
 
 [pg-dr-monitoring]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-monitoring %}
 [pg-dr-upgrading]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-upgrading %}
