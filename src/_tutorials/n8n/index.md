@@ -4,6 +4,7 @@ logo: n8n
 category: automation
 products:
   - Scalingo for PostgreSQL®
+permalink: /tutorials/n8n
 modified_at: 2025-08-12
 ---
 

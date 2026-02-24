@@ -4,6 +4,7 @@ logo: bedrock
 category: cms
 products:
   - Scalingo for MySQL®
+permalink: /tutorials/wordpress
 modified_at: 2025-08-13
 ---
 

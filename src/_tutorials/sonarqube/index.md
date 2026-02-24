@@ -5,6 +5,7 @@ category: security
 products:
   - Scalingo for PostgreSQL®
   - Multi-buildpack
+permalink: /tutorials/sonarqube
 modified_at: 2025-08-07
 ---
 

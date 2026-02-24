@@ -1,7 +1,8 @@
 ---
-title: Deploying a WAF with ModSecurity
-logo: modsecurity
+title: Deploying a WAF with OWASP ModSecurity CRS
+logo: owasp-modsecurity-crs
 category: security
+permalink: /tutorials/modsecurity
 modified_at: 2025-08-12
 ---
 

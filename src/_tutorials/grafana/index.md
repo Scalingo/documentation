@@ -5,6 +5,7 @@ category: analytics
 products:
   - Scalingo for PostgreSQL®
   - Multi-buildpack
+permalink: /tutorials/grafana
 modified_at: 2025-08-12
 ---
 

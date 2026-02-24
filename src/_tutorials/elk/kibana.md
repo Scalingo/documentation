@@ -57,11 +57,6 @@ Kibana on Scalingo. Here are the few steps you will have to follow:
 
 ### Using the Terraform Provider
 
-{% note %}
-The following code blocks are given as examples.\\
-Please adjust the values to suit your needs.
-{% endnote %}
-
 1. Start by forking our [Kibana repository][kibana-scalingo]
 
 2. Place the following block in your Terraform file to create the app:

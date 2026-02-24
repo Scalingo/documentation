@@ -8,7 +8,7 @@ logo: elastic-stack
 is_series: true
 series: Deploying an Elastic Stack
 series_index: 1
-modified_at: 2025-12-25 12:00:00
+modified_at: 2026-02-23
 ---
 
 The Elastic Stack (formerly known as the ELK Stack) is a powerful collection of
@@ -22,21 +22,6 @@ Here is a diagram showing the main principles of the ELK stack architecture:
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/diagram_documentation_elk_stack.svg" %}
 {% include mdl_img.html %}
-
-{% warning %}
-Due to [Elasticsearch license change][elastic-license], we are currently unable
-to provide versions of Elasticsearch higher than `7.10.2`.\\
-Consequently, and according to the [compatibility matrix][elastic-compat]
-provided by Elastic.co, we strongly advise to stick to these versions:
-
-| App      | Min. Version | Max. Version | Default  |
-| -------- | -----------: | -----------: | -------: |
-| Logstash | `6.8.0`      | `7.17.21`    | `6.8.21` |
-| Kibana   | `7.10.0`     | `7.10.2`     | `7.10.2` |
-| Curator  | `7.0.0`      | `7.0.1`      | `7.0.1`  |
-
-Using our repos guaranteed that these constraints are respected.
-{% endwarning %}
 
 
 ## Planning your Deployment
@@ -63,6 +48,21 @@ Using our repos guaranteed that these constraints are respected.
 
 - Logstash requires quite a lot of RAM to run properly. We recommend to deploy
   at least one L container to host it.
+
+{% warning %}
+Due to [Elasticsearch license change][elastic-license], we are currently unable
+to provide versions of Elasticsearch higher than `7.10.2`.\\
+Consequently, and according to the [compatibility matrix][elastic-compat]
+provided by Elastic.co, we strongly advise to stick to these versions:
+
+| App      | Min. Version | Max. Version | Default  |
+| -------- | -----------: | -----------: | -------: |
+| Logstash | `6.8.0`      | `7.17.29`    | `7.17.29` |
+| Kibana   | `7.10.0`     | `7.10.2`     | `7.10.2` |
+| Curator  | `7.0.0`      | `7.0.1`      | `7.0.1`  |
+
+Using our repos guaranteed that these constraints are respected.
+{% endwarning %}
 
 
 ## Deploying
