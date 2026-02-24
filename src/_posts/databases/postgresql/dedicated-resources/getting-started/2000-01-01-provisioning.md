@@ -9,7 +9,7 @@ index: 1
 
 Once you have chosen the right plan for your needs, you are ready to provision
 the database. This can be done via our 
-[dashboard](#using-the-dahboard), our 
+[dashboard](#using-the-dashboard), our 
 [CLI tool](#using-the-command-line), our
 [Terraform Provider](#using-the-terraform-provider), or via our 
 [Kubernetes Operator](#using-the-kubernetes-operator).

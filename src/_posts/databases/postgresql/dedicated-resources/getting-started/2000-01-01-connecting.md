@@ -53,7 +53,7 @@ still remains applicable.
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard][dashboard]
+1. From your web browser, open your [dashboard][database-dashboard]
 2. Open the **Project** containing the database you want to manage
 3. In the **Databases** section, click the database name
 4. Locate the **Connect** section then copy its **Connection String**
@@ -95,9 +95,8 @@ application that needs access.
 
 
 [rfc3986]: https://datatracker.ietf.org/doc/html/rfc3986
-[dashboard]: https://dashboard.scalingo.com
 
-[cli]: ({% post_url tools/cli/2000-01-01-start %})
+[cli]: {% post_url tools/cli/2000-01-01-start %}
 [environment]: {% post_url platform/app/2000-01-01-environment %}
 [dr-firewall-regions]: {% post_url databases/about/2000-01-01-network-exposure %}#allowing-scalingo-apps-to-reach-a-dedicated-resources-database
 

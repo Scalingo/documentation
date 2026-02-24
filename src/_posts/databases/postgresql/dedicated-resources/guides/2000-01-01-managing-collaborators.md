@@ -125,5 +125,5 @@ more interest in participating, you can stop collaborating on your own.
    window
 
 
-[dashboard]: https://dashboard.scalingo.com/
+[dashboard]: https://dashboard.scalingo.com/apps
 [cli]: {% post_url tools/cli/2000-01-01-start %}

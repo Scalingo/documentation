@@ -76,7 +76,7 @@ This covers moves from `Business` or `Enterprise` to `Starter`.
 
 ## Using the Dashboard
 
-1. From your web browser, open your [dashboard][app-dashbaord]
+1. From your web browser, open your [dashboard][database-dashboard]
 2. Click on the application for which you want to scale the Scalingo for
    PostgreSQL® addon
 3. Click on the **Resources** tab
@@ -135,3 +135,4 @@ This covers moves from `Business` or `Enterprise` to `Starter`.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [service-classes]: {% post_url databases/about/2000-01-01-overview %}#service-classes
+[database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
