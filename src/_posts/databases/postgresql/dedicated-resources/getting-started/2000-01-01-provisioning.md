@@ -70,7 +70,7 @@ export SCALINGO_PREVIEW_FEATURES=true
 
 Optionally you can use `--wait` in order to make the command synchronous.
 ```bash
-scalingo database-create --type postgresql-ng --plan <plan_ID> --wait sfdsfsdf
+scalingo database-create --type postgresql-ng --plan <plan_ID> --wait <database_name>
 ```
 
 ### Using the Terraform Provider
