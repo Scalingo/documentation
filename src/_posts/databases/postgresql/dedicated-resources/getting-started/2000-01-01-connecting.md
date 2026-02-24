@@ -61,9 +61,14 @@ still remains applicable.
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, get the environment variable value:
+2. From the command line, list your databases:
    ```bash
-   scalingo --database my-dedicated-database-id env-get SCALINGO_POSTGRESQL_URL
+   scalingo databases
+   ```
+3. Locate the `ID` of the database you would like to connect to
+4. From the command line, get the environment variable value:
+   ```bash
+   scalingo --database <database_ID> env-get SCALINGO_POSTGRESQL_URL
    ```
    The output is:
    ```bash
