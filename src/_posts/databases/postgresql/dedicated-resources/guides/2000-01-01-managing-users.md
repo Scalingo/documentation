@@ -23,10 +23,10 @@ add them as collaborators by following [this guide][dr-managing-collaborators].
 
 ### Understanding Protected User
 
-When provisioning a new Scalingo for PostgreSQL® Dedicated Resources Database addon
-, the platform creates a default user with a random name and password. It also 
-grants this default user read and write permissions on the database, using the 
-following queries:
+When provisioning a new Scalingo for PostgreSQL® Dedicated Resources Database 
+instance, the platform creates a default user with a random name and password.
+It also grants this default user read and write permissions on the database, 
+using the following queries:
 
 ```sql
 GRANT CREATE ON SCHEMA public TO <username>
@@ -53,9 +53,14 @@ This default user is ***protected*** and thus:
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, run the following command to list the users:
+1. From the command line, list your databases:
    ```bash
-   scalingo --database my-dedicated-database-id database-users-list
+   scalingo databases
+   ```
+1. Locate the `ID` of the database for which you want to list users
+1. From the command line, run the following command to list the users:
+   ```bash
+   scalingo --database <database_ID> database-users-list
    ```
    The output should look like this:
    ```text
@@ -68,7 +73,7 @@ This default user is ***protected*** and thus:
    +----------------+-----------+-----------+---------------------+
    ```
    In this example, we can see that the database has 3 users available. The
-   first one is protected, which means it's been created along with the addon.
+   first one is protected, which means it's been created along with the database.
    It can't be removed. Among the two others, one can only read data from the
    database. We can also see the password encryption algorithm.
 
@@ -100,14 +105,19 @@ method used:
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+1. From the command line, list your databases:
+   ```bash
+   scalingo databases
+   ```
+1. Locate the `ID` of the database for which you want to create a user
 2. From the command line, run the following command to create a new user:
    ```bash
-   scalingo --database my-dedicated-database-id database-users-create <username>
+   scalingo --database <database_ID> database-users-create <username>
    ```
    Optionally, if you want to restrict this user to read only abilities, use
    the `--read-only` flag:
    ```bash
-   scalingo --database my-dedicated-database-id database-users-create --read-only <username>
+   scalingo --database <database_ID> database-users-create --read-only <username>
    ```
 3. Set the user password:
    - Either chose a password and confirm it
@@ -135,7 +145,7 @@ Updating a User Password is only available from the command line.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Update the user password with the following command:
    ```bash
-   scalingo --database my-dedicated-database-id database-users-update-password <username>
+   scalingo --database <database_ID> database-users-update-password <username>
    ```
 3. An interactive prompt asks you for a password you want to attribute to your user:
    - Either chose a password and confirm it
@@ -166,7 +176,7 @@ Updating a User Password is only available from the command line.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. Remove the user with the following command:
    ```bash
-   scalingo --database my-dedicated-database-id database-users-delete <username>
+   scalingo --database <database_ID> database-users-delete <username>
    ```
 
 

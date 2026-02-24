@@ -6,8 +6,8 @@ tags: databases postgresql dedicated
 index: 3
 ---
 
-At Scalingo, all databases addons plans are identified using a name made of two
-or three parts separated by a dash (-). This name is made of:
+At Scalingo, all databases plans are identified using a name made of two or 
+three parts separated by a dash (-). This name is made of:
 
 1. a database ***type*** : `postgresql`
 2. a ***class*** : either `starter`, `business` or `enterprise` (learn more about
@@ -77,22 +77,33 @@ This covers moves from `Business` or `Enterprise` to `Starter`.
 ## Using the Dashboard
 
 1. From your web browser, open your [dashboard][database-dashboard]
-2. Click on the application for which you want to scale the Scalingo for
-   PostgreSQL® addon
-3. Click on the **Resources** tab
-4. Locate the **Addons** block and click on the **…** button
-5. From the dropdown menu, select **Change plan**
-6. Select the new plan
-7. Click the **Finish** button
-8. Validate by clicking the **Confirm plan change** button
+2. Click on the database you want to scale
+3. Click on the **Settings** tab
+4. Locate the **Database plan** block and click on the **Change plan** button
+5. Select the new plan
+6. Click the **Finish** button
+7. Validate by clicking the **Confirm plan change** button
 
 
-## Using the Command Line
+## Using the Command Line (Preview)
+
+Because Dedicated Resources databases are not yet generally available,
+you must first enable preview features to use the related CLI commands:
+
+```sh
+export SCALINGO_PREVIEW_FEATURES=true
+```
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, list the plans available for `postgresql`:
+2. From the command line, list your databases:
    ```bash
-   scalingo addons-plans postgresql-ng
+   scalingo databases
+   ```
+3. Locate the `ID` of the database you want to scale (for example
+   `my-dedicated-database`).
+4. From the command line, list the plans available for `postgresql-ng`:
+   ```bash
+   scalingo database-list-plans postgresql-ng
    ```
    The output should look like this:
    ```text
@@ -104,31 +115,38 @@ This covers moves from `Business` or `Enterprise` to `Starter`.
    │ postgresql-dr-starter-16384     │ Starter 16G     │
    ...
    ```
-3. Locate the `ID` corresponding to the plan you want to scale to (for example
-   `postgresql-business-1024`)
-4. Change plan using the `addons-upgrade` sub-command:
+5. Locate the `ID` corresponding to the plan you want to scale to (for example
+   `postgresql-dr-starter-8192`)
+6. Change plan with:
    ```bash
-   scalingo --app my-app addons-upgrade postgresql <plan_ID>
+   scalingo database-upgrade <database_ID> <plan_ID>
+   ```
+   Example:
+   ```bash
+   scalingo database-upgrade 699d6312565f770d0a6cdab3 postgresql-dr-starter-8192
    ```
    The output should look like this:
    ```text
-   -----> Your postgresql-ng database 69944ed33bd04c46f7f76a8d ('my-dedicated-database') is being >upgraded…
-          Message from addon provider: Database plan is being changed
+   -----> Your postgresql-ng database 699d6312565f770d0a6cdab3 ('my-dedicated-database') is being upgraded…
    ```
-   
+
+Optionally you can use `--wait` in order to make the command synchronous.
+```bash
+scalingo database-upgrade --database 699d6312565f770d0a6cdab3 --wait postgresql-dr-starter-8192
+```
 
 ## Using the Terraform Provider
 
 1. Update the `plan` property of the corresponding Resource block in your
-   Terraform file to scale the addon:
+   Terraform file to scale the database:
    ```tf
    resource "scalingo_database" "my-dedicated-database" {  
      name       = "my-dedicated-database"  
      technology = "postgresql-ng"  
-     plan       = "postgresql-dr-business-4096"  
+     plan       = "postgresql-dr-starter-8192"  
    }  
    ```
-   In this example, we switch the `my-dedicated-database` resource to a dedicated PostgreSQL Business 4096 addon.
+   In this example, we switch the `my-dedicated-database` resource to a dedicated PostgreSQL Starter 8192 database.
 2. Run `terraform plan` and check if the result looks good
 3. If so, run `terraform apply`
 
