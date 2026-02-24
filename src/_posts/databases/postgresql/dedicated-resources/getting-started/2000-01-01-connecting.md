@@ -88,7 +88,7 @@ application that needs access.
 
 1. Copy [the connection URI](#getting-the-connection-uri) of your database instance
 2. [Create a new environment variable][environment] for the application that
-   needs to access the addon
+   needs to access the database
 3. Set the value of this new environment variable to connection URI you just
    copied
 4. Restart the application to make the new environment variable available

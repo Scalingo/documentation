@@ -2,12 +2,12 @@
 title: Monitoring and Auditing Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Monitoring and Auditing
 modified_at: 2026-02-13 12:00:00
-tags: databases postgresql addon
+tags: databases postgresql dedicated
 index: 2
 ---
 
 
-Each Scalingo for PostgreSQL® Dedicated Resources Database addon comes with several tools allowing for
+Each Scalingo for PostgreSQL® Dedicated Resources Database database comes with several tools allowing for
 monitoring and auditing of your database. These tools give access to the
 [database logs](#inspecting-database-logs), to some [metrics](#analyzing-database-metrics)
 and to [running queries figures](#watching-running-queries). [Query Statistics](#exploring-query-statistics)
@@ -41,14 +41,19 @@ the cold logs. These have to be manually unarchived to be processed.
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. Run the following command:
-   - To access the hot logs of this addon:
+1. From the command line, list your databases:
    ```bash
-   scalingo --database my-dedicated-database-id logs --lines <number_of_lines>
+   scalingo databases
    ```
-   - To access the cold logs of this addon:
+2. Locate the `ID` of the database you want to monitor
+3. Run the following command:
+   - To access the hot logs of this database:
    ```bash
-   scalingo --database my-dedicated-database-id logs-archives
+   scalingo --database <database_ID> logs --lines <number_of_lines>
+   ```
+   - To access the cold logs of this database:
+   ```bash
+   scalingo --database <database_ID> logs-archives
    ```
 
 
@@ -68,7 +73,7 @@ The provided metrics include:
 2. Click the **Metrics** tab
 
 {% note %}
-Metrics related to your PostgreSQL® addon are only available from
+Metrics related to your PostgreSQL® database are only available from
 the database dashboard.
 {% endnote %}
 

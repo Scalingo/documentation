@@ -1,14 +1,14 @@
 ---
-title: Upgrading Your Scalingo for PostgreSQL® Shared Resources Database
+title: Upgrading Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Upgrading
 modified_at: 2026-02-13 12:00:00
-tags: databases postgresql addon
+tags: databases postgresql dedicated
 index: 4
 ---
 
-In Scalingo's terminology, ***upgrading*** a Scalingo for PostgreSQL® Shared Resources Database addon
-designates the operation consisting in changing the database version for a
-newer one.
+In Scalingo's terminology, ***upgrading*** a Scalingo for PostgreSQL® Dedicated 
+Resources Database designates the operation consisting in changing the database 
+version for a newer one.
 
 We distinguish two main cases:
 - a ***minor-upgrade*** designates an incremental release with a change in the
@@ -21,8 +21,8 @@ We distinguish two main cases:
 
 While we usually advise to stick to the latest minor-upgrade available to
 benefit from bug and security fixes, we also **strongly** advise to take
-extra-care when major-upgrading your Scalingo for PostgreSQL® Shared Resources Database addon ([more
-about this below](#best-practices-when-managing-major-upgrades)).
+extra-care when major-upgrading your Scalingo for PostgreSQL® Dedicated 
+Resources Database ([more about this below](#best-practices-when-managing-major-upgrades)).
 
 When the database vendor releases a new version of your database engine, we
 take some time to study it and test it thoroughly before making it available.
@@ -127,7 +127,7 @@ our experience tends to show that it often takes less time.
 After a major-upgrade, expect a period of reduced performance during phasis 4,
 5 and 6 as the running primary is solicited for these internal tasks. The
 duration depends of the quantity of data stored in your Scalingo for
-PostgreSQL® addon.
+PostgreSQL® database.
 {% endwarning %}
 
 Since we have to completely stop the instances to upgrade them, **a downtime is
@@ -162,19 +162,19 @@ advise to take extra care when dealing with them:
   2. Link this app to your application's code repository.
   3. Make sure to enable Review Apps for this application.
   4. Leverage the [`scalingo.json` manifest file][app-manifest] to:
-     - Specify the version of the database addon you require. This version
+     - Specify the version of the database you require. This version
        should match the one you are using in your production environment.
      - Ideally ask the platform to fill your database with **testing data**,
        using a [`first-deploy` script][deployment-hooks].
 
      Here is an example of a manifest file asking the platform to provision a
-     PostgreSQL `14.6.0` addon and to run the `db-seed.sh` script after the
+     PostgreSQL `14.6.0` and to run the `db-seed.sh` script after the
      first deployment (the script must be included in your codebase):
      ```json
      {
        "addons": [
          {
-           "plan": "postgresql:postgresql-starter-512",
+           "plan": "postgresql-ng:postgresql-dr-starter-4096",
            "options": {
              "version": "14.6.0"
            }
@@ -213,8 +213,8 @@ advise to take extra care when dealing with them:
 ## Upgrading
 
 {% note %}
-Upgrading a PostgreSQL® addon to a newer version is only available through the
-database dashboard.
+Upgrading a PostgreSQL® database to a newer version is only available through 
+the database dashboard.
 {% endnote %}
 
 ### Using the Database Dashboard
