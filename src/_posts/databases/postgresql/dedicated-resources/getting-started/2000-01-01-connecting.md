@@ -63,11 +63,11 @@ still remains applicable.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, get the environment variable value:
    ```bash
-   scalingo --app my-dedicated-database env-get SCALINGO_POSTGRESQL_URL
+   scalingo --database my-dedicated-database-id env-get SCALINGO_POSTGRESQL_URL
    ```
    The output is:
    ```bash
-   postgresql://my_dedicate_wxyz:YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8@my-dedicate-wxyz.postgresql.a.osc-fr1.scalingo-dbs.com:31000/my_dedicate_xyz?sslmode=require
+   postgresql://my_dedicate_wxyz:YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8@my-dedicate-wxyz.postgresql.a.osc-fr1.scalingo-dbs.com:31000/my_dedicate_wxyz?sslmode=require
    ```
 
 
