@@ -31,7 +31,7 @@ the database. This can be done via our
 7. Click the **Create database** button
 8. Database provisioning typically takes 15–30 minutes
 
-### Using the Command Line (Preview)
+### Using the Command Line (Preview) {#using-the-command-line}
 
 Because Dedicated Resources databases are not yet generally available,
 you must first enable preview features to use the related CLI commands:
