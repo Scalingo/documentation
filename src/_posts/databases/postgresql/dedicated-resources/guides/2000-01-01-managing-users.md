@@ -9,8 +9,8 @@ index: 1
 Each Scalingo for PostgreSQL® Dedicated Resources Database instances comes with 
 a [default database user](#understanding-protected-user).
 You can [create](#creating-a-new-user) as many additional users as needed,
-grant them with the appropriate permissions, and you can [delete](#deleting-a-user)
-them once they are not required anymore.
+grant them with the appropriate permissions, [update/reset their password](#updating-or-resetting-a-user-password),
+and [delete](#deleting-a-user) them once they are not required anymore.
 
 {% note %}
 This guide covers **database users** only.
@@ -134,11 +134,24 @@ method used:
    ```
 
 
-## Updating a User Password
+## Updating or Resetting a User Password
+
+It is possible to reset the password of any non-protected user.
 
 {% note %}
-Updating a User Password is only available from the command line.
+- Using the dashboard, you can only reset a password (platform-generated password)
+- Using the command line, you can either:
+  - update a password (set a value),
+  - or reset it (leave the password empty to let the platform generate one)
 {% endnote %}
+
+### Using the Database Dashboard (Reset Only)
+
+1. From your web browser, open your [database dashboard][database-dashboard]
+2. Once on the database dashboard, click the **Settings** tab, then select the **Database Users** tab
+3. Locate the non-protected user for which you want to reset the password
+4. Open the **...** menu next to this user, then click **Reset password**
+5. Confirm the reset operation and safely store the newly generated password
 
 ### Using the Command Line
 
@@ -147,17 +160,21 @@ Updating a User Password is only available from the command line.
    ```bash
    scalingo --database <database_ID> database-users-update-password <username>
    ```
+   Example:
+   ```bash
+   scalingo --database 699d6312565f770d0a6cdab3 database-users-update-password my_user
+   ```
 3. An interactive prompt asks you for a password you want to attribute to your user:
-   - Either chose a password and confirm it
+   - Either choose a password and confirm it
    - Or let the platform generate a password by leaving the field empty
    The output should look like this:
    - If you set a password:
    ```text
-   User "my_user" created.
+   User "my_user" updated.
    ```
    - If you let the platform generate a password:
    ```text
-   User "my_user" created with password "YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8".
+   User "my_user" updated with password "YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8".
    ```
 
 
