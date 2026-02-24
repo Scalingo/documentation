@@ -21,17 +21,13 @@ provided by third-parties. For example, some might feel more intuitive because
 of their Graphical User Interface. Some are better integrated with others
 tools, when some others are more data-visualization centric.
 
-By default, and for security reasons, your PostgreSQL® database is not directly
-accessible from the Internet and therefore not directly usable with your
-third-party tool.
+By default, and for security reasons, your PostgreSQL® database is protected by
+a deny-by-default firewall.
 
-To access your database remotely you first need to [make it reachable over the
-Internet](#making-the-database-reachable-over-internet):
-- either locally, on your computer, via an [encrypted tunnel](#setting-up-an-encrypted-tunnel)
-- or from any location, by [enforcing TLS connection]({% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-connecting %}#enforcing-tls-connection)
-  and [enabling direct Internet access](#enabling-direct-access-over-internet).
+Before using any third-party tool, configure the required [firewall rules](#allowing-access-with-firewall-rules)
+to allow connections from your trusted sources.
 
-Once a secured connection has been established, you should be able to connect
+Once your firewall rule is active, you should be able to connect
 to your database with your tool of choice. If you don't have one yet, we
 suggest you to [take a look at pgAdmin](#using-pgadmin).
 
