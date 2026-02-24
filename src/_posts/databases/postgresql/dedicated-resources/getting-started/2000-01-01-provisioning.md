@@ -98,16 +98,27 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait sfdsfsdf
    documented in [Create Secret][kube-operator-secret].
 3. Create a custom resource to provision your dedicated PostgreSQL database:
    ```yaml
-   apiVersion: databases.scalingo.com/v1alpha1
-   kind: PostgreSQL
-   metadata:
-     name: my-dedicated-database
-   spec:
-     name: my-dedicated-database
-     plan: postgresql-dr-starter-4096
-     connInfoSecretTarget:
-       name: my-dedicated-database-secret
-       prefix: PG
+	apiVersion: databases.scalingo.com/v1alpha1
+	kind: PostgreSQL
+	metadata:
+	  labels:
+	    app.kubernetes.io/name: scalingo-operator
+	    app.kubernetes.io/managed-by: kustomize
+	  name: my-dedicated-database
+	spec:
+	  # Secret read by operator
+	  authSecret:
+	    name: scalingo
+	    key: api_token
+
+	  # Secret written by operator
+	  connInfoSecretTarget:
+	    name:  my-dedicated-database-secret
+	    prefix: PG
+
+	  name: my-dedicated-database
+	  plan: postgresql-dr-starter-4096
+	  region: osc-fr1
    ```
    This example provisions a dedicated PostgreSQL database named
    `my-dedicated-database` on the `postgresql-dr-starter-4096` plan and writes
@@ -116,7 +127,6 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait sfdsfsdf
 4. Apply the resource and wait for provisioning to complete:
    ```bash
    kubectl apply -f my-dedicated-database.yaml
-   kubectl get postgresql my-dedicated-database -w
    ```
 5. Database provisioning typically takes 15–30 minutes
 
