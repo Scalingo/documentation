@@ -2,8 +2,8 @@
 title: Tutorials Hub
 layout: tutorials_main
 description: >
-  This hub centralizes step-by-step tutorials for deploying well-known
-  applications, CMS platforms, and tools on Scalingo.
+  This hub centralizes a curated selection of step-by-step tutorials for
+  deploying well-known applications, CMS platforms, and tools on Scalingo.
   
   Each tutorial aims at removing friction from the deployment process by
   providing production-ready instructions tailored to real-world use cases.
