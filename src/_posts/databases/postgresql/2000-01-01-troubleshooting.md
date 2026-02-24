@@ -3,7 +3,7 @@ title: Troubleshooting Scalingo for PostgreSQL®
 nav: Troubleshooting
 modified_at: 2024-03-13 12:00:00
 tags: databases postgresql addon
-index: 12
+index: 30
 ---
 
 ## Understanding Memory Consumption
@@ -96,8 +96,8 @@ be fine-tuned depending on your needs and usage.
 While it's clearly not a silver bullet, this query can still help finding
 queries that could merit attention or further investigations.
 
-1. Make sure the `pg_stat_statements` extension [is enabled]({% post_url databases/postgresql/guides/2000-01-01-monitoring %}#exploring-query-statistics)
-2. [Access your PostgreSQL database]({% post_url databases/postgresql/getting-started/2000-01-01-accessing %})
+1. Make sure the `pg_stat_statements` extension [is enabled]({% post_url databases/postgresql/shared-resources/guides/2000-01-01-monitoring %}#exploring-query-statistics)
+2. [Access your PostgreSQL database]({% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %})
 3. Run the following query:
    ```sql
    WITH pss AS (
@@ -138,8 +138,8 @@ As we don't consider slow query that only run once in a while as being an
 issue, we added an arbitrary threshold of 200 calls in the `WHERE` clause. Feel
 free to adjust this depending on your usage.
 
-1. Make sure the `pg_stat_statements` extension [is enabled]({% post_url databases/postgresql/guides/2000-01-01-monitoring %}#exploring-query-statistics)
-2. [Access your PostgreSQL database]({% post_url databases/postgresql/getting-started/2000-01-01-accessing %})
+1. Make sure the `pg_stat_statements` extension [is enabled]({% post_url databases/postgresql/shared-resources/guides/2000-01-01-monitoring %}#exploring-query-statistics)
+2. [Access your PostgreSQL database]({% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %})
 3. Run the following query:
    ```sql
    WITH pss AS (

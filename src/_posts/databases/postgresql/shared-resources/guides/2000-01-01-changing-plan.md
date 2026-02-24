@@ -1,5 +1,5 @@
 ---
-title: Changing Plan
+title: Changing Plan of a Scalingo for PostgreSQL® Shared Resources Database
 nav: Changing Plan
 modified_at: 2025-12-23 00:00:00
 tags: databases postgresql addon
@@ -15,8 +15,9 @@ or three parts separated by a dash (-). This name is made of:
 3. a ***size*** : specifying the amount of RAM available with the plan, in MB
    (only for starter and business classes).
 
-You can change your Scalingo for PostgreSQL® addon plan whenever you want. The
-operation is launched instantly, no manual input is required.
+You can change your Scalingo for PostgreSQL® Shared Resources Database addon 
+plan whenever you want. The operation is launched instantly, no manual input is 
+required.
 
 The impact on your application and the downtime vary depending on several
 factors such as the current plan being used and the one you wish to change for

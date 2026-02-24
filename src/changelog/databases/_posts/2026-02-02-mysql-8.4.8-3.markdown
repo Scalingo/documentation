@@ -1,0 +1,13 @@
+---
+modified_at: 2026-02-02 09:00:00
+title: 'MySQL - New version: 8.4.8-3'
+---
+
+New version: **8.4.8-3**
+
+Changelog:
+* Fixed an upgrade issue affecting databases initially created with MySQL versions earlier than 8.0
+
+Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/mysql): 
+
+* `scalingo/mysql:8.4.8-3`

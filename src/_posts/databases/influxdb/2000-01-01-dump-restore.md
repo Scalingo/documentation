@@ -24,9 +24,6 @@ Daily backups done by Scalingo are listed in the database specific dashboard:
 4. Click on **Backups** tab
 5. Download the backup you want
 
-{% assign img_url = "/assets/images/database/influxdb-backups.png" %}
-{% include mdl_img.html %}
-
 ### Restore
 
 Note: if you need to restore a backup on your Scalingo for InfluxDB®, please contact our

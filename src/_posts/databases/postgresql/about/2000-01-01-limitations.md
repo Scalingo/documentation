@@ -3,7 +3,7 @@ title: Limitations
 nav: Limitations
 modified_at: 2025-06-10 12:00:00
 tags: addon database postgresql
-index: 4
+index: 10
 ---
 
 
@@ -29,9 +29,9 @@ all users.
 
 ## Affecting Features
 
-- When using a Business plan, the replica instance of the cluster is not
-  accessible. This instance is only present to ensure high-availability. It's
-  not meant to plug analysis tools, even in read-only mode.
+- On Business and Enterprise plans, replicas operate as standby nodes dedicated 
+  to high availability. They are not exposed for external connections and cannot 
+  be used for analytics workloads, even in read-only mode.
 
 - Only one named database is provisioned per addon. [PostgreSQL®'s
   schemas][postgresql-schemas] can be leveraged to create different logical
@@ -59,6 +59,6 @@ connections.
 | Half-closed connections on the client side | 5 minutes  |
 
 
-[postgresql-protected-user]: {% post_url databases/postgresql/guides/2000-01-01-managing-users %}#understanding-protected-user
+[postgresql-protected-user]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-managing-users %}#understanding-protected-user
 [postgresql-timelines]: https://www.postgresql.org/docs/current/continuous-archiving.html#BACKUP-TIMELINES
 [postgresql-schemas]: https://www.postgresql.org/docs/current/ddl-schemas.html

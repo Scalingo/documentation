@@ -1,5 +1,5 @@
 # Inspiration: https://github.com/timbru31/docker-ruby-node/blob/master/3.2/18/Dockerfile
-FROM ruby:3.2.2
+FROM ruby:3.4.8
 LABEL maintainer "kevin@scalingo.com"
 
 ARG REFRESHED_AT

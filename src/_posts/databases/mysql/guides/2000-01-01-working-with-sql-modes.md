@@ -18,7 +18,8 @@ by your addon are indeed available. The exhaustive list may vary depending on
 your MySQL® version. Descriptions of the modes can be found in the official
 MySQL® documentation:
 
-- [for MySQL® `8.0`][sql-modes]
+- [for MySQL® `8.0`][sql-modes-80]
+- [for MySQL® `8.4`][sql-modes-84]
 
 Currently, the default SQL mode includes:
 - `ONLY_FULL_GROUP_BY`
@@ -49,6 +50,7 @@ these actions via the MySQL® console.
    queries
 
 
-[sql-modes]: https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html
+[sql-modes-80]: https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html
+[sql-modes-84]: https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html
 
 [database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard

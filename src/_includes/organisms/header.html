@@ -31,8 +31,7 @@
     <div class="w-80">
       <div class="ml-3 flex"><a class="py-2 px-3" href="/" title="Homepage">{% icon logo_full %}</a></div>
     </div>
-    <div class="grow hidden xl:flex gap-5 mx-5">
-
+    <div class="grow hidden xl:flex gap-6">
       <a href="/" class="py-2 px-5 hover:text-sc-blue-1{% unless (is_tutorials or is_samples or is_cli or is_changelog) %}{{ active_classes }}{% endunless %}">Documentation</a>
       <a href="/tutorials" class="py-2 px-5 hover:text-sc-blue-1{% if is_tutorials %}{{ active_classes }}{% endif %}">Tutorials</a>
       <a href="/samples" class="py-2 px-5 hover:text-sc-blue-1{% if is_samples %}{{ active_classes }}{% endif %}">Samples</a>

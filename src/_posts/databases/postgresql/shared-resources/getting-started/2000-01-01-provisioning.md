@@ -1,11 +1,19 @@
 ---
-title: Provisioning a Scalingo for PostgreSQL® Addon
+title: Provisioning a Scalingo for PostgreSQL® Shared Resources Database
 nav: Provisioning
 modified_at: 2023-11-22 00:00:00
 tags: databases postgresql addon
 index: 1
 ---
 
+
+{% note %}
+A new database architecture model is now available. Visit
+[Architecture Models][architecture-models] to understand what changes and which
+model best fits your needs. If you are interested, contact our
+[Support](mailto:support@scalingo.com) and
+[Sales](https://scalingo.com/book-a-demo) teams.
+{% endnote %}
 
 Once you have chosen the right plan for your needs, you are ready to provision
 the addon. This can be done via our [dashboard](#using-the-dahboard),
@@ -98,11 +106,12 @@ You can access the database dashboard via the application dashboard:
 
 
 [dashboard]: https://dashboard.scalingo.com/apps
+[architecture-models]: {% post_url databases/about/2000-01-01-architecture-models %}
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
-[monitoring]: {% post_url databases/postgresql/guides/2000-01-01-monitoring %}
-[upgrading]: {% post_url databases/postgresql/guides/2000-01-01-upgrading %}
-[managing-extensions]: {% post_url databases/postgresql/guides/2000-01-01-managing-extensions %}
-[managing-users]: {% post_url databases/postgresql/guides/2000-01-01-managing-users %}
-[backing-up]: {% post_url databases/postgresql/guides/2000-01-01-backing-up %}
+[monitoring]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-monitoring %}
+[upgrading]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-upgrading %}
+[managing-extensions]: {% post_url databases/postgresql/extensions/2000-01-01-managing-extensions %}
+[managing-users]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-managing-users %}
+[backing-up]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-backing-up %}

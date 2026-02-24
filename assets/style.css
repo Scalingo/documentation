@@ -56,7 +56,7 @@
   --text-sc-text-6: 18px;
   --leading-sc-text-6: 20px;
   --text-sc-title-1: 32px;
-  --leading-sc-title-1: 28px;
+  --leading-sc-title-1: 32px;
   --tracking-sc-title-1: -0.04em;
   --text-sc-title-1-1: 32px;
   --leading-sc-title-1-1: 48px;
@@ -202,6 +202,11 @@
     white-space: nowrap !important;
   }
 }
+@media screen and (max-width: 640px) {
+  table {
+    max-width: 91vw !important;
+  }
+}
 
 article h2 {
   color: var(--color-sc-gray-1);
@@ -291,6 +296,13 @@ article ul:not(.list-unstyled)>li {
   padding-left: 1.5em;
 }
 
+  /* Fix margin on mobile */
+  @media screen and (max-width: 640px) {
+    article ul:not(.list-unstyled)>li {
+      padding-left: 1em;
+    }
+  }
+
 article ul:not(.list-unstyled)>li:before {
   content: "";
   position: absolute;
@@ -311,9 +323,21 @@ article ol li {
   padding-left: 0.625rem;
 }
 
+/* Fix margin on mobile */
+@media screen and (max-width: 768px) {
+  article ol li {
+    margin-left: 1.5rem;
+    padding-left: .3rem;
+  }
+}
+
 article ol>li::marker {
   color: #183BEE;
   font-weight: bold;
+}
+
+article ol ul li {
+    margin-left: 0;
 }
 
 article aside.note {
@@ -449,6 +473,16 @@ article tr:nth-child(odd) {
   display: block;
 }
 
+/* Reset the fixed height of the horizontal menu */
+#menu-nav{
+  padding-bottom: 150px;
+}
+
+nav li a:hover,
+nav label:hover{
+  color: var(--color-sc-blue-1);
+}
+
 nav input:checked~label svg {
   transform: rotate(90deg);
 }
@@ -481,6 +515,7 @@ svg {
   padding-right: 1.5rem;
   height: 3.5rem;
   border: 1px solid #D2D9F9;
+  box-sizing: border-box;
 }
 
 .DocSearch .DocSearch-Search-Icon {
@@ -523,6 +558,19 @@ article pre {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+  /* Remove extra margins for code blocks inside list items */
+  article ol pre,
+  article ul pre{
+    margin-left: 0;
+  }
+
+  /* Fix margin on mobile */
+  @media screen and (max-width: 768px) {
+    article pre {
+      padding: 1.5rem;
+    }
+  }
 
 @media (min-width: 640px) {
   article pre {
@@ -907,4 +955,10 @@ blockquote {
     padding: 2px 4px;
 }
 
-/* Generic.Inserted & Diff Inserted */
+/*
+Fix PRE tags overflow by adding min-width:0 on key elements
+source: https://weblog.west-wind.com/posts/2016/feb/15/flexbox-containers-pre-tags-and-managing-overflow
+*/
+div, span, html, body, ul, article, main, nav {
+  min-width: 0;
+}

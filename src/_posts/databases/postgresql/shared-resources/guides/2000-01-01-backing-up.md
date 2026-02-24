@@ -1,5 +1,5 @@
 ---
-title: Backing Up Your Scalingo for PostgreSQL® Addon
+title: Backing Up Your Scalingo for PostgreSQL® Shared Resources Database
 nav: Backing Up
 modified_at: 2025-10-20 12:00:00
 tags: databases postgresql addon how-to
@@ -7,15 +7,13 @@ index: 5
 ---
 
 
-Starter and Business plans of Scalingo for PostgreSQL® include automated and
+Scalingo for PostgreSQL® Shared Resources Databases include automated and
 managed backups so you don't have to worry about them.
 
-With PostgreSQL® for Scalingo, we use two main mechanisms to create these
-automated backups:
-- [Point-in-Time Recovery][backup-policies-pitr] backups, and
-- [Scheduled][backup-policies-scheduled] backups.
-
-[Manual backups][backup-policies-manual] are also available for these plans.
+We provide two backup mechanisms:
+- [Logical backups][backup-policies-logical]: [scheduled][backup-policies-scheduled]
+  and [manual][backup-policies-manual] backups, and
+- [Continuous backups][backup-policies-pitr] (Point-in-Time Recovery).
 
 {% note %}
 **Please carefully read our [backup policies][backup-policies] for details
@@ -210,11 +208,12 @@ somewhere).
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
 [backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
+[backup-policies-logical]: {% post_url databases/about/2000-01-01-backup-policies %}#logical-backups
 [backup-policies-manual]: {% post_url databases/about/2000-01-01-backup-policies %}#manual-backups
-[backup-policies-pitr]: {% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups
+[backup-policies-pitr]: {% post_url databases/about/2000-01-01-backup-policies %}#continuous-backups
 [backup-policies-scheduled]: {% post_url databases/about/2000-01-01-backup-policies %}#scheduled-backups
 
-[database-dashboard]: {% post_url databases/postgresql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
-[accessing-one-off]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-a-one-off
-[accessing-cli]: {% post_url databases/postgresql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
-[connecting-uri]: {% post_url databases/postgresql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
+[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[accessing-one-off]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-a-one-off
+[accessing-cli]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
+[connecting-uri]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri

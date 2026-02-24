@@ -7,6 +7,7 @@ New version: **8.4.8-1**
 
 Changelog:
 * [MySQL 8.4](https://dev.mysql.com/doc/relnotes/mysql/8.4/en/)
+
 Docker image on [Docker Hub](https://hub.docker.com/r/scalingo/mysql):
 
 * `scalingo/mysql:8.4.8-1`

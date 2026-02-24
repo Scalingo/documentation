@@ -2,7 +2,7 @@
 title: Copying your Database
 modified_at: 2023-08-31 16:00:00
 tags: databases backups
-index: 3
+index: 10
 ---
 
 Sometimes, it can be useful to create a copy of your database. Some use-cases
@@ -36,7 +36,7 @@ We usually suggest the following strategy:
 2. From this new app, download the latest production database backup available.
    This can be done using the [Scalingo CLI tool]({% post_url tools/cli/2000-01-01-start %}),
    an API token and a bit of Bash (see hereafter).
-3. Once downloaded, [restore the backup]({% post_url platform/databases/2000-01-01-restore-backup %})
+3. Once downloaded, [restore the backup]({% post_url databases/about/2000-01-01-backup-policies %}#restoring-a-backup)
    to the new app's database.
 4. If needed, run these tasks on a regular basis using the
    [Scalingo Scheduler]({% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}).
@@ -91,11 +91,11 @@ As you can see, this script would require 3 environment variables to be set:
 - `DUPLICATE_SOURCE_APP`: the name of the source application, from where the
   backup will be retrieved.
 - `DUPLICATE_ADDON_KIND`: the database kind (see the [`dbclient-fetcher`
-  documentation]({% post_url platform/databases/2000-01-01-access %}#manually-install-the-databases-cli-in-one-off)
+  documentation]({% post_url platform/databases/2000-01-01-remote-console %}#manually-install-the-databases-cli-in-a-one-off)
   for further help).
 
 The last step of the script depends on the database you're using. Please refer
-to [our documentation]({% post_url platform/databases/2000-01-01-restore-backup %})
+to [our documentation]({% post_url databases/about/2000-01-01-backup-policies %}#restoring-a-backup)
 for precise instructions and examples.
 
 You will most probably need an empty file called `index.php` to trick the
