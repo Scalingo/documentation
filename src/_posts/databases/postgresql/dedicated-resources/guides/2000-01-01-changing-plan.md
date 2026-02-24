@@ -77,12 +77,11 @@ This covers moves from `Business` or `Enterprise` to `Starter`.
 ## Using the Dashboard
 
 1. From your web browser, open your [dashboard][database-dashboard]
-2. Click on the database you want to scale
-3. Click on the **Settings** tab
-4. Locate the **Database plan** block and click on the **Change plan** button
-5. Select the new plan
-6. Click the **Finish** button
-7. Validate by clicking the **Confirm plan change** button
+2. Click on the **Settings** tab
+3. Locate the **Database plan** block and click on the **Change plan** button
+4. Select the new plan
+5. Click the **Finish** button
+6. Validate by clicking the **Confirm plan change** button
 
 
 ## Using the Command Line (Preview)

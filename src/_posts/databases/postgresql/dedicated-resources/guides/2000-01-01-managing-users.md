@@ -46,8 +46,8 @@ This default user is ***protected*** and thus:
 ### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Users** tab
-3. The list of available users is displayed under the **User Management**
+2. Once on the database dashboard, click the **Settings** tab, then select the **Database Users** tab
+3. The list of available users is displayed under the **Manage database users**
    section
 
 ### Using the Command Line
@@ -94,13 +94,13 @@ method used:
 ### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Users** tab
-3. Fill the **Add a new user** form:
+2. Once on the database dashboard, click the **Settings** tab, then select the **Database Users** tab
+3. Click the **Add a database user** boutton and fill out the form
    - Fill a username
    - Fill the corresponding password twice
 4. (optional) If you want to restrict this user to read only abilities, make
    sure to check the **Read only** checkbox
-5. Validate by clicking the **Add User** button
+5. Validate by clicking the **Add this user** button
 
 ### Using the Command Line
 
@@ -166,9 +166,9 @@ Updating a User Password is only available from the command line.
 ### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Users** tab
+2. Once on the database dashboard, click the **Settings** tab, then select the **Database Users** tab
 3. Locate the user you want to remove
-4. Click the **Delete** button next to the user
+4. Open the **...** menu next to this user, then click **Delete user**
 5. Confirm the removal
 
 ### Using the Command Line

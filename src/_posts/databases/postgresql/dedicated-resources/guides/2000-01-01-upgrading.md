@@ -220,8 +220,8 @@ the database dashboard.
 ### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Overview** tab
-3. Locate the **Database Upgrade** block
+2. Click the **Settings** tab
+3. Locate the **Database version** block
 4. If an upgrade is available, the text in the block explains what will be
    done.
 5. To launch the upgrade, click the **Upgrade to …** button

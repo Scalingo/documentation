@@ -42,7 +42,7 @@ export SCALINGO_PREVIEW_FEATURES=true
 
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, list the plans available for `postgresql`:
+2. From the command line, list the plans available for `postgresql-ng`:
    ```bash
    scalingo database-list-plans postgresql-ng
    ```
@@ -150,6 +150,7 @@ tasks such as:
 - [Upgrading the database][pg-dr-upgrading] engine version
 - [Enabling specific features][pg-dr-managing-extensions]
 - [Managing database users][pg-dr-managing-users]
+- [Managing Collaborators][pg-dr-managing-collaborators]
 - [Managing backups][pg-dr-backing-up]
 
 You can access the database dashboard from the main dashboard:
@@ -159,7 +160,7 @@ You can access the database dashboard from the main dashboard:
 3. In the **Databases** section, click the database name
 
 
-[dashboard]: https://dashboard.scalingo.com/apps
+[dashboard]: https://dashboard.scalingo.com/projects
 [architecture-models]: {% post_url databases/about/2000-01-01-architecture-models %}
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
@@ -172,4 +173,5 @@ You can access the database dashboard from the main dashboard:
 [pg-dr-upgrading]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-upgrading %}
 [pg-dr-managing-extensions]: {% post_url databases/postgresql/extensions/2000-01-01-managing-extensions %}
 [pg-dr-managing-users]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-users %}
+[pg-dr-managing-collaborators]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-collaborators %}
 [pg-dr-backing-up]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-backing-up %}

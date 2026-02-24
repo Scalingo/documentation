@@ -54,9 +54,7 @@ still remains applicable.
 ### Using the Dashboard
 
 1. From your web browser, open your [dashboard][database-dashboard]
-2. Open the **Project** containing the database you want to manage
-3. In the **Databases** section, click the database name
-4. Locate the **Connect** section then copy its **Connection String**
+2. Locate the **Connect** section then copy its **Connection String**
 
 ### Using the Command Line
 

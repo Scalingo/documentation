@@ -22,9 +22,8 @@ This will change in a future release.
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard][dashboard]
-2. Browse your projects and select the database you want to manage
-3. Once on the database dashboard, click the **Settings** tab, then select
+1. From your web browser, open your [dashboard][database-dashboard]
+2. Once on the database dashboard, click the **Settings** tab, then select
    **Collaborators**
 
 ### Using the Command Line
@@ -50,16 +49,15 @@ This will change in a future release.
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard][dashboard]
-2. Browse your projects and select the database you want to manage
-3. Once on the database dashboard, click the **Settings** tab, then select
+1. From your web browser, open your [dashboard][database-dashboard]
+2. Once on the database dashboard, click the **Settings** tab, then select
    **Collaborators**
-4. Click the **Add** button
-5. Fill the input field with the e-mail address of the collaborator
-6. Confirm
-7. The collaborator is added and appears dimmed in the list
-8. An invite is sent by e-mail to the collaborator
-9. Once the invite is accepted, the collaborator appears normally in the list
+3. Click the **Add** button
+4. Fill the input field with the e-mail address of the collaborator
+5. Confirm
+6. The collaborator is added and appears dimmed in the list
+7. An invite is sent by e-mail to the collaborator
+8. Once the invite is accepted, the collaborator appears normally in the list
 
 {% note %}
 For Dedicated Resources databases, only the **Collaborator** role is available.
@@ -84,14 +82,13 @@ prevent access to database data.
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard][dashboard]
-2. Browse your projects and select the database you want to manage
-3. Once on the database dashboard, click the **Settings** tab, then select
+1. From your web browser, open your [dashboard][database-dashboard]
+2. Once on the database dashboard, click the **Settings** tab, then select
    **Collaborators**
-4. Locate the collaborator for whom you want to revoke access
-5. Open the contextual menu by clicking the corresponding **...** button
-6. Select **Revoke access**
-7. Confirm by clicking the **Delete user@example.com** button in the popup
+3. Locate the collaborator for whom you want to revoke access
+4. Open the contextual menu by clicking the corresponding **...** button
+5. Select **Revoke access**
+6. Confirm by clicking the **Delete user@example.com** button in the popup
    window
 
 ### Using the Command Line
@@ -114,16 +111,15 @@ more interest in participating, you can stop collaborating on your own.
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard][dashboard]
-2. Browse your projects and select the database you want to manage
-3. Once on the database dashboard, click the **Settings** tab, then select
+1. From your web browser, open your [dashboard][database-dashboard]
+2. Once on the database dashboard, click the **Settings** tab, then select
    **Collaborators**
-4. Locate yourself in the list of collaborators
-5. Open the contextual menu by clicking the corresponding **...** button
-6. Select **Revoke access**
-7. Confirm by clicking the **Delete user@example.com** button in the popup
+3. Locate yourself in the list of collaborators
+4. Open the contextual menu by clicking the corresponding **...** button
+5. Select **Revoke access**
+6. Confirm by clicking the **Delete user@example.com** button in the popup
    window
 
 
-[dashboard]: https://dashboard.scalingo.com/apps
+[database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [cli]: {% post_url tools/cli/2000-01-01-start %}
