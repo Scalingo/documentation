@@ -13,9 +13,9 @@ layout: tutorials
             </h1>
 
             {% if page.products.size > 0 %}
-            <div class="flex flew-col my-6">
+            <div class="flex flew-col gap-2 my-6">
                 {% for product in page.products %}
-                <a href="#" class="flex m-2 p-1 px-2 rounded-md border border-sc-purple-2 bg-sc-purple-3 !text-sc-purple-1 hover:border-sc-purple1 hover:bg-sc-purple-2 hover:!text-sc-gray-1 text-sm !no-underline">{{ product }}</a>
+                <span class="flex p-1 px-2 rounded-md border border-sc-purple-2 bg-sc-purple-3 !text-sc-purple-1 text-sm !no-underline">{{ product }}</span>
                 {% endfor %}
             </div>
             {% endif %}
