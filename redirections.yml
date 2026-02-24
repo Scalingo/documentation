@@ -774,6 +774,36 @@
   - old: "/platform/app/private-networks"
     new: "/platform/networking/private/overview"
 
+  - old: "/platform/getting-started/getting-started-with-grafana"
+    new: "/tutorials/grafana"
+
+  - old: "/platform/getting-started/getting-started-with-modsecurity"
+    new: "/tutorials/modsecurity"
+
+  - old: "/platform/getting-started/getting-started-with-n8n"
+    new: "/tutorials/n8n"
+
+  - old: "/platform/getting-started/getting-started-with-sonarqube"
+    new: "/tutorials/sonarqube"
+
+  - old: "/platform/getting-started/getting-started-with-metabase"
+    new: "/tutorials/metabase"
+
+  - old: "/platform/getting-started/getting-started-with-wordpress"
+    new: "/tutorials/wordpress"
+
+  - old: "/platform/getting-started/getting-started-with-elk/overview"
+    new: "/tutorials/elk/overview"
+
+  - old: "/platform/getting-started/getting-started-with-elk/logstash"
+    new: "/tutorials/elk/logstash"
+
+  - old: "/platform/getting-started/getting-started-with-elk/kibana"
+    new: "/tutorials/elk/kibana"
+
+  - old: "/platform/getting-started/getting-started-with-elk/curator"
+    new: "/tutorials/elk/curator"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

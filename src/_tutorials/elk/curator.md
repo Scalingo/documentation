@@ -302,7 +302,9 @@ ${MY_ENV_VAR:default_value}
 
 [dashboard]: https://dashboard.scalingo.com/apps/
 
-[elk-overview]: {% post_url platform/getting-started/getting-started-with-elk/2000-01-01-overview %}
-[elk-constraint]: {% post_url platform/getting-started/getting-started-with-elk/2000-01-01-overview %}#planning-your-deployment
 [scheduler]: {% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}
 [multi-buildpack-order]: {% post_url platform/deployment/buildpacks/2000-01-01-multi %}#does-the-buildpack-order-matter
+
+[elk-overview]: {% link _tutorials/elk/overview.md %}
+[elk-constraint]: {% link _tutorials/elk/overview.md %}#planning-your-deployment
+

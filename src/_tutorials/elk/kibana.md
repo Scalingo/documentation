@@ -193,5 +193,4 @@ deployment:
 [dashboard]: https://dashboard.scalingo.com/apps/
 [one-click]: https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/kibana-scalingo
 
-
-[elk-constraint]: {% post_url platform/getting-started/getting-started-with-elk/2000-01-01-overview %}#planning-your-deployment
+[elk-constraint]: {% link _tutorials/elk/overview.md %}#planning-your-deployment
