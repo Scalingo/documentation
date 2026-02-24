@@ -101,6 +101,6 @@ application that needs access.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [environment]: {% post_url platform/app/2000-01-01-environment %}
-[dr-firewall-regions]: {% post_url databases/about/2000-01-01-network-exposure %}#allowing-scalingo-apps-to-reach-a-dedicated-resources-database
+[dr-firewall-regions]: {% databases/postgresql/dedicated-resources/getting-started/2000-01-01-accessing %}#allowing-scalingo-apps-to-reach-a-dedicated-resources-database
 
 [database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
