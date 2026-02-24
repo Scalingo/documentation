@@ -88,8 +88,7 @@ prevent access to database data.
 3. Locate the collaborator for whom you want to revoke access
 4. Open the contextual menu by clicking the corresponding **...** button
 5. Select **Revoke access**
-6. Confirm by clicking the **Delete user@example.com** button in the popup
-   window
+6. Confirm by clicking the **Revoke access to** button in the popup window
 
 ### Using the Command Line
 
@@ -117,8 +116,7 @@ more interest in participating, you can stop collaborating on your own.
 3. Locate yourself in the list of collaborators
 4. Open the contextual menu by clicking the corresponding **...** button
 5. Select **Revoke access**
-6. Confirm by clicking the **Delete user@example.com** button in the popup
-   window
+6. Confirm by clicking the **Revoke access to** button in the popup window
 
 
 [database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
