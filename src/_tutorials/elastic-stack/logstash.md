@@ -368,4 +368,4 @@ deployment:
 
 [log-drains]: {% post_url platform/app/2000-01-01-log-drain %}
 
-[elk-constraint]: {% link _tutorials/elk/overview.md %}#planning-your-deployment
+[elk-constraint]: {% link _tutorials/elastic-stack/overview.md %}#planning-your-deployment

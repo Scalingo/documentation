@@ -305,6 +305,6 @@ ${MY_ENV_VAR:default_value}
 [scheduler]: {% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}
 [multi-buildpack-order]: {% post_url platform/deployment/buildpacks/2000-01-01-multi %}#does-the-buildpack-order-matter
 
-[elk-overview]: {% link _tutorials/elk/overview.md %}
-[elk-constraint]: {% link _tutorials/elk/overview.md %}#planning-your-deployment
+[elk-overview]: {% link _tutorials/elastic-stack/overview.md %}
+[elk-constraint]: {% link _tutorials/elastic-stack/overview.md %}#planning-your-deployment
 

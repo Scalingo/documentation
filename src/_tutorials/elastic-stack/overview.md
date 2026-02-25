@@ -85,9 +85,9 @@ Please refer to our dedicated pages:
 [elastic-license]: https://www.elastic.co/fr/pricing/faq/licensing
 [elastic-compat]: https://www.elastic.co/fr/support/matrix#matrix_compatibility
 
-[deploy-logstash]: {% link _tutorials/elk/logstash.md %}
-[deploy-kibana]: {% link _tutorials/elk/kibana.md %}
-[deploy-curator]: {% link _tutorials/elk/curator.md %}
+[deploy-logstash]: {% link _tutorials/elastic-stack/logstash.md %}
+[deploy-kibana]: {% link _tutorials/elastic-stack/kibana.md %}
+[deploy-curator]: {% link _tutorials/elastic-stack/curator.md %}
 
 [elasticsearch]: {% post_url databases/elasticsearch/2000-01-01-start %}
 

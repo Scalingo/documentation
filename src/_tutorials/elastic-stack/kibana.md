@@ -193,4 +193,4 @@ deployment:
 [dashboard]: https://dashboard.scalingo.com/apps/
 [one-click]: https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/kibana-scalingo
 
-[elk-constraint]: {% link _tutorials/elk/overview.md %}#planning-your-deployment
+[elk-constraint]: {% link _tutorials/elastic-stack/overview.md %}#planning-your-deployment
