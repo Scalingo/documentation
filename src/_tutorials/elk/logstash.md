@@ -357,6 +357,7 @@ deployment:
 
 - **`LOGSTASH_VERSION`**\\
   Version of Logstash to deploy.\\
+  Unless specified, buildpack deploys version `7.17.29`.\\
   Defaults to not being set.
 
 
