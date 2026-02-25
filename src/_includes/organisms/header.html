@@ -26,17 +26,17 @@
     {% assign is_changelog = true %}
 {% endif %}
 
-<div class="top-0 z-20 w-full text-sc-gray-1 font-medium hidden xl:block">
+<div class="top-0 z-20 w-full text-sc-gray-1 font-medium text-base lg:text-sm 2xl:text-base hidden xl:block">
   <div class="bg-sc-gray-5 flex py-3 items-center fixed z-10 border-b-4 xl:border-b-0 border-sc-blue-3 w-full">
     <div class="w-80">
-      <div class="ml-3 flex"><a class="py-2 px-3" href="/" title="Homepage">{% icon logo_full %}</a></div>
+      <div class="ml-3 flex"><a class="py-2" href="/" title="Homepage">{% icon logo_full %}</a></div>
     </div>
     <div class="grow hidden xl:flex gap-6">
-      <a href="/" class="py-2 px-5 hover:text-sc-blue-1{% unless (is_tutorials or is_samples or is_cli or is_changelog) %}{{ active_classes }}{% endunless %}">Documentation</a>
-      <a href="/tutorials" class="py-2 px-5 hover:text-sc-blue-1{% if is_tutorials %}{{ active_classes }}{% endif %}">Tutorials</a>
-      <a href="/samples" class="py-2 px-5 hover:text-sc-blue-1{% if is_samples %}{{ active_classes }}{% endif %}">Samples</a>
-      <a href="/tools/cli/start" class="py-2 px-5 hover:text-sc-blue-1{% if is_cli %}{{ active_classes }}{% endif %}">CLI</a>
-      <a href="/changelog" class="py-2 px-5 hover:text-sc-blue-1{% if is_changelog %}{{ active_classes }}{% endif %}">Changelog</a>
+      <a href="/" class="py-2 hover:text-sc-blue-1{% unless (is_tutorials or is_samples or is_cli or is_changelog) %}{{ active_classes }}{% endunless %}">Documentation</a>
+      <a href="/tutorials" class="py-2 hover:text-sc-blue-1{% if is_tutorials %}{{ active_classes }}{% endif %}">Tutorials</a>
+      <a href="/samples" class="py-2 hover:text-sc-blue-1{% if is_samples %}{{ active_classes }}{% endif %}">Samples</a>
+      <a href="/tools/cli/start" class="py-2 hover:text-sc-blue-1{% if is_cli %}{{ active_classes }}{% endif %}">CLI</a>
+      <a href="/changelog" class="py-2 hover:text-sc-blue-1{% if is_changelog %}{{ active_classes }}{% endif %}">Changelog</a>
       <a href="https://developers.scalingo.com" target="_blank" class="py-2 hover:text-sc-blue-1">API Reference</a>
     </div>
     <div class="hidden xl:flex items-center">
@@ -47,7 +47,6 @@
       </div>
     </div>
   </div>
-  <div style="height: 68px;"></div>
 </div>
 
 <script type="text/javascript">
