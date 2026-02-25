@@ -15,10 +15,10 @@ The Elastic Stack (formerly known as the ELK Stack) is a powerful collection of
 softwares that lets you collect data from any source using any format. It gives
 you tools to search, visualize and analyze these data in real time.
 
-The ELK stack is based on three major components: **Elasticsearch**®,
+The Elastick Stack is based on three major components: **Elasticsearch**®,
 **Logstash** and **Kibana**.
 
-Here is a diagram showing the main principles of the ELK stack architecture:
+Here is a diagram showing the main principles of the stack architecture:
 
 {% assign img_url = "https://cdn.scalingo.com/documentation/diagram_documentation_elk_stack.svg" %}
 {% include mdl_img.html %}
@@ -31,23 +31,27 @@ Here is a diagram showing the main principles of the ELK stack architecture:
   to keep indices as light and fast as possible.
 
   To cover this need, we suggest to add a fourth component named **Curator** to
-  your ELK stack.
+  your Elastic Stack.
 
 - Logstash and Kibana both require their own container(s). We will consequently
   need two apps.
 
-- To keep things simple, we will deploy Elasticsearch as an addon attached to
-  Logstash.
+- We will deploy Elasticsearch as an addon attached to Logstash.
 
-- Still to keep things as simple as possible, we will deploy Curator besides
-  Logstash.
-
-- Choosing the appropriate Elasticsearch plan strongly depends on your needs.
-  In this guide, we will start with a Starter 512M plan. Please keep in mind that
-  you can change for a more powerful plan later if need be.
+- We will deploy Curator alongside Logstash, in the same container.
 
 - Logstash requires quite a lot of RAM to run properly. We recommend to deploy
   at least one L container to host it.
+
+- Choosing the appropriate Elasticsearch plan strongly depends on your needs.
+  In this guide, we will start with the smallest plan we provide: a Starter
+  512M plan.
+
+  Note that Elasticsearch can become quite greedy memory-wise: indexing,
+  aggregating, and heavy read workloads with caching enabled can have a
+  significant impact on your database performances. To reduce the JVM heap
+  pressure, and to lower the need of garbage collection, you may want to switch
+  for a more powerful plan.
 
 {% warning %}
 Due to [Elasticsearch license change][elastic-license], we are currently unable
@@ -76,6 +80,7 @@ Please refer to our dedicated pages:
 
 
 *[ELK]: Elasticsearch Logstash Kibana
+*[JVM]: Java Virtual Machine
 
 [elastic-license]: https://www.elastic.co/fr/pricing/faq/licensing
 [elastic-compat]: https://www.elastic.co/fr/support/matrix#matrix_compatibility
