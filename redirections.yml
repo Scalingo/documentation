@@ -793,16 +793,17 @@
     new: "/tutorials/wordpress"
 
   - old: "/platform/getting-started/getting-started-with-elk/overview"
-    new: "/tutorials/elk/overview"
+    new: "/tutorials/elastic-stack/overview"
 
   - old: "/platform/getting-started/getting-started-with-elk/logstash"
-    new: "/tutorials/elk/logstash"
+    new: "/tutorials/elastic-stack/logstash"
 
   - old: "/platform/getting-started/getting-started-with-elk/kibana"
-    new: "/tutorials/elk/kibana"
+    new: "/tutorials/elastic-stack/kibana"
 
   - old: "/platform/getting-started/getting-started-with-elk/curator"
-    new: "/tutorials/elk/curator"
+    new: "/tutorials/elastic-stack/curator"
+
   - old: "/platform/databases/restore-backup"
     new: "/databases/about/backup-policies#restoring-a-backup"
 
