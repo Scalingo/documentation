@@ -29,9 +29,10 @@ application.
 The following limitations currently exist, be it for security, performance or
 stability reasons:
 
-- The Scalingo Scheduler has been designed to run short-lived tasks.
-  Consequently, **scheduled tasks won't run more than 12 hours**. They are
-  automatically killed as soon as they reach this limit.
+- The Scalingo Scheduler has been designed to run short to medium lived tasks
+  (in opposition to long living ones that could last days). Consequently,
+  **scheduled tasks won't run more than 12 hours**. They are automatically
+  killed as soon as they reach this limit.
 
 - Moreover, a one-off container started by the Scalingo Scheduler will not run
   longer than its scheduling interval. For example, a scheduled task set up to
