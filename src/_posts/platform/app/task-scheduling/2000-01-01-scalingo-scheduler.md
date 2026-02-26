@@ -1,7 +1,7 @@
 ---
 title: Scalingo Scheduler - Run Scheduled Tasks
 nav: Scalingo Scheduler
-modified_at: 2023-05-11 16:00:00
+modified_at: 2026-02-24 16:00:00
 tags: task-scheduling
 index: 1
 ---
@@ -29,15 +29,16 @@ application.
 The following limitations currently exist, be it for security, performance or
 stability reasons:
 
-- The Scalingo Scheduler has been designed to run short-lived tasks.
-  Consequently, **scheduled tasks won't run more than 15 minutes**. They are
-  automatically killed as soon as they reach this limit.
+- The Scalingo Scheduler has been designed to run short to medium lived tasks
+  (in opposition to long living ones that could last days). Consequently,
+  **scheduled tasks won't run more than 12 hours**. They are automatically
+  killed as soon as they reach this limit.
 
 - Moreover, a one-off container started by the Scalingo Scheduler will not run
   longer than its scheduling interval. For example, a scheduled task set up to
   run every 10 minutes will be terminated after running for 10 minutes. A
-  scheduled task set to run every 30 minutes will be killed after running for
-  15 minutes (see above).
+  scheduled task set to run every day will be killed after running for
+  12 hours (see above).
 
 - The smallest scheduling interval is set to 10 minutes. For example, the
   Scalingo Scheduler won't let you set up a task to run every 5 minutes (the
