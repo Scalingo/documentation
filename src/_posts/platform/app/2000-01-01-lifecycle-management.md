@@ -1,37 +1,48 @@
 ---
 title: Application Lifecycle Management
 nav: Lifecycle Management
-modified_at: 2025-07-10 12:00:00
+modified_at: 2026-02-26 10:00:00
 index: 10
 tags: management
 ---
 
+
+On Scalingo, an application is the resource that packages and runs your code on 
+the platform. It combines a codebase, its environment configuration, and one or 
+more processes executed in containers. From this entity, you deploy new versions, 
+manage its scaling, and manage add-ons and collaborators.
+
+
+## Create an Application
+
 Three methods are co-existing to manage your applications on the Scalingo:
 
-- [Web Dashboard][dashboard]: The simplest way to manage your applications, use
+- [Dashboard][dashboard]: The simplest way to manage your applications, use
   any browser to create, scale, transfer, or delete applications.
 
 - [CLI][cli]: More comfortable with terminals or you want to build scripts to
   control applications, the command line interface, available for all major
-  operating system, is able to achieve any operation the web dashboard can do.
+  operating system, is able to achieve any operation the dashboard can do.
 
-- [HTTP API][api]: The web dashboard and the CLI are both consuming this API,
+- [HTTP API][api]: The dashboard and the CLI are both consuming this API,
   if you need to automate behaviors by managing applications in a programmatic
   way, you can directly target [our API][api] via [our SDK][sdk].
 
-## Create an Application
+### Using the Dashboard
 
-Creating an application is the first thing done on the platform. Once an app is
-created, the possibility to deploy your code, provision databases, invite
-collaborators are available.
-
-### Web Dashboard
-
-**Where**:
-* Dashboard homepage, button `+ CREATE NEW APP`
-* Any page of the dashboard, bottom-left button `+`
-
-**Actions**: Give a name, choose addons and validate
+1. From your web browser, open your [dashboard][dashboard]
+2. Click the **Create an application +** button
+3. In the **Basic information** section:
+   - Enter the application name
+   - Select the target region
+   - Select the target project
+4. (optional) If your workload is subject to French HDS requirements, check
+   **Health data hosting (compliant with the French HDS standard)**. See
+   [Create an HDS Application](#create-an-hds-application)
+5. Click **Create app**
+6. In the **Deployment method** section, select your Git provider and choose
+   the repository you want to deploy
+7. Confirm the repository selection to create the application
 
 ### Command Line
 
@@ -50,20 +61,46 @@ $ scalingo create my-app --buildpack https://github.com/Scalingo/multi-buildpack
 $ scalingo create --project-id=prj-6731a609-02b6-4614-b28d-5abe43654333 my-app
 ```
 
+## Create an HDS Application
+
+If your workload hosts personal health data in a context subject to 
+[French HDS requirements][hds-page], create an HDS application from the 
+beginning.
+
+1. [Create a new application](#create-an-application)
+2. During creation, enable HDS:
+   - Dashboard: check `Health data hosting (compliant with the French HDS standard)`
+   - CLI: use the `--hds-resource` flag
+   - Terraform: set `hds_resource = true`
+3. Accept the latest version of the HDS contract appendix
+4. Create or update your [Health Professional Point of Contact][hds-poc]
+
+{% note %}
+HDS must be enabled when the application is created. It is not possible to
+convert an existing non-HDS application to HDS afterward.
+{% endnote %}
+
+
 ## Rename an Application
 
-### Web Dashboard
+### Using the Dashboard
 
-**Where**: `Settings` tab of the application, button `RENAME THIS APP`
+1. From your web browser, open your [dashboard][dashboard]
+2. Click on the application you want to rename
+3. Click the **Settings** tab
+4. In **Application details**, click the **Rename** button
+5. Enter the new application name in the confirmation form
+6. Confirm by clicking **Rename**
 
-**Condition**: Logged in user should be the application owner
-
-**Actions**: Fill confirmation form, choose a new name and click on `RENAME`
+{% note %}
+Only the application owner can rename the application.
+{% endnote %}
 
 {% note %}
 The [SCM link][scm] is not updated when renaming an application. You should
 recreate it by yourself.
 {% endnote %}
+
 
 ## Transfer Ownership of an Application
 
@@ -87,41 +124,40 @@ This operation is only achievable from the [Scalingo dashboard][dashboard].
   change anything. The owner at the date of billing is taken into account.
 {% endnote %}
 
-### Invite the future owner
+### Using the Dashboard
 
-1. Go in the collaborators tab
-2. Invite the person you want to transfer the application to
+1. From your web browser, open your [dashboard][dashboard]
+2. Click on the application you want to transfer
+3. Click the **Settings** tab
+4. In the **Collaborators** section, invite the future owner if they are not
+   already a collaborator
+5. Ask the invited user to accept the invitation from the confirmation e-mail
+6. In the **Transfer the application** section, select the collaborator who
+   should receive ownership
+7. Confirm the transfer
 
-### Accept the collaboration
-
-*this step should be done by the user which has been invited*
-
-1. Click on the validation link you've received by email, you'll have to login if you were unauthenticated.
-
-The account is now collaborator of the application.
-
-### Transfer to the new owner
-
-1. Go in the 'Settings' tab
-2. In the '*Transfer the application*' part, choose the collaborator which should receive the app
-3. Validate the transfer
-
-After this step, the previous owner becomes a simple collaborator of the application.
+After the transfer, the previous owner becomes a collaborator of the application.
 
 {% note %}
-  *Note*: if you're handling both accounts, don't forget to log out between each step, otherwise the
-  collaboration invitation won't be considered valid.
+If you're handling both accounts, don't forget to log out between each step, 
+otherwise the collaboration invitation won't be considered valid.
 {% endnote %}
+
 
 ## Delete an Application
 
-### Web Dashboard
+### Using the Dashboard
 
-**Where**: `Settings` tab of the application, button `DELETE THIS APP`
+1. From your web browser, open your [dashboard][dashboard]
+2. Click on the application you want to delete
+3. Click the **Settings** tab
+4. Click the **Delete app** button
+5. Fill the confirmation form
+6. Confirm the deletion
 
-**Condition**: Logged in user should be the application owner
-
-**Actions**: Fill confirmation form and validate operation
+{% note %}
+Only the application owner can delete the application.
+{% endnote %}
 
 ### Command Line
 
@@ -146,3 +182,5 @@ To confirm type the name of the application: my-app
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [scm]: {% post_url platform/app/2000-01-01-scm-integration %}
 [billing]: {% post_url platform/billing/2000-01-01-profile %}
+[hds-page]: {% post_url platform/2000-01-01-hds %}
+[hds-poc]: {% post_url compliance/2000-01-01-hds %}#en-hds-health-professional-point-of-contact
