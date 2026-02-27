@@ -1,6 +1,6 @@
 ---
 modified_at: 2026-03-01 00:00:00
-title: 'Sandbox plan provisioning update (effective March 2, 2026)'
+title: 'Phasing out Sandbox plans in favor of Starter plans'
 ---
 
 Starting Monday, March 2, 2026, Sandbox plans can no longer be provisioned for databases (Application and Review Apps).
