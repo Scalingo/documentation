@@ -243,14 +243,14 @@ update the project with the desired attributes. For example:
 Effective March 1, 2026, projects become a core and permanent component of the platform. Applications can no longer be transferred individually. To change ownership, transfer the entire project instead.
 {% endnote %}
 
-To transfer a project to another user, first add the future owner as a collaborator on all project resources, including applications and Dedicated Resources databases.
+To transfer a project to another user, first add the future owner as a collaborator on all project resources, including applications and Dedicated Resources databases, and make sure they accept the invitation.
 
 {% note %}
 The new owner must have an active [Billing Profile][billing], and valid payment method and must have left the free trial.
 If the project contains HDS resources, the new owner must also provide the required health professional contact details.
 {% endnote %}
 
-After the transfer:
+Once the transfer is accepted by the new owner:
 - The previous owner is downgraded from **owner** to **collaborator** and keeps access to the project.
 - The previous owner no longer has administrative rights on the project.
 - The project is fully owned by the new owner.
