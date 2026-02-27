@@ -1,8 +1,9 @@
 ---
 title: Kibana
-modified_at: 2025-08-13 12:00:00
-tags: elk tutorial logstash elasticsearch kibana log
-index: 3
+is_series: true
+series: Deploying an Elastic Stack
+series_index: 3
+modified_at: 2025-08-13
 ---
 
 **Kibana** is a powerful web-based data visualization tool providing everything
@@ -10,21 +11,6 @@ needed to explore data and build useful and efficient dashboards.
 
 
 ## Deploying
-
-### Using our One-Click Deploy Button
-
-Click the One-Click Deploy button below to automatically deploy Kibana with
-your Scalingo account:
-
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
-
-{% note %}
-- When using our One-Click Deploy button above, a new Elasticsearch database is
-  provisionned and attached to your Kibana app. You can safely delete it if you
-  use the one attached to your Logstash app.
-- In such a case, the `ELASTICSEARCH_URL` must be retrieved from the previously
-  created Logstash instance.
-{% endnote %}
 
 ### Using the Command Line
 
@@ -70,11 +56,6 @@ Kibana on Scalingo. Here are the few steps you will have to follow:
    ```
 
 ### Using the Terraform Provider
-
-{% note %}
-The following code blocks are given as examples.\\
-Please adjust the values to suit your needs.
-{% endnote %}
 
 1. Start by forking our [Kibana repository][kibana-scalingo]
 
@@ -212,5 +193,4 @@ deployment:
 [dashboard]: https://dashboard.scalingo.com/apps/
 [one-click]: https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/kibana-scalingo
 
-
-[elk-constraint]: {% post_url platform/getting-started/getting-started-with-elk/2000-01-01-overview %}#planning-your-deployment
+[elk-constraint]: {% link _tutorials/elastic-stack/overview.md %}#planning-your-deployment

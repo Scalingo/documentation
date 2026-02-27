@@ -1,0 +1,16 @@
+<nav id="menu-nav">
+    <ul>
+    {% assign tutorials_categories = site.tutorials_categories | sort: "name" %}
+
+    {% for category in tutorials_categories %}
+        {% assign current_cat = page.category | slugify %}
+        {% assign cat = category.title | slugify %}
+        <li>
+            <a href="{{ category.url }}"
+               class="flex px-6 py-3 grow border-b border-sc-gray-3 text-sc-title-7 uppercase{% if cat == current_cat %} text-sc-blue-1{% endif %}">
+                {{ category.title }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</nav>

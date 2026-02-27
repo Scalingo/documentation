@@ -1,8 +1,11 @@
 ---
-title: Getting Started with WordPress on Scalingo
-modified_at: 2025-08-13 12:00:00
-tags: php, http, framework, wordpress, deployment
-index: 14
+title: Deploying WordPress
+logo: bedrock
+category: cms
+products:
+  - Scalingo for MySQL®
+permalink: /tutorials/wordpress
+modified_at: 2025-08-13
 ---
 
 WordPress is a popular open-source web content management system (CMS) used for
@@ -49,13 +52,6 @@ Basically everything we love at Scalingo!
 
 ## Deploying
 
-### Using our One-Click Deploy Button
-
-Click the One-Click Deploy button below to automatically deploy WordPress with
-you Scalingo account:
-
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
-
 ### Using the Command Line
 
 We maintain a repository called [wordpress-scalingo] on GitHub to help you
@@ -93,10 +89,10 @@ to follow:
 
    | Env Variable       | Description |
    | ------------------ | ----------- |
-   | `WP_HOME`          | Mandatory. Full URL to Wordpress home.<br />i.e. `https://my-app.osc-fr1.scalingo.io`                           |
-   | `WP_SITEURL`       | Mandatory. Full URL to Wordpress, including the subdirectory.<br />i.e. `https://my-app.osc-fr1.scalingo.io/wp` |
-   | `WP_ENV`           | Can be set to either `development`, `staging`, or `production`. Defaults to `production`.                       |
-   | `AUTH_KEY`         | Mandatory. Can be generated via [Roots WordPress Salts Generator](https://roots.io/salts.html)                  |
+   | `WP_HOME`          | Mandatory. Full URL to Wordpress home.<br />i.e. `https://my-wordpress.osc-fr1.scalingo.io`                           |
+   | `WP_SITEURL`       | Mandatory. Full URL to Wordpress, including the subdirectory.<br />i.e. `https://my-wordpress.osc-fr1.scalingo.io/wp` |
+   | `WP_ENV`           | Can be set to either `development`, `staging`, or `production`. Defaults to `production`.                             |
+   | `AUTH_KEY`         | Mandatory. Can be generated via [Roots WordPress Salts Generator](https://roots.io/salts.html)                        |
 
 5. Generate and add a few security keys and salts, also as environment
    variables. These are random strings of characters that are used to enhance

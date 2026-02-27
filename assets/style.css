@@ -945,11 +945,20 @@ blockquote {
   color: #a6e22e;
 }
 
+.tag {
+    background-color: var(--sc-color-purple-3);
+    border: 1px solid var(--sc-color-purple-2);
+    border-radius: 4px;
+    color: var(--sc-color-purple-1);
+    display: flex;
+    margin: 4px;
+    padding: 2px 4px;
+}
+
 /*
 Fix PRE tags overflow by adding min-width:0 on key elements
 source: https://weblog.west-wind.com/posts/2016/feb/15/flexbox-containers-pre-tags-and-managing-overflow
 */
-
 div, span, html, body, ul, article, main, nav {
   min-width: 0;
 }

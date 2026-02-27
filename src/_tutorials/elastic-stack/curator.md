@@ -1,8 +1,9 @@
 ---
 title: Curator
-modified_at: 2025-08-13 12:00:00
-tags: elk tutorial logstash elasticsearch kibana log
-index: 4
+is_series: true
+series: Deploying an Elastic Stack
+series_index: 4
+modified_at: 2025-08-13
 ---
 
 **Curator** is a tool that helps curating and managing Elasticsearch®'s indices.
@@ -301,7 +302,9 @@ ${MY_ENV_VAR:default_value}
 
 [dashboard]: https://dashboard.scalingo.com/apps/
 
-[elk-overview]: {% post_url platform/getting-started/getting-started-with-elk/2000-01-01-overview %}
-[elk-constraint]: {% post_url platform/getting-started/getting-started-with-elk/2000-01-01-overview %}#planning-your-deployment
 [scheduler]: {% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}
 [multi-buildpack-order]: {% post_url platform/deployment/buildpacks/2000-01-01-multi %}#does-the-buildpack-order-matter
+
+[elk-overview]: {% link _tutorials/elastic-stack/overview.md %}
+[elk-constraint]: {% link _tutorials/elastic-stack/overview.md %}#planning-your-deployment
+

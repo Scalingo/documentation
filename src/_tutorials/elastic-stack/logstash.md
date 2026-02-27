@@ -1,8 +1,9 @@
 ---
 title: Logstash
-modified_at: 2025-12-25 12:00:00
-tags: elk tutorial logstash elasticsearch kibana log
-index: 2
+is_series: true
+series: Deploying an Elastic Stack
+series_index: 2
+modified_at: 2026-02-23
 ---
 
 **Logstash** is a data processing pipeline, able to take multiple sources of
@@ -15,7 +16,8 @@ them to the chosen destination.
 - We are currently stuck with an important [constraint][elk-constraint] related
   to Elasticsearch®. Scalingo provides a version of Logstash that is compatible
   with this constraint **in the `es7-compat` branch** of the
-  [logstash-scalingo] repository. We will have to use this branch.
+  [logstash-scalingo] repository. By default, this branch allows to deploy the
+  latest version of Logstash compatible with Elasticsearch `7.10.2`.
 
 - Sizing Logstash vastly depends on your use-case and the amount of data
   processed. We usually recommend to start with an L container, and adjust
@@ -37,7 +39,7 @@ follow:
    cd logstash-scalingo
    ```
 
-2. Update your branch name to `master` or `main`:
+2. Update your `es7-compat` branch name to `master` or `main`:
 
    ```bash
    git branch -m master
@@ -111,11 +113,6 @@ follow:
    ```
 
 ### Using the Terraform Provider
-
-{% note%}
-The following code blocks are given as examples.\\
-Please adjust the values to suit your needs.
-{% endnote %}
 
 1. Start by forking our [Logstash repository][logstash-scalingo]
 
@@ -360,7 +357,8 @@ deployment:
 
 - **`LOGSTASH_VERSION`**\\
   Version of Logstash to deploy.\\
-  Defaults to `6.8.21`
+  Unless specified, buildpack deploys version `7.17.29`.\\
+  Defaults to not being set.
 
 
 [logstash-scalingo]: https://github.com/Scalingo/logstash-scalingo/tree/es7-compat
@@ -368,5 +366,6 @@ deployment:
 
 [dashboard]: https://dashboard.scalingo.com/apps/
 
-[elk-constraint]: {% post_url platform/getting-started/getting-started-with-elk/2000-01-01-overview %}#planning-your-deployment
 [log-drains]: {% post_url platform/app/2000-01-01-log-drain %}
+
+[elk-constraint]: {% link _tutorials/elastic-stack/overview.md %}#planning-your-deployment

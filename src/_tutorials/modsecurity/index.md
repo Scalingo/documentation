@@ -1,14 +1,15 @@
 ---
-title: Getting Started with ModSecurity on Scalingo
-modified_at: 2025-08-12 12:00:00
-tags: tutorial security firewall modsecurity apache nginx waf
-index: 11
+title: Deploying a WAF with OWASP ModSecurity CRS
+logo: owasp-modsecurity-crs
+category: security
+permalink: /tutorials/modsecurity
+modified_at: 2025-08-12
 ---
 
 ModSecurity is an open-source Web Application Firewall (WAF) that allows users
 to monitor, log and filter HTTP requests. A very common use case is to rely on
-a set of open-source rules provided by [OWASP] (called
-[OWASP ModSecurity Core Rule Set \(CRS\)][CRS]) to protect a web application
+a set of open-source rules called
+[OWASP ModSecurity Core Rule Set (CRS)][CRS] to protect a web application
 against generic classes of vulnerabilities and threats such as SQL injections,
 Cross Site Scripting, etc.
 
@@ -249,6 +250,10 @@ They can be leveraged to customize your deployment:
   log transactions).\\
   Defaults to `Off`.
 
+
+*[OWASP]: Open Worldwide Application Security Project
+*[WAF]: Web Application Firewall
+*[CRS]: Core Rule Set
 
 [OWASP]: https://owasp.org
 [CRS]: https://owasp.org/www-project-modsecurity-core-rule-set/

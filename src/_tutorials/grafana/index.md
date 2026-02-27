@@ -1,8 +1,12 @@
 ---
-title: Getting Started with Grafana on Scalingo
-modified_at: 2025-08-12 12:00:00
-tags: tutorial grafana metrics
-index: 12
+title: Deploying Grafana
+logo: grafana
+category: analytics
+products:
+  - Scalingo for PostgreSQL®
+  - Multi-buildpack
+permalink: /tutorials/grafana
+modified_at: 2025-08-12
 ---
 
 Grafana is an open-source platform for visualizing and monitoring data from
@@ -23,13 +27,6 @@ metrics monitoring.
 
 
 ## Deploying
-
-### Using our One-Click Deploy Button
-
-Click the One-Click Deploy button below to automatically deploy Grafana with
-your Scalingo account:
-
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
 
 ### Using the Command Line
 
@@ -253,5 +250,3 @@ They can be leveraged to customize your deployment:
 
 [dashboard]: https://dashboard.scalingo.com
 [one-click]: https://dashboard.scalingo.com/create/app?source=https://github.com/Scalingo/grafana-scalingo
-
-[multi-buildpack]: {% post_url platform/deployment/buildpacks/2000-01-01-multi %}

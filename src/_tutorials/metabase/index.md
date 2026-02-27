@@ -1,8 +1,12 @@
 ---
-title: Getting Started with Metabase on Scalingo
-modified_at: 2025-08-12 12:00:00
-tags: tutorial metabase
-index: 13
+title: Deploying Metabase
+logo: metabase
+category: analytics
+products:
+  - Scalingo for PostgreSQL®
+  - Multi-buildpack
+permalink: /tutorials/metabase
+modified_at: 2025-08-12
 ---
 
 Metabase is an open-source Business Intelligence tool that allows you to build
@@ -25,13 +29,6 @@ queries.
 
 
 ## Deploying
-
-### Using our One-Click Deploy Button
-
-Click the One-Click Deploy button below to automatically deploy Metabase with
-your Scalingo account:
-
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
 
 ### Using the Command Line
 

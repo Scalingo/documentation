@@ -21,19 +21,38 @@ source: src
 keep_files:
   - packs
 
+collections:
+  tutorials:
+    output: true
+    permalink: /:collection/:path
+
+  tutorials_categories:
+    output: true
+    permalink: /tutorials/cat/:name
+
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "page"
-  -
-    scope:
+      layout: page
+
+  - scope:
       path: ""
-      type: "pages"
+      type: pages
     values:
-      layout: "page"
+      layout: page
+
+  - scope:
+      type: tutorials
+    values:
+      layout: tutorials_page
+
+  - scope:
+      type: tutorials_categories
+    values:
+      layout: tutorials_category
+
 plugins:
   - jekyll-sitemap
   - jekyll-feed

@@ -1,8 +1,12 @@
 ---
-title: Getting Started with SonarQube on Scalingo
-modified_at: 2025-08-07 12:00:00
-tags: tutorial sonarqube
-index: 15
+title: Deploying SonarQube
+logo: sonarqube
+category: security
+products:
+  - Scalingo for PostgreSQL®
+  - Multi-buildpack
+permalink: /tutorials/sonarqube
+modified_at: 2025-08-07
 ---
 
 SonarQube is an automatic code review tool to detect bugs, vulnerabilities, and
@@ -25,13 +29,6 @@ requests.
 
 
 ## Deploying
-
-### Using our One-Click Deploy Button
-
-Click the One-Click Deploy button below to automatically deploy SonarQube with
-your Scalingo account:
-
-[![Deploy](https://cdn.scalingo.com/deploy/button.svg)][one-click]
 
 ### Using the Command Line
 

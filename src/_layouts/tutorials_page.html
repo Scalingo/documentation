@@ -1,0 +1,63 @@
+---
+layout: tutorials
+---
+
+<div class="flex bg-sc-gray-5 w-full rounded-lg justify-center">
+    <div class="flex xl:flex-row items-start flex-col-reverse xl:grow m-10 justify-center relative">
+        <article class="max-w-[720px] text-sc-text-1">
+            <h1 class="text-sc-gray-1 text-sc-title-1 font-bold mb-12 hidden xl:block">
+                {% if page.is_series %}
+                    {{ page.series }} - 
+                {% endif %}
+                {{ page.title }}
+            </h1>
+
+            {% if page.products.size > 0 %}
+            <div class="flex flew-col gap-2 my-6">
+                {% for product in page.products %}
+                <span class="flex p-1 px-2 rounded-md border border-sc-purple-2 bg-sc-purple-3 !text-sc-purple-1 text-sm !no-underline">{{ product }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <section class="py-0">
+                {{ content | inject_anchors }}
+
+                <hr class="mt-12" />
+
+                <div class="flex flex-col md:flex-row justify-between mt-4 text-sc-text-2">
+                    <span itemprop="datePublished" content="{{ page.modified_at }}">
+                        {% if page.modified_at %} Last update: {{ page.modified_at | date_to_string }} {% endif %}
+                    </span>
+                    <a href="https://github.com/{{ site.github_username }}/documentation/edit/master/src/{{ page.path }}" class="flex items-center">
+                        <svg style="width: 14px;height: 14px;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor" d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z" class=""></path>
+                        </svg>
+                        <span class="ml-2">Suggest edits</span>
+                    </a>
+                </div>
+            </section>
+        </article>
+
+        <nav class="xl:sticky xl:top-[75px] xl:border-l xl:border-sc-gray-3 xl:w-[260px] xl:pl-5 xl:ml-5 xl:py-3 2xl:w-[280px] 2xl:pl-10 2xl:ml-10 mb-12">
+            {% if page.is_series %}
+            <div class="font-bold text-sc-gray-1 text-sc-title-6 mb-2">In this series</div>
+            <div class="toc flex flex-cols mb-6 space-y-4">
+                <ul>
+                {% assign series_pages = site.tutorials | where: "series", page.series | sort: "series_index" %}
+                {% for p in series_pages %}
+                <li>
+                    <a href="{{ p.url }}" class="hover:text-sc-blue-1{% if page.url == p.url %} text-sc-blue-1{% endif %}">{{ p.title }}</a>
+                </li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            <div class="font-bold text-sc-gray-1 text-sc-title-6 mb-2">In this article</div>
+            <div class="toc flex flex-cols space-y-4">
+                {% include organisms/content_table.html html=content h_min=2 h_max=3 %}
+            </div>
+        </nav>
+    </div>
+</div>
