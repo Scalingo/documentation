@@ -20,9 +20,9 @@ around midnight UTC**:
 {% include mdl_img.html %}
 
 {% note %}
-The amounts shown are frozen at the end of each billing period. An application
-transferred during the month is billed to its new owner, even if you can see
-its consumption for the period prior to its transfer.
+The amounts shown are frozen at the end of each billing period. A project or 
+application transferred during the month is billed to its new owner, even if you 
+can see its consumption for the period prior to its transfer.
 {% endnote %}
 
 ### Past Consumptions

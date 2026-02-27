@@ -1,7 +1,7 @@
 ---
 title: Application Lifecycle Management
 nav: Lifecycle Management
-modified_at: 2026-02-26 10:00:00
+modified_at: 2026-02-27 07:00:00
 index: 10
 tags: management
 ---
@@ -18,7 +18,7 @@ manage its scaling, and manage add-ons and collaborators.
 Three methods are co-existing to manage your applications on the Scalingo:
 
 - [Dashboard][dashboard]: The simplest way to manage your applications, use
-  any browser to create, scale, transfer, or delete applications.
+  any browser to create, scale or delete applications.
 
 - [CLI][cli]: More comfortable with terminals or you want to build scripts to
   control applications, the command line interface, available for all major
@@ -104,43 +104,23 @@ recreate it by yourself.
 
 ## Transfer Ownership of an Application
 
-You may want to transfer an application to someone else. In this case you have to
-invite this person as a collaborator of the application. Then you will be able to
-transfer them the application.
+{% warning %}
+This application transfer ownership feature is deprecated in favour of complete 
+project transfer.
+{% endwarning %}
+
+Our platform is evolving to improve performance and resilience. As part of this evolution,
+our internal network has been re-architected and is now segmented into multiple subnets.
+
+Because of this new architecture, it is no longer possible to move an application to
+another project or transfer it to another owner:
+
+- To change project, recreate and redeploy the application in the target project.
+- To change owner, transfer the entire project or redeploy the application in the
+  new context.
 
 {% note %}
-The new owner will need a [Billing Profile][billing] and will have left the free trial. To leave free trial period with billing profile go to [Billing][dashboard-billing] and click on Stop free trial button.
-If it's an HDS application, the new owner will need to configure a health professional contact, just like the previous owner.
-{% endnote %}
-
-This operation will not affect the application, nothing regarding the configuration
-or the runtime of the app will be modified.
-
-This operation is only achievable from the [Scalingo dashboard][dashboard].
-
-{% note %}
-  The billing is done the last day of the month to the owner of the application at that date. Hence,
-  transfering the ownership of an application the 4th of the month or the 30th at 11:59PM will not
-  change anything. The owner at the date of billing is taken into account.
-{% endnote %}
-
-### Using the Dashboard
-
-1. From your web browser, open your [dashboard][dashboard]
-2. Click on the application you want to transfer
-3. Click the **Settings** tab
-4. In the **Collaborators** section, invite the future owner if they are not
-   already a collaborator
-5. Ask the invited user to accept the invitation from the confirmation e-mail
-6. In the **Transfer the application** section, select the collaborator who
-   should receive ownership
-7. Confirm the transfer
-
-After the transfer, the previous owner becomes a collaborator of the application.
-
-{% note %}
-If you're handling both accounts, don't forget to log out between each step, 
-otherwise the collaboration invitation won't be considered valid.
+If you need assistance, contact Support.
 {% endnote %}
 
 
@@ -181,6 +161,5 @@ To confirm type the name of the application: my-app
 [sdk]: {% post_url tools/2000-01-01-software-development-kit %}
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [scm]: {% post_url platform/app/2000-01-01-scm-integration %}
-[billing]: {% post_url platform/billing/2000-01-01-profile %}
 [hds-page]: {% post_url platform/2000-01-01-hds %}
 [hds-poc]: {% post_url compliance/2000-01-01-hds %}#en-hds-health-professional-point-of-contact

@@ -1,7 +1,7 @@
 ---
 title: App Notifications
 nav: Notifications
-modified_at: 2024-05-06 00:00:00
+modified_at: 2026-02-27 07:00:00
 tags: app notification
 ---
 
@@ -44,7 +44,6 @@ Note that Mattermost notifications require using the Slack notifier.
 * app_restarted: App restarted, An app was restarted
 * app_scaled: App scaled, An app was scaled
 * app_stopped: App stopped, An app was stopped
-* app_transferred: App transferred, An app was transferred
 * collaborator_accepted: Collaborator accepted, A collaborator invitation was accepted
 * collaborator_invited: Collaborator invited, A collaborator was invited
 * collaborator_removed: Collaborator removed, A collaborator was removed
