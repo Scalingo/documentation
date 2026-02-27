@@ -1,13 +1,13 @@
 ---
-title: Monitoring and Auditing Your Scalingo for PostgreSQL® Shared Resources addon
+title: Monitoring and Auditing Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Monitoring and Auditing
-modified_at: 2024-12-13 00:00:00
-tags: databases postgresql addon
+modified_at: 2026-02-13 12:00:00
+tags: databases postgresql dedicated
 index: 2
 ---
 
 
-Each Scalingo for PostgreSQL® Shared Resources Database addon comes with several tools allowing for
+Each Scalingo for PostgreSQL® Dedicated Resources Database database comes with several tools allowing for
 monitoring and auditing of your database. These tools give access to the
 [database logs](#inspecting-database-logs), to some [metrics](#analyzing-database-metrics)
 and to [running queries figures](#watching-running-queries). [Query Statistics](#exploring-query-statistics)
@@ -41,14 +41,19 @@ the cold logs. These have to be manually unarchived to be processed.
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. Run the following command:
-   - To access the hot logs of this addon:
+1. From the command line, list your databases:
    ```bash
-   scalingo --app my-app --addon postgresql logs --lines <number_of_lines>
+   scalingo databases
    ```
-   - To access the cold logs of this addon:
+2. Locate the `ID` of the database you want to monitor
+3. Run the following command:
+   - To access the hot logs of this database:
    ```bash
-   scalingo --app my-app --addon postgresql logs-archives
+   scalingo --database <database_ID> logs --lines <number_of_lines>
+   ```
+   - To access the cold logs of this database:
+   ```bash
+   scalingo --database <database_ID> logs-archives
    ```
 
 
@@ -68,7 +73,7 @@ The provided metrics include:
 2. Click the **Metrics** tab
 
 {% note %}
-Metrics related to your PostgreSQL® addon are only available from
+Metrics related to your PostgreSQL® database are only available from
 the database dashboard.
 {% endnote %}
 
@@ -90,7 +95,7 @@ stuck ones.
 Scalingo for PostgreSQL® gives direct access to PostgreSQL®'s [*cumulative
 statistics system*][pg-stats-monitoring],
 which collects data about the database activity. Concretely, it exposes several
-views that can be queried from an [Interactive Remote Console][sr-irc].
+views that can be queried from an Interactive Remote Console.
 
 Amongst the views available, these might be of particular interest when
 monitoring the current state of the database:
@@ -105,7 +110,7 @@ monitoring the current state of the database:
   process, including current progress.
 - `pg_stat_user_tables` shows statistics about accesses to each table.
 
-For more information, please refer to [the officiel documentation][pg-stats-monitoring].
+For more information, please refer to [the official documentation][pg-stats-monitoring].
 
 
 ## Exploring Query Statistics
@@ -134,7 +139,7 @@ to be activated manually.
 
 #### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console][sr-irc]
+1. Access your database using the Interactive Remote Console
 2. From the PostgreSQL® console, run the following command:
    ```sql
    CREATE extension pg_stat_statements;
@@ -156,7 +161,7 @@ to be activated manually.
 
 #### Using the Command Line
 
-1. Access your database using the [Interactive Remote Console][sr-irc]
+1. Access your database using the Interactive Remote Console
 2. From the PostgreSQL® console, query the `pg_stat_statements` as you wish.\
    Our [Troubleshooting][troubleshooting]
    page gives some examples.
@@ -167,6 +172,5 @@ to be activated manually.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
-[sr-irc]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
-[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [troubleshooting]: {% post_url databases/postgresql/2000-01-01-troubleshooting %}#identifying-performances-issues

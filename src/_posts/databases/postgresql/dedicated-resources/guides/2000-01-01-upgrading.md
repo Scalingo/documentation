@@ -1,16 +1,16 @@
 ---
-title: Upgrading Your Scalingo for PostgreSQL® Shared Resources Database addon
+title: Upgrading Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Upgrading
-modified_at: 2025-02-17 12:00:00
-tags: databases postgresql addon
+modified_at: 2026-02-13 12:00:00
+tags: databases postgresql dedicated
 index: 4
 ---
 
-In Scalingo's terminology, ***upgrading*** a Scalingo for PostgreSQL® Shared Resources Database addon
-designates the operation consisting in changing the database version for a
-newer one.
+In Scalingo's terminology, ***upgrading*** a Scalingo for PostgreSQL® Dedicated 
+Resources Database designates the operation consisting in changing the database 
+version for a newer one.
 
-We disinguish two main cases:
+We distinguish two main cases:
 - a ***minor-upgrade*** designates an incremental release with a change in the
   tenths digit of the version number (e.g. `13.3.4` to `13.5.0`). It usually
   provides bugs or security fixes as well as minor additional features.
@@ -21,8 +21,8 @@ We disinguish two main cases:
 
 While we usually advise to stick to the latest minor-upgrade available to
 benefit from bug and security fixes, we also **strongly** advise to take
-extra-care when major-upgrading your Scalingo for PostgreSQL® Shared Resources Database addon ([more
-about this below](#best-practices-when-managing-major-upgrades)).
+extra-care when major-upgrading your Scalingo for PostgreSQL® Dedicated 
+Resources Database ([more about this below](#best-practices-when-managing-major-upgrades)).
 
 When the database vendor releases a new version of your database engine, we
 take some time to study it and test it thoroughly before making it available.
@@ -41,21 +41,22 @@ There are no prerequisites for minor-upgrades.
 
 ### Process
 
-#### For Starter Plans
+Upgrades follow the same principles on both topologies, but multi-node
+clusters keep your service available throughout the operation.
+
+#### For Single-node Databases (`Starter`)
 
 1. The instance is stopped. The database is unreachable.
 2. We restart the instance with the targeted version. This operation can take
    quite some time, depending on the database size and enabled extension(s).
 3. Once the instance restarted, the database is reachable again.
-4. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime][zero-downtime].
 
 Since we have to completely stop the instance, **a downtime is inevitable**.
 
 We usually roughly estimate the downtime caused by the operation between a few
 seconds to a few minutes. In any cases, it shouldn't exceed 10 minutes.
 
-#### For Business Plans
+#### For Multi-node Clusters (`Business` and `Enterprise`)
 
 1. The standby instance is stopped. The primary instance is still running, so
    the database is still reachable.
@@ -65,10 +66,8 @@ seconds to a few minutes. In any cases, it shouldn't exceed 10 minutes.
    connection can be lost during a few milliseconds.
 4. The new standby instance is restarted with the targeted version.
 5. Once restarted, the cluster is fully upgraded and fully operational again.
-6. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime][zero-downtime].
 
-Minor-upgrades of Business plans are **usually achieved without any impactful
+Minor-upgrades of multi-node clusters are **usually achieved without any impactful
 downtime**.
 
 
@@ -87,18 +86,19 @@ Finally, upgrade to the latest version of the 15.x branch.
 
 ### Process
 
-#### For Starter Plans
+For major upgrades, the database is temporarily unavailable in both topologies.
+The overall duration mainly depends on the amount of data to process.
+
+#### For Single-node Databases (`Starter`)
 
 1. The instance is stopped. The database is unreachable.
 2. `pg_upgrade` is executed on the data.
 3. The instance is restarted with the targeted version. The database is
    reachable again and the application can use it normally.
-5. The `ANALYZE` SQL command is executed against the database to build up
+4. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-5. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime][zero-downtime].
-6. A base backup is asynchronously done to make [point-in-time recovery][pitr]
+5. A base backup is asynchronously done to make [point-in-time recovery][pitr]
    available again.
 
 Since we have to completely stop the instance to upgrade it, **a downtime is
@@ -108,7 +108,7 @@ We usually roughly estimate the overall downtime of the operation by assuming
 1 minute of unavailibility per 10GiB of data. This remains a raw estimation and
 our experience tends to show that it often takes less time.
 
-#### For Business Plans
+#### For Multi-node Clusters (`Business` and `Enterprise`)
 
 1. The entire cluster is stopped. The database is unreachable.
 2. `pg_upgrade` is executed on the data.
@@ -117,19 +117,17 @@ our experience tends to show that it often takes less time.
 4. The `ANALYZE` SQL command is executed against the database to build up
    PostgreSQL® statistics. PostgreSQL® uses these statistics to determine
    the most efficient execution plans for queries.
-5. The application is restarted to ensure proper connections. [This does not
-   cause any additional downtime][zero-downtime].
-6. A base backup is asynchronously done to make [point-in-time recovery][pitr]
+5. A base backup is asynchronously done to make [point-in-time recovery][pitr]
    available again.
-7. The standby instance is rebuilt from scratch, based on the primary instance
+6. The standby instance is rebuilt from scratch, based on the primary instance
    data. This means the database lives in a degraded state until the end of the
    replication process.
 
 {% warning %}
 After a major-upgrade, expect a period of reduced performance during phasis 4,
-5 and 6 as the running primary is sollicitated for these internal tasks. The
+5 and 6 as the running primary is solicited for these internal tasks. The
 duration depends of the quantity of data stored in your Scalingo for
-PostgreSQL® addon.
+PostgreSQL® database.
 {% endwarning %}
 
 Since we have to completely stop the instances to upgrade them, **a downtime is
@@ -164,19 +162,19 @@ advise to take extra care when dealing with them:
   2. Link this app to your application's code repository.
   3. Make sure to enable Review Apps for this application.
   4. Leverage the [`scalingo.json` manifest file][app-manifest] to:
-     - Specify the version of the database addon you require. This version
+     - Specify the version of the database you require. This version
        should match the one you are using in your production environment.
      - Ideally ask the platform to fill your database with **testing data**,
        using a [`first-deploy` script][deployment-hooks].
 
      Here is an example of a manifest file asking the platform to provision a
-     PostgreSQL `14.6.0` addon and to run the `db-seed.sh` script after the
+     PostgreSQL `14.6.0` and to run the `db-seed.sh` script after the
      first deployment (the script must be included in your codebase):
      ```json
      {
        "addons": [
          {
-           "plan": "postgresql:postgresql-starter-512",
+           "plan": "postgresql-ng:postgresql-dr-starter-4096",
            "options": {
              "version": "14.6.0"
            }
@@ -208,10 +206,6 @@ advise to take extra care when dealing with them:
   9. Once done, close the Pull Request to automatically destroy the linked
      Review App. You can now plan the production upgrade.
 
-- [Create a manual backup][backing-up-creating-manual] of your current
-  production database just before making the move in your production
-  environment.
-
 - [Put the app in maintenance mode][maintenance-mode] during the upgrade
   operations, especially if a significant downtime is expected.
 
@@ -219,21 +213,19 @@ advise to take extra care when dealing with them:
 ## Upgrading
 
 {% note %}
-Upgrading a PostgreSQL® addon to a newer version is only available through the
-database dashboard.
+Upgrading a PostgreSQL® database to a newer version is only available through 
+the database dashboard.
 {% endnote %}
 
 ### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Overview** tab
-3. Locate the **Database Upgrade** block
+2. Click the **Settings** tab
+3. Locate the **Database version** block
 4. If an upgrade is available, the text in the block explains what will be
    done.
 5. To launch the upgrade, click the **Upgrade to …** button
 
-
-[zero-downtime]: {% post_url platform/internals/2000-01-01-container-management %}#zero-downtime-operations
 
 [review_apps]: {% post_url platform/app/2000-01-01-review-apps %}
 [review_apps-config]: {% post_url platform/app/2000-01-01-review-apps %}#configuration-of-review-apps
@@ -243,5 +235,4 @@ database dashboard.
 
 [pitr]: {% post_url databases/about/2000-01-01-backup-policies %}#point-in-time-recovery-backups
 
-[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
-[backing-up-creating-manual]: {% post_url databases/postgresql/shared-resources/guides/2000-01-01-backing-up %}#creating-a-manual-backup
+[database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
