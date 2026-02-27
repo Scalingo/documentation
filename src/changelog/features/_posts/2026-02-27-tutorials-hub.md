@@ -3,7 +3,7 @@ modified_at: 2026-02-27 12:00:00
 title: 'Introducing our Tutorials Hub'
 ---
 
-We are introducing a new [Tutorials Hub], a new place where to find a curated
+We are introducing a new [Tutorials Hub], a place where you can find a curated
 selection of step-by-step tutorials for deploying well-known applications, CMS
 platforms, and tools on Scalingo.
 
