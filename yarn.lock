@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@docsearch/css@^4.5.3":
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-4.5.3.tgz#359930bc8435976c574655adc9bb0574d8887a70"
-  integrity sha512-kUpHaxn0AgI3LQfyzTYkNUuaFY4uEz/Ym9/N/FvyDE+PzSgZsCyDH9jE49B6N6f1eLCm9Yp64J9wENd6vypdxA==
+"@docsearch/css@^4.6.0":
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-4.6.0.tgz#1780de042f61d11d60091f5c2f734543c3bc5d07"
+  integrity sha512-YlcAimkXclvqta47g47efzCM5CFxDwv2ClkDfEs/fC/Ak0OxPH2b3czwa4o8O1TRBf+ujFF2RiUwszz2fPVNJQ==
 
 "@docsearch/js@^4.5.3":
   version "4.5.3"
