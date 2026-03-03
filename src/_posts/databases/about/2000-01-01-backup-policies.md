@@ -91,7 +91,7 @@ this limit, the oldest backup is automatically deleted.
 | Business      | Last 50 rolling backups |
 
 When a database is deleted, a retention policy is retroactively applied to
-all existing manual backups, based on their creation date. The retention
+all existing manual logical backups, based on their creation date. The retention
 duration depends on the plan:
 
 | Service Class | Retention Period |
@@ -127,6 +127,9 @@ Performing a Point-in-Time Recovery resets the continuous backup timeline. This
 means the retention window starts over, and you won’t be able to restore from
 an earlier point in time. Currently, Scalingo only supports a single timeline
 in its recovery process.
+
+Deleting a database permanently removes its continuous backup data. 
+After deletion, point-in-time recovery is no longer possible.
 
 ### Recovery Window for PiTR
 
