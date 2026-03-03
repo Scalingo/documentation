@@ -28,28 +28,17 @@ For more information about the connection URI syntax, please see
 [RFC 3986][rfc3986] which defines the URI Generic Syntax.
 
 
-## Using the Connection URI
-
-**We strongly advise to use one of the two environment variables available to
-connect your application to your database**. Please don't use the value, but
-the environment variable itself.
-
-While the value of the provided connection URI **should not** change over time,
-**we don't guarantee it**. For example, the URI could change for maintenance
-reasons. In such a case, using the environment variable guarantees that your
-application can restart successfully without human intervention. Otherwise, you
-would have to update your code with the new value and trigger a new deployment,
-which would most probably contribute to a greater downtime.
-
-In most cases, you can pass the environment variable directly to the client
-library you are using. But sometimes, the library requires a specific URI
-format, individual keypairs or another format. In such cases, your code
-needs to parse the connection URI to retrieve the different values and build
-what's required by the library. Our advice to use the environment variable
-still remains applicable.
-
-
 ## Getting the Connection URI
+
+Scalingo exposes a connection URI you can use to connect to your Dedicated
+Resources database with its default protected user.
+
+Depending on the client or driver you use, you can either use this URI as-is or
+split it into separate values (host, port, database, user, password, TLS
+settings) to match the expected format.
+
+If you connect with another database user you created, keep the same endpoint
+and database name, and replace the credentials with this user's credentials.
 
 ### Using the Dashboard
 
@@ -64,7 +53,7 @@ still remains applicable.
    scalingo databases
    ```
 3. Locate the `ID` of the database you would like to connect to
-4. From the command line, get the environment variable value:
+4. From the command line, get the connection URI value:
    ```bash
    scalingo --database <database_ID> env-get SCALINGO_POSTGRESQL_URL
    ```
