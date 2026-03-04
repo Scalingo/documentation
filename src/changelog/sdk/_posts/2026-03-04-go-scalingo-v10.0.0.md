@@ -1,6 +1,6 @@
 ---
-modified_at:	2026-03-04 00:00:00
-title:	'go-scalingo - New version: 10.0.0'
+modified_at: 2026-03-04 00:00:00
+title: 'go-scalingo - New version: 10.0.0'
 github: 'https://github.com/Scalingo/go-scalingo'
 ---
 
