@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Long Running Process
-modified_at: 2026-01-02 12:00:00
+modified_at: 2026-03-05 12:00:00
 ---
 
 ## Problematic
@@ -19,7 +19,7 @@ Asynchronously, a worker should handle the processing of the resource created in
 
 There is various message queue system depending on the programming language and the framework your application uses:
 
-- Ruby: [Solid Queue]({% post_url languages/ruby/2000-01-01-solid-queue %}), [Delayed Job]({% post_url languages/ruby/2000-01-01-delayed-job %}), [Sidekiq]({% post_url languages/ruby/2000-01-01-sidekiq %}) or [Resque](https://github.com/resque/resque).
+- Ruby: [Solid Queue]({% post_url languages/ruby/rails/2000-01-01-solid-queue %}), [Delayed Job]({% post_url languages/ruby/2000-01-01-delayed-job %}), [Sidekiq]({% post_url languages/ruby/2000-01-01-sidekiq %}) or [Resque](https://github.com/resque/resque).
 - PHP: [Symfony Messenger]({% post_url languages/php/2000-01-01-symfony %}#symfony-messenger) or [Laravel Tasks Scheduler]({% post_url languages/php/2000-01-01-laravel %})
 - Node.js: [Bull](https://github.com/OptimalBits/bull).
 - Python: [Celery]({% post_url languages/python/2000-01-01-celery-flask %}).
