@@ -1,14 +1,14 @@
 ---
 title: Using Delayed Job (DJ) to Handle Background Tasks
 nav: Delayed Job
-modified_at: 2016-01-13 10:39:00
+modified_at: 2026-03-05 10:39:00
 tags: ruby gem async jobs delayed
 ---
 
 ## What is `delayed_job`?
 
 Delayed_job lets you run background tasks with your Rails application. It uses your database as a queue to process
-background jobs. Since Rails 8, [Solid Queue]({% post_url languages/ruby/2000-01-01-solid-queue %}) is the default 
+background jobs. Since Rails 8, [Solid Queue]({% post_url languages/ruby/rails/2000-01-01-solid-queue %}) is the default
 background job processor for Rails applications.
 
 If your app has a high database load, using a database-backed background job library may not be a good choice for your
