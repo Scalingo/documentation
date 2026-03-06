@@ -1,9 +1,10 @@
 ---
 title: Manage your Projects
-modified_at: 2025-11-13 17:00:00
+modified_at: 2026-02-27 07:00:00
 tags: project management
 index: 2
 ---
+
 
 Projects are the way to organize your applications and resources on Scalingo.
 
@@ -12,6 +13,7 @@ Projects are the way to organize your applications and resources on Scalingo.
 {% warning %}
 We strongly recommend grouping your applications into projects before **March 1, 2026**. After this date, applications can no longer be regrouped between projects except by recreating them in the target project.
 {% endwarning %}
+
 
 ## Setting the project at App creation
 
@@ -70,6 +72,7 @@ Here you've created the app named `test-app` and set the project ID to `prj-6731
    }
    ```
 
+
 ## Updating the project of an existing App
 
 ### Using the Dashboard
@@ -101,6 +104,7 @@ This feature is not yet available in the CLI.
 ### Using the Terraform Provider
 
 This feature is not yet available in the Terraform Provider.
+
 
 ## Listing the projects
 
@@ -143,8 +147,6 @@ The list includes, in addition of the projects you have created, those you are c
 
 Right after the creation of the project, you're redirected on its Dashboard. It is empty and you've got the capability to create its first App by clicking on `Deploy an app` button.
 
-
-
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
@@ -171,6 +173,7 @@ Right after the creation of the project, you're redirected on its Dashboard. It 
    }
    ```
 
+
 ## Updating a project
 
 {% note %}
@@ -179,9 +182,7 @@ Right after the creation of the project, you're redirected on its Dashboard. It 
 
 ### Using the Dashboard
 
-
 If you want to update the `name` of your project, the steps are the following:
-
 
 1. From your web browser, open your [dashboard][dashboard]
 2. Click the **Projects** tab
@@ -193,9 +194,7 @@ If you want to update the `name` of your project, the steps are the following:
 8. Put the name of your choice (1-64 characters, using only a-z, 0-9, -, or _)
 9. Click **Rename**
 
-
 If you want to change the `default` project, the steps are the following:
-
 
 1. From your web browser, open your [dashboard][dashboard]
 2. Click the **Projects** tab
@@ -204,7 +203,6 @@ If you want to change the `default` project, the steps are the following:
 5. On the Dashboard of the project you want to edit, click **Settings** tab
 6. In the **Settings** submenu, make sure to select **General**
 7. In the **Project details**, click **Set [project name] as your default project**
-
 
 ### Using the Command Line
 
@@ -237,6 +235,53 @@ update the project with the desired attributes. For example:
      name = "updated-test-project"
    }
    ```
+
+
+## Transfer Ownership of a Project {#transfer-project-ownership}
+
+{% note %}
+Effective March 1, 2026, projects become a core and permanent component of the platform. Applications can no longer be transferred individually. To change ownership, transfer the entire project instead.
+{% endnote %}
+
+To transfer a project to another user, first add the future owner as a collaborator on all project resources, including applications and Dedicated Resources databases, and make sure they accept the invitation.
+
+{% note %}
+The new owner must have an active [Billing Profile][billing], and valid payment method and must have left the free trial.
+If the project contains HDS resources, the new owner must also provide the required health professional contact details.
+{% endnote %}
+
+Once the transfer is accepted by the new owner:
+- The previous owner is downgraded from **owner** to **collaborator** and keeps access to the project.
+- The previous owner no longer has administrative rights on the project.
+- The project is fully owned by the new owner.
+- Billing for project consumption is charged to the new owner.
+
+{% note %}
+Billing occurs on the last day of the month and is charged to the project owner at that time. Transferring ownership earlier in the month or just before billing does not affect this. The owner recorded on the billing date is the one billed.
+{% endnote %}
+
+### Using the Dashboard
+
+1. From your web browser, open your [dashboard][dashboard]
+2. Click the **Projects** tab
+3. ...
+
+### Using the Command Line
+
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+2. From the command line, update a project:
+   ```shell
+   scalingo XXX
+   ```
+   The output should look like this:
+   ```shell
+   -----> XXX
+   ```
+
+### Using the Terraform Provider
+
+XXX
+
 
 ## Removing a project
 
@@ -275,3 +320,4 @@ remove the associated resource from the Terraform file.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [projects-overview]: {% post_url platform/projects/2000-01-01-overview %}
+[billing]: {% post_url platform/billing/2000-01-01-profile %}
