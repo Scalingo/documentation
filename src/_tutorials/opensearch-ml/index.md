@@ -257,9 +257,7 @@ and keyword matching.
 You now have everything you need to build a basic RAG using OpenSearch® on Scalingo. From here, you can extend this setup by connecting it to an application or an
 LLM to generate answers based on the retrieved context.
 
-
 [opensearch-doc]: https://docs.opensearch.org/latest/ml-commons-plugin/pretrained-models
-[dashboard]: https://dashboard.scalingo.com
 [knn-search]: https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
 *[AI]: Artificial Intelligence
 *[LLM]: Large Language Model
