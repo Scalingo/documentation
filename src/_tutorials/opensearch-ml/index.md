@@ -1,49 +1,53 @@
 ---
-title: Deploying a RAG with OpenSearch®
+title: Building a RAG with OpenSearch®
 logo: opensearch
 category: ai
 products:
   - Scalingo for OpenSearch®
-  - OpenSearch® Dashboards
 permalink: /tutorials/opensearch-rag
 modified_at: 2026-03-06
 ---
 
-OpenSearch® is an open-source search and analytics engine that supports
-vector search through its **k-NN plugin**. This makes it possible to build
-AI applications such as semantic search or Retrieval-Augmented Generation (RAG).
+RAG (Retrieval-Augmented Generation) is an AI architecture where a Large Language Model (LLM) generates answers using external knowledge retrieved at query time, instead of relying only on its training data. This approach improves accuracy and freshness, since the answer is based on context-related documents that can be updated anytime.
 
-In this tutorial, we will build a simple **RAG pipeline** using OpenSearch® on
-Scalingo and a HuggingFace model.
+OpenSearch® is particularly well suited for building RAG systems because it provides the core capabilities for the retrieval layer:
+
+- It supports vector databases and [k-NN search][knn-search], allowing similarity search between embeddings and queries.
+- It can combine semantic search (vectors) with keyword search, which improves retrieval quality.
+-It is built for large-scale indexing and querying, making it ideal for knowledge bases with tons of documents.
+- It integrates Machine Learning features.
+- It's known for its low-latency search, which enables fast context retrieval.
 
 ## Planning your Deployment
 
 Before deploying your RAG pipeline, you need the following components:
 
-- A **Scalingo for OpenSearch® addon** to store vector embeddings and run
+- A **Scalingo for OpenSearch® addon** to store embeddings and run
   similarity searches.
 
-- An **OpenSearch® Dashboards application** to interact with your cluster and
-  execute API requests through Dev Tools.
-
-- A **vector embedding model**, such as
+- A **embedding model**, such as
   `huggingface/sentence-transformers/all-MiniLM-L6-v2`.
 
-OpenSearch® on Scalingo already includes the **k-NN plugin**, which enables
-vector search capabilities required for RAG applications.
+The tutorial can work with other models, you can find more information [here][opensearch-doc]. Since a RAG typically leverages vector search, we will use OpenSearch®'s **k-NN plugin**, which is already included in all Scalingo for OpenSearch® database.
 
-## Deploying and Updating
+Vector search can require additional memory and CPU resources, depending on the number and size of stored embeddings. Each document embedding is stored as a vector, which increases index size and memory usage. 
 
-To install or update OpenSearch Dashboard on Scalingo using the CLI or Terraform, you can check our documentation [here][opensearch-dashboard-scalingo]
+For small datasets, a modest instance is usually sufficient, but larger knowledge bases may require more RAM to store vector indices efficiently and additional CPU resources to handle similarity searches and embedding generation.
 
-## Setting Up Machine Learning in OpenSearch®
+## Setting Up the RAG in OpenSearch®
 
-To use embedding models, OpenSearch® must allow model downloads and execution. Open Dev Tools in OpenSearch® Dashboards and configure the cluster to:
+To use embedding models, OpenSearch® must allow model downloads and execution. Call the API of your OpenSearch® Database and configure the cluster to:
 
-- allow external model downloads
-- enable model execution on all nodes
-- remove memory limits
-- enable access control
+- Allow external model downloads
+- Enable model execution on all nodes
+- Remove default memory limits memory limits
+- Enable access control
+
+We set `only_run_on_ml_node": "false"` to allow the model to run on any node in the cluster, which is useful for local setups without dedicated ML nodes.
+
+`model_access_control_enabled": "true"` enables model access control, allowing administrators to restrict which users can access deployed models.
+
+Finally, `"native_memory_threshold": "99"` increases the allowed native memory usage for ML tasks so that memory limits do not block model execution during development or testing.
 
 ~~~json
 PUT _cluster/settings
@@ -56,15 +60,15 @@ PUT _cluster/settings
 }
 ~~~
 
-These parameters ensure the model can be correctly loaded and executed across
-the cluster.
+### Creating a Model Group
 
+In OpenSearch®, a model group is a logical container used to organize and manage related machine learning models. It is commonly used to:
 
+- Group multiple versions of the same ML model together (e.g. v1, v2, v3).
+- Manage models lifecycle.
+- Grant access to ML models for specific users or teams, by managing permissions and visibility.
 
-
-### Create a Model Group
-
-Create a model group to organize your models.
+The following request creates a model group named `rag-model-group`. We will use it to store the models related to the RAG we are building:
 
 ~~~json
 POST /_plugins/_ml/model_groups/_register
@@ -74,23 +78,18 @@ POST /_plugins/_ml/model_groups/_register
 }
 ~~~
 
-The response will return a **model_group_id**. Keep this value for the next step.
+The response returns a **`model_group_id`**. Keep its value for the next step.
 
-~~~json
-{
-  "model_group_id": "<MODEL_GROUP_ID>"
-}
-~~~
+### Registering the Embedding Model
 
-### Register the Embedding Model
+Model registering designates the process of adding a machine learning model to the OpenSearch® ML framework, so the cluster can store, manage, and use it for inference. This process mostly consists in:
 
-Next, register the embedding model. In this tutorial we use this model ( you can find other models on [OpenSearch Documentation](https://docs.opensearch.org/latest/ml-commons-plugin/pretrained-models)) : 
+- Downloading the model.
+- Importing it into OpenSearch®'s model registry.
+- Storing the model's metadata, configuration, and artifacts in the cluster.
+- Making it known to the ML plugin, so it can be used.
 
-~~~
-huggingface/sentence-transformers/all-MiniLM-L6-v2
-~~~
-
-Run the following request:
+In this tutorial, we use a model named `huggingface/sentence-transformers/all-MiniLM-L6-v2`. [OpenSearch® Documentation][opensearch-doc] references other models that can be used.
 
 ~~~json
 POST /_plugins/_ml/models/_register
@@ -102,13 +101,13 @@ POST /_plugins/_ml/models/_register
 }
 ~~~
 
-OpenSearch® will start downloading and registering the model. You can monitor the registration status with:
+OpenSearch® answers with a **`task_id`** that can be used to monitor the registration process:
 
 ~~~json
 GET /_plugins/_ml/tasks/<TASK_ID>
 ~~~
 
-Once the task is completed, The response will contain the **model_id**, which will be required to build your ingestion pipeline.
+Once the task is completed, OpenSearch® responds with a **`model_id`** identifying the model we've just registered. Keep it aside for later use.
 
 Example:
 
@@ -118,12 +117,13 @@ Example:
 }
 ~~~
 
-Keep this **model_id** for the next step.
-
 ### Creating an Ingestion Pipeline
 
-Next, create an ingestion pipeline that will automatically generate embeddings
-when documents are indexed.
+In OpenSearch®, an ingestion pipeline is a sequence of processing steps automatically applied to documents before they are indexed into OpenSearch®.
+
+In the context of a RAG, the ingestion pipeline prepares raw data so it can be efficiently retrieved and used by a LLM.
+
+In the following example, we create an ingestion pipeline that automatically generates embeddings from the passage_text field using the registered model and stores them in passage_embedding field. This enables OpenSearch® to perform semantic similarity searches on the indexed documents.
 
 ~~~json
 PUT _ingest/pipeline/rag-pipeline
@@ -144,10 +144,11 @@ PUT _ingest/pipeline/rag-pipeline
 
 ### Creating a Vector Index
 
-Create an index configured for vector search.
+A **vector index** stores embeddings generated from documents. These vectors represent the semantic meaning of the text. OpenSearch® can then compare vectors to retrieve the most similar documents.
 
-Make sure the `dimension` matches the output size of your embedding model
-(384 for `all-MiniLM-L6-v2`).
+{% note %}
+Make sure the `dimension` matches the output size of your embedding model (384 for `all-MiniLM-L6-v2`).
+{% endnote %}
 
 ~~~json
 PUT my-nlp-index
@@ -183,7 +184,7 @@ PUT /my-nlp-index/_doc/1
 }
 ~~~
 
-The ingestion pipeline will automatically generate embeddings for the `passage_text` field.You can repeat this operation as many times as needed by changing the document ID in the endpoint.
+The ingestion pipeline automatically generates embeddings for the `passage_text` field. Repeat this operation as many times as needed by changing the document ID in the endpoint URL.
 
 ## Querying the Vector Index
 
@@ -191,10 +192,12 @@ You can now perform a search query on your vector index.
 
 The following request performs a **hybrid search** by combining:
 
-- a **vector search** using the embedding model
-- a **text search** using a traditional `match` query
+- A **vector search** using the embedding model
+- A **text search** using a traditional `match` query
 
-The results are then re-ranked using `script_score`.
+Hybrid search combines semantic understanding and keyword matching. Vector search retrieves documents whose meaning is similar to the query, even if they do not contain the same words. The match query complements this by retrieving documents that contain the exact terms used in the query.
+
+Each search query is wrapped in a script_score query to adjust its importance. This allows both semantic similarity and keyword relevance to influence the final ranking.
 
 ~~~json
 GET /my-nlp-index/_search
@@ -255,6 +258,10 @@ You now have everything you need to build a basic RAG using OpenSearch® on Scal
 LLM to generate answers based on the retrieved context.
 
 
+[opensearch-doc]: https://docs.opensearch.org/latest/ml-commons-plugin/pretrained-models
 [dashboard]: https://dashboard.scalingo.com
-[opensearch-dashboard-github]: https://github.com/Scalingo/opensearch-dashboards-scalingo
-[opensearch-dashboard-scalingo]: https://doc.scalingo.com/databases/opensearch/guides/ingesting-logs/opensearch-dashboards
+[knn-search]: https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
+*[AI]: Artificial Intelligence
+*[LLM]: Large Language Model
+*[ML]: Machine Learning
+*[RAG]: Retrieval-Augmented Generation 
