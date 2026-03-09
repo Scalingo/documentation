@@ -20,36 +20,37 @@ OpenSearch® is particularly well suited for building RAG systems because it pro
 
 ## Planning your Deployment
 
-Before deploying your RAG pipeline, you need the following components:
-
-- A **Scalingo for OpenSearch® addon** to store embeddings and run
-  similarity searches (you can find the documentaion [here][opensearch-doc]).
-
-- The **Scalingo CLI** to execute commands on your application (see the [CLI documentation][cli-doc]).
-
-- A **embedding model**, such as
-  `huggingface/sentence-transformers/all-MiniLM-L6-v2`. This model converts text into numerical vectors (embeddings) that represent the semantic meaning of the text.
-
-The tutorial can work with other models, you can find more information [here][opensearch-doc]. Since a RAG typically leverages vector search, we will use OpenSearch®'s **k-NN plugin**, which is already included in all Scalingo for OpenSearch® databases.
-
-Vector search can require additional memory and CPU resources, depending on the number and size of stored embeddings. Each document embedding is stored as a vector, which increases index size and memory usage. 
-
-For small datasets, a modest instance is usually sufficient, but larger knowledge bases may require more RAM to store vector indices efficiently and additional CPU resources to handle similarity searches and embedding generation.
+- In this tutorial, we will mainly use a [Scalingo for
+  OpenSearch®][scalingo-opensearch] database. This database will store
+  embeddings and run similarity searches, thanks to its included **k-NN
+  plugin**.
+- We will also need an **embedding model** to convert text into numerical
+  vectors (embeddings) that represent the semantic meaning of the text.\\
+  We chose `huggingface/sentence-transformers/all-MiniLM-L6-v2`, but [other
+  models][opensearch-pretrained-models] can give better results, depending
+  on your use-case.
+- Vector search can require quite a lot of memory and CPU resources, depending on
+  the number and size of stored embeddings. Each document embedding is stored
+  as a vector, which increases the index size and memory usage.\\
+  For small datasets, a modest instance is usually sufficient, but larger
+  knowledge bases may require more RAM to store vector indices efficiently and
+  additional CPU resources to handle similarity searches and embedding
+  generation.\\
+  For these reasons, we suggest to start with a Starter 1024 plan, and change
+  anytime for a bigger plan if need be.
 
 ## Setting Up the RAG in OpenSearch®
 
-To use embedding models, OpenSearch® must allow model downloads and execution. Call the API of your OpenSearch® database and configure the cluster to:
+To use embedding models, OpenSearch® must first be allowed to download and execute models.
+The following request:
 
-- Allow external model downloads
-- Enable model execution on all nodes
-- Remove default memory limits memory limits
-- Enable access control
-
-We set `"only_run_on_ml_node": "false"` to allow the model to run on any node in the cluster, which is useful for local setups without dedicated ML nodes.
-
-`"model_access_control_enabled": "true"` enables model access control, allowing administrators to restrict which users can access deployed models.
-
-Finally, `"native_memory_threshold": "99"` increases the allowed native memory usage for ML tasks so that memory limits do not block model execution during development or testing.
+- Allows external model downloads.
+- Allows the model to run on any node in the cluster, which is useful for local
+  setups without dedicated ML nodes.
+- Enables model access control, which allows administrators to grant access to
+  deployed models to specific users.
+- Increases the allowed native memory usage for ML tasks to 99%, so that memory
+  limits do not block the model execution during development and testing.
 
 ~~~bash
 scalingo --app my-app run curl -X PUT $SCALINGO_OPENSEARCH_URL/_cluster/settings \
@@ -93,7 +94,7 @@ Model registering designates the process of adding a machine learning model to t
 - Storing the model's metadata, configuration, and artifacts in the cluster.
 - Making it known to the ML plugin, so it can be used.
 
-In this tutorial, we use a model named `huggingface/sentence-transformers/all-MiniLM-L6-v2`. [OpenSearch® Documentation][opensearch-doc] references other models that can be used.
+The following request instructs OpenSearch® to register the `huggingface/sentence-transformers/all-MiniLM-L6-v2` model, and to store it in the previously created model group:
 
 ~~~bash
 TASK_ID=$(scalingo --app my-app run curl -X POST $SCALINGO_OPENSEARCH_URL/_plugins/_ml/models/_register \
@@ -256,17 +257,15 @@ scalingo --app my-app run curl -X GET $SCALINGO_OPENSEARCH_URL/my-nlp-index/_sea
   }'
 ~~~
 
-This query returns the most relevant documents by combining semantic similarity
-and keyword matching.
-
 ## Conclusion
 
 You now have everything you need to build a basic RAG using OpenSearch® on Scalingo. From here, you can extend this setup by connecting it to an application or an
 LLM to generate answers based on the retrieved context.
 
-[opensearch-doc]: https://docs.opensearch.org/latest/ml-commons-plugin/pretrained-models
+[opensearch-pretrained-models]: https://docs.opensearch.org/latest/ml-commons-plugin/pretrained-models
 [cli-doc]: https://doc.scalingo.com/cli
 [knn-search]: https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
+[scalingo-opensearch]: https://doc.scalingo.com/databases/opensearch
 *[AI]: Artificial Intelligence
 *[LLM]: Large Language Model
 *[ML]: Machine Learning
