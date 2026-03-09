@@ -22,10 +22,10 @@ PostgreSQL® with pgvector on Scalingo and a small Python API.
 
 Before deploying your recommendation engine, you need the following components:
 
-- A **Scalingo for PostgreSQL® addon** to store embeddings and perform
-  similarity searches. You can find the documentation [here][scalingo-postgres].
+- A **[Scalingo for PostgreSQL® addon][scalingo-postgres]** to store embeddings and perform
+  similarity searches.
 
-- A **Python application** that generates embeddings and exposes a
+- A **[Python application][scalingo-python]** that generates embeddings and exposes a
   recommendation API (FastAPI in this tutorial).
 
 - A **dataset of movies** containing titles and descriptions.
@@ -87,18 +87,15 @@ The recommendation workflow follow these steps:
 
 ## Loading the Dataset
 
-To populate the database with movies and embeddings, open a secure database tunnel:
+To populate the database with movies and embeddings, run the setup script as a one-off task:
 
    ```bash
-   scalingo --app my-filmreco db-tunnel
-   ```
-Export the url to the env **DATABASE_URL** Then run the setup script included in the repository:
-
-   ```bash
-   pipenv run python3 setup.py
+   scalingo --app my-filmreco run python3 setup.py
    ```
 
-The script enables the pgvector extension, creates the `movies` table and insert the embeddings from the dataset to our database.
+The script enables the pgvector extension, creates the `movies` table and inserts the embeddings from the dataset to our database. The `DATABASE_URL` environment variable is automatically available in the one-off context.
+
+For more information about running one-off tasks, refer to the [Scalingo documentation on tasks][scalingo-tasks].
 
 ## Querying the Recommendation Engine
 
@@ -110,3 +107,5 @@ You now have a basic recommendation system running on Scalingo using Python, pgv
 
 [github-filmreco]: https://github.com/Scalingo/filmreco-scalingo
 [scalingo-postgres]: https://doc.scalingo.com/databases/postgresql/about/overview
+[scalingo-python]: https://doc.scalingo.com/languages/python
+[scalingo-tasks]: https://doc.scalingo.com/platform/app/tasks
