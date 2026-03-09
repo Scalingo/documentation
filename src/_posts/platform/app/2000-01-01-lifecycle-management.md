@@ -115,12 +115,12 @@ our internal network has been re-architected and is now segmented into multiple 
 Because of this new architecture, it is no longer possible to move an application to
 another project or transfer it to another owner:
 
-- To change project, recreate and redeploy the application in the target project.
-- To change owner, transfer the entire project or redeploy the application in the
+- To change the app's project, recreate and redeploy the application in the destination project.
+- To change the app's owner, transfer the entire project or redeploy the application in the
   new context.
 
 {% note %}
-If you need assistance, contact Support.
+If you need assistance, contact the support.
 {% endnote %}
 
 
