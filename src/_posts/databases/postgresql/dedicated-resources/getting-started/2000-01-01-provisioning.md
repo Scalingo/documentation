@@ -1,0 +1,177 @@
+---
+title: Provisioning a Scalingo for PostgreSQL® Dedicated Resources Database
+nav: Provisioning
+modified_at: 2026-02-13 12:00:00
+tags: databases postgresql dedicated
+index: 1
+---
+
+
+Once you have chosen the right plan for your needs, you are ready to provision
+the database. This can be done via our 
+[dashboard](#using-the-dashboard), our 
+[CLI tool](#using-the-command-line), our
+[Terraform Provider](#using-the-terraform-provider), or via our 
+[Kubernetes Operator](#using-the-kubernetes-operator).
+
+
+## Provisioning
+
+### Using the Dashboard
+
+1. From your web browser, open your [dashboard][dashboard]
+2. Select the **Project** where you want to create the database
+3. Click the arrow next to **Create an application**, then click
+   **Database Dedicated Resources**
+4. In the **Databases engines** section, select 
+   **PostgreSQL Dedicated Resources** and confirm your choice
+5. Enter a database name, then select or confirm the appropriate **Project** and
+   **Region**
+6. Select the plan you want to provision and confirm your selection
+7. Click the **Create database** button
+8. Database provisioning typically takes 15–30 minutes
+
+### Using the Command Line (Preview) {#using-the-command-line}
+
+Because Dedicated Resources databases are not yet generally available,
+you must first enable preview features to use the related CLI commands:
+
+```sh
+export SCALINGO_PREVIEW_FEATURES=true
+```
+
+
+1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+2. From the command line, list the plans available for `postgresql-ng`:
+   ```bash
+   scalingo database-list-plans postgresql-ng
+   ```
+   The output should look like this:
+   ```text
+   ┌─────────────────────────────────┬─────────────────┐
+   │               ID                │      NAME       │
+   ├─────────────────────────────────┼─────────────────┤
+   │ postgresql-dr-starter-4096      │ Starter 4G      │
+   │ postgresql-dr-starter-8192      │ Starter 8G      │
+   │ postgresql-dr-starter-16384     │ Starter 16G     │
+   ...
+   ```
+3. Locate the `ID` corresponding to the plan you want to deploy (for example 
+   `postgresql-dr-starter-4096`)
+4. Provision the database:
+   ```bash
+   scalingo database-create --type postgresql-ng --plan <plan_ID> <database_name>
+   ```
+   The output should look like this:
+   ```text
+   -----> Your postgresql-ng database 698e082f968c27dfb8a27521 ('my-dedicated-database') is being provisioned…
+   ```
+5. Database provisioning typically takes 15–30 minutes
+
+Optionally you can use `--wait` in order to make the command synchronous.
+```bash
+scalingo database-create --type postgresql-ng --plan <plan_ID> --wait <database_name>
+```
+
+### Using the Terraform Provider
+
+1. Place the following `resource` block in your Terraform file to create the
+   database and attach it to your app:
+   ```tf
+   resource "scalingo_database" "my-dedicated-database" {
+     name       = "my-dedicated-database"
+     technology = "postgresql-ng"
+     plan       = "postgresql-dr-starter-4096"
+   }
+   ```
+   In this example, we create a dedicated PostgreSQL Starter 4096 database named `my-dedicated-database`. We could have done the same with another plan.
+2. Run `terraform plan` and check if the result looks good
+3. If so, run `terraform apply`
+4. Database provisioning typically takes 15–30 minutes
+
+### Using the Kubernetes Operator
+
+1. Deploy the [Scalingo Kubernetes Operator][kube-operator] in your cluster
+   using the installation manifest `install.yaml` from the
+   [latest release][kube-operator-install].
+2. Create a Scalingo API token and store it in a Kubernetes Secret, as
+   documented in [Create Secret][kube-operator-secret].
+3. Create a custom resource to provision your dedicated PostgreSQL database:
+   ```yaml
+	apiVersion: databases.scalingo.com/v1alpha1
+	kind: PostgreSQL
+	metadata:
+	  labels:
+	    app.kubernetes.io/name: scalingo-operator
+	    app.kubernetes.io/managed-by: kustomize
+	  name: my-dedicated-database
+	spec:
+	  # Secret read by operator
+	  authSecret:
+	    name: scalingo
+	    key: api_token
+
+	  # Secret written by operator
+	  connInfoSecretTarget:
+	    name:  my-dedicated-database-secret
+	    prefix: PG
+
+	  name: my-dedicated-database
+	  plan: postgresql-dr-starter-4096
+	  region: osc-fr1
+   ```
+   This example provisions a dedicated PostgreSQL database named
+   `my-dedicated-database` on the `postgresql-dr-starter-4096` plan and writes
+   its connection information to the `my-dedicated-database-secret` Kubernetes
+   Secret. You can use another `postgresql-dr-*` plan instead.
+4. Apply the resource and wait for provisioning to complete:
+   ```bash
+   kubectl apply -f my-dedicated-database.yaml
+   ```
+5. Database provisioning typically takes 15–30 minutes
+
+To read the database URL from the generated secret:
+```bash
+kubectl describe secret my-dedicated-database-secret
+kubectl get secret my-dedicated-database-secret -o jsonpath='{.data}' | grep PG
+```
+
+For a complete manifest (including all available fields), use the official
+[PostgreSQL sample resource][kube-operator-pg-sample].
+
+
+## Accessing the Scalingo for PostgreSQL® Dashboard
+
+Every PostgreSQL® database comes with its dedicated dashboard, generally referred
+to as **database dashboard**, which is the central place for administrative
+tasks such as:
+
+- [Monitoring the database][pg-dr-monitoring] through logs, metrics and statistics
+- [Upgrading the database][pg-dr-upgrading] engine version
+- [Enabling specific features][pg-dr-managing-extensions]
+- [Managing database users][pg-dr-managing-users]
+- [Managing Collaborators][pg-dr-managing-collaborators]
+- [Managing backups][pg-dr-backing-up]
+
+You can access the database dashboard from the main dashboard:
+
+1. From your web browser, open your [dashboard][dashboard]
+2. Open the **Project** containing the database you want to manage
+3. In the **Databases** section, click the database name
+
+
+[dashboard]: https://dashboard.scalingo.com/projects
+[architecture-models]: {% post_url databases/about/2000-01-01-architecture-models %}
+
+[cli]: {% post_url tools/cli/2000-01-01-start %}
+[kube-operator]: {% post_url tools/2000-01-01-kubernetes-operator %}
+[kube-operator-install]: https://github.com/Scalingo/scalingo-operator/releases
+[kube-operator-secret]: https://github.com/Scalingo/scalingo-operator/blob/main/README.md#create-secret
+[kube-operator-pg-sample]: https://github.com/Scalingo/scalingo-operator/tree/main/config/samples
+
+[pg-dr-monitoring]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-monitoring %}
+[pg-dr-upgrading]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-upgrading %}
+[pg-dr-managing-extensions]: {% post_url databases/postgresql/extensions/2000-01-01-managing-extensions %}
+[pg-dr-managing-users]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-users %}
+[pg-dr-managing-collaborators]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-collaborators %}
+[pg-dr-backing-up]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-backing-up %}
