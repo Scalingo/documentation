@@ -14,8 +14,8 @@ OpenSearch® is particularly well suited for building RAG systems because it pro
 
 - It supports vector databases and [k-NN search][knn-search], allowing similarity search between embeddings and queries.
 - It can combine semantic search (vectors) with keyword search, which improves retrieval quality.
--It is built for large-scale indexing and querying, making it ideal for knowledge bases with tons of documents.
-- It integrates Machine Learning features.
+- It is built for large-scale indexing and querying, making it ideal for knowledge bases with tons of documents.
+- It integrates machine learning features.
 - It's known for its low-latency search, which enables fast context retrieval.
 
 ## Planning your Deployment
@@ -23,12 +23,12 @@ OpenSearch® is particularly well suited for building RAG systems because it pro
 Before deploying your RAG pipeline, you need the following components:
 
 - A **Scalingo for OpenSearch® addon** to store embeddings and run
-  similarity searches.
+  similarity searches (you can find the documentaion [here][opensearch-doc]).
 
 - A **embedding model**, such as
-  `huggingface/sentence-transformers/all-MiniLM-L6-v2`.
+  `huggingface/sentence-transformers/all-MiniLM-L6-v2`. This model converts text into numerical vectors (embeddings) that represent the semantic meaning of the text.
 
-The tutorial can work with other models, you can find more information [here][opensearch-doc]. Since a RAG typically leverages vector search, we will use OpenSearch®'s **k-NN plugin**, which is already included in all Scalingo for OpenSearch® database.
+The tutorial can work with other models, you can find more information [here][opensearch-doc]. Since a RAG typically leverages vector search, we will use OpenSearch®'s **k-NN plugin**, which is already included in all Scalingo for OpenSearch® databases.
 
 Vector search can require additional memory and CPU resources, depending on the number and size of stored embeddings. Each document embedding is stored as a vector, which increases index size and memory usage. 
 
@@ -36,16 +36,16 @@ For small datasets, a modest instance is usually sufficient, but larger knowledg
 
 ## Setting Up the RAG in OpenSearch®
 
-To use embedding models, OpenSearch® must allow model downloads and execution. Call the API of your OpenSearch® Database and configure the cluster to:
+To use embedding models, OpenSearch® must allow model downloads and execution. Call the API of your OpenSearch® database and configure the cluster to:
 
 - Allow external model downloads
 - Enable model execution on all nodes
 - Remove default memory limits memory limits
 - Enable access control
 
-We set `only_run_on_ml_node": "false"` to allow the model to run on any node in the cluster, which is useful for local setups without dedicated ML nodes.
+We set `"only_run_on_ml_node": "false"` to allow the model to run on any node in the cluster, which is useful for local setups without dedicated ML nodes.
 
-`model_access_control_enabled": "true"` enables model access control, allowing administrators to restrict which users can access deployed models.
+`"model_access_control_enabled": "true"` enables model access control, allowing administrators to restrict which users can access deployed models.
 
 Finally, `"native_memory_threshold": "99"` increases the allowed native memory usage for ML tasks so that memory limits do not block model execution during development or testing.
 
@@ -123,7 +123,7 @@ In OpenSearch®, an ingestion pipeline is a sequence of processing steps automat
 
 In the context of a RAG, the ingestion pipeline prepares raw data so it can be efficiently retrieved and used by a LLM.
 
-In the following example, we create an ingestion pipeline that automatically generates embeddings from the passage_text field using the registered model and stores them in passage_embedding field. This enables OpenSearch® to perform semantic similarity searches on the indexed documents.
+In the following example, we create an ingestion pipeline that automatically generates embeddings from the `passage_text` field using the registered model and stores them in `passage_embedding` field. This enables OpenSearch® to perform semantic similarity searches on the indexed documents.
 
 ~~~json
 PUT _ingest/pipeline/rag-pipeline
@@ -197,7 +197,7 @@ The following request performs a **hybrid search** by combining:
 
 Hybrid search combines semantic understanding and keyword matching. Vector search retrieves documents whose meaning is similar to the query, even if they do not contain the same words. The match query complements this by retrieving documents that contain the exact terms used in the query.
 
-Each search query is wrapped in a script_score query to adjust its importance. This allows both semantic similarity and keyword relevance to influence the final ranking.
+Each search query is wrapped in a `script_score` query to adjust its importance. This allows both semantic similarity and keyword relevance to influence the final ranking.
 
 ~~~json
 GET /my-nlp-index/_search
