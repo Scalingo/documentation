@@ -25,6 +25,8 @@ Before deploying your RAG pipeline, you need the following components:
 - A **Scalingo for OpenSearch® addon** to store embeddings and run
   similarity searches (you can find the documentaion [here][opensearch-doc]).
 
+- The **Scalingo CLI** to execute commands on your application (see the [CLI documentation][cli-doc]).
+
 - A **embedding model**, such as
   `huggingface/sentence-transformers/all-MiniLM-L6-v2`. This model converts text into numerical vectors (embeddings) that represent the semantic meaning of the text.
 
@@ -49,15 +51,16 @@ We set `"only_run_on_ml_node": "false"` to allow the model to run on any node in
 
 Finally, `"native_memory_threshold": "99"` increases the allowed native memory usage for ML tasks so that memory limits do not block model execution during development or testing.
 
-~~~json
-PUT _cluster/settings
-{
-  "persistent": {
-    "plugins.ml_commons.only_run_on_ml_node": "false",
-    "plugins.ml_commons.model_access_control_enabled": "true",
-    "plugins.ml_commons.native_memory_threshold": "99"
-  }
-}
+~~~bash
+scalingo --app my-app run curl -X PUT $SCALINGO_OPENSEARCH_URL/_cluster/settings \
+  -H "Content-Type: application/json" \
+  -d '{
+    "persistent": {
+      "plugins.ml_commons.only_run_on_ml_node": "false",
+      "plugins.ml_commons.model_access_control_enabled": "true",
+      "plugins.ml_commons.native_memory_threshold": "99"
+    }
+  }'
 ~~~
 
 ### Creating a Model Group
@@ -70,15 +73,16 @@ In OpenSearch®, a model group is a logical container used to organize and manag
 
 The following request creates a model group named `rag-model-group`. We will use it to store the models related to the RAG we are building:
 
-~~~json
-POST /_plugins/_ml/model_groups/_register
-{
-  "name": "rag-model-group",
-  "description": "Model group for RAG embeddings"
-}
+~~~bash
+MODEL_GROUP_ID=$(scalingo --app my-app run curl -X POST $SCALINGO_OPENSEARCH_URL/_plugins/_ml/model_groups/_register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "rag-model-group",
+    "description": "Model group for RAG embeddings"
+  }' | jq -r '.model_group_id')
 ~~~
 
-The response returns a **`model_group_id`**. Keep its value for the next step.
+The response returns a **`model_group_id`** which is exported in our terminal. Keep its value for the next step.
 
 ### Registering the Embedding Model
 
@@ -91,31 +95,30 @@ Model registering designates the process of adding a machine learning model to t
 
 In this tutorial, we use a model named `huggingface/sentence-transformers/all-MiniLM-L6-v2`. [OpenSearch® Documentation][opensearch-doc] references other models that can be used.
 
-~~~json
-POST /_plugins/_ml/models/_register
-{
-  "name": "huggingface/sentence-transformers/all-MiniLM-L6-v2",
-  "version": "1.0.2",
-  "model_group_id": "<MODEL_GROUP_ID>",
-  "model_format": "TORCH_SCRIPT"
-}
+~~~bash
+TASK_ID=$(scalingo --app my-app run curl -X POST $SCALINGO_OPENSEARCH_URL/_plugins/_ml/models/_register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "huggingface/sentence-transformers/all-MiniLM-L6-v2",
+    "version": "1.0.2",
+    "model_group_id": "'$MODEL_GROUP_ID'",
+    "model_format": "TORCH_SCRIPT"
+  }' | jq -r '.task_id')
 ~~~
 
-OpenSearch® answers with a **`task_id`** that can be used to monitor the registration process:
+OpenSearch® answers with a **`task_id`** which is exported in our terminal, that can be used to monitor the registration process:
 
-~~~json
-GET /_plugins/_ml/tasks/<TASK_ID>
+~~~bash
+scalingo --app my-app run curl $SCALINGO_OPENSEARCH_URL/_plugins/_ml/tasks/$TASK_ID
 ~~~
 
-Once the task is completed, OpenSearch® responds with a **`model_id`** identifying the model we've just registered. Keep it aside for later use.
+Once the task is completed, retrieve the model ID:
 
-Example:
-
-~~~json
-{
-  "model_id": "<MODEL_ID>"
-}
+~~~bash
+MODEL_ID=$(scalingo --app my-app run curl $SCALINGO_OPENSEARCH_URL/_plugins/_ml/tasks/$TASK_ID | jq -r '.model_id')
 ~~~
+
+OpenSearch® answers with a **`MODEL_ID`** which is exported in our terminal.
 
 ### Creating an Ingestion Pipeline
 
@@ -125,21 +128,22 @@ In the context of a RAG, the ingestion pipeline prepares raw data so it can be e
 
 In the following example, we create an ingestion pipeline that automatically generates embeddings from the `passage_text` field using the registered model and stores them in `passage_embedding` field. This enables OpenSearch® to perform semantic similarity searches on the indexed documents.
 
-~~~json
-PUT _ingest/pipeline/rag-pipeline
-{
-  "description": "Pipeline to generate embeddings",
-  "processors": [
-    {
-      "text_embedding": {
-        "model_id": "<MODEL_ID>",
-        "field_map": {
-          "passage_text": "passage_embedding"
+~~~bash
+scalingo --app my-app run curl -X PUT $SCALINGO_OPENSEARCH_URL/_ingest/pipeline/rag-pipeline \
+  -H "Content-Type: application/json" \
+  -d '{
+    "description": "Pipeline to generate embeddings",
+    "processors": [
+      {
+        "text_embedding": {
+          "model_id": "<MODEL_ID>",
+          "field_map": {
+            "passage_text": "passage_embedding"
+          }
         }
       }
-    }
-  ]
-}
+    ]
+  }'
 ~~~
 
 ### Creating a Vector Index
@@ -150,38 +154,40 @@ A **vector index** stores embeddings generated from documents. These vectors rep
 Make sure the `dimension` matches the output size of your embedding model (384 for `all-MiniLM-L6-v2`).
 {% endnote %}
 
-~~~json
-PUT my-nlp-index
-{
-  "settings": {
-    "index": {
-      "knn": true,
-      "default_pipeline": "rag-pipeline"
-    }
-  },
-  "mappings": {
-    "properties": {
-      "passage_text": {
-        "type": "text"
-      },
-      "passage_embedding": {
-        "type": "knn_vector",
-        "dimension": 384
+~~~bash
+scalingo --app my-app run curl -X PUT $SCALINGO_OPENSEARCH_URL/my-nlp-index \
+  -H "Content-Type: application/json" \
+  -d '{
+    "settings": {
+      "index": {
+        "knn": true,
+        "default_pipeline": "rag-pipeline"
+      }
+    },
+    "mappings": {
+      "properties": {
+        "passage_text": {
+          "type": "text"
+        },
+        "passage_embedding": {
+          "type": "knn_vector",
+          "dimension": 384
+        }
       }
     }
-  }
-}
+  }'
 ~~~
 
 ### Ingesting Documents
 
 You can now ingest documents into the index.
 
-~~~json
-PUT /my-nlp-index/_doc/1
-{
-  "passage_text": "OpenSearch is a powerful search engine for building AI applications."
-}
+~~~bash
+scalingo --app my-app run curl -X PUT $SCALINGO_OPENSEARCH_URL/my-nlp-index/_doc/1 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "passage_text": "OpenSearch is a powerful search engine for building AI applications."
+  }'
 ~~~
 
 The ingestion pipeline automatically generates embeddings for the `passage_text` field. Repeat this operation as many times as needed by changing the document ID in the endpoint URL.
@@ -199,54 +205,55 @@ Hybrid search combines semantic understanding and keyword matching. Vector searc
 
 Each search query is wrapped in a `script_score` query to adjust its importance. This allows both semantic similarity and keyword relevance to influence the final ranking.
 
-~~~json
-GET /my-nlp-index/_search
-{
-  "_source": {
-    "excludes": [
-      "passage_embedding"
-    ]
-  },
-  "query": {
-    "bool": {
-      "filter": {
-        "wildcard": {
-          "id": "*1"
-        }
-      },
-      "should": [
-        {
-          "script_score": {
-            "query": {
-              "neural": {
-                "passage_embedding": {
-                  "query_text": "Hi world",
-                  "model_id": "<MODEL_ID>",
-                  "k": 100
-                }
-              }
-            },
-            "script": {
-              "source": "_score * 1.5"
-            }
+~~~bash
+scalingo --app my-app run curl -X GET $SCALINGO_OPENSEARCH_URL/my-nlp-index/_search \
+  -H "Content-Type: application/json" \
+  -d '{
+    "_source": {
+      "excludes": [
+        "passage_embedding"
+      ]
+    },
+    "query": {
+      "bool": {
+        "filter": {
+          "wildcard": {
+            "id": "*1"
           }
         },
-        {
-          "script_score": {
-            "query": {
-              "match": {
-                "passage_text": "Hi world"
+        "should": [
+          {
+            "script_score": {
+              "query": {
+                "neural": {
+                  "passage_embedding": {
+                    "query_text": "Hi world",
+                    "model_id": "<MODEL_ID>",
+                    "k": 100
+                  }
+                }
+              },
+              "script": {
+                "source": "_score * 1.5"
               }
-            },
-            "script": {
-              "source": "_score * 1.7"
+            }
+          },
+          {
+            "script_score": {
+              "query": {
+                "match": {
+                  "passage_text": "Hi world"
+                }
+              },
+              "script": {
+                "source": "_score * 1.7"
+              }
             }
           }
-        }
-      ]
+        ]
+      }
     }
-  }
-}
+  }'
 ~~~
 
 This query returns the most relevant documents by combining semantic similarity
@@ -258,6 +265,7 @@ You now have everything you need to build a basic RAG using OpenSearch® on Scal
 LLM to generate answers based on the retrieved context.
 
 [opensearch-doc]: https://docs.opensearch.org/latest/ml-commons-plugin/pretrained-models
+[cli-doc]: https://doc.scalingo.com/cli
 [knn-search]: https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
 *[AI]: Artificial Intelligence
 *[LLM]: Large Language Model
