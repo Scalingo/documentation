@@ -74,7 +74,7 @@ The recommendation workflow follow these steps:
 3. Provision a Scalingo for PostgreSQL® Starter 512 addon:
 
    ```bash
-   scalingo --app my-n8n addons-add postgresql postgresql-starter-512
+   scalingo --app my-filmreco addons-add postgresql postgresql-starter-512
    ```
 
 4. Everything's ready, deploy to Scalingo:
