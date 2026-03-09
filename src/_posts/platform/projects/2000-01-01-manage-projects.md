@@ -1,6 +1,6 @@
 ---
 title: Manage your Projects
-modified_at: 2026-02-27 07:00:00
+modified_at: 2026-03-10 07:00:00
 tags: project management
 index: 2
 ---
@@ -240,7 +240,7 @@ update the project with the desired attributes. For example:
 ## Transfer Ownership of a Project {#transfer-project-ownership}
 
 {% note %}
-Effective March 1, 2026, projects become a core and permanent component of the platform. Applications can no longer be transferred individually. To change ownership, transfer the entire project instead.
+Projects are now a core component of the platform. Transferring applications individually will soon be deprecated. To change ownership, transfer the entire project instead.
 {% endnote %}
 
 To transfer a project to another user, first add the future owner as a collaborator on all project resources, including applications and Dedicated Resources databases, and make sure they accept the invitation.
@@ -269,22 +269,6 @@ Billing occurs on the last day of the month and is charged to the project owner 
 5. From the list, choose the collaborator who will become the new owner
 6. Confirm the project name
 7. Click **Transfer** to send the transfer request
-
-### Using the Command Line
-
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, update a project:
-   ```shell
-   scalingo XXX
-   ```
-   The output should look like this:
-   ```shell
-   -----> XXX
-   ```
-
-### Using the Terraform Provider
-
-XXX
 
 
 ## Removing a project
