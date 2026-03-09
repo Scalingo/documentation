@@ -263,8 +263,12 @@ Billing occurs on the last day of the month and is charged to the project owner 
 ### Using the Dashboard
 
 1. From your web browser, open your [dashboard][dashboard]
-2. Click the **Projects** tab
-3. ...
+2. Click the **Projects** tab, then select the project you want to transfer
+3. Click the **Settings** tab
+4. In the **Transfer project ownership** section, click the **Transfer project** button
+5. From the list, choose the collaborator who will become the new owner
+6. Confirm the project name
+7. Click **Transfer** to send the transfer request
 
 ### Using the Command Line
 
