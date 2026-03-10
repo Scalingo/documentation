@@ -57,9 +57,11 @@ The required procedure is the following:
 3. Contact our support team so we can re-create the extension and configure it
    again if needed
 
-Make sure to review the impact of dropping the extension before starting the
-upgrade, especially if you rely on masking rules or objects managed by the
-extension.
+### Upgrading from 2.x to 3.x
+
+The "Legacy Dynamic Masking" was the dynamic masking method used in version 1.x. It is now completely removed and replaced by "Transparent Dynamic Masking".
+
+If you are still using Legacy Dynamic Masking in version 2.x, you must [disable it BEFORE upgrading](https://postgresql-anonymizer.readthedocs.io/en/stable/UPGRADE/).
 
 
 ## Example: Dynamic Masking for Read-Only Users

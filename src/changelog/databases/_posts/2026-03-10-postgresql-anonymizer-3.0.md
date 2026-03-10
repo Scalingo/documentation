@@ -7,7 +7,12 @@ Dalibo has released [PostgreSQL Anonymizer 3.0](https://www.postgresql.org/about
 
 **This release includes important security fixes and should be adopted as soon as possible.**
 
-- PostgreSQL® Anonymizer 3.0 is now available with Scalingo for PostgreSQL® `17.9.0-2`
-- PostgreSQL® 16 images remain on the PostgreSQL® Anonymizer 2.x branch
+Changelog :
 
-Upgrading from the 2.x branch to 3.x requires a specific procedure. Before upgrading a database to PostgreSQL® 17.9.0-2 or later, the extension must be dropped and recreated after the upgrade. See the [PostgreSQL® Anonymizer documentation page]({% post_url databases/postgresql/extensions/2000-01-01-postgresql-anonymizer %}#upgrading-postgresql-anonymizer) for the full procedure.
+- PostgreSQL® Anonymizer 3.0 is now available with Scalingo for PostgreSQL® `17.9.0-2`
+- Legacy Static Masking was deprecated since version 2.0 and it is now fully removed
+- The anon.pg_masking_rules view is replaced by anon.{all|sys|user}_rules
+
+Before upgrading, make sure to read the [PostgreSQL® Anonymizer upgrade procedure]({% post_url databases/postgresql/extensions/2000-01-01-postgresql-anonymizer %}#upgrading-postgresql-anonymizer).
+
+Note: Scalingo for PostgreSQL® 16.x will remain on the PostgreSQL® Anonymizer 2.x branch.
