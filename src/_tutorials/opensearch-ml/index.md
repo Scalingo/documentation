@@ -5,7 +5,7 @@ category: ai
 products:
   - Scalingo for OpenSearch®
 permalink: /tutorials/opensearch-rag
-modified_at: 2026-03-06
+modified_at: 2026-03-10
 ---
 
 RAG (Retrieval-Augmented Generation) is an AI architecture where a Large Language Model (LLM) generates answers using external knowledge retrieved at query time, instead of relying only on its training data. This approach improves accuracy and freshness, since the answer is based on context-related documents that can be updated anytime.
@@ -20,13 +20,13 @@ OpenSearch® is particularly well suited for building RAG systems because it pro
 
 ## Planning your Deployment
 
-- In this tutorial, we will mainly use a [Scalingo for
-  OpenSearch®][scalingo-opensearch] database. This database will store
-  embeddings and run similarity searches, thanks to its included **k-NN
+- In this tutorial, we mainly use a [Scalingo for
+  OpenSearch®][scalingo-opensearch] database. This database stores
+  embeddings and runs similarity searches, thanks to its included **k-NN
   plugin**.
-- We will also need an **embedding model** to convert text into numerical
+- We also need an **embedding model** to convert text into numerical
   vectors (embeddings) that represent the semantic meaning of the text.\\
-  We chose `huggingface/sentence-transformers/all-MiniLM-L6-v2`, but [other
+  We use `huggingface/sentence-transformers/all-MiniLM-L6-v2`, but [other
   models][opensearch-pretrained-models] can give better results, depending
   on your use-case.
 - Vector search can require quite a lot of memory and CPU resources, depending on
@@ -72,7 +72,7 @@ In OpenSearch®, a model group is a logical container used to organize and manag
 - Manage models lifecycle.
 - Grant access to ML models for specific users or teams, by managing permissions and visibility.
 
-The following request creates a model group named `rag-model-group`. We will use it to store the models related to the RAG we are building:
+The following request creates a model group named `rag-model-group`. We use it to store the models related to the RAG we are building:
 
 ~~~bash
 MODEL_GROUP_ID=$(scalingo --app my-app run curl -X POST $SCALINGO_OPENSEARCH_URL/_plugins/_ml/model_groups/_register \
@@ -113,7 +113,7 @@ OpenSearch® answers with a **`task_id`** which is exported in our terminal, tha
 scalingo --app my-app run curl $SCALINGO_OPENSEARCH_URL/_plugins/_ml/tasks/$TASK_ID
 ~~~
 
-Once the task is completed, retrieve the model ID:
+Once the task completes, retrieve the model ID:
 
 ~~~bash
 MODEL_ID=$(scalingo --app my-app run curl $SCALINGO_OPENSEARCH_URL/_plugins/_ml/tasks/$TASK_ID | jq -r '.model_id')

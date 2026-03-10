@@ -1,5 +1,5 @@
 ---
-title: Build a Movie Recommendation Engine
+title: Build a Movie Recommendation Engine with pgvector
 logo: postgresql
 category: ai
 products:
@@ -15,23 +15,23 @@ and **similarity search**.
 Instead of relying on a dedicated vector database, PostgreSQL® can perform
 vector similarity search using the **pgvector** extension.
 
-In this tutorial, we will deploy a simple **movie recommendation system** using
+In this tutorial, we deploy a simple **movie recommendation system** using
 PostgreSQL® with pgvector on Scalingo and a small Python API.
 
 ## Planning your Deployment
 
-- In this tutorial, we have chosen to deploy both the backend and frontend of
+- In this tutorial, we choose to deploy both the backend and frontend of
   the application on a single `web` container of size M.
 
 - Performing similarity search requires a vector-capable database. In this
-  tutorial, we have chosen to entrust [Scalingo for PostgreSQL®
+  tutorial, we choose [Scalingo for PostgreSQL®
   addon][scalingo-postgres] with the **pgvector** extension enabled for this
   role.
 
 - [The application][github-filmreco] is written in [Python][scalingo-python],
   using Flask, FastAPI and [LangChain][langchain] to query the embeddings.
 
-The recommendation workflow follow these steps:
+The recommendation workflow follows these steps:
 
 1. Generate embeddings for each movie description.
 2. Store these embeddings in the Scalingo for PostgreSQL® database, using pgvector.
@@ -79,7 +79,7 @@ The recommendation workflow follow these steps:
    git push scalingo main
    ```
 
-  Scalingo detects the Python environment, installs dependencies and start the application. Your recommendation API is now deployed.
+  Scalingo detects the Python environment, installs dependencies and starts the application. Your recommendation API is deployed.
 
 ## Loading the Dataset
 
@@ -95,9 +95,9 @@ For more information about running one-off tasks, refer to the [Scalingo documen
 
 ## Querying the Recommendation Engine
 
-You can now open your application deployed on Scalingo and enter a prompt to retrieve the most similar movie using pgvector similarity search.
+Open your deployed application on Scalingo and enter a prompt to retrieve the most similar movie using pgvector similarity search.
 
-You now have a basic recommendation system running on Scalingo using Python, pgvector, and LangChain. You can build on this project to implement product recommendations, document similarity search, and more.
+You now have a working recommendation system built with Python, pgvector, and LangChain on Scalingo. With this setup, you can start experimenting with more advanced use cases such as product recommendations, document similarity search, or other semantic search applications.
 
 
 
