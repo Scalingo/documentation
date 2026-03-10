@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL® Anonymizer
 nav: PostgreSQL® Anonymizer
-modified_at: 2025-02-03 12:00:00
+modified_at: 2026-03-10 10:00:00
 tags: databases postgresql anonymization extensions
 index: 50
 ---
@@ -17,6 +17,11 @@ compliance with privacy regulations such as GDPR, HIPAA, and CCPA.
 This extension adds several features and functions. You can find more
 information on the [official documentation][official_doc].
 
+{% warning %}
+PostgreSQL® Anonymizer 3.0 includes important security fixes. If you are using
+the 2.x branch, plan your upgrade as soon as possible.
+{% endwarning %}
+
 
 ## Enabling PostgreSQL® Anonymizer
 
@@ -26,6 +31,35 @@ information on the [official documentation][official_doc].
 3. Our team activates the extension and sets up masking for the given user
 4. Once done, you can define and manage masking rules for your user
    autonomously as described below.
+
+
+## Upgrading PostgreSQL® Anonymizer
+
+PostgreSQL® Anonymizer cannot be upgraded in place. If you upgrade your 
+PostgreSQL® database to a version that ships a different major version of the 
+extension, you must drop the extension before upgrading the database and 
+recreate it afterwards.
+
+{% warning %}
+PostgreSQL® Anonymizer 3.0 fixes [two critical vulnerabilities](https://www.postgresql.org/about/news/postgresql-anonymizer-30-parallel-static-masking-json-import-export-3236/#:~:text=Important%20Security%20Updates) that could allow users to gain superuser privileges under certain conditions. To benefit from these fixes, upgrade your PostgreSQL database to `17.9.0-2` as soon as possible.
+{% endwarning %}
+
+The required procedure is the following:
+
+1. Drop the extension from your database:
+
+   ```sql
+   DROP EXTENSION IF EXISTS anon CASCADE;
+   ```
+
+2. Upgrade your database to the Scalingo for PostgreSQL® version that ships a
+   higher major branch of PostgreSQL® Anonymizer
+3. Contact our support team so we can re-create the extension and configure it
+   again if needed
+
+Make sure to review the impact of dropping the extension before starting the
+upgrade, especially if you rely on masking rules or objects managed by the
+extension.
 
 
 ## Example: Dynamic Masking for Read-Only Users
