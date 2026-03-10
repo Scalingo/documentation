@@ -35,10 +35,10 @@ the 2.x branch, plan your upgrade as soon as possible.
 
 ## Upgrading PostgreSQL® Anonymizer
 
-PostgreSQL® Anonymizer cannot be upgraded in place. If you upgrade your 
-PostgreSQL® database to a version that ships a different major version of the 
-extension, you must drop the extension before upgrading the database and 
-recreate it afterwards.
+PostgreSQL® Anonymizer cannot be upgraded in place. If you upgrade your
+PostgreSQL® database to a version that ships a different major version of the
+extension, it must first be disabled, then re-enabled after the database
+upgrade. Both operations require contacting our support team.
 
 {% warning %}
 PostgreSQL® Anonymizer 3.0 fixes [two critical vulnerabilities](https://www.postgresql.org/about/news/postgresql-anonymizer-30-parallel-static-masking-json-import-export-3236/#:~:text=Important%20Security%20Updates) that could allow users to gain superuser privileges under certain conditions. To benefit from these fixes, upgrade your PostgreSQL database to `17.9.0-2` as soon as possible.
@@ -46,16 +46,11 @@ PostgreSQL® Anonymizer 3.0 fixes [two critical vulnerabilities](https://www.pos
 
 The required procedure is the following:
 
-1. Drop the extension from your database:
-
-   ```sql
-   DROP EXTENSION IF EXISTS anon CASCADE;
-   ```
-
-2. Upgrade your database to the Scalingo for PostgreSQL® version that ships a
-   higher major branch of PostgreSQL® Anonymizer
-3. Contact our support team so we can re-create the extension and configure it
-   again if needed
+1. Contact our support team to request that PostgreSQL® Anonymizer be disabled
+   on your database
+2. Upgrade your database to the Scalingo for PostgreSQL® version that includes a
+   newer major version of PostgreSQL® Anonymizer.
+3. Contact our support team again so we can re-enable the extension if needed
 
 ### Upgrading from 2.x to 3.x
 
