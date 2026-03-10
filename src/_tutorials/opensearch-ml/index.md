@@ -53,9 +53,9 @@ The following request:
   limits do not block the model execution during development and testing.
 
 ~~~bash
-scalingo --app my-app run curl -X PUT $SCALINGO_OPENSEARCH_URL/_cluster/settings \
-  -H "Content-Type: application/json" \
-  -d '{
+scalingo --app my-app run curl --request PUT $SCALINGO_OPENSEARCH_URL/_cluster/settings \
+  --header "Content-Type: application/json" \
+  --data '{
     "persistent": {
       "plugins.ml_commons.only_run_on_ml_node": "false",
       "plugins.ml_commons.model_access_control_enabled": "true",
@@ -75,12 +75,12 @@ In OpenSearch®, a model group is a logical container used to organize and manag
 The following request creates a model group named `rag-model-group`. We use it to store the models related to the RAG we are building:
 
 ~~~bash
-MODEL_GROUP_ID=$(scalingo --app my-app run curl -X POST $SCALINGO_OPENSEARCH_URL/_plugins/_ml/model_groups/_register \
-  -H "Content-Type: application/json" \
-  -d '{
+MODEL_GROUP_ID=$(scalingo --app my-app run curl --request POST $SCALINGO_OPENSEARCH_URL/_plugins/_ml/model_groups/_register \
+  --header "Content-Type: application/json" \
+  --data '{
     "name": "rag-model-group",
     "description": "Model group for RAG embeddings"
-  }' | jq -r '.model_group_id')
+  }' | jq --raw-output '.model_group_id')
 ~~~
 
 The response returns a **`model_group_id`** which is exported in our terminal. Keep its value for the next step.
@@ -97,14 +97,14 @@ Model registering designates the process of adding a machine learning model to t
 The following request instructs OpenSearch® to register the `huggingface/sentence-transformers/all-MiniLM-L6-v2` model, and to store it in the previously created model group:
 
 ~~~bash
-TASK_ID=$(scalingo --app my-app run curl -X POST $SCALINGO_OPENSEARCH_URL/_plugins/_ml/models/_register \
-  -H "Content-Type: application/json" \
-  -d '{
+TASK_ID=$(scalingo --app my-app run curl --request POST $SCALINGO_OPENSEARCH_URL/_plugins/_ml/models/_register \
+  --header "Content-Type: application/json" \
+  --data '{
     "name": "huggingface/sentence-transformers/all-MiniLM-L6-v2",
     "version": "1.0.2",
     "model_group_id": "'$MODEL_GROUP_ID'",
     "model_format": "TORCH_SCRIPT"
-  }' | jq -r '.task_id')
+  }' | jq --raw-output '.task_id')
 ~~~
 
 OpenSearch® answers with a **`task_id`** which is exported in our terminal, that can be used to monitor the registration process:
@@ -116,7 +116,7 @@ scalingo --app my-app run curl $SCALINGO_OPENSEARCH_URL/_plugins/_ml/tasks/$TASK
 Once the task completes, retrieve the model ID:
 
 ~~~bash
-MODEL_ID=$(scalingo --app my-app run curl $SCALINGO_OPENSEARCH_URL/_plugins/_ml/tasks/$TASK_ID | jq -r '.model_id')
+MODEL_ID=$(scalingo --app my-app run curl $SCALINGO_OPENSEARCH_URL/_plugins/_ml/tasks/$TASK_ID | jq --raw-output '.model_id')
 ~~~
 
 OpenSearch® answers with a **`MODEL_ID`** which is exported in our terminal.
@@ -130,9 +130,9 @@ In the context of a RAG, the ingestion pipeline prepares raw data so it can be e
 In the following example, we create an ingestion pipeline that automatically generates embeddings from the `passage_text` field using the registered model and stores them in `passage_embedding` field. This enables OpenSearch® to perform semantic similarity searches on the indexed documents.
 
 ~~~bash
-scalingo --app my-app run curl -X PUT $SCALINGO_OPENSEARCH_URL/_ingest/pipeline/rag-pipeline \
-  -H "Content-Type: application/json" \
-  -d '{
+scalingo --app my-app run curl --request PUT $SCALINGO_OPENSEARCH_URL/_ingest/pipeline/rag-pipeline \
+  --header "Content-Type: application/json" \
+  --data '{
     "description": "Pipeline to generate embeddings",
     "processors": [
       {
@@ -156,9 +156,9 @@ Make sure the `dimension` matches the output size of your embedding model (384 f
 {% endnote %}
 
 ~~~bash
-scalingo --app my-app run curl -X PUT $SCALINGO_OPENSEARCH_URL/my-nlp-index \
-  -H "Content-Type: application/json" \
-  -d '{
+scalingo --app my-app run curl --request PUT $SCALINGO_OPENSEARCH_URL/my-nlp-index \
+  --header "Content-Type: application/json" \
+  --data '{
     "settings": {
       "index": {
         "knn": true,
@@ -184,9 +184,9 @@ scalingo --app my-app run curl -X PUT $SCALINGO_OPENSEARCH_URL/my-nlp-index \
 You can now ingest documents into the index.
 
 ~~~bash
-scalingo --app my-app run curl -X PUT $SCALINGO_OPENSEARCH_URL/my-nlp-index/_doc/1 \
-  -H "Content-Type: application/json" \
-  -d '{
+scalingo --app my-app run curl --request PUT $SCALINGO_OPENSEARCH_URL/my-nlp-index/_doc/1 \
+  --header "Content-Type: application/json" \
+  --data '{
     "passage_text": "OpenSearch is a powerful search engine for building AI applications."
   }'
 ~~~
@@ -207,9 +207,9 @@ Hybrid search combines semantic understanding and keyword matching. Vector searc
 Each search query is wrapped in a `script_score` query to adjust its importance. This allows both semantic similarity and keyword relevance to influence the final ranking.
 
 ~~~bash
-scalingo --app my-app run curl -X GET $SCALINGO_OPENSEARCH_URL/my-nlp-index/_search \
-  -H "Content-Type: application/json" \
-  -d '{
+scalingo --app my-app run curl --request GET $SCALINGO_OPENSEARCH_URL/my-nlp-index/_search \
+  --header "Content-Type: application/json" \
+  --data '{
     "_source": {
       "excludes": [
         "passage_embedding"
