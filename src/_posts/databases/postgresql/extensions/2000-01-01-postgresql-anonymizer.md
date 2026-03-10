@@ -17,11 +17,6 @@ compliance with privacy regulations such as GDPR, HIPAA, and CCPA.
 This extension adds several features and functions. You can find more
 information on the [official documentation][official_doc].
 
-{% warning %}
-PostgreSQL® Anonymizer 3.0 includes important security fixes. If you are using
-the 2.x branch, plan your upgrade as soon as possible.
-{% endwarning %}
-
 
 ## Enabling PostgreSQL® Anonymizer
 
@@ -41,8 +36,9 @@ extension, it must first be disabled, then re-enabled after the database
 upgrade. Both operations require contacting our support team.
 
 {% warning %}
-PostgreSQL® Anonymizer 3.0 fixes [two critical vulnerabilities](https://www.postgresql.org/about/news/postgresql-anonymizer-30-parallel-static-masking-json-import-export-3236/#:~:text=Important%20Security%20Updates) that could allow users to gain superuser privileges under certain conditions. To benefit from these fixes, upgrade your PostgreSQL database to `17.9.0-2` as soon as possible.
+PostgreSQL® Anonymizer 3.0 fixes [two critical vulnerabilities](https://www.postgresql.org/about/news/postgresql-anonymizer-30-parallel-static-masking-json-import-export-3236/#:~:text=Important%20Security%20Updates) that could allow users to gain superuser privileges under certain conditions. Upgrade your PostgreSQL database to `17.9.0-2` or later as soon as possible to benefit from these security fixes.
 {% endwarning %}
+
 
 The required procedure is the following:
 
