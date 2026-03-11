@@ -1,7 +1,7 @@
 ---
 title: Managing PHP Extensions
 nav: Managing PHP Extensions
-modified_at: 2026-01-15 12:00:00
+modified_at: 2026-03-11 12:00:00
 tags: php
 index: 4
 ---
@@ -289,7 +289,7 @@ Scalingo, along with the versions available.
 | Extension | PHP 8.1     | PHP 8.2     | PHP 8.3     | PHP 8.4     | PHP 8.5     |
 | --------- | ----------: | ----------: | ----------: | ----------: | ----------: |
 | Datadog   | `1.6.2`     | `1.6.2`     | `1.6.2`     | `1.6.2`     | `1.6.2`     |
-| New Relic | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | `12.2.0.27` |
+| New Relic | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | `11.5.0.18` | `12.5.0.30` |
 | Scout APM | `1.10.0`    | `1.10.0`    | `1.10.0`    | `1.10.0`    | `1.10.0`    |
 
 ### Enabling an Available Third-Party Extension
