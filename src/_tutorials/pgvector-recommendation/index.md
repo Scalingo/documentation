@@ -101,7 +101,7 @@ You now have a working recommendation system built with Python, pgvector, and La
 
 
 
-[github-filmreco]: https://github.com/Scalingo/filmreco-scalingo
+[github-filmreco]: https://github.com/Scalingo/filmreco
 [scalingo-postgres]: https://doc.scalingo.com/databases/postgresql/about/overview
 [scalingo-python]: https://doc.scalingo.com/languages/python
 [scalingo-tasks]: https://doc.scalingo.com/platform/app/tasks

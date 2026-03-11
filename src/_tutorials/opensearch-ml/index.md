@@ -152,7 +152,7 @@ scalingo --app my-app run curl --request PUT $SCALINGO_OPENSEARCH_URL/_ingest/pi
 A **vector index** stores embeddings generated from documents. These vectors represent the semantic meaning of the text. OpenSearch® can then compare vectors to retrieve the most similar documents.
 
 {% note %}
-Make sure the `dimension` matches the output size of your embedding model (384 for `all-MiniLM-L6-v2`).
+Make sure the `dimension` matches the output size of your embedding model (384 for `all-MiniLM-L6-v2`). To find the output dimension of your model, you can check it on the model page on Hugging Face.
 {% endnote %}
 
 ~~~bash
