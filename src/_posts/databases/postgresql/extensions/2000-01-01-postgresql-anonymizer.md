@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL® Anonymizer
 nav: PostgreSQL® Anonymizer
-modified_at: 2026-03-10 10:00:00
+modified_at: 2026-03-11 9:00:00
 tags: databases postgresql anonymization extensions
 index: 50
 ---
@@ -42,17 +42,18 @@ PostgreSQL® Anonymizer 3.0 fixes [two critical vulnerabilities](https://www.pos
 
 The required procedure is the following:
 
-1. Contact our support team to request that PostgreSQL® Anonymizer be disabled
-   on your database
-2. Upgrade your database to the Scalingo for PostgreSQL® version that includes a
-   newer major version of PostgreSQL® Anonymizer.
-3. Contact our support team again so we can re-enable the extension if needed
+1. Contact our support team to plan the operation
+2. Our support team removes the extension and its masking rules from your
+   database
+3. We then upgrade your database to the Scalingo for PostgreSQL® version that
+   includes PostgreSQL® Anonymizer 3 and re-enable the extension
+4. We review the result with you to confirm that the operation completed
+   successfully
 
-### Upgrading from 2.x to 3.x
-
-The "Legacy Dynamic Masking" was the dynamic masking method used in version 1.x. It is now completely removed and replaced by "Transparent Dynamic Masking".
-
-If you are still using Legacy Dynamic Masking in version 2.x, you must [disable it BEFORE upgrading](https://postgresql-anonymizer.readthedocs.io/en/stable/UPGRADE/).
+{% note %}
+After the upgrade, any masking rules previously configured for your user must
+be re-applied.
+{% endnote %}
 
 
 ## Example: Dynamic Masking for Read-Only Users

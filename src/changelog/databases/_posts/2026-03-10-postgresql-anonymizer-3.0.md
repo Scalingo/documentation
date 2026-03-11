@@ -1,5 +1,5 @@
 ---
-modified_at: 2026-03-10 10:00:00
+modified_at: 2026-03-11 9:00:00
 title: 'PostgreSQL Anonymizer 3.0 — Important Security Updates'
 ---
 
