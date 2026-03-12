@@ -45,8 +45,8 @@ The recommendation workflow follows these steps:
 1. Clone our repository:
 
    ```bash
-   git clone https://github.com/Scalingo/filmreco-scalingo
-   cd filmreco-scalingo
+   git clone https://github.com/Scalingo/filmreco
+   cd filmreco
    ```
 
 2. Create the application on Scalingo:
@@ -61,8 +61,8 @@ The recommendation workflow follows these steps:
    ```bash
    git remote -v
 
-   origin   https://github.com/Scalingo/filmreco-scalingo (fetch)
-   origin   https://github.com/Scalingo/filmreco-scalingo (push)
+   origin   https://github.com/Scalingo/filmreco (fetch)
+   origin   https://github.com/Scalingo/filmreco (push)
    scalingo git@ssh.osc-fr1.scalingo.com:my-filmreco.git (fetch)
    scalingo git@ssh.osc-fr1.scalingo.com:my-filmreco.git (push)
    ```
