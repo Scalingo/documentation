@@ -5,9 +5,6 @@
   <meta name="description" content="{{ page.excerpt | default: page.description | strip_html | normalize_whitespace | truncate: 300 | escape }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
-  {% conditionaltrackers %}
-  {% include organisms/google_tag_manager_head.html %}
-  {% endconditionaltrackers %}
   {% include organisms/favicons.html %}
   <script defer src="{{ 'assets/application.js' | esbuild_asset_path }}"></script>
   <script defer data-domain="scalingo.com" event-app="documentation" data-api="https://scalingo.com/sc-analytics/event" src="{{ 'assets/analytics.js' | esbuild_asset_path }}"></script>
