@@ -59,7 +59,7 @@ Database Maintenance Windows are excluded from the SLA calculation.
    | Plan                   | postgresql-starter-512       |
    | Status                 | running                      |
    | Database Type          | postgresql                   |
-   | Version                | 16.11.0-1                    |
+   | Version                | 17.9.0-2                     |
    | Force TLS              | disabled                     |
    | Internet Accessibility | disabled                     |
    | Maintenance window     | Tuesdays at 22:00 (08 hours) |

@@ -18,7 +18,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">anon</code></td>
-    <td align="left"><code>2.1.0</code></td>
+    <td align="left"><code>3.0.0</code></td>
     <td align="left">Anonymization &amp; Data Masking for PostgreSQL</td>
   </tr>
   <tr valign="top">
@@ -78,7 +78,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">ltree</code></td>
-    <td align="left"><code>1.2</code></td>
+    <td align="left"><code>1.3</code></td>
     <td align="left">data type for hierarchical tree-like structures</td>
   </tr>
   <tr valign="top">
@@ -88,7 +88,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">pg_stat_statements</code></td>
-    <td align="left"><code>1.10</code></td>
+    <td align="left"><code>1.11</code></td>
     <td align="left">track planning and execution statistics of all SQL statements executed</td>
   </tr>
   <tr valign="top">
@@ -108,27 +108,27 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis</code></td>
-    <td align="left"><code>3.6.1</code></td>
+    <td align="left"><code>3.6.2</code></td>
     <td align="left">PostGIS geometry and geography spatial types and functions</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_raster</code></td>
-    <td align="left"><code>3.6.1</code></td>
+    <td align="left"><code>3.6.2</code></td>
     <td align="left">PostGIS raster types and functions</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_sfcgal</code></td>
-    <td align="left"><code>3.6.1</code></td>
+    <td align="left"><code>3.6.2</code></td>
     <td align="left">PostGIS SFCGAL functions</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_tiger_geocoder</code></td>
-    <td align="left"><code>3.6.1</code></td>
+    <td align="left"><code>3.6.2</code></td>
     <td align="left">PostGIS tiger geocoder and reverse geocoder</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgis_topology</code></td>
-    <td align="left"><code>3.6.1</code></td>
+    <td align="left"><code>3.6.2</code></td>
     <td align="left">PostGIS topology spatial types and functions</td>
   </tr>
   <tr valign="top">
@@ -143,7 +143,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">timescaledb</code></td>
-    <td align="left"><code>2.23.1</code></td>
+    <td align="left"><code>2.25.2</code></td>
     <td align="left">Enables scalable inserts and complex queries for time-series data</td>
   </tr>
   <tr valign="top">
@@ -158,7 +158,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">vector</code></td>
-    <td align="left"><code>0.8.1</code></td>
+    <td align="left"><code>0.8.2</code></td>
     <td align="left">vector data type and ivfflat and hnsw access methods</td>
   </tr>
 </table>

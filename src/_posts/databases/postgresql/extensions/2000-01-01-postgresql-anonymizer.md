@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL® Anonymizer
 nav: PostgreSQL® Anonymizer
-modified_at: 2025-02-03 12:00:00
+modified_at: 2026-03-11 9:00:00
 tags: databases postgresql anonymization extensions
 index: 50
 ---
@@ -26,6 +26,34 @@ information on the [official documentation][official_doc].
 3. Our team activates the extension and sets up masking for the given user
 4. Once done, you can define and manage masking rules for your user
    autonomously as described below.
+
+
+## Upgrading PostgreSQL® Anonymizer
+
+PostgreSQL® Anonymizer cannot be upgraded in place. If you upgrade your
+PostgreSQL® database to a version that ships a different major version of the
+extension, it must first be disabled, then re-enabled after the database
+upgrade. Both operations require contacting our support team.
+
+{% warning %}
+PostgreSQL® Anonymizer 3.0 fixes [two critical vulnerabilities](https://www.postgresql.org/about/news/postgresql-anonymizer-30-parallel-static-masking-json-import-export-3236/#:~:text=Important%20Security%20Updates) that could allow users to gain superuser privileges under certain conditions. Upgrade your PostgreSQL database to `17.9.0-2` or later as soon as possible to benefit from these security fixes.
+{% endwarning %}
+
+
+The required procedure is the following:
+
+1. Contact our support team to plan the operation
+2. Our support team removes the extension and its masking rules from your
+   database
+3. We then upgrade your database to the Scalingo for PostgreSQL® version that
+   includes PostgreSQL® Anonymizer 3 and re-enable the extension
+4. We review the result with you to confirm that the operation completed
+   successfully
+
+{% note %}
+After the upgrade, any masking rules previously configured for your user must
+be re-applied.
+{% endnote %}
 
 
 ## Example: Dynamic Masking for Read-Only Users
