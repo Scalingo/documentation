@@ -1,5 +1,4 @@
 ---
-layout: tutorials_category
 title: AI
 category: ai
 description: >
