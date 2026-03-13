@@ -11,7 +11,7 @@ layout: tutorials
     </div>
 
     <div class="grid grid-cols-1 xl:grid-cols-2 2xl:max-w-2/3 gap-6 mt-6 mb-24">
-    {% assign tutorials = site.tutorials | sort: "modified_at" | slice: 0, 10 %}
+    {% assign tutorials = site.tutorials | sort: 'modified_at' | reverse | slice: 0, 12 %}
     {% for tutorial in tutorials %}
         {% if tutorial.category %}
         <a href="{{ tutorial.url }}">
