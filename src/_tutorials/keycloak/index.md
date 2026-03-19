@@ -1,7 +1,13 @@
 ---
-index: 17
-title: Getting Started with Keycloak
-modified_at: 2026-02-01 12:00:00
+title: Deploying Keycloak
+logo: keycloak
+category: security
+products:
+  - Scalingo for PostgreSQL
+  - Projects
+  - Private Networks
+permalink: /tutorials/keycloak
+modified_at: 2026-03-19
 ---
 
 Keycloak is an open-source identity and access management solution designed to
@@ -21,7 +27,8 @@ simplifying the work of developers with authentication and authorization.
 
 - Keycloak requires a rough minimum of 1.5GB of RAM to run, and quite a lot of
   CPU (Keycloak spends a lot of time hashing, opening TLS connections, etc.).
-  Consequently, we advise provisioning at least one XL container.
+  Consequently, we advise provisioning at least one XL container, and possibly
+  change for a more powerful plan later.
 
 - Keycloak requires its own database. Considering the key role Keycloak is
   generally playing, we advise to always deploy with a [Scalingo for
