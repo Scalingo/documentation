@@ -1,6 +1,6 @@
 ---
 title: Environment Variables
-modified_at: 2026-01-02 12:00:00
+modified_at: 2026-03-20 09:00:00
 tags: app configuration environment
 index: 3
 ---
@@ -71,6 +71,15 @@ System.getenv("PORT");
 #### Other Languages
 
 The process should not be really different. Refer to the documentation of the standard library of your language.
+
+## Limitations
+
+An environment variable must obey the following rules:
+
+* The name must NOT exceed 64 characters
+* The name must only be composed of letter, numbers or underscore
+* The name must NOT begin with an underscore
+* The value must not exceed 32768 characters
 
 ## Multi-Lines Environment Variable
 
