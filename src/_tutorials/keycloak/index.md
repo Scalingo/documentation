@@ -66,12 +66,11 @@ simplifying the work of developers with authentication and authorization.
     sudden load.
 
 - To do so, we deploy two applications, grouped in the same [Project][project]:
-  one hosting Keycloak and the second one hosting the reverse proxy (nginx in
-  this guide).
+  one hosting Keycloak and the second one hosting the reverse proxy.
 
 {% note %}
-This guide aims at helping deploy Keycloak on Scalingo. Configuring and
-managing Keycloak is out of the scope of this guide.
+This tutorial covers the deployment of Keycloak on Scalingo. Configuring,
+managing, and administrating Keycloak is out of the scope of this tutorial.
 {% endnote %}
 
 
@@ -79,7 +78,8 @@ managing Keycloak is out of the scope of this guide.
 
 ### Using the Command Line
 
-1. From the command line, create a new [Project][project] to host Keycloak:
+1. From the command line, create a new [Project][project] to host the
+   applications:
    ```bash
    scalingo projects-add keycloak
    ```
@@ -119,7 +119,7 @@ managing Keycloak is out of the scope of this guide.
    ```bash
    scalingo create my-keycloak --project-id <project_id>
    ```
-   With `project_id` being the ID of the project just created.
+   With `project_id` being the ID of the newly created project.
 
 2. Provision a Scalingo for PostgreSQL® Business 1G database:
    ```bash
@@ -151,7 +151,7 @@ managing Keycloak is out of the scope of this guide.
    kc: /app/keycloak/bin/kc.sh start --optimized
    ```
    This instructs the platform to start Keycloak in a [process type][procfile]
-   named `kc`, which, unlike `web`, can't be publicly exposed.
+   named `kc`, which, unlike `web`, can **not** be publicly exposed.
 
 6. (optional) Instruct the platform to run the `kc` process type in three XL
    containers:
@@ -222,7 +222,7 @@ Private Network on Scalingo.
    kc: /app/keycloak/bin/kc.sh start --optimized
    ```
    This instructs the platform to start Keycloak in a [process type][procfile]
-   named `kc`, which unlike `web`, can't be publicly exposed.
+   named `kc`, which, unlike `web`, can **not** be publicly exposed.
 
 5. (optional) Instruct the platform to run the `kc` process type in three XL
    containers:
@@ -301,7 +301,7 @@ server {
    application hosting the Keycloak cluster.
 
 4. Create a `servers.conf.erb` file for nginx, using [the sample suggested
-   above](#nginx-config), or your own.
+   above](#nginx-config), **or your own**.
 
 5. Deploy:
    ```bash
@@ -313,7 +313,7 @@ server {
 1. Create a new git repository dedicated to nginx.
 
 2. In this repository, create a `servers.conf.erb` file for nginx, using [the
-   sample suggested above](#nginx-config), or **your own**.
+   sample suggested above](#nginx-config), **or your own**.
 
 3. Place the following `scalingo_private_network_domain` data block in your
    Terraform file:
@@ -487,8 +487,6 @@ measures such as IP allow-list or authenticated access.
    <% end %>
    ```
 
-6. Deploy to Scalingo.
-
 
 ## Updating
 
@@ -498,9 +496,9 @@ especially before updating a production instance:
 - Review the official changelog that is published with each release. Breaking
   and notable changes should catch your attention.
 - Ensure your SPIs and themes are compatible with the new version.
-- Keep a recent production database backup aside. The update process sometimes
-  involves database updates, so having a backup allows to rollback to a working
-  version in case of failures.
+- Keep a recent backup of your production database aside. The update process
+  sometimes involves database updates, which can unfortunately fail. Having a
+  backup allows to rollback to a working version in case of failures.
 - Test the exact update path on a testing instance.
 
 ### Using the Command Line
@@ -618,7 +616,7 @@ can be leveraged to customize your deployment:
 
 [dashboard]: https://dashboard.scalingo.com/
 
-[db-business-class]: { post_url databases/about/2000-01-01-service-classes %}#business
+[db-business-class]: {% post_url databases/about/2000-01-01-service-classes %}#business
 [db-postgresql]: {% post_url databases/postgresql/about/2000-01-01-overview %}
 [choose-jdk]: {% post_url languages/java/2000-01-01-start %}#choose-a-jdk
 [private-networking]: {% post_url platform/networking/private/2000-01-01-overview %}
