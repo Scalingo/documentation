@@ -22,7 +22,7 @@ simplifying the work of developers with authentication and authorization.
 ## Planning your Deployment
 
 - Even if Keycloak provides quite precise [recommendations][kc-reco] in terms
-  of CPU, RAM and databases, sizing nevertheless mostly depends on the foreseen
+  of CPU, RAM and databases, sizing still mostly depends on the foreseen
   usage and expected performances.
 
 - Keycloak requires a rough minimum of 1.5GB of RAM to run, and quite a lot of
@@ -31,9 +31,10 @@ simplifying the work of developers with authentication and authorization.
   change for a more powerful plan later.
 
 - Keycloak requires its own database. Considering the key role Keycloak is
-  generally playing, we advise to always deploy with a [Scalingo for
-  PostgreSQL® Business addon][db-postgresql], mainly to benefit from the higher
-  SLA and redundancy.
+  generally playing, we advise to always deploy with at least a [Business
+  service class][db-business-class], mainly to benefit from the higher SLA and
+  redundancy. In this tutorial, we deploy a [Scalingo for PostgreSQL® Business
+  1G][db-postgresql].
 
 - Keycloak requires Java version 21 or above to run. We can instruct Scalingo
   to use a specific version of Java by using the `system.properties` file, as
@@ -42,7 +43,7 @@ simplifying the work of developers with authentication and authorization.
 - Keycloak is designed for multi-node clustered setups. In production mode, it
   uses a distributed cache (implemented via Infinispan) to share some resources
   between nodes. To be able to benefit from this cache, which is highly
-  recommended, we will deploy multiple Keycloak containers in a
+  recommended, we deploy multiple Keycloak containers in a
   [Private Network][private-networking]:
 
   - Infinispan uses several TCP ports to run. Running inside a Private Network
@@ -60,13 +61,11 @@ simplifying the work of developers with authentication and authorization.
   proxy:
 
   - It prevents Keycloak from being directly exposed to the Internet.
-
   - It allows to setup features such as rate-limiting and IP allow/deny lists.
-
   - It allows to scale the reverse proxy so that it can handle traffic peaks or
     sudden load.
 
-- To do so, we will deploy two applications in the same [Project][project]:
+- To do so, we deploy two applications, grouped in the same [Project][project]:
   one hosting Keycloak and the second one hosting the reverse proxy (nginx in
   this guide).
 
@@ -100,13 +99,9 @@ managing Keycloak is out of the scope of this guide.
 
 3. Identify the project you just created and keep its ID aside.
 
-4. Reach out to our Support team to enable Private Network for your Project.
-
 ### Using the Terraform Provider
 
-1. Start by forking our [Keycloak repository][keycloak-scalingo]
-
-2. Place the following `scalingo_project` resource block in your Terraform
+1. Place the following `scalingo_project` resource block in your Terraform
    file:
    ```tf
    resource "scalingo_project" "keycloak-prj" {
@@ -125,17 +120,6 @@ managing Keycloak is out of the scope of this guide.
    scalingo create my-keycloak --project-id <project_id>
    ```
    With `project_id` being the ID of the project just created.
-
-   Notice that our Command Line automatically detects the git repository, and
-   adds a git remote to Scalingo:
-   ```bash
-   git remote -v
-
-   origin   https://github.com/Scalingo/keycloak-scalingo (fetch)
-   origin   https://github.com/Scalingo/keycloak-scalingo (push)
-   scalingo git@ssh.osc-fr1.scalingo.com:my-keycloak.git (fetch)
-   scalingo git@ssh.osc-fr1.scalingo.com:my-keycloak.git (push)
-   ```
 
 2. Provision a Scalingo for PostgreSQL® Business 1G database:
    ```bash
@@ -163,11 +147,11 @@ managing Keycloak is out of the scope of this guide.
 
 5. Add a [`Procfile`][procfile] to your git repository, with the following
    content:
-   ```yaml
+   ```yml
    kc: /app/keycloak/bin/kc.sh start --optimized
    ```
    This instructs the platform to start Keycloak in a [process type][procfile]
-   named `kc` (instead of `web`), which can't be publicly exposed.
+   named `kc`, which, unlike `web`, can't be publicly exposed.
 
 6. (optional) Instruct the platform to run the `kc` process type in three XL
    containers:
@@ -181,11 +165,13 @@ managing Keycloak is out of the scope of this guide.
    ```
 
 From this point, you should have a working Keycloak cluster running in its own
-Private Network.
+Private Network on Scalingo.
 
 ### Using the Terraform Provider
 
-1. Place the following `scalingo_app` resource block in your Terraform file:
+1. Fork our [Keycloak repository][keycloak-scalingo]
+
+2. Place the following `scalingo_app` resource block in your Terraform file:
    ```tf
    resource "scalingo_app" "my-keycloak" {
      name           = "my-keycloak"
@@ -205,7 +191,7 @@ Private Network.
    }
    ```
 
-2. Link the app to your forked repository:
+3. Link the app to your forked repository:
    ```tf
    data "scalingo_scm_integration" "github" {
      scm_type = "github"
@@ -219,7 +205,7 @@ Private Network.
    }
    ```
 
-3. Place the following `scalingo_addon` resource block in your Terraform file
+4. Place the following `scalingo_addon` resource block in your Terraform file
    to provision a Scalingo for PostgreSQL® Business 1G database and attach it
    to your app:
    ```tf
@@ -230,13 +216,13 @@ Private Network.
    }
    ```
 
-4. Add a [`Procfile`][procfile] to your git repository, with the following
+5. Add a [`Procfile`][procfile] to your git repository, with the following
    content:
-   ```yaml
+   ```yml
    kc: /app/keycloak/bin/kc.sh start --optimized
    ```
    This instructs the platform to start Keycloak in a [process type][procfile]
-   named `kc` (instead of `web`), which can't be publicly exposed.
+   named `kc`, which unlike `web`, can't be publicly exposed.
 
 5. (optional) Instruct the platform to run the `kc` process type in three XL
    containers:
@@ -259,7 +245,7 @@ Private Network.
    3. Click on the Deploy tab
    4. Click on Manual deployment in the left menu
    5. Click the Trigger deployment button
-   6. After a few seconds, your Keycloak instance is finally up and running!
+   6. After a few seconds, your Keycloak cluster is finally up and running!
 
 
 ## Deploying the Reverse Proxy
@@ -301,7 +287,7 @@ server {
 
 1. Create a new application **in the same Project**:
    ```bash
-   scalingo create --project-id <project_id> my-nginx
+   scalingo create my-nginx --project-id <project_id>
    ```
 
 2. Follow [our documentation][deploy-nginx] to deploy nginx.
@@ -311,8 +297,8 @@ server {
    ```bash
    scalingo --app my-nginx env-set KEYCLOAK_PRIVATE_DOMAIN=kc.<private_network_fqdn>
    ```
-   With `private_network_fqdn` being the private domain name of the application
-   hosting the Keycloak cluster.
+   With `<private_network_fqdn>` being the [private domain name] of the
+   application hosting the Keycloak cluster.
 
 4. Create a `servers.conf.erb` file for nginx, using [the sample suggested
    above](#nginx-config), or your own.
@@ -327,7 +313,7 @@ server {
 1. Create a new git repository dedicated to nginx.
 
 2. In this repository, create a `servers.conf.erb` file for nginx, using [the
-   sample suggested above](#nginx-config), or your own.
+   sample suggested above](#nginx-config), or **your own**.
 
 3. Place the following `scalingo_private_network_domain` data block in your
    Terraform file:
@@ -349,8 +335,6 @@ server {
      }
    }
    ```
-   With `private_network_fqdn` being the [private domain name] of the `kc`
-   process type of the Keycloak app.
 
 5. Link the app to your repository:
    ```tf
@@ -377,13 +361,14 @@ server {
 
 7. If so, run `terraform apply`
 
-8. Once Terraform is done, your Keycloak instance is ready to be deployed:
+8. Once Terraform is done, your nginx instance is ready to be deployed:
    1. Head to your [dashboard]
-   2. Click on your Keycloak application
+   2. Click on your nginx application
    3. Click on the Deploy tab
    4. Click on Manual deployment in the left menu
    5. Click the Trigger deployment button
-   6. After a few seconds, your Keycloak instance is finally up and running!
+   6. After a few seconds, your nginx reverse proxy instance is finally up and
+      running, making your Keycloak cluster reachable!
 
 
 ## Exposing Health and Metrics
@@ -472,15 +457,7 @@ measures such as IP allow-list or authenticated access.
      stack_id       = "scalingo-24"
 
      environment = {
-       KC_PROXY_HEADERS   = "xforwarded",
-       KC_HTTP_ENABLED    = true,
-       KC_HTTP_PORT       = 80,
-       KC_HOSTNAME        = "<hostname>",
-       KC_HEALTH_ENABLED  = true,
-       KC_METRICS_ENABLED = true,
-       KC_CACHE_EMBEDDED_NETWORK_BIND_ADDRESS = "match-address:10.240.\*",
-       KC_BOOTSTRAP_ADMIN_USERNAME = "<admin_username>",
-       KC_BOOTSTRAP_ADMIN_PASSWORD = "<admin_password>",
+       # [...]
        KC_HTTP_MANAGEMENT_PORT = 9000
      }
    }
@@ -513,10 +490,99 @@ measures such as IP allow-list or authenticated access.
 6. Deploy to Scalingo.
 
 
-## Upgrading
+## Updating
+
+While updating Keycloak is generally safe, we still advise to take extra care,
+especially before updating a production instance:
+
+- Review the official changelog that is published with each release. Breaking
+  and notable changes should catch your attention.
+- Ensure your SPIs and themes are compatible with the new version.
+- Keep a recent production database backup aside. The update process sometimes
+  involves database updates, so having a backup allows to rollback to a working
+  version in case of failures.
+- Test the exact update path on a testing instance.
+
+### Using the Command Line
+
+1. Update the version to the desired number:
+   ```bash
+   scalingo --app my-keycloak env-set KEYCLOAK_VERSION=<new_version>
+   ```
+
+2. In your Keycloak repository, create a new empty commit:
+   ```bash
+   git commit -m "Deploy version <new_version>" --allow-empty
+   ```
+
+3. Trigger a new deployment:
+   ```bash
+   git push scalingo master
+   ```
+
+### Using the Terraform Provider
+
+1. Update the `scalingo_app` resource block of the Keycloak app to include the
+   `KEYCLOAK_VERSION` environment variables:
+   ```tf
+   resource "scalingo_app" "my-keycloak" {
+     name           = "my-keycloak"
+     project_id     = scalingo_project.keycloak_project.id
+     stack_id       = "scalingo-24"
+
+     environment = {
+       # [...]
+       KEYCLOAK_VERSION = "<new_version>"
+     }
+   }
+   ```
 
 
 ## Customizing
+
+### Service Provider Interfaces
+
+Keycloak is designed to be extensible. It provides multiple Service Provider
+Interfaces (SPIs), each responsible for providing a specific capability to the
+server.
+
+To add SPIs to your Keycloak cluster:
+
+1. Create a directory named `providers` at the root of your project.
+2. Put the `.jar` files in this directory (don't forget to also add them to
+   your git repository):
+   ```
+   my-keycloak
+   ├── Procfile
+   ├── providers
+   │   └── spi.jar
+   └── system.properties
+   ```
+3. Configure each SPI using the available environment variables (please refer
+   to the SPI documentation for available variables).
+4. Redeploy to Scalingo.
+
+### Themes
+
+Keycloak also support custom themes, which allows to personalize the look and
+feel of end-user facing pages. This sallows to further integrate Keycloak with
+your applications or company.
+
+To add themes to your Keycloak cluster:
+
+1. Create a directory named `providers` at the root of your project.
+2. Put the `.jar` files in this directory (don't forget to also add them to
+   your git repository):
+   ```
+   my-keycloak
+   ├── Procfile
+   ├── providers
+   │   └── theme.jar
+   └── system.properties
+   ```
+3. Configure each theme using the available environment variables (please refer
+   to the theme documentation for available variables).
+4. Redeploy to Scalingo.
 
 ### Environment
 
@@ -526,15 +592,19 @@ Moreover, the buildpack makes use of the following environment variables. They
 can be leveraged to customize your deployment:
 
 - `KEYCLOAK_VERSION`\\
-  Allows to specify the version of Keycloak to deploy.
+  Allows to specify the version of Keycloak to deploy.\\
+  Unless specified, deploys default version set in the buildpack.\\
+  Defaults to not being set.
 
 - `KEYCLOAK_PRIVATE_DOMAIN_NAME`\\
   Private domain name of the Keycloak process type. Allows the reverse proxy to
-  know where the requests must be forwarded.
+  know where the requests must be forwarded.\\
+  Default to not being set.
 
 
 *[SSO]: Single Sign-On
 *[SLA]: Service Level Agreement
+*[SPI]: Service Provider Interface
 
 [OAuth 2.0]: https://oauth.net/2/
 [OpenID Connect]: https://openid.net
@@ -548,6 +618,7 @@ can be leveraged to customize your deployment:
 
 [dashboard]: https://dashboard.scalingo.com/
 
+[db-business-class]: { post_url databases/about/2000-01-01-service-classes %}#business
 [db-postgresql]: {% post_url databases/postgresql/about/2000-01-01-overview %}
 [choose-jdk]: {% post_url languages/java/2000-01-01-start %}#choose-a-jdk
 [private-networking]: {% post_url platform/networking/private/2000-01-01-overview %}
