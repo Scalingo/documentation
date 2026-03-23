@@ -7,7 +7,7 @@ products:
   - Projects
   - Private Networks
 permalink: /tutorials/keycloak
-modified_at: 2026-03-19
+modified_at: 2026-03-23
 ---
 
 Keycloak is an open-source identity and access management solution designed to
@@ -126,7 +126,12 @@ managing, and administrating Keycloak is out of the scope of this tutorial.
    scalingo --app my-keycloak addons-add postgresql postgresql-business-1024
    ```
 
-3. Create a few **mandatory** environment variables:
+3. Let the platform know what buildpack it must use:
+   ```bash
+   scalingo --app my-keycloak env-set BUILDPACK_URL=https://github.com/Scalingo/keycloak-buildpack
+   ```
+
+4. Create a few **mandatory** environment variables:
    ```bash
    scalingo --app my-keycloak env-set KC_PROXY_HEADERS=xforwarded
    scalingo --app my-keycloak env-set KC_HTTP_ENABLED=true
@@ -139,13 +144,13 @@ managing, and administrating Keycloak is out of the scope of this tutorial.
 
    Using port 80 is an example, you can choose any port number.
 
-4. (optional) Create credentials for the initial administrator user:
+5. (optional) Create credentials for the initial administrator user:
    ```bash
    scalingo --app my-keycloak env-set KC_BOOTSTRAP_ADMIN_USERNAME=<admin_username>
    scalingo --app my-keycloak env-set KC_BOOTSTRAP_ADMIN_PASSWORD=<admin_password>
    ```
 
-5. Add a [`Procfile`][procfile] to your git repository, with the following
+6. Add a [`Procfile`][procfile] to your git repository, with the following
    content:
    ```yml
    kc: /app/keycloak/bin/kc.sh start --optimized
@@ -153,13 +158,13 @@ managing, and administrating Keycloak is out of the scope of this tutorial.
    This instructs the platform to start Keycloak in a [process type][procfile]
    named `kc`, which, unlike `web`, can **not** be publicly exposed.
 
-6. (optional) Instruct the platform to run the `kc` process type in three XL
+7. (optional) Instruct the platform to run the `kc` process type in three XL
    containers:
    ```bash
    scalingo --app my-keycloak scale kc:3:XL
    ```
 
-7. Everything’s ready, deploy to Scalingo:
+8. Everything’s ready, deploy to Scalingo:
    ```bash
    git push scalingo master
    ```
@@ -180,6 +185,7 @@ Private Network on Scalingo.
      force_https    = true
 
      environment = {
+       BUILDPACK_URL    = "https://github.com/Scalingo/keycloak-buildpack",
        KC_PROXY_HEADERS = "xforwarded",
        KC_HTTP_ENABLED  = true,
        KC_HTTP_PORT     = 80,
@@ -435,15 +441,9 @@ measures such as IP allow-list or authenticated access.
      stack_id       = "scalingo-24"
 
      environment = {
-       KC_PROXY_HEADERS   = "xforwarded",
-       KC_HTTP_ENABLED    = true,
-       KC_HTTP_PORT       = 80,
-       KC_HOSTNAME        = "<hostname>",
+       # [...]
        KC_HEALTH_ENABLED  = true,
-       KC_METRICS_ENABLED = true,
-       KC_CACHE_EMBEDDED_NETWORK_BIND_ADDRESS = "match-address:10.240.\*",
-       KC_BOOTSTRAP_ADMIN_USERNAME = "<admin_username>",
-       KC_BOOTSTRAP_ADMIN_PASSWORD = "<admin_password>"
+       KC_METRICS_ENABLED = true
      }
    }
    ```
