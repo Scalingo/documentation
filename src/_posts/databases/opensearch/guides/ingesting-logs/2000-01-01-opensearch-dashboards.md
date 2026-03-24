@@ -1,7 +1,7 @@
 ---
 title: OpenSearch® Dashboards
 nav: OpenSearch® Dashboards
-modified_at: 2025-05-19 12:00:00
+modified_at: 2026-03-24 12:00:00
 tags: opensearch logs dashboards
 index: 40
 ---
@@ -26,9 +26,8 @@ role is to give an efficient access to the data stored in the database indexes.
 ### Using the Command Line
 
 We maintain a [buildpack][opensearch-dashboards-buildpack] on GitHub to help
-you deploy OpenSearch® Dashboards on Scalingo. Here are the few steps to
-follow:
-
+you deploy OpenSearch® Dashboards on Scalingo. Here are the few additional
+steps to follow:
 
 1. Clone our repository:
    ```bash
@@ -64,11 +63,6 @@ follow:
    ```
 
 ### Using the Terraform Provider
-
-{% note%}
-The following code blocks are given as examples.\
-You will have to adjust some values to suit your needs.
-{% endnote %}
 
 1. Start by forking our [OpenSearch® Dashboards
    repository][opensearch-dashboards-scalingo]
@@ -163,9 +157,11 @@ deployment:
 
 - **`OPENSEARCH_DASHBOARDS_VERSION`**\
   Version of OpenSearch Dashboards to deploy.\
-  Defaults to `2.19.1`
+  Defaults to not being set, which falls back on the [default
+  version][opensearch-dashboards-default-version] set in the buildpack.
 
 
 [dashboard]: https://dashboard.scalingo.com/apps/
 [opensearch-dashboards-buildpack]: https://github.com/Scalingo/opensearch-dashboards-buildpack
 [opensearch-dashboards-scalingo]: https://github.com/Scalingo/opensearch-dashboards-scalingo
+[opensearch-dashboards-default-version]: https://github.com/Scalingo/opensearch-dashboards-buildpack/blob/master/VERSIONS#L3
