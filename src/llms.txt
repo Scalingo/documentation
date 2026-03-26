@@ -1,6 +1,7 @@
 ---
 layout: null
 encoding: utf-8
+page_exclude: true
 ---
 
 # LLM Feed for doc.scalingo.com
