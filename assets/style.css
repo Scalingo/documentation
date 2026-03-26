@@ -30,6 +30,107 @@
   --color-sc-green-2: #94F3E4;
   --color-sc-green-3: #DEFBF6;
 
+  /* Primary Palette */
+  --color-primary-1: #0D153A;
+  --color-primary-2: #3D5AF1;
+  --color-primary-3: #24D1EE;
+
+  /* Primary Blue */
+  --color-primaryblue-100: #EBEFFF;
+  --color-primaryblue-200: #C1CBFF;
+  --color-primaryblue-300: #96A7FF;
+  --color-primaryblue-400: #6B83FF;
+  --color-primaryblue-500: #3D5AF1;
+  --color-primaryblue-600: #051569;
+  --color-primaryblue-700: #2A44CF;
+  --color-primaryblue-800: #1B32AD;
+  --color-primaryblue-900: #0E218B;
+
+  /* Primary Brown */
+  --color-primary-brown-100: #F4F3F2;
+  --color-primary-brown-200: #E8E7E5;
+  --color-primary-brown-300: #C6C3BF;
+  --color-primary-brown-400: #99938C;
+  --color-primary-brown-500: #8D8680;
+  --color-primary-brown-600: #827A73;
+  --color-primary-brown-700: #827A73;
+  --color-primary-brown-800: #493E33;
+  --color-primary-brown-900: #33261A;
+  --color-primary-brown-1000: #1C0E00;
+
+  /* Primary Orange */
+  --color-primary-orange-100: #FEE6DC;
+  --color-primary-orange-200: #FBBBA2;
+  --color-primary-orange-300: #F65516;
+  --color-primary-orange-400: #BF4311;
+  --color-primary-orange-500: #9F390D;
+  --color-primary-orange-600: #89320B;
+  --color-primary-orange-700: #732A09;
+  --color-primary-orange-800: #682708;
+  --color-primary-orange-900: #481C04;
+  --color-primary-orange-1000: #271201;
+
+  /* Primary Purple */
+  --color-primary-purple-100: #D8D2F4;
+  --color-primary-purple-200: #9484E1;
+  --color-primary-purple-300: #3A1DB4;
+  --color-primary-purple-400: #351B96;
+  --color-primary-purple-500: #301878;
+  --color-primary-purple-600: #2D1764;
+  --color-primary-purple-700: #291550;
+  --color-primary-purple-800: #281446;
+  --color-primary-purple-900: #231128;
+  --color-primary-purple-1000: #1C0E00;
+
+  /* Gray (new palette) */
+  --color-scale-000: #FFFFFF;
+  --color-scale-100: #F5F7FA;
+  --color-scale-200: #E3E7EB;
+  --color-scale-300: #CBD2D9;
+  --color-scale-400: #9AA5B1;
+  --color-scale-500: #7B8794;
+  --color-scale-600: #606E7C;
+  --color-scale-700: #52606D;
+  --color-scale-800: #3E4C59;
+  --color-scale-900: #323F4B;
+  --color-scale-1000: #1F2933;
+
+  /* Error */
+  --color-error-100: #FFF3EF;
+  --color-error-200: #FFD4CE;
+  --color-error-300: #FFB6AC;
+  --color-error-400: #FF988A;
+  --color-error-500: #FE7A68;
+  --color-error-600: #DC6150;
+  --color-error-700: #BA4B3B;
+  --color-error-800: #983629;
+  --color-error-900: #76261B;
+  --color-error-1000: #54180F;
+
+  /* Success */
+  --color-state-success-100: #E8FFFB;
+  --color-state-success-200: #BFFFF4;
+  --color-state-success-300: #96FFED;
+  --color-state-success-400: #6EFFE5;
+  --color-state-success-500: #42FFDF;
+  --color-state-success-600: #19EDCA;
+  --color-state-success-700: #03C5A4;
+  --color-state-success-800: #019C82;
+  --color-state-success-900: #027360;
+  --color-state-success-1000: #004B3F;
+
+  /* Warning */
+  --color-warning-100: #FFF7ED;
+  --color-warning-200: #FFEACD;
+  --color-warning-300: #FFDCAD;
+  --color-warning-400: #FFCF8D;
+  --color-warning-500: #FFB44E;
+  --color-warning-600: #E4972E;
+  --color-warning-700: #E4972E;
+  --color-warning-800: #BB7413;
+  --color-warning-900: #925400;
+  --color-warning-1000: #693D00;
+
   /* fonts */
   --font-sans: "aktiv-grotesk";
   --font-serif: "freight-text-pro";
@@ -269,7 +370,7 @@ article a {
 }
 
 article a:hover {
-  color: var(--color-sc-blue-1);
+  color: var(--color-primary-orange-400);
 }
 
 div.toc ul ul {
@@ -311,7 +412,7 @@ article ul:not(.list-unstyled)>li:before {
   height: 0.4em;
   top: 10px;
   left: 0.25em;
-  background-color: var(--color-sc-blue-1);
+  background-color: var(--color-primary-orange-400);
 }
 
 article ol {
@@ -332,7 +433,7 @@ article ol li {
 }
 
 article ol>li::marker {
-  color: #183BEE;
+  color: var(--color-primary-orange-400);
   font-weight: bold;
 }
 
@@ -480,7 +581,7 @@ article tr:nth-child(odd) {
 
 nav li a:hover,
 nav label:hover{
-  color: var(--color-sc-blue-1);
+  color: var(--color-primary-orange-400);
 }
 
 nav input:checked~label svg {
@@ -500,8 +601,8 @@ svg {
   --docsearch-modal-background: #F8F9FF;
   --docsearch-searchbox-background: #FFFFFF;
   --docsearch-text-color: #1F2933;
-  --docsearch-primary-color: #183BEE;
-  --docsearch-logo-color: #183BEE;
+  --docsearch-primary-color: var(--color-primary-orange-400);
+  --docsearch-logo-color: var(--color-primary-orange-400);
   --docsearch-highlight-color: var(--docsearch-primary-color);
   --docsearch-searchbox-shadow: inset 0 0 0 1px var(--docsearch-primary-color);
 }
@@ -514,17 +615,17 @@ svg {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   height: 3.5rem;
-  border: 1px solid #D2D9F9;
+  border: 1px solid var(--color-scale-500);
   box-sizing: border-box;
 }
 
 .DocSearch .DocSearch-Search-Icon {
-  color: var(--color-sc-blue-1);
+  color: var(--color-primary-orange-400);
   flex: none;
 }
 
 .DocSearch .DocSearch-Button-Placeholder {
-  color: var(--color-sc-gray-2);
+  color: var(--color-grey-500);
   font-weight: 400;
   padding-left: 1rem;
 }
