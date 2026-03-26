@@ -19,6 +19,9 @@ const opts = {
   minify: true,
   target: ["es2017"],
   outdir: "src/assets",
+  loader: {
+    ".ttf": "file",
+  },
   plugins: [
     postCssPlugin({
   postcss: {
