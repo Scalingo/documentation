@@ -591,8 +591,8 @@ can be leveraged to customize your deployment:
 
 - `KEYCLOAK_VERSION`\\
   Allows to specify the version of Keycloak to deploy.\\
-  Unless specified, deploys default version set in the buildpack.\\
-  Defaults to not being set.
+  Defaults to not being set, which falls back on the [default
+  version][keycloak-default-version] set in the buildpack.
 
 - `KEYCLOAK_PRIVATE_DOMAIN_NAME`\\
   Private domain name of the Keycloak process type. Allows the reverse proxy to
@@ -613,6 +613,7 @@ can be leveraged to customize your deployment:
 [kc-metrics]: https://www.keycloak.org/observability/configuration-metrics
 
 [keycloak-scalingo]: https://github.com/Scalingo/keycloak-scalingo
+[keycloak-default-version]: https://github.com/Scalingo/keycloak-buildpack/blob/master/VERSIONS#L3
 
 [dashboard]: https://dashboard.scalingo.com/
 
@@ -625,4 +626,3 @@ can be leveraged to customize your deployment:
 [deploy-nginx]: {% post_url platform/deployment/buildpacks/2000-01-01-nginx %}
 [procfile]: {% post_url platform/app/2000-01-01-procfile %}
 [project]: {% post_url platform/projects/2000-01-01-overview %}
-
