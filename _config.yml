@@ -67,6 +67,9 @@ exclude:
   - app/javascript
   - _plugins
 
+include:
+  - llms.txt
+
 highlighted:
   first_steps:
     - /platform/getting-started/first-steps
