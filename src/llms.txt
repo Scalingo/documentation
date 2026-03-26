@@ -1,0 +1,12 @@
+---
+layout: null
+---
+
+# LLM Feed for doc.scalingo.com
+_Generated: {{ site.time | date_to_rfc822 }}_
+
+## All posts
+The links below take you to the raw Markdown content.
+
+{% for post in site.posts %}- [{{ post.title }}](https://raw.githubusercontent.com/Scalingo/documentation/refs/heads/master/{{ post.path }})
+{% endfor %}
