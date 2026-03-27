@@ -1,5 +1,6 @@
 ---
 title: Database Network Exposure
+description: "Control managed database network exposure by architecture model, keep databases private by default, and configure secure public access only when required."
 nav: Network Exposure
 modified_at: 2026-02-09 12:00:00
 tags: databases internet access accessibility public networking

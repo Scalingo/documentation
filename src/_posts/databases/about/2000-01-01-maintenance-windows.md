@@ -1,5 +1,6 @@
 ---
 title: Database Maintenance Windows
+description: "Configure database maintenance windows to schedule operations during low-impact periods, minimize disruption, and align platform maintenance with business constraints."
 nav: Maintenance Windows
 modified_at: 2024-12-16 12:00:00
 tags: databases maintenance
