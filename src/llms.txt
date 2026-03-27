@@ -9,8 +9,7 @@ _Generated: {{ site.time | date_to_rfc822 }}_
 ## All posts
 The links below take you to the raw Markdown content.
 
-{% for post in site.posts %}
-{% unless post.categories contains 'changelog' %}
+{%- assign llm_posts = site.posts | where_exp: "post", "post.categories contains 'changelog' == false" -%}
+{%- for post in llm_posts -%}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl | prepend: site.url }})
-{% endunless %}
-{% endfor %}
+{%- endfor -%}
