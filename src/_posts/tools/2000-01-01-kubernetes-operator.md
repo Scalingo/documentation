@@ -1,5 +1,6 @@
 ---
 title: Scalingo Operator for Kubernetes®
+description: "Use the Scalingo Kubernetes Operator to provision and manage Dedicated Resources from Kubernetes manifests, and understand which day-2 operations remain outside operator scope."
 nav: Kubernetes Operator
 modified_at: 2026-02-13 00:00:00
 tags: tools kubernetes operator

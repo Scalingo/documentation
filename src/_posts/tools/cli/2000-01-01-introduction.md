@@ -1,5 +1,6 @@
 ---
 title: Introduction
+description: "Prepare and authenticate Scalingo CLI usage with password, SSH key, or API token, and configure required network ports for core commands like git and db-tunnel."
 modified_at: 2023-12-22 00:00:00
 tags: cli interface app
 index: 2
