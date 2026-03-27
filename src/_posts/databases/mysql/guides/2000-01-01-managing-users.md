@@ -1,5 +1,6 @@
 ---
 title: Managing Users of Your Scalingo for MySQL® Addon
+description: "Manage MySQL users by listing accounts, creating users, granting permissions, and deleting obsolete access while respecting protected user constraints."
 nav: Managing Users
 modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon

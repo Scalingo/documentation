@@ -1,5 +1,6 @@
 ---
 title: Troubleshooting Scalingo for MySQL®
+description: "Troubleshoot Scalingo MySQL by analyzing memory allocation, buffer pool pressure, swap behavior, and runtime symptoms that degrade query performance."
 nav: Troubleshooting
 modified_at: 2025-09-29 12:00:00
 tags: databases mysql addon

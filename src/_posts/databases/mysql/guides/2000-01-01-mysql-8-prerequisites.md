@@ -1,5 +1,6 @@
 ---
 title: Prerequisites Before Upgrading to MySQL® 8.0 LTS
+description: "Prepare MySQL 8.0 upgrades by validating group replication prerequisites, storage engine requirements, and schema compatibility before migration."
 nav: Upgrading to MySQL 8.0
 modified_at: 2026-01-29 12:00:00
 tags: databases mysql addon migration
