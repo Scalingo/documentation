@@ -69,8 +69,9 @@ simplifying the work of developers with authentication and authorization.
   one hosting Keycloak and the second one hosting the reverse proxy.
 
 {% note %}
-This tutorial covers the deployment of Keycloak on Scalingo. Configuring,
-managing, and administrating Keycloak is out of the scope of this tutorial.
+This tutorial covers the deployment of Keycloak on Scalingo.
+[Configuring][kc-config], managing, and [administrating][kc-admin] Keycloak is
+out of the scope of this tutorial.
 {% endnote %}
 
 
@@ -616,6 +617,7 @@ can be leveraged to customize your deployment:
 [SAML]: https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language
 [kc-reco]: https://www.keycloak.org/high-availability/single-cluster/concepts-memory-and-cpu-sizing
 [kc-config]: https://www.keycloak.org/server/all-config?f=config
+[kc-admin]: https://www.keycloak.org/docs/latest/server_admin/index.html
 [kc-health]: https://www.keycloak.org/observability/health
 [kc-metrics]: https://www.keycloak.org/observability/configuration-metrics
 
