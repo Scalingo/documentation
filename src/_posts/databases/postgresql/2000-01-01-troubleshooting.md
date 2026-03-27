@@ -1,5 +1,6 @@
 ---
 title: Troubleshooting Scalingo for PostgreSQL®
+description: "Troubleshoot Scalingo PostgreSQL by analyzing memory pressure, swap risks, temporary file usage, and runtime signals that affect query performance."
 nav: Troubleshooting
 modified_at: 2024-03-13 12:00:00
 tags: databases postgresql addon

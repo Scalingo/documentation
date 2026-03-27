@@ -1,6 +1,7 @@
 ---
 title: Getting access to SecNumCloud Region
 nav: SecNumCloud
+description: "Request access to Scalingo SecNumCloud region (osc-secnum-fr1) for applications and users, verify eligibility and company domain requirements, and follow support-based allow-listing procedures."
 modified_at: 2025-10-23 00:00:00
 tags: security procedures secnumcloud
 ---

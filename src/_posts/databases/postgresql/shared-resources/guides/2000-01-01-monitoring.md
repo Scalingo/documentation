@@ -1,5 +1,6 @@
 ---
 title: Monitoring and Auditing Your Scalingo for PostgreSQL® Shared Resources addon
+description: "Inspect Shared Resources PostgreSQL logs, metrics, and running queries from the dashboard, then enable query statistics for deeper performance and audit analysis."
 nav: Monitoring and Auditing
 modified_at: 2024-12-13 00:00:00
 tags: databases postgresql addon

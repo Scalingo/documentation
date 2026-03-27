@@ -1,5 +1,6 @@
 ---
 title: Restoring Your Scalingo for PostgreSQL® Shared Resources Database addon
+description: "Restore Shared Resources PostgreSQL from point-in-time backups via dashboard, with clear guidance on downtime impact, UTC selection, and recovery timeline behavior."
 nav: Restoring
 modified_at: 2024-12-10 00:00:00
 tags: databases postgresql addon

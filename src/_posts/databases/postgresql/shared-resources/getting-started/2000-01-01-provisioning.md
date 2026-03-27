@@ -1,5 +1,6 @@
 ---
 title: Provisioning a Scalingo for PostgreSQL® Shared Resources Database
+description: "Provision a Shared Resources PostgreSQL addon from dashboard, CLI, or Terraform, and align your provisioning path with architecture and project constraints."
 nav: Provisioning
 modified_at: 2023-11-22 00:00:00
 tags: databases postgresql addon

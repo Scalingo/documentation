@@ -1,5 +1,6 @@
 ---
 title: Managing Extensions of Your Scalingo for PostgreSQL® Instance
+description: "List, enable, and disable PostgreSQL extensions on Scalingo instances, with activation steps and links to dedicated guides for major supported extensions."
 nav: Managing Extensions
 modified_at: 2024-11-05 12:00:00
 tags: databases postgresql extensions
