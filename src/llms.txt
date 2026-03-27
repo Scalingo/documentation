@@ -9,6 +9,6 @@ _Generated: {{ site.time | date_to_rfc822 }}_
 ## All posts
 The links below take you to the raw Markdown content.
 
-{% for post in site.posts %}
+{% for post in site.posts %}{% unless post.categories contains 'changelog' -%}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl | prepend: site.url }})
-{% endfor %}
+{% endunless -%}{% endfor %}
