@@ -13,7 +13,6 @@ excerpt_separator: <!--more-->
 markdown: kramdown
 markdown_ext: "md,markdown,mkdown,mkdn,mkd"
 highlighter: rouge
-encoding: utf-8
 
 permalink: /:categories/:slug
 
