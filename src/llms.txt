@@ -6,6 +6,13 @@ page_exclude: true
 # LLM Feed for doc.scalingo.com
 _Generated: {{ site.time | date_to_rfc822 }}_
 
+## Top docs
+The links below prioritize key documentation pages.
+
+{% assign top_urls = site.highlighted.first_steps | concat: site.highlighted.popular | uniq %}{% for top_url in top_urls -%}{% assign top_post = site.posts | where: "url", top_url | first %}
+- [{% if top_post %}{{ top_post.title }}{% else %}{{ top_url }}{% endif %}]({{ top_url | prepend: site.baseurl | prepend: site.url }}){% if top_post and top_post.description %}: {{ top_post.description | strip_html | normalize_whitespace | truncate: 256 }}{% endif %}
+{% endfor %}
+
 ## All posts
 The links below take you to the raw Markdown content.
 
