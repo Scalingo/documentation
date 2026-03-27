@@ -9,9 +9,7 @@ description: "From the deployment of your app to complex scaling operations you'
       <h1 class="mb-4 text-sc-title-1 font-bold">Getting Started on Scalingo</h1>
 
       <p class="xl:leading-10">
-        No server to manage, nor operating system, just git push your code, we take care of everything from there.
-        <br />
-        And voilà, 2 minutes later, your website is online.
+        No server to manage, nor operating system, just git push your code, we take care of everything from there. And voilà, 2 minutes later, your website is online.
       </p>
       <div class="mt-6 mb-10" id="docsearch-index"></div>
     </div>
