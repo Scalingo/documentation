@@ -18,10 +18,12 @@ Use this skill when the user asks to:
 
 When no confirmation is required, return exactly one line:
 
-`description: <text>`
+`description: "<text>"`
 
 Rules:
 - keep a valid YAML front matter line
+- always wrap the description value in double quotes
+- if the text contains `"`, escape it as `\"`
 
 When interactive confirmation is required before edits:
 - show the proposed line in a clearly separated block
@@ -57,7 +59,7 @@ If collaboration mode is `Default`:
 Recommended presentation template:
 
 `Description proposee:`
-`description: <text>`
+`description: "<text>"`
 `ACTION REQUISE`
 `Reponds: apply pour ecrire dans le fichier, ou skip pour ne rien changer.`
 
@@ -88,10 +90,10 @@ Recommended presentation template:
 
 ## Good pattern
 
-`description: <What this page covers>. <What the user can do from it>.`
+`description: "<What this page covers>. <What the user can do from it>."`
 
 ## Examples
 
-`description: Retrieve and inspect Scalingo app logs from dashboard or CLI, understand log streams, and troubleshoot common runtime errors using actionable filtering and investigation steps.`
+`description: "Retrieve and inspect Scalingo app logs from dashboard or CLI, understand log streams, and troubleshoot common runtime errors using actionable filtering and investigation steps."`
 
-`description: Enable, disable, or recover 2FA for a Scalingo account with dashboard steps, TOTP validation, recovery code handling, and support escalation for authenticator loss.`
+`description: "Enable, disable, or recover 2FA for a Scalingo account with dashboard steps, TOTP validation, recovery code handling, and support escalation for authenticator loss."`
