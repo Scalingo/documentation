@@ -52,15 +52,15 @@
   --color-primary-3: #24D1EE;
 
   /* Primary Blue */
-  --color-primaryblue-100: #EBEFFF;
-  --color-primaryblue-200: #C1CBFF;
-  --color-primaryblue-300: #96A7FF;
-  --color-primaryblue-400: #6B83FF;
-  --color-primaryblue-500: #3D5AF1;
-  --color-primaryblue-600: #051569;
-  --color-primaryblue-700: #2A44CF;
-  --color-primaryblue-800: #1B32AD;
-  --color-primaryblue-900: #0E218B;
+  --color-primary-blue-100: #EBEFFF;
+  --color-primary-blue-200: #C1CBFF;
+  --color-primary-blue-300: #96A7FF;
+  --color-primary-blue-400: #6B83FF;
+  --color-primary-blue-500: #3D5AF1;
+  --color-primary-blue-600: #051569;
+  --color-primary-blue-700: #2A44CF;
+  --color-primary-blue-800: #1B32AD;
+  --color-primary-blue-900: #0E218B;
 
   /* Primary Brown */
   --color-primary-brown-100: #F4F3F2;
@@ -99,17 +99,17 @@
   --color-primary-purple-1000: #1C0E00;
 
   /* Gray */
-  --color-scale-000: #FFFFFF;
-  --color-scale-100: #F5F7FA;
-  --color-scale-200: #E3E7EB;
-  --color-scale-300: #CBD2D9;
-  --color-scale-400: #9AA5B1;
-  --color-scale-500: #7B8794;
-  --color-scale-600: #606E7C;
-  --color-scale-700: #52606D;
-  --color-scale-800: #3E4C59;
-  --color-scale-900: #323F4B;
-  --color-scale-1000: #1F2933;
+  --color-primary-gray-000: #FFFFFF;
+  --color-primary-gray-100: #F5F7FA;
+  --color-primary-gray-200: #E3E7EB;
+  --color-primary-gray-300: #CBD2D9;
+  --color-primary-gray-400: #9AA5B1;
+  --color-primary-gray-500: #7B8794;
+  --color-primary-gray-600: #606E7C;
+  --color-primary-gray-700: #52606D;
+  --color-primary-gray-800: #3E4C59;
+  --color-primary-gray-900: #323F4B;
+  --color-primary-gray-1000: #1F2933;
 
   /* Error */
   --color-error-100: #FFF3EF;
@@ -634,7 +634,7 @@ svg {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   height: 3.5rem;
-  border: 1px solid var(--color-scale-600);
+  border: 1px solid var(--color-primary-gray-600);
   box-sizing: border-box;
 }
 
@@ -644,7 +644,7 @@ svg {
 }
 
 .DocSearch .DocSearch-Button-Placeholder {
-  color: var(--color-scale-600);
+  color: var(--color-primary-gray-600);
   font-weight: 400;
   padding-left: 1rem;
 }
@@ -662,6 +662,10 @@ svg {
 .DocSearch-Reset,
 .DocSearch-Close {
   background-color: var(--color-primary-brown-100);
+}
+
+.DocSearch-Hit-path {
+  color: var(--color-primary-gray-1000);
 }
 
 .DocSearch-Input {
