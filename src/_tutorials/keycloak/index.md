@@ -140,7 +140,7 @@ managing, and administrating Keycloak is out of the scope of this tutorial.
    scalingo --app my-keycloak env-set KC_CACHE_EMBEDDED_NETWORK_BIND_ADDRESS="match-address:10.240.\*"
    ```
    With `hostname` being the address at which Keycloak is listening\\
-   (e.g. `my-keycloak.scalingo.io`).
+   (e.g. `my-keycloak.osc-fr1.scalingo.io`).
 
    Using port 80 is an example, you can choose any port number.
 
@@ -258,7 +258,7 @@ Private Network on Scalingo.
 
 Here is a very basic working example of nginx configuration that can be used as
 a starting point. It only proxies the strictly required endpoints, which has
-the advantage to drastically lower the attack surface of Keycloak:
+the advantage of drastically lowering the attack surface of Keycloak:
 
 {: #nginx-config}
 ```erb
@@ -386,11 +386,11 @@ Keycloak allows to track instances status, health, and performances, thanks to
 defaults to TCP `9000`. **By default, they are not available**, and they must
 be explicitely enabled.
 
-{% note %}
+{% warning %}
 Exposing health and metrics is oftenly considered a security risk.\\
 Please consider completing the configuration samples given below with security
 measures such as IP allow-list or authenticated access.
-{% endnote %}
+{% endwarning %}
 
 ### Using the Command Line
 
@@ -563,7 +563,7 @@ To add SPIs to your Keycloak cluster:
 ### Themes
 
 Keycloak also support custom themes, which allows to personalize the look and
-feel of end-user facing pages. This sallows to further integrate Keycloak with
+feel of end-user facing pages. This allows to further integrate Keycloak with
 your applications or company.
 
 To add themes to your Keycloak cluster:
