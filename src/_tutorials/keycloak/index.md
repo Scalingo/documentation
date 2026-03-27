@@ -495,7 +495,8 @@ especially before updating a production instance:
 
 - Review the official changelog that is published with each release. Breaking
   and notable changes should catch your attention.
-- Ensure your SPIs and themes are compatible with the new version.
+- Ensure your [SPIs](#service-provider-interfaces) and themes are compatible
+  with the new version.
 - Keep a recent backup of your production database aside. The update process
   sometimes involves database updates, which can unfortunately fail. Having a
   backup allows to rollback to a working version in case of failures.
