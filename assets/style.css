@@ -736,11 +736,6 @@ article code.language-plaintext {
   font-family: var(--font-mono);
   font-size: 1em;
   font-weight: 400;
-  border-radius: 0.25rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 article code {
