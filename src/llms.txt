@@ -10,5 +10,6 @@ _Generated: {{ site.time | date_to_rfc822 }}_
 The links below take you to the raw Markdown content.
 
 {% for post in site.posts %}{% unless post.categories contains 'changelog' or post.llm_exclude == true or post.layout == 'dir' -%}
-- [{{ post.title }}]({{ post.url | prepend: site.baseurl | prepend: site.url }})
+{% assign llm_description = post.description | strip_html | normalize_whitespace | truncate: 256 %}
+- [{{ post.title }}]({{ post.url | prepend: site.baseurl | prepend: site.url }}){% if post.description and post.description != "" %}: {{ llm_description }}{% endif %}
 {% endunless -%}{% endfor %}
