@@ -43,10 +43,10 @@ At the root of your project, create a file named Procfile with the following
 content:
 
 ```bash
-web: NODE_ENV=development npm run dev
+web: npx serve -s dist -l $PORT
 ```
 
-This tells Scalingo to run the `dev` script from your `package.json` when the application is deployed.
+This tells Scalingo to serve the static files from the `dist` directory on the port provided by the `PORT` environment variable.
 
 ### Package.json
 
@@ -77,25 +77,6 @@ npm install
 ```
 
 to update the package-lock.json file.
-
-#### Set the listening port
-
-In your `package.json`, the `dev` script should initially look like this:
-
-```bash
-"dev": "vite"
-```
-
-Scalingo assigns a port to your application through the `PORT` environment
-variable. To make sure your app listens on the correct port, update the script
-to:
-
-```bash
-"dev": "vite --port $PORT"
-```
-
-This ensures Vite starts on the port provided by Scalingo and allows the
-platform to route traffic correctly to your application.
 
 ### Allow requests from your app
 
@@ -132,7 +113,7 @@ Otherwise, open your Supabase project, then go to **Database** in the left
 sidebar. From there, open the **Backups** section and download the latest
 available backup file.
 
-Once the backup is downloaded, import it into your Scalingo PostgreSQL database by following the [Scalingo PostgreSQL import/export documentation][scalingo-pg-import-doc].
+Once the backup is downloaded, import it into your Scalingo PostgreSQL database by following the [Scalingo PostgreSQL documentation][scalingo-pg-import-doc].
 
 ### Import your database
 
@@ -146,8 +127,7 @@ provides a simple way to deploy it.
 
 To run a Lovable project on Scalingo, you need a few adjustments: add a
 Procfile, move the required runtime packages from devDependencies to
-dependencies, make Vite listen on `$PORT`, allow your Scalingo hostname
-in vite.config.ts and import your database.
+dependencies, allow your Scalingo hostname in vite.config.ts and import your database.
 
 Once these changes are in place, you can deploy your application on Scalingo
 like any other project.
@@ -159,6 +139,6 @@ You have everything you need to get your Lovable app online on Scalingo.
 [procfile-docs]: https://doc.scalingo.com/platform/app/procfile
 [backup-supabase]: https://supabase.com/docs/guides/platform/backups
 [nodejs-devdependencies-doc]: https://doc.scalingo.com/languages/nodejs/start#devdependencies-installation
-[scalingo-pg-import-doc]: https://doc.scalingo.com/databases/scalingo-postgresql/import-and-export
+[scalingo-pg-import-doc]: https://doc.scalingo.com/databases/postgresql/dedicated-resources/guides/restoring
 [cli-doc]: https://doc.scalingo.com/cli
 [lovable-website]: https://lovable.dev
