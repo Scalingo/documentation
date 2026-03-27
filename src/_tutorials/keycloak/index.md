@@ -132,25 +132,31 @@ managing, and administrating Keycloak is out of the scope of this tutorial.
    ```
 
 4. Create a few **mandatory** environment variables:
-   ```bash
-   scalingo --app my-keycloak env-set KC_PROXY_HEADERS=xforwarded
-   scalingo --app my-keycloak env-set KC_HTTP_ENABLED=true
-   scalingo --app my-keycloak env-set KC_HTTP_PORT=80
-   scalingo --app my-keycloak env-set KC_HOSTNAME=<hostname>
-   scalingo --app my-keycloak env-set KC_CACHE_EMBEDDED_NETWORK_BIND_ADDRESS="match-address:10.240.\*"
-   ```
-   With `hostname` being the address at which Keycloak is listening\\
-   (e.g. `my-keycloak.osc-fr1.scalingo.io`).
 
-   Using port 80 is an example, you can choose any port number.
+   - These make sure Keycloak runs properly on Scalingo:
+     ```bash
+     scalingo --app my-keycloak env-set KC_PROXY_HEADERS=xforwarded
+     scalingo --app my-keycloak env-set KC_HTTP_ENABLED=true
+     scalingo --app my-keycloak env-set KC_HTTP_PORT=80
+     scalingo --app my-keycloak env-set KC_HOSTNAME=<hostname>
+     ```
+     With `hostname` being the address at which Keycloak is listening\\
+     (e.g. `my-keycloak.osc-fr1.scalingo.io`).
 
-5. (optional) Create credentials for the initial administrator user:
-   ```bash
-   scalingo --app my-keycloak env-set KC_BOOTSTRAP_ADMIN_USERNAME=<admin_username>
-   scalingo --app my-keycloak env-set KC_BOOTSTRAP_ADMIN_PASSWORD=<admin_password>
-   ```
+     Using port 80 is an example, you can choose any port number.
 
-6. Add a [`Procfile`][procfile] to your git repository, with the following
+   - This one restricts the cache communications to the Private Network only:
+     ```bash
+     scalingo --app my-keycloak env-set KC_CACHE_EMBEDDED_NETWORK_BIND_ADDRESS="match-address:10.240.\*"
+     ```
+
+   - These create initial credentials for the administrator user:
+     ```bash
+     scalingo --app my-keycloak env-set KC_BOOTSTRAP_ADMIN_USERNAME=<admin_username>
+     scalingo --app my-keycloak env-set KC_BOOTSTRAP_ADMIN_PASSWORD=<admin_password>
+     ```
+
+5. Add a [`Procfile`][procfile] to your git repository, with the following
    content:
    ```yml
    kc: /app/keycloak/bin/kc.sh start --optimized
@@ -158,13 +164,13 @@ managing, and administrating Keycloak is out of the scope of this tutorial.
    This instructs the platform to start Keycloak in a [process type][procfile]
    named `kc`, which, unlike `web`, can **not** be publicly exposed.
 
-7. (optional) Instruct the platform to run the `kc` process type in three XL
+6. (optional) Instruct the platform to run the `kc` process type in three XL
    containers:
    ```bash
    scalingo --app my-keycloak scale kc:3:XL
    ```
 
-8. Everything’s ready, deploy to Scalingo:
+7. Everything’s ready, deploy to Scalingo:
    ```bash
    git push scalingo master
    ```
@@ -230,7 +236,7 @@ Private Network on Scalingo.
    This instructs the platform to start Keycloak in a [process type][procfile]
    named `kc`, which, unlike `web`, can **not** be publicly exposed.
 
-5. (optional) Instruct the platform to run the `kc` process type in three XL
+6. (optional) Instruct the platform to run the `kc` process type in three XL
    containers:
    ```tf
    resource "scalingo_container_type" "kc" {
@@ -241,11 +247,11 @@ Private Network on Scalingo.
    }
    ```
 
-6. Run `terraform plan` and check if the result looks good
+7. Run `terraform plan` and check if the result looks good
 
-7. If so, run `terraform apply`
+8. If so, run `terraform apply`
 
-8. Once Terraform is done, your Keycloak instance is ready to be deployed:
+9. Once Terraform is done, your Keycloak instance is ready to be deployed:
    1. Head to your [dashboard]
    2. Click on your Keycloak application
    3. Click on the Deploy tab
@@ -352,7 +358,7 @@ server {
    }
    ```
 
-5. (optional) Instruct the platform to run the `web` process type in a single L
+6. (optional) Instruct the platform to run the `web` process type in a single L
    container:
    ```tf
    resource "scalingo_container_type" "web" {
@@ -363,11 +369,11 @@ server {
    }
    ```
 
-6. Run `terraform plan` and check if the result looks good
+7. Run `terraform plan` and check if the result looks good
 
-7. If so, run `terraform apply`
+8. If so, run `terraform apply`
 
-8. Once Terraform is done, your nginx instance is ready to be deployed:
+9. Once Terraform is done, your nginx instance is ready to be deployed:
    1. Head to your [dashboard]
    2. Click on your nginx application
    3. Click on the Deploy tab
