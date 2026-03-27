@@ -1,5 +1,6 @@
 ---
 title: First Steps On Scalingo
+description: "Prepare your first Scalingo deployment: install Git, configure SSH keys on Linux, macOS, or Windows, add your public key via dashboard or CLI, and start with guided tutorials."
 nav: First Steps
 modified_at: 2023-12-22 00:00:00
 tags: follow-the-light ssh

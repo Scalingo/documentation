@@ -1,5 +1,6 @@
 ---
 title: Common Deployment Errors
+description: "Diagnose common Scalingo deployment failures such as unknown technology detection, monorepo project-dir issues, and buildpack selection conflicts, then apply environment-variable fixes."
 modified_at: 2025-12-30 12:00:00
 index: 7
 ---

@@ -1,5 +1,6 @@
 ---
 title: How to migrate from Heroku
+description: "Migrate an app from Heroku to Scalingo with CLI steps: create the app, transfer environment variables, deploy code, migrate databases, and update custom-domain DNS."
 modified_at: 2026-01-02 12:00:00
 tags: heroku tutorial
 index: 11
@@ -83,4 +84,3 @@ $ git push scalingo master
 ### Need Some Help? 
 
 Have questions or need to report an issue? Feel free to reach our support team for further assistance through our live chat or by sending an email to [support@scalingo.com](mailto:support@scalingo.com).
-

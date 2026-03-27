@@ -1,5 +1,6 @@
 ---
 title: Deployment Process
+description: "Understand each Scalingo deployment phase: trigger methods (Git, GitHub, GitLab, archive), buildpack detection and dependency install, and zero-downtime rollout behavior."
 nav: Introduction
 modified_at: 2020-08-13 00:00:00
 index: 1
