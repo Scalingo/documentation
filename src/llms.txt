@@ -16,6 +16,6 @@ The links below prioritize key documentation pages.
 ## All posts
 The links below take you to the raw Markdown content.
 
-{% for post in site.posts %}{% unless post.categories contains 'changelog' or post.llm_exclude == true or post.layout == 'dir' -%}{% assign llm_description = post.description | strip_html | normalize_whitespace | truncate: 256 %}
+{% assign posts = site.posts | sort: 'modified_at' | reverse %}{% for post in posts %}{% unless post.categories contains 'changelog' or post.llm_exclude == true or post.layout == 'dir' -%}{% assign llm_description = post.description | strip_html | normalize_whitespace | truncate: 256 %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl | prepend: site.url }}){% if post.description and post.description != "" %}: {{ llm_description }}{% endif %}
 {% endunless -%}{% endfor %}
