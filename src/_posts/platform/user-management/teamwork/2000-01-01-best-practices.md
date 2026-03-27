@@ -1,6 +1,6 @@
 ---
 title: Best Practices
-description: "Apply teamwork security best practices on Scalingo: assign least-privilege roles by team size, scope API tokens with service accounts, audit collaborator access, and monitor 2FA status."
+description: "Apply teamwork security best practices on Scalingo with least-privilege role assignment, API token scoping, collaborator access reviews, and 2FA monitoring."
 modified_at: 2025-07-01 12:00:00
 tags: user team role collaborator security
 index: 50
