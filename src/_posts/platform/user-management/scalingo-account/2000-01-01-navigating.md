@@ -1,7 +1,7 @@
 ---
 nav: Navigating the Account Dashboard
 title: Navigating the Scalingo Account Dashboard
-description: Navigate Scalingo account dashboard settings to update profile and authentication, manage SSH keys and API tokens, connect SCM integrations, and handle HDS and referral options.
+description: "Navigate Scalingo account dashboard settings to update profile and authentication, manage SSH keys and API tokens, connect SCM integrations, and handle HDS and referral options."
 modified_at: 2025-07-02 12:00:00
 index: 20
 ---
