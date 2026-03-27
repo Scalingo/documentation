@@ -624,6 +624,7 @@ svg {
   --docsearch-hit-highlight-color: var(--color-primary-brown-100);
   --docsearch-key-gradient: var(--color-primary-brown-100);
   --docsearch-key-shadow: none;
+  --docsearch-muted-color: var(--color-primary-gray-600);
 }
 
 .DocSearch.DocSearch-Button {
@@ -634,12 +635,12 @@ svg {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   height: 3.5rem;
-  border: 1px solid var(--color-primary-gray-600);
+  border: 1px solid var(--color-primary-gray-400);
   box-sizing: border-box;
 }
 
 .DocSearch .DocSearch-Search-Icon {
-  color: var(--color-primary-orange-400);
+  color: var(--color-primary-gray-600);
   flex: none;
 }
 
@@ -661,6 +662,16 @@ svg {
 .DocSearch-Cancel,
 .DocSearch-Reset,
 .DocSearch-Close {
+  background-color: var(--color-primary-brown-100);
+}
+
+.DocSearch-Cancel:hover,
+.DocSearch-Reset:hover,
+.DocSearch-Close:hover {
+  background-color: var(--color-primary-brown-100);
+}
+
+.DocSearch-Dropdown {
   background-color: var(--color-primary-brown-100);
 }
 
