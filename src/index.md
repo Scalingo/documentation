@@ -13,9 +13,9 @@ description: "From the deployment of your app to complex scaling operations you'
         <br />
         And voilà, 2 minutes later, your website is online.
       </p>
-      <div class="mt-6 lg:mt-12" id="docsearch-index"></div>
+      <div class="mt-6 mb-10" id="docsearch-index"></div>
     </div>
-    <div class="w-2/3 h-2/3 md:h-96 md:w-96 mx-auto"></div>
+    <div class="w-2/3 mx-auto"></div>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-6 mb-12">
     {% for post_url in site.highlighted.first_steps %}
@@ -55,7 +55,7 @@ description: "From the deployment of your app to complex scaling operations you'
           <a href="{{ post_url }}">
             <div
               class="bg-sc-gray-5 w-full p-6 flex items-center group rounded-lg transition hover:shadow-md gap-5 leading-5">
-              <div class="grow group-hover:text-primary-orange-400 truncate">{{ post.title}}</div>
+              <div class="h-6 grow group-hover:text-primary-orange-400 truncate">{{ post.title}}</div>
               <div class="text-primary-orange-400 group-hover:translate-x-1 duration-200 ease-out flex-none w-6">{% icon arrow_right %}</div>
             </div>
           </a>
@@ -77,7 +77,7 @@ description: "From the deployment of your app to complex scaling operations you'
             {% endif %}
             <div
               class="bg-sc-gray-5 w-full p-6 flex items-center group rounded-lg transition hover:shadow-md gap-5 leading-5">
-              <div class="grow group-hover:text-primary-orange-400 truncate">{{ post.title}}</div>
+              <div class="h-6 grow group-hover:text-primary-orange-400 truncate">{{ post.title}}</div>
               <div class="text-sc-gray-2 mr-6 whitespace-nowrap hidden md:block">{{ post.modified_at | date_to_string
                 }}</div>
               <div class="text-primary-orange-400 group-hover:translate-x-1 duration-200 ease-out flex-none w-6">{% icon arrow_right %}</div>
