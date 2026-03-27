@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting Git push and SSH common issues
-description: "Troubleshoot Git push and SSH issues on Scalingo: fix access-rights failures, refspec or branch errors, invalid key formats, and host verification problems on Linux, macOS, or Windows."
+description: "Troubleshoot Git push and SSH failures on Scalingo: fix access-rights errors, refspec and branch issues, invalid key formats, and host verification problems on Linux, macOS, or Windows."
 nav: Troubleshoot Git and SSH
 modified_at: 2022-09-02 00:00:00
 tags: follow-the-light ssh linux git troubleshoot problem connect git push

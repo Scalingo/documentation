@@ -1,6 +1,6 @@
 ---
 title: Free Trial
-description: "Check Scalingo free trial limits on apps, containers, and managed databases, learn how to stop the trial early with billing details, and understand restrictions after expiry."
+description: "Review Scalingo free-trial limits for apps, containers, and managed databases, stop the trial early with billing details, and understand restrictions applied after expiry."
 modified_at: 2025-12-08 00:00:00
 tags: billing free trial
 index: 20
