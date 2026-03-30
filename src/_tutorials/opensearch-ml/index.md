@@ -1,5 +1,5 @@
 ---
-title: Building a RAG with OpenSearch®
+title: Build a RAG with OpenSearch®
 logo: opensearch
 category: ai
 products:
