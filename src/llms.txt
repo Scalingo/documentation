@@ -1,6 +1,5 @@
 ---
 layout: null
-page_exclude: true
 ---
 
 # LLM Feed for doc.scalingo.com
