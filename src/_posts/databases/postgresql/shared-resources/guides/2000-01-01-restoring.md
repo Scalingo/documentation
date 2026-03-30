@@ -1,7 +1,7 @@
 ---
 title: Restoring Your Scalingo for PostgreSQL® Shared Resources Database addon
 nav: Restoring
-modified_at: 2024-12-10 00:00:00
+modified_at: 2026-03-30 12:00:00
 tags: databases postgresql addon
 index: 6
 ---
@@ -18,14 +18,14 @@ index: 6
 ### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Backups** tab
+2. Click the **Backups** tab, then **Continuous backups**
 3. Locate the **Point-in-Time Recovery** block
-3. Click the **Start a PiTR** button
-4. Pick a date and time (**timezone is UTC**)
-5. Make sure to check the **I understand that this action will permanently
+4. Click the **Start a PiTR** button
+5. Pick a timezone, then a date and time
+6. Make sure to check the **I understand that this action will permanently
    delete existing data and cannot be cancelled or undone once started.**
    checkbox
-6. Validate by clicking the **Confirm** button
+7. Validate by clicking the **Confirm** button
 
 {% note %}
 Restoring a PiTR backup is only available from the database dashboard.
