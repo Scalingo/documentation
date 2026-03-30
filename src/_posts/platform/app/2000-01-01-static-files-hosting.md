@@ -1,5 +1,6 @@
 ---
 title: Static Files Only Application
+description: "Deploy a static-files-only application on Scalingo using Node.js or Nginx web server configurations for reliable static content delivery."
 modified_at: 2023-02-17 00:00:00
 tags: nginx nodejs express static
 ---

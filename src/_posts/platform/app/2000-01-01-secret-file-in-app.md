@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Access Secret File From the Application
+description: "Inject and access secret files in Scalingo applications securely so credentials and certificates are available at runtime without committing them to code."
 modified_at: 2019-12-06 16:00:00
 tags: secret files
 index: 100

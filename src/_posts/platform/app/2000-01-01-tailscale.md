@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Configure Tailscale
+description: "Configure Tailscale in a Scalingo application with multi-buildpack setup, Aptfile dependencies, and environment variables for private network access."
 modified_at: 2026-01-05 00:00:00
 tags: tailscale networking vpn buildpack
 ---

@@ -1,5 +1,6 @@
 ---
 title: .slugignore File
+description: "Use the .slugignore file to exclude unnecessary files from build output, reduce slug size, and optimize deployment time on Scalingo."
 modified_at: 2024-08-22 00:00:00
 tags: internals slugignore image size
 ---

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Source Code Management Integration, Auto Deploy and Review Apps
+description: "Connect SCM providers to Scalingo for automatic deployments, branch workflows, and review app automation across your application delivery pipeline."
 nav: SCM Integration
 modified_at: 2025-01-27 00:00:00
 tags: integration scm github github-enterprise gitlab

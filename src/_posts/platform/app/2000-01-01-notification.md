@@ -1,5 +1,6 @@
 ---
 title: App Notifications
+description: "Configure application notifications on Scalingo, choose relevant platform events, and route alerts to the right channels for operational follow-up."
 nav: Notifications
 modified_at: 2024-05-06 00:00:00
 tags: app notification

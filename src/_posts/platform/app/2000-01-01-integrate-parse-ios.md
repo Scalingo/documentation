@@ -1,5 +1,6 @@
 ---
 title: Integrate the open-source Parse server with your iOS app
+description: "Deploy the open-source Parse Server on Scalingo and connect it to an iOS application, including endpoint setup and client integration steps."
 nav: Parse with iOS app
 modified_at: 2016-02-11 00:00:00
 tags: integration parse ios
