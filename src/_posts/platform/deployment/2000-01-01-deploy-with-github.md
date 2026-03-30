@@ -1,5 +1,6 @@
 ---
 title: Deploy with GitHub and GitHub Enterprise
+description: "Connect a Scalingo app to GitHub or GitHub Enterprise, choose repository and branch, and automate deployments and review apps from pull-request workflows."
 nav: Deploy with GitHub
 modified_at: 2023-07-26 00:00:00
 tags: scm github github-enterprise deployment

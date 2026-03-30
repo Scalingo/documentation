@@ -1,5 +1,6 @@
 ---
 title: One Click Deploy
+description: "Create a one-click deploy button for public GitHub projects on Scalingo, configure scalingo.json manifest settings, and control default branch deployment behavior."
 modified_at: 2015-12-16 11:40:00
 tags: app deployment one-click
 index: 9

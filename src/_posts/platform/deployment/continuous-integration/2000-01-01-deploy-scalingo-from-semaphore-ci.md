@@ -1,5 +1,6 @@
 ---
 title: Deploy to Scalingo from Semaphore
+description: "Set up continuous deployment from Semaphore to Scalingo by configuring deploy commands, known hosts, and secure Git-based release automation."
 nav: Deploy from Semaphore
 modified_at: 2022-04-26 00:00:00
 tags: ci deployment build semaphore-ci
