@@ -55,7 +55,7 @@ the workload on our infrastructure.
 3. Locate the **Backup schedule** block
 4. Click the **Schedule** button
 5. Make sure to check the **I want to enable scheduled backups** checkbox
-6. Pick a timezone, then an hour (**timezone is UTC**)
+6. Pick an hour (**timezone is UTC**)
 7. Validate by clicking the **Update** button
 
 #### Using the Command Line
