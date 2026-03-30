@@ -1,5 +1,5 @@
 ---
-title: Build a Movie Recommendation Engine with pgvector
+title: Building a Recommendation Engine with pgvector
 logo: postgresql
 category: ai
 products:
