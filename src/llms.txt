@@ -14,7 +14,7 @@ The links below prioritize key documentation pages.
 {% endfor %}
 
 ## All posts
-The links below take you to the raw Markdown content.
+The links below point to the published documentation pages, ordered by modification date (newest first).
 
 {% assign posts = site.posts | sort: 'modified_at' | reverse %}{% for post in posts %}{% unless post.categories contains 'changelog' or post.llm_exclude == true or post.layout == 'dir' -%}{% assign llm_description = post.description | strip_html | normalize_whitespace | truncate: 256 %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl | prepend: site.url }}){% if post.description and post.description != "" %}: {{ llm_description }}{% endif %}
