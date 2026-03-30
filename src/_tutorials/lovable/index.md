@@ -43,7 +43,7 @@ At the root of your project, create a file named Procfile with the following
 content:
 
 ```bash
-web: npx serve -s dist -l $PORT
+web: npx serve --single dist --listen $PORT
 ```
 
 This tells Scalingo to serve the static files from the `dist` directory on the port provided by the `PORT` environment variable.
