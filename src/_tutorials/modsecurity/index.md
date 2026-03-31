@@ -3,7 +3,7 @@ title: Deploying a WAF with OWASP ModSecurity CRS
 logo: owasp-modsecurity-crs
 category: security
 permalink: /tutorials/modsecurity
-modified_at: 2025-08-12
+modified_at: 2026-03-31
 ---
 
 ModSecurity is an open-source Web Application Firewall (WAF) that allows users
@@ -25,15 +25,12 @@ pattern and actions).
 
 ## Planning your Deployment
 
-- Due to technical requirements, ModSecurity is only deployable on
-  `scalingo-20` (EOL) and above.
-
 - ModSecurity requires a set of rules to filter or block requests. In this
-  tutorial, we will use the [OWASP ModSecurity Core Rule Set][CRS].
+  tutorial, we use the [OWASP ModSecurity Core Rule Set][CRS].
 
-- In this tutorial, we have chosen to deploy ModSecurity connected to nginx.
-  Note that ModSecurity can also be connected to other webservers such as IIS
-  or Apache, but these cases are out of the scope of this guide.
+- We also deploy ModSecurity connected to nginx. ModSecurity can also be
+  connected to other webservers such as IIS or Apache, but these cases are out
+  of the scope of this guide.
 
 
 ## Deploying
@@ -125,7 +122,8 @@ git push scalingo master
 
 ### Updating the Core Rule Set
 
-By default, Scalingo tries to install the latest version of the OWASP CRS.
+By default, Scalingo tries to install the latest Long Term Support (LTS)
+version of the OWASP CRS.
 
 Consequently, updating the CRS only consists of triggering a new deployment of
 your instance. To do so, create an empty commit and push it to Scalingo:
@@ -232,11 +230,13 @@ They can be leveraged to customize your deployment:
 
 - **`MODSECURITY_VERSION`**\\
   Allows to specify the version of ModSecurity to deploy.\\
-  Defaults to the version set in the buildpack.
+  Defaults to not being set, which falls back on the [default
+  version][modsecurity_default_version] set in the buildpack.
 
 - **`MODSECURITY_CORE_RULE_SET_VERSION`**\\
   Allows to specify the version of the OWASP Core Rule Set to deploy.\\
-  Defaults to the version set in the buildpack.
+  Defaults to not being set, which falls back on the [default
+  version][crs_default_version] set in the buildpack.
 
 - **`MODSECURITY_DEBUG_LOG_LEVEL`**\\
   Allows to specify the log level.\\
@@ -254,11 +254,14 @@ They can be leveraged to customize your deployment:
 *[OWASP]: Open Worldwide Application Security Project
 *[WAF]: Web Application Firewall
 *[CRS]: Core Rule Set
+*[LTS]: Long Term Support
 
 [OWASP]: https://owasp.org
 [CRS]: https://owasp.org/www-project-modsecurity-core-rule-set/
 [crs-ruleid]: https://coreruleset.org/docs/rules/ruleid/
 [modsecurity-vars]: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#variables
+[modsecurity_default_version]: https://github.com/Scalingo/nginx-buildpack/blob/master/config/versions.sh#L3
+[crs_default_version]: https://github.com/Scalingo/nginx-buildpack/blob/master/config/versions.sh#L5
 
 [dashboard]: https://dashboard.scalingo.com/apps/
 
