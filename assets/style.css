@@ -670,7 +670,8 @@ svg {
 }
 
 .DocSearch-Clear,
-.DocSearch-Commands-Key {
+.DocSearch-Commands-Key,
+.DocSearch-Label {
   color: var(--color-primary-gray-600);
 }
 
