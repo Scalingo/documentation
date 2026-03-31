@@ -1,5 +1,5 @@
 ---
-title: Deploying Lovable projects on Scalingo
+title: Deploying Lovable Projects on Scalingo
 logo: lovable
 category: ai
 permalink: /tutorials/lovable
@@ -7,39 +7,32 @@ modified_at: 2026-03-27
 ---
 
 [Lovable][lovable-website] is an AI app builder that helps you create web applications from natural language prompts. It generates frontend code
-based on the Vite framework, and you can easily export that code.
+based on the [Vite][vite-website] framework.
 
 
 ## Planning your Deployment
 
-- In this tutorial, we deploy both the frontend of
-  the application on a single `web` container of size M.
+- In this tutorial, we deploy the frontend of
+  the application on a single `web` container of size M. This is enough for a typical frontend; if
+  you expect higher traffic, you can choose a bigger size of container or add new instances of your `web` container.
 
 - To sync your project with GitHub from Lovable and keep your repository updated, follow this [tutorial][lovable-export-github].
 
-- You need to have Git installed on your computer.
+- If your project uses a database (e.g. Supabase), you will need to provision a database on Scalingo, such as a PostgreSQL addon.
 
-- You also need to have the [Scalingo CLI][cli-doc] installed.
+## Migrating your Application
 
-## Migrate your application
+- Clone your Lovable project locally:
 
-First, clone your Lovable project locally:
+  ```bash
+  git clone <url_of_your_repo>
+  ```
 
-```bash
-git clone <url_of_your_repo>
-```
+- Open the project in your preferred IDE or code editor, such as Visual Studio Code, Cursor, or any other editor you usually work with.
 
-Then open the project in your preferred IDE or code editor, such as Visual
-Studio Code, Cursor, or any other editor you usually work with.
+### Creating the Procfile
 
-The next sections explain the required configuration changes to run this Vite application on Scalingo.
-
-### Procfile
-
-Scalingo uses a Procfile to determine how to start your application in
-production. You can read more about it in the [Procfile documentation][procfile-docs].
-
-At the root of your project, create a file named Procfile with the following
+At the root of your project, create a file named `Procfile` with the following
 content:
 
 ```bash
@@ -52,12 +45,10 @@ This tells Scalingo to serve the static files from the `dist` directory on the p
 
 Scalingo installs packages from `devDependencies` during the build phase, then prunes them before starting the application. This means that only packages listed under `dependencies` are still available at runtime. For details, see the [Node.js runtime dependencies documentation][nodejs-devdependencies-doc].
 
-In our case, this is important because the application relies on Vite at runtime. If Vite is only declared under `devDependencies`, the build succeeds, but the application fails to boot once deployed because Scalingo no longer finds it. To fix this, we will move the required packages to `dependencies`.
+In our case, this is important because the application relies on Vite at runtime. If Vite is only declared under `devDependencies`, the build succeeds, but the application fails to boot once deployed because Scalingo no longer finds it. To fix this, let's move the required packages to `dependencies`.
 
-#### Move Dependencies
-
-Now open your `package.json`, and move the following packages from
-devDependencies to dependencies:
+Now open your `package.json` file, and move the following packages from
+the `devDependencies` section to the `dependencies` one:
 
   - `vite`
   - `@vitejs/plugin-react-swc`
@@ -66,29 +57,22 @@ devDependencies to dependencies:
   - `postcss`
   - `tailwindcss`
 
-These packages are required for the application to start correctly on
-Scalingo. If they remain in `devDependencies`, they are pruned after the
-build phase and are no longer available at runtime.
-
-Then run:
+Update the `package-lock.json` file:
 
 ```bash
 npm install
 ```
 
-to update the package-lock.json file.
+### Allowing Requests
 
-### Allow requests from your app
-
-Because the application is started with Vite on Scalingo, you need to allow
-your Scalingo hostname in the Vite server configuration.
+Vite requires you to allow hostnames, so you need to add your Scalingo hostname to the Vite server configuration. This allows Vite to accept requests coming from your Scalingo domain instead of rejecting them.
 
 Open `vite.config.ts` and add your application hostname to `allowedHosts` in the `server` section:
 
 ```ts
 server: {
   host: "::",
-  port: 8080,
+  port: Number(process.env.PORT) || 8080,
   allowedHosts: ["<name_of_your_app>.<region>.scalingo.io"],
   hmr: {
     overlay: false
@@ -97,48 +81,36 @@ server: {
 
 ```
 
-This allows Vite to accept requests coming from your Scalingo domain instead of
-rejecting them.
+## Migrating your Supabase Database to Scalingo
 
-## [Optional] Migrate your Supabase database
+If your Lovable project uses Supabase, you may also want to migrate your database to Scalingo.
 
-If your Lovable project uses Supabase, you can also migrate your database to
-Scalingo PostgreSQL.
+### Dumping your Lovable Database
 
-### Dump your database
+To download a backup from the Supabase dashboard:
 
-If you prefer using the Supabase CLI instead of the dashboard, you can follow the instructions [here][backup-supabase].
+- Open your Supabase project.
+- Go to **Database** in the left sidebar.
+- Navigate to the **Backups** section.
+- Download the latest available backup file.
 
-Otherwise, open your Supabase project, then go to **Database** in the left
-sidebar. From there, open the **Backups** section and download the latest
-available backup file.
+You can also use the Supabase CLI to create the database dump. To do so, please follow [Supabase's instructions][backup-supabase].
+
+### Importing your Database to Scalingo
 
 Once the backup is downloaded, import it into your Scalingo PostgreSQL database by following the [Scalingo PostgreSQL documentation][scalingo-pg-import-doc].
 
-### Import your database
-
-To import your database, you can use the [Scalingo PostgreSQL import/export documentation][scalingo-pg-import-doc]
-
-
 ## Conclusion
 
-Lovable makes it easy to generate a frontend application, and Scalingo
-provides a simple way to deploy it.
+Now, you have everything you need to get your Lovable app online on Scalingo.
 
-To run a Lovable project on Scalingo, you need a few adjustments: add a
-Procfile, move the required runtime packages from devDependencies to
-dependencies, allow your Scalingo hostname in vite.config.ts and import your database.
-
-Once these changes are in place, you can deploy your application on Scalingo
-like any other project.
-
-You have everything you need to get your Lovable app online on Scalingo.
+To keep your application up-to-date, regularly update your project code and dependencies, then redeploy the application on Scalingo.
 
 
 [lovable-export-github]: https://docs.lovable.dev/integrations/github
-[procfile-docs]: https://doc.scalingo.com/platform/app/procfile
 [backup-supabase]: https://supabase.com/docs/guides/platform/backups
 [nodejs-devdependencies-doc]: https://doc.scalingo.com/languages/nodejs/start#devdependencies-installation
 [scalingo-pg-import-doc]: https://doc.scalingo.com/databases/postgresql/dedicated-resources/guides/restoring
 [cli-doc]: https://doc.scalingo.com/cli
 [lovable-website]: https://lovable.dev
+[vite-website]: https://vite.dev/
