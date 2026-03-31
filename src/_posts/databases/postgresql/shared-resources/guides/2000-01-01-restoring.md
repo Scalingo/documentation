@@ -21,7 +21,7 @@ index: 6
 2. Click the **Backups** tab, then **Continuous backups**
 3. Locate the **Point-in-Time Recovery** block
 4. Click the **Start a PiTR** button
-5. Pick a timezone, then a date and time (**default timezone is UTC**)
+5. Pick a timezone, then a date and time (**default timezone is UTC + 2**)
 6. Make sure to check the **I understand that this action will permanently
    delete existing data and cannot be cancelled or undone once started.**
    checkbox
