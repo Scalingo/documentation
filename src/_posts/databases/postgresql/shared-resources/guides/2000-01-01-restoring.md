@@ -41,8 +41,6 @@ Restoring a database using a Scheduled backup requires the database to be
 completely stopped, hence causing an inevitable downtime.
 {% endwarning %}
 
-### Using the Command Line
-
 #### From a One-Off Container
 
 1. Follow the procedure to [access your PostgreSQL® database from a one-off
