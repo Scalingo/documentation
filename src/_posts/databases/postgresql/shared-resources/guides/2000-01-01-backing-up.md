@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Shared Resources addon
 nav: Backing Up
-modified_at: 2026-03-30 12:00:00
+modified_at: 2026-04-01 12:00:00
 tags: databases postgresql addon how-to
 index: 5
 ---
@@ -21,7 +21,7 @@ about backups retention and important considerations regarding backups.**
 {% endnote %}
 
 
-## Point-in-Time Recovery Backups
+## Continuous backups
 
 ### Creating a Point-in-Time Recovery Backup
 
@@ -32,7 +32,7 @@ Point-in-Time Recovery backups are automatically created by the platform.
 You have nothing to do to be able to use the Point-in-Time Recovery mechanism.
 
 
-## Scheduled Backups
+## Logical backups
 
 ### Creating a Scheduled Backup
 
@@ -132,7 +132,7 @@ the workload on our infrastructure.
         The backup is downloaded in your current working directory.
 
 
-## Manual Backups
+### Manual Backups
 
 ### Creating a Manual Backup
 
