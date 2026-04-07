@@ -17,7 +17,7 @@
         >
         <label for="{{ item.url | url_encode }}" class="
           cursor-pointer flex items-center pr-6 py-2
-          {% if page.url and page.url contains item.url %}text-sc-blue-1{% endif %}
+          {% if page.url and page.url contains item.url %}text-primary-orange-400{% endif %}
         ">
           <div class="hidden">{{ page.url }}</div>
           <div class="hidden">{{ item.url }}</div>
@@ -32,7 +32,7 @@
       {% else %}
         <a href="{{ item.url }}" class="
           block h-full w-full pr-6 py-2
-          {% if page.url == item.url %}text-sc-blue-1{% endif %}
+          {% if page.url == item.url %}text-primary-orange-400{% endif %}
         ">
           {{ item.title }}
         </a>

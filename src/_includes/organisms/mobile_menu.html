@@ -1,23 +1,23 @@
 <div class="bg-sc-gray-5 text-sc-black-1 hidden top-0 h-screen overflow-y-auto sticky" id="mobile-menu-panels">
-  <div class="border-t-4 border-sc-blue-3 w-full">
+  <div class="border-t-4 border-primary-brown-100 w-full">
     <div class="grow flex px-5 py-3 overflow-y-auto border-sc-gray-3 border-b justify-between items-center">
         <div class="flex items-center">
-        {% assign active_classes = "text-sc-blue-1" %}
-        <a href="/" class="py-2 px-3 hover:text-sc-blue-1 {% if page.url == "/" %} {{ active_classes }} {% endif
+        {% assign active_classes = "text-primary-orange-400" %}
+        <a href="/" class="py-2 px-3 hover:text-primary-orange-400 {% if page.url == "/" %} {{ active_classes }} {% endif
         %}">Guides</a>
-        <a href="/samples" class="py-2 px-3 hover:text-sc-blue-1 {% if page.url == "/samples" %} {{ active_classes }} {%
+        <a href="/samples" class="py-2 px-3 hover:text-primary-orange-400 {% if page.url == "/samples" %} {{ active_classes }} {%
         endif %}">Samples</a>
-        <a href="/tools/cli/start" class="py-2 px-3 hover:text-sc-blue-1 {% if page.url == "/tools/cli/start" %} {{ active_classes }} {% endif
+        <a href="/tools/cli/start" class="py-2 px-3 hover:text-primary-orange-400 {% if page.url == "/tools/cli/start" %} {{ active_classes }} {% endif
         %}">CLI</a>
-        <a href="/changelog" class="py-2 px-3 hover:text-sc-blue-1 {% if page.url == "/changelog" %} {{ active_classes }}
+        <a href="/changelog" class="py-2 px-3 hover:text-primary-orange-400 {% if page.url == "/changelog" %} {{ active_classes }}
         {% endif %}">Changelog</a>
-        <a href="https://developers.scalingo.com" target="_blank" class="py-2 px-3 hover:text-sc-blue-1">API&nbsp;Reference</a>
+        <a href="https://developers.scalingo.com" target="_blank" class="py-2 px-3 hover:text-primary-orange-400">API&nbsp;Reference</a>
       </div>
     </div>
   </div>
   <div id="mobile-nav-container" class="mb-20"></div>
   <div class="xl:hidden fixed bottom-0 flex justify-center items-center h-20 border-sc-gray-3 border-t w-full mx-auto gap-10 bg-sc-gray-5 z-10">
-    <a href="https://auth.scalingo.com/users/sign_in" class="hover:text-sc-blue-1">Sign In</a>
+    <a href="https://auth.scalingo.com/users/sign_in" class="hover:text-primary-orange-400">Sign In</a>
     <div>
       {% include atoms/button.html href="https://auth.scalingo.com/users/sign_up" text="Sign up" %}
     </div>
