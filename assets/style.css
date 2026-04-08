@@ -32,7 +32,7 @@
   /* fonts */
   --font-sans: "aktiv-grotesk";
   --font-serif: "freight-text-pro";
-  --font-mono: "Menlo";
+  --font-mono: ui-monospace, Menlo, Consolas, "Liberation Mono", "DejaVu Sans Mono", monospace;
 
   /* width */
   --sc-container: "1440px";
