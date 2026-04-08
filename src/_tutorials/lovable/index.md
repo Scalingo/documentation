@@ -22,48 +22,42 @@ based on the [Vite][vite-website] framework.
 Before continuing, make sure your Lovable project is synced with GitHub. To do this, follow this [tutorial][lovable-export-github].
 {% endnote %}
 
-1. Clone your Lovable project locally:
-
+1. On your workstation, clone your GitHub repository:
    ```bash
    git clone <url_of_your_repo>
    ```
 
-2. Open the project in your preferred IDE or code editor, such as Visual Studio Code, Cursor, or any other editor you usually work with.
+2. Create the application on Scalingo:
+   ```bash
+   scalingo create my-app
+   ```
 
 3. Create a `Procfile` at the root of your project with the following content:
-
    ```bash
    web: npx serve --single dist --listen $PORT
   ```
+   This instructs the platform to serve the static files from the `dist` directory on the port provided by the `PORT` environment variable.
 
-   This tells Scalingo to serve the static files from the `dist` directory on the port provided by the `PORT` environment variable.
+4. Scalingo installs packages from `devDependencies` during the build phase, then prunes them before starting the application. This means that only packages listed under `dependencies` are still available at runtime. For details, see the [Node.js runtime dependencies documentation][nodejs-devdependencies-doc].
 
-4. Update your `package.json`.
+   In our case, this is important because the application relies on Vite at runtime. If Vite is only declared under `devDependencies`, the build succeeds, but the application fails to boot once deployed because Scalingo no longer finds it.
+   
+   To fix this, let's move the required packages to `dependencies`:
 
-   Scalingo installs packages from `devDependencies` during the build phase, then prunes them before starting the application. This means that only packages listed under `dependencies` are still available at runtime. For details, see the [Node.js runtime dependencies documentation][nodejs-devdependencies-doc].
+   1. Open your `package.json` file, and move the following packages from the `devDependencies` section to the `dependencies` one:
 
-   In our case, this is important because the application relies on Vite at runtime. If Vite is only declared under `devDependencies`, the build succeeds, but the application fails to boot once deployed because Scalingo no longer finds it. To fix this, let's move the required packages to `dependencies`.
+      * `@vitejs/plugin-react-swc`
+      * `lovable-tagger`
+      * `autoprefixer`
+      * `postcss`
+      * `tailwindcss`
 
-   Now open your `package.json` file, and move the following packages from the `devDependencies` section to the `dependencies` one:
+   2. Update the `package-lock.json` file:
+      ```bash
+      npm install
+      ```
 
-   * `@vitejs/plugin-react-swc`
-   * `lovable-tagger`
-   * `autoprefixer`
-   * `postcss`
-   * `tailwindcss`
-
-   Update the `package-lock.json` file:
-
-   ```bash
-   npm install
-   ```
-
-5. Update `vite.config.ts` to allow requests from your Scalingo hostname.
-
-   Vite requires you to allow hostnames, so you need to add your Scalingo hostname to the Vite server configuration. This allows Vite to accept requests coming from your Scalingo domain instead of rejecting them.
-
-   Open `vite.config.ts` and add your application hostname to `allowedHosts` in the `server` section:
-
+5. By default, Vite only responds to requests coming from hosts defined in its `server.allowedHosts` option, which defaults to `localhost`. To allow Vite to accept requests coming from your Scalingo domain, edit this option in your `vite.config.ts` file, so that it looks like this:
    ```ts
    server: {
      host: "::",
@@ -76,11 +70,15 @@ Before continuing, make sure your Lovable project is synced with GitHub. To do t
    ```
 
 6. Commit and push the files you just updated:
-
    ```bash
    git add vite.config.ts package-lock.json package.json Procfile
    git commit -m "Migrate to scalingo"
    git push
+   ```
+
+7. Deploy to Scalingo:
+   ```bash
+   git push scalingo
    ```
 
 ## Migrating your Supabase Database to Scalingo
@@ -112,11 +110,15 @@ If you update your project from Lovable later, the changes will be sync with you
 - `vite.config.ts`
 
 If necessary, reapply the changes, then commit and push them:
-
 ```bash
 git add vite.config.ts package-lock.json package.json Procfile
 git commit -m "Update Lovable project for Scalingo"
 git push
+```
+
+And deploy on Scalingo:
+```bash
+git push scalingo
 ```
 
 [lovable-website]: https://lovable.dev
