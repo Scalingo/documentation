@@ -1,6 +1,6 @@
 ---
 title: Install Puppeteer
-modified_at: 2023-08-28 00:00:00
+modified_at: 2026-04-09 00:00:00
 tags: nodejs puppeteer
 ---
 
@@ -22,7 +22,7 @@ git add .buildpacks
 git commit --message="Add multi-buildpack"
 ```
 
-Depending on your stack, you'll need different system dependencies in a `Aptfile` at the root of your project.
+Depending on your stack, you'll need different system dependencies in the `Aptfile` at the root of your project.
 
 **Ubuntu 22.04**
 
@@ -36,10 +36,14 @@ libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xv
 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
 ```
 
-**NOTE**: These are minimal dependencies, a more thorough list of system dependencies is available in the chromium [source repository](https://source.chromium.org/chromium/chromium/src/+/main:chrome/installer/linux/debian/dist_package_versions.json;l=150)
+{% note %}
+These are minimal dependencies, a more thorough list of system dependencies is available in the chromium [source repository](https://source.chromium.org/chromium/chromium/src/+/main:chrome/installer/linux/debian/dist_package_versions.json;l=150)
+{% endnote %}
 
 ```
 gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget libcairo-gobject2 libxinerama1 libgtk2.0-0 libpangoft2-1.0-0 libthai0 libpixman-1-0 libxcb-render0 libharfbuzz0b libdatrie1 libgraphite2-3 libgbm-dev
 ```
 
-**WARNING**: Puppeteer must be run with the option `--no-sandbox` on Scalingo. This option must be added with care. You should only add this option against some code you own.
+{% warning %}
+Puppeteer must be run with the option `--no-sandbox` on Scalingo. This option must be added with care. You should only add this option against some code you own.
+{% endwarning %}
