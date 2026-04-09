@@ -1,4 +1,4 @@
-<div align="center">
+<p align="center">
     <a href="https://scalingo.com">
         <picture>
             <source media="(prefers-color-scheme: dark)" srcset="https://cdn.scalingo.com/branding/scalingo-brandmark-dark.png">
@@ -6,17 +6,18 @@
             <img alt="Scalingo Logo" src="https://cdn.scalingo.com/branding/scalingo-brandmark-white.png" height="128">
         </picture>
     </a>
+</p>
 
-    <h1>Scalingo Documentation</h1>
+<h1 align="center">Scalingo Documentation</h1>
 
+<p align="center">
     <a href="https://doc.scalingo.com/">Documentation</a> | 
     <a href="https://doc.scalingo.com/tutorials">Tutorials</a> | 
     <a href="https://doc.scalingo.com/samples">Samples</a> | 
     <a href="https://doc.scalingo.com/tools/cli/start">CLI</a> | 
     <a href="https://doc.scalingo.com/changelog">Changelog</a> | 
     <a href="https://developers.scalingo.com/">API Reference</a>
-
-</div>
+</p>
 
 ## Scalingo Getting Started
 
@@ -29,7 +30,7 @@ Learn more about Scalingo on our website [https://scalingo.com](https://scalingo
 
 This repository contains the source files for the Scalingo documentation.
 
-To browse the live documentation, visit [https://doc.scalingo.com](https://doc.scalingo.com).
+To browse the live documentation, visit [https://doc.scalingo.com](https://doc.scalingo.com)
 
 For LLM-oriented discovery and indexing, `llms.txt` is also available at:
 [https://doc.scalingo.com/llms.txt](https://doc.scalingo.com/llms.txt)
