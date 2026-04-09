@@ -11,7 +11,6 @@ import fs from 'fs';
 const opts = {
   entryPoints: [
     "assets/application.js",
-    "assets/analytics.js",
     "assets/style.css",
   ],
   entryNames: '[dir]/[name]-[hash]',
