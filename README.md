@@ -39,13 +39,11 @@ For LLM-oriented discovery and indexing, `llms.txt` is also available at:
 
 This repository is built with Jekyll and follows a mostly standard project structure.
 
-```text
-Looking for something specific?   
-├─ Documentation source files → [src/](./src)  
-├─ Blog posts → [src/_posts/](./src/_posts/)  
-├─ Tutorials → [src/_tutorials/](./src/_tutorials/)  
-├─ Changelog notes → [src/changelog/](./src/changelog/)
-```
+- [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines
+- [src/](./src) for the main documentation source files
+- [src/_posts/](./src/_posts/) for blog posts
+- [src/_tutorials/](./src/_tutorials/) for tutorials
+- [src/changelog/](./src/changelog/) for changelog notes
 
 
 ## Contributing
