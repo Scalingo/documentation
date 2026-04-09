@@ -9,14 +9,14 @@
 
     <h1>Scalingo Documentation</h1>
 
-    <a href="https://doc.scalingo.com/">Documentation</a> |
-    <a href="https://doc.scalingo.com/tutorials">Tutorials</a> |
-    <a href="https://doc.scalingo.com/samples">Samples</a> |
-    <a href="https://doc.scalingo.com/tools/cli/start">CLI</a> |
-    <a href="https://doc.scalingo.com/changelog">Changelog</a> |
+    <a href="https://doc.scalingo.com/">Documentation</a> | 
+    <a href="https://doc.scalingo.com/tutorials">Tutorials</a> | 
+    <a href="https://doc.scalingo.com/samples">Samples</a> | 
+    <a href="https://doc.scalingo.com/tools/cli/start">CLI</a> | 
+    <a href="https://doc.scalingo.com/changelog">Changelog</a> | 
     <a href="https://developers.scalingo.com/">API Reference</a>
-</div>
 
+</div>
 
 ## Scalingo Getting Started
 
@@ -33,6 +33,19 @@ To browse the live documentation, visit [https://doc.scalingo.com](https://doc.s
 
 For LLM-oriented discovery and indexing, `llms.txt` is also available at:
 [https://doc.scalingo.com/llms.txt](https://doc.scalingo.com/llms.txt)
+
+
+## Repository Structure
+
+This repository is built with Jekyll and follows a mostly standard project structure.
+
+```text
+Looking for something specific?   
+├─ Documentation source files → [src/](./src)  
+├─ Blog posts → [src/_posts/](./src/_posts/)  
+├─ Tutorials → [src/_tutorials/](./src/_tutorials/)  
+├─ Changelog notes → [src/changelog/](./src/changelog/)
+```
 
 
 ## Contributing
