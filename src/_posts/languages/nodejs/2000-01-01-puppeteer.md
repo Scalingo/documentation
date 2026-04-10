@@ -26,14 +26,19 @@ Depending on your stack, you'll need different system dependencies in the `Aptfi
 
 - For `scalingo-22`:
 
+```
+libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+```
+
 - For `scalingo-24`:
+
+```
+libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
+```
 
 {% note %}
 These are minimal dependencies, a more thorough list of system dependencies is available in the chromium [source repository](https://source.chromium.org/chromium/chromium/src/+/main:chrome/installer/linux/debian/dist_package_versions.json;l=150)
 {% endnote %}
-
-```
-```
 
 {% warning %}
 Puppeteer must be run with the option `--no-sandbox` on Scalingo. This option must be added with care. You should only add this option against some code you own.
