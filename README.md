@@ -1,9 +1,9 @@
 <p align="center">
     <a href="https://scalingo.com">
         <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="https://cdn.scalingo.com/branding/scalingo-brandmark-dark.png">
-            <source media="(prefers-color-scheme: light)" srcset="https://cdn.scalingo.com/branding/scalingo-brandmark-white.png">
-            <img alt="Scalingo Logo" src="https://cdn.scalingo.com/branding/scalingo-brandmark-white.png" height="128">
+            <source media="(prefers-color-scheme: dark)" srcset="https://cdn.scalingo.com/branding/logo/scalingo-brandmark-dark.png">
+            <source media="(prefers-color-scheme: light)" srcset="https://cdn.scalingo.com/branding/logo/scalingo-brandmark-white.png">
+            <img alt="Scalingo Logo" src="https://cdn.scalingo.com/branding/logo/scalingo-brandmark-white.png" height="128">
         </picture>
     </a>
 </p>
