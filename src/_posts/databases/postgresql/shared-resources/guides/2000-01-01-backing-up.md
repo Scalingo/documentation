@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Shared Resources addon
 nav: Backing Up
-modified_at: 2025-10-20 12:00:00
+modified_at: 2026-04-01 12:00:00
 tags: databases postgresql addon how-to
 index: 5
 ---
@@ -21,7 +21,7 @@ about backups retention and important considerations regarding backups.**
 {% endnote %}
 
 
-## Point-in-Time Recovery Backups
+## Continuous backups
 
 ### Creating a Point-in-Time Recovery Backup
 
@@ -32,7 +32,7 @@ Point-in-Time Recovery backups are automatically created by the platform.
 You have nothing to do to be able to use the Point-in-Time Recovery mechanism.
 
 
-## Scheduled Backups
+## Logical backups
 
 ### Creating a Scheduled Backup
 
@@ -51,7 +51,7 @@ the workload on our infrastructure.
 #### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Backups** tab
+2. Click the **Backups** tab, then **Logical backups**
 3. Locate the **Backup schedule** block
 4. Click the **Schedule** button
 5. Make sure to check the **I want to enable scheduled backups** checkbox
@@ -85,7 +85,7 @@ the workload on our infrastructure.
 #### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Backups** tab
+2. Click the **Backups** tab, then **Logical backups**
 3. Locate the **Backups** block
 4. Locate the Scheduled backup you are interested in
 5. Click the corresponding **Download** button
@@ -132,14 +132,14 @@ the workload on our infrastructure.
         The backup is downloaded in your current working directory.
 
 
-## Manual Backups
+### Manual Backups
 
 ### Creating a Manual Backup
 
 #### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Backups** tab
+2. Click the **Backups** tab, then **Logical backups**
 3. Locate the **Backups** block
 4. Click the **Trigger manual backup** button
 
