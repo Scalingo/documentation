@@ -27,7 +27,7 @@ The minimal *front matter* that you need to add is:
 ```
 ---
 title: What is Epoch
-modified_at: 2021-11-23 00:00:00
+modified_at: 1970-01-01 00:00:00
 ---
 ```
 
@@ -58,7 +58,9 @@ You are welcome to modify any article, but please remember to update `modified_a
 
 When adding or editing content, prefer following the existing structure and naming conventions used by nearby files.
 
-## Don'ts
+## Content conventions
+
+### Don'ts
 
 Please do not use the `date` metadata as it will conflict with the date extracted from the file name. Instead, use `modified_at` to record when a modification is made to an article.
 
@@ -70,7 +72,7 @@ Do not put `categories` in the *front matter*. Avoid adding `category` or `perma
 
 Do not manually edit generated files in `src/assets/` unless the task explicitly requires it. Prefer editing the source files in `assets/`.
 
-## Do's
+### Do's
 
 If you want to write a useful note:
 
@@ -94,7 +96,7 @@ If you want to insert a link to another documentation article:
 [text of the link]({% post_url platform/internals/2000-01-01-routing %})
 ```
 
-## Links
+### Links
 
 Prefer reference-style Markdown links when a page contains several links or when the target URL is long.
 
@@ -140,7 +142,6 @@ New redirect entries must be inserted above the `obsolete` section. Existing red
 Example:
 
 ```yml
-"301":
   -
     old: "/old/path"
     new: "/new/path"
@@ -173,7 +174,7 @@ docker compose -f docker compose-prod.yml up
 
 This will run puma in parallel and serve the site at http://localhost:4302
 
-### Changelog, Samples and New Section
+### Manual rebuilds for changelog, samples, and new sections
 
 For a reason I ignore and I don't want to spend time understanding, we need to manually re-build the pages when adding a new changelog entry or a new section.
 This is done with:
@@ -184,13 +185,13 @@ docker compose exec web bundle exec jekyll build
 
 ### How to debug
 
-#### Ruby
+#### Jekyll build
 
 Using [debug.rb](https://github.com/ruby/debug) it's possible to add break points in Ruby code.
 1. Prepend command `jekyll serve` by `rdbg -c -- `
 2. Add a `binding.break` where you want to stop the execution
 
-#### HTML/CSS
+#### Theming (HTML/CSS)
 
 To help debug responsive layout issues add this tool in the default layout, it will show the current Tailwind screen & size in every pages.
 
