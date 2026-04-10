@@ -754,7 +754,7 @@
     new: "/languages/nodejs/2000-01-01-angular"
 
   - old: "/platform/app/crash"
-    new: "/platform/app/troubleshooting"
+    new: "/platform/app/troubleshooting/overview"
 
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
