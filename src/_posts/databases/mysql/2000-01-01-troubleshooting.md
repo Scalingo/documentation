@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Scalingo for MySQL®
 nav: Troubleshooting
-modified_at: 2025-09-29 12:00:00
+modified_at: 2026-04-10 09:00:00
 tags: databases mysql addon
 index: 12
 ---
@@ -158,6 +158,18 @@ with some general steps to address them:
 
 - Implement connection pooling to reuse database connections, reducing the
   overhead of establishing a new connection for each query.
+
+
+## Solving Connection Issues
+
+### Too Many Connection Errors From
+
+Receiving the error `Too many connection errors from 192.0.2.67:12345` means 
+that the MySQL router blocked the connection after multiple failed 
+attempts using invalid credentials. 
+
+To solve this issue, the MySQL router has to be restarted, which induces a 
+small downtime of less than 30 seconds. To do so, please get in touch with our Support Team.
 
 
 [mysql-memory-use]: https://dev.mysql.com/doc/refman/8.0/en/memory-use.html
