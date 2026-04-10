@@ -38,11 +38,9 @@ For LLM-oriented discovery and indexing, `llms.txt` is also available at:
 
 ## Repository Structure
 
-This repository is built with Jekyll and follows a mostly standard project structure.
+This repository is built with Jekyll. Beyond the technical directories related to configuration and site generation, the main content lives in:
 
-- [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines
-- [src/](./src) for the main documentation source files
-- [src/_posts/](./src/_posts/) for blog posts
+- [src/_posts/](./src/_posts/) for documentation pages
 - [src/_tutorials/](./src/_tutorials/) for tutorials
 - [src/changelog/](./src/changelog/) for changelog notes
 
