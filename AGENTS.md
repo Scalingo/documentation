@@ -9,6 +9,7 @@
   - `src/_posts` for documentation pages
   - `src/_tutorials` for tutorials
   - `src/_tutorials_categories` for tutorial categories
+  - `src/changelog` for changelog entries
   - `src/_includes` for reusable Liquid partials
   - `assets/` for source assets
   - `src/assets/` for built assets
@@ -24,7 +25,10 @@
 
 ## Editing Rules
 
+- New markdown files must follow the `YYYY-MM-DD-title.md` naming pattern.
+- The date in the filename must be less than or equal to the current build date, otherwise the page may be excluded from the build output.
 - When modifying an existing documentation page, update its `modified_at` front matter.
+- `modified_at` is typically set to `09:00:00` so the page is positioned correctly in the generated site.
 - Do not add `date` in front matter for posts. The filename date is authoritative.
 - Do not add `permalink`, `category`, or `categories` in front matter.
 - Do not add a first-level heading (`# Title`) in page content. The page title comes from front matter.
