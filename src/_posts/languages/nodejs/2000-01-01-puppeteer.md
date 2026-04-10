@@ -24,11 +24,7 @@ git commit --message="Add multi-buildpack"
 
 Depending on your stack, you'll need different system dependencies in the `Aptfile` at the root of your project.
 
-**Ubuntu 22.04**
-
-```
-libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-```
+- For `scalingo-22`:
 
 **Ubuntu 24.04**
 
