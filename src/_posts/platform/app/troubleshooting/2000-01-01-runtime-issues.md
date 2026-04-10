@@ -1,116 +1,15 @@
 ---
-title: Application Crash
-modified_at: 2023-05-24 00:00:00
-tags: app crash recovery
-index: 12
+title: Runtime Issues
+modified_at: 2026-04-10 00:00:00
+tags: troubleshooting crash runtime recovery notification
+index: 3
 ---
 
-When the platform starts your container(s) (be it after a successful build,
-after a scale operation or after a restart operation), your application enters
-the *run* phase of its [lifespan]({% post_url platform/internals/2000-01-01-container-management %}).
-Unfortunately, bad things may still happen during this phase, which can lead
-your application to crash.
+Runtime Issues are errors that happen after your application's container has reached the *running* state.
 
-Various reasons can explain why your application's lifespan ends up shortened.
-At Scalingo, we distinguish two main kinds of crash:
-**[Boot Errors](#understanding-boot-errors)** and
-**[Runtime Errors](#understanding-runtime-errors)**.
+For a broader overview, see [Troubleshooting Your Application]({% post_url platform/app/2000-01-01-troubleshooting %}). If your application fails before reaching the *running* state, see [Boot and Startup Errors]({% post_url platform/app/troubleshooting/2000-01-01-boot-and-startup-errors %}).
 
-
-## Understanding Boot Errors
-
-**Boot Errors** can only occur when your container is still in its *starting*
-state, **before** entering its *running* state.
-
-These errors are thrown by the platform when it detects that your application
-doesn't behave as expected.
-
-There are 3 kinds of Boot Errors:
-[Start Errors](#understanding-start-errors),
-[Timeout Errors](#understanding-timeout-errors) and
-[Hook Errors](#understanding-hook-errors).
-
-### Understanding Start Errors
-
-The **Start Error** is the default kind of Boot Error. It is thrown as soon as
-an unmanaged error is detected and caught by the platform. It can occur at any
-moment, as long as your app isn't *running* yet.
-
-A Start Error makes the deployment fail instantly. Note that the former version
-of your application (if any), keeps running.
-
-In most cases, a Start Error is caused by a misconfiguration of your
-application, or by some unmanaged error/exception in your application's code.
-
-#### Fixing Start Errors
-
-It's very likely that an action on your side is required to fix the issue. The
-deployment logs should help you identify the issue.
-
-### Understanding Timeout Errors
-
-When your application has a [`web` or a `tcp` process type]({% post_url platform/app/2000-01-01-procfile %}#special-process-types),
-the process started in the corresponding container(s) **MUST** bind to the
-provided network port (`PORT` environment variable) within a delay of 60
-seconds. After this deadline, the platform considers the application has being
-unreachable and throws a **Timeout Error**, causing the deployment to fail.
-
-- If this situation arises after a restart or a scale operation, the platform
-  automatically retries to start your container(s). After 20 unsuccessful
-  attempts (with an exponential backoff strategy), the platform gives up.
-  Note that your existing containers keep running during this time and after.
-
-- If you are trying to deploy a new version of an already running application,
-  this new deployment is considered a failure but the previous version of your
-  application keeps running.
-
-- Conversely, if this is a very first deployment, the platform does not make
-  any attempt to recover from the error. The deployment fails with a
-  **timeout-error** status, letting you know that your application didn't
-  bind to `PORT` soon enough.
-
-{% note %}
-  A Timeout Error can only occur if you have a `web` or a `tcp` process type,
-  which is very likely.
-{% endnote %}
-
-#### Fixing Timeout Errors
-
-To fix a Timeout Error, make sure:
-- to bind to the provided network port, by using the `PORT` environment
-  variable.
-- to listen on `0.0.0.0` and not on `127.0.0.1`.
-- that your application is starting quickly enough.
-
-You may need to edit your
-[Procfile]({% post_url platform/app/2000-01-01-procfile %}) to fulfill these
-requirements.
-
-If your application doesn't need a `web` or `tcp` process type, make sure to
-[scale the unnecessary process type to zero]({% post_url platform/app/2000-01-01-web-less-app %}#deploy-a-web-less-application).
-
-### Understanding Hook Errors
-
-If your application has a [`postdeploy` process type]({% post_url platform/app/2000-01-01-procfile %}#special-process-types),
-the platform can throw a **Hook Error** if the post-deployment process fails.
-
-- In such a case, the deployment fails with a **hook-error** status.
-- If your application is already running, its code isn't updated and the former
-  version keeps running.
-
-{% note %}
-  Hook Errors can only occur if you have a `postdeploy` process type.
-{% endnote %}
-
-#### Fixing Hook Errors
-
-Hook Errors are generally caused by an error in your codebase or by some
-misconfiguration. To recover from it, we first advise to investigate the logs
-of your application to understand the root cause. After fixing it, trigger a
-new deployment by pushing your updated code to Scalingo.
-
-
-## Understanding Runtime Errors
+## Understanding Runtime Issues
 
 **Runtime Errors** are errors that happen during the execution of the process.
 Per definition, they can only occur when your container has reached its
@@ -144,7 +43,7 @@ error and the impact it has on your application:
   especially if your application is too verbose. This can lead to sensitive
   data leak and further exploitation.
 
-### Mitigating and Preventing Runtime Errors
+## Mitigating and Preventing Runtime Errors
 
 The very first step to take to mitigate the consequences of a Runtime Error is
 to ensure that you have regular, tested backups (for databases, this feature is
@@ -165,7 +64,7 @@ Finally, we strongly encourage developers to test their code, to follow the
 best practices and to conduct Q/A testings in a dedicated environment before
 migrating to production.
 
-### Recovering from a Runtime Error
+## Recovering from a Runtime Error
 
 When a Runtime Error occurs and leads to an application crash, the platform
 automatically takes some remedial measures to try to recover from it. The very
@@ -199,7 +98,7 @@ lasts 10 minutes. From here, we distinguish two main cases:
      is crashed and won't be restarted anymore, which means your application
      may now be totally unavailable.
 
-#### Fixing Runtime Errors
+### Fixing Runtime Errors
 
 Besides the measures taken by the platform, we strongly advise you to carefully
 investigate the logs of your crashing application as soon as possible. Once
