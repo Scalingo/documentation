@@ -10,7 +10,7 @@ platform/app/2000-01-01-review-apps %}) and [one-click deploy button]({%
 post_url platform/deployment/2000-01-01-one-click-deploy %}). Its intent is to
 configure how an application should be created.
 
-If your application code is in a subdirectory configured through the [`PROJECT_DIR`]({% post_url platform/getting-started/2000-01-01-common-deployment-errors %}#project-in-a-subdirectory) environment variable, Scalingo detects the JSON manifest under this subdirectory. If there is no JSON manifest in the `PROJECT_DIR` folder, Scalingo tries to get the `scalingo.json` in every folder up to the root of your repository.
+If your application code is in a subdirectory configured through the [`PROJECT_DIR`]({% post_url platform/getting-started/2000-01-01-quick-resolution-guide %}#project-in-a-subdirectory) environment variable, Scalingo detects the JSON manifest under this subdirectory. If there is no JSON manifest in the `PROJECT_DIR` folder, Scalingo tries to get the `scalingo.json` in every folder up to the root of your repository.
 
 ## Configuration of the Environment
 

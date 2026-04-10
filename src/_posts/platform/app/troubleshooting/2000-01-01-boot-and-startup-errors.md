@@ -2,12 +2,12 @@
 title: Boot and Startup Errors
 modified_at: 2026-04-10 00:00:00
 tags: troubleshooting crash startup boot timeout hook
-index: 2
+index: 3
 ---
 
 Boot and Startup Errors occur when the platform tries to start your application's containers, before they reach the *running* state.
 
-For a broader overview, see [Troubleshooting Your Application]({% post_url platform/app/2000-01-01-troubleshooting %}). If your application starts successfully and fails later, see [Runtime Issues]({% post_url platform/app/troubleshooting/2000-01-01-runtime-issues %}).
+For a broader overview, see [Troubleshooting Your Application]({% post_url platform/app/2000-01-01-troubleshooting %}). If the deployment fails before the containers are started, see [Deployment Issues]({% post_url platform/app/troubleshooting/2000-01-01-deployment-issues %}). If your application starts successfully and fails later, see [Runtime Issues]({% post_url platform/app/troubleshooting/2000-01-01-runtime-issues %}).
 
 There are 3 kinds of Boot and Startup Errors:
 [Start Errors](#understanding-start-errors),

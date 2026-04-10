@@ -756,6 +756,9 @@
   - old: "/platform/app/crash"
     new: "/platform/app/troubleshooting/overview"
 
+  - old: "/platform/getting-started/common-deployment-errors"
+    new: "/platform/getting-started/quick-resolution-guide"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
