@@ -24,7 +24,7 @@ The date in the filename must be less than or equal to the current build date, o
 
 The minimal *front matter* that you need to add is:
 
-```
+```yml
 ---
 title: What is Epoch
 modified_at: 1970-01-01 00:00:00
@@ -76,7 +76,7 @@ Do not manually edit generated files in `src/assets/` unless the task explicitly
 
 If you want to write a useful note:
 
-```
+```liquid
 {% note %}
   My useful note here
 {% endnote %}
@@ -84,7 +84,7 @@ If you want to write a useful note:
 
 If you want to write a warning note:
 
-```
+```liquid
 {% warning %}
   My warning note here
 {% endwarning %}
@@ -142,6 +142,7 @@ New redirect entries must be inserted above the `obsolete` section. Existing red
 Example:
 
 ```yml
+"301":
   -
     old: "/old/path"
     new: "/new/path"
@@ -168,7 +169,7 @@ And visit http://localhost:4300
 
 If you want to serve the doc like in production (through the rack stack), generate the site first (see above) and then:
 
-```
+```sh
 docker compose -f docker compose-prod.yml up
 ```
 
@@ -179,7 +180,7 @@ This will run puma in parallel and serve the site at http://localhost:4302
 For a reason I ignore and I don't want to spend time understanding, we need to manually re-build the pages when adding a new changelog entry or a new section.
 This is done with:
 
-```
+```sh
 docker compose exec web bundle exec jekyll build
 ```
 
@@ -195,7 +196,7 @@ Using [debug.rb](https://github.com/ruby/debug) it's possible to add break point
 
 To help debug responsive layout issues add this tool in the default layout, it will show the current Tailwind screen & size in every pages.
 
-```
+```liquid
   {% include organisms/responsive_tool.html %}
 ```
 
@@ -204,8 +205,8 @@ To help debug responsive layout issues add this tool in the default layout, it w
 Sometimes, the files regeneration (especially the assets) got lost.
 
 In this case remove the `_site` folder via
-```
-dc run web rm -rf _site
+```sh
+docker compose run web rm -rf _site
 ```
 
 ## Validation
