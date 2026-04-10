@@ -26,11 +26,7 @@ Depending on your stack, you'll need different system dependencies in the `Aptfi
 
 - For `scalingo-22`:
 
-**Ubuntu 24.04**
-
-```
-libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
-```
+- For `scalingo-24`:
 
 {% note %}
 These are minimal dependencies, a more thorough list of system dependencies is available in the chromium [source repository](https://source.chromium.org/chromium/chromium/src/+/main:chrome/installer/linux/debian/dist_package_versions.json;l=150)
