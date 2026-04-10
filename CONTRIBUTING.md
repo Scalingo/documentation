@@ -125,11 +125,15 @@ object(s)`. Then, insert it with:
 {% include mdl_img.html %}
 ```
 
-## Redirects
+## Renaming a page
 
-Redirects are defined in `redirections.yml`.
+If you rename a page or change its path, check the root-level files that may contain hardcoded internal URLs or routing rules related to that page, especially:
 
-If you rename a page or change its path, add a new redirect entry in the `301` section in the same change.
+- `_config.yml`
+- `config.ru`
+- `redirections.yml`
+
+If the public URL changes, add a new redirect entry in the `301` section of `redirections.yml` in the same change.
 
 New redirect entries must be inserted above the `obsolete` section. Existing redirect entries should not be rewritten, reordered or removed as part of a normal page move.
 
