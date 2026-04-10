@@ -2,10 +2,25 @@
 
 [*Scalingo Documentation Center*](http://doc.scalingo.com) relies on Jekyll. You are welcome to contribute to this documentation by forking and sending pull requests.
 
+## Repository structure
+
+Jekyll reads its source files from `src/` because `_config.yml` sets `source: src`.
+
+Main content is organized in:
+
+- `src/_posts/` for documentation pages
+- `src/_tutorials/` for tutorials
+- `src/_tutorials_categories/` for tutorial categories
+- `src/changelog/` for changelog entries
+- `src/_includes/` for reusable Liquid partials
+- `assets/` for source assets
+- `src/assets/` for built assets
+
 ## Adding a new article
 
-To add a new article simply create a new markdown file in the `_posts` folder with the following file format: `yyyy-mm-dd-title.md` (*e.g. 1970-01-01-what-is-epoch.md*).
+To add a new content page, create a new markdown file in the appropriate directory for that content type, using the following file format: `yyyy-mm-dd-title.md` (*e.g. 1970-01-01-what-is-epoch.md*).
 Please use the current date when creating the file.
+The date in the filename must be less than or equal to the current build date, otherwise the page may be excluded from the build output.
 
 The minimal *front matter* that you need to add is:
 
@@ -16,14 +31,32 @@ modified_at: 2021-11-23 00:00:00
 ---
 ```
 
-Optional tag :
+Optional tags:
 
 - `nav: [string]` set another url than the one generated from the title
 - `index: [integer]` change the position of the page in his folder in the side menu
+- `tags: [string]` add search and classification keywords
+- `layout: [string]` use a specific page layout for special pages
+- `description: [string]` add a short page description used by some landing pages
+- `subnav_index: [integer]` set the position of a page in the sub-navigation
+- `logo: [string]` define the icon or logo used by tutorial pages
+- `products: [array]` list related Scalingo products for a tutorial
+- `category: [string]` assign a tutorial to a tutorial category
+- `permalink: [string]` define the public URL of tutorials and other special pages that require a stable path
+- `is_series: [boolean]` mark a tutorial as part of a series
+- `series: [string]` group tutorial pages under the same series name
+- `series_index: [integer]` set the position of a page inside a tutorial series
+- `oses: [array]` list supported operating systems on pages that display OS-specific icons
+- `cvss: [object]` define CVSS metadata for security bulletins
+- `github: [string]` link a changelog entry to the upstream GitHub repository
+
+The exact set of supported tags depends on the content type and layout. When in doubt, copy the front matter structure from a nearby page of the same kind.
 
 ## Modifying an article
 
-You are welcome to modify any article, but please remember to update `modified_at` before sending your pull request.
+You are welcome to modify any article, but please remember to update `modified_at` before sending your pull request. In existing content, `modified_at` is typically set to `09:00:00`; prefer keeping that convention unless you have a reason to do otherwise.
+
+When adding or editing content, prefer following the existing structure and naming conventions used by nearby files.
 
 ## Don'ts
 
@@ -33,7 +66,9 @@ Please do not use first-level HTML/Markdown headers (*i.e. `<h1></h1>`*) as it w
 
 __Blockquotes__ should be **only used for quotes**.
 
-Do not put `categories`, `category` or `permalink` in the *front matter*, everything is handled by the jekyll-dirname-generator plugin.
+Do not put `categories` in the *front matter*. Avoid adding `category` or `permalink` to regular documentation pages in `src/_posts/` unless the content type already relies on them, such as tutorials or some legacy pages.
+
+Do not manually edit generated files in `src/assets/` unless the task explicitly requires it. Prefer editing the source files in `assets/`.
 
 ## Do's
 
@@ -59,6 +94,28 @@ If you want to insert a link to another documentation article:
 [text of the link]({% post_url platform/internals/2000-01-01-routing %})
 ```
 
+## Links
+
+Prefer reference-style Markdown links when a page contains several links or when the target URL is long.
+
+Example in content:
+
+```markdown
+Open your [account dashboard][dashboard].
+Transfer ownership with [this guide][transfer-project-ownership].
+```
+
+Then define the links at the bottom of the page:
+
+```markdown
+[dashboard]: https://dashboard.scalingo.com/
+[transfer-project-ownership]: {% post_url platform/projects/2000-01-01-manage-projects %}#transfer-project-ownership
+```
+
+This keeps the body of the page easier to read and makes link maintenance simpler.
+
+For short, isolated links, inline Markdown links are still acceptable.
+
 To insert an image, first upload it to our CDN, inside the documentation
 folder. Give it a public permission `Grant public read access to this
 object(s)`. Then, insert it with:
@@ -66,6 +123,23 @@ object(s)`. Then, insert it with:
 ```liquid
 {% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_*" %}
 {% include mdl_img.html %}
+```
+
+## Redirects
+
+Redirects are defined in `redirections.yml`.
+
+If you rename a page or change its path, add a new redirect entry in the `301` section in the same change.
+
+New redirect entries must be inserted above the `obsolete` section. Existing redirect entries should not be rewritten, reordered or removed as part of a normal page move.
+
+Example:
+
+```yml
+"301":
+  -
+    old: "/old/path"
+    new: "/new/path"
 ```
 
 ## Running Locally
@@ -127,4 +201,19 @@ Sometimes, the files regeneration (especially the assets) got lost.
 In this case remove the `_site` folder via
 ```
 dc run web rm -rf _site
+```
+
+## Validation
+
+After content or configuration changes, run:
+
+```sh
+docker compose run --rm web bundle exec jekyll build
+```
+
+After asset changes, run:
+
+```sh
+docker compose run --rm web yarn build
+docker compose run --rm web bundle exec jekyll build
 ```
