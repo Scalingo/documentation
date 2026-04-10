@@ -164,7 +164,7 @@ with some general steps to address them:
 
 ### Too Many Connection Errors From
 
-Receiving the error `Too many connection errors from 1.2.3.4:12345` means 
+Receiving the error `Too many connection errors from 192.0.2.67:12345` means 
 that the MySQL router blocked the connection after multiple failed 
 attempts using invalid credentials. 
 
