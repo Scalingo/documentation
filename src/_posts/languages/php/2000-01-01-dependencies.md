@@ -97,7 +97,7 @@ Scalingo currently supports the following versions of Composer:
 
 | Composer    | `scalingo-22`  | `scalingo-24`  |
 | ----------: | -------------: | -------------: |
-| `2.9`       | up to `2.9.6`  | up to `2.9.6`  |
+| `2.9`       | up to `2.9.7`  | up to `2.9.7`  |
 | `2.2` (LTS) | up to `2.2.26` | up to `2.2.26` |
 
 
