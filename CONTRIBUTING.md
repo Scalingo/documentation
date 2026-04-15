@@ -54,7 +54,7 @@ The exact set of supported tags depends on the content type and layout. When in 
 
 ## Modifying an article
 
-You are welcome to modify any article, but please remember to update `modified_at` before sending your pull request. In existing content, `modified_at` is typically set to `09:00:00`; prefer keeping that convention unless you have a reason to do otherwise.
+You are welcome to modify any article, but please remember to update `modified_at` before sending your pull request. In existing content, `modified_at` is typically set to `00:00:00`; prefer keeping that convention unless you have a reason to do otherwise.
 
 When adding or editing content, prefer following the existing structure and naming conventions used by nearby files.
 

@@ -32,9 +32,6 @@ This repository contains the source files for the Scalingo documentation.
 
 To browse the live documentation, visit [https://doc.scalingo.com](https://doc.scalingo.com)
 
-For LLM-oriented discovery and indexing, `llms.txt` is also available at:
-[https://doc.scalingo.com/llms.txt](https://doc.scalingo.com/llms.txt)
-
 
 ## Repository Structure
 
