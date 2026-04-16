@@ -9,7 +9,9 @@ index: 3
 - [English version](#en)
 - [Version française](#fr)
 
-{: #en}
+<a id="en"></a>
+
+## English
 
 Deploying an application on Scalingo ensures that you are following a base set of security practices from the beginning.
 
@@ -56,7 +58,9 @@ For example, we only allow TLS 1.2 and TLS 1.3 ciphers and we disable weak ciphe
 
 ---
 
-{: #fr}
+<a id="fr"></a>
+
+## Français
 
 Le déploiement d'une application sur Scalingo garantit que vous suivez un ensemble de pratiques de sécurité de base dès le départ.
 

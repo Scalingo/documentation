@@ -9,7 +9,9 @@ index: 11
 - [English version](#en)
 - [Version française](#fr)
 
-{: #en}
+<a id="en"></a>
+
+## English
 
 ### Vendor Security
 
@@ -36,7 +38,9 @@ of their security measures.
 
 ---
 
-{: #fr}
+<a id="fr"></a>
+
+## Français
 
 ### Sécurité des Fournisseurs
 

@@ -9,7 +9,9 @@ index: 4
 - [English version](#en)
 - [Version française](#fr)
 
-{: #en}
+<a id="en"></a>
+
+## English
 
 ### Monitoring
 
@@ -41,7 +43,9 @@ the future.
 
 ---
 
-{: #fr}
+<a id="fr"></a>
+
+## Français
 
 ### Surveillance
 

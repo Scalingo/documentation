@@ -9,7 +9,9 @@ index: 10
 - [English version](#en)
 - [Version française](#fr)
 
-{: #en}
+<a id="en"></a>
+
+## English
 
 ### Security By Design
 
@@ -54,7 +56,9 @@ to the deployment phase.
 
 ---
 
-{: #fr}
+<a id="fr"></a>
+
+## Français
 
 ### Sécurité dès la Conception
 

@@ -9,9 +9,11 @@ index: 5
 - [English version](#en)
 - [Version française](#fr)
 
-{: #en}
+<a id="en"></a>
 
-## Measures protecting your code and data
+## English
+
+### Measures protecting your code and data
 
 ### Data Encryption
 
@@ -52,9 +54,11 @@ fires and floods.
 
 ---
 
-{: #fr}
+<a id="fr"></a>
 
-## Mesures de Protection de votre Code et de vos Données
+## Français
+
+### Mesures de Protection de votre Code et de vos Données
 
 ### Chiffrement des Données
 

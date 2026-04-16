@@ -9,7 +9,9 @@ index: 13
 - [English version](#en)
 - [Version française](#fr)
 
-{: #en}
+<a id="en"></a>
+
+## English
 
 ### Disaster Recovery
 
@@ -37,7 +39,9 @@ After each test, a post-mortem is performed to measure the effectiveness of the 
 
 ---
 
-{: #fr}
+<a id="fr"></a>
+
+## Français
 
 ### Reprise d'Activités (PRA)
 

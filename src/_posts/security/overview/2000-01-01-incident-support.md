@@ -9,7 +9,9 @@ index: 12
 - [English version](#en)
 - [Version française](#fr)
 
-{: #en}
+<a id="en"></a>
+
+## English
 
 ### Security Incident Response
 
@@ -35,7 +37,9 @@ If your business requires extended availability and priority support, consider u
 
 ---
 
-{: #fr}
+<a id="fr"></a>
+
+## Français
 
 ### Réponse aux Incidents de Sécurité
 

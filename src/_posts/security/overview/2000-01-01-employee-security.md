@@ -9,7 +9,9 @@ index: 9
 - [English version](#en)
 - [Version française](#fr)
 
-{: #en}
+<a id="en"></a>
+
+## English
 
 ### Security Training
 
@@ -26,7 +28,9 @@ They are trained to detect phishing, social engineering, or impersonation attemp
 
 ---
 
-{: #fr}
+<a id="fr"></a>
+
+## Français
 
 ### Formation en Sécurité
 
