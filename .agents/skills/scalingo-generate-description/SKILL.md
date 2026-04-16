@@ -65,6 +65,9 @@ Recommended presentation template:
 
 ## Content rules
 
+- base the description only on explicit information in the page text
+- do not infer, generalize, or add facts that are not stated on the page
+- if a detail is not supported by the page, omit it
 - hard limit: 256 characters max
 - target: 120 to 180 characters when possible
 - sequence: page scope first, actionable outcomes second
@@ -84,6 +87,7 @@ Recommended presentation template:
 ## Validation checks
 
 - Is it <= 256 chars?
+- Can every claim be traced back to the page text?
 - Would it help route a query like "how to get app logs" or "how to reset 2FA"?
 - Is each word useful for either scope or actionability?
 - Is it specific enough versus nearby pages?
