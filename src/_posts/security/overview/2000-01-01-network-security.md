@@ -1,10 +1,15 @@
 ---
 title: Network Security
 nav: Network
-modified_at: 2024-06-20 00:00:00
+modified_at: 2026-04-16 00:00:00
 tags: compliance security measures
 index: 2
 ---
+
+- [English version](#en)
+- [Version française](#fr)
+
+{: #en}
 
 ### DDoS Protection
 
@@ -37,3 +42,32 @@ each other.
 
 Our operations team uses VPNs to access the platform securely. This ensures that all access to the platform is encrypted
 and secure.
+
+---
+
+{: #fr}
+
+### Protection DDoS
+
+Nous utilisons une approche multi-niveaux pour protéger la plateforme contre les attaques DDoS :
+
+- des centres de nettoyage de données sont utilisés pour filtrer le trafic malveillant (Région `osc-secnum-fr1`)
+- nous implémentons un filtrage IP basé sur des listes d'adresses IP malveillantes connues qui sont régulièrement mises à jour
+- nous utilisons la limitation de débit pour empêcher un trafic excessif de submerger la plateforme
+- nous avons déployé un nombre adéquat de serveurs pour gérer le volume de trafic attendu
+
+Le dernier niveau de protection est votre application, car votre code doit être capable de gérer le trafic qu'il reçoit. Nous n'avons aucun moyen de distinguer entre une attaque et une augmentation soudaine du trafic légitime.
+
+Si votre application n'est pas capable de résister au trafic qu'elle reçoit, nous vous encourageons à souscrire à un service CDN qui vous aidera à absorber le trafic et à le distribuer sur plusieurs serveurs.
+
+### Isolation Réseau
+
+Notre réseau est isolé de l'internet public pour empêcher les accès non autorisés à la plateforme. À l'intérieur du réseau, nous utilisons des VLAN pour séparer les différentes parties de la plateforme et pour empêcher les accès non autorisés entre elles.
+
+### Pare-feu
+
+Scalingo utilise des pare-feu pour protéger la plateforme contre les accès non autorisés. Les pare-feu sont configurés pour autoriser uniquement le trafic nécessaire et bloquer tout autre trafic. Il existe plusieurs couches de pare-feu pour protéger la plateforme contre différents types d'attaques. À l'intérieur du réseau, nous utilisons des pare-feu pour protéger les différentes parties de la plateforme les unes des autres.
+
+### VPN
+
+Notre équipe d'exploitation utilise des VPN pour accéder à la plateforme de manière sécurisée. Cela garantit que tous les accès à la plateforme sont chiffrés et sécurisés.
