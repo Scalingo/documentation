@@ -1,5 +1,6 @@
 ---
 title: Application Lifecycle Management
+description: "Manage the full Scalingo app lifecycle: create, rename, transfer ownership, and administer application resources from dashboard or CLI workflows."
 nav: Lifecycle Management
 modified_at: 2026-03-09 07:00:00
 index: 10

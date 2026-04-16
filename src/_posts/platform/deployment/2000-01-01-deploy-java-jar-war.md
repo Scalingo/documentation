@@ -1,5 +1,6 @@
 ---
 title: Deployment of JAR and WAR archives
+description: "Deploy prebuilt Java JAR or WAR archives on Scalingo, configure startup commands and process types, and reuse CI build artifacts to speed up releases."
 nav: Deploy JAR/WAR
 modified_at: 2026-04-07 12:00:00
 index: 8

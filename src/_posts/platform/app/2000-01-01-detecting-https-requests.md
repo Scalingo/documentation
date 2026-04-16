@@ -1,5 +1,6 @@
 ---
 title: Detecting HTTPS requests
+description: "Detect HTTPS requests correctly behind reverse proxies on Scalingo using forwarded headers, with concrete implementation examples for common runtimes."
 modified_at: 2024-08-23 00:00:00
 tags: internals routing request https
 index: 22

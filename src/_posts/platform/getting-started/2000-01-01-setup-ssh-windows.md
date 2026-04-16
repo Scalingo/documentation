@@ -1,5 +1,6 @@
 ---
 title: Setup SSH on Windows
+description: "Set up SSH on Windows with Git Bash for Scalingo Git deployments: install required tools, generate an SSH key pair, load it in the SSH agent, and add the public key to your account."
 modified_at: 2025-02-14 00:00:00
 tags: follow-the-light ssh windows git
 index: 5

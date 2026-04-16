@@ -1,5 +1,6 @@
 ---
 title: Custom Error and Maintenance Pages
+description: "Configure custom error and maintenance pages on Scalingo to control user-facing responses during outages, maintenance windows, or upstream failures."
 modified_at: 2026-01-02 12:00:00
 tags: app custom error page
 ---

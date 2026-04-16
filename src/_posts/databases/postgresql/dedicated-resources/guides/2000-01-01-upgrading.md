@@ -1,5 +1,6 @@
 ---
 title: Upgrading Your Scalingo for PostgreSQL® Dedicated Resources Database
+description: "Upgrade Dedicated PostgreSQL with minor or major version paths, prepare compatibility checks, and execute safer upgrade workflows to reduce production risk."
 nav: Upgrading
 modified_at: 2026-02-13 12:00:00
 tags: databases postgresql dedicated

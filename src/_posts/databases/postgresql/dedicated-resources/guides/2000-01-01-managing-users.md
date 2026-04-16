@@ -1,5 +1,6 @@
 ---
 title: Managing Users of Your Scalingo for PostgreSQL® Dedicated Resources Database
+description: "Manage Dedicated PostgreSQL users by listing accounts, creating users, updating or resetting passwords, granting permissions, and deleting obsolete access."
 nav: Managing Users
 modified_at: 2026-02-13 12:00:00
 tags: databases postgresql dedicated

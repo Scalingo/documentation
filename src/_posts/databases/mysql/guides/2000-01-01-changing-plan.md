@@ -1,5 +1,6 @@
 ---
 title: Changing Plan
+description: "Change your MySQL addon plan by class or size, understand supported transitions, and anticipate application impact and downtime before scaling."
 nav: Changing Plan
 modified_at: 2025-12-23 12:00:00
 tags: databases mysql addon

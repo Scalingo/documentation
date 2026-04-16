@@ -1,5 +1,6 @@
 ---
 title: Using Multiple Databases
+description: "Create and manage multiple databases on one MySQL instance, understand shared users and resources, and handle connection variables for additional schemas."
 nav: Using Multiple Databases
 modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon

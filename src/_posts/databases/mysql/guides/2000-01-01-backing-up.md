@@ -1,5 +1,6 @@
 ---
 title: Backing Up Your Scalingo for MySQL® Addon
+description: "Use MySQL managed backup features, including periodic and manual backups, and understand retention policy and operational constraints before recovery."
 nav: Backing Up
 modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon

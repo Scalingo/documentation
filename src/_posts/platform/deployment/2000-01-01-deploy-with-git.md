@@ -1,5 +1,6 @@
 ---
 title: Deploy with Git
+description: "Deploy to Scalingo with Git: create an app, configure the Git remote, push branches, deploy previous versions, and troubleshoot SSH authentication issues."
 modified_at: 2023-06-05 00:00:00
 tags: git deployment push pull clone
 index: 4

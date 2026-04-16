@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Configure Dynatrace to monitor Scalingo applications
+description: "Configure Dynatrace with Scalingo applications to route telemetry and validate monitoring integration for performance tracking and incident investigation."
 nav: Configure Dynatrace
 modified_at: 2019-05-17 13:00:00
 tags: integration dynatrace

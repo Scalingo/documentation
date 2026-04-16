@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Configure Cloudflare to access Scalingo applications
+description: "Configure Cloudflare with a Scalingo application, set DNS and proxy settings, and secure traffic flow between Cloudflare and your app endpoints."
 nav: Configure Cloudflare
 modified_at: 2026-01-02 12:00:00
 tags: integration cloudflare

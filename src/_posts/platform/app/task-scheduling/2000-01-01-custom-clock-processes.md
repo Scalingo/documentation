@@ -1,5 +1,6 @@
 ---
 title: Scheduled Jobs with Custom Clock Processes
+description: "Schedule recurring jobs with custom clock processes on Scalingo, define timing logic in your app, and run background scheduling safely."
 nav: Custom Clock Processes
 modified_at: 2023-02-01 17:00:00
 tags: task-scheduling

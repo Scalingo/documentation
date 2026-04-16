@@ -1,5 +1,6 @@
 ---
 title: Connecting Your Scalingo for PostgreSQL® Dedicated Resources Database
+description: "Retrieve and understand the Dedicated PostgreSQL connection URI, map each URI component, and connect applications securely with SSL-ready settings."
 nav: Connecting
 modified_at: 2026-02-13 12:00:00
 tags: databases postgresql dedicated

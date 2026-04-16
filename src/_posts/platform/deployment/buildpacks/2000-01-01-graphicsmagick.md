@@ -1,5 +1,6 @@
 ---
 title: GraphicsMagick Buildpack
+description: "Install GraphicsMagick on Scalingo with a multi-buildpack setup, configure image tooling alongside your runtime buildpack, and validate binary availability at runtime."
 modified_at: 2024-10-08 00:00:00
 tags: buildpacks build image graphicsmagick
 ---

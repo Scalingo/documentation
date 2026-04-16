@@ -1,5 +1,6 @@
 ---
 title: Scalingo Autoscaler
+description: "Configure the Scalingo Autoscaler by selecting a metric, defining target values and limits, and understanding cooldowns and platform constraints."
 nav: Scalingo Autoscaler
 modified_at: 2025-12-29 11:04:00
 tags: app scaling autoscaling metrics autoscaler

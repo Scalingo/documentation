@@ -1,5 +1,6 @@
 ---
 title: Referral Program
+description: "Use the Scalingo referral program to share your referral link, earn invoice credits from paying referrals, and track sign-ups and rewards in dashboard."
 modified_at: 2025-06-26 00:00:00
 tags: referral
 index: 99

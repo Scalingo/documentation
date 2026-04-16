@@ -1,5 +1,6 @@
 ---
 title: Deploy with GitLab
+description: "Connect a Scalingo app to GitLab, select repository and branch, and manage automatic deployments and review apps from merge-request workflows."
 modified_at: 2023-06-07 00:00:00
 tags: scm gitlab deployment
 index: 6

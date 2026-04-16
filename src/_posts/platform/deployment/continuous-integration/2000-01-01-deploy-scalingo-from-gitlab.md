@@ -1,5 +1,6 @@
 ---
 title: Deploy to Scalingo from GitLab CI/CD
+description: "Understand the current status of GitLab CI/CD deployment guidance and use the recommended GitLab integration path for automatic Scalingo deployments."
 nav: Deploy from GitLab CI
 modified_at: 2023-03-10 00:00:00
 tags: ci deployment build gitlab

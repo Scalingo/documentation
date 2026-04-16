@@ -1,5 +1,6 @@
 ---
 title: Wkhtmltopdf Buildpack
+description: "Install wkhtmltopdf on Scalingo with a dedicated buildpack in a multi-buildpack setup, and review current deprecation guidance and supported usage patterns."
 modified_at: 2023-12-22 00:00:00
 tags: buildpacks build wkhtmltopdf
 ---

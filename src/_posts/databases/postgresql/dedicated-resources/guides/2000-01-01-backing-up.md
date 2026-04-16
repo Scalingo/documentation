@@ -1,5 +1,6 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Dedicated Resources Database
+description: "Use Dedicated PostgreSQL managed backups, understand continuous backup retention windows by service class, and run point-in-time backup operations."
 nav: Backing Up
 modified_at: 2026-02-13 12:00:00
 tags: databases postgresql dedicated how-to
