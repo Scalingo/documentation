@@ -133,7 +133,7 @@ extensions, please read [Adding a PECL Extension](#adding-a-pecl-extension).
 
 | Extension       | PHP 8.2  | PHP 8.3  | PHP 8.4  | PHP 8.5  |
 | --------------- | -------- | -------- | -------- | -------- |
-| `ext-amqp`      | Optional | Optional | Optional |          |
+| `ext-amqp`      | Optional | Optional | Optional | Optional |
 | `ext-apcu`      | Enabled  | Enabled  | Enabled  | Enabled  |
 | `ext-apfd`      | Optional | Optional | Optional | Optional |
 | `ext-event`     | Optional | Optional | Optional | Optional |
@@ -150,7 +150,7 @@ The following table lists the supported versions of available PECL extensions:
 
 | Extension       | PHP 8.2  | PHP 8.3  | PHP 8.4  | PHP 8.5  |
 | --------------- | -------: | -------: | -------: | -------: |
-| `ext-amqp`      | `2.1.2`  | `2.1.2`  | `2.1.2`  |          |
+| `ext-amqp`      | `2.2.0`  | `2.2.0`  | `2.2.0`  | `2.2.0`  |
 | `ext-apcu`      | `5.1.28` | `5.1.28` | `5.1.28` | `5.1.28` |
 | `ext-apfd`      | `1.0.3`  | `1.0.3`  | `1.0.3`  | `1.0.3`  |
 | `ext-event`     | `3.0.8`  | `3.0.8`  | `3.0.8`  | `3.0.8`  |
