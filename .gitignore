@@ -1,3 +1,20 @@
+# Environment variables
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Development tools
+.idea
+.vscode
+
+# AI
+.agents
+.claude
+.codex
+
+# Jekyll
 _site
 public
 .sass-cache
@@ -9,8 +26,4 @@ tmp
 node_modules
 yarn-error.log
 .jekyll-cache
-
-.idea
-.vscode
-.DS_Store
 src/assets/**
