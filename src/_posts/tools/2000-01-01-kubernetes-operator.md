@@ -12,10 +12,6 @@ index: 3
 
 Scalingo maintains a [Kubernetes Operator](https://github.com/Scalingo/scalingo-operator) that lets you manage Scalingo Dedicated Resources instances directly from a Kubernetes cluster.
 
-{% note %}
-The Scalingo Kubernetes Operator is currently in alpha, and we are actively extending its capabilities.
-{% endnote %}
-
 ### Scope
 
 The Scalingo Kubernetes Operator is a deployment and provisioning tool for Dedicated Resources.
@@ -32,10 +28,10 @@ It does not target supervision or day-2 operations. Operations outside this scop
 
 To start using the Scalingo operator in your Kubernetes cluster:
 
-1. [Deploy the Operator](https://github.com/Scalingo/scalingo-operator/releases) in your Kubernetes cluster using the `install.yaml` file
+1. [Deploy the Operator](https://github.com/Scalingo/scalingo-operator#deploy-the-operator) in your Kubernetes cluster using the `install.yaml` file from the [latest release](https://github.com/Scalingo/scalingo-operator/releases/latest)
 2. Create a Scalingo [API tokens]({% post_url platform/user-management/scalingo-account/2000-01-01-navigating %}#api-tokens) from your account settings
 3. [Put the token in Kubernetes secret](https://github.com/Scalingo/scalingo-operator/blob/main/README.md#create-secret)
-4. Create your dedicated database custom resource, based on this [example](https://github.com/Scalingo/scalingo-operator/blob/main/config/samples/databases_v1alpha1_postgresql.yaml)
+4. Create your dedicated database custom resource, based on these [examples](https://github.com/Scalingo/scalingo-operator/tree/main/doc/examples/custom_resources)
 5. Apply the custom resource to deploy the dedicated database
 
 For the complete list of resources, details and examples, see the operator [documentation page](https://github.com/Scalingo/scalingo-operator).
