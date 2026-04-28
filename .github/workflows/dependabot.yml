@@ -1,0 +1,15 @@
+name: Dependabot auto-approve
+on: pull_request
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Automatically merge Dependabot PRs
+        uses: Scalingo/actions/dependabot-automerge@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
