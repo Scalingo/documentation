@@ -14,7 +14,12 @@ Scalingo maintains a [Kubernetes Operator](https://github.com/Scalingo/scalingo-
 
 ### Scope
 
-The Scalingo Kubernetes Operator is a deployment and provisioning tool for Dedicated Resources.
+The Scalingo Kubernetes Operator is a deployment and provisioning tool for Dedicated Resources. It handles the operations:
+
+- create database
+- add/remove firewall rules
+- update plan
+- remove database
 
 It does not target supervision or day-2 operations. Operations outside this scope must be handled through the Scalingo CLI, API, or Dashboard, for example:
 
@@ -34,4 +39,4 @@ To start using the Scalingo operator in your Kubernetes cluster:
 4. Create your dedicated database custom resource, based on these [examples](https://github.com/Scalingo/scalingo-operator/tree/main/doc/examples/custom_resources)
 5. Apply the custom resource to deploy the dedicated database
 
-For the complete list of resources, details and examples, see the operator [documentation page](https://github.com/Scalingo/scalingo-operator).
+For the complete list of resources, details and examples, see the operator [documentation page](https://github.com/Scalingo/scalingo-operator/blob/main/README.md).
