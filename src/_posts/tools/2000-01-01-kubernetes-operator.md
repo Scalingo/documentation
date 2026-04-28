@@ -18,7 +18,7 @@ The Scalingo Kubernetes Operator is a deployment and provisioning tool for Dedic
 
 - create database
 - add/remove firewall rules
-- update plan
+- change plan
 - remove database
 
 It does not target supervision or day-2 operations. Operations outside this scope must be handled through the Scalingo CLI, API, or Dashboard, for example:
