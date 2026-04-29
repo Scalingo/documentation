@@ -2,7 +2,7 @@
 title: Getting access to SecNumCloud Region
 nav: SecNumCloud
 description: "Request access to Scalingo SecNumCloud region (osc-secnum-fr1) for applications and users, verify eligibility and company domain requirements, and follow support-based allow-listing procedures."
-modified_at: 2025-10-23 00:00:00
+modified_at: 2026-04-20 00:00:00
 tags: security procedures secnumcloud
 ---
 
@@ -10,11 +10,9 @@ tags: security procedures secnumcloud
 
 ### Pre-conditions
 
-- The application must be owned by a *company* or *public entity* (no
-  individuals are allowed)
-- The owner must be physically representated in Europe (have an office in an EU country)
-- Have a legitimate reason to be hosted in a SecNumCloud environment: business
-  requirement, legal requirement, reinforced security...
+- The application must be owned by a company or public body. Individual applicants are not eligible.
+- The owning entity must be established in the European Union and maintain a physical presence in an EU member state.
+- The application must have a legitimate need to be hosted in a SecNumCloud environment, whether for business, regulatory, or security reasons.
 
 ### Procedure
 

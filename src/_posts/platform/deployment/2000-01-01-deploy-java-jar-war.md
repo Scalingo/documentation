@@ -2,7 +2,7 @@
 title: Deployment of JAR and WAR archives
 description: "Deploy prebuilt Java JAR or WAR archives on Scalingo, configure startup commands and process types, and reuse CI build artifacts to speed up releases."
 nav: Deploy JAR/WAR
-modified_at: 2026-01-12 12:00:00
+modified_at: 2026-04-07 12:00:00
 index: 8
 tags: deployment, java, jar, war
 ---
@@ -106,8 +106,8 @@ The latest available versions currently are:
 
 | Tomcat Version | `scalingo-20` (EOL) | `scalingo-22`       | `scalingo-24`       |
 | -------------: | ------------------: | ------------------: | ------------------: |
-| **`10.1`**     | up to `10.1.49.0`   | up to `10.1.50.0`   | up to `10.1.50.0`   |
-| **`9.0`**      | up to `9.0.112.0`   | up to `9.0.113.0`   | up to `9.0.113.0`   |
+| **`10.1`**     | up to `10.1.49.0`   | up to `10.1.53.0`   | up to `10.1.53.0`   |
+| **`9.0`**      | up to `9.0.112.0`   | up to `9.0.116.0`   | up to `9.0.116.0`   |
 | `8.5`          | up to `8.5.68.1`    | up to `8.5.68.1`    | up to `8.5.68.1`    |
 
 The default Tomcat version on all stacks is the latest `9.0` version.

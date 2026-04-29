@@ -2,12 +2,12 @@
 title: Restoring Your Scalingo for PostgreSQL® Shared Resources Database addon
 description: "Restore Shared Resources PostgreSQL from point-in-time backups via dashboard, with clear guidance on downtime impact, UTC selection, and recovery timeline behavior."
 nav: Restoring
-modified_at: 2024-12-10 00:00:00
+modified_at: 2026-04-01 12:00:00
 tags: databases postgresql addon
 index: 6
 ---
 
-## Restoring a Point-in-Time Recovery Backup
+## Restoring from a continuous backup
 
 {% warning %}
 - Restoring a database using the Point-in-Time Recovery feature requires the
@@ -19,28 +19,28 @@ index: 6
 ### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Backups** tab
+2. Click the **Backups** tab, then **Continuous backups**
 3. Locate the **Point-in-Time Recovery** block
-3. Click the **Start a PiTR** button
-4. Pick a date and time (**timezone is UTC**)
-5. Make sure to check the **I understand that this action will permanently
+4. Click the **Start a PiTR** button
+5. Pick a timezone, then a date and time (**default timezone is your browser timezone**)
+6. Make sure to check the **I understand that this action will permanently
    delete existing data and cannot be cancelled or undone once started.**
    checkbox
-6. Validate by clicking the **Confirm** button
+7. Validate by clicking the **Confirm** button
 
 {% note %}
 Restoring a PiTR backup is only available from the database dashboard.
 {% endnote %}
 
 
-## Restoring a Scheduled Backup
+## Restoring from a logical backup
+
+### Restoring from a scheduled backup
 
 {% warning %}
 Restoring a database using a Scheduled backup requires the database to be
 completely stopped, hence causing an inevitable downtime.
 {% endwarning %}
-
-### Using the Command Line
 
 #### From a One-Off Container
 
@@ -94,16 +94,16 @@ Restoring a Scheduled backup is only available from the command line.
 {% endnote %}
 
 
-## Restoring a Manual Backup
+### Restoring from a manual backup
 
 Manual backups are considered like any Scheduled backup. Consequently, please
-refer to the [documentation explaining how to restore a Scheduled backup](#restoring-a-scheduled-backup).
+refer to the [documentation explaining how to restore a Scheduled backup](#restoring-from-a-scheduled-backup).
 
 
-## Restoring a Dump
+### Restoring from a customer-provided dump
 
 Dumps are considered like any Scheduled backup. Consequently, please refer to
-the [documentation explaining how to restore a Scheduled backup](#restoring-a-scheduled-backup).
+the [documentation explaining how to restore a Scheduled backup](#restoring-from-a-scheduled-backup).
 
 
 [database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard

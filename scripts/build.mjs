@@ -11,7 +11,6 @@ import fs from 'fs';
 const opts = {
   entryPoints: [
     "assets/application.js",
-    "assets/analytics.js",
     "assets/style.css",
   ],
   entryNames: '[dir]/[name]-[hash]',
@@ -19,6 +18,9 @@ const opts = {
   minify: true,
   target: ["es2017"],
   outdir: "src/assets",
+  loader: {
+    ".ttf": "file",
+  },
   plugins: [
     postCssPlugin({
   postcss: {

@@ -2,7 +2,7 @@
 title: Restoring Your Scalingo for PostgreSQL® Dedicated Resources Database
 description: "Restore Dedicated PostgreSQL from point-in-time recovery or dumps, choose the right recovery path, and understand downtime and timeline reset implications."
 nav: Restoring
-modified_at: 2026-02-13 12:00:00
+modified_at: 2026-04-01 12:00:00
 tags: databases postgresql dedicated
 index: 6
 ---
@@ -13,11 +13,11 @@ restored to a specific point in time within the backup retention period,
 depending on your plan.
 
 You can restore your database either from a managed
-[Point-in-Time Recovery backup](#restoring-a-point-in-time-recovery-backup),
-or from a [dump you previously created](#restoring-a-dump).
+[continuous backup](#restoring-from-a-continuous-backup),
+or from a [customer-provided dump](#restoring-from-a-customer-provided-dump).
 
 
-## Restoring a Point-in-Time Recovery Backup
+## Restoring from a continuous backup
 
 Point-in-Time Recovery is a fully managed restore operation available from the
 database dashboard.
@@ -35,13 +35,13 @@ database dashboard.
 2. Click the **Backups** tab
 3. Locate the **Point-in-Time Recovery** block
 4. Click the **Start a PiTR** button
-5. Pick a date and time (**timezone is UTC**)
+5. Pick a timezone, then a date and time (**default timezone is your browser timezone**)
 6. Make sure to check the **I understand that this action will permanently
    delete existing data and cannot be cancelled or undone once started.**
    checkbox
 7. Validate by clicking the **Confirm** button
 
-## Restoring a Dump
+## Restoring from a customer-provided dump
 
 On Dedicated Resources, [dump][backing-up-dumping] restore is a client-managed operation.
 You must connect to the database yourself and run standard PostgreSQL® tools

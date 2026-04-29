@@ -7,8 +7,17 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
   {% include organisms/favicons.html %}
   <script defer src="{{ 'assets/application.js' | esbuild_asset_path }}"></script>
-  <script defer data-domain="scalingo.com" event-app="documentation" data-api="https://scalingo.com/sc-analytics/event" src="{{ 'assets/analytics.js' | esbuild_asset_path }}"></script>
-  <link rel="stylesheet" href="https://use.typekit.net/ajl3atf.css">
+  {% if jekyll.environment == "production" %}
+  <script async src="https://analytics.scalingo.com/script.js"></script>
+  <script>
+   window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+   plausible.init({
+     domain: "scalingo.com",
+     endpoint: "https://analytics.scalingo.com/event",
+     customProperties: { app: "documentation" },
+   })
+  </script>
+  {% endif %}
   <link rel="stylesheet" href="{{ 'assets/style.css' | esbuild_asset_path }}">
 
   <meta property="og:site_name" content="{{ site.title }}"/>
