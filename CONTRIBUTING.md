@@ -137,15 +137,21 @@ If you rename a page or change its path, check the root-level files that may con
 
 If the public URL changes, add a new redirect entry in the `301` section of `redirections.yml` in the same change.
 
-New redirect entries must be inserted above the `obsolete` section. Existing redirect entries should not be rewritten, reordered or removed as part of a normal page move.
+Append new redirect entries at the end of the `301` section, immediately before the `obsolete` section. Do not insert them near similar redirects elsewhere in the file.
+
+Do not modify existing redirect entries during a normal page move, even if they point to a page that is being moved again. Redirect chaining is acceptable.
 
 Example:
 
 ```yml
 "301":
-  -
-    old: "/old/path"
+  # Existing redirects above...
+
+  - old: "/old/path"
     new: "/new/path"
+
+obsolete:
+  # Obsolete paths below...
 ```
 
 ## Running Locally
