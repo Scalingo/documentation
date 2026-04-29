@@ -127,7 +127,7 @@ it as soon as we can.
 
 ### Image Too Large
 
-The maximal size of an application image is __1.5 GiB__. If your assets, your
+The maximal size of an application image is __2 GiB__. If your assets, your
 dependencies and the code of your application weigh more than this limit,
 different solutions are available to lighten the image of your application:
 
