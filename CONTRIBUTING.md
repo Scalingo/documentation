@@ -60,6 +60,26 @@ When adding or editing content, prefer following the existing structure and nami
 
 ## Content conventions
 
+Documentation pages use the kramdown Markdown flavor. Use standard Markdown
+syntax by default, and refer to the [kramdown quick reference](https://kramdown.gettalong.org/quickref.html) when you need extra formatting options.
+
+### Writing style
+
+Use clear international English.
+
+The target audience is technical, but not necessarily native English-speaking. Documentation should be easy to scan and actionable for an international developer or operator audience.
+
+- Prefer short, direct sentences.
+- Use technical terms when they are precise and expected by developers or operators.
+- Avoid jargon when a simpler word is equally accurate.
+- Avoid idioms, slang, humor, metaphors, and culture-specific expressions.
+- Prefer active voice and concrete actions.
+- Keep explanations concise, especially in troubleshooting pages.
+- Define acronyms or product-specific concepts the first time they appear when the audience may not know them.
+- Do not over-explain standard technical concepts, but link to canonical documentation when useful.
+- Use consistent product and platform terms across pages.
+- Preserve exact command names, log messages, error messages, environment variables, and configuration keys.
+
 ### Don'ts
 
 Please do not use the `date` metadata as it will conflict with the date extracted from the file name. Instead, use `modified_at` to record when a modification is made to an article.
@@ -127,6 +147,25 @@ object(s)`. Then, insert it with:
 {% include mdl_img.html %}
 ```
 
+### Reusable content with Jekyll includes
+
+When the same content must appear on several pages, create a Jekyll include
+instead of duplicating the Markdown.
+
+Put reusable content fragments in `src/_includes/`. The include file does not
+need any special structure: write the Markdown directly, without front matter
+or an additional wrapper.
+
+Then include the fragment from each page:
+
+```liquid
+{% include api_endpoints.md %}
+```
+
+Keep includes focused on a small reusable fragment, such as a list, a warning,
+or a shared paragraph. If the fragment needs an internal maintenance note, put
+the note inside the include so contributors see it in the canonical source.
+
 ## Renaming a page
 
 If you rename a page or change its path, check the root-level files that may contain hardcoded internal URLs or routing rules related to that page, especially:
@@ -137,15 +176,21 @@ If you rename a page or change its path, check the root-level files that may con
 
 If the public URL changes, add a new redirect entry in the `301` section of `redirections.yml` in the same change.
 
-New redirect entries must be inserted above the `obsolete` section. Existing redirect entries should not be rewritten, reordered or removed as part of a normal page move.
+Append new redirect entries at the end of the `301` section, immediately before the `obsolete` section. Do not insert them near similar redirects elsewhere in the file.
+
+Do not modify existing redirect entries during a normal page move, even if they point to a page that is being moved again. Redirect chaining is acceptable.
 
 Example:
 
 ```yml
 "301":
-  -
-    old: "/old/path"
+  # Existing redirects above...
+
+  - old: "/old/path"
     new: "/new/path"
+
+obsolete:
+  # Obsolete paths below...
 ```
 
 ## Running Locally
