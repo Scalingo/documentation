@@ -1,6 +1,6 @@
 ---
 title: Runtime Issues
-modified_at: 2026-04-29 00:00:00
+modified_at: 2026-04-30 00:00:00
 tags: app runtime crash recovery troubleshooting
 index: 3
 ---
@@ -9,6 +9,19 @@ index: 3
 Per definition, they can only occur when your container has reached its
 *running* state (which means your deployment is considered successful by the
 platform).
+
+Deployment flow: `[x]` completed, `[!]` covered here, `[ ]` covered later.
+
+```text
+[x] Source fetched
+[x] Technology detected
+[x] Application image built
+[x] Container started
+[x] Postdeploy hook run
+[!] Application running
+```
+
+## Understanding Runtime Errors
 
 Unfortunately, and even if it has reached this state, unexpected errors can
 still lead your application to crash.

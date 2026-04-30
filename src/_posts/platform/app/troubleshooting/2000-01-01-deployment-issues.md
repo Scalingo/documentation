@@ -8,6 +8,17 @@ index: 1
 This page gathers common issues that can happen before an application image is
 ready to start.
 
+Deployment flow: `[x]` completed, `[!]` covered here, `[ ]` covered later.
+
+```text
+[!] Source fetched
+[!] Technology detected
+[!] Application image built
+[ ] Container started
+[ ] Postdeploy hook run
+[ ] Application running
+```
+
 ## Unknown Technology
 
 When pushing your app to Scalingo, you might get the following error:
