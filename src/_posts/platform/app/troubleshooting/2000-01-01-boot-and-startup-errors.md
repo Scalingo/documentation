@@ -11,16 +11,6 @@ the *run* phase of its [lifespan]({% post_url platform/internals/2000-01-01-cont
 Unfortunately, bad things may still happen during this phase, which can lead
 your application to crash before it becomes available.
 
-Deployment flow: `[x]` completed, `[!]` covered here, `[ ]` covered later.
-
-```text
-[x] Source fetched
-[x] Technology detected
-[x] Application image built
-[!] Container started
-[!] Postdeploy hook run
-[ ] Application running
-```
 
 ## Understanding Boot Errors
 

@@ -10,16 +10,6 @@ Per definition, they can only occur when your container has reached its
 *running* state (which means your deployment is considered successful by the
 platform).
 
-Deployment flow: `[x]` completed, `[!]` covered here, `[ ]` covered later.
-
-```text
-[x] Source fetched
-[x] Technology detected
-[x] Application image built
-[x] Container started
-[x] Postdeploy hook run
-[!] Application running
-```
 
 ## Understanding Runtime Errors
 
