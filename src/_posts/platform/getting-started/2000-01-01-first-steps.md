@@ -22,9 +22,9 @@ you need to have Git installed on your computer.
 To verify that you are allowed to push code to your application, Scalingo uses
 SSH authentication.
 
-* [Guide for Linux]({% post_url platform/getting-started/2000-01-01-setup-ssh-linux %})
-* [Guide for MacOS]({% post_url platform/getting-started/2000-01-01-setup-ssh-macos %})
-* [Guide for Windows]({% post_url platform/getting-started/2000-01-01-setup-ssh-windows %})
+* [Configure your SSH keys on Linux]({% post_url platform/getting-started/2000-01-01-setup-ssh-linux %})
+* [Configure your SSH keys on macOS]({% post_url platform/getting-started/2000-01-01-setup-ssh-macos %})
+* [Configure your SSH keys on Windows]({% post_url platform/getting-started/2000-01-01-setup-ssh-windows %})
 
 Once you have your own SSH key pair, add the content of the public key to your
 account.
