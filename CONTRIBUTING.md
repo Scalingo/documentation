@@ -60,6 +60,9 @@ When adding or editing content, prefer following the existing structure and nami
 
 ## Content conventions
 
+Documentation pages use the kramdown Markdown flavor. Use standard Markdown
+syntax by default, and refer to the [kramdown quick reference](https://kramdown.gettalong.org/quickref.html) when you need extra formatting options.
+
 ### Writing style
 
 Use clear international English.
