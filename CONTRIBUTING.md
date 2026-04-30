@@ -144,6 +144,25 @@ object(s)`. Then, insert it with:
 {% include mdl_img.html %}
 ```
 
+### Reusable content with Jekyll includes
+
+When the same content must appear on several pages, create a Jekyll include
+instead of duplicating the Markdown.
+
+Put reusable content fragments in `src/_includes/`. The include file does not
+need any special structure: write the Markdown directly, without front matter
+or an additional wrapper.
+
+Then include the fragment from each page:
+
+```liquid
+{% include api_endpoints.md %}
+```
+
+Keep includes focused on a small reusable fragment, such as a list, a warning,
+or a shared paragraph. If the fragment needs an internal maintenance note, put
+the note inside the include so contributors see it in the canonical source.
+
 ## Renaming a page
 
 If you rename a page or change its path, check the root-level files that may contain hardcoded internal URLs or routing rules related to that page, especially:
