@@ -60,6 +60,23 @@ When adding or editing content, prefer following the existing structure and nami
 
 ## Content conventions
 
+### Writing style
+
+Use clear international English.
+
+The target audience is technical, but not necessarily native English-speaking. Documentation should be easy to scan and actionable for an international developer or operator audience.
+
+- Prefer short, direct sentences.
+- Use technical terms when they are precise and expected by developers or operators.
+- Avoid jargon when a simpler word is equally accurate.
+- Avoid idioms, slang, humor, metaphors, and culture-specific expressions.
+- Prefer active voice and concrete actions.
+- Keep explanations concise, especially in troubleshooting pages.
+- Define acronyms or product-specific concepts the first time they appear when the audience may not know them.
+- Do not over-explain standard technical concepts, but link to canonical documentation when useful.
+- Use consistent product and platform terms across pages.
+- Preserve exact command names, log messages, error messages, environment variables, and configuration keys.
+
 ### Don'ts
 
 Please do not use the `date` metadata as it will conflict with the date extracted from the file name. Instead, use `modified_at` to record when a modification is made to an article.
