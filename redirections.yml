@@ -867,6 +867,10 @@
   - old: "/platform/app/crash"
     new: "/platform/app/troubleshooting/boot-and-startup-errors"
 
+  -
+    old: "/platform/deployment/unknown-technology"
+    new: "/platform/app/troubleshooting/deployment-issues#unknown-technology"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
