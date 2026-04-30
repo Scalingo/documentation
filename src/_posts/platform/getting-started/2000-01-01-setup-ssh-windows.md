@@ -1,6 +1,6 @@
 ---
 title: Setup SSH on Windows
-modified_at: 2025-02-14 00:00:00
+modified_at: 2026-04-30 00:00:00
 tags: follow-the-light ssh windows git
 index: 5
 ---
@@ -14,6 +14,20 @@ You can download git-bash
 [here](https://github.com/git-for-windows/git/releases)
 and install it by selecting `git-bash` during the installation process.
 
+### Check if you already have an available SSH key
+
+In a git-bash terminal, run the following command:
+
+```bash
+$ ls $HOME/.ssh
+```
+
+If the files `id_ed25519` and `id_ed25519.pub` are in the `$HOME/.ssh` folder,
+you don't need to follow this guide, you already have your SSH key.
+
+However, if you have an SSH key but encounter authentication issues, you may need to add it to your SSH agent.
+See the section [Add an existing key to your SSH agent](#add-an-existing-key-to-your-ssh-agent) below.
+
 ### Create a new SSH key pair
 
 Git authentication is based on SSH, so you need to be able to authenticate with
@@ -23,7 +37,7 @@ section.
 
 ```bash
 $ cd $HOME
-$ mkdir .ssh
+$ mkdir -p ~/.ssh
 $ cd .ssh
 $ ssh-keygen.exe -t ed25519
 ```
@@ -70,24 +84,24 @@ Ensure your key is loaded in the SSH agent by running:
 $ ssh-add.exe -l
 ```
 If the key is not here, follow the next section to add it to your agent.
-Otherwise, please recheck the different step of this guide.
+Otherwise, please recheck the different steps of this guide.
 
 ## Add an existing key to your SSH agent
 
 If you already have an SSH key but cannot authenticate, you may need to add it to your SSH agent.
 
-Follow these steps in an admin elevated PowerShell terminal to ensure the SSH agent is running : 
+Follow these steps in an admin elevated PowerShell terminal to ensure the SSH agent is running:
 ```powershell
 Get-Service ssh-agent | Set-Service -StartupType Manual
 Start-Service ssh-agent
 ```
 
-In a terminal windows add your key to the SSH agent:
+In a terminal window add your key to the SSH agent:
 ```bash
 ssh-add.exe $HOME/.ssh/id_ed25519
 ```
 
-In the same terminal verify that the key is loaded : 
+In the same terminal verify that the key is loaded:
 ```bash
 ssh-add -l
 ```

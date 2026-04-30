@@ -1,7 +1,7 @@
 ---
 title: First Steps On Scalingo
 nav: First Steps
-modified_at: 2023-12-22 00:00:00
+modified_at: 2026-04-30 00:00:00
 tags: follow-the-light ssh
 index: 1
 ---
@@ -10,29 +10,28 @@ index: 1
 
 ### Git
 
-Deploying an application on Scalingo requires you to have Git installed.
+Scalingo lets you deploy and run your code using Git. To deploy an application,
+you need to have Git installed on your computer.
 
-* Linux: Use your package manager to install it. (example: `apt-get install git`)
-* macOS: If you've installed XCode, Git has been automatically installed. Otherwise,
-  install it from [Git official website](https://git-scm.com/download/mac)
-* Windows: Install if from [Git official website](https://git-scm.com/download/windows)
+* [Install git on Linux](https://git-scm.com/install/linux)
+* [Install git on macOS](https://git-scm.com/install/mac)
+* [Install git on Windows](https://git-scm.com/install/windows)
 
 ### SSH Key Setup
 
-To identify that you are allowed to push to your application, you need to setup SSH
-authentication.
+To verify that you are allowed to push code to your application, Scalingo uses
+SSH authentication.
 
 * [Guide for Linux]({% post_url platform/getting-started/2000-01-01-setup-ssh-linux %})
 * [Guide for MacOS]({% post_url platform/getting-started/2000-01-01-setup-ssh-macos %})
 * [Guide for Windows]({% post_url platform/getting-started/2000-01-01-setup-ssh-windows %})
 
-For any operating system, you need to copy the content of the public key to your account.
+Once you have your own SSH key pair, add the content of the public key to your
+account.
 
-With our dashboard:
+Using our dashboard: [https://dashboard.scalingo.com/account/keys](https://dashboard.scalingo.com/account/keys)
 
-[https://dashboard.scalingo.com/account/keys](https://dashboard.scalingo.com/account/keys)
-
-With our command line client:
+Using our [command line client]({% post_url tools/cli/2000-01-01-start %}):
 
 ```bash
 scalingo keys-add [name of the key] [path to the key]
@@ -43,6 +42,9 @@ scalingo keys-add Laptop ~/.ssh/id_ed25519.pub
 ```
 
 ## Some Tutorials to Start With
+
+Once Git and SSH are ready, follow a tutorial for your language or framework to
+easily deploy your first application on Scalingo.
 
 <ul class="list-unstyled">
   {% for post in site.tags["getting-started-tutorial"] %}
