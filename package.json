@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@docsearch/js": "^4.6.3",
-    "@docsearch/css": "^4.6.2",
+    "@docsearch/css": "^4.6.3",
     "@tailwindcss/postcss": "^4.2.1",
     "autoprefixer": "^10.5.0",
     "esbuild": "^0.28.0",
