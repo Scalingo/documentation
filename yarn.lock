@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-4.6.2.tgz#986776619dccbf798176c75e858cc22f5e710bb4"
   integrity sha512-fH/cn8BjEEdM2nJdjNMHIvOVYupG6AIDtFVDgIZrNzdCSj4KXr9kd+hsehqsNGYjpUjObeKYKvgy/IwCb1jZYQ==
 
-"@docsearch/js@^4.6.0":
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/@docsearch/js/-/js-4.6.0.tgz#db5020cfa6fe8b1f89886473d3b228777b438e7c"
-  integrity sha512-9/rbgkm/BgTq46cwxIohvSAz3koOFjnPpg0mwkJItAfzKbQIj+310PvwtgUY1YITDuGCag6yOL50GW2DBkaaBw==
+"@docsearch/js@^4.6.3":
+  version "4.6.3"
+  resolved "https://registry.yarnpkg.com/@docsearch/js/-/js-4.6.3.tgz#a72acd72c1d137cc264f456b244776dcbfc3dd23"
+  integrity sha512-qUIX2b4Apew3tv4F0qhmgShsl/Lfw4m6mqv/5/5dWNxwTcDdLMp2s3YwZ+NMGh3IKCg0pBaXm7Q5VdyU5Rj+cQ==
 
 "@emnapi/core@^1.7.1", "@emnapi/core@^1.8.1":
   version "1.9.1"
