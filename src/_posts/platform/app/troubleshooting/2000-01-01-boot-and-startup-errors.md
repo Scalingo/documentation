@@ -99,5 +99,5 @@ new deployment by pushing your updated code to Scalingo.
 
 [lifespan]: {% post_url platform/internals/2000-01-01-container-management %}
 [webless]: {% post_url platform/app/2000-01-01-web-less-app %}#deploy-a-web-less-application
-[Procfile]: {% platform/app/2000-01-01-procfile %}
+[Procfile]: {% post_url platform/app/2000-01-01-procfile %}
 [procfile-special]: {% post_url platform/app/2000-01-01-procfile %}#special-process-types
