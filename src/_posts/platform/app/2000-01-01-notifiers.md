@@ -7,12 +7,7 @@ index: 41
 ---
 
 App notifiers let you choose where Scalingo sends messages about your
-application activity.
-
-
-## Overview
-
-A notifier is defined for one application. It contains:
+application activity. A notifier is defined for one application and contains:
 
 - a name, to identify it in the dashboard;
 - a notification channel, such as email, Slack, webhook, or Rocket.Chat;
