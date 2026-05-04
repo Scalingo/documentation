@@ -1,31 +1,23 @@
 ---
 title: Boot and Startup Errors
-modified_at: 2026-04-30 00:00:00
+modified_at: 2026-05-04 00:00:00
 tags: app deployment boot startup timeout hook troubleshooting
 index: 2
 ---
 
-When the platform starts your container(s), be it after a successful build,
-after a scale operation or after a restart operation, your application enters
-the *run* phase of its [lifespan]({% post_url platform/internals/2000-01-01-container-management %}).
-Unfortunately, bad things may still happen during this phase, which can lead
-your application to crash before it becomes available.
-
-
-## Understanding Boot Errors
-
 **Boot Errors** can only occur when your container is still in its *starting*
-state, **before** entering its *running* state.
+state, **before** entering the *running* state of its [lifespan]:
+
+{% deploytl steps="4-5" %}
 
 These errors are thrown by the platform when it detects that your application
 doesn't behave as expected.
 
-There are 3 kinds of Boot Errors:
-[Start Errors](#start-errors),
-[Timeout Errors](#timeout-errors) and
-[Hook Errors](#hook-errors).
+There are 3 kinds of Boot Errors: [Start Errors](#start-errors),
+[Timeout Errors](#timeout-errors) and [Hook Errors](#hook-errors).
 
-### Start Errors
+
+## Start Errors
 
 The **Start Error** is the default kind of Boot Error. It is thrown as soon as
 an unmanaged error is detected and caught by the platform. It can occur at any
@@ -37,14 +29,15 @@ of your application (if any), keeps running.
 In most cases, a Start Error is caused by a misconfiguration of your
 application, or by some unmanaged error/exception in your application's code.
 
-#### Fixing Start Errors
+### Fixing Start Errors
 
 It's very likely that an action on your side is required to fix the issue. The
 deployment logs should help you identify the issue.
 
-### Timeout Errors
 
-When your application has a [`web` or a `tcp` process type]({% post_url platform/app/2000-01-01-procfile %}#special-process-types),
+## Timeout Errors
+
+When your application has a [`web` or a `tcp` process type][procfile-special],
 the process started in the corresponding container(s) **MUST** bind to the
 provided network port (`PORT` environment variable) within a delay of 60
 seconds. After this deadline, the platform considers the application has been
@@ -69,7 +62,7 @@ unreachable and throws a **Timeout Error**, causing the deployment to fail.
   which is very likely.
 {% endnote %}
 
-#### Fixing Timeout Errors
+### Fixing Timeout Errors
 
 To fix a Timeout Error, make sure:
 - to bind to the provided network port, by using the `PORT` environment
@@ -77,16 +70,15 @@ To fix a Timeout Error, make sure:
 - to listen on `0.0.0.0` and not on `127.0.0.1`.
 - that your application is starting quickly enough.
 
-You may need to edit your
-[Procfile]({% post_url platform/app/2000-01-01-procfile %}) to fulfill these
-requirements.
+You may need to edit your [Procfile] to fulfill these requirements.
 
 If your application doesn't need a `web` or `tcp` process type, make sure to
-[scale the unnecessary process type to zero]({% post_url platform/app/2000-01-01-web-less-app %}#deploy-a-web-less-application).
+[scale the unnecessary process type to zero][webless].
 
-### Hook Errors
 
-If your application has a [`postdeploy` process type]({% post_url platform/app/2000-01-01-procfile %}#special-process-types),
+## Hook Errors
+
+If your application has a [`postdeploy` process type][procfile-special],
 the platform can throw a **Hook Error** if the post-deployment process fails.
 
 - In such a case, the deployment fails with a **hook-error** status.
@@ -97,9 +89,15 @@ the platform can throw a **Hook Error** if the post-deployment process fails.
   Hook Errors can only occur if you have a `postdeploy` process type.
 {% endnote %}
 
-#### Fixing Hook Errors
+### Fixing Hook Errors
 
 Hook Errors are generally caused by an error in your codebase or by some
 misconfiguration. To recover from it, we first advise to investigate the logs
 of your application to understand the root cause. After fixing it, trigger a
 new deployment by pushing your updated code to Scalingo.
+
+
+[lifespan]: {% post_url platform/internals/2000-01-01-container-management %}
+[webless]: {% post_url platform/app/2000-01-01-web-less-app %}#deploy-a-web-less-application
+[Procfile]: {% platform/app/2000-01-01-procfile %}
+[procfile-special]: {% post_url platform/app/2000-01-01-procfile %}#special-process-types
