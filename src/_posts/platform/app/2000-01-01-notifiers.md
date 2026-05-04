@@ -94,6 +94,18 @@ selection of event types.
 
 The available event types are:
 
+{::comment}
+To update this list, fetch the event types from the public API endpoint:
+https://api.osc-fr1.scalingo.com/v1/event_types
+
+Use:
+- name as Event Type;
+- display_name as Display Name;
+- description as Description.
+
+Keep the rows sorted alphabetically by name.
+{:/comment}
+
 | Event Type                       | Display Name                   | Description                                                            |
 | -------------------------------- | ------------------------------ | ---------------------------------------------------------------------- |
 | `addon_db_upgraded`              | Addon database upgraded        | A database addon was upgraded                                          |
