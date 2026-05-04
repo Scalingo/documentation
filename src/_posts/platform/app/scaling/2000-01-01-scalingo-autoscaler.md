@@ -435,7 +435,7 @@ The following event is available to monitor the Autoscaler executions:
 | ------------ | -------------------------------------------------------------------- |
 | `app_scaled` | An autoscaling operation (scale-in and scale-out) has been triggered |
 
-To learn more about events and notifications, please visit the page dedicated
-to [app notifications]({% post_url platform/app/2000-01-01-notification %}).
+To learn more about events and notifiers, please visit the page dedicated to
+[app notifiers]({% post_url platform/app/2000-01-01-notifiers %}).
 
 [scaling-v]: {% post_url platform/app/scaling/2000-01-01-scaling %}#vertical-scaling
