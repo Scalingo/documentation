@@ -10,6 +10,18 @@ App notifiers let you choose where Scalingo sends messages about your
 application activity.
 
 
+## Overview
+
+A notifier is defined for one application. It contains:
+
+- a name, to identify it in the dashboard;
+- a notification channel, such as email, Slack, webhook, or Rocket.Chat;
+- the event types that should trigger a notification.
+
+When an event matching the notifier configuration occurs, Scalingo sends a
+notification through the selected channel.
+
+
 ## Vocabulary
 
 Event
@@ -30,23 +42,24 @@ Alert
   notifiers.
 
 
-## How Notifiers Work
+## Default Notifier
 
-A notifier is defined for one application. It contains:
+Each app has a default notifier. This notifier is configured to send critical
+alerts by email to the application owner.
 
-- a name, to identify it in the dashboard;
-- a notification channel, such as email, Slack, webhook, or Rocket.Chat;
-- the event types that should trigger a notification.
+Scalingo regularly updates the default notifier to include new critical alerts.
 
-When an event matching the notifier configuration occurs, Scalingo sends a
-notification through the selected channel.
-
-Notifiers are also used by [application metric alerts][alerts]. When an alert
-is triggered, Scalingo creates an event and sends a notification to the
-notifiers selected in the alert configuration.
+We recommend keeping the default notifier active, keeping critical alert event
+types selected, and adding the application's collaborators to this notifier.
 
 
-## Configuring Notifiers
+## Creating Custom Notifiers
+
+Create additional notifiers when you need specific channels, recipients, or
+event types.
+
+For example, you can create a notifier dedicated to deployment events, another
+one for alerts, or another one for a webhook-based integration.
 
 ### From the Dashboard
 
@@ -74,18 +87,12 @@ different delivery settings:
 - Mattermost: use the Slack integration.
 
 
-## Default Notifier
+## Using Notifiers With Alerts
 
-Each app has a default notifier. This notifier is configured to send critical
-alerts by email to the application owner.
+Notifiers are also used by [application metric alerts][alerts]. When an alert
+is triggered, Scalingo creates an event and sends a notification to the
+notifiers selected in the alert configuration.
 
-Scalingo regularly updates the default notifier to include new critical alerts.
-
-We recommend keeping the default notifier active, keeping critical alert event
-types selected, and adding the application's collaborators to this notifier.
-
-Create additional notifiers when you need specific channels, recipients, or
-event types.
 
 ## Event Types
 
