@@ -213,7 +213,7 @@ later time.
 
 By default, owner and collaborators receive email notifications one day before
 a scheduled maintenance execution. This notification system operates via the
-[App notifications]({% post_url /platform/app/2000-01-01-notification %})
+[App notifiers]({% post_url platform/app/2000-01-01-notifiers %})
 feature and the "default notifier" which is configured for each app. Please
 check if it is still active or configure another notifier for this purpose.
 It can easily be configured to suit your preferences. For instance, if you

@@ -151,7 +151,7 @@ The following events are available to monitor the backups:
 | `database_backup_succeeded` | A database backup has been successfully completed |
 | `database_backup_failed`    | A database backup has failed                      |
 
-To learn more about events and notifications, please visit the page dedicated to [app notifications]({% post_url platform/app/2000-01-01-notification %}).
+To learn more about events and notifiers, please visit the page dedicated to [app notifiers]({% post_url platform/app/2000-01-01-notifiers %}).
 
 ## Restoring a backup
 
