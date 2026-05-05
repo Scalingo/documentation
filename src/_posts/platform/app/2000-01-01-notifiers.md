@@ -3,7 +3,7 @@ title: App Notifiers
 nav: Notifiers
 modified_at: 2026-05-04 00:00:00
 tags: app notifier notification event
-index: 41
+index: 36
 ---
 
 App notifiers let you choose where Scalingo sends messages about your
