@@ -861,6 +861,9 @@
   - old: "/databases/postgresql/guides/upgrading"
     new: "/databases/postgresql/shared-resources/guides/upgrading"
 
+  - old: "/platform/app/notification"
+    new: "/platform/app/notifiers"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

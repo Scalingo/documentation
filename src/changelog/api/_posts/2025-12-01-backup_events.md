@@ -11,4 +11,4 @@ Two new event types have been added to monitor database backup operations:
 These events can be used to create notifiers that alert you when backup operations
 succeed or fail.
 
-More information about events and notifications in the [documentation]({% post_url platform/app/2000-01-01-notification %}).
+More information about events and notifiers in the [documentation]({% post_url platform/app/2000-01-01-notifiers %}).
