@@ -1,6 +1,6 @@
 ---
-title: Boot and Startup Errors
-modified_at: 2026-05-04 00:00:00
+title: Boot Errors
+modified_at: 2026-05-05 00:00:00
 tags: app deployment boot startup timeout hook troubleshooting
 index: 2
 ---
@@ -92,9 +92,9 @@ the platform can throw a **Hook Error** if the post-deployment process fails.
 ### Fixing Hook Errors
 
 Hook Errors are generally caused by an error in your codebase or by some
-misconfiguration. To recover from it, we first advise to investigate the logs
-of your application to understand the root cause. After fixing it, trigger a
-new deployment by pushing your updated code to Scalingo.
+misconfiguration. To recover from it, we first advise to investigate **your
+application logs**, not the deployment logs, to understand the root cause. After
+fixing it, trigger a new deployment by pushing your updated code to Scalingo.
 
 
 [lifespan]: {% post_url platform/internals/2000-01-01-container-management %}
