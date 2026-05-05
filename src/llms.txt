@@ -1,0 +1,21 @@
+---
+layout: null
+---
+
+# Scalingo Doc
+
+> Scalingo is a European Platform-as-a-Service for deploying, running, and operating applications, databases, and supporting services in the cloud. This documentation covers the main platform workflows and reference material, including application deployment, environment configuration, databases, add-ons, networking, observability, troubleshooting, and operational guidance.
+
+_Generated: {{ site.time | date_to_rfc822 }}_
+
+## Top docs
+The links below prioritize key documentation pages.
+{% assign top_urls = site.highlighted.first_steps | concat: site.highlighted.popular | uniq %}{% for top_url in top_urls -%}{% assign top_post = site.posts | where: "url", top_url | first %}
+- [{% if top_post %}{{ top_post.title }}{% else %}{{ top_url }}{% endif %}]({{ top_url | prepend: site.baseurl | prepend: site.url }}){% if top_post and top_post.description %}: {{ top_post.description | strip_html | normalize_whitespace | truncate: 256 }}{% endif %}
+{% endfor %}
+
+## All posts
+The links below point to the published documentation pages, ordered by modification date (newest first).
+{% assign posts = site.posts | sort: 'modified_at' | reverse %}{% for post in posts %}{% unless post.categories contains 'changelog' or post.llm_exclude == true or post.layout == 'dir' -%}{% assign llm_description = post.description | strip_html | normalize_whitespace | truncate: 256 %}
+- [{{ post.title }}]({{ post.url | prepend: site.baseurl | prepend: site.url }}){% if post.description and post.description != "" %}: {{ llm_description }}{% endif %}
+{% endunless -%}{% endfor %}
