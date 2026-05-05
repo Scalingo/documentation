@@ -1,7 +1,7 @@
 ---
 title: App Notifiers
 nav: Notifiers
-modified_at: 2026-05-04 00:00:00
+modified_at: 2026-05-05 00:00:00
 tags: app notifier notification event
 index: 36
 ---
