@@ -44,7 +44,7 @@ error and the impact it has on your application:
 
 ## Mitigating and Preventing Runtime Errors
 
-The very first step to take to mitigate the consequences of a Runtime Error is
+The very first step to mitigate the consequences of a Runtime Error is
 to ensure that you have regular, tested backups (for databases, this feature is
 included in all our *business* plans) and to setup some
 [redundancy]({% post_url platform/app/scaling/2000-01-01-scaling %}#redundancy).

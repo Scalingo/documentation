@@ -106,7 +106,7 @@ dependencies, and your application code exceed this limit, you need to reduce
 the size of the image before deployment:
 
 * Try to remove unused external dependencies or assets.
-* Define a [.slugignore file]({% post_url platform/app/2000-01-01-slugignore %})
+* Define a [`.slugignore` file]({% post_url platform/app/2000-01-01-slugignore %})
   to exclude files from the image.
 
 If you absolutely need all this data, please contact our support team.

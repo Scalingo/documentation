@@ -23,7 +23,7 @@ The **Start Error** is the default kind of Boot Error. It is thrown as soon as
 an unmanaged error is detected and caught by the platform. It can occur at any
 moment, as long as your app isn't *running* yet.
 
-A Start Error makes the deployment fail instantly. Note that the former version
+A Start Error makes the deployment fails instantly. Note that the former version
 of your application (if any), keeps running.
 
 In most cases, a Start Error is caused by a misconfiguration of your
