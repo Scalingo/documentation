@@ -1,6 +1,5 @@
 ---
 title: Service Classes
-description: "Choose the right database service class by comparing Starter, Business, and Enterprise characteristics for performance, replication, security, and SLA targets."
 nav: Service Classes
 modified_at: 2026-02-03 10:00:00
 index: 3

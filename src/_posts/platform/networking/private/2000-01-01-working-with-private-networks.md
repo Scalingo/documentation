@@ -2,7 +2,6 @@
 index: 20
 nav: Working With Private Networks
 title: Working With Private Networks
-description: "Configure applications for Private Networks by binding services to the right interfaces, controlling exposure, and enabling secure communication between private containers."
 modified_at: 2026-01-21 12:00:00
 ---
 

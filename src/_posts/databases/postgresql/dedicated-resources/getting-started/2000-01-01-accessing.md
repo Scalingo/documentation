@@ -1,6 +1,5 @@
 ---
 title: Accessing Your Scalingo for PostgreSQL® Dedicated Resources Database
-description: "Access Dedicated PostgreSQL remotely with psql or third-party tools, configure trusted sources and credentials, and run secure investigation or maintenance sessions."
 nav: Accessing
 modified_at: 2026-02-13 12:00:00
 tags: databases postgresql dedicated

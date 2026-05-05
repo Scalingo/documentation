@@ -1,6 +1,5 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Shared Resources addon
-description: "Understand Shared Resources PostgreSQL backup mechanisms, including logical and continuous backups, retention policy, and manual recovery preparation steps."
 nav: Backing Up
 modified_at: 2026-04-01 12:00:00
 tags: databases postgresql addon how-to

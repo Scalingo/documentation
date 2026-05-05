@@ -1,6 +1,5 @@
 ---
 title: Scalingo Scheduler - Run Scheduled Tasks
-description: "Schedule recurring commands with Scalingo Scheduler, configure execution frequency, and manage scheduled task behavior from dashboard or CLI."
 nav: Scalingo Scheduler
 modified_at: 2026-02-24 16:00:00
 tags: task-scheduling

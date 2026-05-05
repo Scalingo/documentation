@@ -1,6 +1,5 @@
 ---
 title: Setup SSH on macOS
-description: "Set up SSH on macOS for Scalingo Git deployments: verify existing keys, create an ed25519 key pair, configure the SSH agent, and add your public key to your account."
 modified_at: 2025-02-14 00:00:00
 tags: follow-the-light ssh macos git
 index: 4

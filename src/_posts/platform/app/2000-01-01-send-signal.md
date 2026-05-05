@@ -1,6 +1,5 @@
 ---
 title: Send a Signal to a Container
-description: "Send Unix signals to Scalingo containers to trigger graceful shutdown, reload, or custom process behavior, and understand how signals are handled."
 nav: Send Signal
 modified_at: 2025-01-27 00:00:00
 tags: app signal

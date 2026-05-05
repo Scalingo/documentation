@@ -1,6 +1,5 @@
 ---
 title: Prerequisites Before Upgrading to MySQL® 8.4 LTS
-description: "Prepare MySQL 8.4 upgrades by detecting unsupported schema patterns, resolving known blockers, and validating upgrade readiness before rollout."
 nav: Upgrading to MySQL 8.4
 modified_at: 2026-01-29 12:00:00
 tags: databases mysql addon migration

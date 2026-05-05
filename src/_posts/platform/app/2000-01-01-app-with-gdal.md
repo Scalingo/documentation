@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Deploy an Application Including the GDAL Library
-description: "Install and use the GDAL library on Scalingo applications, including Django-specific setup, so geospatial dependencies build and run correctly in your containers."
 nav: App Including GDAL
 modified_at: 2025-10-27 00:00:00
 tags: app gdal geo

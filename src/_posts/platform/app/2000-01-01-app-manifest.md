@@ -1,6 +1,5 @@
 ---
 title: Scalingo JSON Manifest
-description: "Define a Scalingo app manifest to configure environment variables, add-ons, deployment hooks, and process formation so app creation and review app deployments are reproducible."
 modified_at: 2025-12-30 00:00:00
 tags: app review apps one-click manifest
 ---

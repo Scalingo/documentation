@@ -1,6 +1,5 @@
 ---
 title: "Sticky Sessions - Session Affinity"
-description: "Enable sticky sessions on Scalingo, understand session affinity behavior and limits, and evaluate compatibility with stateful application frameworks."
 nav: "Sticky Sessions"
 modified_at: 2026-01-02 12:00:00
 tags: app routing

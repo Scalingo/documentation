@@ -1,6 +1,5 @@
 ---
 title: Manage your Projects
-description: "Manage Scalingo Projects from dashboard or CLI: create, rename, set defaults, and assign applications during creation to keep resources organized."
 modified_at: 2026-03-09 07:00:00
 tags: project management
 index: 2

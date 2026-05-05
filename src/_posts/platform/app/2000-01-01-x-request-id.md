@@ -1,6 +1,5 @@
 ---
 title: The X-Request-ID header
-description: "Use the X-Request-ID header to trace requests across Scalingo logs and application services for faster debugging and incident correlation."
 modified_at: 2017-06-08 00:00:00
 tags: internals reverse-proxy routing http header
 index: 90

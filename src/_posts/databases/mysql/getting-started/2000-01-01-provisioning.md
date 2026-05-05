@@ -1,6 +1,5 @@
 ---
 title: Provisioning a Scalingo for MySQL® Addon
-description: "Provision a MySQL addon from dashboard, CLI, or Terraform, and follow the required plan selection and setup flow for your application."
 nav: Provisioning
 modified_at: 2025-12-23 12:00:00
 tags: databases mysql addon

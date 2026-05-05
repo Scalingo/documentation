@@ -2,7 +2,6 @@
 index: 40
 nav: Forcing HTTPS
 title: Forcing HTTPS
-description: "Enforce HTTPS on Scalingo applications with redirects and security headers so all attached domains consistently serve encrypted traffic."
 modified_at: 2025-12-11 12:00:00
 ---
 

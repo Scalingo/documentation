@@ -1,6 +1,5 @@
 ---
 title: Scalingo Provider for Terraform
-description: "Automate Scalingo infrastructure with the Terraform provider: authenticate with API tokens, declare resources as code, and manage repeatable provisioning workflows."
 nav: Terraform Provider
 modified_at: 2026-02-13 00:00:00
 tags: tools terraform provider

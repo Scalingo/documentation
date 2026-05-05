@@ -1,6 +1,5 @@
 ---
 title: Restoring Your Scalingo for PostgreSQL® Dedicated Resources Database
-description: "Restore Dedicated PostgreSQL from point-in-time recovery or dumps, choose the right recovery path, and understand downtime and timeline reset implications."
 nav: Restoring
 modified_at: 2026-04-01 12:00:00
 tags: databases postgresql dedicated

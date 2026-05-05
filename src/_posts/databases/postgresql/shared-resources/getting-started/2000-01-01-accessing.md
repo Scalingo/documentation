@@ -1,6 +1,5 @@
 ---
 title: Accessing Your Scalingo for PostgreSQL® Shared Resources Database
-description: "Access Shared Resources PostgreSQL remotely through CLI console or external tools to inspect data, run diagnostics, and perform controlled maintenance tasks."
 nav: Accessing
 modified_at: 2025-06-10 00:00:00
 tags: databases postgresql addon

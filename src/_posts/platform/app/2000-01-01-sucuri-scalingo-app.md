@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Configure Sucuri to access Scalingo applications
-description: "Configure Sucuri in front of a Scalingo application, including SSL and certificate considerations, to secure and proxy traffic correctly."
 nav: Configure Sucuri
 modified_at: 2026-01-02 12:00:00
 tags: integration sucuri

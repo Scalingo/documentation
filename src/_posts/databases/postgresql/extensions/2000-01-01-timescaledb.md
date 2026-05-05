@@ -1,6 +1,5 @@
 ---
 title: TimescaleDB®
-description: "Configure TimescaleDB on Scalingo PostgreSQL for time-series workloads, understand available edition limits, and apply platform-specific setup recommendations."
 nav: TimescaleDB®
 modified_at: 2025-09-18 12:00:00
 tags: databases postgresql timescaledb timeseries extensions

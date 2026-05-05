@@ -1,6 +1,5 @@
 ---
 title: Monitoring and Auditing Your Scalingo for PostgreSQL® Dedicated Resources Database
-description: "Monitor and audit Dedicated PostgreSQL with dashboard logs, metrics, running queries, and query statistics to troubleshoot incidents and track performance trends."
 nav: Monitoring and Auditing
 modified_at: 2026-02-13 12:00:00
 tags: databases postgresql dedicated

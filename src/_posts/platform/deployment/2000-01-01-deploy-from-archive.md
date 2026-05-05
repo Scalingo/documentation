@@ -1,6 +1,5 @@
 ---
 title: Deploy Directly from an Archive
-description: "Deploy an application to Scalingo directly from a tar.gz archive using the CLI, including archive structure requirements and command usage without Git hosting."
 nav: Deploy from Archive
 modified_at: 2020-02-18 00:00:00
 tags: source deploy archive

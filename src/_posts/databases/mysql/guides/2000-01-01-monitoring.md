@@ -1,6 +1,5 @@
 ---
 title: Monitoring and Auditing Your Scalingo for MySQL® Addon
-description: "Monitor and audit MySQL with dashboard logs and metrics to troubleshoot incidents, investigate behavior changes, and track database health over time."
 nav: Monitoring and Auditing
 modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon

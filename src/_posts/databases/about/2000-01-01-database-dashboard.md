@@ -1,6 +1,5 @@
 ---
 title: Database Dashboard
-description: "Use the database dashboard as the central interface to monitor databases, manage users and backups, change plans, upgrade versions, and configure key options."
 nav: Database Dashboard
 modified_at: 2025-04-28 12:00:00
 index: 11

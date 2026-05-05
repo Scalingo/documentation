@@ -1,6 +1,5 @@
 ---
 title: Databases Backup Policies
-description: "Understand database backup mechanisms and retention policies across engines and architectures, including logical backups, continuous backups, and recovery objectives."
 nav: Backup Policies
 modified_at: 2025-12-23 18:00:00
 tags: databases backup policy policies explanation

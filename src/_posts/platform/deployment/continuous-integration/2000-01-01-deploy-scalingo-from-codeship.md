@@ -1,6 +1,5 @@
 ---
 title: Deploy to Scalingo from Codeship
-description: "Set up continuous deployment from Codeship to Scalingo with custom deployment scripts, branch pipelines, and secure SSH-based deployment access."
 nav: Deploy from Codeship
 modified_at: 2020-04-29 00:00:00
 tags: ci deployment build codeship

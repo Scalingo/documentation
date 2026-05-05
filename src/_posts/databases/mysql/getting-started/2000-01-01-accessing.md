@@ -1,6 +1,5 @@
 ---
 title: Accessing Your Scalingo for MySQL® database
-description: "Access MySQL remotely with CLI console, one-off containers, or external clients to inspect data, run diagnostics, and perform maintenance safely."
 nav: Accessing
 modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon

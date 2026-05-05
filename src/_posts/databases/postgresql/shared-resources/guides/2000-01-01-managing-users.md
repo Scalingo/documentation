@@ -1,6 +1,5 @@
 ---
 title: Managing Users of Your Scalingo for PostgreSQL® Shared Resources addon
-description: "Manage Shared Resources PostgreSQL users by listing accounts, creating role-specific users, and deleting obsolete access while respecting protected user constraints."
 nav: Managing Users
 modified_at: 2024-11-05 12:00:00
 tags: databases postgresql addon

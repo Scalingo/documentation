@@ -1,6 +1,5 @@
 ---
 title: Environment Variables
-description: "Manage Scalingo environment variables, use aliases, apply security and naming best practices, and access variables safely from your application code."
 modified_at: 2026-03-20 09:00:00
 tags: app configuration environment
 index: 3

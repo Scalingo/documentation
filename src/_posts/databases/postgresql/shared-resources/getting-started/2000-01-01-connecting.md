@@ -1,6 +1,5 @@
 ---
 title: Connecting Your Scalingo for PostgreSQL® Shared Resources Database
-description: "Connect applications to Shared Resources PostgreSQL using SCALINGO_POSTGRESQL_URL or DATABASE_URL, decode URI parts, and apply secure SSL settings."
 nav: Connecting
 modified_at: 2025-08-26 12:00:00
 tags: databases postgresql addon

@@ -1,6 +1,5 @@
 ---
 title: Child Application
-description: "Deploy and manage child applications from a parent app workflow, including setup constraints and deployment behavior for multi-app architectures on Scalingo."
 modified_at: 2023-12-22 00:00:00
 tags: app child
 index: 32

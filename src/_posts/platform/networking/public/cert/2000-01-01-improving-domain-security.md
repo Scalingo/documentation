@@ -2,7 +2,6 @@
 index: 30
 nav: Improving the Domain Security
 title: Improving the Domain Name Security
-description: "Improve domain certificate security with CAA DNS records to restrict authorized certificate authorities and reduce mis-issuance risk on public domains."
 modified_at: 2026-01-05 12:00:00
 ---
 

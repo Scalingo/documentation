@@ -1,6 +1,5 @@
 ---
 title: Heroku Compatibility
-description: "Understand Heroku compatibility on Scalingo across Procfile, buildpacks, app.json, environment variables, add-ons, and one-off tasks to deploy existing Heroku apps with minimal changes."
 modified_at: 2022-03-11 00:00:00
 tags: heroku twelve-factor
 index: 10

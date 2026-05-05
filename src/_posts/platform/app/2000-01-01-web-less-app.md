@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Deploy a Web-less Application
-description: "Deploy a web-less application on Scalingo by defining non-web process types and runtime commands for worker or background-only workloads."
 nav: Web-less Application
 modified_at: 2021-01-20 00:00:00
 tags: app webless

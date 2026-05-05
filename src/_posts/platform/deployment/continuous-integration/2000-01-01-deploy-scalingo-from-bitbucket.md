@@ -1,6 +1,5 @@
 ---
 title: Deploy to Scalingo from Bitbucket
-description: "Set up continuous deployment from Bitbucket Pipelines to Scalingo with SSH authentication, pipeline configuration, and automated deploy commands."
 nav: Deploy from Bitbucket
 modified_at: 2022-04-26 00:00:00
 tags: ci deployment build bitbucket

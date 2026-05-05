@@ -1,6 +1,5 @@
 ---
 title: Deploy to Scalingo from CircleCI
-description: "Set up continuous deployment from CircleCI to Scalingo by configuring .circleci pipelines, authentication variables, and region-specific deployment commands."
 nav: Deploy from CircleCI
 modified_at: 2023-12-22 00:00:00
 tags: ci deployment build circle-ci

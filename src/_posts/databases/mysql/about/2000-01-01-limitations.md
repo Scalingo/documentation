@@ -1,6 +1,5 @@
 ---
 title: Limitations
-description: "Check managed MySQL operational limits on Scalingo, including protected user constraints and platform-specific restrictions that affect daily administration."
 nav: Limitations
 modified_at: 2025-09-29 12:00:00
 tags: addon database mysql

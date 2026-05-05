@@ -1,6 +1,5 @@
 ---
 title: Setup SSH on Linux
-description: "Set up SSH on Linux for Scalingo Git deployments: check existing keys, generate an ed25519 key pair, add it to the SSH agent, and register the public key in your account."
 modified_at: 2025-02-14 00:00:00
 tags: follow-the-light ssh linux git
 index: 3

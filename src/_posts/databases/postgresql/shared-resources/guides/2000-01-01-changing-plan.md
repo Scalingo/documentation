@@ -1,6 +1,5 @@
 ---
 title: Changing Plan of a Scalingo for PostgreSQL® Shared Resources addon
-description: "Change Shared Resources PostgreSQL addon plan, compare class and size transitions, and estimate application impact and downtime before scaling operations."
 nav: Changing Plan
 modified_at: 2025-12-23 00:00:00
 tags: databases postgresql addon

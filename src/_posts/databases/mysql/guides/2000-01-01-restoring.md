@@ -1,6 +1,5 @@
 ---
 title: Restoring Your Scalingo for MySQL® Addon
-description: "Restore MySQL from periodic backups with CLI workflows, understand mandatory downtime, and follow controlled recovery steps to minimize disruption."
 nav: Restoring
 modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon

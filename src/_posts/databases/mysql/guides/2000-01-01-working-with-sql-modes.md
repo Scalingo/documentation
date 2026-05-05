@@ -1,6 +1,5 @@
 ---
 title: Working with SQL Modes
-description: "Configure MySQL SQL modes to enforce stricter validation or compatibility behavior, inspect active modes, and adapt query processing to application needs."
 nav: Working with SQL Modes
 modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon modes

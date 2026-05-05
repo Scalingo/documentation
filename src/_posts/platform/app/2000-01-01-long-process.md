@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Long Running Process
-description: "Handle long-running operations in web apps by using asynchronous processing patterns and HTTP 202 responses to avoid request timeouts on Scalingo."
 modified_at: 2026-03-05 12:00:00
 ---
 

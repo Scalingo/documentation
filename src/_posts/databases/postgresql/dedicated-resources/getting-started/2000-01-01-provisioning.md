@@ -1,6 +1,5 @@
 ---
 title: Provisioning a Scalingo for PostgreSQL® Dedicated Resources Database
-description: "Provision a Dedicated Resources PostgreSQL database from dashboard, CLI, Terraform, or Kubernetes Operator, and choose the setup path that fits your project lifecycle."
 nav: Provisioning
 modified_at: 2026-02-13 12:00:00
 tags: databases postgresql dedicated

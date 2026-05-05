@@ -1,6 +1,5 @@
 ---
 title: PostgreSQL® Anonymizer
-description: "Set up PostgreSQL Anonymizer on Scalingo to mask sensitive data, meet enablement prerequisites, and apply compliant anonymization workflows for non-production datasets."
 nav: PostgreSQL® Anonymizer
 modified_at: 2026-03-11 9:00:00
 tags: databases postgresql anonymization extensions

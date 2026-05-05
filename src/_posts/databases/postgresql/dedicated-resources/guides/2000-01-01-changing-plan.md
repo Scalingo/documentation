@@ -1,6 +1,5 @@
 ---
 title: Changing Plan of a Scalingo for PostgreSQL® Dedicated Resources Database
-description: "Change Dedicated PostgreSQL plan class or size, understand supported scale directions, and anticipate service impact when moving across resource tiers."
 nav: Changing Plan
 modified_at: 2026-02-13 12:00:00
 tags: databases postgresql dedicated

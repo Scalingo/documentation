@@ -1,6 +1,5 @@
 ---
 title: Upgrading Your Scalingo for PostgreSQL® Shared Resources Database addon
-description: "Upgrade Shared Resources PostgreSQL with minor and major version paths, validate compatibility, and plan safer upgrades to limit avoidable disruptions."
 nav: Upgrading
 modified_at: 2025-02-17 12:00:00
 tags: databases postgresql addon

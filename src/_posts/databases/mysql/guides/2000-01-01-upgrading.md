@@ -1,6 +1,5 @@
 ---
 title: Upgrading Your Scalingo for MySQL® Addon
-description: "Upgrade MySQL addon versions with safer patch-level strategy, validate prerequisites for LTS branch moves, and reduce compatibility risks during rollout."
 nav: Upgrading
 modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon

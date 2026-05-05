@@ -1,6 +1,5 @@
 ---
 title: Setup Git on Windows
-description: "Install and configure Git on Windows for Scalingo deployments, set your Git identity, and prepare your workstation with the required SSH setup."
 modified_at: 2017-08-09 11:00:00
 tags: git windows
 index: 6

@@ -1,6 +1,5 @@
 ---
 title: Post-deployment hook
-description: "Configure and run post-deploy hooks on Scalingo to execute migrations, cache warmups, or setup tasks automatically after each deployment."
 modified_at: 2023-12-22 00:00:00
 tags: app deployment hook postdeploy
 index: 13

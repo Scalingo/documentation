@@ -1,6 +1,5 @@
 ---
 title: Review Apps
-description: "Enable and configure Scalingo Review Apps for pull requests, control environment variables and add-ons, and manage deployment behavior from SCM events."
 modified_at: 2026-01-02 12:00:00
 tags: app review apps
 index: 31

@@ -1,6 +1,5 @@
 ---
 title: Connecting to Your Scalingo for MySQL® Addon
-description: "Connect your application to MySQL using SCALINGO_MYSQL_URL or DATABASE_URL, understand URI components, and configure secure SSL-ready connectivity."
 nav: Connecting
 modified_at: 2025-09-24 12:00:00
 tags: databases mysql addon

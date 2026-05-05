@@ -1,6 +1,5 @@
 ---
 title: File System and File Storage
-description: "Understand Scalingo filesystem behavior, write temporary files safely, and apply storage best practices for ephemeral containers and persistent data needs."
 modified_at: 2023-07-27 00:00:00
 tags: app runtime file system disk storage
 index: 1

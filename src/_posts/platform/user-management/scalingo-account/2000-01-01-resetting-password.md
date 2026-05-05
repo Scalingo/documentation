@@ -1,6 +1,5 @@
 ---
 title: Resetting Your Scalingo Account Password
-description: "Change or reset your Scalingo password from dashboard or sign-in flow, including forgotten-password email recovery and GitHub SSO-specific guidance."
 nav: Resetting Your Password
 modified_at: 2025-07-02 12:00:00
 index: 40

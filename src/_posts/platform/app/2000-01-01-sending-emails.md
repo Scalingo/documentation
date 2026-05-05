@@ -1,6 +1,5 @@
 ---
 title: Sending emails from your application
-description: "Send emails from Scalingo applications using external SMTP services, understand delivery constraints, and adapt to blocked outbound port 25."
 nav: Sending emails
 modified_at: 2023-06-05 00:00:00
 tags: app email smtp

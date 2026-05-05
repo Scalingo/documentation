@@ -1,6 +1,5 @@
 ---
 title: Limitations
-description: "Check managed PostgreSQL operational limits on Scalingo, including protected user constraints, backup and restore restrictions, and policies that impact administration tasks."
 nav: Limitations
 modified_at: 2025-06-10 12:00:00
 tags: addon database postgresql
