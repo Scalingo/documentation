@@ -865,7 +865,7 @@
     new: "/platform/app/troubleshooting/deployment-issues"
 
   - old: "/platform/app/crash"
-    new: "/platform/app/troubleshooting/boot-and-startup-errors"
+    new: "/platform/app/troubleshooting/boot-errors"
 
   - old: "/platform/deployment/unknown-technology"
     new: "/platform/app/troubleshooting/deployment-issues#unknown-technology"

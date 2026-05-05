@@ -32,7 +32,7 @@ happen in the following order:
 2. Containers from the new version of the application are started
 3. We wait until they started successfully (see common [deployment start
    errors]({% post_url
-   platform/app/troubleshooting/2000-01-01-boot-and-startup-errors
+   platform/app/troubleshooting/2000-01-01-boot-errors
    %}#start-errors)). They are not reachable yet, see [limits](#limits) below.
 4. An extra container is started to run the `postdeploy` command
 5. If the `postdeploy` command succeeds, we update the routing

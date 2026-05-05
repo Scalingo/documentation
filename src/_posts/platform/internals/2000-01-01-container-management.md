@@ -27,7 +27,7 @@ receive requests. Once the application has been started, the container scheduler
 will try to connect to your application on the port defined previously during
 **60 seconds**. Once a TCP connection is accepted by your container, we consider
 the container ready to get requests. Otherwise, the operation is aborted with a
-[Boot Timeout Error]({% post_url platform/app/troubleshooting/2000-01-01-boot-and-startup-errors %}#timeout-errors):
+[Boot Timeout Error]({% post_url platform/app/troubleshooting/2000-01-01-boot-errors %}#timeout-errors):
 
 * In the case of a deployment, it will be stopped with the **status
   'timeout-error'** and you'll have to fix why your application has not been
