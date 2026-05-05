@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scalingo - Generate Description"
+  short_description: "Generate concise actionable doc descriptions"
+  default_prompt: "Use $scalingo-generate-description to create or rewrite a Jekyll front matter description line under 256 characters."

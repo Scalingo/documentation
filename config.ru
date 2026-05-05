@@ -15,6 +15,23 @@ class Object
   end
 end
 
+class ForcePlainTextUtf8
+  def initialize(app)
+    @app = app
+  end
+
+  def call(env)
+    status, headers, body = @app.call(env)
+    content_type = headers["Content-Type"]
+
+    if content_type&.start_with?("text/plain") && !content_type.match?(/;\s*charset=/i)
+      headers["Content-Type"] = "#{content_type}; charset=utf-8"
+    end
+
+    [status, headers, body]
+  end
+end
+
 use Rack::Rewrite do
   r301 %r{.*}, "https://#{ENV["CANONICAL_HOST"]}/samples$&", if: proc { |rack_env|
     ["samples.scalingo.com"].include?(rack_env["SERVER_NAME"])
@@ -51,6 +68,8 @@ use Rack::Rewrite do
     rack_env["PATH_INFO"].present? && rack_env["PATH_INFO"] != "/" && rack_env["PATH_INFO"] !~ /\.(jpg|jpeg|png|gif|ico|svg|eot|otf|ttf|woff|woff2|css|js|xml|txt|webmanifest)$/i
   }
 end
+
+use ForcePlainTextUtf8
 
 use Rack::Cors do
   if ENV["ALLOWED_CHANGELOG_FEED_CONSUMERS"].present?

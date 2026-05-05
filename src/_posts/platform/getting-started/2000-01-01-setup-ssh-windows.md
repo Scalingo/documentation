@@ -78,7 +78,7 @@ It should display the following output:
 You've successfully authenticated on Scalingo, but there is no shell access
 ```
 
-If it doesn't, something has been done wrong. 
+If it doesn't, something has been done wrong.
 Ensure your key is loaded in the SSH agent by running:
 ```bash
 $ ssh-add.exe -l
