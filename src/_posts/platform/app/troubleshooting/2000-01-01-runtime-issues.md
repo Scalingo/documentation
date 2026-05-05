@@ -112,5 +112,5 @@ when a Timeout Error occurs).
 
 You can modify this behavior by tweaking your
 [Notifier's configuration]({% post_url platform/app/2000-01-01-notifiers %}).
-The `app_crashed`, `app_crashed_repeated` and the `app_deploy` events can be
+The `app_crashed`, `app_crashed_repeated` and the `app_deployed` events can be
 particularly worth considering.
