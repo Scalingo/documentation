@@ -8,6 +8,8 @@ index: 1
 This page gathers common issues that can happen before an application image is
 ready to start.
 
+{% deploytl steps="1-2-3" %}
+
 
 ## Unknown Technology
 
