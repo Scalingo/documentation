@@ -26,7 +26,7 @@ SSH authentication.
 * [Configure your SSH keys on macOS]({% post_url platform/getting-started/2000-01-01-setup-ssh-macos %})
 * [Configure your SSH keys on Windows]({% post_url platform/getting-started/2000-01-01-setup-ssh-windows %})
 
-Once you have your own SSH key pair, add the content of the public key to your
+Once you have your own SSH key pair, add the content of the **public** key to your
 account.
 
 Using our dashboard: [https://dashboard.scalingo.com/account/keys](https://dashboard.scalingo.com/account/keys)
