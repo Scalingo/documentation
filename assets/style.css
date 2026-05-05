@@ -1138,7 +1138,7 @@ div, span, html, body, ul, article, main, nav {
 
 ol.deploy-timeline {
     border-left: 4px solid var(--color-primary-gray-200);
-    margin-left: 1rem;
+    margin: 1rem 0 1rem 1rem;
 
     li {
         display: flex;
