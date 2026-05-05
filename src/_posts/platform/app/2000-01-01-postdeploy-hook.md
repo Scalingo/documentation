@@ -1,6 +1,6 @@
 ---
 title: Post-deployment hook
-modified_at: 2023-12-22 00:00:00
+modified_at: 2026-04-29 00:00:00
 tags: app deployment hook postdeploy
 index: 13
 ---
@@ -32,7 +32,7 @@ happen in the following order:
 2. Containers from the new version of the application are started
 3. We wait until they started successfully (see common [deployment start
    errors]({% post_url
-   platform/getting-started/2000-01-01-common-deployment-errors
+   platform/app/troubleshooting/2000-01-01-boot-errors
    %}#start-errors)). They are not reachable yet, see [limits](#limits) below.
 4. An extra container is started to run the `postdeploy` command
 5. If the `postdeploy` command succeeds, we update the routing

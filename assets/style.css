@@ -1134,3 +1134,63 @@ source: https://weblog.west-wind.com/posts/2016/feb/15/flexbox-containers-pre-ta
 div, span, html, body, ul, article, main, nav {
   min-width: 0;
 }
+
+
+ol.deploy-timeline {
+    border-left: 4px solid var(--color-primary-gray-200);
+    margin: 1rem 0 1rem 1rem;
+
+    li {
+        display: flex;
+        font-weight: 300;
+        line-height: 2rem;
+        list-style-type: none;
+        margin-left: -1.1rem;
+        padding: 0;
+
+       &::before {
+            background-color: var(--color-primary-gray-200);
+            border-radius: 50%;
+            border: 1px solid var(--color-primary-gray-200);
+            color: #FFF;
+            content: "\00A0"; /* non-breakbale space */
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 1.25rem;
+            font-weight: 600;
+            height: 2rem;
+            line-height: 2rem;
+            margin-right: 1rem;
+            text-align: center;
+            width: 2rem;
+        }
+
+        &.ok {
+            font-weight: 400;
+
+            &::before {
+                background-color: var(--color-state-success-700);
+                content: "\2713"; /* ✓ (check mark) */
+            }
+        }
+
+        &.cur {
+            font-weight: 600;
+
+            &::before {
+                background-color: var(--color-warning-500);
+                content: "\2022"; /* • (bullet) */
+            }
+        }
+
+        span {
+            background-color: var(--color-primary-gray-200);
+            border-radius: 5px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-right: 1rem;
+            padding: 0 0.5rem;
+        }
+    }
+}

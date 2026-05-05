@@ -78,7 +78,7 @@ highlighted:
     - /tools/cli/start
     - /platform/app/log-drain
     - /platform/deployment/deployment-process
-    - /platform/getting-started/common-deployment-errors
+    - /platform/app/troubleshooting/deployment-issues
     - /languages/nodejs/start
     - /languages/php/start
     - /databases/postgresql/about/overview

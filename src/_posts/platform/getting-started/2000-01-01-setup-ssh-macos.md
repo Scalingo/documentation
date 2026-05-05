@@ -64,7 +64,7 @@ Replace `~/.ssh/custom_scalingo_key` with the path to your Scalingo SSH key. No 
 
 ### Check everything is working
 
-In a terminal, run the following command (depending on [the region]({% post_url platform/internals/2000-01-01-regions %}):
+In a terminal, run the following command (depending on [the region])({% post_url platform/internals/2000-01-01-regions %}):
 
 ```bash
 $ ssh -T git@ssh.osc-fr1.scalingo.com
@@ -89,19 +89,19 @@ Ensure your key is loaded in the SSH agent by running:
 $ ssh-add -l
 ```
 If the key is not here, follow the next section to add it to your agent.
-Otherwise, please recheck the different step of this guide.
+Otherwise, please recheck the different steps of this guide.
 
 ## Add an existing key to your SSH agent
 
 If you already have an SSH key but cannot authenticate, you may need to add it to your SSH agent.
-Ensure the SSH agent is running : 
+Ensure the SSH agent is running: 
 ```bash
 eval "$(ssh-agent -s)"
 ```
 
-Configure your SSH key for automatic loading by creating or updating the ~/.ssh/config file and add the below lines :
+Configure your SSH key for automatic loading by creating or updating the ~/.ssh/config file and add the below lines:
 ```bash
-Host *
+Host ssh.osc-fr1.scalingo.com ssh.osc-secnum-fr1.scalingo.com
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/id_ed25519
