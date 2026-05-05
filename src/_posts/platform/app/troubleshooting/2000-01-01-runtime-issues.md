@@ -25,7 +25,8 @@ The most common causes are:
 - Configuration issues
 - Bugs in your application code
 - Uncaught exception in your code (especially with non-compiled languages)
-- Insufficient resources
+- Insufficient resources, such as an Out of Memory (OOM) crash when the
+  application consumes all its allocated memory
 - Temporary error/unavailability of an external resource
 
 A Runtime Error can have several consequences, depending on the severity of the
