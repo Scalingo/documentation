@@ -19,6 +19,9 @@ permissions. Overall, Keycloak helps organizations improve security while
 simplifying the work of developers with authentication and authorization.
 
 
+{% include tutorial_disclaimer.md %}
+
+
 ## Planning your Deployment
 
 - Even if Keycloak provides quite precise [recommendations][kc-reco] in terms
@@ -151,7 +154,8 @@ out of the scope of this tutorial.
      scalingo --app my-keycloak env-set KC_CACHE_EMBEDDED_NETWORK_BIND_ADDRESS="match-address:10.240.\*"
      ```
 
-   - These create initial credentials for the administrator user:
+   - These are used to create the initial credentials for the administrator
+     user (remember to use a **strong** password):
      ```bash
      scalingo --app my-keycloak env-set KC_BOOTSTRAP_ADMIN_USERNAME=<admin_username>
      scalingo --app my-keycloak env-set KC_BOOTSTRAP_ADMIN_PASSWORD=<admin_password>
@@ -500,8 +504,8 @@ measures such as IP allow-list or authenticated access.
 While updating Keycloak is generally safe, we still advise to take extra care,
 especially before updating a production instance:
 
-- Review the official changelog that is published with each release. Breaking
-  and notable changes should catch your attention.
+- Review the [official changelog][kc-changelog] that is published with each
+  release. Breaking and notable changes should catch your attention.
 - Ensure your [SPIs](#service-provider-interfaces) and themes are compatible
   with the new version.
 - Keep a recent backup of your production database aside. The update process
@@ -620,6 +624,7 @@ can be leveraged to customize your deployment:
 [kc-admin]: https://www.keycloak.org/docs/latest/server_admin/index.html
 [kc-health]: https://www.keycloak.org/observability/health
 [kc-metrics]: https://www.keycloak.org/observability/configuration-metrics
+[kc-changelog]: https://www.keycloak.org/docs/latest/release_notes/index.html
 
 [keycloak-scalingo]: https://github.com/Scalingo/keycloak-scalingo
 [keycloak-default-version]: https://github.com/Scalingo/keycloak-buildpack/blob/master/VERSIONS#L3
