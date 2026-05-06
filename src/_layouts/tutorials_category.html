@@ -14,16 +14,16 @@ layout: tutorials
         {% assign tutorials = site.tutorials | where: "category", page.category | sort: "modified_at" %}
         {% for tutorial in tutorials %}
         <a href="{{ tutorial.url }}">
-            <div class="flex items-center bg-sc-gray-5 rounded-lg h-24 px-5 border-l-8 border-sc-blue-1 group transform hover:border-l-12 duration-200 ease-out hover:shadow-lg">
+            <div class="flex items-center bg-sc-gray-5 rounded-lg h-24 px-5 border-l-8 border-primary-orange-300 group transform hover:border-l-12 duration-200 ease-out hover:shadow-lg">
                 <div class="flex items-center h-12 min-w-[48px] max-w-[48px] mr-6">{% icon {{ tutorial.logo }} %}</div>
-                <div class="flex items-center grow mr-6 font-bold h-12 group-hover:text-sc-blue-1 transition text-sc-title-4-2 line-clamp-2">
+                <div class="flex items-center grow mr-6 font-bold h-12 group-hover:text-primary-orange-400 transition text-sc-title-4-2 line-clamp-2">
                     {% if tutorial.is_series %}
                         {{ tutorial.series }}
                     {% else %}
                         {{ tutorial.title }}
                     {% endif %}
                 </div>
-                <div class="justify-end transform group-hover:translate-x-1 duration-200 ease-out">{% icon arrow_right %}</div>
+                <div class="text-primary-orange-400 justify-end transform group-hover:translate-x-1 duration-200 ease-out">{% icon arrow_right %}</div>
             </div>
         </a>
     {% endfor %}

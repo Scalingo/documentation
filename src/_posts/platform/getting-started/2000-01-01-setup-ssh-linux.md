@@ -67,12 +67,12 @@ Ensure your key is loaded in the SSH agent by running:
 ssh-add -l 
 ```
 If the key is not here, follow the next section to add it to your agent.
-Otherwise, please recheck the different step of this guide.
+Otherwise, please recheck the different steps of this guide.
 
 ## Add an existing key to your SSH agent
 If you already have an SSH key but cannot authenticate, you may need to add it to your SSH agent.
 
-Ensure the SSH agent is running :
+Ensure the SSH agent is running:
 ```bash
 eval "$(ssh-agent -s)"
 ```
@@ -82,7 +82,7 @@ Add your key to the agent:
 ssh-add ~/.ssh/id_ed25519
 ```
 
-Verify that the key is loaded : 
+Verify that the key is loaded: 
 ```bash
 ssh-add -l
 ```

@@ -13,7 +13,7 @@ modified_at: 2015-09-09 00:00:00
       <p class="mt-4">{{ page.description }}</p>
       {% include atoms/filter.html %}
     </div>
-    <div class="hidden lg:block lg:mx-10">{% icon lightbulb %}</div>
+    <div class="hidden lg:block lg:mx-10"></div>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-6 mt-6 mb-24">
@@ -24,10 +24,10 @@ modified_at: 2015-09-09 00:00:00
             <span class="mt-4 font-medium text-sc-gray-1 text-sc-text-6">{{ item.name }}</span>
           </div>
           <div class="flex flex-row divide-x divide-sc-gray-3 text-sc-text-5 font-medium border-t border-sc-gray-3">
-            <a href="https://github.com/Scalingo/sample-{{ item.url }}" class="w-1/2 py-6 text-center text-sc-gray-1 hover:text-sc-blue-1">
+            <a href="https://github.com/Scalingo/sample-{{ item.url }}" class="w-1/2 py-6 text-center text-sc-gray-1 hover:text-primary-orange-400">
                 Source
               </a>
-              <a href="https://{{ item.url }}.is-easy-on-scalingo.com" class="w-1/2 py-6 text-center text-sc-gray-1 hover:text-sc-blue-1">
+              <a href="https://{{ item.url }}.is-easy-on-scalingo.com" class="w-1/2 py-6 text-center text-sc-gray-1 hover:text-primary-orange-400">
                 App
               </a>
           </div>

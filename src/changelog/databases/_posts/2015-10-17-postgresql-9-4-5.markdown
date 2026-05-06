@@ -1,10 +1,10 @@
 ---
 modified_at:	2015-10-17 10:35:06
 title:	'PostgreSQL - New default version: 9.4.5'
-blog:   'http://blog.scalingo.com/post/131342051228/postgresql-94-is-now-available-and-our-future'
+blog:   'https://scalingo.com/blog/postgresql-94-is-now-available-and-our-future'
 ---
 
-Blog post: [PostgreSQL 9.4 is now available and our Future Plan for database versioning](http://blog.scalingo.com/post/131342051228/postgresql-94-is-now-available-and-our-future)
+Blog post: [PostgreSQL 9.4 is now available and our Future Plan for database versioning](https://scalingo.com/blog/postgresql-94-is-now-available-and-our-future)
 
 List of enabled extensions:
 

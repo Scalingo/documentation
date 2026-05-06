@@ -47,7 +47,7 @@ layout: tutorials
                 {% assign series_pages = site.tutorials | where: "series", page.series | sort: "series_index" %}
                 {% for p in series_pages %}
                 <li>
-                    <a href="{{ p.url }}" class="hover:text-sc-blue-1{% if page.url == p.url %} text-sc-blue-1{% endif %}">{{ p.title }}</a>
+                    <a href="{{ p.url }}" class="hover:text-primary-orange-400{% if page.url == p.url %} text-primary-orange-400{% endif %}">{{ p.title }}</a>
                 </li>
                 {% endfor %}
                 </ul>
