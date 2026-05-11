@@ -1,7 +1,7 @@
 ---
 title: Runtime Issues
-modified_at: 2026-05-04 00:00:00
-tags: app runtime crash recovery troubleshooting
+modified_at: 2026-05-11 00:00:00
+tags: app runtime crash recovery troubleshooting oom memory
 index: 3
 ---
 
@@ -42,6 +42,36 @@ error and the impact it has on your application:
 - Security Risks: runtime errors can sometimes introduce security risks,
   especially if your application is too verbose. This can lead to sensitive
   data leak and further exploitation.
+
+## Out of Memory Crashes
+
+When an application consumes all its allocated memory (RAM + swap), the system
+applies a protection mechanism called the **OOM Killer** (Out of Memory Killer).
+
+The usual sequence is:
+
+1. The application progressively uses all available RAM.
+2. The system starts using swap space.
+3. When memory and swap reach 100% usage, the OOM Killer intervenes.
+4. The application is immediately terminated by the system.
+
+This can have several observable consequences:
+
+- Abrupt termination: the application stops without a graceful shutdown process.
+- Automatic restart: the container restarts according to its configuration.
+- Restart event: a "Restart" event appears in the metrics timeline.
+- Data loss: all non-persisted data in memory is lost.
+
+To reduce the risk of OOM crashes:
+
+- Regularly monitor memory charts in the [Metrics tab][metrics].
+- Set up [alerts][alerts] before reaching memory limits.
+- Analyze usage spikes in correlation with deployment events.
+- Consider upgrading to a larger [container size][container-sizes] if needed.
+
+The OOM Killer is a system protection mechanism. If your application regularly
+experiences OOM events, it typically indicates a need for code optimization or
+increased allocated resources.
 
 ## Mitigating and Preventing Runtime Errors
 
@@ -115,3 +145,7 @@ You can modify this behavior by tweaking your
 [Notifier's configuration]({% post_url platform/app/2000-01-01-notifiers %}).
 The `app_crashed`, `app_crashed_repeated` and the `app_deployed` events can be
 particularly worth considering.
+
+[alerts]: {% post_url platform/app/2000-01-01-alerts %}
+[container-sizes]: {% post_url platform/internals/2000-01-01-container-sizes %}
+[metrics]: {% post_url platform/app/2000-01-01-metrics %}
