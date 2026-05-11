@@ -11,7 +11,7 @@ layout: tutorials
     </div>
 
     <div class="grid grid-cols-1 xl:grid-cols-2 2xl:max-w-2/3 gap-6 mt-6 mb-24">
-        {% assign tutorials = site.tutorials | where: "category", page.category | sort: "modified_at" %}
+        {% assign tutorials = site.tutorials | where: "category", page.category | where_exp: "page", "page.deprecated != true" | sort: "modified_at" %}
         {% for tutorial in tutorials %}
         <a href="{{ tutorial.url }}">
             <div class="flex items-center bg-sc-gray-5 rounded-lg h-24 px-5 border-l-8 border-primary-orange-300 group transform hover:border-l-12 duration-200 ease-out hover:shadow-lg">
@@ -26,6 +26,6 @@ layout: tutorials
                 <div class="text-primary-orange-400 justify-end transform group-hover:translate-x-1 duration-200 ease-out">{% icon arrow_right %}</div>
             </div>
         </a>
-    {% endfor %}
+        {% endfor %}
     </div>
 </div>
