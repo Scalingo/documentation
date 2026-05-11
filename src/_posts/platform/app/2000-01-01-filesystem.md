@@ -2,7 +2,7 @@
 title: File System and File Storage
 modified_at: 2023-07-27 00:00:00
 tags: app runtime file system disk storage
-index: 2
+index: 1
 ---
 
 ## Introduction
