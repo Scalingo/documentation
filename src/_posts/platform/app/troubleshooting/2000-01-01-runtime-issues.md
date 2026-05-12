@@ -26,7 +26,7 @@ The most common causes are:
 - Bugs in your application code
 - Uncaught exception in your code (especially with non-compiled languages)
 - Insufficient resources, such as an Out of Memory (OOM) crash when the
-  application consumes all its allocated memory
+  application consumes all its available memory
 - Temporary error/unavailability of an external resource
 
 A Runtime Error can have several consequences, depending on the severity of the
@@ -133,7 +133,7 @@ The usual sequence is:
 This can have several observable consequences:
 
 - Abrupt termination: the application stops without a graceful shutdown process.
-- Automatic restart: the container restarts according to its configuration.
+- Automatic restart: the container is restarted following our [runtime error recovery process](#recovering-from-a-runtime-error).
 - Restart event: a "Restart" event appears in the metrics timeline.
 - Data loss: all non-persisted data in memory is lost.
 
