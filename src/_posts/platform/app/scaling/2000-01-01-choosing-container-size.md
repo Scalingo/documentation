@@ -7,8 +7,10 @@ index: 1
 ---
 
 Choosing the right container size is a balance between safety, performance, and
-cost. A safe initial size gives your application enough memory headroom while
-you collect real metrics and validate the workload.
+cost. Memory is often the resource that most directly constrains this choice
+because each running container must stay below its own memory quota. A safe
+initial size gives your application enough memory headroom while you collect
+real metrics and validate the workload.
 
 For simple applications, the default `M` container size is often a reasonable
 starting point. Choose a larger size from the beginning when you already know
