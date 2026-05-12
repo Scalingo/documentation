@@ -88,5 +88,4 @@ crash diagnosis and recovery guidance.
 [metrics]: {% post_url platform/app/2000-01-01-metrics %}
 [notifiers]: {% post_url platform/app/2000-01-01-notifiers %}
 [oom-diagnosis]: {% post_url platform/app/troubleshooting/2000-01-01-runtime-issues %}#out-of-memory-crashes
-
 [scaling]: {% post_url platform/app/scaling/2000-01-01-scaling %}
