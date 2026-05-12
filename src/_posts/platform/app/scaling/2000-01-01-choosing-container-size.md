@@ -3,7 +3,7 @@ title: Choosing a Container Size
 nav: Choosing a Container Size
 modified_at: 2026-05-12 00:00:00
 tags: app scaling containers memory metrics
-index: 15
+index: 1
 ---
 
 Choosing the right container size is a balance between safety, performance, and
