@@ -5,42 +5,42 @@ tags: containers sizes
 index: 2
 ---
 
-## Comparative Table
+The following table provides a side-by-side comparison of resources and process
+limits applied to each container size, allowing for a clear overview of the
+capabilities and isolation characteristics associated with each profile.
 
-<div class="overflow-horizontal-content" markdown="1">
-| Name                       | Memory  | CPU Priority | PID Limit[^pid-limit] |
-| -------------------------- | ------- | ------------ | --------- |
-| S - Small                  | 256 MB  | Low          | 128       |
-| M - Medium (Default)       | 512 MB  | Standard     | 256       |
-| L - Large                  | 1 GB    | Standard     | 512       |
-| XL - eXtra Large           | 2 GB    | High         | 1024      |
-| 2XL - eXtra eXtra Large    | 4 GB    | High         | 2048      |
-{: .table }
-</div>
+| Size    | Memory (MB) | Swap (MB) | [CPU Priority](#cpu) | [PID](#pid) | [FD](#fd) |
+| :-----: | ----------: | --------: | :------------------: | ----------: | :-------: |
+| **S**   | 256         | 512       | Low                  | 128         | 1048576   |
+| **M**   | 512         | 1024      | Standard             | 256         | 1048576   |
+| **L**   | 1024        | 2048      | Standard             | 512         | 1048576   |
+| **XL**  | 2048        | 4096      | High                 | 1024        | 1048576   |
+| **2XL** | 4096        | 8192      | High                 | 2048        | 1048576   |
+
+The default container size is **M**.
 
 Prices are available on the [Scalingo pricing page](https://scalingo.com/pricing).
-Bigger container sizes are available upon request on the support. 
 
-{% note %}
-Limits apply when using Scalingo under the free trial. For more information,
-see [what you can do under the free trial][free-trial-limits].
-{% endnote %}
 
-## Container Limits
+{: #cpu}**CPU Priority**
+: All containers can use all available CPU cores.
 
-Containers have various limits depending on their size. Here is a comprehensive list:
+  - A *High* priority container receives twice the CPU share of a *Standard*
+    priority container when CPU resources are contested.
+  - Following the same logic, a *Low* priority container receives half the CPU
+    share of a *Standard* priority container when CPU resources are contested.
 
-- **Memory**: see the comparative table above.
-- **Swap**: twice the amount of RAM.
-- **CPU**: all containers have access to all CPU cores. But higher priority
-  means twice as much priority compared to standard priority. For example,
-  consider three containers, one has a high priority and two others have a
-  standard priority. When processes in all three containers attempt to use
-  100% of CPU, the first container would receive 50% of the total CPU time and
-  the two others would receive 25%.
-- **PID limit**: see the comparative table above.
-- **Open file limit** (`nofile`): 1,048,576. This is the maximum number of files an application can open.
+  For example, if three containers are fully utilizing the CPU — one with High
+  priority and two with Standard priority — the High priority container would
+  receive 50% of the total CPU time, while each Standard priority container
+  would receive 25%.
 
-[^pid-limit]: Each new process requires a PID.
+{: #pid}**PID**
+: Maximum number of processes the container can spawn.
 
-[free-trial-limits]: {% post_url platform/getting-started/2000-01-01-free-trial %}#what-can-i-do-under-the-free-trial
+{: #fd}**FD** (`nofile`)
+: Maximum number of file descriptors a process can open.
+
+
+*[PID]: Process IDentifier
+*[FD]: File Descriptors
