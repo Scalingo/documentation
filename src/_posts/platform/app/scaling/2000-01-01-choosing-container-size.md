@@ -1,7 +1,7 @@
 ---
 title: Choosing a Container Size
 nav: Choosing a Container Size
-modified_at: 2026-05-12 00:00:00
+modified_at: 2026-05-18 00:00:00
 tags: app scaling containers memory metrics
 index: 1
 ---
@@ -24,8 +24,8 @@ limits, and PID limits.
 
 ## Start Safe, Then Adjust
 
-When you are unsure about the right size, start with a size that is slightly
-larger than your first estimate. After deployment, use [metrics][metrics],
+When you are unsure about the right size, start with a size that gives your
+application enough headroom. After deployment, use [metrics][metrics],
 [alerts][alerts], and realistic load testing to adjust the size.
 
 Avoid choosing a smaller size only because the application starts successfully.
@@ -62,10 +62,11 @@ read our [external testing procedures][external-testing].
 {% endnote %}
 
 
-## Adjust With Scaling
+## Match Capacity to Traffic
 
-Use the general [scaling][scaling] guidance to decide whether the application
-needs vertical scaling, horizontal scaling, or a combination of both.
+Once you have chosen the target size for each process type, use
+[Scaling Your Application][scaling] to configure the expected capacity for your
+traffic and workload.
 
 If the application is critical or you are unsure about the safest sizing
 strategy, contact Scalingo support.
