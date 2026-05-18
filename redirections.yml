@@ -873,6 +873,12 @@
   - old: "/platform/deployment/unknown-technology"
     new: "/platform/app/troubleshooting/deployment-issues#unknown-technology"
 
+  - old: "/addons/scalingo-vpn-ipsec"
+    new: "/changelog#changelog-addons-2026-05-18-scalingo-vpn-ipsec-deprecated"
+
+  - old: "/addons/scalingo-vpn-ipsec/start"
+    new: "/changelog#changelog-addons-2026-05-18-scalingo-vpn-ipsec-deprecated"
+  
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
