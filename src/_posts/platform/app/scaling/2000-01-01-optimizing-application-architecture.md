@@ -25,10 +25,15 @@ operational profile. A `web` process should handle HTTP requests and return
 responses quickly. Background workers, schedulers, importers, exporters, and
 other resource-intensive jobs should run in dedicated process types.
 
+Favor focused processes that can be scaled independently, with a clear role
+and a predictable resource profile. This is usually easier to operate than a
+single large process that handles every workload.
+
 This separation has several advantages:
 
 - each workload can have its own number of containers;
 - each workload can use a container size adapted to its resource profile;
+- focused containers can start and scale faster;
 - long or heavy tasks do not block request handling;
 - worker concurrency can be tuned independently from web concurrency;
 - incidents are easier to diagnose from metrics and logs.
