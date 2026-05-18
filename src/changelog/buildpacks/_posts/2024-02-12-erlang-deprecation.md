@@ -4,7 +4,7 @@ title: 'Erlang - Deprecation'
 github: 'https://github.com/Scalingo/erlang-buildpack'
 ---
 
-The [erlang-buildpack](https://github.com/Scalingo/erlang-buildpack) was
+The [erlang-buildpack](https://github.com/Scalingo/erlang-buildpack) has been
 deprecated and archived on the 12th of February 2024.
 
 If you want to deploy an Erlang app on Scalingo, please use your own buildpack.
