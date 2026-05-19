@@ -115,18 +115,12 @@ languages:
   - url: php
     name: "PHP"
     logo: php
-  - url: groovy
-    name: "Groovy"
-    logo: groovy
   - url: java
     name: "Java"
     logo: java
   - url: clojure
     name: "Clojure"
     logo: clojure
-  - url: crystal
-    name: "Crystal"
-    logo: crystal
   - url: elixir
     name: "Elixir"
     logo: elixir
