@@ -86,7 +86,7 @@ highlighted:
     - name: Ruby on Rails
       url: /languages/ruby/rails/start
       logo: ruby-on-rails
-    - name: NodeJS
+    - name: Node.js
       url: "/languages/nodejs/start"
       logo: nodejs
     - name: PHP
@@ -165,7 +165,7 @@ samples:
     name: Next.js (standalone)
     logo: nextjs
   - url: node-nuxt
-    name: NodeJS/Nuxt.js
+    name: Node.js/Nuxt.js
     logo: nodejs
   - url: php-laravel
     name: PHP/Laravel
