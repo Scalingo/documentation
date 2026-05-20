@@ -103,11 +103,11 @@ scalingo --app my-app env-set JAVA_WEBAPP_RUNNER_VERSION=10.1.24.0
 
 The latest available versions currently are:
 
-| Tomcat Version | `scalingo-22`     | `scalingo-24`     |
-| -------------: | ----------------: | ----------------: |
-| **`10.1`**     | up to `10.1.54.0` | up to `10.1.54.0` |
-| **`9.0`**      | up to `9.0.117.0` | up to `9.0.117.0` |
-| `8.5`          | up to `8.5.68.1`  | up to `8.5.68.1`  |
+| Tomcat Version | `scalingo-22` (EOL) | `scalingo-24`     |
+| -------------: | ------------------: | ----------------: |
+| **`10.1`**     | up to `10.1.54.0`   | up to `10.1.54.0` |
+| **`9.0`**      | up to `9.0.117.0`   | up to `9.0.117.0` |
+| `8.5`          | up to `8.5.68.1`    | up to `8.5.68.1`  |
 
 The default Tomcat version on all stacks is the latest `9.0` version.
 
