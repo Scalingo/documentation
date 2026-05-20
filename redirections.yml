@@ -897,6 +897,12 @@
   - old: "/platform/internals/stacks/scalingo-20-stack"
     new: "/platform/internals/stacks/stacks"
 
+  - old: "/platform/internals/stacks/intro"
+    new: "/platform/internals/stacks/stacks"
+
+  - old: "/platform/internals/base-docker-image"
+    new: "/platform/internals/stacks/stacks"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
