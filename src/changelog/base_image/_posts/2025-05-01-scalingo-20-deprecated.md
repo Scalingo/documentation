@@ -3,7 +3,7 @@ modified_at: 2025-05-01 07:00:00
 title: 'scalingo-20 is now deprecated'
 ---
 
-The [scalingo-20]({% post_url platform/internals/stacks/2000-01-01-scalingo-20-stack %}) stack, based on the Ubuntu 20.04 LTS operating system, is now deprecated.
+The [scalingo-20]({% post_url platform/internals/stacks/2000-01-01-stacks %}) stack, based on the Ubuntu 20.04 LTS operating system, is now deprecated.
 
 Applications using scalingo-20 will continue to work. However, to ensure the security, performance, and reliability of both your applications and our platform, we strongly encourage you to plan their migration to scalingo-22, based on Ubuntu 22.04 LTS, as soon as possible.
 
