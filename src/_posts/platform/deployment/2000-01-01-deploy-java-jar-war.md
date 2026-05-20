@@ -111,6 +111,8 @@ The latest available versions currently are:
 
 The default Tomcat version on all stacks is the latest `9.0` version.
 
+{% include scalingo_22_deprecation_note.md %}
+
 {% note %}
 Even though we still support this version, we strongly advise against using the
 `8.5` version, which has been released a while ago. If you are still using it,

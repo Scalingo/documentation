@@ -100,6 +100,8 @@ Scalingo currently supports the following versions of Composer:
 | `2.9`       | up to `2.9.7`  | up to `2.9.7`  |
 | `2.2` (LTS) | up to `2.2.26` | up to `2.2.26` |
 
+{% include scalingo_22_deprecation_note.md %}
+
 
 ## Working with Composer Environments
 
