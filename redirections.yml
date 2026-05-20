@@ -878,6 +878,21 @@
 
   - old: "/addons/scalingo-vpn-ipsec/start"
     new: "/changelog#changelog-addons-scalingo-vpn-ipsec-deprecated"
+
+  - old: "/languages/java/play"
+    new: "/changelog#changelog-buildpacks-play-framework-buildpack-removed"
+
+  - old: "/languages/groovy/start"
+    new: "/changelog#changelog-buildpacks-grails-buildpack-removed"
+
+  - old: "/languages/groovy"
+    new: "/changelog#changelog-buildpacks-grails-buildpack-removed"
+
+  - old: "/languages/crystal/start"
+    new: "/changelog#changelog-buildpacks-crystal-support-ended"
+
+  - old: "/languages/crystal"
+    new: "/changelog#changelog-buildpacks-crystal-support-ended"
   
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
