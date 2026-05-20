@@ -1,9 +1,15 @@
 ---
 title: Scalingo-22 Stack
 nav: Scalingo-22
-modified_at: 2026-03-10 00:00:00
+modified_at: 2026-05-20 00:00:00
 index: 3
 ---
+
+{% warning %}
+The scalingo-22 stack, based on Ubuntu 22.04 LTS, will be deprecated on May 1, 2027.
+This date follows the end of Ubuntu 22.04 LTS standard security maintenance in May 2027, as described in the [Ubuntu release cycle](https://ubuntu.com/about/release-cycle).
+Plan your migration to [scalingo-24]({% post_url platform/internals/stacks/2000-01-01-scalingo-24-stack %}) before this date.
+{% endwarning %}
 
 This article describes the scalingo-22 stack, based on Ubuntu 22.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
 
