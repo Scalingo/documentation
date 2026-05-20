@@ -7,7 +7,7 @@ index: 3
 
 {% warning %}
 The scalingo-22 stack, based on Ubuntu 22.04 LTS, will reach end-of-life on May 1, 2027.
-This date follows the end of Ubuntu 22.04 LTS standard security maintenance in May 2027, as described in the [Ubuntu release cycle](https://ubuntu.com/about/release-cycle).
+This date follows the end of Ubuntu 22.04 LTS standard security maintenance in May 2027, as described in the [Ubuntu release cycle](https://ubuntu.com/about/release-cycle).\\
 From this date, Scalingo will no longer support applications running on scalingo-22, and new deployments, including Review Apps, must use [scalingo-24]({% post_url platform/internals/stacks/2000-01-01-scalingo-24-stack %}) or later.
 {% endwarning %}
 
