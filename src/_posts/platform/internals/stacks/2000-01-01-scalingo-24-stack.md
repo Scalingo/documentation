@@ -13,7 +13,7 @@ This article describes the scalingo-24 stack, based on Ubuntu 24.04. [What is a 
 
 ## Support Period
 
-scalingo-24 is based on Ubuntu 24.04. It will be supported through April 2029.
+scalingo-24 is based on Ubuntu 24.04. It will be supported through May 2029.
 
 ## Testing and Migrating Your App
 
