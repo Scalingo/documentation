@@ -23,7 +23,7 @@ Learn how to test and [migrate your app]({% post_url platform/internals/stacks/2
 
 ## Docker Image
 
-This base image is a completely standard Docker image. You can run it locally with this command:
+This base image is a completely standard Docker image. The image is available on [Docker Hub](https://hub.docker.com/r/scalingo/scalingo-22). You can run it locally with this command:
 
 ```
 docker pull scalingo/scalingo-22:latest
