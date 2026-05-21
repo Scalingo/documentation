@@ -12,14 +12,18 @@ The [scalingo-24]({% post_url platform/internals/stacks/2000-01-01-scalingo-24-s
 **Deprecation Plan**
 
 - **June 2026: End-of-support notification**. All owners and collaborators of applications using scalingo-22 are informed of the end of support for this stack.
-- **June 1, 2027: End of support**. Ubuntu 22.04 LTS and scalingo-22 officially reach end-of-life and no longer receive updates.
-From this date, it is no longer possible to select this stack to create new applications.
-Scalingo will no longer support applications running on scalingo-22, and new deployments, including Review Apps, must use scalingo-24 or later.
+- **June 1, 2027: End of support**. Ubuntu 22.04 LTS and scalingo-22 officially reach end-of-life and no longer receive updates.\\
+  From this date, it is no longer possible to select this stack to create new applications.\\
+  Scalingo will no longer support applications running on scalingo-22, and new deployments, including Review Apps, must use scalingo-24 or later.
 
 
-**Plan today**
+**Act-now Items (as of 2026-05-21)**
 
-To ensure the security, performance, and reliability of your applications, we encourage you to migrate to scalingo-24 before June 1, 2027.
+To ensure the security, performance, and reliability of your applications, we encourage you to:
+- Start planning your migration to `scalingo-24` without any further delay
+- Conduct migration tests to identify potential blocking items
+- Fix any blocking items found
+- Migrate as soon as possible, before June 1, 2027.
 
 Resources to guide you:
 - [Scalingo Stacks](https://doc.scalingo.com/platform/internals/stacks/stacks)
