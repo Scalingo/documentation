@@ -1,7 +1,7 @@
 ---
 title: App Notifiers
 nav: Notifiers
-modified_at: 2026-05-05 00:00:00
+modified_at: 2026-06-29 12:00:00
 tags: app notifier notification event
 index: 36
 ---
@@ -139,6 +139,9 @@ Keep the rows sorted alphabetically by name.
 | `collaborator_role_changed`      | Collaborator role changed      | A collaborator role was changed                                        |
 | `database_backup_failed`         | Database backup failed         | A database backup has failed                                           |
 | `database_backup_succeeded`      | Database backup succeeded      | A database backup has succeeded                                        |
+| `database_continuousbackup_healthy` | Database continuous backup healthy | Point-in-time recovery is available and restore points are up to date |
+| `database_continuousbackup_delayed` | Database continuous backup delayed | The latest restorable point is more than 12 hours old
+| `database_continuousbackup_stale`   | Database continuous backup stale   | The latest restorable point is more than 24 hours old            |
 | `database_maintenance_completed` | Addon maintenance completed    | A maintenance has been completed successfully on your addon             |
 | `database_maintenance_planned`   | Addon maintenance planned      | A maintenance is planned on your addon                                 |
 | `database_maintenance_started`   | Addon maintenance started      | A maintenance has started on your addon                                |
