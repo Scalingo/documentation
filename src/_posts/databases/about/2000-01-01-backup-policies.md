@@ -151,6 +151,15 @@ The following events are available to monitor the backups:
 | `database_backup_succeeded` | A database backup has been successfully completed |
 | `database_backup_failed`    | A database backup has failed                      |
 
+The following events are available to monitor continuous backups for Point-in-Time
+Recovery (PiTR):
+
+| Event                               | Description |
+| ----------------------------------- | ----------- |
+| `database_continuousbackup_healthy` | Point-in-time recovery is available and restore points are up to date |
+| `database_continuousbackup_delayed` | The latest restorable point is more than 12 hours behind |
+| `database_continuousbackup_stale`   | The latest restorable point is more than 24 hours behind |
+
 To learn more about events and notifiers, please visit the page dedicated to [app notifiers]({% post_url platform/app/2000-01-01-notifiers %}).
 
 ## Restoring a backup
