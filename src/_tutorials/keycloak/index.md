@@ -7,7 +7,8 @@ products:
   - Projects
   - Private Networks
 permalink: /tutorials/keycloak
-modified_at: 2026-03-23
+modified_at: 2026-05-22
+last_reviewed_at: 2026-05-22
 ---
 
 Keycloak is an open-source identity and access management solution designed to
@@ -64,18 +65,17 @@ simplifying the work of developers with authentication and authorization.
   proxy:
 
   - It prevents Keycloak from being directly exposed to the Internet.
-  - It allows to setup features such as rate-limiting and IP allow/deny lists.
+  - It allows to set up features such as rate-limiting and IP allow/deny lists.
   - It allows to scale the reverse proxy so that it can handle traffic peaks or
     sudden load.
 
 - To do so, we deploy two applications, grouped in the same [Project][project]:
   one hosting Keycloak and the second one hosting the reverse proxy.
 
-{% note %}
-This tutorial covers the deployment of Keycloak on Scalingo.
-[Configuring][kc-config], managing, and [administrating][kc-admin] Keycloak is
-out of the scope of this tutorial.
-{% endnote %}
+- Keycloak provides an [exhaustive list of configuration options][kc-config],
+  recommendations to [run in production][kc-production], and documentation
+  for [administrating][kc-admin] Keycloak.\\
+  We strongly suggest to read these pages before entering prodution.
 
 
 ## Creating the Project
@@ -119,23 +119,25 @@ out of the scope of this tutorial.
 
 ### Using the Command Line
 
-1. Create a new application **in the project**:
+1. Fork our [Keycloak repository][keycloak-scalingo]
+
+2. Create a new application **in the project**:
    ```bash
    scalingo create my-keycloak --project-id <project_id>
    ```
    With `project_id` being the ID of the newly created project.
 
-2. Provision a Scalingo for PostgreSQL® Business 1G database:
+3. Provision a Scalingo for PostgreSQL® Business 1G database:
    ```bash
    scalingo --app my-keycloak addons-add postgresql postgresql-business-1024
    ```
 
-3. Let the platform know what buildpack it must use:
+4. Let the platform know what buildpack it must use:
    ```bash
    scalingo --app my-keycloak env-set BUILDPACK_URL=https://github.com/Scalingo/keycloak-buildpack
    ```
 
-4. Create a few **mandatory** environment variables:
+5. Create a few **mandatory** environment variables:
 
    - These make sure Keycloak runs properly on Scalingo:
      ```bash
@@ -144,7 +146,8 @@ out of the scope of this tutorial.
      scalingo --app my-keycloak env-set KC_HTTP_PORT=80
      scalingo --app my-keycloak env-set KC_HOSTNAME=<hostname>
      ```
-     With `hostname` being the address at which Keycloak is listening\\
+     With `hostname` being the publicly exposed address at which Keycloak is
+     available\\
      (e.g. `my-keycloak.osc-fr1.scalingo.io`).
 
      Using port 80 is an example, you can choose any port number.
@@ -161,7 +164,31 @@ out of the scope of this tutorial.
      scalingo --app my-keycloak env-set KC_BOOTSTRAP_ADMIN_PASSWORD=<admin_password>
      ```
 
-5. Add a [`Procfile`][procfile] to your git repository, with the following
+6. Create a few more **recommended** environment variables:
+
+   - This one pins the version of Keycloak. This prevents against unintentional
+     updates:
+     ```bash
+     scalingo --app my-keycloak env-set KEYCLOAK_VERSION="<version>"
+     ```
+     With `version` being the version number to deploy.
+
+   - This one restricts the communication with the reverse proxy to the Private
+     Network only:
+     ```bash
+     scalingo --app my-keycloak env-set KC_PROXY_TRUSTED_ADDRESSES="10.240.0.0/22"
+     ```
+
+   - This one allows to limit the number of queued requests, which is important
+     to protect the cluster against overload situations:
+     ```bash
+     scalingo --app my-keycloak env-set KC_HTTP_MAX_QUEUED_REQUESTS=<number>
+     ```
+     With `number` being the number of requests Keycloak can keep in queue
+     before dropping additional ones. Set this to a number matching your
+     environment.
+
+7. Add a [`Procfile`][procfile] to your git repository, with the following
    content:
    ```yml
    kc: /app/keycloak/bin/kc.sh start --optimized
@@ -169,13 +196,13 @@ out of the scope of this tutorial.
    This instructs the platform to start Keycloak in a [process type][procfile]
    named `kc`, which, unlike `web`, can **not** be publicly exposed.
 
-6. (optional) Instruct the platform to run the `kc` process type in three XL
+8. (optional) Instruct the platform to run the `kc` process type in three XL
    containers:
    ```bash
    scalingo --app my-keycloak scale kc:3:XL
    ```
 
-7. Everything’s ready, deploy to Scalingo:
+9. Everything’s ready, deploy to Scalingo:
    ```bash
    git push scalingo master
    ```
@@ -197,11 +224,14 @@ Private Network on Scalingo.
 
      environment = {
        BUILDPACK_URL    = "https://github.com/Scalingo/keycloak-buildpack",
+       KEYCLOAK_VERSION = "<version>",
        KC_PROXY_HEADERS = "xforwarded",
        KC_HTTP_ENABLED  = true,
        KC_HTTP_PORT     = 80,
        KC_HOSTNAME      = "<hostname>",
        KC_CACHE_EMBEDDED_NETWORK_BIND_ADDRESS = "match-address:10.240.\*",
+       KC_PROXY_TRUSTED_ADDRESSES  = "10.240.0.0/24",
+       KC_HTTP_MAX_QUEUED_REQUESTS = <number>,
        KC_BOOTSTRAP_ADMIN_USERNAME = "<admin_username>",
        KC_BOOTSTRAP_ADMIN_PASSWORD = "<admin_password>"
      }
@@ -283,17 +313,20 @@ server {
   listen <%= ENV["PORT"] %>;
   charset utf-8;
 
-  location /realms/ {
+  # Optional hardening:
+  proxy_hide_header X-Powered-By;
+
+  location ^~ /realms/ {
     proxy_pass      http://keycloak/realms/;
     proxy_redirect  default;
   }
 
-  location /resources/ {
+  location ^~ /resources/ {
     proxy_pass      http://keycloak/resources/;
     proxy_redirect  default;
   }
 
-  location /.well-known/ {
+  location ^~ /.well-known/ {
     proxy_pass      http://keycloak/.well-known/;
     proxy_redirect  default;
   }
@@ -388,6 +421,53 @@ server {
       running, making your Keycloak cluster reachable!
 
 
+## Exposing the Admin
+
+Keycloak's `/admin` endpoint provides access to the administration console and
+management APIs used to configure and operate a Keycloak cluster. Through this
+endpoint, administrators can manage realms, users, groups, roles, identity
+providers, clients, and authentication flows.
+
+{% warning %}
+Because it exposes highly privileged operations, the `/admin` interface should
+be carefully secured using strong authentication, network restrictions, HTTPS,
+and proper role-based access controls. **In production environments, limiting
+or disabling external exposure of the admin endpoint is considered a security
+best practice.**
+{% endwarning %}
+
+### Using the Command Line or the Terraform Provider
+
+1. Add a `limit_req_zone` directive to set up rate limiting at the top of the
+   `servers.conf.erb` file:
+   ```erb
+   # Rate limiting for /admin:
+   limit_req_zone $binary_remote_addr zone=keycloak_admin:10m rate=5r/m;
+   ```
+
+2. Add two new `location` in the `servers.conf.erb` file:
+   ```erb
+   location = /admin {
+     return 301 /admin/;
+   }
+
+   location ^~ /admin/ {
+     # IP allow list:
+     allow 192.0.2.10;
+     allow 198.51.100.0/24;
+     deny all;
+
+     # Rate limiting:
+     limit_req zone=keycloak_admin burst=10 nodelay;
+
+     proxy_pass       http://keycloak/admin/;
+     proxy_redirect   default;
+   }
+   ```
+
+2. Trigger a new deployment
+
+
 ## Exposing Health and Metrics
 
 Keycloak allows to track instances status, health, and performances, thanks to
@@ -398,52 +478,82 @@ defaults to TCP `9000`. **By default, they are not available**, and they must
 be explicitely enabled.
 
 {% warning %}
-Exposing health and metrics is oftenly considered a security risk.\\
-Please consider completing the configuration samples given below with security
-measures such as IP allow-list or authenticated access.
+When enabled, and because they expose sensitive data and information, the
+`/health` and `/metrics` endpoints should be carefully secured using strong
+authentication, network restrictions, HTTPS, and proper role-based access
+controls. **In production environments, limiting or disabling external exposure
+of these endpoints is considered a security best practice.**
 {% endwarning %}
 
-### Using the Command Line
-
-1. Enable the health and/or metrics endpoints:
-   ```bash
-   scalingo --app my-keycloak env-set KC_HEALTH_ENABLED=true
-   scalingo --app my-keycloak env-set KC_METRICS_ENABLED=true
-   ```
-
-2. (optional) Choose a port for the management interface:
-   ```bash
-   scalingo --app my-keycloak env-set KC_HTTP_MANAGEMENT_PORT=9000
-   ```
-
-3. Add a new `upstream` in the `servers.conf.erb` file:
+{: #health-metrics-first-steps}
+1. Add a new `upstream` dedicated to management in the `servers.conf.erb` file:
    ```erb
    upstream mgmt {
      server <%= ENV["KEYCLOAK_PRIVATE_DOMAIN"] %>:<%= ENV["KC_HTTP_MANAGEMENT_PORT"] or 9000 %>;
    }
    ```
 
-4. Add new `location` in the `servers.conf.erb` file:
+2. Add two new `limit_req_zone` directives for health and metrics:
+   ```erb
+   limit_req_zone $binary_remote_addr zone=keycloak_health:10m  rate=60r/m;
+   limit_req_zone $binary_remote_addr zone=keycloak_metrics:10m rate=30r/m;
+   ```
+
+3. Add two new `location` in the `servers.conf.erb` file:
    ```erb
    <% if ENV["KC_HEALTH_ENABLED"] %>
-   location /health {
-     proxy_pass       http://mgmt;
+   location ^~ /health/ {
+     # IP allow list:
+     allow 192.0.2.20;
+     allow 198.51.100.0/24;
+     deny all;
+
+     limit_req zone=keycloak_health burst=20 nodelay;
+
+     proxy_pass       http://mgmt/health/;
      proxy_redirect   default;
    }
    <% end %>
 
    <% if ENV["KC_METRICS_ENABLED"] %>
-   location /metrics {
-     proxy_pass       http://mgmt;
+   location = /metrics {
+     # IP allow list:
+     allow 192.0.2.20;
+     allow 198.51.100.0/24;
+     deny all;
+
+     # Rate limiting:
+     limit_req zone=keycloak_metrics burst=10 nodelay;
+
+     proxy_pass       http://mgmt/metrics;
      proxy_redirect   default;
    }
    ```
 
-5. Deploy to Scalingo.
+### Using the Command Line
+
+Make sure you have followed [the first steps](#health-metrics-first-steps)
+
+{:start="4"}
+4. Enable the health and/or metrics endpoints:
+   ```bash
+   scalingo --app my-keycloak env-set KC_HEALTH_ENABLED=true
+   scalingo --app my-keycloak env-set KC_METRICS_ENABLED=true
+   ```
+
+5. (optional) Choose a port for the management interface:
+   ```bash
+   scalingo --app my-keycloak env-set KC_HTTP_MANAGEMENT_PORT=9000
+   ```
+
+6. Trigger a new deployment
 
 ### Using the Terraform Provider
 
-1. Update the `scalingo_app` resource block of the Keycloak app to include the
+Make sure you have followed [the first steps](#health-metrics-first-steps)
+
+{:start="4"}
+4. Update the `scalingo_app` resource block of the Keycloak app to include the
    appropriate environment variables:
    ```tf
    resource "scalingo_app" "my-keycloak" {
@@ -454,49 +564,43 @@ measures such as IP allow-list or authenticated access.
      environment = {
        # [...]
        KC_HEALTH_ENABLED  = true,
-       KC_METRICS_ENABLED = true
-     }
-   }
-   ```
-
-2. (optional) Update the `scalingo_app` resource block of the Keycloak app to
-   set the management interface port:
-   ```tf
-   resource "scalingo_app" "my-keycloak" {
-     name           = "my-keycloak"
-     project_id     = scalingo_project.keycloak_project.id
-     stack_id       = "scalingo-24"
-
-     environment = {
-       # [...]
+       KC_METRICS_ENABLED = true,
+       # Optional:
        KC_HTTP_MANAGEMENT_PORT = 9000
      }
    }
    ```
 
-3. Add a new `upstream` in the `servers.conf.erb` file:
-   ```erb
-   upstream mgmt {
-     server <%= ENV["KEYCLOAK_PRIVATE_DOMAIN"] %>:<%= ENV["KC_HTTP_MANAGEMENT_PORT"] or 9000 %>;
-   }
-   ```
+5. Trigger a new deployment
 
-4. Add new `location` in the `servers.conf.erb` file:
-   ```erb
-   <% if ENV["KC_HEALTH_ENABLED"] %>
-   location /health {
-     proxy_pass       http://mgmt;
-     proxy_redirect   default;
-   }
-   <% end %>
 
-   <% if ENV["KC_METRICS_ENABLED"] %>
-   location /metrics {
-     proxy_pass       http://mgmt;
-     proxy_redirect   default;
-   }
-   <% end %>
-   ```
+## Managing Logs
+
+By default, Keycloak runs with the `INFO` log level. This provides general
+operational information such as Keycloak lifecycle events, authentication
+flows, and warnings, without being overly verbose.
+
+Logging can be configured either globally or per component. The log level can
+be changed using environment variables. For example, to set the general log
+level to `DEBUG`, set `KC_LOG_LEVEL` to `DEBUG`.
+
+It is also possible to enable logging for specific components only, allowing
+for troubleshooting specific issues without flooding the logs. To do so, use an
+environment variable named after the component. For example, to specify a
+different log level for the component `org.hibernate`, you could set
+`KC_LOG_LEVEL_ORG_HIBERNATE` to `DEBUG`.
+
+Logs are written to standard output by default, making them fully compatible
+with every logging features Scalingo provides.
+
+For further guidance related to Keycloak logging, please refer to [the official
+documentation][kc-logging].
+
+
+## Managing Vulnerabilities
+
+Keycloak official vulnerabilities and security issues are documented
+[here][kc-vuln] by the editor.
 
 
 ## Updating
@@ -525,10 +629,7 @@ especially before updating a production instance:
    git commit -m "Deploy version <new_version>" --allow-empty
    ```
 
-3. Trigger a new deployment:
-   ```bash
-   git push scalingo master
-   ```
+3. Trigger a new deployment
 
 ### Using the Terraform Provider
 
@@ -547,6 +648,8 @@ especially before updating a production instance:
    }
    ```
 
+2. Trigger a new deployment
+
 
 ## Customizing
 
@@ -558,7 +661,7 @@ server.
 
 To add SPIs to your Keycloak cluster:
 
-1. Create a directory named `providers` at the root of your project.
+1. Create a directory named `providers` at the root of your project
 2. Put the `.jar` files in this directory (don't forget to also add them to
    your git repository):
    ```
@@ -569,18 +672,18 @@ To add SPIs to your Keycloak cluster:
    └── system.properties
    ```
 3. Configure each SPI using the available environment variables (please refer
-   to the SPI documentation for available variables).
-4. Redeploy to Scalingo.
+   to the SPI documentation for available variables)
+4. Trigger a new deployment
 
 ### Themes
 
-Keycloak also support custom themes, which allows to personalize the look and
+Keycloak also supports custom themes, which allow to personalize the look and
 feel of end-user facing pages. This allows to further integrate Keycloak with
 your applications or company.
 
 To add themes to your Keycloak cluster:
 
-1. Create a directory named `providers` at the root of your project.
+1. Create a directory named `providers` at the root of your project
 2. Put the `.jar` files in this directory (don't forget to also add them to
    your git repository):
    ```
@@ -591,8 +694,8 @@ To add themes to your Keycloak cluster:
    └── system.properties
    ```
 3. Configure each theme using the available environment variables (please refer
-   to the theme documentation for available variables).
-4. Redeploy to Scalingo.
+   to the theme documentation for available variables)
+4. Trigger a new deployment
 
 ### Environment
 
@@ -622,8 +725,11 @@ can be leveraged to customize your deployment:
 [kc-reco]: https://www.keycloak.org/high-availability/single-cluster/concepts-memory-and-cpu-sizing
 [kc-config]: https://www.keycloak.org/server/all-config?f=config
 [kc-admin]: https://www.keycloak.org/docs/latest/server_admin/index.html
+[kc-production]: https://www.keycloak.org/server/configuration-production
 [kc-health]: https://www.keycloak.org/observability/health
 [kc-metrics]: https://www.keycloak.org/observability/configuration-metrics
+[kc-logging]: https://www.keycloak.org/server/logging
+[kc-vuln]: https://github.com/keycloak/keycloak/security
 [kc-changelog]: https://www.keycloak.org/docs/latest/release_notes/index.html
 
 [keycloak-scalingo]: https://github.com/Scalingo/keycloak-scalingo

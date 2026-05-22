@@ -19,7 +19,19 @@ All commands, configuration snippets, and examples are provided for
 illustrative purposes only. They are not intended to be used verbatim in
 production without proper review, testing, and adaptation.\\
 **Final implementation decisions and their consequences are the responsibility
-of the reader**.
+of the user**.
+
+### Responsibilities
+
+This tutorial describes a self-managed deployment approach and does not
+constitute a managed or hosted service provided by Scalingo.
+
+Scalingo remains responsible for the buildpacks, the scripts, initial
+configuration, samples, and instructions presented in this tutorial.
+
+Operational responsibility, including, but not limited to deployment, final
+configurations, proper exploitation, maintenance, upgrades, monitoring,
+backup restoration tests and security, remains with the user.
 
 ### Security Notice
 
@@ -44,11 +56,9 @@ head -c 32 /dev/urandom | base64
 ### Feedback and Contributions
 
 If you identify an error, outdated information, or missing details,
-contributions are welcome. You may:
-
-- Get in touch with our Support Team
-- [Open an issue](https://github.com/Scalingo/documentation/issues)
-- [Submit a pull request](https://github.com/Scalingo/documenation/pulls)
+contributions are welcome. You may get in touch with our Support Team, [open an
+issue](https://github.com/Scalingo/documentation/issues), or [submit a pull
+request](https://github.com/Scalingo/documenation/pulls).
 
 Your feedback helps improve the quality and reliability of this documentation.
 </div>
