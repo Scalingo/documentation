@@ -40,10 +40,6 @@ simplifying the work of developers with authentication and authorization.
   redundancy. In this tutorial, we deploy a [Scalingo for PostgreSQL® Business
   1G][db-postgresql].
 
-- Keycloak requires Java version 21 or above to run. We can instruct Scalingo
-  to use a specific version of Java by using the `system.properties` file, as
-  described in [our documentation][choose-jdk].
-
 - Keycloak is designed for multi-node clustered setups. In production mode, it
   uses a distributed cache (implemented via Infinispan) to share some resources
   between nodes. To be able to benefit from this cache, which is highly
@@ -739,7 +735,6 @@ can be leveraged to customize your deployment:
 
 [db-business-class]: {% post_url databases/about/2000-01-01-service-classes %}#business
 [db-postgresql]: {% post_url databases/postgresql/about/2000-01-01-overview %}
-[choose-jdk]: {% post_url languages/java/2000-01-01-start %}#choose-a-jdk
 [private-networking]: {% post_url platform/networking/private/2000-01-01-overview %}
 [private domain name]: {% post_url platform/networking.private/2000-01-01-concepts %}#private-domain-names
 [private-networking-addressing]: {% post_url platform/networking/private/2000-01-01-concepts %}#addressing
