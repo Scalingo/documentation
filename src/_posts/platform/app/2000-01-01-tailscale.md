@@ -37,7 +37,6 @@ tailscale
 Replace `[dist]` with the codename of the [stack]({% post_url platform/internals/stacks/2000-01-01-stacks %}) you are using:
 * `noble` for `scalingo-24` (default)
 * `jammy` for `scalingo-22`
-* `focal` for `scalingo-20`
 
 ## Step 3: Set TAILSCALE_AUTHKEY Environment Variable
 
