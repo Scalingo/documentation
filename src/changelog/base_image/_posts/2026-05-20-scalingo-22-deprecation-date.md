@@ -1,5 +1,5 @@
 ---
-modified_at: 2026-05-21 00:00:00
+modified_at: 2026-05-28 00:00:00
 title: 'Deprecation Plan for scalingo-22'
 ---
 
