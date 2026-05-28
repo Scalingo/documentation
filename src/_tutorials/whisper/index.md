@@ -8,7 +8,7 @@ modified_at: 2026-05-26
 
 [Whisper] is an automatic speech recognition model that converts speech to text. It was trained on a large, multilingual audio corpus, which makes it robust to different accents, background noise, and real-world conditions. As an open source model, it is well suited for developers who want to integrate speech to text without depending entirely on a proprietary API.
 
-Instead of relying on an external SaaS API, Whisper can run directly inside a web application using [faster-whisper], an optimized implementation of the Whisper model that improving inference speed on CPU.
+Instead of relying on an external SaaS API, Whisper can run directly inside a web application using [faster-whisper], an optimized implementation of the Whisper model that improves inference speed on CPU.
 
 In this tutorial, a small speech to text demo is deployed on Scalingo using a [FastAPI] backend, a Python web framework, a minimal HTML/JavaScript frontend that records audio in the browser, and `faster-whisper` running on CPU in a single web container.
 
@@ -16,7 +16,7 @@ In this tutorial, a small speech to text demo is deployed on Scalingo using a [F
 
 For this kind of application, it is recommended to start with an M container and move to a larger size if startup time or inference latency becomes an issue.
 
-The application supports two environment variables: `MODEL_USE` and `MODEL_CACHE_DIR`. A good starting point is to set `MODEL_USE=small` and `MODEL_CACHE_DIR=/tmp/models`, then move to a larger model only if better accuracy is required. You can view the possibles values of `MODEL_USE` on [faster-whisper] repository.
+The application supports one environment variables: `MODEL_USE`. A good starting point is to set `MODEL_USE=small`, then move to a larger model only if better accuracy is required. You can view the possibles values of `MODEL_USE` on [faster-whisper] repository.
 
 ## Deploying the Application
 
@@ -51,7 +51,6 @@ The application supports two environment variables: `MODEL_USE` and `MODEL_CACHE
 
    ```bash
    scalingo --app mywhisper env-set MODEL_USE=small
-   scalingo --app mywhisper env-set MODEL_CACHE_DIR=/tmp/models
    ```
 
 4. Deploy to Scalingo:
@@ -60,7 +59,7 @@ The application supports two environment variables: `MODEL_USE` and `MODEL_CACHE
    git push scalingo main
    ```
 
-   Scalingo detects the Python environment, installs the dependencies declared by the project, and starts the application using the `Procfile`. The speech to text demo is now deployed.
+   Scalingo detects the Python environment, installs the dependencies declared by the project, and starts the application using the [Procfile]. The speech to text demo is now deployed.
 
 ## Testing the Deployment
 
@@ -70,9 +69,9 @@ Before using the application, query the health endpoint to check that the model 
    curl https://mywhisper.osc-fr1.scalingo.io/health
    ```
 
-Since the model is downloaded the first time the container starts, wait until the `status` field is ready before opening the application in a browser and testing recording from the HTML interface. 
+Since the model is downloaded the first time the container starts, wait until the `status` field is ready before opening the application in a browser and testing the recording from the HTML interface. 
 
-The transcription endpoint can also be tested directly with **curl**.For example, if the audio file is in the current directory of your computer:
+The transcription endpoint can also be tested directly with `curl`.For example, if the audio file is in the current directory of your computer:
 
    ```bash
    curl --request POST https://mywhisper.osc-fr1.scalingo.io/transcribe \
@@ -81,7 +80,7 @@ The transcription endpoint can also be tested directly with **curl**.For example
 
 The backend writes the uploaded file to `/tmp`, transcribes it, then returns a JSON response containing the transcript and model metadata. 
 
-In this demo the transcription runs synchronously, but this demo can be adapted to an asynchronous workflow, for example by offloading the transcription to a background job.
+In this demo the transcription runs synchronously. This demo can be adapted to an asynchronous workflow, for example by offloading the transcription to a background job.
 
 ## Updating the Model
 
@@ -116,3 +115,4 @@ To deploy a new version, commit the changes and push again to the Scalingo remot
 [whisper]: https://github.com/openai/whisper
 [faster-whisper]: https://github.com/SYSTRAN/faster-whisper
 [fastapi]: https://fastapi.tiangolo.com
+[procfile]: {% post_url platform/app/2000-01-01-procfile %}
