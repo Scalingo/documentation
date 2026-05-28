@@ -22,33 +22,25 @@ change the number or size of running containers, see
 
 Use [process types][procfile] to separate workloads that do not have the same
 operational profile. A `web` process should handle HTTP requests and return
-responses quickly. Background workers, schedulers, importers, exporters, and
-other resource-intensive jobs should run in dedicated process types.
+responses quickly, using [background jobs][long-process] for long work.
 
-Favor focused processes that can be scaled independently, with a clear role
-and a predictable resource profile. This is usually easier to operate than a
-single large process that handles every workload.
-
-This separation has several advantages:
-
-- each workload can have its own number of containers;
-- each workload can use a container size adapted to its resource profile;
-- focused containers can start and scale faster;
-- long or heavy tasks do not block request handling;
-- worker concurrency can be tuned independently from web concurrency;
-- incidents are easier to diagnose from metrics and logs.
+Run background workers, importers, exporters, and other resource-intensive jobs
+in dedicated process types so each workload can use its own container count and
+size, making scaling and debugging easier.
 
 Typical process types include:
 
 - `web` for HTTP traffic;
 - `worker` for background jobs;
-- `clock` or `scheduler` for recurring jobs;
+- `clock` or `scheduler` custom process types for long-running,
+  high-frequency, or precise recurring jobs;
 - dedicated workers for heavy jobs such as PDF generation, image processing,
   imports, exports, or batch tasks.
 
-For long tasks triggered by a user request, return quickly from the web process
-and process the work asynchronously. See [Long Running Process][long-process]
-for the general pattern.
+For most recurring jobs, consider the
+[Scalingo Scheduler][scalingo-scheduler] with a `cron.json` file as the
+built-in option for running scheduled tasks without a continuously running
+process.
 
 
 ## Tune Concurrency Carefully
@@ -126,3 +118,4 @@ Issues][oom-diagnosis] for diagnosis and recovery guidance.
 [python]: {% post_url languages/python/2000-01-01-start %}
 [ruby]: {% post_url languages/ruby/2000-01-01-start %}
 [scaling]: {% post_url platform/app/scaling/2000-01-01-scaling %}
+[scalingo-scheduler]: {% post_url platform/app/task-scheduling/2000-01-01-scalingo-scheduler %}
