@@ -238,9 +238,9 @@ started during a scale-out operation are billed like any other container (on
 the other hand, scaling-in allows to save costs).
 
 Consequently, billing depends on the type of container you chose for your
-application (M is the default container size), on the maximum number of
-containers set in the Autoscaler configuration and on your application
-workload.
+application (M is the default
+[container size][container-sizes]), on the maximum number of containers set in
+the Autoscaler configuration and on your application workload.
 
 
 ## Creating an Autoscaler
@@ -439,3 +439,4 @@ To learn more about events and notifiers, please visit the page dedicated to
 [app notifiers]({% post_url platform/app/2000-01-01-notifiers %}).
 
 [scaling-v]: {% post_url platform/app/scaling/2000-01-01-scaling %}#vertical-scaling
+[container-sizes]: {% post_url platform/internals/2000-01-01-container-sizes %}

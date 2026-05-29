@@ -1,83 +1,46 @@
 ---
 title: Container Sizes
-modified_at: 2015-12-02 00:00:00
-tags: internals containers sizes
+modified_at: 2026-05-05 00:00:00
+tags: containers sizes
 index: 2
 ---
 
-## Comparative Table
+The following table provides a side-by-side comparison of resources and process
+limits applied to each container size, allowing for a clear overview of the
+capabilities and isolation characteristics associated with each profile.
 
-<div class="overflow-horizontal-content">
-	<table class="table">
-		<thead>
-		<tr>
-			<th>Name</th>
-			<th>Memory</th>
-			<th>CPU Priority</th>
-			<th>PID Limit</th>
-			<th>Price</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<td>S - Small</td>
-			<td>256MB</td>
-			<td>Low</td>
-			<td>128</td>
-			<td>0.01€/h</td>
-		</tr>
-		<tr>
-			<td>M - Medium (Default)</td>
-			<td>512MB</td>
-			<td>Standard</td>
-			<td>256</td>
-			<td>0.02€/h</td>
-		</tr>
-		<tr>
-			<td>L - Large</td>
-			<td>1GB</td>
-			<td>Standard</td>
-			<td>512</td>
-			<td>0.04€/h</td>
-		</tr>
-		<tr>
-			<td>XL - eXtra Large</td>
-			<td>2GB</td>
-			<td>High</td>
-			<td>1024</td>
-			<td>0.08€/h</td>
-		</tr>
-		<tr>
-			<td>2XL - eXtra eXtra Large</td>
-			<td>4GB</td>
-			<td>High</td>
-			<td>2048</td>
-			<td>0.16€/h</td>
-		</tr>
-		</tbody>
-	</table>
-</div>
+| Size    | Memory (MB) | Swap (MB) | [CPU Priority](#cpu) | [PID](#pid) | [FD](#fd) |
+| :-----: | ----------: | --------: | :------------------: | ----------: | :-------: |
+| **S**   | 256         | 512       | Low                  | 128         | 1048576   |
+| **M**   | 512         | 1024      | Standard             | 256         | 1048576   |
+| **L**   | 1024        | 2048      | Standard             | 512         | 1048576   |
+| **XL**  | 2048        | 4096      | High                 | 1024        | 1048576   |
+| **2XL** | 4096        | 8192      | High                 | 2048        | 1048576   |
 
-Bigger container sizes are available upon request on the support.
-As a note, each new process requires a PID. And inside each process, each thread needs one too.
+The default container size is **M**.
 
-## Availability of the Sizes
+Prices are available on the [Scalingo pricing page](https://scalingo.com/pricing).
 
-Our 30 days free trial only gives you access to small and medium containers, if you want
-to use another kind of size, please [fill your billing profile and payment
-method](https://dashboard.scalingo.com/billing).
 
-## Container Limits
+{: #cpu}**CPU Priority**
+: All containers can use all available CPU cores.
 
-Containers have various limits depending on their size. Here is a comprehensive list:
+  - A *High* priority container receives twice the CPU share of a *Standard*
+    priority container when CPU resources are contested.
+  - Following the same logic, a *Low* priority container receives half the CPU
+    share of a *Standard* priority container when CPU resources are contested.
 
-- RAM: cf. above-mentioned table
-- Swap: twice the amount of RAM.
-- CPU access: all containers have access to all CPU cores. But higher priority
-  means twice as much priority compared to standard priority. For example,
-  consider three containers, one has a high priority and two others have a
-  standard priority. When processes in all three containers attempt to use
-  100% of CPU, the first container would receive 50% of the total CPU time and
-  the two others would receive 25%.
-- PID limits: from 128 (S) to 2048 (2XL).
-- Ulimit nofile: 1048576. Maximum number of files an application can open.
+  For example, if three containers are fully utilizing the CPU — one with High
+  priority and two with Standard priority — the High priority container would
+  receive 50% of the total CPU time, while each Standard priority container
+  would receive 25%.
+
+{: #pid}**PID**
+: Maximum number of processes the container can spawn.
+
+{: #fd}**FD** (`nofile`)
+: Maximum number of file descriptors a process can open.
+
+
+*[PID]: Process IDentifier
+*[FD]: File Descriptors
