@@ -24,18 +24,18 @@ Use [process types][procfile] to separate workloads that do not have the same
 operational profile. A `web` process should handle HTTP requests and return
 responses quickly, using [background jobs][long-process] for long work.
 
-Run background workers, importers, exporters, and other resource-intensive jobs
-in dedicated process types so each workload can use its own container count and
-size, making scaling and debugging easier.
+Run background workers, importers, exporters, and scheduled jobs in process
+types that match their role. This makes each workload easier to scale, size,
+and debug independently.
 
 Typical process types include:
 
 - `web` for HTTP traffic;
 - `worker` for background jobs;
-- `clock` or `scheduler` custom process types for long-running,
-  high-frequency, or precise recurring jobs;
-- dedicated workers for heavy jobs such as PDF generation, image processing,
-  imports, exports, or batch tasks.
+- `clock` or `scheduler` [custom process types][custom-clock-processes] for
+  long-running, high-frequency, or precise recurring jobs;
+- dedicated workers for imports, exports, batch tasks, or other specialized
+  workloads.
 
 For most recurring jobs, consider the
 [Scalingo Scheduler][scalingo-scheduler] with a `cron.json` file as the
@@ -64,11 +64,11 @@ environment variables. See the language pages for details:
 and [Go][go].
 
 
-## Handle Memory-Intensive Workloads
+## Isolate Resource-Intensive Workloads
 
-Memory pressure is often caused by specific workloads rather than by every
-request. Check whether the application consumes more memory regularly, or only
-during occasional tasks such as:
+Resource pressure is often caused by specific workloads rather than by every
+request. Check whether the application consumes more CPU or memory regularly,
+or only during occasional tasks such as:
 
 - background jobs;
 - PDF generation;
@@ -81,12 +81,12 @@ during occasional tasks such as:
 Depending on what you observe, prefer the smallest change that addresses the
 actual cause:
 
-- optimize the code path that allocates too much memory;
-- tune runtime-specific memory settings;
-- split heavy jobs into a dedicated process type;
+- optimize the code path that consumes too many resources;
+- tune runtime-specific memory or concurrency settings;
 - reduce worker or job concurrency;
 - split large jobs into smaller chunks;
-- isolate workloads that do not have the same resource profile.
+- move specialized jobs to their own process type when they do not share the
+  same resource profile as the rest of the application.
 
 If each container still needs more memory after these changes, continue with
 [Choosing a Container Size][choosing-container-size].
@@ -107,6 +107,7 @@ Issues][oom-diagnosis] for diagnosis and recovery guidance.
 
 [alerts]: {% post_url platform/app/2000-01-01-alerts %}
 [choosing-container-size]: {% post_url platform/app/scaling/2000-01-01-choosing-container-size %}
+[custom-clock-processes]: {% post_url platform/app/task-scheduling/2000-01-01-custom-clock-processes %}
 [go]: {% post_url languages/go/2000-01-01-start %}
 [java]: {% post_url languages/java/2000-01-01-start %}
 [long-process]: {% post_url platform/app/2000-01-01-long-process %}
