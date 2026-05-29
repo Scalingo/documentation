@@ -66,8 +66,7 @@ An Autoscaler can depend on 6 different metrics:
 | [RAM consumption](#ram-consumption)                                      | `technical` | `memory`            |
 | [Swap consumption](#swap-consumption)                                    | `technical` | `swap`              |
 
-
-
+{% include application_swap_deprecation_note.md %}
 
 ### RPM per container (recommended)
 

@@ -21,6 +21,7 @@ The default container size is **M**.
 
 Prices are available on the [Scalingo pricing page](https://scalingo.com/pricing).
 
+{% include application_swap_deprecation_note.md %}
 
 {: #cpu}**CPU Priority**
 : All containers can use all available CPU cores.
