@@ -9,7 +9,7 @@ index: 13
 - [English version](#en)
 - [Version française](#fr)
 
-<a id="en"></a>
+<span id="en"></span>
 
 ## English
 
@@ -39,9 +39,10 @@ After each test, a post-mortem is performed to measure the effectiveness of the 
 
 ---
 
-<a id="fr"></a>
+<span id="fr"></span>
 
 ## Français
+{: #francais}
 
 ### Reprise d'Activités (PRA)
 

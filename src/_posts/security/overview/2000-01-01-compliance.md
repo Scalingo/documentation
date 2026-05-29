@@ -9,7 +9,7 @@ index: 15
 - [English version](#en)
 - [Version française](#fr)
 
-<a id="en"></a>
+<span id="en"></span>
 
 ## English
 
@@ -41,9 +41,10 @@ the data hosted on them. We are working on a SecNumCloud certification for a new
 
 ---
 
-<a id="fr"></a>
+<span id="fr"></span>
 
 ## Français
+{: #francais}
 
 ### RGPD
 

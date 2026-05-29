@@ -9,7 +9,7 @@ index: 10
 - [English version](#en)
 - [Version française](#fr)
 
-<a id="en"></a>
+<span id="en"></span>
 
 ## English
 
@@ -56,9 +56,10 @@ to the deployment phase.
 
 ---
 
-<a id="fr"></a>
+<span id="fr"></span>
 
 ## Français
+{: #francais}
 
 ### Sécurité dès la Conception
 

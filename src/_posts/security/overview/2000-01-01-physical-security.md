@@ -9,7 +9,7 @@ index: 1
 - [English version](#en)
 - [Version française](#fr)
 
-<a id="en"></a>
+<span id="en"></span>
 
 ## English
 
@@ -46,9 +46,10 @@ prompt response in case of emergencies.
 
 ---
 
-<a id="fr"></a>
+<span id="fr"></span>
 
 ## Français
+{: #francais}
 
 ### Datacenters
 

@@ -9,7 +9,7 @@ index: 5
 - [English version](#en)
 - [Version française](#fr)
 
-<a id="en"></a>
+<span id="en"></span>
 
 ## English
 
@@ -54,9 +54,10 @@ fires and floods.
 
 ---
 
-<a id="fr"></a>
+<span id="fr"></span>
 
 ## Français
+{: #francais}
 
 ### Mesures de Protection de votre Code et de vos Données
 

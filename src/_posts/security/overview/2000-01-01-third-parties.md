@@ -9,7 +9,7 @@ index: 11
 - [English version](#en)
 - [Version française](#fr)
 
-<a id="en"></a>
+<span id="en"></span>
 
 ## English
 
@@ -38,9 +38,10 @@ of their security measures.
 
 ---
 
-<a id="fr"></a>
+<span id="fr"></span>
 
 ## Français
+{: #francais}
 
 ### Sécurité des Fournisseurs
 

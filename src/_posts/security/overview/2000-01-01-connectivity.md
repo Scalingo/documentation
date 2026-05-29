@@ -9,7 +9,7 @@ index: 7
 - [English version](#en)
 - [Version française](#fr)
 
-<a id="en"></a>
+<span id="en"></span>
 
 ## English
 
@@ -27,9 +27,10 @@ unauthorized access.
 
 ---
 
-<a id="fr"></a>
+<span id="fr"></span>
 
 ## Français
+{: #francais}
 
 ### Connectivité Sécurisée
 

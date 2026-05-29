@@ -9,7 +9,7 @@ index: 3
 - [English version](#en)
 - [Version française](#fr)
 
-<a id="en"></a>
+<span id="en"></span>
 
 ## English
 
@@ -58,9 +58,10 @@ For example, we only allow TLS 1.2 and TLS 1.3 ciphers and we disable weak ciphe
 
 ---
 
-<a id="fr"></a>
+<span id="fr"></span>
 
 ## Français
+{: #francais}
 
 Le déploiement d'une application sur Scalingo garantit que vous suivez un ensemble de pratiques de sécurité de base dès le départ.
 
