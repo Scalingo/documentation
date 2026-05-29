@@ -478,6 +478,10 @@ article aside.note ol {
   color: var(--color-primary-purple-800);
 }
 
+article aside p:last-child {
+  margin-bottom: 0;
+}
+
 article aside.note li::before {
   background-color: var(--color-primary-purple-800);
 }

@@ -14,6 +14,6 @@ from the latest security vulnerabilities.
 
 ### Customer VPN
 
-We offer the possibility to set up a VPN connection (OpenVPN, IPSec) between your infrastructure and the Scalingo
+We offer the possibility to set up a VPN connection (OpenVPN) between your infrastructure and the Scalingo
 platform. This allows you to securely connect your infrastructure to the platform and to protect your data from
 unauthorized access.
