@@ -1,9 +1,14 @@
 ---
 modified_at: 2026-05-29 00:00:00
-title: 'Application containers: swap deprecation plan'
+title: 'Swap will be disabled for applications'
 ---
 
-Scalingo is progressively phasing out swap memory for application containers.
+Scalingo is progressively updating how memory limits are enforced for
+application containers.
+
+Applications will no longer be able to rely on swap memory. If an application
+exceeds its available memory, it may stop with an out-of-memory error and
+restart according to the usual restart policy.
 
 The rollout will be progressive:
 
