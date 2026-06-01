@@ -1,6 +1,6 @@
 ---
 modified_at: 2026-06-01 00:00:00
-title: 'Reduce Let's Encrypt certificate duration to 45 days'
+title: 'Reduce Lets Encrypt certificate duration to 45 days'
 ---
 
 Let's Encrypt certificates are now generated for a duration of 45 days, instead of 90 days previously.
