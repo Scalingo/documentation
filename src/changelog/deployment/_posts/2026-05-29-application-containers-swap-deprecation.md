@@ -3,8 +3,6 @@ modified_at: 2026-06-01 00:00:00
 title: 'Swap memory will be progressively disabled from application containers'
 ---
 
-**Swap will no longer be available for application containers.**
-
 Scalingo is progressively updating how memory limits are enforced for
 application containers.
 
