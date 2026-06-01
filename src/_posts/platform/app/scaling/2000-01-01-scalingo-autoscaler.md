@@ -66,9 +66,6 @@ An Autoscaler can depend on 6 different metrics:
 | [RAM consumption](#ram-consumption)                                      | `technical` | `memory`            |
 | [Swap consumption](#swap-consumption)                                    | `technical` | `swap`              |
 
-
-
-
 ### RPM per container (recommended)
 
 Requests Per Minute (RPM) per container is calculated as the total number of
@@ -179,6 +176,8 @@ prevent out-of-memory errors and ensure smooth operations.
 Swap consumption tracks the use of disk-based swap memory, which occurs when an
 application exceeds its allocated RAM. While swap provides additional capacity,
 excessive usage can significantly degrade performance.
+
+{% include application_swap_deprecation_note.md %}
 
 #### Usage
 
