@@ -325,7 +325,7 @@ options and values before validating.
    for available values.
 
 
-## Enabling the Autoscaler
+## Enabling an Autoscaler
 
 Enabling (or re-enabling) an Autoscaler allows you to put a previously [disabled](#disabling-an-autoscaler)
 Autoscaler back in action, using the saved configuration.
@@ -374,7 +374,7 @@ may decide to either scale-out (i.e. boot up additional containers) or scale-in
 ## Disabling an Autoscaler
 
 Disabling an Autoscaler allows you to put it out of action, while saving its
-configuration for later use. It can be [re-enabled](#enabling-the-autoscaler)
+configuration for later use. It can be [re-enabled](#enabling-an-autoscaler)
 anytime.
 
 Sometimes it can be useful to temporarily disable an Autoscaler to only rely on
