@@ -23,3 +23,6 @@ We recommend reviewing your applications' memory usage during the transition
 period and configuring memory alerts if needed.
 
 The documentation will be updated progressively to reflect this change.
+
+For more details, refer to the [blog post](https://scalingo.com/blog/clearer-memory-limits-for-application-containers).
+
