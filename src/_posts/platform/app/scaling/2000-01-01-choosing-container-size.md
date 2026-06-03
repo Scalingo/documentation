@@ -1,7 +1,7 @@
 ---
 title: Choosing a Container Size
 nav: Choosing a Container Size
-modified_at: 2026-05-18 00:00:00
+modified_at: 2026-06-03 00:00:00
 tags: app scaling containers memory metrics
 index: 1
 ---
@@ -70,10 +70,9 @@ Resource utilization trends provide valuable insight into whether the current co
   warrant [scaling out][h-scaling] to maintain service quality and fluent user
   experience.
 - **Restart events**: Unexpected or recurring container restarts can point to
-  resource exhaustion, such as out-of-memory (OOM) conditions, application
-  crashes, or other operational issues. Investigating restart patterns can help
-  determine whether scaling up resources is necessary to improve application
-  stability.
+  resource exhaustion, application crashes, or other operational issues.
+  Investigating restart patterns can help determine whether scaling up resources
+  is necessary to improve application stability.
 
 If production metrics are not enough to validate a size, test the application
 with realistic load and non-sensitive data.
@@ -97,9 +96,10 @@ Configure [alerts][alerts] for critical metrics, and keep
 [notifiers][notifiers] configured so the right people receive notifications
 before resource usage becomes critical.
 
-If the application consumes all its available memory, it can be terminated by
-the system. See the [Runtime Issues][oom-diagnosis] page for Out of Memory
-crash diagnosis and recovery guidance.
+Monitor both functional and technical metrics. Functional metrics, such as
+requests per minute per container, help you understand how much traffic each
+container handles. Technical metrics, such as RAM, and CPU usage, help you 
+monitor resource pressure before it affects the application.
 
 
 [alerts]: {% post_url platform/app/2000-01-01-alerts %}
@@ -107,7 +107,6 @@ crash diagnosis and recovery guidance.
 [external-testing]: {% post_url security/procedures/2000-01-01-external-testing %}#can-i-run-a-load-test-on-my-application-that-is-running-on-scalingo
 [metrics]: {% post_url platform/app/2000-01-01-metrics %}
 [notifiers]: {% post_url platform/app/2000-01-01-notifiers %}
-[oom-diagnosis]: {% post_url platform/app/troubleshooting/2000-01-01-runtime-issues %}#out-of-memory-crashes
 [scaling]: {% post_url platform/app/scaling/2000-01-01-scaling %}
 [h-scaling]: {% post_url platform/app/scaling/2000-01-01-scaling %}#horizontal-scaling
 [v-scaling]: {% post_url platform/app/scaling/2000-01-01-scaling %}#vertical-scaling

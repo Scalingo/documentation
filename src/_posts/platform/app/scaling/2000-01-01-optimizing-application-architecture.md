@@ -1,20 +1,21 @@
 ---
-title: Optimizing Application Architecture
-nav: Optimized Architecture
-modified_at: 2026-05-18 00:00:00
-tags: app scaling architecture containers memory metrics performance concurrency
+title: Optimizing Application Workloads
+nav: Optimized Workloads
+modified_at: 2026-06-03 00:00:00
+tags: app scaling workloads containers memory metrics performance concurrency
 index: 5
 ---
 
-An optimized application architecture makes efficient use of the resources
-allocated to each container while keeping the application easy to operate. On
-Scalingo, this usually means separating workloads into [process types][procfile],
-keeping web requests short, tuning concurrency carefully, and using metrics to
-decide when to optimize code, split work, or scale the application.
+When an application starts hitting resource limits, increasing the container
+size is not always the only option. Sometimes, the issue comes from a specific
+workload: a long request, a background job, a large import, or too much
+concurrency in one process.
 
-This page focuses on how to structure the application workload. To choose a
-container size, see [Choosing a Container Size][choosing-container-size]. To
-change the number or size of running containers, see
+This page lists optimization options you can consider when you want to improve
+how these workloads use container resources.
+
+For container sizing, see [Choosing a Container Size][choosing-container-size].
+To change the number or size of running containers, see
 [Scaling Your Application][scaling].
 
 
@@ -41,6 +42,20 @@ For most recurring jobs, consider the
 [Scalingo Scheduler][scalingo-scheduler] with a `cron.json` file as the
 built-in option for running scheduled tasks without a continuously running
 process.
+
+
+## Consider Private Networks for Separate Applications
+
+For larger applications, process types are not the only way to separate
+responsibilities. When a workload is operated as a separate application,
+[Private Networks][private-networks] let application containers communicate
+privately and share internal services within the same project.
+
+Private Networks are complementary to process types:
+
+- use process types to separate workloads inside an application;
+- use Private Networks when a workflow spans multiple applications within the
+  same project.
 
 
 ## Tune Concurrency Carefully
@@ -115,6 +130,7 @@ Issues][oom-diagnosis] for diagnosis and recovery guidance.
 [nodejs]: {% post_url languages/nodejs/2000-01-01-start %}
 [oom-diagnosis]: {% post_url platform/app/troubleshooting/2000-01-01-runtime-issues %}#out-of-memory-crashes
 [php]: {% post_url languages/php/2000-01-01-start %}
+[private-networks]: {% post_url platform/networking/private/2000-01-01-overview %}
 [procfile]: {% post_url platform/app/2000-01-01-procfile %}
 [python]: {% post_url languages/python/2000-01-01-start %}
 [ruby]: {% post_url languages/ruby/2000-01-01-start %}
