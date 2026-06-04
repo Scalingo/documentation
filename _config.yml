@@ -86,7 +86,7 @@ highlighted:
     - name: Ruby on Rails
       url: /languages/ruby/rails/start
       logo: ruby-on-rails
-    - name: NodeJS
+    - name: Node.js
       url: "/languages/nodejs/start"
       logo: nodejs
     - name: PHP
@@ -115,18 +115,12 @@ languages:
   - url: php
     name: "PHP"
     logo: php
-  - url: groovy
-    name: "Groovy"
-    logo: groovy
   - url: java
     name: "Java"
     logo: java
   - url: clojure
     name: "Clojure"
     logo: clojure
-  - url: crystal
-    name: "Crystal"
-    logo: crystal
   - url: elixir
     name: "Elixir"
     logo: elixir
@@ -171,7 +165,7 @@ samples:
     name: Next.js (standalone)
     logo: nextjs
   - url: node-nuxt
-    name: NodeJS/Nuxt.js
+    name: Node.js/Nuxt.js
     logo: nodejs
   - url: php-laravel
     name: PHP/Laravel
