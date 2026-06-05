@@ -495,9 +495,12 @@ article aside.note a {
   font-weight: var(--font-weight-bold, 700);
 }
 
-article aside.note code.language-plaintext {
+article aside.note code.language-plaintext,
+article .stack:not(table .stack) {
   background-color: var(--color-primary-purple-200-60);
   color: var(--color-primary-purple-800);
+  padding: 0 0.33rem;
+  border-radius: 6px;
 }
 
 article aside.warning {
@@ -765,7 +768,8 @@ article pre {
   }
 }
 
-article code.language-plaintext {
+article code.language-plaintext,
+article .stack:not(table .stack) {
   background-color: var(--color-sc-gray-3);
   color: var(--color-sc-gray-2);
   font-family: var(--font-mono);
@@ -1203,6 +1207,39 @@ ol.deploy-timeline {
             font-weight: 400;
             margin-right: 1rem;
             padding: 0 0.5rem;
+        }
+    }
+}
+
+article .stack {
+    align-items: center;
+    display: inline-flex;
+    gap: 0.33rem;
+
+    &::after {
+        content: "\25CF";           /* ⏺ (black circle) */
+    }
+
+    &.default,
+    &.supported {
+        &::after {
+            color: rgb(103, 194, 58);
+            margin-top: -0.1rem;    /* Small adj. for v-alignment */
+        }
+    }
+
+    &.deprecated {
+        &::after {
+            color: rgb(230, 162, 60);
+            content: "\25B2";       /* ▲ (plain up-pointing triangle) */
+            margin-top: -0.2rem;    /* Small adj. for v-alignment */
+        }
+    }
+
+    &.discontinued {
+        &::after {
+            color: rgb(245, 108, 108);
+            content: "\1F7AD";      /* 🞭 (very heavy saltire) */
         }
     }
 }
