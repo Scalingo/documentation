@@ -98,6 +98,5 @@ monitor resource pressure before it affects the application.
 [metrics]: {% post_url platform/app/2000-01-01-metrics %}
 [notifiers]: {% post_url platform/app/2000-01-01-notifiers %}
 [procfile]: {% post_url platform/app/2000-01-01-procfile %}
-[scaling]: {% post_url platform/app/scaling/2000-01-01-scaling %}
 [h-scaling]: {% post_url platform/app/scaling/2000-01-01-scaling %}#horizontal-scaling
 [v-scaling]: {% post_url platform/app/scaling/2000-01-01-scaling %}#vertical-scaling
