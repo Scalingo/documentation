@@ -115,4 +115,4 @@ development dependencies installed (e.g. to debug your app).
 In addition to the `--[no-]dev` flag, the platform always runs
 `composer install` with the `--prefer-dist` and `--optimize-autoloader` flags.
 
-[EOL]: {% post_url platform/internals/stacks/2000-01-01-stacks %}#stack-end-of-life
+[EOL]: {% post_url platform/internals/stacks/2000-01-01-overview %}#lifecycle

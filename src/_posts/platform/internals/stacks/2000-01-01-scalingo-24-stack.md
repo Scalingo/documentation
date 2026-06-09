@@ -1,42 +1,47 @@
 ---
 title: Scalingo-24 Stack
-nav: Scalingo-24
-modified_at: 2026-06-10 00:00:00
-index: 3
+nav: scalingo-24
+modified_at: 2026-03-10 00:00:00
+index: 2
 ---
 
-{% note %}
-scalingo-24 is the current default stack.
-{% endnote %}
 
-This article describes the scalingo-24 stack, based on Ubuntu 24.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
+The {% scalingo 24 %} [stack] is based on Ubuntu 24.04 Long-Term Support.
 
-## Support Period
 
-scalingo-24 is based on Ubuntu 24.04. It will be supported through May 2029.
+## Lifecycle
 
-## Testing and Migrating Your App
+{% scalingo 24 %} is currently **supported**.
 
-Learn how to test and [migrate your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-24.
+| Status                                               | From          | Through      |
+| ---------------------------------------------------: | ------------: | -----------: |
+| <span class="stack supported">**Supported**</span>   | **May 2025**  | **May 2028** |
+| <span class="stack deprecated">Deprecated</span>     | June 2028     | May 2029     |
+| <span class="stack discontinued">Discontinued</span> | June 2029     | -            |
+
 
 ## Docker Image
 
-This base image is a completely standard Docker image. The image is available on [Docker Hub](https://hub.docker.com/r/scalingo/scalingo-24). You can run it locally with this command:
+This base image is a completely standard Docker image. The image is available
+on [Docker Hub]. You can run it locally with this command:
 
-```
+```shell
 docker pull scalingo/scalingo-24:latest
 docker run --rm -it scalingo/scalingo-24:latest bash
 ```
 
-## Ubuntu Packages
+## Packages
 
-The following table lists available packages and versions for the stack scalingo-24.
+The following table lists available packages and versions for the stack
+{% scalingo 24 %}.
 
-In general, apps do not typically interact directly with this level of operating system services. Some app dependencies may, as well as apps that directly rely on the underlying operating system. The list below is provided to document the available operating system packages.
-
-<div class="overflow-horizontal-content" markdown="1">
-{: .table }
 | Name | Version |
 | ---- | ------- |
 {% include scalingo_24_stack_packages.md %}
-</div>
+
+
+*[LTS]: Long-Term Support
+
+[Docker Hub]: https://hub.docker.com/r/scalingo/scalingo-24
+
+[stack]: {% post_url platform/internals/stacks/2000-01-01-overview %}
