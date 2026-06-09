@@ -1,6 +1,6 @@
 ---
 title: Optimizing Application Workloads
-nav: Optimized Workloads
+nav: Optimizing Workloads
 modified_at: 2026-06-08 00:00:00
 tags: app scaling workloads containers memory metrics performance concurrency
 index: 5
