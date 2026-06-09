@@ -12,7 +12,7 @@ This new versions contain the following changes:
 
 For a comprehensive list of packages installed in the different stacks, please refer to our documentation:
 
-* [scalingo-20]({% post_url platform/internals/stacks/2000-01-01-stacks %})
+* [scalingo-20]({% post_url platform/internals/stacks/2000-01-01-overview %})
 * [scalingo-22]({% post_url platform/internals/stacks/2000-01-01-scalingo-22-stack %}#ubuntu-packages)
 
 As always, the Docker images are available on Docker Hub:

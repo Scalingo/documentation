@@ -11,7 +11,7 @@ This date follows the end of Ubuntu 22.04 LTS standard support after May 2027, a
 From this date, Scalingo will no longer support applications running on scalingo-22, and new deployments, including Review Apps, must use [scalingo-24]({% post_url platform/internals/stacks/2000-01-01-scalingo-24-stack %}) or later.
 {% endwarning %}
 
-This article describes the scalingo-22 stack, based on Ubuntu 22.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
+This article describes the scalingo-22 stack, based on Ubuntu 22.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-overview %})
 
 ## Support Period
 
@@ -19,7 +19,7 @@ scalingo-22 is based on Ubuntu 22.04. It will be supported through May 2027.
 
 ## Testing and Migrating Your App
 
-Learn how to test and [migrate your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-22.
+Learn how to test and [migrate your app]({% post_url platform/internals/stacks/2000-01-01-overview %}#migrating-to-a-different-stack) to scalingo-22.
 
 ## Docker Image
 

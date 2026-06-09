@@ -7,4 +7,4 @@ Scalingo supports the following versions of Nginx:
 
 {% include scalingo_22_deprecation_note.md %}
 
-[EOL]: {% post_url platform/internals/stacks/2000-01-01-stacks %}#stack-end-of-life
+[EOL]: {% post_url platform/internals/stacks/2000-01-01-overview %}#lifecycle
