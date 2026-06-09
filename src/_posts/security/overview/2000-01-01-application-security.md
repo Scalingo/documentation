@@ -9,9 +9,7 @@ index: 3
 - [English version](#en)
 - [Version française](#fr)
 
-<span id="en"></span>
-
-## English
+## English {#en}
 
 Deploying an application on Scalingo ensures that you are following a base set of security practices from the beginning.
 
@@ -58,10 +56,7 @@ For example, we only allow TLS 1.2 and TLS 1.3 ciphers and we disable weak ciphe
 
 ---
 
-<span id="fr"></span>
-
-## Français
-{: #francais}
+## Français {#fr}
 
 Le déploiement d'une application sur Scalingo garantit que vous suivez un ensemble de pratiques de sécurité de base dès le départ.
 
@@ -73,17 +68,17 @@ Lorsque vous envoyez votre code sur Scalingo, nous construisons une nouvelle ima
 
 Chaque application est déployée dans son propre conteneur, qui est isolé des autres conteneurs s'exécutant sur le même hôte. Cela garantit que l'application est protégée des autres applications s'exécutant sur le même hôte. Les conteneurs sont également isolés du système d'exploitation hôte, ce qui fournit une couche supplémentaire de sécurité.
 
-### Scalabilité
+### Scalabilité {#scalabilite}
 
 La plateforme vous permet de mettre à l'échelle votre application horizontalement en ajoutant plus de conteneurs ou verticalement en augmentant la taille des conteneurs. Cela garantit que votre application peut gérer le volume de trafic attendu et qu'elle est protégée des attaques par déni de service ou des pics de trafic simples.
 
 De plus, si activée, la fonctionnalité d'auto-scaling ajustera automatiquement le nombre de conteneurs en fonction, par exemple, de l'utilisation du CPU de l'application ou du nombre de requêtes qu'elle reçoit.
 
-### Gestion des Dépendances
+### Gestion des Dépendances {#gestion-des-dependances}
 
 Nous mettons à jour régulièrement les dépendances utilisées par la plateforme pour assurer qu'elles sont à jour et qu'elles ne contiennent aucune vulnérabilité de sécurité connue. Cela inclut les images de base utilisées pour construire les conteneurs, les bibliothèques et outils utilisés par la plateforme, et les dépendances utilisées par les applications déployées sur la plateforme.
 
-### En-têtes de Sécurité
+### En-têtes de Sécurité {#en-tetes-de-securite}
 
 Nous utilisons des en-têtes de sécurité pour protéger la plateforme des vulnérabilités de sécurité courantes telles que le cross-site scripting (XSS) et le clickjacking. Ces en-têtes sont configurés pour prévenir les attaques courantes et pour protéger la plateforme des vulnérabilités de sécurité connues.
 

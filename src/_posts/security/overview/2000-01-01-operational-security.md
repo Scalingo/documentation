@@ -9,9 +9,7 @@ index: 8
 - [English version](#en)
 - [Version française](#fr)
 
-<span id="en"></span>
-
-## English
+## English {#en}
 
 ### Logical Access Control
 
@@ -25,10 +23,7 @@ Access is revoked immediately when an employee leaves the company or when their 
 
 ---
 
-<span id="fr"></span>
-
-## Français
-{: #francais}
+## Français {#fr}
 
 ### Contrôle d'Accès Logique
 

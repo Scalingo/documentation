@@ -9,9 +9,7 @@ index: 13
 - [English version](#en)
 - [Version française](#fr)
 
-<span id="en"></span>
-
-## English
+## English {#en}
 
 ### Disaster Recovery
 
@@ -39,16 +37,13 @@ After each test, a post-mortem is performed to measure the effectiveness of the 
 
 ---
 
-<span id="fr"></span>
+## Français {#fr}
 
-## Français
-{: #francais}
-
-### Reprise d'Activités (PRA)
+### Reprise d'Activités (PRA) {#pra}
 
 Nous disposons de plans de reprise d'activités pour garantir la disponibilité de la plateforme en cas de catastrophe. Les plans de reprise d'activités comprennent des procédures pour restaurer le fonctionnement normal de la plateforme et pour garantir la disponibilité de la plateforme à nos clients. Ces plans sont testés régulièrement pour s'assurer qu'ils sont efficaces et que nous pouvons restaurer le fonctionnement normal de la plateforme en cas de catastrophe.
 
-### Continuité des Activités (PCA)
+### Continuité des Activités (PCA) {#pca}
 
 Nous disposons de plans de continuité des activités pour garantir la disponibilité de la plateforme en cas de perturbation des activités. Les plans de continuité des activités comprennent des procédures pour restaurer le fonctionnement normal de la plateforme et pour garantir la disponibilité de la plateforme à nos clients. Ces plans sont testés régulièrement, par sous-parties, pour s'assurer qu'ils sont efficaces et que nous pouvons restaurer le fonctionnement normal de la plateforme en cas de perturbation des activités.
 
@@ -61,3 +56,6 @@ La continuité des activités est assurée à différents niveaux :
 - Redondance des services
 
 Après chaque test, un post-mortem est effectué pour mesurer l'efficacité du plan et identifier les axes d'amélioration.
+
+*[PCA]: Plan de Continuité des Activités
+*[PRA]: Plan de Reprise des Activités

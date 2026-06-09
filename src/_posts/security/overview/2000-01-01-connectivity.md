@@ -9,9 +9,7 @@ index: 7
 - [English version](#en)
 - [Version française](#fr)
 
-<span id="en"></span>
-
-## English
+## English {#en}
 
 ### Secure Connectivity
 
@@ -21,16 +19,13 @@ from the latest security vulnerabilities.
 
 ### Customer VPN
 
-We offer the possibility to set up a VPN connection (OpenVPN, IPSec) between your infrastructure and the Scalingo
+We offer the possibility to set up a VPN connection (OpenVPN) between your infrastructure and the Scalingo
 platform. This allows you to securely connect your infrastructure to the platform and to protect your data from
 unauthorized access.
 
 ---
 
-<span id="fr"></span>
-
-## Français
-{: #francais}
+## Français {#fr}
 
 ### Connectivité Sécurisée
 
@@ -38,4 +33,4 @@ Toutes les données transmises entre la plateforme et l'utilisateur sont chiffr�
 
 ### VPN Client
 
-Nous offrons la possibilité de mettre en place une connexion VPN (OpenVPN, IPSec) entre votre infrastructure et la plateforme Scalingo. Cela vous permet de connecter en toute sécurité votre infrastructure à la plateforme et de protéger vos données contre les accès non autorisés.
+Nous offrons la possibilité de mettre en place une connexion VPN (OpenVPN) entre votre infrastructure et la plateforme Scalingo. Cela vous permet de connecter en toute sécurité votre infrastructure à la plateforme et de protéger vos données contre les accès non autorisés.

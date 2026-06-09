@@ -9,9 +9,7 @@ index: 15
 - [English version](#en)
 - [Version française](#fr)
 
-<span id="en"></span>
-
-## English
+## English {#en}
 
 ### GDPR
 
@@ -41,10 +39,7 @@ the data hosted on them. We are working on a SecNumCloud certification for a new
 
 ---
 
-<span id="fr"></span>
-
-## Français
-{: #francais}
+## Français {#fr}
 
 ### RGPD
 
@@ -61,3 +56,8 @@ Scalingo est certifié ISO 27001:2022 et nous avons mis en place un niveau de s�
 ### SecNumCloud
 
 Scalingo héberge son infrastructure dans des datacenters qualifiés SecNumCloud (uniquement pour la région `osc-secnum-fr1`). Cette qualification garantit que les datacenters ont mis en place un niveau de sécurité élevé pour protéger les données qui y sont hébergées. Nous travaillons sur une certification SecNumCloud pour une nouvelle gamme de produits.
+
+
+*[HDS]: Hébergeur de Données de Santé
+*[RGPD]: Règlement Général sur la Protection des Données
+*[GDPR]: General Data Protection Regulation

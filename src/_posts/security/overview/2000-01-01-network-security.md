@@ -9,9 +9,7 @@ index: 2
 - [English version](#en)
 - [Version française](#fr)
 
-<span id="en"></span>
-
-## English
+## English {#en}
 
 ### DDoS Protection
 
@@ -47,10 +45,7 @@ and secure.
 
 ---
 
-<span id="fr"></span>
-
-## Français
-{: #francais}
+## Français {#fr}
 
 ### Protection DDoS
 

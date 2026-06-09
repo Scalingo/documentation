@@ -9,9 +9,7 @@ index: 12
 - [English version](#en)
 - [Version française](#fr)
 
-<span id="en"></span>
-
-## English
+## English {#en}
 
 ### Security Incident Response
 
@@ -31,16 +29,13 @@ Our operations team is available 24/7 to respond to security incidents and to en
 
 ### Technical Support
 
-Our technical support team is available to assist you with any technical or security issues, Monday to Friday, from 9:00 AM to 12:00 PM and 2:00 PM to 6:00 PM CET/CEST. You can contact us via chat or email at [support@scalingo.com](mailto:support@scalingo.com).
+Our technical support team is available to assist you with any technical or security issues, Monday to Friday, from 9:00 AM to 12:00 PM and 2:00 PM to 6:00 PM CET/CEST. You can contact us via chat or email.
 
 If your business requires extended availability and priority support, consider upgrading to our complementary plans tailored for demanding needs. [Contact our sales](https://scalingo.com/book-a-demo) team to learn more.
 
 ---
 
-<span id="fr"></span>
-
-## Français
-{: #francais}
+## Français {#fr}
 
 ### Réponse aux Incidents de Sécurité
 
