@@ -18,16 +18,6 @@ See the [container sizes][container-sizes] page for the available sizes, memory
 limits, and PID limits.
 
 
-## Pick an Initial Size
-
-When you are unsure about the right size, start with a size that gives your
-application enough headroom to handle traffic peaks, expensive requests, and
-occasional jobs.
-
-Avoid choosing a smaller size only because the application starts successfully.
-An application can boot with low memory usage and still consume much more
-memory under real traffic, scheduled jobs, large requests, or specific user
-flows.
 ## Picking an Initial Size
 
 For simple applications, the default `M` container size is often a reasonable
