@@ -1,7 +1,7 @@
 ---
 title: Scalingo Autoscaler
 nav: Scalingo Autoscaler
-modified_at: 2026-06-08 00:00:00
+modified_at: 2026-06-09 00:00:00
 tags: app scaling autoscaling metrics autoscaler
 index: 20
 ---
