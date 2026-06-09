@@ -1,0 +1,25 @@
+---
+modified_at: 2026-06-09 09:00:00
+title: 'MySQL 8.0 LTS - Deprecation Plan'
+---
+
+MySQL 8.0 LTS reached the end of its support cycle on April 30, 2026. Since
+this date, this version no longer receives updates, security patches, or
+maintenance fixes.
+
+We encourage you to start planning the upgrade of your MySQL instances to MySQL
+8.4 LTS as soon as possible.
+
+## Deprecation Plan
+
+- **April 30, 2026:** MySQL 8.0 reaches end of support.
+- **June 2026:** End-of-support notification sent to owners and collaborators of
+  MySQL 8.0 databases.
+- **October 12, 2026:** Remaining MySQL 8.0 databases will be automatically
+  upgraded to the latest available minor version of MySQL 8.0, then to MySQL 8.4
+  LTS.
+
+We recommend upgrading proactively so you can validate that your services
+continue to work as expected before the automatic upgrade campaign starts.
+
+[Read our prerequisites before upgrading to MySQL® 8.4 LTS]({% post_url databases/mysql/guides/2000-01-01-upgrading %})
