@@ -1,7 +1,7 @@
 ---
 title: Choosing a Container Size
 nav: Choosing a Container Size
-modified_at: 2026-06-09 00:00:00
+modified_at: 2026-06-10 00:00:00
 tags: app scaling containers memory metrics
 index: 1
 ---
