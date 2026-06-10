@@ -1,7 +1,7 @@
 ---
 title: Scalingo Autoscaler
 nav: Scalingo Autoscaler
-modified_at: 2025-12-29 11:04:00
+modified_at: 2026-06-10 00:00:00
 tags: app scaling autoscaling metrics autoscaler
 index: 20
 ---
@@ -21,7 +21,7 @@ metric while remaining within strict boundaries to prevent unforeseen costs.
 
 An Autoscaler is linked to a [process type]({% post_url platform/app/2000-01-01-procfile %}),
 which means you can have multiple Autoscalers for the same application, as long
-as each one is setup for a different process type. Each Autoscaler can be setup
+as each one is set up for a different process type. Each Autoscaler can be set up
 differently.
 
 When the configured metric deviates from the defined *target*, the Autoscaler
@@ -44,22 +44,22 @@ to take action:
   round, ensuring a progressive and controlled adjustment. When the metric is
   RPM per container, the Autoscaler is able to add more than one container per
   decision round when required, allowing to scale much faster. The maximum
-  number of containers limit is still honoured in such a case.
+  number of containers still applies in such a case.
 
 These rules are designed to prevent the application from scaling wildly. They
 make autoscaling effective at handling moderately increasing or decreasing
 metrics, but less effective at managing sudden, massive spikes. For such cases,
-and considering they are predictable, we usually adivse to manually scale the
+and considering they are predictable, we usually advise to manually scale the
 application to an appropriate container formation.
 
 
-## Chosing a Metric
+## Choosing a Metric
 
 An Autoscaler can depend on 6 different metrics:
 
 | Metric                                                                   | Kind        | Keyword             |
 | ------------------------------------------------------------------------ | ----------- | ------------------- |
-| [Requests Per Minute (RPM) per container](rpm-per-container-recommended) | `router`    | `rpm_per_container` |
+| [Requests Per Minute (RPM) per container](#rpm-per-container-recommended) | `router`    | `rpm_per_container` |
 | [Response Time](#response-time)                                          | `router`    | `p95_response_time` |
 | [Number of 5xx errors](#5xx-errors)                                      | `router`    | `5XX`               |
 | [CPU consumption](#cpu-consumption)                                      | `technical` | `cpu`               |
@@ -144,7 +144,7 @@ distribute the load.
 
 However, if high CPU usage persists despite autoscaling, it may indicate that
 your application requires more powerful containers to run properly. In such
-cases, switching for a larger plan (vertical scaling) can provide more CPU
+cases, switching to a larger plan (vertical scaling) can provide more CPU
 priority per container, thus enhancing the ability of your application to deal
 with resource-intensive scenarios.
 
@@ -234,7 +234,7 @@ resource-intensive endpoints of your application.
 
 Although the Scalingo Autoscaler itself is free, the additional containers
 started during a scale-out operation are billed like any other container (on
-the other hand, scaling-in allows to save costs).
+the other hand, scaling-in can save costs).
 
 Consequently, billing depends on the type of container you chose for your
 application (M is the default
@@ -246,7 +246,7 @@ the Autoscaler configuration and on your application workload.
 
 {% warning %}
 Adding an Autoscaler also immediately enables it!
-Since this can lead to additional costs, please make sure to chose appropriate
+Since this can lead to additional costs, please make sure to choose appropriate
 options and values before validating.
 [It can be disabled](#disabling-an-autoscaler) if needed.
 {% endwarning %}
@@ -257,7 +257,7 @@ options and values before validating.
 2. Click on the **Resources** tab
 3. Locate the **Containers** block
 4. In this block, locate the **Scale** button next to the process type for
-   which you want to setup the Autoscaler
+   which you want to set up the Autoscaler
 5. Click the down arrow next to the **Scale** button
 6. From the dropdown menu, select **Setup autoscaler**
 7. The following popup window appears:
@@ -268,15 +268,15 @@ options and values before validating.
    1. Pick the minimum number of containers for this process type
       (minimum is 2)
    2. Pick the maximum number of containers for this process type
-   3. Chose the metric to watch
-   4. Chose a value above which the Autoscaler considers scaling-out
+   3. Choose the metric to watch
+   4. Choose a value above which the Autoscaler considers scaling-out
    5. Validate by clicking the **Confirm** button
 9. **The Autoscaler is configured and enabled**
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
-2. From the command line, run the following command to setup the Autoscaler:
+1. Make sure you have correctly [set up the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+2. From the command line, run the following command to set up the Autoscaler:
    ```bash
    scalingo --app my-app autoscalers-add --container-type <process_type> \
        --metric <metric> --target <target> \
@@ -287,10 +287,10 @@ options and values before validating.
      Name of the process type to scale (e.g. `web`, `clock`, `scheduler`, ...)
    - `metric`\
      Name of the metric to watch.\
-     Please refer to the *Keyword* column of the [metrics table](#available-metrics)
+     Please refer to the *Keyword* column of the [metrics table](#choosing-a-metric)
      for available values.
    - `target`\
-     The value for metric that serves as boundary to trigger a scale operation
+     The metric value that serves as a boundary to trigger a scale operation
    - `min`\
      Minimum number of containers to run
    - `max`\
@@ -320,13 +320,13 @@ options and values before validating.
    `web` process type when the total number of requests received by the
    application divided by the number of running `web` containers exceeds 1000.
    It will start a maximum of 10 containers.\
-   Please refer to the *Keyword* column of the [metrics table](#available-metrics)
+   Please refer to the *Keyword* column of the [metrics table](#choosing-a-metric)
    for available values.
 
 
-## Enabling the Autoscaler
+## Enabling an Autoscaler
 
-Enabling (or re-enabling) an Autoscaler allows to put a previously [disabled](#disabling-an-autoscaler)
+Enabling (or re-enabling) an Autoscaler allows you to put a previously [disabled](#disabling-an-autoscaler)
 Autoscaler back in action, using the saved configuration.
 
 When enabling an Autoscaler, and depending on the current state, the platform
@@ -345,8 +345,8 @@ may decide to either scale-out (i.e. boot up additional containers) or scale-in
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
-2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
+1. Make sure you have correctly [set up the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+2. Make sure you have [added and configured an Autoscaler](#creating-an-autoscaler)
 3. From the command line, enable the Autoscaler:
    ```bash
    scalingo --app my-app autoscalers-enable <process_type>
@@ -372,14 +372,14 @@ may decide to either scale-out (i.e. boot up additional containers) or scale-in
 
 ## Disabling an Autoscaler
 
-Disabling an Autoscaler allows to put it out of action, while saving its
+Disabling an Autoscaler allows you to put it out of action, while saving its
 configuration for later use. It can be [re-enabled](#enabling-an-autoscaler)
 anytime.
 
 Sometimes it can be useful to temporarily disable an Autoscaler to only rely on
 manual scaling, be it for testing purposes, to handle a planned peak such as
 the Christmas period for an e-commerce website, and so on... This feature
-allows to put an Autoscaler aside for an undetermined amount of time, after
+allows you to put an Autoscaler aside for an undetermined amount of time, after
 which it can be re-enabled with the same configuration.
 
 When disabling an Autoscaler, the platform does not scale-in. The number of
@@ -401,8 +401,8 @@ running containers remains the same.
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
-2. Make sure you have [added and configured an Autoscaler](#configuring-an-autoscaler)
+1. Make sure you have correctly [set up the Scalingo command line tool]({% post_url tools/cli/2000-01-01-start %})
+2. Make sure you have [added and configured an Autoscaler](#creating-an-autoscaler)
 3. From the command line, disable the Autoscaler:
    ```bash
    scalingo --app my-app autoscalers-disable <process_type>
@@ -428,7 +428,7 @@ running containers remains the same.
 
 ## Monitoring the Autoscaler
 
-The following event is available to monitor the Autoscaler executions:
+The following event is available to monitor Autoscaler executions:
 
 | Event        | Description                                                          |
 | ------------ | -------------------------------------------------------------------- |
