@@ -590,7 +590,15 @@ article tr:nth-child(odd) {
   transform: rotate(180deg);
 }
 
+.changelog .heading:target label svg {
+  transform: rotate(180deg);
+}
+
 .changelog input:checked+label+div {
+  display: block;
+}
+
+.changelog .heading:target input+label+div {
   display: block;
 }
 
