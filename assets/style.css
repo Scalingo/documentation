@@ -498,8 +498,6 @@ article aside.note a {
 article aside.note code.language-plaintext {
   background-color: var(--color-primary-purple-200-60);
   color: var(--color-primary-purple-800);
-  padding: 0.6px;
-  border-radius: 6px;
 }
 
 article aside.warning {
@@ -535,8 +533,6 @@ article aside.warning a {
 article aside.warning code.language-plaintext {
   background-color: var(--color-error-200);
   color: var(--color-error-900);
-  padding: 0.6px;
-  border-radius: 6px;
 }
 
 article aside.note ul,
@@ -765,6 +761,8 @@ article code.language-plaintext {
   font-family: var(--font-mono);
   font-size: 1em;
   font-weight: 400;
+  padding: 0 0.3rem;
+  border-radius: 4px;
 }
 
 article code {
