@@ -45,7 +45,8 @@ Before continuing, make sure your Lovable project is synced with GitHub. To do t
        "nitro": "^3.0.260603-beta"
      }
    }
-      
+   ```
+   
    This version is required so the Lovable Vite config can generate the correct production server.
 
 5. Configure Vite to build a Node.js server for production. In your `vite.config.ts`, add the Nitro node-server preset:
