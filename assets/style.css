@@ -478,6 +478,10 @@ article aside.note ol {
   color: var(--color-primary-purple-800);
 }
 
+article aside p:last-child {
+  margin-bottom: 0;
+}
+
 article aside.note li::before {
   background-color: var(--color-primary-purple-800);
 }
@@ -494,8 +498,6 @@ article aside.note a {
 article aside.note code.language-plaintext {
   background-color: var(--color-primary-purple-200-60);
   color: var(--color-primary-purple-800);
-  padding: 0.6px;
-  border-radius: 6px;
 }
 
 article aside.warning {
@@ -531,8 +533,6 @@ article aside.warning a {
 article aside.warning code.language-plaintext {
   background-color: var(--color-error-200);
   color: var(--color-error-900);
-  padding: 0.6px;
-  border-radius: 6px;
 }
 
 article aside.note ul,
@@ -586,12 +586,22 @@ article tr:nth-child(odd) {
   background-color: var(--color-sc-gray-4);
 }
 
-.changelog input:checked~label svg {
+.changelog input:checked~label svg,
+.changelog .heading:target input:not(:checked)~label svg {
   transform: rotate(180deg);
 }
 
-.changelog input:checked+label+div {
+.changelog input:checked+label+div,
+.changelog .heading:target input:not(:checked)+label+div {
   display: block;
+}
+
+.changelog .heading:target input:checked~label svg {
+  transform: none;
+}
+
+.changelog .heading:target input:checked+label+div {
+  display: none;
 }
 
 /* Reset the fixed height of the horizontal menu */
@@ -761,6 +771,8 @@ article code.language-plaintext {
   font-family: var(--font-mono);
   font-size: 1em;
   font-weight: 400;
+  padding: 0 0.3rem;
+  border-radius: 4px;
 }
 
 article code {

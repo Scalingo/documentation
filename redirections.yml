@@ -873,8 +873,71 @@
   - old: "/platform/deployment/unknown-technology"
     new: "/platform/app/troubleshooting/deployment-issues#unknown-technology"
 
+  - old: "/addons/scalingo-vpn-ipsec"
+    new: "/changelog#changelog-addons-scalingo-vpn-ipsec-deprecated"
+
+  - old: "/addons/scalingo-vpn-ipsec/start"
+    new: "/changelog#changelog-addons-scalingo-vpn-ipsec-deprecated"
+
+  - old: "/languages/java/play"
+    new: "/changelog#changelog-buildpacks-play-framework-buildpack-removed"
+
+  - old: "/languages/groovy/start"
+    new: "/changelog#changelog-buildpacks-grails-buildpack-removed"
+
+  - old: "/languages/groovy"
+    new: "/changelog#changelog-buildpacks-grails-buildpack-removed"
+
+  - old: "/languages/crystal/start"
+    new: "/changelog#changelog-buildpacks-crystal-support-ended"
+
+  - old: "/languages/crystal"
+    new: "/changelog#changelog-buildpacks-crystal-support-ended"
+
+  - old: "/platform/internals/stacks/scalingo-20-stack"
+    new: "/platform/internals/stacks/stacks"
+
+  - old: "/platform/internals/stacks/intro"
+    new: "/platform/internals/stacks/stacks"
+
+  - old: "/platform/internals/base-docker-image"
+    new: "/platform/internals/stacks/stacks"
+
+  - old: "/databases/about/logical-backups"
+    new: "/databases/about/backup-policies#logical-backups"
+
+  - old: "/databases/mysql/accessing"
+    new: "/databases/mysql/getting-started/accessing"
+
+  - old: "/databases/mysql/connecting"
+    new: "/databases/mysql/getting-started/connecting"
+
+  - old: "/databases/mysql/mysql-8-prerequisites"
+    new: "/databases/mysql/guides/mysql-8-prerequisites"
+
+  - old: "/databases/postgresql/shared-resources/getting-started/tools"
+    new: "/databases/postgresql/shared-resources/getting-started"
+
+  - old: "/databases/postgresql/shared-resources/getting-started/cli"
+    new: "/databases/postgresql/shared-resources/getting-started"
+
+  - old: "/databases/postgresql/shared-resources/getting-started/start"
+    new: "/databases/postgresql/shared-resources/getting-started"
+
+  - old: "/platform/app/scaling/rpm-per-container-recommended"
+    new: "/platform/app/scaling/scalingo-autoscaler#rpm-per-container-recommended"
+
+  - old: "/platform/app/zero-downtime-deployment"
+    new: "/platform/internals/container-management#zero-downtime-operations"
+
+  - old: "/platform/cli/introduction"
+    new: "/tools/cli/start"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
   - "/languages/javascript/iojs"
   - "/languages/javascript/iojs/getting-started-with-iojs.html"
+  - "/addons/lab/scalingo-shared-filesystem/start"
+  - "/languages/meteorjs/phantomjs-spiderable-setup"
+  - "/platform/databases/adminer"
