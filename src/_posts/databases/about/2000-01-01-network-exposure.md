@@ -1,7 +1,7 @@
 ---
 title: Database Network Exposure
 nav: Network Exposure
-modified_at: 2026-06-04 00:00:00
+modified_at: 2026-06-16 00:00:00
 tags: databases internet access accessibility public networking
 index: 21
 ---
@@ -71,6 +71,20 @@ you have reviewed the security implications.
 
 
 ## Dedicated Resources
+
+With Dedicated Resources, the database endpoint is Internet-routable, but
+inbound traffic is denied by default. Access is controlled through a
+**fine-grained firewall** that follows an allowlist model: every incoming
+connection must match an explicit rule.
+
+A Dedicated Resources database can also be reached through an Outscale Net
+Peering from another Outscale account in the same region as the database.
+Traffic coming through the Net Peering must still match a database firewall
+rule before it can reach the database.
+
+This also applies to traffic coming from the Scalingo network: if a Scalingo
+app must connect to the database, you still need to allow it (typically with
+the matching managed rule for the app region).
 
 {% note %}
 The Dedicated Resources architecture model is currently available for Scalingo 
