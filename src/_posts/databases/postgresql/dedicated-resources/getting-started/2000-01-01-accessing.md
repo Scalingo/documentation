@@ -106,7 +106,7 @@ You can connect a Dedicated Resources database to an Outscale VPC from another
 Outscale account in the same region as the database using Net Peering.
 
 {% note %}
-Using a net peering does not prevent from having to define firewall rules to access
+Using a Net Peering does not prevent from having to define firewall rules to access
 your database, the difference is that you have to allow private IP ranges from
 your own networks.
 {% endnote %}
