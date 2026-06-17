@@ -139,7 +139,7 @@ preview features to be enabled.
 5. Configure your Outscale VPC to route traffic to the database IP range. Update
    both the Security Group and the Route Table rules.
 
-6. Get your [private peering endpoint][database-endpoints] address to build your connection chain through the net peering.
+6. Get your [private peering endpoint][database-endpoints] address to build your connection chain through the Net Peering.
 
 ## Using Third Party Tools
 
