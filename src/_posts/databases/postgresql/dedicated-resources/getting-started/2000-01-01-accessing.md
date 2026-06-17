@@ -124,7 +124,7 @@ preview features to be enabled.
 2. Fetch the database network configuration:
 
    ```bash
-   scalingo --database db-id database-network-configuration
+   scalingo --database <db-id> database-network-configuration
    ```
 
 3. From the fetched information, create the Outscale Net Peering from your
@@ -133,7 +133,7 @@ preview features to be enabled.
 4. Register the Outscale Net Peering on the database:
 
    ```bash
-   scalingo --database db-id database-net-peerings-add --outscale-net-peering-id pcx-123456789
+   scalingo --database <db-id> database-net-peerings-add --outscale-net-peering-id pcx-123456789
    ```
 
 5. Configure your Outscale VPC to route traffic to the database IP range. Update
