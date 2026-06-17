@@ -171,4 +171,4 @@ You can use your own pgAdmin, deployed on Scalingo or on another infrastructure
 as long as the firewall rules are correctly configured.
 
 [egress]: {% post_url platform/networking/public/2000-01-01-egress %}
-[database-endpoints]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-endpoints %}
+[database-endpoints]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-endpoints %}#private-peering-rw
