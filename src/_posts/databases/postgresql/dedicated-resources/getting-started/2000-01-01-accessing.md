@@ -6,7 +6,7 @@ tags: databases postgresql dedicated
 index: 3
 ---
 
-By default the deployed database is completely private ans is not reachable by
+By default the deployed database is completely private and is not reachable by
 any entity. Access configuration should be configured to allow database clients
 to reach it. Either it is an application using the database, or a database
 administration tool like a console or a web client.
@@ -45,8 +45,8 @@ Then:
 scalingo --database <db-id> database-firewall-rules
 
 # Add a new rule to the database based on a CIDR or a managed range
-scalingo --database <db-id> database-firewall-rules-add --cidr "12.23.34.45/32" --label "My workstation"
-scalingo --database <db id> database-firewall-rules-add --managed-range mr-scalingo-osc-fr1
+scalingo --database <db-id> database-firewall-rules-add --cidr "198.51.100.25/32" --label "My workstation"
+scalingo --database <db-id> database-firewall-rules-add --managed-range mr-scalingo-osc-fr1
 
 # Remove an existing rule to restrict access
 scalingo --database <db-id> database-firewall-rules-remove <rule-id>
@@ -106,7 +106,7 @@ You can connect a Dedicated Resources database to an Outscale VPC from another
 Outscale account in the same region as the database using Net Peering.
 
 {% note %}
-Using a net peering do not prevent from having to define firewall rules to access
+Using a net peering does not prevent from having to define firewall rules to access
 your database, the difference is that you have to allow private IP ranges from
 your own networks.
 {% endnote %}
