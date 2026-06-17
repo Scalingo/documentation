@@ -104,37 +104,37 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait <database_
    apiVersion: databases.scalingo.com/v1alpha1
    kind: PostgreSQL
    metadata:
-      labels:
-         app.kubernetes.io/name: scalingo-operator
-         app.kubernetes.io/managed-by: kustomize
-      name: my-dedicated-database
+     labels:
+       app.kubernetes.io/name: scalingo-operator
+       app.kubernetes.io/managed-by: kustomize
+     name: my-dedicated-database
    spec:
-      # Secret read by operator
-      authSecret:
-        name: scalingo
-         key: api_token
+     # Secret read by operator
+     authSecret:
+       name: scalingo
+       key: api_token
 
-      # Secret written by operator
-      connInfoSecretTarget:
-         name:  my-dedicated-database-secret
-         prefix: PG
+     # Secret written by operator
+     connInfoSecretTarget:
+       name: my-dedicated-database-secret
+       prefix: PG
 
-      # Network configuration
-      networking:
-         internet_access:
-            enabled: true
-         outscale:
-            oks:
-               net_peering: false
-         firewall:
-            rules:
-            - type: "custom_range"
-               cidr: "0.0.0.0/0"
-               label: "Allow the world"
+     # Network configuration
+     networking:
+       internet_access:
+         enabled: true
+       outscale:
+         oks:
+           net_peering: false
+       firewall:
+         rules:
+           - type: "custom_range"
+             cidr: "198.51.100.25/32"
+             label: "My workstation"
 
-      name: my-dedicated-database
-      plan: postgresql-dr-starter-4096
-      region: osc-fr1
+     name: my-dedicated-database
+     plan: postgresql-dr-starter-4096
+     region: osc-fr1
    ```
 
    This example provisions a dedicated PostgreSQL database named

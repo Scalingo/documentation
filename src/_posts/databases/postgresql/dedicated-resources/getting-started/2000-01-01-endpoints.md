@@ -36,7 +36,7 @@ scalingo --database <db-id> database-endpoints
 
 Public RW (`public-rw`) stands for public read/write. Its hostname resolves to
 the public IP configured for the database. It will always route requests to the
-servers able to receive read and writes operations on the database.
+servers able to receive read and write operations on the database.
 
 In case of a cluster failover (maintenance/incident), the gateway instance
 targeted by the endpoint will change transparently, the IP resolved by the
@@ -44,11 +44,11 @@ hostname will not change.
 
 ### Private Peering RW
 
-Private Peering RW (`private-peering-rw`) standard for private peering
-read/write. Its hostname resolved to the private IP address on the database
-gateway instance which is consider as primary at a given time.
+Private Peering RW (`private-peering-rw`) stands for private peering
+read/write. Its hostname resolves to the private IP address on the database
+gateway instance which is considerd as primary at a given time.
 
-This couple hostname:port will only be reachable from networks linked with a
+This hostname:port couple will only be reachable from networks linked with a
 Net Peering to the database.
 
 In case of a cluster failover (maintenance/incident), the hostname DNS
@@ -57,13 +57,10 @@ instance.
 
 ## Build a Connection String from an endpoint
 
-When you know which endpoint you will use to access your database, you can
-configure your applications using the following scheme:
+When configuring an application, choose the endpoint matching the network path
+you want to use to reach your database.
 
-```text
-postgresql://<username>:<password>@<endpoint-hostname>:<endpoint-port>/<database-name>?<options>
-```
+For example, use the public endpoint to connect through the public Internet, or
+the Private Peering endpoint to connect through Net Peering.
 
-The user and password can be the ones created by default, or after having created a [custom user][managing-users]
-
-[managing-users]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-users %}
+    
