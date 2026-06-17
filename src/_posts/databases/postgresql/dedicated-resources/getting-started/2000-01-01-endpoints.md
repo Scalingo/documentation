@@ -44,7 +44,7 @@ hostname will not change.
 
 ### Private Peering RW
 
-Private Peering RW (`private-peering-rw`) standard for privat peering
+Private Peering RW (`private-peering-rw`) standard for private peering
 read/write. Its hostname resolved to the private IP address on the database
 gateway instance which is consider as primary at a given time.
 
@@ -55,7 +55,7 @@ In case of a cluster failover (maintenance/incident), the hostname DNS
 resolution will be automatically updated to resolve on an available gateway
 instance.
 
-## Build a Connection String from the endpoint
+## Build a Connection String from an endpoint
 
 When you know which endpoint you will use to access your database, you can
 configure your applications using the following scheme:
