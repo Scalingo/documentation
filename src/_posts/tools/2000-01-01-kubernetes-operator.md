@@ -1,7 +1,7 @@
 ---
 title: Scalingo Operator for Kubernetes®
 nav: Kubernetes Operator
-modified_at: 2026-06-11 00:00:00
+modified_at: 2026-06-18 00:00:00
 tags: tools kubernetes operator
 index: 3
 ---

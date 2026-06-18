@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Accessing
-modified_at: 2026-06-11 00:00:00
+modified_at: 2026-06-18 00:00:00
 tags: databases postgresql dedicated
 index: 3
 ---

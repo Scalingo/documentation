@@ -1,7 +1,7 @@
 ---
 title: Understanding Database Endpoints
 nav: Endpoints
-modified_at: 2026-06-16 00:00:00
+modified_at: 2026-06-18 00:00:00
 tags: databases postgresql dedicated endpoints
 index: 4
 ---

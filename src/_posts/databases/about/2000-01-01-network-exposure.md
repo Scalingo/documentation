@@ -1,7 +1,7 @@
 ---
 title: Database Network Exposure
 nav: Network Exposure
-modified_at: 2026-06-16 00:00:00
+modified_at: 2026-06-18 00:00:00
 tags: databases internet access accessibility public networking
 index: 21
 ---
@@ -104,11 +104,11 @@ connection must match an explicit rule**.
 
 Each access path requires an explicit firewall rule:
 
-- [Scalingo apps](#allowing-scalingo-apps-to-reach-a-database): add the matching
+- [Scalingo apps](#allowing-scalingo-apps-to-reach-a-database-1): add the matching
   managed firewall rule for the app region.
-- [Public Internet clients](#making-your-database-reachable-from-the-internet):
+- [Public Internet clients](#making-your-database-reachable-from-external-networks):
   allow only the required public source IP addresses or CIDR ranges.
-- [Outscale Net Peering](#making-your-database-reachable-from-the-internet):
+- [Outscale Net Peering](#making-your-database-reachable-from-external-networks):
   allow the private IP ranges from your own Outscale network in the firewall.
 
 ### Allowing Scalingo Apps To Reach a Database
@@ -120,7 +120,7 @@ firewall rule for the app region.
 This rule allows the Scalingo regional network, so the database becomes
 reachable at the network level from any Scalingo app hosted in that region.
 
-### Making Your Database Reachable from External Networks {#making-your-database-reachable-from-the-internet}
+### Making Your Database Reachable from External Networks
 
 1. Open only required source networks in the firewall allowlist.
 2. If needed, add managed rules for Scalingo regions.

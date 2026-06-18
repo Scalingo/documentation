@@ -1,7 +1,7 @@
 ---
 title: Managing Users of Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Managing Users
-modified_at: 2026-02-13 12:00:00
+modified_at: 2026-06-18 12:00:00
 tags: databases postgresql dedicated
 index: 1
 ---
