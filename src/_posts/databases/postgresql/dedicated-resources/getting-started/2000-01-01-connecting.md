@@ -66,14 +66,18 @@ and database name, and replace the credentials with this user's credentials.
 
 ## Building the Connection URI from a Specific Endpoint
 
-Databases with dedicated resources have [multiple endpoints][database-endpoints]
-to decide the right hostname to connect to.
+Dedicated Resources databases expose [multiple endpoints][database-endpoints].
+You can choose which one to use depending on the network path you want for your
+connection.
 
-Get the right hostname and port from the list of endpoints and substitute the
-hostname and port of the above connection string to access the database by the
-right path.
+For example, use the public endpoint to connect through the public Internet, or
+the private peering endpoint to connect through Net Peering.
 
-User/password credentials can be used for all endpoints.
+To use a specific endpoint, replace the hostname and port in the connection URI
+with the hostname and port of the chosen endpoint.
+
+All endpoints accept the default database credentials or the credentials of a
+[custom user][managing-users].
 
 ## TLS Connections Are Enforced
 
@@ -104,3 +108,4 @@ application that needs access.
 [dr-firewall-regions]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-accessing %}#allowing-scalingo-apps-to-reach-a-dedicated-resources-database
 [database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [database-endpoints]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-endpoints %}
+[managing-users]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-users %}
