@@ -1,12 +1,12 @@
 ---
 title: Managing Users of Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Managing Users
-modified_at: 2026-02-13 12:00:00
+modified_at: 2026-06-18 12:00:00
 tags: databases postgresql dedicated
 index: 1
 ---
 
-Each Scalingo for PostgreSQL® Dedicated Resources Database instances comes with 
+Each Scalingo for PostgreSQL® Dedicated Resources Database instances comes with
 a [default database user](#understanding-protected-user).
 You can [create](#creating-a-new-user) as many additional users as needed,
 grant them with the appropriate permissions, [update/reset their password](#updating-or-resetting-a-user-password),
@@ -23,9 +23,9 @@ add them as collaborators by following [this guide][dr-managing-collaborators].
 
 ### Understanding Protected User
 
-When provisioning a new Scalingo for PostgreSQL® Dedicated Resources Database 
+When provisioning a new Scalingo for PostgreSQL® Dedicated Resources Database
 instance, the platform creates a default user with a random name and password.
-It also grants this default user read and write permissions on the database, 
+It also grants this default user read and write permissions on the database,
 using the following queries:
 
 ```sql
@@ -68,8 +68,8 @@ This default user is ***protected*** and thus:
    |    USERNAME    | READ-ONLY | PROTECTED | PASSWORD ENCRYPTION |
    +----------------+-----------+-----------+---------------------+
    | my_app_4553    | false     | true      | SCRAM-SHA-256       |
-   | my_app_4553_rw | false     | false     | MD5                 |
-   | my_app_4553_ro | true      | false     | MD5                 |
+   | my_app_4553_rw | false     | false     | SCRAM-SHA-256       |
+   | my_app_4553_ro | true      | false     | SCRAM-SHA-256       |
    +----------------+-----------+-----------+---------------------+
    ```
    In this example, we can see that the database has 3 users available. The

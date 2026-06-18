@@ -1,15 +1,13 @@
 ---
 title: Connecting Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Connecting
-modified_at: 2026-02-13 12:00:00
+modified_at: 2026-06-18 12:00:00
 tags: databases postgresql dedicated
 index: 2
 ---
 
-
 Each Scalingo for PostgreSQL® Dedicated Resources database has its own
 **connection URI**, containing all information needed to connect to it.
-
 
 ## Understanding the Connection URI
 
@@ -21,12 +19,11 @@ In the case of PostgreSQL®, the connection URI provided by Scalingo is always
 formed as follows:
 
 ```bash
-postgresql://[user]:[password]@[url]:[port]/[dbname]?sslmode=require
+postgresql://[user]:[password]@[hostname]:[port]/[dbname]?sslmode=require
 ```
 
 For more information about the connection URI syntax, please see
 [RFC 3986][rfc3986] which defines the URI Generic Syntax.
-
 
 ## Getting the Connection URI
 
@@ -49,26 +46,44 @@ and database name, and replace the credentials with this user's credentials.
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list your databases:
+
    ```bash
    scalingo databases
    ```
+
 3. Locate the `ID` of the database you would like to connect to
 4. From the command line, get the connection URI value:
+
    ```bash
    scalingo --database <database_ID> env-get SCALINGO_POSTGRESQL_URL
    ```
+
    The output is:
+
    ```bash
    postgresql://my_dedicate_wxyz:YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8@my-dedicate-wxyz.postgresql.a.osc-fr1.scalingo-dbs.com:31000/my_dedicate_wxyz?sslmode=require
    ```
 
+## Building the Connection URI from a Specific Endpoint
+
+Dedicated Resources databases expose [multiple endpoints][database-endpoints].
+You can choose which one to use depending on the network path you want for your
+connection.
+
+For example, use the public endpoint to connect through the public Internet, or
+the private peering endpoint to connect through Net Peering.
+
+To use a specific endpoint, replace the hostname and port in the connection URI
+with the hostname and port of the chosen endpoint.
+
+All endpoints accept the default database credentials or the credentials of a
+[custom user][managing-users].
 
 ## TLS Connections Are Enforced
 
 By default, all PostgreSQL® Dedicated Resources databases enforce TLS.
 Any non-TLS connection is denied. Consequently, your application must be
 configured to use TLS when connecting to the database.
-
 
 ## Connecting Multiple Applications to the Same Database
 
@@ -92,3 +107,5 @@ application that needs access.
 [environment]: {% post_url platform/app/2000-01-01-environment %}
 [dr-firewall-regions]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-accessing %}#allowing-scalingo-apps-to-reach-a-dedicated-resources-database
 [database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
+[database-endpoints]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-endpoints %}
+[managing-users]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-users %}

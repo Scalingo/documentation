@@ -1,7 +1,7 @@
 ---
 title: Scalingo Operator for Kubernetes®
 nav: Kubernetes Operator
-modified_at: 2026-02-13 00:00:00
+modified_at: 2026-06-18 00:00:00
 tags: tools kubernetes operator
 index: 3
 ---
@@ -18,6 +18,7 @@ The Scalingo Kubernetes Operator is a deployment and provisioning tool for Dedic
 
 - create database
 - add/remove firewall rules
+- add net peerings
 - change plan
 - remove database
 

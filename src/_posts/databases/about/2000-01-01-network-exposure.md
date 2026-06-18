@@ -1,7 +1,7 @@
 ---
 title: Database Network Exposure
 nav: Network Exposure
-modified_at: 2026-06-04 00:00:00
+modified_at: 2026-06-18 00:00:00
 tags: databases internet access accessibility public networking
 index: 21
 ---
@@ -23,11 +23,12 @@ By default, databases are not exposed to the public Internet. We apply secure
 connectivity settings out of the box, so your database is not publicly exposed
 unless you explicitly enable it.
 
-|                           | [Shared Resources](#shared-resources)        | [Dedicated Resources](#dedicated-resources)             |
-|---------------------------|----------------------------------------------|---------------------------------------------------------|
-| Default reachability      | Reachable from the Scalingo regional network | Not reachable by default (no internal or public access) |
-| Public Internet access    | Enable/disable, no source filtering          | Denied by default, allowed only via firewall            |
-| Force TLS                 | Disabled by default                          | Enabled by default                                      |
+|                            | [Shared Resources](#shared-resources)        | [Dedicated Resources](#dedicated-resources)             |
+|----------------------------|----------------------------------------------|---------------------------------------------------------|
+| Default reachability       | Reachable from the Scalingo regional network | Not reachable by default (no internal or public access) |
+| Internet-routable endpoint | Optional, through Internet Accessibility     | Available, denied by default, allowed only via firewall |
+| Private peering endpoint   | Not available                                | Optional, through Outscale Net Peering                  |
+| Force TLS                  | Disabled by default                          | Enabled by default                                      |
 
 For *Shared Resources* and *Dedicated Resources* fundamentals, see 
 [Architecture Models][architecture-models].
@@ -72,18 +73,43 @@ you have reviewed the security implications.
 
 ## Dedicated Resources
 
+Dedicated Resources databases provide fine-grained control over network
+exposure. By default, no application, external client, or peered network can
+reach them until you explicitly allow traffic.
+
 {% note %}
 The Dedicated Resources architecture model is currently available for Scalingo 
 for PostgreSQL® only, and only to selected customers.
 To request access or learn more, please contact our [Support](mailto:support@scalingo.com) or [Sales](https://scalingo.com/book-a-demo) teams.
 {% endnote %}
 
+### Outscale Net Peering
+
+In addition to their [Internet-routable endpoint][public-endpoint],
+Dedicated Resources database instances can provide a [private endpoint][private-endpoint]
+reachable through an [Outscale Net Peering][outscale-net-peering] from an
+Outscale account in the same region as the database. This creates a private
+connectivity path between the database network and an Outscale VPC.
+
+This access path is useful when your workloads run outside Scalingo but inside
+an Outscale VPC, and you want traffic to reach the database without using the
+public Internet route.
+
 ### How the Firewall Works
 
 With Dedicated Resources, the database endpoint is Internet-routable, but
 inbound traffic is denied by default. Access is controlled through a
-**fine-grained firewall** that follows an allowlist model: every incoming
-connection must match an explicit rule.
+**fine-grained firewall** that follows an allowlist model: **every incoming
+connection must match an explicit rule**.
+
+Each access path requires an explicit firewall rule:
+
+- [Scalingo apps](#allowing-scalingo-apps-to-reach-a-database-1): add the matching
+  managed firewall rule for the app region.
+- [Public Internet clients](#making-your-database-reachable-from-external-networks):
+  allow only the required public source IP addresses or CIDR ranges.
+- [Outscale Net Peering](#making-your-database-reachable-from-external-networks):
+  allow the private IP ranges from your own Outscale network in the firewall.
 
 ### Allowing Scalingo Apps To Reach a Database
 
@@ -94,7 +120,7 @@ firewall rule for the app region.
 This rule allows the Scalingo regional network, so the database becomes
 reachable at the network level from any Scalingo app hosted in that region.
 
-### Making Your Database Reachable from the Internet
+### Making Your Database Reachable from External Networks
 
 1. Open only required source networks in the firewall allowlist.
 2. If needed, add managed rules for Scalingo regions.
@@ -103,3 +129,6 @@ reachable at the network level from any Scalingo app hosted in that region.
 [architecture-models]: {% post_url databases/about/2000-01-01-architecture-models %}
 [database-features]: {% post_url databases/about/2000-01-01-features %}
 [access-your-database]: {% post_url platform/databases/2000-01-01-access %}
+[outscale-net-peering]: https://docs.outscale.com/en/userguide/About-Net-Peerings.html
+[public-endpoint]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-endpoints %}#public-rw
+[private-endpoint]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-endpoints %}#private-peering-rw

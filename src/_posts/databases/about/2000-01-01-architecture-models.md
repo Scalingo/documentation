@@ -1,7 +1,7 @@
 ---
 title: Architecture Models
 nav: Architecture Models
-modified_at: 2026-02-03 10:00:00
+modified_at: 2026-06-18 10:00:00
 index: 2
 ---
 
@@ -13,22 +13,22 @@ backups and minute based pricing. Then, the architecture model you choose
 defines the level of execution and network isolation, and the SecNumCloud scope.
 
 
-| Architecture model          | Shared Resources                         | Dedicated Resources                                    |
-|-----------------------------|------------------------------------------|--------------------------------------------------------|
-| Execution isolation         | Container with shared vCPU               | VM with dedicated vCPU                                 |
-| Network isolation           | Shared                                   | Dedicated VPC                                          |
-| Cluster communications [^1] | Encrypted communications                 | Encrypted communications                               |
-| Regions                     | osc-fr1, osc-secnum-fr1                  | osc-fr1, osc-secnum-fr1                                |
-| Availability Zones          | Single AZ                                | Up to 3 AZ                                             |
-| Service classes             | Starter, Business                        | Starter, Business, Enterprise                          |
-| Scaling                     | Scale up and scale down                  | Scale up only                                          |
-| Service class switching     | Scale in and out between service classes | Scale in and out between service classes               |
-| Attachment model            | Add-on to an application                 | Dedicated database, no app required                    |
-| Provisioning permissions    | Any Collaborator[^2]                     | Owner only                                             |
-| Collaborators               | Inherits the app collaborators           | Has its own collaborators                              |
-| Internet access             | Enable/disable, no source filtering      | Fine grained firewall                                  |
-| HDS eligibility             | Yes                                      | Yes                                                    |
-| SecNumCloud scope           | Infrastructure qualified                 | Infrastructure qualified; Service targeted in 2026[^3] |
+| Architecture model          | Shared Resources                                    | Dedicated Resources                                    |
+|-----------------------------|-----------------------------------------------------|--------------------------------------------------------|
+| Execution isolation         | Container with shared vCPU                          | VM with dedicated vCPU                                 |
+| Network isolation           | Shared                                              | Dedicated VPC                                          |
+| Cluster communications [^1] | Encrypted communications                            | Encrypted communications                               |
+| Regions                     | osc-fr1, osc-secnum-fr1                             | osc-fr1, osc-secnum-fr1                                |
+| Availability Zones          | Single AZ                                           | Up to 3 AZ                                             |
+| Service classes             | Starter, Business                                   | Starter, Business, Enterprise                          |
+| Scaling                     | Scale up and scale down                             | Scale up only                                          |
+| Service class switching     | Scale in and out between service classes            | Scale in and out between service classes               |
+| Attachment model            | Add-on to an application                            | Dedicated database, no app required                    |
+| Provisioning permissions    | Any Collaborator[^2]                                | Owner only                                             |
+| Collaborators               | Inherits the app collaborators                      | Has its own collaborators                              |
+| Network exposure            | Enable/disable Internet access, no source filtering | Fine-grained firewall, optional Outscale Net Peering   |
+| HDS eligibility             | Yes                                                 | Yes                                                    |
+| SecNumCloud scope           | Infrastructure qualified                            | Infrastructure qualified; Service targeted in 2026[^3] |
 
 [^1]: For Business and Enterprise (HA) plans, intra cluster communications are always encrypted, for both architecture models.
 [^2]: The "Collaborator" role (excluding "Limited Collaborator") allows users to provision add-ons.
