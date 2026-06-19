@@ -50,14 +50,14 @@ Before continuing, make sure your Lovable project is synced with GitHub. To do t
    ```
    If your `vite.config.ts` file already contains other options, keep them and only add the nitro section.
 
-6. Commit and push the files you just updated:
+5. Commit and push the files you just updated:
    ```bash
    git add vite.config.ts Procfile
    git commit -m "Migrate to scalingo"
    git push
    ```
 
-7. Deploy to Scalingo:
+6. Deploy to Scalingo:
    ```bash
    git push scalingo
    ```
