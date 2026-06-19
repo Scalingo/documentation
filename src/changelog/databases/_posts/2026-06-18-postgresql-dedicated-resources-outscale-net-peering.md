@@ -14,4 +14,4 @@ This new access path lets you connect workloads running in an Outscale VPC to a
 Dedicated Resources database over Outscale Net Peering, without using the public
 Internet route.
 
-Learn more in the [Dedicated Resources access guide]({% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-accessing %}#connecting-through-outscale-net-peering).
+Learn more in the [Dedicated Resources access guide]({% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-accessing %}#creating-an-outscale-net-peering).
