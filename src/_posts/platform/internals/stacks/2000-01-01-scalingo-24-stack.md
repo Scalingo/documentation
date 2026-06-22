@@ -1,8 +1,8 @@
 ---
 title: Scalingo-24 Stack
 nav: scalingo-24
-modified_at: 2026-03-10 00:00:00
-index: 2
+modified_at: 2026-06-22 00:00:00
+index: 3
 ---
 
 
@@ -11,7 +11,7 @@ The {% scalingo 24 %} [stack] is based on Ubuntu 24.04 Long-Term Support.
 
 ## Lifecycle
 
-{% scalingo 24 %} is currently **supported**.
+{% scalingo 24 %} is currently **[supported][stack-lifecycle]**.
 
 | Status                                               | From          | Through      |
 | ---------------------------------------------------: | ------------: | -----------: |
@@ -45,3 +45,4 @@ The following table lists available packages and versions for the stack
 [Docker Hub]: https://hub.docker.com/r/scalingo/scalingo-24
 
 [stack]: {% post_url platform/internals/stacks/2000-01-01-overview %}
+[stack-lifecycle]: {% post_url platform/internals/stacks/2000-01-01-overview %}#lifecycle
