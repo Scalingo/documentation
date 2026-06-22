@@ -1,5 +1,5 @@
 ---
-modified_at: 2026-06-18 00:00:00
+modified_at: 2026-06-22 00:00:00
 title: 'PostgreSQL® Dedicated Resources - Outscale Net Peering Support'
 ---
 
