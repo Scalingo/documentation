@@ -1,44 +1,56 @@
 ---
 title: Scalingo-22 Stack
-nav: Scalingo-22
+nav: scalingo-22
 modified_at: 2026-06-10 00:00:00
 index: 4
 ---
 
 {% warning %}
-The scalingo-22 stack, based on Ubuntu 22.04 LTS, is deprecated and will be discontinued on June 1, 2027.
-This date follows the end of Ubuntu 22.04 LTS standard support after May 2027, as described in the [Ubuntu releases list](https://documentation.ubuntu.com/project/release-team/list-of-releases/).\\
-From this date, Scalingo will no longer support applications running on scalingo-22, and new deployments, including Review Apps, must use [scalingo-24]({% post_url platform/internals/stacks/2000-01-01-scalingo-24-stack %}) or later.
+The {% scalingo 22 %} stack is now **[deprecated][stack-lifecycle]**. It will
+be [discontinued][stack-lifecycle] on June 1, 2027.
+
+We strongly encourage migrating to {% scalingo 24 %} or later as soon as
+possible.
 {% endwarning %}
 
-This article describes the scalingo-22 stack, based on Ubuntu 22.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-overview %})
+The {% scalingo 22 %} [stack] is based on Ubuntu 22.04 Long-Term Support.
 
-## Support Period
 
-scalingo-22 is based on Ubuntu 22.04. It will be supported through May 2027.
+## Lifecycle
 
-## Testing and Migrating Your App
+{% scalingo 22 %} is currently **[deprecated][stack-lifecycle]**.
 
-Learn how to test and [migrate your app]({% post_url platform/internals/stacks/2000-01-01-overview %}#migrating-to-a-different-stack) to scalingo-22.
+| Status                                               | From          | Through      |
+| ---------------------------------------------------: | ------------: | -----------: |
+| <span class="stack supported">Supported</span>       | May 2022      | May 2026     |
+| <span class="stack deprecated">**Deprecated**</span> | **June 2026** | **May 2027** |
+| <span class="stack discontinued">Discontinued</span> | June 2027     | -            |
+
 
 ## Docker Image
 
-This base image is a completely standard Docker image. The image is available on [Docker Hub](https://hub.docker.com/r/scalingo/scalingo-22). You can run it locally with this command:
+This base image is a completely standard Docker image. The image is available
+on [Docker Hub]. You can run it locally with this command:
 
-```
+```shell
 docker pull scalingo/scalingo-22:latest
 docker run --rm -it scalingo/scalingo-22:latest bash
 ```
 
-## Ubuntu Packages
+## Packages
 
-The following table lists available packages and versions for the stack scalingo-22.
+The following table lists available packages and versions for the stack
+{% scalingo 22 %}.
 
-In general, apps do not typically interact directly with this level of operating system services. Some app dependencies may, as well as apps that directly rely on the underlying operating system. The list below is provided to document the available operating system packages.
-
-<div class="overflow-horizontal-content" markdown="1">
-{: .table }
 | Name | Version |
 | ---- | ------- |
 {% include scalingo_22_stack_packages.md %}
-</div>
+
+
+*[LTS]: Long-Term Support
+
+[Docker Hub]: https://hub.docker.com/r/scalingo/scalingo-24
+
+[stack]: {% post_url platform/internals/stacks/2000-01-01-overview %}
+[stack-lifecycle]: {% post_url platform/internals/stacks/2000-01-01-overview %}#lifecycle
+

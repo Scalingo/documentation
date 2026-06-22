@@ -2,7 +2,7 @@ module Jekyll
   class StackTag < Liquid::Tag
     CLASSES = {
       "26" => "supported",
-      "24" => "default",
+      "24" => "supported",
       "22" => "deprecated",
       "20" => "discontinued",
       "18" => "discontinued",
@@ -17,7 +17,7 @@ module Jekyll
     def render(context)
       css_class = CLASSES.fetch(@stack, "unknown")
 
-      %(<span class="stack #{css_class}" title="#{css_class.capitalize}">scalingo-#{@stack}</span>)
+      %(<span class="stack #{css_class}" title="Current status: #{css_class.capitalize}">scalingo-#{@stack}</span>)
     end
   end
 end

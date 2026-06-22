@@ -1,38 +1,49 @@
 ---
 title: Scalingo-26 Stack
-nav: Scalingo-26
+nav: scalingo-26
 modified_at: 2026-05-26 00:00:00
 index: 2
 ---
 
-This article describes the scalingo-26 stack, based on Ubuntu 26.04. [What is a stack?]({% post_url platform/internals/stacks/2000-01-01-stacks %})
+The {% scalingo 26 %} [stack] is based on Ubuntu 26.04 Long-Term Support.
 
-## Support Period
+It's currently the default stack when deploying applications on Scalingo.
 
-scalingo-26 is based on Ubuntu 26.04. It will be supported through May 2031.
 
-## Testing and Migrating Your App
+## Lifecycle
 
-Learn how to test and [migrate your app]({% post_url platform/internals/stacks/2000-01-01-stacks %}#migrating-to-a-new-stack) to scalingo-26.
+{% scalingo 26 %} is currently **[supported][stack-lifecycle]**.
+
+| Status                                               | From          | Through      |
+| ---------------------------------------------------: | ------------: | -----------: |
+| <span class="stack supported">**Supported**</span>   | **May 2026**  | **May 2031** |
+| <span class="stack deprecated">Deprecated</span>     | June 2031     | May 2032     |
+| <span class="stack discontinued">Discontinued</span> | June 2032     | -            |
+
 
 ## Docker Image
 
-This base image is a completely standard Docker image. The image is available on [Docker Hub](https://hub.docker.com/r/scalingo/scalingo-26). You can run it locally with this command:
+This base image is a completely standard Docker image. The image is available
+on [Docker Hub]. You can run it locally with this command:
 
-```
+```shell
 docker pull scalingo/scalingo-26:latest
 docker run --rm -it scalingo/scalingo-26:latest bash
 ```
 
-## Ubuntu Packages
+## Packages
 
-The following table lists available packages and versions for the stack scalingo-26.
+The following table lists available packages and versions for the stack
+{% scalingo 26 %}.
 
-In general, apps do not typically interact directly with this level of operating system services. Some app dependencies may, as well as apps that directly rely on the underlying operating system. The list below is provided to document the available operating system packages.
-
-<div class="overflow-horizontal-content" markdown="1">
-{: .table }
 | Name | Version |
 | ---- | ------- |
 {% include scalingo_26_stack_packages.md %}
-</div>
+
+
+*[LTS]: Long-Term Support
+
+[Docker Hub]: https://hub.docker.com/r/scalingo/scalingo-24
+
+[stack]: {% post_url platform/internals/stacks/2000-01-01-overview %}
+[stack-lifecycle]: {% post_url platform/internals/stacks/2000-01-01-overview %}#lifecycle
