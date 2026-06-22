@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Accessing
-modified_at: 2026-06-18 00:00:00
+modified_at: 2026-06-19 00:00:00
 tags: databases postgresql dedicated
 index: 3
 ---
@@ -100,15 +100,15 @@ You do not need to manually track egress IP changes for these rules.
 {% endnote %}
 
 
-## Connecting Through Outscale Net Peering
+## Creating an Outscale Net Peering
 
-You can connect a Dedicated Resources database to an Outscale VPC from another
-Outscale account in the same region as the database using Net Peering.
+You can create an [Outscale Net Peering][outscale-net-peering] between the
+Dedicated VPC of your database and an Outscale VPC from another Outscale
+account in the same region.
 
 {% note %}
-Using a Net Peering does not prevent from having to define firewall rules to access
-your database, the difference is that you have to allow private IP ranges from
-your own networks.
+Using Net Peering does not remove the need for firewall rules. You must allow
+the private IP ranges from your own networks.
 {% endnote %}
 
 This feature is currently available from the Scalingo CLI only and requires
@@ -141,6 +141,7 @@ preview features to be enabled.
 
 6. Get your [private peering endpoint][database-endpoints] address to build your connection chain through the Net Peering.
 
+
 ## Using Third Party Tools
 
 While using `psql` to query and administer a PostgreSQL® database is probably
@@ -172,3 +173,4 @@ as long as the firewall rules are correctly configured.
 
 [egress]: {% post_url platform/networking/public/2000-01-01-egress %}
 [database-endpoints]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-endpoints %}#private-peering-rw
+[outscale-net-peering]: {% post_url databases/about/2000-01-01-network-exposure %}#outscale-net-peering
