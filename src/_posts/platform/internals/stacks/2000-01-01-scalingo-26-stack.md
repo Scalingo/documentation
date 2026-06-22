@@ -1,7 +1,7 @@
 ---
 title: Scalingo-26 Stack
 nav: scalingo-26
-modified_at: 2026-05-26 00:00:00
+modified_at: 2026-06-22
 index: 2
 ---
 
@@ -43,7 +43,7 @@ The following table lists available packages and versions for the stack
 
 *[LTS]: Long-Term Support
 
-[Docker Hub]: https://hub.docker.com/r/scalingo/scalingo-24
+[Docker Hub]: https://hub.docker.com/r/scalingo/scalingo-26
 
 [stack]: {% post_url platform/internals/stacks/2000-01-01-overview %}
 [stack-lifecycle]: {% post_url platform/internals/stacks/2000-01-01-overview %}#lifecycle
