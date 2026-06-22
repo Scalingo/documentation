@@ -41,7 +41,7 @@ The following table lists available packages and versions for the stack
 {% include scalingo_26_stack_packages.md %}
 
 
-[Docker Hub]: https://hub.docker.com/r/scalingo/scalingo-24
+[Docker Hub]: https://hub.docker.com/r/scalingo/scalingo-26
 
 [stack]: {% post_url platform/internals/stacks/2000-01-01-overview %}
 [stack-lifecycle]: {% post_url platform/internals/stacks/2000-01-01-overview %}#lifecycle
