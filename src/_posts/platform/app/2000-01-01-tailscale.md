@@ -34,9 +34,9 @@ tailscale
 :repo:deb [trusted=yes] https://pkgs.tailscale.com/stable/ubuntu [dist] main
 ```
 
-Replace `[dist]` with the codename of the [stack]({% post_url platform/internals/stacks/2000-01-01-stacks %}) you are using:
-* `resolute` for `scalingo-26`
-* `noble` for `scalingo-24` (default)
+Replace `[dist]` with the codename of the [stack] you are using:
+* `resolute` for `scalingo-26` (default)
+* `noble` for `scalingo-24`
 * `jammy` for `scalingo-22`
 
 ## Step 3: Set TAILSCALE_AUTHKEY Environment Variable
@@ -99,3 +99,6 @@ You can verify the connection by running a [one-off container]({% post_url platf
 {% note %}
 The `ALL_PROXY` environment variable directs software that respects it (like `curl`) to use the local SOCKS5 proxy provided by Tailscale.
 {% endnote %}
+
+
+[stack]: {% post_url platform/internals/stacks/2000-01-01-overview %}

@@ -119,4 +119,4 @@ Even though we still support this version, we strongly advise against using the
 please consider migrating to a more recent version.
 {% endnote %}
 
-[EOL]: {% post_url platform/internals/stacks/2000-01-01-stacks %}#stack-end-of-life
+[EOL]: {% post_url platform/internals/stacks/2000-01-01-overview %}#lifecycle
