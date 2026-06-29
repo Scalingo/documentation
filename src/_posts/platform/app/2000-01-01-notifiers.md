@@ -1,7 +1,7 @@
 ---
 title: App Notifiers
 nav: Notifiers
-modified_at: 2026-05-05 00:00:00
+modified_at: 2026-06-29 12:00:00
 tags: app notifier notification event
 index: 36
 ---
@@ -108,54 +108,57 @@ Use:
 Keep the rows sorted alphabetically by name.
 {:/comment}
 
-| Event Type                       | Display Name                   | Description                                                            |
-| -------------------------------- | ------------------------------ | ---------------------------------------------------------------------- |
-| `addon_db_upgraded`              | Addon database upgraded        | A database addon was upgraded                                          |
-| `addon_deleted`                  | Addon deleted                  | An addon was deleted                                                   |
-| `addon_plan_changed`             | Addon plan changed             | An addon plan was changed                                              |
-| `addon_provisioned`              | Addon provisioned              | An addon was provisioned                                               |
-| `addon_resumed`                  | Addon resumed                  | An addon was provisioned                                               |
-| `addon_suspended`                | Addon suspended                | An addon was suspended                                                 |
-| `addon_updated`                  | Addon Updated                  | An addon has been updated                                              |
-| `alert_added`                    | Alert Added                    | An alert has been configured                                           |
-| `alert_deleted`                  | Alert Deleted                  | An alert has been deleted                                              |
-| `app_alert_triggered`            | Alert triggered                | An alert was triggered                                                 |
-| `app_command_ran`                | App command ran                | A command was ran in an app                                            |
-| `app_crashed`                    | App crashed                    | An app was crashed. This event is only sent on 2nd, 5th and 12th crash. |
-| `app_crashed_repeated`           | App crashed repeated           | An app was crashed. This event is sent on each crash.                  |
-| `app_deleted`                    | App deleted                    | A command was ran in an app                                            |
-| `app_deployed`                   | App deployed                   | An app was deployed                                                    |
-| `app_edited`                     | App Edited                     | Application settings have been edited                                  |
-| `app_project_updated`            | App project updated            | An app was moved to another project                                    |
-| `app_region_migration_started`   | Region Migration Started       | An app is being migrated to another region                             |
-| `app_renamed`                    | App renamed                    | An app was renamed                                                     |
-| `app_restarted`                  | App restarted                  | An app was restarted                                                   |
-| `app_scaled`                     | App scaled                     | An app was scaled                                                      |
-| `app_stopped`                    | App stopped                    | An app was stopped                                                     |
-| `app_transferred`                | App transferred                | An app was transferred                                                 |
-| `collaborator_accepted`          | Collaborator accepted          | A collaborator invitation was accepted                                 |
-| `collaborator_invited`           | Collaborator invited           | A collaborator was invited                                             |
-| `collaborator_removed`           | Collaborator removed           | A collaborator was removed                                             |
-| `collaborator_role_changed`      | Collaborator role changed      | A collaborator role was changed                                        |
-| `database_backup_failed`         | Database backup failed         | A database backup has failed                                           |
-| `database_backup_succeeded`      | Database backup succeeded      | A database backup has succeeded                                        |
-| `database_maintenance_completed` | Addon maintenance completed    | A maintenance has been completed successfully on your addon             |
-| `database_maintenance_planned`   | Addon maintenance planned      | A maintenance is planned on your addon                                 |
-| `database_maintenance_started`   | Addon maintenance started      | A maintenance has started on your addon                                |
-| `domain_added`                   | Domain added                   | A domain was added                                                     |
-| `domain_edited`                  | Domain edited                  | A domain was edited                                                    |
-| `domain_removed`                 | Domain removed                 | A domain was removed                                                   |
-| `github_link`                    | Github link                    | A GitHub repo was linked to an app                                     |
-| `github_unlink`                  | Github unlink                  | A GitHub repo was unlinked to an app                                   |
-| `notifier_added`                 | Notifier added                 | A notifier was added                                                   |
-| `notifier_edited`                | Notifier edited                | A notifier was edited                                                  |
-| `notifier_removed`               | Notifier removed               | A notifier was removed                                                 |
-| `project_created`                | Project created                | A project has been created                                             |
-| `project_deleted`                | Project deleted                | A project has been deleted                                             |
-| `project_edited`                 | Project edited                 | Project was edited                                                     |
-| `variable_added`                 | Variable added                 | A variable was added                                                   |
-| `variable_bulk_edited`           | Variables bulk edited          | Some variables was bulk edited                                         |
-| `variable_edited`                | Variable edited                | A variable was edited                                                  |
-| `variable_removed`               | Variable removed               | A variable was removed                                                 |
+| Event Type                          | Display Name                       | Description                                                             |
+| ----------------------------------- | ---------------------------------- | ----------------------------------------------------------------------- |
+| `addon_db_upgraded`                 | Addon database upgraded            | A database addon was upgraded                                           |
+| `addon_deleted`                     | Addon deleted                      | An addon was deleted                                                    |
+| `addon_plan_changed`                | Addon plan changed                 | An addon plan was changed                                               |
+| `addon_provisioned`                 | Addon provisioned                  | An addon was provisioned                                                |
+| `addon_resumed`                     | Addon resumed                      | An addon was provisioned                                                |
+| `addon_suspended`                   | Addon suspended                    | An addon was suspended                                                  |
+| `addon_updated`                     | Addon Updated                      | An addon has been updated                                               |
+| `alert_added`                       | Alert Added                        | An alert has been configured                                            |
+| `alert_deleted`                     | Alert Deleted                      | An alert has been deleted                                               |
+| `app_alert_triggered`               | Alert triggered                    | An alert was triggered                                                  |
+| `app_command_ran`                   | App command ran                    | A command was ran in an app                                             |
+| `app_crashed`                       | App crashed                        | An app was crashed. This event is only sent on 2nd, 5th and 12th crash. |
+| `app_crashed_repeated`              | App crashed repeated               | An app was crashed. This event is sent on each crash.                   |
+| `app_deleted`                       | App deleted                        | A command was ran in an app                                             |
+| `app_deployed`                      | App deployed                       | An app was deployed                                                     |
+| `app_edited`                        | App Edited                         | Application settings have been edited                                   |
+| `app_project_updated`               | App project updated                | An app was moved to another project                                     |
+| `app_region_migration_started`      | Region Migration Started           | An app is being migrated to another region                              |
+| `app_renamed`                       | App renamed                        | An app was renamed                                                      |
+| `app_restarted`                     | App restarted                      | An app was restarted                                                    |
+| `app_scaled`                        | App scaled                         | An app was scaled                                                       |
+| `app_stopped`                       | App stopped                        | An app was stopped                                                      |
+| `app_transferred`                   | App transferred                    | An app was transferred                                                  |
+| `collaborator_accepted`             | Collaborator accepted              | A collaborator invitation was accepted                                  |
+| `collaborator_invited`              | Collaborator invited               | A collaborator was invited                                              |
+| `collaborator_removed`              | Collaborator removed               | A collaborator was removed                                              |
+| `collaborator_role_changed`         | Collaborator role changed          | A collaborator role was changed                                         |
+| `database_backup_failed`            | Database backup failed             | A database backup has failed                                            |
+| `database_backup_succeeded`         | Database backup succeeded          | A database backup has succeeded                                         |
+| `database_continuousbackup_delayed` | Database continuous backup delayed | The latest restorable point is more than 12 hours old                   |
+| `database_continuousbackup_healthy` | Database continuous backup healthy | Point-in-time recovery is available and restore points are up to date   |
+| `database_continuousbackup_stale`   | Database continuous backup stale   | The latest restorable point is more than 24 hours old                   |
+| `database_maintenance_completed`    | Addon maintenance completed        | A maintenance has been completed successfully on your addon             |
+| `database_maintenance_planned`      | Addon maintenance planned          | A maintenance is planned on your addon                                  |
+| `database_maintenance_started`      | Addon maintenance started          | A maintenance has started on your addon                                 |
+| `domain_added`                      | Domain added                       | A domain was added                                                      |
+| `domain_edited`                     | Domain edited                      | A domain was edited                                                     |
+| `domain_removed`                    | Domain removed                     | A domain was removed                                                    |
+| `github_link`                       | Github link                        | A GitHub repo was linked to an app                                      |
+| `github_unlink`                     | Github unlink                      | A GitHub repo was unlinked to an app                                    |
+| `notifier_added`                    | Notifier added                     | A notifier was added                                                    |
+| `notifier_edited`                   | Notifier edited                    | A notifier was edited                                                   |
+| `notifier_removed`                  | Notifier removed                   | A notifier was removed                                                  |
+| `project_created`                   | Project created                    | A project has been created                                              |
+| `project_deleted`                   | Project deleted                    | A project has been deleted                                              |
+| `project_edited`                    | Project edited                     | Project was edited                                                      |
+| `variable_added`                    | Variable added                     | A variable was added                                                    |
+| `variable_bulk_edited`              | Variables bulk edited              | Some variables was bulk edited                                          |
+| `variable_edited`                   | Variable edited                    | A variable was edited                                                   |
+| `variable_removed`                  | Variable removed                   | A variable was removed                                                  |
 
 [alerts]: {% post_url platform/app/2000-01-01-alerts %}
