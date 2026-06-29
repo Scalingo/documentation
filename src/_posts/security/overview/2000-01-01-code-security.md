@@ -56,7 +56,7 @@ to the deployment phase.
 
 ## Français {#fr}
 
-### Sécurité dès la Conception
+### Sécurité dès la Conception {#securite-des-la-conception}
 
 La sécurité est une priorité absolue chez Scalingo. Nous suivons le principe de "Sécurité dès la Conception", ce qui signifie que la sécurité est intégrée à la plateforme dès le début. Cela garantit que la plateforme est sécurisée par défaut et que la sécurité est prise en compte à chaque étape du processus de développement.
 
@@ -66,15 +66,15 @@ En détail, cela signifie que nous identifions les exigences de sécurité au d�
 
 Toutes les modifications de code sont examinées par notre équipe de développement pour s'assurer qu'elles n'introduisent pas de vulnérabilités de sécurité. Nous utilisons des outils automatisés pour analyser le code à la recherche de vulnérabilités de sécurité courantes et nous effectuons des revues de code manuelles pour détecter les vulnérabilités que les outils automatisés auraient pu manquer.
 
-### Développement Sécurisé
+### Développement Sécurisé {#developpement-securise}
 
 Toutes les modifications de code sont examinées par notre équipe de développement pour s'assurer qu'elles n'introduisent pas de vulnérabilités de sécurité. Nous utilisons des outils automatisés pour analyser le code à la recherche de vulnérabilités de sécurité courantes.
 
-### Gestion des Dépendances
+### Gestion des Dépendances {#gestion-des-dependances}
 
 Nous mettons à jour régulièrement les dépendances utilisées par la plateforme pour nous assurer qu'elles sont à jour et qu'elles ne contiennent aucune vulnérabilité de sécurité connue. Nous utilisons des outils automatisés pour analyser les dépendances à la recherche de vulnérabilités de sécurité et nous les mettons à jour dès qu'une vulnérabilité est détectée.
 
-### Gestion des Vulnérabilités
+### Gestion des Vulnérabilités {#gestion-des-vulnerabilites}
 
 Nous disposons d'un programme de gestion des vulnérabilités pour détecter et répondre aux vulnérabilités de sécurité de la plateforme. Nous utilisons des outils automatisés pour analyser la plateforme à la recherche de vulnérabilités de sécurité et nous avons des procédures en place pour corriger les vulnérabilités dès qu'elles sont détectées.
 

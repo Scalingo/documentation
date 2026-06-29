@@ -28,11 +28,11 @@ They are trained to detect phishing, social engineering, or impersonation attemp
 
 ## Français {#fr}
 
-### Formation en Sécurité
+### Formation en Sécurité {#formation-en-securite}
 
 Tous les employés reçoivent une formation en sécurité pour s'assurer qu'ils sont conscients des mesures de sécurité mises en place par la plateforme et pour prévenir les incidents de sécurité causés par des erreurs humaines.
 
-### Sensibilisation à la Sécurité
+### Sensibilisation à la Sécurité {#sensibilisation-a-la-securite}
 
 Tous les employés sont tenus de suivre les meilleures pratiques de sécurité pour protéger la plateforme contre les incidents de sécurité. Cela inclut l'utilisation de mots de passe forts, l'activation de l'authentification à deux facteurs et le respect des politiques de sécurité mises en place par la plateforme.
 

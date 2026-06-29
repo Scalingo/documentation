@@ -48,7 +48,7 @@ the data hosted on them. We are working on a SecNumCloud certification for a new
 
 Scalingo est conforme au Règlement Général sur la Protection des Données (RGPD) et nous prenons toutes les mesures nécessaires pour protéger la confidentialité des données de nos utilisateurs. Nous ne partageons pas les données de nos utilisateurs avec des tiers sans leur consentement et nous prenons toutes les mesures nécessaires pour protéger les données contre les accès non autorisés. Consultez notre Accord de Traitement des Données [ici](https://scalingo.com/data-processing-agreement).
 
-### Hébergement de Données de Santé (HDS)
+### Hébergement de Données de Santé (HDS) {#hebergement-de-donnees-de-sante}
 
 Scalingo est certifié pour héberger des données de santé (HDS 2.0) en France. Nous avons mis en place les mesures de sécurité nécessaires pour protéger les données de santé hébergées sur la plateforme et nous nous engageons à protéger la confidentialité des données de santé. Consultez notre certification HDS [ici](/compliance/hds). Vous pouvez consulter notre Annexe d'Hébergement de Données de Santé [ici](https://scalingo.com/gtc-appendix-health-data-hosting).
 

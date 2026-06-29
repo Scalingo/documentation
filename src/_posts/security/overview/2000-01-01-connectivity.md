@@ -27,7 +27,7 @@ unauthorized access.
 
 ## Français {#fr}
 
-### Connectivité Sécurisée
+### Connectivité Sécurisée {#connectivite-securisee}
 
 Toutes les données transmises entre la plateforme et l'utilisateur sont chiffrées en utilisant HTTPS. Cela garantit que les données sont protégées contre l'écoute clandestine et la falsification. Les chiffrements autorisés sont régulièrement mis à jour pour garantir que la plateforme est protégée contre les dernières vulnérabilités de sécurité.
 

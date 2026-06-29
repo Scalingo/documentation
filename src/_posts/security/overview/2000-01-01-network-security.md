@@ -60,7 +60,7 @@ Le dernier niveau de protection est votre application, car votre code doit être
 
 Si votre application n'est pas capable de résister au trafic qu'elle reçoit, nous vous encourageons à souscrire à un service CDN qui vous aidera à absorber le trafic et à le distribuer sur plusieurs serveurs.
 
-### Isolation Réseau
+### Isolation Réseau {#isolation-reseau}
 
 Notre réseau est isolé de l'internet public pour empêcher les accès non autorisés à la plateforme. À l'intérieur du réseau, nous utilisons des VLAN pour séparer les différentes parties de la plateforme et pour empêcher les accès non autorisés entre elles.
 

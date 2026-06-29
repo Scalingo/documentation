@@ -46,19 +46,19 @@ prompt response in case of emergencies.
 
 ## Français {#fr}
 
-### Datacenters
+### Centres de données {#centres-de-donnees}
 
 Scalingo ne possède pas ses propres datacenters, mais utilise des services IaaS pour provisionner des ressources. Ces services utilisent des datacenters certifiés ISO 27001, ISO 27017, ISO 27018, HDS (Région `osc-fr1`) et peuvent en plus avoir la qualification SecNumCloud (Région `osc-secnum-fr1`). Ces certifications garantissent que les datacenters ont mis en place un niveau de sécurité élevé pour protéger les données qui y sont hébergées.
 
-### Contrôle d'Accès Physique
+### Contrôle d'Accès Physique {#controle-d-acces-physique}
 
 L'accès aux datacenters est réservé uniquement au personnel autorisé. L'accès est contrôlé par un système de badges et est surveillé par vidéosurveillance. L'accès aux locaux hébergeant les traitements est contrôlé par une combinaison de zonage, d'accompagnement des visiteurs, de systèmes de badges et de portes verrouillées. En cas d'intrusion, des mécanismes d'alerte sont en place pour notifier le personnel approprié.
 
-### Sécurité des Équipements
+### Sécurité des Équipements {#securite-des-equipements}
 
 Des mesures sont prises pour garantir la sécurité physique des serveurs et des postes de travail des clients. Cela inclut le stockage sécurisé, l'utilisation de câbles de sécurité, de filtres de confidentialité, l'effacement sécurisé des données avant élimination et d'autres mesures de sécurité pertinentes.
 
-### Atténuation des Risques Environnementaux
+### Atténuation des Risques Environnementaux {#attenuation-des-risques-environnementaux}
 
 L'emplacement de l'installation est évalué pour les risques environnementaux potentiels tels que les zones inondables, la proximité d'industries chimiques, les zones sismiques ou volcaniques, etc. S'il y a des substances dangereuses présentes dans la zone, cela est spécifié.
 

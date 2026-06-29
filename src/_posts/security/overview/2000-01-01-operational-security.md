@@ -25,10 +25,10 @@ Access is revoked immediately when an employee leaves the company or when their 
 
 ## Français {#fr}
 
-### Contrôle d'Accès Logique
+### Contrôle d'Accès Logique {#controle-d-acces-logique}
 
 L'accès à l'administration de la plateforme est réservé uniquement au personnel autorisé. Il est sécurisé par une authentification à deux facteurs et utilise, lorsque possible, un hôte bastion et une connexion VPN.
 
-### Revue et Révocation des Accès
+### Revue et Révocation des Accès {#revue-et-revocation-des-acces}
 
 L'accès à la plateforme est examiné régulièrement pour s'assurer que seul le personnel autorisé a accès à la plateforme. L'accès est révoqué immédiatement lorsqu'un employé quitte l'entreprise ou lorsque son accès n'est plus nécessaire.

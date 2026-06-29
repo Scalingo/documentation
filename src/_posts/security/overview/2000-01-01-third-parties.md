@@ -38,7 +38,7 @@ of their security measures.
 
 ## Français {#fr}
 
-### Sécurité des Fournisseurs
+### Sécurité des Fournisseurs {#securite-des-fournisseurs}
 
 Nous effectuons une diligence raisonnable sur tous les fournisseurs tiers pour nous assurer qu'ils ont mis en place des mesures de sécurité pour protéger les données hébergées sur la plateforme. Nous exigeons que tous les fournisseurs tiers se conforment à nos politiques de sécurité et fournissent des preuves de leurs mesures de sécurité.
 
@@ -46,10 +46,10 @@ Nous effectuons une diligence raisonnable sur tous les fournisseurs tiers pour n
 
 Nous effectuons des audits réguliers de nos fournisseurs tiers pour nous assurer qu'ils se conforment à nos politiques de sécurité et qu'ils ont mis en place des mesures de sécurité pour protéger nos données.
 
-### Accès des Tiers
+### Accès des Tiers {#acces-des-tiers}
 
 L'accès à la plateforme par les fournisseurs tiers est réservé uniquement au personnel autorisé. L'accès est surveillé et journalisé pour s'assurer que seul le personnel autorisé a accès à la plateforme. L'accès est limité aux permissions nécessaires et est révoqué immédiatement lorsque l'accès n'est plus nécessaire.
 
-### Sélection des Fournisseurs
+### Sélection des Fournisseurs {#selection-des-fournisseurs}
 
 Nous sélectionnons soigneusement nos fournisseurs tiers pour nous assurer qu'ils ont mis en place des mesures de sécurité pour protéger les données hébergées sur la plateforme. Nous exigeons que tous les fournisseurs tiers se conforment à nos politiques de sécurité et fournissent des preuves de leurs mesures de sécurité.

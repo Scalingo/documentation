@@ -37,15 +37,15 @@ If your business requires extended availability and priority support, consider u
 
 ## Français {#fr}
 
-### Réponse aux Incidents de Sécurité
+### Réponse aux Incidents de Sécurité {#reponse-aux-incidents-de-securite}
 
 En cas d'incident de sécurité, notre équipe d'exploitation suit un plan de réponse aux incidents prédéfini pour contenir l'incident et atténuer son impact. Le plan de réponse aux incidents comprend des procédures pour identifier la cause de l'incident, contenir l'incident et restaurer le fonctionnement normal de la plateforme. Après la résolution de l'incident, nous effectuons un post-mortem pour identifier la cause profonde de l'incident et prévenir des incidents similaires à l'avenir.
 
-### Signalement d'Incident de Sécurité
+### Signalement d'Incident de Sécurité {#signalement-dincident-de-securite}
 
 Si vous suspectez un incident de sécurité, veuillez le signaler à notre équipe de sécurité à [security@scalingo.com](mailto:security@scalingo.com). Nous prenons tous les signalements d'incidents de sécurité au sérieux et nous enquêterons rapidement sur l'incident.
 
-### Communication sur les Incidents de Sécurité
+### Communication sur les Incidents de Sécurité {#communication-sur-les-incidents-de-securite}
 
 En cas d'incident de sécurité, nous communiquerons avec nos clients pour les tenir informés de l'incident et fournir des mises à jour sur l'état de l'incident. Nous fournirons des mises à jour régulières sur l'incident et nous informerons nos clients de toute action qu'ils doivent entreprendre pour protéger leurs données. La communication sur la sécurité se fait via notre [page de statut](https://scalingostatus.com), et par support chat ou email si nécessaire.
 

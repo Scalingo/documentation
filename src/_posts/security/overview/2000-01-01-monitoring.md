@@ -57,6 +57,6 @@ Nous utilisons la journalisation pour enregistrer toutes les actions effectuées
 
 Les logs internes de la plateforme sont stockés dans un système de stockage sécurisé, en ajout uniquement et redondant pour garantir que les logs sont protégés contre les accès non autorisés. Les logs sont régulièrement examinés par notre équipe d'exploitation pour identifier les incidents de sécurité et prévenir des incidents similaires à l'avenir.
 
-### Réponse aux Incidents
+### Réponse aux Incidents {#reponse-aux-incidents}
 
 En cas d'incident de sécurité, notre équipe d'exploitation suit un plan de réponse aux incidents prédéfini pour contenir l'incident et atténuer son impact. Le plan de réponse aux incidents comprend des procédures pour identifier la cause de l'incident, contenir l'incident et restaurer le fonctionnement normal de la plateforme. Après la résolution de l'incident, nous effectuons un post-mortem pour identifier la cause profonde de l'incident et prévenir des incidents similaires à l'avenir.
