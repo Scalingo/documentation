@@ -1,7 +1,7 @@
 ---
 title: Business Continuity and Disaster Recovery
 nav: Business Continuity
-modified_at: 2026-04-16 00:00:00
+modified_at: 2026-06-29 00:00:00
 tags: compliance security measures
 index: 13
 ---
@@ -34,6 +34,9 @@ The business continuity is ensured on various levels:
 - Service redundancy
 
 After each test, a post-mortem is performed to measure the effectiveness of the plan and to identify areas for improvement.
+
+*[BCP]: Business Continuity Plan
+*[DRP]: Disaster Recovery Plan
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Compliance
 nav: Compliance
-modified_at: 2026-04-16 00:00:00
+modified_at: 2026-06-29 00:00:00
 tags: compliance security measures
 index: 15
 ---
@@ -36,6 +36,9 @@ system to protect the data hosted on the platform. See our ISO 27001 certificati
 Scalingo is hosting its infrastructure in the SecNumCloud qualified datacenters (uniquely for the region
 `osc-secnum-fr1`). This qualification ensures that the datacenters have implemented a high level of security to protect
 the data hosted on them. We are working on a SecNumCloud certification for a new range of products.
+
+*[GDPR]: General Data Protection Regulation
+*[HDS]: Health Data Hosting
 
 ---
 

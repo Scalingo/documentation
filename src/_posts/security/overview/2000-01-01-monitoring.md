@@ -1,7 +1,7 @@
 ---
 title: Security Monitoring, Journaling and Logging
 nav: Monitoring
-modified_at: 2026-04-16 00:00:00
+modified_at: 2026-06-29 00:00:00
 tags: compliance security measures monitoring
 index: 4
 ---

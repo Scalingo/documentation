@@ -1,7 +1,7 @@
 ---
 title: Incidents and Support
 nav: Incidents & Support
-modified_at: 2026-04-16 00:00:00
+modified_at: 2026-06-29 00:00:00
 tags: compliance security measures
 index: 12
 ---
@@ -55,6 +55,6 @@ Notre équipe d'exploitation est disponible 24h/24 et 7j/7 pour répondre aux in
 
 ### Support Technique
 
-Notre équipe de support technique est disponible pour vous aider avec tout problème technique ou de sécurité, du lundi au vendredi, de 9h00 à 12h00 et de 14h00 à 18h00 CET/CEST. Vous pouvez nous contacter par chat ou email à [support@scalingo.com](mailto:support@scalingo.com).
+Notre équipe de support technique est disponible pour vous aider avec tout problème technique ou de sécurité, du lundi au vendredi, de 9h00 à 12h00 et de 14h00 à 18h00 CET/CEST. Vous pouvez nous contacter par chat ou email.
 
 Si votre entreprise nécessite une disponibilité étendue et un support prioritaire, envisagez de passer à nos plans complémentaires adaptés aux besoins exigeants. [Contactez notre équipe commerciale](https://scalingo.com/book-a-demo) pour en savoir plus.
