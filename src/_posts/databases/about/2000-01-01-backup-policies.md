@@ -1,7 +1,7 @@
 ---
 title: Databases Backup Policies
 nav: Backup Policies
-modified_at: 2026-06-29 12:00:00
+modified_at: 2026-07-07 09:00:00
 tags: databases backup policy policies explanation
 index: 20
 ---
@@ -13,9 +13,9 @@ objective (RPO) ranges from about 5 minutes with continuous backups to up to
 
 Backup technology and retention policy depend on the database engine and architecture model. We provide two backup mechanisms when supported:
 
-- [**Logical backups**](logical-backups): scheduled or manual dumps of the database, stored as 
+- [**Logical backups**](#logical-backups): scheduled or manual dumps of the database, stored as 
   archives and retained according to the applicable retention policy.
-- [**Continuous backups**](continuous-backups): Point-in-Time Recovery (PiTR), which lets you 
+- [**Continuous backups**](#continuous-backups): Point-in-Time Recovery (PiTR), which lets you 
   restore the database to a specific point in time within the configured 
   recovery window.
 
