@@ -11,11 +11,11 @@ capabilities and isolation characteristics associated with each profile.
 
 | Size    | Memory (MB) | Swap (MB) | [CPU Priority](#cpu) | [PID](#pid) | [FD](#fd) |
 | :-----: | ----------: | --------: | :------------------: | ----------: | :-------: |
-| **S**   | 256         | 512       | Low                  | 128         | 1048576   |
-| **M**   | 512         | 1024      | Standard             | 256         | 1048576   |
-| **L**   | 1024        | 2048      | Standard             | 512         | 1048576   |
-| **XL**  | 2048        | 4096      | High                 | 1024        | 1048576   |
-| **2XL** | 4096        | 8192      | High                 | 2048        | 1048576   |
+| **S**   | 256         | 256       | Low                  | 128         | 1048576   |
+| **M**   | 512         | 512       | Standard             | 256         | 1048576   |
+| **L**   | 1024        | 1024      | Standard             | 512         | 1048576   |
+| **XL**  | 2048        | 2048      | High                 | 1024        | 1048576   |
+| **2XL** | 4096        | 4096      | High                 | 2048        | 1048576   |
 
 The default container size is **M**.
 
