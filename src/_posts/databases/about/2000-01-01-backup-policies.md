@@ -1,7 +1,7 @@
 ---
 title: Databases Backup Policies
 nav: Backup Policies
-modified_at: 2026-07-07 09:00:00
+modified_at: 2026-07-09 00:00:00
 tags: databases backup policy policies explanation
 index: 20
 ---
@@ -13,10 +13,10 @@ objective (RPO) ranges from about 5 minutes with continuous backups to up to
 
 Backup technology and retention policy depend on the database engine and architecture model. We provide two backup mechanisms when supported:
 
-- [**Logical backups**](#logical-backups): scheduled or manual dumps of the database, stored as 
+- [**Logical backups**](#logical-backups): scheduled or manual dumps of the database, stored as
   archives and retained according to the applicable retention policy.
-- [**Continuous backups**](#continuous-backups): Point-in-Time Recovery (PiTR), which lets you 
-  restore the database to a specific point in time within the configured 
+- [**Continuous backups**](#continuous-backups): Point-in-Time Recovery (PiTR), which lets you
+  restore the database to a specific point in time within the configured
   recovery window.
 
 The table below summarises which backup mechanisms are available (and whether they are managed by Scalingo) for each database engine and architecture model:
@@ -44,12 +44,14 @@ Scalingo provides two logical backup mechanisms for supported database engines:
 
 ### Scheduled Backups
 
-When scheduled backups are enabled (enabled by default), they run daily. Each 
-backup dumps the database to an archive, which is retained according to their 
+When scheduled backups are enabled (enabled by default), they run daily. Each
+backup dumps the database to an archive, which is retained according to their
 [retention policy](#retention-policy-for-scheduled-backups).
 
 The start time can be customized using the dashboard or our Command Line tool,
 enabling you to align backups with your workload and core business operations.
+The actual start time also depends on the backup queue, so the backup may
+start later than the configured time.
 
 #### Retention Policy for Scheduled Backups
 
@@ -73,7 +75,7 @@ expire gradually according to their retention policy.
 ### Manual Backups
 
 Scalingo provides a manual backup service for supported database engines.
-Manual backups consist in dumping the database to an archive which is retained 
+Manual backups consist in dumping the database to an archive which is retained
 according to their [retention policy](#retention-policy-for-manual-backups).
 This feature allows you to create a backup on demand, such as before an upgrade
 or any important operation on your data.
@@ -128,7 +130,7 @@ means the retention window starts over, and you won’t be able to restore from
 an earlier point in time. Currently, Scalingo only supports a single timeline
 in its recovery process.
 
-Deleting a database permanently removes its continuous backup data. 
+Deleting a database permanently removes its continuous backup data.
 After deletion, point-in-time recovery is no longer possible.
 
 ### Recovery Window for PiTR
@@ -186,7 +188,7 @@ the page dedicated to your database engine for the exact procedure to follow.
   backed up. This operation may impact the performance of the database and, by
   extension, the application.
 
-- On Business plans, logical backups are performed on the secondary instance to 
+- On Business plans, logical backups are performed on the secondary instance to
   limit the impact on the primary instance.
 
 - Several factors can delay, cancel, or impact the backup process:
@@ -202,7 +204,7 @@ the page dedicated to your database engine for the exact procedure to follow.
 - Some specific conditions may delay, cancel, or affect the consistency of the
   backup:
 
-  - Logical backups are only performed if the feature is enabled, which is the 
+  - Logical backups are only performed if the feature is enabled, which is the
     default setting. However, users can manually disable it if needed.
   - The database must be in a running state at the scheduled time of the
     backup.
