@@ -1,5 +1,5 @@
 ---
-modified_at: 2026-06-02 00:00:00
+modified_at: 2026-07-10 00:00:00
 title: 'Stack scalingo-24 v7, scalingo-22 v17, scalingo-24-minimal v6 and scalingo-22-minimal v16'
 ---
 
