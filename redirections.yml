@@ -730,7 +730,7 @@
     new: "/platform/billing/consumption-reports"
 
   - old: "/platform/account/manage#referrals"
-    new: "/platform/user-management/scalingo-account/navigating#referrals"
+    new: "/changelog#changelog-dashboard-referral-program-discontinuation"
 
   - old: "/platform/account/manage"
     new: "/platform/user-management/scalingo-account/navigating"
@@ -932,6 +932,12 @@
 
   - old: "/platform/cli/introduction"
     new: "/tools/cli/start"
+
+  - old: "/platform/user-management/scalingo-account/navigating#referrals"
+    new: "/changelog#changelog-dashboard-referral-program-discontinuation"
+
+  - old: "/platform/user-management/scalingo-account/referrals"
+    new: "/changelog#changelog-dashboard-referral-program-discontinuation"
 
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
