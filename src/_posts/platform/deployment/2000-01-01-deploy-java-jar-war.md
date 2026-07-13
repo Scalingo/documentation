@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2026-06-16 12:00:00
+modified_at: 2026-07-13 12:00:00
 index: 8
 tags: deployment, java, jar, war
 ---
@@ -105,18 +105,12 @@ The latest available versions currently are:
 
 | Tomcat Version | `scalingo-22` ([EOL]) | `scalingo-24`     | `scalingo-26`     |
 | -------------: | --------------------: | ----------------: | ----------------: |
-| **`10.1`**     | up to `10.1.55.0`     | up to `10.1.55.0` | up to `10.1.55.0` |
-| **`9.0`**      | up to `9.0.118.0`     | up to `9.0.118.0` | up to `9.0.118.0` |
-| `8.5`          | up to `8.5.68.1`      | up to `8.5.68.1`  | up to `8.5.68.1`  |
+| **`10.1`**     | up to `10.1.56.0`     | up to `10.1.56.0` | up to `10.1.56.0` |
+| **`9.0`**      | up to `9.0.119.0`     | up to `9.0.119.0` | up to `9.0.119.0` |
 
 The default Tomcat version on all stacks is the latest `9.0` version.
 
 {% include scalingo_22_deprecation_note.md %}
 
-{% note %}
-Even though we still support this version, we strongly advise against using the
-`8.5` version, which has been released a while ago. If you are still using it,
-please consider migrating to a more recent version.
-{% endnote %}
 
 [EOL]: {% post_url platform/internals/stacks/2000-01-01-stacks %}#stack-end-of-life
