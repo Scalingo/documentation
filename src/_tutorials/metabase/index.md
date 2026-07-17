@@ -66,7 +66,7 @@ steps you will need to follow:
 4. (optional) Instruct the platform to run the `web` process type in a single
    XL container:
    ```bash
-   scalingo --app -my-metabase scale web:1:XL
+   scalingo --app my-metabase scale web:1:XL
    ```
 
 5. Everything's ready, deploy to Scalingo:
