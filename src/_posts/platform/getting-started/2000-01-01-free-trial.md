@@ -11,8 +11,8 @@ When you create an account on [Scalingo](https://scalingo.com), you are given a
 free trial period to test the platform.
 
 To start the free trial, you must first configure your [billing profile][billing-profile]
-and add a valid [payment method][payment-methods]. You are not charged for
-eligible free trial resources during the trial period.
+and add a valid [payment method][payment-methods]. You are not charged while the free
+trial is active.
 
 ### What can I do under the free trial?
 
