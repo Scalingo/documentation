@@ -1,6 +1,6 @@
 ---
 title: Container Sizes
-modified_at: 2026-05-05 00:00:00
+modified_at: 2026-07-21 00:00:00
 tags: containers sizes
 index: 2
 ---
@@ -16,6 +16,7 @@ capabilities and isolation characteristics associated with each profile.
 | **L**   | 1024        | 1024      | Standard             | 512         | 1048576   |
 | **XL**  | 2048        | 2048      | High                 | 1024        | 1048576   |
 | **2XL** | 4096        | 4096      | High                 | 2048        | 1048576   |
+| **3XL** | 8192        | 8192      | High                 | 4096        | 1048576   |
 
 The default container size is **M**.
 
