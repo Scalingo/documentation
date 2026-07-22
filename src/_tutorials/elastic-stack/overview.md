@@ -8,6 +8,7 @@ is_series: true
 series: Deploying an Elastic Stack
 series_index: 1
 modified_at: 2026-02-23
+last_reviewed_at: 2026-02-23
 ---
 
 The Elastic Stack (formerly known as the ELK Stack) is a powerful collection of
