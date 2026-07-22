@@ -2,10 +2,12 @@
 title: Deploying WordPress
 logo: bedrock
 category: cms
+kind: tutorial
 products:
   - Scalingo for MySQL®
 permalink: /tutorials/wordpress
 modified_at: 2025-08-13
+last_reviewed_at: 2025-08-13
 ---
 
 WordPress is a popular open-source web content management system (CMS) used for

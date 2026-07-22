@@ -202,6 +202,28 @@
   --text-sc-title-7: 12px;
   --leading-sc-title-7: 32px;
   --tracking-sc-title-7: 0.14em;
+
+  --text-sc-title-8: 10px;
+}
+
+.text-xs {
+    font-size: 1/2rem;
+}
+
+.bg-sc-gray-3 {
+  background-color: var(--color-sc-gray-3);
+}
+
+.bg-sc-gray-4 {
+  background-color: var(--color-sc-gray-4);
+}
+
+.border-sc-gray-3 {
+  border-color: var(--color-sc-gray-3);
+}
+
+.text-primary-orange-400 {
+    color: var(--color-primary-400);
 }
 
 .text-sc-title-1 {
@@ -315,7 +337,7 @@
 @media screen and (max-width: 768px) {
   table {
     display: block !important;
-    max-width: 95vw !important;
+    /*max-width: 95vw !important;*/
     overflow-x: auto !important;
     white-space: nowrap !important;
   }
@@ -368,16 +390,20 @@ article h5 {
 
 article p {
   color: var(--color-sc-gray-2);
+}
+
+article p:not(:last-of-type) {
   margin-bottom: 0.5rem;
 }
 
-article li {
-  margin-bottom: 0.75rem;
-}
-
-article ul {
+article ul,
+article ol {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
+}
+
+article li:not(:last-of-type) {
+  margin-bottom: 0.75rem;
 }
 
 article a {
@@ -733,11 +759,11 @@ article pre {
   line-height: 18px;
   background-color: #060C20;
   overflow-x: auto;
+  white-space: pre;
   padding: 2rem;
   border-radius: 0.5rem;
   color: var(--color-sc-gray-3);
   font-family: var(--font-mono);
-  max-width: 20rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
@@ -753,6 +779,7 @@ article pre {
   /* Fix margin on mobile */
   @media screen and (max-width: 768px) {
     article pre {
+      /* max-width: 24rem; */
       padding: 1.5rem;
     }
   }
@@ -761,7 +788,7 @@ article pre {
   article pre {
     margin-left: 0;
     margin-right: 0;
-    max-width: none;
+    /* max-width: 34rem; */
   }
 }
 
@@ -1139,14 +1166,17 @@ blockquote {
     padding: 2px 4px;
 }
 
+.mono {
+    font-family: var(--font-mono);
+}
+
 /*
 Fix PRE tags overflow by adding min-width:0 on key elements
 source: https://weblog.west-wind.com/posts/2016/feb/15/flexbox-containers-pre-tags-and-managing-overflow
 */
-div, span, html, body, ul, article, main, nav {
-  min-width: 0;
+div:has(> pre) {
+    min-width: 0;
 }
-
 
 ol.deploy-timeline {
     border-left: 4px solid var(--color-primary-gray-200);
