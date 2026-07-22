@@ -779,7 +779,6 @@ article pre {
   /* Fix margin on mobile */
   @media screen and (max-width: 768px) {
     article pre {
-      /* max-width: 24rem; */
       padding: 1.5rem;
     }
   }
@@ -788,7 +787,6 @@ article pre {
   article pre {
     margin-left: 0;
     margin-right: 0;
-    /* max-width: 34rem; */
   }
 }
 
