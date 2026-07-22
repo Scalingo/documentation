@@ -13,7 +13,11 @@ module Jekyll
         new_path += "/#{part}"
         title = breadcrumb_hash[new_path]
 
-        "<a href=\"#{new_path}\">#{title}</a>"
+        if new_path.start_with?("/changelog/")
+          title
+        else
+          "<a href=\"#{new_path}\">#{title}</a>"
+        end
       end.join(" - ")
     end
   end
