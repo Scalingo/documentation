@@ -7,6 +7,7 @@ products:
   - Scalingo for PostgreSQL®
 permalink: /tutorials/metabase
 modified_at: 2025-08-12
+last_reviewed_at: 2025-08-12
 ---
 
 Metabase is an open-source Business Intelligence tool that allows you to build
