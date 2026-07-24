@@ -2,11 +2,12 @@
 title: Deploying Grafana
 logo: grafana
 category: analytics
+kind: tutorial
 products:
   - Scalingo for PostgreSQL®
-  - Multi-buildpack
 permalink: /tutorials/grafana
 modified_at: 2025-08-12
+last_reviewed_at: 2025-08-12
 ---
 
 Grafana is an open-source platform for visualizing and monitoring data from
