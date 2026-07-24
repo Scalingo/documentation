@@ -8,7 +8,7 @@ kind: demo
 last_reviewed_at: 2026-07-24
 ---
 
-**[Whisper]** is a general-purpose Automatic Speech Recognition (ASR) model for converting speech into text. It was trained on a large, multilingual audio corpus, which makes it robust to different accents, background noise, and real-world conditions. As an open source model, it is well suited for developers who want to integrate speech to text without depending entirely on a proprietary Saas or API.
+**[Whisper]** is a general-purpose Automatic Speech Recognition (ASR) model for converting speech into text. It was trained on a large, multilingual audio corpus, which makes it robust to different accents, background noise, and real-world conditions. As an open source model, it is well suited for developers who want to integrate speech to text without depending entirely on a proprietary SaaS or API.
 
 **[faster-whisper]** is an optimized reimplementation of OpenAI's Whisper model built on the [CTranslate2] inference engine. It delivers the same transcription quality as Whisper while significantly improving inference speed and reducing memory usage, making it well suited for production deployments and resource-constrained environments such as Scalingo.
 
