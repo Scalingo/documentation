@@ -1,22 +1,32 @@
 ---
-title: Building Speech to Text with Whisper
+title: Building Speech to Text with OpenAI Whisper
 logo: openai
 category: ai
 permalink: /tutorials/whisper
-modified_at: 2026-05-26
+modified_at: 2026-07-24
+kind: demo
+last_reviewed_at: 2026-07-24
 ---
 
-[Whisper] is an automatic speech recognition model that converts speech to text. It was trained on a large, multilingual audio corpus, which makes it robust to different accents, background noise, and real-world conditions. As an open source model, it is well suited for developers who want to integrate speech to text without depending entirely on a proprietary API.
+[Whisper] is a general-purpose Automatic Speech Recognition (ASR) model for converting speech into text. It was trained on a large, multilingual audio corpus, which makes it robust to different accents, background noise, and real-world conditions. As an open source model, it is well suited for developers who want to integrate speech to text without depending entirely on a proprietary Saas or API.
 
-Instead of relying on an external SaaS API, Whisper can run directly inside a web application using [faster-whisper], an optimized implementation of the Whisper model that improves inference speed on CPU.
+**[faster-whisper]** is an optimized reimplementation of OpenAI's Whisper model built on the [CTranslate2] inference engine. It delivers the same transcription quality as Whisper while significantly improving inference speed and reducing memory usage, making it well suited for production deployments and resource-constrained environments such as Scalingo.
 
-In this tutorial, a small speech to text demo is deployed on Scalingo using a [FastAPI] backend, a Python web framework, a minimal HTML/JavaScript frontend that records audio in the browser, and `faster-whisper` running on CPU in a single web container.
+In this tutorial, we use faster-whisper to create a small speech-to-text app featuring a Python backend as well as a minimal HTTP/Javascript frontend.
 
 ## Planning your Deployment
 
-For this kind of application, it is recommended to start with an M container and move to a larger size if startup time or inference latency becomes an issue.
+- Whisper is available in several sizes (`tiny`, `small`, `medium`, ...). We recommend to start with the `small` size, and switch for a larger model if accuracy becomes an issue.
+- The size of the container mainly depends on the size of the model you wish to use. The table below gives some rough recommendations. Please scale up or down depending on your use case and measured performances:
 
-The application supports one environment variables: `MODEL_USE`. A good starting point is to set `MODEL_USE=small`, then move to a larger model only if better accuracy is required. You can view the possibles values of `MODEL_USE` on [faster-whisper] repository.
+  | Model Size | Container Size |
+  | --------- | ------------- |
+  | tiny       | L              |
+  | base       | L              |
+  | small      | XL or 2XL      |
+  | medium     | 3XL            |
+  | large      | 3XL            |
+  | turbo      | 3XL            |
 
 ## Deploying the Application
 
@@ -25,14 +35,14 @@ The application supports one environment variables: `MODEL_USE`. A good starting
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Scalingo/whisper-speech-to-text
-   cd whisper-speech-to-text
+   git clone https://github.com/Scalingo/scalingo-labs
+   cd scalingo-labs/whisper-speech-to-text
    ```
 
 2. Create the application on Scalingo:
 
    ```bash
-   scalingo create mywhisper
+   scalingo create my-whisper
    ```
 
    The Scalingo command line automatically detects the Git repository and
@@ -41,16 +51,16 @@ The application supports one environment variables: `MODEL_USE`. A good starting
    ```bash
    git remote -v
 
-   origin   https://github.com/Scalingo/whisper-speech-to-text (fetch)
-   origin   https://github.com/Scalingo/whisper-speech-to-text (push)
-   scalingo git@ssh.osc-fr1.scalingo.com:mywhisper.git (fetch)
-   scalingo git@ssh.osc-fr1.scalingo.com:mywhisper.git (push)
+   origin   https://github.com/Scalingo/scalingo-labs (fetch)
+   origin   https://github.com/Scalingo/scalingo-labs (push)
+   scalingo git@ssh.osc-fr1.scalingo.com:my-whisper.git (fetch)
+   scalingo git@ssh.osc-fr1.scalingo.com:my-whisper.git (push)
    ```
 
-3. Configure the application:
+3. Set the model size to use:
 
    ```bash
-   scalingo --app mywhisper env-set MODEL_USE=small
+   scalingo --app my-whisper env-set MODEL_SIZE=small
    ```
 
 4. Deploy to Scalingo:
@@ -63,13 +73,19 @@ The application supports one environment variables: `MODEL_USE`. A good starting
 
 ## Testing the Deployment
 
-Before using the application, query the health endpoint to check that the model is loaded:
+Since the model is downloaded the first time the container starts, query the `/health` endpoint to check the model status:
 
    ```bash
    curl https://mywhisper.osc-fr1.scalingo.io/health
    ```
 
-Since the model is downloaded the first time the container starts, wait until the `status` field is ready before opening the application in a browser and testing the recording from the HTML interface. 
+The output should look like this:
+
+   ```bash
+   {"ok":true,"model":"tiny","status":"ready","ready":true}
+   ```
+
+Check that the status field is set to ready before opening the application in a browser and testing the recording from the HTML interface.
 
 The transcription endpoint can also be tested directly with `curl`.For example, if the audio file is in the current directory of your computer:
 
@@ -82,37 +98,18 @@ The backend writes the uploaded file to `/tmp`, transcribes it, then returns a J
 
 In this demo the transcription runs synchronously. This demo can be adapted to an asynchronous workflow, for example by offloading the transcription to a background job.
 
-## Updating the Model
+## Customizing
 
-The application reads the Whisper model name from the `MODEL_USE` environment variable, so changing model size does not require code changes.
+### Environment
 
-To switch the deployed application to another model, update the variable from the command line:
+`MODEL_SIZE`: Size of the model to use. Check [Whisper][whisper] documentation for available values.
+**Don't forget to adjust the size of your container(s) accordingly.**
+Defaults to `small`.
 
-   ```bash
-   scalingo --app mywhisper env-set MODEL_USE=medium
-   ```
-
-Model names such as `tiny`, `base`, `small`, `medium`, `large-v3`, or `turbo` can be used, depending on the balance required between accuracy, startup time, and CPU usage.
-
-After changing the variable, restart the application so a new container is started with the updated configuration and the selected model is loaded again at startup:
-
-   ```bash
-   scalingo --app mywhisper restart
-   ```
-
-At the next startup, the application downloads the selected model into the cache directory and warms it in the background before serving transcription requests.
-
-## Updating your Application
-
-To deploy a new version, commit the changes and push again to the Scalingo remote:
-
-   ```bash
-   git add .
-   git commit -m "Update Whisper demo"
-   git push scalingo main
-   ```
-
+*[ASR]: Automatic Speech Recognition
 [whisper]: https://github.com/openai/whisper
 [faster-whisper]: https://github.com/SYSTRAN/faster-whisper
 [fastapi]: https://fastapi.tiangolo.com
+[CTranslate2]: https://github.com/OpenNMT/CTranslate2
+
 [procfile]: {% post_url platform/app/2000-01-01-procfile %}
