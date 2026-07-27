@@ -1,7 +1,7 @@
 ---
 title: Choosing a Container Size
 nav: Choosing a Container Size
-modified_at: 2026-06-10 00:00:00
+modified_at: 2026-07-27 00:00:00
 tags: app scaling containers memory metrics
 index: 1
 ---
@@ -51,9 +51,9 @@ maintain performance and stability:
   downsized to reduce costs.
 - **Memory and swap**: Monitor memory consumption to ensure the application has
   sufficient headroom during normal operation and traffic peaks. Frequent use of
-  swap space is a strong indicator of memory pressure and can significantly
-  degrade performance, often signaling the need for a [larger container
-  size][v-scaling].
+  swap space, associated with high RAM usage, is a strong indicator of memory
+  pressure and can significantly degrade performance, often signaling the need
+  for a [larger container size][v-scaling].
 - **Application-level signals**: Increasing response times or a growing number of
   server-side errors can indicate that the application is approaching its
   capacity limits, even when CPU and memory utilization appear healthy, and may

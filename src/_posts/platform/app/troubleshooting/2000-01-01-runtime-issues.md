@@ -1,6 +1,6 @@
 ---
 title: Runtime Issues
-modified_at: 2026-05-11 00:00:00
+modified_at: 2026-07-27 00:00:00
 tags: app runtime crash recovery troubleshooting oom memory
 index: 3
 ---
@@ -120,15 +120,20 @@ particularly worth considering.
 
 ### Out of Memory Crashes
 
-When an application consumes all its allocated memory (RAM + swap), the system
-applies a protection mechanism called the **OOM Killer** (Out of Memory Killer).
+When an application cannot allocate more memory, the system applies a protection
+mechanism called the **OOM Killer** (Out of Memory Killer).
 
-The usual sequence is:
+While swap is available, the usual sequence is:
 
 1. The application progressively uses all available RAM.
-2. The system starts using swap space.
+2. The application relies on swap as additional capacity.
 3. When memory and swap reach 100% usage, the OOM Killer intervenes.
 4. The application is immediately terminated by the system.
+
+Once [swap is disabled for application
+containers](/changelog#changelog-deployment-application-containers-swap-deprecation),
+this additional capacity will no longer be available. An application that
+reaches its RAM limit may therefore encounter an out-of-memory error directly.
 
 This can have several observable consequences:
 
