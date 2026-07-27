@@ -114,8 +114,25 @@ module Dirname
       @all_posts = site.posts.docs
       @breadcrumb_hash = {}
       tree = directory_hash("src/_posts/")
+
+      # Changelog posts live outside src/_posts, so they are not part of the
+      # documentation tree. Register only their parent breadcrumb labels here
+      # without adding changelog entries to the main navigation.
+      add_changelog_breadcrumbs
+
       site.data["tree"] = tree["children"]
       site.data["breadcrumb_hash"] = @breadcrumb_hash
+    end
+
+    def add_changelog_breadcrumbs
+      @breadcrumb_hash["/changelog"] = "Changelog"
+
+      @all_posts.each do |doc|
+        next unless doc.relative_path.start_with?("changelog/")
+
+        category = doc.relative_path.split("/")[1]
+        @breadcrumb_hash["/changelog/#{category}"] = category.tr("_", " ").titleize
+      end
     end
   end
 end

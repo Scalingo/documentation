@@ -2,8 +2,10 @@
 title: Deploying a WAF with OWASP ModSecurity CRS
 logo: owasp-modsecurity-crs
 category: security
+kind: tutorial
 permalink: /tutorials/modsecurity
 modified_at: 2026-03-31
+last_reviewed_at: 2026-03-31
 ---
 
 ModSecurity is an open-source Web Application Firewall (WAF) that allows users

@@ -58,6 +58,25 @@ You are welcome to modify any article, but please remember to update `modified_a
 
 When adding or editing content, prefer following the existing structure and naming conventions used by nearby files.
 
+## Changelog entries
+
+Changelog entries live in `src/changelog/<category>/_posts/`.
+
+For a new changelog entry, use the publication date as the filename prefix:
+`yyyy-mm-dd-title.md`.
+
+The date in the filename is the publication date used by Jekyll. It defines
+where the entry appears in the changelog ordering. Do not add a `date` field in
+the front matter.
+
+In general, before merging a new changelog entry, update the filename date to
+the expected merge date. This makes the changelog entry appear to customers as
+published on the day it actually becomes visible.
+
+For a newly published changelog entry, `modified_at` should use the same date as
+the filename prefix. When editing an existing changelog entry later, keep the
+filename date unchanged and update `modified_at` to the modification date.
+
 ## Content conventions
 
 Documentation pages use the kramdown Markdown flavor. Use standard Markdown
@@ -174,7 +193,12 @@ If you rename a page or change its path, check the root-level files that may con
 - `config.ru`
 - `redirections.yml`
 
-If the public URL changes, add a new redirect entry in the `301` section of `redirections.yml` in the same change.
+If the public URL changes for a page that has already been published on
+`master`, add a new redirect entry in the `301` section of `redirections.yml`
+in the same change.
+
+Do not add a redirect for a page that was created and then renamed within the
+same unmerged branch, because the original URL was never published.
 
 Append new redirect entries at the end of the `301` section, immediately before the `obsolete` section. Do not insert them near similar redirects elsewhere in the file.
 
@@ -255,6 +279,32 @@ docker compose run web rm -rf _site
 ```
 
 ## Validation
+
+Before committing or merging documentation changes, run the checks that match
+your change.
+
+### Content pages
+
+- Edited pages have an updated `modified_at` value.
+- New pages use the `yyyy-mm-dd-title.md` filename format.
+- For posts, the date in the filename is earlier than or equal to the server
+  build date. Future-dated posts are not generated until a later deployment.
+
+### Renamed or moved pages
+
+- Internal links pointing to the old page path are updated.
+- If the old URL was already published on `master`, `redirections.yml` includes
+  a matching redirect.
+
+### Changelog entries
+
+- New changelog entries are in the correct
+  `src/changelog/<category>/_posts/` directory.
+- New changelog entry filenames start with the publication date that should
+  define their position in the changelog, usually the expected merge date.
+- Changelog entries do not define `date` in the front matter.
+
+### Build checks
 
 After content or configuration changes, run:
 

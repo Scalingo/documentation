@@ -1,17 +1,17 @@
 ---
 title: Provisioning a Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Provisioning
-modified_at: 2026-02-13 12:00:00
+modified_at: 2026-06-18 12:00:00
 tags: databases postgresql dedicated
 index: 1
 ---
 
 
 Once you have chosen the right plan for your needs, you are ready to provision
-the database. This can be done via our 
-[dashboard](#using-the-dashboard), our 
+the database. This can be done via our
+[dashboard](#using-the-dashboard), our
 [CLI tool](#using-the-command-line), our
-[Terraform Provider](#using-the-terraform-provider), or via our 
+[Terraform Provider](#using-the-terraform-provider), or via our
 [Kubernetes Operator](#using-the-kubernetes-operator).
 
 
@@ -23,7 +23,7 @@ the database. This can be done via our
 2. Select the **Project** where you want to create the database
 3. Click the arrow next to **Create an application**, then click
    **Database Dedicated Resources**
-4. In the **Databases engines** section, select 
+4. In the **Databases engines** section, select
    **PostgreSQL Dedicated Resources** and confirm your choice
 5. Enter a database name, then select or confirm the appropriate **Project** and
    **Region**
@@ -56,7 +56,7 @@ export SCALINGO_PREVIEW_FEATURES=true
    │ postgresql-dr-starter-16384     │ Starter 16G     │
    ...
    ```
-3. Locate the `ID` corresponding to the plan you want to deploy (for example 
+3. Locate the `ID` corresponding to the plan you want to deploy (for example
    `postgresql-dr-starter-4096`)
 4. Provision the database:
    ```bash
@@ -94,40 +94,60 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait <database_
 1. Deploy the [Scalingo Kubernetes Operator][kube-operator] in your cluster
    using the installation manifest `install.yaml` from the
    [latest release][kube-operator-install].
+
 2. Create a Scalingo API token and store it in a Kubernetes Secret, as
    documented in [Create Secret][kube-operator-secret].
+
 3. Create a custom resource to provision your dedicated PostgreSQL database:
+
    ```yaml
-	apiVersion: databases.scalingo.com/v1alpha1
-	kind: PostgreSQL
-	metadata:
-	  labels:
-	    app.kubernetes.io/name: scalingo-operator
-	    app.kubernetes.io/managed-by: kustomize
-	  name: my-dedicated-database
-	spec:
-	  # Secret read by operator
-	  authSecret:
-	    name: scalingo
-	    key: api_token
+   apiVersion: databases.scalingo.com/v1alpha1
+   kind: PostgreSQL
+   metadata:
+     labels:
+       app.kubernetes.io/name: scalingo-operator
+       app.kubernetes.io/managed-by: kustomize
+     name: my-dedicated-database
+   spec:
+     # Secret read by operator
+     authSecret:
+       name: scalingo
+       key: api_token
 
-	  # Secret written by operator
-	  connInfoSecretTarget:
-	    name:  my-dedicated-database-secret
-	    prefix: PG
+     # Secret written by operator
+     connInfoSecretTarget:
+       name: my-dedicated-database-secret
+       prefix: PG
 
-	  name: my-dedicated-database
-	  plan: postgresql-dr-starter-4096
-	  region: osc-fr1
+     # Network configuration
+     networking:
+       internet_access:
+         enabled: true
+       outscale:
+         oks:
+           net_peering: false
+       firewall:
+         rules:
+           - type: "custom_range"
+             cidr: "198.51.100.25/32"
+             label: "My workstation"
+
+     name: my-dedicated-database
+     plan: postgresql-dr-starter-4096
+     region: osc-fr1
    ```
+
    This example provisions a dedicated PostgreSQL database named
    `my-dedicated-database` on the `postgresql-dr-starter-4096` plan and writes
    its connection information to the `my-dedicated-database-secret` Kubernetes
    Secret. You can use another `postgresql-dr-*` plan instead.
+
 4. Apply the resource and wait for provisioning to complete:
+
    ```bash
    kubectl apply -f my-dedicated-database.yaml
    ```
+
 5. Database provisioning typically takes 15–30 minutes
 
 To read the database URL from the generated secret:

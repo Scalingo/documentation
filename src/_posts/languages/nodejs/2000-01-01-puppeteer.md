@@ -36,6 +36,12 @@ libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xv
 libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
 ```
 
+- For `scalingo-26`:
+
+```
+libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
+```
+
 {% note %}
 These are minimal dependencies originally documented by [cypress](https://docs.cypress.io/app/get-started/install-cypress#Linux-Prerequisites). A more thorough list of system dependencies is available in the chromium [source repository](https://source.chromium.org/chromium/chromium/src/+/main:chrome/installer/linux/debian/dist_package_versions.json;l=150)
 {% endnote %}

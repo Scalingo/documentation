@@ -51,7 +51,7 @@ defaults:
   - scope:
       type: tutorials_categories
     values:
-      layout: tutorials_category
+      layout: tutorials_main
 
 plugins:
   - jekyll-sitemap

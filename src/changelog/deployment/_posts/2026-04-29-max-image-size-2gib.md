@@ -1,6 +1,6 @@
 ---
 modified_at: 2026-04-29 00:00:00
-title: ‘Increasing the maximum application image size to 2 GiB’
+title: 'Increasing the maximum application image size to 2 GiB'
 ---
 
 The maximum size of an application image is now **2 GiB**.
