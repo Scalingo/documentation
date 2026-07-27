@@ -1,12 +1,13 @@
 ---
 title: Deploying Metabase
 logo: metabase
+kind: tutorial
 category: analytics
 products:
   - Scalingo for PostgreSQL®
-  - Multi-buildpack
 permalink: /tutorials/metabase
 modified_at: 2025-08-12
+last_reviewed_at: 2025-08-12
 ---
 
 Metabase is an open-source Business Intelligence tool that allows you to build
