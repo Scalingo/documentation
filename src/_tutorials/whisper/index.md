@@ -35,8 +35,11 @@ In this tutorial, we use faster-whisper to create a small speech-to-text app fea
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Scalingo/scalingo-labs
-   cd scalingo-labs/whisper-speech-to-text
+   git clone --no-checkout https://github.com/Scalingo/scalingo-labs
+   cd scalingo-labs/
+   git sparse-checkout init --cone
+   git sparse-checkout set whisper-speech-to-text
+   git checkout
    ```
 
 2. Create the application on Scalingo:

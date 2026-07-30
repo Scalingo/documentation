@@ -45,8 +45,11 @@ The recommendation workflow follows these steps:
 1. Clone our repository:
 
    ```bash
-   git clone https://github.com/Scalingo/scalingo-labs
-   cd scalingo-labs/filmrecommendation
+   git clone --no-checkout https://github.com/Scalingo/scalingo-labs
+   cd scalingo-labs/
+   git sparse-checkout init --cone
+   git sparse-checkout set filmrecommendation
+   git checkout
    ```
 
 2. Create the application on Scalingo:
