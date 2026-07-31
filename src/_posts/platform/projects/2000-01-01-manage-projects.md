@@ -10,9 +10,6 @@ Projects are the way to organize your applications and resources on Scalingo.
 
 [Learn more about Projects][projects-overview].
 
-{% warning %}
-We strongly recommend grouping your applications into projects. Soon, it will no longer be possible to transfer applications between projects, except by recreating them in the target project.
-{% endwarning %}
 
 ## Setting the project at App creation
 
@@ -70,39 +67,6 @@ Here you've created the app named `test-app` and set the project ID to `prj-6731
      project_id = "prj-6731a609-02b6-4614-b28d-5abe43654333"
    }
    ```
-
-
-## Updating the project of an existing App
-
-### Using the Dashboard
-
-1. From your web browser, open your [dashboard][dashboard]
-2. Click the **Apps** tab
-3. Click on the application for which you want to manage the project
-4. Click the **Settings** tab
-5. In the **Settings** submenu, make sure to select **General**
-6. In the section **Parent project**, click **Move app to another project**
-
-
-If the project isn't already existing, proceed as follows:
-
-1. Click **+ New project**
-2. Enter the project name of your choice (1-64 characters, using only a-z, 0-9, -, or _)
-3. Click **Add**
-
-
-If the project is in the list
-
-1. Select the project you want
-2. Click **Move app to project**
-
-### Using the Command Line
-
-This feature is not yet available in the CLI.
-
-### Using the Terraform Provider
-
-This feature is not yet available in the Terraform Provider.
 
 
 ## Listing the projects
@@ -239,7 +203,7 @@ update the project with the desired attributes. For example:
 ## Transfer Ownership of a Project {#transfer-project-ownership}
 
 {% note %}
-Projects are now a core component of the platform. Transferring applications individually will soon be deprecated. To change ownership, transfer the entire project instead.
+Projects are now a core component of the platform. Applications can no longer be transferred individually. To change ownership, transfer the entire project instead.
 {% endnote %}
 
 To transfer a project to another user, first add the future owner as a collaborator on all project resources, including applications and Dedicated Resources databases, and make sure they accept the invitation.
