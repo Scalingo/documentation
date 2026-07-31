@@ -112,7 +112,7 @@ This application transfer ownership feature is deprecated in favour of complete
 Our platform is evolving to improve performance and resilience. As part of this evolution,
 our internal network has been re-architected and is now segmented into multiple subnets.
 
-Because of this new architecture, it will no longer possible to move an application to
+Because of this new architecture, it is no longer possible to move an application to
 another project or transfer it to another owner:
 
 - To change the app's project, recreate and redeploy the application in the destination project.
@@ -122,18 +122,6 @@ another project or transfer it to another owner:
 {% note %}
 If you need assistance, contact the support.
 {% endnote %}
-
-### Using the Dashboard
-
-1. From your web browser, open your [dashboard][dashboard]
-2. Click on the application you want to transfer
-3. Click the **Settings** tab
-4. In the **Collaborators** section, invite the future owner if they are not
-   already a collaborator
-5. Ask the invited user to accept the invitation from the confirmation e-mail
-6. In the **Transfer the application** section, select the collaborator who
-   should receive ownership
-7. Confirm the transfer
 
 
 ## Delete an Application
