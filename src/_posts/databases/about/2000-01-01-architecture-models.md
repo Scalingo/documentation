@@ -32,7 +32,6 @@ defines the level of execution and network isolation, and the SecNumCloud scope.
 
 [^1]: For Business and Enterprise (HA) plans, intra cluster communications are always encrypted, for both architecture models.
 [^2]: The "Collaborator" role (excluding "Limited Collaborator") allows users to provision add-ons.
-[^3]: In 2027, Scalingo's objective is to qualify the architecture model that powers Databases on Dedicated Resources. This qualification is not yet completed.
 
 
 ## Shared Resources
