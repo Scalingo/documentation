@@ -28,11 +28,11 @@ defines the level of execution and network isolation, and the SecNumCloud scope.
 | Collaborators               | Inherits the app collaborators                      | Has its own collaborators                              |
 | Network exposure            | Enable/disable Internet access, no source filtering | Fine-grained firewall, optional Outscale Net Peering   |
 | HDS eligibility             | Yes                                                 | Yes                                                    |
-| SecNumCloud scope           | Infrastructure qualified                            | Infrastructure qualified; Service targeted in 2026[^3] |
+| SecNumCloud scope           | IaaS provider qualified                             | IaaS provider qualified; SNC qualification in progress |
 
 [^1]: For Business and Enterprise (HA) plans, intra cluster communications are always encrypted, for both architecture models.
 [^2]: The "Collaborator" role (excluding "Limited Collaborator") allows users to provision add-ons.
-[^3]: In 2026, Scalingo's objective is to qualify the architecture model that powers Databases on Dedicated Resources. This qualification is not yet completed.
+[^3]: In 2027, Scalingo's objective is to qualify the architecture model that powers Databases on Dedicated Resources. This qualification is not yet completed.
 
 
 ## Shared Resources
