@@ -37,11 +37,15 @@ Start the server using Node.js.
 ```json
 {
   "scripts": {
-    "start": "node .next/standalone/server.js"
+    "start": "node .next/standalone/server.js --hostname 0.0.0.0"
     // others scripts
   }
 }
 ```
+
+{% warning %}
+  Ensure that the `--hostname` is set to 0.0.0.0 to avoid the [boot timeout issue]({% post_url languages/nodejs/2000-01-01-start %}#nextjs).
+{% endwarning %}
 
 {% note %}
 Reason: after build node_modules will have been removed, so the original command `next start` will error: `"sh: 1: next: not found"`
