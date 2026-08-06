@@ -933,6 +933,24 @@
   - old: "/platform/cli/introduction"
     new: "/tools/cli/start"
 
+  - old: "/languages/nodejs/angular"
+    new: "/languages/nodejs/start"
+
+  - old: "/languages/nodejs/deployment-errors"
+    new: "/languages/nodejs/troubleshooting"
+
+  - old: "/languages/nodejs/nextjs-standalone"
+    new: "/languages/nodejs/frameworks/nextjs#standalone-mode"
+
+  - old: "/languages/nodejs/puppeteer"
+    new: "/languages/nodejs/extensions#use-puppeteer-or-another-headless-browser"
+
+  - old: "/languages/nodejs/websocket-web-same-port"
+    new: "/languages/nodejs/start#starting-the-application"
+
+  - old: "/languages/nodejs/yarn-2"
+    new: "/languages/nodejs/yarn"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

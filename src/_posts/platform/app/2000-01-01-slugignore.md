@@ -111,4 +111,4 @@ Godeps
 
 You're deploying a Next.js application but the image size is too big. You can try to run Next.js in standalone mode.
 
-More information here: [Next.js in standalone mode]({% post_url languages/nodejs/2000-01-01-nextjs-standalone %}).
+More information here: [Deploy Next.js]({% post_url languages/nodejs/frameworks/2000-01-01-nextjs %}#standalone-mode).
