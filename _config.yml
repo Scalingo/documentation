@@ -51,7 +51,7 @@ defaults:
   - scope:
       type: tutorials_categories
     values:
-      layout: tutorials_category
+      layout: tutorials_main
 
 plugins:
   - jekyll-sitemap
@@ -121,9 +121,6 @@ languages:
   - url: clojure
     name: "Clojure"
     logo: clojure
-  - url: elixir
-    name: "Elixir"
-    logo: elixir
   - url: python
     name: "Python"
     logo: python
@@ -179,9 +176,6 @@ samples:
   - url: python-fastapi
     name: Python/FastAPI
     logo: python-fastapi
-  - url: elixir-plug
-    name: Elixir/Plug
-    logo: elixir
   - url: java-spark
     name: Java/Spark
     logo: java-spark

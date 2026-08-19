@@ -23,8 +23,8 @@ modified_at: 2015-09-09 00:00:00
     <article>
       <div id="{{post.id | slugify}}" class="heading" data-type="heading"
         data-state="{% if body != " " %}closed{% else %}empty{% endif %}">
-        <input type="checkbox" id="{{post.id | url_decode  }}" class="hidden">
-        <label class="flex flex-row flex-wrap gap-y-4 w-full p-6 {% cycle 'bg-sc-gray-4', 'even' %} cursor-pointer" for="{{post.id | url_decode}}">
+        <input type="checkbox" id="{{ post.url }}" class="hidden">
+        <label class="flex flex-row flex-wrap gap-y-4 w-full p-6 {% cycle 'bg-sc-gray-4', 'even' %} cursor-pointer" for="{{ post.url }}">
           <div class="w-1/2 lg:w-1/6">
             {{ post.modified_at | date: "%b %-d, %Y" }}
           </div>

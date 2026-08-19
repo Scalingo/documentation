@@ -10,20 +10,42 @@ layout: tutorials
         </div>
     </div>
 
-    <div class="grid grid-cols-1 xl:grid-cols-2 2xl:max-w-2/3 gap-6 mt-6 mb-24">
-    {% assign tutorials = site.tutorials | where_exp: "page", "page.deprecated != true" | where_exp: "page", "page.category != nil" | sort: "modified_at" | reverse | slice: 0, 12 %}
+    <div class="columns-1 xl:columns-2 2xl:max-w-2/3 gap-6 mt-6 mb-24">
+    {% assign tutorials = site.tutorials | where_exp: "page", "page.deprecated != true" | where_exp: "page", "page.category != nil"  %}
+    {% if page.category %}
+        {% assign tutorials = tutorials | where: "category", page.category %}
+    {% endif %}
+    {% assign tutorials = tutorials | sort: "modified_at" | reverse | slice: 0, 12 %}
+
     {% for tutorial in tutorials %}
-        <a href="{{ tutorial.url }}">
-            <div class="flex items-center bg-sc-gray-5 rounded-lg h-24 px-5 border-l-8 border-primary-orange-300 group transform hover:border-l-12 duration-200 ease-out hover:shadow-lg">
-                <div class="flex items-center h-12 min-w-[48px] max-w-[48px] mr-6">{% icon {{ tutorial.logo }} %}</div>
-                <div class="flex items-center grow mr-6 font-bold h-12 group-hover:text-primary-orange-400 transition text-sc-title-4-2 line-clamp-2">
-                    {% if tutorial.is_series %}
-                        {{ tutorial.series }}
-                    {% else %}
-                        {{ tutorial.title }}
-                    {% endif %}
+        {% assign title = tutorial.title %}
+        {% if tutorial.is_series %}
+            {% assign title = tutorial.series %}
+        {% endif %}
+
+        {% assign kind = tutorial.kind | default: "demo" %}
+        {% assign kind_badge = "badge_card_" | append: kind | append: ".html" %}
+
+        {% assign products = "" %}
+        {% if tutorial.products.size > 0 %}
+            {% assign products = tutorial.products | slice: 0, 3 %}
+        {% endif %}
+
+        <a href="{{ tutorial.url }}" class="break-inside-avoid-column">
+            <div class="flex flex-col gap-3 mb-6 bg-sc-gray-5 rounded-lg p-4 border-l-8 border-primary-orange-300 break-inside-avoid-column group transform hover:border-l-12 duration-200 ease-out hover:shadow-lg">
+                <div class="flex flex-row justify-between items-start">
+                    <div class="flex items-center h-12 min-w-[48px] max-w-[48px] mr-4">{% icon {{ tutorial.logo }} %}</div>
+                    {% include {{ kind_badge }} %}
                 </div>
-                <div class="text-primary-orange-400 justify-end transform group-hover:translate-x-1 duration-200 ease-out">{% icon arrow_right %}</div>
+                <div class="flex grow mr-4 font-bold transition text-sc-title-3 line-clamp-2">{{ title }}</div>
+                {% if products.size > 0 %}
+                <ul class="flex flex-row flex-wrap gap-2 items-center">
+                    <li class="text-xs uppercase">Features</li>
+                    {% for product in products %}
+                    <li>{% include badge_card_product.html product=product %}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
             </div>
         </a>
     {% endfor %}
