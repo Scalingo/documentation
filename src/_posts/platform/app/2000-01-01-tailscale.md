@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Configure Tailscale
-modified_at: 2026-05-26 00:00:00
+modified_at: 2026-08-19 00:00:00
 tags: tailscale networking vpn buildpack
 ---
 
@@ -35,9 +35,9 @@ tailscale
 ```
 
 Replace `[dist]` with the codename of the [stack] you are using:
-* `resolute` for `scalingo-26` (default)
-* `noble` for `scalingo-24`
-* `jammy` for `scalingo-22`
+* `resolute` for {% scalingo 26 %}
+* `noble` for {% scalingo 24 %}
+* `jammy` for {% scalingo 22 %}
 
 ## Step 3: Set TAILSCALE_AUTHKEY Environment Variable
 
