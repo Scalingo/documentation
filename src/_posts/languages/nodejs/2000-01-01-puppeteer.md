@@ -1,19 +1,25 @@
 ---
 title: Install Puppeteer
-modified_at: 2026-04-09 00:00:00
+modified_at: 2026-08-20 00:00:00
 tags: nodejs puppeteer
 ---
 
-Puppeteer is a library to headless Chrome API. In short, most things that you can do manually in the browser can be achieved with a program using Puppeteer. By default, installing Puppeteer on a Scalingo application fails because the X11 library are not included in Scalingo base image. The error message is:
+Puppeteer is a library to headless Chrome API. In short, most things that you
+can do manually in the browser can be achieved with a program using Puppeteer.
+By default, installing Puppeteer on a Scalingo application fails because the
+X11 libraries are not included in Scalingo base image. The error message is:
 
 ```
 [Nest] 31 - 10/24/2019, 4:08:50 PM [ExceptionsHandler] Failed to launch chrome!
 /app/node_modules/puppeteer/.local-chromium/linux-686378/chrome-linux/chrome: error while loading shared libraries: libX11-xcb.so.1: cannot open shared object file: No such file or directory
 ```
 
+
 ## Install Puppeteer on a Scalingo Application
 
-To install Puppeteer on a Scalingo application, you need to make use of [the APT buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-apt %}). Such a buildpack should be used as part of a [multi-buildpack]({% post_url platform/deployment/buildpacks/2000-01-01-multi %}).
+To install Puppeteer on a Scalingo application, you need to make use of the
+[apt-buildpack]. Such a buildpack should be used as part of a
+[multi-buildpack].
 
 ```bash
 echo 'https://github.com/Scalingo/apt-buildpack' > .buildpacks
@@ -22,30 +28,39 @@ git add .buildpacks
 git commit --message="Add multi-buildpack"
 ```
 
-Depending on your stack, you'll need different system dependencies in the `Aptfile` at the root of your project.
+Depending on your stack, you'll need different system dependencies in the
+`Aptfile` at the root of your project.
 
-- For `scalingo-22`:
+- For {% scalingo 22 %}:
+  ```
+  libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+  ```
 
-```
-libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-```
+- For {% scalingo 24 %}:
+  ```
+  libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
+  ```
 
-- For `scalingo-24`:
-
-```
-libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
-```
-
-- For `scalingo-26`:
-
-```
-libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
-```
+- For {% scalingo 26 %}:
+  ```
+  libgtk-3-0t64 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
+  ```
 
 {% note %}
-These are minimal dependencies originally documented by [cypress](https://docs.cypress.io/app/get-started/install-cypress#Linux-Prerequisites). A more thorough list of system dependencies is available in the chromium [source repository](https://source.chromium.org/chromium/chromium/src/+/main:chrome/installer/linux/debian/dist_package_versions.json;l=150)
+These are minimal dependencies originally documented by [cypress]. A more
+thorough list of system dependencies is available in the [chromium source
+repository].
 {% endnote %}
 
 {% warning %}
-Puppeteer must be run with the option `--no-sandbox` on Scalingo. This option must be added with care. You should only add this option against some code you own.
+Puppeteer must be run with the option `--no-sandbox` on Scalingo. This option
+must be added with care. You should only add this option against some code you
+own.
 {% endwarning %}
+
+
+[cypress]: https://docs.cypress.io/app/get-started/install-cypress#Linux-Prerequisites
+[chromium source repository]: https://source.chromium.org/chromium/chromium/src/+/main:chrome/installer/linux/debian/dist_package_versions.json;l=150
+
+[apt-buildpack]: {% post_url platform/deployment/buildpacks/2000-01-01-apt %}
+[multi-buildpack]: {% post_url platform/deployment/buildpacks/2000-01-01-multi %}
