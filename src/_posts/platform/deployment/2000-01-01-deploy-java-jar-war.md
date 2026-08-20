@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2026-08-18 12:00:00
+modified_at: 2026-08-20 12:00:00
 index: 8
 tags: deployment, java, jar, war
 ---
@@ -103,10 +103,10 @@ scalingo --app my-app env-set JAVA_WEBAPP_RUNNER_VERSION=10.1.24.0
 
 The latest available versions currently are:
 
-| Tomcat Version | `scalingo-22` ([EOL]) | `scalingo-24`     | `scalingo-26`     |
-| -------------: | --------------------: | ----------------: | ----------------: |
-| **`10.1`**     | up to `10.1.57.0`     | up to `10.1.57.0` | up to `10.1.57.0` |
-| **`9.0`**      | up to `9.0.120.0`     | up to `9.0.120.0` | up to `9.0.120.0` |
+| Tomcat Version | {% scalingo 22 %} | {% scalingo 24 %} | {% scalingo 26 %} |
+| -------------: | ----------------: | ----------------: | ----------------: |
+| **`10.1`**     | up to `10.1.57.0` | up to `10.1.57.0` | up to `10.1.57.0` |
+| **`9.0`**      | up to `9.0.120.0` | up to `9.0.120.0` | up to `9.0.120.0` |
 
 The default Tomcat version on all stacks is the latest `9.0` version.
 
