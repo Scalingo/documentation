@@ -109,5 +109,3 @@ The latest available versions currently are:
 | **`9.0`**      | up to `9.0.120.0` | up to `9.0.120.0` | up to `9.0.120.0` |
 
 The default Tomcat version on all stacks is the latest `9.0` version.
-
-{% include scalingo_22_deprecation_note.md %}
