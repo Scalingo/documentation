@@ -41,7 +41,6 @@ The following table lists available packages and versions for the stack
 {% include scalingo_26_stack_packages.md %}
 
 
-*[LTS]: Long-Term Support
 
 [Docker Hub]: https://hub.docker.com/r/scalingo/scalingo-26
 
