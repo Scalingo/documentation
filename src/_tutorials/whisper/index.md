@@ -3,7 +3,7 @@ title: Building Speech to Text with OpenAI Whisper
 logo: openai
 category: ai
 permalink: /tutorials/whisper
-modified_at: 2026-07-24
+modified_at: 2026-08-21
 kind: demo
 last_reviewed_at: 2026-07-24
 ---
@@ -19,14 +19,11 @@ In this tutorial, we use faster-whisper to create a small speech-to-text app fea
 - Whisper is available in several sizes (`tiny`, `small`, `medium`, ...). We recommend to start with the `small` size, and switch for a larger model if accuracy becomes an issue.
 - The size of the container mainly depends on the size of the model you wish to use. The table below gives some rough recommendations. Please scale up or down depending on your use case and measured performances:
 
-  | Model Size | Container Size |
-  | ---------: | :------------- |
-  | tiny       | L              |
-  | base       | L              |
-  | small      | XL or 2XL      |
-  | medium     | 3XL            |
-  | large      | 3XL            |
-  | turbo      | 3XL            |
+  | Model Size               | Container Size |
+  | -----------------------: | :------------- |
+  | `tiny` `base`            | L              |
+  | `small`                  | XL or 2XL      |
+  | `medium` `large` `turbo` | 3XL            |
 
 ## Deploying the Application
 
