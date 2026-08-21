@@ -1,7 +1,7 @@
 ---
 title: Scalingo Autoscaler
 nav: Scalingo Autoscaler
-modified_at: 2026-06-10 00:00:00
+modified_at: 2026-07-31 00:00:00
 tags: app scaling autoscaling metrics autoscaler
 index: 20
 ---
@@ -173,17 +173,17 @@ prevent out-of-memory errors and ensure smooth operations.
 
 ### Swap Consumption
 
-Swap consumption tracks the use of disk-based swap memory, which occurs when an
-application exceeds its allocated RAM. While swap provides additional capacity,
-excessive usage can significantly degrade performance.
+Swap consumption tracks the use of disk-based swap memory. High swap
+consumption, when associated with high RAM usage, is a strong indicator of
+memory pressure and may degrade application performance.
 
 {% include application_swap_deprecation_note.md %}
 
 #### Usage
 
-Monitoring swap consumption helps prevent performance degradation. When swap
-usage exceeds the target, the Autoscaler adds containers to reduce the load on
-existing instances.
+Monitoring swap consumption alongside RAM usage helps prevent performance
+degradation. When swap usage exceeds the target, the Autoscaler adds containers
+to reduce the load on existing instances.
 
 #### Recommended target
 
