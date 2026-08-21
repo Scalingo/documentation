@@ -100,8 +100,6 @@ Scalingo currently supports the following versions of Composer:
 | `2.10`      | up to `2.10.2`    | up to `2.10.2`    | up to `2.10.2`    |
 | `2.2` (LTS) | up to `2.2.28`    | up to `2.2.28`    | up to `2.2.28`    |
 
-{% include scalingo_22_deprecation_note.md %}
-
 ## Working with Composer Environments
 
 By default, Scalingo considers that your application runs in *production* mode.
