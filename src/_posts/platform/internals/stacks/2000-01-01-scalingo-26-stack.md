@@ -5,7 +5,7 @@ modified_at: 2026-07-06
 index: 2
 ---
 
-The {% scalingo 26 %} [stack] is based on Ubuntu 26.04 Long-Term Support.
+The {% scalingo 26 %} [stack] is based on Ubuntu 26.04 Long-Term Support (LTS).
 
 It's currently the default stack when deploying applications on Scalingo.
 
