@@ -3,6 +3,10 @@ a supported Scalingo product, reference implementation or tutorial. Scalingo
 does not guarantee that it works continuously, remains compatible over time, or
 is suitable for production usage.
 
-This demo may include external dependencies not maintained by Scalingo.
-Customers are solely responsible for validating all aspects (code, security,
-compliance, operations) before any production use.
+This demo may include external dependencies not maintained by Scalingo,
+**customers remain responsible for**:
+
+* Validating all aspects of deployed code and configuration (code, security,
+  compliance, operations) before any production use.
+* Maintaining applications and their components during their runtime (releases
+  monitoring, new version deployments, monitoring, scaling)
