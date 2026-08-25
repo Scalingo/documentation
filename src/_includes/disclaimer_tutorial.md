@@ -6,6 +6,10 @@ product or managed service scope. Scalingo provides limited support for the
 Scalingo-controlled scope only.
 
 This tutorial may reference software, repositories, dependencies or
-configuration choices that are not fully maintained or supported by Scalingo.
-**Customers remain responsible for validating the full implementation against
-their own security, compliance, operational and production requirements.**
+configuration choices that are not fully maintained or supported by Scalingo,
+**customers remain responsible for**:
+
+* Validating all aspects of deployed code and configuration (code, security,
+  compliance, operations) before any production use.
+* Maintaining applications and their components during their runtime (releases
+  monitoring, new version deployments, monitoring, scaling)
