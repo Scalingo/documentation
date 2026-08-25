@@ -1,7 +1,7 @@
 ---
 title: Scalingo-22 Stack
 nav: scalingo-22
-modified_at: 2026-06-22
+modified_at: 2026-08-25
 index: 4
 ---
 
@@ -53,4 +53,3 @@ The following table lists available packages and versions for the stack
 
 [stack]: {% post_url platform/internals/stacks/2000-01-01-overview %}
 [stack-lifecycle]: {% post_url platform/internals/stacks/2000-01-01-overview %}#lifecycle
-
