@@ -12,8 +12,7 @@ layout: tutorials
                 {{ page.title }}
             </h1>
 
-            <div class="flex flex-col gap-2 mt-6">
-                <div class="flex flex-row gap-2">
+            <div class="flex flex-row gap-2 mt-4">
                 {% assign kind = page.kind | default: "demo" %}
                 {% assign p = "badge_page_" | append: kind | append: ".html" %}
                 {% include {{ p }} %}
@@ -22,19 +21,18 @@ layout: tutorials
                     {% include badge_page_product.html product=product %}
                     {% endfor %}
                 {% endif %}
-                </div>
-
-                <details class="text-sm pt-4" id="disclaimer">
-                    <summary class="cursor-pointer"><span class="font-bold">Responsibility Disclaimer:</span><br><span class="text-xs italic">This page is designed as an example, you are responsible of what is deployed and its maintenance. <span class="font-bold">Click to read more</span></span></summary>
-                    <div class="p-6 mt-2 bg-sc-gray-4 rounded-md italic">
-                        {% assign d = "disclaimer_" | append: kind | append: ".md" %}
-                        {% capture disclaimer -%}
-                        {% include {{d }} %}
-                        {%- endcapture %}
-                        {{ disclaimer | markdownify }}
-                    </div>
-                </details>
             </div>
+
+            <details class="text-sm" id="disclaimer">
+                <summary class="cursor-pointer"><span class="font-bold">Responsibility Disclaimer:</span><br /><span class="text-xs italic">This page is designed as an example, you are responsible of what is deployed and its maintenance. <span class="font-bold">Click to read more.</span></span></summary>
+                <div class="p-6 mt-2 bg-sc-gray-4 rounded-md italic">
+                    {% assign d = "disclaimer_" | append: kind | append: ".md" %}
+                    {% capture disclaimer -%}
+                    {% include {{ d }} %}
+                    {%- endcapture %}
+                    {{ disclaimer | markdownify }}
+                </div>
+            </details>
 
             <section class="py-0">
                 {{ content | inject_anchors }}
