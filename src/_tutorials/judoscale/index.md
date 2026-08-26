@@ -4,8 +4,8 @@ logo: judoscale
 category: platform
 kind: tutorial
 permalink: /tutorials/judoscale
-modified_at: 2026-08-25
-last_reviewed_at: 2026-08-25
+modified_at: 2026-09-03
+last_reviewed_at: 2026-09-03
 ---
 
 [Horizontal scaling][scaling] changes the number of containers that run a
