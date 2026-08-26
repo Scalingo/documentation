@@ -1,7 +1,7 @@
 ---
 title: Scalingo Autoscaler
 nav: Scalingo Autoscaler
-modified_at: 2026-07-31 00:00:00
+modified_at: 2026-09-03 00:00:00
 tags: app scaling autoscaling metrics autoscaler
 index: 20
 ---
@@ -15,6 +15,13 @@ The ***Scalingo Autoscaler*** is a feature that, once configured and enabled,
 allows the platform to automatically and dynamically adjust the number of
 containers of your application (horizontal scaling) depending on a performance
 metric while remaining within strict boundaries to prevent unforeseen costs.
+
+{% note %}
+The Scalingo Autoscaler is free and built into the Scalingo platform. For a
+third-party autoscaler that autoscales using request queue time and background
+job queues, see
+[Autoscaling with Judoscale](/tutorials/judoscale).
+{% endnote %}
 
 
 ## Understanding the Autoscaler
