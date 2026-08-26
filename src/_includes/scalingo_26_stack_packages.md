@@ -3,7 +3,7 @@
 |                      autoconf |                2.72-3.1ubuntu2 |
 |                      automake |               1:1.18.1-3build1 |
 |                 autotools-dev |               20240727.1build1 |
-|                    base-files |                    14ubuntu6.1 |
+|                    base-files |                    14ubuntu6.2 |
 |                   base-passwd |                          3.6.8 |
 |                          bash |                   5.3-2ubuntu1 |
 |               bash-completion |               1:2.16.0-8build1 |
@@ -405,8 +405,8 @@
 |                libssh-4:amd64 |                0.11.3-1ubuntu2 |
 |           libssh2-1-dev:amd64 |        1.11.1-1ubuntu0.26.04.3 |
 |            libssh2-1t64:amd64 |        1.11.1-1ubuntu0.26.04.3 |
-|              libssl-dev:amd64 |               3.5.5-1ubuntu3.3 |
-|              libssl3t64:amd64 |               3.5.5-1ubuntu3.3 |
+|              libssl-dev:amd64 |               3.5.5-1ubuntu3.4 |
+|              libssl3t64:amd64 |               3.5.5-1ubuntu3.4 |
 |        libstdc++-15-dev:amd64 |               15.2.0-16ubuntu1 |
 |              libstdc++6:amd64 |           16-20260322-1ubuntu1 |
 |libsysprof-capture-4-dev:amd64 |                         50.0-1 |
@@ -506,8 +506,8 @@
 |                        netpbm |             2:11.10.02-1build1 |
 |              nettle-dev:amd64 |                       3.10.2-1 |
 |                openssh-client |            1:10.2p1-2ubuntu3.5 |
-|                       openssl |               3.5.5-1ubuntu3.3 |
-|       openssl-provider-legacy |               3.5.5-1ubuntu3.3 |
+|                       openssl |               3.5.5-1ubuntu3.4 |
+|       openssl-provider-legacy |               3.5.5-1ubuntu3.4 |
 |                        passwd |              1:4.17.4-2ubuntu3 |
 |                         patch |                    2.8-2build1 |
 |                          perl |              5.40.1-7ubuntu0.1 |
