@@ -3,7 +3,7 @@ title: Deploy to Scalingo from CircleCI
 nav: Deploy from CircleCI
 modified_at: 2023-12-22 00:00:00
 tags: ci deployment build circle-ci
-index: 22
+index: 2
 ---
 
 This page describes the steps to setup **Continuous Deployment** from CircleCI

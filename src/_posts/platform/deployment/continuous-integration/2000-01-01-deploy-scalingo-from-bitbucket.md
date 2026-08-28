@@ -3,7 +3,7 @@ title: Deploy to Scalingo from Bitbucket
 nav: Deploy from Bitbucket
 modified_at: 2022-04-26 00:00:00
 tags: ci deployment build bitbucket
-index: 25
+index: 1
 ---
 
 To setup **Continuous Deployment** from Bitbucket to Scalingo, please follow the

@@ -3,7 +3,7 @@ title: Deploy to Scalingo from GitLab CI/CD
 nav: Deploy from GitLab CI
 modified_at: 2023-03-10 00:00:00
 tags: ci deployment build gitlab
-index: 22
+index: 3
 ---
 
 This page used to explain how to deploy your application using GitLab CI/CD.
