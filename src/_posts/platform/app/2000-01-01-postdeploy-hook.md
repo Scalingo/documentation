@@ -1,6 +1,6 @@
 ---
 title: Post-deployment hook
-modified_at: 2026-04-29 00:00:00
+modified_at: 2026-08-28 00:00:00
 tags: app deployment hook postdeploy
 index: 13
 ---
@@ -81,7 +81,7 @@ postdeploy: bundle exec rake db:migrate
 {% note %}
 Keep in mind that database migrations may fail. You should design them *knowing* that
 they may fail. Here is an [article from
-Codeship](https://blog.codeship.com/rails-migrations-zero-downtime/) explaining
+CloudBees](https://www.cloudbees.com/blog/rails-migrations-zero-downtime) explaining
 this process.
 {% endnote %}
 
