@@ -106,9 +106,16 @@ applications cannot be linked. You can link additional projects later.
    Treat `JUDOSCALE_URL` like an ingest key: do not commit it to git or share
    it publicly. See [environment variables][environment].
 
-4. Commit the adapter package, deploy the application, then confirm the setup
-   in the Judoscale wizard. Deployment starts new containers with the updated
-   environment.
+4. Commit the adapter package and deploy the application:
+
+   ```bash
+   git add .
+   git commit -m "Add Judoscale adapter"
+   git push scalingo main
+   ```
+
+   Then confirm the setup in the Judoscale wizard. Deployment starts new
+   containers with the updated environment.
 
    After a successful setup, Judoscale shows queue-time charts for that
    process type. Charts will appear empty if the web process has no traffic,
