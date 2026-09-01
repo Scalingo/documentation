@@ -6,9 +6,10 @@ products:
   - Scalingo for PostgreSQL
   - Projects
   - Private Networks
+kind: tutorial
 permalink: /tutorials/keycloak
-modified_at: 2026-05-22
-last_reviewed_at: 2026-05-22
+modified_at: 2026-09-01
+last_reviewed_at: 2026-09-01
 ---
 
 Keycloak is an open-source identity and access management solution designed to
@@ -18,9 +19,6 @@ standard protocols like [OAuth 2.0], [OpenID Connect], and [SAML].  It also
 offers centralized user management, role-based access control, and fine-grained
 permissions. Overall, Keycloak helps organizations improve security while
 simplifying the work of developers with authentication and authorization.
-
-
-{% include tutorial_disclaimer.md %}
 
 
 ## Planning your Deployment
@@ -151,6 +149,12 @@ simplifying the work of developers with authentication and authorization.
    - This one restricts the cache communications to the Private Network only:
      ```bash
      scalingo --app my-keycloak env-set KC_CACHE_EMBEDDED_NETWORK_BIND_ADDRESS="match-address:10.240.\*"
+    ```
+
+   - These configure the cache:
+     ```bash
+     scalingo --app my-keycloak env-set KC_CACHE_STACK="jdbc-ping"
+     scalingo --app my-keycloak env-set KC_CACHE_CONFIG_MUTATE="true"
      ```
 
    - These are used to create the initial credentials for the administrator
@@ -225,6 +229,8 @@ Private Network on Scalingo.
        KC_HTTP_ENABLED  = true,
        KC_HTTP_PORT     = 80,
        KC_HOSTNAME      = "<hostname>",
+       KC_CACHE_STACK   = "jdbc-ping",
+       KC_CACHE_CONFIG_MUTATE = true,
        KC_CACHE_EMBEDDED_NETWORK_BIND_ADDRESS = "match-address:10.240.\*",
        KC_PROXY_TRUSTED_ADDRESSES  = "10.240.0.0/24",
        KC_HTTP_MAX_QUEUED_REQUESTS = <number>,
@@ -299,15 +305,26 @@ the advantage of drastically lowering the attack surface of Keycloak:
 
 {: #nginx-config}
 ```erb
+resolver 10.255.0.10 10.255.0.11 valid=3s ipv6=off;
+resolver_timeout 2s;
+
 upstream keycloak {
-  server <%= ENV["KEYCLOAK_PRIVATE_DOMAIN"] %>:80;
+  zone kc 64k;
   ip_hash;
+  server <%= ENV["KEYCLOAK_PRIVATE_DOMAIN"] %>:80 resolve max_fails=2;
 }
 
 server {
   server_name localhost;
   listen <%= ENV["PORT"] %>;
   charset utf-8;
+
+  proxy_set_header Host              $host;
+  proxy_set_header X-Real-IP         $remote_addr;
+  proxy_set_header X-Forwarded-For   $remote_addr;
+  proxy_set_header X-Forwarded-Host  $host;
+  proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+  proxy_set_header X-Forwarded-Port  $http_x_forwarded_port;
 
   # Optional hardening:
   proxy_hide_header X-Powered-By;
@@ -438,7 +455,7 @@ best practice.**
    `servers.conf.erb` file:
    ```erb
    # Rate limiting for /admin:
-   limit_req_zone $binary_remote_addr zone=keycloak_admin:10m rate=5r/m;
+   limit_req_zone $binary_remote_addr zone=keycloak_admin:10m rate=20r/m;
    ```
 
 2. Add two new `location` in the `servers.conf.erb` file:
@@ -454,7 +471,7 @@ best practice.**
      deny all;
 
      # Rate limiting:
-     limit_req zone=keycloak_admin burst=10 nodelay;
+     limit_req zone=keycloak_admin burst=20 nodelay;
 
      proxy_pass       http://keycloak/admin/;
      proxy_redirect   default;
@@ -485,7 +502,11 @@ of these endpoints is considered a security best practice.**
 1. Add a new `upstream` dedicated to management in the `servers.conf.erb` file:
    ```erb
    upstream mgmt {
-     server <%= ENV["KEYCLOAK_PRIVATE_DOMAIN"] %>:<%= ENV["KC_HTTP_MANAGEMENT_PORT"] or 9000 %>;
+     zone mgmt 64k;
+
+     ip_hash;
+     server <%= ENV["KEYCLOAK_PRIVATE_DOMAIN"] %>:<%= ENV["KC_HTTP_MANAGEMENT_PORT"] or 9000 %>
+       resolve max_fails=2;
    }
    ```
 
