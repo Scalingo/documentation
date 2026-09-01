@@ -16,7 +16,7 @@
     "mdn-polyfills": "^5.20.0",
     "postcss": "^8.5.26",
     "postcss-cli": "^11.0.1",
-    "postcss-import": "^16.1.1",
+    "postcss-import": "^17.0.0",
     "tailwindcss": "^4.3.0"
   }
 }
