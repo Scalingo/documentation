@@ -5,7 +5,7 @@ category: ai
 products:
   - Scalingo for PostgreSQL®
 permalink: /tutorials/pgvector-recommendation
-modified_at: 2026-03-06
+modified_at: 2026-07-24
 ---
 
 Recommendation systems are widely used in modern applications to suggest
@@ -45,8 +45,8 @@ The recommendation workflow follows these steps:
 1. Clone our repository:
 
    ```bash
-   git clone https://github.com/Scalingo/filmreco
-   cd filmreco
+   git clone https://github.com/Scalingo/scalingo-labs
+   cd scalingo-labs/filmrecommendation
    ```
 
 2. Create the application on Scalingo:
@@ -61,8 +61,8 @@ The recommendation workflow follows these steps:
    ```bash
    git remote -v
 
-   origin   https://github.com/Scalingo/filmreco (fetch)
-   origin   https://github.com/Scalingo/filmreco (push)
+   origin   https://github.com/Scalingo/scalingo-labs (fetch)
+   origin   https://github.com/Scalingo/scalingo-labs (push)
    scalingo git@ssh.osc-fr1.scalingo.com:my-filmreco.git (fetch)
    scalingo git@ssh.osc-fr1.scalingo.com:my-filmreco.git (push)
    ```

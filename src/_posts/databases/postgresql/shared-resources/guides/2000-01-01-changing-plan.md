@@ -71,7 +71,7 @@ though.
 ### From Business to Business
 
 When changing the size of a Business plan, the platform first reboots the
-primary instance with the targeted new size. It then reboots the follower
+follower instance with the targeted new size. It then reboots the primary
 instance with the targeted new size. There's no downtime during this
 operation, thanks to the failover mechanism included in the Business plan.
 

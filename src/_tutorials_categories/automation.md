@@ -1,5 +1,4 @@
 ---
-layout: tutorials_category
 title: Automation
 category: automation
 description: >

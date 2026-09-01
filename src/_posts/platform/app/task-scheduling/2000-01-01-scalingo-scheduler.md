@@ -76,7 +76,8 @@ the commands are run are billed like any other
 [one-off container]({% post_url platform/app/2000-01-01-tasks %}).
 
 Consequently, billing depends on the type of container you defined in your task
-(M is the default container size) and on the job lifespan.
+(M is the default
+[container size][container-sizes]) and on the job lifespan.
 
 For example, if your job runs during 5 minutes, you will be billed 5 minutes of
 an M container.
@@ -187,3 +188,5 @@ remove the file.
 
 Logs for scheduled tasks are included in the [application logs]({% post_url platform/app/2000-01-01-logs %}), 
 next to other containers logs.
+
+[container-sizes]: {% post_url platform/internals/2000-01-01-container-sizes %}

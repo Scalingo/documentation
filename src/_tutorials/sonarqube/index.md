@@ -6,13 +6,38 @@ products:
   - Scalingo for PostgreSQL®
   - Multi-buildpack
 permalink: /tutorials/sonarqube
-modified_at: 2025-08-07
+modified_at: 2026-05-11
+deprecated: true
 ---
 
 SonarQube is an automatic code review tool to detect bugs, vulnerabilities, and
 code smells in your project. It can integrate with your existing workflow to
 enable continuous code inspection across your project branches and pull
 requests.
+
+{% warning %}
+**This tutorial is now deprecated.**
+
+SonarQube has been shipping their own Elasticsearch® engine for a few years.
+The database is fully integrated into SonarQube. Configuration options allowing
+to connect to an external Elasticsearch® database have been removed, and
+SonarQube team has now repeatedly confirmed that they won't support this
+feature.
+
+Consequently, deploying SonarQube on Scalingo induces that the Elasticsearch®
+database lives and dies with the container runnning it, resulting in several
+no-goes:
+
+- Data won't survive reboots, nor updates.
+- Scalingo can't provide any backup mechanism for this database.
+- Application can't scale horizontally.
+
+**Considering the above, it's impossible for us to keep supporting SonarQube
+deployments on Scalingo.**
+
+The instructions below are kept temporarily and will be removed on the 12th of
+November 2026 (2026-11-12), after a 6 months notice period.
+{% endwarning %}
 
 
 ## Planning your Deployment

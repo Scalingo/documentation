@@ -51,7 +51,7 @@ defaults:
   - scope:
       type: tutorials_categories
     values:
-      layout: tutorials_category
+      layout: tutorials_main
 
 plugins:
   - jekyll-sitemap
@@ -86,7 +86,7 @@ highlighted:
     - name: Ruby on Rails
       url: /languages/ruby/rails/start
       logo: ruby-on-rails
-    - name: NodeJS
+    - name: Node.js
       url: "/languages/nodejs/start"
       logo: nodejs
     - name: PHP
@@ -115,21 +115,12 @@ languages:
   - url: php
     name: "PHP"
     logo: php
-  - url: groovy
-    name: "Groovy"
-    logo: groovy
   - url: java
     name: "Java"
     logo: java
   - url: clojure
     name: "Clojure"
     logo: clojure
-  - url: crystal
-    name: "Crystal"
-    logo: crystal
-  - url: elixir
-    name: "Elixir"
-    logo: elixir
   - url: python
     name: "Python"
     logo: python
@@ -171,7 +162,7 @@ samples:
     name: Next.js (standalone)
     logo: nextjs
   - url: node-nuxt
-    name: NodeJS/Nuxt.js
+    name: Node.js/Nuxt.js
     logo: nodejs
   - url: php-laravel
     name: PHP/Laravel
@@ -185,9 +176,6 @@ samples:
   - url: python-fastapi
     name: Python/FastAPI
     logo: python-fastapi
-  - url: elixir-plug
-    name: Elixir/Plug
-    logo: elixir
   - url: java-spark
     name: Java/Spark
     logo: java-spark

@@ -1,6 +1,6 @@
 ---
 title: Next.js in standalone mode
-modified_at: 2024-07-26 11:26:57
+modified_at: 2026-08-25 00:00:00
 tags: nodejs nextjs standalone
 index: 5
 ---
@@ -37,11 +37,15 @@ Start the server using Node.js.
 ```json
 {
   "scripts": {
-    "start": "node .next/standalone/server.js"
+    "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js"
     // others scripts
   }
 }
 ```
+
+{% warning %}
+  Ensure that the `HOSTNAME` env var is set to `0.0.0.0` to avoid the [boot timeout issue]({% post_url languages/nodejs/2000-01-01-start %}#nextjs). It should only be set for the node.js process, not globally on the application side.
+{% endwarning %}
 
 {% note %}
 Reason: after build node_modules will have been removed, so the original command `next start` will error: `"sh: 1: next: not found"`

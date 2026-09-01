@@ -3,7 +3,7 @@ title: Deploy to Scalingo from Semaphore
 nav: Deploy from Semaphore
 modified_at: 2022-04-26 00:00:00
 tags: ci deployment build semaphore-ci
-index: 23
+index: 4
 ---
 
 To setup **Continuous Deployment** from Semaphore to Scalingo, please follow the

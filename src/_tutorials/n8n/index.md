@@ -2,10 +2,12 @@
 title: Deploying n8n
 logo: n8n
 category: automation
+kind: tutorial
 products:
   - Scalingo for PostgreSQL®
 permalink: /tutorials/n8n
 modified_at: 2025-08-12
+last_reviewed_at: 2025-08-12
 ---
 
 n8n is an open-source workflow automation tool that lets you connect apps,
