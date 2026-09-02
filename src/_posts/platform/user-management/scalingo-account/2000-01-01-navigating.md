@@ -1,7 +1,7 @@
 ---
 nav: Navigating the Account Dashboard
 title: Navigating the Scalingo Account Dashboard
-modified_at: 2025-07-02 12:00:00
+modified_at: 2026-07-13 00:00:00
 index: 20
 ---
 
@@ -89,14 +89,6 @@ updated if necessary.
 Learn more about the [HDS certification][hds]
 
 
-## Referrals
-
-The [**Referrals**][account-referrals] tab allows to:
-
-- Get your referral link
-- View some statistics related to your referrals (clicks, sign-ups, earnings)
-
-
 [api]: https://developers.scalingo.com
 [dashboard-account]: https://dashboard.scalingo.com/account
 [account-authentication]: https://dashboard.scalingo.com/account/authentication
@@ -104,8 +96,6 @@ The [**Referrals**][account-referrals] tab allows to:
 [account-tokens]: https://dashboard.scalingo.com/account/tokens
 [account-integrations]: https://dashboard.scalingo.com/account/integrations
 [account-hds]: https://dashboard.scalingo.com/account/hds
-[account-referrals]: https://dashboard.scalingo.com/account/referrals
-
 [ssh-keys]: {% post_url platform/getting-started/2000-01-01-first-steps %}#ssh-key-setup
 [scm]: {% post_url platform/app/2000-01-01-scm-integration %}
 [best-practices]: {% post_url platform/user-management/teamwork/2000-01-01-best-practices %}
