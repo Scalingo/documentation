@@ -2,7 +2,7 @@
 title: Autoscaling with Judoscale
 logo: judoscale
 category: integration
-kind: tutorial
+kind: demo
 permalink: /tutorials/judoscale
 modified_at: 2026-09-03
 last_reviewed_at: 2026-09-03
