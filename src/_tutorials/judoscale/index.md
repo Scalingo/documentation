@@ -62,6 +62,10 @@ If no adapter exists for your stack, you can still scale on a
    to change the number of running containers. It does not scale anything
    until you enable autoscaling for a process type.
 
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_judoscale_add_project.png" %}
+{% include mdl_img.html %}
+{:start="4"}
+
 4. Select the [project][projects] that contains the application you want to
    autoscale.
 
@@ -81,6 +85,10 @@ applications cannot be linked. You can link additional projects later.
 1. In the Judoscale team dashboard, click **Set up** on the process type you
    want to autoscale.
 
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_judoscale_dashboard.png" %}
+{% include mdl_img.html %}
+{:start="2"}
+
 2. Follow the setup wizard: choose your language, framework, and job backend
    if you have one. The wizard shows the exact package to install.
 
@@ -94,6 +102,10 @@ applications cannot be linked. You can link additional projects later.
    For other stacks, use the package names shown in the wizard. The adapter
    reports queue-related metrics for web and worker process types. It does not
    impact how your application handles requests or jobs.
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_judoscale_setup.png" %}
+{% include mdl_img.html %}
+{:start="3"}
 
 3. Set the `JUDOSCALE_URL` environment variable on the Scalingo application.
    The wizard provides the value. Add it from the **Environment** tab of your
@@ -121,6 +133,8 @@ applications cannot be linked. You can link additional projects later.
    process type. Charts will appear empty if the web process has no traffic,
    or if the worker process has no jobs waiting.
 
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_judoscale_graph.png" %}
+{% include mdl_img.html %}
 
 ## Configuring and Enabling Autoscaling
 
@@ -138,6 +152,10 @@ applications cannot be linked. You can link additional projects later.
 3. Review the other defaults. They are a reasonable starting point for most
    applications. You can change them after you have seen the charts under
    real load.
+
+{% assign img_url = "https://cdn.scalingo.com/documentation/screenshot_judoscale_trigger.png" %}
+{% include mdl_img.html %}
+{:start="4"}
 
 4. Save and enable autoscaling.
 
