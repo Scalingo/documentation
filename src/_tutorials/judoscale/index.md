@@ -176,7 +176,7 @@ open the worker process type in Judoscale and enable autoscaling the same way.
 Both autoscalers adjust the number of containers running for a process type,
 but they use different metrics and provide different configuration options.
 
-The Scalingo Autoscaler is built into the platform and does not require an
+The [Scalingo Autoscaler][scalingo-autoscaler] is built into the platform and does not require an
 adapter or an account with another service. It can scale using requests per
 minute, response time, 5xx errors, CPU, RAM, or swap usage.
 
