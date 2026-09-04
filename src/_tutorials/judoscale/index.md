@@ -3,8 +3,9 @@ title: Autoscaling with Judoscale
 logo: judoscale
 category: integration
 kind: demo
+partner: Judoscale
 permalink: /tutorials/judoscale
-modified_at: 2026-09-03
+modified_at: 2026-09-04
 last_reviewed_at: 2026-09-03
 ---
 

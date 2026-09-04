@@ -35,7 +35,14 @@ layout: tutorials
             <div class="flex flex-col gap-3 mb-6 bg-sc-gray-5 rounded-lg p-4 border-l-8 border-primary-orange-300 break-inside-avoid-column group transform hover:border-l-12 duration-200 ease-out hover:shadow-lg">
                 <div class="flex flex-row justify-between items-start">
                     <div class="flex items-center h-12 min-w-[48px] max-w-[48px] mr-4">{% icon {{ tutorial.logo }} %}</div>
-                    {% include {{ kind_badge }} %}
+                    {% if tutorial.partner %}
+                    <div class="flex flex-row flex-wrap justify-end gap-2">
+                        {% include {{ kind_badge }} %}
+                        {% include badge_partner.html partner=tutorial.partner kind=kind %}
+                    </div>
+                    {% else %}
+                        {% include {{ kind_badge }} %}
+                    {% endif %}
                 </div>
                 <div class="flex grow mr-4 font-bold transition text-sc-title-3 line-clamp-2">{{ title }}</div>
                 {% if products.size > 0 %}

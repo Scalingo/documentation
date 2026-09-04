@@ -42,6 +42,7 @@ Optional tags:
 - `logo: [string]` define the icon or logo used by tutorial pages
 - `products: [array]` list related Scalingo products for a tutorial
 - `category: [string]` assign a tutorial to a tutorial category
+- `partner: [string]` identify the partner that authored a guest tutorial
 - `permalink: [string]` define the public URL of tutorials and other special pages that require a stable path
 - `is_series: [boolean]` mark a tutorial as part of a series
 - `series: [string]` group tutorial pages under the same series name
