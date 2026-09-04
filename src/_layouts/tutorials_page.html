@@ -12,10 +12,13 @@ layout: tutorials
                 {{ page.title }}
             </h1>
 
-            <div class="flex flew-col gap-2 mt-6">
+            <div class="flex flex-row flex-wrap gap-2 mt-6">
             {% assign kind = page.kind | default: "demo" %}
             {% assign p = "badge_page_" | append: kind | append: ".html" %}
             {% include {{ p }} %}
+            {% if page.partner %}
+                {% include badge_partner.html partner=page.partner kind=kind %}
+            {% endif %}
             {% if page.products.size > 0 %}
                 {% for product in page.products %}
                 {% include badge_page_product.html product=product %}
