@@ -14,7 +14,7 @@ last_reviewed_at: 2026-09-03
 [autoscaler][scalingo-autoscaler] that watches platform metrics such as
 requests per minute, response time, CPU, and memory.
 
-If you need more control over your autoscaling behavior or want to use
+If you need more autoscaling options or want to use
 metrics such as request queue time and background job queues,
 you can use Judoscale.
 [Judoscale][judoscale] is a third-party autoscaler with its own account and
