@@ -8,8 +8,8 @@ products:
   - Private Networks
 kind: tutorial
 permalink: /tutorials/keycloak
-modified_at: 2026-09-01
-last_reviewed_at: 2026-09-01
+modified_at: 2026-09-07
+last_reviewed_at: 2026-09-07
 ---
 
 Keycloak is an open-source identity and access management solution designed to
@@ -137,14 +137,14 @@ simplifying the work of developers with authentication and authorization.
      ```bash
      scalingo --app my-keycloak env-set KC_PROXY_HEADERS=xforwarded
      scalingo --app my-keycloak env-set KC_HTTP_ENABLED=true
-     scalingo --app my-keycloak env-set KC_HTTP_PORT=80
+     scalingo --app my-keycloak env-set KC_HTTP_PORT=8080
      scalingo --app my-keycloak env-set KC_HOSTNAME=<hostname>
      ```
      With `hostname` being the publicly exposed address at which Keycloak is
      available\\
      (e.g. `my-keycloak.osc-fr1.scalingo.io`).
 
-     Using port 80 is an example, you can choose any port number.
+     Using port 8080 is an example, you can choose any port number.
 
    - This one restricts the cache communications to the Private Network only:
      ```bash
@@ -219,7 +219,7 @@ Private Network on Scalingo.
    resource "scalingo_app" "my-keycloak" {
      name           = "my-keycloak"
      project_id     = scalingo_project.keycloak-prj.id
-     stack_id       = "scalingo-24"
+     stack_id       = "scalingo-26"
      force_https    = true
 
      environment = {
@@ -227,7 +227,7 @@ Private Network on Scalingo.
        KEYCLOAK_VERSION = "<version>",
        KC_PROXY_HEADERS = "xforwarded",
        KC_HTTP_ENABLED  = true,
-       KC_HTTP_PORT     = 80,
+       KC_HTTP_PORT     = 8080,
        KC_HOSTNAME      = "<hostname>",
        KC_CACHE_STACK   = "jdbc-ping",
        KC_CACHE_CONFIG_MUTATE = true,
@@ -311,7 +311,7 @@ resolver_timeout 2s;
 upstream keycloak {
   zone kc 64k;
   ip_hash;
-  server <%= ENV["KEYCLOAK_PRIVATE_DOMAIN"] %>:80 resolve max_fails=2;
+  server <%= ENV["KEYCLOAK_PRIVATE_DOMAIN"] %>:8080 resolve max_fails=2;
 }
 
 server {
@@ -391,7 +391,7 @@ server {
    resource "scalingo_app" "my-nginx" {
      name           = "my-nginx"
      project_id     = scalingo_project.keycloak-prj.id
-     stack_id       = "scalingo-24"
+     stack_id       = "scalingo-26"
 
      environment = {
        KEYCLOAK_PRIVATE_DOMAIN = "kc.${substr(data.scalingo_private_network_domain.pndn.domains[0], 0, -1)}"
@@ -576,7 +576,7 @@ Make sure you have followed [the first steps](#health-metrics-first-steps)
    resource "scalingo_app" "my-keycloak" {
      name           = "my-keycloak"
      project_id     = scalingo_project.keycloak_project.id
-     stack_id       = "scalingo-24"
+     stack_id       = "scalingo-26"
 
      environment = {
        # [...]
@@ -656,7 +656,7 @@ especially before updating a production instance:
    resource "scalingo_app" "my-keycloak" {
      name           = "my-keycloak"
      project_id     = scalingo_project.keycloak_project.id
-     stack_id       = "scalingo-24"
+     stack_id       = "scalingo-26"
 
      environment = {
        # [...]
