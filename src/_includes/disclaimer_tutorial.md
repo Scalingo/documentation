@@ -9,7 +9,11 @@ This tutorial may reference software, repositories, dependencies or
 configuration choices that are not fully maintained or supported by Scalingo,
 **customers remain responsible for**:
 
-* Validating all aspects of deployed code and configuration (code, security,
-  compliance, operations) before any production use.
-* Maintaining applications and their components during their runtime (releases
-  monitoring, new version deployments, monitoring, scaling)
+* Validating the code and configuration they deploy against applicable security,
+  compliance and operational requirements before any production use.
+* Maintaining the applications and components they control during runtime,
+  including monitoring releases, deploying new versions, monitoring application
+  health and scaling as needed.
+
+This notice does not modify or limit the applicable Agreement or Scalingo's
+contractual commitments.
