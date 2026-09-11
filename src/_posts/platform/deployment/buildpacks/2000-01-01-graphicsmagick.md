@@ -1,6 +1,6 @@
 ---
 title: GraphicsMagick Buildpack
-modified_at: 2024-10-08 00:00:00
+modified_at: 2026-09-11 00:00:00
 tags: buildpacks build image graphicsmagick
 ---
 
@@ -18,8 +18,8 @@ You have to write a `.buildpacks` file with the reference to this buildpack and 
 you want to use:
 
 ```bash
-https://github.com/Scalingo/graphicsmagick-buildpack.git
-https://github.com/Scalingo/nodejs-buildpack.git
+https://github.com/Scalingo/graphicsmagick-buildpack
+https://github.com/Scalingo/nodejs-buildpack
 ```
 
 Add this file to your git repository:

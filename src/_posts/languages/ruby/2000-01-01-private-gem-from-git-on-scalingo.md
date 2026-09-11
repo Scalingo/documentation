@@ -1,7 +1,7 @@
 ---
 title: Installing a Gem on Scalingo from a Private Git Repository
 nav: Gem from a private Git repo
-modified_at: 2017-02-08 17:39:00
+modified_at: 2026-09-11 17:39:00
 tags: ruby gem private git
 ---
 
@@ -44,8 +44,8 @@ To use the private key buildpack, your application should be using the multi bui
 
 ```
 $ cat << EOF > .buildpacks
-https://github.com/Scalingo/ssh-private-key-buildpack.git
-https://github.com/Scalingo/ruby-buildpack.git
+https://github.com/Scalingo/ssh-private-key-buildpack
+https://github.com/Scalingo/ruby-buildpack
 EOF
 ```
 
