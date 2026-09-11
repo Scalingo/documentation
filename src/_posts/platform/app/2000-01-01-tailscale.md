@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Configure Tailscale
-modified_at: 2026-08-19 00:00:00
+modified_at: 2026-09-11 00:00:00
 tags: tailscale networking vpn buildpack
 ---
 
@@ -19,7 +19,7 @@ To install Tailscale and your application dependencies, you need to use the [mul
 Create or update the `.buildpacks` file at the root of your repository:
 
 ```text
-https://github.com/Scalingo/apt-buildpack.git
+https://github.com/Scalingo/apt-buildpack
 # Add any other buildpack required to build your application (e.g. scalingo/nodejs, scalingo/ruby, etc.)
 ```
 
