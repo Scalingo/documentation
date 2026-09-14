@@ -27,7 +27,7 @@ const initialQuery = urlParams.get('q');
       container: container,
       appId: 'RWJM2H1BD2',
       apiKey: '9dfb74cc002ece507fac441e93da6345',
-      indexName: 'scalingo-doc',
+      indexName: 'scalingo_production',
       placeholder: 'Search',
       initialQuery: (index === 0 && initialQuery) ? initialQuery : null,
       transformItems(items) {
