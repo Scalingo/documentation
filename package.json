@@ -7,7 +7,7 @@
     "build": "node scripts/build.mjs"
   },
   "dependencies": {
-    "@docsearch/js": "^4.7.0",
+    "@docsearch/js": "^5.0.4",
     "@docsearch/css": "^4.7.0",
     "@tailwindcss/postcss": "^4.3.3",
     "autoprefixer": "^10.5.4",
