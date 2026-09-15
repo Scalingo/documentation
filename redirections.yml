@@ -933,6 +933,12 @@
   - old: "/platform/cli/introduction"
     new: "/tools/cli/start"
 
+  - old: "/platform/user-management/scalingo-account/navigating#referrals"
+    new: "/changelog#changelog-dashboard-referral-program-discontinuation"
+
+  - old: "/platform/user-management/scalingo-account/referrals"
+    new: "/changelog#changelog-dashboard-referral-program-discontinuation"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
