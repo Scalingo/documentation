@@ -1266,7 +1266,7 @@ article .stack {
     &.discontinued {
         &::after {
             color: rgb(245, 108, 108);
-            content: "\1F7AD";      /* 🞭 (very heavy saltire) */
+            content: "\2716";      /* ✖ (heavy multiplication) */
         }
     }
 }
