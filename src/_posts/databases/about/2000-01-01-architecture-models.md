@@ -1,7 +1,7 @@
 ---
 title: Architecture Models
 nav: Architecture Models
-modified_at: 2026-06-18 10:00:00
+modified_at: 2026-09-17 00:00:00
 index: 2
 ---
 
@@ -66,11 +66,7 @@ This provides stronger isolation and security.
 **Dedicated Resources are designed for SecNumCloud requirements and is the model 
 we plan to certify under SecNumCloud.**
 
-{% note %}
-The Dedicated Resources architecture model is currently available for Scalingo 
-for PostgreSQL® only, and only to selected customers.
-To request access or learn more, please contact our [Support](mailto:support@scalingo.com) or [Sales](https://scalingo.com/book-a-demo) teams.
-{% endnote %}
+{% include dedicated_resources_availability.md %}
 
 ### Dedicated Resources Infrastructure Model
 
