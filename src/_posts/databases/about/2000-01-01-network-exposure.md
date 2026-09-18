@@ -77,11 +77,7 @@ Dedicated Resources databases provide fine-grained control over network
 exposure. By default, no application, external client, or peered network can
 reach them until you explicitly allow traffic.
 
-{% note %}
-The Dedicated Resources architecture model is currently available for Scalingo 
-for PostgreSQL® only, and only to selected customers.
-To request access or learn more, please contact our [Support](mailto:support@scalingo.com) or [Sales](https://scalingo.com/book-a-demo) teams.
-{% endnote %}
+{% include dedicated_resources_availability.md %}
 
 ### Outscale Net Peering
 

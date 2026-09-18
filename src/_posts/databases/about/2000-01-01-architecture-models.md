@@ -66,11 +66,7 @@ This provides stronger isolation and security.
 **Dedicated Resources are designed for SecNumCloud requirements and is the model 
 we plan to certify under SecNumCloud.**
 
-{% note %}
-The Dedicated Resources architecture model is currently available for Scalingo 
-for PostgreSQL® only, and only to selected customers.
-To request access or learn more, please contact our [Support](mailto:support@scalingo.com) or [Sales](https://scalingo.com/book-a-demo) teams.
-{% endnote %}
+{% include dedicated_resources_availability.md %}
 
 ### Dedicated Resources Infrastructure Model
 

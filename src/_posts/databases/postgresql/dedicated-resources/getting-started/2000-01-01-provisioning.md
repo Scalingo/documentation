@@ -1,7 +1,7 @@
 ---
 title: Provisioning a Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Provisioning
-modified_at: 2026-06-18 12:00:00
+modified_at: 2026-09-17 00:00:00
 tags: databases postgresql dedicated
 index: 1
 ---
@@ -16,6 +16,8 @@ the database. This can be done via our
 
 
 ## Provisioning
+
+{% include dedicated_resources_availability.md %}
 
 ### Using the Dashboard
 
