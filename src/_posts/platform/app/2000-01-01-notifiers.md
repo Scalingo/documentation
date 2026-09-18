@@ -143,6 +143,7 @@ Keep the rows sorted alphabetically by name.
 | `database_continuousbackup_healthy` | Database continuous backup healthy | Point-in-time recovery is available and restore points are up to date   |
 | `database_continuousbackup_stale`   | Database continuous backup stale   | The latest restorable point is more than 24 hours old                   |
 | `database_maintenance_completed`    | Addon maintenance completed        | A maintenance has been completed successfully on your addon             |
+| `database_maintenance_missed`       | Addon maintenance missed           | A maintenance has been postponed to a later window                           |
 | `database_maintenance_planned`      | Addon maintenance planned          | A maintenance is planned on your addon                                  |
 | `database_maintenance_started`      | Addon maintenance started          | A maintenance has started on your addon                                 |
 | `domain_added`                      | Domain added                       | A domain was added                                                      |

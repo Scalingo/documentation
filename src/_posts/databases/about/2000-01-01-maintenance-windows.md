@@ -227,3 +227,4 @@ There are three events about database maintenance:
 - `database_maintenance_planned` : A database maintenance has been planned.
 - `database_maintenance_started`: A database maintenance has started.
 - `database_maintenance_completed`: A database maintenance has completed.
+- `database_maintenance_missed`: A maintenance has been postponed to a later window
