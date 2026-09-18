@@ -1,6 +1,6 @@
 ---
 title: File System and File Storage
-modified_at: 2023-07-27 00:00:00
+modified_at: 2026-09-18 00:00:00
 tags: app runtime file system disk storage
 index: 1
 ---
@@ -12,6 +12,8 @@ temporary files for instance. The file system located on the disk alongside your
 platform is temporary. It means that each time your application is restarted or
 redeployed, it gets a new file system. Files stored previously on it won't be
 present anymore.
+The performance of this disk depends on the size of the container running your
+application.
 
 ## Where you can write temporary files
 

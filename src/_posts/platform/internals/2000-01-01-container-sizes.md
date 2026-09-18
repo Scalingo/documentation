@@ -1,6 +1,6 @@
 ---
 title: Container Sizes
-modified_at: 2026-08-02 00:00:00
+modified_at: 2026-09-18 00:00:00
 tags: containers sizes
 index: 2
 ---
@@ -46,3 +46,13 @@ Prices are available on the [Scalingo pricing page](https://scalingo.com/pricing
 
 *[PID]: Process IDentifier
 *[FD]: File Descriptors
+
+## Local Ephemeral Disk
+
+Each container has a local ephemeral disk. Its content is lost when the
+container is restarted or redeployed. The performance of this disk depends on
+the container size and increases with larger sizes. See
+[File System and File Storage][filesystem] for more information.
+
+
+[filesystem]: {% post_url platform/app/2000-01-01-filesystem %}
