@@ -7,7 +7,7 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import docsearch from '@docsearch/js';
+import docsearch from '@docsearch/js/docsearch';
 
 // Replace prod url with local/staging/review apps url
 function replaceUrl(url) {
@@ -20,16 +20,16 @@ function replaceUrl(url) {
 }
 
 const urlParams = new URLSearchParams(window.location.search);
-const initialQuery = urlParams.get('q');
+const initialQuery = urlParams.get('q') || '';
 ["#docsearch-nav", "#docsearch-index"].forEach((container, index) => {
   if(document.querySelectorAll(container).length > 0) {
-    docsearch({
+    const search = docsearch({
       container: container,
       appId: 'RWJM2H1BD2',
       apiKey: '9dfb74cc002ece507fac441e93da6345',
-      indexName: 'scalingo_production',
+      indices: ['scalingo_production'],
       placeholder: 'Search',
-      initialQuery: (index === 0 && initialQuery) ? initialQuery : null,
+      initialQuery: index === 0 ? initialQuery : '',
       transformItems(items) {
         return items.map((item) => {
           item.url = replaceUrl(item.url);
@@ -37,12 +37,9 @@ const initialQuery = urlParams.get('q');
         });
       },
     });
-  }
-})
 
-// Open the search modal if the initial query is present
-if (initialQuery) {
-  const div = document.querySelector('#docsearch-nav');
-  const button = div.querySelector('button');
-  button.click();
-}
+    if (index === 0 && initialQuery) {
+      search.open();
+    }
+  }
+});
