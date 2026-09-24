@@ -6,4 +6,4 @@ github: 'https://github.com/Scalingo/go-scalingo'
 
 ## Changelog
 
-* feat(preview/database-endpoints/credentials) Allow asking for default credentials to the API when listing endpoints
+* feat(preview/database-endpoints/credentials): allow asking for default credentials to the API when listing endpoints

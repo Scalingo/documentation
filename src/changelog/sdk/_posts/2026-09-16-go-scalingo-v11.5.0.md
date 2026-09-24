@@ -6,4 +6,4 @@ github: 'https://github.com/Scalingo/go-scalingo'
 
 ## Changelog
 
-* feat(firewall rules) Add application firewall rules
+* feat(firewall rules): add application firewall rules
