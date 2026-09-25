@@ -3,7 +3,6 @@ modified_at:	2021-06-25 12:00:00
 title:	'Per-container metrics, notifiers/alerts, changelog'
 ---
 
-* Account: the referral program is displayed again
 * Account: the deletion process is working again
 * Billing/invoices: the duration billed is now displayed for each entry
 * App/addons: addons can be resumed if they were suspended
