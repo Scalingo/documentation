@@ -137,6 +137,7 @@ Keep the rows sorted alphabetically by name.
 | `collaborator_invited`              | Collaborator invited               | A collaborator was invited                                              |
 | `collaborator_removed`              | Collaborator removed               | A collaborator was removed                                              |
 | `collaborator_role_changed`         | Collaborator role changed          | A collaborator role was changed                                         |
+| `redis_to_valkey_migration_completed` | Redis to Valkey migration completed | A migration from Redis to Valkey completed |
 | `database_backup_failed`            | Database backup failed             | A database backup has failed                                            |
 | `database_backup_succeeded`         | Database backup succeeded          | A database backup has succeeded                                         |
 | `database_continuousbackup_delayed` | Database continuous backup delayed | The latest restorable point is more than 12 hours old                   |
