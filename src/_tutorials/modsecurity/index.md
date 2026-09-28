@@ -4,7 +4,7 @@ logo: owasp-modsecurity-crs
 category: security
 kind: tutorial
 permalink: /tutorials/modsecurity
-modified_at: 2026-03-31
+modified_at: 2026-09-28
 last_reviewed_at: 2026-03-31
 ---
 
@@ -259,7 +259,7 @@ They can be leveraged to customize your deployment:
 *[LTS]: Long Term Support
 
 [OWASP]: https://owasp.org
-[CRS]: https://owasp.org/www-project-modsecurity-core-rule-set/
+[CRS]: https://coreruleset.org/
 [crs-ruleid]: https://coreruleset.org/docs/rules/ruleid/
 [modsecurity-vars]: https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual-(v3.x)#variables
 [modsecurity_default_version]: https://github.com/Scalingo/nginx-buildpack/blob/master/config/versions.sh#L3
