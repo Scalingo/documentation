@@ -3,7 +3,7 @@ title: Logstash
 is_series: true
 series: Deploying an Elastic Stack
 series_index: 2
-modified_at: 2026-02-23
+modified_at: 2026-09-14
 ---
 
 **Logstash** is a data processing pipeline, able to take multiple sources of
@@ -312,7 +312,7 @@ in the Logstash configuration directory at runtime, allowing you to precisely
 customize your instance.
 
 For example, if you'd want to modify the logging behavior of Logstash, you
-could edit the `config/log4j2.yml` file.
+could edit the `config/log4j2.properties` file.
 
 ### Interfacing with Log Drains
 
