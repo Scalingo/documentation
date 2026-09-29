@@ -1,6 +1,6 @@
 ---
 title: Scalingo JSON Manifest
-modified_at: 2025-12-30 00:00:00
+modified_at: 2026-09-24 00:00:00
 tags: app review apps one-click manifest
 ---
 
@@ -47,13 +47,45 @@ can still customize them before triggering the deployment.
 
 ### Monorepos
 
-If your application code is in a subdirectory (configured using the `PROJECT_DIR` environment variable), Scalingo 
+If your application code is in a subdirectory (configured using the `PROJECT_DIR` environment variable), Scalingo
 detects the JSON manifest under this subdirectory.
 
-If there is no JSON manifest in the `PROJECT_DIR` folder, Scalingo 
+If there is no JSON manifest in the `PROJECT_DIR` folder, Scalingo
 tries to get the `scalingo.json` in every folder up to the root of your repository.
 
 See our dedicated page on [monorepos]({% post_url platform/app/2000-01-01-monorepo %}) for more information about this type of setup.
+
+## Configuration of the Application Firewall
+
+Review apps inherit the [Application Firewall]({% post_url platform/networking/public/2000-01-01-routing %}#application-ip-firewall) rules from their parent app by default. You can override the inherited rules in `scalingo.json`.
+
+### Example
+
+```json
+{
+  "firewall_rules": [
+    {
+      "cidr": "203.0.113.42/32",
+      "label": "office"
+    },
+    {
+      "cidr": "10.0.0.0/24"
+    }
+  ]
+}
+```
+
+### Disabling the app firewall
+
+To disable the firewall on a review app where the parent app have some firewall rules, pass an empty array.
+
+In that case the child app will be created without any firewall rules and thus the firewall will be disabled for the child app.
+
+```json
+{
+  "firewall_rules": []
+}
+```
 
 ## Configuration of Addons
 
