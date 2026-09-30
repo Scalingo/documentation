@@ -11,7 +11,9 @@ post_url platform/deployment/2000-01-01-one-click-deploy %}). Its intent is to
 configure how an application should be created.
 
 For Review Apps, configuration in `scalingo.json` takes precedence over
-configuration inherited from the parent application.
+configuration inherited from the parent application. The manifest is evaluated
+only when the review app is created. Changes to `scalingo.json` do not reconfigure
+existing review apps on subsequent deployments.
 
 ## Configuration of the Environment
 
