@@ -77,7 +77,7 @@ with them. Omitting `firewall_rules` keeps the inherited rules.
       "label": "office"
     },
     {
-      "cidr": "10.0.0.0/24"
+      "cidr": "192.0.2.0/24"
     }
   ]
 }
