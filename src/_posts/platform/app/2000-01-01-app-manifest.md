@@ -1,6 +1,6 @@
 ---
 title: Scalingo JSON Manifest
-modified_at: 2026-09-24 00:00:00
+modified_at: 2026-09-30 00:00:00
 tags: app review apps one-click manifest
 ---
 
@@ -9,6 +9,9 @@ root of your repository to configure [review apps]({% post_url
 platform/app/2000-01-01-review-apps %}) and [one-click deploy button]({%
 post_url platform/deployment/2000-01-01-one-click-deploy %}). Its intent is to
 configure how an application should be created.
+
+For Review Apps, configuration in `scalingo.json` takes precedence over
+configuration inherited from the parent application.
 
 ## Configuration of the Environment
 
@@ -58,6 +61,9 @@ See our dedicated page on [monorepos]({% post_url platform/app/2000-01-01-monore
 ## Configuration of the Application Firewall
 
 Review apps inherit the [Application Firewall]({% post_url platform/networking/public/2000-01-01-routing %}#application-ip-firewall) rules from their parent app by default. You can override the inherited rules in `scalingo.json`.
+
+An explicit `firewall_rules` list replaces the parent's rules; it is not merged
+with them. Omitting `firewall_rules` keeps the inherited rules.
 
 ### Example
 
