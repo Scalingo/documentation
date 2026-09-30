@@ -10,406 +10,358 @@ modified_at: 2026-09-17 00:00:00
 last_reviewed_at: 2026-09-17
 ---
 
-[PostgREST][postgrest-homepage] turns a PostgreSQL® database directly into a REST API and can run as
-a standalone service. In this tutorial, we deploy PostgREST on Scalingo using the
-[PostgREST buildpack][postgrest-buildpack], connect it to PostgreSQL® database, and use Keycloak to authenticate our users. The application we use as demo is a small TODOs API.
+[PostgREST][postgrest-homepage] is an open-source web server that automatically turns a PostgreSQL® database into a RESTful API. It allows developers to expose database tables, views, and functions directly through HTTP endpoints. PostgREST also supports filtering, pagination, relationships, and JSON responses out of the box. This makes it a lightweight and efficient option for building data-driven APIs with minimal application-layer code.
 
 ## Planning your Deployment
 
-Before starting this tutorial, make sure you have the following tools and services available:
+- PostgREST obviously requires a PostgreSQL® database. For this demo we suggest to start with a a [PostgreSQL® Starter or Business 512 addon][pg]. 
+- PostgREST has a very small base RAM footprint. It can operate comfortably with 100 to 400 MB of RAM, depending on concurrency, payload sizes, and JSON transformations. Consequently, we suggest to start with an M container for this demo.
+- To handle requests, PostgREST separates authentication from authorization:
+  - It **authenticates** the incoming HTTP request, typically by verifying a [JSON Web Token][jwt-homepage]. These tokens are usually generated and provided by an Identity Provider. If you already have one, please check its documentation to plug it to PostgREST. If not, an option that might be worth considering is Keycloak, for which we have a [tutorial][keycloak-tutorial].
+  - It **authorizes** the resulting database operations, using roles, grants, views, functions, and Row-Level Security ([RLS]). We will setup all these hereafter.
+- To keep this demo simple, we will focus on the Resource Owner Password Credentials (ROPC) grant type described in [RFC 6749][rfc6749]. With Keycloak, this flow is called [Direct Access Grants]. This flow mainly consists in converting user-provided credentials to a JWT.
 
-- Git
-- [Scalingo CLI][scalingo-cli]
-- curl
-- jq
-- An existing Keycloak deployment
-
-
-If you do not already have Keycloak running on Scalingo, follow our
-[Deploying Keycloak tutorial][keycloak-tutorial] first. This tutorial focuses
-on deploying PostgREST and configuring Keycloak to authenticate requests to it.
-
-{% warning %}
-For simplicity, this tutorial requests access tokens using the Resource Owner
-Password Credentials flow, called **[Direct Access Grants][Direct Access Grants]** in Keycloak.
-{% endwarning %}
-
-
-The request flow used throughout this tutorial is:
+## Understanding How Authorization Works in PostgREST
 
 1. PostgREST exposes the PostgreSQL® database through an HTTP API.
-2. Keycloak authenticates users and issues [JWT][jwt-homepage]
-   (JSON Web Tokens).
-3. PostgREST verifies the JWT signature and extracts its claims.
-4. PostgreSQL® [Row-Level Security][postgres-rls] (RLS) uses these claims to
-   decide which rows each user can access.
+2. Keycloak (or any Identity Service) authenticates the user and issues a corresponding JWT.
+3. PostgREST verifies the JWT and extracts claims from it.
+4. PostgREST impersonates a PostgreSQL® role using one of the extracted claim.
+5. PostgreSQL® RLS distinguishes the individual user and retrieves the corresponding data.
 
+## Deploying
 
-## Deploying PostgREST on Scalingo
+#### Using the Command Line
 
-PostgREST is distributed as a standalone binary. The
-[PostgREST buildpack][postgrest-buildpack] downloads that binary and configures `/app/bin/postgrest` as the default `web`
-process.
+1. On your workstation, create an empty Git repository:
 
+   ```shell
+   mkdir my-postgrest
+   cd my-postgrest
+   git init
+   ```
 
-### Creating the Application
+2. Create the application on Scalingo:
 
-Create an empty Git repository:
+   ```shell
+   scalingo create my-postgrest
+   ```
 
-```bash
-mkdir my-postgrest
-cd my-postgrest
-git init
-```
+3. Provision a Scalingo for PostgreSQL® Starter 512 add-on:
 
-Create the application:
+   ```shell
+   scalingo --app my-postgrest addons-add postgresql postgresql-starter-512
+   ```
 
-```bash
-scalingo create my-postgrest
-```
+4. Instruct the platform to use a specific buildpack to deploy PostgREST:
+
+   ```shell
+   scalingo --app my-postgrest env-set BUILDPACK_URL=https://github.com/Scalingo/postgrest-buildpack
+   ```
 
-### Adding PostgreSQL
+5. Specify the version of PostgREST you want to deploy:
 
-Provision a PostgreSQL addon, a Starter plan is sufficient for this tutorial. For production, choose a
-plan that matches your availability and performance
-requirements.
+   ```shell
+   scalingo --app my-postgrest env-set POSTGREST_VERSION=<version>
+   ```
 
-```bash
-scalingo --app my-postgrest addons-add postgresql postgresql-starter-512
-```
-Scalingo exposes the database connection URI through `SCALINGO_POSTGRESQL_URL`, The value has this shape:
+6. Set up the PostgreSQL® connection:
 
-```text
-postgresql://USERNAME:PASSWORD@DB_HOST:DB_PORT/DATABASE?sslmode=prefer
-```
+   ```shell
+   scalingo --app my-postgrest env-set \
+     PGRST_DB_URI=\$SCALINGO_POSTGRESQL_URL \
+     PGRST_DB_SCHEMAS=api \
+     PGRST_SERVER_PORT=\$PORT
+   ```
 
-Keep the `USERNAME` value. We will use it later on this tutorial.
+### Setting Up the Database
 
-### Configuring the Buildpack
+1. Open a PostgreSQL® console:
 
-Configure the PostgREST buildpack:
+   ```shell
+   scalingo --app my-postgrest pg-console
+   ```
 
-```bash
-scalingo --app my-postgrest env-set \
-  BUILDPACK_URL="https://github.com/Scalingo/postgrest-buildpack" \
-  POSTGREST_VERSION="16.4"
-```
+2. From the PostgreSQL® console, create a schema that PostgREST will expose and another one that will stay private for internal helpers:
 
-This command permit to install the version `16.4` of PostgREST
+   ```sql
+   CREATE SCHEMA api;
+   CREATE SCHEMA private;
+   ```
 
-### Configuring PostgREST
+3. Create a helper that reads the user ID from the JWT claims:
 
-Configure the PostgreSQL connection, the exposed schema and the Scalingo port:
+   ```sql
+   CREATE FUNCTION private.jwt_sub()
+   RETURNS text
+   LANGUAGE sql
+   STABLE
+   AS $$
+     SELECT current_setting('request.jwt.claims', true)::jsonb ->> 'sub';
+   $$;
+   ```
 
-```bash
-scalingo --app my-postgrest env-set \
-  PGRST_DB_URI='$SCALINGO_POSTGRESQL_URL' \
-  PGRST_DB_SCHEMAS="api" \
-  PGRST_SERVER_PORT='$PORT'
-```
+4. Create the `todos` table in the `api` schema:
 
-`PGRST_DB_URI` points directly to the connection URI created by the PostgreSQL
-addon and `PGRST_SERVER_PORT` must use Scalingo assigned `PORT`.
+   ```sql
+   CREATE TABLE api.todos (
+     id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+     owner_id text NOT NULL DEFAULT private.jwt_sub(),
+     task text NOT NULL,
+     done boolean NOT NULL DEFAULT false,
+     created_at timestamptz NOT NULL DEFAULT now()
+   );
+   ```
 
-## Creating the API in PostgreSQL
+   The `owner_id` column stores the JWT `sub` claim. Clients do not need to send this value when they create a todo item.
 
-PostgREST builds its REST API from the PostgreSQL schema, so the database is the
-API definition. Open a PostgreSQL console:
+5. Enable and force RLS on the `todos` table:
 
-```bash
-scalingo --app my-postgrest pgsql-console
-```
+   ```sql
+   ALTER TABLE api.todos ENABLE ROW LEVEL SECURITY;
+   ALTER TABLE api.todos FORCE ROW LEVEL SECURITY;
+   ```
 
-### Creation of Schema and Helpers
+   `FORCE ROW LEVEL SECURITY` is important in this tutorial because the database role used by PostgREST also owns the table. A table owner can otherwise bypass RLS.
 
-Create a schema that PostgREST will expose and a private schema for internal helpers:
+6. Create a dedicated policy for each CRUD operation:
 
-```sql
-CREATE SCHEMA api;
-CREATE SCHEMA private;
-```
+   ```sql
+   CREATE POLICY todos_select_own
+   ON api.todos
+   FOR SELECT
+   USING (owner_id = private.jwt_sub());
+   ```
 
-Create a helper that reads the Keycloak user ID from the JWT claims given by PostgREST:
+   ```sql
+   CREATE POLICY todos_insert_own
+   ON api.todos
+   FOR INSERT
+   WITH CHECK (owner_id = private.jwt_sub());
+   ```
 
-```sql
-CREATE FUNCTION private.jwt_sub()
-RETURNS text
-LANGUAGE sql
-STABLE
-AS $$
-  SELECT current_setting('request.jwt.claims', true)::jsonb ->> 'sub';
-$$;
-```
+   ```sql
+   CREATE POLICY todos_update_own
+   ON api.todos
+   FOR UPDATE
+   USING (owner_id = private.jwt_sub())
+   WITH CHECK (owner_id = private.jwt_sub());
+   ```
 
-Create the `todos` table in the `api` schema:
+   ```sql
+   CREATE POLICY todos_delete_own
+   ON api.todos
+   FOR DELETE
+   USING (owner_id = private.jwt_sub());
+   ```
 
-```sql
-CREATE TABLE api.todos (
-  id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  owner_id text NOT NULL DEFAULT private.jwt_sub(),
-  task text NOT NULL,
-  done boolean NOT NULL DEFAULT false,
-  created_at timestamptz NOT NULL DEFAULT now()
-);
-```
+### Setting Up Keycloak
 
-The `owner_id` column stores the Keycloak `sub` claim. Clients do not need to
-send this value when they create a todo.
+PostgREST does not manage user accounts. You need an identity provider to issue the JWT. In this tutorial, we use Keycloak. PostgREST validates Keycloak's signature, reads selected claims from the token, and passes the verified claims to PostgreSQL® for authorization.
 
-### Enabling Row-Level Security
+1. Connect to the admin console of your Keycloak deployment and create a realm named:
 
-Enable and force RLS on the database:
+   ```text
+   postgrest-demo
+   ```
 
-```sql
-ALTER TABLE api.todos ENABLE ROW LEVEL SECURITY;
-ALTER TABLE api.todos FORCE ROW LEVEL SECURITY;
-```
+2. Keep the realm selected, then create an OpenID Connect client with the following configuration:
 
-`FORCE ROW LEVEL SECURITY` is important in this tutorial because the database
-role used by PostgREST also owns the table. A table owner can otherwise bypass
-RLS. Create one policy for each operation and exit the PostgreSQL console:
+   - Client ID: `postgrest-api`
+   - Client authentication: **On**
+   - Standard flow: **On**
+   - Direct access grants: **On**
 
-```sql
-CREATE POLICY todos_select_own
-ON api.todos
-FOR SELECT
-USING (owner_id = private.jwt_sub());
+3. Save the client, open **Credentials**, and copy the client secret. Store it locally:
 
-CREATE POLICY todos_insert_own
-ON api.todos
-FOR INSERT
-WITH CHECK (owner_id = private.jwt_sub());
+   ```bash
+   export KEYCLOAK_CLIENT_SECRET="PASTE_THE_SECRET"
+   ```
 
-CREATE POLICY todos_update_own
-ON api.todos
-FOR UPDATE
-USING (owner_id = private.jwt_sub())
-WITH CHECK (owner_id = private.jwt_sub());
+   By creating the realm and the client, we allow the application to authenticate users and validate tokens issued by Keycloak using the client credentials.
 
-CREATE POLICY todos_delete_own
-ON api.todos
-FOR DELETE
-USING (owner_id = private.jwt_sub());
-```
+4. Add the PostgreSQL® role to the JWT.
 
-These policies permit users to access and modify only the rows they own. At this point, the PostgreSQL side of the API is ready.  Now we need to configure Keycloak.
+   Open the dedicated client scope for `postgrest-api`, then select:
 
+   **Add mapper** → **By configuration** → **Hardcoded claim**
 
-## Configuring Keycloak as the Identity Provider
+   Configure the mapper with:
 
-PostgREST does not manage user accounts. You need an identity
-provider to issue the JWTs, in this tutorial we use Keycloak and PostgREST validates Keycloak's
-signature, reads selected claims from the token and passes the verified claims
-to PostgreSQL for authorization.
+   - Name: `postgrest-role`
+   - Token Claim Name: `role`
+   - Claim value: your `POSTGREST_DB_USER`
+   - Claim JSON Type: `String`
+   - Add to access token: **On**
+   - Add to ID token: **Off**
+   - Add to userinfo: **Off**
 
-### Creating the Realm and Client
+   This configuration adds a fixed `role` claim to every access token issued for the client, allowing PostgREST to connect to PostgreSQL® using the Scalingo database role while relying on the user's unique `sub` claim to enforce RLS.
 
-First connect to your admin console of the Keycloak deployment and create a realm named:
+5. Add an audience to the access token.
 
-```text
-postgrest-demo
-```
+   The audience ensure that PostgREST only accepts tokens issued for the `postgrest-api` client.
 
-Keep the realm selected, then create an OpenID Connect client with:
+   In the same dedicated client scope, select:
 
-- Client ID: `postgrest-api`
-- Client authentication: **On**
-- Standard flow: **On**
-- Direct access grants: **On**
+   **Add mapper** → **By configuration** → **Audience**
 
-Save the client and open **Credentials**. Copy the client secret and keep it
-locally:
+   Configure the mapper with:
 
-```bash
- export KEYCLOAK_CLIENT_SECRET="PASTE_THE_SECRET"
-```
+   - Name: `postgrest-audience`
+   - Included Client Audience: `postgrest-api`
+   - Add to access token: **On**
 
-By creating the realm and the client, we allow the application to authenticate users and validate tokens issued by Keycloak using the client credentials.
+   The access token should then contain:
 
-### Adding the PostgreSQL Role to the JWT
+   ```json
+   {
+     "aud": "postgrest-api"
+   }
+   ```
 
-By default, PostgREST reads the `role` claim from authenticated JWTs and uses it as the PostgreSQL role for each request. For this role, we will use the PostgreSQL user created by the Scalingo PostgreSQL add-on. Open the dedicated client scope for `postgrest-api`, then select:
+6. Create a user named `alice`.
 
-**Add mapper** -> **By configuration** -> **Hardcoded claim**
+   Since this tutorial requests tokens directly with `curl`, configure the user so that no browser interaction is required:
 
-Configure:
+   - Complete the required profile fields.
+   - Set **Email verified** to **On**.
+   - Keep **Required user actions** empty.
+   - Set a password with **Temporary** set to **Off**.
 
-- Name: `postgrest-role`
-- Token Claim Name: `role`
-- Claim value: your `POSTGREST_DB_USER`
-- Claim JSON Type: `String`
-- Add to access token: **On**
-- Add to ID token: **Off**
-- Add to userinfo: **Off**
+7. Store Alice's password locally:
 
-This configuration adds a fixed role claim to every access token issued for the client, allowing PostgREST to connect to PostgreSQL using the Scalingo database role while  relying on user unique sub claim to enforce RLS.
+   ```bash
+   export ALICE_PASSWORD="ALICE_TEST_PASSWORD"
+   ```
 
-### Adding an Audience
+8. Set the public URL of the Keycloak endpoint that exposes the realm:
 
-The audience claim identifies the intended recipient of the access token. By checking this, PostgREST can ensure that it only accepts tokens that were issued for the `postgrest-api` client that we have created. In the same dedicated client scope, select:
+   ```bash
+   export KEYCLOAK_URL="https://my-postgrest.<region>.scalingo.io"
+   export KEYCLOAK_REALM="postgrest-demo"
+   ```
 
-**Add mapper** -> **By configuration** -> **Audience**
+9. Retrieve the JSON Web Key Set (JWKS) published by Keycloak:
 
-Configure:
+   ```bash
+   KEYCLOAK_JWKS="$(
+     curl --fail --silent --show-error \
+       "$KEYCLOAK_URL/realms/$KEYCLOAK_REALM/protocol/openid-connect/certs" \
+     | jq --compact-output .
+   )"
+   ```
 
-- Name: `postgrest-audience`
-- Included Client Audience: `postgrest-api`
-- Add to access token: **On**
+10. Configure PostgREST to verify Keycloak JWT signatures and validate the API audience:
 
-The access token should then contain:
+   ```bash
+   scalingo --app "$POSTGREST_APP" env-set \
+     PGRST_JWT_SECRET="$KEYCLOAK_JWKS" \
+     PGRST_JWT_AUD="postgrest-api"
+   ```
 
-```json
-{
-  "aud": "postgrest-api"
-}
-```
+11. Keep the JWT signing keys in sync with Keycloak.
 
-### Create a user
+   Keycloak can rotate signing keys. When a new signing key is activated, refresh `PGRST_JWT_SECRET` with the current JWKS.
 
-Now, we will create a user named `alice`. Since the tutorial requests tokens directly with `curl`, configure this user
-so that no browser interaction is required:
+### Deploying PostgREST
 
-- Complete the required profile fields.
-- Set **Email verified** to **On**.
-- Keep **Required user actions** empty.
-- Set a password with **Temporary** set to **Off**.
+Everything required by PostgREST is now configured.
 
-Store the password locally:
+1. Deploy the API:
 
-```bash
- export ALICE_PASSWORD="ALICE_TEST_PASSWORD"
-```
+   ```bash
+   git commit --allow-empty --message "Deploy PostgREST"
+   git push scalingo main
+   ```
 
-## Configuring PostgREST to Trust Keycloak
+   During the build, the PostgREST buildpack downloads the configured PostgREST binary and registers it as the `web` process.
 
-Set the public URL of the Keycloak endpoint that exposes the realm:
+2. Set the public URL of the deployed application. We will use it later:
 
-```bash
- export KEYCLOAK_URL="https://my-postgrest.<region>.scalingo.io"
- export KEYCLOAK_REALM="postgrest-demo"
-```
+   ```bash
+   export POSTGREST_URL="https://<postgrest-public-domain>"
+   ```
 
-Keycloak publishes its public signing keys as a JSON Web Key Set (JWKS):
+## Testing
 
-```bash
-KEYCLOAK_JWKS="$(
-  curl --fail --silent --show-error \
-    "$KEYCLOAK_URL/realms/$KEYCLOAK_REALM/protocol/openid-connect/certs" \
-  | jq --compact-output .
-)"
-```
+1. Define a helper function that requests a Keycloak access token:
 
-Configure PostgREST to verify Keycloak JWT signatures and validate the API
-audience:
+   ```bash
+   get_token() {
+     local username="$1"
+     local password="$2"
 
-```bash
-scalingo --app "$POSTGREST_APP" env-set \
-  PGRST_JWT_SECRET="$KEYCLOAK_JWKS" \
-  PGRST_JWT_AUD="postgrest-api"
-```
+     curl --fail --silent --show-error --request POST \
+       "$KEYCLOAK_URL/realms/$KEYCLOAK_REALM/protocol/openid-connect/token" \
+       --header "Content-Type: application/x-www-form-urlencoded" \
+       --data-urlencode "grant_type=password" \
+       --data-urlencode "client_id=postgrest-api" \
+       --data-urlencode "client_secret=$KEYCLOAK_CLIENT_SECRET" \
+       --data-urlencode "username=$username" \
+       --data-urlencode "password=$password" \
+     | jq --raw-output '.access_token'
+   }
+   ```
 
-{% note %}
-Keycloak can rotate signing keys. When a new signing key is activated, refresh
-`PGRST_JWT_SECRET` with the current JWKS.
-{% endnote %}
+2. Request an access token for Alice:
 
-## Deploying the API
+   ```bash
+   export ALICE_TOKEN="$(get_token alice "$ALICE_PASSWORD")"
+   echo "$ALICE_TOKEN"
+   ```
 
-Everything required by PostgREST is now stored in the Scalingo application
-environment and PostgreSQL database.
+3. Verify that Alice's token contains claims similar to:
 
-Now deploy the API:
+   ```json
+   {
+     "sub": "e393ad9b-598e-45a7-b853-a1e888ca680f",
+     "preferred_username": "alice",
+     "role": "my_postgrest_1234",
+     "aud": "postgrest-api"
+   }
+   ```
 
-```bash
-git commit --allow-empty --message "Deploy PostgREST"
-git push scalingo main
-```
+   The exact `sub` value is generated by Keycloak and differs for every user.
 
-During the build, the PostgREST buildpack downloads the configured PostgREST
-binary and registers it as the `web` process.
+4. Create a todo using Alice's access token. Alice does not need to provide `owner_id` explicitly:
 
-Set the public URL of the deployed application (we will use it after):
+   ```bash
+   curl --fail --silent --show-error --request POST \
+     "$POSTGREST_URL/todos" \
+     --header "Authorization: Bearer $ALICE_TOKEN" \
+     --header "Content-Type: application/json" \
+     --header "Prefer: return=representation" \
+     --data '{"task":"Deploy PostgREST on Scalingo"}' \
+   | jq
+   ```
 
-```bash
- export POSTGREST_URL="https://<postgrest-public-domain>"
-```
+   PostgreSQL® automatically fills `owner_id` from Alice's verified JWT `sub` claim.
 
-## Testing the Keycloak and PostgREST Integration
+5. Read the todos using the same token:
 
-Define a helper that requests a Keycloak access token:
+   ```bash
+   curl --fail --silent --show-error \
+     "$POSTGREST_URL/todos?select=id,owner_id,task,done" \
+     --header "Authorization: Bearer $ALICE_TOKEN" \
+   | jq
+   ```
 
-```bash
-get_token() {
-  local username="$1"
-  local password="$2"
-
-  curl --fail --silent --show-error --request POST \
-    "$KEYCLOAK_URL/realms/$KEYCLOAK_REALM/protocol/openid-connect/token" \
-    --header "Content-Type: application/x-www-form-urlencoded" \
-    --data-urlencode "grant_type=password" \
-    --data-urlencode "client_id=postgrest-api" \
-    --data-urlencode "client_secret=$KEYCLOAK_CLIENT_SECRET" \
-    --data-urlencode "username=$username" \
-    --data-urlencode "password=$password" \
-  | jq --raw-output '.access_token'
-}
-```
-
-Request one token for Alice:
-
-```bash
- export ALICE_TOKEN="$(get_token alice "$ALICE_PASSWORD")"
-echo $ALICE_TOKEN
-```
-
-A token for Alice should contain claims similar to:
-
-```json
-{
-  "sub": "e393ad9b-598e-45a7-b853-a1e888ca680f",
-  "preferred_username": "alice",
-  "role": "my_postgrest_1234",
-  "aud": "postgrest-api"
-}
-```
-
-The exact `sub` value is generated by Keycloak and differs for every user.
-
-### Creating and Viewing Alice's Todo
-
-First, create a todo using Alice's access token. Alice does not need to provide `owner_id` explicitly:
-
-```bash
-curl --fail --silent --show-error --request POST \
-  "$POSTGREST_URL/todos" \
-  --header "Authorization: Bearer $ALICE_TOKEN" \
-  --header "Content-Type: application/json" \
-  --header "Prefer: return=representation" \
-  --data '{"task":"Deploy PostgREST on Scalingo"}' \
-| jq
-```
-
-PostgreSQL automatically fills `owner_id` from Alice's verified JWT `sub` claim.
-
-Then, read the todos using the same token:
-
-```bash
-curl --fail --silent --show-error \
-  "$POSTGREST_URL/todos?select=id,owner_id,task,done" \
-  --header "Authorization: Bearer $ALICE_TOKEN" \
-| jq
-```
-
-Alice should only receive her own rows. The HTTP endpoint is the same for every user, but PostgreSQL returns different data because the RLS policy compares each row's `owner_id` with the authenticated user's verified JWT `sub` claim.
+   Alice should only receive her own rows. The HTTP endpoint is the same for every user, but PostgreSQL® returns different data because the RLS policy compares each row's `owner_id` with the authenticated user's verified JWT `sub` claim.
 
 You now have a PostgREST API running directly on Scalingo, by using
 PostgreSQL® and Keycloak and by using Row-Level Security
 and JWT to isolate each user's data.
 
-[keycloak-tutorial]: https://doc.scalingo.com/tutorials/keycloak
-[scalingo-cli]: https://doc.scalingo.com/tools/cli/start
-[postgrest-buildpack]: https://github.com/Amyti/postgrest-buildpack 
+*[JWT]: JSON Web Token
+*[RLS]: Row-Level Security
+*[ROPC]: Resource Owner Password Credentials
+*[CRUD]: Create Read Update Delete
 [postgrest-homepage]: https://docs.postgrest.org
+[rfc6749]: https://www.rfc-editor.org/info/rfc6749/#section-4.3
+[postgrest-buildpack]: https://github.com/Amyti/postgrest-buildpack
 [jwt-homepage]: https://www.jwt.io/
-[postgres-rls]: https://www.postgresql.org/docs/current/ddl-rowsecurity.html
+[RLS]: https://www.postgresql.org/docs/current/ddl-rowsecurity.html
 [Direct Access Grants]: https://www.keycloak.org/docs/latest/server_admin/index.html#_oidc-auth-flows-direct
+[pg]: https://www.scalingo.com/databases/postgresql
+[keycloak-tutorial]: https://doc.scalingo.com/tutorials/keycloak
