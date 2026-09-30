@@ -62,7 +62,7 @@ See our dedicated page on [monorepos]({% post_url platform/app/2000-01-01-monore
 
 ## Configuration of the Application Firewall
 
-Review apps inherit the [Application Firewall]({% post_url platform/networking/public/2000-01-01-routing %}#application-ip-firewall) rules from their parent app by default. You can override the inherited rules in `scalingo.json`.
+Review apps inherit the [Application Firewall]({% post_url platform/networking/public/2000-01-01-application-firewall %}) rules from their parent app by default. You can override the inherited rules in `scalingo.json`.
 
 An explicit `firewall_rules` list replaces the parent's rules; it is not merged
 with them. Omitting `firewall_rules` keeps the inherited rules.
