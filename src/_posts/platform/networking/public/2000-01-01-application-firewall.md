@@ -69,8 +69,8 @@ You can manage rules through the Dashboard, the [CLI][cli-firewall], the
 remove it and add a new one. To disable the firewall, delete all its rules.
 
 {% note %}
-Adding or removing a rule can take up to two minutes to take effect. The
-previous firewall configuration remains active until then.
+Adding or removing a rule can take several minutes to take effect. 
+The previous firewall configuration remains active until then.
 {% endnote %}
 
 ### Using the Dashboard
