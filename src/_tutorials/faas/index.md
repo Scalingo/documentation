@@ -139,11 +139,11 @@ The example in `examples/quote.json` contains two items: website development for
 
 Scalingo one-off containers let applications run tasks on demand without keeping a dedicated worker running continuously. This approach can be used for document generation, data processing, or batch operations, with resources chosen to suit each workload.
 
-[one-off-tasks]: https://doc.scalingo.com/platform/app/tasks
+[one-off-tasks]: {% post_url platform/app/2000-01-01-tasks %}
 [studo]: https://scalingo.com/fr/blog/studo-faas-scalingo
 [run-api]: https://developers.scalingo.com/apps#run-a-one-off-container
 [operations]: https://developers.scalingo.com/operations
 [pdfkit]: https://pdfkit.org/docs/getting_started.html
-[nodejs]: https://doc.scalingo.com/languages/nodejs
+[nodejs]: {% post_url languages/nodejs/about/2000-01-01-start %}
 [container-sizes]: https://doc.scalingo.com/platform/internals/container-sizes
 [api-auth]: https://developers.scalingo.com/#authentication
