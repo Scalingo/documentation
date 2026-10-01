@@ -326,5 +326,5 @@ and JWT to isolate each user's data.
 [jwt-homepage]: https://www.jwt.io/
 [RLS]: https://www.postgresql.org/docs/current/ddl-rowsecurity.html
 [Direct Access Grants]: https://www.keycloak.org/docs/latest/server_admin/index.html#_oidc-auth-flows-direct
-[pg]: {% link _posts/database/postgresql/about/2000-01-01-overview.md %}
+[pg]: {% post_url databases/postgresql/about/2000-01-01-overview %}
 [keycloak-tutorial]: {% link _tutorials/keycloak/index.md %}
