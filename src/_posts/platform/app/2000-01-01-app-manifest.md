@@ -86,7 +86,7 @@ If `firewall_rules` contains more rules than the application's quota allows
 }
 ```
 
-### Disabling the app firewall
+### Disabling the Application Firewall
 
 To disable the firewall on a review app where the parent app have some firewall rules, pass an empty array.
 
