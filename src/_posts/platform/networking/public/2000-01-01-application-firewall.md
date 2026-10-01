@@ -6,20 +6,20 @@ tags: networking firewall ipv4 access
 index: 40
 ---
 
-Application Firewall restricts public HTTP and HTTPS access to an application
+***Application Firewall*** is a feature that, once configured, restricts public HTTP and HTTPS access to an application
 based on allowed IPv4 CIDR ranges. Scalingo's routers check the source IP address
 before forwarding a request to the application's containers.
 
 ## How the Firewall Works
 
-Each firewall rule allows access from an IPv4 range. A request only needs to
+Each firewall rule **allows access** from an IPv4 range. A request only needs to
 match one rule to be allowed.
 
-| Configuration | Request source IP | Result |
-| --- | --- | --- |
-| No rules | Any IP | The firewall is disabled and does not restrict public access. |
-| One or more rules | Matches at least one allowed range | The firewall allows the request. |
-| One or more rules | Matches none of the allowed ranges | The router returns HTTP `403 Forbidden`. |
+| Configuration     | Request source IP                  | Result                                                       |
+| ----------------- | ---------------------------------- | ------------------------------------------------------------ |
+| No rules          | Any IP                             | The firewall is disabled and does not restrict public access |
+| One or more rules | Matches at least one allowed range | The firewall allows the request                              |
+| One or more rules | Matches none of the allowed ranges | The router returns HTTP `403 Forbidden`                      |
 
 Adding the first rule restricts public access to the allowed ranges. Deleting
 the last rule restores access from any source IP once the change takes effect.
@@ -129,10 +129,11 @@ allow only its outbound addresses: any other allowed range also grants access.
 
 ### Allowing Cloudflare Traffic
 
-To require public requests to pass through Cloudflare, add one rule for each
-[Cloudflare proxy IPv4 range][cloudflare-ips] and allow only those ranges. Use
-IPv4 for connections from Cloudflare to Scalingo, and keep the rules aligned
-with Cloudflare's published list.
+To require public incoming requests to your application to pass through Cloudflare:
+  - Add one rule for each [Cloudflare proxy IPv4 range][cloudflare-ips] in your Application Firewall allowlist
+  - Make sure to only allow these ranges, so that any other source is rejected
+  - In Cloudflare, make sure to force IPv4 for connections from Cloudflare to Scalingo
+  - Keep the allowlist in sync with Cloudflare's published IP ranges
 
 {% warning %}
 Cloudflare's proxy IP ranges are shared across its customers. Allowing these
@@ -202,6 +203,8 @@ application; `status=403` alone does not.
 Set the `SCALINGO_FORBIDDEN_PAGE_URL` environment variable to the URL of your
 custom error page. See [Custom Error and Maintenance Pages][custom-error-pages]
 for configuration requirements and restart instructions.
+
+*[CIDR]: Classless Inter-Domain Routing
 
 [dashboard]: https://dashboard.scalingo.com/
 [private-networks]: {% post_url platform/networking/private/2000-01-01-overview %}
