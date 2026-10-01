@@ -132,7 +132,6 @@ allow only its outbound addresses: any other allowed range also grants access.
 To require public incoming requests to your application to pass through Cloudflare:
   - Add one rule for each [Cloudflare proxy IPv4 range][cloudflare-ips] in your Application Firewall allowlist
   - Make sure to only allow these ranges, so that any other source is rejected
-  - In Cloudflare, make sure to force IPv4 for connections from Cloudflare to Scalingo
   - Keep the allowlist in sync with Cloudflare's published IP ranges
 
 {% warning %}
@@ -204,6 +203,7 @@ Set the `SCALINGO_FORBIDDEN_PAGE_URL` environment variable to the URL of your
 custom error page. See [Custom Error and Maintenance Pages][custom-error-pages]
 for configuration requirements and restart instructions.
 
+
 *[CIDR]: Classless Inter-Domain Routing
 
 [dashboard]: https://dashboard.scalingo.com/
@@ -211,7 +211,7 @@ for configuration requirements and restart instructions.
 [cli-firewall]: {% post_url tools/cli/2000-01-01-features %}#manage-application-ip-firewall-rules
 [api]: https://developers.scalingo.com/
 [terraform-provider]: {% post_url tools/2000-01-01-terraform-provider %}
-[cloudflare-ips]: https://www.cloudflare.com/ips-v4
+[cloudflare-ips]: https://www.cloudflare.com/ips/
 [egress]: {% post_url platform/networking/public/2000-01-01-egress %}
 [review-apps]: {% post_url platform/app/2000-01-01-review-apps %}
 [manifest-firewall]: {% post_url platform/app/2000-01-01-app-manifest %}#configuration-of-the-application-firewall
