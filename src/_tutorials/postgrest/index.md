@@ -1,13 +1,12 @@
 ---
 title: Deploying PostgREST with Keycloak
-logo: postgresql
+logo: postgrest
 category: integration
 products:
   - Scalingo for PostgreSQL®
 kind: demo
 permalink: /tutorials/postgrest
-modified_at: 2026-09-17 00:00:00
-last_reviewed_at: 2026-09-17
+modified_at: 2026-10-01 00:00:00
 ---
 
 [PostgREST][postgrest-homepage] is an open-source web server that automatically turns a PostgreSQL® database into a RESTful API. It allows developers to expose database tables, views, and functions directly through HTTP endpoints. PostgREST also supports filtering, pagination, relationships, and JSON responses out of the box. This makes it a lightweight and efficient option for building data-driven APIs with minimal application-layer code.
