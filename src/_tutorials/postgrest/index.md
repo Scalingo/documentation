@@ -30,7 +30,7 @@ In this demo, we use PostgREST to expose a simple `todos` application, the same 
 4. PostgREST impersonates a PostgreSQL® role using one of the extracted claim.
 5. PostgreSQL® RLS distinguishes the individual user and retrieves the corresponding data.
 
-## Deploying
+## Creating the PostgREST Application
 
 ### Using the Command Line
 
@@ -69,7 +69,7 @@ In this demo, we use PostgREST to expose a simple `todos` application, the same 
      PGRST_SERVER_PORT=\$PORT
    ```
 
-### Setting Up the Database
+## Setting Up the Database
 
 1. Open a PostgreSQL® console:
    ```shell
@@ -141,7 +141,7 @@ In this demo, we use PostgREST to expose a simple `todos` application, the same 
    USING (owner_id = private.jwt_sub());
    ```
 
-### Setting Up Keycloak
+## Setting Up Keycloak
 
 1. Connect to the admin console of your Keycloak instance
 2. Create a new realm named `postgrest-demo`
@@ -233,7 +233,7 @@ In this demo, we use PostgREST to expose a simple `todos` application, the same 
 Keycloak signing keys can be rotated. This happens when a new realm signing key is created and becomes the active key, for example by adding a key provider with a higher priority. In this case make sure to update `PGRST_JWT_SECRET` with the new JWKS.
 {% endnote %}
 
-### Deploying PostgREST
+## Finalizing the PostgREST Deployment
 
 Everything required by PostgREST is now configured.
 
