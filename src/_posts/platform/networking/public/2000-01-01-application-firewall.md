@@ -1,14 +1,14 @@
 ---
 title: Application Firewall
 nav: Application Firewall
-modified_at: 2026-09-30 00:00:00
+modified_at: 2026-10-01 00:00:00
 tags: networking firewall ipv4 access
 index: 40
 ---
 
 ***Application Firewall*** is a feature that, once configured, restricts public HTTP and HTTPS access to an application
 based on allowed IPv4 CIDR ranges. Scalingo's routers check the source IP address
-before forwarding a request to the application's containers.
+before forwarding a request to the application's `web` containers.
 
 ## How the Firewall Works
 
@@ -28,6 +28,9 @@ the last rule restores access from any source IP once the change takes effect.
 
 The same rules apply to the application's default Scalingo domain and all its
 custom domains.
+
+Only public HTTP and HTTPS traffic to `web` containers is filtered. Traffic
+exposed through the [TCP addon][tcp-addon] is not filtered.
 
 Traffic through [Private Networks][private-networks] is unaffected. Requests
 using the application's public route remain subject to firewall rules, even
@@ -206,6 +209,7 @@ for configuration requirements and restart instructions.
 
 [dashboard]: https://dashboard.scalingo.com/
 [private-networks]: {% post_url platform/networking/private/2000-01-01-overview %}
+[tcp-addon]: {% post_url addons/tcp-gateway/2000-01-01-start %}
 [cli-firewall]: {% post_url tools/cli/2000-01-01-features %}#manage-application-ip-firewall-rules
 [api]: https://developers.scalingo.com/
 [terraform-provider]: {% post_url tools/2000-01-01-terraform-provider %}

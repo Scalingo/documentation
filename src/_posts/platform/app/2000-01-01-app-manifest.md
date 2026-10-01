@@ -1,6 +1,6 @@
 ---
 title: Scalingo JSON Manifest
-modified_at: 2026-09-30 00:00:00
+modified_at: 2026-10-01 00:00:00
 tags: app review apps one-click manifest
 ---
 
@@ -66,6 +66,9 @@ Review apps inherit the [Application Firewall]({% post_url platform/networking/p
 
 An explicit `firewall_rules` list replaces the parent's rules; it is not merged
 with them. Omitting `firewall_rules` keeps the inherited rules.
+
+If `firewall_rules` contains more rules than the application's quota allows
+(20 by default), Review App creation fails.
 
 ### Example
 
