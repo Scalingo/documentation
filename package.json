@@ -10,7 +10,7 @@
     "@docsearch/js": "^5.1.1",
     "@docsearch/css": "^5.1.1",
     "@tailwindcss/postcss": "^4.3.3",
-    "autoprefixer": "^10.5.4",
+    "autoprefixer": "^10.6.1",
     "esbuild": "^0.28.2",
     "esbuild-style-plugin": "^1.6.3",
     "mdn-polyfills": "^5.20.0",
