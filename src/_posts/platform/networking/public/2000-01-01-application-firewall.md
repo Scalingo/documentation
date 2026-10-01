@@ -173,12 +173,10 @@ subsequent deployments do not update the rules from this setting.
 See [Application Firewall configuration in the manifest][manifest-firewall]
 for the configuration and JSON examples.
 
-## Identifying and Customizing Blocked Requests
+## Identifying Blocked Requests
 
 Blocked requests receive an HTTP `403 Forbidden` response with a standard
 Scalingo error page. They are not forwarded to an application container.
-
-### Identifying Firewall Rejections in Logs
 
 Enable router logs to see blocked requests in your [application logs][logs]:
 
@@ -197,7 +195,7 @@ The `container=false` field indicates that no target container was selected.
 It distinguishes a firewall rejection from an HTTP 403 returned by your
 application; `status=403` alone does not.
 
-### Customizing the Access Denied Page
+## Customizing the Access Denied Page
 
 Set the `SCALINGO_FORBIDDEN_PAGE_URL` environment variable to the URL of your
 custom error page. See [Custom Error and Maintenance Pages][custom-error-pages]
