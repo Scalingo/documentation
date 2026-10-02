@@ -53,7 +53,7 @@ In this demo, we use PostgREST to expose a simple `todos` application, the same 
 
 4. Instruct the platform to use a specific buildpack to deploy PostgREST:
    ```shell
-   scalingo --app my-postgrest env-set BUILDPACK_URL=https://github.com/Scalingo/postgrest-buildpack
+   scalingo --app my-postgrest env-set BUILDPACK_URL=https://raw.githubusercontent.com/Scalingo/scalingo-labs/main/postgrest-buildpack/postgrest-buildpack-main.tar.gz
    ```
 
 5. Specify the version of PostgREST you want to deploy:
@@ -321,7 +321,7 @@ and JWT to isolate each user's data.
 
 [postgrest-homepage]: https://docs.postgrest.org
 [rfc6749]: https://www.rfc-editor.org/info/rfc6749/#section-4.3
-[postgrest-buildpack]: https://github.com/Amyti/postgrest-buildpack
+[postgrest-buildpack]: https://raw.githubusercontent.com/Scalingo/scalingo-labs/main/postgrest-buildpack/postgrest-buildpack-main.tar.gz
 [jwt-homepage]: https://www.jwt.io/
 [RLS]: https://www.postgresql.org/docs/current/ddl-rowsecurity.html
 [Direct Access Grants]: https://www.keycloak.org/docs/latest/server_admin/index.html#_oidc-auth-flows-direct
