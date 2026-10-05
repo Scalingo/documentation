@@ -1,7 +1,7 @@
 ---
 title: Application Firewall
 nav: Application Firewall
-modified_at: 2026-10-01 00:00:00
+modified_at: 2026-10-05 00:00:00
 tags: networking firewall ipv4 access
 index: 40
 ---
