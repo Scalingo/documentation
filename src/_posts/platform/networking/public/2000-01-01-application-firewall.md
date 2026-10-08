@@ -10,6 +10,12 @@ index: 40
 based on allowed IPv4 CIDR ranges. Scalingo's routers check the source IP address
 before forwarding a request to the application's `web` containers.
 
+{% note %}
+This feature is currently in Preview and available upon request. Contact our 
+Support team to get access.
+{% endnote %}
+
+
 ## How the Firewall Works
 
 Each firewall rule **allows access** from an IPv4 range. A request only needs to
