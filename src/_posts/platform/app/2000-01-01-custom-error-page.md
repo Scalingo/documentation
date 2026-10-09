@@ -1,6 +1,6 @@
 ---
 title: Custom Error and Maintenance Pages
-modified_at: 2026-01-02 12:00:00
+modified_at: 2026-10-09 00:00:00
 tags: app custom error page
 ---
 
@@ -13,7 +13,7 @@ default, the error page looks like the following:
 {% include mdl_img.html %}
 
 You can customize these pages by providing Scalingo with a custom error page
-URL. Four different error pages can be customized. You need to set one of these
+URL. Five different error pages can be customized. You need to set one of these
 environment variables depending on which error page you want to customize:
 
 - `SCALINGO_NO_FRONT_ERROR_URL`: if the application has no `web` container
@@ -23,6 +23,8 @@ environment variables depending on which error page you want to customize:
   crashed or cut the connection unexpectedly.
 - `SCALINGO_TIMEOUT_ERROR_URL`: if the application returns a 504 HTTP response
   or timed out.
+- `SCALINGO_FORBIDDEN_PAGE_URL`: if the request is denied by the application IP
+  firewall.
 
 To learn more about HTTP errors returned by our frontends, please see [our
 documentation][routing-errors].

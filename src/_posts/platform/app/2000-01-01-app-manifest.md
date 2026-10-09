@@ -1,6 +1,6 @@
 ---
 title: Scalingo JSON Manifest
-modified_at: 2025-12-30 00:00:00
+modified_at: 2026-10-09 00:00:00
 tags: app review apps one-click manifest
 ---
 
@@ -9,6 +9,11 @@ root of your repository to configure [review apps]({% post_url
 platform/app/2000-01-01-review-apps %}) and [one-click deploy button]({%
 post_url platform/deployment/2000-01-01-one-click-deploy %}). Its intent is to
 configure how an application should be created.
+
+For Review Apps, configuration in `scalingo.json` takes precedence over
+configuration inherited from the parent application. The manifest is evaluated
+only when the review app is created. Changes to `scalingo.json` do not reconfigure
+existing review apps on subsequent deployments.
 
 ## Configuration of the Environment
 
@@ -47,13 +52,51 @@ can still customize them before triggering the deployment.
 
 ### Monorepos
 
-If your application code is in a subdirectory (configured using the `PROJECT_DIR` environment variable), Scalingo 
+If your application code is in a subdirectory (configured using the `PROJECT_DIR` environment variable), Scalingo
 detects the JSON manifest under this subdirectory.
 
-If there is no JSON manifest in the `PROJECT_DIR` folder, Scalingo 
+If there is no JSON manifest in the `PROJECT_DIR` folder, Scalingo
 tries to get the `scalingo.json` in every folder up to the root of your repository.
 
 See our dedicated page on [monorepos]({% post_url platform/app/2000-01-01-monorepo %}) for more information about this type of setup.
+
+## Configuration of the Application Firewall
+
+Review apps inherit the [Application Firewall]({% post_url platform/networking/public/2000-01-01-application-firewall %}) rules from their parent app by default. You can override the inherited rules in `scalingo.json`.
+
+An explicit `firewall_rules` list replaces the parent's rules; it is not merged
+with them. Omitting `firewall_rules` keeps the inherited rules.
+
+If `firewall_rules` contains more rules than the application's quota allows
+(20 by default), Review App creation fails.
+
+### Example
+
+```json
+{
+  "firewall_rules": [
+    {
+      "cidr": "203.0.113.42/32",
+      "label": "office"
+    },
+    {
+      "cidr": "192.0.2.0/24"
+    }
+  ]
+}
+```
+
+### Disabling the Application Firewall
+
+To disable the firewall on a review app where the parent app have some firewall rules, pass an empty array.
+
+In that case the child app will be created without any firewall rules and thus the firewall will be disabled for the child app.
+
+```json
+{
+  "firewall_rules": []
+}
+```
 
 ## Configuration of Addons
 
