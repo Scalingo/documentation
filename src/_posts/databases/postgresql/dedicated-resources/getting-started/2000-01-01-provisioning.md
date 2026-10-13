@@ -1,17 +1,17 @@
 ---
 title: Provisioning a Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Provisioning
-modified_at: 2026-09-17 00:00:00
+modified_at: 2026-10-13 00:00:00
 tags: databases postgresql dedicated
 index: 1
 ---
 
 
-Once you have chosen the right plan for your needs, you are ready to provision
-the database. This can be done via our
-[dashboard](#using-the-dashboard), our
-[CLI tool](#using-the-command-line), our
-[Terraform Provider](#using-the-terraform-provider), or via our
+{% include database_architecture_models.md engine="PostgreSQL®" %}
+
+You can provision a PostgreSQL® Dedicated Resources database using the
+[dashboard](#using-the-dashboard), [CLI](#using-the-command-line),
+[Terraform Provider](#using-the-terraform-provider) or
 [Kubernetes Operator](#using-the-kubernetes-operator).
 
 
@@ -183,7 +183,6 @@ You can access the database dashboard from the main dashboard:
 
 
 [dashboard]: https://dashboard.scalingo.com/projects
-[architecture-models]: {% post_url databases/about/2000-01-01-architecture-models %}
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [kube-operator]: {% post_url tools/2000-01-01-kubernetes-operator %}

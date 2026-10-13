@@ -1,23 +1,17 @@
 ---
 title: Provisioning a Scalingo for PostgreSQL® Shared Resources Database
 nav: Provisioning
-modified_at: 2023-11-22 00:00:00
+modified_at: 2026-10-13 00:00:00
 tags: databases postgresql addon
 index: 1
 ---
 
 
-{% note %}
-A new database architecture model is now available. Visit
-[Architecture Models][architecture-models] to understand what changes and which
-model best fits your needs. If you are interested, contact our
-[Support](mailto:support@scalingo.com) and
-[Sales](https://scalingo.com/book-a-demo) teams.
-{% endnote %}
+{% include database_architecture_models.md engine="PostgreSQL®" %}
 
-Once you have chosen the right plan for your needs, you are ready to provision
-the addon. This can be done via our [dashboard](#using-the-dahboard),
-our [CLI tool](#using-the-command-line) or via our
+You can provision a PostgreSQL® Shared Resources database as an application
+add-on using the [dashboard](#using-the-dashboard),
+[CLI](#using-the-command-line) or
 [Terraform Provider](#using-the-terraform-provider).
 
 
@@ -106,7 +100,6 @@ You can access the database dashboard via the application dashboard:
 
 
 [dashboard]: https://dashboard.scalingo.com/apps
-[architecture-models]: {% post_url databases/about/2000-01-01-architecture-models %}
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
