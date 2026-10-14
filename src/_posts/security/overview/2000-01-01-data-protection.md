@@ -1,7 +1,7 @@
 ---
 title: Data protection
 nav: Data protection
-modified_at: 2026-06-29 00:00:00
+modified_at: 2026-10-14 00:00:00
 tags: compliance security measures
 index: 5
 ---
@@ -11,73 +11,90 @@ index: 5
 
 ## English {#en}
 
-### Measures protecting your code and data
+### Encryption
 
-### Data Encryption
+All managed databases provisioned on Scalingo have encryption at rest enabled. TLS availability and defaults for
+connections depend on the database engine and instance. Check the product documentation and enforce TLS where supported;
+see [managed database features][database-features]. For public application traffic, configure HTTPS as described in the
+[TLS documentation][tls].
 
-All data stored on the platform is encrypted at rest to protect it from unauthorized access. The encryption keys are
-managed by the platform and are rotated regularly to ensure that the data is protected from unauthorized access.
+### Backups and persistent storage
 
-### Data Backups
+Backups handled by Scalingo are encrypted. Backup mechanisms, retention, and restore procedures vary by database engine,
+architecture, and service class; see the [database backup policy][backup-policies]. The filesystem in an application
+container is temporary. Use a managed database or persistent object storage for data that must survive an application
+restart or redeployment. Backups for a customer-selected external service must be arranged with that provider.
 
-We perform regular backups of the data hosted on the platform to protect it from data loss. The backups are stored in a
-secure redundant storage system to ensure that the data is protected from hardware failures and other disasters.
+### Application isolation and build integrity
 
-**Note**: The backup of the databases varies depending on the database plan and technology. Please refer to the database
-documentation for more information.
+Each application runs in its own container, isolated from other application containers. This is one layer of platform
+isolation; application authentication and authorization remain part of the application owner's responsibility. Build
+and runtime containers are separate, and the deployed container image is immutable. See [application security][application-security]
+and [file system and file storage][file-storage].
 
-### Data Isolation
+### Processing and third-party services
 
-Each application hosted on the platform is isolated from other applications to prevent unauthorized access to the data.
-The platform uses containerization to isolate each application in its own container and to prevent unauthorized access
-between containers.
+The [Data Processing Agreement][dpa-en] describes Scalingo's processing of personal data and the applicable
+subprocessor arrangements.
+An external database, object-storage service, monitoring tool, or other provider selected for an application has its
+own terms and controls. Do not assume that connecting it to a Scalingo application makes it part of Scalingo's HDS
+certification scope; check the provider's certification and your contractual arrangements. See the current
+[HDS certificate and scope][hds-certification].
 
-### Data Privacy
+### Availability and recovery
 
-We take data privacy seriously and we are committed to protecting the privacy of our users' data. We do not share our
-users' data with third parties without their consent and we take all necessary measures to protect the data from
-unauthorized access.
-
-### Data Integrity
-
-Your applications are built on separate containers (builders), which are isolated from the runtime containers. This
-ensures that the code you deploy is not tampered with during the build process. Furthermore, the images built are
-immutable and cannot be modified once they are produced and deployed.
-
-### Resilience
-
-The platform is designed to be resilient to hardware failures and other disasters. We use redundant storage systems to
-protect the data from hardware failures and we have multiple datacenters to protect the platform from disasters such as
-fires and floods.
+Availability commitments and recovery options depend on the product and service class. Refer to the applicable
+[Service Level Agreement][sla-en] and the product-specific backup documentation for the current terms and procedures.
 
 ---
 
 ## Français {#fr}
 
-### Mesures de Protection de votre Code et de vos Données {#mesures-de-protection}
+### Chiffrement {#chiffrement-des-donnees}
 
-### Chiffrement des Données {#chiffrement-des-donnees}
+Toutes les bases de données managées provisionnées sur Scalingo bénéficient du chiffrement au repos. La disponibilité
+et les paramètres TLS des connexions dépendent du moteur et de l'instance. Consultez la documentation du produit et
+imposez TLS lorsqu'il est pris en charge ; voir les [fonctionnalités des bases de données managées (en anglais)][database-features].
+Pour le trafic applicatif public, configurez HTTPS comme décrit dans la [documentation TLS (en anglais)][tls].
 
-Toutes les données stockées sur la plateforme sont chiffrées au repos pour les protéger contre les accès non autorisés. Les clés de chiffrement sont gérées par la plateforme et sont renouvelées régulièrement pour garantir que les données sont protégées contre les accès non autorisés.
+### Sauvegardes et stockage persistant {#sauvegardes-de-donnees}
 
-### Sauvegardes de Données {#sauvegardes-de-donnees}
+Les sauvegardes réalisées par Scalingo sont chiffrées. Les mécanismes de sauvegarde, la rétention et les procédures de
+restauration varient selon le moteur de base de données, l'architecture et la classe de service ; consultez la
+[politique de sauvegarde des bases de données (en anglais)][backup-policies]. Le système de fichiers d'un conteneur applicatif est
+temporaire. Utilisez une base de données managée ou un stockage objet persistant pour les données qui doivent survivre
+au redémarrage ou au redéploiement de l'application. Les sauvegardes d'un service externe choisi par le client doivent
+être organisées avec ce fournisseur.
 
-Nous effectuons des sauvegardes régulières des données hébergées sur la plateforme pour les protéger contre la perte de données. Les sauvegardes sont stockées dans un système de stockage redondant sécurisé pour garantir que les données sont protégées contre les pannes matérielles et autres catastrophes.
+### Isolation des applications et intégrité des images {#isolation-des-donnees}
 
-**Note** : La sauvegarde des bases de données varie en fonction du plan et de la technologie de la base de données. Veuillez vous référer à la documentation de la base de données pour plus d'informations.
+Chaque application s'exécute dans son propre conteneur, isolé des conteneurs des autres applications. Cette isolation
+constitue une couche de protection de la plateforme ; l'authentification et les autorisations au sein de l'application
+restent sous la responsabilité de son propriétaire. Les conteneurs de build et d'exécution sont séparés et l'image
+conteneur déployée est immuable. Consultez les pages [Sécurité des applications][application-security] et
+[Système de fichiers et stockage (en anglais)][file-storage].
 
-### Isolation des Données {#isolation-des-donnees}
+### Traitement et services tiers {#confidentialite-des-donnees}
 
-Chaque application hébergée sur la plateforme est isolée des autres applications pour empêcher l'accès non autorisé aux données. La plateforme utilise la conteneurisation pour isoler chaque application dans son propre conteneur et pour empêcher les accès non autorisés entre conteneurs.
+L'[Accord de Traitement des Données][dpa-fr] décrit le traitement des données personnelles par Scalingo et les
+accords avec les sous-traitants ultérieurs concernés. Une base de données externe, un service de stockage objet, un outil de supervision ou tout autre fournisseur
+choisi pour une application relève de ses propres conditions et contrôles. Ne considérez pas qu'une connexion à une
+application Scalingo l'inclut dans le périmètre de certification HDS de Scalingo ; vérifiez la certification du
+fournisseur et vos accords contractuels. Consultez le [certificat HDS en vigueur et son périmètre (en anglais)][hds-certification].
 
-### Confidentialité des Données {#confidentialite-des-donnees}
+### Disponibilité et restauration {#resilience}
 
-Nous prenons la confidentialité des données au sérieux et nous nous engageons à protéger la confidentialité des données de nos utilisateurs. Nous ne partageons pas les données de nos utilisateurs avec des tiers sans leur consentement et nous prenons toutes les mesures nécessaires pour protéger les données contre les accès non autorisés.
+Les engagements de disponibilité et les options de restauration dépendent du produit et de la classe de service.
+Consultez l'[Accord de Niveau de Service][sla-fr] applicable et la documentation de sauvegarde propre au produit pour
+connaître les conditions et procédures en vigueur.
 
-### Intégrité des Données {#integrite-des-donnees}
-
-Vos applications sont construites sur des conteneurs séparés (builders), qui sont isolés des conteneurs d'exécution. Cela garantit que le code que vous déployez n'est pas altéré pendant le processus de construction. De plus, les images construites sont immuables et ne peuvent pas être modifiées une fois qu'elles sont produites et déployées.
-
-### Résilience {#resilience}
-
-La plateforme est conçue pour être résiliente aux pannes matérielles et autres catastrophes. Nous utilisons des systèmes de stockage redondants pour protéger les données contre les pannes matérielles et nous avons plusieurs datacenters pour protéger la plateforme contre les catastrophes telles que les incendies et les inondations.
+[tls]: {% post_url platform/networking/public/cert/2000-01-01-overview %}
+[database-features]: {% post_url databases/about/2000-01-01-features %}
+[backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
+[application-security]: {% post_url security/overview/2000-01-01-application-security %}
+[file-storage]: {% post_url platform/app/2000-01-01-filesystem %}
+[dpa-en]: https://scalingo.com/data-processing-agreement
+[dpa-fr]: https://scalingo.com/fr/contrat-gestion-traitements-donnees-personnelles
+[hds-certification]: {% post_url compliance/2000-01-01-hds %}
+[sla-en]: https://scalingo.com/service-level-agreement
+[sla-fr]: https://scalingo.com/fr/engagements-de-services

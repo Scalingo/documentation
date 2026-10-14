@@ -1,7 +1,7 @@
 ---
 title: Security Monitoring, Journaling and Logging
 nav: Monitoring
-modified_at: 2026-06-29 00:00:00
+modified_at: 2026-10-14 00:00:00
 tags: compliance security measures monitoring
 index: 4
 ---
@@ -11,52 +11,59 @@ index: 4
 
 ## English {#en}
 
-### Monitoring
+### Application and database logs
 
-We use monitoring tools to monitor the platform for production and security incidents. The monitoring tools are
-configured to alert our operations team in the event of an incident and to provide them with the information they need
-to respond to the incident.
+Application logs are the output your application writes to `stdout` and `stderr`. Database add-on logs contain output
+from the managed database service. Router logs, which record requests to an application, can be enabled separately.
+Recent logs are available in the dashboard and CLI; older logs are available as downloadable archives. The current
+[logs guide][logs] documents a one-year retention period, archive behavior, and ingestion limits. You can forward logs
+to another service with a [log drain][log-drain].
 
-This alerting is paging the on-call team members in case of an incident. The on-call team members are responsible for
-responding to the incident and for coordinating the response with other team members.
+Applications control the content of their application logs. Do not write credentials or unnecessary personal or health
+data to logs. If logs may contain personal, health, or other sensitive customer data, use encrypted transport such as
+TLS and check the receiving provider's processing terms and HDS scope, as well as its retention and access policies.
 
-### Journaling
+### Metrics and alerts
 
-We use journaling to record all actions taken on the platform. The journaling is used to track changes to
-the platform and to identify the cause of production and security incidents.
+Use the dashboard metrics for application resources and the database-specific metrics for managed database health. The
+available measurements depend on the resource and service class. See the [application metrics][app-metrics] and your
+database's monitoring documentation. Database backup success and recovery events can also be sent to application
+notifiers; see the [backup policy][backup-policies].
 
-### Logging
-
-The internal logs of the platform are stored in a secure, append-only, redundant storage system to ensure that the logs
-are protected from unauthorized access. The logs are regularly reviewed by our operations team to identify security
-incidents and to prevent similar incidents from occurring in the future.
-
-### Incident Response
-
-In the event of a security incident, our operations team follows a predefined incident response plan to contain the
-incident and mitigate its impact. The incident response plan includes procedures for identifying the cause of the
-incident, containing the incident, and restoring the platform to normal operation. After the incident has been resolved,
-we perform a post-mortem to identify the root cause of the incident and to prevent similar incidents from occurring in
-the future.
+For suspected security issues, see [incident and support information][incident-support] and report them to
+[security@scalingo.com](mailto:security@scalingo.com).
 
 ---
 
 ## Français {#fr}
 
-### Surveillance
+### Journaux applicatifs et de bases de données
 
-Nous utilisons des outils de surveillance pour surveiller la plateforme à la recherche d'incidents de production et de sécurité. Les outils de surveillance sont configurés pour alerter notre équipe d'exploitation en cas d'incident et pour leur fournir les informations dont ils ont besoin pour répondre à l'incident.
+Les journaux applicatifs correspondent aux sorties que votre application écrit sur `stdout` et `stderr`. Les journaux
+d'add-on de base de données contiennent les sorties du service de base de données managé. Les journaux du routeur, qui
+enregistrent les requêtes vers une application, peuvent être activés séparément. Les journaux récents sont accessibles
+dans le tableau de bord et la CLI ; les journaux plus anciens sont disponibles sous forme d'archives téléchargeables.
+Le [guide des journaux (en anglais)][logs] en vigueur décrit une durée de conservation d'un an, le fonctionnement des archives et
+les limites d'ingestion. Vous pouvez transférer vos journaux vers un autre service au moyen d'un [drain de logs (en anglais)][log-drain].
 
-Cette alerte appelle les membres de l'équipe d'astreinte en cas d'incident. Les membres de l'équipe d'astreinte sont responsables de la réponse à l'incident et de la coordination de la réponse avec les autres membres de l'équipe.
+Les applications contrôlent le contenu de leurs journaux applicatifs. N'y écrivez pas d'identifiants ni de données
+personnelles ou de santé qui ne sont pas nécessaires. Si les journaux peuvent contenir des données personnelles, de santé
+ou d'autres données client sensibles, utilisez un transport chiffré comme TLS et vérifiez les conditions de traitement
+et le périmètre HDS du fournisseur destinataire, ainsi que ses règles de conservation et d'accès.
 
-### Journalisation
+### Métriques et alertes
 
-Nous utilisons la journalisation pour enregistrer toutes les actions effectuées sur la plateforme. La journalisation est utilisée pour suivre les modifications apportées à la plateforme et pour identifier la cause des incidents de production et de sécurité.
+Utilisez les métriques du tableau de bord pour les ressources applicatives et les métriques propres à la base de données
+pour suivre la santé des bases managées. Les mesures disponibles dépendent de la ressource et de sa classe de service.
+Consultez la [documentation des métriques applicatives (en anglais)][app-metrics] et celle de la supervision du moteur de base de
+données utilisé. Les événements de sauvegarde et de restauration des bases de données peuvent également être transmis
+aux notificateurs de l'application ; consultez la [politique de sauvegarde (en anglais)][backup-policies].
 
-### Logs
+En cas de soupçon d'incident de sécurité, consultez les [informations sur les incidents et le support][incident-support]
+et écrivez à [security@scalingo.com](mailto:security@scalingo.com).
 
-Les logs internes de la plateforme sont stockés dans un système de stockage sécurisé, en ajout uniquement et redondant pour garantir que les logs sont protégés contre les accès non autorisés. Les logs sont régulièrement examinés par notre équipe d'exploitation pour identifier les incidents de sécurité et prévenir des incidents similaires à l'avenir.
-
-### Réponse aux Incidents {#reponse-aux-incidents}
-
-En cas d'incident de sécurité, notre équipe d'exploitation suit un plan de réponse aux incidents prédéfini pour contenir l'incident et atténuer son impact. Le plan de réponse aux incidents comprend des procédures pour identifier la cause de l'incident, contenir l'incident et restaurer le fonctionnement normal de la plateforme. Après la résolution de l'incident, nous effectuons un post-mortem pour identifier la cause profonde de l'incident et prévenir des incidents similaires à l'avenir.
+[logs]: {% post_url platform/app/2000-01-01-logs %}
+[log-drain]: {% post_url platform/app/2000-01-01-log-drain %}
+[app-metrics]: {% post_url platform/app/2000-01-01-metrics %}
+[backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
+[incident-support]: {% post_url security/overview/2000-01-01-incident-support %}
