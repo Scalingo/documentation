@@ -1,7 +1,7 @@
 ---
 title: Application Security
 nav: Application
-modified_at: 2026-06-29 00:00:00
+modified_at: 2026-10-14 00:00:00
 tags: compliance security measures application
 index: 3
 ---
@@ -28,8 +28,8 @@ isolated from the host operating system, which provides an additional layer of s
 ### Scalability
 
 The platform allows you to scale your application horizontally by adding more containers or vertically by increasing the
-size of the containers. This ensures that your application can handle the expected traffic volume and that it is
-protected from denial-of-service attacks or simple traffic spikes.
+size of the containers. This gives your application more capacity for increased traffic, but scaling does not distinguish
+malicious traffic from a legitimate increase in traffic.
 
 Furthemore, if enabled, the auto-scaling feature will automatically adjust the number of containers based on, for
 example, the CPU usage of the application or the number of requests it receives.
@@ -70,7 +70,7 @@ Chaque application est déployée dans son propre conteneur, qui est isolé des 
 
 ### Scalabilité {#scalabilite}
 
-La plateforme vous permet de mettre à l'échelle votre application horizontalement en ajoutant plus de conteneurs ou verticalement en augmentant la taille des conteneurs. Cela garantit que votre application peut gérer le volume de trafic attendu et qu'elle est protégée des attaques par déni de service ou des pics de trafic simples.
+La plateforme vous permet de mettre à l'échelle votre application horizontalement en ajoutant plus de conteneurs ou verticalement en augmentant la taille des conteneurs. La mise à l'échelle augmente la capacité disponible en cas de hausse du trafic, mais elle ne permet pas de distinguer le trafic malveillant d'une hausse légitime.
 
 De plus, si activée, la fonctionnalité d'auto-scaling ajustera automatiquement le nombre de conteneurs en fonction, par exemple, de l'utilisation du CPU de l'application ou du nombre de requêtes qu'elle reçoit.
 
