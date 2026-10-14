@@ -1,7 +1,7 @@
 ---
 title: Database Dashboard
 nav: Database Dashboard
-modified_at: 2025-04-28 12:00:00
+modified_at: 2026-10-14 00:00:00
 index: 11
 ---
 
@@ -27,6 +27,8 @@ dedicated **guides** available for each database.
 
 ## Accessing the Database Dashboard
 
+### Shared Resources
+
 You can access the database dashboard via the application dashboard:
 
 1. From your web browser, open your [dashboard][dashboard]
@@ -36,5 +38,15 @@ You can access the database dashboard via the application dashboard:
    the database you want to manage.
 
 
+### Dedicated Resources
+
+You can access the database dashboard from your project:
+
+1. From your web browser, open your [dashboard][project-dashboard]
+2. Open the **Project** containing the database you want to manage
+3. In the **Databases** section, click the database name
+
+
+[project-dashboard]: https://dashboard.scalingo.com/projects
 [dashboard]: https://dashboard.scalingo.com/apps
 [maintenance-windows]: {% post_url databases/about/2000-01-01-maintenance-windows %}

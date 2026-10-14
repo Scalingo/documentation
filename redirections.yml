@@ -933,6 +933,63 @@
   - old: "/platform/cli/introduction"
     new: "/tools/cli/start"
 
+  - old: "/databases/mysql/getting-started/provisioning"
+    new: "/databases/mysql/shared-resources/getting-started/provisioning"
+
+  - old: "/databases/mysql/getting-started/connecting"
+    new: "/databases/mysql/shared-resources/getting-started/connecting"
+
+  - old: "/databases/mysql/getting-started/accessing"
+    new: "/databases/mysql/shared-resources/getting-started/accessing"
+
+  - old: "/databases/mysql/guides/mysql-84-prerequisites"
+    new: "/databases/mysql/version-upgrades/mysql-84-prerequisites"
+
+  - old: "/databases/mysql/guides/mysql-8-prerequisites"
+    new: "/databases/mysql/version-upgrades/mysql-8-prerequisites"
+
+  - old: "/databases/mysql/guides/using-multiple-databases"
+    new: "/databases/mysql/shared-resources/guides/using-multiple-databases"
+
+  - old: "/databases/mysql/guides/changing-plan"
+    new: "/databases/mysql/shared-resources/guides/changing-plan"
+
+  - old: "/databases/mysql/guides/backing-up"
+    new: "/databases/mysql/shared-resources/guides/backing-up"
+
+  - old: "/databases/mysql/guides/restoring"
+    new: "/databases/mysql/shared-resources/guides/restoring"
+
+  - old: "/databases/mysql/guides/working-with-sql-modes"
+    new: "/databases/mysql/mysql-features/working-with-sql-modes"
+
+  - old: "/databases/mysql/guides/upgrading"
+    new: "/databases/mysql/shared-resources/guides/upgrading"
+
+  - old: "/databases/mysql/guides/monitoring"
+    new: "/databases/mysql/shared-resources/guides/monitoring"
+
+  - old: "/databases/mysql/guides/managing-users"
+    new: "/databases/mysql/shared-resources/guides/managing-users"
+
+  - old: "/databases/mysql/getting-started"
+    new: "/databases/mysql/shared-resources/getting-started"
+
+  - old: "/databases/mysql/guides"
+    new: "/databases/mysql/shared-resources/guides"
+
+  - old: "/databases/mysql/troubleshooting"
+    new: "/databases/mysql/shared-resources/troubleshooting"
+
+  - old: "/databases/mysql/guides/accessing"
+    new: "/databases/mysql/shared-resources/getting-started/accessing"
+
+  - old: "/databases/mysql/guides/connecting"
+    new: "/databases/mysql/shared-resources/getting-started/connecting"
+
+  - old: "/databases/mysql/guides/upgrading-to-mysql-8"
+    new: "/databases/mysql/version-upgrades/mysql-8-prerequisites"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

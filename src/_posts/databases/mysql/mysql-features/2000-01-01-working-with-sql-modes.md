@@ -1,7 +1,7 @@
 ---
 title: Working with SQL Modes
 nav: Working with SQL Modes
-modified_at: 2025-09-24 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases mysql addon modes
 index: 20
 ---
@@ -14,7 +14,7 @@ SQL syntax and data constraints, providing developers the ability to optimize
 database performances based on their application's requirements.
 
 Scalingo doesn't moderate the modes available, which means all modes supported
-by your addon are indeed available. The exhaustive list may vary depending on
+by your database are indeed available. The exhaustive list may vary depending on
 your MySQL® version. Descriptions of the modes can be found in the official
 MySQL® documentation:
 
@@ -53,4 +53,4 @@ these actions via the MySQL® console.
 [sql-modes-80]: https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html
 [sql-modes-84]: https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html
 
-[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard
+[database-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}

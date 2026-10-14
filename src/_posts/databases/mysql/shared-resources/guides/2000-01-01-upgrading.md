@@ -1,7 +1,7 @@
 ---
-title: Upgrading Your Scalingo for MySQL® Addon
+title: Upgrading Your Scalingo for MySQL® Shared Resources Database
 nav: Upgrading
-modified_at: 2025-09-24 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases mysql addon
 index: 4
 ---
@@ -10,7 +10,7 @@ In Scalingo's terminology, ***upgrading*** a Scalingo for MySQL® addon
 designates the operation consisting in changing the database version for a
 newer one.
 
-*Currently**, Scalingo supports the `8.0` and `8.4` LTS branches of MySQL® Community
+**Currently**, Scalingo supports the `8.0` and `8.4` LTS branches of MySQL® Community
 Edition.
 
 As explained in [the official documentation][mysql-lts], and starting with
@@ -167,7 +167,7 @@ through the database dashboard.
 [app-manifest]: {% post_url platform/app/2000-01-01-app-manifest %}
 [deployment-hooks]: {% post_url platform/app/2000-01-01-app-manifest %}#deployment-hooks
 [maintenance-mode]: {% post_url platform/app/2000-01-01-custom-error-page %}#custom-maintenance-page
-[mysql84-prerequisites]: {% post_url databases/mysql/guides/2000-01-01-mysql-84-prerequisites %}
+[mysql84-prerequisites]: {% post_url databases/mysql/version-upgrades/2000-01-01-mysql-84-prerequisites %}
 
-[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard
-[backing-up-creating-manual]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}#creating-a-manual-backup
+[database-dashboard]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard
+[backing-up-creating-manual]: {% post_url databases/mysql/shared-resources/guides/2000-01-01-backing-up %}#creating-a-manual-backup

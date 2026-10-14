@@ -1,13 +1,13 @@
 ---
-title: Accessing Your Scalingo for MySQL® database
+title: Accessing Your Scalingo for MySQL® Shared Resources Database
 nav: Accessing
-modified_at: 2025-09-24 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases mysql addon
 index: 3
 ---
 
 
-Remotely accessing your Scalingo for MSQL® database can sometimes be useful,
+Remotely accessing your Scalingo for MySQL® database can sometimes be useful,
 for example, to conduct investigations, to check or compute data locally, to
 dump the database content,...
 
@@ -22,7 +22,7 @@ depends on your needs and preferences.
    scalingo --app my-app mysql-console
    ```
    The output should look like this:
-   ```bash
+   ```text
    -----> Starting container one-off-7872  Done in 0.479 seconds
    -----> Connecting to container [one-off-7872]...
    -----> Process 'mysql-console my_app_4553' is starting...
@@ -101,7 +101,7 @@ third-party tool.
 
 To access your database remotely you first need to [make it reachable over the
 Internet](#making-the-database-reachable-over-internet):
-- either locally, on your computer, via an [encrypted tunnel](#setting-up-an-encrypted-tunnel)
+- either locally, on your computer, via an [encrypted tunnel](#using-our-command-line-tool)
 - or from any location, by [enforcing TLS connection][connecting-tls]
   and [enabling direct Internet access](#enabling-direct-access-over-internet).
 
@@ -308,7 +308,7 @@ like described [above](#using-openssh).
 [ssh]: {% post_url platform/getting-started/2000-01-01-first-steps %}
 [one-off]: {% post_url platform/app/2000-01-01-tasks %}
 
-[connecting]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}
-[connecting-uri-get]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}#getting-the-connection-uri
-[connecting-uri-understand]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
-[connecting-tls]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}#enforcing-tls-connection
+[connecting]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-connecting %}
+[connecting-uri-get]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-connecting %}#getting-the-connection-uri
+[connecting-uri-understand]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
+[connecting-tls]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-connecting %}#enforcing-tls-connection

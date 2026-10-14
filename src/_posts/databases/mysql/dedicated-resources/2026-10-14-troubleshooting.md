@@ -1,9 +1,9 @@
 ---
-title: Troubleshooting Scalingo for MySQL®
+title: Troubleshooting Your Scalingo for MySQL® Dedicated Resources Database
 nav: Troubleshooting
-modified_at: 2026-04-10 09:00:00
-tags: databases mysql addon
-index: 12
+modified_at: 2026-10-14 00:00:00
+tags: databases mysql dedicated
+index: 3
 ---
 
 ## Understanding Memory Consumption
@@ -93,11 +93,14 @@ more disk I/O operations.
 **For queries that run very oftently**, the cache hit ratio should ideally
 neighbor `100%`.
 
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, open a console for your MySQL® addon: 
+1. Make sure you have installed a MySQL® client and allowed your source in the
+   [database firewall][database-firewall]
+2. Get the database [connection URI][connection-uri], then open a MySQL® console:
    ```bash
-   scalingo --app my-app mysql-console
+   mysql --user=<user> --password --host=<hostname> --port=<port> --ssl-mode=REQUIRED <dbname>
    ```
+   Use the user, hostname, port and database name from the connection URI.
+   Enter the database password when prompted.
 3. Run the following query:
    ```sql
    SELECT ((g1.VARIABLE_VALUE - g2.VARIABLE_VALUE) * 100.0 / g1.VARIABLE_VALUE) AS ratio
@@ -164,11 +167,11 @@ with some general steps to address them:
 
 ### Too Many Connection Errors From
 
-Receiving the error `Too many connection errors from 192.0.2.67:12345` means 
-that the MySQL router blocked the connection after multiple failed 
-attempts using invalid credentials. 
+Receiving the error `Too many connection errors from 192.0.2.67:12345` means
+that the MySQL router blocked the connection after multiple failed
+attempts using invalid credentials.
 
-To solve this issue, the MySQL router has to be restarted, which induces a 
+To solve this issue, the MySQL router has to be restarted, which induces a
 small downtime of less than 30 seconds. To do so, please get in touch with our Support Team.
 
 
@@ -180,5 +183,8 @@ small downtime of less than 30 seconds. To do so, please get in touch with our S
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
-[changing-plan]: {% post_url databases/mysql/guides/2000-01-01-changing-plan %}
-[inspecting-logs]: {% post_url databases/mysql/guides/2000-01-01-monitoring %}#inspecting-database-logs
+[changing-plan]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-changing-plan %}
+[inspecting-logs]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-monitoring %}#inspecting-database-logs
+
+[connection-uri]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-connecting %}#getting-the-connection-uri
+[database-firewall]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-accessing %}#allowing-access-with-firewall-rules

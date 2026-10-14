@@ -1,7 +1,7 @@
 ---
 title: Provisioning a Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Provisioning
-modified_at: 2026-10-13 00:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases postgresql dedicated
 index: 1
 ---
@@ -78,7 +78,7 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait <database_
 ### Using the Terraform Provider
 
 1. Place the following `resource` block in your Terraform file to create the
-   database and attach it to your app:
+   database:
    ```tf
    resource "scalingo_database" "my-dedicated-database" {
      name       = "my-dedicated-database"
@@ -103,7 +103,7 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait <database_
 3. Create a custom resource to provision your dedicated PostgreSQL database:
 
    ```yaml
-   apiVersion: databases.scalingo.com/v1alpha1
+   apiVersion: databases.scalingo.com/v1
    kind: PostgreSQL
    metadata:
      labels:

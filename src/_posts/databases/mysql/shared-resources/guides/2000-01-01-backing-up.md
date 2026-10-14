@@ -1,7 +1,7 @@
 ---
-title: Backing Up Your Scalingo for MySQL® Addon
+title: Backing Up Your Scalingo for MySQL® Shared Resources Database
 nav: Backing Up
-modified_at: 2025-09-24 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases mysql addon
 index: 5
 ---
@@ -201,7 +201,7 @@ somewhere).
 
 [backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
 
-[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
-[accessing-one-off]: {% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-a-one-off
-[accessing-cli]: {% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
-[connecting-uri]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
+[database-dashboard]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard
+[accessing-one-off]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-accessing %}#using-a-one-off
+[accessing-cli]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
+[connecting-uri]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri

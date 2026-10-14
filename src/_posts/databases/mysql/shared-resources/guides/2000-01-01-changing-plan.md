@@ -1,7 +1,7 @@
 ---
-title: Changing Plan
+title: Changing Plan of a Scalingo for MySQL® Shared Resources Database
 nav: Changing Plan
-modified_at: 2025-12-23 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases mysql addon
 index: 3
 ---

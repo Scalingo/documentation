@@ -3,7 +3,7 @@ title: Prerequisites Before Upgrading to MySQL® 8.0 LTS
 nav: Upgrading to MySQL 8.0
 modified_at: 2026-01-29 12:00:00
 tags: databases mysql addon migration
-index: 40
+index: 1
 ---
 
 Starting with MySQL® 8, Scalingo enables group replication on all MySQL®

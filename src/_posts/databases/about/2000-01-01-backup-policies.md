@@ -1,7 +1,7 @@
 ---
 title: Databases Backup Policies
 nav: Backup Policies
-modified_at: 2026-07-09 00:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases backup policy policies explanation
 index: 20
 ---
@@ -21,10 +21,11 @@ Backup technology and retention policy depend on the database engine and archite
 
 The table below summarises which backup mechanisms are available (and whether they are managed by Scalingo) for each database engine and architecture model:
 
-| Managed Database            | Architecture model  | Logical Backups      | Continious Backups |
+| Managed Database            | Architecture model  | Logical Backups      | Continuous Backups |
 |-----------------------------|---------------------|----------------------|--------------------|
 | Scalingo for PostgreSQL®    | Dedicated Resources | Customer-managed[^1] | Managed            |
 | Scalingo for PostgreSQL®    | Shared Resources    | Managed              | Managed            |
+| Scalingo for MySQL®         | Dedicated Resources | Customer-managed[^1] | Managed            |
 | Scalingo for MySQL®         | Shared Resources    | Managed              | Not available      |
 | Scalingo for MongoDB®       | Shared Resources    | Managed              | Not available      |
 | Scalingo for OpenSearch®    | Shared Resources    | Managed              | Not available      |
@@ -107,23 +108,18 @@ deleted immediately.
 
 ## Continuous backups
 
-Continuous backups (Point-in-Time Recovery, PiTR) is the primary backup
-mechanism for PostgreSQL® instances. They let you restore the database to a
-specific point in time within a predefined **recovery window**. The recovery
-window ranges from 7 to 30 days, depending on the service class and
+Continuous backups (Point-in-Time Recovery, PiTR) let you restore the database
+to a specific point in time within a predefined **recovery window**. The
+recovery window ranges from 7 to 30 days, depending on the service class and
 architecture model.
 
-We achieve this by making a full PiTR backup of the database on a weekly basis.
-Between two full PiTR backups, we keep track of the Write-Ahead Logs (WAL),
-which contains all the modification instructions. Replaying the WAL from a
-full PiTR backup until a specific date allows us to rebuild the state of the
-database at that particular date. Please note that the first base backup may
-take up to 24 hours to complete, after which PiTR begins monitoring changes for
-recovery purposes.
+Scalingo creates a full backup on a weekly basis and records database changes
+between full backups.
+To restore a database to a specific point in time, the platform restores a
+full backup and replays the changes recorded up to that point.
 
-PiTR technology operates independently of the database's load or size, making
-it a reliable solution for handling large datasets. This feature offers a 7-day
-retention period without the usual constraints of traditional backup methods.
+Point-in-time recovery becomes available once the first full backup is complete.
+This can take up to 24 hours.
 
 Performing a Point-in-Time Recovery resets the continuous backup timeline. This
 means the retention window starts over, and you won’t be able to restore from
@@ -166,11 +162,13 @@ To learn more about events and notifiers, please visit the page dedicated to [ap
 
 ## Restoring a backup
 
-Each database engine has its own backup and restore process. Please refer to
-the page dedicated to your database engine for the exact procedure to follow.
+The restore procedure depends on the database engine and architecture model.
+Refer to the guide for your database:
 
+- [Scalingo for PostgreSQL® (Dedicated Resources)]({% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-restoring %})
 - [Scalingo for PostgreSQL® (Shared Resources)]({% post_url databases/postgresql/shared-resources/guides/2000-01-01-restoring %})
-- [Scalingo for MySQL®]({% post_url databases/mysql/guides/2000-01-01-restoring %})
+- [Scalingo for MySQL® (Dedicated Resources)]({% post_url databases/mysql/dedicated-resources/guides/2026-10-14-restoring %})
+- [Scalingo for MySQL® (Shared Resources)]({% post_url databases/mysql/shared-resources/guides/2000-01-01-restoring %})
 - [Scalingo for OpenSearch®]({% post_url databases/opensearch/guides/2000-01-01-restoring %})
 - [Scalingo for MongoDB®]({% post_url databases/mongodb/2000-01-01-start %}#backups)
 - [Scalingo for Caching]({% post_url databases/redis/2000-01-01-start %}#backups)

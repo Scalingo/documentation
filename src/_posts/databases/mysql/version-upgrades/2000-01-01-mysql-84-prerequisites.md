@@ -1,9 +1,9 @@
 ---
 title: Prerequisites Before Upgrading to MySQL® 8.4 LTS
 nav: Upgrading to MySQL 8.4
-modified_at: 2026-01-29 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases mysql addon migration
-index: 40
+index: 2
 ---
 
 Upgrading a Scalingo for MySQL® database from MySQL® 8.0.x LTS to MySQL® 8.4.x LTS may be refused if your schema uses features that are no longer supported in MySQL® 8.4.
@@ -63,6 +63,6 @@ SHOW CREATE TABLE `foo`;
 If you find a partitioning key using a prefix length, you need to update the table definition to remove this pattern.
 
 
-If you fixed all the issues listed above, or if none were detected, you can now safely [perform the upgrade from the Scalingo dashboard][mysql-upgrade].
+If you fixed all the issues listed above, or if none were detected, you can [open the database dashboard][database-dashboard] and launch the upgrade if it is available.
 
-[mysql-upgrade]: {% post_url databases/mysql/guides/2000-01-01-upgrading %}#upgrading
+[database-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}

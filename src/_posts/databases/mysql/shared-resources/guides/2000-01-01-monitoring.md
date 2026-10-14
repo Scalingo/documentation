@@ -1,7 +1,7 @@
 ---
-title: Monitoring and Auditing Your Scalingo for MySQL® Addon
+title: Monitoring and Auditing Your Scalingo for MySQL® Shared Resources Database
 nav: Monitoring and Auditing
-modified_at: 2025-09-24 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases mysql addon
 index: 2
 ---
@@ -74,4 +74,4 @@ dashboard.
 
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
-[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
+[database-dashboard]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard

@@ -1,7 +1,7 @@
 ---
-title: Restoring Your Scalingo for MySQL® Addon
+title: Restoring Your Scalingo for MySQL® Shared Resources Database
 nav: Restoring
-modified_at: 2025-09-24 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases mysql addon
 index: 6
 ---
@@ -117,7 +117,7 @@ Restoring from a dump is only available from the command line.
 {% endnote %}
 
 
-[accessing-one-off]: {% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-a-one-off
-[accessing-cli]: {% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
-[connecting-uri]: {% post_url databases/mysql/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
-[backing-up-downloading]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}#downloading-a-periodic-backup
+[accessing-one-off]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-accessing %}#using-a-one-off
+[accessing-cli]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
+[connecting-uri]: {% post_url databases/mysql/shared-resources/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri
+[backing-up-downloading]: {% post_url databases/mysql/shared-resources/guides/2000-01-01-backing-up %}#downloading-a-periodic-backup

@@ -1,15 +1,20 @@
 ---
-title: Provisioning a Scalingo for MySQL® Addon
+title: Provisioning a Scalingo for MySQL® Shared Resources Database
 nav: Provisioning
-modified_at: 2025-12-23 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases mysql addon
 index: 1
 ---
 
-Once you have chosen the right plan for your needs, you are ready to provision
-the addon. This can be done via our [dashboard](#using-the-dashboard),
-our [CLI tool](#using-the-command-line) or via our
+{% include database_architecture_models.md engine="MySQL®" %}
+
+You can provision a MySQL® Shared Resources database as an application
+add-on using the [dashboard](#using-the-dashboard),
+[CLI](#using-the-command-line) or
 [Terraform Provider](#using-the-terraform-provider).
+
+
+## Provisioning
 
 ### Using the Dashboard
 
@@ -97,10 +102,10 @@ You can access the database dashboard via the application dashboard:
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
-[monitoring]: {% post_url databases/mysql/guides/2000-01-01-monitoring %}
-[upgrading]: {% post_url databases/mysql/guides/2000-01-01-upgrading %}
-[managing-users]: {% post_url databases/mysql/guides/2000-01-01-managing-users %}
-[multiple-db]: {% post_url databases/mysql/guides/2000-01-01-using-multiple-databases %}
-[backing-up]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}
+[monitoring]: {% post_url databases/mysql/shared-resources/guides/2000-01-01-monitoring %}
+[upgrading]: {% post_url databases/mysql/shared-resources/guides/2000-01-01-upgrading %}
+[managing-users]: {% post_url databases/mysql/shared-resources/guides/2000-01-01-managing-users %}
+[multiple-db]: {% post_url databases/mysql/shared-resources/guides/2000-01-01-using-multiple-databases %}
+[backing-up]: {% post_url databases/mysql/shared-resources/guides/2000-01-01-backing-up %}
 
 

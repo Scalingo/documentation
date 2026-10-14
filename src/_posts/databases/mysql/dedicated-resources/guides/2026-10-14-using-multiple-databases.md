@@ -1,20 +1,21 @@
 ---
-title: Using Multiple Databases
+title: Using Multiple Databases on Scalingo for MySQL® Dedicated Resources
 nav: Using Multiple Databases
-modified_at: 2025-09-24 12:00:00
-tags: databases mysql addon
-index: 30
+modified_at: 2026-10-14 00:00:00
+tags: databases mysql dedicated
+index: 8
 ---
 
 
-Each Scalingo for MySQL® addon comes with a default database. You can, however,
+Each Scalingo for MySQL® Dedicated Resources database comes with a default
+database. You can, however,
 create multiple databases on the same Scalingo for MySQL® instance. In this
 case:
 - The memory and disk storage allocated in the plan are shared between all
   databases
 - By default, the database users (the default one and the ones you could have
   created) are shared between databases, even for existing ones
-- All databases are [backed up][backing-up] in the same backup file
+- All databases are covered by the same [continuous backups][backing-up]
 - The platform doesn't provide any environment variable for these additional
   databases. You should, however, be able to generate one from the original
   `SCALINGO_MYSQL_URL`.
@@ -30,12 +31,12 @@ case:
 
 ### Using the Command Line Tool
 
-1. Access your database using the [Interactive Remote Console][irc]
-2. From the MySQL® console, run the following command: 
+1. Access your database using the [MySQL client][mysql-client]
+2. From the MySQL® console, run the following command:
    ```sql
    SHOW DATABASES;
    ```
-   The ouput should look like this:
+   The output should look like this:
    ```
    mysql> SHOW DATABASES;
    +--------------------+
@@ -75,7 +76,7 @@ Creating a new database is only available from the Database Dashboard.
 {% endnote %}
 
 {% warning %}
-Consider [creating a backup][backing-up-create] prior to deleting a database.
+Consider [creating a dump][backing-up-create] prior to deleting a database.
 {% endwarning%}
 
 ### Using the Database Dashboard
@@ -90,8 +91,8 @@ Consider [creating a backup][backing-up-create] prior to deleting a database.
 8. Validate by clicking the **Confirm** button
 
 
-[irc]: {% post_url databases/mysql/getting-started/2000-01-01-accessing %}#using-the-interactive-remote-console
-[database-dashboard]: {% post_url databases/mysql/getting-started/2000-01-01-provisioning %}#accessing-the-mysql-dashboard
+[mysql-client]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-accessing %}#using-the-mysql-client
+[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
 
-[backing-up]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}
-[backing-up-create]: {% post_url databases/mysql/guides/2000-01-01-backing-up %}#creating-a-manual-backup
+[backing-up]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-backing-up %}
+[backing-up-create]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-backing-up %}#dumping-the-database
