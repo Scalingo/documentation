@@ -28,7 +28,7 @@ The [logs guide][logs] covers application, database, and router logs, including 
 
 ## Français {#fr}
 
-### Supervision et métriques
+### Supervision et métriques {#supervision-et-metriques}
 
 Le tableau de bord affiche les métriques et alertes applicatives. Les métriques des bases de données managées varient
 selon le produit et sa classe de service. Consultez la [documentation des métriques applicatives (en anglais)][app-metrics],
