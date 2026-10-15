@@ -7,5 +7,6 @@
 5. Enter a database name, then select or confirm the appropriate **Project** and
    **Region**
 6. Select the plan you want to provision and confirm your selection
-7. Click the **Create database** button
+7. Review the database configuration, then click the **Create database** button
+   to confirm it and start provisioning
 8. Database provisioning typically takes 15–30 minutes
