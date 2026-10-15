@@ -56,42 +56,43 @@ Availability commitments and recovery options depend on the product and service 
 
 ## Français {#fr}
 
-### Mesures de Protection de votre Code et de vos Données {#mesures-de-protection}
+### Mesures de protection du code et des données {#mesures-de-protection}
 
-### Chiffrement des Données {#chiffrement-des-donnees}
+### Chiffrement des données {#chiffrement-des-donnees}
 
-Les bases de données managées provisionnées sur Scalingo bénéficient du chiffrement au repos. La disponibilité et les
-paramètres TLS dépendent du moteur de base de données et de l'instance. Consultez la documentation du produit et
-imposez TLS lorsqu'il est pris en charge ; voir les [fonctionnalités des bases de données managées (en anglais)][database-features].
+Les bases de données managées créées sur Scalingo sont chiffrées au repos. La disponibilité et les paramètres TLS
+dépendent du moteur et de l'instance. Consultez la documentation du produit et imposez TLS lorsqu'il est pris en charge ;
+voir les [fonctionnalités des bases de données managées (en anglais)][database-features].
 
-### Sauvegardes de Données {#sauvegardes-de-donnees}
+### Sauvegardes de données {#sauvegardes-de-donnees}
 
-Les méthodes et la rétention des sauvegardes varient selon le moteur, l'architecture et la classe de service de la base de
-données managée. Consultez la [politique de sauvegarde des bases de données (en anglais)][backup-policies]. Les
+Les méthodes et la durée de conservation des sauvegardes varient selon le moteur, l'architecture et la classe de service
+de la base de données managée. Consultez la [politique de sauvegarde des bases de données (en anglais)][backup-policies]. Les
 sauvegardes des services hors du périmètre des bases de données managées par Scalingo doivent être organisées avec leur
 fournisseur.
 
-### Isolation des Données {#isolation-des-donnees}
+### Isolation des données {#isolation-des-donnees}
 
-Chaque application s'exécute dans son propre conteneur, isolé des autres conteneurs applicatifs. Cette isolation
-constitue une couche de protection de la plateforme ; l'authentification et les autorisations au sein de l'application
-restent sous la responsabilité de son propriétaire. Consultez la page [Sécurité des applications][application-security].
+Chaque application s'exécute dans son propre conteneur, isolé des autres conteneurs applicatifs. Cette isolation ajoute
+une couche de protection au niveau de la plateforme. Le propriétaire de l'application reste responsable de
+l'authentification et des autorisations dans l'application. Consultez la page
+[Sécurité des applications][application-security].
 
-### Confidentialité des Données {#confidentialite-des-donnees}
+### Confidentialité des données {#confidentialite-des-donnees}
 
-L'[Accord de Traitement des Données][dpa-fr] décrit le traitement des données personnelles par Scalingo et les sous-traitants
-ultérieurs concernés. Les services externes choisis pour une application ont leurs propres conditions et contrôles. Leur
-connexion à une application Scalingo ne les inclut pas automatiquement dans le périmètre HDS de Scalingo ; vérifiez la
-certification du fournisseur et le contrat applicable.
+L'[Accord de traitement des données][dpa-fr] décrit le traitement des données personnelles par Scalingo et les sous-traitants
+ultérieurs concernés. Les services externes associés à une application ont leurs propres conditions et contrôles. Leur
+utilisation n'étend pas automatiquement le périmètre HDS de Scalingo à ces services. Vérifiez la certification du
+fournisseur et le contrat applicable.
 
-### Intégrité des Données {#integrite-des-donnees}
+### Intégrité des données {#integrite-des-donnees}
 
-Les conteneurs de build et d'exécution sont séparés, et l'image conteneur déployée est immuable.
+Les conteneurs de build et d'exécution sont séparés. Une fois déployée, l'image conteneur ne peut pas être modifiée.
 
 ### Résilience {#resilience}
 
 Les engagements de disponibilité et les options de restauration dépendent du produit et de la classe de service. Consultez
-l'[Accord de Niveau de Service][sla-fr] applicable et la documentation de sauvegarde propre au produit.
+les [engagements de service applicables][sla-fr] et la documentation de sauvegarde du produit.
 
 [dpa-fr]: https://scalingo.com/fr/contrat-gestion-traitements-donnees-personnelles
 [sla-fr]: https://scalingo.com/fr/engagements-de-services

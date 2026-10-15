@@ -27,12 +27,11 @@ isolated from the host operating system, which provides an additional layer of s
 
 ### Scalability
 
-The platform allows you to scale your application horizontally by adding more containers or vertically by increasing the
-size of the containers. This gives your application more capacity for increased traffic, but scaling does not distinguish
-malicious traffic from a legitimate increase in traffic.
+You can add containers or increase their size to handle more traffic. Scaling can add capacity, but it cannot distinguish
+malicious traffic from a legitimate increase.
 
-Furthemore, if enabled, the auto-scaling feature will automatically adjust the number of containers based on, for
-example, the CPU usage of the application or the number of requests it receives.
+When enabled, autoscaling adjusts the number of containers based on measures such as application CPU usage or request
+volume.
 
 ### Dependency Management
 
@@ -70,9 +69,11 @@ Chaque application est déployée dans son propre conteneur, qui est isolé des 
 
 ### Scalabilité {#scalabilite}
 
-La plateforme vous permet de mettre à l'échelle votre application horizontalement en ajoutant plus de conteneurs ou verticalement en augmentant la taille des conteneurs. La mise à l'échelle augmente la capacité disponible en cas de hausse du trafic, mais elle ne permet pas de distinguer le trafic malveillant d'une hausse légitime.
+Ajoutez des conteneurs ou augmentez leur taille pour absorber une hausse du trafic. La mise à l'échelle peut augmenter
+la capacité, mais ne distingue pas le trafic malveillant d'une hausse légitime.
 
-De plus, si activée, la fonctionnalité d'auto-scaling ajustera automatiquement le nombre de conteneurs en fonction, par exemple, de l'utilisation du CPU de l'application ou du nombre de requêtes qu'elle reçoit.
+Lorsque l'autoscaling est activé, il ajuste le nombre de conteneurs selon des mesures telles que l'utilisation du CPU
+ou le nombre de requêtes reçues.
 
 ### Gestion des Dépendances {#gestion-des-dependances}
 
