@@ -1,7 +1,7 @@
 ---
 title: Managing Users of Your Scalingo for MySQL® Shared Resources Database
 nav: Managing Users
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-15 00:00:00
 tags: databases mysql addon
 index: 1
 ---
@@ -9,7 +9,8 @@ index: 1
 Each Scalingo for MySQL® addon comes with a [default database
 user](#understanding-protected-user). You can [create](#creating-a-new-user) as
 many additional users as needed, grant them with the appropriate permissions,
-and you can [delete](#deleting-a-user) them once they are not required anymore.
+[update/reset their password](#updating-a-user-password),
+and [delete](#deleting-a-user) them once they are not required anymore.
 
 
 ## Listing Existing Users
@@ -32,15 +33,11 @@ This default user is ***protected*** and thus:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Settings** tab
-3. In the **Settings** submenu, select **Users**
-4. The list of available users is displayed under the **User Management**
-   section
+{% include database_users_list_dashboard.md %}
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+1. Make sure you have correctly [set up the Scalingo command line tool][cli]
 2. From the command line, run the following command to list the users:
    ```bash
    scalingo --app my-app --addon mysql database-users-list
@@ -62,7 +59,6 @@ This default user is ***protected*** and thus:
 
 ## Creating a New User
 
-{% note %}
 The following restrictions apply when creating a new user, regardless of the
 method you use:
 
@@ -73,25 +69,14 @@ method you use:
 - Password **must**:
   - Be between 24 and 64 characters long.
   - Not contain the character `"` or `'`
-{% endnote %}
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard][database-dashboard]
-2. Click the **Settings** tab
-3. In the **Settings** submenu, select **Users**
-4. Click the **Add a user** button
-5. Fill the **Add a new user** form:
-   - Fill a username
-   - To grant write abilities to this user, make sure to check the **Write
-     (optional)** checkbox
-6. Validate by clicking the **Add this user** button
-7. A secure password is generated automatically and shown in a popup window
-   after the user creation. **You will be able to view and copy it only once**.
+{% include database_users_create_dashboard.md %}
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+1. Make sure you have correctly [set up the Scalingo command line tool][cli]
 2. From the command line, run the following command to create a new user:
    ```bash
    scalingo --app my-app --addon mysql database-users-create <username>
@@ -102,7 +87,7 @@ method you use:
    scalingo --app my-app --addon mysql database-users-create --read-only <username>
    ```
 3. Set the user password:
-   - Either chose a password and confirm it
+   - Either choose a password and confirm it
    - Or let the platform generate a password by leaving the field empty
 
    The output should look like this:
@@ -115,32 +100,18 @@ method you use:
    User "my_user" created with password "YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8".
    ```
 
-## Updating a User Password
+## Updating or Resetting a User Password
+{: #updating-a-user-password}
 
-{% note %}
-- Setting a user password to a **specific value** can only be done via the
-  command line.
-- Please get in touch with our Support Team to update a
-  [protected user](#understanding-protected-user) password.
-{% endnote %}
+{% include database_users_password_methods.md %}
 
-### Using the Database Dashboard
+### Using the Database Dashboard (Reset Only)
 
-1. From your web browser, [open your database dashboard][database-dashboard]
-2. Click the **Settings** tab
-3. In the **Settings** submenu, select **Users**
-4. Locate the user you want the password to be updated
-5. Click the **"&#8230;"** button next to the user
-6. From the popup menu, select **Reset password**
-7. In the popup window, confirm the reset by typing the name of the user
-8. Validate by clicking the **Confirm** button
-9. A secure password is generated automatically and shown in a popup window
-   after the password reset. **You will be able to view and copy it only
-   once**.
+{% include database_users_reset_password_dashboard.md %}
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+1. Make sure you have correctly [set up the Scalingo command line tool][cli]
 2. Update the user password with the following command:
    ```bash
    scalingo --app my-app --addon mysql database-users-update-password <username>
@@ -151,11 +122,11 @@ method you use:
    The output should look like this:
    - If you set a password:
    ```text
-   User "my_user" created.
+   User "my_user" updated.
    ```
    - If you let the platform generate a password:
    ```text
-   User "my_user" created with password "YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8".
+   User "my_user" updated with password "YANs3y07m5_KJC2MSDGebh8tx1lliFWh2Yb239zVqGQvbElWDjIN7QWspVH92Ul8".
    ```
 
 
@@ -163,18 +134,11 @@ method you use:
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard][database-dashboard]
-2. Click the **Settings** tab
-3. In the **Settings** submenu, select **Users**
-4. Locate the user you want to remove
-5. Click the **"&#8230;"** button next to the user
-6. From the popup menu, select **Delete user**
-7. In the popup window, confirm the deletion by typing the name of the user
-8. Validate by clicking the **Confirm** button
+{% include database_users_delete_dashboard.md %}
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+1. Make sure you have correctly [set up the Scalingo command line tool][cli]
 2. Remove the user with the following command:
    ```bash
    scalingo --app my-app --addon mysql database-users-delete <username>
