@@ -1,14 +1,14 @@
 {
   "private": true,
   "engines": {
-    "node": "~18"
+    "node": "~26"
   },
   "scripts": {
     "build": "node scripts/build.mjs"
   },
   "dependencies": {
-    "@docsearch/js": "^5.1.1",
     "@docsearch/css": "^5.1.1",
+    "@docsearch/js": "^5.1.1",
     "@tailwindcss/postcss": "^4.3.3",
     "autoprefixer": "^10.6.1",
     "esbuild": "^0.28.2",

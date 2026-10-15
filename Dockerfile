@@ -4,7 +4,7 @@ LABEL maintainer "kevin@scalingo.com"
 
 ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
-ARG NODE_MAJOR=18
+ARG NODE_MAJOR=26
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
