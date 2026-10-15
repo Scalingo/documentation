@@ -18,16 +18,21 @@ Main content is organized in:
 
 ## Adding a new article
 
-To add a new content page, create a new markdown file in the appropriate directory for that content type, using the following file format: `yyyy-mm-dd-title.md` (*e.g. 1970-01-01-what-is-epoch.md*).
-Please use the current date when creating the file.
-The date in the filename must be less than or equal to the current build date, otherwise the page may be excluded from the build output.
+For documentation pages in `src/_posts/`, use the filename format
+`2000-01-01-title.md` (e.g. `2000-01-01-what-is-epoch.md`).
+
+Always use the fixed `2000-01-01` prefix. Record the actual creation or
+modification date in `modified_at`.
+
+For changelog entries, use the publication date instead, as described in
+[Changelog entries](#changelog-entries).
 
 The minimal *front matter* that you need to add is:
 
 ```yml
 ---
 title: What is Epoch
-modified_at: 1970-01-01 00:00:00
+modified_at: 2026-10-15 00:00:00
 ---
 ```
 
@@ -287,7 +292,8 @@ your change.
 ### Content pages
 
 - Edited pages have an updated `modified_at` value.
-- New pages use the `yyyy-mm-dd-title.md` filename format.
+- New documentation pages in `src/_posts/` use the `2000-01-01-title.md`
+  filename format, with the fixed `2000-01-01` prefix.
 - For posts, the date in the filename is earlier than or equal to the server
   build date. Future-dated posts are not generated until a later deployment.
 
