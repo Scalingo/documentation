@@ -183,8 +183,8 @@ small downtime of less than 30 seconds. To do so, please get in touch with our S
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
-[changing-plan]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-changing-plan %}
-[inspecting-logs]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-monitoring %}#inspecting-database-logs
+[changing-plan]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-changing-plan %}
+[inspecting-logs]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-monitoring %}#inspecting-database-logs
 
-[connection-uri]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-connecting %}#getting-the-connection-uri
-[database-firewall]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-accessing %}#allowing-access-with-firewall-rules
+[connection-uri]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-connecting %}#getting-the-connection-uri
+[database-firewall]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-accessing %}#allowing-access-with-firewall-rules

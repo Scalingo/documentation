@@ -91,8 +91,8 @@ Consider [creating a dump][backing-up-create] prior to deleting a database.
 8. Validate by clicking the **Confirm** button
 
 
-[mysql-client]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-accessing %}#using-the-mysql-client
-[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
+[mysql-client]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-accessing %}#using-the-mysql-client
+[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
 
-[backing-up]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-backing-up %}
-[backing-up-create]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-backing-up %}#dumping-the-database
+[backing-up]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-backing-up %}
+[backing-up-create]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-backing-up %}#dumping-the-database

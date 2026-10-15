@@ -81,6 +81,6 @@ impact before importing the dump.
    Use the user, hostname, port and database name from the connection URI.
    Enter the database password when prompted.
 
-[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
-[connection-uri]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-connecting %}#getting-the-connection-uri
-[backing-up-dumping]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-backing-up %}#dumping-the-database
+[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
+[connection-uri]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-connecting %}#getting-the-connection-uri
+[backing-up-dumping]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-backing-up %}#dumping-the-database

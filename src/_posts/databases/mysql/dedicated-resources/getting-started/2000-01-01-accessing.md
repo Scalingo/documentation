@@ -19,7 +19,7 @@ trusted source.
 
 ### Using the Database Dashboard
 
-1. From your web browser, [open your database dashboard]({% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-provisioning %}#accessing-the-scalingo-for-mysql-dashboard)
+1. From your web browser, [open your database dashboard]({% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard)
 2. Select the **Settings** tab
 3. In the **Settings** submenu, select **Internet Access**
 4. In the **Firewall rules** block, click **New rule**
@@ -27,7 +27,7 @@ trusted source.
    - **Custom CIDR IPv4** to allow specific public IP addresses or ranges
    - **Scalingo `<region>` region** to allow traffic from Scalingo apps in that region
 6. Repeat as needed for each trusted source
-7. Connect using the database [connection URI]({% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-connecting %}#getting-the-connection-uri)
+7. Connect using the database [connection URI]({% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-connecting %}#getting-the-connection-uri)
 
 ### Using the Command Line (Preview) {#using-the-command-line}
 
@@ -194,7 +194,7 @@ MySQL Workbench is a database administration tool for MySQL®.
 3. Configure the connection to require TLS
 4. Connect to the database
 
-[connection-uri]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-connecting %}#getting-the-connection-uri
+[connection-uri]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-connecting %}#getting-the-connection-uri
 [egress]: {% post_url platform/networking/public/2000-01-01-egress %}
-[database-endpoints]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-endpoints %}#private-peering-rw
+[database-endpoints]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-endpoints %}#private-peering-rw
 [outscale-net-peering]: {% post_url databases/about/2000-01-01-network-exposure %}#outscale-net-peering

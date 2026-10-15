@@ -119,5 +119,5 @@ more interest in participating, you can stop collaborating on your own.
 6. Confirm by clicking the **Revoke access to** button in the popup window
 
 
-[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
+[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
 [cli]: {% post_url tools/cli/2000-01-01-start %}

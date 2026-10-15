@@ -167,7 +167,7 @@ Refer to the guide for your database:
 
 - [Scalingo for PostgreSQL® (Dedicated Resources)]({% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-restoring %})
 - [Scalingo for PostgreSQL® (Shared Resources)]({% post_url databases/postgresql/shared-resources/guides/2000-01-01-restoring %})
-- [Scalingo for MySQL® (Dedicated Resources)]({% post_url databases/mysql/dedicated-resources/guides/2026-10-14-restoring %})
+- [Scalingo for MySQL® (Dedicated Resources)]({% post_url databases/mysql/dedicated-resources/guides/2000-01-01-restoring %})
 - [Scalingo for MySQL® (Shared Resources)]({% post_url databases/mysql/shared-resources/guides/2000-01-01-restoring %})
 - [Scalingo for OpenSearch®]({% post_url databases/opensearch/guides/2000-01-01-restoring %})
 - [Scalingo for MongoDB®]({% post_url databases/mongodb/2000-01-01-start %}#backups)

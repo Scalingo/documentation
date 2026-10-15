@@ -95,5 +95,5 @@ through the database dashboard.
 
 [mysql-lts]: https://dev.mysql.com/blog-archive/introducing-mysql-innovation-and-long-term-support-lts-versions/
 [maintenance-mode]: {% post_url platform/app/2000-01-01-custom-error-page %}#custom-maintenance-page
-[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
-[backing-up-dumping]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-backing-up %}#dumping-the-database
+[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
+[backing-up-dumping]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-backing-up %}#dumping-the-database

@@ -174,10 +174,10 @@ tasks such as:
 [kube-operator-secret]: https://github.com/Scalingo/scalingo-operator/blob/main/README.md#create-secret
 [kube-operator-mysql-sample]: https://github.com/Scalingo/scalingo-operator/blob/main/config/samples/databases_v1_mysql.yaml
 
-[mysql-dr-monitoring]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-monitoring %}
-[mysql-dr-upgrading]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-upgrading %}
-[mysql-dr-managing-users]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-managing-users %}
-[mysql-dr-managing-collaborators]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-managing-collaborators %}
-[mysql-dr-backing-up]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-backing-up %}
+[mysql-dr-monitoring]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-monitoring %}
+[mysql-dr-upgrading]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-upgrading %}
+[mysql-dr-managing-users]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-managing-users %}
+[mysql-dr-managing-collaborators]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-managing-collaborators %}
+[mysql-dr-backing-up]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-backing-up %}
 
-[mysql-dr-multiple-db]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-using-multiple-databases %}
+[mysql-dr-multiple-db]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-using-multiple-databases %}

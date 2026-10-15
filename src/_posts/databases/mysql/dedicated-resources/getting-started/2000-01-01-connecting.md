@@ -109,7 +109,7 @@ application that needs access.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [environment]: {% post_url platform/app/2000-01-01-environment %}
-[dr-firewall-regions]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-accessing %}#allowing-scalingo-apps-to-reach-a-dedicated-resources-database
-[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
-[database-endpoints]: {% post_url databases/mysql/dedicated-resources/getting-started/2026-10-14-endpoints %}
-[managing-users]: {% post_url databases/mysql/dedicated-resources/guides/2026-10-14-managing-users %}
+[dr-firewall-regions]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-accessing %}#allowing-scalingo-apps-to-reach-a-dedicated-resources-database
+[database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
+[database-endpoints]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-endpoints %}
+[managing-users]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-managing-users %}
