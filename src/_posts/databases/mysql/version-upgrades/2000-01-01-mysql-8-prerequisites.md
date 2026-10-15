@@ -201,5 +201,6 @@ SELECT i.table_schema, i.table_name, i.engine, c.constraint_name  \
   WHERE i.table_schema not in ('information_schema', 'performance_schema', 'sys', 'mysql', 'mysql_innodb_cluster_metadata');
 ```
 
+If you have fixed all the issues listed above, or if none were detected, you can launch the upgrade.
 
 [prereq]: https://dev.mysql.com/doc/refman/8.0/en/group-replication-requirements.html

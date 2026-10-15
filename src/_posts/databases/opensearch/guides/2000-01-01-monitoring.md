@@ -1,7 +1,7 @@
 ---
 title: Monitoring and Auditing Your Scalingo for OpenSearch® Addon
 nav: Monitoring and Auditing
-modified_at: 2025-04-25 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases opensearch addon
 index: 2
 ---
@@ -72,7 +72,7 @@ dashboard.
 
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
-[db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
+[db-dashboard]: {% post_url databases/opensearch/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-opensearch-dashboard
 [monitoring]: {% post_url databases/opensearch/guides/2000-01-01-monitoring %}
 [managing-users]: {% post_url databases/opensearch/guides/2000-01-01-managing-users %}
 [backing-up]: {% post_url databases/opensearch/guides/2000-01-01-backing-up %}

@@ -1,7 +1,7 @@
 ---
 title: Changing Plan
 nav: Changing Plan
-modified_at: 2025-05-26 12:00:00
+modified_at: 2026-10-15 00:00:00
 tags: databases opensearch addon
 index: 3
 ---
@@ -83,15 +83,7 @@ operation, thanks to the failover mechanism included in the Business plan.
 
 ## Using the Dashboard
 
-1. From your web browser, open your [dashboard][dashboard]
-2. Click on the application for which you want to scale the Scalingo for
-   OpenSearch® addon
-3. Click on the **Resources** tab
-4. Locate the **Addons** block and click on the **…** button
-5. From the dropdown menu, select **Change plan**
-6. Select the new plan
-7. Click the **Finish** button
-8. Validate by clicking the **Confirm plan change** button
+{% include database_changing_plan_shared_resources_dashboard.md %}
 
 
 ## Using the Database Dashboard
@@ -149,8 +141,7 @@ operation, thanks to the failover mechanism included in the Business plan.
    application to a OpenSearch® Business 2048 addon.
 
 
-[dashboard]: https://dashboard.scalingo.com/apps
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [db-plans]: {% post_url databases/about/2000-01-01-overview %}#database-plans
-[db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
+[db-dashboard]: {% post_url databases/opensearch/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-opensearch-dashboard

@@ -63,6 +63,4 @@ SHOW CREATE TABLE `foo`;
 If you find a partitioning key using a prefix length, you need to update the table definition to remove this pattern.
 
 
-If you fixed all the issues listed above, or if none were detected, you can [open the database dashboard][database-dashboard] and launch the upgrade if it is available.
-
-[database-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
+If you have fixed all the issues listed above, or if none were detected, you can launch the upgrade.

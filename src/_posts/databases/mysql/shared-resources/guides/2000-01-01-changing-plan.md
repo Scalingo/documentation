@@ -1,7 +1,7 @@
 ---
 title: Changing Plan of a Scalingo for MySQL® Shared Resources Database
 nav: Changing Plan
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-15 00:00:00
 tags: databases mysql addon
 index: 3
 ---
@@ -80,15 +80,7 @@ plan.
 
 ## Using the Dashboard
 
-1. From your web browser, open your [dashboard]
-2. Click on the application for which you want to scale the Scalingo for
-   MySQL® addon
-3. Click on the **Resources** tab
-4. Locate the **Addons** block and click on the **…** button
-5. From the dropdown menu, select **Change plan**
-6. Select the new plan
-7. Click the **Finish** button
-8. Validate by clicking the **Confirm plan change** button
+{% include database_changing_plan_shared_resources_dashboard.md %}
 
 
 ## Using the Command Line
@@ -135,7 +127,6 @@ plan.
    application to a MySQL® Business 1024 addon.
 
 
-[dashboard]: https://dashboard.scalingo.com/apps
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [databases-plans]: {% post_url databases/about/2000-01-01-overview %}#database-plans

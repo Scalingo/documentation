@@ -21,17 +21,7 @@ You can provision a MySQL® Dedicated Resources database using the
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard][dashboard]
-2. Select the **Project** where you want to create the database
-3. Click the arrow next to **Create an application**, then click
-   **Database Dedicated Resources**
-4. In the **Databases engines** section, select
-   **MySQL Dedicated Resources** and confirm your choice
-5. Enter a database name, then select or confirm the appropriate **Project** and
-   **Region**
-6. Select the plan you want to provision and confirm your selection
-7. Click the **Create database** button
-8. Database provisioning typically takes 15–30 minutes
+{% include database_provisioning_dedicated_resources_dashboard.md engine="MySQL" %}
 
 ### Using the Command Line (Preview) {#using-the-command-line}
 
@@ -173,11 +163,7 @@ tasks such as:
 - [Using multiple databases][mysql-dr-multiple-db]
 - [Managing backups][mysql-dr-backing-up]
 
-You can access the database dashboard from the main dashboard:
-
-1. From your web browser, open your [dashboard][dashboard]
-2. Open the **Project** containing the database you want to manage
-3. In the **Databases** section, click the database name
+{% include database_dashboard_access_dedicated_resources.md %}
 
 
 [dashboard]: https://dashboard.scalingo.com/projects

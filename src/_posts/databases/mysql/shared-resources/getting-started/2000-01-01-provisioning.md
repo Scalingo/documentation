@@ -1,7 +1,7 @@
 ---
 title: Provisioning a Scalingo for MySQL® Shared Resources Database
 nav: Provisioning
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-15 00:00:00
 tags: databases mysql addon
 index: 1
 ---
@@ -18,15 +18,7 @@ add-on using the [dashboard](#using-the-dashboard),
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard]
-2. Click on the application for which you want to add a MySQL® database
-3. Click on the **Resources** tab
-4. Locate the **Addons** block and click on the **Add an addon** button
-5. Select **MySQL**® in the databases block and click the **Go to plan
-   selection** button
-6. Select the plan you want to provision
-7. Click the **Finish** button
-8. Give the platform a few seconds to ship your database and enjoy!
+{% include database_provisioning_shared_resources_dashboard.md engine="MySQL®" %}
 
 ### Using the Command Line
 
@@ -77,7 +69,8 @@ add-on using the [dashboard](#using-the-dashboard),
 4. After a few seconds, your database is ready to use. Enjoy!
 
 
-## Accessing the MySQL® Dashboard
+## Accessing the Scalingo for MySQL® Dashboard
+{: #accessing-the-mysql-dashboard}
 
 Every MySQL® addon comes with its dedicated dashboard, generally referred
 to as **database dashboard**, which is the central place for administrative
@@ -89,13 +82,7 @@ tasks such as:
 - [Using multiple databases][multiple-db]
 - [Managing backups][backing-up]
 
-You can access the database dashboard via the application dashboard:
-
-1. From your web browser, open your [dashboard]
-2. Click on the application for which you want to manage your database
-3. Click on the **Overview** tab
-4. Locate the **Addons** block and click on the **Dashboard** button next to
-   the database you want to manage.
+{% include database_dashboard_access_shared_resources.md %}
 
 
 [dashboard]: https://dashboard.scalingo.com/apps

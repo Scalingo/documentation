@@ -961,7 +961,7 @@
     new: "/databases/mysql/shared-resources/guides/restoring"
 
   - old: "/databases/mysql/guides/working-with-sql-modes"
-    new: "/databases/mysql/mysql-features/working-with-sql-modes"
+    new: "/databases/mysql/shared-resources/guides/working-with-sql-modes"
 
   - old: "/databases/mysql/guides/upgrading"
     new: "/databases/mysql/shared-resources/guides/upgrading"
@@ -989,6 +989,9 @@
 
   - old: "/databases/mysql/guides/upgrading-to-mysql-8"
     new: "/databases/mysql/version-upgrades/mysql-8-prerequisites"
+
+  - old: "/databases/about/database-dashboard"
+    new: "/databases/about/features#database-dashboard"
 
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"

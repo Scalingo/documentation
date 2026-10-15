@@ -1,12 +1,3 @@
----
-title: Working with SQL Modes
-nav: Working with SQL Modes
-modified_at: 2026-10-14 00:00:00
-tags: databases mysql addon modes
-index: 20
----
-
-
 SQL modes allow you to configure MySQL® to behave according to specific
 standards, adjusting how it processes queries and verifies data validity. This
 includes settings that can make MySQL® more strict or more flexible regarding
@@ -18,8 +9,12 @@ by your database are indeed available. The exhaustive list may vary depending on
 your MySQL® version. Descriptions of the modes can be found in the official
 MySQL® documentation:
 
+{% if include.architecture == "shared-resources" %}
 - [for MySQL® `8.0`][sql-modes-80]
 - [for MySQL® `8.4`][sql-modes-84]
+{% else %}
+- [for MySQL® `8.4`][sql-modes-84]
+{% endif %}
 
 Currently, the default SQL mode includes:
 - `ONLY_FULL_GROUP_BY`
@@ -48,9 +43,3 @@ these actions via the MySQL® console.
 6. Validate by clicking the **Update configuration** button
 7. The changes are done at runtime, which means they immediately apply to new
    queries
-
-
-[sql-modes-80]: https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html
-[sql-modes-84]: https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html
-
-[database-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}

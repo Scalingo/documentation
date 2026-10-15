@@ -1,7 +1,7 @@
 ---
 title: Provisioning a Scalingo for PostgreSQL® Shared Resources Database
 nav: Provisioning
-modified_at: 2026-10-13 00:00:00
+modified_at: 2026-10-15 00:00:00
 tags: databases postgresql addon
 index: 1
 ---
@@ -19,15 +19,7 @@ add-on using the [dashboard](#using-the-dashboard),
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard][dashboard]
-2. Click on the application for which you want to add a PostgreSQL® database
-3. Click on the **Resources** tab
-4. Locate the **Addons** block and click on the **Add an addon** button
-5. Select **PostgreSQL**® in the databases block and click the **Go to plan
-   selection** button
-6. Select the plan you want to provision
-7. Click the **Finish** button
-8. Give the platform a few seconds to ship your database and enjoy!
+{% include database_provisioning_shared_resources_dashboard.md engine="PostgreSQL®" %}
 
 ### Using the Command Line
 
@@ -90,13 +82,7 @@ tasks such as:
 - [Managing database users][managing-users]
 - [Managing backups][backing-up]
 
-You can access the database dashboard via the application dashboard:
-
-1. From your web browser, open your [dashboard][dashboard]
-2. Click on the application for which you want to manage your database
-3. Click on the **Overview** tab
-4. Locate the **Addons** block and click on the **Dashboard** button next to
-   the database you want to manage.
+{% include database_dashboard_access_shared_resources.md %}
 
 
 [dashboard]: https://dashboard.scalingo.com/apps

@@ -1,7 +1,7 @@
 ---
 title: Managing Users of Your Scalingo for PostgreSQL® Shared Resources addon
 nav: Managing Users
-modified_at: 2024-11-05 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases postgresql addon
 index: 1
 ---
@@ -172,5 +172,5 @@ Updating a User Password is only available from the command line.
 
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
-[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-postgresql-dashboard
+[database-dashboard]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [managing-collaborators]: {% post_url platform/user-management/teamwork/2000-01-01-managing %}
