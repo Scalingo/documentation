@@ -19,3 +19,15 @@ The links below point to the published documentation pages, ordered by modificat
 {% assign posts = site.posts | sort: 'modified_at' | reverse %}{% for post in posts %}{% unless post.categories contains 'changelog' or post.llm_exclude == true or post.layout == 'dir' -%}{% assign llm_description = post.description | strip_html | normalize_whitespace | truncate: 256 %}
 - [{{ post.title }}]({{ post.url | prepend: site.baseurl | prepend: site.url }}){% if post.description and post.description != "" %}: {{ llm_description }}{% endif %}
 {% endunless -%}{% endfor %}
+
+## Tutorials
+The links below point to the published Scalingo tutorials, ordered by modification date (newest first).
+{% assign tutorials = site.tutorials | sort: 'modified_at' | reverse %}{% for tutorial in tutorials %}{% unless tutorial.deprecated == true or tutorial.llm_exclude == true -%}
+- [{{ tutorial.title }}]({{ tutorial.url | prepend: site.baseurl | prepend: site.url }}){% if tutorial.description and tutorial.description != "" %}: {{ tutorial.description | strip_html | normalize_whitespace | truncate: 256 }}{% endif %}
+{% endunless -%}{% endfor %}
+
+## Tutorial categories
+The links below point to the available tutorial categories.
+{% for category in site.tutorials_categories %}{% unless category.deprecated == true or category.llm_exclude == true -%}
+- [{{ category.title }}]({{ category.url | prepend: site.baseurl | prepend: site.url }}){% if category.description and category.description != "" %}: {{ category.description | strip_html | normalize_whitespace | truncate: 256 }}{% endif %}
+{% endunless -%}{% endfor %}

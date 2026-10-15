@@ -18,4 +18,21 @@ page_exclude: true
     <priority>0.5</priority>
   </url>
 {% endfor %}
+{% for tutorial in site.tutorials %}
+  {% unless tutorial.deprecated == true %}
+    <url>
+      <loc>{{ tutorial.url | prepend: site.baseurl | prepend: site.url }}</loc>
+      <priority>0.9</priority>
+    </url>
+  {% endunless %}
+{% endfor %}
+{% for category in site.tutorials_categories %}
+  {% unless category.deprecated == true %}
+    <url>
+      <loc>{{ category.url | prepend: site.baseurl | prepend: site.url }}</loc>
+      <priority>0.5</priority>
+    </url>
+  {% endunless %}
+{% endfor %}
+
 </urlset>
