@@ -1,5 +1,5 @@
 ---
-title: Security Monitoring and Logging
+title: Security Monitoring, Journaling and Logging
 nav: Monitoring
 modified_at: 2026-10-16 00:00:00
 tags: compliance security measures monitoring
@@ -22,11 +22,12 @@ communicates with customers.
 
 ### Logs and metrics available to customers
 
-Application logs contain what your application writes to `stdout` and `stderr`. You can access application and database
-add-on logs through the Dashboard and CLI. Router logs are optional; you can enable them for an application through the
-CLI. You can also configure a [log drain][log-drain] to forward application or add-on logs to another provider; adding
-one does not disable the [Scalingo Logs][logs] feature for those logs. The [logs guide][logs] covers access and retention,
-and the [CLI reference][cli-features] documents how to enable router logs. See [application metrics][app-metrics],
+Application logs contain the messages your application writes to `stdout` and `stderr`; you control this content in your
+application. You can access application and database add-on logs through the Dashboard and CLI. Router logs are optional;
+you can enable them for an application through the CLI. You can also configure a [log drain][log-drain] to forward
+application or add-on logs to another provider; adding one does not disable the [Scalingo Logs][logs] feature for those
+logs. The [logs guide][logs] covers access and retention, and the [CLI reference][cli-features] documents how to enable
+router logs. See [application metrics][app-metrics],
 [application alerts][alerts], and the database monitoring guides linked from [database features][database-features].
 
 Avoid writing secrets or unnecessary personal or health data to application logs. If forwarded application or add-on logs
@@ -48,9 +49,9 @@ des journaux applicatifs et des add-ons de base de données accessibles aux clie
 
 ### Journaux et métriques accessibles aux clients {#journaux-et-metriques-accessibles-aux-clients}
 
-Les journaux applicatifs contiennent les messages écrits par votre application sur `stdout` et `stderr`. Vous pouvez
-consulter les journaux applicatifs et ceux des add-ons de base de données depuis le tableau de bord ou la CLI. Les
-journaux du routeur sont optionnels ; vous pouvez les activer pour une application depuis la CLI. Vous pouvez aussi
+Les journaux applicatifs contiennent les messages que votre application écrit sur `stdout` et `stderr` ; vous en définissez
+le contenu dans l'application. Vous pouvez consulter les journaux applicatifs et ceux des add-ons de base de données depuis
+le tableau de bord ou la CLI. Les journaux du routeur sont optionnels ; vous pouvez les activer pour une application depuis la CLI. Vous pouvez aussi
 configurer un [log drain (mécanisme de transfert des journaux, en anglais)][log-drain] pour transférer les journaux
 applicatifs ou ceux des add-ons vers un autre fournisseur ; cela ne désactive pas la fonctionnalité
 [Scalingo Logs (en anglais)][logs] pour ces journaux. Le [guide des journaux (en anglais)][logs] décrit leur accès et
