@@ -27,8 +27,9 @@ isolated from the host operating system, which provides an additional layer of s
 
 ### Scalability
 
-For details on container scaling and autoscaling, see the [scaling guide][scaling] and the
-[Scalingo Autoscaler guide][autoscaler].
+You can scale horizontally by adding containers or vertically by changing their size. Once configured and enabled, the
+Scalingo Autoscaler adjusts the number of containers based on the metric you select. See the [scaling guide][scaling] and
+the [Scalingo Autoscaler guide][autoscaler] for details.
 
 ### Dependency Management
 
@@ -66,8 +67,10 @@ Chaque application est déployée dans son propre conteneur, qui est isolé des 
 
 ### Scalabilité {#scalabilite}
 
-Consultez les guides [Mise à l'échelle d'une application (en anglais)][scaling] et
-[Scalingo Autoscaler (en anglais)][autoscaler] pour configurer la capacité et l'autoscaling.
+Vous pouvez augmenter la capacité horizontalement en ajoutant des conteneurs ou verticalement en modifiant leur taille.
+Une fois configuré et activé, Scalingo Autoscaler ajuste le nombre de conteneurs selon la métrique choisie. Consultez
+les guides [Mise à l'échelle d'une application (en anglais)][scaling] et [Scalingo Autoscaler (en anglais)][autoscaler]
+pour plus de détails.
 
 ### Gestion des Dépendances {#gestion-des-dependances}
 

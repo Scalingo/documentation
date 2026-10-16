@@ -14,10 +14,13 @@ index: 2
 ### Public application traffic
 
 The Application Firewall is in Preview and available on request. See the [Application Firewall][application-firewall]
-and [public routing][routing] documentation for its scope. It filters by source IPv4 address and does not inspect request
-content or replace application-specific protections.
+documentation for its scope. It filters by source IPv4 address and does not inspect request content or replace
+application-specific protections.
 
-Scaling and autoscaling can add capacity, but cannot distinguish malicious traffic from a legitimate increase. Configure
+Traffic to public applications passes through Scalingo's routing layer, which filters undesirable traffic and applies
+ingress constraints; see the [public routing][routing] documentation. You can add capacity by scaling your application
+manually or by configuring and enabling the Autoscaler, but neither method distinguishes malicious traffic from a
+legitimate increase. Configure
 application-specific protections in your application or through a suitable proxy or CDN.
 
 For private application connectivity, see [Private Networks][private-networks] and [customer VPN
@@ -30,13 +33,15 @@ connectivity][connectivity]. Controls for staff access to platform administratio
 
 ### Trafic public vers les applications
 
-Le pare-feu applicatif est en préversion et accessible sur demande. Consultez les pages
-[Pare-feu applicatif (en anglais)][application-firewall] et [routage public (en anglais)][routing] pour connaître son
-périmètre. Il filtre selon l'adresse IPv4 source, sans inspecter le contenu des requêtes ni remplacer les protections
-propres à l'application.
+Le pare-feu applicatif est en préversion et accessible sur demande. Consultez la page
+[Pare-feu applicatif (en anglais)][application-firewall] pour connaître son périmètre. Il filtre selon l'adresse IPv4
+source, sans inspecter le contenu des requêtes ni remplacer les protections propres à l'application.
 
-La mise à l'échelle et l'autoscaling peuvent augmenter la capacité, mais ne distinguent pas le trafic malveillant d'une hausse
-légitime. Configurez les protections propres à votre application ou utilisez un proxy ou un CDN adapté.
+Le trafic vers les applications publiques passe par la couche de routage de Scalingo, qui filtre le trafic indésirable et
+applique des contraintes au trafic entrant ; consultez la documentation sur le [routage public (en anglais)][routing].
+Vous pouvez augmenter la capacité en mettant votre application à l'échelle manuellement ou en configurant et activant
+l'autoscaler, mais aucun de ces moyens ne distingue le trafic malveillant d'une hausse légitime. Configurez les protections
+propres à votre application ou utilisez un proxy ou un CDN adapté.
 
 Pour la connectivité privée des applications, consultez les pages [Réseaux privés (en anglais)][private-networks] et
 [connectivité VPN client (en anglais)][connectivity]. Les contrôles d'accès du personnel à l'administration de la

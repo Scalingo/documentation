@@ -15,9 +15,10 @@ index: 5
 
 ### Data Encryption
 
-Managed databases provisioned on Scalingo have encryption at rest enabled. TLS availability and defaults depend on the
-database engine and instance. Check the product documentation and enforce TLS where supported; see
-[managed database features][database-features].
+Managed databases provisioned on Scalingo have encryption at rest enabled. Scalingo manages the encryption keys and
+rotates them regularly. TLS is available for Scalingo databases, but may not be enabled by default; the default depends
+on the database engine. See [managed database features][database-features] for details and enable TLS for your
+connections where needed.
 
 ### Data Backups
 
@@ -26,7 +27,7 @@ For managed database backups, see the [security overview][backups-overview] and 
 
 ### Data Isolation
 
-Application owners remain responsible for authentication and authorization in their applications. See
+Configure authentication and authorization in your application to control access to its data. See
 [application security][application-security] for container isolation and image immutability.
 
 ### Data Privacy
@@ -36,16 +37,19 @@ External services selected for an application have their own terms and controls.
 
 ### Data Integrity
 
-Build and runtime containers are separate. The [Buildpack Security page][buildpack-security] describes their lifecycle.
+Application builds run in containers isolated from runtime containers. See [Buildpack Security][buildpack-security] for
+the build lifecycle and [Application Security][application-security] for image immutability.
 
 ### Resilience
 
 Availability commitments depend on the product and service class. See the applicable [Service Level Agreement][sla-en].
+For platform continuity and disaster recovery, see [Business Continuity and Disaster Recovery][business-continuity].
 
 [database-features]: {% post_url databases/about/2000-01-01-features %}
 [backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
 [backups-overview]: {% post_url security/overview/2000-01-01-backups %}
 [application-security]: {% post_url security/overview/2000-01-01-application-security %}
+[business-continuity]: {% post_url security/overview/2000-01-01-business-disaster %}
 [buildpack-security]: {% post_url security/overview/2000-01-01-buildpack-security %}
 [dpa-en]: https://scalingo.com/data-processing-agreement
 [sla-en]: https://scalingo.com/service-level-agreement
@@ -58,9 +62,10 @@ Availability commitments depend on the product and service class. See the applic
 
 ### Chiffrement des données {#chiffrement-des-donnees}
 
-Les bases de données managées créées sur Scalingo sont chiffrées au repos. La disponibilité et les paramètres TLS
-dépendent du moteur et de l'instance. Consultez la documentation du produit et imposez TLS lorsqu'il est pris en charge ;
-voir les [fonctionnalités des bases de données managées (en anglais)][database-features].
+Les bases de données managées créées sur Scalingo sont chiffrées au repos. Scalingo gère les clés de chiffrement et les
+renouvelle régulièrement. TLS est toujours disponible pour les bases de données Scalingo, mais peut ne pas être activé par
+défaut ; cela dépend du moteur. Consultez les [fonctionnalités des bases de données managées (en anglais)][database-features]
+et activez TLS pour vos connexions si nécessaire.
 
 ### Sauvegardes de données {#sauvegardes-de-donnees}
 
@@ -69,9 +74,8 @@ Consultez la page [Sauvegardes][backups-overview] et la
 
 ### Isolation des données {#isolation-des-donnees}
 
-Le propriétaire de l'application reste responsable de l'authentification et des autorisations dans l'application.
-Consultez la page [Sécurité des applications][application-security] pour l'isolation des conteneurs et l'immutabilité
-des images.
+Configurez l'authentification et les autorisations dans votre application pour contrôler l'accès aux données. Consultez
+la page [Sécurité des applications][application-security] pour l'isolation des conteneurs et l'immutabilité des images.
 
 ### Confidentialité des données {#confidentialite-des-donnees}
 
@@ -80,13 +84,16 @@ ultérieurs concernés. Les services externes associés à une application ont l
 
 ### Intégrité des données {#integrite-des-donnees}
 
-Les conteneurs de build et d'exécution sont séparés. La page [Sécurité des buildpacks][buildpack-security] décrit leur
-cycle de vie.
+Les builds applicatifs s'exécutent dans des conteneurs isolés des conteneurs d'exécution. Consultez la page
+[Sécurité des buildpacks][buildpack-security] pour le cycle de build et la page
+[Sécurité des applications][application-security] pour l'immutabilité des images.
 
 ### Résilience {#resilience}
 
 Les engagements de disponibilité dépendent du produit et de la classe de service. Consultez les
-[engagements de service applicables][sla-fr].
+[engagements de service applicables][sla-fr]. Pour la continuité d'activité et la reprise après sinistre de la plateforme,
+consultez la page [Continuité d'activité et reprise après sinistre][business-continuity].
 
 [dpa-fr]: https://scalingo.com/fr/contrat-gestion-traitements-donnees-personnelles
+[business-continuity]: {% post_url security/overview/2000-01-01-business-disaster %}
 [sla-fr]: https://scalingo.com/fr/engagements-de-services
