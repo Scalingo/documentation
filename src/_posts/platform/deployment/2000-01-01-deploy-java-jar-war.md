@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2026-08-20 12:00:00
+modified_at: 2026-10-16 12:00:00
 index: 8
 tags: deployment, java, jar, war
 ---
@@ -82,30 +82,26 @@ $ scalingo --app my-app deploy ./archive.tar.gz
 
 ### JVM version selection
 
-The used version of OpenJDK (Java runtime) can be defined by the environment
-variable `JAVA_VERSION`. By default the **1.8** version will be used.
-
-```sh
-# Configure the application to use OpenJDK version 1.9
-
-$ scalingo --app my-app env-set JAVA_VERSION=1.9
-```
+Please refer to our [Java language documentation][java] for versions
+availability and selection.
 
 ### Webapp Runner / Tomcat version selection
-
-By default, the latest `9.0.x` version of Tomcat is installed. If you want to
-use another version, you can define the environment variable
-`JAVA_WEBAPP_RUNNER_VERSION`, like so:
-
-```sh
-scalingo --app my-app env-set JAVA_WEBAPP_RUNNER_VERSION=10.1.24.0
-```
 
 The latest available versions currently are:
 
 | Tomcat Version | {% scalingo 22 %} | {% scalingo 24 %} | {% scalingo 26 %} |
 | -------------: | ----------------: | ----------------: | ----------------: |
-| **`10.1`**     | up to `10.1.57.0` | up to `10.1.57.0` | up to `10.1.57.0` |
-| **`9.0`**      | up to `9.0.120.0` | up to `9.0.120.0` | up to `9.0.120.0` |
+| **`10.1`**     | up to `10.1.60.0` | up to `10.1.60.0` | up to `10.1.60.0` |
+| **`9.0`**      | up to `9.0.122.0` | up to `9.0.122.0` | up to `9.0.122.0` |
 
 The default Tomcat version on all stacks is the latest `9.0` version.
+
+If you want to use another version, you can define the environment variable
+`JAVA_WEBAPP_RUNNER_VERSION`, like so:
+
+```sh
+scalingo --app my-app env-set JAVA_WEBAPP_RUNNER_VERSION=10.1.60.0
+```
+
+
+[java]: {% post_url languages/java/2000-01-01-start %}
