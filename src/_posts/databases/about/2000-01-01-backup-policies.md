@@ -31,6 +31,7 @@ The table below summarises which backup mechanisms are available (and whether th
 | Scalingo for OpenSearch®    | Shared Resources    | Managed              | Not available      |
 | Scalingo for Elasticsearch® | Shared Resources    | Managed              | Not available      |
 | Scalingo for InfluxDB®      | Shared Resources    | Managed              | Not available      |
+| Scalingo for Valkey®       | Shared Resources    | Managed              | Not available      |
 
 [^1]: On Dedicated Resources, logical backups are possible, but they are customer-managed and rely on an external tool for both execution and retention policy.
 
@@ -105,6 +106,25 @@ duration depends on the plan:
 If manual backups have already exceeded their retention period, they are
 deleted immediately.
 
+
+### Valkey on Shared Resources
+
+Valkey Starter and Business plans on Shared Resources use managed hourly backups
+instead of a configurable daily schedule. Hourly and twelve-hourly retention
+are currently exclusive to Valkey on Shared Resources.
+
+Scheduled backups retain the following numbers of successful recovery points:
+
+| Service Class | Hourly | Twelve-hourly | Daily | Weekly | Monthly |
+|---------------|--------|---------------|-------|--------|---------|
+| Starter       | 4      | 2             | 3     | 4      | —       |
+| Business      | 8      | 2             | 7     | 8      | 12      |
+
+Hourly retention keeps the latest successful backups. Other tiers keep one
+successful backup per UTC half-day (00:00–12:00 or 12:00–24:00), day, week
+(starting on Sunday), or month.
+
+Both classes retain the latest **10 manual backups**.
 
 ## Continuous backups
 
