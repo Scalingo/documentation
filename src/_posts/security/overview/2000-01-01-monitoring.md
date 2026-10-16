@@ -13,8 +13,8 @@ index: 4
 
 ### Monitoring and metrics
 
-The dashboard shows application metrics and alerts. Managed database metrics vary by product and service class. See the
-[application metrics][app-metrics], [application alerts][alerts], and database-specific monitoring documentation.
+See [application metrics][app-metrics], [application alerts][alerts], and the product documentation for database
+monitoring.
 
 We monitor the platform for production and security incidents. The [incident and support page][incident-support] explains
 how to report a suspected incident and how Scalingo communicates with customers.
@@ -33,9 +33,8 @@ For health data subject to HDS requirements, check the provider's HDS scope as w
 
 ### Supervision et métriques {#supervision-et-metriques}
 
-Le tableau de bord affiche les métriques et alertes applicatives. Les métriques des bases de données managées varient
-selon le produit et sa classe de service. Consultez la [documentation des métriques applicatives (en anglais)][app-metrics],
-le [guide des alertes applicatives (en anglais)][alerts] et la documentation de supervision du moteur concerné.
+Consultez la [documentation des métriques applicatives (en anglais)][app-metrics], le
+[guide des alertes applicatives (en anglais)][alerts] et la documentation de supervision du moteur concerné.
 
 Nous surveillons la plateforme pour détecter les incidents de production et de sécurité. La page [Incidents et support][incident-support]
 explique comment signaler un incident suspect et comment Scalingo informe ses clients.

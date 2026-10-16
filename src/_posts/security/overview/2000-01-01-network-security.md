@@ -1,7 +1,7 @@
 ---
 title: Network Security
 nav: Network
-modified_at: 2026-10-15 00:00:00
+modified_at: 2026-10-16 00:00:00
 tags: compliance security measures
 index: 2
 ---
@@ -13,10 +13,9 @@ index: 2
 
 ### Public application traffic
 
-Scalingo routes public HTTP and HTTPS traffic to application `web` containers. The Application Firewall is in Preview
-and available on request. It filters traffic by source IPv4 address for public HTTP/HTTPS requests to `web` containers.
-TCP add-ons and Private Networks are unaffected, and the firewall does not inspect request content like a Web Application
-Firewall. See the [Application Firewall][application-firewall] and [public routing][routing] documentation.
+The Application Firewall is in Preview and available on request. See the [Application Firewall][application-firewall]
+and [public routing][routing] documentation for its scope. It filters by source IPv4 address and does not inspect request
+content or replace application-specific protections.
 
 Scaling and autoscaling can add capacity, but cannot distinguish malicious traffic from a legitimate increase. Configure
 application-specific protections in your application or through a suitable proxy or CDN.
@@ -31,11 +30,10 @@ connectivity][connectivity]. Controls for staff access to platform administratio
 
 ### Trafic public vers les applications
 
-Scalingo achemine le trafic HTTP et HTTPS public vers les conteneurs applicatifs `web`. Le pare-feu applicatif est en
-préversion et accessible sur demande. Il filtre le trafic selon l'adresse IPv4 source pour les requêtes HTTP/HTTPS
-publiques vers les conteneurs `web`. Les add-ons TCP et les réseaux privés ne sont pas concernés. Le pare-feu n'inspecte
-pas le contenu des requêtes comme le ferait un pare-feu applicatif Web (WAF). Consultez les pages
-[Pare-feu applicatif (en anglais)][application-firewall] et [routage public (en anglais)][routing].
+Le pare-feu applicatif est en préversion et accessible sur demande. Consultez les pages
+[Pare-feu applicatif (en anglais)][application-firewall] et [routage public (en anglais)][routing] pour connaître son
+périmètre. Il filtre selon l'adresse IPv4 source, sans inspecter le contenu des requêtes ni remplacer les protections
+propres à l'application.
 
 La mise à l'échelle et l'autoscaling peuvent augmenter la capacité, mais ne distinguent pas le trafic malveillant d'une hausse
 légitime. Configurez les protections propres à votre application ou utilisez un proxy ou un CDN adapté.

@@ -1,7 +1,7 @@
 ---
 title: Application Security
 nav: Application
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-16 00:00:00
 tags: compliance security measures application
 index: 3
 ---
@@ -27,11 +27,8 @@ isolated from the host operating system, which provides an additional layer of s
 
 ### Scalability
 
-You can add containers or increase their size to handle more traffic. Scaling can add capacity, but it cannot distinguish
-malicious traffic from a legitimate increase.
-
-When enabled, autoscaling adjusts the number of containers based on measures such as application CPU usage or request
-volume.
+For details on container scaling and autoscaling, see the [scaling guide][scaling] and the
+[Scalingo Autoscaler guide][autoscaler].
 
 ### Dependency Management
 
@@ -69,11 +66,8 @@ Chaque application est déployée dans son propre conteneur, qui est isolé des 
 
 ### Scalabilité {#scalabilite}
 
-Ajoutez des conteneurs ou augmentez leur taille pour absorber une hausse du trafic. La mise à l'échelle peut augmenter
-la capacité, mais ne distingue pas le trafic malveillant d'une hausse légitime.
-
-Lorsque l'autoscaling est activé, il ajuste le nombre de conteneurs selon des mesures telles que l'utilisation du CPU
-ou le nombre de requêtes reçues.
+Consultez les guides [Mise à l'échelle d'une application (en anglais)][scaling] et
+[Scalingo Autoscaler (en anglais)][autoscaler] pour configurer la capacité et l'autoscaling.
 
 ### Gestion des Dépendances {#gestion-des-dependances}
 
@@ -88,3 +82,6 @@ Nous utilisons des en-têtes de sécurité pour protéger la plateforme des vuln
 Toutes les données transmises entre la plateforme et l'utilisateur sont chiffrées en utilisant TLS (HTTPS). Cela garantit que les données sont protégées contre l'écoute clandestine et la falsification. Les chiffrements autorisés sont régulièrement mis à jour pour assurer que la plateforme est protégée contre les dernières vulnérabilités de sécurité.
 
 Par exemple, nous autorisons uniquement les chiffrements TLS 1.2 et TLS 1.3 et nous désactivons les chiffrements et protocoles faibles tels que SSLv3 et TLS 1.0.
+
+[scaling]: {% post_url platform/app/scaling/2000-01-01-scaling %}
+[autoscaler]: {% post_url platform/app/scaling/2000-01-01-scalingo-autoscaler %}

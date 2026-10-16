@@ -1,7 +1,7 @@
 ---
 title: Data protection
 nav: Data protection
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-16 00:00:00
 tags: compliance security measures
 index: 5
 ---
@@ -21,34 +21,32 @@ database engine and instance. Check the product documentation and enforce TLS wh
 
 ### Data Backups
 
-Backup methods and retention vary by managed database engine, architecture, and service class. See the current
-[database backup policy][backup-policies]. Backups for services outside Scalingo's managed database scope must be
-arranged with their provider.
+For managed database backups, see the [security overview][backups-overview] and the current
+[database backup policy][backup-policies].
 
 ### Data Isolation
 
-Each application runs in its own container, isolated from other application containers. This is one layer of platform
-isolation; application authentication and authorization remain the application owner's responsibility. See
-[application security][application-security].
+Application owners remain responsible for authentication and authorization in their applications. See
+[application security][application-security] for container isolation and image immutability.
 
 ### Data Privacy
 
 The [Data Processing Agreement][dpa-en] describes Scalingo's processing of personal data and applicable subprocessors.
-External services selected for an application have their own terms and controls. Connecting one to a Scalingo
-application does not automatically include it in Scalingo's HDS scope; check the provider's certification and contract.
+External services selected for an application have their own terms and controls.
 
 ### Data Integrity
 
-Build and runtime containers are separate, and the deployed container image is immutable.
+Build and runtime containers are separate. The [Buildpack Security page][buildpack-security] describes their lifecycle.
 
 ### Resilience
 
-Availability commitments and recovery options depend on the product and service class. See the applicable
-[Service Level Agreement][sla-en] and product-specific backup documentation.
+Availability commitments depend on the product and service class. See the applicable [Service Level Agreement][sla-en].
 
 [database-features]: {% post_url databases/about/2000-01-01-features %}
 [backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
+[backups-overview]: {% post_url security/overview/2000-01-01-backups %}
 [application-security]: {% post_url security/overview/2000-01-01-application-security %}
+[buildpack-security]: {% post_url security/overview/2000-01-01-buildpack-security %}
 [dpa-en]: https://scalingo.com/data-processing-agreement
 [sla-en]: https://scalingo.com/service-level-agreement
 
@@ -66,33 +64,29 @@ voir les [fonctionnalités des bases de données managées (en anglais)][databas
 
 ### Sauvegardes de données {#sauvegardes-de-donnees}
 
-Les méthodes et la durée de conservation des sauvegardes varient selon le moteur, l'architecture et la classe de service
-de la base de données managée. Consultez la [politique de sauvegarde des bases de données (en anglais)][backup-policies]. Les
-sauvegardes des services hors du périmètre des bases de données managées par Scalingo doivent être organisées avec leur
-fournisseur.
+Consultez la page [Sauvegardes][backups-overview] et la
+[politique de sauvegarde des bases de données (en anglais)][backup-policies] pour les détails.
 
 ### Isolation des données {#isolation-des-donnees}
 
-Chaque application s'exécute dans son propre conteneur, isolé des autres conteneurs applicatifs. Cette isolation ajoute
-une couche de protection au niveau de la plateforme. Le propriétaire de l'application reste responsable de
-l'authentification et des autorisations dans l'application. Consultez la page
-[Sécurité des applications][application-security].
+Le propriétaire de l'application reste responsable de l'authentification et des autorisations dans l'application.
+Consultez la page [Sécurité des applications][application-security] pour l'isolation des conteneurs et l'immutabilité
+des images.
 
 ### Confidentialité des données {#confidentialite-des-donnees}
 
 L'[Accord de traitement des données][dpa-fr] décrit le traitement des données personnelles par Scalingo et les sous-traitants
-ultérieurs concernés. Les services externes associés à une application ont leurs propres conditions et contrôles. Leur
-utilisation n'étend pas automatiquement le périmètre HDS de Scalingo à ces services. Vérifiez la certification du
-fournisseur et le contrat applicable.
+ultérieurs concernés. Les services externes associés à une application ont leurs propres conditions et contrôles.
 
 ### Intégrité des données {#integrite-des-donnees}
 
-Les conteneurs de build et d'exécution sont séparés. Une fois déployée, l'image conteneur ne peut pas être modifiée.
+Les conteneurs de build et d'exécution sont séparés. La page [Sécurité des buildpacks][buildpack-security] décrit leur
+cycle de vie.
 
 ### Résilience {#resilience}
 
-Les engagements de disponibilité et les options de restauration dépendent du produit et de la classe de service. Consultez
-les [engagements de service applicables][sla-fr] et la documentation de sauvegarde du produit.
+Les engagements de disponibilité dépendent du produit et de la classe de service. Consultez les
+[engagements de service applicables][sla-fr].
 
 [dpa-fr]: https://scalingo.com/fr/contrat-gestion-traitements-donnees-personnelles
 [sla-fr]: https://scalingo.com/fr/engagements-de-services
