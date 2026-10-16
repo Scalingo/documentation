@@ -1,12 +1,12 @@
 ---
 title: Managing Users of Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Managing Users
-modified_at: 2026-06-18 12:00:00
+modified_at: 2026-10-15 00:00:00
 tags: databases postgresql dedicated
 index: 1
 ---
 
-Each Scalingo for PostgreSQL® Dedicated Resources Database instances comes with
+Each Scalingo for PostgreSQL® Dedicated Resources database comes with
 a [default database user](#understanding-protected-user).
 You can [create](#creating-a-new-user) as many additional users as needed,
 grant them with the appropriate permissions, [update/reset their password](#updating-or-resetting-a-user-password),
@@ -45,20 +45,17 @@ This default user is ***protected*** and thus:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard][database-dashboard]
-2. Once on the database dashboard, click the **Settings** tab, then select the **Database Users** tab
-3. The list of available users is displayed under the **Manage database users**
-   section
+{% include database_users_list_dashboard.md %}
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-1. From the command line, list your databases:
+1. Make sure you have correctly [set up the Scalingo command line tool][cli]
+2. From the command line, list your databases:
    ```bash
    scalingo databases
    ```
-1. Locate the `ID` of the database for which you want to list users
-1. From the command line, run the following command to list the users:
+3. Locate the `ID` of the database for which you want to list users
+4. From the command line, run the following command to list the users:
    ```bash
    scalingo --database <database_ID> database-users-list
    ```
@@ -93,24 +90,17 @@ method used:
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard][database-dashboard]
-2. Once on the database dashboard, click the **Settings** tab, then select the **Database Users** tab
-3. Click the **Add a database user** boutton and fill out the form
-   - Fill a username
-   - Fill the corresponding password twice
-4. (optional) If you want to restrict this user to read only abilities, make
-   sure to check the **Read only** checkbox
-5. Validate by clicking the **Add this user** button
+{% include database_users_create_dashboard.md %}
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-1. From the command line, list your databases:
+1. Make sure you have correctly [set up the Scalingo command line tool][cli]
+2. From the command line, list your databases:
    ```bash
    scalingo databases
    ```
-1. Locate the `ID` of the database for which you want to create a user
-2. From the command line, run the following command to create a new user:
+3. Locate the `ID` of the database for which you want to create a user
+4. From the command line, run the following command to create a new user:
    ```bash
    scalingo --database <database_ID> database-users-create <username>
    ```
@@ -119,8 +109,8 @@ method used:
    ```bash
    scalingo --database <database_ID> database-users-create --read-only <username>
    ```
-3. Set the user password:
-   - Either chose a password and confirm it
+5. Set the user password:
+   - Either choose a password and confirm it
    - Or let the platform generate a password by leaving the field empty
 
    The output should look like this:
@@ -136,26 +126,15 @@ method used:
 
 ## Updating or Resetting a User Password
 
-It is possible to reset the password of any non-protected user.
-
-{% note %}
-- Using the dashboard, you can only reset a password (platform-generated password)
-- Using the command line, you can either:
-  - update a password (set a value),
-  - or reset it (leave the password empty to let the platform generate one)
-{% endnote %}
+{% include database_users_password_methods.md %}
 
 ### Using the Database Dashboard (Reset Only)
 
-1. From your web browser, open your [database dashboard][database-dashboard]
-2. Once on the database dashboard, click the **Settings** tab, then select the **Database Users** tab
-3. Locate the non-protected user for which you want to reset the password
-4. Open the **...** menu next to this user, then click **Reset password**
-5. Confirm the reset operation and safely store the newly generated password
+{% include database_users_reset_password_dashboard.md %}
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+1. Make sure you have correctly [set up the Scalingo command line tool][cli]
 2. Update the user password with the following command:
    ```bash
    scalingo --database <database_ID> database-users-update-password <username>
@@ -182,15 +161,11 @@ It is possible to reset the password of any non-protected user.
 
 ### Using the Database Dashboard
 
-1. From your web browser, open your [database dashboard][database-dashboard]
-2. Once on the database dashboard, click the **Settings** tab, then select the **Database Users** tab
-3. Locate the user you want to remove
-4. Open the **...** menu next to this user, then click **Delete user**
-5. Confirm the removal
+{% include database_users_delete_dashboard.md %}
 
 ### Using the Command Line
 
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
+1. Make sure you have correctly [set up the Scalingo command line tool][cli]
 2. Remove the user with the following command:
    ```bash
    scalingo --database <database_ID> database-users-delete <username>

@@ -1,7 +1,7 @@
 ---
 title: Restoring Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Restoring
-modified_at: 2026-04-01 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases postgresql dedicated
 index: 6
 ---
@@ -47,8 +47,8 @@ You must connect to the database yourself and run standard PostgreSQL® tools
 (`pg_restore`, `psql`).
 
 {% warning %}
-Restoring a database using a dump requires the database to be completely 
-stopped, hence causing an inevitable downtime.
+Restoring a dump over an existing database requires application downtime.
+Stop application access to the database until the restore is complete.
 {% endwarning %}
 
 You can run the restore from your local or development environment.
@@ -64,9 +64,9 @@ impact before running `pg_restore --clean`.
 
 1. Make sure your source IP (or range) is allowlisted in the database firewall
    ```sh
-   scalingo database-firewall-rules-add my-dedicated-db-id --cidr 203.0.113.0/24 --label "Office network"
+   scalingo --database my-dedicated-db-id database-firewall-rules-add --cidr 203.0.113.0/24 --label "Office network"
    # or directly the public ip of the workstation:
-   scalingo database-firewall-rules-add my-dedicated-db-id --cidr <public IP>/32 --label "My workstation"
+   scalingo --database my-dedicated-db-id database-firewall-rules-add --cidr <public IP>/32 --label "My workstation"
    # wait for the database to be reachable from workstation
    ```
 2. Get the database [connection URI][connection-uri]
