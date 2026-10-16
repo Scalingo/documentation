@@ -60,6 +60,7 @@ module Dirname
 
       if url_path != "/"
         if page_for_dir
+          # Preserve authored content on directory pages while still generating their navigation links.
           page_for_dir.data["layout"] = "dir" unless page_for_dir.data["render_content"]
           page_for_dir.data["slug"] = url_path
           page_for_dir.data["links"] = children.each_with_object([]) do |obj, memo|
