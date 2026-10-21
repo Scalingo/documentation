@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for MySQL® Shared Resources Database
 nav: Accessing
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-21 00:00:00
 tags: databases mysql addon
 index: 3
 ---
@@ -29,11 +29,10 @@ depends on your needs and preferences.
 
    ---> Download and extract the database CLI
    ---> Database CLI installed:
-   mysql  Ver 8.0.33 for Linux on x86_64 (Source distribution)
+   ...
    mysql: [Warning] Using a password on the command line interface can be insecure.
    Welcome to the MySQL monitor.  Commands end with ; or \g.
    Your MySQL connection id is 496
-   Server version: 8.0.35 MySQL Community Server - GPL
 
    Copyright (c) 2000, 2023, Oracle and/or its affiliates.
 
@@ -64,7 +63,7 @@ depends on your needs and preferences.
    ```text
    ---> Download and extract the database CLI
    ---> Database CLI installed:
-   mysql  Ver 8.0.33 for Linux on x86_64 (Source distribution)
+   ...
    ```
    If you ever need a specific version, just add it as a second parameter:
    ```bash
@@ -74,7 +73,7 @@ depends on your needs and preferences.
    ```text
    ---> Download and extract the database CLI
    ---> Database CLI installed:
-   mysql  Ver 8.0.35 for Linux on x86_64 (Source distribution)
+   ...
    ```
 
    The `dbclient-fetcher` helper installs the following tools:

@@ -1,7 +1,7 @@
 ---
 title: Working with SQL Modes on Scalingo for MySQL® Dedicated Resources
 nav: Working with SQL Modes
-modified_at: 2026-10-15 00:00:00
+modified_at: 2026-10-21 00:00:00
 tags: databases mysql modes
 index: 20
 ---

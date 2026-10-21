@@ -1,7 +1,7 @@
 ---
 title: Connecting to Your Scalingo for MySQL® Shared Resources Database
 nav: Connecting
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-21 00:00:00
 tags: databases mysql addon
 index: 2
 ---
@@ -118,7 +118,7 @@ the database, like so:
    connection URI changes
 
 
-[mysql-tls]: https://dev.mysql.com/doc/refman/8.0/en/encrypted-connections.html
+[mysql-tls]: https://dev.mysql.com/doc/refman/8.4/en/encrypted-connections.html
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [env]: {% post_url platform/app/2000-01-01-environment %}

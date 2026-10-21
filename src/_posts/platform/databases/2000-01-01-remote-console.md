@@ -1,7 +1,7 @@
 ---
 title: Interactive Remote Console
 nav: Remote Console
-modified_at: 2026-02-09 12:00:00
+modified_at: 2026-10-21 00:00:00
 tags: databases
 index: 2
 ---
@@ -23,9 +23,7 @@ It is not available for OpenSearch or Dedicated Resources databases.
 
 {% note %}
 Remote Console tools run in a one-off container, which is a copy of your app
-execution environment. Client versions follow stack compatibility constraints,
-so some versions are not available on older stacks (for example, MySQL client
-8.4 is not available on `scalingo-20`).
+execution environment. Available client versions depend on your app's stack.
 {% endnote %}
 
 ## Open a Remote Console

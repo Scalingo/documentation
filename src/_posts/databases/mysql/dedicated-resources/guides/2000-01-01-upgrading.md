@@ -1,7 +1,7 @@
 ---
 title: Upgrading Your Scalingo for MySQL® Dedicated Resources Database
 nav: Upgrading
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-21 00:00:00
 tags: databases mysql dedicated
 index: 5
 ---
@@ -13,8 +13,8 @@ newer one.
 
 Scalingo for MySQL® Dedicated Resources runs MySQL® 8.4 LTS Community Edition.
 
-As explained in [the official documentation][mysql-lts], and starting with
-MySQL® `8.0.34`, the patch-upgrades only contain bug and security fixes.
+As explained in [the official documentation][mysql-lts], patch-upgrades within
+a MySQL® LTS branch only contain bug and security fixes.
 Consequently, it should be rather safe to upgrade to a new minor version.
 
 While we usually advise to stick to the latest patch-upgrade available to

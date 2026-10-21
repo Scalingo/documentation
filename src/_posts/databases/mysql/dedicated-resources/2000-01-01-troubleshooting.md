@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Your Scalingo for MySQL® Dedicated Resources Database
 nav: Troubleshooting
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-21 00:00:00
 tags: databases mysql dedicated
 index: 3
 ---
@@ -175,11 +175,11 @@ To solve this issue, the MySQL router has to be restarted, which induces a
 small downtime of less than 30 seconds. To do so, please get in touch with our Support Team.
 
 
-[mysql-memory-use]: https://dev.mysql.com/doc/refman/8.0/en/memory-use.html
-[mysql-buffer-pool]: https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool-resize.html
-[mysql-connection-management]: https://dev.mysql.com/doc/refman/8.0/en/connection-management.html
-[mysql-group-replication]: https://dev.mysql.com/doc/refman/8.0/en/group-replication.html
-[mysql-explain]: https://dev.mysql.com/doc/refman/8.0/en/using-explain.html
+[mysql-memory-use]: https://dev.mysql.com/doc/refman/8.4/en/memory-use.html
+[mysql-buffer-pool]: https://dev.mysql.com/doc/refman/8.4/en/innodb-buffer-pool-resize.html
+[mysql-connection-management]: https://dev.mysql.com/doc/refman/8.4/en/connection-management.html
+[mysql-group-replication]: https://dev.mysql.com/doc/refman/8.4/en/group-replication.html
+[mysql-explain]: https://dev.mysql.com/doc/refman/8.4/en/using-explain.html
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 

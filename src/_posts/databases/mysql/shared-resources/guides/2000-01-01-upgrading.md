@@ -1,7 +1,7 @@
 ---
 title: Upgrading Your Scalingo for MySQL® Shared Resources Database
 nav: Upgrading
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-21 00:00:00
 tags: databases mysql addon
 index: 4
 ---
@@ -10,11 +10,10 @@ In Scalingo's terminology, ***upgrading*** a Scalingo for MySQL® addon
 designates the operation consisting in changing the database version for a
 newer one.
 
-**Currently**, Scalingo supports the `8.0` and `8.4` LTS branches of MySQL® Community
-Edition.
+Scalingo for MySQL® Shared Resources runs MySQL® 8.4 LTS Community Edition.
 
-As explained in [the official documentation][mysql-lts], and starting with
-MySQL® `8.0.34`, the patch-upgrades only contain bug and security fixes.
+As explained in [the official documentation][mysql-lts], patch-upgrades within
+a MySQL® LTS branch only contain bug and security fixes.
 Consequently, it should be rather safe to upgrade to a new minor version.
 
 {% note %}

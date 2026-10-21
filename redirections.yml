@@ -993,6 +993,9 @@
   - old: "/databases/about/database-dashboard"
     new: "/databases/about/features#database-dashboard"
 
+  - old: "/databases/mysql/version-upgrades/mysql-8-prerequisites"
+    new: "/databases/mysql/version-upgrades/mysql-84-prerequisites"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

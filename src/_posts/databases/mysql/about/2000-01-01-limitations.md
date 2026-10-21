@@ -1,7 +1,7 @@
 ---
 title: Limitations
 nav: Limitations
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-21 00:00:00
 tags: addon database mysql
 index: 4
 ---
@@ -45,11 +45,7 @@ which may impact your application. We don't customize these timeouts, so that **
 values are kept.
 
 For further details about these timeouts, please check the official
-documentation for MySQL® Router, depending on your MySQL® version:
-
-- For [MySQL® `8.0`][mysql-router-conf-8.0]
-- For [MySQL® `8.4`][mysql-router-conf-8.4]
+[MySQL® Router 8.4 documentation][mysql-router-conf-8.4].
 
 
-[mysql-router-conf-8.0]: https://dev.mysql.com/doc/mysql-router/8.0/en/mysql-router-conf-options.html
 [mysql-router-conf-8.4]: https://dev.mysql.com/doc/mysql-router/8.4/en/mysql-router-conf-options.html

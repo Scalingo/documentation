@@ -9,12 +9,7 @@ by your database are indeed available. The exhaustive list may vary depending on
 your MySQL® version. Descriptions of the modes can be found in the official
 MySQL® documentation:
 
-{% if include.architecture == "shared-resources" %}
-- [for MySQL® `8.0`][sql-modes-80]
 - [for MySQL® `8.4`][sql-modes-84]
-{% else %}
-- [for MySQL® `8.4`][sql-modes-84]
-{% endif %}
 
 Currently, the default SQL mode includes:
 - `ONLY_FULL_GROUP_BY`
