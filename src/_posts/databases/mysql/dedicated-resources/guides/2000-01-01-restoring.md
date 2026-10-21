@@ -1,15 +1,15 @@
 ---
 title: Restoring Your Scalingo for MySQL® Dedicated Resources Database
 nav: Restoring
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-21 00:00:00
 tags: databases mysql dedicated
 index: 7
 ---
 
 
-Dedicated Resources MySQL® databases are automatically backed up and can be
-restored to a specific point in time within the backup retention period,
-depending on your plan.
+Scalingo for MySQL® Dedicated Resources databases are automatically backed up.
+Point-in-time recovery (PITR) lets you restore your database to a specific point
+within your plan's [Recovery Window][recovery-window].
 
 You can restore your database either from a managed
 [continuous backup](#restoring-from-a-continuous-backup),
@@ -84,3 +84,5 @@ impact before importing the dump.
 [database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
 [connection-uri]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-connecting %}#getting-the-connection-uri
 [backing-up-dumping]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-backing-up %}#dumping-the-database
+
+[recovery-window]: {% post_url databases/about/2000-01-01-backup-policies %}#recovery-window-for-pitr
