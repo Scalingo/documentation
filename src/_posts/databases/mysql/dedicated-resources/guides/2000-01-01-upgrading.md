@@ -6,94 +6,156 @@ tags: databases mysql dedicated
 index: 5
 ---
 
-In Scalingo's terminology, ***upgrading*** a Scalingo for MySQL® Dedicated
-Resources database
-designates the operation consisting in changing the database version for a
-newer one.
+Upgrading a Scalingo for MySQL® Dedicated Resources database changes its version
+to a newer one.
 
-Scalingo for MySQL® Dedicated Resources runs MySQL® 8.4 LTS Community Edition.
+We distinguish two cases:
 
-As explained in [the official documentation][mysql-lts], patch-upgrades within
-a MySQL® LTS branch only contain bug and security fixes.
-Consequently, it should be rather safe to upgrade to a new minor version.
+- A ***minor-upgrade*** updates the database within the same LTS branch, for
+  example from `8.4.1` to `8.4.2`. It provides bug and security fixes.
+- A ***major-upgrade*** moves the database to a newer LTS branch, for example from `8.0`
+  to `8.4`. It can
+  introduce new features and changes that break backward compatibility.
 
-While we usually advise to stick to the latest patch-upgrade available to
-benefit from bug and security fixes, we also strongly advise to take extra-care
-when upgrading your Scalingo for MySQL® Dedicated Resources database ([more about this
-below](#best-practices-before-upgrading)).
+We recommend promptly upgrading to the latest available minor version to receive
+bug and security fixes. Major-upgrades require checking application and schema
+compatibility with the target version. Before either type of upgrade, review the
+[best practices below](#best-practices-when-managing-major-upgrades).
+
+When MySQL® releases a new version, Scalingo tests it before making it available
+on the platform. You choose when to launch an available upgrade from the
+database dashboard.
 
 {% warning %}
-Beware that no downgrade is possible once your database has been upgraded.
+You cannot downgrade your database after an upgrade.
 {% endwarning %}
 
 
-## Understanding the Patch-Upgrade Process
+## Understanding the Minor-Upgrade Process
 
 ### Prerequisites
 
-There are no prerequisites for patch-upgrades.
+There are no prerequisites for minor-upgrades.
 
 ### Process
 
-#### For Starter Plans
+Single-node databases stop during the upgrade. Multi-node clusters upgrade
+instances one by one and switch the primary to an upgraded instance.
+
+#### For Single-node Databases (`Starter`)
 
 1. The instance is stopped. The database is unreachable.
-2. The instance is restarted with the targeted version. This operation can take
-   quite some time depending on the database size.
-3. Once the instance is restarted, the database is reachable again.
+2. Scalingo restarts the instance with the target version. The restart duration
+   depends on the database size.
+3. Once the instance has restarted, the database is reachable again.
 
-Since we have to completely stop the instance, **a downtime is inevitable**.
+**The database is unavailable from the moment the instance stops until it has
+restarted.**
 
-#### For Business and Enterprise Plans
+#### For Multi-node Clusters (`Business` and `Enterprise`)
 
-1. The Scalingo for MySQL® Routers of the cluster are restarted one by one with
-   the targeted version. This shouldn't cause any downtime.
-2. The different instances forming the cluster are restarted one by one. This
-   shouldn't cause any downtime, thanks to the MySQL® Routers routing the
-   connections to the available instances.
-3. Once all the nodes are restarted, the cluster is fully upgraded and fully
-   operational again.
+1. The MySQL® Routers are restarted one by one with the targeted version.
+2. Scalingo restarts secondary instances with the target version while the
+   primary continues to serve queries.
+3. A failover makes an upgraded secondary instance the primary.
+4. The former primary is restarted with the target version.
+5. Once all instances and routers have restarted, the cluster is fully upgraded.
 
-Patch-upgrades of Business and Enterprise plans are **usually achieved without any impactful
+Existing connections are reset when routers restart and when the primary
+instance changes. Your application must reconnect to continue querying the
+database.
+
+
+Minor-upgrades of multi-node clusters are **usually achieved without any impactful
 downtime**.
 
-### Best Practices Before Upgrading
+## Understanding the Major-Upgrade Process
 
-- First, carefully read the changelogs provided by MySQL® (we usually link them
-  in our respective changelog entries). Identifying noticeable changes,
-  especially ones that may have a negative impact on your database or app, will
-  allow you to update your application accordingly.
+### Prerequisites
 
-- Test the upgrade on a separate Dedicated Resources database using testing
-  data and the same application code before upgrading production.
+Read the MySQL® upgrade notes for the target LTS branch. Check for removed
+features, configuration changes, and schema compatibility requirements. Resolve
+any compatibility issues before launching the upgrade.
 
-- [Create a dump][backing-up-dumping] of your current
-  production database just before making the move in your production
-  environment.
+For example, before upgrading from MySQL® `8.0` to `8.4`, review the
+[upgrade prerequisites][mysql84-prerequisites]. Test the upgrade with your
+application before upgrading production.
 
-- [Put the app in maintenance mode][maintenance-mode] during the upgrade
-  operations, especially if a significant downtime is expected.
+### Process
+
+Single-node databases stop during the upgrade. Multi-node clusters upgrade
+instances one by one and switch the primary to an upgraded instance.
+
+#### For Single-node Databases (`Starter`)
+
+1. The instance is stopped. The database is unreachable.
+2. Scalingo restarts the instance with the target version. The restart duration
+   depends on the database size.
+3. Once the instance has restarted, the database is reachable again.
+
+**The database is unavailable from the moment the instance stops until it has
+restarted.**
+
+We usually roughly estimate the downtime caused by the operation between a few
+seconds to a few minutes. In any cases, it shouldn't exceed 10 minutes.
+
+#### For Multi-node Clusters (`Business` and `Enterprise`)
+
+1. The MySQL® Routers are restarted one by one with the targeted version.
+2. Scalingo restarts secondary instances with the target version while the
+   primary continues to serve queries.
+3. A failover makes an upgraded secondary instance the primary.
+4. The former primary is restarted with the target version.
+5. Once all instances and routers have restarted, the cluster is fully upgraded.
+
+Existing connections are reset when routers restart and when the primary
+instance changes. Your application must reconnect to continue querying the
+database.
+
+### Best Practices When Managing Major-Upgrades
+
+Major-upgrades can break backward compatibility. Before upgrading production:
+
+- Read the MySQL® changelogs linked from our release announcements. Check for
+  changes that affect your database or application and update your application
+  before upgrading.
+
+- Test the upgrade before applying it to production:
+  1. Provision a separate MySQL® Dedicated Resources database with the same
+     version as production.
+  2. Connect a staging application running the same code to this database.
+  3. Load test data without production or customer data.
+  4. Upgrade the test database to the target version.
+  5. Run your application tests and check that it reconnects after connections
+     are reset.
+  6. Fix any issues before scheduling the production upgrade.
+
+- [Create a dump][backing-up-dumping] of your production database just before
+  upgrading it.
+
+- [Put the app in maintenance mode][maintenance-mode] during the upgrade if
+  downtime is expected.
 
 
 ## Upgrading
 
 {% note %}
-Upgrading a Scalingo for MySQL® Dedicated Resources database to a newer version
-is only available
+Upgrading a Scalingo for MySQL® Dedicated Resources database is only available
 through the database dashboard.
 {% endnote %}
 
 ### Using the Database Dashboard
 
 1. From your web browser, open your [database dashboard][database-dashboard]
-2. Select the **Settings** tab
-3. In the **Settings** submenu, select the **General** tab
-4. Locate the **Database Version** block
-5. If an upgrade is available, a button allows you to trigger the upgrade
-6. Click the button to launch the upgrade process
+2. Click the **Settings** tab
+3. Locate the **Database version** block
+4. If an upgrade is available, the text in the block explains what will be
+   done.
+5. To launch the upgrade, click the **Upgrade to …** button
 
 
-[mysql-lts]: https://dev.mysql.com/blog-archive/introducing-mysql-innovation-and-long-term-support-lts-versions/
 [maintenance-mode]: {% post_url platform/app/2000-01-01-custom-error-page %}#custom-maintenance-page
 [database-dashboard]: {% post_url databases/mysql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-mysql-dashboard
 [backing-up-dumping]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-backing-up %}#dumping-the-database
+
+[mysql84-prerequisites]: {% post_url databases/mysql/version-upgrades/2000-01-01-mysql-84-prerequisites %}
