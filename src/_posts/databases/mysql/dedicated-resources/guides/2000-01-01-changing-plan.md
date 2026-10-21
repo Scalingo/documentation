@@ -1,7 +1,7 @@
 ---
 title: Changing Plan of a Scalingo for MySQL® Dedicated Resources Database
 nav: Changing Plan
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-10-21 00:00:00
 tags: databases mysql dedicated
 index: 4
 ---
@@ -38,11 +38,11 @@ Plan changes can combine two dimensions:
 ### Single-node to Single-node (Scale-up)
 
 This covers `Starter` to `Starter` when increasing size. The platform reboots
-the existing instance with the new size.
+the existing instance with the new size. No new VM is created.
 
 | From topology | To topology | To size | Downtime | Typical duration |
 |---------------|-------------|---------|----------|------------------|
-| Single-node (`Starter`) | Single-node (`Starter`) | Larger only | **Yes** | ~15 minutes |
+| Single-node (`Starter`) | Single-node (`Starter`) | Larger only | **Yes** | ~5 minutes |
 
 ### Single-node to Multi-node Cluster (Scale-out)
 
@@ -56,11 +56,15 @@ creates additional node(s) and configures replication/failover.
 ### Multi-node Cluster to Multi-node Cluster
 
 This covers `Business` <-> `Enterprise`, as well as size increases within the
-same class.
+same class. Moving from `Business` to `Enterprise` starts additional
+infrastructure and takes longer than increasing size within the same class.
 
 | From topology | To topology | To size | Downtime | Typical duration |
 |---------------|-------------|---------|----------|------------------|
-| Multi-node (`Business`/`Enterprise`) | Multi-node (`Business`/`Enterprise`) | Same or Larger | **No** | ~15 minutes |
+| `Business` | `Business` | Larger only | **No** | ~5 minutes |
+| `Enterprise` | `Enterprise` | Larger only | **No** | ~5 minutes |
+| `Business` | `Enterprise` | Same or Larger | **No** | ~15 minutes |
+| `Enterprise` | `Business` | Same or Larger | **No** | ~15 minutes |
 
 ### Multi-node Cluster to Single-node (Scale-in)
 
