@@ -65,7 +65,6 @@ Existing connections are reset when routers restart and when the primary
 instance changes. Your application must reconnect to continue querying the
 database.
 
-
 Minor-upgrades of multi-node clusters are **usually achieved without any impactful
 downtime**.
 
