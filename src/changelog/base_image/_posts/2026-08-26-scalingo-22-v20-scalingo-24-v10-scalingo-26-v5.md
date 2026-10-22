@@ -1,11 +1,11 @@
 ---
-modified_at: 2026-10-21 00:00:00
+modified_at: 2026-10-22 00:00:00
 title: 'Stack scalingo-26 v5, scalingo-24 v10, scalingo-22 v20, scalingo-26-minimal v6, scalingo-24-minimal v9 and scalingo-22-minimal v19'
 ---
 
 These new versions contain the following changes:
 
-* Remove eMudhra root certificate (https://ubuntu.com/blog/emudhra-ca-compromise-fixes-available)
+* Update the CA certificate store to remove trust paths affected by the eMudhra intermediate CA compromise; see [our security bulletin]({% post_url security/bulletins/2026-10-21-SSB-2026-006 %})
 * feat(jks): update to the most recent version
 * Full `apt upgrade`
 
