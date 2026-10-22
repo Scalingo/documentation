@@ -10,8 +10,8 @@ This setting is available for all applications, regardless of their language or
 buildpack.
 
 {% note %}
-If you deployed a PHP application before October 21, 2026, you must explicitly
-re-enable multipart requests to accept them again.
+If you created your PHP application before October 21, 2026, multipart requests
+remain disabled until you explicitly re-enable them.
 {% endnote %}
 
 To re-enable file uploads and form submissions using `multipart/form-data`:
