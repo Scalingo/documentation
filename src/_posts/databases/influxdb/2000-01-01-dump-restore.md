@@ -1,7 +1,7 @@
 ---
 title: How to dump and restore my Scalingo for InfluxDB® database on Scalingo
 nav: Dump and Restore
-modified_at: 2017-02-06 18:04:00
+modified_at: 2026-10-14 00:00:00
 index: 2
 ---
 
@@ -18,11 +18,9 @@ about the technical reasons.
 
 Daily backups done by Scalingo are listed in the database specific dashboard:
 
-1. Go to your app on [Scalingo Dashboard](https://dashboard.scalingo.com/apps)
-2. Click on **Addons** tab
-3. Click **Link to dashboard** which will take you to the **Scalingo for InfluxDB® dashboard**
-4. Click on **Backups** tab
-5. Download the backup you want
+1. [Open your database dashboard][database-dashboard]
+2. Click on **Backups** tab
+3. Download the backup you want
 
 ### Restore
 
@@ -67,3 +65,5 @@ we do not want it to be exposed over the Internet.
 
 Moreover, to restore your data on Scalingo for InfluxDB®, the InfluxDB® daemon must be stopped. This action is not
 possible on Scalingo.
+
+[database-dashboard]: {% post_url databases/influxdb/2000-01-01-start %}#accessing-the-database-dashboard

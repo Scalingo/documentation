@@ -1,7 +1,7 @@
 ---
 title: Limitations
 nav: Limitations
-modified_at: 2025-05-22 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: database opensearch addon
 index: 4
 ---
@@ -63,4 +63,4 @@ connections.
 [opensearch-api-security]: https://docs.opensearch.org/docs/2.19/api-reference/security-apis/
 [opensearch-api-snapshot]: https://docs.opensearch.org/docs/2.19/api-reference/snapshots/index/
 
-[db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
+[db-dashboard]: {% post_url databases/opensearch/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-opensearch-dashboard

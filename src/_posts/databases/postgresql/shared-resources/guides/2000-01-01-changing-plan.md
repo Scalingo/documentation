@@ -1,7 +1,7 @@
 ---
 title: Changing Plan of a Scalingo for PostgreSQL® Shared Resources addon
 nav: Changing Plan
-modified_at: 2025-12-23 00:00:00
+modified_at: 2026-10-15 00:00:00
 tags: databases postgresql addon
 index: 3
 ---
@@ -82,15 +82,7 @@ operation, thanks to the failover mechanism included in the Business plan.
 
 ## Using the Dashboard
 
-1. From your web browser, open your [dashboard][app-dashbaord]
-2. Click on the application for which you want to scale the Scalingo for
-   PostgreSQL® addon
-3. Click on the **Resources** tab
-4. Locate the **Addons** block and click on the **…** button
-5. From the dropdown menu, select **Change plan**
-6. Select the new plan
-7. Click the **Finish** button
-8. Validate by clicking the **Confirm plan change** button
+{% include database_changing_plan_shared_resources_dashboard.md %}
 
 
 ## Using the Command Line

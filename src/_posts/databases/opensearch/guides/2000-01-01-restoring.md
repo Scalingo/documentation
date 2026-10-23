@@ -1,7 +1,7 @@
 ---
 title: Restoring Your Scalingo for OpenSearch® Addon
 nav: Restoring
-modified_at: 2025-05-05 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases opensearch addon
 index: 6
 ---
@@ -143,7 +143,7 @@ Restoring a dump can only be done from your workstation.
 [opensearch-api-snapshot]: https://docs.opensearch.org/docs/2.19/api-reference/snapshots/index/
 [elasticsearch-dump]: https://github.com/elasticsearch-dump/elasticsearch-dump
 
-[db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
+[db-dashboard]: {% post_url databases/opensearch/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-opensearch-dashboard
 [opensearch-limitations-backup]: {% post_url databases/opensearch/about/2000-01-01-limitations %}#affecting-backups-and-restorations
 [accessing-db-tunnel]: {% post_url databases/opensearch/getting-started/2000-01-01-accessing %}#using-our-command-line-tool
 [connecting-understand-uri]: {% post_url databases/opensearch/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri

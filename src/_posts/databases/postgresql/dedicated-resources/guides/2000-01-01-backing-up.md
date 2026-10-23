@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Backing Up
-modified_at: 2026-02-13 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases postgresql dedicated how-to
 index: 5
 ---
@@ -43,9 +43,9 @@ connections from your chosen source before running the dump.
 
 1. Make sure your source IP (or range) is allowlisted in the database firewall
    ```sh
-   scalingo database-firewall-rules-add my-dedicated-db-id --cidr 203.0.113.0/24 --label "Office network"
+   scalingo --database my-dedicated-db-id database-firewall-rules-add --cidr 203.0.113.0/24 --label "Office network"
    # or directly the public ip of the workstation:
-   scalingo database-firewall-rules-add my-dedicated-db-id --cidr <public IP>/32 --label "My workstation"
+   scalingo --database my-dedicated-db-id database-firewall-rules-add --cidr <public IP>/32 --label "My workstation"
    # wait for the database to be reachable from workstation
    ```
 2. Get the database [connection URI][connection-uri]
@@ -62,7 +62,7 @@ connections from your chosen source before running the dump.
 
 [backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
 [backup-policies-pitr]: {% post_url databases/about/2000-01-01-backup-policies %}#continuous-backups
-[backup-policies-pitr-window]: {% post_url databases/about/2000-01-01-backup-policies %}#restoring-a-backup
+[backup-policies-pitr-window]: {% post_url databases/about/2000-01-01-backup-policies %}#recovery-window-for-pitr
 
 [database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [connection-uri]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-connecting %}#getting-the-connection-uri
