@@ -19,9 +19,6 @@ time are not affected by this change.**
 Only requests with this header will be blocked by this rule. Scalingo will return
 **HTTP 415 Unsupported Media Type**; these requests will not reach the application.
 
-If your clients send Brotli-compressed request bodies, change them to send
-uncompressed bodies without that header before this time.
-
 Contact [Scalingo support][support] if you need the filtering rule disabled.
 Disabling it can expose applications that decode Brotli request bodies on an
 unpatched Node.js version.
@@ -34,7 +31,11 @@ fetched by your application.
 Rebuild and redeploy with a fixed release: **22.23.4**, **24.22.1** or **26.12.1**
 on the corresponding Node.js release line, or a later version.
 
+See [security bulletin SSB-2026-007][bulletin] for deployment instructions and
+incident details.
+
 [advisory]: https://nodejs.org/en/blog/vulnerability/october-2026-security-releases#nodejs-brotli-decoder-out-of-bounds-write-permits-remote-code-execution-cve-2026-111497---high
+[bulletin]: {% post_url security/bulletins/2026-10-23-SSB-2026-007 %}
 [nodejs]: {% post_url languages/nodejs/2000-01-01-start %}
 [multi-buildpack]: {% post_url platform/deployment/buildpacks/2000-01-01-multi %}
 [support]: mailto:support@scalingo.com
