@@ -1,9 +1,9 @@
 ---
 modified_at: 2026-10-23 00:00:00
-title: 'Node.js and multi-buildpack apps: Brotli-compressed requests blocked'
+title: 'Existing Node.js and multi-buildpack apps: Brotli-compressed requests blocked'
 ---
 
-Scalingo is changing incoming request filtering for applications using the
+Scalingo is changing incoming request filtering for existing applications using the
 [Node.js buildpack][nodejs] or [multi-buildpack][multi-buildpack], in response to the
 [Node.js Brotli decoder vulnerability (Node2Shell)][advisory].
 
@@ -12,9 +12,12 @@ The rule also applies to multi-buildpack applications that do not run Node.js.
 ## Incoming requests
 
 Starting October 23, 2026 at **15:00 CEST (UTC+2)**, Scalingo will reject incoming
-requests to these applications with the `Content-Encoding: br` header. Only
-requests with this header will be blocked by this rule; they will not reach the
-application.
+requests with the `Content-Encoding: br` header to applications that already
+exist at that time and use either buildpack. **Applications created after this
+time are not affected by this change.**
+
+Only requests with this header will be blocked by this rule; they will not reach
+the application.
 
 If your clients send Brotli-compressed request bodies, change them to send
 uncompressed bodies without that header before this time.
