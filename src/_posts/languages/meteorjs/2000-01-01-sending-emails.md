@@ -1,6 +1,6 @@
 ---
 title: Sending emails with Meteor
-modified_at: 2023-12-22 00:00:00
+modified_at: 2026-10-23 00:00:00
 category: languages
 tags: nodejs meteor tutorial emails
 permalink: /languages/javascript/meteor/sending-emails-with-meteor/
@@ -23,21 +23,8 @@ To add the environment variable, run the following command or add it through
 scalingo env-set MAIL_URL=<smtp_url>
 ```
 
-More information in [the official Meteor documentation](https://docs.meteor.com/api/email.html).
-
-## Snippet to send an email with Meteor
-
-```javascript
-recipient = "user@example.com"
-Email.send({
-  from: process.env.EMAIL_FROM,
-  to: recipient,
-  subject: "Test email to " + recipient,
-  text: "Hello " + recipient + "\n\nThis is a simple test email\n"
-});
-```
-
-Automatically Meteor will use the `MAIL_URL` server address and send the email.
+For instructions on sending emails, see the
+[official Meteor documentation](https://docs.meteor.com/api/email.html).
 
 ## Use of an external SMTP server
 

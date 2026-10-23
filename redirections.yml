@@ -933,6 +933,12 @@
   - old: "/platform/cli/introduction"
     new: "/tools/cli/start"
 
+  - old: "/languages/meteorjs/telescope"
+    new: "/languages/meteorjs/tutorial"
+
+  - old: "/languages/meteorjs/npm"
+    new: "/languages/meteorjs/start#meteor-dependencies-installation"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"
