@@ -16,8 +16,8 @@ requests with the `Content-Encoding: br` header to applications that already
 exist at that time and use either buildpack. **Applications created after this
 time are not affected by this change.**
 
-Only requests with this header will be blocked by this rule; they will not reach
-the application.
+Only requests with this header will be blocked by this rule. Scalingo will return
+**HTTP 415 Unsupported Media Type**; these requests will not reach the application.
 
 If your clients send Brotli-compressed request bodies, change them to send
 uncompressed bodies without that header before this time.
