@@ -35,7 +35,7 @@ This document defines specifically the scope of the pentesting, its duration, an
 {% note %}
 By default, and to speed up requests, **Scalingo will offer you its audit agreement template**. The document will be systematically transferred to you for review and approval before signature.
 
-If you or your service provider prefer to use your own audit agreement template, it is possible to transfer it to us. IIt will then be evaluated internally by our competent departments. Additional time may be required to process the request fully.
+If you or your service provider prefer to use your own audit agreement template, it is possible to transfer it to us. It will then be evaluated internally by our competent departments. Additional time may be required to process the request fully.
 {% endnote %}
 
 For example:
