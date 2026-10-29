@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for OpenSearch® Addon
 nav: Backing Up
-modified_at: 2025-05-05 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases opensearch addon
 index: 5
 ---
@@ -207,7 +207,7 @@ documentation][elasticsearch-dump].
 [elasticsearch-dump]: https://github.com/elasticsearch-dump/elasticsearch-dump
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
-[db-dashboard]: {% post_url databases/about/2000-01-01-database-dashboard %}
+[db-dashboard]: {% post_url databases/opensearch/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-opensearch-dashboard
 [db-backup-policies]: {% post_url databases/about/2000-01-01-backup-policies %}
 [accessing-one-off]: {% post_url databases/opensearch/getting-started/2000-01-01-accessing %}#using-a-one-off
 [accessing-db-tunnel]: {% post_url databases/opensearch/getting-started/2000-01-01-accessing %}#using-our-command-line-tool

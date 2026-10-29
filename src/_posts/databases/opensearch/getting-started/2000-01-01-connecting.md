@@ -1,7 +1,7 @@
 ---
 title: Connecting to Your Scalingo for OpenSearch® Addon
 nav: Connecting
-modified_at: 2025-04-28 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases opensearch addon
 index: 2
 ---
@@ -128,5 +128,5 @@ the others applications.
 [dashboard]: https://dashboard.scalingo.com
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
-[db-dashboard]: {% post_url databases/opensearch/guides/2000-01-01-monitoring %}#accessing-the-opensearch-dashboard
+[db-dashboard]: {% post_url databases/opensearch/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-opensearch-dashboard
 [env]: {% post_url platform/app/2000-01-01-environment %}

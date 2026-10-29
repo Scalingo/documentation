@@ -1,17 +1,17 @@
 ---
 title: Provisioning a Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Provisioning
-modified_at: 2026-09-17 00:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases postgresql dedicated
 index: 1
 ---
 
 
-Once you have chosen the right plan for your needs, you are ready to provision
-the database. This can be done via our
-[dashboard](#using-the-dashboard), our
-[CLI tool](#using-the-command-line), our
-[Terraform Provider](#using-the-terraform-provider), or via our
+{% include database_architecture_models.md engine="PostgreSQL®" %}
+
+You can provision a PostgreSQL® Dedicated Resources database using the
+[dashboard](#using-the-dashboard), [CLI](#using-the-command-line),
+[Terraform Provider](#using-the-terraform-provider) or
 [Kubernetes Operator](#using-the-kubernetes-operator).
 
 
@@ -21,17 +21,7 @@ the database. This can be done via our
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard][dashboard]
-2. Select the **Project** where you want to create the database
-3. Click the arrow next to **Create an application**, then click
-   **Database Dedicated Resources**
-4. In the **Databases engines** section, select
-   **PostgreSQL Dedicated Resources** and confirm your choice
-5. Enter a database name, then select or confirm the appropriate **Project** and
-   **Region**
-6. Select the plan you want to provision and confirm your selection
-7. Click the **Create database** button
-8. Database provisioning typically takes 15–30 minutes
+{% include database_provisioning_dedicated_resources_dashboard.md engine="PostgreSQL" %}
 
 ### Using the Command Line (Preview) {#using-the-command-line}
 
@@ -78,7 +68,7 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait <database_
 ### Using the Terraform Provider
 
 1. Place the following `resource` block in your Terraform file to create the
-   database and attach it to your app:
+   database:
    ```tf
    resource "scalingo_database" "my-dedicated-database" {
      name       = "my-dedicated-database"
@@ -103,7 +93,7 @@ scalingo database-create --type postgresql-ng --plan <plan_ID> --wait <database_
 3. Create a custom resource to provision your dedicated PostgreSQL database:
 
    ```yaml
-   apiVersion: databases.scalingo.com/v1alpha1
+   apiVersion: databases.scalingo.com/v1
    kind: PostgreSQL
    metadata:
      labels:
@@ -175,15 +165,10 @@ tasks such as:
 - [Managing Collaborators][pg-dr-managing-collaborators]
 - [Managing backups][pg-dr-backing-up]
 
-You can access the database dashboard from the main dashboard:
-
-1. From your web browser, open your [dashboard][dashboard]
-2. Open the **Project** containing the database you want to manage
-3. In the **Databases** section, click the database name
+{% include database_dashboard_access_dedicated_resources.md %}
 
 
 [dashboard]: https://dashboard.scalingo.com/projects
-[architecture-models]: {% post_url databases/about/2000-01-01-architecture-models %}
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [kube-operator]: {% post_url tools/2000-01-01-kubernetes-operator %}
