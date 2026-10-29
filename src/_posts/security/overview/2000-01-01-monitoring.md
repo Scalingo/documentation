@@ -1,7 +1,7 @@
 ---
 title: Security Monitoring, Journaling and Logging
 nav: Monitoring
-modified_at: 2026-06-29 00:00:00
+modified_at: 2026-10-16 00:00:00
 tags: compliance security measures monitoring
 index: 4
 ---
@@ -11,52 +11,64 @@ index: 4
 
 ## English {#en}
 
-### Monitoring
+### Scalingo platform monitoring and logs
 
-We use monitoring tools to monitor the platform for production and security incidents. The monitoring tools are
-configured to alert our operations team in the event of an incident and to provide them with the information they need
-to respond to the incident.
+We monitor the platform for production and security incidents, and our monitoring alerts the operations team. Scalingo
+manages its platform logs to operate the service, trace platform changes, and investigate incidents; the operations team
+reviews them to identify security incidents. These platform logs are separate from the application and database add-on
+logs available to customers.
+The [incident and support page][incident-support] explains how to report a suspected incident and how Scalingo
+communicates with customers.
 
-This alerting is paging the on-call team members in case of an incident. The on-call team members are responsible for
-responding to the incident and for coordinating the response with other team members.
+### Logs and metrics available to customers
 
-### Journaling
+Application logs contain the messages your application writes to `stdout` and `stderr`; you control this content in your
+application. You can access application and database add-on logs through the Dashboard and CLI. Router logs are optional;
+you can enable them for an application through the CLI. You can also configure a [log drain][log-drain] to forward
+application or add-on logs to another provider; adding one does not disable the [Scalingo Logs][logs] feature for those
+logs. The [logs guide][logs] covers access and retention, and the [CLI reference][cli-features] documents how to enable
+router logs. See [application metrics][app-metrics],
+[application alerts][alerts], and the database monitoring guides linked from [database features][database-features].
 
-We use journaling to record all actions taken on the platform. The journaling is used to track changes to
-the platform and to identify the cause of production and security incidents.
-
-### Logging
-
-The internal logs of the platform are stored in a secure, append-only, redundant storage system to ensure that the logs
-are protected from unauthorized access. The logs are regularly reviewed by our operations team to identify security
-incidents and to prevent similar incidents from occurring in the future.
-
-### Incident Response
-
-In the event of a security incident, our operations team follows a predefined incident response plan to contain the
-incident and mitigate its impact. The incident response plan includes procedures for identifying the cause of the
-incident, containing the incident, and restoring the platform to normal operation. After the incident has been resolved,
-we perform a post-mortem to identify the root cause of the incident and to prevent similar incidents from occurring in
-the future.
+Avoid writing secrets or unnecessary personal or health data to application logs. If forwarded application or add-on logs
+may contain sensitive data, use encrypted transport such as TLS and check the receiving provider's processing, retention,
+and access conditions.
+For health data subject to HDS requirements, check the provider's HDS scope as well.
 
 ---
 
 ## Français {#fr}
 
-### Surveillance
+### Supervision et journaux de la plateforme Scalingo {#supervision-et-journaux-de-la-plateforme-scalingo}
 
-Nous utilisons des outils de surveillance pour surveiller la plateforme à la recherche d'incidents de production et de sécurité. Les outils de surveillance sont configurés pour alerter notre équipe d'exploitation en cas d'incident et pour leur fournir les informations dont ils ont besoin pour répondre à l'incident.
+Nous surveillons la plateforme pour détecter les incidents de production et de sécurité. Nos outils alertent l'équipe
+d'exploitation. Scalingo gère ses journaux de plateforme pour exploiter le service, suivre les modifications et analyser
+les incidents. L'équipe d'exploitation les examine pour repérer les incidents de sécurité. Ces journaux sont distincts
+des journaux applicatifs et des add-ons de base de données accessibles aux clients. La page
+[Incidents et support][incident-support] explique comment signaler un incident suspect et comment Scalingo informe ses clients.
 
-Cette alerte appelle les membres de l'équipe d'astreinte en cas d'incident. Les membres de l'équipe d'astreinte sont responsables de la réponse à l'incident et de la coordination de la réponse avec les autres membres de l'équipe.
+### Journaux et métriques accessibles aux clients {#journaux-et-metriques-accessibles-aux-clients}
 
-### Journalisation
+Les journaux applicatifs contiennent les messages que votre application écrit sur `stdout` et `stderr` ; vous en définissez
+le contenu dans l'application. Vous pouvez consulter les journaux applicatifs et ceux des add-ons de base de données depuis
+le tableau de bord ou la CLI. Les journaux du routeur sont optionnels ; vous pouvez les activer pour une application depuis la CLI. Vous pouvez aussi
+configurer un [log drain (mécanisme de transfert des journaux, en anglais)][log-drain] pour transférer les journaux
+applicatifs ou ceux des add-ons vers un autre fournisseur ; cela ne désactive pas la fonctionnalité
+[Scalingo Logs (en anglais)][logs] pour ces journaux. Le [guide des journaux (en anglais)][logs] décrit leur accès et
+leur durée de conservation ; la [référence CLI (en anglais)][cli-features] explique comment activer les journaux du
+routeur. Consultez aussi la [documentation des métriques applicatives (en anglais)][app-metrics], le [guide des alertes
+applicatives (en anglais)][alerts] et les guides de supervision des bases de données référencés dans les
+[fonctionnalités des bases de données (en anglais)][database-features].
 
-Nous utilisons la journalisation pour enregistrer toutes les actions effectuées sur la plateforme. La journalisation est utilisée pour suivre les modifications apportées à la plateforme et pour identifier la cause des incidents de production et de sécurité.
+Évitez d'écrire dans les journaux applicatifs des secrets ou des données personnelles ou de santé superflues. Si vous
+transférez des journaux applicatifs ou d'add-ons susceptibles de contenir des données sensibles, utilisez un transport
+chiffré comme TLS et vérifiez les conditions de traitement, de conservation et d'accès du fournisseur destinataire. Pour
+les données de santé soumises aux exigences HDS, vérifiez aussi le périmètre HDS du fournisseur.
 
-### Logs
-
-Les logs internes de la plateforme sont stockés dans un système de stockage sécurisé, en ajout uniquement et redondant pour garantir que les logs sont protégés contre les accès non autorisés. Les logs sont régulièrement examinés par notre équipe d'exploitation pour identifier les incidents de sécurité et prévenir des incidents similaires à l'avenir.
-
-### Réponse aux Incidents {#reponse-aux-incidents}
-
-En cas d'incident de sécurité, notre équipe d'exploitation suit un plan de réponse aux incidents prédéfini pour contenir l'incident et atténuer son impact. Le plan de réponse aux incidents comprend des procédures pour identifier la cause de l'incident, contenir l'incident et restaurer le fonctionnement normal de la plateforme. Après la résolution de l'incident, nous effectuons un post-mortem pour identifier la cause profonde de l'incident et prévenir des incidents similaires à l'avenir.
+[app-metrics]: {% post_url platform/app/2000-01-01-metrics %}
+[alerts]: {% post_url platform/app/2000-01-01-alerts %}
+[database-features]: {% post_url databases/about/2000-01-01-features %}
+[logs]: {% post_url platform/app/2000-01-01-logs %}
+[log-drain]: {% post_url platform/app/2000-01-01-log-drain %}
+[cli-features]: {% post_url tools/cli/2000-01-01-features %}
+[incident-support]: {% post_url security/overview/2000-01-01-incident-support %}
