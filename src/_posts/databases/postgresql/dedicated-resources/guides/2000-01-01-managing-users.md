@@ -40,7 +40,7 @@ ALTER DEFAULT PRIVILEGES FOR USER <database> IN SCHEMA public GRANT ALL ON SEQUE
 {% note %}
 This default user is ***protected*** and thus:
 - can't be renamed, nor removed,
-- its password can't be updated
+- its password can only be changed by our support team
 {% endnote %}
 
 ### Using the Database Dashboard

@@ -1,7 +1,7 @@
 ---
 title: Managing Users of Your Scalingo for MySQL® Shared Resources Database
 nav: Managing Users
-modified_at: 2026-10-15 00:00:00
+modified_at: 2026-11-02 00:00:00
 tags: databases mysql addon
 index: 1
 ---
@@ -28,7 +28,7 @@ GRANT ALL PRIVILEGES ON <database>.* TO '<username>'@'%'
 {% note %}
 This default user is ***protected*** and thus:
 - can't be renamed, nor removed,
-- its password can't be updated
+- its password can only be changed by our support team
 {% endnote %}
 
 ### Using the Database Dashboard
