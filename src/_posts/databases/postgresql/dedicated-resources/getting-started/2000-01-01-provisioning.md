@@ -1,7 +1,7 @@
 ---
 title: Provisioning a Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Provisioning
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-11-02 00:00:00
 tags: databases postgresql dedicated
 index: 1
 ---
@@ -25,12 +25,7 @@ You can provision a PostgreSQL® Dedicated Resources database using the
 
 ### Using the Command Line (Preview) {#using-the-command-line}
 
-Because Dedicated Resources databases are not yet generally available,
-you must first enable preview features to use the related CLI commands:
-
-```sh
-export SCALINGO_PREVIEW_FEATURES=true
-```
+{% include dedicated_resources_cli_preview.md %}
 
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]

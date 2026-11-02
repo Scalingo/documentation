@@ -1,7 +1,7 @@
 ---
 title: Changing Plan of a Scalingo for MySQL® Dedicated Resources Database
 nav: Changing Plan
-modified_at: 2026-10-21 00:00:00
+modified_at: 2026-11-02 00:00:00
 tags: databases mysql dedicated
 index: 4
 ---
@@ -89,12 +89,7 @@ This covers moves from `Business` or `Enterprise` to `Starter`.
 
 ## Using the Command Line (Preview)
 
-Because Dedicated Resources databases are not yet generally available,
-you must first enable preview features to use the related CLI commands:
-
-```sh
-export SCALINGO_PREVIEW_FEATURES=true
-```
+{% include dedicated_resources_cli_preview.md %}
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list your databases:

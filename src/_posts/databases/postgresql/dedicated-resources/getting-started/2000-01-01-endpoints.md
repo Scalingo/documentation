@@ -1,7 +1,7 @@
 ---
 title: Understanding Database Endpoints
 nav: Endpoints
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-11-02 00:00:00
 tags: databases postgresql dedicated endpoints
 index: 4
 ---
@@ -10,12 +10,7 @@ Database endpoints are the different ways to access the database through the net
 
 ## Listing Database Endpoints with CLI
 
-Because Dedicated Resources databases are not yet generally available,
-you must first enable preview features to use the related CLI commands:
-
-```sh
-export SCALINGO_PREVIEW_FEATURES=true
-```
+{% include dedicated_resources_cli_preview.md %}
 
 Run the following command to list your database endpoints:
 

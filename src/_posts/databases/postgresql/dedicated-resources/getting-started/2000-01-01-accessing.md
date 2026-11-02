@@ -31,12 +31,7 @@ trusted source.
 
 ### Using the Command Line (Preview) {#using-the-command-line}
 
-Because Dedicated Resources databases are not yet generally available,
-you must first enable preview features to use the related CLI commands:
-
-```bash
-export SCALINGO_PREVIEW_FEATURES=true
-```
+{% include dedicated_resources_cli_preview.md %}
 
 Then:
 
