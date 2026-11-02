@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for MySQL® Dedicated Resources Database
 nav: Accessing
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-11-02 00:00:00
 tags: databases mysql dedicated
 index: 3
 ---
@@ -42,17 +42,17 @@ Then:
 
 ```bash
 # List the existing rules
-scalingo --database <db-id> database-firewall-rules
+scalingo --database <db-name> database-firewall-rules
 
 # Add a new rule to the database based on a CIDR or a managed range
-scalingo --database <db-id> database-firewall-rules-add --cidr "198.51.100.25/32" --label "My workstation"
-scalingo --database <db-id> database-firewall-rules-add --managed-range mr-scalingo-osc-fr1
+scalingo --database <db-name> database-firewall-rules-add --cidr "198.51.100.25/32" --label "My workstation"
+scalingo --database <db-name> database-firewall-rules-add --managed-range mr-scalingo-osc-fr1
 
 # Remove an existing rule to restrict access
-scalingo --database <db-id> database-firewall-rules-remove <rule-id>
+scalingo --database <db-name> database-firewall-rules-remove <rule-id>
 
 # List existing managed ranges which are maintained by Scalingo
-scalingo --database <db-id> database-firewall-managed-ranges
+scalingo --database <db-name> database-firewall-managed-ranges
 ```
 
 ### How the Firewall Works

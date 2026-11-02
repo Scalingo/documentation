@@ -1,7 +1,7 @@
 ---
 title: Backing Up Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Backing Up
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-11-02 00:00:00
 tags: databases postgresql dedicated how-to
 index: 5
 ---
@@ -43,14 +43,14 @@ connections from your chosen source before running the dump.
 
 1. Make sure your source IP (or range) is allowlisted in the database firewall
    ```sh
-   scalingo --database my-dedicated-db-id database-firewall-rules-add --cidr 203.0.113.0/24 --label "Office network"
+   scalingo --database my-dedicated-db database-firewall-rules-add --cidr 203.0.113.0/24 --label "Office network"
    # or directly the public ip of the workstation:
-   scalingo --database my-dedicated-db-id database-firewall-rules-add --cidr <public IP>/32 --label "My workstation"
+   scalingo --database my-dedicated-db database-firewall-rules-add --cidr <public IP>/32 --label "My workstation"
    # wait for the database to be reachable from workstation
    ```
 2. Get the database [connection URI][connection-uri]
    ```sh
-   SCALINGO_DB_URL=$(scalingo --database my-dedicated-db-id env-get SCALINGO_POSTGRESQL_URL)
+   SCALINGO_DB_URL=$(scalingo --database my-dedicated-db env-get SCALINGO_POSTGRESQL_URL)
    ```
 3. Create the dump:
    ```sh
