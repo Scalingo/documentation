@@ -64,6 +64,10 @@ the database endpoint.
 You can configure up to **30 firewall rules** per
 database, and rule changes usually propagate in around 2 minutes.
 
+{% note %}
+Contact our support team if you need to increase the firewall rule limit.
+{% endnote %}
+
 Here are common CIDR formats you can use in firewall rules:
 
 - Single IP: `203.0.113.10/32` (`/32` means one exact IPv4 address)
