@@ -1,7 +1,7 @@
 ---
 title: Managing Users of Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Managing Users
-modified_at: 2026-10-15 00:00:00
+modified_at: 2026-11-02 00:00:00
 tags: databases postgresql dedicated
 index: 1
 ---
@@ -23,8 +23,8 @@ add them as collaborators by following [this guide][dr-managing-collaborators].
 
 ### Understanding Protected User
 
-When provisioning a new Scalingo for PostgreSQL® Dedicated Resources Database
-instance, the platform creates a default user with a random name and password.
+When provisioning a new Scalingo for PostgreSQL® Dedicated Resources Database,
+the platform creates a default user with a random name and password.
 It also grants this default user read and write permissions on the database,
 using the following queries:
 

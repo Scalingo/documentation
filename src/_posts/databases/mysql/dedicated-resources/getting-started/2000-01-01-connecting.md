@@ -1,7 +1,7 @@
 ---
 title: Connecting Your Scalingo for MySQL® Dedicated Resources Database
 nav: Connecting
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-11-02 00:00:00
 tags: databases mysql dedicated
 index: 2
 ---
@@ -97,7 +97,7 @@ Dedicated Resources firewall allows traffic from the application's region (see
 Then add the database connection string as an environment variable in each
 application that needs access.
 
-1. Copy [the connection URI](#getting-the-connection-uri) of your database instance
+1. Copy [the connection URI](#getting-the-connection-uri) of your database
 2. [Create a new environment variable][environment] for the application that
    needs to access the database
 3. Set the value of this new environment variable to connection URI you just
