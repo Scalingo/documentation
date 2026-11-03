@@ -9,9 +9,9 @@ These new versions contain the following changes:
 
 For a comprehensive list of packages installed in the different stacks, please refer to our documentation:
 
-* [scalingo-22]({% post_url platform/internals/stacks/2000-01-01-scalingo-22-stack %}#ubuntu-packages)
-* [scalingo-24]({% post_url platform/internals/stacks/2000-01-01-scalingo-24-stack %}#ubuntu-packages)
-* [scalingo-26]({% post_url platform/internals/stacks/2000-01-01-scalingo-26-stack %}#ubuntu-packages)
+* [scalingo-22]({% post_url platform/internals/stacks/2000-01-01-scalingo-22-stack %}#packages)
+* [scalingo-24]({% post_url platform/internals/stacks/2000-01-01-scalingo-24-stack %}#packages)
+* [scalingo-26]({% post_url platform/internals/stacks/2000-01-01-scalingo-26-stack %}#packages)
 
 As always, the Docker images are available on Docker Hub:
 
