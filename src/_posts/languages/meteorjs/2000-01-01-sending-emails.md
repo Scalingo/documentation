@@ -1,6 +1,6 @@
 ---
 title: Sending emails with Meteor
-modified_at: 2026-10-23 00:00:00
+modified_at: 2026-11-03 00:00:00
 category: languages
 tags: nodejs meteor tutorial emails
 permalink: /languages/javascript/meteor/sending-emails-with-meteor/
