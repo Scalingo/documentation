@@ -67,7 +67,7 @@
 |       gcc-13-x86-64-linux-gnu |        13.3.0-6ubuntu2~24.04.1 |
 |             gcc-14-base:amd64 |        14.2.0-4ubuntu2~24.04.1 |
 |          gcc-x86-64-linux-gnu |              4:13.2.0-7ubuntu1 |
-|                   ghostscript |       10.02.1~dfsg1-0ubuntu7.9 |
+|                   ghostscript |      10.02.1~dfsg1-0ubuntu7.10 |
 |      gir1.2-freedesktop:amd64 |                       1.80.1-1 |
 |  gir1.2-freedesktop-dev:amd64 |                       1.80.1-1 |
 |    gir1.2-gdkpixbuf-2.0:amd64 |        2.42.10+dfsg-3ubuntu3.3 |
@@ -127,8 +127,8 @@
 |             libbinutils:amd64 |               2.42-4ubuntu2.10 |
 |            libblkid-dev:amd64 |              2.39.3-9ubuntu6.6 |
 |               libblkid1:amd64 |              2.39.3-9ubuntu6.6 |
-|           libbrotli-dev:amd64 |                  1.1.0-2build2 |
-|              libbrotli1:amd64 |                  1.1.0-2build2 |
+|           libbrotli-dev:amd64 |               1.1.0-2ubuntu0.1 |
+|              libbrotli1:amd64 |               1.1.0-2ubuntu0.1 |
 |                 libbsd0:amd64 |               0.12.1-1build1.1 |
 |              libbz2-1.0:amd64 |             1.0.8-5.1ubuntu0.1 |
 |              libbz2-dev:amd64 |             1.0.8-5.1ubuntu0.1 |
@@ -233,9 +233,9 @@
 |                 libgpm2:amd64 |                      1.20.7-11 |
 |             libgprofng0:amd64 |               2.42-4ubuntu2.10 |
 |          libgraphite2-3:amd64 |        1.3.14-2ubuntu0.24.04.1 |
-|                  libgs-common |       10.02.1~dfsg1-0ubuntu7.9 |
-|                 libgs10:amd64 |       10.02.1~dfsg1-0ubuntu7.9 |
-|                libgs10-common |       10.02.1~dfsg1-0ubuntu7.9 |
+|                  libgs-common |      10.02.1~dfsg1-0ubuntu7.10 |
+|                 libgs10:amd64 |      10.02.1~dfsg1-0ubuntu7.10 |
+|                libgs10-common |      10.02.1~dfsg1-0ubuntu7.10 |
 |        libgssapi-krb5-2:amd64 |             1.20.1-6ubuntu2.10 |
 |           libharfbuzz0b:amd64 |                  8.3.0-2build2 |
 |             libheif-dev:amd64 |              1.17.6-1ubuntu4.9 |
@@ -659,6 +659,6 @@
 |                           xxd |         2:9.1.0016-1ubuntu7.20 |
 |                      xz-utils |   5.6.1+really5.4.5-1ubuntu0.4 |
 |                           zip |                3.0-13ubuntu0.2 |
-|                  zlib1g:amd64 |        1:1.3.dfsg-3.1ubuntu2.2 |
-|              zlib1g-dev:amd64 |        1:1.3.dfsg-3.1ubuntu2.2 |
+|                  zlib1g:amd64 |        1:1.3.dfsg-3.1ubuntu2.3 |
+|              zlib1g-dev:amd64 |        1:1.3.dfsg-3.1ubuntu2.3 |
 |                          zstd |          1.5.5+dfsg2-2build1.1 |
