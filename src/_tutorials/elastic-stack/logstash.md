@@ -327,7 +327,7 @@ of log drain:
 scalingo --app my-app log-drains-add --type elk --url <logstash_url>
 ```
 
-With `logstash_url` being the URL of your Lostash app.
+With `logstash_url` being the URL of your Logstash app.
 
 The elk log drain sends the log entries over HTTP, with a `content-type` header
 set to `plain/text`.\\
