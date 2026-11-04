@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Accessing
-modified_at: 2026-06-19 00:00:00
+modified_at: 2026-11-03 00:00:00
 tags: databases postgresql dedicated
 index: 3
 ---
@@ -31,28 +31,23 @@ trusted source.
 
 ### Using the Command Line (Preview) {#using-the-command-line}
 
-Because Dedicated Resources databases are not yet generally available,
-you must first enable preview features to use the related CLI commands:
-
-```bash
-export SCALINGO_PREVIEW_FEATURES=true
-```
+{% include dedicated_resources_cli_preview.md %}
 
 Then:
 
 ```bash
 # List the existing rules
-scalingo --database <db-id> database-firewall-rules
+scalingo --database <db-name> database-firewall-rules
 
 # Add a new rule to the database based on a CIDR or a managed range
-scalingo --database <db-id> database-firewall-rules-add --cidr "198.51.100.25/32" --label "My workstation"
-scalingo --database <db-id> database-firewall-rules-add --managed-range mr-scalingo-osc-fr1
+scalingo --database <db-name> database-firewall-rules-add --cidr "198.51.100.25/32" --label "My workstation"
+scalingo --database <db-name> database-firewall-rules-add --managed-range mr-scalingo-osc-fr1
 
 # Remove an existing rule to restrict access
-scalingo --database <db-id> database-firewall-rules-remove <rule-id>
+scalingo --database <db-name> database-firewall-rules-remove <rule-id>
 
 # List existing managed ranges which are maintained by Scalingo
-scalingo --database <db-id> database-firewall-managed-ranges
+scalingo --database <db-name> database-firewall-managed-ranges
 ```
 
 ### How the Firewall Works
@@ -63,6 +58,10 @@ the database endpoint.
 
 You can configure up to **30 firewall rules** per
 database, and rule changes usually propagate in around 2 minutes.
+
+{% note %}
+Contact our support team if you need to increase the firewall rule limit.
+{% endnote %}
 
 Here are common CIDR formats you can use in firewall rules:
 
@@ -105,6 +104,9 @@ You do not need to manually track egress IP changes for these rules.
 You can create an [Outscale Net Peering][outscale-net-peering] between the
 Dedicated VPC of your database and an Outscale VPC from another Outscale
 account in the same region.
+
+See [Network Exposure][network-exposure] for the different ways to expose
+your database and connect to it.
 
 {% note %}
 Using Net Peering does not remove the need for firewall rules. You must allow
@@ -174,3 +176,5 @@ as long as the firewall rules are correctly configured.
 [egress]: {% post_url platform/networking/public/2000-01-01-egress %}
 [database-endpoints]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-endpoints %}#private-peering-rw
 [outscale-net-peering]: {% post_url databases/about/2000-01-01-network-exposure %}#outscale-net-peering
+
+[network-exposure]: {% post_url databases/about/2000-01-01-network-exposure %}

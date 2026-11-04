@@ -1,32 +1,26 @@
 ---
 title: Provisioning a Scalingo for OpenSearch® Addon
 nav: Provisioning
-modified_at: 2025-04-23 12:00:00
+modified_at: 2026-10-15 00:00:00
 tags: databases opensearch addon
 index: 1
 ---
 
 
 Once you have chosen the right plan for your needs, you are ready to provision
-the addon. This can be done via our [dashboard](#using-the-dahboard),
+the addon. This can be done via our [dashboard](#using-the-dashboard),
 our [CLI tool](#using-the-command-line) or via our
 [Terraform Provider](#using-the-terraform-provider).
 
 
-## Using the Dashboard
+## Provisioning
 
-1. From your web browser, open your [dashboard][dashboard]
-2. Click on the application for which you want to add an OpenSearch® database
-3. Click on the **Resources** tab
-4. Locate the **Addons** block and click on the **Add an addon** button
-5. Select **OpenSearch**® in the databases block and click the **Go to plan
-   selection** button
-6. Select the plan you want to provision
-7. Click the **Finish** button
-8. Give the platform a few seconds to ship your database and enjoy!
+### Using the Dashboard
+
+{% include database_provisioning_shared_resources_dashboard.md engine="OpenSearch®" %}
 
 
-## Using the Command Line
+### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the plans available for `opensearch`:
@@ -57,7 +51,7 @@ our [CLI tool](#using-the-command-line) or via our
 5. Wait a few seconds for the addon to be provisioned and enjoy!
 
 
-## Using the Terraform Provider
+### Using the Terraform Provider
 
 1. Place the following `resource` block in your Terraform file to create the
    addon and attach it to your app:
@@ -71,6 +65,11 @@ our [CLI tool](#using-the-command-line) or via our
    In this example, we create an OpenSearch Starter 2048 addon named `my-db`
    and attach it to an app named `my-app` (which must exist). We could have
    done the same with another plan.
+
+
+## Accessing the Scalingo for OpenSearch® Dashboard
+
+{% include database_dashboard_access_shared_resources.md %}
 
 
 [dashboard]: https://dashboard.scalingo.com/apps
