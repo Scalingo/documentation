@@ -8,7 +8,7 @@ products:
   - Private Networks
 kind: tutorial
 permalink: /tutorials/keycloak
-modified_at: 2026-09-07
+modified_at: 2026-10-21
 last_reviewed_at: 2026-09-07
 ---
 
@@ -731,6 +731,12 @@ can be leveraged to customize your deployment:
   know where the requests must be forwarded.\\
   Default to not being set.
 
+### Connecting Login Providers
+
+To let users sign in with email and password, Google, or Pro Santé Connect,
+follow our [Configuring Login Providers in Keycloak][keycloak-authentication]
+tutorial.
+
 
 *[SSO]: Single Sign-On
 *[SLA]: Service Level Agreement
@@ -751,6 +757,7 @@ can be leveraged to customize your deployment:
 
 [keycloak-scalingo]: https://github.com/Scalingo/keycloak-scalingo
 [keycloak-default-version]: https://github.com/Scalingo/keycloak-buildpack/blob/master/VERSIONS#L3
+[keycloak-authentication]: {% link _tutorials/keycloak-authentication/index.md %}
 
 [dashboard]: https://dashboard.scalingo.com/
 
