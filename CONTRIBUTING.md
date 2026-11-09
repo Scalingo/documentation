@@ -80,8 +80,12 @@ the expected merge date. This makes the changelog entry appear to customers as
 published on the day it actually becomes visible.
 
 For a newly published changelog entry, `modified_at` should use the same date as
-the filename prefix. When editing an existing changelog entry later, keep the
-filename date unchanged and update `modified_at` to the modification date.
+the filename prefix.
+
+When modifying a published changelog entry, keep both the
+filename date and `modified_at` unchanged. The changelog displays `modified_at`
+but orders entries by the filename date; changing `modified_at` makes the
+displayed dates inconsistent with the timeline.
 
 ## Runtime and database version updates
 
@@ -325,6 +329,7 @@ your change.
 - New changelog entry filenames start with the publication date that should
   define their position in the changelog, usually the expected merge date.
 - Changelog entries do not define `date` in the front matter.
+- Edits to published changelog entries preserve both the filename date and `modified_at`.
 
 ### Build checks
 
