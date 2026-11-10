@@ -5,16 +5,16 @@ category: analytics
 products:
   - Scalingo for PostgreSQL®
 permalink: /tutorials/jupyterlab
-modified_at: 2026-11-09
-last_reviewed_at: 2026-11-09
+modified_at: 2026-11-10
+last_reviewed_at: 2026-11-10
 published: true
 ---
 
-JupyterLab is an open-source web application that allows to create and share
-documents called *notebooks* that combine live code, equations, visualizations,
-and narrative text. Users can run code step by step, inspect outputs instantly,
-and modify their work dynamically. This makes it ideal for learning, data
-analysis, or scientific computing.
+[JupyterLab][jupyter] is an open-source web application that allows to create
+and share documents called *notebooks* that combine live code, equations,
+visualizations, and narrative text. Users can run code step by step, inspect
+outputs instantly, and modify their work dynamically. This makes it ideal for
+learning, data analysis, or scientific computing.
 
 
 ## Planning your Deployment
@@ -46,7 +46,8 @@ any updates in years. Use it with caution, ideally after reviewing its code!
 - Depending on several factors such as the size of your datasets, the
   complexity of your computations, and the number of notebooks you run at the
   same time, JupyterLab can consume a lot of RAM. We consequently advise to
-  deploy an L container, and change for a more powerful plan later if needed.
+  deploy an L container, and [change for a more powerful one][container-sizing]
+  later if needed.
 
 - JupyterLab supports two main authentication mechanisms to secure access to an
   instance:
@@ -59,6 +60,9 @@ any updates in years. Use it with caution, ideally after reviewing its code!
   storage, they woud not survive reboots, scaling, etc. As a consequence, we
   will use token-based authentication exclusively. Password authentication will
   be fully disabled for this demo.
+
+  For more information about JupyterLab authentication mechanisms and security,
+  please refer to [the official documentation][jupyter-security].
 
   {:#token}
   A cryptographically secure random token can be generated using the following
@@ -175,8 +179,8 @@ any updates in years. Use it with caution, ideally after reviewing its code!
 ## Updating
 
 JupyterLab is a Python application, distributed via its own package called
-`jupyterlab`. Updating to a newer version mainly consists in updating this
-package:
+[`jupyterlab`][jupyterlab-package]. Updating to a newer version mainly consists
+in updating this package:
 
 1. In your repository, ask `uv` to either update:
 
@@ -234,11 +238,15 @@ They can be leveraged to customize your deployment:
   token itself (not recommended).
 
 
+[jupyter]: https://jupyter.org/
 [pgcontents]: https://github.com/quantopian/pgcontents
 [ipep-27]: https://github.com/ipython/ipython/wiki/IPEP-27:-Contents-Service
 [jupyter-scalingo]: https://github.com/Scalingo/scalingo-labs/tree/main/jupyterlab
+[jupyterlab-package]: https://pypi.org/project/jupyterlab/
+[jupyter-security]: https://jupyter-server.readthedocs.io/en/stable/operators/security.html
 
 [dashboard]: https://dashboard.scalingo.com/
 
+[container-sizing]: {% post_url platform/app/scaling/2000-01-01-choosing-container-size %}
 [filesystem]: {% post_url platform/app/2000-01-01-filesystem %}
 [db-postgresql]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}
