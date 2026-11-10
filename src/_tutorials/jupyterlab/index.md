@@ -81,7 +81,7 @@ any updates in years. Use it with caution, ideally after reviewing its code!
    cd jupyterlab
    git init
    git add .
-   git commit -m "Initialize project from Scalingo demo"
+   git commit --message="Initialize project from Scalingo demo"
    ```
 
 3. Create the application on Scalingo:
@@ -193,7 +193,7 @@ package:
 2. Commit the update:
    ```bash
    git add pyproject.toml uv.lock
-   git commit -m "Upgrade JupyterLab to <NEW_VERSION>"
+   git commit --message="Upgrade JupyterLab to <NEW_VERSION>"
    ```
 
 ### Using the Command Line
@@ -225,7 +225,7 @@ package:
 
 JupyterLab supports several environment variables to customize its behavior.
 
-Moreover, the deployment makes use of the following environment variable(s).
+Moreover, the deployment makes use of the following environment variable.
 They can be leveraged to customize your deployment:
 
 * **`JUPYTER_TOKEN`**
