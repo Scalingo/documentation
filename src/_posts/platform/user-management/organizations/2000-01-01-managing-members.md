@@ -9,8 +9,8 @@ Members with the **Admin** role can invite users and remove members from the
 organization's **Members** page. Each invited user must accept the invitation to
 become a member.
 
-Then [add each member as a collaborator on each resource they
-need][collaborators].
+Joining an organization does not grant access to its resources.
+[Add each member as a collaborator on each resource they need][collaborators].
 
 ## Inviting a Member
 
@@ -94,8 +94,8 @@ To remove access to a single resource instead, [revoke collaborator access on
 that resource][remove-collaborator]. The user remains a member of the organization
 and keeps their access to other resources.
 
-For credentials the member may already know, follow the
-[guidance on rotating secrets when revoking access][remove-collaborator].
+A removed member may still know credentials used to access your resources.
+Follow the [guidance on rotating secrets when revoking access][remove-collaborator].
 
 [dashboard]: https://dashboard.scalingo.com/
 [remove-collaborator]: {% post_url platform/user-management/teamwork/2000-01-01-managing %}#removing-a-collaborator

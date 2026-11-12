@@ -23,9 +23,9 @@ around midnight UTC**:
 {% include mdl_img.html %}
 
 {% note %}
-The amounts shown are frozen at the end of each billing period. When a project's
-ownership is transferred during the month, that month's usage is billed to the
-destination billing profile, even if you can still see consumption from before
+The amounts shown are frozen at the end of each billing period. If a project's
+ownership is transferred during the month, the destination billing profile is
+billed for that month's usage, even if you can still see consumption from before
 the transfer.
 {% endnote %}
 

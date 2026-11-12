@@ -10,13 +10,12 @@ index: 20
 When you [create an account](https://auth.scalingo.com/users/sign_up), Scalingo offers
 eligible accounts a 30-day free trial to test the platform.
 
-To start the free trial, you must configure the [billing profile][billing-profile]
-and add a valid [payment method][payment-methods]. You are not charged while the free
-trial is active.
+To start the free trial, configure your [billing profile][billing-profile] and
+add a valid [payment method][payment-methods]. You are not charged during the
+free trial.
 
 {% note %}
-Each account is limited to one free trial. Organizations are not eligible for
-the free trial.
+Each account can use the free trial once. Organizations are not eligible.
 {% endnote %}
 
 ### What can I do under the free trial?

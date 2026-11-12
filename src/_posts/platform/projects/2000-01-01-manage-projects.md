@@ -172,12 +172,12 @@ update the project with the desired attributes. For example:
 
 ## Setting Your Default Project
 
-Your default project is used when you create a resource without specifying a
-project. To change your default project, set another project as the default.
+When you create a resource without specifying a project, Scalingo uses your
+default project. To change it, set another project as the default.
 
 {% note %}
-This preference applies only to your user account. It does not change
-the default project of other collaborators or organization members.
+This preference applies only to your user account. It does not change the
+default project for other collaborators or organization members.
 {% endnote %}
 
 ### Using the Dashboard {#set-default-using-the-dashboard}
@@ -198,21 +198,21 @@ scalingo projects-update --default prj-6731a609-02b6-4614-b28d-5abe43654333
 
 ## Transferring Projects
 
-Transferring a project transfers ownership of the project and all its resources.
-The new owner takes over administration and billing.
+When you transfer a project, the new owner takes over ownership, administration
+and billing for the project and all its resources.
 
 {% note %}
-Projects are now a core component of the platform. Applications can no longer be
-transferred individually. To change ownership, transfer the entire project instead.
+Applications cannot be transferred individually. To change ownership, transfer
+the entire project.
 {% endnote %}
 
-Transferring a project also affects billing for the current month. See
+The transfer also affects billing for the current month. See
 [how transfers affect consumption billing][transfer-billing].
 
 ### Transfer Ownership to a Collaborator {#transfer-project-ownership}
 
-You can transfer ownership to a collaborator only for projects in your personal
-account.
+You can transfer a project to a collaborator only if the project is in your
+personal account.
 
 To transfer a project to a collaborator, the new owner must:
 
@@ -224,7 +224,7 @@ To transfer a project to a collaborator, the new owner must:
 - Provide the required health professional contact details if the project contains
   HDS resources.
 
-Once the transfer is accepted by the new owner:
+Once the new owner accepts the transfer:
 
 - The previous owner is downgraded from **owner** to **collaborator** and keeps access to the project.
 - The previous owner no longer has administrative rights on the project.
