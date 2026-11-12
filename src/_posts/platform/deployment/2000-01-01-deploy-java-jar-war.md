@@ -1,7 +1,7 @@
 ---
 title: Deployment of JAR and WAR archives
 nav: Deploy JAR/WAR
-modified_at: 2026-10-16 12:00:00
+modified_at: 2026-11-12 12:00:00
 index: 8
 tags: deployment, java, jar, war
 ---
@@ -91,8 +91,8 @@ The latest available versions currently are:
 
 | Tomcat Version | {% scalingo 22 %} | {% scalingo 24 %} | {% scalingo 26 %} |
 | -------------: | ----------------: | ----------------: | ----------------: |
-| **`10.1`**     | up to `10.1.60.0` | up to `10.1.60.0` | up to `10.1.60.0` |
-| **`9.0`**      | up to `9.0.122.0` | up to `9.0.122.0` | up to `9.0.122.0` |
+| **`10.1`**     | up to `10.1.61.0` | up to `10.1.63.0` | up to `10.1.61.0` |
+| **`9.0`**      | up to `9.0.123.0` | up to `9.0.123.0` | up to `9.0.123.0` |
 
 The default Tomcat version on all stacks is the latest `9.0` version.
 
@@ -100,7 +100,7 @@ If you want to use another version, you can define the environment variable
 `JAVA_WEBAPP_RUNNER_VERSION`, like so:
 
 ```sh
-scalingo --app my-app env-set JAVA_WEBAPP_RUNNER_VERSION=10.1.60.0
+scalingo --app my-app env-set JAVA_WEBAPP_RUNNER_VERSION=10.1.61.0
 ```
 
 
