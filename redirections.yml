@@ -947,3 +947,5 @@ obsolete:
   - "/addons/lab/scalingo-shared-filesystem/start"
   - "/languages/meteorjs/phantomjs-spiderable-setup"
   - "/platform/databases/adminer"
+  - "/platform/getting-started/getting-started-with-sonarqube"
+  - "/tutorials/sonarqube"
