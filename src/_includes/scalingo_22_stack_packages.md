@@ -55,7 +55,7 @@
 |                        gcc-11 |        11.4.0-1ubuntu1~22.04.3 |
 |             gcc-11-base:amd64 |        11.4.0-1ubuntu1~22.04.3 |
 |             gcc-12-base:amd64 |        12.3.0-1ubuntu1~22.04.3 |
-|                   ghostscript |       9.55.0~dfsg1-0ubuntu5.14 |
+|                   ghostscript |       9.55.0~dfsg1-0ubuntu5.15 |
 |      gir1.2-freedesktop:amd64 |                       1.72.0-1 |
 |    gir1.2-gdkpixbuf-2.0:amd64 |         2.42.8+dfsg-1ubuntu0.5 |
 |         gir1.2-glib-2.0:amd64 |                       1.72.0-1 |
@@ -111,8 +111,8 @@
 |             libbinutils:amd64 |               2.38-4ubuntu2.12 |
 |            libblkid-dev:amd64 |              2.37.2-4ubuntu3.6 |
 |               libblkid1:amd64 |              2.37.2-4ubuntu3.6 |
-|           libbrotli-dev:amd64 |                  1.0.9-2build6 |
-|              libbrotli1:amd64 |                  1.0.9-2build6 |
+|           libbrotli-dev:amd64 |               1.0.9-2ubuntu0.1 |
+|              libbrotli1:amd64 |               1.0.9-2ubuntu0.1 |
 |                 libbsd0:amd64 |                       0.11.5-1 |
 |              libbz2-1.0:amd64 |               1.0.8-5ubuntu0.1 |
 |              libbz2-dev:amd64 |               1.0.8-5ubuntu0.1 |
@@ -210,8 +210,8 @@
 |              libgpgme11:amd64 |            1.16.0-1.2ubuntu4.2 |
 |                 libgpm2:amd64 |                1.20.7-10build1 |
 |          libgraphite2-3:amd64 |              1.3.14-1ubuntu0.1 |
-|                  libgs9:amd64 |       9.55.0~dfsg1-0ubuntu5.14 |
-|                 libgs9-common |       9.55.0~dfsg1-0ubuntu5.14 |
+|                  libgs9:amd64 |       9.55.0~dfsg1-0ubuntu5.15 |
+|                 libgs9-common |       9.55.0~dfsg1-0ubuntu5.15 |
 |        libgssapi-krb5-2:amd64 |             1.19.2-2ubuntu0.10 |
 |           libharfbuzz0b:amd64 |               2.7.4-1ubuntu3.2 |
 |                libheif1:amd64 |                 1.12.0-2build1 |
@@ -449,7 +449,7 @@
 |                 libzip4:amd64 |                 1.7.3-1ubuntu2 |
 |             libzstd-dev:amd64 |             1.4.8+dfsg-3build1 |
 |                libzstd1:amd64 |             1.4.8+dfsg-3build1 |
-|          linux-libc-dev:amd64 |                 5.15.0-198.208 |
+|          linux-libc-dev:amd64 |                 5.15.0-202.212 |
 |                       llvm-15 |      1:15.0.7-0ubuntu0.22.04.3 |
 |                   llvm-15-dev |      1:15.0.7-0ubuntu0.22.04.3 |
 |          llvm-15-linker-tools |      1:15.0.7-0ubuntu0.22.04.3 |

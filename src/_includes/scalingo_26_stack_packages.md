@@ -68,7 +68,7 @@
 |       gcc-15-x86-64-linux-gnu |               15.2.0-16ubuntu1 |
 |             gcc-16-base:amd64 |           16-20260322-1ubuntu1 |
 |          gcc-x86-64-linux-gnu |              4:15.2.0-5ubuntu1 |
-|                   ghostscript |        10.06.0~dfsg-3ubuntu1.1 |
+|                   ghostscript |        10.06.0~dfsg-3ubuntu1.2 |
 |      girepository-tools:amd64 |              2.88.0-1ubuntu0.1 |
 |                           git |            1:2.53.0-1ubuntu1.1 |
 |                       git-man |            1:2.53.0-1ubuntu1.1 |
@@ -122,8 +122,8 @@
 |             libbinutils:amd64 |                  2.46-3ubuntu2 |
 |            libblkid-dev:amd64 |              2.41.3-3ubuntu2.2 |
 |               libblkid1:amd64 |              2.41.3-3ubuntu2.2 |
-|           libbrotli-dev:amd64 |                  1.2.0-3build1 |
-|              libbrotli1:amd64 |                  1.2.0-3build1 |
+|           libbrotli-dev:amd64 |               1.2.0-3ubuntu0.1 |
+|              libbrotli1:amd64 |               1.2.0-3ubuntu0.1 |
 |                 libbsd0:amd64 |                 0.12.2-2build2 |
 |              libbz2-1.0:amd64 |               1.0.8-6ubuntu0.1 |
 |              libbz2-dev:amd64 |               1.0.8-6ubuntu0.1 |
@@ -224,9 +224,9 @@
 |                 libgpm2:amd64 |                1.20.7-12build1 |
 |             libgprofng0:amd64 |                  2.46-3ubuntu2 |
 |          libgraphite2-3:amd64 |             1.3.14-11ubuntu1.1 |
-|                  libgs-common |        10.06.0~dfsg-3ubuntu1.1 |
-|                 libgs10:amd64 |        10.06.0~dfsg-3ubuntu1.1 |
-|                libgs10-common |        10.06.0~dfsg-3ubuntu1.1 |
+|                  libgs-common |        10.06.0~dfsg-3ubuntu1.2 |
+|                 libgs10:amd64 |        10.06.0~dfsg-3ubuntu1.2 |
+|                libgs10-common |        10.06.0~dfsg-3ubuntu1.2 |
 |        libgssapi-krb5-2:amd64 |              1.22.1-2ubuntu4.1 |
 |           libgssrpc4t64:amd64 |              1.22.1-2ubuntu4.1 |
 |           libharfbuzz0b:amd64 |                       12.3.2-2 |
@@ -473,7 +473,7 @@
 |                 libzip5:amd64 |                       1.11.4-2 |
 |             libzstd-dev:amd64 |                   1.5.7+dfsg-3 |
 |                libzstd1:amd64 |                   1.5.7+dfsg-3 |
-|          linux-libc-dev:amd64 |                    7.0.0-38.38 |
+|          linux-libc-dev:amd64 |                    7.0.0-42.42 |
 |         linux-sysctl-defaults |                    4.15ubuntu5 |
 |                       llvm-21 |              1:21.1.8-6ubuntu1 |
 |                   llvm-21-dev |              1:21.1.8-6ubuntu1 |
@@ -660,6 +660,6 @@
 |                        zipcmp |                       1.11.4-2 |
 |                      zipmerge |                       1.11.4-2 |
 |                       ziptool |                       1.11.4-2 |
-|                  zlib1g:amd64 | 1:1.3.dfsg+really1.3.1-1ubuntu3.1 |
-|              zlib1g-dev:amd64 | 1:1.3.dfsg+really1.3.1-1ubuntu3.1 |
+|                  zlib1g:amd64 | 1:1.3.dfsg+really1.3.1-1ubuntu3.2 |
+|              zlib1g-dev:amd64 | 1:1.3.dfsg+really1.3.1-1ubuntu3.2 |
 |                          zstd |                   1.5.7+dfsg-3 |
