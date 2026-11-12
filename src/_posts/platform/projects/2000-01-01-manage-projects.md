@@ -1,6 +1,6 @@
 ---
 title: Manage your Projects
-modified_at: 2026-03-09 07:00:00
+modified_at: 2026-11-12 00:00:00
 tags: project management
 index: 2
 ---
@@ -11,75 +11,104 @@ Projects are the way to organize your applications and resources on Scalingo.
 [Learn more about Projects][projects-overview].
 
 
-## Setting the project at App creation
+## Creating a new project
 
-### Using the Dashboard
+To create a project in an organization, you must be its administrator.
 
-Within the App creation wizard, the section **Project** enables you to set a project different from **default**.
+### Using the Dashboard {#create-using-the-dashboard}
 
-If the project you'd like to set against the new App, doesn't exist, proceed as follows:
+1. Open your [Dashboard][dashboard]
+1. Click the **Projects** tab
+2. Click **Create a project** at the top of the list
+3. Enter the project name (1–64 characters, using only a-z, 0-9, -, or _)
+4. Choose the region where you want to create the project
+5. Check the target context, then click **Create new project**
 
-1. Click **+ New project**
-2. Enter the project name of your choice (1–64 characters, using only a-z, 0-9, -, or _)
-3. Click **Add**
+The Dashboard opens the new project. Click **Deploy an app** to create its first
+application.
 
-If the project is in the list
-1. Select the project you want
-2. Proceed with the next steps of your app creation
+### Using the Command Line {#create-using-the-cli}
 
-### Using the Command Line
+Make sure you have [set up the Scalingo command line tool][cli].
 
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, list the projects:
-   ```shell
-   scalingo projects
-   ```
-   The output should look like this:
-    ```shell
-    /!\  This command only displays projects where you are the owner
-   ┌──────────────┬─────────┬──────────────────────────────────────────┐
-   │     NAME     │ DEFAULT │                    ID                    │
-   ├──────────────┼─────────┼──────────────────────────────────────────┤
-   │ test-project │ false   │ prj-6731a609-02b6-4614-b28d-5abe43654333 │
-   │ default      │ true    │ prj-20f1b7e4-cf4d-46e9-aff1-e47ae149c444 │
-   └──────────────┴─────────┴──────────────────────────────────────────┘
-   ```
+To create a project in your personal account:
 
-3. From the command line, set the project at the app creation step:
+```shell
+scalingo projects-add test-project
+```
 
-   ```shell
-   scalingo create --project-id=prj-6731a609-02b6-4614-b28d-5abe43654333 test-app
-   ```
-   The output should look like this:
-   ```shell
-   App 'test-app' has been created
-   To deploy your application, run these commands in your GIT repository:
-   ...
-   ```
-Here you've created the app named `test-app` and set the project ID to `prj-6731a609-02b6-4614-b28d-5abe43654333`.
+To create a project in an organization, first find its slug:
 
-### Using the Terraform Provider
+```shell
+scalingo orgs
+```
 
-1. Place the following `project_id` in the app `resource` block in your Terraform file:
-   ```tf
-   resource "scalingo_app" "test_app" {
-     name = "terraform-testapp"
-     project_id = "prj-6731a609-02b6-4614-b28d-5abe43654333"
-   }
-   ```
+The output shows each organization's **ID**, **SLUG** and your **ROLE**.
+
+Pass the organization's slug with `--org` when creating the project:
+
+```shell
+scalingo projects-add --org my-org my-project
+```
+
+Without `--org`, you create the project in your personal account.
+
+To create a new default project in your personal account, add `--default`:
+
+```shell
+scalingo projects-add --default test-project
+```
+
+### Using the Terraform Provider {#create-using-the-terraform-provider}
+
+To create a project in your personal account:
+
+```tf
+resource "scalingo_project" "test-project" {
+  name    = "test-project"
+  default = true
+}
+```
+
+The `default` attribute makes this the default project in your personal account.
+
+To create a project in an organization, set `org` to the organization's slug:
+
+```tf
+resource "scalingo_project" "my_project" {
+  name = "my-project"
+  org  = "my-org-1"
+}
+```
+
+Omit `org` to create the project in your personal account.
 
 
 ## Listing the projects
 
+### Using the Dashboard {#list-using-the-dashboard}
 
-### Using the Dashboard
-
-1. From your web browser, open your [dashboard][dashboard]
+1. Open your [Dashboard][dashboard]
 2. Click the **Projects** tab
 
-The list includes, in addition of the projects you have created, those you are collaborating on (meaning you're collaborator on at least one of the applications)
+The Dashboard only lists projects in the selected context:
 
-### Using the Command Line
+- Projects you created
+- Projects containing a resource you collaborate on
+
+Within each project, you only see resources you can access.
+
+#### Finding a Project's ID
+
+1. Select the project from the list
+2. Go to **Settings** > **General**
+3. Copy the **Project ID** from the **Project details** section
+
+### Using the Command Line {#list-using-the-cli}
+
+The CLI lists the projects you can access in your personal account and in
+organizations you are a member of. The **ORGANIZATION** column identifies each
+project's organization and is empty for projects in your personal account.
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the projects:
@@ -89,61 +118,22 @@ The list includes, in addition of the projects you have created, those you are c
    The output should look like this:
    ```shell
      /!\  This command only displays projects where you are the owner
-   ┌──────────────┬─────────┬──────────────────────────────────────────┐
-   │     NAME     │ DEFAULT │                    ID                    │
-   ├──────────────┼─────────┼──────────────────────────────────────────┤
-   │ test-project │ false   │ prj-6731a609-02b6-4614-b28d-5abe43654333 │
-   │ default      │ true    │ prj-20f1b7e4-cf4d-46e9-aff1-e47ae149c444 │
-   └──────────────┴─────────┴──────────────────────────────────────────┘
+   ┌──────────────┬──────────────┬─────────┬──────────────────────────────────────────┐
+   │     NAME     │ ORGANIZATION │ DEFAULT │                    ID                    │
+   ├──────────────┼──────────────┼─────────┼──────────────────────────────────────────┤
+   │ test-project │ my-org-1     │ false   │ prj-6731a609-02b6-4614-b28d-5abe43654333 │
+   │ default      │              │ true    │ prj-20f1b7e4-cf4d-46e9-aff1-e47ae149c444 │
+   └──────────────┴──────────────┴─────────┴──────────────────────────────────────────┘
    ```
 
-## Creating a new project
 
-### Using the Dashboard
-
-1. From your web browser, open your [dashboard][dashboard]
-2. Click the **Projects** tab
-3. Click `Create a project` button in the top of the list
-4. Enter the project name of your choice (1–64 characters, using only a-z, 0-9, -, or _)
-5. Choose the region on which you want to create the new project
-6. Click `Create new project`
-
-Right after the creation of the project, you're redirected on its Dashboard. It is empty and you've got the capability to create its first App by clicking on `Deploy an app` button.
-
-### Using the Command Line
-
-1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, create a project:
-   ```shell
-   scalingo projects-add test-project
-   ```
-   The output should look like this:
-   ```shell
-   -----> test-project has been created
-   ```
-   You can also create a new project that will be default directly:
-   ```shell
-   scalingo projects-add --default test-project
-   ```
-
-### Using the Terraform Provider
-
-1. Place the following `resource` block in your Terraform file:
-   ```tf
-   resource "scalingo_project" "test-project" {
-     name = "test-project"
-     default = true
-   }
-   ```
+Learn how to [choose an application's destination project][app-project].
+{: #setting-the-project-at-app-creation}
 
 
 ## Updating a project
 
-{% note %}
-   `default` cannot be changed from true to false. To change the default project, update an existing project to be the new default one, or create a new default project.
-{% endnote %}
-
-### Using the Dashboard
+### Using the Dashboard {#update-using-the-dashboard}
 
 If you want to update the `name` of your project, the steps are the following:
 
@@ -157,23 +147,7 @@ If you want to update the `name` of your project, the steps are the following:
 8. Put the name of your choice (1-64 characters, using only a-z, 0-9, -, or _)
 9. Click **Rename**
 
-If you want to change the `default` project, the steps are the following:
-
-1. From your web browser, open your [dashboard][dashboard]
-2. Click the **Projects** tab
-3. (optional) You can filter the list of projects by clicking on `My projects` or `Other projects` and or type its name or a part of it in the search text box
-4. On the row of the project you want to edit, click the `name` of the project
-5. On the Dashboard of the project you want to edit, click **Settings** tab
-6. In the **Settings** submenu, make sure to select **General**
-7. In the **Project details**, click **Set [project name] as your default project**
-
-### Using the Command Line
-
-Two attributes can be updated: `name` and `default`.
-
-{% note %}
-   `default` cannot be changed from true to false. To change the default project, update an existing project to be the new default one, or create a new default project.
-{% endnote %}
+### Using the Command Line {#update-using-the-cli}
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, update a project name:
@@ -184,12 +158,8 @@ Two attributes can be updated: `name` and `default`.
    ```shell
    -----> test-project has been updated
    ```
-   You can also update a project to become the new default:
-   ```shell
-   scalingo projects-update --default prj-6731a609-02b6-4614-b28d-5abe43654333
-   ```
 
-### Using the Terraform Provider
+### Using the Terraform Provider {#update-using-the-terraform-provider}
 
 There is only one step required to update a project using Terraform. You need to
 update the project with the desired attributes. For example:
@@ -200,30 +170,66 @@ update the project with the desired attributes. For example:
    ```
 
 
-## Transfer Ownership of a Project {#transfer-project-ownership}
+## Setting Your Default Project
+
+Your default project is used when you create a resource without specifying a
+project. To change your default project, set another project as the default.
 
 {% note %}
-Projects are now a core component of the platform. Applications can no longer be transferred individually. To change ownership, transfer the entire project instead.
+This preference applies only to your user account. It does not change
+the default project of other collaborators or organization members.
 {% endnote %}
 
-To transfer a project to another user, first add the future owner as a collaborator on all project resources, including applications and Dedicated Resources databases, and make sure they accept the invitation.
+### Using the Dashboard {#set-default-using-the-dashboard}
+
+1. Open your [Dashboard][dashboard] and select **Projects**
+2. Open the project you want to use as your default
+3. Go to **Settings** > **General**
+4. In **Project details**, click **Set [project name] as your default project**
+
+### Using the Command Line {#set-default-using-the-cli}
+
+Use `scalingo projects-update --default` with the project's ID:
+
+```shell
+scalingo projects-update --default prj-6731a609-02b6-4614-b28d-5abe43654333
+```
+
+
+## Transferring Projects
+
+Transferring a project transfers ownership of the project and all its resources.
+The new owner takes over administration and billing.
 
 {% note %}
-The new owner must have an active [Billing Profile][billing], and valid payment method and must have left the free trial.
-If the project contains HDS resources, the new owner must also provide the required health professional contact details.
+Projects are now a core component of the platform. Applications can no longer be
+transferred individually. To change ownership, transfer the entire project instead.
 {% endnote %}
+
+Transferring a project also affects billing for the current month. See
+[how transfers affect consumption billing][transfer-billing].
+
+### Transfer Ownership to a Collaborator {#transfer-project-ownership}
+
+You can transfer ownership to a collaborator only for projects in your personal
+account.
+
+To transfer a project to a collaborator, the new owner must:
+
+- Be a collaborator on all project resources, including applications and Dedicated
+  Resources databases, and have accepted the invitations.
+- Have an active [billing profile][billing].
+- Have a valid payment method.
+- Have left the free trial.
+- Provide the required health professional contact details if the project contains
+  HDS resources.
 
 Once the transfer is accepted by the new owner:
+
 - The previous owner is downgraded from **owner** to **collaborator** and keeps access to the project.
 - The previous owner no longer has administrative rights on the project.
-- The project is fully owned by the new owner.
-- Billing for project consumption is charged to the new owner.
 
-{% note %}
-Billing occurs on the last day of the month and is charged to the project owner at that time. Transferring ownership earlier in the month or just before billing does not affect this. The owner recorded on the billing date is the one billed.
-{% endnote %}
-
-### Using the Dashboard
+#### Using the Dashboard {#transfer-using-the-dashboard}
 
 1. From your web browser, open your [dashboard][dashboard]
 2. Click the **Projects** tab, then select the project you want to transfer
@@ -233,12 +239,39 @@ Billing occurs on the last day of the month and is charged to the project owner 
 6. Confirm the project name
 7. Click **Transfer** to send the transfer request
 
+### Transfer Ownership to an Organization {#transferring-a-personal-project-to-an-organization}
+
+Resources keep running during the transfer, with the same configuration and
+collaborators.
+
+To transfer a project to an organization:
+
+- You must own the personal project and have the **Admin** role in the destination
+  organization.
+- The organization must have a complete [billing profile][billing] and a valid,
+  active payment method.
+- Every existing collaborator on the project's resources must have accepted an
+  invitation to that organization. Existing collaborator assignments are retained.
+  Other members do not automatically receive resource access.
+
+#### Using the Dashboard {#transfer-to-organization-using-the-dashboard}
+
+1. Select **Personal account** and open the project.
+2. Go to **Settings** > **General**.
+3. In **Transfer project ownership**, under **Transfer ownership to an organization**,
+   click **Transfer to an organization**.
+4. Select the **Destination organization**.
+5. Review any blocking conditions displayed by the Dashboard, then click **Transfer**.
+
+If a check fails, the project remains in your personal account. After a successful
+transfer, select the organization to access the project.
+
 
 ## Removing a project
 
 A project can be removed only if this is not the default one, and no application is linked to it.
 
-### Using the Dashboard
+### Using the Dashboard {#remove-using-the-dashboard}
 
 1. From your web browser, open your [dashboard][dashboard]
 2. Click the **Projects** tab
@@ -250,7 +283,7 @@ A project can be removed only if this is not the default one, and no application
 8. In the popup, confirm the name of the project you want to delete
 9. Click **Delete project [project name]**
 
-### Using the Command Line
+### Using the Command Line {#remove-using-the-cli}
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, update a project:
@@ -262,7 +295,7 @@ A project can be removed only if this is not the default one, and no application
    -----> prj-6731a609-02b6-4614-b28d-5abe43654333 has been removed
    ```
 
-### Using the Terraform Provider
+### Using the Terraform Provider {#remove-using-the-terraform-provider}
 
 There is only one step required to remove a project using Terraform. You just need to
 remove the associated resource from the Terraform file.
@@ -272,3 +305,5 @@ remove the associated resource from the Terraform file.
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [projects-overview]: {% post_url platform/projects/2000-01-01-overview %}
 [billing]: {% post_url platform/billing/2000-01-01-profile %}
+[transfer-billing]: {% post_url platform/billing/2000-01-01-consumption-reports %}#current-consumption
+[app-project]: {% post_url platform/app/2000-01-01-lifecycle-management %}#create-an-application

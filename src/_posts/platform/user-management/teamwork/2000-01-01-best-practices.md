@@ -1,6 +1,6 @@
 ---
 title: Best Practices
-modified_at: 2025-07-01 12:00:00
+modified_at: 2026-11-12 00:00:00
 tags: user team role collaborator security
 index: 50
 ---
@@ -39,7 +39,20 @@ repository from introducing harmful logic into your codebase.\
 deployment methods and access permissions you have configured on Scalingo**.
 
 
-## Setting the Appropriate Roles
+## Choosing Between your Personal Account and an Organization
+
+For collaboration centered on an application, you can keep the project and its
+resources in your personal account and invite collaborators to the application.
+
+When a team needs shared management of projects, members and billing, use an
+organization. See [when to use organizations][organizations-use-cases] for examples.
+
+
+## Setting the Appropriate Roles on Resources
+
+Resource roles apply in both personal accounts and organizations. Choose the
+**Collaborator** or **Limited Collaborator** role according to the actions each
+person needs to perform.
 
 ### Small Teams
 
@@ -75,9 +88,6 @@ developers.
 
 Structure example: Several project teams and multiple environments.
 
-- Use a global service account (dedicated Scalingo account) as the application
-  **Owner**, especially for production apps. This avoids coupling billing or
-  critical permissions to a personal account.
 - Apply the same role split as in [mid-sized teams](#mid-sized-teams):
   **Collaborator** for leads, **Limited Collaborator** for developers.
 - Use a specific and dedicated service account to [scope API tokens](#scoping-api-tokens)
@@ -122,7 +132,8 @@ into your internal security alerts or audit processes.
 
 [least-privilege]: https://en.wikipedia.org/wiki/Principle_of_least_privilege
 
-[dashboard-collab]: https://dashboard.scalingo.com/collaborators
+[dashboard-collab]: {% post_url platform/user-management/teamwork/2000-01-01-personal-account-collaborators %}#listing-all-collaborators
 [api]: https://developers.scalingo.com
 
 [roles]: {% post_url platform/user-management/teamwork/2000-01-01-roles %}
+[organizations-use-cases]: {% post_url platform/user-management/organizations/2000-01-01-overview %}#when-to-use-organizations

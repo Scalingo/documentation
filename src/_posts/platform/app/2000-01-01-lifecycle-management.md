@@ -1,7 +1,7 @@
 ---
 title: Application Lifecycle Management
 nav: Lifecycle Management
-modified_at: 2026-03-09 07:00:00
+modified_at: 2026-11-12 00:00:00
 index: 10
 tags: management
 ---
@@ -15,7 +15,7 @@ manage its scaling, and manage add-ons and collaborators.
 
 ## Create an Application
 
-Three methods are co-existing to manage your applications on the Scalingo:
+You can use the following tools to manage your applications:
 
 - [Dashboard][dashboard]: The simplest way to manage your applications, use
   any browser to create, scale or delete applications.
@@ -28,25 +28,35 @@ Three methods are co-existing to manage your applications on the Scalingo:
   if you need to automate behaviors by managing applications in a programmatic
   way, you can directly target [our API][api] via [our SDK][sdk].
 
+- [Terraform Provider][terraform-provider]: Manage your applications as code.
+  Define their configuration in Terraform files to automate their creation,
+  updates, and deletion.
+
+{% note %}
+We recommend choosing the destination project explicitly, especially when
+creating an application in an organization. Otherwise, the application is created
+in your default project. See [how to list projects and find their IDs][projects-list].
+{% endnote %}
+
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard][dashboard]
-2. Click the **Create an application +** button
-3. In the **Basic information** section:
+1. Open the [Dashboard][dashboard] and select **Projects**
+2. Open the project where you want to create the application
+3. Click the **Create an application +** button
+4. In the **Basic information** section:
    - Enter the application name
    - Select the target region
-   - Select the target project
-4. (optional) If your workload is subject to French HDS requirements, check
+5. (optional) If your workload is subject to French HDS requirements, check
    **Health data hosting (compliant with the French HDS standard)**. See
    [Create an HDS Application](#create-an-hds-application)
-5. Click **Create app**
-6. In the **Deployment method** section, select your Git provider and choose
+6. Click **Create app**
+7. In the **Deployment method** section, select your Git provider and choose
    the repository you want to deploy
-7. Confirm the repository selection to create the application
+8. Confirm the repository selection to create the application
 
 ### Command Line
 
-The subcommand `create` is dedicated to creating applications:
+Use `scalingo create` to create an application.
 
 ```bash
 $ scalingo create <appname>
@@ -57,9 +67,29 @@ $ scalingo create my-app --remote staging
 # Create a new app with a custom buildpack
 $ scalingo create my-app --buildpack https://github.com/Scalingo/multi-buildpack
 
-# Create a new app in the chosen project
+# Create a new app in chosen project
 $ scalingo create --project-id=prj-6731a609-02b6-4614-b28d-5abe43654333 my-app
 ```
+
+{% note %}
+Specify the destination project's ID with `--project-id`.
+{% endnote %}
+
+### Using the Terraform Provider
+
+1. Add the following `resource` block to your Terraform file:
+   ```tf
+   resource "scalingo_app" "test_app" {
+     name = "terraform-testapp"
+   }
+   ```
+2. Run `terraform plan` and review the changes
+3. Run `terraform apply` to create the application
+
+{% note %}
+Specify the destination project's ID with `project_id` in the `scalingo_app`
+resource block.
+{% endnote %}
 
 ## Create an HDS Application
 
@@ -160,7 +190,9 @@ To confirm type the name of the application: my-app
 
 [sdk]: {% post_url tools/2000-01-01-software-development-kit %}
 [cli]: {% post_url tools/cli/2000-01-01-start %}
+[terraform-provider]: {% post_url tools/2000-01-01-terraform-provider %}
 [scm]: {% post_url platform/app/2000-01-01-scm-integration %}
 [hds-page]: {% post_url platform/2000-01-01-hds %}
 [hds-poc]: {% post_url compliance/2000-01-01-hds %}#en-hds-health-professional-point-of-contact
 [transfer-project-ownership]: {% post_url platform/projects/2000-01-01-manage-projects %}#transfer-project-ownership
+[projects-list]: {% post_url platform/projects/2000-01-01-manage-projects %}#listing-the-projects

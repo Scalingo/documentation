@@ -1,11 +1,14 @@
 ---
 title: Monitoring Consumptions
-modified_at: 2025-07-07 12:00:00
+modified_at: 2026-11-12 00:00:00
 index: 40
 ---
 
+Consumption reports show the resource usage for a billing profile.
 
 ## Viewing Consumptions
+
+{% include billing_context.md %}
 
 ### Current Consumption
 
@@ -20,7 +23,10 @@ around midnight UTC**:
 {% include mdl_img.html %}
 
 {% note %}
-The amounts shown are frozen at the end of each billing period. A project transferred during the month is billed to its new owner, even if you can see its consumption for the period prior to its transfer.
+The amounts shown are frozen at the end of each billing period. When a project's
+ownership is transferred during the month, that month's usage is billed to the
+destination billing profile, even if you can still see consumption from before
+the transfer.
 {% endnote %}
 
 ### Past Consumptions
