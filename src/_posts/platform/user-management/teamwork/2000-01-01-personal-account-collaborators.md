@@ -9,7 +9,7 @@ In your personal account, you add collaborators to individual applications. The
 **Collaborators** page brings these assignments together, giving you a complete
 view of who has access to your applications.
 
-## Listing Collaborators {#listing-all-collaborators}
+## Listing Collaborators
 
 ### Using the Dashboard
 
