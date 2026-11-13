@@ -1,7 +1,7 @@
 ---
 title: Upgrading Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Upgrading
-modified_at: 2026-02-13 12:00:00
+modified_at: 2026-10-21 00:00:00
 tags: databases postgresql dedicated
 index: 4
 ---
@@ -51,7 +51,8 @@ clusters keep your service available throughout the operation.
    quite some time, depending on the database size and enabled extension(s).
 3. Once the instance restarted, the database is reachable again.
 
-Since we have to completely stop the instance, **a downtime is inevitable**.
+**The database is unavailable from the moment the instance stops until it has
+restarted.**
 
 We usually roughly estimate the downtime caused by the operation between a few
 seconds to a few minutes. In any cases, it shouldn't exceed 10 minutes.

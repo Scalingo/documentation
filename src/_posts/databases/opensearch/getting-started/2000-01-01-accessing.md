@@ -1,7 +1,7 @@
 ---
 title: Accessing Your Scalingo for OpenSearch® database
 nav: Accessing
-modified_at: 2025-09-05 12:00:00
+modified_at: 2026-10-14 00:00:00
 tags: databases opensearch addon
 index: 3
 ---
@@ -153,7 +153,7 @@ recommend activating Internet Accessibility.
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [ssh]: {% post_url platform/getting-started/2000-01-01-first-steps %}
 [one-off]: {% post_url platform/app/2000-01-01-tasks %}
-[db-dashboard]: {% post_url databases/opensearch/getting-started/2000-01-01-connecting %}#accessing-the-opensearch-dashboard
+[db-dashboard]: {% post_url databases/opensearch/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-opensearch-dashboard
 [connecting]:      {% post_url databases/opensearch/getting-started/2000-01-01-connecting %}
 [connecting-uri1]: {% post_url databases/opensearch/getting-started/2000-01-01-connecting %}#getting-the-connection-uri
 [connecting-uri2]: {% post_url databases/opensearch/getting-started/2000-01-01-connecting %}#understanding-the-connection-uri

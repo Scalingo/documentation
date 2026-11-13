@@ -1,13 +1,13 @@
 ---
-title: Managing Extensions of Your Scalingo for PostgreSQL® Instance
+title: Managing Extensions of Your Scalingo for PostgreSQL® Database
 nav: Managing Extensions
-modified_at: 2024-11-05 12:00:00
+modified_at: 2026-11-02 00:00:00
 tags: databases postgresql extensions
 index: 10
 ---
 
 PostgreSQL® is a database engine which is extensible thanks to a large set of
-extensions. A lot of them are installed alongside your PostgreSQL® instance,
+extensions. A lot of them are installed alongside your PostgreSQL® database,
 but you need to enable those manually according to your needs.
 
 Please note that we have dedicated pages for some of the most popular

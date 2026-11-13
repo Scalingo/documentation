@@ -8,14 +8,14 @@ For example, to download the tools to interact with your MySQL addon:
 [10:48] Scalingo ~ $ dbclient-fetcher mysql
 ---> Download and extract the database CLI
 ---> Database CLI installed:
-mysql  Ver 8.0.33 for Linux on x86_64 (Source distribution)
+...
 ```
 
 If you ever need a specific version, just add it as a second parameter:
 
 ```bash
-[10:48] Scalingo ~ $ dbclient-fetcher mysql 8.0
+[10:48] Scalingo ~ $ dbclient-fetcher mysql <version>
 ---> Download and extract the database CLI
 ---> Database CLI installed:
-mysql  Ver 8.0.33 for Linux on x86_64 (Source distribution)
+...
 ```

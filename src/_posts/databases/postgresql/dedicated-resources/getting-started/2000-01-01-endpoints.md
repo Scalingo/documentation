@@ -1,7 +1,7 @@
 ---
 title: Understanding Database Endpoints
 nav: Endpoints
-modified_at: 2026-06-19 00:00:00
+modified_at: 2026-11-02 00:00:00
 tags: databases postgresql dedicated endpoints
 index: 4
 ---
@@ -10,12 +10,7 @@ Database endpoints are the different ways to access the database through the net
 
 ## Listing Database Endpoints with CLI
 
-Because Dedicated Resources databases are not yet generally available,
-you must first enable preview features to use the related CLI commands:
-
-```sh
-export SCALINGO_PREVIEW_FEATURES=true
-```
+{% include dedicated_resources_cli_preview.md %}
 
 Run the following command to list your database endpoints:
 
@@ -50,7 +45,7 @@ hostname will not change.
 
 Private Peering RW (`private-peering-rw`) stands for private peering
 read/write. Its hostname resolves to the private IP address on the database
-gateway instance which is considerd as primary at a given time.
+gateway instance which is considered as primary at a given time.
 
 This hostname:port couple will only be reachable from networks linked with a
 Net Peering to the database.
@@ -66,5 +61,3 @@ you want to use to reach your database.
 
 For example, use the public endpoint to connect through the public Internet, or
 the Private Peering endpoint to connect through Net Peering.
-
-    
