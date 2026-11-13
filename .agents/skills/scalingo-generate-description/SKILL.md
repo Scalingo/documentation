@@ -31,9 +31,16 @@ evaluation or log, include the requested analysis separately.
 
 - Use one YAML line with a double-quoted value; escape embedded double quotes and
   backslashes. No Markdown, HTML, Liquid, links, or line breaks in the value.
-- Use the page's language and established product terminology.
-- Maximum: 256 characters in the description value, excluding YAML syntax. Aim for
-  120–180 when useful; do not pad a complete description to reach a minimum.
+- Use the page's language and established product terminology. Name concepts
+  with terms the page uses and, where possible, explains or defines. Do not
+  introduce a parallel vocabulary or a new abstract object while summarizing:
+  “assign a role” does not establish an “assignment” concept. Ordinary grammatical
+  changes are fine; this is a terminology check, not literal word matching.
+- Maximum: 256 characters in the description value, excluding YAML syntax. This
+  is a ceiling, not a target. Stop once the main intent and distinguishing scope
+  are clear; never add weak or secondary topics to use the remaining characters.
+  The 120–180 range is only a guide: prefer a shorter, focused description over
+  a longer, diluted one. There is no minimum length.
   This is a local metadata constraint, not a Google snippet-length requirement.
 
 ## Select the information
@@ -102,9 +109,15 @@ Check each description against the body, then compare sibling pages:
   page, including its relevant includes, rather than only to a linked page?
 - Does the description match the page type: procedure, concept, reference, or
   announcement? Does it promise only what this page actually explains?
+- Do the nouns naming concepts come from the page's terminology, preferably
+  terms it explains? Check noun phrases and nominalizations as well as factual
+  meaning; a related verb in the source does not establish a new product object.
 - Does the first clause identify the main intent and the correct object?
 - Is the sentence active, natural, and useful without the title?
 - Does each detail help select this page rather than summarize a secondary section?
+- Before accepting a shorter version, compare what it drops: keep terms naming a
+  distinct user task or product scope, and remove redundant wording first. A lower
+  character count alone is not evidence of improvement.
 - Are different objects and scopes still distinguishable across the batch?
 - Is the value valid YAML, on one line, and no longer than 256 characters?
 
@@ -121,3 +134,5 @@ alone does not guarantee a changed search snippet.
 `description: "Compare Owner, Collaborator, and Limited Collaborator permissions for Scalingo applications, including deployments, settings, and data access."`
 
 `description: "Scalingo organizations group projects, resources, and members under separate administration and billing."`
+
+`description: "On Scalingo, each collaborator has a role that defines what they can do on an application or database."`
