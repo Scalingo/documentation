@@ -1,4 +1,4 @@
 ---
 nav: Collaborators
-index: 20
+index: 3
 ---

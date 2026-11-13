@@ -57,7 +57,7 @@ The [**API Tokens**][account-tokens] tab allows to:
 Reminder: API tokens inherit the exact permissions of your account for each
 application or database. Currently, it is not possible to restrict the scope or
 permissions of an individual token. For improved security, especially in larger
-organizations, we recommend reviewing our [security best
+teams, we recommend reviewing our [security best
 practices][best-practices]
 {% endnote %}
 

@@ -11,7 +11,7 @@ and security settings on Scalingo, depending on your team's size and structure.
 While Scalingo keeps access control simple, [using roles][roles] strategically
 helps balancing collaboration with operational security.
 
-The recommendations below cover team organization, API tokens and access reviews.
+The recommendations below cover team structure, API tokens and access reviews.
 They follow the principle of [least privilege][least-privilege]: give each
 collaborator only the permissions they need.
 
