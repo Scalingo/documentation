@@ -12,11 +12,6 @@ keeping full control over who can manage it.
 Unlike Shared Resources databases, a Dedicated Resources database has its own
 collaborators.
 
-{% note %}
-For now, Dedicated Resources databases still use application CLI commands.
-This will change in a future release.
-{% endnote %}
-
 
 ## Listing Collaborators of a Database
 
