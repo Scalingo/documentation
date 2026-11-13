@@ -130,8 +130,8 @@ into your internal security alerts or audit processes.
 
 [least-privilege]: https://en.wikipedia.org/wiki/Principle_of_least_privilege
 
-[dashboard-collab]: {% post_url platform/user-management/teamwork/2000-01-01-personal-account-collaborators %}#listing-collaborators
+[dashboard-collab]: {% post_url platform/user-management/collaborators/2000-01-01-personal-account-collaborators %}#listing-collaborators
 [api]: https://developers.scalingo.com
 
-[roles]: {% post_url platform/user-management/teamwork/2000-01-01-roles %}
+[roles]: {% post_url platform/user-management/collaborators/2000-01-01-roles %}
 [organizations-use-cases]: {% post_url platform/user-management/organizations/2000-01-01-overview %}#when-to-use-organizations

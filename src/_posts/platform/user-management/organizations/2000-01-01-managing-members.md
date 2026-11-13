@@ -67,8 +67,9 @@ If you are signed in with a different email address, sign out and sign in with t
 account that received the invitation.
 
 Once you accept the invitation, you become a member and can select the
-[organization in the Dashboard][organization-context]. You can then
-[ask for access to the resources you need][resource-access].
+[organization in the Dashboard][organization-context]. To access a resource, ask
+the organization's administrator or a Collaborator of that resource to add you
+as a collaborator.
 
 {% note %}
 You cannot accept an expired or cancelled invitation. Ask the organization's
@@ -104,7 +105,6 @@ directly.
 {% endnote %}
 
 [dashboard]: https://dashboard.scalingo.com/
-[collaborators]: {% post_url platform/user-management/organizations/2000-01-01-overview %}#members-and-resource-access
+[collaborators]: {% post_url platform/user-management/collaborators/2000-01-01-overview %}
 [invitation]: #accepting-an-invitation
 [organization-context]: {% post_url platform/user-management/organizations/2000-01-01-overview %}#accessing-an-organization-in-the-dashboard
-[resource-access]: {% post_url platform/user-management/organizations/2000-01-01-overview %}#members-and-resource-access

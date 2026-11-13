@@ -220,6 +220,6 @@ are sent.
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [notifications]: {% post_url platform/app/2000-01-01-notifiers %}
-[roles]: {% post_url platform/user-management/teamwork/2000-01-01-roles %}
+[roles]: {% post_url platform/user-management/collaborators/2000-01-01-roles %}
 [organization-invitation]: {% post_url platform/user-management/organizations/2000-01-01-managing-members %}#inviting-a-member
 [organization-remove-member]: {% post_url platform/user-management/organizations/2000-01-01-managing-members %}#removing-a-member

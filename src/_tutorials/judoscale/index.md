@@ -5,7 +5,7 @@ category: integration
 kind: demo
 partner: Judoscale
 permalink: /tutorials/judoscale
-modified_at: 2026-09-04
+modified_at: 2026-11-13 00:00:00
 last_reviewed_at: 2026-09-03
 ---
 
@@ -229,4 +229,4 @@ Scalingo][judoscale-pricing].
 [environment]: {% post_url platform/app/2000-01-01-environment %}
 [projects]: {% post_url platform/projects/2000-01-01-overview %}
 [api-tokens]: {% post_url platform/user-management/scalingo-account/2000-01-01-navigating %}#api-tokens
-[token-practices]: {% post_url platform/user-management/teamwork/2000-01-01-best-practices %}#scoping-api-tokens
+[token-practices]: {% post_url platform/user-management/collaborators/2000-01-01-best-practices %}#scoping-api-tokens
