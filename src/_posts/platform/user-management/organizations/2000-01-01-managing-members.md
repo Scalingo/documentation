@@ -1,6 +1,6 @@
 ---
 title: Managing Members
-modified_at: 2026-11-12 00:00:00
+modified_at: 2026-11-13 00:00:00
 tags: organization member invitation administrator
 index: 3
 ---
@@ -90,16 +90,20 @@ To remove a member, you must have the **Admin** role:
 5. Check the member and organization in the confirmation window, then click
    **Remove member**.
 
-To remove access to a single resource instead, [revoke collaborator access on
-that resource][remove-collaborator]. The user remains a member of the organization
-and keeps their access to other resources.
+{% note %}
+To remove access to a single resource instead, revoke collaborator access on that
+resource. The person remains a member of the organization and keeps their access
+to other resources.
+{% endnote %}
 
-A removed member may still know credentials used to access your resources.
-Follow the [guidance on rotating secrets when revoking access][remove-collaborator].
+{% note %}
+Removing a member does not change credentials they may already know. Rotate any
+passwords, API tokens or other secrets they could use to access your resources
+directly.
+{% endnote %}
 
 [dashboard]: https://dashboard.scalingo.com/
-[remove-collaborator]: {% post_url platform/user-management/teamwork/2000-01-01-managing %}#removing-a-collaborator
-[collaborators]: {% post_url platform/user-management/teamwork/2000-01-01-managing %}#inviting-a-collaborator
+[collaborators]: {% post_url platform/user-management/organizations/2000-01-01-overview %}#members-and-resource-access
 [invitation]: #accepting-an-invitation
 [organization-context]: {% post_url platform/user-management/organizations/2000-01-01-overview %}#accessing-an-organization-in-the-dashboard
 [resource-access]: {% post_url platform/user-management/organizations/2000-01-01-overview %}#members-and-resource-access

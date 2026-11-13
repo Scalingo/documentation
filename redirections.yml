@@ -1002,6 +1002,9 @@
   - old: "/languages/meteorjs/npm"
     new: "/languages/meteorjs/start#meteor-dependencies-installation"
 
+  - old: "/platform/user-management/teamwork/managing"
+    new: "/platform/app/managing-collaborators"
+
 obsolete:
   - "/how-to-migrate-from-cloudcontrol/"
   - "/how-to-migrate-from-shelly-cloud/"

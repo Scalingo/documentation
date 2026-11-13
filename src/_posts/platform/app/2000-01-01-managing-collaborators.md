@@ -1,31 +1,31 @@
 ---
-title: Managing Resource Collaborators
+title: Managing Application Collaborators
+nav: Managing Collaborators
 modified_at: 2026-11-13 00:00:00
 tags: app collaborator
-index: 3
+index: 17
 ---
 
-Inviting collaborators allows you to share access to applications and Dedicated
-Resources databases while preserving full control and accountability. This feature
-is designed to support seamless teamwork from development to production.
+Add collaborators to an application and assign each one a role that defines what
+they can do. Collaborators can deploy code, change settings or access data,
+depending on their role.
 
-Granting collaborator access should be done with care. While collaborators
-cannot delete an application, they still hold sufficient privileges to modify
-configurations, deploy new code, or scale resources. These actions can impact
-the stability or availability of your services.
-
-Consequently, it is essential to assign new collaborators the appropriate role
-based on their responsibilities. [Roles][roles] define the level of access and
-actions a user can perform on your applications and databases.
+Choose a [role][roles] based on the access each person needs.
 
 
-## Listing Collaborators of a Resource {#listing-collaborators-of-an-app}
+## Collaborator Access to Add-ons
+
+Collaborators on an application also have access to its add-ons. Their role
+determines what they can do on those add-ons.
+
+
+## Listing Collaborators of an Application
 
 ### Using the Dashboard
 
 1. Open your [Dashboard][dashboard]
-2. Open **Projects** and select the project containing the resource
-3. Open **Resources** and select the resource
+2. Open **Projects** and select the project containing the application
+3. Open **Resources** and select the application
 4. Click the **Settings** tab
 5. In the **Settings** submenu, make sure to select **Collaborators**
 
@@ -34,11 +34,7 @@ actions a user can perform on your applications and databases.
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, list the collaborators:
    ```shell
-   # For an application
    scalingo --app my-app collaborators
-
-   # For a Dedicated Resources database
-   scalingo --database my-dedicated-db collaborators
    ```
    The output should look like this:
    ```text
@@ -52,23 +48,18 @@ actions a user can perform on your applications and databases.
    ```
 
 
-## Adding a Collaborator {#inviting-a-collaborator}
+## Adding a Collaborator
 
-Add a collaborator by entering their email address and choosing a resource role.
-The result depends on where the resource is located:
+Add a collaborator by entering their email address and choosing a role.
+The result depends on where the application is located:
 
-- **Personal account:** The person receives an invitation by email and must accept
-  it to access the resource.
-- **Organization:** Scalingo checks that the person is already a member of the
-  organization. Access is granted immediately, without another invitation. If they
-  are not yet a member, [invite them to join the organization][organization-invitation]
-  first and wait for them to accept.
+{% include collaborator_invitation_context.md %}
 
 ### Using the Dashboard
 
 1. Open your [Dashboard][dashboard]
-2. Open **Projects** and select the project containing the resource
-3. Open **Resources** and select the resource
+2. Open **Projects** and select the project containing the application
+3. Open **Resources** and select the application
 4. Go to **Settings** > **Collaborators**
 5. Click **Add**
 6. Enter the collaborator's email address. If they already have a Scalingo account,
@@ -79,15 +70,11 @@ The result depends on where the resource is located:
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, invite someone:
+2. From the command line, add a collaborator:
    ```shell
-   # For an application
    scalingo --app my-app collaborators-add user@example.com
-
-   # For a Dedicated Resources database
-   scalingo --database my-dedicated-db collaborators-add user@example.com
    ```
-   The output should look like this:
+   Example output in a personal account:
    ```text
    -----> user@example.com has been invited to collaborate to my-app
    ```
@@ -107,8 +94,8 @@ The result depends on where the resource is located:
      email = each.key
    }
    ```
-   In this example, we invite two users (user1@example.com and
-   user2@example.com) to work on an app named `my-app` (which must exist).
+   This example adds user1@example.com and user2@example.com as collaborators on
+   an existing application named `my-app`.
 
 
 ## Updating a Collaborator's Role
@@ -116,8 +103,8 @@ The result depends on where the resource is located:
 ### Using the Dashboard
 
 1. Open your [Dashboard][dashboard]
-2. Open **Projects** and select the project containing the resource
-3. Open **Resources** and select the resource
+2. Open **Projects** and select the project containing the application
+3. Open **Resources** and select the application
 4. Click the **Settings** tab
 5. In the **Settings** submenu, make sure to select **Collaborators**
 6. Locate the collaborator for whom you want to update the role
@@ -150,28 +137,25 @@ resource "scalingo_collaborator" "collaborators" {
 }
 ```
 
-## Revoking a Collaborator's Access to a Resource {#removing-a-collaborator}
 
-Revoking collaborator access affects only the selected resource and any attached
-add-ons.
+## Revoking a Collaborator's Access to an Application
 
-{% warning %}
-- When revoking permissions from a user, environment variables and other
-  credentials are not changed. Users can still directly access services if they
-  know the service credentials. To fully revoke access, make sure to rotate all
-  relevant secrets, such as database passwords and API tokens.
+Revoking collaborator access immediately removes access to the selected
+application and its attached add-ons. It does not remove organization membership
+or change access to other resources. To revoke access across an organization,
+[remove the member from the organization][organization-remove-member].
 
-- At the moment, updating the password of the default database user requires
-  assistance from the Scalingo support team. Once the password is changed, you
-  must manually update the associated environment variable and restart the
-  parent application for the new credentials to be used.
-{% endwarning %}
+{% include collaborator_credentials_revocation.md %}
+
+For an application's database add-on, changing the default database user's
+password requires help from Support. After changing it, update the associated
+environment variable and restart the application.
 
 ### Using the Dashboard
 
 1. Open your [Dashboard][dashboard]
-2. Open **Projects** and select the project containing the resource
-3. Open **Resources** and select the resource
+2. Open **Projects** and select the project containing the application
+3. Open **Resources** and select the application
 4. Click the **Settings** tab
 5. In the **Settings** submenu, make sure to select **Collaborators**
 6. Locate the collaborator for whom you want to revoke access
@@ -180,16 +164,17 @@ add-ons.
 9. Confirm by clicking the **Delete user@example.com** button in the popup
    window
 
+{% note %}
+As a collaborator, you can revoke your own access to the application. Follow the
+steps above and select your own account in the list.
+{% endnote %}
+
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
 2. From the command line, revoke the access:
    ```shell
-   # For an application
    scalingo --app my-app collaborators-remove user@example.com
-
-   # For a Dedicated Resources database
-   scalingo --database my-dedicated-db collaborators-remove user@example.com
    ```
    The output should look like this:
    ```text
@@ -215,38 +200,20 @@ add-ons.
    ```
 
 
-## Stopping Collaborating
-
-If you no longer need access to an application or Dedicated Resources database,
-you can revoke your own collaborator access.
-
-### Using the Dashboard
-
-1. Open your [Dashboard][dashboard]
-2. Open **Projects** and select the project containing the resource
-3. Open **Resources** and select the resource
-4. Click the **Settings** tab
-5. In the **Settings** submenu, make sure to select **Collaborators**
-6. Locate yourself in the list of collaborators
-7. Open the contextual menu by clicking the corresponding **…** button
-8. Select **Revoke access**
-9. Confirm by clicking the **Delete user@example.com** button in the popup
-   window
-
-
 ## Monitoring Collaborators
 
-The following events are available to monitor the collaborators:
+Use the following event types in an app notifier to stay informed about changes
+to an application's collaborators:
 
 | Event                       | Description                               |
 | --------------------------- | ----------------------------------------- |
-| `collaborator_accepted`     | A new collaborator has accepted an invite |
-| `collaborator_invited`      | A collaborator has been invited           |
-| `collaborator_removed`      | A collaborator has been removed           |
-| `collaborator_role_changed` | A collaborator's role has been changed    |
+| `collaborator_accepted`     | A collaborator invitation was accepted    |
+| `collaborator_invited`      | A collaborator was invited                |
+| `collaborator_removed`      | A collaborator was removed                |
+| `collaborator_role_changed` | A collaborator role was changed           |
 
-To learn more about events and notifiers, please visit the page dedicated to
-[app notifiers][notifications].
+Configure an [app notifier][notifications] to choose where these notifications
+are sent.
 
 
 [dashboard]: https://dashboard.scalingo.com/

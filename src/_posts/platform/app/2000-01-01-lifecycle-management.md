@@ -1,7 +1,7 @@
 ---
 title: Application Lifecycle Management
 nav: Lifecycle Management
-modified_at: 2026-11-12 00:00:00
+modified_at: 2026-11-13 00:00:00
 index: 10
 tags: management
 ---
@@ -10,7 +10,7 @@ tags: management
 On Scalingo, an application is the resource that packages and runs your code on 
 the platform. It combines a codebase, its environment configuration, and one or 
 more processes executed in containers. From this entity, you deploy new versions, 
-manage its scaling, and manage add-ons and collaborators.
+manage its scaling, and manage add-ons and [collaborators][app-collaborators].
 
 
 ## Create an Application
@@ -196,3 +196,4 @@ To confirm type the name of the application: my-app
 [hds-poc]: {% post_url compliance/2000-01-01-hds %}#en-hds-health-professional-point-of-contact
 [transfer-project-ownership]: {% post_url platform/projects/2000-01-01-manage-projects %}#transfer-project-ownership
 [projects-list]: {% post_url platform/projects/2000-01-01-manage-projects %}#listing-the-projects
+[app-collaborators]: {% post_url platform/app/2000-01-01-managing-collaborators %}
