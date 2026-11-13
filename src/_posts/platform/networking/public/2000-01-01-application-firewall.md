@@ -1,7 +1,7 @@
 ---
 title: Application Firewall
 nav: Application Firewall
-modified_at: 2026-10-09 00:00:00
+modified_at: 2026-11-09 00:00:00
 tags: networking firewall ipv4 access
 index: 40
 ---
@@ -9,12 +9,6 @@ index: 40
 ***Application Firewall*** is a feature that, once configured, restricts public HTTP and HTTPS access to an application
 based on allowed IPv4 CIDR ranges. Scalingo's routers check the source IP address
 before forwarding a request to the application's `web` containers.
-
-{% note %}
-This feature is currently in Preview and available upon request. Contact our 
-Support team to get access.
-{% endnote %}
-
 
 ## How the Firewall Works
 
