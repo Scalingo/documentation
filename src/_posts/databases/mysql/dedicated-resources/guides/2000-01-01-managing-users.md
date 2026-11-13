@@ -1,7 +1,7 @@
 ---
 title: Managing Users of Your Scalingo for MySQL® Dedicated Resources Database
 nav: Managing Users
-modified_at: 2026-11-02 00:00:00
+modified_at: 2026-11-13 00:00:00
 tags: databases mysql dedicated
 index: 2
 ---
@@ -9,7 +9,7 @@ index: 2
 Each Scalingo for MySQL® Dedicated Resources database comes with
 a [default database user](#understanding-protected-user).
 You can [create](#creating-a-new-user) as many additional users as needed,
-grant them with the appropriate permissions, [update/reset their password](#updating-a-user-password),
+grant them with the appropriate permissions, [update/reset their password](#updating-or-resetting-a-user-password),
 and [delete](#deleting-a-user) them once they are not required anymore.
 
 {% note %}
@@ -120,7 +120,6 @@ method used:
 
 
 ## Updating or Resetting a User Password
-{: #updating-a-user-password}
 
 {% include database_users_password_methods.md %}
 

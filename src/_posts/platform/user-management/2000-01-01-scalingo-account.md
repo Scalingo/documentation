@@ -1,4 +1,4 @@
 ---
 nav: Scalingo Account
-index: 10
+index: 1
 ---

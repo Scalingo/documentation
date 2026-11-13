@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Git push and SSH common issues
 nav: Troubleshoot Git and SSH
-modified_at: 2022-09-02 00:00:00
+modified_at: 2026-11-13 00:00:00
 tags: follow-the-light ssh linux git troubleshoot problem connect git push
 index: 2
 ---
@@ -253,5 +253,5 @@ $ ssh-add -l -E md5
 2048 MD5:a0:dd:42:3c:5a:9d:e4:2a:21:52:4e:78:07:6e:c8:4d /home/USERNAME/.ssh/id_rsa (RSA)
 ```
 
-Go to the [Dashboard > User settings > SSH Keys]({% post_url platform/user-management/teamwork/2000-01-01-managing %}#ssh-keys)
+Go to the [Dashboard > User settings > SSH Keys]({% post_url platform/user-management/scalingo-account/2000-01-01-navigating %}#ssh-keys)
 page and check if the fingerprint is the same as the output of the previous command.

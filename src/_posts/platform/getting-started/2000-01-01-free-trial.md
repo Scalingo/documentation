@@ -1,6 +1,6 @@
 ---
 title: Free Trial
-modified_at: 2026-10-01 00:00:00
+modified_at: 2026-11-12 00:00:00
 tags: billing free trial
 index: 20
 ---
@@ -10,9 +10,13 @@ index: 20
 When you [create an account](https://auth.scalingo.com/users/sign_up), Scalingo offers
 eligible accounts a 30-day free trial to test the platform.
 
-To use your free trial, you must configure your [billing profile][billing-profile]
-and add a valid [payment method][payment-methods]. You are not charged while the free
-trial is active.
+To start the free trial, configure your [billing profile][billing-profile] and
+add a valid [payment method][payment-methods]. You are not charged during the
+free trial.
+
+{% note %}
+Each account can use the free trial once. Organizations are not eligible.
+{% endnote %}
 
 ### What can I do under the free trial?
 
@@ -36,8 +40,9 @@ You would like to test another engine or another plan? Contact us on the chat.
 
 You may want to leave the free trial period earlier to start using the platform to
 its full potential. To do so, open the
-[web dashboard](https://dashboard.scalingo.com/billing) and click the
-`Stop free trial` button. Your billing starts and the free trial limits are
+[Dashboard](https://dashboard.scalingo.com/), open **Billing** and click
+**Stop free trial**.
+Your billing starts and the free trial limits are
 removed.
 
 ### What happens at the end of the free trial?
