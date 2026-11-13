@@ -40,6 +40,18 @@ The page shows:
 - **Pending invitations**: The invited email address, when the invitation was sent,
   who sent it and whether it has expired.
 
+### Managing Invitations
+
+| State | Effect | Administrator action |
+| ----- | ------ | -------------------- |
+| Pending | The user has not accepted the invitation yet. | Cancel the invitation with **Cancel invitation**. |
+| Accepted | The new member can select the organization in the Dashboard. | [Add the member as a collaborator on each resource they need][collaborators]. |
+| Expired | After 7 days, the user can no longer accept the invitation. You can still view it for 30 days after expiration. | Use **Delete invitation**, then send a new invitation. |
+| Cancelled | The user can no longer accept the invitation. | Send a new invitation if the person should still join. |
+
+Cancelling a pending invitation takes effect immediately. You can send a new
+invitation at any time.
+
 
 ## Accepting an Invitation
 
@@ -63,17 +75,6 @@ You cannot accept an expired or cancelled invitation. Ask the organization's
 administrator for a new one.
 {% endnote %}
 
-## Invitation States and Actions
-
-| State | Effect | Administrator action |
-| ----- | ------ | -------------------- |
-| Pending | The user has not accepted the invitation yet. | Cancel the invitation with **Cancel invitation**. |
-| Accepted | The new member can select the organization in the Dashboard. | [Add the member as a collaborator on each resource they need][collaborators]. |
-| Expired | After 7 days, the user can no longer accept the invitation. You can still view it for 30 days after expiration. | Use **Delete invitation**, then send a new invitation. |
-| Cancelled | The user can no longer accept the invitation. | Send a new invitation if the person should still join. |
-
-Cancelling a pending invitation takes effect immediately. You can send a new
-invitation at any time.
 
 ## Removing a Member
 
