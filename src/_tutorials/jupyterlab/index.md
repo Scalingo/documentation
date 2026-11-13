@@ -5,8 +5,8 @@ category: analytics
 products:
   - Scalingo for PostgreSQL®
 permalink: /tutorials/jupyterlab
-modified_at: 2026-11-10
-last_reviewed_at: 2026-11-10
+modified_at: 2026-11-13
+last_reviewed_at: 2026-11-13
 published: true
 ---
 
@@ -75,17 +75,20 @@ any updates in years. Use it with caution, ideally after reviewing its code!
 
 ### Using the Command Line
 
-1. Clone the code for the demo:
+1. Sparse-checkout the `scalingo-labs` repository, and extend it by downloading
+   the directory containing the code for this demo:
    ```bash
-   git clone https://github.com/Scalingo/scalingo-labs
+   git clone --sparse https://github.com/Scalingo/scalingo-labs
+   cd scalingo-labs
+   git sparse-checkout set jupyterlab
+   cd jupyterlab
    ```
 
-2. Create a new local git repository from the appropriate directory:
+2. Create a new git repository from the downloaded `jupyerlab` directory:
    ```bash
-   cd jupyterlab
    git init
    git add .
-   git commit --message="Initialize project from Scalingo demo"
+   git commit --message "Initialize JupyterLab project"
    ```
 
 3. Create the application on Scalingo:
@@ -225,12 +228,26 @@ in updating this package:
 
 ## Customizing
 
+While JupyterLab supports several environment variables to customize its
+behavior, most of its configuration lies in different configuration files, such
+as `jupyter_server_config.py`. These files are written in Python.
+
+To generate a list of all available options, generate a configuration file from
+a [one-off container][one-off], and inspect it:
+
+1. After a first successful deployment, launch a one-off:
+   ```shell
+   scalingo --app my-jupyter run bash
+   ```
+
+2. From the one-off, generate the configuration file:
+   ```shell
+   jupyter lab --generate-config
+   ```
+
 ### Environment
 
-JupyterLab supports several environment variables to customize its behavior.
-
-Moreover, the deployment makes use of the following environment variable.
-They can be leveraged to customize your deployment:
+The deployment process uses the following environment variable:
 
 * **`JUPYTER_TOKEN`**
   Allows to specify the token that protects the JupyterLab interface.\\
@@ -250,3 +267,4 @@ They can be leveraged to customize your deployment:
 [container-sizing]: {% post_url platform/app/scaling/2000-01-01-choosing-container-size %}
 [filesystem]: {% post_url platform/app/2000-01-01-filesystem %}
 [db-postgresql]: {% post_url databases/postgresql/shared-resources/getting-started/2000-01-01-provisioning %}
+[one-off]: {% post_url platform/app/2000-01-01-tasks %}
