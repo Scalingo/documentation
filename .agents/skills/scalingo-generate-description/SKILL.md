@@ -10,6 +10,12 @@ documentation page for a task or question.
 
 ## Scope and edits
 
+**Warning: exclude changelog entries.** Do not generate, add, or rewrite
+`description` fields for changelog or release notes. Skip any file under a
+`changelog` directory, including `src/changelog/`, even when included in a batch
+request. Also skip notes identified as changelog entries outside that directory.
+Leave any existing descriptions unchanged.
+
 - Read the requested pages before drafting. For a PR, identify its base and changed
   files; include added, modified, and renamed content pages at their current paths.
 - Skip deleted pages, includes, configuration, and empty navigation files. Do not
@@ -85,9 +91,6 @@ Do not let a warning displace the task it qualifies.
   another sentence, and avoid “This page covers”, “Learn how to”, and “Understand”.
 - For a conceptual page, an active statement about the product or rule is valid;
   do not force an artificial task. Reference pages can start with “Compare”.
-- For an announcement, describe the change or feature in the present tense.
-  Do not imply that the announcement contains a configuration procedure or copy
-  “new”, “now available”, or release promotion into the description.
 - Use specific verbs instead of “manage” where a more precise verb fits. Avoid
   “enable” when it means “make possible” rather than switching a setting on.
 - Keep the main action and closely related outcomes. Do not turn the description
@@ -107,8 +110,7 @@ Check each description against the body, then compare sibling pages:
 
 - Can every action and qualification be traced to substantive content on this
   page, including its relevant includes, rather than only to a linked page?
-- Does the description match the page type: procedure, concept, reference, or
-  announcement? Does it promise only what this page actually explains?
+- Does the description match the page type: procedure, concept, or reference? Does it promise only what this page actually explains?
 - Do the nouns naming concepts come from the page's terminology, preferably
   terms it explains? Check noun phrases and nominalizations as well as factual
   meaning; a related verb in the source does not establish a new product object.
