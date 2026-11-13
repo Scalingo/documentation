@@ -1,7 +1,7 @@
 ---
 title: Application Security
 nav: Application
-modified_at: 2026-06-29 00:00:00
+modified_at: 2026-10-16 00:00:00
 tags: compliance security measures application
 index: 3
 ---
@@ -27,12 +27,9 @@ isolated from the host operating system, which provides an additional layer of s
 
 ### Scalability
 
-The platform allows you to scale your application horizontally by adding more containers or vertically by increasing the
-size of the containers. This ensures that your application can handle the expected traffic volume and that it is
-protected from denial-of-service attacks or simple traffic spikes.
-
-Furthemore, if enabled, the auto-scaling feature will automatically adjust the number of containers based on, for
-example, the CPU usage of the application or the number of requests it receives.
+You can scale horizontally by adding containers or vertically by changing their size. Once configured and enabled, the
+Scalingo Autoscaler adjusts the number of containers based on the metric you select. See the [scaling guide][scaling] and
+the [Scalingo Autoscaler guide][autoscaler] for details.
 
 ### Dependency Management
 
@@ -70,9 +67,10 @@ Chaque application est déployée dans son propre conteneur, qui est isolé des 
 
 ### Scalabilité {#scalabilite}
 
-La plateforme vous permet de mettre à l'échelle votre application horizontalement en ajoutant plus de conteneurs ou verticalement en augmentant la taille des conteneurs. Cela garantit que votre application peut gérer le volume de trafic attendu et qu'elle est protégée des attaques par déni de service ou des pics de trafic simples.
-
-De plus, si activée, la fonctionnalité d'auto-scaling ajustera automatiquement le nombre de conteneurs en fonction, par exemple, de l'utilisation du CPU de l'application ou du nombre de requêtes qu'elle reçoit.
+Vous pouvez augmenter la capacité horizontalement en ajoutant des conteneurs ou verticalement en modifiant leur taille.
+Une fois configuré et activé, Scalingo Autoscaler ajuste le nombre de conteneurs selon la métrique choisie. Consultez
+les guides [Mise à l'échelle d'une application (en anglais)][scaling] et [Scalingo Autoscaler (en anglais)][autoscaler]
+pour plus de détails.
 
 ### Gestion des Dépendances {#gestion-des-dependances}
 
@@ -87,3 +85,6 @@ Nous utilisons des en-têtes de sécurité pour protéger la plateforme des vuln
 Toutes les données transmises entre la plateforme et l'utilisateur sont chiffrées en utilisant TLS (HTTPS). Cela garantit que les données sont protégées contre l'écoute clandestine et la falsification. Les chiffrements autorisés sont régulièrement mis à jour pour assurer que la plateforme est protégée contre les dernières vulnérabilités de sécurité.
 
 Par exemple, nous autorisons uniquement les chiffrements TLS 1.2 et TLS 1.3 et nous désactivons les chiffrements et protocoles faibles tels que SSLv3 et TLS 1.0.
+
+[scaling]: {% post_url platform/app/scaling/2000-01-01-scaling %}
+[autoscaler]: {% post_url platform/app/scaling/2000-01-01-scalingo-autoscaler %}

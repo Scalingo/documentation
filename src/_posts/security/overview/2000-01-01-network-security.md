@@ -1,7 +1,7 @@
 ---
 title: Network Security
 nav: Network
-modified_at: 2026-06-29 00:00:00
+modified_at: 2026-10-16 00:00:00
 tags: compliance security measures
 index: 2
 ---
@@ -11,63 +11,44 @@ index: 2
 
 ## English {#en}
 
-### DDoS Protection
+### Public application traffic
 
-We use a multi-level approach to protect the platform from DDoS attacks:
+The Application Firewall is in Preview and available on request. See the [Application Firewall][application-firewall]
+documentation for its scope. It filters by source IPv4 address and does not inspect request content or replace
+application-specific protections.
 
-- data scrubbing centers are used to filter out malicious traffic (Region `osc-secnum-fr1`)
-- we implement IP filtering based on known malicious IP addresses lists that are regularly updated
-- we use rate limiting to prevent excessive traffic from overwhelming the platform
-- we have deployed an adequate number of servers to handle the expected traffic volume
+Traffic to public applications passes through Scalingo's routing layer, which filters undesirable traffic and applies
+ingress constraints; see the [public routing][routing] documentation. You can add capacity by scaling your application
+manually or by configuring and enabling the Autoscaler, but neither method distinguishes malicious traffic from a
+legitimate increase. Configure
+application-specific protections in your application or through a suitable proxy or CDN.
 
-The last level of protection is your application, as your code should be able to handle the traffic it receives. We have
-no means of distinguishing between an attack and a sudden increase in legitimate traffic.
-
-If your application is not able to withstand the traffic it receives, we encourage you to subscribe to a CDN service
-that will help you absorb the traffic and distribute it across multiple servers.
-
-### Network isolation
-
-Our network is isolated from the public internet to prevent unauthorized access to the platform. Inside the network, we
-use VLANs to separate different parts of the platform and to prevent unauthorized access between them.
-
-### Firewalls
-
-Scalingo uses firewalls to protect the platform from unauthorized access. The firewalls are configured to allow only the
-necessary traffic and to block all other traffic. There are multiple layers of firewalls to protect the platform from
-different types of attacks. Inside the network, we use firewalls to protect the different parts of the platform from
-each other.
-
-### VPN
-
-Our operations team uses VPNs to access the platform securely. This ensures that all access to the platform is encrypted
-and secure.
+For private application connectivity, see [Private Networks][private-networks] and [customer VPN
+connectivity][connectivity]. Controls for staff access to platform administration are described in
+[operational security][operational-security].
 
 ---
 
 ## Français {#fr}
 
-### Protection DDoS
+### Trafic public vers les applications
 
-Nous utilisons une approche multi-niveaux pour protéger la plateforme contre les attaques DDoS :
+Le pare-feu applicatif est en préversion et accessible sur demande. Consultez la page
+[Pare-feu applicatif (en anglais)][application-firewall] pour connaître son périmètre. Il filtre selon l'adresse IPv4
+source, sans inspecter le contenu des requêtes ni remplacer les protections propres à l'application.
 
-- des centres de nettoyage de données sont utilisés pour filtrer le trafic malveillant (Région `osc-secnum-fr1`)
-- nous implémentons un filtrage IP basé sur des listes d'adresses IP malveillantes connues qui sont régulièrement mises à jour
-- nous utilisons la limitation de débit pour empêcher un trafic excessif de submerger la plateforme
-- nous avons déployé un nombre adéquat de serveurs pour gérer le volume de trafic attendu
+Le trafic vers les applications publiques passe par la couche de routage de Scalingo, qui filtre le trafic indésirable et
+applique des contraintes au trafic entrant ; consultez la documentation sur le [routage public (en anglais)][routing].
+Vous pouvez augmenter la capacité en mettant votre application à l'échelle manuellement ou en configurant et activant
+l'autoscaler, mais aucun de ces moyens ne distingue le trafic malveillant d'une hausse légitime. Configurez les protections
+propres à votre application ou utilisez un proxy ou un CDN adapté.
 
-Le dernier niveau de protection est votre application, car votre code doit être capable de gérer le trafic qu'il reçoit. Nous n'avons aucun moyen de distinguer entre une attaque et une augmentation soudaine du trafic légitime.
+Pour la connectivité privée des applications, consultez les pages [Réseaux privés (en anglais)][private-networks] et
+[connectivité VPN client (en anglais)][connectivity]. Les contrôles d'accès du personnel à l'administration de la
+plateforme sont décrits dans la page [Sécurité opérationnelle][operational-security].
 
-Si votre application n'est pas capable de résister au trafic qu'elle reçoit, nous vous encourageons à souscrire à un service CDN qui vous aidera à absorber le trafic et à le distribuer sur plusieurs serveurs.
-
-### Isolation Réseau {#isolation-reseau}
-
-Notre réseau est isolé de l'internet public pour empêcher les accès non autorisés à la plateforme. À l'intérieur du réseau, nous utilisons des VLAN pour séparer les différentes parties de la plateforme et pour empêcher les accès non autorisés entre elles.
-
-### Pare-feu
-
-Scalingo utilise des pare-feu pour protéger la plateforme contre les accès non autorisés. Les pare-feu sont configurés pour autoriser uniquement le trafic nécessaire et bloquer tout autre trafic. Il existe plusieurs couches de pare-feu pour protéger la plateforme contre différents types d'attaques. À l'intérieur du réseau, nous utilisons des pare-feu pour protéger les différentes parties de la plateforme les unes des autres.
-
-### VPN
-
-Notre équipe d'exploitation utilise des VPN pour accéder à la plateforme de manière sécurisée. Cela garantit que tous les accès à la plateforme sont chiffrés et sécurisés.
+[application-firewall]: {% post_url platform/networking/public/2000-01-01-application-firewall %}
+[connectivity]: {% post_url security/overview/2000-01-01-connectivity %}
+[operational-security]: {% post_url security/overview/2000-01-01-operational-security %}
+[private-networks]: {% post_url platform/networking/private/2000-01-01-concepts %}
+[routing]: {% post_url platform/networking/public/2000-01-01-routing %}
