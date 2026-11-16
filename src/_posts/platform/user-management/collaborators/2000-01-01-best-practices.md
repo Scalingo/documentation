@@ -1,6 +1,6 @@
 ---
 title: Best Practices
-modified_at: 2026-11-13 00:00:00
+modified_at: 2026-11-16 00:00:00
 tags: user team role collaborator security
 index: 50
 ---
@@ -49,16 +49,15 @@ organization. See [when to use organizations][organizations-use-cases] for examp
 
 ## Setting the Appropriate Roles on Resources
 
-Resource roles apply in both personal accounts and organizations. Choose the
-**Collaborator** or **Limited Collaborator** role according to the actions each
-person needs to perform.
+Choose the **Collaborator** or **Limited Collaborator** role on each resource
+according to the actions each person needs to perform.
 
 ### Small Teams
 
 Structure example: A CTO or lead developer, and a few developers.
 
-- Assign the **Owner** role to the CTO or technical lead responsible for
-  billing and managing applications.
+- Have the CTO or technical lead create the resources with their Scalingo account
+  so they become the **Owner**.
 - Give the **Collaborator** role to developers who are trusted with full access
   to settings and data.
 - If contributors have limited responsibilities, prefer using the **Limited
@@ -71,8 +70,8 @@ Structure example: A CTO or lead developer, and a few developers.
 Structure example: A CTO, a lead developer, senior developers, junior
 developers.
 
-- Keep the **Owner** role for the CTO or engineering manager responsible for
-  managing the account and billing.
+- Have the CTO or engineering manager create the resources with their Scalingo
+  account so they become the **Owner**.
 - Assign the **Collaborator** role to trusted leads who need access to all
   environments, data, and team management.
 - Use the **Limited Collaborator** role for senior developers who handle
