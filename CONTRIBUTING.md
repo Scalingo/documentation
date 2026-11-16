@@ -117,12 +117,17 @@ The target audience is technical, but not necessarily native English-speaking. D
 - Use technical terms when they are precise and expected by developers or operators.
 - Avoid jargon when a simpler word is equally accurate.
 - Avoid idioms, slang, humor, metaphors, and culture-specific expressions.
-- Prefer active voice and concrete actions.
+- Prefer active voice and affirmative statements: describe what users can do, what the system does, and which rules apply. Explain how to achieve an action rather than stating that another action is unavailable. Use negative statements when they clarify a restriction, exception, or consequence the reader needs to know.
 - Keep explanations concise, especially in troubleshooting pages.
 - Define acronyms or product-specific concepts the first time they appear when the audience may not know them.
 - Do not over-explain standard technical concepts, but link to canonical documentation when useful.
 - Use consistent product and platform terms across pages.
 - Preserve exact command names, log messages, error messages, environment variables, and configuration keys.
+
+For example:
+
+- Prefer: "To make another user the Owner, transfer the project to them."
+- Avoid: "You cannot assign the Owner role directly. To change ownership, transfer the project."
 
 ### Don'ts
 
