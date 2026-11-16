@@ -1,7 +1,7 @@
 ---
 title: Managing Application Collaborators
 nav: Managing Collaborators
-modified_at: 2026-11-13 00:00:00
+modified_at: 2026-11-16 00:00:00
 tags: app collaborator
 index: 17
 ---
@@ -50,10 +50,7 @@ determines what they can do on those add-ons.
 
 ## Adding a Collaborator
 
-Add a collaborator by entering their email address and choosing a role.
-The result depends on where the application is located:
-
-{% include collaborator_invitation_context.md %}
+Learn more about [collaborator roles and access rules][collaborator-access].
 
 ### Using the Dashboard
 
@@ -223,3 +220,5 @@ are sent.
 [roles]: {% post_url platform/user-management/collaborators/2000-01-01-roles %}
 [organization-invitation]: {% post_url platform/user-management/organizations/2000-01-01-managing-members %}#inviting-a-member
 [organization-remove-member]: {% post_url platform/user-management/organizations/2000-01-01-managing-members %}#removing-a-member
+
+[collaborator-access]: {% post_url platform/user-management/collaborators/2000-01-01-overview %}

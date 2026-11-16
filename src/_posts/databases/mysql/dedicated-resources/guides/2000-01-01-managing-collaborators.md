@@ -1,7 +1,7 @@
 ---
 title: Managing Collaborators of Your Scalingo for MySQL® Dedicated Resources Database
 nav: Managing Collaborators
-modified_at: 2026-11-13 00:00:00
+modified_at: 2026-11-16 00:00:00
 tags: databases mysql dedicated collaborator
 index: 1
 ---
@@ -39,7 +39,7 @@ Resources database. Each database has its own collaborators.
 
 ## Adding a Collaborator
 
-{% include collaborator_invitation_context.md %}
+Learn more about [collaborator roles and access rules][collaborator-access].
 
 ### Using the Dashboard
 
@@ -140,3 +140,5 @@ removed, then run `terraform apply`.
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 [user-passwords]: {% post_url databases/mysql/dedicated-resources/guides/2000-01-01-managing-users %}#updating-or-resetting-a-user-password
 [remove-member]: {% post_url platform/user-management/organizations/2000-01-01-managing-members %}#removing-a-member
+
+[collaborator-access]: {% post_url platform/user-management/collaborators/2000-01-01-overview %}
