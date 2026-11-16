@@ -1016,6 +1016,7 @@
 
   - old: "/platform/user-management/teamwork/best-practices"
     new: "/platform/user-management/collaborators/best-practices"
+
   - old: "/security/overview/backups"
     new: "/security/overview/infrastructure-backups"
 
