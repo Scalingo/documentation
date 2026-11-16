@@ -1,4 +1,4 @@
 ---
 nav: Organizations
-index: 2
+index: 3
 ---
