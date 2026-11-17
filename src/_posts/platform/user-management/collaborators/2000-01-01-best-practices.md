@@ -1,6 +1,6 @@
 ---
 title: Best Practices
-modified_at: 2026-11-16 00:00:00
+modified_at: 2026-11-17 00:00:00
 tags: user team role collaborator security
 index: 50
 ---
@@ -107,9 +107,10 @@ and cannot be used across other apps.
 
 ### Auditing Collaborators' 2FA Status
 
-Although 2FA cannot be enforced globally on Scalingo, you can view each
-collaborator's 2FA status from the [Collaborators page][dashboard-collab] of
-your Scalingo dashboard.
+2FA cannot be enforced globally on Scalingo. You can check users' 2FA status from:
+
+- **Personal account:** The [Collaborators page][dashboard-collab].
+- **Organization:** The [Members page][organization-members].
 
 ### Reviewing Accesses
 
@@ -130,6 +131,7 @@ into your internal security alerts or audit processes.
 [least-privilege]: https://en.wikipedia.org/wiki/Principle_of_least_privilege
 
 [dashboard-collab]: {% post_url platform/user-management/collaborators/2000-01-01-personal-account-collaborators %}#listing-collaborators
+[organization-members]: {% post_url platform/user-management/organizations/2000-01-01-managing-members %}#viewing-members-and-invitations
 [api]: https://developers.scalingo.com
 
 [roles]: {% post_url platform/user-management/collaborators/2000-01-01-roles %}
