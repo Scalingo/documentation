@@ -64,12 +64,6 @@ any updates in years. Use it with caution, ideally after reviewing its code!
   For more information about JupyterLab authentication mechanisms and security,
   please refer to [the official documentation][jupyter-security].
 
-  {:#token}
-  A cryptographically secure random token can be generated using the following
-  command:
-  ```bash
-  openssl rand -hex 24
-  ```
 
 ## Deploying
 
@@ -107,10 +101,12 @@ any updates in years. Use it with caution, ideally after reviewing its code!
    scalingo --app my-jupyter scale web:1:L
    ```
 
-6. Set the [token](#token) that grants access to JupyterLab:
+6. Set the access token that grants access to JupyterLab:
    ```bash
-   scalingo --app my-jupyter env-set JUPYTER_TOKEN=<token>
+   scalingo --app my-jupyter env-set JUPYTER_TOKEN="$( openssl rand -hex 24 )"
    ```
+   In this example, we use `openssl` to generate a random secret. Feel free to
+   use another method that suits you best.
 
 7. Everything's ready, deploy to Scalingo:
    ```bash
@@ -122,7 +118,19 @@ any updates in years. Use it with caution, ideally after reviewing its code!
 1. Start by creating a new repository in your SCM, using the files we provide
    in the [dedicated repository subdirectory][jupyter-scalingo].
 
-2. Create the application:
+2. Create a variable to store the access token.
+   ```tf
+   variable "access_token" {
+     type      = string
+     sensitive = true
+   }
+   ```
+   {% note %}
+   A better option would consist in using a proper secrets manager. For this
+   demo, we chose to keep things as simple as possible with a *sensitive* var.
+   {% endnote %}
+
+3. Create the application:
    ```tf
    resource "scalingo_app" "my-jupyter" {
      name        = "my-jupyter"
@@ -130,13 +138,12 @@ any updates in years. Use it with caution, ideally after reviewing its code!
      force_https = true
 
      environment = {
-       JUPYTER_TOKEN="<token>"
+       JUPYTER_TOKEN = var.access_token
      }
    }
    ```
-   Set `token` to [a randomly generated token](#token).
 
-3. Link the app to your repository:
+4. Link the app to your repository:
    ```tf
    data "scalingo_scm_integration" "github" {
      scm_type = "github"
@@ -150,7 +157,7 @@ any updates in years. Use it with caution, ideally after reviewing its code!
    }
    ```
 
-4. Provision a Scalingo for PostgreSQL® Starter 512 addon:
+5. Provision a Scalingo for PostgreSQL® Starter 512 addon:
    ```tf
    resource "scalingo_addon" "my-jupyter-db" {
      app         = scalingo_app.my-jupyter.id
@@ -159,7 +166,7 @@ any updates in years. Use it with caution, ideally after reviewing its code!
    }
    ```
 
-5. (optional) Instruct the platform to run the `web` process type in a single L
+6. (optional) Instruct the platform to run the `web` process type in a single L
    container:
    ```tf
    resource "scalingo_container_type" "web" {
@@ -170,7 +177,16 @@ any updates in years. Use it with caution, ideally after reviewing its code!
    }
    ```
 
-6. Once Terraform is done, your JupyterLab instance is ready to be deployed:
+7. Create the access token, and run Terraform:
+   ```bash
+   export TF_VAR_access_token="$( openssl rand -hex 24 )"
+   terraform plan
+   terraform apply
+   ```
+   In this example, we use `openssl` to generate a random secret. Feel free to
+   use another method that suits you best.
+
+8. Once Terraform is done, your JupyterLab instance is ready to be deployed:
    1. Head to your [dashboard]
    2. Click on your JupyterLab application
    3. Click on the **Deploy** tab
