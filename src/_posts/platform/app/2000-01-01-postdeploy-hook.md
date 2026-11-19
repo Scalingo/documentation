@@ -66,7 +66,9 @@ contains the environment variables from your app, with the one we inject in any
 * During the postdeploy execution, the new version of the application is not
   yet reachable. If you make a query to it, the old version will respond, or,
   if it is the first deployment, your query will return a "404 not found" error.
-* Memory available: a postdeploy hook is executed in a M container (512 MB RAM available). This size is modifiable upon request on the support.
+* Memory available: a postdeploy hook is executed in a M container (512 MB RAM available).
+  This size is modifiable upon request on the support. In any case, containers triggered
+  by `postdeploy` are billed the same way as any container.
 
 ## Examples
 
