@@ -42,12 +42,12 @@ The page shows:
 
 ### Managing Invitations
 
-| State | Effect | Administrator action |
-| ----- | ------ | -------------------- |
-| Pending | The user has not accepted the invitation yet. | Cancel the invitation with **Cancel invitation**. |
-| Accepted | The new member can select the organization in the Dashboard. | [Add the member as a collaborator on each resource they need][collaborators]. |
-| Expired | After 7 days, the user can no longer accept the invitation. You can still view it for 30 days after expiration. | Use **Delete invitation**, then send a new invitation. |
-| Cancelled | The user can no longer accept the invitation. | Send a new invitation if the person should still join. |
+| State     | Effect                                                                                                          | Administrator action                                                          |
+|-----------|-----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| Pending   | The user has not accepted the invitation yet.                                                                   | Cancel the invitation with **Cancel invitation**.                             |
+| Accepted  | The new member can select the organization in the Dashboard.                                                    | [Add the member as a collaborator on each resource they need][collaborators]. |
+| Expired   | After 7 days, the user can no longer accept the invitation. You can still view it for 30 days after expiration. | Use **Delete invitation**, then send a new invitation.                        |
+| Cancelled | The user can no longer accept the invitation.                                                                   | Send a new invitation if the person should still join.                        |
 
 Cancelling a pending invitation takes effect immediately. You can send a new
 invitation at any time.
@@ -63,7 +63,7 @@ to become a member:
    If you do not have an account, create one with that email address, then reopen
    the invitation email and follow its link again.
 
-If you are signed in with a different email address, sign out and sign in with the
+If you are signed in with a different email address, sign out and sign in or sign up with the
 account that received the invitation.
 
 Once you accept the invitation, you become a member and can select the
