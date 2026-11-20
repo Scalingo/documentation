@@ -85,7 +85,7 @@ tasks such as:
 {% include database_dashboard_access_shared_resources.md %}
 
 
-[dashboard]: https://dashboard.scalingo.com/apps
+[dashboard]: https://dashboard.scalingo.com/
 
 [cli]: {% post_url tools/cli/2000-01-01-start %}
 
