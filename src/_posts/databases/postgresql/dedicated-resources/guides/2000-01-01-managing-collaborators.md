@@ -51,7 +51,9 @@ Learn more about [collaborator roles and access rules][collaborator-access].
 5. Confirm the addition
 
 {% note %}
-Dedicated Resources databases support only the **Collaborator** role.
+When you add a collaborator to a Dedicated Resources database, they receive the
+**Collaborator** role. The **Limited Collaborator** role is currently available
+only for applications.
 {% endnote %}
 
 ### Using the Command Line
