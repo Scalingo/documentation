@@ -5,7 +5,7 @@ title: 'Collaborators Page - View and Export 2FA Status'
 
 We have added a new feature to the [Collaborators]({% post_url /platform/user-management/collaborators/2000-01-01-overview %}) page, allowing you to see whether your collaborators have enabled **Two-Factor Authentication (2FA)**.
 
-### What’s new?
+### What’s New?
 - Each collaborator’s **2FA status** is now displayed on the **Collaborators** page.  
 - This information is also included in the **JSON** and **CSV** exports.  
 

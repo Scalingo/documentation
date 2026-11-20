@@ -1,6 +1,6 @@
 ---
 title: Best Practices
-modified_at: 2026-11-17 00:00:00
+modified_at: 2026-11-20 00:00:00
 tags: user team role collaborator security
 index: 50
 ---
@@ -38,7 +38,7 @@ introducing harmful code. Review code and restrict repository access
 alongside the permissions you configure on Scalingo.
 
 
-## Choosing Between your Personal Account and an Organization
+## Choosing Between Your Personal Account and an Organization
 
 For collaboration centered on an application, you can keep the project and its
 resources in your personal account and invite collaborators to the application.

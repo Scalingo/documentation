@@ -114,6 +114,11 @@ Use clear international English.
 The target audience is technical, but not necessarily native English-speaking. Documentation should be easy to scan and actionable for an international developer or operator audience.
 
 - Prefer short, direct sentences.
+- Use Title Case for page titles and section headings. Capitalize the first
+  and last words and all major words. In the middle of a title, lowercase
+  articles, coordinating conjunctions, prepositions of up to three letters,
+  and the infinitive "to" (for example, "Creating a New Project"). Preserve
+  the original capitalization of product names, commands, and quoted messages.
 - Use technical terms when they are precise and expected by developers or operators.
 - Avoid jargon when a simpler word is equally accurate.
 - Avoid idioms, slang, humor, metaphors, and culture-specific expressions.

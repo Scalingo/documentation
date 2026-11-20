@@ -1,6 +1,6 @@
 ---
-title: Manage your Projects
-modified_at: 2026-11-12 00:00:00
+title: Manage Your Projects
+modified_at: 2026-11-20 00:00:00
 tags: project management
 index: 2
 ---
@@ -11,7 +11,7 @@ Projects are the way to organize your applications and resources on Scalingo.
 [Learn more about Projects][projects-overview].
 
 
-## Creating a new project
+## Creating a New Project
 
 To create a project in an organization, you must be its administrator.
 
@@ -84,7 +84,7 @@ resource "scalingo_project" "my_project" {
 Omit `org` to create the project in your personal account.
 
 
-## Listing the projects
+## Listing the Projects
 
 ### Using the Dashboard {#list-using-the-dashboard}
 
@@ -131,7 +131,7 @@ Learn how to [choose an application's destination project][app-project].
 {: #setting-the-project-at-app-creation}
 
 
-## Updating a project
+## Updating a Project
 
 ### Using the Dashboard {#update-using-the-dashboard}
 
@@ -267,7 +267,7 @@ If a check fails, the project remains in your personal account. After a successf
 transfer, select the organization to access the project.
 
 
-## Removing a project
+## Removing a Project
 
 A project can be removed only if this is not the default one, and no application is linked to it.
 

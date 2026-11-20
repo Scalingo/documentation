@@ -1,7 +1,7 @@
 ---
-title: Managing Users of Your Scalingo for PostgreSQL® Shared Resources addon
+title: Managing Users of Your Scalingo for PostgreSQL® Shared Resources Addon
 nav: Managing Users
-modified_at: 2026-11-13 00:00:00
+modified_at: 2026-11-20 00:00:00
 tags: databases postgresql addon
 index: 1
 ---
