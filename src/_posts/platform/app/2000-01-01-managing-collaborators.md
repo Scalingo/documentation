@@ -1,7 +1,7 @@
 ---
 title: Managing Application Collaborators
 nav: Managing Collaborators
-modified_at: 2026-11-16 00:00:00
+modified_at: 2026-11-20 00:00:00
 tags: app collaborator
 index: 17
 ---
@@ -145,8 +145,7 @@ or change access to other resources. To revoke access across an organization,
 {% include collaborator_credentials_revocation.md %}
 
 For an application's database add-on, changing the default database user's
-password requires help from Support. After changing it, update the associated
-environment variable and restart the application.
+password requires help from Support.
 
 ### Using the Dashboard
 
