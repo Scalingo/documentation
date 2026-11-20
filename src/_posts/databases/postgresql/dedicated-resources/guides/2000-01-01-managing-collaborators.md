@@ -46,9 +46,13 @@ Learn more about [collaborator roles and access rules][collaborator-access].
 1. Open the [database dashboard][database-dashboard]
 2. Go to **Settings** > **Collaborators**
 3. Click **Add**
-4. Enter the collaborator's email address. If they already have a Scalingo account,
-   use the email address associated with that account
-5. Confirm the addition
+4. Invite or add a collaborator.
+
+   - In a **personal account**, enter the collaborator's email address. If they
+     already have a Scalingo account, use the email address associated with it.
+     Click **Invite collaborator**.
+   - In an **organization**, select a member from the list and click
+     **Add collaborator**.
 
 {% note %}
 When you add a collaborator to a Dedicated Resources database, they receive the

@@ -59,10 +59,13 @@ Learn more about [collaborator roles and access rules][collaborator-access].
 3. Open **Resources** and select the application
 4. Go to **Settings** > **Collaborators**
 5. Click **Add**
-6. Enter the collaborator's email address. If they already have a Scalingo account,
-   use the email address associated with that account
-7. Select a [role][roles] based on the permissions the collaborator needs
-8. Confirm the addition
+6. Invite or add a collaborator.
+
+   - In a **personal account**, enter the collaborator's email address. If they
+     already have a Scalingo account, use the email address associated with it.
+     Select a [role][roles] and click **Invite collaborator**.
+   - In an **organization**, select a member from the list, select a [role][roles],
+     and click **Add collaborator**.
 
 ### Using the Command Line
 
