@@ -1,7 +1,7 @@
 ---
 title: Managing Collaborators of Your Scalingo for MySQL® Dedicated Resources Database
 nav: Managing Collaborators
-modified_at: 2026-11-16 00:00:00
+modified_at: 2026-11-20 00:00:00
 tags: databases mysql dedicated collaborator
 index: 1
 ---
@@ -91,9 +91,10 @@ collaborators.
 
 ## Revoking a Collaborator's Access to the Database
 
-Revoking collaborator access immediately removes access to this database. It does
-not remove organization membership or change access to other resources. To revoke access
-across an organization, [remove the member from the organization][remove-member].
+When you revoke a collaborator's access, they immediately lose the permissions
+granted by their role on this database. They retain their organization membership
+and access to other resources. To revoke their access across the organization,
+[remove them from the organization][remove-member].
 
 {% include collaborator_credentials_revocation.md %}
 
