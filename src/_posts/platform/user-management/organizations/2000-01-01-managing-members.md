@@ -1,6 +1,6 @@
 ---
 title: Managing Members
-modified_at: 2026-11-13 00:00:00
+modified_at: 2026-11-20 00:00:00
 tags: organization member invitation administrator
 index: 3
 ---
@@ -98,11 +98,7 @@ resource. The person remains a member of the organization and keeps their access
 to other resources.
 {% endnote %}
 
-{% note %}
-Removing a member does not change credentials they may already know. Rotate any
-passwords, API tokens or other secrets they could use to access your resources
-directly.
-{% endnote %}
+{% include collaborator_credentials_revocation.md %}
 
 [dashboard]: https://dashboard.scalingo.com/
 [collaborators]: {% post_url platform/user-management/collaborators/2000-01-01-overview %}
