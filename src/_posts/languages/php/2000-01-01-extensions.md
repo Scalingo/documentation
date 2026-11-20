@@ -41,7 +41,7 @@ that are **available** on Scalingo.
 | `ext-exif`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
 | `ext-fileinfo`     | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
 | `ext-filter`       | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-ftp`          | Optional | Optional | Optional | Optional | Enabled  |
+| `ext-ftp`          | Optional | Optional | Optional | Optional | Optional |
 | `ext-gd`           | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
 | `ext-gettext`      | Optional | Optional | Optional | Optional | Optional |
 | `ext-gmp`          | Optional | Optional | Optional | Optional | Optional |
@@ -148,18 +148,18 @@ extensions, please read [Adding a PECL Extension](#adding-a-pecl-extension).
 
 The following table lists the supported versions of available PECL extensions:
 
-| Extension       | PHP 8.2  | PHP 8.3   | PHP 8.4   | PHP 8.5   | PHP 8.6  |
-| --------------- | -------: | --------: | --------: | --------: | -------: |
-| `ext-amqp`      | `2.2.0`  | `2.2.0`   | `2.2.0`   | `2.2.0`   |          |
-| `ext-apcu`      | `5.1.28` | `5.1.28`  | `5.1.28`  | `5.1.28`  |          |
-| `ext-apfd`      | `1.0.3`  | `1.0.3`   | `1.0.3`   | `1.0.3`   | `1.0.3`  |
-| `ext-event`     | `3.0.8`  | `3.0.8`   | `3.0.8`   | `3.0.8`   | `3.2.0`  |
-| `ext-igbinary`  | `3.2.16` | `3.2.16`  | `3.2.16`  |           |          |
-| `ext-imagick`   | `3.8.1`  | `3.8.1`   | `3.8.1`   | `3.8.1`   |          |
-| `ext-memcached` | `3.4.0`  | `3.4.0`   | `3.4.0`   | `3.4.0`   |          |
-| `ext-mongodb`   | `1.21.5` | `1.21.14` | `1.21.14` | `1.21.14` |          |
-| `ext-oci8`      | `3.4.0`  | `3.4.0`   | `3.4.0`   | `3.4.0`   | `3.4.0`  |
-| `ext-redis`     | `6.3.0`  | `6.3.0`   | `6.3.0`   | `6.3.0`   |          |
+| Extension       | PHP 8.2   | PHP 8.3   | PHP 8.4   | PHP 8.5   | PHP 8.6  |
+| --------------- | --------: | --------: | --------: | --------: | -------: |
+| `ext-amqp`      | `2.2.0`   | `2.2.0`   | `2.2.0`   | `2.2.0`   |          |
+| `ext-apcu`      | `5.1.28`  | `5.1.28`  | `5.1.28`  | `5.1.28`  |          |
+| `ext-apfd`      | `1.0.3`   | `1.0.3`   | `1.0.3`   | `1.0.3`   | `1.0.3`  |
+| `ext-event`     | `3.2.0`   | `3.2.0`   | `3.2.0`   | `3.2.0`   | `3.2.0`  |
+| `ext-igbinary`  | `3.2.16`  | `3.2.16`  | `3.2.16`  |           |          |
+| `ext-imagick`   | `3.8.1`   | `3.8.1`   | `3.8.1`   | `3.8.1`   |          |
+| `ext-memcached` | `3.4.0`   | `3.4.0`   | `3.4.0`   | `3.4.0`   |          |
+| `ext-mongodb`   | `1.21.14` | `1.21.14` | `1.21.14` | `1.21.14` |          |
+| `ext-oci8`      | `3.4.0`   | `3.4.0`   | `3.4.0`   | `3.4.0`   | `3.4.0`  |
+| `ext-redis`     | `6.3.0`   | `6.3.0`   | `6.3.0`   | `6.3.0`   |          |
 
 ### Enabling an Available PECL Extension
 
