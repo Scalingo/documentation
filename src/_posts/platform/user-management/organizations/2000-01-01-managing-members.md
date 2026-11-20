@@ -42,15 +42,14 @@ The page shows:
 
 ### Managing Invitations
 
-| State     | Effect                                                                                                          | Administrator action                                                          |
-|-----------|-----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-| Pending   | The user has not accepted the invitation yet.                                                                   | Cancel the invitation with **Cancel invitation**.                             |
-| Accepted  | The new member can select the organization in the Dashboard.                                                    | [Add the member as a collaborator on each resource they need][collaborators]. |
-| Expired   | After 7 days, the user can no longer accept the invitation. You can still view it for 30 days after expiration. | Use **Delete invitation**, then send a new invitation.                        |
-| Cancelled | The user can no longer accept the invitation.                                                                   | Send a new invitation if the person should still join.                        |
+| State | Effect | Administrator action |
+|---|---|---|
+| Pending | The user has not accepted the invitation yet. | Cancel the invitation with **Cancel invitation**. |
+| Accepted | The new member can select the organization in the Dashboard. | [Add the member as a collaborator on each resource they need][collaborators]. |
+| Expired | After 7 days, the user can no longer accept the invitation. You can still view it for 30 days after expiration. | Use **Delete invitation**, then send a new invitation. |
 
-Cancelling a pending invitation takes effect immediately. You can send a new
-invitation at any time.
+When you cancel a pending invitation, it disappears from the list and its link
+stops working immediately. You can send a new invitation at any time.
 
 
 ## Accepting an Invitation
