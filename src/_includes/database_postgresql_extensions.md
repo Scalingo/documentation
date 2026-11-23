@@ -18,7 +18,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">anon</code></td>
-    <td align="left"><code>3.0.0</code></td>
+    <td align="left"><code>3.1.3</code></td>
     <td align="left">Anonymization &amp; Data Masking for PostgreSQL</td>
   </tr>
   <tr valign="top">
@@ -28,12 +28,12 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">btree_gist</code></td>
-    <td align="left"><code>1.7</code></td>
+    <td align="left"><code>1.8</code></td>
     <td align="left">support for indexing common datatypes in GiST</td>
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">citext</code></td>
-    <td align="left"><code>1.6</code></td>
+    <td align="left"><code>1.8</code></td>
     <td align="left">data type for case-insensitive character strings</td>
   </tr>
   <tr valign="top">
@@ -73,7 +73,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">isn</code></td>
-    <td align="left"><code>1.2</code></td>
+    <td align="left"><code>1.3</code></td>
     <td align="left">data types for international product numbering standards</td>
   </tr>
   <tr valign="top">
@@ -88,7 +88,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">pg_stat_statements</code></td>
-    <td align="left"><code>1.11</code></td>
+    <td align="left"><code>1.12</code></td>
     <td align="left">track planning and execution statistics of all SQL statements executed</td>
   </tr>
   <tr valign="top">
@@ -98,7 +98,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">pgcrypto</code></td>
-    <td align="left"><code>1.3</code></td>
+    <td align="left"><code>1.4</code></td>
     <td align="left">cryptographic functions</td>
   </tr>
   <tr valign="top">
@@ -133,7 +133,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">postgres_fdw</code></td>
-    <td align="left"><code>1.1</code></td>
+    <td align="left"><code>1.2</code></td>
     <td align="left">foreign-data wrapper for remote PostgreSQL servers</td>
   </tr>
   <tr valign="top">
@@ -143,7 +143,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">timescaledb</code></td>
-    <td align="left"><code>2.25.2</code></td>
+    <td align="left"><code>2.30.3</code></td>
     <td align="left">Enables scalable inserts and complex queries for time-series data</td>
   </tr>
   <tr valign="top">
@@ -158,7 +158,7 @@ vim Syntax:
   </tr>
   <tr valign="top">
     <td align="left"><code class="language-plaintext highlighter-rouge">vector</code></td>
-    <td align="left"><code>0.8.6</code></td>
+    <td align="left"><code>0.8.7</code></td>
     <td align="left">vector data type and ivfflat and hnsw access methods</td>
   </tr>
 </table>
