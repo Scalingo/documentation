@@ -1,6 +1,5 @@
 <ul class="ml-6">
-  {% assign sorted = include.children | sort: 'index' %}
-  {% for item in sorted %}
+  {% for item in include.children %}
     <li class="text-sc-text-2 cursor-pointer">
       {% if item.type == "dir" %}
         <input type="checkbox" id="{{ item.url | url_encode  }}" class="hidden"

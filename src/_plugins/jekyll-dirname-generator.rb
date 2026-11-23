@@ -72,6 +72,10 @@ module Dirname
         end
         children.reverse! if newest_first
         children.each_with_index { |child, index| child["index"] = index + 1 }
+      else
+        max_index = children.length + 1
+        children.each { |child| child["index"] ||= max_index }
+        children.sort_by! { |child| child["index"] }
       end
 
       if url_path != "/"
@@ -95,11 +99,6 @@ module Dirname
         end
       end
 
-      unless sort_children_by_date
-        max_index = children.length + 1
-        children.each { |child| child["index"] ||= max_index }
-        children.sort_by! { |child| child["index"] }
-      end
       data["children"] = children
       return data
     end
