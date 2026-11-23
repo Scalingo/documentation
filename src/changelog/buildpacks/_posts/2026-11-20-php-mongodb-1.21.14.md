@@ -5,6 +5,6 @@ github: https://github.com/Scalingo/php-buildpack
 ---
 
 PHP extension **mongodb** `1.21.14` is now available for the latest version of
-PHP 8.2, 8.3, 8.4, 8.5, and 8.6.
+PHP 8.2, 8.3, 8.4, and 8.5.
 
 [Changelog](https://pecl.php.net/package-changelog.php?package=mongodb&release=1.21.14)
