@@ -23,6 +23,8 @@ module Dirname
       page_for_dir = @all_posts.detect { |x|
         x.url == url_path
       }
+      sort_children_by_date = page_for_dir&.data&.dig("sort_children") == "date_desc"
+      publication_dates = {}
       data = {
         "title" => (page_for_dir && (page_for_dir.data["nav"] || page_for_dir.data["title"])) ? (page_for_dir.data["nav"] || page_for_dir.data["title"]) : path.split("/").compact.last.split("-").map(&:capitalize).join(" "),
         "type" => "dir",
@@ -46,6 +48,7 @@ module Dirname
             "url" => matched_page ? matched_page.url : "UNMATCHED PAGE",
             "index" => (matched_page && matched_page.data["index"]) ? matched_page.data["index"] : nil,
           }
+          publication_dates[child["url"]] = matched_page.date if sort_children_by_date && matched_page
           children << child
           @breadcrumb_hash[child["url"]] = child["title"]
         end
@@ -57,6 +60,14 @@ module Dirname
         children.find { |child| child["type"] == "dir" } || children.first
       end
       children = children.uniq { |link| link["url"] }
+
+      if sort_children_by_date
+        children = children.sort_by do |child|
+          date = publication_dates[child["url"]]
+          [date ? 1 : 0, date, child["url"]]
+        end.reverse
+        children.each_with_index { |child, index| child["index"] = index + 1 }
+      end
 
       if url_path != "/"
         if page_for_dir

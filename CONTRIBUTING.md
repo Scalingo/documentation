@@ -18,10 +18,9 @@ Main content is organized in:
 
 ## Adding a new article
 
-For documentation pages in `src/_posts/`, use the filename format
-`2000-01-01-title.md` (e.g. `2000-01-01-what-is-epoch.md`).
-
-Always use the fixed `2000-01-01` prefix. Record the actual creation or
+For regular documentation pages in `src/_posts/`, use the filename format
+`2000-01-01-title.md` (e.g. `2000-01-01-what-is-epoch.md`). For security bulletins,
+use the publication date as the filename prefix. Record the actual creation or
 modification date in `modified_at`.
 
 For changelog entries, use the publication date instead, as described in
@@ -40,6 +39,7 @@ Optional tags:
 
 - `nav: [string]` set another url than the one generated from the title
 - `index: [integer]` change the position of the page in his folder in the side menu
+- `sort_children: date_desc` sort a folder's articles by publication date, newest first, on the folder page and in the side menu
 - `tags: [string]` add search and classification keywords
 - `layout: [string]` use a specific page layout for special pages
 - `description: [string]` add a short page description used by some landing pages
@@ -311,8 +311,8 @@ your change.
 ### Content pages
 
 - Edited pages have an updated `modified_at` value.
-- New documentation pages in `src/_posts/` use the `2000-01-01-title.md`
-  filename format, with the fixed `2000-01-01` prefix.
+- New documentation pages in `src/_posts/` use the fixed `2000-01-01` filename
+  prefix. Security bulletins use their publication date.
 - For posts, the date in the filename is earlier than or equal to the server
   build date. Future-dated posts are not generated until a later deployment.
 
