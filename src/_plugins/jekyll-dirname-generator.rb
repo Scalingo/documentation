@@ -23,6 +23,9 @@ module Dirname
       page_for_dir = @all_posts.detect { |x|
         x.url == url_path
       }
+      sort_children = page_for_dir&.data&.dig("sort_children")
+      sort_children_by_date = %w[date_asc date_desc].include?(sort_children)
+      publication_dates = {} if sort_children_by_date
       data = {
         "title" => (page_for_dir && (page_for_dir.data["nav"] || page_for_dir.data["title"])) ? (page_for_dir.data["nav"] || page_for_dir.data["title"]) : path.split("/").compact.last.split("-").map(&:capitalize).join(" "),
         "type" => "dir",
@@ -46,6 +49,7 @@ module Dirname
             "url" => matched_page ? matched_page.url : "UNMATCHED PAGE",
             "index" => (matched_page && matched_page.data["index"]) ? matched_page.data["index"] : nil,
           }
+          publication_dates[child["url"]] = matched_page.date if sort_children_by_date && matched_page
           children << child
           @breadcrumb_hash[child["url"]] = child["title"]
         end
@@ -57,6 +61,18 @@ module Dirname
         children.find { |child| child["type"] == "dir" } || children.first
       end
       children = children.uniq { |link| link["url"] }
+
+      if sort_children_by_date
+        newest_first = sort_children == "date_desc"
+        # Keep undated entries at the end in either direction.
+        undated_position = newest_first ? -1 : 1
+        children.sort_by! do |child|
+          date = publication_dates[child["url"]]
+          [date ? 0 : undated_position, date, child["url"]]
+        end
+        children.reverse! if newest_first
+        children.each_with_index { |child, index| child["index"] = index + 1 }
+      end
 
       if url_path != "/"
         if page_for_dir
@@ -79,16 +95,11 @@ module Dirname
         end
       end
 
-      # Create index if not existing
-      max_index = children.length + 1
-      children = children.map { |x|
-        x["index"] ||= max_index
-        x
-      }
-      # Sort by index
-      children = children.sort_by { |x|
-        x["index"]
-      }
+      unless sort_children_by_date
+        max_index = children.length + 1
+        children.each { |child| child["index"] ||= max_index }
+        children.sort_by! { |child| child["index"] }
+      end
       data["children"] = children
       return data
     end
