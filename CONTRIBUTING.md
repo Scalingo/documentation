@@ -39,7 +39,7 @@ Optional tags:
 
 - `nav: [string]` set another url than the one generated from the title
 - `index: [integer]` change the position of the page in his folder in the side menu
-- `sort_children: date_desc` sort a folder's articles by publication date, newest first, on the folder page and in the side menu
+- `sort_children` sorts a folder's entries by publication date on the folder page and in the side menu. Use `date_asc` for oldest first or `date_desc` for newest first. Both modes override the entries' `index` values and place undated entries last.
 - `tags: [string]` add search and classification keywords
 - `layout: [string]` use a specific page layout for special pages
 - `description: [string]` add a short page description used by some landing pages
