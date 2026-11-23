@@ -19,9 +19,9 @@ Main content is organized in:
 ## Adding a new article
 
 For regular documentation pages in `src/_posts/`, use the filename format
-`2000-01-01-title.md` (e.g. `2000-01-01-what-is-epoch.md`). For security bulletins,
-use the publication date as the filename prefix. Record the actual creation or
-modification date in `modified_at`.
+`2000-01-01-title.md` (e.g. `2000-01-01-what-is-epoch.md`). For security bulletins
+and post-mortems, use the publication date as the filename prefix. Record the
+actual creation or modification date in `modified_at`.
 
 For changelog entries, use the publication date instead, as described in
 [Changelog entries](#changelog-entries).
@@ -312,7 +312,7 @@ your change.
 
 - Edited pages have an updated `modified_at` value.
 - New documentation pages in `src/_posts/` use the fixed `2000-01-01` filename
-  prefix. Security bulletins use their publication date.
+  prefix. Security bulletins and post-mortems use their publication date.
 - For posts, the date in the filename is earlier than or equal to the server
   build date. Future-dated posts are not generated until a later deployment.
 
