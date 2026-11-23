@@ -47,7 +47,7 @@ that are **available** on Scalingo.
 | `ext-gmp`          | Optional | Optional | Optional | Optional | Optional |
 | `ext-hash`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
 | `ext-iconv`        | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
-| `ext-imap`         | Optional | Optional |          |          |
+| `ext-imap`         | Optional | Optional |          |          |          |
 | `ext-intl`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
 | `ext-json`         | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
 | `ext-libxml`       | Enabled  | Enabled  | Enabled  | Enabled  | Enabled  |
