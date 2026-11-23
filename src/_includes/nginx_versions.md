@@ -2,5 +2,5 @@ Scalingo supports the following versions of Nginx:
 
 | Nginx version         | {% scalingo 22 %} | {% scalingo 24 %} | {% scalingo 26 %} |
 | --------------------: | ----------------: | ----------------: | ----------------: |
-| **`1.31`** (Mainline) | Up to `1.31.9`    | Up to `1.31.9`    | Up to `1.31.9`    |
+| **`1.31`** (Mainline) | Up to `1.31.10`   | Up to `1.31.10`   | Up to `1.31.10`   |
 | **`1.30`** (Stable)   | Up to `1.30.7`    | Up to `1.30.7`    | Up to `1.30.7`    |
