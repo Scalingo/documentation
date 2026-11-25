@@ -78,9 +78,14 @@ information in the request.
 - The organization making the request and its business or public-sector activity.
 - How the organization plans to use SecNumCloud and why it needs the region.
 
-Support may ask for an example project as part of the review. Once Scalingo
-activates access for the organization, members with permission to create
-projects can select the SecNumCloud region for new projects in that organization.
+Scalingo reviews your request and verifies your organization's identity and your
+administrator role. Support may also ask you to verify your identity, provide
+documents about the organization, or describe a project that illustrates your
+intended use of SecNumCloud.
+
+Once Scalingo approves and activates access for the organization, members with
+permission to create projects can select the SecNumCloud region for new projects
+in that organization.
 
 ### Collaborate on SecNumCloud resources
 
