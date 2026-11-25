@@ -26,10 +26,12 @@ you a secure link to provide them.
 
 ### Personal account
 
-Scalingo must approve both your personal account and your project before you
-can host the project in the region.
+Scalingo approves SecNumCloud access for your entire personal account. Once
+approved, you can create projects and resources in the region without further
+SecNumCloud approval.
 
-If you own the project, contact Support with the following information.
+When you first request access for a project you own, send Support the following
+information.
 
 - The project or application the request covers.
 - The street address of the company or public body.
@@ -52,8 +54,9 @@ projects can select the SecNumCloud region for new projects in that organization
 ### Resource in a personal account
 
 To collaborate on a SecNumCloud resource in a personal account, you need an
-invitation to the resource and approval to access the region. If you later want
-to host your own project there, request approval for that project.
+invitation to the resource and approval to access the region. If Scalingo
+grants you regional access as a collaborator, that approval also covers your
+own personal account.
 
 If you receive an invitation and need access to the region, tell Support which
 project or application you were invited to and why you need access. Support can
