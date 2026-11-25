@@ -1,43 +1,10 @@
-{% assign active_classes = " text-primary-orange-400" %}
-
-{% comment %}
-  Please don't try to simplify the following lines.
-  They ensure `is_foo` is always a boolean, which is mandatory for the menu to
-  work well.
-{% endcomment %}
-
-{% assign is_tutorials = false %}
-{% if page.url == '/tutorials' or page.url contains '/tutorials/' %}
-    {% assign is_tutorials = true %}
-{% endif %}
-
-{% assign is_samples = false %}
-{% if page.url == '/samples' or page.url contains '/samples/' %}
-    {% assign is_samples = true %}
-{% endif %}
-
-{% assign is_cli = false %}
-{% if page.url == '/tools/cli/start' or page.url contains '/tools/cli/start/' %}
-    {% assign is_cli = true %}
-{% endif %}
-
-{% assign is_changelog = false %}
-{% if page.url == '/changelog' or page.url contains '/changelog/' %}
-    {% assign is_changelog = true %}
-{% endif %}
-
 <div class="top-0 z-20 w-full text-sc-gray-1 font-medium text-base lg:text-sm 2xl:text-base hidden xl:block">
   <div class="bg-sc-gray-5 flex py-3 items-center fixed z-10 border-b-4 xl:border-b-0 border-primary-brown-100 w-full">
     <div class="w-80">
       <div class="ml-3 flex"><a class="flex items-center py-2 w-27.75 h-11 ml-3.5" href="/" title="Homepage">{% icon logo_full %}</a></div>
     </div>
     <div class="grow hidden xl:flex gap-6">
-      <a href="/" class="py-2 hover:text-primary-orange-400{% unless (is_tutorials or is_samples or is_cli or is_changelog) %}{{ active_classes }}{% endunless %}">Documentation</a>
-      <a href="/tutorials" class="py-2 hover:text-primary-orange-400{% if is_tutorials %}{{ active_classes }}{% endif %}">Tutorials</a>
-      <a href="/samples" class="py-2 hover:text-primary-orange-400{% if is_samples %}{{ active_classes }}{% endif %}">Samples</a>
-      <a href="/tools/cli/start" class="py-2 hover:text-primary-orange-400{% if is_cli %}{{ active_classes }}{% endif %}">CLI</a>
-      <a href="/changelog" class="py-2 hover:text-primary-orange-400{% if is_changelog %}{{ active_classes }}{% endif %}">Changelog</a>
-      <a href="https://developers.scalingo.com" target="_blank" class="py-2 hover:text-primary-orange-400">API Reference</a>
+      {% include organisms/navigation/sections.html %}
     </div>
     <div class="hidden xl:flex items-center">
       <a href="https://scalingo.com" class="mr-10 hover:text-primary-orange-400" target="_blank">scalingo.com</a>
@@ -48,38 +15,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  document.querySelector("#mobile-menu").addEventListener("click", toggleMobileMenu, true);
-
-  function toggleMobileMenu(e) {
-    e.stopPropagation();
-
-    let button = document.querySelector("#mobile-menu");
-    let panels = document.querySelector("#mobile-menu-panels");
-    let nav = document.querySelector("#mobile-menu-nav");
-    let iconCross = document.querySelector("#mobile-menu-icon-cross");
-    let iconHamburger = document.querySelector("#mobile-menu-icon-hamburger");
-    let content = document.querySelector("#content");
-
-    let buttonClasses = ['active']
-
-    if (button.classList.contains('active')) {
-      document.getElementById('full-nav-container').appendChild(document.getElementById('menu-nav'));
-      button.classList.remove(...buttonClasses)
-      iconHamburger.classList.remove("hidden");
-      content.classList.remove("hidden");
-      iconCross.classList.add("hidden");
-      panels.classList.add("hidden");
-      nav.classList.add("hidden");
-    } else {
-      document.getElementById('mobile-nav-container').appendChild(document.getElementById('menu-nav'));
-      button.classList.add(...buttonClasses)
-      iconHamburger.classList.add("hidden");
-      content.classList.add("hidden");
-      iconCross.classList.remove("hidden");
-      panels.classList.remove("hidden");
-      nav.classList.remove("hidden");
-    }
-  }
-</script>
