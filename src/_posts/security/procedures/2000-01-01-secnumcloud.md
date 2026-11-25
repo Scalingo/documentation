@@ -5,42 +5,75 @@ modified_at: 2026-11-25 00:00:00
 tags: security procedures secnumcloud
 ---
 
-To host resources such as applications or databases in the SecNumCloud region
-(`osc-secnum-fr1`), you need approval from Scalingo.
+The SecNumCloud region (`osc-secnum-fr1`) hosts resources such as applications
+and databases. Scalingo approves access for a personal account or an
+organization.
 
-## Eligibility
+## Personal account
 
-To qualify for SecNumCloud access, you must meet these conditions.
+Approval covers your entire personal account, including when you first
+request access to collaborate on a resource.
 
-- A company or public body owns the resources.
-- The company or public body is established in the European Union and has a
-  physical presence in an EU member state.
-- The company or public body has a legitimate business, regulatory, or security
-  reason to host the resources in the region.
+### Request access to host resources
 
-## Request access
+#### Pre-conditions
 
-To request access, contact Scalingo Support by email or chat on behalf of the
-company or public body. If Scalingo needs supporting documents, Support sends
-you a secure link to provide them.
+- The application must be owned by a company or public body. Individual applicants are not eligible.
+- The owning entity must be established in the European Union and maintain a physical presence in an EU member state.
+- The application must have a legitimate need to be hosted in a SecNumCloud environment, whether for business, regulatory, or security reasons.
 
-### Personal account
+#### Procedure
 
-Scalingo approves SecNumCloud access for your entire personal account. Once
-approved, you can create projects and resources in the region without further
-SecNumCloud approval.
+1. Contact support using the standard means (email or chat)
+2. Provide the following information
+   - Project or application covered by the request
+   - Street address of the company / entity
+   - Reason of requesting the access
+3. A first answer will be provided under 7 business days
+4. _First-time domain or project registration only:_ an identity verification will be conducted.
+Have the Identity Document of the new app owner ready or use official tools like [France Identité](https://france-identite.gouv.fr/justificatif/).
+If the requester is not the owner, the owner will have to also contact directly the support.
 
-When you first request access for a project you own, send Support the following
-information.
+Note: this identity verification will take place each time a new domain is added to the SecNumCloud region.
 
-- The project or application the request covers.
-- The street address of the company or public body.
-- Why you need SecNumCloud hosting.
+### Collaborate on SecNumCloud resources
 
-### Organization
+Your personal account must first be allow-listed to access `osc-secnum-fr1`.
+
+#### Pre-conditions
+
+- The collaborator must have a legitimate reason to access the `osc-secnum-fr1` region, such as creating or collaborating on an application hosted there.
+- The collaborator must act as an employee of a company, using a verified company email address (domain verification ensures that the organization controls the specified domain, allowing us to authenticate communications sent on its behalf).
+- The company domain must already be associated with at least one existing application in the `osc-secnum-fr1` region, or be declared as owned by the organization.
+
+#### Procedure
+
+##### Access through an existing application
+
+- If your company already hosts one or more applications in the `osc-secnum-fr1` region, the application owner can invite you directly as a collaborator.
+- If your company domain is not yet allow-listed, you may ask the support team to register it. Once validated, everyone with an email address on that domain will be eligible to access the region without further access confirmation needed from the support.
+
+##### Access without allow-listed domain
+
+- If your company domain has not been declared or allow-listed, the request must still come from the application owner.
+- The owner of the application must send the collaborator an invitation.
+- The collaborator must contact the support using standard means (email or chat) to request access.
+- The support team will need the owner to confirm the request before granting access.
+
+##### Domain declaration and regularization
+
+- To simplify future collaborator additions or removals, a company may request domain allow-listing (or submit a list of specific people) through the support channel (email or chat).
+- The domain must already be associated with an existing Scalingo account or application; we do not pre-register unregistered domains from Scalingo services.
+
+An answer will be provided within two business days.
+
+## Organization
+
+### Request access
 
 Only an organization administrator can request access on behalf of an
-organization. Include the following information in the request.
+organization. Contact Support by email or chat and include the following
+information in the request.
 
 - The organization making the request and its business or public-sector activity.
 - How the organization plans to use SecNumCloud and why it needs the region.
@@ -49,30 +82,7 @@ Support may ask for an example project as part of the review. Once Scalingo
 activates access for the organization, members with permission to create
 projects can select the SecNumCloud region for new projects in that organization.
 
-## Collaborate on SecNumCloud resources
-
-### Resource in a personal account
-
-To collaborate on a SecNumCloud resource in a personal account, you need an
-invitation to the resource and approval to access the region. If Scalingo
-grants you regional access as a collaborator, that approval also covers your
-own personal account.
-
-If you receive an invitation and need access to the region, tell Support which
-project or application you were invited to and why you need access. Support can
-assess the request using an approved email domain or an approved project. The
-project owner can request access on your behalf. If Support asks the owner to
-confirm a request you submitted, the owner must contact Support directly.
-
-To request approval for a company email domain, contact Support as the domain
-owner or an authorized representative. Explain why the company needs regional
-access for that domain. The domain must already be associated with a Scalingo
-account or application in the SecNumCloud region.
-
-The company can also submit a list of people who need access. Scalingo verifies
-each person's identity for a group request.
-
-### Resource in an approved organization
+### Collaborate on SecNumCloud resources
 
 Members of an approved organization can be added as collaborators on its
 SecNumCloud resources without separate SecNumCloud approval. Each member's
