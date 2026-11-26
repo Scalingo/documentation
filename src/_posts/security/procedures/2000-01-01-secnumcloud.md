@@ -79,7 +79,7 @@ information in the request.
 - How the organization plans to use SecNumCloud and why it needs the region.
 
 Scalingo reviews your request and verifies your organization's identity and your
-administrator role. Support may also ask you to verify your identity, provide
+administrator role. Support will also ask you to verify your identity, provide
 documents about the organization, or describe a project that illustrates your
 intended use of SecNumCloud.
 
