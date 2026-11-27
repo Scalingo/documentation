@@ -3,15 +3,20 @@ title: Data Reversibility
 modified_at: 2026-11-27 00:00:00
 ---
 
-You can export your data at any time while you have access to the relevant
-services. The self-service export tools included in your Scalingo plans and
-addons carry no separate export fee.
+You can export your data and key configuration settings directly from your
+Scalingo account at any time while you have access to the relevant services.
+The self-service export tools included in your Scalingo plans and addons carry
+no separate export fee. Scalingo does not charge a fee for switching providers.
 
-For custom export requests, contact [Scalingo support][support]. Depending on
-your request, we may offer a separate paid service.
+For a custom export, contact [Scalingo support][support]. If you request
+additional work, such as an export in a specific format, at a scheduled time, or
+from a copy of your data, we may offer a paid service and share a quote in advance.
 
-Export the data you need before deleting your Scalingo account. Account deletion
-ends access to your data. See Article 10 of the [General Terms and Conditions][gtc].
+Export all your data and configuration settings before deleting your resources or
+your Scalingo account. Deleting your account ends self-service access to your
+data. After the contract ends, you can request the return of your data in writing
+during the applicable retention period. See Article 10 of the [General Terms and
+Conditions][gtc].
 
 ## Managed Application Runtime
 
