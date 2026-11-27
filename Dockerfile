@@ -1,5 +1,5 @@
 # Inspiration: https://github.com/timbru31/docker-ruby-node/blob/master/3.2/18/Dockerfile
-FROM ruby:3.4.13
+FROM ruby:4.0.10
 LABEL maintainer "kevin@scalingo.com"
 
 ARG REFRESHED_AT
@@ -21,6 +21,6 @@ RUN printf 'Package: nodejs\nPin: origin deb.nodesource.com\nPin-Priority: 1001'
 
 COPY Gemfile Gemfile.lock /usr/src/app/
 
-RUN gem install bundler:2.4.22
+RUN gem install bundler:4.0.0
 
 WORKDIR /usr/src/app
