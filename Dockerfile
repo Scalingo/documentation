@@ -21,6 +21,6 @@ RUN printf 'Package: nodejs\nPin: origin deb.nodesource.com\nPin-Priority: 1001'
 
 COPY Gemfile Gemfile.lock /usr/src/app/
 
-RUN gem install bundler:4.0.0
+RUN gem install bundler:4.0.25
 
 WORKDIR /usr/src/app
