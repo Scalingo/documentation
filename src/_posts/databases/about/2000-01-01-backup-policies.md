@@ -79,10 +79,10 @@ expire gradually according to their retention policy.
 These limits apply to Scalingo for PostgreSQL®, MySQL®, MongoDB®, OpenSearch®,
 Elasticsearch®, InfluxDB®, and Caching on Shared Resources.
 
-| Service Class | Daily | Weekly | Monthly |
-|---------------|------:|-------:|--------:|
-| Starter       |     7 |      4 |       — |
-| Business      |     7 |      8 |      12 |
+| Service Class | Daily       | Weekly       | Monthly        |
+|---------------|-------------|--------------|----------------|
+| Starter       | Last 7 days | Last 4 weeks |              — |
+| Business      | Last 7 days | Last 8 weeks | Last 12 months |
 
 ##### Hourly schedules
 
