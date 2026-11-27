@@ -5,7 +5,7 @@ category: analytics
 products:
   - Scalingo for PostgreSQL®
 permalink: /tutorials/jupyterlab
-modified_at: 2026-11-13
+modified_at: 2026-11-27
 last_reviewed_at: 2026-11-13
 published: true
 ---
@@ -78,7 +78,7 @@ any updates in years. Use it with caution, ideally after reviewing its code!
    cd jupyterlab
    ```
 
-2. Create a new git repository from the downloaded `jupyerlab` directory:
+2. Create a new git repository from the downloaded `jupyterlab` directory:
    ```bash
    git init
    git add .
@@ -125,11 +125,12 @@ any updates in years. Use it with caution, ideally after reviewing its code!
      sensitive = true
    }
    ```
-   {% note %}
-   A better option would consist in using a proper secrets manager. For this
-   demo, we chose to keep things as simple as possible with a *sensitive* var.
-   {% endnote %}
+{% note %}
+A better option would consist in using a proper secrets manager. For this
+demo, we chose to keep things as simple as possible with a *sensitive* var.
+{% endnote %}
 
+{:start="3"}
 3. Create the application:
    ```tf
    resource "scalingo_app" "my-jupyter" {
