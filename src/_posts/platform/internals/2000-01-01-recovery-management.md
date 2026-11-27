@@ -58,3 +58,7 @@ This redundancy ensure there will always be sufficient data to recover a catastr
 
 The RPO determines the maximum acceptable amount of data loss measured in time.
 It depends on your database engine, architecture model, and service class.
+
+See the [typical RPOs by database engine and architecture model][backup-mechanisms].
+
+[backup-mechanisms]: {% post_url databases/about/2000-01-01-backup-policies %}#backup-mechanisms

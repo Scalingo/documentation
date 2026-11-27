@@ -6,10 +6,7 @@ tags: databases backup policy policies explanation
 index: 20
 ---
 
-All plans include automated, managed backups designed to support reliable data
-recovery. Depending on the architecture model, the typical recovery point
-objective (RPO) ranges from about 5 minutes with continuous backups to up to
-1 day with logical backups.
+All plans include automated, managed backups.
 
 Backup technology and retention policy depend on the database engine and architecture model. We provide two backup mechanisms when supported:
 
@@ -19,25 +16,35 @@ Backup technology and retention policy depend on the database engine and archite
   restore the database to a specific point in time within the configured
   recovery window.
 
-The table below summarises which backup mechanisms are available (and whether they are managed by Scalingo) for each database engine and architecture model:
+The table shows the backup methods and typical recovery point objective (RPO)
+for each database engine and architecture model.
 
-| Managed Database            | Architecture model  | Logical Backups      | Continuous Backups |
-|-----------------------------|---------------------|----------------------|--------------------|
-| Scalingo for PostgreSQL®    | Dedicated Resources | Customer-managed[^1] | Managed            |
-| Scalingo for PostgreSQL®    | Shared Resources    | Managed              | Managed            |
-| Scalingo for MySQL®         | Dedicated Resources | Customer-managed[^1] | Managed            |
-| Scalingo for MySQL®         | Shared Resources    | Managed              | Not available      |
-| Scalingo for OpenSearch®    | Shared Resources    | Managed              | Not available      |
-| Scalingo for Valkey®        | Shared Resources    | Managed              | Not available      |
-| Scalingo for Valkey®        | Dedicated Resources | Managed              | Not available      |
-| Scalingo for Caching        | Shared Resources    | Managed              | Not available      |
-| Scalingo for Elasticsearch® | Shared Resources    | Managed              | Not available      |
-| Scalingo for InfluxDB®      | Shared Resources    | Managed              | Not available      |
-| Scalingo for MongoDB®       | Shared Resources    | Managed              | Not available      |
+| Managed Database            | Architecture model  | Logical Backups      | Continuous Backups | Typical RPO[^2] |
+|-----------------------------|---------------------|----------------------|--------------------|-----------------|
+| Scalingo for PostgreSQL®    | Dedicated Resources | Customer-managed[^1] | Managed            | 5 minutes[^3]   |
+| Scalingo for PostgreSQL®    | Shared Resources    | Managed              | Managed            | 5 minutes[^3]   |
+| Scalingo for MySQL®         | Dedicated Resources | Customer-managed[^1] | Managed            | 5 minutes[^3]   |
+| Scalingo for MySQL®         | Shared Resources    | Managed              | Not available      | 1 day           |
+| Scalingo for OpenSearch®    | Dedicated Resources | Managed              | Not available      | 1 hour          |
+| Scalingo for OpenSearch®    | Shared Resources    | Managed              | Not available      | 1 day           |
+| Scalingo for Valkey®        | Shared Resources    | Managed              | Not available      | 1 hour          |
+| Scalingo for Valkey®        | Dedicated Resources | Managed              | Not available      | 1 hour          |
+| Scalingo for Caching        | Shared Resources    | Managed              | Not available      | 1 day           |
+| Scalingo for Elasticsearch® | Shared Resources    | Managed              | Not available      | 1 day           |
+| Scalingo for InfluxDB®      | Shared Resources    | Managed              | Not available      | 1 day           |
+| Scalingo for MongoDB®       | Shared Resources    | Managed              | Not available      | 1 day           |
+{: #backup-mechanisms }
 
 [^1]: For these combinations of database engine and architecture model, Scalingo
     uses continuous backups (PiTR) as the primary backup method. You can create
     logical backups with external tools and manage their retention yourself.
+
+[^2]: The latest recovery point is the most recent successful scheduled backup
+    or the latest point available through PiTR. Backup delays or failures can
+    leave an older recovery point.
+
+[^3]: This estimate accounts for the time needed to synchronize and ingest
+    database changes for continuous backups.
 
 ## Logical Backups
 
