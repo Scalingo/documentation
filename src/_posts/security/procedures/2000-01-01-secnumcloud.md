@@ -1,7 +1,7 @@
 ---
 title: Getting access to SecNumCloud Region
 nav: SecNumCloud
-modified_at: 2026-11-26 00:00:00
+modified_at: 2026-11-27 00:00:00
 tags: security procedures secnumcloud
 ---
 
@@ -38,14 +38,11 @@ accepts [proof of identity issued by France Identité](https://france-identite.g
 
 ### Personal Account
 
-The project owner must contact Support to request access for a project in a
-personal account.
+The holder of the personal account that will own the resources must request
+SecNumCloud access from Scalingo Support.
 
-Approval covers your personal account. Each collaborator you invite must have
-SecNumCloud approval for their own account.
-
-Once Scalingo activates access, you can select the SecNumCloud region when
-creating a project in your personal account.
+Once Scalingo activates SecNumCloud access for your personal account, you can
+select the region when creating a project in that account.
 
 ### Organization
 
@@ -65,12 +62,13 @@ company or public body that owns the resource.
 
 ### Invite Collaborators to a Resource in a Personal Account
 
-Each collaborator you invite to a resource in your personal account must
-have SecNumCloud approval for their own account. To qualify for approval, each
+Each collaborator invited to a resource in a personal account must have
+SecNumCloud approval for their own account. To qualify for approval, each
 collaborator must be a company employee, use a verified company email address,
 and have a legitimate reason to access the region.
 
-1. Invite each collaborator to your resource in the SecNumCloud region.
+1. As the resource owner, make sure each collaborator has been invited to your
+   resource in the SecNumCloud region.
 2. For collaborators who still need SecNumCloud approval, choose one of these options.
    - Send Scalingo Support the list of people who need access.
    - Ask each collaborator to contact Scalingo Support and name the resource
