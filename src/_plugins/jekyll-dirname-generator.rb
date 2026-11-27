@@ -43,13 +43,15 @@ module Dirname
           matched_page = @all_posts.detect { |x|
             x.path.ends_with?(full_path)
           }
+          next unless matched_page
+
           child = {
-            "title" => matched_page ? (matched_page.data["nav"] || matched_page.data["title"]) : nil,
+            "title" => matched_page.data["nav"] || matched_page.data["title"],
             "type" => "file",
-            "url" => matched_page ? matched_page.url : "UNMATCHED PAGE",
-            "index" => (matched_page && matched_page.data["index"]) ? matched_page.data["index"] : nil,
+            "url" => matched_page.url,
+            "index" => matched_page.data["index"],
           }
-          publication_dates[child["url"]] = matched_page.date if sort_children_by_date && matched_page
+          publication_dates[child["url"]] = matched_page.date if sort_children_by_date
           children << child
           @breadcrumb_hash[child["url"]] = child["title"]
         end
