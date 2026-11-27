@@ -7,8 +7,8 @@ products:
   - Private Network
 kind: tutorial
 permalink: /tutorials/clamav
-modified_at: 2026-11-26
-last_reviewed_at: 2026-11-26
+modified_at: 2026-11-27
+last_reviewed_at: 2026-11-27
 ---
 
 **[ClamAV]** is a free, open-source antivirus engine designed to detect
