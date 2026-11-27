@@ -1,6 +1,6 @@
 ---
 title: Best Practices
-modified_at: 2025-07-01 12:00:00
+modified_at: 2026-11-20 00:00:00
 tags: user team role collaborator security
 index: 50
 ---
@@ -11,9 +11,9 @@ and security settings on Scalingo, depending on your team's size and structure.
 While Scalingo keeps access control simple, [using roles][roles] strategically
 helps balancing collaboration with operational security.
 
-The following recommendations follow the principle of [least
-privilege][least-privilege], meaning that all collaborators should be assigned
-the minimum permissions according to their responsibilities.
+The recommendations below cover team structure, API tokens and access reviews.
+They follow the principle of [least privilege][least-privilege]: give each
+collaborator only the permissions they need.
 
 ## Threat Modeling and Shared Responsibility
 
@@ -32,21 +32,32 @@ workflows. As such, it is the responsibility of each owner to:
 - Review and validate all code before it reaches production
 - Use protected branches and pull request reviews to enforce standards
 
-While roles can prevent a user from deploying an unvalidated branch directly
-from the dashboard they do not prevent a developer with access to your
-repository from introducing harmful logic into your codebase.\
-**We strongly recommend aligning your internal security practices with the
-deployment methods and access permissions you have configured on Scalingo**.
+Roles can prevent a user from deploying an unvalidated branch directly from
+the Dashboard. They cannot prevent a developer with repository access from
+introducing harmful code. Review code and restrict repository access
+alongside the permissions you configure on Scalingo.
 
 
-## Setting the Appropriate Roles
+## Choosing Between Your Personal Account and an Organization
+
+For collaboration centered on an application, you can keep the project and its
+resources in your personal account and invite collaborators to the application.
+
+When a team needs shared management of projects, members and billing, use an
+organization. See [when to use organizations][organizations-use-cases] for examples.
+
+
+## Setting the Appropriate Roles on Resources
+
+Choose the **Collaborator** or **Limited Collaborator** role on each resource
+according to the actions each person needs to perform.
 
 ### Small Teams
 
 Structure example: A CTO or lead developer, and a few developers.
 
-- Assign the **Owner** role to the CTO or technical lead responsible for
-  billing and application lifecycle.
+- Have the CTO or technical lead create the resources with their Scalingo account
+  so they become the **Owner**.
 - Give the **Collaborator** role to developers who are trusted with full access
   to settings and data.
 - If contributors have limited responsibilities, prefer using the **Limited
@@ -59,8 +70,8 @@ Structure example: A CTO or lead developer, and a few developers.
 Structure example: A CTO, a lead developer, senior developers, junior
 developers.
 
-- Keep the **Owner** role for the CTO or an engineering manager in charge of
-  account and billing governance.
+- Have the CTO or engineering manager create the resources with their Scalingo
+  account so they become the **Owner**.
 - Assign the **Collaborator** role to trusted leads who need access to all
   environments, data, and team management.
 - Use the **Limited Collaborator** role for senior developers who handle
@@ -68,16 +79,12 @@ developers.
   secrets.
 - Junior developers do not need a Scalingo account. They can contribute to the
   project exclusively through your GitHub or GitLab workflows.
-- Leverage branch protections and CI validation workflows for better deployment
-  governance.
+- Use protected branches and CI checks to validate changes before deployment.
 
 ### Large or Multi-Project Teams
 
 Structure example: Several project teams and multiple environments.
 
-- Use a global service account (dedicated Scalingo account) as the application
-  **Owner**, especially for production apps. This avoids coupling billing or
-  critical permissions to a personal account.
 - Apply the same role split as in [mid-sized teams](#mid-sized-teams):
   **Collaborator** for leads, **Limited Collaborator** for developers.
 - Use a specific and dedicated service account to [scope API tokens](#scoping-api-tokens)
@@ -100,9 +107,10 @@ and cannot be used across other apps.
 
 ### Auditing Collaborators' 2FA Status
 
-Although 2FA cannot be enforced globally on Scalingo, you can view each
-collaborator's 2FA status from the [Collaborators page][dashboard-collab] of
-your Scalingo dashboard.
+2FA cannot be enforced globally on Scalingo. You can check users' 2FA status from:
+
+- **Personal account:** The [Collaborators page][dashboard-collab].
+- **Organization:** The [Members page][organization-members].
 
 ### Reviewing Accesses
 
@@ -122,7 +130,9 @@ into your internal security alerts or audit processes.
 
 [least-privilege]: https://en.wikipedia.org/wiki/Principle_of_least_privilege
 
-[dashboard-collab]: https://dashboard.scalingo.com/collaborators
+[dashboard-collab]: {% post_url platform/user-management/collaborators/2000-01-01-personal-account-collaborators %}#listing-collaborators
+[organization-members]: {% post_url platform/user-management/organizations/2000-01-01-managing-members %}#viewing-members-and-invitations
 [api]: https://developers.scalingo.com
 
-[roles]: {% post_url platform/user-management/teamwork/2000-01-01-roles %}
+[roles]: {% post_url platform/user-management/collaborators/2000-01-01-roles %}
+[organizations-use-cases]: {% post_url platform/user-management/organizations/2000-01-01-overview %}#when-to-use-organizations

@@ -1,7 +1,7 @@
 ---
 nav: Navigating the Account Dashboard
 title: Navigating the Scalingo Account Dashboard
-modified_at: 2025-07-02 12:00:00
+modified_at: 2026-11-13 00:00:00
 index: 20
 ---
 
@@ -57,7 +57,7 @@ The [**API Tokens**][account-tokens] tab allows to:
 Reminder: API tokens inherit the exact permissions of your account for each
 application or database. Currently, it is not possible to restrict the scope or
 permissions of an individual token. For improved security, especially in larger
-organizations, we recommend reviewing our [security best
+teams, we recommend reviewing our [security best
 practices][best-practices]
 {% endnote %}
 
@@ -108,5 +108,5 @@ The [**Referrals**][account-referrals] tab allows to:
 
 [ssh-keys]: {% post_url platform/getting-started/2000-01-01-first-steps %}#ssh-key-setup
 [scm]: {% post_url platform/app/2000-01-01-scm-integration %}
-[best-practices]: {% post_url platform/user-management/teamwork/2000-01-01-best-practices %}
+[best-practices]: {% post_url platform/user-management/collaborators/2000-01-01-best-practices %}
 [hds]: {% post_url compliance/2000-01-01-hds %}

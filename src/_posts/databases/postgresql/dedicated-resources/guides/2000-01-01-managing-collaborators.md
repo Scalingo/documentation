@@ -1,16 +1,13 @@
 ---
 title: Managing Collaborators of Your Scalingo for PostgreSQL® Dedicated Resources Database
 nav: Managing Collaborators
-modified_at: 2026-02-13 12:00:00
+modified_at: 2026-11-20 00:00:00
 tags: databases postgresql dedicated collaborator
 index: 1
 ---
 
-Inviting collaborators allows you to share access to a dedicated database while
-keeping full control over who can manage it.
-
-Unlike Shared Resources databases, a Dedicated Resources database has its own
-collaborators.
+Add collaborators to give other Scalingo accounts access to a Dedicated
+Resources database. Each database has its own collaborators.
 
 
 ## Listing Collaborators of a Database
@@ -40,30 +37,33 @@ collaborators.
    ```
 
 
-## Inviting a Collaborator
+## Adding a Collaborator
+
+Learn more about [collaborator roles and access rules][collaborator-access].
 
 ### Using the Dashboard
 
-1. From your web browser, open your [dashboard][database-dashboard]
-2. Once on the database dashboard, click the **Settings** tab, then select
-   **Collaborators**
-3. Click the **Add** button
-4. Fill the input field with the e-mail address of the collaborator
-5. Confirm
-6. The collaborator is added and appears dimmed in the list
-7. An invite is sent by e-mail to the collaborator
-8. Once the invite is accepted, the collaborator appears normally in the list
+1. Open the [database dashboard][database-dashboard]
+2. Go to **Settings** > **Collaborators**
+3. Click **Add**
+4. Invite or add a collaborator.
+
+   - In a **personal account**, enter the collaborator's email address. If they
+     already have a Scalingo account, use the email address associated with it.
+     Click **Invite collaborator**.
+   - In an **organization**, select a member from the list and click
+     **Add collaborator**.
 
 {% note %}
-For Dedicated Resources databases, only the **Collaborator** role is available.
-The **Limited Collaborator** role is not available because it is designed to
-prevent access to database data.
+When you add a collaborator to a Dedicated Resources database, they receive the
+**Collaborator** role. The **Limited Collaborator** role is currently available
+only for applications.
 {% endnote %}
 
 ### Using the Command Line
 
 1. Make sure you have correctly [setup the Scalingo command line tool][cli]
-2. From the command line, invite someone:
+2. From the command line, add a collaborator:
    ```shell
    scalingo --database my-dedicated-db-id collaborators-add user@example.com
    ```
@@ -72,8 +72,39 @@ prevent access to database data.
    -----> user@example.com has been invited to collaborate to my-dedicated-db
    ```
 
+### Using the Terraform Provider
 
-## Removing a Collaborator
+Add a `scalingo_collaborator` resource for each collaborator. This example uses
+an existing database declared as `scalingo_database.my_db`:
+
+```tf
+locals {
+  team = ["user1@example.com", "user2@example.com"]
+}
+
+resource "scalingo_collaborator" "database_collaborators" {
+  for_each = toset(local.team)
+
+  app   = scalingo_database.my_db.id
+  email = each.key
+}
+```
+
+Run `terraform plan` to review the changes, then `terraform apply` to add the
+collaborators.
+
+
+## Revoking a Collaborator's Access to the Database
+
+When you revoke a collaborator's access, they immediately lose the permissions
+granted by their role on this database. They retain their organization membership
+and access to other resources. To revoke their access across the organization,
+[remove them from the organization][remove-member].
+
+{% include collaborator_credentials_revocation.md %}
+
+Follow the instructions to [update or reset database user passwords][user-passwords]
+for credentials the collaborator may already know.
 
 ### Using the Dashboard
 
@@ -83,7 +114,12 @@ prevent access to database data.
 3. Locate the collaborator for whom you want to revoke access
 4. Open the contextual menu by clicking the corresponding **...** button
 5. Select **Revoke access**
-6. Confirm by clicking the **Revoke access to** button in the popup window
+6. Review the collaborator and database in the confirmation window, then confirm
+
+{% note %}
+As a collaborator, you can revoke your own access to the database. Follow the
+steps above and select your own account in the list.
+{% endnote %}
 
 ### Using the Command Line
 
@@ -97,22 +133,18 @@ prevent access to database data.
    -----> user@example.com has been removed from the collaborators of my-dedicated-db
    ```
 
+### Using the Terraform Provider
 
-## Stopping Collaborating
+Remove the collaborator's email address from `local.team`. If you manage a single
+collaborator without `for_each`, remove their `scalingo_collaborator` block.
 
-If you are currently working collaboratively on a dedicated database and have no
-more interest in participating, you can stop collaborating on your own.
-
-### Using the Dashboard
-
-1. From your web browser, open your [dashboard][database-dashboard]
-2. Once on the database dashboard, click the **Settings** tab, then select
-   **Collaborators**
-3. Locate yourself in the list of collaborators
-4. Open the contextual menu by clicking the corresponding **...** button
-5. Select **Revoke access**
-6. Confirm by clicking the **Revoke access to** button in the popup window
+Run `terraform plan` and check that only the intended collaborator access will be
+removed, then run `terraform apply`.
 
 
 [database-dashboard]: {% post_url databases/postgresql/dedicated-resources/getting-started/2000-01-01-provisioning %}#accessing-the-scalingo-for-postgresql-dashboard
 [cli]: {% post_url tools/cli/2000-01-01-start %}
+[user-passwords]: {% post_url databases/postgresql/dedicated-resources/guides/2000-01-01-managing-users %}#updating-or-resetting-a-user-password
+[remove-member]: {% post_url platform/user-management/organizations/2000-01-01-managing-members %}#removing-a-member
+
+[collaborator-access]: {% post_url platform/user-management/collaborators/2000-01-01-overview %}
