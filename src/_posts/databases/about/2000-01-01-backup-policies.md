@@ -64,7 +64,7 @@ to suit your workload. The actual start time may vary depending on platform load
 
 Scalingo uses the following retention levels for scheduled backups.
 
-- **Hourly** keeps the most recent successful hourly backups.
+- **Hourly** keeps successful hourly backups within the retention window.
 - **Twelve-hourly** keeps one successful backup per half-day, starting at 00:00
   and 12:00 UTC.
 - **Daily** keeps one successful backup per day.
@@ -79,21 +79,21 @@ expire gradually according to their retention policy.
 These limits apply to Scalingo for PostgreSQL®, MySQL®, MongoDB®, OpenSearch®,
 Elasticsearch®, InfluxDB®, and Caching on Shared Resources.
 
-| Service Class | Daily       | Weekly       | Monthly        |
-|---------------|-------------|--------------|----------------|
-| Starter       | Last 7 days | Last 4 weeks |              — |
-| Business      | Last 7 days | Last 8 weeks | Last 12 months |
+| Service Class | Daily Retention | Weekly Retention | Monthly Retention |
+|---------------|-----------------|------------------|-------------------|
+| Starter       | Last 7 days     | Last 4 weeks     |                 — |
+| Business      | Last 7 days     | Last 8 weeks     | Last 12 months    |
 
 ##### Hourly schedules
 
 These limits apply to Scalingo for OpenSearch® on Dedicated Resources and to
 Scalingo for Valkey®.
 
-| Databases             | Service Class | Hourly | Twelve-hourly | Daily | Weekly |
-|-----------------------|---------------|-------:|--------------:|------:|-------:|
-| OpenSearch DR, Valkey | Starter       |      8 |             2 |     7 |      — |
-| OpenSearch DR, Valkey | Business      |     24 |             4 |    14 |      — |
-| OpenSearch DR, Valkey | Enterprise    |     24 |             8 |    30 |      — |
+| Service Class | Hourly Retention | Twelve-hourly Retention | Daily Retention |
+|---------------|------------------|-------------------------|-----------------|
+| Starter       | Last 8 hours     | Last 2 half-days        | Last 7 days     |
+| Business      | Last 24 hours    | Last 4 half-days        | Last 14 days    |
+| Enterprise    | Last 24 hours    | Last 8 half-days        | Last 30 days    |
 
 ### Manual Backups
 
