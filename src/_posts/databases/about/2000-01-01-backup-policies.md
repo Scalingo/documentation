@@ -1,15 +1,12 @@
 ---
 title: Databases Backup Policies
 nav: Backup Policies
-modified_at: 2026-10-14 00:00:00
+modified_at: 2026-11-27 00:00:00
 tags: databases backup policy policies explanation
 index: 20
 ---
 
-All plans include automated, managed backups designed to support reliable data
-recovery. Depending on the architecture model, the typical recovery point
-objective (RPO) ranges from about 5 minutes with continuous backups to up to
-1 day with logical backups.
+All plans include automated, managed backups.
 
 Backup technology and retention policy depend on the database engine and architecture model. We provide two backup mechanisms when supported:
 
@@ -19,60 +16,91 @@ Backup technology and retention policy depend on the database engine and archite
   restore the database to a specific point in time within the configured
   recovery window.
 
-The table below summarises which backup mechanisms are available (and whether they are managed by Scalingo) for each database engine and architecture model:
+The table shows the backup methods and typical recovery point objective (RPO)
+for each database engine and architecture model.
 
-| Managed Database            | Architecture model  | Logical Backups      | Continuous Backups |
-|-----------------------------|---------------------|----------------------|--------------------|
-| Scalingo for PostgreSQL®    | Dedicated Resources | Customer-managed[^1] | Managed            |
-| Scalingo for PostgreSQL®    | Shared Resources    | Managed              | Managed            |
-| Scalingo for MySQL®         | Dedicated Resources | Customer-managed[^1] | Managed            |
-| Scalingo for MySQL®         | Shared Resources    | Managed              | Not available      |
-| Scalingo for MongoDB®       | Shared Resources    | Managed              | Not available      |
-| Scalingo for OpenSearch®    | Shared Resources    | Managed              | Not available      |
-| Scalingo for Elasticsearch® | Shared Resources    | Managed              | Not available      |
-| Scalingo for InfluxDB®      | Shared Resources    | Managed              | Not available      |
-| Scalingo for Valkey®       | Shared Resources    | Managed              | Not available      |
+| Managed Database            | Architecture model  | Logical Backups      | Continuous Backups | Typical RPO[^2] |
+|-----------------------------|---------------------|----------------------|--------------------|-----------------|
+| Scalingo for PostgreSQL®    | Dedicated Resources | Customer-managed[^1] | Managed            | 5 minutes[^3]   |
+| Scalingo for PostgreSQL®    | Shared Resources    | Managed              | Managed            | 5 minutes[^3]   |
+| Scalingo for MySQL®         | Dedicated Resources | Customer-managed[^1] | Managed            | 5 minutes[^3]   |
+| Scalingo for MySQL®         | Shared Resources    | Managed              | Not available      | 1 day           |
+| Scalingo for OpenSearch®    | Dedicated Resources | Managed              | Not available      | 1 hour          |
+| Scalingo for OpenSearch®    | Shared Resources    | Managed              | Not available      | 1 day           |
+| Scalingo for Valkey®        | Shared Resources    | Managed              | Not available      | 1 hour          |
+| Scalingo for Valkey®        | Dedicated Resources | Managed              | Not available      | 1 hour          |
+| Scalingo for Caching        | Shared Resources    | Managed              | Not available      | 1 day           |
+| Scalingo for Elasticsearch® | Shared Resources    | Managed              | Not available      | 1 day           |
+| Scalingo for InfluxDB®      | Shared Resources    | Managed              | Not available      | 1 day           |
+| Scalingo for MongoDB®       | Shared Resources    | Managed              | Not available      | 1 day           |
+{: #backup-mechanisms }
 
-[^1]: On Dedicated Resources, logical backups are possible, but they are customer-managed and rely on an external tool for both execution and retention policy.
+[^1]: For these combinations of database engine and architecture model, Scalingo
+    uses continuous backups (PiTR) as the primary backup method. You can create
+    logical backups with external tools and manage their retention yourself.
+
+[^2]: The latest recovery point is the most recent successful scheduled backup
+    or the latest point available through PiTR. Backup delays or failures can
+    leave an older recovery point.
+
+[^3]: This estimate accounts for the time needed to synchronize and ingest
+    database changes for continuous backups.
 
 ## Logical Backups
 
-Scalingo provides two logical backup mechanisms for supported database engines:
+Scalingo manages two types of logical backups.
 
-- [Scheduled backups](#scheduled-backups) rely on our automated backup service
-  to create a daily full backup of your database.
-- [Manual backups](#manual-backups), as the name implies, can be leveraged at
-  any time to manually trigger the creation of a new full backup.
+- [Scheduled backups](#scheduled-backups) are full database backups that
+  Scalingo's backup service runs automatically.
+- [Manual backups](#manual-backups) are full database backups that run when
+  you request them.
+
+You can also create logical backups with external tools. You store these backups
+outside Scalingo and manage their retention. The policies below apply only to
+backups managed by Scalingo.
 
 ### Scheduled Backups
 
-When scheduled backups are enabled (enabled by default), they run daily. Each
-backup dumps the database to an archive, which is retained according to their
-[retention policy](#retention-policy-for-scheduled-backups).
+Scheduled backups are enabled by default. Each backup creates an archive that
+Scalingo keeps according to the [retention policy](#retention-policy-for-scheduled-backups).
 
-The start time can be customized using the dashboard or our Command Line tool,
-enabling you to align backups with your workload and core business operations.
-The actual start time also depends on the backup queue, so the backup may
-start later than the configured time.
+You can set the start time for daily backups in the dashboard or with the CLI
+to suit your workload. The actual start time may vary depending on platform load.
 
 #### Retention Policy for Scheduled Backups
 
-We retain a limited number of backups based on your database plan:
+Scalingo uses the following retention levels for scheduled backups.
 
-- **Daily backups**: one backup is retained for each of the last 7 days, for a
-  total of 7 backups.
-- **Weekly backups**: the daily backup taken on Sunday is retained as the
-  weekly backup.
-- **Monthly backups**: the daily backup from the first Sunday of the month is
-  retained as the monthly backup.
-
-| Service Class | Architecture Model | Daily Retention | Weekly Retention | Monthly Retention |
-|---------------|--------------------|-----------------|------------------|-------------------|
-| Starter       | Shared Resources   | Last 7 days     | Last 4 weeks     | —                 |
-| Business      | Shared Resources   | Last 7 days     | Last 8 weeks     | Last 12 months    |
+- **Hourly** keeps successful hourly backups within the retention window.
+- **Twelve-hourly** keeps one successful backup per half-day, starting at 00:00
+  and 12:00 UTC.
+- **Daily** keeps one successful backup per day.
+- **Weekly** keeps the daily backup from Sunday.
+- **Monthly** keeps the daily backup from the first Sunday of the month.
 
 Deleting a database doesn't immediately remove its scheduled backups. They
 expire gradually according to their retention policy.
+
+##### Daily schedules
+
+These limits apply to Scalingo for PostgreSQL®, MySQL®, MongoDB®, OpenSearch®,
+Elasticsearch®, InfluxDB®, and Caching on Shared Resources.
+
+| Service Class | Daily Retention | Weekly Retention | Monthly Retention |
+|---------------|-----------------|------------------|-------------------|
+| Starter       | Last 7 days     | Last 4 weeks     |                 — |
+| Business      | Last 7 days     | Last 8 weeks     | Last 12 months    |
+
+##### Hourly schedules
+
+These limits apply to Scalingo for OpenSearch® on Dedicated Resources and to
+Scalingo for Valkey®.
+
+| Service Class | Hourly Retention | Twelve-hourly Retention | Daily Retention |
+|---------------|------------------|-------------------------|-----------------|
+| Starter       | Last 8 hours     | Last 2 half-days        | Last 7 days     |
+| Business      | Last 24 hours    | Last 4 half-days        | Last 14 days    |
+| Enterprise    | Last 24 hours    | Last 8 half-days        | Last 30 days    |
 
 ### Manual Backups
 
@@ -84,15 +112,28 @@ or any important operation on your data.
 
 #### Retention Policy for Manual Backups
 
-The number of manual backups you can store is limited by your plan (see below).
-Manual backups are kept for an unlimited amount of time, as long as the number
-of backups doesn't exceed the plan's limit. If creating a new backup exceeds
-this limit, the oldest backup is automatically deleted.
+Manual backup limits depend on how often Scalingo runs scheduled backups for
+the database.
+
+For databases with **[daily scheduled backups](#daily-schedules)**:
 
 | Service Class | Backups Retained        |
 |---------------|-------------------------|
 | Starter       | Last 10 rolling backups |
 | Business      | Last 50 rolling backups |
+| Enterprise    | Last 50 rolling backups |
+
+For databases with **[hourly scheduled backups](#hourly-schedules)**:
+
+| Service Class | Backups Retained        |
+|---------------|-------------------------|
+| Starter       | Last 10 rolling backups |
+| Business      | Last 10 rolling backups |
+| Enterprise    | Last 10 rolling backups |
+
+Manual backups are kept for an unlimited amount of time, as long as the number
+of backups doesn't exceed the plan's limit. If creating a new backup exceeds
+this limit, the oldest backup is automatically deleted.
 
 When a database is deleted, a retention policy is retroactively applied to
 all existing manual logical backups, based on their creation date. The retention
@@ -102,29 +143,10 @@ duration depends on the plan:
 |---------------|------------------|
 | Starter       | 1 month          |
 | Business      | 1 year           |
+| Enterprise    | 1 year           |
 
-If manual backups have already exceeded their retention period, they are
-deleted immediately.
-
-
-### Valkey on Shared Resources
-
-Valkey Starter and Business plans on Shared Resources use managed hourly backups
-instead of a configurable daily schedule. Hourly and twelve-hourly retention
-are currently exclusive to Valkey on Shared Resources.
-
-Scheduled backups retain the following numbers of successful recovery points:
-
-| Service Class | Hourly | Twelve-hourly | Daily | Weekly | Monthly |
-|---------------|--------|---------------|-------|--------|---------|
-| Starter       | 4      | 2             | 3     | 4      | —       |
-| Business      | 8      | 2             | 7     | 8      | 12      |
-
-Hourly retention keeps the latest successful backups. Other tiers keep one
-successful backup per UTC half-day (00:00–12:00 or 12:00–24:00), day, week
-(starting on Sunday), or month.
-
-Both classes retain the latest **10 manual backups**.
+If manual backups have already exceeded their retention period, they are deleted
+immediately.
 
 ## Continuous backups
 

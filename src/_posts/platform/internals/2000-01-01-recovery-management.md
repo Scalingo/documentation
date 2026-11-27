@@ -1,6 +1,6 @@
 ---
 title: Recovery Management
-modified_at: 2021-04-07 00:00:00
+modified_at: 2026-11-27 00:00:00
 tags: internals faq crash recovery
 index: 5
 ---
@@ -57,7 +57,8 @@ This redundancy ensure there will always be sufficient data to recover a catastr
 ### Hosted Databases - Recovery Point Objective (RPO)
 
 The RPO determines the maximum acceptable amount of data loss measured in time.
-It depends of the type of database you are using:
+It depends on your database engine, architecture model, and service class.
 
-* Scalingo for MySQL®, Scalingo for MongoDB®, Scalingo for Elasticsearch®, Scalingo for Caching, Scalingo for InfluxDB®: last daily backup: at worst 24h of data loss
-* Scalingo for PostgreSQL®: continuous backuping, at worst: 30 minutes of data loss
+See the [typical RPOs by database engine and architecture model][backup-mechanisms].
+
+[backup-mechanisms]: {% post_url databases/about/2000-01-01-backup-policies %}#backup-mechanisms
