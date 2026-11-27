@@ -8,7 +8,7 @@ products:
   - Private Networks
 kind: tutorial
 permalink: /tutorials/keycloak
-modified_at: 2026-09-07
+modified_at: 2026-11-27
 last_reviewed_at: 2026-09-07
 ---
 
