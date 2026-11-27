@@ -249,7 +249,7 @@ To install dependencies locally:
 ```sh
 docker compose build --pull \
 && docker compose run --rm web bundle install \
-&& docker compose run --rm web yarn install --ignore-engines \
+&& docker compose run --rm web yarn install --immutable \
 && docker compose run --rm web bundle exec jekyll build
 ```
 

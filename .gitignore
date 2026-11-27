@@ -24,6 +24,7 @@ vendor
 TODO.txt
 tmp
 node_modules
+/.yarn/install-state.gz
 yarn-error.log
 .jekyll-cache
 src/assets/**
