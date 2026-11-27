@@ -108,10 +108,21 @@ or any important operation on your data.
 Manual backup limits depend on how often Scalingo runs scheduled backups for
 the database.
 
-- For databases with [daily scheduled backups](#daily-schedules), Scalingo
-  retains up to **10** manual backups for Starter and **50** for Business.
-- For databases with [hourly scheduled backups](#hourly-schedules), Scalingo
-  retains up to **10** manual backups for every service class.
+For databases with **[daily scheduled backups](#daily-schedules)**:
+
+| Service Class | Backups Retained        |
+|---------------|-------------------------|
+| Starter       | Last 10 rolling backups |
+| Business      | Last 50 rolling backups |
+| Enterprise    | Last 50 rolling backups |
+
+For databases with **[hourly scheduled backups](#hourly-schedules)**:
+
+| Service Class | Backups Retained        |
+|---------------|-------------------------|
+| Starter       | Last 10 rolling backups |
+| Business      | Last 10 rolling backups |
+| Enterprise    | Last 10 rolling backups |
 
 Manual backups are kept for an unlimited amount of time, as long as the number
 of backups doesn't exceed the plan's limit. If creating a new backup exceeds
