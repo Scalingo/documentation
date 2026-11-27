@@ -16,8 +16,9 @@ RUN printf 'Package: nodejs\nPin: origin deb.nodesource.com\nPin-Priority: 1001'
   nodejs \
   && apt-get upgrade -qq \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*\
-  && npm install -g yarn@1
+  && rm -rf /var/lib/apt/lists/*
+
+RUN npm install --global @yarnpkg/cli-dist@4.19.0
 
 COPY Gemfile Gemfile.lock /usr/src/app/
 
