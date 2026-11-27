@@ -35,7 +35,9 @@ The table below summarises which backup mechanisms are available (and whether th
 | Scalingo for InfluxDB®      | Shared Resources    | Managed              | Not available      |
 | Scalingo for MongoDB®       | Shared Resources    | Managed              | Not available      |
 
-[^1]: On Dedicated Resources, logical backups are possible, but they are customer-managed and rely on an external tool for both execution and retention policy.
+[^1]: For these combinations of database engine and architecture model, Scalingo
+    uses continuous backups (PiTR) as the primary backup method. You can create
+    logical backups with external tools and manage their retention yourself.
 
 ## Logical Backups
 
