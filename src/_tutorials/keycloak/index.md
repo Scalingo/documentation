@@ -636,7 +636,7 @@ especially before updating a production instance:
 
 ### Using the Command Line
 
-1. Update the version to the desired number:
+1. Update the version to the desired one:
    ```bash
    scalingo --app my-keycloak env-set KEYCLOAK_VERSION=<new_version>
    ```
@@ -650,14 +650,11 @@ especially before updating a production instance:
 
 ### Using the Terraform Provider
 
-1. Update the `scalingo_app` resource block of the Keycloak app to include the
-   `KEYCLOAK_VERSION` environment variables:
+1. Update the `scalingo_app` resource block to include the `KEYCLOAK_VERSION`
+   environment variables:
    ```tf
    resource "scalingo_app" "my-keycloak" {
-     name           = "my-keycloak"
-     project_id     = scalingo_project.keycloak_project.id
-     stack_id       = "scalingo-26"
-
+     # [...]
      environment = {
        # [...]
        KEYCLOAK_VERSION = "<new_version>"
