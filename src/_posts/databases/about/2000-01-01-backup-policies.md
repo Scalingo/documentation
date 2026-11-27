@@ -58,8 +58,7 @@ Scheduled backups are enabled by default. Each backup creates an archive that
 Scalingo keeps according to the [retention policy](#retention-policy-for-scheduled-backups).
 
 You can set the start time for daily backups in the dashboard or with the CLI
-to suit your workload. Your backup may start later depending on how many
-backups are scheduled at the same time across the platform.
+to suit your workload. The actual start time may vary depending on platform load.
 
 #### Retention Policy for Scheduled Backups
 
